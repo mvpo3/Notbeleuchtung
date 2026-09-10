@@ -156,13 +156,16 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
             try:
                 ergebnis = run(bundle, dxf_path=str(dxf_in), floor=floor, out_path=out_path,
                                lb_path=lb_path, plankopf=plankopf or None,
-                               projekt_kontext=kontext)
+                               projekt_kontext=kontext, pdf_quelle=(format == "pdf"))
             except Exception as exc:  # Provider-/Render-Fehler → 422, Ursache mitgeben.
                 raise HTTPException(status_code=422, detail=f"Plan-Erzeugung fehlgeschlagen: {exc}") from exc
             summary = _header_summary(ergebnis.render_summary)
             if format == "pdf":
+                # Das gelieferte DXF ist das Layout-Blatt (Paperspace) — ezdxf rastert es
+                # nicht; die Modelspace-Quelle (Modus 1) rendert das A0-PDF.
+                pdf_src = Path(ergebnis.render_summary.get("pdf_quelle") or out_path)
                 try:
-                    resp_path = dxf_zu_pdf(out_path, workdir / f"{floor}_notbeleuchtung.pdf")
+                    resp_path = dxf_zu_pdf(pdf_src, workdir / f"{floor}_notbeleuchtung.pdf")
                 except Exception as exc:  # matplotlib fehlt (Extra `render`) o.ä.
                     raise HTTPException(status_code=422, detail=f"PDF-Export fehlgeschlagen: {exc}") from exc
                 media = "application/pdf"

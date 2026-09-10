@@ -79,13 +79,12 @@ _EXTRA_LABELS: dict[str, RoomType] = {
     "gard": RoomType.ENTRANCE_HALL,  # „Gard." = Garderobe, Wohnungs-Vorraum
     "garderobe": RoomType.ENTRANCE_HALL,
     "loggia": RoomType.BALCONY,      # überdachter Freisitz ~ Balkon
-    # Fahrrad-/Kinderwagenraum = Abstellraum. Token-exakt inkl. Kompositum-Token
+    # Fahrradraum = Abstellraum. Token-exakt inkl. Kompositum-Token
     # „fahrradraum" (echter Stempel, ein Token) — so bleiben „Fahrradrampe",
     # „Fahrradabstellplätze" und „Fahrräder" (≠„fahrrad") UNKNOWN.
+    # Kinderwagenraum NICHT hier: er ist ein eigener Kanon-Typ (s. _EXTRA_DIRECT).
     "fahrrad": RoomType.STORAGE,
     "fahrradraum": RoomType.STORAGE,
-    "kinderwagen": RoomType.STORAGE,
-    "kinderwagenraum": RoomType.STORAGE,
 }
 _WORT = re.compile(r"[A-Za-zÄÖÜäöüß]+")
 
@@ -124,6 +123,17 @@ _EXTRA_DIRECT: dict[str, tuple[str, bool, bool]] = {
 # token-exakt VOR classify_room geprüft. Waschküche/-raum = communale Nasszelle,
 # keine Wohnungsküche.
 _EXTRA_OVERRIDE: dict[str, tuple[str, bool, bool]] = {
+    # Kinderwagenraum = GEMEINSAMER Abstellraum im Erschließungsbereich, nicht der
+    # private Wohnungs-Abstellraum — deshalb eigener Typ statt STORAGE/ABSTELLRAUM
+    # (die Türleuchten-Regel in platzierung/fachpraxis.py adressiert genau ihn).
+    # Als OVERRIDE, weil reale Stempel Mischräume beschriften („FAHRRADRAUM / KIWA",
+    # „Fahrrad+ KiWa") und das generische `fahrrad`-Token sonst gewinnt — es steht in
+    # _EXTRA_LABELS, das vor _EXTRA_DIRECT geprüft wird. Gemessene Schreibweisen in
+    # den Repo-Plänen: „KIWA" (Mollgasse), „KiWa" (Barawitzka); das ausgeschriebene
+    # „Kinderwagen(raum)" kommt real nicht vor, bleibt aber als Vokabular gültig.
+    "kiwa": ("KINDERWAGENRAUM", False, True),
+    "kinderwagen": ("KINDERWAGENRAUM", False, True),
+    "kinderwagenraum": ("KINDERWAGENRAUM", False, True),
     "waschküche": ("WASCHKÜCHE", False, True),
     "waschkueche": ("WASCHKÜCHE", False, True),
     "waschraum": ("WASCHKÜCHE", False, True),

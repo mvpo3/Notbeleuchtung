@@ -71,6 +71,45 @@ def _dedupe_anker(anker, pos, exits, G):
     return behalten
 
 
+#: Suchradius Tür → tragende Raum-Polygon-Kante (Türwand).
+_TUERWAND_SUCH_MM = 600.0
+
+
+def _tuer_durchgangsrichtung(
+    raum: RaumModell, tuer_xy: tuple[float, float], pos: dict[str, tuple[float, float]]
+) -> tuple[float, float]:
+    """Richtung DURCH eine Tür ohne Graph-Anlauf: Normale der Türwand.
+
+    Türwand = nächste Raum-Polygon-Kante (≤ 600 mm); das Vorzeichen der Normale
+    zeigt vom nächsten Zirkulations-Knoten WEG (raus statt zurück in den Gang).
+    Fallback ohne Wand/Knoten: (0, −1) wie bisher."""
+    tx, ty = tuer_xy
+    best: tuple[float, float] | None = None
+    best_d = _TUERWAND_SUCH_MM
+    for r in raum.raeume:
+        poly = r.polygon_mm
+        for (x1, y1), (x2, y2) in zip(poly, poly[1:] + poly[:1]):
+            ex_, ey_ = x2 - x1, y2 - y1
+            l2 = ex_ * ex_ + ey_ * ey_
+            if l2 < 1.0:
+                continue
+            t = max(0.0, min(1.0, ((tx - x1) * ex_ + (ty - y1) * ey_) / l2))
+            d = math.hypot(tx - (x1 + t * ex_), ty - (y1 + t * ey_))
+            if d < best_d:
+                best_d, best = d, (ex_, ey_)
+    if best is None:
+        return (0.0, -1.0)
+    n = math.hypot(*best)
+    nx_, ny_ = -best[1] / n, best[0] / n
+    # Anlauf = nächster Zirkulations-Knoten, der NICHT die Tür selbst ist
+    # (pos enthält auch die Ausgänge — der Exit liegt auf der Tür, Distanz 0).
+    kandidaten = [p for p in pos.values() if math.hypot(p[0] - tx, p[1] - ty) > 250.0]
+    anlauf = min(kandidaten, key=lambda p: math.hypot(p[0] - tx, p[1] - ty), default=None)
+    if anlauf is not None and (nx_ * (tx - anlauf[0]) + ny_ * (ty - anlauf[1])) < 0.0:
+        nx_, ny_ = -nx_, -ny_
+    return (nx_, ny_)
+
+
 def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Platzierung]:
     """RZ an Kreuzungs-Ankern (degree>=3) + Ausgängen, Richtung zum nächsten Ausgang."""
     G = build_circulation_graph(raum)
@@ -117,15 +156,26 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
         # ZUR TÜR zeigt (Referenz: SH-Tür oben → Block 180° gedreht = Pfeil nach oben).
         # Unrotiert zeigt der unten-Block auf −y → rotation = Winkel(RZ→Tür) + 90°.
         typen = {r.id: (r.raum_typ or "").upper() for r in raum.raeume}
+        # Anker-Türen: bevorzugt Notausgangs-/Stiegenhaus-Türen; liefert der Provider
+        # solche Flags nicht (reale Pläne, z.B. Mollgasse), zählt JEDE Tür — der
+        # 2000-mm-Radius unten begrenzt ohnehin auf die Tür AM Ausgang (Owner-Regel
+        # wie in communal_stgh_strategy: an Türen immer Pfeil zur/durch die Tür).
         ausgangs_tueren = [
             t for t in raum.tueren
             if t.ist_notausgang
             or "STIEGENHAUS" in (typen.get(t.von_raum or "", ""), typen.get(t.nach_raum or "", ""))
-        ]
+        ] or list(raum.tueren)
         if nid in exits and richtung == "unten" and ausgangs_tueren:
             tuer = min(ausgangs_tueren,
                        key=lambda t: math.hypot(t.xy_mm[0] - nx_, t.xy_mm[1] - ny))
             d_tuer = math.hypot(tuer.xy_mm[0] - nx_, tuer.xy_mm[1] - ny)
+            if d_tuer > 2000.0 and raum.tueren:
+                # Keine FLAGGED Tür am Ausgang (Provider setzt ist_notausgang nicht
+                # überall, z.B. Mollgasse-Durchgänge) → die Tür AM Ausgang ist die
+                # nächste Tür überhaupt; der 2000-mm-Radius begrenzt weiter.
+                tuer = min(raum.tueren,
+                           key=lambda t: math.hypot(t.xy_mm[0] - nx_, t.xy_mm[1] - ny))
+                d_tuer = math.hypot(tuer.xy_mm[0] - nx_, tuer.xy_mm[1] - ny)
             if d_tuer <= 2000.0:
                 if d_tuer > 50.0:
                     dx, dy = tuer.xy_mm[0] - nx_, tuer.xy_mm[1] - ny
@@ -137,7 +187,12 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
                              default=None)
                     dx, dy = ((nx_ - pos[nb][0], ny - pos[nb][1]) if nb else (0.0, -1.0))
                 else:
-                    dx, dy = 0.0, -1.0
+                    # Graphloser Ausgang AUF der Tür (reale Pläne: Exits liegen neben
+                    # dem Wegenetz): Durchgangs-Richtung = Normale der Türwand
+                    # (nächste Raum-Polygon-Kante), Vorzeichen weg vom Gang (origin/main).
+                    dx, dy = _tuer_durchgangsrichtung(raum, tuer.xy_mm, pos)
+                # F03: dieselbe Rotationsformel aus EINEM Helper (bausteine.rotation_zur_tuer)
+                # statt inline — formel-identisch zur main-Fassung, aber nicht mehr dupliziert.
                 rotation = _rotation_zur_tuer(dx, dy)
         out.append(
             Platzierung(

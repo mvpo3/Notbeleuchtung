@@ -137,7 +137,7 @@ def komponenten_ohne_stempel(
     blockiert |= wand
     # Türöffnungen als Trennlinien versiegeln (wie stempel_flutung, Stufe 0).
     for t in tueren:
-        r_px = max(1, round(max(_TUER_RAND_MM, t.breite_mm) / res))
+        r_px = max(1, round(max(_TUER_RAND_MM, t.breite_mm or 0.0) / res))
         rr, cc = raster.px(t.xy_mm)
         d = disk(r_px, dtype=bool)
         r0, c0 = rr - r_px, cc - r_px

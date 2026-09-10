@@ -15,6 +15,7 @@ from __future__ import annotations
 import itertools
 import json
 import math
+import os
 import os.path
 import re
 import subprocess
@@ -31,6 +32,7 @@ sys.stdout.reconfigure(encoding="utf-8")
 import matplotlib
 
 matplotlib.use("Agg")
+import ezdxf
 import matplotlib.pyplot as plt
 import numpy as np
 from ezdxf.addons.drawing import Frontend, RenderContext
@@ -39,6 +41,7 @@ from ezdxf.addons.drawing.properties import LayoutProperties
 from shapely.geometry import Point, Polygon
 from shapely.ops import unary_union
 
+from notbeleuchtung.raumerkennung.aussenbereich import ueberdachungen
 from notbeleuchtung.raumerkennung.dxf_load import WALL_PATTERN, DxfPlan, lade_dxf
 from notbeleuchtung.raumerkennung.fluchtweg import _KEIN_FLW_LAYER
 from notbeleuchtung.raumerkennung.kaskade import iou, raeume_aus_kaskade
@@ -60,7 +63,10 @@ from notbeleuchtung.raumerkennung.tuer_typisierung import (
 )
 
 EINGANG = REPO / "Projekte" / "_eingang"
-ERGEBNIS = REPO / "Projekte" / "_ergebnis"
+# Ausgabeordner überschreibbar (Sammelläufe über alle Repo-Grundrisse
+# schreiben nach _ergebnis_alle, damit _ergebnis die gepflegten fünf bleibt).
+ERGEBNIS = Path(os.environ.get("PLAN_PRUEFEN_ERGEBNIS",
+                               REPO / "Projekte" / "_ergebnis"))
 
 _FARBEN = plt.cm.tab20.colors  # type: ignore[attr-defined]
 
@@ -572,6 +578,12 @@ _ANKER_KUERZEL = {
     "RICHTUNGSWECHSEL": "RW", "KREUZUNG": "K", "ENDE": "E", "STRECKE": "S",
 }
 _SEG_FARBE = {"LINIE": "#0055cc", "GRAPH": "#00a040", "FALLBACK": "#888888"}
+# ZEICHEN-ERSATZMASSE, KEINE MESSUNG: Klemmgrenzen fuer den Tuer-Bogen im
+# Pruefbild. Sie bestimmen nur, wie gross der Bogen gemalt wird, und wandern in
+# kein Datenfeld. Eine Tuer ohne gemessene Breite (breite_mm is None) erscheint
+# damit so gross wie eine 400er — das ist Darstellung, kein Mass.
+_BOGEN_ZEICHEN_MIN_MM = 400.0
+_BOGEN_ZEICHEN_MAX_MM = 1500.0
 _AUSGANG_FARBE = {"final_exit": "#dd0000", "stair_exit": "#ff8800",
                   "door": "#777777"}
 _KIND_MARKER = {"rz": ("s", "#00a040"), "sicherheitsleuchte": ("o", "#0055cc"),
@@ -592,9 +604,17 @@ def _tuer_kuerzel(t) -> str:
     return k
 
 
+#: Wand-Segmente kürzer als das sind Tür-Laibungen/Jambs, keine Türwand.
+_MIN_WAND_SEGMENT_MM = 300.0
+
+
 def _wandwinkel_bei(plan: DxfPlan, xy_mm, max_mm: float = 600.0) -> float | None:
     """Winkel (° mod 180) des nächsten Wand-Segments am Punkt (mm) — Messbasis
-    der Rotationsprüfung (Türwandwinkel). None, wenn keine Wand in max_mm."""
+    der Rotationsprüfung (Türwandwinkel). None, wenn keine Wand in max_mm.
+    Kurze Segmente (< 300 mm, Tür-Laibungen quer zur Wand) zählen nur, wenn die
+    Tür praktisch AUF ihnen liegt (≤ 200 mm = Wandstärken-Band) — sonst maßen
+    sie die Laibung statt der Türwand (Mollgasse durchgang_65), während echte
+    kurze Wand-Stummel an der Tür (Mollgasse tuer_30) weiter zählen."""
     px, py = xy_mm
     best, best_d = None, max_mm
     for e in plan.wall_entities():
@@ -603,8 +623,11 @@ def _wandwinkel_bei(plan: DxfPlan, xy_mm, max_mm: float = 600.0) -> float | None
             l2 = dx * dx + dy * dy
             if l2 < 1.0:
                 continue
+            kurz = l2 < _MIN_WAND_SEGMENT_MM * _MIN_WAND_SEGMENT_MM
             t = max(0.0, min(1.0, ((px - x1) * dx + (py - y1) * dy) / l2))
             d = math.hypot(px - (x1 + t * dx), py - (y1 + t * dy))
+            if kurz and d > 200.0:
+                continue
             if d < best_d:
                 best_d = d
                 best = math.degrees(math.atan2(dy, dx)) % 180.0
@@ -632,9 +655,10 @@ def _wohnungs_umrisse(modell) -> dict[str, object]:
 
 
 def _bild_fluchtweg(plan: DxfPlan, zoom, modell, wpolys: dict,
-                    pfad: Path, rot: int) -> None:
+                    pfad: Path, rot: int, kandidaten=()) -> None:
     """05_fluchtweg.png: Türen (Bögen + Typkürzel), Ausgänge (Kreise),
-    Fluchtweg-Segmente (Farbe je Quelle, Pfeil Richtung Ausgang), Wohnungen."""
+    Fluchtweg-Segmente (Farbe je Quelle, Pfeil Richtung Ausgang), Wohnungen,
+    Kreuzcheck-Kandidaten (gestrichelt rot — Prüf-Output, keine Ausgänge)."""
     from matplotlib.patches import Arc
     f = plan.factor
     fig, ax = _figur(plan, zoom)
@@ -662,8 +686,9 @@ def _bild_fluchtweg(plan: DxfPlan, zoom, modell, wpolys: dict,
     for t in modell.tueren:
         w = _wandwinkel_bei(plan, t.xy_mm) or 0.0
         # Bogen-Durchmesser gedeckelt: breite Durchgänge (bis 3.8 m) würden
-        # sonst das Bild dominieren (Barawitzka-Sichtbefund).
-        d = min(max(t.breite_mm, 400.0), 1500.0) / f
+        # sonst das Bild dominieren (Barawitzka-Sichtbefund). Reine Bildgröße,
+        # siehe _BOGEN_ZEICHEN_MIN_MM/_MAX — kein Maß der Tür.
+        d = min(max(t.breite_mm or 0.0, _BOGEN_ZEICHEN_MIN_MM), _BOGEN_ZEICHEN_MAX_MM) / f
         ax.add_patch(Arc((t.xy_mm[0] / f, t.xy_mm[1] / f), d, d, angle=w,
                          theta1=0.0, theta2=180.0, color="#994400", lw=1.5,
                          zorder=ztop + 2))
@@ -673,6 +698,13 @@ def _bild_fluchtweg(plan: DxfPlan, zoom, modell, wpolys: dict,
         ax.plot(a.xy_mm[0] / f, a.xy_mm[1] / f, "o", ms=11, mfc="none",
                 mec=_AUSGANG_FARBE.get(a.typ, "#777777"), mew=2.5,
                 zorder=ztop + 3)
+    # Kreuzcheck: notausgang_kandidat = gestrichelt roter Kreis (kein Ausgang).
+    for k in kandidaten:
+        ax.plot(k.xy_mm[0] / f, k.xy_mm[1] / f, "o", ms=14, mfc="none",
+                mec="#dd0000", mew=2.0, ls="none", zorder=ztop + 3)
+        ax.add_patch(plt.Circle((k.xy_mm[0] / f, k.xy_mm[1] / f), 900.0 / f,
+                                fill=False, ec="#dd0000", ls="--", lw=1.6,
+                                zorder=ztop + 3))
     _speichern(fig, pfad, rot)
 
 
@@ -730,6 +762,136 @@ def _bild_platzierung(plan: DxfPlan, zoom, modell, platz,
     _speichern(fig, pfad, rot)
 
 
+# ------------------------------------------------- Referenzvergleich (Fachplaner)
+
+#: Fachplaner-Referenzplan (46 Leuchten + Controller; docs/REFERENZ_PLATZIERUNG.md).
+_REFERENZ_DXF = (REPO / "DIN-Notbeleuchtungspläne(Beispiele)"
+                 / "din_support_ReMi_Barawitzkagasse_28.04.2026.dxf")
+#: Plan-Name → (Frame-Offset m, Frame-Fenster in REF-mm). our_mm = ref_mm +
+#: offset·1000 (EG-Frame, Ø 0.19 m). Das Fenster wählt das Geschoss-Frame im
+#: Referenz-Modelspace (mehrere Frames nebeneinander — Bounds-Filter reichte
+#: nicht: UG/OG-Leuchten fielen mit EG-Offset in die Plan-Bounds).
+_REFERENZ_FRAME = {
+    "Barawitzka_EG": ((-48.44, -39.04), (45_000.0, 5_000.0, 70_000.0, 45_000.0)),
+}
+_REF_LAYER_KIND = {
+    "din_SIBEL_10_emergency_lighting": "rz",
+    "din_SIBEL_10_emergency_lighting_yellow": "sicherheitsleuchte",
+    "din_SIBEL_11_emergency_lighting_system": "system",
+}
+_REF_TREFFER_MM = 1000.0
+_REF_ROT_TOL_GRAD = 10.0
+
+
+def _referenz_leuchten(name: str, bounds_mm) -> list[dict]:
+    """Fachplaner-Leuchten des passenden Geschoss-Frames (Fenster in REF-mm),
+    in unser mm-System verschoben."""
+    off_fenster = _REFERENZ_FRAME.get(name)
+    if off_fenster is None or not _REFERENZ_DXF.exists():
+        return []
+    off, (fx1, fy1, fx2, fy2) = off_fenster
+    doc = ezdxf.readfile(str(_REFERENZ_DXF))
+    out = []
+    for e in doc.modelspace().query("INSERT"):
+        kind = _REF_LAYER_KIND.get(e.dxf.layer)
+        if kind is None:
+            continue
+        rx, ry = e.dxf.insert.x, e.dxf.insert.y
+        if not (fx1 <= rx <= fx2 and fy1 <= ry <= fy2):
+            continue
+        x, y = rx + off[0] * 1000.0, ry + off[1] * 1000.0
+        att = {a.dxf.tag: a.dxf.text for a in e.attribs}
+        out.append({"x": x, "y": y, "rot": float(e.dxf.rotation) % 360.0,
+                    "block": e.dxf.name, "typ": att.get("TYPENUMBER", ""),
+                    "kind": kind})
+    return out
+
+
+def _referenz_match(refs: list[dict], platz):
+    """Greedy-Match Referenz→eigene Leuchte: ≤1 m UND Rotations-Δ ≤10° (mod 180,
+    Panel-Achse — Referenz wie wir im 90°-Raster). Controller zählt nicht."""
+    unsere = list(platz.platzierungen)
+    frei = set(range(len(unsere)))
+    treffer, fehlend = [], []
+    for r in (x for x in refs if x["kind"] != "system"):
+        best, best_d = None, _REF_TREFFER_MM
+        for i in frei:
+            p = unsere[i]
+            d = math.hypot(p.xy_mm[0] - r["x"], p.xy_mm[1] - r["y"])
+            if d > best_d:
+                continue
+            if abs((p.rotation_deg - r["rot"] + 90.0) % 180.0 - 90.0) > _REF_ROT_TOL_GRAD:
+                continue
+            best, best_d = i, d
+        if best is None:
+            fehlend.append(r)
+        else:
+            treffer.append((r, unsere[best], best_d))
+            frei.discard(best)
+    return treffer, fehlend, [unsere[i] for i in frei]
+
+
+def _bild_referenzvergleich(plan: DxfPlan, zoom, modell, platz, refs,
+                            treffer, fehlend, pfad: Path, rot: int) -> None:
+    """07_referenzvergleich.png: eigene Platzierung (Symbole wie 06) ÜBER den
+    Fachplaner-Leuchten (Kreise mit Typ; grün = getroffen, rot = ohne Gegenstück)."""
+    f = plan.factor
+    fig, ax = _figur(plan, zoom)
+    _meterraster(ax, plan)
+    ax.autoscale(False)
+    ztop = _ztop(ax)
+    for r in modell.raeume:
+        if len(r.polygon_mm) >= 3:
+            ax.fill([x / f for x, _ in r.polygon_mm],
+                    [y / f for _, y in r.polygon_mm],
+                    fc="white", ec="#909090", alpha=0.25, lw=0.8, zorder=ztop)
+    getroffen = {id(r) for r, _p, _d in treffer}
+    radius = 450.0 / f
+    for r in refs:
+        farbe = ("#777777" if r["kind"] == "system"
+                 else "#00a040" if id(r) in getroffen else "#dd0000")
+        ax.add_patch(plt.Circle((r["x"] / f, r["y"] / f), radius, fill=False,
+                                ec=farbe, lw=1.8, zorder=ztop + 2))
+        ax.text(r["x"] / f, (r["y"] + 550.0) / f, r["typ"] or r["block"],
+                ha="center", va="bottom", fontsize=5, color=farbe, zorder=ztop + 2)
+    for p in platz.platzierungen:
+        marker, farbe = _KIND_MARKER.get(p.kind, ("D", "#000000"))
+        ax.plot(p.xy_mm[0] / f, p.xy_mm[1] / f, marker, ms=6, mfc="none",
+                mec=farbe, mew=1.5, zorder=ztop + 3)
+    ax.set_title(f"Referenzvergleich: {len(treffer)} Treffer / "
+                 f"{len(fehlend)} fehlend (Fachplaner-Kreise, eigene Symbole)",
+                 fontsize=8)
+    _speichern(fig, pfad, rot)
+
+
+def _referenzvergleich(name: str, plan: DxfPlan, zoom, modell, platz,
+                       ziel: Path, rot: int) -> dict | None:
+    """Nur für Pläne mit Referenz (Barawitzka_EG): Bild + Kennzahlen + md-Block."""
+    refs = _referenz_leuchten(name, modell.bounds_mm)
+    if not refs:
+        return None
+    treffer, fehlend, ueber = _referenz_match(refs, platz)
+    _bild_referenzvergleich(plan, zoom, modell, platz, refs, treffer, fehlend,
+                            ziel / "07_referenzvergleich.png", rot)
+    basis = len(treffer) + len(fehlend)
+    quote = len(treffer) / basis if basis else 0.0
+    l = ["", f"## Referenzvergleich Fachplaner ({basis} Referenz-Leuchten im Frame)", "",
+         (f"- Treffer (≤{_REF_TREFFER_MM / 1000:.0f} m, Rotation ≤{_REF_ROT_TOL_GRAD:.0f}°): "
+          f"**{len(treffer)}/{basis} = {quote * 100:.0f} %**"),
+         f"- überzählig (eigene ohne Referenz-Gegenstück): {len(ueber)}"]
+    if fehlend:
+        l += ["", "| fehlende Referenz | xy m | rot° |", "|---|---|--:|"]
+        l += [f"| {r['block']} {r['typ']} | ({r['x'] / 1000:.2f}, {r['y'] / 1000:.2f}) "
+              f"| {r['rot']:.0f} |" for r in fehlend]
+    if ueber:
+        # Spec V1 verlangt fehlende UND ueberzaehlige einzeln, nicht nur die Zahl.
+        l += ["", "| überzählige eigene | xy m | rot° |", "|---|---|--:|"]
+        l += [f"| {p.kind} | ({p.xy_mm[0] / 1000:.2f}, {p.xy_mm[1] / 1000:.2f}) "
+              f"| {p.rotation_deg:.0f} |" for p in ueber]
+    return {"md": l, "treffer": len(treffer), "fehlend": len(fehlend),
+            "ueberzaehlig": len(ueber), "quote": quote}
+
+
 def _leuchten_je_klasse(modell, platz) -> tuple[Counter, int]:
     """(Zählung Nutzungsklasse→n mit LIFT/SCHACHT separat, n auf Treppenläufen)."""
     polys = [(r, Polygon(r.polygon_mm).buffer(0)) for r in modell.raeume
@@ -752,7 +914,14 @@ def _leuchten_je_klasse(modell, platz) -> tuple[Counter, int]:
 
 def _rotations_pruefung(plan: DxfPlan, modell, platz) -> list[tuple]:
     """RZ über einer Tür: rotation_deg gegen den Türwandwinkel MESSEN
-    (nur berichten — Platzierung wird nicht geändert)."""
+    (nur berichten — Platzierung wird nicht geändert).
+
+    Messbasis-Fix (Rotationsfix 2026-09-07): (1) Vergleichbar ist die
+    **unten-Block-äquivalente** Rotation — direktionale links/rechts-Blöcke
+    tragen ihre Pfeilrichtung im Block, nicht in rotation_deg; roh verglichen
+    war jede links/rechts-Platzierung an einer vertikalen Wand fälschlich
+    „abweichend". Äquivalenz: rot_eq = Pfeil-Azimut − 270° (Block-Nullrichtung,
+    docs/REFERENZ_PLATZIERUNG.md §4)."""
     zeilen = []
     for p in platz.platzierungen:
         if p.kind != "rz" or not modell.tueren:
@@ -763,8 +932,13 @@ def _rotations_pruefung(plan: DxfPlan, modell, platz) -> list[tuple]:
         w = _wandwinkel_bei(plan, t.xy_mm)
         if w is None:
             continue
-        delta = abs((p.rotation_deg - w + 90.0) % 180.0 - 90.0)
-        zeilen.append((t.id, p.xy_mm, p.rotation_deg, w, delta))
+        # Block-lokale Pfeilrichtung aus dem KEY (nicht aus `richtung` — der
+        # unten-Block kann jede richtung tragen, dann steckt sie in rotation_deg).
+        lokal = (180.0 if p.catalog_key.endswith("_links")
+                 else 0.0 if p.catalog_key.endswith("_rechts") else 270.0)
+        rot_eq = (p.rotation_deg + lokal - 270.0) % 360.0
+        delta = abs((rot_eq - w + 90.0) % 180.0 - 90.0)
+        zeilen.append((t.id, p.xy_mm, rot_eq, w, delta))
     return zeilen
 
 
@@ -796,12 +970,21 @@ def _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz,
          + ", ".join(f"{v}={k}" for k, v in _TUER_KUERZEL.items())
          + "; ? = untypisiert (keine Regel greift), /NA = Notausgang, "
          "* = ohne Türblatt.", "",
-         "| ID | raum_a | raum_b | Typ | Breite mm | Notausgang |",
-         "|---|---|---|---|--:|---|"]
+         ("| ID | raum_a | raum_b | Typ | Breite mm | Breiten-Quelle | "
+          "Notausgang | Quelle | Grund |"),
+         "|---|---|---|---|--:|---|---|---|---|"]
     for t in modell.tueren:
+        # Grund nur bei untypisierten Türen (Spec 5: für JEDE einzeln).
+        grund = t.untypisiert_grund if t.tuer_detail is None else None
+        quelle = (t.quelle or "")[:40]
+        # v1.4.0: keine Messung ist None — nichts erfinden, „—" ausweisen.
+        breite = "—" if t.breite_mm is None else f"{t.breite_mm:.0f}"
+        b_grund = (f"{t.breite_quelle} ({t.breite_grund})"
+                   if t.breite_grund else t.breite_quelle)
         l.append(f"| {t.id} | {t.von_raum or '—'} | {t.nach_raum or '—'} | "
-                 f"{t.tuer_detail or '—'} | {t.breite_mm:.0f} | "
-                 f"{'ja' if t.ist_notausgang else '—'} |")
+                 f"{t.tuer_detail or '—'} | {breite} | {b_grund} | "
+                 f"{'ja' if t.ist_notausgang else '—'} | {quelle or '—'} | "
+                 f"{grund or ''} |")
     l += ["", f"## Ausgänge ({len(modell.ausgaenge)})", "",
           "| ID | Typ | x m | y m |", "|---|---|--:|--:|"]
     for a in modell.ausgaenge:
@@ -880,6 +1063,105 @@ def _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz,
     return l
 
 
+def _restweg_im_eg(dxf: Path, geschoss: str) -> str | None:
+    """Für OG-Pläne: Restweg im EG (Stiegenhaustür → final_exit) aus dem
+    EG-Plan derselben Projektfamilie in Projekte/_eingang; sonst 'unbekannt'.
+    """
+    from notbeleuchtung.raumerkennung.tuer_typisierung import ist_obergeschoss
+    if not ist_obergeschoss(geschoss):
+        return None
+    familie = dxf.stem.split("_")[0].split(" ")[0]
+    kandidaten = sorted(Path("Projekte/_eingang").glob(f"{familie}*EG*.dxf"))
+    if not kandidaten:
+        return "Restweg im EG: unbekannt (kein EG-Plan in Projekte/_eingang)"
+    from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
+    eg = ArchitekturRaumProvider().parse(str(kandidaten[0]), "EG")
+    stg = {f"seg_graph_{t.id}" for t in eg.tueren
+           if t.tuer_detail == "stiegenhaustuer"}
+    laengen = [s.laenge_mm for s in eg.zirkulation.segmente
+               if s.segment_id in stg]
+    if not laengen:
+        return (f"Restweg im EG: unbekannt ({kandidaten[0].name}: kein Segment "
+                "Stiegenhaustür→final_exit)")
+    return (f"Restweg im EG ({kandidaten[0].name}): "
+            f"{min(laengen) / 1000:.1f}–{max(laengen) / 1000:.1f} m "
+            "(Stiegenhaustür → nächster final_exit)")
+
+
+def _kreuzcheck_md(modell, kc, flw_warnungen: list[str],
+                   restweg: str | None) -> list[str]:
+    """Markdown-Block: Kreuzcheck + Fluchtweg-Warnungen + untypisierte Türen."""
+    l = ["", "## Kreuzcheck Fluchtweglinien ↔ Endausgänge", ""]
+    if restweg:
+        l += [restweg, ""]
+    if kc is None:
+        l += ["keine Außenkontur — Kreuzcheck nicht möglich."]
+    else:
+        l += [(f"{len(kc.endpunkte_aussenkante)} Linien-Endpunkte an der "
+               f"Außenkante, davon {len(kc.gedeckte_endpunkte)} mit final_exit "
+               f"≤ 1.5 m gedeckt.")]
+        for w in kc.warnungen:
+            l.append(f"- ⚠ {w}")
+        if kc.kandidaten:
+            l += ["", ("Kandidaten (typ notausgang_kandidat — Prüf-Output, "
+                       "KEINE Ausgänge; gestrichelt rot in 05_fluchtweg.png):"),
+                  ""]
+            for k in kc.kandidaten:
+                l.append(f"- ({k.xy_mm[0] / 1000:.2f}, {k.xy_mm[1] / 1000:.2f}) "
+                         f"Tür {k.tuer_id or '—'} — {k.grund}")
+        if kc.unbenutzte_exits:
+            l += ["", "final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): "
+                  + ", ".join(kc.unbenutzte_exits)]
+    if flw_warnungen:
+        l += ["", "### Fluchtweg-Warnungen", ""]
+        l += [f"- ⚠ {w}" for w in flw_warnungen]
+    # Gründe-Tabelle untypisierte Türen (Fachteil „untypisierte Türen").
+    gruende = Counter(t.untypisiert_grund for t in modell.tueren
+                      if t.tuer_detail is None and t.untypisiert_grund)
+    if gruende:
+        l += ["", "### Untypisierte Türen — Gründe", "",
+              "| Grund | Anzahl |", "|---|--:|"]
+        l += [f"| {g} | {n} |" for g, n in gruende.most_common()]
+    return l
+
+
+def _aussen_md(ab, ueber=(), exits=()) -> list[str]:
+    """Markdown-Abschnitt „Außenbereich" (Spec 2) aus ``AussenBereiche``.
+
+    ``ueber`` = erkannte Überdachungen (Prüfstrecken-Output, kein Contract),
+    ``exits`` = final_exit-Ausgänge für den Abstands-Hinweis.
+    """
+    if ab is None:
+        return ["", "## Außenbereich", "", "- keine Außen-Analyse "
+                "(keine Wandkörper im Plan)"]
+
+    def _fl(polys):
+        return sum(p.area for p in polys) / 1e6      # mm² → m²
+
+    komp = ", ".join(f"{p.area / 1e6:.1f}" for p in ab.komponenten) or "—"
+    return ["", "## Außenbereich", "",
+            f"- Gebäude-Komponenten: {len(ab.komponenten)} "
+            f"(Flächen m²: {komp}; Summe {_fl(ab.komponenten):.1f})",
+            f"- offene AUSSEN-Flächen: {len(ab.offen)} "
+            f"({_fl(ab.offen):.1f} m²)",
+            f"- geschlossene Höfe (AUSSEN_GESCHLOSSEN): "
+            f"{len(ab.geschlossen)} ({_fl(ab.geschlossen):.1f} m²)",
+            (f"- Überdachungen über offener Außenfläche: {len(ueber)} "
+             f"({_fl(ueber):.1f} m²)")] + [
+        f"  - {a.area / 1e6:.1f} m² — {d / 1000:.2f} m zu {eid}"
+        for a, d, eid in _ueberdachung_exit_abstand(ueber, exits) if d <= 5000]
+
+
+def _ueberdachung_exit_abstand(ueber, exits):
+    """Je Überdachung der Abstand (mm) zum nächsten final_exit + dessen ID."""
+    ziele = [a for a in exits if a.typ == "final_exit"]
+    for u in ueber:
+        if not ziele:
+            continue
+        e = min(ziele, key=lambda a: u.distance(Point(a.xy_mm)))
+        yield u, u.distance(Point(e.xy_mm)), e.id
+
+
 def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     """RaumModell + Platzierung (Pipeline-Smoke, Default-Bundle) → 05/06-PNGs
     + bericht-Block + VERLAUF-Kennzahlen."""
@@ -888,9 +1170,12 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     bundle = build_default_bundle()
     modell = bundle.raum.parse(str(dxf), geschoss)
     platz = bundle.platzierer.place(modell, bundle.norm, None)
+    kc = getattr(bundle.raum, "letzter_kreuzcheck", None)
+    flw_warnungen = list(getattr(bundle.raum, "fluchtweg_warnungen", []))
 
     wpolys = _wohnungs_umrisse(modell)
-    _bild_fluchtweg(plan, zoom, modell, wpolys, ziel / "05_fluchtweg.png", rot)
+    _bild_fluchtweg(plan, zoom, modell, wpolys, ziel / "05_fluchtweg.png", rot,
+                    kandidaten=kc.kandidaten if kc else ())
     _bild_platzierung(plan, zoom, modell, platz, ziel / "06_platzierung.png", rot)
 
     segs = {s.segment_id: s for s in modell.zirkulation.segmente}
@@ -910,6 +1195,18 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     rotz = _rotations_pruefung(plan, modell, platz)
     bst_texte = _brandschutz_texte(plan)
     md = _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz, bst_texte)
+    ab = getattr(bundle.raum, "letzte_aussenbereiche", None)
+    # Vordach-Signal: Prüfstrecken-Output, als Attribut am Provider abgelegt
+    # (wie letzte_aussenbereiche) — KEIN Contract-Feld am Ausgang.
+    ueber = (ueberdachungen(plan, unary_union(ab.komponenten), ab.offen)
+             if ab is not None and ab.komponenten else [])
+    bundle.raum.letzte_ueberdachungen = ueber
+    md = md + _aussen_md(ab, ueber, modell.ausgaenge)
+    md = md + _kreuzcheck_md(modell, kc, flw_warnungen,
+                             _restweg_im_eg(dxf, geschoss))
+    refz = _referenzvergleich(dxf.stem, plan, zoom, modell, platz, ziel, rot)
+    if refz is not None:
+        md = md + refz["md"]
     ausg_typ = Counter(a.typ for a in modell.ausgaenge)
     seg_q = Counter((s.quelle or "?") for s in modell.zirkulation.segmente)
     kind_n = Counter(p.kind for p in platz.platzierungen)
@@ -925,6 +1222,12 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
         "leuchten_lauf": lauf,
         "rot_abweichend": sum(1 for *_x, d in rotz if d > _ROT_TOLERANZ_GRAD),
         "rot_gemessen": len(rotz),
+        "kreuzcheck_warnungen": len(kc.warnungen) if kc else 0,
+        "notausgang_kandidaten": len(kc.kandidaten) if kc else 0,
+        "unbenutzte_exits": len(kc.unbenutzte_exits) if kc else 0,
+        **({"referenz_treffer": refz["treffer"], "referenz_fehlend": refz["fehlend"],
+            "referenz_ueberzaehlig": refz["ueberzaehlig"],
+            "referenz_quote": refz["quote"]} if refz is not None else {}),
     }
 
 
@@ -1222,8 +1525,15 @@ def _verlauf_schreiben(ergebnisse: list[dict], commit: str) -> None:
 
 
 def _material_report(ergebnisse: list[dict]) -> None:
-    """docs/MATERIAL_REPORT.md — je Plan eine Sektion, idempotent ersetzt."""
-    pfad = REPO / "docs" / "MATERIAL_REPORT.md"
+    """docs/MATERIAL_REPORT.md — je Plan eine Sektion, idempotent ersetzt.
+
+    Nur der Standard-Lauf (Projekte/_eingang → Projekte/_ergebnis) pflegt das
+    Repo-Dokument; ein umgelenkter Sammellauf schreibt neben seine Ergebnisse,
+    sonst überschreibt er den gepflegten Bericht der Prüfstrecken-Pläne.
+    """
+    pfad = (REPO / "docs" / "MATERIAL_REPORT.md"
+            if ERGEBNIS == REPO / "Projekte" / "_ergebnis"
+            else ERGEBNIS / "MATERIAL_REPORT.md")
     alt = pfad.read_text(encoding="utf-8") if pfad.exists() else ""
     sektionen: dict[str, str] = {}
     for block in re.split(r"^(?=# Plan )", alt, flags=re.MULTILINE):
@@ -1266,6 +1576,10 @@ def main() -> int:
               f"{r['leuchten_kind']} je Klasse {r['leuchten_klasse']}, "
               f"Lauf {r['leuchten_lauf']}, Rotation "
               f"{r['rot_abweichend']}/{r['rot_gemessen']} abweichend")
+        if "referenz_quote" in r:
+            print(f"   Referenzvergleich: {r['referenz_treffer']} Treffer / "
+                  f"{r['referenz_fehlend']} fehlend / {r['referenz_ueberzaehlig']} "
+                  f"überzählig ({r['referenz_quote'] * 100:.0f} %)")
         ergebnisse.append(r)
     if ergebnisse:
         _verlauf_schreiben(ergebnisse, commit)

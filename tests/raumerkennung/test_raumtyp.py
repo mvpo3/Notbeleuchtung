@@ -44,18 +44,19 @@ def test_abkuerzung_kein_substring_bleed(label):
 @pytest.mark.parametrize(
     "label, erwartet, flucht, communal",
     [
-        ("Fahrradraum", "ABSTELLRAUM", False, False),      # Fahrrad-/Kinderwagenraum
+        ("Fahrradraum", "ABSTELLRAUM", False, False),      # Fahrradraum
         ("FAHRRADRAUM", "ABSTELLRAUM", False, False),
         ("Fahrrad", "ABSTELLRAUM", False, False),
-        ("Kinderwagenraum", "ABSTELLRAUM", False, False),
-        ("Kinderwagen", "ABSTELLRAUM", False, False),
+        ("Kinderwagenraum", "KINDERWAGENRAUM", False, True),
+        ("Kinderwagen", "KINDERWAGENRAUM", False, True),
         ("Keller", "KELLER", False, True),
         ("Kellerabteil", "KELLER", False, True),
         ("KELLERABTEIL BT1", "KELLER", False, True),
     ],
 )
 def test_nebenraeume_vokabular(label, erwartet, flucht, communal):
-    # Nebenraum-Vokabular: Fahrrad/Kinderwagen → ABSTELLRAUM, Keller(abteil) → KELLER.
+    # Nebenraum-Vokabular: Fahrrad → ABSTELLRAUM, Kinderwagen → eigener
+    # KINDERWAGENRAUM (communal, Türleuchten-Regel), Keller(abteil) → KELLER.
     tf = raumtyp_flags(label)
     assert tf is not None, f"{label!r} sollte typisieren"
     assert tf[0] == erwartet
