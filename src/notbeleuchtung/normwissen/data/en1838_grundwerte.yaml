@@ -48,6 +48,18 @@ erkennungsweite:
   # _port_source/rz_coverage_oenorm.yaml → l = 200·0,15 = 30 m
   piktogramm_hoehe_default_m: 0.15
 
+# Wartungsfaktor (Maintenance Factor) — F09/W07.
+# [PRAXIS] NICHT in EN 1838 beziffert. Die Norm-Lux (§4.2.1/§4.3.1) sind MAINTAINED
+# values; zur Planung ist durch den Wartungsfaktor zu teilen (Alterung/Verschmutzung/
+# Spannungsabfall). Der 2-Werte-Split 0,80 innen / 0,57 außen stammt aus drei echten
+# Profi-Notberechnungen (Relux/DIALux), dokumentiert in
+# knowledge/extracted/LICHTBERECHNUNG_REFERENZ.md. Geltung: [AT-Referenzpraxis].
+# Die Engine rechnet Lux nur INNEN (Korridor-Deckung/Aufheller/Nachweis) → `innen`
+# greift; `aussen` ist dokumentiert, aber (noch) ohne Außen-Lux-Konsument = inert.
+wartungsfaktor:
+  innen: 0.80    # [PRAXIS] geschlossene Räume — LICHTBERECHNUNG_REFERENZ.md
+  aussen: 0.57   # [PRAXIS] Außenbereich vor Schlussausgang — LICHTBERECHNUNG_REFERENZ.md
+
 # Horizontale Beleuchtungsstärke am Boden.
 lux:
   # [BELEGT] §4.2.1, Norm-S.9 — Mittellinie Rettungsweg. Gebunden an Wegbreite
