@@ -22,11 +22,14 @@ die Deckung mit der konstanten isotropen Lichtstärke.
 from __future__ import annotations
 
 from collections.abc import Callable
+from itertools import pairwise
 
 from notbeleuchtung.hauptengine.contracts import (
+    FluchtwegSegment,
     LBVorgabe,
     NormProvider,
     OibBefund,
+    Platzierung,
     PlatzierungsErgebnis,
     RaumModell,
 )
@@ -37,6 +40,7 @@ from . import (
     deckungs_zuordnung,
     fachpraxis,
     lb_override,
+    mittellinie_snap,
     verbotszonen_nachpass,
 )
 from .anker_strategy import plan_rettungszeichen_anker
@@ -56,6 +60,61 @@ from .sonderstellen_strategy import plan_flag_raeume, plan_sonderstellen
 # spikey Teil-Polygone eines Gangs) erzeugt viele Klein-Fragmente — die würden sonst
 # je einzeln aufgefüllt (Überproduktion). Ein echter Flur-Arm ist deutlich länger.
 _MIN_KORRIDOR_ARM_MM = 6000.0
+# Owner-Korrektur 2026-09-10 (AutoCAD-Diff L-Demo): max RZ-Abstand ENTLANG eines Gang-Arms
+# = Praxis-Sichtlinie, enger als die reine Erkennungsweite l=z·h (die einen 15-m-Arm mit
+# End-RZ noch abdecken würde). Übersteigt eine Lücke das, kommt ein Mittel-Arm-RZ dazu.
+_MAX_RZ_ARM_GAP_MM = 12000.0
+
+
+def _flucht_ziele(raum: RaumModell) -> list:
+    """Richtungs-Ziele für Zwischen-RZ: Ausgänge, sonst Stiegenhaus-Zentren (1OG ohne
+    eigenen Ausgang flieht über die Stiege)."""
+    ziele = [a.xy_mm for a in raum.ausgaenge]
+    if not ziele:
+        from .geometry import find_center_visual
+        ziele = [find_center_visual(r.polygon_mm) for r in raum.raeume
+                 if (r.raum_typ or "").upper() == "STIEGENHAUS" and len(r.polygon_mm) >= 3]
+    return ziele
+
+
+def _mittel_arm_rz(rz: list, korridore: list, raum: RaumModell, norm: NormProvider) -> list:
+    """Zwischen-RZ in langen Gang-Armen, deren End-RZ eine Lücke > `_MAX_RZ_ARM_GAP_MM`
+    lassen (Owner-Korrektur). Pfeil zeigt zum nächsten Fluchtziel."""
+    import math
+
+    from .bausteine import AGV_SV_F as _AGV_SV_F
+    from .bausteine import key_und_rotation as _kr
+    from .bausteine import richtung_und_rotation as _rr
+    from .geometry import _bbox
+    ziele = _flucht_ziele(raum)
+    zusatz: list = []
+    for r in korridore:
+        x0, y0, x1, y1 = _bbox(r.polygon_mm)
+        laengs = 0 if (x1 - x0) >= (y1 - y0) else 1     # 0=x-Arm, 1=y-Arm
+        lo, hi = (x0, x1) if laengs == 0 else (y0, y1)
+        quer = (y0 + y1) / 2.0 if laengs == 0 else (x0 + x1) / 2.0
+        if hi - lo < _MAX_RZ_ARM_GAP_MM:
+            continue
+        pos = sorted(p.xy_mm[laengs] for p in (rz + zusatz)
+                     if point_in_polygon(p.xy_mm, r.polygon_mm))
+        grenzen = [lo, *pos, hi]
+        for a, b in pairwise(grenzen):
+            if b - a <= _MAX_RZ_ARM_GAP_MM:
+                continue
+            mid = (a + b) / 2.0
+            pt = (mid, quer) if laengs == 0 else (quer, mid)
+            ziel = min(ziele, key=lambda z: math.hypot(z[0] - pt[0], z[1] - pt[1]), default=None)
+            richtung, _ = _rr(ziel[0] - pt[0], ziel[1] - pt[1]) if ziel else ("unten", 0.0)
+            seg = FluchtwegSegment(segment_id=f"sicht_{r.id}_{int(mid)}",
+                                   polyline_mm=[pt], reason="long_run")
+            anf = norm.fuer_fluchtweg_abschnitt(seg)
+            key, rot, mirror = _kr(anf.symbol_katalog_keys, richtung)
+            zusatz.append(Platzierung(
+                xy_mm=pt, catalog_key=key, rotation_deg=rot, mirror_x=mirror,
+                height_mm=float(anf.montagehoehe_mm), kind="rz", richtung=richtung,
+                # vorläufiger F13-SV-Kreis; circuit_zuordnung vergibt final (F06-fest).
+                circuit_hint=f"AGV-A-F{_AGV_SV_F}", covers_segment=[], norm_quelle=anf.quelle))
+    return zusatz
 
 
 def _sichtlinien_garantie(rz: list, raum: RaumModell, norm: NormProvider) -> list:
@@ -81,15 +140,18 @@ def _sichtlinien_garantie(rz: list, raum: RaumModell, norm: NormProvider) -> lis
         r for r in korridore
         if not any(p.kind == "rz" and point_in_polygon(p.xy_mm, r.polygon_mm) for p in rz)
     ]
-    if not unbedeckt:
-        return rz
-    unbedeckt_ids = {r.id for r in unbedeckt}
-    zusatz = [
-        p for p in plan_rettungszeichen_gang(raum, norm)
-        if any(r.id in unbedeckt_ids and point_in_polygon(p.xy_mm, r.polygon_mm)
-               for r in unbedeckt)
-    ]
-    return list(rz) + zusatz
+    if unbedeckt:
+        unbedeckt_ids = {r.id for r in unbedeckt}
+        gefuellt = list(rz) + [
+            p for p in plan_rettungszeichen_gang(raum, norm)
+            if any(r.id in unbedeckt_ids and point_in_polygon(p.xy_mm, r.polygon_mm)
+                   for r in unbedeckt)
+        ]
+    else:
+        gefuellt = list(rz)
+    # Owner-Korrektur 2026-09-10: lange Arme, deren End-RZ eine Lücke > _MAX_RZ_ARM_GAP_MM
+    # lassen, bekommen ein Zwischen-RZ (Sichtlinie, enger als l=z·h).
+    return gefuellt + _mittel_arm_rz(gefuellt, korridore, raum, norm)
 
 
 def _plan_rettungszeichen(raum: RaumModell, norm: NormProvider):
@@ -168,6 +230,11 @@ class NotlichtPlatzierer:
         # montierbaren Punkt holen (Selman-BEFUND) — vor dem abstand_nachpass, damit
         # dieser eventuelle Verschiebungs-Kollisionen entzerrt.
         platzierungen = verbotszonen_nachpass.entferne_aus_verbotszonen(platzierungen, raum)
+        # Owner-Korrektur 2026-09-10: RZ/Aufheller im Gang auf die Korridor-Mittelachse
+        # snappen (Querachse zentrieren, Längsachse erhalten). VOR dem Entzerren, damit ein
+        # Aufheller, der dabei auf sein RZ fällt, vom abstand_nachpass aufgelöst wird.
+        # Tür-RZ ausgenommen.
+        platzierungen = mittellinie_snap.snappe_auf_mittellinie(platzierungen, raum)
         # Kollisionen an der Strategie-Naht auflösen (Dubletten mergen, verschieden-artige
         # entzerren) — nach lb_override (das SL hinzufügt), vor der Deckungs-Zuordnung,
         # damit diese die finalen Positionen sieht.
