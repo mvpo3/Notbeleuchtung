@@ -50,29 +50,30 @@ stehe ich bald). Dazwischen durchziehen. **Push/PR/Merge nur auf explizites Owne
 - `db8cac3` docs — dieser Handoff-STAND
 - `859bfdc` F06 — getrennter Kreis Warnung→**fehler** (Hard-Stop, W13). **BLOCK 1 KOMPLETT.**
 
-**Voller `pytest` zuletzt GRÜN: 1026 passed, 36 skipped** (nach Lib-Fix deterministisch). ruff clean.
+**Voller `pytest` zuletzt GRÜN: 1032 passed, 36 skipped.** ruff clean (getrackt). Schema in sync.
 
-**NÄCHSTE SCHRITTE (in Reihenfolge):**
-1. ~~F06 committen~~ ✅ erledigt (`859bfdc`). **Block 1 = F01–F06 + W-LIB fertig.**
-2. **Block 2 (HIER WEITER):** **F08** (erkennungsweite_m im `place()`-Pfad verdrahten ODER sichtlinie-Pfad
-   `plan_rettungszeichen_sichtlinie` als deaktiviert dokumentieren — er ist test-only, nicht im
-   place-Pfad; W17, Dep F03) → **F07** (≥2-Leuchten-Redundanz-Garantie je Abschnitt + Prüf-Hard-Fail;
-   W19, Dep F04, **Verhaltensänderung = dichter → E2E-Sichtprüfung nötig**). Dateien: platzierer.py/
-   anker_strategy.py bzw. deckung.py/validierung.py.
-3. **Block 3 (🟨, berührt `normwissen/data` → HANDOFF_B_ENIS.md protokollieren):** **F09** Wartungsfaktor
-   innen 0,80 [AT-verbindlich] / außen 0,57 [AT-Referenzpraxis] — **Contract-Feld
-   `NormAnforderung.wartungsfaktor` ergänzen (norm_regelwerk.py, CONTRACT_VERSION 1.2.0→bump) +
-   `gen_schema.py` + YAML füllen + provider.py liest es**. F02 hat den Konsum-Hook schon gelegt
-   (`lux.wartungsfaktor_aus_norm`) → F09 füllt nur die Quelle, dann greift 0,80 überall gleichzeitig.
-   **ACHTUNG Golden-Shift:** 0,80 < 1,0 → dichtere SL-Platzierung → E2E-Symbolzahlen ändern sich →
-   Golden bewusst nachziehen (inhaltlich nötig, norm-korrekt) + voller pytest. Dann **F11** (Antipanik-
-   Trigger 60/8 m² als Referenz-Praxis in `ove_e8101_zusatz.yaml`, OVE-scope-gated), **F12**
-   (seitenselektiver Randbereich), **F13** (Stiege podest-gestaffelte Höhe), **F14** (grün=RZ/gelb=SL
-   Layer). **F10 (Blendungsgrenzen f(h)) HÄNGT an Enis' cd-Werten → wird Handoff, nicht Fix.**
-4. **Phase 4 Verify:** `.venv/Scripts/python.exe -m pytest -q` (voll, ~8 min) · `gen_schema.py` (falls
-   Contract) · `ruff check .` · E2E: neues DXF rendern vs. 4OG-GU-PDF → **`docs/audit/07_sichtpruefung.md`**
-   (Abweichungen dokumentieren).
-5. **STOP vor Push.** Commit-Liste + Sichtprüfungs-Abweichungen an Owner. **Push/PR/Merge nur auf GO.**
+### UPDATE 2026-09-10 SPÄT — Block 2 + 3 DURCH, GEPUSHT (Owner-GO)
+**Alle zugesagten Fixes gebaut + auf GitHub gepusht** (Branch `leonis/wissensabgleich-engine`). Neu:
+- `b49e968` **F08** — erkennungsweite_m Prod-Pfad belegt, sichtlinie test-only (doc, W17)
+- `0d06660` **F07** — ≥2-Leuchten-Redundanz garantiert (`deckung.garantiere_redundanz`, Aufruf in
+  `place()` vor circuit_zuordnung) + validierung Regel 4b warnung→**fehler** (W19). Segment-genau/No-op.
+- `8e60044` **F09** — Wartungsfaktor innen 0,80/außen 0,57 aus Norm-YAML (W07). **Contract 1.2.0→1.3.0.**
+- `f33ec9b` **F11** — Antipanik-Schwellen 60/8 m² gefüllt (Owner-Entscheid; Enis' 2 Guard-Tests
+  nachgezogen). OVE-scope-gated + fail-closed → inert ohne OIB-Scope.
+- `1390c06` **F14** — Layer grün=RZ/gelb=SL Regression-Test (Default festgenagelt).
+- `7320e1b` **F13** — RZ-Montagehöhen-10-m-Warnung (weich, W01). **Contract 1.3.0→1.4.0.**
+- `b09c66e` docs — `07_sichtpruefung.md` (Verify + Sichtprüfung).
+
+**Kein Golden-Shift** (alle Fixes auf Fixtures inert). Contract/YAML-Protokoll: `docs/audit/HANDOFF_B_ENIS.md`.
+
+**OFFEN / Resume-Punkt:**
+1. **PR noch NICHT angelegt** (nur Branch gepusht). Die 2 additiven Contract-Bumps (1.3.0/1.4.0)
+   berühren `hauptengine/contracts` = **3-Owner-CODEOWNERS** → Enis+Selman-Kenntnisnahme bei PR/Merge.
+2. **F11 gemeinsam ansehen** (Owner-Wunsch): soll `verkehr_scope` je `anwendbar` werden? Heute nie →
+   60-m²-Antipanik faktisch weiter inert. Scope-Gate-Design = `BLOCKER2_FLAECHEN_SCOPE.md` (3-Owner).
+3. **NICHT gebaut (Handoff):** F12 (Randbereich seitenselektiv — kollidiert mit Enis' umlaufender
+   §4.3.1-Lesart, Norm-Abstimmung) · F13-Podest-Höhe (Podest-Contract ohne Elevation → Selman/3-Owner) ·
+   F10 (Blendung, braucht Enis-cd) · F15–F18 (Block 4, 3-Owner).
 
 **FALLEN / gelernt in dieser Session:**
 - **Voller `pytest` ~8 min** — nur an Verhaltens-Fixes (F07/F09) + einmal in Phase 4 nötig, sonst
