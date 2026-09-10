@@ -2,9 +2,14 @@
 kurze Engstelle, Türdurchgang."""
 from __future__ import annotations
 
-from shapely.geometry import Polygon
+from shapely.geometry import LineString, Polygon
 
-from notbeleuchtung.raumerkennung.breitenprofil import miss_breitenprofil
+from notbeleuchtung.raumerkennung.breitenprofil import (
+    ECKE_FENSTER_MM,
+    SNAP_MM,
+    begrenzende_flaechen,
+    miss_breitenprofil,
+)
 
 
 def _gerader_gang(breite: float, laenge: float) -> Polygon:
@@ -134,3 +139,63 @@ def test_ecke_in_einen_saal_loescht_nicht_das_ganze_profil() -> None:
             if m.laufmeter_mm < 7000 and not m.an_richtungswechsel]
     assert len(gang) > 50, f"Eckfilter frisst den Gang: {len(gang)} Punkte"
     assert p.abschnitte[0].breite_mm == 1200.0
+
+
+# ── Achse im Wandkörper: Messort schieben, Maß nicht erfinden ────────────────
+def _zwei_zimmer_mit_wand(lichte: float, wand: float, laenge: float
+                          ) -> list[Polygon]:
+    """Zwei lichte Raumpolygone, dazwischen ``wand`` mm Wandkörper (kein Raum)."""
+    unten = Polygon([(0, 0), (laenge, 0), (laenge, lichte), (0, lichte)])
+    y0 = lichte + wand
+    oben = Polygon([(0, y0), (laenge, y0), (laenge, y0 + lichte), (0, y0 + lichte)])
+    return [unten, oben]
+
+
+def test_achse_in_der_wand_wird_gemessen() -> None:
+    """Fluchtweglinien liegen oft in der Wandmitte zwischen zwei LICHTEN
+    Raumpolygonen. Ohne Snap schneidet die Achse keinen Raum → flaeche_fehlt."""
+    raeume = _zwei_zimmer_mit_wand(lichte=2000, wand=200, laenge=6000)
+    achse = [(0, 2100), (6000, 2100)]           # exakt Wandmitte, 100 mm daneben
+
+    assert [r for r in raeume if r.intersects(LineString(achse))] == []
+    fl = begrenzende_flaechen(raeume, achse)
+    assert len(fl) == 2
+    assert fl == [raeume[0], raeume[1]]         # unverändert, kein Puffer
+
+    p = miss_breitenprofil("seg_wand", achse, fl)
+    assert p.messbar and p.grund is None
+    # Gemessen wird die ECHTE lichte Breite des Raums, nicht 2000 + 2*100.
+    assert {m.breite_mm for m in p.profil} == {2000.0}
+    assert p.breite_min_mm == 2000.0
+
+
+def test_float_rauschen_auf_der_raumkante_ist_kein_grund() -> None:
+    """Achse auf der Polygonkante: ``covers`` scheitert an Float-Rauschen."""
+    flaeche = _gerader_gang(1200, 6000)
+    p = miss_breitenprofil("seg_kante", [(0, -1e-9), (6000, -1e-9)], [flaeche])
+    assert p.messbar
+    assert p.breite_min_mm == 1200.0
+
+
+def test_jenseits_der_snap_toleranz_bleibt_unmessbar() -> None:
+    """Kein Default, kein Normwert: weiter weg → None mit Grund."""
+    flaeche = _gerader_gang(1200, 6000)
+    achse = [(0, 1200 + SNAP_MM + 1), (6000, 1200 + SNAP_MM + 1)]
+    assert begrenzende_flaechen([flaeche], achse) == []
+    p = miss_breitenprofil("seg_weit", achse, None)
+    assert not p.messbar
+    assert p.grund == "flaeche_fehlt"
+    assert p.breite_min_mm is None
+
+
+def test_ecke_im_weiten_raum_deckelt_auf_eckfenster() -> None:
+    """Regression Mollgasse_EG/seg_72: 62 von 62 Punkten als Richtungswechsel
+    verworfen, weil der Deckel Median/2 (≈3500 mm) das ganze Segment abdeckt."""
+    raum = Polygon([(0, 0), (12000, 0), (12000, 7000), (0, 7000)])
+    p = miss_breitenprofil("seg_weit_raum",
+                           [(1000, 1000), (4000, 1000), (4000, 4000)], raum)
+    assert p.messbar, p.grund
+    ecken = [m for m in p.profil if m.an_richtungswechsel]
+    # Fenster ±ECKE_FENSTER_MM um den Knick bei 3000 mm, nicht ±3500 mm.
+    assert len(ecken) <= 11, f"{len(ecken)} Punkte verworfen"
+    assert all(abs(m.laufmeter_mm - 3000.0) <= ECKE_FENSTER_MM for m in ecken)

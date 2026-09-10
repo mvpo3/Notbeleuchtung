@@ -68,3 +68,15 @@
 - 2026-09-09 · ab0ad51 · Muthgasse_E2: 99 Stempel, 99 Räume, 11 Restflächen, IoU-Mittel —, Legendenabdeckung 99.4 % · Räume gesamt 102, mit Stempel 91, Flag ok 73, Rest typisiert 0 / untypisiert 0 (kaskade L:80 H:1 F:21 R:0) · Türen typisiert 219/308, Ausgänge final_exit:2 stair_exit:12, Segmente FALLBACK:1 GRAPH:15 LINIE:139, Wohnungen 7
 - 2026-09-09 · ab0ad51 · Rennweg_EG: 19 Stempel, 19 Räume, 2 Restflächen, IoU-Mittel —, Legendenabdeckung 100.0 % · Räume gesamt 21, mit Stempel 19, Flag ok 19, Rest typisiert 2 / untypisiert 0 (kaskade L:19 H:0 F:0 R:2) · Türen typisiert 24/41, Ausgänge final_exit:3 stair_exit:5, Segmente FALLBACK:1 GRAPH:8, Wohnungen 2
 - 2026-09-09 · ab0ad51 · Rennweg_OG3: 10 Stempel, 10 Räume, 4 Restflächen, IoU-Mittel —, Legendenabdeckung 100.0 % · Räume gesamt 14, mit Stempel 10, Flag ok 10, Rest typisiert 3 / untypisiert 1 (kaskade L:10 H:0 F:0 R:4) · Türen typisiert 15/27, Ausgänge stair_exit:1, Segmente GRAPH:5, Wohnungen 2
+
+## Lauf 2026-09-10 · Schritt 4 (Nachfolger von 1ddb752) · Fluchtweg-Breitenmessung
+- 2026-09-10 · Schritt 4 · Barawitzka_EG: Breitenprofil messbar 12/12 (vorher 12/12), nicht messbar 0
+- 2026-09-10 · Schritt 4 · Mollgasse_EG: Breitenprofil messbar 107/126 (vorher 86/126), nicht messbar flaeche_fehlt 12 (vorher 17), nur_tuer_oder_eckpunkte 7 (vorher 23)
+- 2026-09-10 · Schritt 4 · Muthgasse_E2: Breitenprofil messbar 154/155 (vorher 102/155), nicht messbar flaeche_fehlt 0 (vorher 44), nur_tuer_oder_eckpunkte 1 (vorher 9)
+- 2026-09-10 · Schritt 4 · Rennweg_EG: Breitenprofil messbar 9/9 (vorher 6/9), nicht messbar 0 (vorher nur_tuer_oder_eckpunkte 3)
+- 2026-09-10 · Schritt 4 · Rennweg_OG3: Breitenprofil messbar 5/5 (vorher 3/5), nicht messbar 0 (vorher nur_tuer_oder_eckpunkte 2)
+- 2026-09-10 · Schritt 4 · SUMME: Breitenprofil messbar 287/307 (93.5 %), vorher 209/307 (68.1 %) — Ziel >270 erreicht
+- 2026-09-10 · Schritt 4 · Ursache 1 (behoben): Achse im Wandkoerper zwischen zwei LICHTEN Raumpolygonen bzw. auf der Kante (Float-Rauschen bis 6.9e-11 mm). breitenprofil.begrenzende_flaechen + SNAP_MM=200 verschieben den MESSORT auf die naechste Flaeche; gemessen wird das unveraenderte Polygon, kein Puffer. Allein: 262/307
+- 2026-09-10 · Schritt 4 · Ursache 2 (behoben): Eckfenster in breitenprofil._markiere skalierte mit der an der Ecke aufgeblaehten Breite (Deckel Median/2). Zweiter Deckel ECKE_FENSTER_MM=500. Zusammen: 287/307
+- 2026-09-10 · Schritt 4 · Rest 20 nicht messbar, einzeln belegt: 12x flaeche_fehlt (alle Mollgasse_EG: seg_4/7/8/9/10/27/34/41/92/93/94/95, naechstes Raumpolygon 200.0-1269.6 mm entfernt) — dort existiert kein lichtes Raumpolygon (Laubengang/Hofwege, Kaskade R:0); ohne Polygon keine lichte Breite, fachlich korrekt None mit Grund
+- 2026-09-10 · Schritt 4 · Rest 20 (Forts.): 8x nur_tuer_oder_eckpunkte (Mollgasse_EG seg_6/11/52/71/75/79/99, Muthgasse_E2 seg_28) — Stummel 50-200 mm mit 2-3 Abtastpunkten, jeder davon Tuerdurchgang; keine Gangbreite vorhanden, fachlich korrekt nicht messbar

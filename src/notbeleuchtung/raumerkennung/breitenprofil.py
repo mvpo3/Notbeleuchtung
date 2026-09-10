@@ -30,6 +30,7 @@ from itertools import pairwise
 
 from shapely.geometry import LineString, MultiLineString, Point
 from shapely.geometry.base import BaseGeometry
+from shapely.ops import nearest_points
 
 XY = tuple[float, float]
 
@@ -39,6 +40,7 @@ MIN_ABSCHNITT_MM = 500.0  # kürzer = keine eigene Abschnittsbreite
 TUER_RADIUS_MM = 400.0    # Abtastpunkt gilt als Türdurchgang
 ECKE_MIN_GRAD = 20.0      # darunter Stützpunkt-Rauschen, keine echte Ecke
 ECKE_FENSTER_MM = 500.0   # Fenster, über das der Knick gemessen wird
+SNAP_MM = 200.0           # Achse neben der lichten Fläche: MESSORT verschieben
 
 
 @dataclass(frozen=True)
@@ -168,10 +170,27 @@ def _teilflaechen(flaeche: BaseGeometry | Sequence[BaseGeometry]
 def _breite_an(teile_flaeche: list[BaseGeometry], p: Point, n: XY,
                reichweite: float) -> tuple[float | None, str | None]:
     """Distanz zwischen den begrenzenden Wandkanten: Länge des Flächen-Schnitts
-    der Normalen durch p, über alle Teilflächen die ENGSTE (= nächste Kanten)."""
+    der Normalen durch p, über alle Teilflächen die ENGSTE (= nächste Kanten).
+
+    Liegt der Abtastpunkt neben allen Flächen (Achse im Wandkörper zwischen
+    zwei lichten Raumpolygonen, oder Float-Rauschen auf der Kante), wandert der
+    MESSORT bis ``SNAP_MM`` auf die nächste Fläche. Der Messwert bleibt der
+    echte Schnitt mit dem echten Polygon — es wird nichts hinzugerechnet.
+    """
     treffend = [f for f in teile_flaeche if f.covers(p)]
     if not treffend:
-        return None, "punkt_ausserhalb_flaeche"
+        nah = [(f.distance(p), f) for f in teile_flaeche
+               if f.distance(p) <= SNAP_MM]
+        if not nah:
+            return None, "punkt_ausserhalb_flaeche"
+        f0 = min(nah, key=lambda x: x[0])[1]
+        q = nearest_points(f0, p)[0]
+        dx, dy = q.x - p.x, q.y - p.y
+        d = math.hypot(dx, dy)
+        # 1 µm über die Kante nach innen, sonst verfehlt der Strahltest die
+        # Fläche wieder um Float-Rauschen.
+        p = Point(q.x + dx / d * 1e-3, q.y + dy / d * 1e-3) if d else q
+        treffend = [f for f in teile_flaeche if f.covers(p)] or [f0]
     strahl = LineString([
         (p.x - n[0] * reichweite, p.y - n[1] * reichweite),
         (p.x + n[0] * reichweite, p.y + n[1] * reichweite),
@@ -193,6 +212,25 @@ def _breite_an(teile_flaeche: list[BaseGeometry], p: Point, n: XY,
     if breite >= 2 * reichweite - 1e-6:
         return None, "wandkante_fehlt"   # Fläche offen: keine zweite Kante
     return breite, None
+
+
+def begrenzende_flaechen(raumpolygone: Sequence[BaseGeometry],
+                        polyline_mm: list[XY],
+                        *, snap_mm: float = SNAP_MM) -> list[BaseGeometry]:
+    """Die Raumpolygone, die diesen Fluchtweg begrenzen — Eingabe für
+    ``miss_breitenprofil(flaeche=...)``.
+
+    Nicht nur die geschnittenen: Raumpolygone sind LICHTE Polygone, die
+    Fluchtweg-Achse liegt oft im Wandkörper dazwischen oder exakt auf der
+    Kante. Deshalb zählt jede Fläche bis ``snap_mm`` neben der Achse.
+    Zurück kommen die Polygone UNVERÄNDERT — kein Puffer, sonst würde die
+    Toleranz als Breite mitgemessen.
+    """
+    achse = _achse(polyline_mm)
+    if achse is None:
+        return []
+    return [p for p in raumpolygone
+            if p is not None and not p.is_empty and p.distance(achse) <= snap_mm]
 
 
 def miss_breitenprofil(
@@ -279,9 +317,9 @@ def _markiere(roh: list[Messpunkt], achse: LineString,
     Abschnitte, Engstellen oder ``breite_min_mm`` ein.
 
     ponytail: das Eckfenster skaliert mit der DORT gemessenen (an der Ecke also
-    aufgeblähten) Breite — bei einer Ecke in einen Saal fällt viel Profil weg.
-    Konservativ (verwirft, erfindet nie); wenn die Abdeckung stört, Fenster aus
-    der Gangbreite der Nachbarpunkte statt aus dem Eckwert bilden.
+    aufgeblähten) Breite, gedeckelt auf Median/2 UND auf ``ECKE_FENSTER_MM``.
+    Konservativ (verwirft, erfindet nie); wenn die Abdeckung noch stört, Fenster
+    aus der Gangbreite der Nachbarpunkte statt aus dem Eckwert bilden.
     """
     tuer_idx: set[int] = set()
     for t in tueren:
@@ -300,7 +338,11 @@ def _markiere(roh: list[Messpunkt], achse: LineString,
     # Segments. Ohne Deckel löscht eine Ecke in einen 5,8-m-Raum ±5,8 m Profil
     # (Rennweg_EG: 61 von 68 Punkten), ohne die lokale Breite verliert man
     # umgekehrt die schmalen Punkte in weiten Segmenten.
-    deckel = _median(gemessen) / 2 if gemessen else 0.0
+    # Zweiter Deckel: ECKE_FENSTER_MM. Weiter als das Fenster, über das der
+    # Knick überhaupt gemessen wird, reicht eine Ecke nicht. Ohne ihn verwirft
+    # ein Segment in einem weiten Raum sich selbst komplett (Mollgasse seg_72:
+    # 62 von 62 Punkten, Breiten 6991–7555 mm).
+    deckel = min(_median(gemessen) / 2, ECKE_FENSTER_MM) if gemessen else 0.0
     return [
         Messpunkt(
             m.laufmeter_mm, m.xy_mm, m.breite_mm,
