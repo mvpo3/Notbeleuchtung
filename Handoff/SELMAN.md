@@ -62,7 +62,90 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 
 ---
 
-## ═══ SELMAN: HIER WEITER (Stand 2026-09-10, Abschluss Schritte 1–6) ═══
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-10, Abschluss-Runde 2) ═══
+
+**Branch:** `selman/extents-ausreisser`, **nicht gepusht, kein PR, kein Merge** —
+der Owner gibt das GO separat. Commits dieser Runde: `c3cd3e7` · `47df2d9` +
+Abschluss-Commit. **Kein Code in `src/` geändert, `hauptengine/contracts/**`
+unberührt.**
+**Suite: 1200 passed, 10 skipped, 2 deselected, 11 xfailed, 0 XPASS, 0 failed (19:08 min).**
+**Prüfstrecke über alle fünf Pläne gelaufen, diesmal OHNE Parallellast**
+(`scripts/plan_pruefen.py`, exit 0, Lauf `2026-09-10 13:35 · 47df2d9`).
+
+**Leitregel unverändert:** *der Code erfindet keine Maße.* Fehlende Messung ist
+`None` mit Quelle `UNBEKANNT` und einem Grund — nie ein Default, nie ein
+Normwert, nie ein Mittelwert. Der AST-Riegel
+`tests/contract/test_keine_erfundenen_masse.py` setzt das durch.
+
+**Was diese Runde geklärt hat (Details: `docs/ENIS_UEBERGABE_0908.md` §§ 11 + 12):**
+1. **Der Befund „3 echte Türen haben ihre Typisierung verloren" ist widerlegt.**
+   Zwei tatsächlich gelaufene Provider-Parses derselben DXF (`0d7c5db` gegen
+   HEAD, Worktree `D:/nbwt_vorher` steht noch) zeigen: die 3 war eine
+   **Saldo-Zahl** (15 − 5 Fahnen − 7), keine Mengendifferenz. Lagebezogen:
+   11 Ausgänge weg, 1 geblieben, 4 neu; davon 5 Beschriftungs-Fahnen und
+   6 Kontaktzonen-Artefakte. **Keine echte Tür ist verloren gegangen.**
+2. **Band `>= 9` in `test_soll_stair_exits` NICHT abgesenkt.** Der einzige
+   gemessen gedeckte Ersatzwert wäre der Ist-Stand (5) selbst — verboten.
+   Geändert wurde nur der `reason` (er behauptete die widerlegte Ursache) plus
+   Docstring. Der fachliche Ersatz steht als eigener strict-xfail daneben:
+   `test_soll_stair_exit_aus_echter_blocktuer`, Soll ≥ 1 `stair_exit` an einer
+   echten `A-DOOR`/`A-GLAZ`-Blocktür, **Ist 0 von 5** — Zielwert aus `tuer_50`
+   (334453/106403, `von_raum=stiegenhaus_1`), nicht aus dem Ist.
+3. **Mollgasse-„Laubengänge" sind keine Laubengänge** — alle 12 `flaeche_fehlt`-
+   Segmente liegen auf dem Außenanlagen-Layer `09-WEG_G00-LEG-M0` (Zaun,
+   Mauersockel, Pflanztrog h=40 cm, Rigol, Gehsteig, Restmüll). Bewusste Grenze
+   statt Pseudo-Fix, ausführlich in `docs/OFFENE_FRAGEN.md`: eine „nächste
+   durchgehende Linie"-Regel griffe bei **107 von 107** korrekt gemessenen
+   Segmenten auf das Achsraster `02-AXO` zu und ersetzte jede richtige Messung
+   durch eine erfundene.
+
+**Ist der Prüfstrecke (Lauf `2026-09-10 13:35 · 47df2d9`), Türen typisiert:**
+Barawitzka_EG 55/106 · Mollgasse_EG 70/147 · Muthgasse_E2 206/291 ·
+Rennweg_EG 24/41 · Rennweg_OG3 15/27 — **gegen `e9837b0` bewegt sich keine
+einzige Kennzahl**, auf keinem Plan (erwartet, es wurde kein `src/`-Code
+angefasst).
+
+**Laufzeit endlich sauber gemessen (keine pytest-Suite parallel):**
+Barawitzka 263,6 s · Mollgasse 288,2 s · **Muthgasse 1852,4 s** · Rennweg_EG
+58,3 s · Rennweg_OG3 51,6 s. Muthgasse gegen den lastfreien Vorbefund 1838 s =
+**+14,4 s / +0,8 %** — die 2116,4 s des Laufs `e9837b0` waren Lastkontext, keine
+Verschlechterung.
+
+**XFAIL-Bilanz: 11 strict-xfails, 0 XPASS.** Alle elf mit je einem Satz
+Begründung in § 12.5. **In dieser Runde wurde kein xfail zu XPASS gedreht und
+kein Zielband geändert.** Neu ist genau einer: `test_soll_stair_exit_aus_echter_blocktuer`
+(zusätzlich sichtbar gemachter Befund, kein gefallenes Zielbild).
+
+**DIE NÄCHSTEN DREI SACHEN IN MEINER LANE, alle belegt:**
+1. **Manhattan-Dedupe `provider.py:148-157`** entkoppelt die `stair_exit`-Kennzahl
+   von den Türen — zwei der untersuchten Türen fallen dort weg. Solange das so
+   ist, misst `test_soll_stair_exits` nicht das, was sein Name behauptet.
+2. **`tuer_typisierung.py:152-156` feuert auch bei `von_raum == nach_raum`.** Bei
+   **4 der 5** widerlegten Fahnen war genau das der Fall (raum_88 → raum_88). Eine
+   Tür von einem Raum in denselben Raum darf keine `stiegenhaustuer` sein.
+3. **Die 9 STIEGENHAUS-Polygone auf Muthgasse sind höchstens 4 Kerne**
+   (`stiegenhaus_1 ≡ _5`, `_2 ≡ _3 ≡ _4`, `_6`, `_7`, plus `_8` = 0,2 m² = 100 %
+   `lift_5`). Vorher wie nachher gleich defekt.
+
+**Was bewusst NICHT angefasst wurde:** `hauptengine/contracts/**` (Bump
+`raum_modell` 1.4.0 wartet auf @EnisAMG-Approval — bis dahin eingefroren) ·
+Enis' YAML + `test_quellenblock_e07_rl4.py:301` · `dxf_renderer.py` (@mvpo3) ·
+`lux_nachweis_bericht.py:329/:333` (nur gemeldet) · Nennerfrage Muthgasse
+`A-DETL` · die 12 Mollgasse-Segmente (Entscheidung dokumentiert, kein Code).
+
+**Vorbestehend, nicht von mir:** `tests/raumerkennung/test_tueren.py::test_mollgasse_tueren`
+**skippt** (DXF `Projekte/Mollgasse Notbeleuchtung/WHA_MOL_EG.dxf` fehlt im
+Arbeitsbaum). `ruff check .`: 4 vorbestehende ISC004 in `scripts/plan_pruefen.py`.
+
+**Weiter offen wie gehabt:** GESCHÄFTSLOKAL (blockiert, seit 2026-09-08) ·
+Render-Speicher `_figur` 8×/Plan (Leonis) · Spikey-Polygone Mollgasse raum_41/55
+(meine Lane) · Referenz-Frames UG/OG1 nicht verdrahtet · 4 Tür-Quoten-xfails ·
+Baufeld E2 ohne Zielbild · `lichte_mm` ohne Erzeuger (darf nie aus `breite_mm`
+abgeleitet werden).
+
+---
+
+## ═══ SELMAN: Stand 2026-09-10, Abschluss Schritte 1–6 ═══
 
 **Branch:** `selman/extents-ausreisser`, **nicht gepusht, kein PR, kein Merge** —
 der Owner gibt das GO separat. Commits dieser Runde: `8b35e53` · `58cd3a0` ·

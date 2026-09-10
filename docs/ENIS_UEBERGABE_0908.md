@@ -1215,3 +1215,129 @@ Blocktür eine Breite verlangte — `tuer_8` und `tuer_17` haben
 `breite_mm=None` mit Quelle `UNBEKANNT`. Die **Erwartung** war falsch, nicht
 der Code; korrigiert auf ≥ 14 von 18. **Kein Code in `src/` wurde geändert**
 — der Befund ist Test- und Berichtsarbeit.
+
+---
+
+## 12. Nachtrag 2026-09-10 — Abschluss Schritt 3: lastfreie Prüfstrecke, volle Suite, XFAIL-Bilanz
+
+Schreibt § 10 fort. **Die Zahlen aus § 10 bleiben unverändert stehen** und werden
+hier als „vorher" zitiert. Stand: `47df2d9` auf `selman/extents-ausreisser`,
+**kein Push**.
+
+### 12.1 Was gelaufen ist
+
+| Lauf | Befehl | Ergebnis |
+|---|---|---|
+| Prüfstrecke | `.venv/Scripts/python.exe scripts/plan_pruefen.py` (alle fünf DXF in `Projekte/_eingang/`) | exit 0, fünf Pläne, Rohlog `…/scratchpad/_s3_pruefstrecke.log` |
+| Volle Suite | `.venv/Scripts/python.exe -m pytest -q -rX` | `1200 passed, 10 skipped, 2 deselected, 11 xfailed, 2 warnings in 1148.43s (0:19:08)`, exit 0, Rohlog `…/scratchpad/_s3_pytest.log` |
+
+**Diesmal nacheinander, nicht gleichzeitig.** Der Kritikpunkt aus § 10.1 ist damit
+erledigt: die Laufzeiten unten sind echte Messwerte ohne Parallellast.
+
+### 12.2 Prüfstrecke — Ist je Plan (Lauf `2026-09-10 13:35 · 47df2d9`)
+
+| Plan | Stempel | Räume | Restflächen | Türen typisiert | Ausgänge | Segmente | Wohnungen | RZ / SL | Laufzeit |
+|---|---:|---:|---:|---|---|---|---:|---|---:|
+| Barawitzka_EG | 38 | 38 | 10 | 55/106 | final_exit 1 | GRAPH 11, FALLBACK 1 | 7 | 3 / 4 | 263,6 s |
+| Mollgasse_EG | 83 | 83 | 2 | 70/147 | final_exit 9, stair_exit 4 | LINIE 103, GRAPH 19, FALLBACK 4 | 8 | 30 / 35 | 288,2 s |
+| Muthgasse_E2 | 99 | 99 | 11 | 206/291 | final_exit 5, stair_exit 5 | LINIE 139, GRAPH 5, FALLBACK 2 | 8 | 65 / 28 | **1852,4 s** |
+| Rennweg_EG | 19 | 19 | 2 | 24/41 | final_exit 3, stair_exit 5 | GRAPH 8, FALLBACK 1 | 2 | 5 / 10 | 58,3 s |
+| Rennweg_OG3 | 10 | 10 | 4 | 15/27 | stair_exit 1 | GRAPH 5 | 2 | 1 / 2 | 51,6 s |
+
+Legendenabdeckung unverändert (90,3 / 99,9 / 99,4 / 100,0 / 100,0 %). IoU-Mittel
+weiterhin `—`: es liegt **keine** `<planname>.referenz.json` neben den DXF in
+`Projekte/_eingang/`, also wird kein IoU berechnet — keine fehlende Messung, die
+irgendwo ersetzt worden wäre. Flags 2 / 37 / 26 / 0 / 0. Unbekannte Muster
+3 / 2 / 5 / 0 / 0. Referenzvergleich nur Barawitzka_EG: 2 Treffer / 9 fehlend /
+5 überzählig (18 %). Alles unverändert gegen § 10.2.
+
+### 12.3 Delta gegen den Lauf `e9837b0` (2026-09-10 04:48)
+
+**Kennzahlen: kein einziger Wert bewegt sich, auf keinem der fünf Pläne.**
+Stempel, Räume, Restflächen, Kaskade, Türen typisiert, Ausgänge, Segmente,
+Wohnungen, Leuchten, Legendenabdeckung, Referenzvergleich — alle identisch zu
+§ 10.2. Das ist das erwartete Ergebnis: die Schritte 1 und 2 dieses Auftrags
+haben **keinen Code in `src/`** geändert (Schritt 1 nur
+`tests/naht/test_soll_muthgasse.py` + Bericht, Schritt 2 nur
+`docs/OFFENE_FRAGEN.md`).
+
+**Laufzeiten dagegen schon** — und genau das ist der Punkt:
+
+| Plan | § 10.2 (parallel zur Suite) | jetzt (lastfrei) | Delta |
+|---|---:|---:|---:|
+| Barawitzka_EG | 312,0 s | 263,6 s | −48,4 s |
+| Mollgasse_EG | 369,1 s | 288,2 s | −80,9 s |
+| Muthgasse_E2 | 2116,4 s | **1852,4 s** | −264,0 s |
+| Rennweg_EG | 55,5 s | 58,3 s | +2,8 s |
+| Rennweg_OG3 | 50,5 s | 51,6 s | +1,1 s |
+
+Muthgasse liegt lastfrei bei **1852,4 s** gegen den lastfreien Vorbefund
+**1838 s** (2026-09-09): **+14,4 s = +0,8 %**. Damit ist belegt, was § 10.2 nur
+vermutet hat — die 2116,4 s waren Lastkontext, keine Verschlechterung der
+Pipeline. Die Fußnote aus § 10.2 ist erledigt.
+
+### 12.4 Volle Suite — Delta gegen § 10.1
+
+| | vorher (§ 10.1) | jetzt |
+|---|---|---|
+| passed | 1199 | **1200** |
+| skipped | 10 | 10 |
+| deselected | 2 | 2 |
+| xfailed | 10 | **11** |
+| XPASS | 0 | **0** |
+| failed | 0 | 0 |
+| Laufzeit | 1648,74 s (27:28) | 1148,43 s (19:08) |
+
+Die beiden neuen Einträge kommen beide aus Schritt 1 dieses Auftrags und beide
+aus `tests/naht/test_soll_muthgasse.py`: `test_soll_echte_blocktueren_im_modell`
+(**passed**, +1) und `test_soll_stair_exit_aus_echter_blocktuer` (**xfail**, +1).
+Die kürzere Laufzeit ist derselbe Lasteffekt wie in § 12.3, in die andere
+Richtung: der Vorlauf lief parallel zur Prüfstrecke.
+
+### 12.5 XFAIL-BILANZ — 11 strict-xfails, **kein einziger zu XPASS gedreht**
+
+`pytest -q -rX` meldet `11 xfailed` und **keine** XPASS-Zeile (`-rX` würde jede
+ausweisen). Bei `strict=True` wäre ein XPASS ein Suite-Fehler; die Suite ist
+grün.
+
+| # | Test | Datei:Zeile | Warum er xfail ist |
+|---|---|---|---|
+| 1 | `test_soll_explizite_linien_vorhanden` | `tests/naht/test_soll_barawitzka.py:65` | Der Plan hat keine expliziten Fluchtweg-Linien — die 16 Farbe-96-Linien sind Katastergrenzen; das Zielbild wartet auf einen Plan-Nachtrag des Fachplaners, nicht auf Code. |
+| 2 | `test_soll_90_prozent_tueren_typisiert` | `tests/naht/test_soll_barawitzka.py:76` | Soll ≥ 90 % typisierte Türen je Familie, Ist 55/106 — Hauptlücke `unbekannte_kombination` / `kein_nachbarraum`. |
+| 3 | `test_soll_16_endpunkte_an_der_aussenkante_gedeckt` | `tests/naht/test_soll_barawitzka.py:104` | Folgt aus #1: ohne echte FLW-Linien gibt es 0 Endpunkte an der Außenkante, also auch 0 gedeckte. |
+| 4 | `test_soll_jeder_endpunkt_an_der_kante_hat_final_exit` | `tests/naht/test_soll_mollgasse.py:111` | Der `09-WEG`-Layer zeichnet Doppellinien-Stummel; ohne Dedup/Clustering der Endpunkte deckt die `final_exit`-Menge nur einen Bruchteil der Kandidaten. |
+| 5 | `test_soll_90_prozent_tueren_typisiert` | `tests/naht/test_soll_mollgasse.py:125` | Soll ≥ 90 %, Ist 70/147 — Nachbarräume ohne Kanon-Typ. |
+| 6 | `test_soll_final_exit_anzahl_gleich_endpunkte_an_der_kante` | `tests/naht/test_soll_mollgasse.py:159` | Dieselbe Ursache wie #4, als Zählgleichung formuliert: 9 `final_exit` gegen 43 Endpunkte. |
+| 7 | `test_soll_stair_exits` | `tests/naht/test_soll_muthgasse.py:112` | Soll ≥ 9 `stair_exit`, Ist 5. Band **bewusst nicht abgesenkt** — der einzige durch Messung gedeckte Ersatzwert wäre der Ist-Stand selbst, und aus dem Ist abgeleitete Bänder sind hier verboten (§ 11.5). |
+| 8 | `test_soll_stair_exit_aus_echter_blocktuer` | `tests/naht/test_soll_muthgasse.py:187` | Der fachlich belegte Ersatz zu #7: Soll ≥ 1 `stair_exit` an einer echten `A-DOOR`/`A-GLAZ`-Blocktür, Ist 0 von 5 — alle fünf ruhen auf Kontaktzonen-Artefakten. Zielwert aus `tuer_50`, nicht aus dem Ist. |
+| 9 | `test_soll_90_prozent_tueren_typisiert` | `tests/naht/test_soll_muthgasse.py:230` | Soll ≥ 90 %, Ist 206/291 = 70,8 % — Türen ohne typisierte Gegenseite. |
+| 10 | `test_soll_referenz_trefferquote` | `tests/naht/test_soll_referenzvergleich.py:57` | Zielbild ≥ 80 % Deckung gegen die Fachplaner-Leuchten, Ist 18 % — die Platzierungs-Strategien (Lane @mvpo3) sind noch nicht referenz-deckend. |
+| 11 | `test_soll_eg_90_prozent_tueren_typisiert` | `tests/naht/test_soll_rennweg.py:138` | Soll ≥ 90 %, Ist 24/41 — Gründe-Tabelle in `bericht.md`. |
+
+**Ausdrücklich, weil danach gefragt wurde:**
+
+- **Zu XPASS gedreht wurde in diesem Auftrag KEIN xfail.** Nicht einer. Es gibt
+  keine XPASS-Zeile im Log.
+- **Abgesenkt oder sonst geändert wurde in diesem Auftrag KEIN Zielband.** Das
+  Band von `test_soll_stair_exits` steht unverändert bei `>= 9`, obwohl die
+  Analyse aus Schritt 1 eine Absenkung auf 5 vorgeschlagen hatte — abgelehnt,
+  Begründung in § 11.5. Geändert wurde dort nur der `reason`-Text (er behauptete
+  eine widerlegte Ursache) und ein Docstring.
+- **Neu hinzugekommen ist genau einer:** #8, ein **zusätzlich sichtbar
+  gemachter** Befund mit einem aus `tuer_50` abgeleiteten, nicht aus dem Ist
+  abgeleiteten Zielwert. Kein Zielbild ist gefallen.
+- Damit: 9 xfails im Ausgangsstand → 10 nach dem Abschluss-Schritt der
+  Vorrunde (`test_soll_stair_exits`) → **11** nach Schritt 1 dieses Auftrags.
+
+### 12.6 Was in diesem Schritt ausdrücklich nicht gemacht wurde
+
+- Kein Push, kein PR, kein Merge — der Owner gibt das GO separat.
+- **Keine Contract-Änderung.** `hauptengine/contracts/**` ist unberührt; der
+  laufende Bump `raum_modell` 1.3.0 → 1.4.0 wartet weiter auf das Approval von
+  @EnisAMG.
+- Kein Code in `src/` geändert — dieser Schritt ist Messung und Bericht.
+- Die offenen Befunde aus § 10.6 und § 11.6 bleiben offen: die 3 Nebenbefunde
+  (Manhattan-Dedupe, Regel bei `von_raum == nach_raum`, 9 STIEGENHAUS-Polygone =
+  höchstens 4 Kerne), die Nennerfrage Muthgasse `A-DETL`, die 12
+  Mollgasse-Segmente ohne lichtes Polygon (`docs/OFFENE_FRAGEN.md`, mit der
+  Fluchtwegbreiten-Frage an @EnisAMG).
