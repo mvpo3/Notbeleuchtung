@@ -1574,3 +1574,363 @@ Nicht gemacht: keine Änderung an `raumtyp.py`, `nutzungsklasse.py`,
 Zielband geändert; keine Contract-Änderung (`hauptengine/contracts/**`
 unberührt, `raum_modell` 1.4.0 wartet weiter auf das Approval von @EnisAMG);
 kein Push, kein PR, kein Merge.
+
+---
+
+## 14. Nachtrag 2026-09-10 — Punkt 4 des Owner-Auftrags: überlappende Raumpolygone
+
+Auftrag: „REST-Überlappungen messen, Herkunft klären, Relevanz beurteilen,
+Bereinigung skizzieren." **Ergebnis: nur gemessen und berichtet — auf
+ausdrücklichen Owner-Wunsch NICHTS umgesetzt.** Kein Code in `src/` geändert,
+kein Contract berührt, kein Test scharf geschaltet.
+
+Alle Zahlen aus tatsächlich gelaufenen Skripten gegen die Ergebnisse des Laufs
+**`47df2d9` (2026-09-10 13:35)**, Datenquelle
+`Projekte/_ergebnis/<Plan>/raeume.json`. Messskripte (Session-Scratchpad,
+alle nur lesend, wiederverwendbar): `_p4_overlap.py` (Haupttabelle +
+Flächenbilanz), `_p4_detail.py` (Punktzahl-Verteilung, >200-Punkte-Räume),
+`_p4_herkunft.py` (Quellen-Zuordnung der Paare), `_p4_top3.py` (Top-3 je Plan),
+`_p4_f_rate.py` (Trefferquote je Kaskadenzweig, `raum_88`).
+
+### 14.1 Definitionen — so und nicht anders gezählt
+
+- **Polygon**: `polygon_mm` aus `raeume.json`, als `shapely.Polygon`; ungültige
+  Ringe über `buffer(0)` repariert. Einträge mit <3 Punkten sind Stempel ohne
+  Polygon (`stempel_*`) und keine Räume — ausgeschlossen: Barawitzka 1,
+  Mollgasse 23, Muthgasse 9. Die verbleibenden Zahlen (47/62/101/21/14) decken
+  sich exakt mit „Räume gesamt" in `Projekte/_ergebnis/VERLAUF.md`.
+- **Überlappung**: paarweise `A.intersection(B).area`. Rauschschwelle 1 mm²
+  (Float-Kanten). Das Verhältnis wird **je Seite getrennt** gebildet:
+  `inter / eigene Fläche`.
+- **„Überlapper >5 %"**: ein Raum wird **einmal** gezählt, sobald mindestens ein
+  Partner ihn zu >5 % **seiner eigenen** Fläche schneidet. Zählung über eine
+  Menge von Raum-Indizes, nicht über Paare → keine Doppelzählung. Beide Seiten
+  eines Paares können gezählt werden, wenn beide die 5 % reißen — das ist
+  gewollt, denn beide sind fachlich falsch.
+- **>200 Punkte**: `len(polygon_mm) > 200`.
+- **„verschluckt LIFT/SCHACHT"**: Partner mit `typ` enthält
+  LIFT/SCHACHT/AUFZUG, ist der flächenkleinere der beiden, und
+  `inter / Fläche_klein > 0.90`. Gezählt wird der **Verschlucker**.
+
+### 14.2 Messtabelle je Plan
+
+| Plan | Räume gesamt | Überlapper >5 % | >200 Punkte | verschluckt LIFT/SCHACHT | Doppelbelegte Fläche |
+|---|---|---|---|---|---|
+| Barawitzka_EG | 47 | 9 (19 %) | 1 | 0 | 42,3 m² von 541,1 m² = 7,8 % |
+| Mollgasse_EG | 62 | 16 (26 %) | 3 | 0 | 45,8 m² von 1110,4 m² = 4,1 % |
+| Muthgasse_E2 | 101 | 37 (37 %) | 9 | 1 | 174,2 m² von 1074,1 m² = 16,2 % |
+| Rennweg_EG | 21 | 0 | 0 | 0 | 0,0 m² = 0,0 % |
+| Rennweg_OG3 | 14 | 0 | 2 | 0 | 0,0 m² = 0,0 % |
+| **SUMME** | **245** | **62 (25,3 %)** | **15** | **1** | **262,3 m² von 3329,4 m² = 7,9 %** |
+
+Doppelbelegung = Summe der Einzelflächen minus `unary_union`-Fläche, also die
+Grundfläche, die mehr als einem Raum gehört.
+
+**Typisiert vs. untypisiert unter den 62 Überlappern: 53 typisiert, 9
+untypisiert.**
+
+**>200 Punkte und Überlappung sind weitgehend unabhängig**: die 2 Räume mit
+>200 Punkten auf Rennweg_OG3 (`rest_3` 234 Punkte, `rest_4` 239 Punkte, beide
+Quelle R) überlappen **0 %**. Umgekehrt haben die schlimmsten Überlapper auf
+Barawitzka nur 4 bzw. 25 Punkte. Punktzahl ist ein Symptom des
+Rasterverfahrens, nicht die Ursache der Überlappung.
+
+### 14.3 Top-3 je Plan (nach absolut überlappter Fläche)
+
+**Barawitzka_EG**
+
+1. `raum_43` — TERRASSE, Quelle **F**, 56,6 m², **464 Punkte**, überlappt gesamt
+   37,4 m² mit 5 Räumen: `raum_15` (TERRASSE, H, 14,3 m²) zu **99 %** von dessen
+   Fläche; `raum_37` (STIEGENHAUS, H, 12,9 m²) zu **99 %**; `raum_39`
+   (TERRASSE, H, 9,2 m²) zu **89 %**; `raum_12` (VORRAUM, H) zu 22 %; `raum_14`
+   (TERRASSE, H) zu 6 %.
+2. `raum_15` — TERRASSE, H, 14,3 m², 4 Punkte: liegt zu **99 % seiner eigenen
+   Fläche** in `raum_43`.
+3. `raum_37` — STIEGENHAUS, H, 12,9 m², 25 Punkte: zu **99 % seiner eigenen
+   Fläche** in `raum_43`. Ein komplettes Stiegenhaus liegt in einer Terrasse.
+
+**Mollgasse_EG**
+
+1. `raum_51` — untypisiert, Quelle **F**, 137,5 m², **373 Punkte**, überlappt
+   11,6 m²: verschluckt `raum_53` (KINDERWAGENRAUM, F, 7,2 m²) zu **100 %**,
+   schneidet `raum_7` (VORRAUM, H, 8,2 m²) zu 53 %.
+2. `raum_1` — untypisiert, H, 11,4 m², 7 Punkte: liegt zu **100 %** in `raum_3`.
+3. `raum_3` — untypisiert, H, 25,4 m², 7 Punkte: enthält `raum_1` ganz (45 % der
+   eigenen Fläche).
+
+**Muthgasse_E2**
+
+1. `raum_86` — KÜCHE, Quelle **F**, 43,7 m², **709 Punkte**, überlappt 41,7 m²
+   mit 5 Räumen: `raum_26` (KÜCHE, L, 18,1 m²) zu **99 %**, `raum_25` (ZIMMER,
+   L, 13,9 m²) zu **99 %**, `raum_24` (BALKON, L) zu 89 %, `raum_76` (BAD, L) zu
+   95 %, `raum_20` (BAD, L) zu 28 %. Eine „Küche" verschluckt eine ganze Wohnung.
+2. `raum_85` — KÜCHE, F, 33,5 m², **457 Punkte**, überlappt 31,3 m²: `raum_22`
+   (KÜCHE, L) zu 98 %, `raum_17` (ZIMMER, L) zu 98 %, `raum_23` (BALKON, L) zu
+   87 %.
+3. `raum_92` — KÜCHE, F, 20,7 m², **453 Punkte**, überlappt 21,6 m² mit 5
+   Räumen: `raum_39` (ZIMMER, L) zu 84 %, `raum_37` (BAD, L) zu 95 %, `raum_38`
+   (KÜCHE, L) zu 9 %, `raum_54` (VORRAUM, L) zu 26 %, `raum_93` (KÜCHE, F) zu
+   14 %.
+
+**Rennweg_EG / Rennweg_OG3**: kein einziges Paar über der Schwelle. Beide Pläne
+bestehen praktisch nur aus L- und R-Räumen (EG: L:19 R:2, OG3: L:10 R:4) —
+**kein F-Raum, keine Überlappung.**
+
+**Der Fall aus § 11 heute**: `raum_88` ist inzwischen **typisiert**
+(STIEGENHAUS), Quelle **F**, `flag=flutung_unsicher`, Stempel 39,7 m² gegen
+berechnete **20,67 m²**, weiterhin **719 Polygonpunkte**. Er überlappt jetzt nur
+noch drei statt fünf Räume: `raum_68` (GANG, L, 24,6 m²) zu 26 % von dessen
+Fläche, `raum_67` (untypisiert, L, 3,7 m²) zu **99 %**, und **`raum_79` (LIFT,
+L, 4,04 m²) weiterhin zu 98 %** — das ist der einzige LIFT/SCHACHT-Verschluck im
+gesamten Bestand. Die 41,3 m² sind auf 20,7 m² geschrumpft, das Grundproblem ist
+geblieben.
+
+### 14.4 Herkunft — Quellen-Kombination je überlappendem Paar
+
+50 relevante Paare gesamt (mindestens eine Seite >5 %):
+
+| Kombination | Paare | überlappte Fläche |
+|---|---|---|
+| **F ↔ L** | 31 | 173,1 m² |
+| **F ↔ H** | 12 | 62,3 m² |
+| **F ↔ F** | 5 | 12,1 m² |
+| H ↔ H | 2 | 13,9 m² |
+| **R ↔ irgendwas** | **0** | **0,0 m²** |
+
+**48 von 50 Paaren (96 %) und 247,5 von 262,3 m² Doppelbelegung (94 %) haben
+einen F-Raum auf mindestens einer Seite.** Trefferquote je Zweig (Überlapper /
+Räume des Zweigs): F 23/74 (31 %), H 13/51 (25 %), L 26/130 (20 %), **R 0/9
+(0 %)**. Die L-Räume sind dabei fast durchweg **Opfer**, nicht Täter — sie sind
+saubere Layer-Polygone, über die ein F-Raum drüberliegt.
+
+**Der Befund ist nicht `rest_komponenten.py` und nicht die Wandmaske, sondern
+der F-Zweig (Stempel-Flutung).** Belege:
+
+- `src/notbeleuchtung/raumerkennung/kaskade.py:90` — der H-Zweig hat eine
+  Dedup-Prüfung: `if any(iou(r.polygon_mm, v.polygon_mm) > 0.5 for v in raeume):
+  continue`. Sie greift über **IoU**, also intersection/**union**: ein Polygon,
+  das vollständig in einem 3x größeren liegt, hat IoU 0,33 und passiert den
+  Filter ungehindert. Das erklärt die 2 H↔H-Paare auf Mollgasse (`raum_1` liegt
+  zu 100 % in `raum_3`, IoU nur 0,45).
+- `src/notbeleuchtung/raumerkennung/kaskade.py:110-126` — der F-Zweig hängt
+  jeden gefluteten Raum **ohne jede Überlappungsprüfung** an `raeume` an. Es gibt
+  weder eine IoU-Prüfung wie bei H noch eine Subtraktion. Die einzigen
+  Verwerfungskriterien sind `len(fr.polygon_mm) < 3` und
+  `Polygon(...).area < 1e6` (Zeile 114).
+- `src/notbeleuchtung/raumerkennung/stempel_flutung.py:227-233` — die Signatur
+  `flute_stempel(plan, stempel_ohne_polygon, wandkoerper, tueren, raster_mm)`
+  bekommt die bereits belegten Raumpolygone **gar nicht übergeben**. Die Flutung
+  kennt nur Wandkörper und Türöffnungen, also läuft sie durch jede Tür in den
+  Nachbarraum weiter.
+- `src/notbeleuchtung/raumerkennung/stempel_flutung.py:46` + `:277-296` —
+  `_STUFEN_MM = (600.0, 900.0, 1200.0, 1500.0)`: die Flutung versiegelt
+  Türöffnungen erst stufenweise und bricht ab, sobald die Fläche der
+  Stempelangabe nahekommt. Bei `flag=flutung_unsicher` (`raum_88`: Stempel
+  39,7 m² vs. geflutet 20,7 m²) wird die **beste, aber nie passende** Maske
+  genommen — also genau die Variante, die durch offene Türen in Nachbarräume
+  ausgelaufen ist. Daher die 400–700 Polygonpunkte: die Rastergrenze folgt
+  Möbel-/Wandkanten mehrerer Räume.
+- `src/notbeleuchtung/raumerkennung/kaskade.py:143` +
+  `src/notbeleuchtung/raumerkennung/rest_komponenten.py:147-151` — der R-Zweig
+  macht es richtig: er bekommt `belegte` übergeben und blockiert diese Flächen im
+  Raster (`Polygon(poly).buffer(_BELEGT_PUFFER_MM)`, `_BELEGT_PUFFER_MM = 100.0`,
+  `rest_komponenten.py:47`). Ergebnis: **0 von 9 R-Räumen überlappt**, obwohl
+  zwei davon >200 Punkte haben. Das ist der Gegenbeweis, dass die Rasterisierung
+  als solche das Problem nicht ist.
+
+Kurz: **die Belegungsprüfung, die `rest_komponenten.py` hat, fehlt in
+`stempel_flutung.py` komplett und ist in `kaskade.py:90` mit der falschen
+Metrik (IoU statt Anteil am kleineren Polygon) implementiert.**
+
+### 14.5 Relevanzurteil
+
+**Relevant, und schwerer als vermutet.**
+
+- **25,3 % aller Räume** (62 von 245) überlappen einen anderen Raum um mehr als
+  5 % ihrer eigenen Fläche. Auf Muthgasse **37 %**.
+- **7,9 % der gesamten erkannten Grundfläche** (262,3 von 3329,4 m²) gehört mehr
+  als einem Raum. Auf Muthgasse **16,2 %**.
+- **Die Überlappungen betreffen ganz überwiegend typisierte Räume, nicht
+  REST-Räume: 53 von 62 Überlappern haben einen `raum_typ`.** Der Owner-Verdacht
+  „REST-Räume überlappen" trifft die Symptomklasse aus § 11, aber nicht die
+  Ursachenklasse: `raum_88` ist heute ein typisierter STIEGENHAUS-Raum, und die
+  drei schlimmsten Muthgasse-Fälle sind allesamt als KÜCHE typisiert. **Kein
+  einziger Überlapper stammt aus `rest_komponenten.py`.**
+- Es sind keine Randfälle: **13 Räume liegen zu >90 % ihrer eigenen Fläche in
+  einem anderen Raum** (Barawitzka 2, Mollgasse 2, Muthgasse 11 — darunter
+  STIEGENHAUS `raum_37`, LIFT `raum_79`, BAD `raum_76`, ZIMMER
+  `raum_17`/`raum_25`). Nach der Grundregel „jeder Punkt gehört genau einem
+  Raum" existieren diese Räume in der Zuordnung faktisch doppelt.
+- Fachliche Folgewirkung: eine „KÜCHE" von 43,7 m², die eine ganze Wohnung mit
+  Bad, Zimmer und Balkon enthält, ist eine falsche Nutzungsklasse über echter
+  Grundfläche. Was daran hängt — Fluchtweglogik, `ist_fluchtweg`/`ist_communal`,
+  Zirkulation, Platzierungsdichte — arbeitet auf dieser falschen Zuordnung. Der
+  LIFT `raum_79` ist zu 98 % von einem STIEGENHAUS überdeckt; für die Belegung
+  des Stiegenhauses zählt Liftschachtfläche mit.
+- **Gegenprobe**: Rennweg_EG und Rennweg_OG3 haben 0 F-Räume und 0
+  Überlappungen bei 35 Räumen. Es gibt also einen Zweigpfad durch die Kaskade,
+  der die Regel bereits vollständig einhält. Das Ziel ist erreichbar, nicht
+  theoretisch.
+
+Das rechtfertigt einen eigenen Arbeitsschritt.
+
+### 14.6 Bereinigungsskizze — VORSCHLAG, ausdrücklich NICHT umgesetzt
+
+Das Folgende ist ein Vorschlag zur Entscheidung durch den Owner. In diesem
+Schritt ist **nichts davon gebaut worden**.
+
+**Reihenfolge (jeder Schritt einzeln messbar, kein Big Bang):**
+
+1. **Riegel zuerst, ohne Verhaltensänderung.** Ein neuer Test misst die
+   Kennzahlen dieses Berichts über alle fünf Pläne und friert den Ist-Stand
+   (62 Überlapper, 262,3 m² Doppelbelegung) als *Obergrenze* ein. Ein
+   `xfail`-Zielbild daneben mit dem Sollwert 0. Damit wird jede Regression
+   sichtbar, bevor irgendetwas angefasst wird. Es existiert heute **kein**
+   solcher Test — `grep` über `tests/` findet Überlappung nur als Prosa in
+   `tests/naht/test_soll_muthgasse.py:29`.
+2. **Ursache im F-Zweig, nicht am Ergebnis.** `flute_stempel` bekommt die
+   bereits belegten Raumpolygone als weiteren Parameter und blockiert sie im
+   Raster — exakt das Muster aus `rest_komponenten.py:147-151`, das nachweislich
+   0 Überlappungen produziert. Das ist der kleinste Eingriff, der 94 % der
+   doppelt belegten Fläche adressiert, und er baut keine neue Mechanik, sondern
+   zieht eine vorhandene an die zweite Stelle, die sie braucht.
+3. **Metrik in `kaskade.py:90` korrigieren.** IoU >0,5 zusätzlich um „Anteil am
+   kleineren Polygon >0,5" ergänzen. Restposten: 2 Paare / 13,9 m². Erst nach
+   Schritt 2 und getrennt messen.
+4. **Nachmessen und die Restfälle einzeln belegen.** Was danach noch überlappt,
+   wird namentlich mit Grund dokumentiert, nicht weggerundet.
+
+**Konfliktregel — hier braucht es die Owner-Entscheidung.** Die Schritte oben
+*vermeiden* Überlappung an der Entstehung. Sie brauchen keine Gewinnerregel.
+Eine nachgelagerte Auflösung („wer gewinnt") wäre eine zweite Mechanik obendrauf
+und deshalb der schlechtere Weg — sie schneidet Polygone auf, statt sie richtig
+zu erzeugen. Falls nach Schritt 2/3 Restfälle bleiben, wäre die naheliegende
+Rangfolge: **L vor H vor F** (Layer-Polygon ist gezeichnete Wahrheit, Flutung
+ist Rekonstruktion), bei gleichem Zweig **der typisierte vor dem
+untypisierten**, bei gleichem Stand **der mit dem Stempel im Inneren**. „Der
+Kleinere gewinnt" ist fachlich falsch — `raum_88` würde damit gegen den LIFT
+gewinnen, obwohl der LIFT das gezeichnete Polygon ist.
+
+**Risiko der Bereinigung, ehrlich:**
+
+- Räume können **verschwinden**: wenn ein F-Raum nach Abzug der belegten Flächen
+  unter das 1-m²-Kriterium (`kaskade.py:114`) fällt, entfällt er — sein Stempel
+  ist dann wieder ohne Polygon. Bei Muthgasse betrifft das potenziell die 11
+  überlappenden F-Räume; das sind 11 der 90 Räume mit Stempel.
+- Räume können **zerfallen**: das Abziehen belegter Flächen kann eine geflutete
+  Maske in mehrere Zusammenhangskomponenten zerlegen. Der heutige Code nimmt
+  implizit eine Komponente an. Was mit den Bruchstücken passiert, ist eine
+  offene Frage.
+- Die Muthgasse-Laufzeit (1852 s) reagiert empfindlich auf zusätzliche
+  Rasteroperationen; ein zusätzliches Blockieren pro Stempel läuft über dieselbe
+  Rastergröße wie heute, ist aber zu messen.
+- `flute_stempel` ist die Stelle, an der `flaeche_stempel` gegen
+  `flaeche_berechnet` geprüft wird. Kleinere Polygone bedeuten mehr
+  `abweichung_prozent` und potenziell mehr `flag != ok` — bei Muthgasse steht
+  „Flag ok 73 von 101". Diese Zahl kann sinken, **ohne** dass die Erkennung
+  schlechter wird: ein Raum, der ehrlich meldet, dass er nicht auf die
+  Stempelfläche kommt, ist besser als einer, der die Fläche durch Übergriff in
+  den Nachbarraum erreicht. Das Zielband dafür darf nicht abgesenkt werden, aber
+  es muss vorher geklärt sein, wie es zu lesen ist.
+
+**Offene Entscheidungen, die der Owner treffen muss:**
+
+1. **Ursache oder Nachbereinigung?** Belegte Flächen in `stempel_flutung.py`
+   blockieren (Vorschlag) — oder eine nachgelagerte Konfliktauflösung über
+   fertige Polygone. Empfehlung: Ersteres; nur das folgt der Grundregel schon bei
+   der Entstehung.
+2. **Was passiert mit einem F-Raum, der nach dem Abzug unter 1 m² fällt oder in
+   Bruchstücke zerfällt?** Ganz verwerfen (Stempel wird wieder polygonlos,
+   Kennzahl „mit Stempel" sinkt), größte Komponente behalten, oder alle
+   Komponenten als eigene Räume? Ohne diese Antwort ist Schritt 2 nicht
+   umsetzbar.
+3. **Darf „Flag ok" sinken**, wenn dafür die Überlappung verschwindet? Konkret:
+   ein heute als `ok` geflagter Raum, der seine Stempelfläche nur durch Übergriff
+   erreicht, wird danach `abweichung`-auffällig.
+4. **Ist die Rangfolge L > H > F** für etwaige Restkonflikte fachlich richtig,
+   oder gibt es Pläne, bei denen das Layer-Polygon dem gefluteten unterlegen ist?
+5. **Soll die Kennzahl „Überlappende Räume / doppelt belegte m²" dauerhaft in
+   `VERLAUF.md` und in die Prüfstrecke aufgenommen werden**, so wie
+   Legendenabdeckung und Breitenprofil?
+
+### 14.7 Was in diesem Schritt gemacht und was nicht gemacht wurde
+
+Gemacht: die Messung oben, dieser Befund, die Bereinigungsskizze als Vorschlag.
+
+Nicht gemacht: keine Datei in `src/` geändert, kein Test hinzugefügt oder
+scharf geschaltet, kein Zielband bewegt, keine Contract-Änderung
+(`hauptengine/contracts/**` unberührt, `raum_modell` 1.4.0 wartet weiter auf das
+Approval von @EnisAMG), kein Push, kein PR, kein Merge.
+
+---
+
+## 15. Nachtrag 2026-09-10 — Abschluss Schritt 2: volle Suite, XFAIL-Bilanz, keine Prüfstrecke
+
+### 15.1 Volle Suite (wörtlich)
+
+```
+D:/KI Projekt/Notbeleuchtung/.venv/Scripts/python.exe -m pytest -q -rX
+
+1200 passed, 10 skipped, 2 deselected, 11 xfailed, 2 warnings in 1169.34s (0:19:29)
+```
+
+exit 0. `-rX` würde jeden XPASS ausweisen — **es gibt keine XPASS-Zeile**. Die
+beiden Warnungen sind die bekannten und unveränderten: die
+`StarletteDeprecationWarning` aus `fastapi/testclient.py` und die
+`RuntimeWarning: coroutine 'BackgroundTask.__call__' was never awaited` aus
+`api/main.py:183` (Fehlerpfad des DWG-Uploads).
+
+Delta gegen § 12.4 (Lauf `47df2d9`): `1200 passed, 10 skipped, 2 deselected,
+11 xfailed` — **jede Zahl identisch**, nur die Laufzeit ist von 1148,43 s auf
+1169,34 s gestiegen (+1,8 %, Messrauschen).
+
+### 15.2 XFAIL-Bilanz — 11 strict-xfails, je ein Satz
+
+Zeilennummern sind die des `@pytest.mark.xfail`-Dekorators im heutigen Stand
+(gegen § 12.5 um wenige Zeilen verschoben, weil Schritt 1 in
+`test_soll_muthgasse.py` `reason` und Docstring umformuliert hat).
+
+| # | Test | Datei:Zeile | Warum er xfail ist |
+|---|---|---|---|
+| 1 | `test_soll_explizite_linien_vorhanden` | `tests/naht/test_soll_barawitzka.py:55` | Der Plan enthält keine expliziten Fluchtweg-Linien — die 16 Farbe-96-Linien sind Katastergrenzen; das Zielbild wartet auf einen Plan-Nachtrag des Fachplaners, nicht auf Code. |
+| 2 | `test_soll_90_prozent_tueren_typisiert` | `tests/naht/test_soll_barawitzka.py:70` | Soll ≥ 90 % typisierte Türen je Familie, Ist 55/106 — Hauptlücke `unbekannte_kombination` / `kein_nachbarraum`. |
+| 3 | `test_soll_16_endpunkte_an_der_aussenkante_gedeckt` | `tests/naht/test_soll_barawitzka.py:95` | Folgt aus #1: ohne echte FLW-Linien gibt es 0 Endpunkte an der Außenkante, also auch 0 gedeckte. |
+| 4 | `test_soll_jeder_endpunkt_an_der_kante_hat_final_exit` | `tests/naht/test_soll_mollgasse.py:104` | Der `09-WEG`-Layer zeichnet Doppellinien-Stummel; ohne Dedup/Clustering der Endpunkte deckt die `final_exit`-Menge nur einen Bruchteil der Kandidaten. |
+| 5 | `test_soll_90_prozent_tueren_typisiert` | `tests/naht/test_soll_mollgasse.py:119` | Soll ≥ 90 %, Ist 70/147 — Nachbarräume ohne Kanon-Typ. |
+| 6 | `test_soll_final_exit_anzahl_gleich_endpunkte_an_der_kante` | `tests/naht/test_soll_mollgasse.py:152` | Dieselbe Ursache wie #4, als Zählgleichung formuliert: 9 `final_exit` gegen 43 Endpunkte. |
+| 7 | `test_soll_stair_exits` | `tests/naht/test_soll_muthgasse.py:104` | Soll ≥ 9 `stair_exit`, Ist 5; Band **bewusst nicht abgesenkt**, weil der einzige gemessen gedeckte Ersatzwert der Ist-Stand selbst wäre (§ 11.5). |
+| 8 | `test_soll_stair_exit_aus_echter_blocktuer` | `tests/naht/test_soll_muthgasse.py:180` | Soll ≥ 1 `stair_exit` an einer echten `A-DOOR`/`A-GLAZ`-Blocktür, Ist 0 von 5 — alle fünf ruhen auf Kontaktzonen-Artefakten; der ursprüngliche Anker `tuer_50` ist in § 13.7 widerlegt, `reason` und Docstring sind korrigiert, das Band steht unverändert bei ≥ 1. |
+| 9 | `test_soll_90_prozent_tueren_typisiert` | `tests/naht/test_soll_muthgasse.py:237` | Soll ≥ 90 %, Ist 206/291 = 70,8 % — Türen ohne typisierte Gegenseite; `raum_65` (§ 13) ist einer dieser Fälle und bleibt untypisiert, weil das Label im Kanon fehlt. |
+| 10 | `test_soll_referenz_trefferquote` | `tests/naht/test_soll_referenzvergleich.py:51` | Zielbild ≥ 80 % Deckung gegen die Fachplaner-Leuchten, Ist 18 % — die Platzierungs-Strategien (Lane @mvpo3) sind noch nicht referenz-deckend. |
+| 11 | `test_soll_eg_90_prozent_tueren_typisiert` | `tests/naht/test_soll_rennweg.py:133` | Soll ≥ 90 %, Ist 24/41 — Gründe-Tabelle in `bericht.md`. |
+
+**Ausdrücklich, weil danach gefragt wurde:**
+
+- **Wurde ein xfail gedreht? NEIN.** Kein xfail ist in diesem Auftrag scharf
+  geschaltet worden, und keiner ist zu XPASS gekippt — bei `strict=True` wäre
+  ein XPASS ein Suite-Fehler, die Suite ist grün und `-rX` meldet nichts.
+- **Wurde ein Zielband geändert? NEIN.** Kein Band ist abgesenkt, angehoben oder
+  sonst berührt worden. Die einzige Änderung an einer Testdatei in diesem
+  Auftrag ist der `reason`-Text plus Docstring von
+  `test_soll_stair_exit_aus_echter_blocktuer` (Schritt 1, Commit `fff9f65`) —
+  Marker und Schwelle unverändert.
+- Anzahl unverändert: 11 vor und 11 nach diesem Auftrag.
+
+### 15.3 Prüfstrecke — bewusst NICHT gelaufen, mit Begründung
+
+`scripts/plan_pruefen.py` ist in diesem Auftrag **nicht** gelaufen, und es ist
+auch **kein** Lauf erfunden worden. Grund: die Prüfstrecke misst das Verhalten
+der Pipeline, und dieses Verhalten hat sich nicht geändert.
+
+- `git diff --stat 47df2d9..HEAD -- src/` ist **leer** — in Schritt 1 und
+  Schritt 2 wurde keine einzige Zeile Produktionscode angefasst.
+- Geändert wurden ausschließlich Dokumente (`docs/ENIS_UEBERGABE_0908.md`,
+  `docs/OFFENE_FRAGEN.md`, `docs/COORDINATION.md`, `Handoff/SELMAN.md`) und der
+  `reason`/Docstring eines bestehenden xfail-Markers in
+  `tests/naht/test_soll_muthgasse.py`. Nichts davon läuft in der Pipeline.
+- Der letzte Lauf `2026-09-10 13:35 · 47df2d9` (exit 0, alle fünf Pläne, § 12.2)
+  ist damit für HEAD weiterhin gültig; `Projekte/_ergebnis/VERLAUF.md` wird aus
+  demselben Grund nicht fortgeschrieben — ein neuer Eintrag ohne neuen Lauf wäre
+  eine erfundene Zeile.
+- Ein Wiederholungslauf hätte rund 2500 s gekostet (Muthgasse allein 1852 s) und
+  per Konstruktion dieselben Zahlen geliefert.
