@@ -171,8 +171,9 @@ def pruefe(
 
         # 4b. 2-Leuchten-Redundanz je Fluchtweg-Abschnitt (EN 50172 / §5.1.8): fällt eine
         #     Leuchte aus, muss der Abschnitt minimal beleuchtet bleiben → ≥ 2 Leuchten
-        #     (RZ/SL) in Erkennungsweite. WARNUNG, kein Hard-Fail — Bestandspläne erfüllen
-        #     das oft nicht flächendeckend; erst sichtbar machen, Hard-Fail folgt später.
+        #     (RZ/SL) in Erkennungsweite. HARD-FAIL (F07/W19): Ausfallschutz ist norm-
+        #     verbindlich, kein bloßer Hinweis. Die Platzierung garantiert das proaktiv
+        #     (`deckung.garantiere_redundanz`), die Prüfung zieht den Boden ein.
         leuchten = [p for p in plzg if p.kind in ("rz", "sicherheitsleuchte")]
         redundanz_radius = _redundanz_radius_mm(norm)
         unterversorgt = [
@@ -184,7 +185,7 @@ def pruefe(
         ]
         befunde.append(Befund(
             "2-Leuchten-Redundanz je Fluchtweg-Abschnitt (EN 50172)",
-            "warnung" if unterversorgt else "ok",
+            "fehler" if unterversorgt else "ok",
             f"{len(unterversorgt)}/{len(segmente)} Abschnitt(e) mit < {_REDUNDANZ_MIN} "
             "Leuchten in Reichweite" if unterversorgt
             else f"alle {len(segmente)} Abschnitte mit ≥ {_REDUNDANZ_MIN} Leuchten",
