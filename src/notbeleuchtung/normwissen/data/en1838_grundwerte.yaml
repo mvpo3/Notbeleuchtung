@@ -152,20 +152,18 @@ umschaltzeit:
   # oder innerhalb 0,5 s. Kein passender Raumtyp im RaumModell → Track C,
   # deshalb kein Eintrag.
 
-# Flächen-Schwellen (Contract `NormRegelwerk.flaechen_schwellen`) — F11/W11.
-# [PRAXIS / AT-Referenzpraxis] Die 60 m² / 8 m² stehen NICHT in EN 1838 (die
-# vorliegende Ausgabe kennt keine flächenbezogene Auslöse-Schwelle). Belegt sind sie
-# in OVE E 8101:2019 718.560.9.001.AT (Sanitärbereich ab 8 m²) bzw. als Referenz-Praxis
-# (Antipanik ab ~60 m² freier Fläche) — dort SCOPE-GEBUNDEN an „erhöhte Anforderungen
-# nach der Art der Nutzung" (OVE R 12-2 / OIB-RL 2).
-# WICHTIG: Der Konsument (`flaechen_strategy`) wendet beide Schwellen NUR an, wenn der
-# OIB-Pfad diesen Scope bestätigt (`sanitaer_scope`/`verkehr_scope` == anwendbar,
-# fail-closed) — NIE global. Auf Plänen ohne diesen OIB-Scope bleibt der Trigger inert.
-# Owner-Entscheid 2026-09-10 (vorher bewusst leer; Details docs/NORMQUELLEN_AT.md 2b).
-flaechen_schwellen:
-  antipanik_min_m2: 60.0     # [PRAXIS] Antipanik ab freier Fläche ~60 m² (OVE-scope-gated)
-  wc_sanitaer_min_m2: 8.0    # [BELEGT OVE] Sanitärbereich ab 8 m² (718.560.9.001.AT Punkt 1)
-  quelle: "OVE E 8101:2019 718.560.9.001.AT"
+# NICHT hier modelliert — Flächen-Schwellen (Contract v1.1.0
+# `NormRegelwerk.flaechen_schwellen`): die kursierenden 60 m² / 8 m² stehen
+# NICHT in EN 1838. Die vorliegende Ausgabe kennt überhaupt keine
+# flächenbezogene Auslöse-Schwelle (die einzigen m²-Bezüge sind 2 cd/m²
+# Leuchtdichte in §5.4.1 und eine französische A-Abweichung in Anhang B);
+# §4.3.8 nennt Toiletten für Menschen mit Behinderung OHNE Flächenmaß.
+# Belegt sind die Werte in
+# OVE E 8101:2019 718.560.9.001.AT und ÖVE/ÖNORM E 8002-1 — dort aber
+# SCOPE-GEBUNDEN (nur bei erhöhten Anforderungen nach der Art der Nutzung bzw.
+# nur für Flughäfen/Bahnhöfe). Das Contract-Feld wirkt dagegen global.
+# Bis zur 3-Owner-Entscheidung über ein Scope-Gate bleiben beide Felder leer
+# (= None = inert). Details: docs/NORMQUELLEN_AT.md Abschnitt 2b.
 
 # Norm-Fundstellen (kommen als NormAnforderung.quelle in den Audit-Trail).
 quellen:

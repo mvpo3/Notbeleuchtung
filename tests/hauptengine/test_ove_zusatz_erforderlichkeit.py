@@ -184,12 +184,9 @@ def test_platzierungen_bleiben_unveraendert():
     assert any(p.kind == "antipanik" for p in ohne.platzierungen)
 
 
-def test_schwellen_gefuellt_aber_scope_gated():
-    # F11/W11 (Owner-Entscheid 2026-09-10): die OVE-Flächen-Schwellen sind jetzt gefüllt
-    # (60 m² Antipanik / 8 m² Sanitär, [AT-Referenzpraxis]). Sie wirken NICHT global —
-    # das OVE-Scope-Gate in flaechen_strategy (fail-closed) entscheidet die Anwendung.
+def test_schwellen_bleiben_leer():
     s = En1838NormProvider().regelwerk_snapshot().flaechen_schwellen
-    assert s.antipanik_min_m2 == 60.0 and s.wc_sanitaer_min_m2 == 8.0
+    assert s.antipanik_min_m2 is None and s.wc_sanitaer_min_m2 is None
 
 
 def test_ohne_projekt_kontext_kein_befund():
