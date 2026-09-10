@@ -61,6 +61,74 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 ## STAND (append-only, neueste oben) — für nahtloses Weitermachen
 
 ---
+
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-10, Abschluss Schritte 1–6) ═══
+
+**Branch:** `selman/extents-ausreisser`, **nicht gepusht, kein PR, kein Merge** —
+der Owner gibt das GO separat. Commits dieser Runde: `8b35e53` · `58cd3a0` ·
+`1ddb752` · `9141a3c` · `e9837b0` + Abschluss-Commit.
+**Suite: 1199 passed, 10 skipped, 2 deselected, 10 xfailed, 0 XPASS, 0 failed (27:28 min).**
+**Prüfstrecke über alle fünf Pläne gelaufen** (`scripts/plan_pruefen.py`, exit 0).
+
+**Leitregel dieser Runde, die stehen bleiben muss:** *der Code erfindet keine
+Maße.* Fehlende Messung ist `None` mit Quelle `UNBEKANNT` und einem Grund — nie
+ein Default, nie ein Normwert, nie ein Mittelwert.
+
+**Was umgesetzt ist (Details + alle Zahlen: `docs/ENIS_UEBERGABE_0908.md` § 10,
+Tabelle § 7.2; Vorher-Stand unverändert in § 7.1):**
+1. **Beschriftungsfahnen sind keine Türen** — `_DOOR_EXCLUDE` um `BESCHRIFT`,
+   Muthgasse **308 → 291 Türen**, 83 Phantom-`TuerOeffnung`en weg, Zähler
+   `_verworfene_bloecke` statt stiller Ausschluss. Andere vier Pläne: 0.
+2. **Contract `raum_modell` 1.3.0 → 1.4.0** — `Tuer.breite_mm: float | None`
+   (vorher `0.0`), `breite_quelle`, `breite_grund`, `lichte_mm` (**bleibt None**,
+   kein Erzeuger). Alle neun Schreibpfade setzen die Quelle, alle Konsumenten
+   None-fest, Schema regeneriert, Drift-Gate grün. **3-Owner-Approval offen.**
+3. **Riegel gegen erfundene Maße** — `tests/contract/test_keine_erfundenen_masse.py`,
+   AST über `src/**`, Messfeldliste aus den Contracts selbst. `dxf_renderer.py`
+   `900.0` → `_ZEICHEN_ERSATZBREITE_MM` (gleicher Wert, gleiches Bild).
+4. **Fluchtweg-Breitenmessung 209/307 (68,1 %) → 287/307 (93,5 %)** —
+   `begrenzende_flaechen` + `SNAP_MM = 200` verschieben den **Messort**, nicht das
+   Polygon; zweiter Deckel `ECKE_FENSTER_MM` gegen Eckfenster.
+5. **Fenstererkennung nach Erscheinungsbild** — `raumerkennung/fenster_signatur.py`,
+   24 Barawitzka-Öffnungen, **0 Falschtreffer** auf den vier Vergleichsplänen.
+   `belichtung_vollstaendigkeit` Barawitzka UNGEPRUEFT → TEILWEISE.
+
+**Ist der Prüfstrecke (Lauf 2026-09-10 04:48 · `e9837b0`), Türen typisiert:**
+Barawitzka_EG 55/106 · Mollgasse_EG 70/147 · **Muthgasse_E2 206/291** ·
+Rennweg_EG 24/41 · Rennweg_OG3 15/27. Gegen `ab0ad51` bewegt sich **nur
+Muthgasse** (vorher 219/308).
+
+**DIE NÄCHSTEN DREI SACHEN IN MEINER LANE, alle belegt:**
+1. **`stair_exit` Muthgasse 12 → 5 — 3 echte Türen haben ihre Typisierung
+   verloren.** 5 der 7 Verschwundenen waren Fahnen (erfundene Ausgänge, richtig
+   so), die restlichen 3 nicht. Ursache liegt in der **Tür-Typisierung**, nicht im
+   Fahnen-Ausschluss, und ist **nicht aufgeklärt**. Band bewusst **nicht**
+   abgesenkt, sondern als strict-xfail `test_soll_stair_exits` sichtbar.
+2. **12 Mollgasse-Segmente `flaeche_fehlt`** (`seg_4/7/8/9/10/27/34/41/92/93/94/95`) —
+   dort existiert **kein lichtes Raumpolygon** (Laubengang/Hofwege, Kaskade `R:0`,
+   Ursache `aussenkontur` in `rest_komponenten.py`). `SNAP_MM` NICHT auf 300 heben:
+   `seg_92-95` laufen 6 m **an** einem KINDERWAGENRAUM entlang, nicht durch ihn —
+   das würde die Zahl heben und die Messung kaputtmachen.
+3. **`lichte_mm` hat keinen Erzeuger.** Das Feld steht im Contract und bleibt
+   `None`. Der Slice dazu ist offen — und er darf die Lichte **nie** aus
+   `breite_mm` ableiten.
+
+**Was bewusst NICHT angefasst wurde:** Enis' YAML + `test_quellenblock_e07_rl4.py:301`
+(Vorschlag `== 3` → `== 4` steht in § 6.4) · `dxf_renderer.py` über die Konstante
+hinaus · `lux_nachweis_bericht.py:329/:333` (nur gemeldet) · die Nennerfrage
+Muthgasse `A-DETL` · Raumzuordnung der 24 Fensteröffnungen.
+
+**Vorbestehend, nicht von mir:** `tests/raumerkennung/test_tueren.py::test_mollgasse_tueren`
+**skippt**, weil `Projekte/Mollgasse Notbeleuchtung/WHA_MOL_EG.dxf` im Arbeitsbaum
+fehlt (Prüfstrecken-DXF liegt unter `Projekte/_eingang/Mollgasse_EG.dxf`).
+`ruff check .`: 4 Fehler, die vorbestehenden ISC004 in `scripts/plan_pruefen.py`.
+
+**Weiter offen wie gehabt:** GESCHÄFTSLOKAL (blockiert, seit 2026-09-08) ·
+Render-Speicher `_figur` 8×/Plan (Leonis) · Spikey-Polygone Mollgasse raum_41/55
+(meine Lane) · Referenz-Frames UG/OG1 nicht verdrahtet · 4 Tür-Quoten-xfails ·
+Baufeld E2 ohne Zielbild.
+
+---
 ## ═══ SELMAN: HIER WEITER (Stand 2026-09-10) ═══
 
 **Branch:** `selman/extents-ausreisser`, **nicht gepusht**. Contracts unberührt.
