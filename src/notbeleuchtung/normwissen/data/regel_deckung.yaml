@@ -75,6 +75,10 @@ deckung:
     offen:
       frage: "Erschließungsfläche vor dem Lift: eigener raumtyp_regeln-Eintrag (wie GANG) oder via default(rz)?"
       owner: Enis
+  KINDERWAGENRAUM:
+    offen:
+      frage: "Communaler Kinderwagenraum im Erschliessungsbereich: Die Referenz-Praxis (Owner 2026-09-08) setzt ein Rettungszeichen an die Tuer (wie TECHNIK/MUELLRAUM). Gibt es dafuer einen Norm-Trigger, oder bleibt es Referenz-Praxis ohne Norm-Quelle?"
+      owner: Enis
   WASCHKÜCHE:
     offen:
       frage: "Communale Nasszelle — Sanitär-Flächen-Trigger wie WC/BAD anwendbar oder LB-adressierbar wie Nebenräume?"

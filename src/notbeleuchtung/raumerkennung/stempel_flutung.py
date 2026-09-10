@@ -23,13 +23,14 @@ m²-Angabe bekommen die niedrigste Versiegelungsstufe und Flag ``ok``.
 from __future__ import annotations
 
 import math
+import warnings
 from dataclasses import dataclass, field
 
 import numpy as np
+from PIL import Image, ImageDraw
 from scipy import ndimage
 from shapely.geometry import Polygon
 from shapely.ops import snap
-from skimage.draw import polygon as _fill_polygon
 from skimage.measure import find_contours, label
 from skimage.morphology import closing, disk
 from skimage.segmentation import watershed
@@ -80,17 +81,34 @@ class _Raster:
 
 
 def _fuelle(mask: np.ndarray, geom, raster: _Raster) -> None:
-    """Polygon(e) in die Maske rastern (Exterior=True, Löcher wieder frei)."""
+    """Polygon(e) in die Maske rastern (Exterior=True, Löcher wieder frei).
+
+    Gefüllt wird per Scanline (Pillow) statt ``skimage.draw.polygon``: dessen
+    Kosten sind O(BBox-Pixel × Stützpunkte), und die Wand-Union großer Pläne
+    hat Ringe mit >20 000 Stützpunkten über das ganze Geschoss (Baufeld E2:
+    ein Aufruf = 166 s, mit Scanline 0,05 s). Ein Bild je Aufruf, Werte
+    1=setzen / 2=löschen, damit die Ring-Reihenfolge und die unberührten
+    Zellen der Maske erhalten bleiben.
+    """
     polys = geom.geoms if geom.geom_type in ("MultiPolygon", "GeometryCollection") \
         else [geom]
+    bild = Image.new("L", (mask.shape[1], mask.shape[0]), 0)
+    stift = ImageDraw.Draw(bild)
+    leer = True
     for p in polys:
         if p.geom_type != "Polygon" or p.is_empty:
             continue
-        for ring, wert in [(p.exterior, True)] + [(i, False) for i in p.interiors]:
-            rc = [raster.px(xy) for xy in ring.coords]
-            rr, cc = _fill_polygon([r for r, _ in rc], [c for _, c in rc],
-                                   shape=mask.shape)
-            mask[rr, cc] = wert
+        for ring, wert in [(p.exterior, 1)] + [(i, 2) for i in p.interiors]:
+            xy = [(c, r) for r, c in (raster.px(pt) for pt in ring.coords)]
+            if len(xy) < 3:
+                continue
+            stift.polygon(xy, fill=wert)
+            leer = False
+    if leer:
+        return
+    gemalt = np.asarray(bild)
+    mask[gemalt == 1] = True
+    mask[gemalt == 2] = False
 
 
 @dataclass
@@ -201,6 +219,11 @@ def _vektorisiere(mask: np.ndarray, raster: _Raster, wand_grenze) -> Polygon:
     return poly
 
 
+# Obergrenze der Raster-Zellen (~477 MiB bool). Weit über jedem realen
+# Geschoss: Muthgasse E2, der größte Plan im Repo, braucht 4.6e7 Zellen.
+_MAX_RASTER_ZELLEN = 5e8
+
+
 def flute_stempel(
     plan: DxfPlan | None,
     stempel_ohne_polygon: list[Stempel],
@@ -222,6 +245,19 @@ def flute_stempel(
     pad = round((max(_STUFEN_MM) + _CLOSING_MM) / res) + 4
     h = math.ceil((b.max_xy[1] - b.min_xy[1]) / res) + 2 * pad + 1
     w = math.ceil((b.max_xy[0] - b.min_xy[0]) / res) + 2 * pad + 1
+    # Reißleine gegen entgleiste Extents: ein Geschoss mit fehlkalibriertem
+    # mm-Faktor oder Phantom-Geometrie spannt sonst ein Raster jenseits jedes
+    # Speichers auf (Baufeld 4OG vor dem dxf_load-Fix: 1.7e6 x 1.6e6 = 2.56 TiB).
+    # Lieber ohne geflutete Räume weiterrechnen als den ganzen Parse verlieren.
+    if h * w > _MAX_RASTER_ZELLEN:
+        warnings.warn(
+            f"Stempel-Flutung übersprungen: Raster {w}x{h} = {h * w:.3g} Zellen "
+            f"über dem Limit {_MAX_RASTER_ZELLEN:.3g} — Wand-Extents "
+            f"{(b.max_xy[0] - b.min_xy[0]) / 1000:.0f}x"
+            f"{(b.max_xy[1] - b.min_xy[1]) / 1000:.0f} m sind für ein Geschoss "
+            "unplausibel (mm-Faktor oder Phantom-Geometrie prüfen).",
+            RuntimeWarning, stacklevel=2)
+        return []
     raster = _Raster(x0=b.min_xy[0], y0=b.min_xy[1], res=res, pad=pad, shape=(h, w))
 
     wand = np.zeros((h, w), dtype=bool)

@@ -512,6 +512,14 @@ def _wand_richtung(raum: RaumModell, tuer) -> tuple[float, float]:
     return best
 
 
+# ZEICHEN-ERSATZMASS, KEINE MESSUNG. Tueren ohne gemessene Breite (breite_mm is None,
+# breite_quelle == "UNBEKANNT") muessen im DXF trotzdem eine Groesse haben, sonst faellt
+# das Symbol auf einen Punkt zusammen. Dieser Wert ist reine Bildgroesse: er wird nirgends
+# zurueckgeschrieben, verlaesst _draw_tueren nicht und ist KEIN Mass der Tuer.
+# Wer eine Breite braucht, liest t.breite_mm — None heisst nicht gemessen.
+_ZEICHEN_ERSATZBREITE_MM = 900.0
+
+
 def _draw_tueren(msp, raum: RaumModell) -> int:
     """Türen aus dem Contract zeichnen (Gap-Audit H-Gebäude: `raum.tueren` wurde vom
     Render ignoriert — der Plan wirkte türlos). Darstellung wie im Architektur-Bestand:
@@ -521,7 +529,8 @@ def _draw_tueren(msp, raum: RaumModell) -> int:
 
     drawn = 0
     for t in raum.tueren:
-        breite = t.breite_mm or 900.0
+        # nur fuer die Darstellung; siehe _ZEICHEN_ERSATZBREITE_MM
+        breite = t.breite_mm or _ZEICHEN_ERSATZBREITE_MM
         wx, wy = _wand_richtung(raum, t)
         nx, ny = -wy, wx                       # Wand-Normale (Aufschlagseite)
         if t.schwenk_richtung == "links":

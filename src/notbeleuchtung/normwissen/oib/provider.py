@@ -145,8 +145,12 @@ class OibRl2Provider:
     def _astv_hinweise(self, teil: Gebaeudeteil) -> list[str]:
         """AStV-Parallelpfad — ergänzt nur, senkt nie (Erl.-S. 48)."""
         astv = self._doc["astv_parallelpfad"]
+        # `pruefpunkte_kurz` haengt an BEIDEN Varianten: ob der Gebaeudeteil eine
+        # Arbeitsstaette ist oder ob das offen ist, aendert nichts daran, WELCHE
+        # § 9-Tatbestaende ungeprueft sind. Bei `False` bleibt es bei keinem
+        # Hinweis — die Reichweite nach § 1 Abs. 2/3 fuehrt `normwissen/astv.py`.
         if teil.arbeitsstaette_nach_aschg is True:
-            return [astv["wenn_arbeitsstaette"]]
+            return [astv["wenn_arbeitsstaette"], astv["pruefpunkte_kurz"]]
         if teil.arbeitsstaette_nach_aschg is None:
-            return [astv["wenn_unbekannt"]]
+            return [astv["wenn_unbekannt"], astv["pruefpunkte_kurz"]]
         return []

@@ -61,6 +61,184 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 ## STAND (append-only, neueste oben) — für nahtloses Weitermachen
 
 ---
+
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-10, Abschluss Schritte 1–6) ═══
+
+**Branch:** `selman/extents-ausreisser`, **nicht gepusht, kein PR, kein Merge** —
+der Owner gibt das GO separat. Commits dieser Runde: `8b35e53` · `58cd3a0` ·
+`1ddb752` · `9141a3c` · `e9837b0` + Abschluss-Commit.
+**Suite: 1199 passed, 10 skipped, 2 deselected, 10 xfailed, 0 XPASS, 0 failed (27:28 min).**
+**Prüfstrecke über alle fünf Pläne gelaufen** (`scripts/plan_pruefen.py`, exit 0).
+
+**Leitregel dieser Runde, die stehen bleiben muss:** *der Code erfindet keine
+Maße.* Fehlende Messung ist `None` mit Quelle `UNBEKANNT` und einem Grund — nie
+ein Default, nie ein Normwert, nie ein Mittelwert.
+
+**Was umgesetzt ist (Details + alle Zahlen: `docs/ENIS_UEBERGABE_0908.md` § 10,
+Tabelle § 7.2; Vorher-Stand unverändert in § 7.1):**
+1. **Beschriftungsfahnen sind keine Türen** — `_DOOR_EXCLUDE` um `BESCHRIFT`,
+   Muthgasse **308 → 291 Türen**, 83 Phantom-`TuerOeffnung`en weg, Zähler
+   `_verworfene_bloecke` statt stiller Ausschluss. Andere vier Pläne: 0.
+2. **Contract `raum_modell` 1.3.0 → 1.4.0** — `Tuer.breite_mm: float | None`
+   (vorher `0.0`), `breite_quelle`, `breite_grund`, `lichte_mm` (**bleibt None**,
+   kein Erzeuger). Alle neun Schreibpfade setzen die Quelle, alle Konsumenten
+   None-fest, Schema regeneriert, Drift-Gate grün. **3-Owner-Approval offen.**
+3. **Riegel gegen erfundene Maße** — `tests/contract/test_keine_erfundenen_masse.py`,
+   AST über `src/**`, Messfeldliste aus den Contracts selbst. `dxf_renderer.py`
+   `900.0` → `_ZEICHEN_ERSATZBREITE_MM` (gleicher Wert, gleiches Bild).
+4. **Fluchtweg-Breitenmessung 209/307 (68,1 %) → 287/307 (93,5 %)** —
+   `begrenzende_flaechen` + `SNAP_MM = 200` verschieben den **Messort**, nicht das
+   Polygon; zweiter Deckel `ECKE_FENSTER_MM` gegen Eckfenster.
+5. **Fenstererkennung nach Erscheinungsbild** — `raumerkennung/fenster_signatur.py`,
+   24 Barawitzka-Öffnungen, **0 Falschtreffer** auf den vier Vergleichsplänen.
+   `belichtung_vollstaendigkeit` Barawitzka UNGEPRUEFT → TEILWEISE.
+
+**Ist der Prüfstrecke (Lauf 2026-09-10 04:48 · `e9837b0`), Türen typisiert:**
+Barawitzka_EG 55/106 · Mollgasse_EG 70/147 · **Muthgasse_E2 206/291** ·
+Rennweg_EG 24/41 · Rennweg_OG3 15/27. Gegen `ab0ad51` bewegt sich **nur
+Muthgasse** (vorher 219/308).
+
+**DIE NÄCHSTEN DREI SACHEN IN MEINER LANE, alle belegt:**
+1. **`stair_exit` Muthgasse 12 → 5 — 3 echte Türen haben ihre Typisierung
+   verloren.** 5 der 7 Verschwundenen waren Fahnen (erfundene Ausgänge, richtig
+   so), die restlichen 3 nicht. Ursache liegt in der **Tür-Typisierung**, nicht im
+   Fahnen-Ausschluss, und ist **nicht aufgeklärt**. Band bewusst **nicht**
+   abgesenkt, sondern als strict-xfail `test_soll_stair_exits` sichtbar.
+2. **12 Mollgasse-Segmente `flaeche_fehlt`** (`seg_4/7/8/9/10/27/34/41/92/93/94/95`) —
+   dort existiert **kein lichtes Raumpolygon** (Laubengang/Hofwege, Kaskade `R:0`,
+   Ursache `aussenkontur` in `rest_komponenten.py`). `SNAP_MM` NICHT auf 300 heben:
+   `seg_92-95` laufen 6 m **an** einem KINDERWAGENRAUM entlang, nicht durch ihn —
+   das würde die Zahl heben und die Messung kaputtmachen.
+3. **`lichte_mm` hat keinen Erzeuger.** Das Feld steht im Contract und bleibt
+   `None`. Der Slice dazu ist offen — und er darf die Lichte **nie** aus
+   `breite_mm` ableiten.
+
+**Was bewusst NICHT angefasst wurde:** Enis' YAML + `test_quellenblock_e07_rl4.py:301`
+(Vorschlag `== 3` → `== 4` steht in § 6.4) · `dxf_renderer.py` über die Konstante
+hinaus · `lux_nachweis_bericht.py:329/:333` (nur gemeldet) · die Nennerfrage
+Muthgasse `A-DETL` · Raumzuordnung der 24 Fensteröffnungen.
+
+**Vorbestehend, nicht von mir:** `tests/raumerkennung/test_tueren.py::test_mollgasse_tueren`
+**skippt**, weil `Projekte/Mollgasse Notbeleuchtung/WHA_MOL_EG.dxf` im Arbeitsbaum
+fehlt (Prüfstrecken-DXF liegt unter `Projekte/_eingang/Mollgasse_EG.dxf`).
+`ruff check .`: 4 Fehler, die vorbestehenden ISC004 in `scripts/plan_pruefen.py`.
+
+**Weiter offen wie gehabt:** GESCHÄFTSLOKAL (blockiert, seit 2026-09-08) ·
+Render-Speicher `_figur` 8×/Plan (Leonis) · Spikey-Polygone Mollgasse raum_41/55
+(meine Lane) · Referenz-Frames UG/OG1 nicht verdrahtet · 4 Tür-Quoten-xfails ·
+Baufeld E2 ohne Zielbild.
+
+---
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-10) ═══
+
+**Branch:** `selman/extents-ausreisser`, **nicht gepusht**. Contracts unberührt.
+**Suite: 1177 passed, 10 skipped, 9 xfailed, 0 failed (19:31 min).**
+
+**Enis' Normwissen-Übergabe 0908-v2 verarbeitet** — Bericht
+`docs/ENIS_UEBERGABE_0908.md` (655 Z.), Board-Antwort an @EnisAMG/@mvpo3 vom
+2026-09-10 in `docs/COORDINATION.md`. Commits `a9ab1b6` (WIP-Sicherung) →
+`1a78966` (Bericht + Breitenprofil) → `3d3215d` (Wächter-Fix) → `288efc8` /
+`38a4387` (Bericht nachgezogen). Archiv-SHA nicht prüfbar (Paket lag entpackt),
+`SHA256SUMS.txt` alle 12 OK.
+
+**Umgesetzt (Punkt 2 von dreien):** `raumerkennung/breitenprofil.py` misst den
+tatsächlichen Breitenverlauf — Mittelachse, 100-mm-Abtastung, Abschnitte
+konstanter Breite (Tol. 100 mm, min. 500 mm), Engstellen getrennt, Türpunkte
+eigen, fehlende Messung `None` **mit Grund**, **nie ein Normwert als Fallback**.
+Drei Messfehler behoben (u. a. schiefe Normale: 1200 mm wurden als 1223,8 mm
+gemessen, jetzt 1200,8 mm). Ist: **209 von 307 Segmenten messbar (68,1 %)**.
+
+**Punkt 1 (natürliche Belichtung) und Punkt 3 (`Tuer.breite_mm`): nur Vorschlag,
+kein Code** — beide brauchen Contract-Felder (1.3.0 → 1.4.0, additiv, Default
+`None`) und damit die 3-Owner-Runde.
+
+**Die drei nächsten Sachen in meiner Lane, alle belegt:**
+1. **61 Fluchtwegsegmente ohne schneidendes Raumpolygon** (`flaeche_fehlt`) —
+   Erkennungslücke, größter Einzelposten der 98 nicht messbaren Segmente.
+2. **83 Muthgasse-Beschriftungsfahnen zählen als Türen** → `RaumModell.tueren`
+   308 statt ~225 (+27 %). Eigenständiger Erkennungs-Bug.
+3. **`dxf_renderer.py:524` erfindet still 900 mm Türbreite** (`breite_mm or 900.0`).
+
+**Fensterlage vorab gemessen** (für Punkt 1, falls er GO bekommt): Muthgasse
+Layer `A-GLAZ*` 579 Punkte (`A-GLAZ-IDEN` = Beschriftung, ausschließen) · Mollgasse
+nur Blockname, 17 INSERTs · Rennweg EG/OG3 in den `Wall_*`-Blöcken, **Einfügepunkt
+ist ein Dummy**, echte Lage nur über Blockgeometrie · **Barawitzka: null
+Fensterobjekte**. Oberlichter: 0 im ganzen Repo.
+
+**Weiter offen wie gehabt:** GESCHÄFTSLOKAL (blockiert, seit 2026-09-08) ·
+Render-Speicher `_figur` 8×/Plan (Leonis) · Spikey-Polygone Mollgasse raum_41/55
+(meine Lane) · Referenz-Frames UG/OG1 nicht verdrahtet · 4 Tür-Quoten-xfails ·
+Baufeld E2 ohne Zielbild · `Projekte/BVH Fischamenderstrasse/fertige
+Elektromontagepläne/` unausgewertet.
+
+---
+## ═══ SELMAN: Stand 2026-09-09 ═══
+
+**Branch:** `selman/extents-ausreisser`, **gepusht**, PR offen. `origin/main` gemergt
+(Leonis: 1:50-Vektor-PDF auf ISO-A-Blatt, DIN-Farbtrennung, Richtungspfeile,
+Sichtlinien-Garantie, `mittellinie._raster`-Kappung). Contracts unverändert.
+**Suite nach dem Merge: 1096 passed, 10 skipped, 9 xfailed, 0 failed (19:55 min).**
+
+**Prüfstreckenlauf über alle fünf Pläne abgeschlossen** (Commit `cef2210`), gemessen:
+Barawitzka 38 Stempel/47 Räume, Türen 55/106, **Referenzvergleich 18 %** (2 Treffer /
+9 fehlend / 5 überzählig), 263 s · Mollgasse 83/62, Türen 70/147, RZ 30 SL 35, 292 s ·
+Muthgasse E2 99/102, **Türen 219/308**, RZ 64 SL 28, 1838 s · Rennweg EG 19/21,
+Türen 24/41, 56 s · Rennweg OG3 10/14, Türen 15/27, 52 s.
+
+**Bestandsaufnahme (10 Themen, belegt) — die zwei echten Baustellen:**
+1. **`RaumModell.anker` hat NULL Konsumenten** in `platzierung/` und `hauptengine/`
+   (`grep '\.anker'` dort leer). Stiegenhaus-/Ganganker inkl. `winkel_grad` und
+   `fluchtrichtung_grad` werden erzeugt, geprüft — und nie gelesen. Das ist die
+   plausibelste Einzelursache für die 18 % Referenz-Trefferquote.
+2. **WOHNUNG_PRIVAT-Filter greift nur in `flaechen_strategy.py:155-167`** — sechs
+   weitere Platzierungspfade laufen ungefiltert. Realbefund: Mollgasse 11,
+   Muthgasse 29 Leuchten in Wohnungen. Leonis' Lane, im Board gemeldet.
+
+**Weiter offen:** GESCHÄFTSLOKAL (3-Owner-Frage, blockiert) · Render-Speicher
+`_figur` 8×/Plan (Leonis) · Spikey-Polygone Mollgasse raum_41/55 (**meine Lane**,
+von Leonis übergeben) · Referenz-Frames UG/OG1 nicht verdrahtet (`_REFERENZ_FRAME`
+kennt nur Barawitzka_EG → 35 der 46 Referenzleuchten ungenutzt) · 4 Tür-Quoten-xfails
+(Ist 48–71 %, Ziel 90 %) · Baufeld E2 ohne Zielbild (nur ZIP) · unausgewertetes
+Referenzmaterial, größter Posten: `Projekte/BVH Fischamenderstrasse/fertige
+Elektromontagepläne/` (10+ fertige Elektropläne, in keiner Datei je erwähnt).
+
+---
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-08 abends) ═══
+
+**Branch:** `selman/extents-ausreisser` — **35 Commits vor `origin/main`, 0 dahinter**
+(Merge `956e827` gemacht). Suite nach dem Merge **1089 passed, 0 failed**.
+**NICHT gepusht** — Push/PR braucht Owner-GO.
+
+**Was diese Session gemacht hat (alles gemessen, nicht geschätzt):**
+1. `stempel_flutung._fuelle` auf Pillow-Scanline — `skimage.draw.polygon` kostete
+   O(BBox-Pixel × Stützpunkte), ein Ring der Baufeld-Wand-Union 166 s. **Baufeld E2
+   entsperrt: Kaskade 41 s statt >13 min, 0,47 GB, 237 Räume.**
+2. `kaskade`: Stempel-Typ auf L-/H-Räume zurückschreiben, **nach** der Flutung
+   (davor bleibt der Typ an verworfenen Polygonen hängen). Muthgasse Türen
+   27/311 → 219/307; xfail-Zielbild erreicht.
+3. `tuer_typisierung`: Türtext-Fallback darf `ist_notausgang=False` von
+   Balkontür/Garagentor nicht zurückdrehen (Geschosskürzel „E2" matchte das
+   Notausgang-Muster).
+4. `plan_pruefen._material_report` folgt dem Ausgabeziel — der Sammellauf hatte
+   `docs/MATERIAL_REPORT.md` überschrieben (zurückgeholt aus 45d60c7).
+5. **KINDERWAGENRAUM** als eigener Kanon-Typ + Token `kiwa` in `_EXTRA_OVERRIDE`
+   (reale Stempel schreiben „KIWA", nie „Kinderwagen"; als OVERRIDE, weil sonst
+   das generische `fahrrad`-Token den Mischraum „FAHRRADRAUM / KIWA" gewinnt).
+   Wirkung: Mollgasse RZ 26 → 28, Barawitzka RZ 2 → 3.
+
+**Offen / als Nächstes:**
+- **Push + PR** (Owner-GO nötig). Danach Board-Antworten abwarten.
+- **`GESCHÄFTSLOKAL`** — echte Kanon-Lücke, 3-Owner-Frage steht im Board.
+- **Render-Speicherfresser** `plan_pruefen._figur` (8× `draw_layout` je Plan,
+  ~13 GB) — Leonis' Lane, im Board gemeldet.
+- **Sammellauf wiederholen**, sobald der Render entlastet ist: der letzte lief nur
+  über 62 der 72 Ordner, und die Zwillinge (Barawitzka_EG/415_1_3,
+  Muthgasse_E2/M109B E2, Rennweg_EG/OG3) müssen vor jeder Statistik dedupliziert
+  werden.
+- **Vokabular:** Trefferquote 87 %; sechs Alias-Kandidaten sind mit Beleg
+  VERWORFEN (`docs/OFFENE_FRAGEN.md`) — nicht erneut vorschlagen ohne neuen Beleg.
+
+---
 ## ═══ SELMAN: HIER MORGEN WEITER (Zusammenfassung 2026-08-29) ═══
 
 **Branch:** `selman/raumerkennung-dxf` (gepusht). Setup: siehe oben §0. Test: `pytest -q`

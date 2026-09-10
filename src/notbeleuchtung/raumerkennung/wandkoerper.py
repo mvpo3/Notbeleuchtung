@@ -42,7 +42,9 @@ _WAND_LAYER = re.compile(
 # New_255; Mollgasse LEG-LILA/LEG-GRÜN = Belagsflächen, Rigol = Kiesrinne).
 _NEGATIV_LAYER = re.compile(
     r"New_060|New_255|M(?:Ö|OE|.)BEL|EINRICHT|MOBILIAR|PLANGRAFIK"
-    r"|LEG-LILA|LEG-GR.N|RIGOL|BELAG", re.IGNORECASE)
+    r"|LEG-LILA|LEG-GR.N|RIGOL|BELAG"
+    # Muthgasse (AIA-Layer): Boden/Decke/Flächen-Query sind nie Wände.
+    r"|A-FLOR|A-CLNG|Q-SPCQ", re.IGNORECASE)
 
 _BREITE_MIN_MM, _BREITE_MAX_MM = 50.0, 600.0
 _MIN_FLAECHE_MM2 = 5e4  # 0.05 m²
