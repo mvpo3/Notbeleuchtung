@@ -578,6 +578,12 @@ _ANKER_KUERZEL = {
     "RICHTUNGSWECHSEL": "RW", "KREUZUNG": "K", "ENDE": "E", "STRECKE": "S",
 }
 _SEG_FARBE = {"LINIE": "#0055cc", "GRAPH": "#00a040", "FALLBACK": "#888888"}
+# ZEICHEN-ERSATZMASSE, KEINE MESSUNG: Klemmgrenzen fuer den Tuer-Bogen im
+# Pruefbild. Sie bestimmen nur, wie gross der Bogen gemalt wird, und wandern in
+# kein Datenfeld. Eine Tuer ohne gemessene Breite (breite_mm is None) erscheint
+# damit so gross wie eine 400er — das ist Darstellung, kein Mass.
+_BOGEN_ZEICHEN_MIN_MM = 400.0
+_BOGEN_ZEICHEN_MAX_MM = 1500.0
 _AUSGANG_FARBE = {"final_exit": "#dd0000", "stair_exit": "#ff8800",
                   "door": "#777777"}
 _KIND_MARKER = {"rz": ("s", "#00a040"), "sicherheitsleuchte": ("o", "#0055cc"),
@@ -680,8 +686,9 @@ def _bild_fluchtweg(plan: DxfPlan, zoom, modell, wpolys: dict,
     for t in modell.tueren:
         w = _wandwinkel_bei(plan, t.xy_mm) or 0.0
         # Bogen-Durchmesser gedeckelt: breite Durchgänge (bis 3.8 m) würden
-        # sonst das Bild dominieren (Barawitzka-Sichtbefund).
-        d = min(max(t.breite_mm or 0.0, 400.0), 1500.0) / f
+        # sonst das Bild dominieren (Barawitzka-Sichtbefund). Reine Bildgröße,
+        # siehe _BOGEN_ZEICHEN_MIN_MM/_MAX — kein Maß der Tür.
+        d = min(max(t.breite_mm or 0.0, _BOGEN_ZEICHEN_MIN_MM), _BOGEN_ZEICHEN_MAX_MM) / f
         ax.add_patch(Arc((t.xy_mm[0] / f, t.xy_mm[1] / f), d, d, angle=w,
                          theta1=0.0, theta2=180.0, color="#994400", lw=1.5,
                          zorder=ztop + 2))
