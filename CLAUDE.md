@@ -88,6 +88,10 @@ Enis:   NormProvider ─► NormRegelwerk┘     └─► Leonis: Platzierer(Ra
 - `hauptengine/contracts/**` ändern = **Approval aller 3 Owner** (CODEOWNERS).
   Eigenes Package = eigenes Approval → schnelle Parallelarbeit, nur die Naht ist
   konsens-gebunden.
+- Ein Approval gilt **nur für den Stand, auf dem es erteilt wurde**. Jeder
+  nachgeschobene Commit entwertet es → neu reviewen. Das Gate
+  (`.github/workflows/contract-freeze.yml`, Check `contract-freeze`) prüft das
+  bei jedem Push.
 - Naht-Invarianten (CI, `tests/contract/`): `covers_segment ∈ RaumModell.segmente`
   (Leonis↔Selman) · `norm_quelle ∈ NormRegelwerk.quellen` (Leonis↔Enis) ·
   `catalog_key ∈ schrack_symbol_mapping.yaml`.

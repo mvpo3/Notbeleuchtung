@@ -1,0 +1,29 @@
+name: contract-freeze
+# Prozess-Gate zur Contract-Freeze-Regel: beruehrt ein PR die Contracts, muessen
+# ALLE CODEOWNERS approved haben — und zwar auf GENAU dem aktuellen head_sha.
+# Vorfall PR #149: PR am 09.09. mit anderem Inhalt angelegt, 55 Commits spaeter
+# nachgeschoben, 0 Reviews, gemerged. Deshalb laeuft der Check auf jedem
+# `synchronize` erneut und wertet ein Approval mit altem commit_id als veraltet.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  pull_request_review:
+    types: [submitted, dismissed]
+
+permissions:
+  contents: read
+  pull-requests: write   # nur fuer den Stale-Approval-Kommentar (Teil 2)
+
+jobs:
+  contract-freeze:
+    name: contract-freeze
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Approval-Gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: python3 .github/scripts/contract_freeze_check.py
