@@ -148,6 +148,55 @@ def test_erkennungsweite_im_prod_pfad():
     assert treffer == []
 
 
+def test_redundanz_garantie_und_hardfail():
+    """F07 / W19 (EN 50172 §5.1.8): (a) ein Fluchtweg-Abschnitt mit nur 1 Leuchte bekommt
+    durch `garantiere_redundanz` die fehlende zweite Sicherheitsleuchte (segment-genau, in
+    Erkennungsweite, schon konform = No-op); (b) ein Abschnitt mit < 2 Leuchten ist in der
+    Prüfung ein Hard-Fail (fehler)."""
+    from fakes import FakeNormProvider
+    from notbeleuchtung.hauptengine.contracts import (
+        BBox,
+        FluchtwegSegment,
+        Platzierung,
+        PlatzierungsErgebnis,
+        RaumModell,
+        ZirkulationsGraph,
+    )
+    from notbeleuchtung.hauptengine.validierung import gesamtstatus, pruefe
+    from notbeleuchtung.platzierung.deckung import (
+        _dist_punkt_polyline,
+        _redundanz_radius_mm,
+        garantiere_redundanz,
+    )
+
+    seg = FluchtwegSegment(
+        segment_id="S1", polyline_mm=[(0.0, 0.0), (10000.0, 0.0)], reason="long_run"
+    )
+    raum = RaumModell(
+        floor="X", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 3000.0)),
+        zirkulation=ZirkulationsGraph(segmente=[seg]),
+    )
+    norm = FakeNormProvider()
+    einzel = [Platzierung(xy_mm=(0.0, 0.0), catalog_key="k", kind="rz",
+                          height_mm=2400.0, circuit_hint="AGV-A-F13")]
+
+    # (a) Garantie: genau 1 Zusatz-SL, am Abschnitt, in Erkennungsweite.
+    mit_garantie = garantiere_redundanz(einzel, raum, norm)
+    zusatz = mit_garantie[len(einzel):]
+    assert len(zusatz) == 1
+    assert zusatz[0].kind == "sicherheitsleuchte"
+    assert zusatz[0].covers_segment == ["S1"]
+    assert _dist_punkt_polyline(zusatz[0].xy_mm, seg.polyline_mm) <= _redundanz_radius_mm(norm)
+    # schon konform (2 Leuchten in Reichweite) → No-op:
+    assert garantiere_redundanz(mit_garantie, raum, norm) == mit_garantie
+
+    # (b) Hard-Fail: 1 Leuchte am Abschnitt → fehler.
+    befunde = pruefe(raum, PlatzierungsErgebnis(floor="X", platzierungen=einzel))
+    b = next(x for x in befunde if "Redundanz" in x.regel)
+    assert b.status == "fehler"
+    assert gesamtstatus(befunde) == "fehler"
+
+
 def test_f03_rotation_zur_tuer_ein_helper():
     """F03 / W16: die 4× duplizierte Pfeil-Rotationsformel lebt jetzt in einem Helper.
     Exakte Kardinal-Werte (unten-Block-Basis, atan2+90 auf 90° gerastert)."""

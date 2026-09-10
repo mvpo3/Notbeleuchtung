@@ -19,6 +19,7 @@ Polygon — Stiegenhäuser/Wohnräume bleiben unberührt. Render-frei, kein Cont
 from __future__ import annotations
 
 from collections.abc import Callable
+from itertools import pairwise
 
 from notbeleuchtung.hauptengine.contracts import NormProvider, Platzierung, RaumModell
 
@@ -43,6 +44,106 @@ _VERDICHTUNGS_FAKTOR = 1.3
 _MIN_ABSTAND_MM = 4000.0   # Fluchtweg-SL realistisch ≥ 4 m Abstand (nicht 1,5 m)
 _MAX_ABSTAND_MM = 30000.0  # Sanity-Cap (Hersteller-Maximum Hochdecken-Optik ~35 m)
 _NACHWEIS_RASTER_MM = 250.0
+_REDUNDANZ_MIN = 2         # EN 50172 §5.1.8: je Fluchtweg-Abschnitt ≥ 2 Leuchten (= validierung._REDUNDANZ_MIN)
+_REDUNDANZ_RADIUS_FALLBACK_MM = 30000.0  # z=200·h=0,15=30 m, nur falls Provider keine Erkennungsweite liefert
+
+
+def _dist(a: tuple[float, float], b: tuple[float, float]) -> float:
+    return ((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2) ** 0.5
+
+
+def _dist_punkt_polyline(p, poly) -> float:
+    """Minimaler Abstand p→Polylinie (geklemmte Segment-Projektion). Lokal gehalten wie
+    in `validierung` — die Deckungs-Schicht bleibt dependency-leicht, identische Metrik."""
+    if not poly:
+        return float("inf")
+    if len(poly) == 1:
+        return _dist(p, poly[0])
+    best = float("inf")
+    for a, b in pairwise(poly):
+        dx, dy = b[0] - a[0], b[1] - a[1]
+        lq = dx * dx + dy * dy
+        if lq == 0.0:
+            d = _dist(p, a)
+        else:
+            t = max(0.0, min(1.0, ((p[0] - a[0]) * dx + (p[1] - a[1]) * dy) / lq))
+            d = _dist(p, (a[0] + t * dx, a[1] + t * dy))
+        best = min(best, d)
+    return best
+
+
+def _redundanz_radius_mm(norm: NormProvider) -> float:
+    """Redundanz-Reichweite = Erkennungsweite l=z·h aus der Norm (hinterleuchtet, 0,15 m) —
+    DIESELBE Metrik wie `validierung._redundanz_radius_mm` (F04), damit die Platzierungs-
+    Garantie und der Prüf-Hard-Fail denselben Radius sehen. Fallback nur, wenn die Norm
+    keine (positive) Erkennungsweite liefert."""
+    w = norm.erkennungsweite_m(0.15, hinterleuchtet=True) * 1000.0
+    return w if w and w > 0 else _REDUNDANZ_RADIUS_FALLBACK_MM
+
+
+def _resample_polyline(poly: list[tuple[float, float]], k: int) -> list[tuple[float, float]]:
+    """k gleich-(bogen-)verteilte Punkte auf der Polylinie (inkl. beider Enden)."""
+    if k <= 1 or len(poly) < 2:
+        mid = poly[len(poly) // 2] if poly else (0.0, 0.0)
+        return [mid]
+    seg_len = [_dist(a, b) for a, b in pairwise(poly)]
+    total = sum(seg_len)
+    if total <= 0.0:
+        return [poly[0]]
+    paare = list(pairwise(poly))
+    out: list[tuple[float, float]] = []
+    for j in range(k):
+        ziel = total * j / (k - 1)
+        acc = 0.0
+        for idx, ((a, b), ln) in enumerate(zip(paare, seg_len)):
+            if acc + ln >= ziel or idx == len(paare) - 1:
+                t = 0.0 if ln == 0.0 else (ziel - acc) / ln
+                out.append((a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1])))
+                break
+            acc += ln
+    return out
+
+
+def garantiere_redundanz(
+    platzierungen: list[Platzierung], raum: RaumModell, norm: NormProvider
+) -> list[Platzierung]:
+    """F07 / W19 — EN 50172 §5.1.8 [AT-verbindlich über ÖNORM EN 1838]: jeder Fluchtweg-
+    Abschnitt braucht ≥ 2 Leuchten (RZ/SL) in Erkennungsweite, damit ein Leuchten-Ausfall
+    den Abschnitt nicht verdunkelt. Abschnitte mit < 2 Leuchten in Reichweite bekommen die
+    fehlende(n) Sicherheitsleuchte(n) bogen-verteilt auf der Segment-Polylinie, möglichst
+    weit weg von den schon vorhandenen. **Minimal/segment-genau**: Abschnitte mit ≥ 2
+    Leuchten sind ein No-op → kein Golden-Shift auf schon konformen Plänen. Läuft VOR der
+    Stromkreis-Zuordnung, damit die Zusatz-Leuchten ihren getrennten SV-Kreis (F13) erhalten.
+    Radius = `norm.erkennungsweite_m` (identisch zur Prüfung)."""
+    segmente = raum.zirkulation.segmente if raum.zirkulation else []
+    if not segmente:
+        return platzierungen
+    radius = _redundanz_radius_mm(norm)
+    vorhandene = [p for p in platzierungen if p.kind in ("rz", "sicherheitsleuchte")]
+    zusatz: list[Platzierung] = []
+    for s in segmente:
+        poly = [tuple(pt) for pt in s.polyline_mm]
+        if not poly:
+            continue
+        nah = [p.xy_mm for p in (vorhandene + zusatz)
+               if _dist_punkt_polyline(p.xy_mm, poly) <= radius]
+        fehlen = _REDUNDANZ_MIN - len(nah)
+        if fehlen <= 0:
+            continue
+        anf = norm.fuer_fluchtweg_abschnitt(s)
+        # Kandidaten weit von schon vorhandenen Leuchten: größtmöglicher Ausfall-Abstand.
+        kandidaten = _resample_polyline(poly, max(2 * fehlen + 1, 3))
+        kandidaten.sort(key=lambda c: min((_dist(c, q) for q in nah), default=0.0), reverse=True)
+        for (x, y) in kandidaten[:fehlen]:
+            zusatz.append(Platzierung(
+                xy_mm=(x, y), catalog_key=_SL_KEY, rotation_deg=0.0,
+                height_mm=float(anf.montagehoehe_mm), kind="sicherheitsleuchte",
+                # Vorläufiger getrennter SV-Kreis (F13); `circuit_zuordnung` vergibt final.
+                # MUSS F13 tragen, sonst schlägt der getrennte-Kreis-Hard-Stop (F06) zu.
+                richtung="gerade", circuit_hint=f"AGV-A-F{_AGV_SV_F}",
+                covers_segment=[s.segment_id], norm_quelle=anf.quelle,
+            ))
+    return platzierungen + zusatz
 
 
 def _nachweis_punkte(linie: list, breite_mm: float) -> tuple[list, list]:

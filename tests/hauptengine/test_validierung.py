@@ -176,13 +176,13 @@ def test_konformer_plan_ist_ok():
     assert all(b.status == "ok" for b in befunde)
 
 
-def test_redundanz_einzelne_leuchte_ist_warnung():
-    # Nur 1 Leuchte am Abschnitt → kein Ausfallschutz (EN 50172) → Warnung, kein Fehler.
+def test_redundanz_einzelne_leuchte_ist_fehler():
+    # F07/W19: Nur 1 Leuchte am Abschnitt → kein Ausfallschutz (EN 50172) → HARD-FAIL.
     befunde = pruefe(_raum("s1"), _erg(_rz(xy=(0.0, 0.0))))
     b = next(b for b in befunde if "Redundanz" in b.regel)
-    assert b.status == "warnung"
+    assert b.status == "fehler"
     assert "1/1" in b.detail
-    assert gesamtstatus(befunde) != "fehler"
+    assert gesamtstatus(befunde) == "fehler"
 
 
 def test_redundanz_zwei_leuchten_ist_ok():

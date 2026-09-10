@@ -43,7 +43,7 @@ from .anker_strategy import plan_rettungszeichen_anker
 from .aussen_strategy import plan_aussenleuchten
 from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
 from .communal_stgh_strategy import plan_rettungszeichen
-from .deckung import verdichte_fluchtweg
+from .deckung import garantiere_redundanz, verdichte_fluchtweg
 from .flaechen_strategy import plan_antipanik, plan_sicherheitsleuchten
 from .gang_strategy import plan_rettungszeichen_gang
 from .geometry import point_in_polygon
@@ -175,6 +175,11 @@ class NotlichtPlatzierer:
         # Fluchtweg-Deckung nachträglich geometrisch zuordnen (füllt covers_segment,
         # das die RZ-Strategien selbst nicht setzen) → Deckungs-Prüfung wird aussagekräftig.
         platzierungen = deckungs_zuordnung.zuordnen(platzierungen, raum, norm)
+        # ≥2-Leuchten-Redundanz je Fluchtweg-Abschnitt garantieren (EN 50172 §5.1.8, F07):
+        # unterversorgte Abschnitte bekommen die fehlende SL. VOR der Stromkreis-Zuordnung,
+        # damit die Zusatz-Leuchten ihren getrennten SV-Kreis (F13) erhalten — sonst
+        # triggert der getrennte-Kreis-Hard-Stop (F06). No-op auf schon konformen Plänen.
+        platzierungen = garantiere_redundanz(platzierungen, raum, norm)
         # Stromkreise final vergeben: Dauer-/Bereitschaftslicht trennen + je Kreis deckeln
         # (statt alles grob auf AGV-{Gebäude}-F13 zu mischen). Läuft zuletzt, nach lb_override.
         platzierungen = circuit_zuordnung.zuordnen(platzierungen)
