@@ -182,7 +182,9 @@ def test_soll_echte_blocktueren_im_modell(plan, rm):
     reason="Soll ≥ 1 stair_exit an einer echten Blocktür — Ist Muthgasse E2 "
     "2026-09-10: 0 von 5. Gemessen: von den 18 Türen mit echtem A-DOOR/A-GLAZ-"
     "Block hat keine eine STIEGENHAUS-Seite; alle 5 stair_exit ruhen auf "
-    "Kontaktzonen-Artefakten aus durchgaenge_ohne_tuerblatt.",
+    "Kontaktzonen-Artefakten aus durchgaenge_ohne_tuerblatt. Der frühere "
+    "Anker tuer_50 ist widerlegt (keine Blocktür, 780,5 mm zum nächsten "
+    "A-DOOR-INSERT) — Belege in docs/ENIS_UEBERGABE_0908.md § 13.7.",
 )
 def test_soll_stair_exit_aus_echter_blocktuer(plan, rm):
     """Fachliches Zielbild als Ersatz für das reine Zählband oben.
@@ -194,13 +196,25 @@ def test_soll_stair_exit_aus_echter_blocktuer(plan, rm):
     vorher (12 Stück) noch heute (5 Stück). Das ist der eigentliche Defekt
     hinter der Kennzahl, und er ist älter als der Fahnen-Ausschluss.
 
-    Konkreter Ansatzpunkt, gemessen: ``tuer_50`` bei 334453 / 106403
-    (``quelle='arc_aussen+text:E2-VF-12a'``) liegt mit ``von_raum=stiegenhaus_1``
-    (STIEGENHAUS) an einem echten Stiegenhaus und bleibt untypisiert, weil die
-    Gegenseite ``raum_65`` keinen ``raum_typ`` trägt — die Regel
-    ``tuer_typisierung.py:154-156`` scheitert an der Raumtypisierung der
-    Gegenseite, nicht an der Türregel. Zielwert 1 ist damit nicht aus dem Ist
-    abgeleitet, sondern aus einer benennbaren echten Stiegenhaustür im Plan.
+    **Korrektur 2026-09-10 (Schritt 3, docs/ENIS_UEBERGABE_0908.md § 13.7):**
+    der frühere Ansatzpunkt ``tuer_50`` trägt diesen Zielwert NICHT. ``tuer_50``
+    bei 334453 / 106403 stammt aus ``quelle='arc_aussen+text:E2-VF-12a'``, also
+    aus einem ARC, und sitzt auf **keinem** Türblock — der nächste der 209
+    ``A-DOOR``/``A-GLAZ``-INSERTs liegt 780,5 mm entfernt. Sie fällt damit gar
+    nicht in die Menge ``_tueren_auf_blocktuer``. Der Ursprungsbefund hatte den
+    Abstand einer echten Blocktür zu einem STIEGENHAUS-*Polygon* gemessen
+    (``tuer_22``, 0 mm zu ``raum_88`` — dem Artefaktraum aus § 11.4), nicht zu
+    ``stiegenhaus_1``.
+
+    Ein ``raum_typ`` auf ``raum_65`` würde diesen Test folglich nicht drehen:
+    von den 18 echten Blocktüren hat keine eine STIEGENHAUS-Seite, und die drei
+    mit untypisierter Gegenseite (``tuer_11/12/13`` → ``raum_70/59/48``, alle
+    Stempelname ``Vorr.``) haben gegenüber GANG, lieferten also ``VORRAUM`` →
+    ``WOHNUNG_PRIVAT`` → ``wohnungseingang`` und ebenfalls keinen
+    ``stair_exit``. Der Zielwert 1 ruht damit derzeit auf keinem benannten
+    Anker; das Band bleibt trotzdem unverändert, weil ein aus dem Ist
+    abgeleitetes Band hier verboten ist (§ 11.5). Der belegte Defekt dahinter
+    ist unverändert: alle 5 ``stair_exit`` stammen aus Kontaktzonen-Artefakten.
     """
     echte = {(round(t.xy_mm[0]), round(t.xy_mm[1]))
              for t in _tueren_auf_blocktuer(plan, rm)}

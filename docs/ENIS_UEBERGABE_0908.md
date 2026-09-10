@@ -1309,7 +1309,7 @@ grün.
 | 5 | `test_soll_90_prozent_tueren_typisiert` | `tests/naht/test_soll_mollgasse.py:125` | Soll ≥ 90 %, Ist 70/147 — Nachbarräume ohne Kanon-Typ. |
 | 6 | `test_soll_final_exit_anzahl_gleich_endpunkte_an_der_kante` | `tests/naht/test_soll_mollgasse.py:159` | Dieselbe Ursache wie #4, als Zählgleichung formuliert: 9 `final_exit` gegen 43 Endpunkte. |
 | 7 | `test_soll_stair_exits` | `tests/naht/test_soll_muthgasse.py:112` | Soll ≥ 9 `stair_exit`, Ist 5. Band **bewusst nicht abgesenkt** — der einzige durch Messung gedeckte Ersatzwert wäre der Ist-Stand selbst, und aus dem Ist abgeleitete Bänder sind hier verboten (§ 11.5). |
-| 8 | `test_soll_stair_exit_aus_echter_blocktuer` | `tests/naht/test_soll_muthgasse.py:187` | Der fachlich belegte Ersatz zu #7: Soll ≥ 1 `stair_exit` an einer echten `A-DOOR`/`A-GLAZ`-Blocktür, Ist 0 von 5 — alle fünf ruhen auf Kontaktzonen-Artefakten. Zielwert aus `tuer_50`, nicht aus dem Ist. |
+| 8 | `test_soll_stair_exit_aus_echter_blocktuer` | `tests/naht/test_soll_muthgasse.py:187` | Der fachlich belegte Ersatz zu #7: Soll ≥ 1 `stair_exit` an einer echten `A-DOOR`/`A-GLAZ`-Blocktür, Ist 0 von 5 — alle fünf ruhen auf Kontaktzonen-Artefakten. Zielwert aus `tuer_50`, nicht aus dem Ist. **Korrigiert in § 13.7: `tuer_50` ist keine Blocktür (780,5 mm zum nächsten `A-DOOR`-INSERT), der Anker ist widerlegt; Band unverändert.** |
 | 9 | `test_soll_90_prozent_tueren_typisiert` | `tests/naht/test_soll_muthgasse.py:230` | Soll ≥ 90 %, Ist 206/291 = 70,8 % — Türen ohne typisierte Gegenseite. |
 | 10 | `test_soll_referenz_trefferquote` | `tests/naht/test_soll_referenzvergleich.py:57` | Zielbild ≥ 80 % Deckung gegen die Fachplaner-Leuchten, Ist 18 % — die Platzierungs-Strategien (Lane @mvpo3) sind noch nicht referenz-deckend. |
 | 11 | `test_soll_eg_90_prozent_tueren_typisiert` | `tests/naht/test_soll_rennweg.py:138` | Soll ≥ 90 %, Ist 24/41 — Gründe-Tabelle in `bericht.md`. |
@@ -1341,3 +1341,236 @@ grün.
   höchstens 4 Kerne), die Nennerfrage Muthgasse `A-DETL`, die 12
   Mollgasse-Segmente ohne lichtes Polygon (`docs/OFFENE_FRAGEN.md`, mit der
   Fluchtwegbreiten-Frage an @EnisAMG).
+
+---
+
+## 13. Nachtrag 2026-09-10 — Punkt 3 des Owner-Auftrags: `raum_65` (Muthgasse E2)
+
+Auftrag: „Wenn der Typ ableitbar ist, umsetzen und den Test scharf schalten."
+**Ergebnis: nicht umgesetzt, xfail bleibt.** Der Typ ist im Plan belegt, aber
+das passende Label existiert im Kanon nicht — die Festlegung gehört in
+`normwissen/` (@EnisAMG), nicht in `raumerkennung/`. Begründung unten, Fragen
+in `docs/OFFENE_FRAGEN.md`.
+
+Codestand `c7b52df`. `git diff --stat 1d9c03a..HEAD -- src/` ist leer, deshalb
+ist der Vorsessions-Provider-Dump `_p2_nachher.json` (291 Türen / 113 Räume)
+für HEAD gültig und wurde wiederverwendet statt neu zu parsen.
+Prüfstrecken-Zahlen aus `Projekte/_ergebnis/*/raeume.json` (Lauf `47df2d9`,
+2026-09-10 13:35). Messskripte (Session-Scratchpad, alle nur lesend, in diesem
+Schritt erneut gelaufen): `_r65_umfeld.py`, `_r65_vokabular.py`, `_r65_vf.py`,
+`_r65_tuer50.py`, `_r65_falschtreffer.py`, `_untyp_tabelle.py`.
+
+### 13.1 Steckbrief `raum_65`
+
+| Feld | Wert | Beleg |
+|---|---|---|
+| Fläche | 13,04 m² | `raeume.json`, `_p2_nachher.json` |
+| Polygon | 15 Punkte, bbox 333153…337815 × 106351…111004 mm (4,66 × 4,65 m), L-förmig um den Stiegenkern | `_r65_umfeld.py` |
+| Zentrum | 335 283 / 108 862 mm | `bericht.md:126` |
+| Kaskaden-Zweig | **L** (`raeume_aus_layer`), `flag=kein_stempel` | `raeume.json` `quelle:"L"` |
+| DXF-Herkunft | LWPOLYLINE Handle `73B8`, Layer `A-AREA-BNDY`, closed, 15 Stützpunkte, IoU 1,0000 gegen das Modell-Polygon | `_r65_umfeld.py` |
+| `raum_typ` | `''` (leer) | Dump |
+| `nutzungsklasse` | `None` | Dump |
+| Nachbarn (≤ 300 mm) | `stiegenhaus_1…5` (STIEGENHAUS, je 0 mm), `raum_46` GANG (180 mm), `raum_52` (untypisiert, 180 mm), `raum_89` BAD (267 mm) | `_r65_umfeld.py` |
+| Türen | 7 (`tuer_50`, `tuer_91`, `tuer_119`, `durchgang_120/140/141/142`), 3× `unbekannte_kombination`, 3× `beide_seiten_untypisiert` | `bericht.md:538,579,607,729,749-751` |
+
+Im Polygon liegen 49 Texte; vier davon bilden auf `A-AREA-IDEN` die vollständige
+Stempelgruppe: `E2-VF-11a` (Nummer), `Schl.` (Name), `13,04 m²` (Fläche,
+deckungsgleich mit dem Polygon), `Ker.Bel.` (Belag) — alle vier innerhalb
+194–360 mm zueinander, weit innerhalb des Stempelradius von 1500 mm.
+
+### 13.2 Geprüfte Ursachen — drei widerlegt, eine belegt
+
+- **„Kein Stempel im Polygon" — widerlegt.** Der Stempel ist vollständig und
+  liegt mittendrin (Abstand 0 mm).
+- **„Kein Polygon aus Layer oder HATCH" — widerlegt.** Echtes geschlossenes
+  Architekten-Polygon auf `A-AREA-BNDY` (im Kanon der Raum-Layer,
+  `raumlayer.py:34-35`), IoU 1,0. Der Plan hat 160 solche Entities und 0 HATCH
+  auf Raum-Layern.
+- **„Restfläche ohne greifende Regel" — strukturell ausgeschlossen.**
+  `rest_komponenten.komponenten_ohne_stempel` sieht `raum_65` nie:
+  `kaskade.py:145` übergibt alle L/H/F-Polygone als `belegte`,
+  `rest_komponenten.py:147-152` maskiert sie (100 mm Puffer) aus dem Raster.
+  Muthgasse hat folgerichtig R:0; die drei Geometrieregeln
+  (`rest_komponenten.py:89-102`) laufen für `raum_65` nie.
+  `nutzungsklasse.py:54-56` ist reine Nachschlagetabelle `raum_typ →
+  Nutzungsklasse` und liefert ohne `raum_typ` `None`.
+- **Vokabular-Lücke — das ist die Ursache, belegter Regelpfad.**
+  `stempel_anker.finde_stempel` (`:230-245`) sieht `A-AREA-IDEN` layerunabhängig,
+  Anker ist der m²-Text. `Ker.Bel.` wird als Belag erkannt; Kandidaten bleiben
+  `Schl.` und `E2-VF-11a`. In `stempel_anker.py:219-221` gilt
+  `name_frag = next((f for f in kandidaten if _typ(f[0])), None)` und bei `None`
+  ein `continue`. Gemessen: `raumtyp_flags('Schl.') = None`,
+  `raumtyp_flags('E2-VF-11a') = None`, `classify_room('Schl.') =
+  RoomType.UNKNOWN` — `schl` steht in keinem der drei Wörterbücher
+  (`raumtyp.py` `_EXTRA_LABELS:65`, `_EXTRA_DIRECT:95`, `_EXTRA_OVERRIDE:125`).
+  ⇒ Es entsteht **gar kein `Stempel`**, deshalb `flag=kein_stempel`, deshalb
+  kein `Zuordnung`-Eintrag, deshalb greift die Rückschreibung
+  `kaskade.py:118-128` nicht.
+
+Dasselbe Muster trifft alle zehn untypisierten Muthgasse-Räume — jeder trägt
+einen vollständigen `A-AREA-IDEN`-Stempel mit einem Namen außerhalb des Kanons:
+`Vorr.` (raum_48/59/70), `SR` (raum_52/71), `Schrankr.` (raum_61), `Schl.`
+(raum_65/67), `Aufzug 1`/`Aufzug 2` (raum_77/78).
+
+**Der Code hat sich korrekt verhalten: er hat einen Text nicht erfunden, den er
+nicht kennt.**
+
+### 13.3 Was der Plan über `raum_65` hergibt
+
+- Name `Schl.`, Nummer `E2-VF-11a`.
+- Das Nummernpräfix `VF` trägt in diesem Plan ausschließlich Verkehrsflächen
+  (`_r65_vf.py`, über alle nummerierten Stempelgruppen): `E2-VF-12` = `STGH`,
+  `E2-VF-13a/b/c` = `Gang`, `E2-VF-15a/b/c` = `Aufzug 1`/`Aufzug 2`/`FW-Aufzug`,
+  `E2-VF-12a` = `Podest 2.OG/1.OG`, `E3-VF-12b/c` = `Stiege`, `E2-VF-11a/b` =
+  `Schl.`. **Null** Wohnungsräume unter `VF`; Wohnungsräume tragen durchweg eine
+  Top-Nummer (`E2-7-…`, `E2-9-…`), Nutzflächen `NF`.
+- Umfeld stützt dasselbe: 13,04 m², direkt an fünf STIEGENHAUS-Polygonen und an
+  `raum_46` GANG, mit `EI ₂ 30-C`-Türtexten an beiden Durchgängen.
+- ⇒ `Schl.` = **Schleuse** (Brandschutzschleuse vor dem Stiegenhaus), nicht
+  Schlafzimmer. Ein Schlafzimmer trüge eine Top-Nummer und keinen `Ker.Bel.`
+  zwischen zwei Brandschutztüren.
+
+### 13.4 Warum trotzdem kein Code in unserer Lane
+
+1. `SCHLEUSE` existiert im Kanon nicht (`docs/VOKABULAR.md` § 1, Zeilen 17–39
+   vollständig geprüft). Ein neuer Kanon-Typ plus Nutzungsklasse plus
+   Notlicht-Konsum ist `normwissen/` (@EnisAMG) bzw. `platzierung/` (@mvpo3).
+2. Die Abkürzung `Schl.` löst der *Leser* auf, nicht der Plan — sie wird
+   nirgends ausgeschrieben. Ein Wörterbucheintrag `schl → …` ist eine fachliche
+   Festlegung, keine Messung.
+3. Ersatzweise `GANG` zu setzen wäre genau das verbotene Raten: eine Schleuse
+   ist kein Gang, und der Unterschied entscheidet über die Nutzungsklasse und
+   damit über eine Leuchte an falscher Stelle.
+
+**Untypisiert ist für `raum_65` das korrekte Ergebnis, solange die
+Vokabular-Frage offen ist.**
+
+### 13.5 Falschtreffer-Messung (der (c)-Teil, vorsorglich)
+
+`_r65_falschtreffer.py`, token-exakt über alle Texte und ATTRIBs aller fünf
+Pläne. „Falschtreffer" = Treffer ohne m²-Nachbar, also kein Raumstempel:
+
+| Kandidat-Token | Bara. | Moll. | Muth. | Renn_EG | Renn_OG3 | Falschtreffer |
+|---|--:|--:|--:|--:|--:|---|
+| `schl` | 0 | 0 | 2 (`Schl.`) | 0 | 0 | **0 auf allen fünf Plänen** |
+| `vorr` | 0 | 0 | 9 (`Vorr.`) | 0 | 0 | 0 |
+| `schrankr` | 0 | 0 | 1 | 0 | 0 | 0 |
+| `sr` | 1 | 1 | 3 | 0 | 0 | 0 |
+| `aufzug` | 10 | 2 | 3 | 1 | 1 | **11** (Kabinen-/Bedienfeldtexte, Maßketten) |
+| `stiege` | 4 | 0 | 4 | 0 | 0 | **4** (Barawitzka `STIEGE 2 EINGANG`) |
+| `podest` | 0 | 8 | 1 | 0 | 0 | **4** (Höhenkoten `FOK PODEST = +1.18`) |
+
+Ein Eintrag `schl` erzeugte auf den anderen vier Plänen null Falschtreffer. Das
+Risiko liegt also nicht in der Regel, sondern im **Label**: welcher Kanon-Typ
+und welche Nutzungsklasse einer Schleuse zustehen. `aufzug`, `stiege`, `podest`
+sind dagegen echte (c)-Fälle und ohne m²-Kontextbedingung nicht sicher.
+
+### 13.6 Untypisierte Räume über alle fünf Pläne (`_untyp_tabelle.py`)
+
+Quelle `Projekte/_ergebnis/<Plan>/raeume.json`, Lauf `47df2d9`. „Untypisiert" =
+`typ` leer oder `UNBEKANNT`. „ohne Zweig" = Stempel ohne Polygon
+(`flag=kein_polygon`).
+
+| Plan | Räume ges. | untypisiert | % | untypisiert je Zweig | Räume je Zweig |
+|---|--:|--:|--:|---|---|
+| Barawitzka_EG | 48 | 6 | 12,5 % | L:1 H:4 F:0 R:1 | L:2 H:40 F:2 R:3 |
+| Mollgasse_EG | 85 | 28 | 32,9 % | L:0 H:8 F:11 R:0 + 9 ohne Zweig | L:0 H:10 F:52 R:0 |
+| Muthgasse_E2 | 110 | 10 | 9,1 % | L:10 H:0 F:0 R:0 | L:80 H:1 F:20 R:0 |
+| Rennweg_EG | 21 | 5 | 23,8 % | L:5 H:0 F:0 R:0 | L:19 H:0 F:0 R:2 |
+| Rennweg_OG3 | 14 | 1 | 7,1 % | L:0 H:0 F:0 R:1 | L:10 H:0 F:0 R:4 |
+| **Summe** | **278** | **50** | **18,0 %** | | |
+
+Charakter der Lücken:
+
+- **Barawitzka**: 5 × `kein_stempel` + 1 R-Rest 3,40 m².
+- **Mollgasse**: fast alles Vokabular/Außenraum — `EIGENGARTEN TOP 1-3`,
+  `GESCHÄFTSLOKAL`, `KLEINKINDERSPIELPLATZ`, `PODEST`, `GEHWEG`, `VORPLATZ`,
+  `STAUDENBEET`, `GARAGENRAMPE`, `AUFZUG 8 PERS.`, `SR`; 9 davon ohne Polygon.
+- **Muthgasse**: ausschließlich L-Zweig, ausschließlich `kein_stempel`,
+  ausschließlich die Vokabular-Lücke aus § 13.2.
+- **Rennweg_EG**: 5 × Vokabular (`Müllplatz`, `Geschäftslokal 1`,
+  `GESCHÄFTLOKAL`, `Zugangsweg`, `Garageneinfahrt`), alle `flag=ok` — Polygon
+  und Fläche korrekt, nur der Typ fehlt.
+- **Rennweg_OG3**: 1 R-Rest 10,09 m².
+
+**Abgleich mit der Prüfstrecken-Kennzahl „Rest typisiert / untypisiert".**
+`scripts/plan_pruefen.py:1399-1400` zählt über `rest_r`, und `rest_r` ist
+ausschließlich der R-Zweig (`kaskade.py:151`). Die Kennzahl misst also nicht
+„untypisierte Räume", sondern „untypisierte Rest-Komponenten". Gegenprobe aus
+denselben `raeume.json`:
+
+| Plan | R-Räume | gemessen typisiert / untypisiert | VERLAUF.md `47df2d9` |
+|---|--:|---|---|
+| Barawitzka_EG | 3 | 2 / 1 | „2 / 1" ✔ |
+| Mollgasse_EG | 0 | 0 / 0 | „0 / 0" ✔ |
+| Muthgasse_E2 | 0 | 0 / 0 | „0 / 0" ✔ |
+| Rennweg_EG | 2 | 2 / 0 | „2 / 0" ✔ |
+| Rennweg_OG3 | 4 | 3 / 1 | „3 / 1" ✔ |
+
+Fünf von fünf identisch — die Kennzahl ist richtig, sie beantwortet nur eine
+andere Frage. Muthgasse meldet „0 / 0" und hat gleichzeitig 10 untypisierte
+Räume, weil alle 10 aus dem L-Zweig kommen und der R-Zweig leer ist. Auch
+„Restflächen 11" ist etwas anderes: `rest_n` (`:1406`) = `restflaechen(...) +
+rest_r` = Polygone ohne Stempel aus allen Zweigen = 10 L + 1 H. *Nebenbefund,
+nicht Teil des Auftrags:* der Kennzahlname ist für das Gemessene irreführend;
+Umbenennen wäre Prüfstrecken-Kosmetik und wurde hier nicht angefasst.
+
+### 13.7 Korrektur an § 11.5 / § 12.5: `tuer_50` ist keine Blocktür
+
+Der strict-xfail `test_soll_stair_exit_aus_echter_blocktuer`
+(`tests/naht/test_soll_muthgasse.py`) zählt über `_tueren_auf_blocktuer` nur
+Türen, die auf einem `A-DOOR`/`A-GLAZ`-INSERT ± 2 mm sitzen. Gemessen
+(`_r65_tuer50.py`, 209 solche INSERTs im Plan):
+
+```
+A-DOOR/A-GLAZ-INSERTs: 209
+tuer_50 @(334453,106403) auf Blocktuer: False []
+   naechster A-DOOR/A-GLAZ-INSERT: (334077, 107087,
+   'HNP_T_BZ_2-DF - HNP_T44_BZ-A_A_EI_30-C_2DF_150_5x200-V455-E 2 - FOK AF 300',
+   'A-DOOR') d=780.5 mm
+```
+
+`tuer_50` stammt aus `quelle='arc_aussen+text:E2-VF-12a'`, also aus einem ARC,
+nicht aus einem Block-INSERT. Die Aussage in § 11.5 („wäre der Typ da, gäbe es
+mindestens einen `stair_exit` aus einer echten Blocktür") und der daraus
+abgeleitete Zielwert-Anker in § 12.5 Zeile #8 beruhen auf einer Verwechslung:
+dort war „nächster Abstand einer echten Blocktür zu einem STIEGENHAUS-*Polygon*
+= 0 mm" gemessen — das ist `tuer_22`, und ihr 0-mm-Nachbar ist `raum_88`, der
+Artefaktraum aus § 11.4, nicht `stiegenhaus_1`.
+
+Vollzähliger Gegenbeweis, alle 18 echten Blocktüren mit ihren Nachbarn
+(`_r65_tuer50.py`): `tuer_1` WC→GANG, `tuer_2` KEIN_RAUM→BAD, `tuer_3`
+ZIMMER→KEIN_RAUM, `tuer_4` KEIN_RAUM→KÜCHE, `tuer_5/6` GANG→KÜCHE, `tuer_7`
+GANG→VORRAUM, `tuer_8` BALKON→KÜCHE, `tuer_9` KEIN_RAUM→VORRAUM, `tuer_10`
+GANG→ABSTELLRAUM, `tuer_11/12/13` GANG→raum_70/59/48 (untypisiert, alle
+`Vorr.`), `tuer_14/15` KÜCHE→AUSSEN, `tuer_16` ZIMMER→AUSSEN, `tuer_17`
+AUSSEN→ZIMMER, `tuer_22` BAD→GANG. **Keine einzige hat eine STIEGENHAUS-Seite.**
+Die drei mit untypisierter Gegenseite hätten mit einem Typ `VORRAUM`
+(`WOHNUNG_PRIVAT`) `wohnungseingang` und damit ebenfalls keinen `stair_exit`.
+
+**Folge: Ein Typ auf `raum_65` hätte diesen xfail auch dann nicht gedreht, wenn
+wir ihn hätten setzen dürfen.** Der Test bleibt strict-xfail; Band unverändert,
+nicht abgesenkt. Geändert wurden nur `reason` und Docstring, weil beide eine
+widerlegte Ursache behaupteten.
+
+Ergänzend für `test_soll_stair_exits` (Band ≥ 9) gemessen, was ein Typ auf
+`raum_65` über `tuer_typisierung.py:152-156` / `ausgaenge.py:62-64` bewirken
+würde:
+
+| hypothetischer Typ | Nutzungsklasse | Wirkung auf `tuer_50` |
+|---|---|---|
+| GANG / STIEGENHAUS / AUFZUGSVORPLATZ | ALLGEMEIN_ERSCHLIESSUNG | `stiegenhaustuer` → +1 `stair_exit` |
+| VORRAUM | WOHNUNG_PRIVAT | `wohnungseingang` → kein `stair_exit` |
+| ABSTELLRAUM | WOHNUNG_PRIVAT | kein `stair_exit` |
+
+### 13.8 Was in diesem Schritt gemacht und was nicht gemacht wurde
+
+Gemacht: Messung, dieser Befund, die Vokabular-Fragen in
+`docs/OFFENE_FRAGEN.md`, Korrektur von `reason` und Docstring des xfail.
+
+Nicht gemacht: keine Änderung an `raumtyp.py`, `nutzungsklasse.py`,
+`stempel_anker.py` oder sonst in `src/`; kein xfail scharf geschaltet; kein
+Zielband geändert; keine Contract-Änderung (`hauptengine/contracts/**`
+unberührt, `raum_modell` 1.4.0 wartet weiter auf das Approval von @EnisAMG);
+kein Push, kein PR, kein Merge.

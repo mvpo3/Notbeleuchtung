@@ -670,3 +670,51 @@ Breite des Wegs dorthin).
 
 Ohne Antwort bleibt die Behandlung wie heute: keine Messung, `None` mit Grund.
 **Owner: Enis (`normwissen/`).**
+
+### @EnisAMG — Raumstempel-Abkürzungen ohne Kanon-Eintrag (Muthgasse E2)
+
+Reine Vokabular-Entscheidung, keine Code-Frage. Belege in
+`docs/ENIS_UEBERGABE_0908.md` § 13.
+
+Alle 10 untypisierten Räume in Muthgasse_E2 tragen einen **vollständigen,
+korrekt gefundenen** Raumstempel auf `A-AREA-IDEN` (Nummer, Name, m², Belag).
+Sie bleiben untypisiert, weil der Name in keinem der drei Wörterbücher in
+`raumtyp.py` steht (`_EXTRA_LABELS:65`, `_EXTRA_DIRECT:95`,
+`_EXTRA_OVERRIDE:125`) und `stempel_anker.py:219-221` ohne erkannten Namen gar
+keinen `Stempel` erzeugt. Wir setzen nichts, solange die Zuordnung nicht
+fachlich entschieden ist — ein geratener `raum_typ` erzeugt eine Leuchte an
+falscher Stelle.
+
+- **Frage 1 — `Schl.` (2 Räume: `raum_65` 13,04 m², `raum_67` 3,73 m²).**
+  Der Plan belegt eine Verkehrsfläche: Nummer `E2-VF-11a`/`-11b`, und das
+  Präfix `VF` trägt in diesem Plan ausschließlich Verkehrsflächen (`STGH`,
+  `Gang`, `Aufzug 1/2`, `FW-Aufzug`, `Podest`, `Stiege`) — kein einziger
+  Wohnungsraum, die tragen Top-Nummern. `raum_65` liegt mit 0 mm Abstand an
+  fünf STIEGENHAUS-Polygonen, hat `Ker.Bel.` und `EI ₂ 30-C`-Türen an beiden
+  Durchgängen. Wir lesen das als **Schleuse** (Brandschutzschleuse vor dem
+  Stiegenhaus), nicht als Schlafzimmer — ausgeschrieben steht es im Plan
+  nirgends.
+  → Bekommt `Schleuse` einen eigenen Kanon-Typ (`docs/VOKABULAR.md` § 1 kennt
+  ihn nicht), und mit welcher Nutzungsklasse? Wirkung, gemessen:
+  `ALLGEMEIN_ERSCHLIESSUNG` würde 2 Räume typisieren und `tuer_50` zur
+  `stiegenhaustuer` machen (+1 `stair_exit` für `test_soll_stair_exits`);
+  `WOHNUNG_PRIVAT` hätte keine Wirkung auf die Ausgänge.
+- **Frage 2 — `Vorr.` (3 Räume) und `Schrankr.` (1 Raum).**
+  Gilt `Vorr.` als `VORRAUM` und `Schrankr.` als `ABSTELLRAUM`? Beide Kanon-Typen
+  existieren, nur die Abkürzung fehlt im Wörterbuch. Beide führen zu
+  `WOHNUNG_PRIVAT`, also ohne Wirkung auf Ausgänge — sie schließen aber die
+  Türtypisierungs-Lücke `unbekannte_kombination` bei `tuer_11/12/13`.
+- **Frage 3 — `SR` (2 Räume Muthgasse, je 1 in Barawitzka und Mollgasse) sowie
+  `Aufzug 1`/`Aufzug 2` (2 Räume).** `SR` ist ohne Auflösung mehrdeutig.
+  `Aufzug` steht als Token nur über `fw` (`FW-Aufzug`) im Wörterbuch; ein
+  Eintrag `aufzug` hätte über alle fünf Pläne **11 Falschtreffer** (Kabinen- und
+  Bedienfeldbeschriftungen, Maßketten) und ist ohne m²-Kontextbedingung nicht
+  sicher.
+
+Falschtreffer-Messung über alle fünf Pläne (`_r65_falschtreffer.py`,
+token-exakt, „Falschtreffer" = Treffer ohne m²-Nachbar, also kein Raumstempel):
+`schl` 0, `vorr` 0, `schrankr` 0, `sr` 0, `aufzug` 11, `stiege` 4, `podest` 4.
+Die ersten vier wären also risikofrei umsetzbar, sobald das **Label** feststeht.
+
+**Owner: Enis (`normwissen/`).** Bis zur Antwort bleiben die Räume untypisiert;
+das ist gewollt und kein Defekt.
