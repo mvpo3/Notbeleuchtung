@@ -274,3 +274,31 @@ def test_breite_max_ist_ohne_bestimmung_none() -> None:
     """Default des Modells: nicht bestimmt heißt None, nie 0.0."""
     from notbeleuchtung.raumerkennung.breitenprofil import Abschnitt
     assert Abschnitt(0.0, 100.0, 1200.0).breite_max_mm is None
+
+
+def test_alter_positionsaufruf_mit_quelle_bleibt_unveraendert() -> None:
+    """Regression zur Einführung von breite_max_mm.
+
+    Vorher war ``quelle`` das VIERTE Positionsargument. Stünde das neue Feld
+    positional davor, würde ``Abschnitt(v, b, breite, "handmessung")`` still zu
+    ``breite_max_mm="handmessung"`` — ein Bedeutungswechsel ohne Fehlermeldung.
+    Deshalb ist ``breite_max_mm`` keyword-only; dieser Test hält die
+    Positionsfolge fest.
+    """
+    import inspect
+
+    from notbeleuchtung.raumerkennung.breitenprofil import Abschnitt
+
+    a = Abschnitt(0.0, 100.0, 1200.0, "handmessung")
+    assert (a.von_mm, a.bis_mm, a.breite_mm) == (0.0, 100.0, 1200.0)
+    assert a.quelle == "handmessung"        # NICHT in breite_max_mm gelandet
+    assert a.breite_max_mm is None          # ohne Angabe bleibt es None
+
+    b = Abschnitt(0.0, 100.0, 1200.0)       # Aufruf ohne quelle, wie bisher
+    assert b.quelle == "gemessen" and b.breite_max_mm is None
+
+    par = inspect.signature(Abschnitt).parameters
+    assert [n for n, p in par.items()
+            if p.kind is p.POSITIONAL_OR_KEYWORD] == [
+        "von_mm", "bis_mm", "breite_mm", "quelle"], par
+    assert par["breite_max_mm"].kind is par["breite_max_mm"].KEYWORD_ONLY
