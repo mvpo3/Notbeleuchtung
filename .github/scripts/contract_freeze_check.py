@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Contract-Freeze-Gate: Approval aller CODEOWNERS auf dem AKTUELLEN head_sha.
 
 Beruehrt ein PR weder `hauptengine/contracts/` noch `CONTRACT_VERSION`, endet der
