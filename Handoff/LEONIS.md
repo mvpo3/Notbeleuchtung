@@ -4,6 +4,53 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-09-10 SPÄTABEND) — Branch `leonis/demo-l-gebaeude` (basiert auf wissensabgleich→main), SYNC + Owner-Regeln + Demo. HIER WEITER.
+
+**AKTIVER Branch = `leonis/demo-l-gebaeude`.** 1173 grün, ruff clean, **NICHTS gepusht.**
+Enthält den ganzen Wissensabgleich (F01–F14 minus F11) + main-Sync + heutige Owner-Arbeit.
+
+**Was heute passierte (chronologisch):**
+1. **Wissensabgleich Block 2+3 gepusht** auf `leonis/wissensabgleich-engine` (F07/F08/F09/F11/F13/F14),
+   PR bewusst OFFEN gelassen für Enis/Selman-Review (Owner-Wunsch).
+2. **Demo-Branch `leonis/demo-l-gebaeude`** (vom wissensabgleich-HEAD): synthetisches L-Gebäude aus
+   `Four-story-Apartment.dxf` gebaut (`scripts/demo/build_l_gebaeude.py` Generator + `run_demo.py` +
+   `demo_report.py`). Artefakte in `Projektbeispiele-demo-Platzierungslogik/demo/` (NICHT im Repo).
+3. **Blatt-Härtung** (`aaf5eba`, `dxf_renderer._baue_blatt_layout`): Fit fasst ALLE Inhalte
+   (Symbole vor Blatt gezeichnet + akkurate Bbox + Ausreißer-Cap auf größter Achse + 12% Rand) →
+   kein Plan-Teil ragt aus dem Fenster. **Owner-Regel: Pläne IMMER PDF, nie PNG** (Memory).
+4. **SYNC von origin/main** (59 Commits: Selman raumerkennung + `Tuer.breite_mm 0.0→None` Contract
+   **raum_modell 1.4.0**; Enis normwissen; F2 render). 1 Merge-Konflikt (anker_strategy, meine Lane)
+   gelöst = mains Türwand-Richtung + mein F03-Helper. `merge 70b2575`.
+5. **F11 ZURÜCKGENOMMEN** (`77006d7`, Owner-Entscheid): Sync brachte Enis' NEUE Guard-Tests
+   (`test_astv_arbeitsstaetten`, `test_quellenblock_e07_rl4`: `flaechen_schwellen is None`) → meine
+   F11-Füllung (60/8) kollidierte → revertet. `flaechen_schwellen` wieder leer, Enis-Guards grün.
+6. **4 Owner-Korrektur-Regeln** aus AutoCAD-Diff der korrigierten Demo-Pläne (`428fe82`):
+   **A** `mittellinie_snap.py` (RZ/Aufheller im Gang auf Bbox-Kurzachsen-Mitte, Tür-RZ ausgenommen) ·
+   **B** Leader-Beschriftung (`_draw_nodeid_labels`: LWPOLYLINE Symbol→Label) ·
+   **C** `_mittel_arm_rz` (langer Gang-Arm > 12 m Lücke → Zwischen-RZ) · **D** Tür-RZ ~150 mm ins
+   Raum-Innere (`fachpraxis`). test_fachpraxis nachgezogen.
+7. **Unterlage-Fix** (`17e08da`): bei Original-DXF als `unterlage_dxf` zeichnet die Engine keine
+   eigenen Räume/Türen mehr (Owner: „keine neuen Türen") — nur Unterlage + Fluchtweg + Symbole + Blatt.
+8. **Neues Projekt getestet:** `EG/1OG_Elektroplan_DE_NEU.dxf` (in P4). Erkennung typt 16/12 Räume
+   korrekt (02-TWA-Wände greifen!), ABER **0 Gebäude-Ausgänge** (AUSSEN-Türen = Balkone) + Gang
+   nicht als Fluchtziel → dünn. Enrichment (`run_projekt_neu.py`: Ausgänge an Gang-Enden) → voller
+   Plan. Output `Projektbeispiele-demo-Platzierungslogik/elektroplan_out/`.
+9. **Board-Notiz** (`7286f04`): Slice-3b (trainierter Dialekt-Detektor) Review für Selman in
+   `docs/COORDINATION.md` — Scope-Trennung, Skalen-Detekt, `confidence` durch die Naht.
+
+**OFFEN / Resume (Owner-GO nötig):**
+- **Push/PR** von `leonis/demo-l-gebaeude` (nichts gepusht). Enthält main-Sync + F11-Revert + Owner-Regeln.
+- **Selman-Nähte** (Board-Notiz gemacht, seine Lane): (a) Slice-3b-Detektor-Design; (b) **Ausgangs-/
+  Korridor-Ableitung auf `02-*-L04`-Dialekt** (Elektroplan → keine Gebäude-Ausgänge erkannt).
+- **Brandabschnitt-Slice** (3-Owner, nur Wissen da, nicht gebaut): OVE E 8101 §560.9 = **≥2 Kreise je
+  Brandabschnitt, ≤20 Leuchten/Kreis, Stiegenhaus eigener Strang**. `circuit_zuordnung` kennt heute
+  KEINE Brandabschnitte (`din_brandabschnitte`-Layer nicht erkannt/konsumiert). Selman erkennt →
+  RaumModell-Feld · Enis Schwellen · ich konsumiere. Quellen: PLATZIERUNGS_KONZEPTE.md:200,
+  Bildlehren_ONL_Zumtobel.md:37-42.
+- **`confidence`/`rolle`-Naht** = Contract-Frage (3-Owner) für den Detektor.
+
+---
+
 ## STAND (2026-09-10) — MULTI-SLICE Wissens-/Normabgleich, Phase 3 LÄUFT (Branch `leonis/wissensabgleich-engine`)
 
 **AKTIVE AUFGABE. Hier weitermachen.** Owner-Task: Wissens-/Normabgleich + Verbesserung
