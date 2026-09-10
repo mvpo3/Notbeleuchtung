@@ -13,7 +13,7 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-CONTRACT_VERSION = "1.3.0"
+CONTRACT_VERSION = "1.4.0"
 
 Klassifikation = Literal["rz", "antipanik", "sicherheitsleuchte"]
 
@@ -42,6 +42,10 @@ class NormAnforderung(BaseModel):
     #   LICHTBERECHNUNG_REFERENZ.md) — NICHT in EN 1838 beziffert. None = kein MF → Konsument
     #   rechnet mit 1,0 (inert). Konsum: platzierung.lux.wartungsfaktor_aus_norm.
     wartungsfaktor: float | None = None
+    # v1.4.0 (F13/W01) — obere Montagehöhen-Schranke für Rettungszeichen: oberhalb wird die
+    #   Erkennbarkeit (l=z·h, EN 1838 §5.5) fraglich. Real bis 10,8 m gebaut (Barawitzka),
+    #   daher WEICHE Warnung, kein Hard-Stop. [AT-Referenzpraxis]. None = keine Schranke.
+    montagehoehe_max_mm: int | None = None
     quelle: str = ""                     # "ÖNORM EN 1838:2013 §4.2.1" — rückverfolgbar
 
 
