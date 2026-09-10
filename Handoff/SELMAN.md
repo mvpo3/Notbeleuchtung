@@ -62,7 +62,274 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 
 ---
 
-## ═══ SELMAN: HIER WEITER (Stand 2026-09-10, Abschluss Schritte 1–6) ═══
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-10, Abschluss zweiter Block) ═══
+
+**Branch:** `selman/extents-ausreisser`, **PR #152 offen, kein Merge.** Commits
+dieser Runde: `f7fb165` (Contract-Freeze-Gate) · `79fc0bb` (Überlappungs-Riegel +
+Enis-Frage + Bereinigungsregeln) + Abschluss-Commit. **Kein Code in `src/`
+geändert**, `hauptengine/contracts/**` unberührt, keine Contract-Änderung.
+
+**Belege dieser Runde (echte Läufe):**
+- Prüfstrecke über alle fünf Pläne **nacheinander, ohne Parallellast**, exit 0 —
+  Barawitzka 258,6 s · Mollgasse 290,6 s · Muthgasse 1840,5 s · Rennweg_EG 56,1 s
+  · Rennweg_OG3 51,1 s. **Keine Kennzahl bewegt sich** gegen den Lauf `47df2d9`,
+  alle fünf `raeume.json` sind **byte-identisch** (`git diff` leer); geändert haben
+  sich nur die Laufzeit-Zeile in `bericht.md` und die Render-PNGs. Das ist das
+  **erwartete** Ergebnis, weil seit `47df2d9` kein `src/`-Code geändert wurde —
+  nicht wegerklärt, sondern gemessen.
+- Volle Suite: **`1211 passed, 10 skipped, 2 deselected, 11 xfailed, 2 warnings in
+  1153.08s (0:19:13)`**, exit 0, **keine XPASS-Zeile**. Die +11 gegen die 1200 des
+  Vorlaufs sind exakt die neuen Riegel-Tests.
+- **Kein xfail gedreht, kein Zielband geändert.** Die 11 XFAIL sind unverändert
+  dieselben: Barawitzka 3 (FLW-Linien fehlen im Plan / ≥90 % Türen / final_exit
+  deckt Endpunkte), Mollgasse 3 (final_exit-Deckung / ≥90 % Türen / final_exit =
+  Endpunktzahl), Muthgasse 3 (≥9 stair_exit / ≥1 stair_exit an echter Blocktür /
+  ≥90 % Türen), Referenzvergleich 1 (≥80 % Trefferquote), Rennweg 1 (≥90 % Türen).
+- `tests/naht/test_ueberlappung_riegel.py` + `tests/contract/test_keine_erfundenen_masse.py`
+  einzeln: **`14 passed in 1.32s`**.
+
+**Leitregel unverändert:** *der Code erfindet keine Maße und keine Typen.* Der
+AST-Riegel `tests/contract/test_keine_erfundenen_masse.py` setzt die Maß-Hälfte
+durch, er wurde nicht umgangen.
+
+**Was diese Runde gebaut hat:**
+
+1. **Contract-Freeze-Gate — Check `contract-freeze`**
+   (`.github/workflows/contract-freeze.yml` + `.github/scripts/contract_freeze_check.py`).
+   Anlass ist der #149-Vorfall (0 Reviews, 55 nachgeschobene Commits, alter Titel,
+   Contract-Bump 1.4.0 auf `main`). Der Check läuft auf `pull_request`
+   **inkl. `synchronize`** — das ist der Riegel gegen genau diese Lücke — und auf
+   `pull_request_review`. Owner-Logins kommen aus `.github/CODEOWNERS`, kein
+   zweiter Pflegeort. Ein Approval zählt nur bei `review.commit_id == head_sha`
+   (nicht `submitted_at`); pro Login zählt das jüngste wertende Review. Berührt ein
+   PR keine Contracts → **grün**, nicht geskippt, damit er als Required Status
+   Check taugt. Gegen echte Daten: **#149 exit 1, #152 exit 0.**
+   **ACHTUNG: das Gate allein verhindert nichts.** Auf `main` gibt es **keine
+   Branch Protection** (`GET .../branches/main/protection` → **404**), und unser
+   Token hat `admin:false`. **@mvpo3 muss sie setzen** — fertige Anleitung inkl.
+   `PUT`-Aufruf und den drei Check-Namen `test` / `contracts` / `contract-freeze`
+   in **`docs/BRANCH_PROTECTION.md`**.
+2. **Überlappungs-Riegel** `tests/naht/test_ueberlappung_riegel.py` (11 Tests,
+   0,24 s): Obergrenzen 9/42,3 · 16/45,8 · 37/174,2 · 0 · 0, Summe **62 / 262,3 m²**.
+   Steigt eine Zahl → rot; sinkt sie → Band im selben Commit nachziehen. Datenquelle
+   sind die eingecheckten `raeume.json` (die DXF sind nicht getrackt).
+3. **SCHLEUSE-Frage an @EnisAMG** in `docs/OFFENE_FRAGEN.md` — vollständig belegt,
+   **nicht geraten**: `Schl.` = Schleuse (Kanon-Typ + Nutzungsklasse nötig) oder
+   Schlafzimmer (`schl → ZIMMER`)? Wirkung gemessen, Falschtrefferrisiko 0.
+4. **§§ 17 + 18 in `docs/ENIS_UEBERGABE_0908.md` — beides NUR gemessen, nichts
+   umgesetzt.** § 17 Douglas-Peucker 20 mm: 14 149 → 5 740 Punkte (−59,4 %), 0
+   ungültige Polygone, 0 MultiPolygon-Zerfälle, Flächenfehler 0,058 % — **aber 17
+   von 245 Räumen reißen die 0,5-%-Grenze** (max 1,47 %, ausschließlich kleine
+   Räume, 15 davon auf Mollgasse), und als Bereinigung taugt es **nicht**: 62
+   bleibt 62 mit identischen IDs, 262,342 → 262,043 m². § 18 Muthgasse: **eine
+   Ursache, kein Bündel** — der F-Zweig bekommt `belegte` nicht übergeben; 31 von
+   32 relevanten Paaren F↔L, 100 % der Doppelfläche mit F-Beteiligung.
+   **Widerlegt**: Rasterauflösung (überall exakt 50 mm), HATCH-Zahl (Barawitzka 6×
+   mehr, 2× weniger Doppelbelegung), Layerstruktur (Muthgasse hat die
+   zweitwenigsten Layer), Blockverschachtelung (Rennweg tiefer). Zweiter,
+   unabhängiger und für die Überlappung folgenloser Mangel: Blattausdehnung
+   503,8 × 275,9 m gegen 46,8 × 47,9 m echtes Geschoss → 57,45 Mio Rasterzellen
+   Laufzeit und 7 Phantom-Fragmente (27 m²), aber **null Überlapper**.
+5. **`Projekte/_ergebnis/VERLAUF.md`** führt die Überlappungszahlen jetzt
+   dauerhaft mit (je Plan Überlapper >5 %, doppelbelegte Fläche absolut und in
+   Prozent, verschluckte LIFT/SCHACHT, plus Summenzeile).
+
+**NÄCHSTER PUNKT: unverändert die Bereinigung (§ 14.6 / § 14.6.1) — weiterhin
+NICHT freigegeben.** Die fünf Owner-Fragen sind offen; die Regelkaskade ist
+gerechnet (löst 62 von 62 Fällen, 0 ungelöst, Regel (d) greift im heutigen
+Bestand null Mal), aber (e) wäre **contract-berührend** (`polygon_roh`,
+`bereinigung`) und der Contract ist eingefroren.
+
+**Offen an @EnisAMG:** die SCHLEUSE-Frage (`Schl.`), die drei älteren
+Vokabular-Fragen (`Vorr.`/`Schrankr.`, `SR`/`Aufzug`), die Mollgasse-
+„Laubengang"-Frage — und das **weiterhin ausstehende Approval für `raum_modell`
+1.4.0**, das mit PR #149 ohne sein Approval auf `main` gelandet ist.
+**Offen an @mvpo3:** die **Branch Protection auf `main` setzen**
+(`docs/BRANCH_PROTECTION.md`) — ohne sie ist der neue Check nur Dekoration; und
+die Überlappungszahlen: `raum_79` (LIFT) liegt zu 97,6 % in `raum_88`
+(STIEGENHAUS), 13 Räume liegen zu >90 % ihrer eigenen Fläche in einem anderen,
+Leuchten können rechnerisch in verschluckten Polygonen landen.
+
+**Vorbestehend rot, nicht von uns und nicht repariert:** `ruff check .` → 4 ×
+`ISC004` in `scripts/plan_pruefen.py:1135,1143,1145,1147`. Die Datei ist in
+unseren Commits unverändert; der CI-Job `test` bleibt aus demselben Grund rot wie
+bei #149.
+
+**Mess- und Prüfskripte dieser Runde** (Session-Scratchpad
+`C:/Users/selma/AppData/Local/Temp/claude/D--KI-Projekt/8fc32369-9bee-42cd-9e07-20d9eeb9eff5/scratchpad`,
+alle nur lesend): `_freeze_probe.sh`, `_freeze_stale_probe.py`,
+`_s2_regel_umfang.py`, `_p4b_simplify.py`, `_p4b_liste17.py`, `_p4b_delta.py`,
+`_m5_struktur.py`, `_m5_zweige.py`, `_m5_cluster.py`, `_m5_fzweig.py`,
+`_m5_verteilung.py`, `_s3b_verlauf_overlap.py`; Rohlogs `_s3b_pruefstrecke.log`,
+`_s3b_pytest.log`.
+
+---
+
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-10, Abschluss-Runde 3) ═══
+
+**Branch:** `selman/extents-ausreisser`, **nicht gepusht, kein PR, kein Merge** —
+der Owner gibt das GO separat. Commits dieser Runde: `fff9f65` +
+Abschluss-Commit. **Kein Code in `src/` geändert** (`git diff --stat
+47df2d9..HEAD -- src/` ist leer), `hauptengine/contracts/**` unberührt.
+**Suite: 1200 passed, 10 skipped, 2 deselected, 11 xfailed, 0 XPASS, 0 failed
+(19:29 min), exit 0.**
+**Prüfstrecke bewusst NICHT gelaufen** und kein Lauf erfunden: ohne
+`src/`-Änderung liefert sie per Konstruktion die Zahlen des Laufs
+`2026-09-10 13:35 · 47df2d9`; `Projekte/_ergebnis/VERLAUF.md` bleibt deshalb
+unverändert.
+
+**Leitregel unverändert:** *der Code erfindet keine Maße und keine Typen.* Ist
+ein `raum_typ` nicht belegbar, bleibt der Raum untypisiert — ein geratener Typ
+ist schlimmer als keiner. Der AST-Riegel
+`tests/contract/test_keine_erfundenen_masse.py` setzt die Maß-Hälfte durch.
+
+**Was diese Runde geklärt hat (Details: `docs/ENIS_UEBERGABE_0908.md`
+§§ 13 + 14 + 15):**
+
+1. **`raum_65` (Muthgasse E2): nicht umgesetzt, xfail bleibt, Band unverändert.**
+   Der Raum trägt einen vollständigen `A-AREA-IDEN`-Stempel (`E2-VF-11a` /
+   `Schl.` / `13,04 m²` / `Ker.Bel.`), aber `raumtyp_flags('Schl.')` und
+   `classify_room('Schl.')` liefern `None` / `UNKNOWN`, deshalb bricht
+   `stempel_anker.py:219-221` ab und es entsteht gar kein `Stempel`.
+   **Vokabular-Lücke, kein Code-Fehler** — `SCHLEUSE` gibt es im Kanon nicht,
+   und Kanon-Typ + Nutzungsklasse sind Enis' Lane. Nebenbefund: der xfail wäre
+   ohnehin nicht gefallen, weil `tuer_50` **keine Blocktür** ist (780,5 mm zum
+   nächsten `A-DOOR`-INSERT) — Korrektur an § 11.5 / § 12.5 #8 steht in § 13.7.
+   Untypisiert über alle fünf Pläne: **50 von 278 Räumen = 18,0 %**.
+2. **Überlappende Raumpolygone vermessen — nur berichtet, auf Owner-Wunsch
+   NICHTS umgesetzt (§ 14).** **62 von 245 Räumen (25,3 %)** überlappen einen
+   anderen um >5 % ihrer eigenen Fläche (Muthgasse 37/101 = 37 %, Rennweg beide
+   0); **262,3 m² von 3329,4 m² (7,9 %)** Grundfläche gehören mehr als einem
+   Raum. **Ursache ist der F-Zweig (Stempel-Flutung), nicht
+   `rest_komponenten.py`:** 96 % der relevanten Paare haben einen F-Raum auf
+   mindestens einer Seite, aus dem R-Zweig stammt **kein einziger** Überlapper.
+   `flute_stempel` bekommt die belegten Raumpolygone gar nicht übergeben
+   (`stempel_flutung.py:227-233`), der F-Zweig hängt ungeprüft an
+   (`kaskade.py:110-126`), die H-Dedup misst IoU statt Anteil am kleineren
+   Polygon (`kaskade.py:90`). Der R-Zweig blockiert `belegte` im Raster
+   (`rest_komponenten.py:147-151`) und hat 0 von 9 Überlappern — das ist der
+   Gegenbeweis, dass die Rasterisierung nicht das Problem ist.
+
+**NÄCHSTER PUNKT: die REST-/Überlappungs-Bereinigung (§ 14.6).** Sie ist als
+**Vorschlag** ausgearbeitet und **noch nicht freigegeben**. Reihenfolge, wenn
+das GO kommt: (1) Riegel zuerst — ein Test, der 62 Überlapper / 262,3 m² als
+*Obergrenze* einfriert, plus ein `xfail`-Zielbild mit Sollwert 0 (heute gibt es
+**keinen** solchen Test); (2) `flute_stempel` bekommt die belegten Polygone und
+blockiert sie im Raster, exakt nach dem Muster aus `rest_komponenten.py:147-151`
+— adressiert 94 % der Doppelfläche; (3) Metrik in `kaskade.py:90` um „Anteil am
+kleineren Polygon > 0,5" ergänzen (Restposten 2 Paare / 13,9 m²); (4) nachmessen
+und Restfälle namentlich belegen.
+
+**Vor Schritt (2) müssen fünf Owner-Fragen beantwortet sein** (§ 14.6, Kurzform):
+Ursache oder Nachbereinigung? Was passiert mit einem F-Raum, der nach dem Abzug
+unter 1 m² fällt oder in Bruchstücke zerfällt? Darf „Flag ok" sinken, wenn dafür
+die Überlappung verschwindet? Ist die Rangfolge **L > H > F** richtig? Soll
+„Überlappende Räume / doppelt belegte m²" dauerhaft in `VERLAUF.md` und die
+Prüfstrecke? **Ohne diese Antworten nicht anfangen** — Schritt (2) kann Räume
+verschwinden lassen (1-m²-Kriterium `kaskade.py:114`) oder in
+Zusammenhangskomponenten zerlegen.
+
+**Offen an @EnisAMG:** drei Vokabular-Fragen in `docs/OFFENE_FRAGEN.md`
+(`Schl.`, `Vorr.`/`Schrankr.`, `SR`/`Aufzug`); die Mollgasse-„Laubengang"-Frage
+aus `47df2d9`; und das **weiterhin ausstehende Approval für `raum_modell`
+1.4.0**, das mit PR #149 ohne sein Approval auf `main` gelandet ist.
+**Offen an @mvpo3:** `raum_79` (LIFT) liegt zu 98 % in `raum_88` (STIEGENHAUS) —
+Leuchten können rechnerisch in verschluckten LIFT/SCHACHT-Polygonen landen;
+13 Räume liegen zu >90 % ihrer eigenen Fläche in einem anderen.
+
+**Messskripte dieser Runde** (Session-Scratchpad
+`C:/Users/selma/AppData/Local/Temp/claude/D--KI-Projekt/8fc32369-9bee-42cd-9e07-20d9eeb9eff5/scratchpad`,
+alle nur lesend, wiederverwendbar): `_r65_umfeld.py`, `_r65_vokabular.py`,
+`_r65_vf.py`, `_r65_tuer50.py`, `_r65_falschtreffer.py`, `_untyp_tabelle.py`,
+`_p4_overlap.py`, `_p4_detail.py`, `_p4_herkunft.py`, `_p4_top3.py`,
+`_p4_f_rate.py`.
+
+---
+
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-10, Abschluss-Runde 2) ═══
+
+**Branch:** `selman/extents-ausreisser`, **nicht gepusht, kein PR, kein Merge** —
+der Owner gibt das GO separat. Commits dieser Runde: `c3cd3e7` · `47df2d9` +
+Abschluss-Commit. **Kein Code in `src/` geändert, `hauptengine/contracts/**`
+unberührt.**
+**Suite: 1200 passed, 10 skipped, 2 deselected, 11 xfailed, 0 XPASS, 0 failed (19:08 min).**
+**Prüfstrecke über alle fünf Pläne gelaufen, diesmal OHNE Parallellast**
+(`scripts/plan_pruefen.py`, exit 0, Lauf `2026-09-10 13:35 · 47df2d9`).
+
+**Leitregel unverändert:** *der Code erfindet keine Maße.* Fehlende Messung ist
+`None` mit Quelle `UNBEKANNT` und einem Grund — nie ein Default, nie ein
+Normwert, nie ein Mittelwert. Der AST-Riegel
+`tests/contract/test_keine_erfundenen_masse.py` setzt das durch.
+
+**Was diese Runde geklärt hat (Details: `docs/ENIS_UEBERGABE_0908.md` §§ 11 + 12):**
+1. **Der Befund „3 echte Türen haben ihre Typisierung verloren" ist widerlegt.**
+   Zwei tatsächlich gelaufene Provider-Parses derselben DXF (`0d7c5db` gegen
+   HEAD, Worktree `D:/nbwt_vorher` steht noch) zeigen: die 3 war eine
+   **Saldo-Zahl** (15 − 5 Fahnen − 7), keine Mengendifferenz. Lagebezogen:
+   11 Ausgänge weg, 1 geblieben, 4 neu; davon 5 Beschriftungs-Fahnen und
+   6 Kontaktzonen-Artefakte. **Keine echte Tür ist verloren gegangen.**
+2. **Band `>= 9` in `test_soll_stair_exits` NICHT abgesenkt.** Der einzige
+   gemessen gedeckte Ersatzwert wäre der Ist-Stand (5) selbst — verboten.
+   Geändert wurde nur der `reason` (er behauptete die widerlegte Ursache) plus
+   Docstring. Der fachliche Ersatz steht als eigener strict-xfail daneben:
+   `test_soll_stair_exit_aus_echter_blocktuer`, Soll ≥ 1 `stair_exit` an einer
+   echten `A-DOOR`/`A-GLAZ`-Blocktür, **Ist 0 von 5** — Zielwert aus `tuer_50`
+   (334453/106403, `von_raum=stiegenhaus_1`), nicht aus dem Ist.
+3. **Mollgasse-„Laubengänge" sind keine Laubengänge** — alle 12 `flaeche_fehlt`-
+   Segmente liegen auf dem Außenanlagen-Layer `09-WEG_G00-LEG-M0` (Zaun,
+   Mauersockel, Pflanztrog h=40 cm, Rigol, Gehsteig, Restmüll). Bewusste Grenze
+   statt Pseudo-Fix, ausführlich in `docs/OFFENE_FRAGEN.md`: eine „nächste
+   durchgehende Linie"-Regel griffe bei **107 von 107** korrekt gemessenen
+   Segmenten auf das Achsraster `02-AXO` zu und ersetzte jede richtige Messung
+   durch eine erfundene.
+
+**Ist der Prüfstrecke (Lauf `2026-09-10 13:35 · 47df2d9`), Türen typisiert:**
+Barawitzka_EG 55/106 · Mollgasse_EG 70/147 · Muthgasse_E2 206/291 ·
+Rennweg_EG 24/41 · Rennweg_OG3 15/27 — **gegen `e9837b0` bewegt sich keine
+einzige Kennzahl**, auf keinem Plan (erwartet, es wurde kein `src/`-Code
+angefasst).
+
+**Laufzeit endlich sauber gemessen (keine pytest-Suite parallel):**
+Barawitzka 263,6 s · Mollgasse 288,2 s · **Muthgasse 1852,4 s** · Rennweg_EG
+58,3 s · Rennweg_OG3 51,6 s. Muthgasse gegen den lastfreien Vorbefund 1838 s =
+**+14,4 s / +0,8 %** — die 2116,4 s des Laufs `e9837b0` waren Lastkontext, keine
+Verschlechterung.
+
+**XFAIL-Bilanz: 11 strict-xfails, 0 XPASS.** Alle elf mit je einem Satz
+Begründung in § 12.5. **In dieser Runde wurde kein xfail zu XPASS gedreht und
+kein Zielband geändert.** Neu ist genau einer: `test_soll_stair_exit_aus_echter_blocktuer`
+(zusätzlich sichtbar gemachter Befund, kein gefallenes Zielbild).
+
+**DIE NÄCHSTEN DREI SACHEN IN MEINER LANE, alle belegt:**
+1. **Manhattan-Dedupe `provider.py:148-157`** entkoppelt die `stair_exit`-Kennzahl
+   von den Türen — zwei der untersuchten Türen fallen dort weg. Solange das so
+   ist, misst `test_soll_stair_exits` nicht das, was sein Name behauptet.
+2. **`tuer_typisierung.py:152-156` feuert auch bei `von_raum == nach_raum`.** Bei
+   **4 der 5** widerlegten Fahnen war genau das der Fall (raum_88 → raum_88). Eine
+   Tür von einem Raum in denselben Raum darf keine `stiegenhaustuer` sein.
+3. **Die 9 STIEGENHAUS-Polygone auf Muthgasse sind höchstens 4 Kerne**
+   (`stiegenhaus_1 ≡ _5`, `_2 ≡ _3 ≡ _4`, `_6`, `_7`, plus `_8` = 0,2 m² = 100 %
+   `lift_5`). Vorher wie nachher gleich defekt.
+
+**Was bewusst NICHT angefasst wurde:** `hauptengine/contracts/**` (Bump
+`raum_modell` 1.4.0 wartet auf @EnisAMG-Approval — bis dahin eingefroren) ·
+Enis' YAML + `test_quellenblock_e07_rl4.py:301` · `dxf_renderer.py` (@mvpo3) ·
+`lux_nachweis_bericht.py:329/:333` (nur gemeldet) · Nennerfrage Muthgasse
+`A-DETL` · die 12 Mollgasse-Segmente (Entscheidung dokumentiert, kein Code).
+
+**Vorbestehend, nicht von mir:** `tests/raumerkennung/test_tueren.py::test_mollgasse_tueren`
+**skippt** (DXF `Projekte/Mollgasse Notbeleuchtung/WHA_MOL_EG.dxf` fehlt im
+Arbeitsbaum). `ruff check .`: 4 vorbestehende ISC004 in `scripts/plan_pruefen.py`.
+
+**Weiter offen wie gehabt:** GESCHÄFTSLOKAL (blockiert, seit 2026-09-08) ·
+Render-Speicher `_figur` 8×/Plan (Leonis) · Spikey-Polygone Mollgasse raum_41/55
+(meine Lane) · Referenz-Frames UG/OG1 nicht verdrahtet · 4 Tür-Quoten-xfails ·
+Baufeld E2 ohne Zielbild · `lichte_mm` ohne Erzeuger (darf nie aus `breite_mm`
+abgeleitet werden).
+
+---
+
+## ═══ SELMAN: Stand 2026-09-10, Abschluss Schritte 1–6 ═══
 
 **Branch:** `selman/extents-ausreisser`, **nicht gepusht, kein PR, kein Merge** —
 der Owner gibt das GO separat. Commits dieser Runde: `8b35e53` · `58cd3a0` ·
