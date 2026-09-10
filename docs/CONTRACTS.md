@@ -39,6 +39,11 @@ symbol_katalog_keys[], mindest_anzahl (RZ=2), dauer_min (60), quelle`.
   kind ∈ {rz, sicherheitsleuchte, antipanik}, richtung, circuit_hint,
   covers_segment[], norm_quelle`
 
+## Contract-Freeze (Prozess-Gate)
+Änderungen an `hauptengine/contracts/**` brauchen das Approval aller 3 Owner
+(CODEOWNERS). Ein Approval gilt nur für den Stand, auf dem es erteilt wurde —
+jeder nachgeschobene Commit entwertet es. Prüfung: Check `contract-freeze`.
+
 ## Naht-Invarianten (CI-Gate)
 - `covers_segment ∈ RaumModell.zirkulation.segmente[].segment_id`
 - `norm_quelle ∈ NormRegelwerk.quellen`
