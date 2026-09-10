@@ -18,9 +18,17 @@ Türzahl-Korrektur 2026-09-10: 308 → **291** Türen. Die 83 Beschriftungs-Fahn
 ``_DOOR_EXCLUDE``; an ihren Stellen entstehen 66 echte ``durchgang``/``text:``-
 Türen neu, weil deren Sperrwirkung wegfällt. Gemessen, nicht abgeleitet
 (Provider-Parse E2, 825,6 s): 291 Türen, 113 Räume, 205 typisiert = 70,5 %.
-Nebenwirkung, gemessen und NICHT geglättet: stair_exit fällt von 12 auf 5 —
-5 der 12 stammten aus Fahnen, 3 echte Türen verlieren ihre Typisierung
-(``test_soll_stair_exits`` als strict-xfail-Zielbild).
+Nebenwirkung, gemessen und NICHT geglättet: stair_exit fällt von 12 auf 5.
+Nachmessung 2026-09-10 (zwei Provider-Parses derselben DXF, Stand ``0d7c5db``
+vs. ``1d9c03a``): die früher behaupteten „3 echten Türen, die ihre Typisierung
+verloren haben" gibt es **nicht** — die 3 war eine Saldo-Zahl (15 Kandidaten
+vorher − 5 Fahnen − 7 nachher), keine Menge. Lagebezogen sind 11 Ausgänge weg,
+1 geblieben, 4 neu. Von den 11 waren 5 Beschriftungs-Fahnen und 6 Kontaktzonen-
+Artefakte aus ``durchgaenge_ohne_tuerblatt`` (Breiten bis 4862 mm — es gibt kein
+4,8-m-Türblatt), entstanden zwischen dem Artefakt-Raum ``raum_88`` (vorher 693
+Polygonpunkte, 41,3 m², überlappte fünf STIEGENHAUS-Polygone zu 28–41 % und
+``raum_79``/LIFT zu 99 %) und den Räumen, die er überdeckte. Kein Regressions-
+fehler in ``tuer_typisierung.py`` (zwischen beiden Ständen byte-identisch).
 """
 from pathlib import Path
 
@@ -96,18 +104,126 @@ def test_soll_raeume_tueren_ausgaenge(rm):
 @pytest.mark.xfail(
     strict=True,
     reason="Soll ≥ 9 stair_exit — Ist Muthgasse E2 2026-09-10: 5 (vorher 12). "
-    "Gemessen nach dem Fahnen-Ausschluss: 7 Türen tragen stiegenhaustuer/"
-    "brandschutztuer (alle 7 mit Stiegenhaus-Seite), 2 davon werden final_exit. "
-    "Vorher waren es 15 Kandidaten — 5 davon waren Beschriftungs-Fahnen "
-    "(gemessen im Vorher-Dump: 5× tuer_detail='stiegenhaustuer'), also frei "
-    "erfundene Ausgänge. Die restlichen 3 verlorenen Kandidaten sind echte "
-    "Türen, die ihre Typisierung eingebüßt haben — offener Befund der "
-    "Tür-Typisierung, NICHT durch Absenken des Bandes zu heilen.",
+    "Das Band bleibt bei 9 und wird NICHT abgesenkt: siehe Docstring — es gibt "
+    "keinen gemessenen Ersatz-Zielwert, nur den Ist-Stand, und aus dem Ist "
+    "abgeleitete Bänder sind hier verboten. Der fachlich belegte Zielwert steht "
+    "in test_soll_stair_exit_aus_echter_blocktuer (≥ 1, Ist 0).",
 )
 def test_soll_stair_exits(rm):
+    """Zahlenband ohne fachliche Deckung — bewusst unverändert stehen gelassen.
+
+    Herkunft: gesetzt in ``ebf867a`` (2026-09-07) nach der Konvention „Bänder
+    knapp unter Ist — dürfen nur wachsen“, Ist damals 12. Nachgemessen
+    2026-09-10 (Provider-Parse auf ``0d7c5db``): von diesen 12 entsprach
+    **keine einzige** einem echten Türblatt — 5 Beschriftungs-Fahnen
+    (Blockdef = 1× LINE, kein ARC, Layer ``A-DOOR-IDEN``, ``breite_mm=0.0``)
+    und 7 Kontaktzonen-Artefakte aus ``durchgaenge_ohne_tuerblatt``. Die 9 ist
+    also ein eingefrorener Falschpositiv-Stand, kein Fachziel.
+
+    Warum trotzdem 9 stehen bleibt: der einzige Wert, den eine Messung heute
+    deckt, ist die 5 — und die ist der Ist-Stand selbst. „Ist ist 5, also
+    setze ich 5“ ist keine Begründung, und auch die 5 ruht auf denselben
+    Kontaktzonen-Artefakten (4 der 5 haben Stiegenhaus ↔ Stiegenhaus, eine
+    davon ``von_raum == nach_raum``). Ein fachlich hergeleiteter Zielwert für
+    diese Kennzahl existiert nicht, solange sie über ``provider.py:148-157``
+    (1500-mm-Manhattan-Dedupe) Positions-Cluster zählt statt Türen. Der
+    Befund bleibt darum sichtbar rot statt still grün gerechnet.
+    """
     assert sum(1 for a in rm.ausgaenge if a.typ == "stair_exit") >= 9, (
         "stair_exit-Erkennung eingebrochen (Ist 5, vor dem Fahnen-Ausschluss 12)"
     )
+
+
+_BLOCKTUER_LAYER = ("A-DOOR", "A-GLAZ")   # Fahnen liegen auf A-DOOR-IDEN
+
+
+def _blocktuer_positionen(plan):
+    """INSERT-Positionen echter Türblöcke (Layer A-DOOR/A-GLAZ), auf 1 mm
+    gerundet. Deren Blockdefinitionen tragen 8–110 LINEs und den Türblatt-ARC
+    (r = 900/950/1020 mm); die 83 Fahnen-Blöcke auf ``A-DOOR-IDEN`` tragen
+    genau 1 LINE und keinen ARC."""
+    aus = set()
+    for e in plan.entities():
+        if e.dxftype() != "INSERT" or str(e.dxf.layer) not in _BLOCKTUER_LAYER:
+            continue
+        xy = plan._scale(e.dxf.insert)
+        aus.add((round(xy[0]), round(xy[1])))
+    return aus
+
+
+def _tueren_auf_blocktuer(plan, rm):
+    """Türen im Modell, die auf einem echten Türblock sitzen (± 2 mm)."""
+    pos = _blocktuer_positionen(plan)
+    return [t for t in rm.tueren
+            if any((round(t.xy_mm[0]) + dx, round(t.xy_mm[1]) + dy) in pos
+                   for dx in range(-2, 3) for dy in range(-2, 3))]
+
+
+def test_soll_echte_blocktueren_im_modell(plan, rm):
+    """Klammer für das Zielbild darunter — sonst könnte es xfailen, weil es gar
+    keine echten Türblöcke mehr gibt.
+
+    Ist 2026-09-10 (Provider-Parse E2, Dump ``_p2_nachher.json``): 18 Türen
+    sitzen auf einem ``A-DOOR``/``A-GLAZ``-INSERT; 16 davon tragen eine
+    Türblatt-Breite (8× 900, 5× 950, 3× 1000 mm), 2 haben ``breite_mm=None``
+    mit ``breite_quelle='UNBEKANNT'`` (``tuer_8`` Schiebetür-Block, ``tuer_17``
+    4-tlg. Fenstertür) — das ist regelkonform und wird hier NICHT als Fehler
+    gewertet.
+    """
+    echte = _tueren_auf_blocktuer(plan, rm)
+    assert len(echte) >= 15, f"nur {len(echte)} Türen auf echten Türblöcken (Ist 18)"
+    mit_breite = [t for t in echte if t.breite_mm]
+    assert len(mit_breite) >= 14, (
+        f"nur {len(mit_breite)} von {len(echte)} Blocktüren mit Breite (Ist 16/18)")
+
+
+@pytest.mark.xfail(
+    strict=True,
+    reason="Soll ≥ 1 stair_exit an einer echten Blocktür — Ist Muthgasse E2 "
+    "2026-09-10: 0 von 5. Gemessen: von den 18 Türen mit echtem A-DOOR/A-GLAZ-"
+    "Block hat keine eine STIEGENHAUS-Seite; alle 5 stair_exit ruhen auf "
+    "Kontaktzonen-Artefakten aus durchgaenge_ohne_tuerblatt. Der frühere "
+    "Anker tuer_50 ist widerlegt (keine Blocktür, 780,5 mm zum nächsten "
+    "A-DOOR-INSERT) — Belege in docs/ENIS_UEBERGABE_0908.md § 13.7.",
+)
+def test_soll_stair_exit_aus_echter_blocktuer(plan, rm):
+    """Fachliches Zielbild als Ersatz für das reine Zählband oben.
+
+    Gemessen 2026-09-10 auf beiden Ständen (``0d7c5db`` und ``1d9c03a``): von
+    den 18 Türen, die an ihrer Position einen echten ``A-DOOR``/``A-GLAZ``-Block
+    mit Türblatt-ARC (r = 900/950/1020 mm) tragen, hat **0** eine STIEGENHAUS-
+    Seite — also stammt **0** ``stair_exit`` aus einer echten Blocktür, weder
+    vorher (12 Stück) noch heute (5 Stück). Das ist der eigentliche Defekt
+    hinter der Kennzahl, und er ist älter als der Fahnen-Ausschluss.
+
+    **Korrektur 2026-09-10 (Schritt 3, docs/ENIS_UEBERGABE_0908.md § 13.7):**
+    der frühere Ansatzpunkt ``tuer_50`` trägt diesen Zielwert NICHT. ``tuer_50``
+    bei 334453 / 106403 stammt aus ``quelle='arc_aussen+text:E2-VF-12a'``, also
+    aus einem ARC, und sitzt auf **keinem** Türblock — der nächste der 209
+    ``A-DOOR``/``A-GLAZ``-INSERTs liegt 780,5 mm entfernt. Sie fällt damit gar
+    nicht in die Menge ``_tueren_auf_blocktuer``. Der Ursprungsbefund hatte den
+    Abstand einer echten Blocktür zu einem STIEGENHAUS-*Polygon* gemessen
+    (``tuer_22``, 0 mm zu ``raum_88`` — dem Artefaktraum aus § 11.4), nicht zu
+    ``stiegenhaus_1``.
+
+    Ein ``raum_typ`` auf ``raum_65`` würde diesen Test folglich nicht drehen:
+    von den 18 echten Blocktüren hat keine eine STIEGENHAUS-Seite, und die drei
+    mit untypisierter Gegenseite (``tuer_11/12/13`` → ``raum_70/59/48``, alle
+    Stempelname ``Vorr.``) haben gegenüber GANG, lieferten also ``VORRAUM`` →
+    ``WOHNUNG_PRIVAT`` → ``wohnungseingang`` und ebenfalls keinen
+    ``stair_exit``. Der Zielwert 1 ruht damit derzeit auf keinem benannten
+    Anker; das Band bleibt trotzdem unverändert, weil ein aus dem Ist
+    abgeleitetes Band hier verboten ist (§ 11.5). Der belegte Defekt dahinter
+    ist unverändert: alle 5 ``stair_exit`` stammen aus Kontaktzonen-Artefakten.
+    """
+    echte = {(round(t.xy_mm[0]), round(t.xy_mm[1]))
+             for t in _tueren_auf_blocktuer(plan, rm)}
+    treffer = [a.id for a in rm.ausgaenge if a.typ == "stair_exit"
+               and any((round(a.xy_mm[0]) + dx, round(a.xy_mm[1]) + dy) in echte
+                       for dx in range(-2, 3) for dy in range(-2, 3))]
+    assert treffer, (
+        "kein stair_exit sitzt auf einer echten Blocktür "
+        f"({sum(1 for a in rm.ausgaenge if a.typ == 'stair_exit')} stair_exit gesamt)")
 
 
 def test_soll_raeume_flaechendeckend_typisiert(rm):

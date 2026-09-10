@@ -172,4 +172,4 @@ Restweg im EG (Rennweg_EG.dxf): 4.6–13.5 m (Stiegenhaustür → nächster fina
 | tuer_in_schacht | 3 |
 | tuer_ins_nichts | 1 |
 
-Laufzeit: 50.5 s
+Laufzeit: 51.1 s

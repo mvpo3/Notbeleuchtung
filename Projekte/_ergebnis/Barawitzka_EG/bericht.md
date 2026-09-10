@@ -472,4 +472,4 @@ Quellen: FALLBACK: 1, GRAPH: 11
 | sicherheitsleuchte | (12.23, -7.16) | 0 |
 | sicherheitsleuchte | (11.44, -23.01) | 0 |
 
-Laufzeit: 312.0 s
+Laufzeit: 258.6 s
