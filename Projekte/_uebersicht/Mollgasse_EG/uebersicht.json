@@ -1,0 +1,196 @@
+{
+  "plan": "Mollgasse_EG",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\Mollgasse\\Erdgeschoß.dxf",
+  "floor": "EG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    1800,
+    1592
+  ],
+  "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
+  "kategorien": {
+    "untypisiert": 10,
+    "gang": 16,
+    "nebenraum": 11,
+    "sanitaer": 11,
+    "stiege": 2,
+    "wohnen": 11,
+    "aussen": 1,
+    "schacht": 2,
+    "hof": 1,
+    "ueberlappung": 2,
+    "segmente": 126,
+    "final_exit": 9,
+    "stair_exit": 4
+  },
+  "raeume_gesamt": 64,
+  "raeume_typisiert": 54,
+  "raum_typen": {
+    "GANG": 11,
+    "VORRAUM": 5,
+    "ABSTELLRAUM": 5,
+    "WC": 5,
+    "BAD": 6,
+    "STIEGENHAUS": 2,
+    "ZIMMER": 10,
+    "MUELLRAUM": 2,
+    "GARAGE": 1,
+    "KINDERWAGENRAUM": 2,
+    "TECHNIK": 1,
+    "KÜCHE": 1,
+    "TERRASSE": 1,
+    "LIFT": 2
+  },
+  "wohnungen": {
+    "anzahl": 8,
+    "raeume_je_wohnung": {
+      "top_3": 14,
+      "top_1": 3,
+      "top_2": 2,
+      "top_4": 3,
+      "top_5": 8,
+      "top_6": 1,
+      "top_7": 1,
+      "top_8": 2
+    },
+    "ohne_wohnung": 30
+  },
+  "innenhoefe_m2": [
+    73.0
+  ],
+  "ausgaenge": [
+    {
+      "id": "exit_1",
+      "typ": "final_exit",
+      "xy_mm": [
+        2703279.928073096,
+        1521765.0620949925
+      ]
+    },
+    {
+      "id": "exit_2",
+      "typ": "final_exit",
+      "xy_mm": [
+        2703364.9280727683,
+        1524050.0620954765
+      ]
+    },
+    {
+      "id": "exit_3",
+      "typ": "final_exit",
+      "xy_mm": [
+        2689945.6725804326,
+        1523965.3887721135
+      ]
+    },
+    {
+      "id": "exit_4",
+      "typ": "final_exit",
+      "xy_mm": [
+        2665832.808560734,
+        1537216.246338233
+      ]
+    },
+    {
+      "id": "exit_tuer_35",
+      "typ": "stair_exit",
+      "xy_mm": [
+        2699649.9280764093,
+        1520760.062094981
+      ]
+    },
+    {
+      "id": "exit_tuer_45",
+      "typ": "stair_exit",
+      "xy_mm": [
+        2654509.762283398,
+        1543143.844299075
+      ]
+    },
+    {
+      "id": "exit_tuer_68",
+      "typ": "final_exit",
+      "xy_mm": [
+        2688619.938590315,
+        1511087.047254316
+      ]
+    },
+    {
+      "id": "exit_tuer_69",
+      "typ": "stair_exit",
+      "xy_mm": [
+        2689361.4170862553,
+        1524975.816966092
+      ]
+    },
+    {
+      "id": "exit_durchgang_4",
+      "typ": "stair_exit",
+      "xy_mm": [
+        2689344.447839368,
+        1526605.3526673613
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_3",
+      "typ": "final_exit",
+      "xy_mm": [
+        2694039.8699394553,
+        1522939.5924278707
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_4",
+      "typ": "final_exit",
+      "xy_mm": [
+        2655928.2483188463,
+        1538462.000588917
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_5",
+      "typ": "final_exit",
+      "xy_mm": [
+        2652188.436705678,
+        1535039.837466481
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_6",
+      "typ": "final_exit",
+      "xy_mm": [
+        2653324.1590852314,
+        1533156.763725877
+      ]
+    }
+  ],
+  "stiegenhaeuser": [
+    "raum_13",
+    "raum_51"
+  ],
+  "ueberlappungen": [
+    {
+      "raum_id": "raum_1",
+      "raum_typ": null,
+      "in_raum_id": "raum_3",
+      "in_raum_typ": "GANG",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_53",
+      "raum_typ": "KINDERWAGENRAUM",
+      "in_raum_id": "raum_51",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 100.0
+    }
+  ],
+  "tueren_gesamt": 147,
+  "laufzeit_s": 87.3,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 10** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 154 Knoten / 119 Kanten.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

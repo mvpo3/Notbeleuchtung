@@ -1,0 +1,82 @@
+{
+  "plan": "EG_Grundriss_DE_NEU",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\EG_Grundriss_DE_NEU.dxf",
+  "floor": "EG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    1800,
+    1233
+  ],
+  "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
+  "kategorien": {
+    "gang": 4,
+    "wohnen": 4,
+    "nebenraum": 1,
+    "untypisiert": 2,
+    "sanitaer": 1,
+    "stiege": 1,
+    "schacht": 1,
+    "hof": 0,
+    "ueberlappung": 0,
+    "segmente": 6,
+    "stair_exit": 1,
+    "final_exit": 1
+  },
+  "raeume_gesamt": 14,
+  "raeume_typisiert": 12,
+  "raum_typen": {
+    "GANG": 2,
+    "WOHNZIMMER": 1,
+    "VORRAUM": 2,
+    "KÜCHE": 2,
+    "ZIMMER": 1,
+    "ABSTELLRAUM": 1,
+    "BAD": 1,
+    "STIEGENHAUS": 1,
+    "SCHACHT": 1
+  },
+  "wohnungen": {
+    "anzahl": 4,
+    "raeume_je_wohnung": {
+      "top_2": 4,
+      "top_3": 2,
+      "top_1": 2,
+      "top_4": 1
+    },
+    "ohne_wohnung": 5
+  },
+  "innenhoefe_m2": [],
+  "ausgaenge": [
+    {
+      "id": "exit_durchgang_2",
+      "typ": "stair_exit",
+      "xy_mm": [
+        2880372.753043973,
+        1736587.3414144996
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_1",
+      "typ": "final_exit",
+      "xy_mm": [
+        2881162.60302017,
+        1737581.4623038138
+      ]
+    }
+  ],
+  "stiegenhaeuser": [
+    "rest_1"
+  ],
+  "ueberlappungen": [],
+  "tueren_gesamt": 31,
+  "laufzeit_s": 8.0,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 2** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "Außenflächen (BALKON/TERRASSE): **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",
+    "Innenhöfe: **0** — `provider.letzte_aussenbereiche.geschlossen` ist leer (oder es gab keine Wandkörper-Analyse).",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

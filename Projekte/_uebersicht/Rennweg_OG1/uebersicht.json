@@ -1,0 +1,91 @@
+{
+  "plan": "Rennweg_OG1",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\Rennweg\\OG1 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf",
+  "floor": "OG1",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    1800,
+    1774
+  ],
+  "rotation": "Rotation: keine dominante Kantenrichtung — 0° belassen.",
+  "kategorien": {
+    "wohnen": 4,
+    "gang": 4,
+    "sanitaer": 3,
+    "untypisiert": 1,
+    "nebenraum": 1,
+    "stiege": 3,
+    "aussen": 1,
+    "schacht": 1,
+    "hof": 0,
+    "ueberlappung": 0,
+    "segmente": 6,
+    "stair_exit": 3
+  },
+  "raeume_gesamt": 18,
+  "raeume_typisiert": 17,
+  "raum_typen": {
+    "ZIMMER": 4,
+    "VORRAUM": 3,
+    "BAD": 2,
+    "GANG": 1,
+    "ABSTELLRAUM": 1,
+    "WC": 1,
+    "STIEGENHAUS": 3,
+    "BALKON": 1,
+    "LIFT": 1
+  },
+  "wohnungen": {
+    "anzahl": 3,
+    "raeume_je_wohnung": {
+      "top_1": 9,
+      "top_2": 1,
+      "top_3": 1
+    },
+    "ohne_wohnung": 7
+  },
+  "innenhoefe_m2": [],
+  "ausgaenge": [
+    {
+      "id": "exit_durchgang_23",
+      "typ": "stair_exit",
+      "xy_mm": [
+        12549384.921023523,
+        356217436.03124774
+      ]
+    },
+    {
+      "id": "exit_durchgang_24",
+      "typ": "stair_exit",
+      "xy_mm": [
+        12550585.691954186,
+        356220240.0387096
+      ]
+    },
+    {
+      "id": "exit_durchgang_25",
+      "typ": "stair_exit",
+      "xy_mm": [
+        12549983.50139345,
+        356218820.4251553
+      ]
+    }
+  ],
+  "stiegenhaeuser": [
+    "raum_14",
+    "rest_1",
+    "rest_2"
+  ],
+  "ueberlappungen": [],
+  "tueren_gesamt": 29,
+  "laufzeit_s": 12.8,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 1** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "Innenhöfe: **0** — `provider.letzte_aussenbereiche.geschlossen` ist leer (oder es gab keine Wandkörper-Analyse).",
+    "`final_exit`: **0** — kein Ausgang ins Freie erkannt (in Obergeschossen erwartungsgemäß, s. provider.py).",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

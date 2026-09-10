@@ -1,0 +1,87 @@
+{
+  "plan": "Mollgasse_DG",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\Mollgasse\\Dachgeschoß.dxf",
+  "floor": "EG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    2400,
+    1863
+  ],
+  "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
+  "kategorien": {
+    "gang": 5,
+    "wohnen": 11,
+    "sanitaer": 9,
+    "stiege": 1,
+    "nebenraum": 4,
+    "untypisiert": 1,
+    "aussen": 1,
+    "schacht": 3,
+    "hof": 2,
+    "ueberlappung": 1,
+    "segmente": 5,
+    "final_exit": 1
+  },
+  "raeume_gesamt": 35,
+  "raeume_typisiert": 34,
+  "raum_typen": {
+    "VORRAUM": 3,
+    "ZIMMER": 9,
+    "KÜCHE": 2,
+    "BAD": 6,
+    "STIEGENHAUS": 1,
+    "GANG": 2,
+    "WC": 3,
+    "ABSTELLRAUM": 4,
+    "TERRASSE": 1,
+    "SCHACHT": 1,
+    "LIFT": 2
+  },
+  "wohnungen": {
+    "anzahl": 5,
+    "raeume_je_wohnung": {
+      "top_3": 5,
+      "top_5": 2,
+      "top_1": 10,
+      "top_2": 8,
+      "top_4": 1
+    },
+    "ohne_wohnung": 9
+  },
+  "innenhoefe_m2": [
+    51.0,
+    22.2
+  ],
+  "ausgaenge": [
+    {
+      "id": "exit_aussenoeffnung_1",
+      "typ": "final_exit",
+      "xy_mm": [
+        2885079.758403892,
+        1702714.7963773212
+      ]
+    }
+  ],
+  "stiegenhaeuser": [
+    "raum_7"
+  ],
+  "ueberlappungen": [
+    {
+      "raum_id": "lift_2",
+      "raum_typ": "LIFT",
+      "in_raum_id": "raum_31",
+      "in_raum_typ": null,
+      "anteil_prozent": 95.1
+    }
+  ],
+  "tueren_gesamt": 66,
+  "laufzeit_s": 56.9,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 1** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "`stair_exit`: **0** — kein Stiegenhaus-Ausgang erkannt.",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

@@ -1,0 +1,2029 @@
+{
+  "plan": "Herrenholz_EG",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\DXF_Herrenholzgasse\\20230228_po_eg_V.dxf",
+  "floor": "EG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    2400,
+    718
+  ],
+  "rotation": "Rotation: dominante Richtung 172° (schräg) — unsicher, 0° belassen.",
+  "kategorien": {
+    "untypisiert": 244,
+    "aussen": 46,
+    "nebenraum": 60,
+    "wohnen": 55,
+    "sanitaer": 46,
+    "gang": 46,
+    "schacht": 1,
+    "hof": 0,
+    "ueberlappung": 257,
+    "segmente": 0,
+    "final_exit": 15
+  },
+  "raeume_gesamt": 498,
+  "raeume_typisiert": 254,
+  "raum_typen": {
+    "TERRASSE": 46,
+    "TECHNIK": 9,
+    "KÜCHE": 46,
+    "ABSTELLRAUM": 46,
+    "WC": 46,
+    "VORRAUM": 46,
+    "MUELLRAUM": 5,
+    "ZIMMER": 9,
+    "SCHACHT": 1
+  },
+  "wohnungen": {
+    "anzahl": 49,
+    "raeume_je_wohnung": {
+      "top_38": 2,
+      "top_43": 1,
+      "top_44": 2,
+      "top_45": 1,
+      "top_46": 2,
+      "top_47": 1,
+      "top_48": 3,
+      "top_49": 3,
+      "top_1": 4,
+      "top_2": 4,
+      "top_3": 5,
+      "top_4": 5,
+      "top_5": 4,
+      "top_6": 4,
+      "top_7": 4,
+      "top_8": 4,
+      "top_9": 4,
+      "top_10": 4,
+      "top_11": 4,
+      "top_12": 4,
+      "top_13": 4,
+      "top_14": 4,
+      "top_15": 4,
+      "top_16": 4,
+      "top_17": 4,
+      "top_18": 4,
+      "top_19": 4,
+      "top_20": 4,
+      "top_21": 4,
+      "top_22": 4,
+      "top_23": 5,
+      "top_24": 5,
+      "top_25": 5,
+      "top_26": 5,
+      "top_27": 4,
+      "top_28": 4,
+      "top_29": 4,
+      "top_30": 4,
+      "top_31": 5,
+      "top_32": 5,
+      "top_33": 5,
+      "top_34": 4,
+      "top_35": 4,
+      "top_36": 4,
+      "top_37": 4,
+      "top_39": 3,
+      "top_40": 3,
+      "top_41": 3,
+      "top_42": 3
+    },
+    "ohne_wohnung": 314
+  },
+  "innenhoefe_m2": [],
+  "ausgaenge": [
+    {
+      "id": "exit_tuer_41",
+      "typ": "final_exit",
+      "xy_mm": [
+        -21023.60927695912,
+        11406.57443673391
+      ]
+    },
+    {
+      "id": "exit_tuer_42",
+      "typ": "final_exit",
+      "xy_mm": [
+        -15433.0595736038,
+        24815.22131688506
+      ]
+    },
+    {
+      "id": "exit_tuer_43",
+      "typ": "final_exit",
+      "xy_mm": [
+        48570.09182001082,
+        39685.61981675755
+      ]
+    },
+    {
+      "id": "exit_tuer_44",
+      "typ": "final_exit",
+      "xy_mm": [
+        77697.4992907606,
+        35806.66941276761
+      ]
+    },
+    {
+      "id": "exit_tuer_45",
+      "typ": "final_exit",
+      "xy_mm": [
+        112318.9392469498,
+        31195.77661273853
+      ]
+    },
+    {
+      "id": "exit_tuer_46",
+      "typ": "final_exit",
+      "xy_mm": [
+        27722.17553802847,
+        17781.338952342812
+      ]
+    },
+    {
+      "id": "exit_tuer_47",
+      "typ": "final_exit",
+      "xy_mm": [
+        64188.625687896376,
+        -1275.232770945965
+      ]
+    },
+    {
+      "id": "exit_tuer_48",
+      "typ": "final_exit",
+      "xy_mm": [
+        90516.11304669206,
+        692.7119885671995
+      ]
+    },
+    {
+      "id": "exit_tuer_49",
+      "typ": "final_exit",
+      "xy_mm": [
+        115360.7068779862,
+        -9344.896819808018
+      ]
+    },
+    {
+      "id": "exit_tuer_50",
+      "typ": "final_exit",
+      "xy_mm": [
+        126145.6795833261,
+        -10098.33686112583
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_1",
+      "typ": "final_exit",
+      "xy_mm": [
+        128242.924955428,
+        -18540.739141639628
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_2",
+      "typ": "final_exit",
+      "xy_mm": [
+        -25157.717885229158,
+        4606.621702651334
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_3",
+      "typ": "final_exit",
+      "xy_mm": [
+        -890.661671999755,
+        28432.18381302625
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_4",
+      "typ": "final_exit",
+      "xy_mm": [
+        -20811.33582132061,
+        13775.811904440347
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_5",
+      "typ": "final_exit",
+      "xy_mm": [
+        -17357.82725357391,
+        22854.405949798154
+      ]
+    }
+  ],
+  "stiegenhaeuser": [],
+  "ueberlappungen": [
+    {
+      "raum_id": "raum_1",
+      "raum_typ": null,
+      "in_raum_id": "raum_474",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.1
+    },
+    {
+      "raum_id": "raum_2",
+      "raum_typ": null,
+      "in_raum_id": "raum_1",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_2",
+      "raum_typ": null,
+      "in_raum_id": "raum_181",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_2",
+      "raum_typ": null,
+      "in_raum_id": "raum_474",
+      "in_raum_typ": null,
+      "anteil_prozent": 95.0
+    },
+    {
+      "raum_id": "raum_3",
+      "raum_typ": null,
+      "in_raum_id": "raum_354",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_3",
+      "raum_typ": null,
+      "in_raum_id": "raum_355",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_3",
+      "raum_typ": null,
+      "in_raum_id": "raum_492",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_12",
+      "raum_typ": null,
+      "in_raum_id": "raum_493",
+      "in_raum_typ": null,
+      "anteil_prozent": 97.8
+    },
+    {
+      "raum_id": "raum_26",
+      "raum_typ": null,
+      "in_raum_id": "raum_25",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_26",
+      "raum_typ": null,
+      "in_raum_id": "raum_54",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_28",
+      "raum_typ": null,
+      "in_raum_id": "raum_27",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_28",
+      "raum_typ": null,
+      "in_raum_id": "raum_53",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_30",
+      "raum_typ": null,
+      "in_raum_id": "raum_29",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_30",
+      "raum_typ": null,
+      "in_raum_id": "raum_52",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_32",
+      "raum_typ": null,
+      "in_raum_id": "raum_31",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_32",
+      "raum_typ": null,
+      "in_raum_id": "raum_51",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_34",
+      "raum_typ": null,
+      "in_raum_id": "raum_33",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_34",
+      "raum_typ": null,
+      "in_raum_id": "raum_50",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_39",
+      "raum_typ": null,
+      "in_raum_id": "raum_38",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_50",
+      "raum_typ": null,
+      "in_raum_id": "raum_33",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_50",
+      "raum_typ": null,
+      "in_raum_id": "raum_34",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_51",
+      "raum_typ": null,
+      "in_raum_id": "raum_31",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_51",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_52",
+      "raum_typ": null,
+      "in_raum_id": "raum_29",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_52",
+      "raum_typ": null,
+      "in_raum_id": "raum_30",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_53",
+      "raum_typ": null,
+      "in_raum_id": "raum_27",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_53",
+      "raum_typ": null,
+      "in_raum_id": "raum_28",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_54",
+      "raum_typ": null,
+      "in_raum_id": "raum_25",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_54",
+      "raum_typ": null,
+      "in_raum_id": "raum_26",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_76",
+      "raum_typ": null,
+      "in_raum_id": "raum_475",
+      "in_raum_typ": null,
+      "anteil_prozent": 96.6
+    },
+    {
+      "raum_id": "raum_77",
+      "raum_typ": null,
+      "in_raum_id": "raum_76",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_77",
+      "raum_typ": null,
+      "in_raum_id": "raum_176",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_77",
+      "raum_typ": null,
+      "in_raum_id": "raum_475",
+      "in_raum_typ": null,
+      "anteil_prozent": 97.1
+    },
+    {
+      "raum_id": "raum_79",
+      "raum_typ": null,
+      "in_raum_id": "raum_78",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_79",
+      "raum_typ": null,
+      "in_raum_id": "raum_175",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.9
+    },
+    {
+      "raum_id": "raum_80",
+      "raum_typ": null,
+      "in_raum_id": "raum_476",
+      "in_raum_typ": null,
+      "anteil_prozent": 93.6
+    },
+    {
+      "raum_id": "raum_81",
+      "raum_typ": null,
+      "in_raum_id": "raum_80",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_81",
+      "raum_typ": null,
+      "in_raum_id": "raum_179",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_81",
+      "raum_typ": null,
+      "in_raum_id": "raum_476",
+      "in_raum_typ": null,
+      "anteil_prozent": 96.8
+    },
+    {
+      "raum_id": "raum_82",
+      "raum_typ": null,
+      "in_raum_id": "raum_477",
+      "in_raum_typ": null,
+      "anteil_prozent": 91.3
+    },
+    {
+      "raum_id": "raum_83",
+      "raum_typ": null,
+      "in_raum_id": "raum_82",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_83",
+      "raum_typ": null,
+      "in_raum_id": "raum_182",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_83",
+      "raum_typ": null,
+      "in_raum_id": "raum_477",
+      "in_raum_typ": null,
+      "anteil_prozent": 97.3
+    },
+    {
+      "raum_id": "raum_85",
+      "raum_typ": null,
+      "in_raum_id": "raum_84",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_85",
+      "raum_typ": null,
+      "in_raum_id": "raum_237",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.8
+    },
+    {
+      "raum_id": "raum_87",
+      "raum_typ": null,
+      "in_raum_id": "raum_86",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_87",
+      "raum_typ": null,
+      "in_raum_id": "raum_238",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.8
+    },
+    {
+      "raum_id": "raum_89",
+      "raum_typ": null,
+      "in_raum_id": "raum_88",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_89",
+      "raum_typ": null,
+      "in_raum_id": "raum_239",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.8
+    },
+    {
+      "raum_id": "raum_91",
+      "raum_typ": null,
+      "in_raum_id": "raum_90",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_91",
+      "raum_typ": null,
+      "in_raum_id": "raum_197",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.8
+    },
+    {
+      "raum_id": "raum_96",
+      "raum_typ": "TERRASSE",
+      "in_raum_id": "raum_477",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.9
+    },
+    {
+      "raum_id": "raum_97",
+      "raum_typ": "TERRASSE",
+      "in_raum_id": "raum_474",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.8
+    },
+    {
+      "raum_id": "raum_99",
+      "raum_typ": "TERRASSE",
+      "in_raum_id": "raum_475",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.7
+    },
+    {
+      "raum_id": "raum_100",
+      "raum_typ": "TERRASSE",
+      "in_raum_id": "raum_489",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.8
+    },
+    {
+      "raum_id": "raum_102",
+      "raum_typ": null,
+      "in_raum_id": "raum_101",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_102",
+      "raum_typ": null,
+      "in_raum_id": "raum_183",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.5
+    },
+    {
+      "raum_id": "raum_104",
+      "raum_typ": null,
+      "in_raum_id": "raum_103",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_104",
+      "raum_typ": null,
+      "in_raum_id": "raum_184",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_105",
+      "raum_typ": null,
+      "in_raum_id": "raum_480",
+      "in_raum_typ": null,
+      "anteil_prozent": 94.5
+    },
+    {
+      "raum_id": "raum_106",
+      "raum_typ": null,
+      "in_raum_id": "raum_105",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_106",
+      "raum_typ": null,
+      "in_raum_id": "raum_186",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_106",
+      "raum_typ": null,
+      "in_raum_id": "raum_480",
+      "in_raum_typ": null,
+      "anteil_prozent": 96.9
+    },
+    {
+      "raum_id": "raum_107",
+      "raum_typ": null,
+      "in_raum_id": "raum_481",
+      "in_raum_typ": null,
+      "anteil_prozent": 97.3
+    },
+    {
+      "raum_id": "raum_108",
+      "raum_typ": null,
+      "in_raum_id": "raum_107",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_108",
+      "raum_typ": null,
+      "in_raum_id": "raum_188",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_108",
+      "raum_typ": null,
+      "in_raum_id": "raum_481",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.0
+    },
+    {
+      "raum_id": "raum_110",
+      "raum_typ": null,
+      "in_raum_id": "raum_109",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_110",
+      "raum_typ": null,
+      "in_raum_id": "raum_189",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.5
+    },
+    {
+      "raum_id": "raum_112",
+      "raum_typ": null,
+      "in_raum_id": "raum_111",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_112",
+      "raum_typ": null,
+      "in_raum_id": "raum_190",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_113",
+      "raum_typ": null,
+      "in_raum_id": "raum_482",
+      "in_raum_typ": null,
+      "anteil_prozent": 94.5
+    },
+    {
+      "raum_id": "raum_114",
+      "raum_typ": null,
+      "in_raum_id": "raum_113",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_114",
+      "raum_typ": null,
+      "in_raum_id": "raum_191",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_114",
+      "raum_typ": null,
+      "in_raum_id": "raum_482",
+      "in_raum_typ": null,
+      "anteil_prozent": 97.0
+    },
+    {
+      "raum_id": "raum_115",
+      "raum_typ": null,
+      "in_raum_id": "raum_483",
+      "in_raum_typ": null,
+      "anteil_prozent": 97.2
+    },
+    {
+      "raum_id": "raum_116",
+      "raum_typ": null,
+      "in_raum_id": "raum_115",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_116",
+      "raum_typ": null,
+      "in_raum_id": "raum_192",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_116",
+      "raum_typ": null,
+      "in_raum_id": "raum_483",
+      "in_raum_typ": null,
+      "anteil_prozent": 97.2
+    },
+    {
+      "raum_id": "raum_117",
+      "raum_typ": null,
+      "in_raum_id": "raum_484",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.3
+    },
+    {
+      "raum_id": "raum_118",
+      "raum_typ": null,
+      "in_raum_id": "raum_117",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_118",
+      "raum_typ": null,
+      "in_raum_id": "raum_193",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_118",
+      "raum_typ": null,
+      "in_raum_id": "raum_484",
+      "in_raum_typ": null,
+      "anteil_prozent": 93.8
+    },
+    {
+      "raum_id": "raum_119",
+      "raum_typ": null,
+      "in_raum_id": "raum_485",
+      "in_raum_typ": null,
+      "anteil_prozent": 96.3
+    },
+    {
+      "raum_id": "raum_120",
+      "raum_typ": null,
+      "in_raum_id": "raum_119",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_120",
+      "raum_typ": null,
+      "in_raum_id": "raum_194",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_120",
+      "raum_typ": null,
+      "in_raum_id": "raum_485",
+      "in_raum_typ": null,
+      "anteil_prozent": 94.8
+    },
+    {
+      "raum_id": "raum_122",
+      "raum_typ": null,
+      "in_raum_id": "raum_121",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_122",
+      "raum_typ": null,
+      "in_raum_id": "raum_196",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_122",
+      "raum_typ": null,
+      "in_raum_id": "raum_488",
+      "in_raum_typ": null,
+      "anteil_prozent": 96.5
+    },
+    {
+      "raum_id": "raum_124",
+      "raum_typ": "TERRASSE",
+      "in_raum_id": "raum_480",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.8
+    },
+    {
+      "raum_id": "raum_125",
+      "raum_typ": "TERRASSE",
+      "in_raum_id": "raum_487",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.8
+    },
+    {
+      "raum_id": "raum_126",
+      "raum_typ": "TERRASSE",
+      "in_raum_id": "raum_481",
+      "in_raum_typ": null,
+      "anteil_prozent": 97.9
+    },
+    {
+      "raum_id": "raum_142",
+      "raum_typ": null,
+      "in_raum_id": "raum_486",
+      "in_raum_typ": null,
+      "anteil_prozent": 97.2
+    },
+    {
+      "raum_id": "raum_143",
+      "raum_typ": null,
+      "in_raum_id": "raum_142",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_143",
+      "raum_typ": null,
+      "in_raum_id": "raum_185",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_143",
+      "raum_typ": null,
+      "in_raum_id": "raum_486",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.9
+    },
+    {
+      "raum_id": "raum_157",
+      "raum_typ": null,
+      "in_raum_id": "raum_487",
+      "in_raum_typ": null,
+      "anteil_prozent": 97.2
+    },
+    {
+      "raum_id": "raum_158",
+      "raum_typ": null,
+      "in_raum_id": "raum_157",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_158",
+      "raum_typ": null,
+      "in_raum_id": "raum_187",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_158",
+      "raum_typ": null,
+      "in_raum_id": "raum_487",
+      "in_raum_typ": null,
+      "anteil_prozent": 96.2
+    },
+    {
+      "raum_id": "raum_159",
+      "raum_typ": null,
+      "in_raum_id": "raum_488",
+      "in_raum_typ": null,
+      "anteil_prozent": 96.0
+    },
+    {
+      "raum_id": "raum_160",
+      "raum_typ": null,
+      "in_raum_id": "raum_159",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_160",
+      "raum_typ": null,
+      "in_raum_id": "raum_195",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_160",
+      "raum_typ": null,
+      "in_raum_id": "raum_488",
+      "in_raum_typ": null,
+      "anteil_prozent": 95.1
+    },
+    {
+      "raum_id": "raum_162",
+      "raum_typ": "MUELLRAUM",
+      "in_raum_id": "raum_495",
+      "in_raum_typ": "MUELLRAUM",
+      "anteil_prozent": 98.2
+    },
+    {
+      "raum_id": "raum_164",
+      "raum_typ": "TERRASSE",
+      "in_raum_id": "raum_486",
+      "in_raum_typ": null,
+      "anteil_prozent": 99.0
+    },
+    {
+      "raum_id": "raum_165",
+      "raum_typ": "TERRASSE",
+      "in_raum_id": "raum_479",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.6
+    },
+    {
+      "raum_id": "raum_168",
+      "raum_typ": "TERRASSE",
+      "in_raum_id": "raum_485",
+      "in_raum_typ": null,
+      "anteil_prozent": 99.2
+    },
+    {
+      "raum_id": "raum_169",
+      "raum_typ": "TERRASSE",
+      "in_raum_id": "raum_484",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.8
+    },
+    {
+      "raum_id": "raum_170",
+      "raum_typ": "TERRASSE",
+      "in_raum_id": "raum_483",
+      "in_raum_typ": null,
+      "anteil_prozent": 99.2
+    },
+    {
+      "raum_id": "raum_171",
+      "raum_typ": "TERRASSE",
+      "in_raum_id": "raum_482",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.2
+    },
+    {
+      "raum_id": "raum_172",
+      "raum_typ": "TERRASSE",
+      "in_raum_id": "raum_488",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.3
+    },
+    {
+      "raum_id": "raum_173",
+      "raum_typ": null,
+      "in_raum_id": "raum_489",
+      "in_raum_typ": null,
+      "anteil_prozent": 96.1
+    },
+    {
+      "raum_id": "raum_174",
+      "raum_typ": null,
+      "in_raum_id": "raum_173",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_174",
+      "raum_typ": null,
+      "in_raum_id": "raum_180",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_174",
+      "raum_typ": null,
+      "in_raum_id": "raum_489",
+      "in_raum_typ": null,
+      "anteil_prozent": 95.7
+    },
+    {
+      "raum_id": "raum_175",
+      "raum_typ": null,
+      "in_raum_id": "raum_78",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_175",
+      "raum_typ": null,
+      "in_raum_id": "raum_79",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_176",
+      "raum_typ": null,
+      "in_raum_id": "raum_76",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_176",
+      "raum_typ": null,
+      "in_raum_id": "raum_77",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_176",
+      "raum_typ": null,
+      "in_raum_id": "raum_475",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.7
+    },
+    {
+      "raum_id": "raum_178",
+      "raum_typ": null,
+      "in_raum_id": "raum_177",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_178",
+      "raum_typ": null,
+      "in_raum_id": "raum_236",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.8
+    },
+    {
+      "raum_id": "raum_179",
+      "raum_typ": null,
+      "in_raum_id": "raum_80",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_179",
+      "raum_typ": null,
+      "in_raum_id": "raum_81",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_179",
+      "raum_typ": null,
+      "in_raum_id": "raum_476",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.6
+    },
+    {
+      "raum_id": "raum_180",
+      "raum_typ": null,
+      "in_raum_id": "raum_173",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_180",
+      "raum_typ": null,
+      "in_raum_id": "raum_174",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_180",
+      "raum_typ": null,
+      "in_raum_id": "raum_489",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.4
+    },
+    {
+      "raum_id": "raum_181",
+      "raum_typ": null,
+      "in_raum_id": "raum_1",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_181",
+      "raum_typ": null,
+      "in_raum_id": "raum_2",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_181",
+      "raum_typ": null,
+      "in_raum_id": "raum_474",
+      "in_raum_typ": null,
+      "anteil_prozent": 97.9
+    },
+    {
+      "raum_id": "raum_182",
+      "raum_typ": null,
+      "in_raum_id": "raum_82",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_182",
+      "raum_typ": null,
+      "in_raum_id": "raum_83",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_182",
+      "raum_typ": null,
+      "in_raum_id": "raum_477",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.6
+    },
+    {
+      "raum_id": "raum_183",
+      "raum_typ": null,
+      "in_raum_id": "raum_101",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_183",
+      "raum_typ": null,
+      "in_raum_id": "raum_102",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_184",
+      "raum_typ": null,
+      "in_raum_id": "raum_103",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_184",
+      "raum_typ": null,
+      "in_raum_id": "raum_104",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_185",
+      "raum_typ": null,
+      "in_raum_id": "raum_142",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_185",
+      "raum_typ": null,
+      "in_raum_id": "raum_143",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_185",
+      "raum_typ": null,
+      "in_raum_id": "raum_486",
+      "in_raum_typ": null,
+      "anteil_prozent": 99.9
+    },
+    {
+      "raum_id": "raum_186",
+      "raum_typ": null,
+      "in_raum_id": "raum_105",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_186",
+      "raum_typ": null,
+      "in_raum_id": "raum_106",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_186",
+      "raum_typ": null,
+      "in_raum_id": "raum_480",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.4
+    },
+    {
+      "raum_id": "raum_187",
+      "raum_typ": null,
+      "in_raum_id": "raum_157",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_187",
+      "raum_typ": null,
+      "in_raum_id": "raum_158",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_187",
+      "raum_typ": null,
+      "in_raum_id": "raum_487",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.1
+    },
+    {
+      "raum_id": "raum_188",
+      "raum_typ": null,
+      "in_raum_id": "raum_107",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_188",
+      "raum_typ": null,
+      "in_raum_id": "raum_108",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_188",
+      "raum_typ": null,
+      "in_raum_id": "raum_481",
+      "in_raum_typ": null,
+      "anteil_prozent": 99.2
+    },
+    {
+      "raum_id": "raum_189",
+      "raum_typ": null,
+      "in_raum_id": "raum_109",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_189",
+      "raum_typ": null,
+      "in_raum_id": "raum_110",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_190",
+      "raum_typ": null,
+      "in_raum_id": "raum_111",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_190",
+      "raum_typ": null,
+      "in_raum_id": "raum_112",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_191",
+      "raum_typ": null,
+      "in_raum_id": "raum_113",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_191",
+      "raum_typ": null,
+      "in_raum_id": "raum_114",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_191",
+      "raum_typ": null,
+      "in_raum_id": "raum_482",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.7
+    },
+    {
+      "raum_id": "raum_192",
+      "raum_typ": null,
+      "in_raum_id": "raum_115",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_192",
+      "raum_typ": null,
+      "in_raum_id": "raum_116",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_192",
+      "raum_typ": null,
+      "in_raum_id": "raum_483",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.9
+    },
+    {
+      "raum_id": "raum_193",
+      "raum_typ": null,
+      "in_raum_id": "raum_117",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_193",
+      "raum_typ": null,
+      "in_raum_id": "raum_118",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_193",
+      "raum_typ": null,
+      "in_raum_id": "raum_484",
+      "in_raum_typ": null,
+      "anteil_prozent": 95.4
+    },
+    {
+      "raum_id": "raum_194",
+      "raum_typ": null,
+      "in_raum_id": "raum_119",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_194",
+      "raum_typ": null,
+      "in_raum_id": "raum_120",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_194",
+      "raum_typ": null,
+      "in_raum_id": "raum_485",
+      "in_raum_typ": null,
+      "anteil_prozent": 97.9
+    },
+    {
+      "raum_id": "raum_195",
+      "raum_typ": null,
+      "in_raum_id": "raum_159",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_195",
+      "raum_typ": null,
+      "in_raum_id": "raum_160",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_195",
+      "raum_typ": null,
+      "in_raum_id": "raum_488",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.3
+    },
+    {
+      "raum_id": "raum_196",
+      "raum_typ": null,
+      "in_raum_id": "raum_121",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_196",
+      "raum_typ": null,
+      "in_raum_id": "raum_122",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_196",
+      "raum_typ": null,
+      "in_raum_id": "raum_488",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.8
+    },
+    {
+      "raum_id": "raum_197",
+      "raum_typ": null,
+      "in_raum_id": "raum_90",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_197",
+      "raum_typ": null,
+      "in_raum_id": "raum_91",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_236",
+      "raum_typ": null,
+      "in_raum_id": "raum_177",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_236",
+      "raum_typ": null,
+      "in_raum_id": "raum_178",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_237",
+      "raum_typ": null,
+      "in_raum_id": "raum_84",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_237",
+      "raum_typ": null,
+      "in_raum_id": "raum_85",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_238",
+      "raum_typ": null,
+      "in_raum_id": "raum_86",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_238",
+      "raum_typ": null,
+      "in_raum_id": "raum_87",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_239",
+      "raum_typ": null,
+      "in_raum_id": "raum_88",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_239",
+      "raum_typ": null,
+      "in_raum_id": "raum_89",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_325",
+      "raum_typ": null,
+      "in_raum_id": "raum_334",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_325",
+      "raum_typ": null,
+      "in_raum_id": "raum_335",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_325",
+      "raum_typ": null,
+      "in_raum_id": "raum_490",
+      "in_raum_typ": null,
+      "anteil_prozent": 97.6
+    },
+    {
+      "raum_id": "raum_334",
+      "raum_typ": null,
+      "in_raum_id": "raum_490",
+      "in_raum_typ": null,
+      "anteil_prozent": 95.9
+    },
+    {
+      "raum_id": "raum_335",
+      "raum_typ": null,
+      "in_raum_id": "raum_325",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.6
+    },
+    {
+      "raum_id": "raum_335",
+      "raum_typ": null,
+      "in_raum_id": "raum_334",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_335",
+      "raum_typ": null,
+      "in_raum_id": "raum_490",
+      "in_raum_typ": null,
+      "anteil_prozent": 95.3
+    },
+    {
+      "raum_id": "raum_337",
+      "raum_typ": null,
+      "in_raum_id": "raum_336",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_337",
+      "raum_typ": null,
+      "in_raum_id": "raum_376",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.9
+    },
+    {
+      "raum_id": "raum_339",
+      "raum_typ": null,
+      "in_raum_id": "raum_338",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_339",
+      "raum_typ": null,
+      "in_raum_id": "raum_377",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.6
+    },
+    {
+      "raum_id": "raum_341",
+      "raum_typ": null,
+      "in_raum_id": "raum_340",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_341",
+      "raum_typ": null,
+      "in_raum_id": "raum_472",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.6
+    },
+    {
+      "raum_id": "raum_343",
+      "raum_typ": null,
+      "in_raum_id": "raum_342",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_343",
+      "raum_typ": null,
+      "in_raum_id": "raum_371",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_345",
+      "raum_typ": null,
+      "in_raum_id": "raum_344",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_345",
+      "raum_typ": null,
+      "in_raum_id": "raum_378",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_347",
+      "raum_typ": null,
+      "in_raum_id": "raum_346",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_347",
+      "raum_typ": null,
+      "in_raum_id": "raum_380",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_353",
+      "raum_typ": null,
+      "in_raum_id": "raum_352",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_353",
+      "raum_typ": null,
+      "in_raum_id": "raum_381",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.6
+    },
+    {
+      "raum_id": "raum_354",
+      "raum_typ": null,
+      "in_raum_id": "raum_492",
+      "in_raum_typ": null,
+      "anteil_prozent": 99.7
+    },
+    {
+      "raum_id": "raum_355",
+      "raum_typ": null,
+      "in_raum_id": "raum_3",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_355",
+      "raum_typ": null,
+      "in_raum_id": "raum_354",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_355",
+      "raum_typ": null,
+      "in_raum_id": "raum_492",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_367",
+      "raum_typ": null,
+      "in_raum_id": "raum_366",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_367",
+      "raum_typ": null,
+      "in_raum_id": "raum_379",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_368",
+      "raum_typ": null,
+      "in_raum_id": "raum_372",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_368",
+      "raum_typ": null,
+      "in_raum_id": "raum_373",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_371",
+      "raum_typ": null,
+      "in_raum_id": "raum_342",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_371",
+      "raum_typ": null,
+      "in_raum_id": "raum_343",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_373",
+      "raum_typ": null,
+      "in_raum_id": "raum_368",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_373",
+      "raum_typ": null,
+      "in_raum_id": "raum_372",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_375",
+      "raum_typ": null,
+      "in_raum_id": "raum_374",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_375",
+      "raum_typ": null,
+      "in_raum_id": "raum_382",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_375",
+      "raum_typ": null,
+      "in_raum_id": "raum_492",
+      "in_raum_typ": null,
+      "anteil_prozent": 97.6
+    },
+    {
+      "raum_id": "raum_376",
+      "raum_typ": null,
+      "in_raum_id": "raum_336",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_376",
+      "raum_typ": null,
+      "in_raum_id": "raum_337",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_377",
+      "raum_typ": null,
+      "in_raum_id": "raum_338",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_377",
+      "raum_typ": null,
+      "in_raum_id": "raum_339",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_378",
+      "raum_typ": null,
+      "in_raum_id": "raum_344",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_378",
+      "raum_typ": null,
+      "in_raum_id": "raum_345",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_379",
+      "raum_typ": null,
+      "in_raum_id": "raum_366",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_379",
+      "raum_typ": null,
+      "in_raum_id": "raum_367",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_380",
+      "raum_typ": null,
+      "in_raum_id": "raum_346",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_380",
+      "raum_typ": null,
+      "in_raum_id": "raum_347",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_381",
+      "raum_typ": null,
+      "in_raum_id": "raum_352",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_381",
+      "raum_typ": null,
+      "in_raum_id": "raum_353",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_382",
+      "raum_typ": null,
+      "in_raum_id": "raum_374",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_382",
+      "raum_typ": null,
+      "in_raum_id": "raum_375",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_382",
+      "raum_typ": null,
+      "in_raum_id": "raum_492",
+      "in_raum_typ": null,
+      "anteil_prozent": 99.5
+    },
+    {
+      "raum_id": "raum_435",
+      "raum_typ": null,
+      "in_raum_id": "raum_444",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_435",
+      "raum_typ": null,
+      "in_raum_id": "raum_445",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_445",
+      "raum_typ": null,
+      "in_raum_id": "raum_435",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_445",
+      "raum_typ": null,
+      "in_raum_id": "raum_444",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_447",
+      "raum_typ": null,
+      "in_raum_id": "raum_446",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_447",
+      "raum_typ": null,
+      "in_raum_id": "raum_450",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_449",
+      "raum_typ": null,
+      "in_raum_id": "raum_448",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_449",
+      "raum_typ": null,
+      "in_raum_id": "raum_452",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_449",
+      "raum_typ": null,
+      "in_raum_id": "raum_494",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_450",
+      "raum_typ": null,
+      "in_raum_id": "raum_446",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_450",
+      "raum_typ": null,
+      "in_raum_id": "raum_447",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_451",
+      "raum_typ": null,
+      "in_raum_id": "raum_461",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_451",
+      "raum_typ": null,
+      "in_raum_id": "raum_462",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_452",
+      "raum_typ": null,
+      "in_raum_id": "raum_448",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_452",
+      "raum_typ": null,
+      "in_raum_id": "raum_449",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_452",
+      "raum_typ": null,
+      "in_raum_id": "raum_494",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_462",
+      "raum_typ": null,
+      "in_raum_id": "raum_451",
+      "in_raum_typ": null,
+      "anteil_prozent": 92.7
+    },
+    {
+      "raum_id": "raum_462",
+      "raum_typ": null,
+      "in_raum_id": "raum_461",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_471",
+      "raum_typ": "TERRASSE",
+      "in_raum_id": "raum_476",
+      "in_raum_typ": null,
+      "anteil_prozent": 98.7
+    },
+    {
+      "raum_id": "raum_472",
+      "raum_typ": null,
+      "in_raum_id": "raum_340",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_472",
+      "raum_typ": null,
+      "in_raum_id": "raum_341",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_478",
+      "raum_typ": null,
+      "in_raum_id": "raum_84",
+      "in_raum_typ": null,
+      "anteil_prozent": 90.5
+    }
+  ],
+  "tueren_gesamt": 807,
+  "laufzeit_s": 468.9,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 244** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "Stiegenhäuser: **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",
+    "Innenhöfe: **0** — `provider.letzte_aussenbereiche.geschlossen` ist leer (oder es gab keine Wandkörper-Analyse).",
+    "`stair_exit`: **0** — kein Stiegenhaus-Ausgang erkannt.",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

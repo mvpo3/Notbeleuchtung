@@ -62,6 +62,86 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 
 ---
 
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-11, Übersichtskarten-Sweep) ═══
+
+**Branch:** `selman/extents-ausreisser`, **PR #152 offen, kein Merge, kein Push.**
+**Kein Code in `src/` geändert**, `hauptengine/contracts/**` unberührt, keine
+Contract-Änderung. Neu ist genau ein dauerhaftes Skript + Ausgabe-Artefakte.
+
+**Was diese Runde gebaut hat:**
+
+1. **`scripts/analyse/uebersicht_karte.py`** (neu) — eine Übersichtskarte je Plan:
+   `uebersicht.png` (Räume nach Kategorie eingefärbt: Wohnräume / Sanitär / sonstige
+   typisierte / Außenflächen / Gänge / Stiegenhäuser / Schächte+Lifte / **untypisiert
+   magenta schraffiert**, dazu Innenhöfe, Wohnungen farbcodiert, Ausgänge nach
+   `Ausgang.typ`, Fluchtweg-Segmente, verschluckte Räume), `uebersicht.json`
+   (maschinenlesbar) und `uebersicht.md` (Kennzahlen + Abschnitt „nicht erkannt“).
+   **Wiederverwendet `scripts/plan_pruefen.py`** (`import plan_pruefen as pp`) für
+   Ladepfad, Rotation, Maßstab, Farbwahl und die matplotlib-Konventionen — dort war das
+   schon gelöst, nichts davon wurde neu erfunden. Argument `--name <Ausgabename>` gibt dem
+   Ausgabeordner einen lesbaren Namen; `dxf:` in JSON/MD führt weiter den echten
+   Originalpfad. ruff sauber.
+
+2. **Sweep über alle Pläne:** 63 gerechnet, **62 ok, 1 nicht auswertbar**. Rund **133 min**
+   Wanduhr (111,2 min bei 2 parallel + 22,2 min zwei serielle Nachläufe), 219,9 min CPU.
+   Ausgabe `Projekte/_uebersicht/<plan>/`; die **17 fertigen Elektro-/Notbeleuchtungspläne**
+   (Ergebnisbeispiele, enthalten bereits Leuchten — **keine** leeren Architekturpläne)
+   getrennt unter `Projekte/_uebersicht/_elektro_beispiele/<plan>/`.
+
+3. **`Projekte/_uebersicht/INDEX.md`** — eine Zeile je Plan (Projekt / Geschoss / Pfad /
+   Räume / untypisiert / Wohnungen / Stiegenhäuser / Gänge / Innenhöfe / Schächte+Lifte /
+   final_exit / stair_exit / Fluchtwegsegmente), nach Projekt gruppiert, Summenzeile je
+   Projekt und über alles, Elektro-Gruppe in eigenem, als solchem gekennzeichnetem
+   Abschnitt. Dazu die Abschnitte **„Was die Karte NICHT zeigt“** und **„Auffälligkeiten“**.
+
+**Zahlen (Σ, aus den 62 `uebersicht.json`):** Architektur (45 Karten) 3507 Räume · 666
+untypisiert · 348 Wohnungen · 127 Stiegenhäuser · 403 Gänge · 53 Innenhöfe · 140
+Schächte+Lifte · 77 `final_exit` · 75 `stair_exit` · 2422 Fluchtweg-Segmente. Elektro-
+Beispiele (17 Karten) 2681 / 404 / 151 / 91 / 463 / 33 / 38 / 30 / 120 / 2425.
+
+**Die harten Befunde (Details in INDEX.md, Abschnitt „Auffälligkeiten“):**
+- **7 Pläne mit 0 erkannten Ausgängen:** `Barawitzka_2DG`, `Barawitzka_FDM`,
+  `Barawitzka_KG`, `Herrenholz_OG1`, `Herrenholz_OG2`, `Herrenholz_UG`, `Rennweg_OG2`.
+  Härtester Fall `Herrenholz_OG1`: 300 Räume, 640 Türen, 55 Segmente, **kein** Ausgang.
+- **Untypisierung häuft sich in UG/KG:** `BaufeldE2_NB_UG` 237/266 · `Mollgasse_KG1` 24/31 ·
+  `Fischamend_E_UG` 30/43 · `Barawitzka_KG` 28/41 · `Mollgasse_KG2` 19/30 ·
+  `Fischamend_BT1_UG` 21/44 · `Rennweg_UG` 10/23. Absolut größter: `Herrenholz_EG` mit 244.
+- **Verschluckte Räume (>90 % in einem anderen Raum):** `Herrenholz_EG` 257 Paare /
+  127 Räume · `BaufeldE2_NB_UG` 201 / 201 · `Barawitzka_KG` 54 Paare bei 41 Räumen.
+  Verschluckte **LIFT/SCHACHT**-Polygone: alle acht Muthgasse-Pläne (2–3 je Plan), die
+  Fischamend-Obergeschosse (1–2), Barawitzka 1DG/EG (2).
+- **Dublette hart bestätigt:** `Herrenholz_UG` und `Herrenholz_OG2` liefern Zeile für Zeile
+  identische Werte, 28.284.638 vs. 28.284.639 Byte. Derselbe Plan zweimal. **Welcher das
+  echte Geschoss ist, entscheidet der Owner.**
+- **`floor`-Feld unbrauchbar:** 43 von 62 Plänen melden `floor == "EG"`. Die Geschoss-Spalte
+  im INDEX kommt deshalb aus dem Dateinamen, nicht aus dem Modell. Nicht korrigiert — die
+  Erkennung soll nichts erfinden.
+- **Renderlast reproduziert (Leonis' Befund):** `BaufeldE2_NB_OG1` / `_OG3` sind bei
+  2 parallel mit `MemoryError` in `LineCollection.set_segments` gestorben, seriell dann ok
+  (512,5 s / 819,4 s); ein Prozess stand bei 22,3 GB.
+
+**Was NICHT geht / offen ist:**
+- **`Aichholzgasse`** (`26_0507_AICH.dxf`, 146 MB, 10 Grundrisse in einem Modelspace) ist
+  **nicht auswertbar**: `ValueError: Keine Wand-Entities gefunden — Layer-Muster prüfen.`
+  (`dxf_load.py:258`, aus `provider.parse`), Abbruch nach 84,9 s vor dem Render. Die
+  Layer-Benennung dieses Büros passt nicht auf die Wand-Muster. Traceback:
+  `Projekte/_uebersicht/Aichholzgasse/uebersicht.md`.
+- **Die 8 Muthgasse-Karten sind so nicht vorzeigbar.** Zahlen stimmen, PNG nicht: der
+  Modelspace enthält mehrere abgesetzte Zeichnungen, der Auto-Zoom umfasst alles, der
+  Grundriss sitzt als briefmarkengroßer Fleck oben links, die Legende liegt darüber.
+  `pp._varianten_bounds` kennt nur den Barawitzka-Stempel-Prefix → **nächster Schritt:
+  eigene Bounds-Heuristik für Muthgasse.**
+- **`Baufeld_E2.zip`** (zweite Fassung, gleiche Dateinamen, andere MD5, minimal kleiner)
+  ist **nicht** geprüft. Gerechnet wurde `Baufeld_E2_Notbeleuchtungsplaene.zip`.
+- **`Barawitzka_FDM`** ist ein Fundamentplan (Ebene −2, 8 Räume, 0 Türen) — als Draufsicht
+  mitgerechnet, inhaltlich wahrscheinlich kein Grundriss. Owner-Entscheidung.
+- **Sichtgeprüft sind nur 3 PNGs** (`Rennweg_UG`, `Herrenholz_EG`, `Muthgasse_E2`). Die
+  übrigen ~59 wurden **nicht** einzeln angesehen — das wird hier nicht behauptet.
+- Board-Eintrag mit den Lane-Auswirkungen (@mvpo3 Ausgänge, @EnisAMG Vokabular) steht in
+  `docs/COORDINATION.md` unter „## Log“.
+
+---
+
 ## ═══ SELMAN: HIER WEITER (Stand 2026-09-10, Abschluss zweiter Block) ═══
 
 **Branch:** `selman/extents-ausreisser`, **PR #152 offen, kein Merge.** Commits

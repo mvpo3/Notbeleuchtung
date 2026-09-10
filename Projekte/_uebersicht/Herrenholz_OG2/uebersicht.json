@@ -1,0 +1,154 @@
+{
+  "plan": "Herrenholz_OG2",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\DXF_Herrenholzgasse\\20230228_po_2og_V.dxf",
+  "floor": "2OG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    2400,
+    776
+  ],
+  "rotation": "Rotation: dominante Richtung 172° (schräg) — unsicher, 0° belassen.",
+  "kategorien": {
+    "aussen": 46,
+    "wohnen": 55,
+    "gang": 14,
+    "untypisiert": 38,
+    "nebenraum": 2,
+    "hof": 0,
+    "ueberlappung": 11,
+    "segmente": 14
+  },
+  "raeume_gesamt": 155,
+  "raeume_typisiert": 117,
+  "raum_typen": {
+    "TERRASSE": 46,
+    "ZIMMER": 55,
+    "GANG": 14,
+    "MUELLRAUM": 2
+  },
+  "wohnungen": {
+    "anzahl": 23,
+    "raeume_je_wohnung": {
+      "top_20": 3,
+      "top_1": 3,
+      "top_2": 3,
+      "top_12": 3,
+      "top_3": 3,
+      "top_13": 3,
+      "top_14": 3,
+      "top_15": 3,
+      "top_16": 3,
+      "top_4": 3,
+      "top_5": 3,
+      "top_6": 3,
+      "top_7": 3,
+      "top_8": 3,
+      "top_9": 3,
+      "top_10": 3,
+      "top_11": 3,
+      "top_17": 3,
+      "top_18": 3,
+      "top_19": 3,
+      "top_21": 3,
+      "top_22": 3,
+      "top_23": 3
+    },
+    "ohne_wohnung": 86
+  },
+  "innenhoefe_m2": [],
+  "ausgaenge": [],
+  "stiegenhaeuser": [],
+  "ueberlappungen": [
+    {
+      "raum_id": "raum_19",
+      "raum_typ": "ZIMMER",
+      "in_raum_id": "raum_148",
+      "in_raum_typ": "MUELLRAUM",
+      "anteil_prozent": 98.7
+    },
+    {
+      "raum_id": "raum_137",
+      "raum_typ": null,
+      "in_raum_id": "raum_87",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_138",
+      "raum_typ": null,
+      "in_raum_id": "raum_18",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_139",
+      "raum_typ": null,
+      "in_raum_id": "raum_17",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_140",
+      "raum_typ": null,
+      "in_raum_id": "raum_16",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_141",
+      "raum_typ": null,
+      "in_raum_id": "raum_15",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_142",
+      "raum_typ": null,
+      "in_raum_id": "raum_74",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_143",
+      "raum_typ": null,
+      "in_raum_id": "raum_136",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_144",
+      "raum_typ": null,
+      "in_raum_id": "raum_76",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_145",
+      "raum_typ": null,
+      "in_raum_id": "raum_71",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_146",
+      "raum_typ": null,
+      "in_raum_id": "raum_79",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    }
+  ],
+  "tueren_gesamt": 239,
+  "laufzeit_s": 126.1,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 38** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "Stiegenhäuser: **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",
+    "Schächte/Lifte: **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",
+    "Innenhöfe: **0** — `provider.letzte_aussenbereiche.geschlossen` ist leer (oder es gab keine Wandkörper-Analyse).",
+    "`final_exit`: **0** — kein Ausgang ins Freie erkannt (in Obergeschossen erwartungsgemäß, s. provider.py).",
+    "`stair_exit`: **0** — kein Stiegenhaus-Ausgang erkannt.",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}
