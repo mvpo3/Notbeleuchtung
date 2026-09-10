@@ -13,6 +13,7 @@ from .lb_vorgabe import (
 )
 from .norm_regelwerk import (
     ErkennungsweiteParameter,
+    FlaechenSchwellen,
     Klassifikation,
     NormAnforderung,
     NormRegelwerk,
@@ -82,6 +83,7 @@ __all__ = [
     "Bundesland",
     "Edge",
     "ErkennungsweiteParameter",
+    "FlaechenSchwellen",
     "FluchtwegSegment",
     "Gebaeudeklasse",
     "Gebaeudeteil",

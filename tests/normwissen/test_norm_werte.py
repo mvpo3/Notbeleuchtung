@@ -72,18 +72,17 @@ def test_halbwertstufe_bleibt_in_der_yaml_sichtbar():
     assert grund["umschaltzeit"]["vollwert_s"] == 60.0
 
 
-# ── Bewusst NICHT gefüllt ───────────────────────────────────────────────────
-def test_flaechen_schwellen_bleiben_ohne_en_1838_beleg_leer():
-    """60 m² / 8 m² stehen NICHT in EN 1838.
-
-    Belegt sind sie in OVE E 8101:2019 718.560.9.001.AT und ÖVE/ÖNORM E 8002-1
-    — dort aber scope-gebunden (erhöhte Anforderungen nach der Art der Nutzung
-    bzw. nur Flughäfen/Bahnhöfe). Das Contract-Feld wirkt global. Bis zur
-    3-Owner-Entscheidung über ein Scope-Gate bleibt es leer, statt die Schwelle
-    auf jedes Gebäude anzuwenden.
-    """
-    assert SNAP.flaechen_schwellen.antipanik_min_m2 is None
-    assert SNAP.flaechen_schwellen.wc_sanitaer_min_m2 is None
+# ── Flächen-Schwellen: gefüllt (F11/W11), aber OVE-scope-gated ───────────────
+def test_flaechen_schwellen_gefuellt_als_ove_referenzpraxis():
+    """F11/W11 (Owner-Entscheid 2026-09-10): 60 m² / 8 m² sind gefüllt — NICHT als
+    EN-1838-Default (dort kommen sie nicht vor), sondern als [AT-Referenzpraxis] aus
+    OVE E 8101:2019 718.560.9.001.AT. Sie wirken NICHT global: der Konsument
+    (`flaechen_strategy`) wendet sie nur bei OIB-bestätigtem Scope an (fail-closed).
+    Die Quelle liegt im Audit-Trail (Naht-Invariante)."""
+    assert SNAP.flaechen_schwellen.antipanik_min_m2 == 60.0
+    assert SNAP.flaechen_schwellen.wc_sanitaer_min_m2 == 8.0
+    assert SNAP.flaechen_schwellen.quelle == "OVE E 8101:2019 718.560.9.001.AT"
+    assert SNAP.flaechen_schwellen.quelle in SNAP.quellen
 
 
 def test_arbeitsplatz_lux_bleibt_leer_solange_der_raumtyp_fehlt():
@@ -116,8 +115,12 @@ def test_quellen_sind_die_drei_raumregeln_plus_die_sonderstellen():
     `tests/fixtures/norm_regelwerk_snapshot.json` (3-Owner-Lane) bleibt bei den
     drei alten Strings und wird hier bewusst NICHT nachgezogen; siehe
     docs/SPEC_SONDERSTELLEN_CONTRACT.md §7.
+
+    F11/W11: Dazu die OVE-Flächen-Schwellen-Quelle — sie muss im Audit-Trail liegen
+    (Naht-Invariante FlaechenSchwellen.quelle ∈ quellen). Sortiert ASCII-„O" vor „Ö".
     """
     assert SNAP.quellen == [
+        "OVE E 8101:2019 718.560.9.001.AT",
         "ÖNORM EN 1838:2013 §4.1",
         "ÖNORM EN 1838:2013 §4.1.2 c)",
         "ÖNORM EN 1838:2013 §4.1.2 h)",
