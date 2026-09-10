@@ -154,7 +154,8 @@ def durchgaenge_ohne_tuerblatt(raeume: list[Raum], tueren: list[Tuer],
                     continue
                 out.append(Tuer(
                     id=f"durchgang_{len(out) + 1}", xy_mm=xy,
-                    breite_mm=float(round(breite)), von_raum=ra.id,
+                    breite_mm=float(round(breite)),
+                    breite_quelle="GEOMETRIE_OEFFNUNG", von_raum=ra.id,
                     nach_raum=rb.id, ohne_tuerblatt=True, quelle="durchgang"))
                 tuer_punkte.append(xy)
     return out
@@ -215,7 +216,8 @@ def aussen_durchgaenge(raeume: list[Raum], tueren: list[Tuer],
                 continue
             out.append(Tuer(
                 id=f"aussenoeffnung_{len(out) + 1}", xy_mm=xy,
-                breite_mm=float(round(breite)), von_raum=r.id,
+                breite_mm=float(round(breite)),
+                breite_quelle="GEOMETRIE_OEFFNUNG", von_raum=r.id,
                 nach_raum=AUSSEN, ohne_tuerblatt=True,
                 quelle="oeffnung_aussenwand"))
             tuer_punkte.append(xy)

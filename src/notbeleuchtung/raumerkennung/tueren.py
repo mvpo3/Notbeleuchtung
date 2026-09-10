@@ -12,7 +12,7 @@ F1 (`richtung_durch_tuer`) konsumiert `RaumModell.tueren` an den ECHTEN Öffnung
 
 **Kein Maß wird erfunden:** Beschriftungs-Fahnen (Blockname „Beschriftung", z.B.
 Muthgasse ``HNP_Beschriftung Türen … Durchgangslichte…``) heißen nach Türen,
-sind aber keine — ``_DOOR_EXCLUDE`` verwirft sie, statt sie mit ``breite_mm=0``
+sind aber keine — ``_DOOR_EXCLUDE`` verwirft sie, statt sie mit ``breite_mm=None``
 als Tür zu führen. Verworfene Kandidaten stehen in ``_verworfene_bloecke``.
 """
 from __future__ import annotations
@@ -62,20 +62,25 @@ def _ist_aussentuer(name: str) -> bool:
     return bool(_AUSSENTUER.search(name)) and not _DOOR_EXCLUDE.search(name)
 
 
-def _breite_mm(name: str) -> float:
+#: Grund für ``breite_quelle="UNBEKANNT"``, wenn der Blockname kein Maß trägt.
+_GRUND_BLOCKNAME = "Blockname traegt kein Breitenmass (Oeffnungs-Marker oder kein cm/mm-Token)"
+
+
+def _breite_mm(name: str) -> float | None:
     """Nennbreite in mm: erste Zahl im cm-Türbereich (60–130) × 10.
 
-    Öffnungs-Marker (``Öffnung_81``) tragen eine ID, keine Breite → 0.
+    Öffnungs-Marker (``Öffnung_81``) tragen eine ID, keine Breite → ``None``
+    (v1.4.0: keine Messung ist None, nicht 0.0).
     """
     if _OEFFNUNG.search(name):
-        return 0.0
+        return None
     for tok in _INT.findall(name):
         n = int(tok)
         if 60 <= n <= 130:        # cm-Konvention (TÜR-80)
             return float(n) * 10.0
         if 600 <= n <= 1300:      # mm direkt (…_0800x2000)
             return float(n)
-    return 0.0
+    return None
 
 
 def _block_tueren(plan: DxfPlan) -> list[Tuer]:
@@ -84,8 +89,11 @@ def _block_tueren(plan: DxfPlan) -> list[Tuer]:
         if e.dxftype() != "INSERT" or not _ist_tuer_block(e.dxf.name):
             continue
         (xy,) = plan.entity_points(e) or [(0.0, 0.0)]
+        b = _breite_mm(e.dxf.name)
         out.append(Tuer(id=f"tuer_{len(out) + 1}", xy_mm=xy,
-                        breite_mm=_breite_mm(e.dxf.name),
+                        breite_mm=b,
+                        breite_quelle="BLOCKNAME" if b is not None else "UNBEKANNT",
+                        breite_grund=None if b is not None else _GRUND_BLOCKNAME,
                         ist_notausgang=_ist_aussentuer(e.dxf.name),
                         quelle="block"))
     return out
@@ -101,6 +109,7 @@ def _arc_tueren(plan: DxfPlan) -> list[Tuer]:
         if _ARC_MIN_MM < r < _ARC_MAX_MM:
             out.append(Tuer(id=f"tuer_{len(out) + 1}",
                             xy_mm=plan._scale(e.dxf.center), breite_mm=round(r),
+                            breite_quelle="GEOMETRIE_SCHWENKRADIUS",
                             quelle="arc"))
     return out
 
@@ -122,12 +131,14 @@ class TuerOeffnung:
     """Eine Türöffnung — Position + Nennbreite, quelle 'block' oder 'arc'."""
 
     xy_mm: XY
-    breite_mm: float
+    breite_mm: float | None
     winkel_grad: float | None
     quelle: str
+    #: Herkunft von ``breite_mm`` (Contract-Vokabular ``BreiteQuelle``, v1.4.0).
+    breite_quelle: str = "UNBEKANNT"
 
 
-def _blattbreite_aus_block(insert, factor: float, tiefe: int = 0) -> float:
+def _blattbreite_aus_block(insert, factor: float, tiefe: int = 0) -> float | None:
     """Türblatt-Breite = Radius des Schwenkbogen-ARC in der Blockdefinition
     (Rennweg-Zargentüren tragen keine Breite im Namen). Spiegelung (xscale=-1)
     ist egal — der Radius ist skaleninvariant bei |scale|=1."""
@@ -143,7 +154,7 @@ def _blattbreite_aus_block(insert, factor: float, tiefe: int = 0) -> float:
                     return r
     except Exception:  # noqa: BLE001, S110 — kaputter Block liefert eben keine Breite
         pass
-    return 0.0
+    return None
 
 
 def tuer_oeffnungen(plan: DxfPlan) -> list[TuerOeffnung]:
@@ -158,11 +169,16 @@ def tuer_oeffnungen(plan: DxfPlan) -> list[TuerOeffnung]:
             if t == "INSERT":
                 name = str(e.dxf.name)
                 if _ist_tuer_block(name):
-                    breite = _breite_mm(name) or _blattbreite_aus_block(e, plan.factor)
+                    breite = _breite_mm(name)
+                    b_quelle = "BLOCKNAME"
+                    if breite is None:
+                        breite = _blattbreite_aus_block(e, plan.factor)
+                        b_quelle = ("GEOMETRIE_SCHWENKRADIUS" if breite is not None
+                                    else "UNBEKANNT")
                     out.append(TuerOeffnung(
                         xy_mm=plan._scale(e.dxf.insert), breite_mm=breite,
                         winkel_grad=float(e.dxf.get("rotation", 0.0)),
-                        quelle="block"))
+                        quelle="block", breite_quelle=b_quelle))
                 elif tiefe < 3:
                     try:
                         _walk(e.virtual_entities(), tiefe + 1)
@@ -174,7 +190,8 @@ def tuer_oeffnungen(plan: DxfPlan) -> list[TuerOeffnung]:
                 if _ARC_MIN_MM < r < _ARC_MAX_MM and _SWEEP_MIN <= sweep <= _SWEEP_MAX:
                     out.append(TuerOeffnung(
                         xy_mm=plan._scale(e.dxf.center), breite_mm=float(round(r)),
-                        winkel_grad=float(e.dxf.start_angle), quelle="arc"))
+                        winkel_grad=float(e.dxf.start_angle), quelle="arc",
+                        breite_quelle="GEOMETRIE_SCHWENKRADIUS"))
 
     _walk(plan.space)
     return out
@@ -221,7 +238,8 @@ def aussentor_tueren(oeffnungen: list[TuerOeffnung], tueren: list[Tuer],
                 and grenze.distance(Point(o.xy_mm)) > _AUSSEN_PROBE_MM):
             continue
         out.append(Tuer(id=f"aussentor_{len(out) + 1}", xy_mm=o.xy_mm,
-                        breite_mm=o.breite_mm, quelle="arc_aussen"))
+                        breite_mm=o.breite_mm, breite_quelle=o.breite_quelle,
+                        quelle="arc_aussen"))
         punkte.append(o.xy_mm)
     return out
 
@@ -252,6 +270,7 @@ def verschmelze_doppelfluegel(tueren: list[Tuer], wand_segs) -> list[Tuer]:
     auf den Wänden). Nur ARC-Quellen — Block-Türen tragen ihre Breite selbst.
     """
     arcs = [t for t in tueren if t.quelle in ("arc", "arc_aussen")
+            and t.breite_mm is not None
             and _ARC_MIN_MM < t.breite_mm < _ARC_MAX_MM]
     verbraucht: set[str] = set()
     neu: list[Tuer] = []
@@ -277,6 +296,7 @@ def verschmelze_doppelfluegel(tueren: list[Tuer], wand_segs) -> list[Tuer]:
                      (t1.xy_mm[1] + t2.xy_mm[1]) / 2)
             neu.append(Tuer(id=f"doppel_{len(neu) + 1}", xy_mm=mitte,
                             breite_mm=t1.breite_mm + t2.breite_mm,
+                            breite_quelle="GEOMETRIE_SUMME",
                             quelle="doppelfluegel"))
             verbraucht |= {t1.id, t2.id}
             break
@@ -317,7 +337,7 @@ def text_tueren(plan: DxfPlan, tueren: list[Tuer]) -> list[Tuer]:
     """Türen aus türimplizierenden Texten OHNE gezeichnete Tür ≤ 1.5 m.
 
     Position = Textposition (die Öffnung liegt daneben — gut genug für
-    Zuordnung + Ausgangs-Ableitung); Breite unbekannt (0, nichts erfinden);
+    Zuordnung + Ausgangs-Ableitung); Breite unbekannt (None, nichts erfinden);
     ``quelle`` trägt den Text als Begründung.
     """
     punkte = [t.xy_mm for t in tueren]
@@ -326,7 +346,9 @@ def text_tueren(plan: DxfPlan, tueren: list[Tuer]) -> list[Tuer]:
         if any(math.dist(xy, p) < _TEXT_TUER_NAH_MM for p in punkte):
             continue
         out.append(Tuer(id=f"texttuer_{len(out) + 1}", xy_mm=xy,
-                        breite_mm=0.0, quelle=f"text:{text[:40]}"))
+                        breite_mm=None, breite_quelle="UNBEKANNT",
+                        breite_grund="nur Text-Beleg, keine Geometrie",
+                        quelle=f"text:{text[:40]}"))
         punkte.append(xy)
     return out
 

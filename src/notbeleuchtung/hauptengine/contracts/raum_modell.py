@@ -15,7 +15,7 @@ from pydantic import BaseModel, Field
 
 XY = tuple[float, float]
 
-CONTRACT_VERSION = "1.3.0"
+CONTRACT_VERSION = "1.4.0"
 
 # v1.2.0 — rein additive, optionale Felder/Modelle (kein Erzeuger bricht):
 # Nutzungsklassen + Tür-Details + Stiegenhaus-/Anker-Modelle + Segment-Herkunft.
@@ -27,6 +27,19 @@ Nutzungsklasse = Literal[
 TuerDetail = Literal[
     "zimmertuer", "wohnungseingang", "stiegenhaustuer", "hauseingang",
     "balkontuer", "garagentor", "brandschutztuer",
+]
+
+# v1.4.0 — Herkunft eines Tuer-Breitenmasses. Der Code erfindet keine Masse:
+# fehlt eine Messung, ist ``breite_mm`` None und ``breite_quelle`` "UNBEKANNT"
+# (mit ``breite_grund``) — nie ein Default, nie ein Normwert, nie ein Mittel.
+BreiteQuelle = Literal[
+    "BLOCKNAME",                # Nennmass aus dem Blocknamen (tueren.py::_breite_mm)
+    "GEOMETRIE_SCHWENKRADIUS",  # Radius des Tuerblatt-ARC
+    "GEOMETRIE_SUMME",          # Summe zweier Blattbreiten (Doppelfluegel)
+    "GEOMETRIE_OEFFNUNG",       # Wandoeffnung/Rohbaulichte (tuer_zuordnung.py)
+    "ATTRIBUT",                 # DXF-ATTRIB — heute ohne Erzeuger, reserviert
+    "STANDARDWERT",             # Reserve; gehoert NICHT ins Modell (nur Render)
+    "UNBEKANNT",                # keine Messung -> breite_mm is None
 ]
 
 AnkerTyp = Literal[
@@ -83,7 +96,15 @@ class Raum(BaseModel):
 class Tuer(BaseModel):
     id: str
     xy_mm: XY
-    breite_mm: float = 0.0
+    # v1.4.0 — breite_mm ist das GEMESSENE Mass; None = nicht gemessen
+    # (frueher 0.0). breite_quelle sagt, welches Mass es ist, breite_grund
+    # (nur bei UNBEKANNT) warum keine Messung vorliegt. lichte_mm ist die
+    # nutzbare Durchgangslichte (Fertigmass) und bleibt None, solange kein
+    # Beleg im Plan steht — es gibt KEINE belegte Umrechnung aus breite_mm.
+    breite_mm: float | None = None
+    breite_quelle: BreiteQuelle = "UNBEKANNT"
+    breite_grund: str | None = None
+    lichte_mm: int | None = None
     von_raum: str | None = None
     nach_raum: str | None = None
     ist_notausgang: bool = False

@@ -90,6 +90,9 @@ class ArchitekturRaumProvider:
             # in den Blockdefinitionen — die Kaskade hat sie bereits gesucht.
             tueren = [
                 Tuer(id=f"tuer_{i}", xy_mm=o.xy_mm, breite_mm=o.breite_mm,
+                     breite_quelle=o.breite_quelle,
+                     breite_grund=(None if o.breite_mm is not None
+                                   else "Tueroeffnung ohne messbare Breite"),
                      ist_notausgang=False, quelle=o.quelle)
                 for i, o in enumerate(k.tueroeffnungen, start=1)
             ]
