@@ -1148,4 +1148,4 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_tuer_109, exit_tuer_11
 | tuer_in_schacht | 4 |
 | tuer_ins_nichts | 3 |
 
-Laufzeit: 2116.4 s
+Laufzeit: 1840.5 s

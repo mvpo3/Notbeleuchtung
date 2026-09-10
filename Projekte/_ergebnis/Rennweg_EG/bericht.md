@@ -241,4 +241,4 @@ Quellen: FALLBACK: 1, GRAPH: 8
 | tuer_ins_nichts | 4 |
 | beide_seiten_untypisiert | 1 |
 
-Laufzeit: 55.5 s
+Laufzeit: 56.1 s
