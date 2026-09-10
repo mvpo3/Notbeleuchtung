@@ -1,0 +1,444 @@
+{
+  "plan": "Barawitzka_KG",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\Barawitzkagasse\\415_260415_PP_VA_1_2 -1 KG.dxf",
+  "floor": "KG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    1395,
+    1800
+  ],
+  "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
+  "kategorien": {
+    "untypisiert": 28,
+    "nebenraum": 7,
+    "sanitaer": 1,
+    "schacht": 5,
+    "hof": 6,
+    "ueberlappung": 54,
+    "segmente": 0
+  },
+  "raeume_gesamt": 41,
+  "raeume_typisiert": 13,
+  "raum_typen": {
+    "TECHNIK": 2,
+    "KINDERWAGENRAUM": 2,
+    "ABSTELLRAUM": 2,
+    "WC": 1,
+    "GARAGE": 1,
+    "SCHACHT": 3,
+    "LIFT": 2
+  },
+  "wohnungen": {
+    "anzahl": 3,
+    "raeume_je_wohnung": {
+      "top_1": 1,
+      "top_2": 1,
+      "top_3": 1
+    },
+    "ohne_wohnung": 38
+  },
+  "innenhoefe_m2": [
+    575.8,
+    411.7,
+    13.0,
+    357.0,
+    12.6,
+    6.4
+  ],
+  "ausgaenge": [],
+  "stiegenhaeuser": [],
+  "ueberlappungen": [
+    {
+      "raum_id": "raum_1",
+      "raum_typ": null,
+      "in_raum_id": "raum_24",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_1",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 91.9
+    },
+    {
+      "raum_id": "raum_2",
+      "raum_typ": null,
+      "in_raum_id": "raum_27",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_2",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_3",
+      "raum_typ": null,
+      "in_raum_id": "raum_25",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_3",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_4",
+      "raum_typ": null,
+      "in_raum_id": "raum_23",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_4",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 91.8
+    },
+    {
+      "raum_id": "raum_5",
+      "raum_typ": null,
+      "in_raum_id": "raum_20",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_5",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_6",
+      "raum_typ": null,
+      "in_raum_id": "raum_14",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_6",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_7",
+      "raum_typ": null,
+      "in_raum_id": "raum_21",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_7",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_8",
+      "raum_typ": null,
+      "in_raum_id": "raum_22",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_8",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 99.2
+    },
+    {
+      "raum_id": "raum_9",
+      "raum_typ": null,
+      "in_raum_id": "raum_16",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_9",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 99.9
+    },
+    {
+      "raum_id": "raum_10",
+      "raum_typ": null,
+      "in_raum_id": "raum_17",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_10",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_11",
+      "raum_typ": "TECHNIK",
+      "in_raum_id": "raum_19",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_11",
+      "raum_typ": "TECHNIK",
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_12",
+      "raum_typ": null,
+      "in_raum_id": "raum_18",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_12",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 99.9
+    },
+    {
+      "raum_id": "raum_13",
+      "raum_typ": null,
+      "in_raum_id": "raum_26",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_13",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 95.6
+    },
+    {
+      "raum_id": "raum_14",
+      "raum_typ": null,
+      "in_raum_id": "raum_6",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_14",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_15",
+      "raum_typ": "TECHNIK",
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 92.6
+    },
+    {
+      "raum_id": "raum_16",
+      "raum_typ": null,
+      "in_raum_id": "raum_9",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_16",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 99.9
+    },
+    {
+      "raum_id": "raum_17",
+      "raum_typ": null,
+      "in_raum_id": "raum_10",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_17",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_18",
+      "raum_typ": null,
+      "in_raum_id": "raum_12",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_18",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 99.9
+    },
+    {
+      "raum_id": "raum_19",
+      "raum_typ": null,
+      "in_raum_id": "raum_11",
+      "in_raum_typ": "TECHNIK",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_19",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_20",
+      "raum_typ": null,
+      "in_raum_id": "raum_5",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_20",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_21",
+      "raum_typ": null,
+      "in_raum_id": "raum_7",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_21",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_22",
+      "raum_typ": null,
+      "in_raum_id": "raum_8",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_22",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 99.2
+    },
+    {
+      "raum_id": "raum_23",
+      "raum_typ": null,
+      "in_raum_id": "raum_4",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_23",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 91.8
+    },
+    {
+      "raum_id": "raum_24",
+      "raum_typ": null,
+      "in_raum_id": "raum_1",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_24",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 91.9
+    },
+    {
+      "raum_id": "raum_25",
+      "raum_typ": null,
+      "in_raum_id": "raum_3",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_25",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_26",
+      "raum_typ": null,
+      "in_raum_id": "raum_13",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_26",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 95.6
+    },
+    {
+      "raum_id": "raum_27",
+      "raum_typ": null,
+      "in_raum_id": "raum_2",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_27",
+      "raum_typ": null,
+      "in_raum_id": "raum_32",
+      "in_raum_typ": "GARAGE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "lift_2",
+      "raum_typ": "LIFT",
+      "in_raum_id": "rest_1",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    }
+  ],
+  "tueren_gesamt": 102,
+  "laufzeit_s": 315.4,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 28** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "Gänge (GANG/VORRAUM/AUFZUGSVORPLATZ): **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",
+    "Stiegenhäuser: **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",
+    "Außenflächen (BALKON/TERRASSE): **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",
+    "`final_exit`: **0** — kein Ausgang ins Freie erkannt (in Obergeschossen erwartungsgemäß, s. provider.py).",
+    "`stair_exit`: **0** — kein Stiegenhaus-Ausgang erkannt.",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

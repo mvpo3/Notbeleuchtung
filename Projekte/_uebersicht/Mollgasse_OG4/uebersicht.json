@@ -1,0 +1,107 @@
+{
+  "plan": "Mollgasse_OG4",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\Mollgasse\\4.Obergeschoß.dxf",
+  "floor": "EG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    1800,
+    1469
+  ],
+  "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
+  "kategorien": {
+    "untypisiert": 5,
+    "wohnen": 12,
+    "gang": 10,
+    "sanitaer": 13,
+    "nebenraum": 6,
+    "stiege": 3,
+    "aussen": 1,
+    "schacht": 3,
+    "hof": 4,
+    "ueberlappung": 1,
+    "segmente": 10,
+    "final_exit": 1,
+    "stair_exit": 1
+  },
+  "raeume_gesamt": 53,
+  "raeume_typisiert": 48,
+  "raum_typen": {
+    "ZIMMER": 9,
+    "GANG": 4,
+    "WC": 6,
+    "BAD": 7,
+    "ABSTELLRAUM": 6,
+    "VORRAUM": 6,
+    "KÜCHE": 2,
+    "WOHNZIMMER": 1,
+    "STIEGENHAUS": 3,
+    "BALKON": 1,
+    "SCHACHT": 1,
+    "LIFT": 2
+  },
+  "wohnungen": {
+    "anzahl": 12,
+    "raeume_je_wohnung": {
+      "top_2": 3,
+      "top_1": 5,
+      "top_11": 2,
+      "top_12": 1,
+      "top_3": 2,
+      "top_4": 5,
+      "top_5": 6,
+      "top_6": 1,
+      "top_7": 1,
+      "top_8": 4,
+      "top_9": 4,
+      "top_10": 1
+    },
+    "ohne_wohnung": 18
+  },
+  "innenhoefe_m2": [
+    1075.0,
+    30.5,
+    12.8,
+    18.4
+  ],
+  "ausgaenge": [
+    {
+      "id": "exit_tuer_3",
+      "typ": "final_exit",
+      "xy_mm": [
+        2831723.8453234183,
+        1748036.8270586801
+      ]
+    },
+    {
+      "id": "exit_durchgang_32",
+      "typ": "stair_exit",
+      "xy_mm": [
+        2872815.7515918724,
+        1727587.2953549905
+      ]
+    }
+  ],
+  "stiegenhaeuser": [
+    "raum_30",
+    "stiegenhaus_1",
+    "stiegenhaus_2"
+  ],
+  "ueberlappungen": [
+    {
+      "raum_id": "raum_43",
+      "raum_typ": null,
+      "in_raum_id": "lift_2",
+      "in_raum_typ": "LIFT",
+      "anteil_prozent": 97.8
+    }
+  ],
+  "tueren_gesamt": 93,
+  "laufzeit_s": 73.5,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 5** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

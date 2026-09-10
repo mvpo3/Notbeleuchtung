@@ -1,0 +1,134 @@
+{
+  "plan": "Rennweg_EG",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\Rennweg\\EG - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf",
+  "floor": "EG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    1307,
+    2400
+  ],
+  "rotation": "Rotation: keine dominante Kantenrichtung — 0° belassen.",
+  "kategorien": {
+    "wohnen": 3,
+    "nebenraum": 3,
+    "sanitaer": 1,
+    "gang": 2,
+    "stiege": 5,
+    "aussen": 2,
+    "untypisiert": 5,
+    "schacht": 1,
+    "hof": 0,
+    "ueberlappung": 0,
+    "segmente": 9,
+    "final_exit": 3,
+    "stair_exit": 5
+  },
+  "raeume_gesamt": 22,
+  "raeume_typisiert": 17,
+  "raum_typen": {
+    "KÜCHE": 2,
+    "ABSTELLRAUM": 1,
+    "BAD": 1,
+    "ZIMMER": 1,
+    "GARAGE": 1,
+    "VORRAUM": 1,
+    "STIEGENHAUS": 5,
+    "TERRASSE": 2,
+    "MUELLRAUM": 1,
+    "GANG": 1,
+    "LIFT": 1
+  },
+  "wohnungen": {
+    "anzahl": 2,
+    "raeume_je_wohnung": {
+      "top_1": 4,
+      "top_2": 1
+    },
+    "ohne_wohnung": 17
+  },
+  "innenhoefe_m2": [],
+  "ausgaenge": [
+    {
+      "id": "exit_tuer_10",
+      "typ": "final_exit",
+      "xy_mm": [
+        12553324.15708311,
+        356223898.8877717
+      ]
+    },
+    {
+      "id": "exit_tuer_11",
+      "typ": "final_exit",
+      "xy_mm": [
+        12549022.2701902,
+        356210061.526092
+      ]
+    },
+    {
+      "id": "exit_durchgang_23",
+      "typ": "stair_exit",
+      "xy_mm": [
+        12550474.551925628,
+        356215650.2833502
+      ]
+    },
+    {
+      "id": "exit_durchgang_24",
+      "typ": "stair_exit",
+      "xy_mm": [
+        12552335.03797256,
+        356220238.1594256
+      ]
+    },
+    {
+      "id": "exit_durchgang_25",
+      "typ": "stair_exit",
+      "xy_mm": [
+        12549376.63179941,
+        356217429.0071349
+      ]
+    },
+    {
+      "id": "exit_durchgang_26",
+      "typ": "stair_exit",
+      "xy_mm": [
+        12550581.32130497,
+        356220240.3024988
+      ]
+    },
+    {
+      "id": "exit_durchgang_27",
+      "typ": "stair_exit",
+      "xy_mm": [
+        12549973.561770158,
+        356218819.99069494
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_2",
+      "typ": "final_exit",
+      "xy_mm": [
+        12555263.126077065,
+        356222922.7257775
+      ]
+    }
+  ],
+  "stiegenhaeuser": [
+    "raum_7",
+    "raum_14",
+    "raum_15",
+    "rest_1",
+    "rest_2"
+  ],
+  "ueberlappungen": [],
+  "tueren_gesamt": 41,
+  "laufzeit_s": 13.2,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 5** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "Innenhöfe: **0** — `provider.letzte_aussenbereiche.geschlossen` ist leer (oder es gab keine Wandkörper-Analyse).",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

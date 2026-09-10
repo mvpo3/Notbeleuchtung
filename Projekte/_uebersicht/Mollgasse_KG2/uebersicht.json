@@ -1,0 +1,133 @@
+{
+  "plan": "Mollgasse_KG2",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\Mollgasse\\2.Kellergeschoß.dxf",
+  "floor": "EG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    1800,
+    1662
+  ],
+  "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
+  "kategorien": {
+    "gang": 2,
+    "untypisiert": 19,
+    "nebenraum": 3,
+    "stiege": 3,
+    "schacht": 3,
+    "hof": 0,
+    "ueberlappung": 0,
+    "segmente": 15,
+    "stair_exit": 6,
+    "final_exit": 3
+  },
+  "raeume_gesamt": 30,
+  "raeume_typisiert": 11,
+  "raum_typen": {
+    "GANG": 2,
+    "GARAGE": 1,
+    "STIEGENHAUS": 3,
+    "ABSTELLRAUM": 1,
+    "TECHNIK": 1,
+    "SCHACHT": 1,
+    "LIFT": 2
+  },
+  "wohnungen": {
+    "anzahl": 1,
+    "raeume_je_wohnung": {
+      "top_1": 1
+    },
+    "ohne_wohnung": 29
+  },
+  "innenhoefe_m2": [],
+  "ausgaenge": [
+    {
+      "id": "exit_tuer_9",
+      "typ": "stair_exit",
+      "xy_mm": [
+        2207557.932417918,
+        1588772.8592084642
+      ]
+    },
+    {
+      "id": "exit_durchgang_20",
+      "typ": "stair_exit",
+      "xy_mm": [
+        2171345.6727831815,
+        1610089.2669609522
+      ]
+    },
+    {
+      "id": "exit_durchgang_21",
+      "typ": "stair_exit",
+      "xy_mm": [
+        2175499.8799726856,
+        1608373.1971687598
+      ]
+    },
+    {
+      "id": "exit_durchgang_22",
+      "typ": "stair_exit",
+      "xy_mm": [
+        2179999.9837740865,
+        1608470.4582624831
+      ]
+    },
+    {
+      "id": "exit_durchgang_40",
+      "typ": "stair_exit",
+      "xy_mm": [
+        2209105.38503571,
+        1584261.0696483147
+      ]
+    },
+    {
+      "id": "exit_durchgang_41",
+      "typ": "stair_exit",
+      "xy_mm": [
+        2208135.489301859,
+        1584895.2259469437
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_1",
+      "typ": "final_exit",
+      "xy_mm": [
+        2170667.1043923777,
+        1598436.235735898
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_2",
+      "typ": "final_exit",
+      "xy_mm": [
+        2193354.5123136765,
+        1581301.5774130253
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_3",
+      "typ": "final_exit",
+      "xy_mm": [
+        2193341.5783291585,
+        1583412.3864633574
+      ]
+    }
+  ],
+  "stiegenhaeuser": [
+    "raum_5",
+    "rest_2",
+    "rest_5"
+  ],
+  "ueberlappungen": [],
+  "tueren_gesamt": 97,
+  "laufzeit_s": 69.8,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 19** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "Außenflächen (BALKON/TERRASSE): **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",
+    "Innenhöfe: **0** — `provider.letzte_aussenbereiche.geschlossen` ist leer (oder es gab keine Wandkörper-Analyse).",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}
