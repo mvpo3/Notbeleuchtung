@@ -699,6 +699,8 @@ falscher Stelle.
   `ALLGEMEIN_ERSCHLIESSUNG` würde 2 Räume typisieren und `tuer_50` zur
   `stiegenhaustuer` machen (+1 `stair_exit` für `test_soll_stair_exits`);
   `WOHNUNG_PRIVAT` hätte keine Wirkung auf die Ausgänge.
+  → **Ausformuliert mit Planausschnitt, Indizientabelle und Kurzform-Scan über
+  alle fünf Pläne im letzten Abschnitt dieser Datei.**
 - **Frage 2 — `Vorr.` (3 Räume) und `Schrankr.` (1 Raum).**
   Gilt `Vorr.` als `VORRAUM` und `Schrankr.` als `ABSTELLRAUM`? Beide Kanon-Typen
   existieren, nur die Abkürzung fehlt im Wörterbuch. Beide führen zu
@@ -718,3 +720,143 @@ Die ersten vier wären also risikofrei umsetzbar, sobald das **Label** feststeht
 
 **Owner: Enis (`normwissen/`).** Bis zur Antwort bleiben die Räume untypisiert;
 das ist gewollt und kein Defekt.
+
+### @EnisAMG — Entscheidung `Schl.`: **Schleuse** oder **Schlafzimmer**? (2026-09-10, Selman)
+
+Ausformulierung der Frage 1 aus dem Abschnitt darüber. Alle Zahlen gemessen
+(`_s2_r65_steckbrief.py`, `_s2_r67.py`, `_s2_kurzform_scan.py`,
+`_s2_kurzform_bilanz.py`), Belege in `docs/ENIS_UEBERGABE_0908.md` § 13.
+**Es ist nichts gesetzt und nichts geraten: der `xfail` bleibt, ein neuer
+Kanon-Typ entsteht erst nach deiner Entscheidung.**
+
+#### Planausschnitt `raum_65` (Muthgasse_E2)
+
+| Feld | Wert |
+|---|---|
+| Fläche | **13,04 m²** (Stempel `13,04 m²`, deckungsgleich mit dem Polygon) |
+| Zentrum (xy_mm) | 335 283 / 108 862 |
+| bbox | x 333 153…337 815, y 106 351…111 004 mm → 4,66 × 4,65 m, **L-förmig um den Stiegenkern gewickelt** |
+| Umfang / Punkte | 15,28 m / 15 Stützpunkte |
+| Stempelgruppe (`A-AREA-IDEN`) | `E2-VF-11a` · **`Schl.`** · `13,04 m²` · `Ker.Bel.` |
+| Heute | `raum_typ` leer, `nutzungsklasse=None`, `flag=kein_stempel`, Kaskadenzweig `L` |
+
+**Nachbarräume (Polygonabstand ≤ 2000 mm):**
+
+| Abstand | Raum | raum_typ | Nutzungsklasse | Fläche |
+|--:|---|---|---|--:|
+| 0 mm | `stiegenhaus_1` | STIEGENHAUS | ALLGEMEIN_ERSCHLIESSUNG | 11,16 m² |
+| 0 mm | `stiegenhaus_2` | STIEGENHAUS | ALLGEMEIN_ERSCHLIESSUNG | 7,89 m² |
+| 0 mm | `stiegenhaus_3` | STIEGENHAUS | ALLGEMEIN_ERSCHLIESSUNG | 8,14 m² |
+| 0 mm | `stiegenhaus_4` | STIEGENHAUS | ALLGEMEIN_ERSCHLIESSUNG | 8,22 m² |
+| 0 mm | `stiegenhaus_5` | STIEGENHAUS | ALLGEMEIN_ERSCHLIESSUNG | 10,66 m² |
+| 180 mm | `raum_52` | untypisiert (Stempel `SR`) | – | 5,19 m² |
+| 180 mm | `raum_46` | GANG | ALLGEMEIN_ERSCHLIESSUNG | 28,52 m² |
+| 267 mm | `raum_89` | BAD | WOHNUNG_PRIVAT | 4,19 m² (**nur Wandkontakt, keine Tür**) |
+| 666 mm | `raum_94` | GANG | ALLGEMEIN_ERSCHLIESSUNG | 18,10 m² |
+| 1522 mm | `raum_50` | ZIMMER | WOHNUNG_PRIVAT | 13,38 m² |
+| 1809 / 1920 mm | `lift_4` / `lift_5` | LIFT | KEIN_RAUM | je 3,73 m² |
+
+**Lage zum Stiegenhaus:** Abstand **0 mm zu fünf STIEGENHAUS-Polygonen**
+(`stiegenhaus_1…5` sind Podest- und Laufteilstücke desselben Kerns),
+gemeinsame Kontaktlänge zusammen ~8,2 m.
+
+**Türen (5 echte Übergänge, dazu 2 Selbstbezüge aus Textankern):**
+
+| Tür | Quelle | lichte Breite | von → nach | Gegenseite |
+|---|---|--:|---|---|
+| `tuer_50` | `arc_aussen+text:E2-VF-12a` | 655 mm | `stiegenhaus_1` → `raum_65` | STIEGENHAUS |
+| `durchgang_140` | `durchgang+text:E2-VF-12a` | 1126 mm | `raum_65` → `stiegenhaus_1` | STIEGENHAUS |
+| `durchgang_141` | `durchgang+text:T-E2-VF-11a-1` | 1513 mm | `raum_65` → `stiegenhaus_2` | STIEGENHAUS |
+| `durchgang_142` | `durchgang` | 1515 mm | `raum_65` → `stiegenhaus_2` | STIEGENHAUS |
+| `durchgang_120` | `durchgang+text:T-E2-VF-11a-2` | 2196 mm | `raum_52` → `raum_65` | untypisiert (`SR`) |
+
+**4 von 5 Übergängen führen direkt ins Stiegenhaus. Kein einziger Übergang
+führt zu einem Raum mit `nutzungsklasse=WOHNUNG_PRIVAT`.** An zwei der
+Stiegenhaus-Durchgänge steht die Türbeschriftung **EI₂30-C** (im DXF in drei
+MTEXT-Fragmente zerlegt: `EI` + Index 2 + `30-C`), dazu `121`/`200` als lichtes
+Maß und `STUK= +11,12`. Im 5-m-Ring: `Glaswand EI90+A2`, 2× `E90`.
+
+#### Indizien für beide Lesarten
+
+| Indiz | Messwert | spricht für |
+|---|---|---|
+| Nummernpräfix | `E2-VF-11a` — `VF` trägt im Plan **ausschließlich** Verkehrsflächen (STGH, Gang, Aufzug, Podest, Stiege); Wohnungsräume tragen Top-Nummern `E2-7-…` bis `E2-10-…` | Schleuse |
+| Wohnungszugehörigkeit | keine Tür zu einem `WOHNUNG_PRIVAT`-Raum | Schleuse |
+| Türen ins Stiegenhaus | 4 von 5 | Schleuse |
+| Brandschutz | 2× vollständige EI₂30-C-Beschriftung, exakt an den beiden Stiegenhaus-Durchgängen | Schleuse |
+| Anzahl Öffnungen | 3 Öffnungen — Durchgangsraum, kein Sackraum | Schleuse |
+| Geometrie | L-förmig, 15 Punkte, um den Stiegenkern gewickelt, 8,2 m gemeinsame Kante, Abstand 0 mm | Schleuse |
+| Belag | `Ker.Bel.` (Keramik). Wohnräume dieses Plans tragen `Parkett` (49×), Nassräume `Ker.Bel.` (26×) | Schleuse |
+| Plan-Vokabular | Schlafräume heißen in diesem Plan ausgeschrieben **`Zimmer` (20×)**; die Tokens `Schlaf…` und `SZ` kommen **null Mal** vor | Schleuse |
+| Zweiter `Schl.`-Raum | `raum_67`, `E2-VF-11b`, **3,73 m²**, Nachbarn `raum_88` STIEGENHAUS (0 mm) und `raum_68` GANG (180 mm), Türen → Stiegenhaus + Gang, ebenfalls `Ker.Bel.` — als Schlafzimmer physisch ausgeschlossen | Schleuse |
+| **Fläche 13,04 m²** | liegt im Zimmer-Flächenband des Plans (19 ZIMMER: min 1,17 / median 10,31 / max 18,95 m²) | **Schlafzimmer** |
+| Nachbarschaft `raum_89` BAD (267 mm) | Wandkontakt, aber **keine Tür** dorthin | neutral |
+
+**Für „Schlafzimmer" spricht ausschließlich die Fläche** — und diese nur bei
+`raum_65`, nicht bei `raum_67` (3,73 m² unter derselben Abkürzung, gleiche
+Nummernserie `E2-VF-11a/b`). Jedes andere gemessene Merkmal spricht für eine
+Rauch-/Brandschutzschleuse vor dem Stiegenhaus.
+
+#### Die Entscheidungsfrage
+
+> **Ist `Schl.` in dieser Plan-Familie eine Schleuse oder ein Schlafzimmer?**
+>
+> - **Schleuse** — Brandschutz-/Rauchschutzschleuse vor dem Stiegenhaus, Teil
+>   der Erschließung, damit **beleuchtungspflichtig**. Dann brauchen wir von dir
+>   das Kanon-Label: eigener Typ `SCHLEUSE` in `docs/VOKABULAR.md` § 1 +
+>   `RoomType` (heute existiert beides nicht), oder Zuordnung auf einen
+>   bestehenden Typ (`VORRAUM`/`GANG`) — plus die Nutzungsklasse
+>   (`ALLGEMEIN_ERSCHLIESSUNG`?).
+> - **Schlafzimmer** — privat, **keine Notbeleuchtung**. Dann Wörterbucheintrag
+>   `schl → ZIMMER`, Nutzungsklasse `WOHNUNG_PRIVAT`.
+
+Gemessene Wirkung der Entscheidung: `ALLGEMEIN_ERSCHLIESSUNG` typisiert 2 Räume
+und macht `tuer_50` zur `stiegenhaustuer` (+1 `stair_exit` in
+`test_soll_stair_exits`); `WOHNUNG_PRIVAT` hat keine Wirkung auf die Ausgänge.
+Falschtrefferrisiko für den Token `schl` über alle fünf Pläne: **0**
+(token-exakt gemessen, „Falschtreffer" = Treffer ohne m²-Nachbar).
+
+Ersatzweise `GANG`/`VORRAUM` **zu raten** ist der einzige Weg, den wir nicht
+gehen: er entscheidet über Leuchte oder keine Leuchte.
+
+#### Kurzform-Scan über die anderen vier Pläne — ist das ein Einzelfall?
+
+Methode: alle m²-verankerten Stempelgruppen (r=1500 mm, wie
+`stempel_anker._stempel_aus_texten`, zusätzlich auf den Layer des m²-Ankers
+eingegrenzt) plus alle INSERT/ATTRIB-Stempel aus `finde_stempel`.
+„Nicht aufgelöst" = kein Kandidat der Gruppe liefert `raumtyp_flags(...)` ungleich `None`.
+
+| Plan | Stempelgruppen | aufgelöst | **nicht aufgelöst** | INSERT-Stempel ohne Typ |
+|---|--:|--:|--:|--:|
+| Barawitzka_EG | 65 | 36 | **29** | 0 |
+| Mollgasse_EG | 4 | 0 | **4** | **27** |
+| Muthgasse_E2 | 130 | 99 | **31** | 0 |
+| Rennweg_EG | 0 | 0 | 0 | **5** |
+| Rennweg_OG3 | 0 | 0 | 0 | 0 |
+
+Echte Abkürzungen ohne Kanon-Auflösung (je `raumtyp_flags=None`,
+`classify_room=UNKNOWN`):
+
+| Kurzform | Bara. | Moll. | Muth. | Renn_EG | Renn_OG3 | Σ |
+|---|--:|--:|--:|--:|--:|--:|
+| `Vorr.` | 0 | 0 | 8 | 0 | 0 | **8** |
+| `SR` | 1 | 1 | 3 | 0 | 0 | **5** |
+| **`Schl.`** | 0 | 0 | **2** | 0 | 0 | **2** |
+| `Schrankr.` | 0 | 0 | 1 | 0 | 0 | **1** |
+| `gärtn. gest.` | 2 | 0 | 0 | 0 | 0 | 2 |
+
+**`Schl.` kommt nur in Muthgasse_E2 vor, dort zweimal — in den anderen vier
+Plänen null Mal.** Es ist damit kein einmaliger Ausrutscher, aber auch nicht die
+Spitze: Platz 3 hinter `Vorr.` (8) und `SR` (5).
+
+Wirkung auf die Untypisiert-Zahl (50 untypisierte Räume über fünf Pläne,
+identisch mit § 13.6): `Schl.` kostet **2 von 50** (4 %). Die vier Kurzformen
+zusammen (`SR` 4, `Vorr.` 3, `Schl.` 2, `Schrankr.` 1) kosten **10 Räume =
+20 %**. Die Mehrheit (Mollgasse 28, Rennweg_EG 5) hängt dagegen an
+**ausgeschriebenen** Außenraum- und Nutzungsbegriffen (`EIGENGARTEN`, `GEHWEG`,
+`VORPLATZ`, `TOP n`, `GESCHÄFTSLOKAL`, `Müllplatz`), nicht an Abkürzungen — das
+ist eine getrennte Vokabularfrage und nicht Teil dieser Entscheidung.
+
+**Owner: Enis (`normwissen/`).** Bis zur Antwort bleiben `raum_65` und
+`raum_67` untypisiert, der `xfail` bleibt stehen, und es entsteht **kein neuer
+Kanon-Typ**.

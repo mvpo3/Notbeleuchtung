@@ -1853,12 +1853,156 @@ gewinnen, obwohl der LIFT das gezeichnete Polygon ist.
    `VERLAUF.md` und in die Prüfstrecke aufgenommen werden**, so wie
    Legendenabdeckung und Breitenprofil?
 
+#### 14.6.1 Nachtrag 2026-09-10 — Owner-Antworten als verbindliche Regeln (weiterhin VORSCHLAG)
+
+Der Owner hat die fünf offenen Entscheidungen oben beantwortet. Die Antworten
+stehen hier als **verbindliche Konfliktregeln** — **umgesetzt ist weiterhin
+nichts**, kein Code in `src/`, kein Contract, kein Test.
+
+**(a) Vorrang nach QUELLE, nicht nach Größe.**
+Rangfolge: **Polygon mit Stempel** > **Layer-/HATCH-Polygon ohne Stempel** >
+**Flutung** > **Restfläche**. Bei gleicher Quelle gewinnt das Polygon, dessen
+Fläche näher am Stempelwert liegt.
+Abbildung auf die Daten in `raeume.json`: Rang 1 = `quelle ∈ {L, H}` **und**
+`flaeche_stempel ≠ None`; Rang 2 = `quelle ∈ {L, H}` ohne Stempel; Rang 3 =
+`quelle = F`; Rang 4 = `quelle = R`.
+
+**(b) Enthaltensein schlägt Größe.**
+Liegt der kleinere Raum **vollständig** im größeren, bleiben **beide** — der
+größere bekommt ein Loch (Ring-Polygon). Bei Teilüberlappung wird die gemeinsame
+Fläche dem Raum zugeschlagen, dessen **Schwerpunkt näher an ihr liegt**.
+
+**(c) LIFT und SCHACHT** werden **immer** aus jedem umgebenden Raum ausgestanzt,
+unabhängig von der Quelle.
+
+**(d) Restflächen** sind nachrangig und dürfen **nie** über ein anderes Polygon
+ragen.
+
+**(e) Nicht destruktiv.** Originalpolygon bleibt in `polygon_roh`, die bereinigte
+Fassung steht in `polygon_mm`, dazu ein Feld `bereinigung` mit der greifenden
+Regel und dem Gegenspieler.
+⚠️ **(e) berührt den Contract**: `polygon_roh` und `bereinigung` wären **neue
+Felder** auf `Raum` in `hauptengine/contracts/raum_modell.py`. Das ist hier
+**ausdrücklich nur ein Vorschlag**; der Contract ist in diesem Schritt nicht
+angefasst worden und `raum_modell` 1.4.0 wartet weiter auf das Approval von
+@EnisAMG.
+
+##### Angewandte Kaskade (Reihenfolge, damit die Zuordnung eindeutig ist)
+
+Die vier Regeln überschneiden sich. Für die Umfangsrechnung wurde je Paar die
+**erste** greifende Regel genommen, in dieser Reihenfolge:
+
+1. **(c)** eine Seite ist LIFT/SCHACHT/AUFZUG → ausstanzen.
+2. **(d)** genau eine Seite hat `quelle = R` → die Restfläche weicht.
+3. **(b)** `Schnitt / kleinere Fläche ≥ 0,99` → Enthaltensein, Ringloch.
+4. **(a₁)** unterschiedlicher Quellen-Rang → höherer Rang gewinnt.
+5. **(a₂)** gleicher Rang → näher am Stempelwert gewinnt.
+6. **(b₂)** gleicher Rang, kein Stempel-Stichentscheid → Schwerpunktnähe.
+
+**Auslegung, die der Owner drehen kann:** (b) ist hier **vor** (a) einsortiert —
+„Enthaltensein schlägt Größe" wurde als „Enthaltensein schlägt auch die
+Quellenrangfolge" gelesen, weil bei Enthaltensein niemand verliert (beide Räume
+bleiben, es entsteht nur ein Loch). Wird (a) vorgezogen, wechseln **7 Paare /
+69,7 m²** von „beide bleiben, Ringloch" zu „ein Polygon verliert die Fläche" —
+die Zahl der gelösten Fälle ändert sich dadurch **nicht**, nur das Ergebnisbild.
+
+##### Umfangsrechnung — welche Regel löst wie viele der 62 Überlapper?
+
+Gerechnet mit `_s2_regel_umfang.py` über dieselben Daten und dieselben
+Definitionen wie § 14.1/14.2 (Lauf `47df2d9`). Grundmenge: die **50 relevanten
+Paare** aus § 14.4 (mindestens eine Seite > 5 %) bzw. die **62 Überlapper-Räume**
+aus § 14.2.
+
+**Je Paar:**
+
+| Regel | Paare | Schnittfläche | verbleibende Schnittfläche danach (kumulativ) |
+|---|--:|--:|--:|
+| Start | 50 | — | **261,4 m²** |
+| (c) LIFT/SCHACHT ausstanzen | 1 | 3,9 m² | 257,5 m² |
+| (b) Enthaltensein → Ringloch | 7 | 69,7 m² | 187,8 m² |
+| (a₁) Quellen-Rang entscheidet | 37 | 180,4 m² | 7,3 m² |
+| (a₂) näher am Stempelwert | 5 | 7,3 m² | **0,0 m²** |
+| (b₂) Schwerpunktnähe | 0 | 0,0 m² | 0,0 m² |
+| **(d) Restfläche weicht** | **0** | **0,0 m²** | 0,0 m² |
+| **ungelöst** | **0** | **0,0 m²** | — |
+
+**Je Raum (die 62 Überlapper):** ein Raum kann mehrere Partner haben; hier steht
+die Menge der Regeln, die seine Fälle lösen.
+
+| greifende Regel(n) | Räume |
+|---|--:|
+| nur (a₁) | 41 |
+| nur (b) | 10 |
+| nur (a₂) | 5 |
+| (a₁) + (a₂) | 2 |
+| (a₁) + (b) | 2 |
+| (a₁) + (b) + (c) | 1 |
+| nur (c) | 1 |
+| **ungelöst** | **0** |
+| **Summe** | **62** |
+
+**Es bleibt kein Fall übrig, den keine Regel löst.** Die Regeln (a)+(b)+(c)
+decken alle 50 Paare und alle 62 Räume ab.
+
+**Zur „verbleibenden doppelbelegten Fläche": die 0,0 m² sind die Paar-Rechnung,
+nicht die Gesamtbilanz.** Ehrlich aufgeschlüsselt:
+
+| Posten | Fläche |
+|---|--:|
+| Doppelbelegung gesamt (`unary_union`-Differenz, § 14.2) | **262,34 m²** |
+| davon Schnitte der 50 relevanten Paare (> 5 %) | 261,40 m² |
+| davon Schnitte in **45 Paaren unter der 5-%-Schwelle** | 2,08 m² |
+| Abzug Mehrfachüberdeckung (Flächen, die > 2 Räumen gehören, sonst doppelt gezählt) | −1,14 m² |
+
+Nach Anwendung aller Regeln auf die 50 relevanten Paare blieben rechnerisch die
+**2,08 m² aus den 45 Kleinstpaaren** stehen — sie liegen unter der Messschwelle
+dieses Berichts und sind kein Ziel der Bereinigung. Die Regeln adressieren damit
+**261,4 von 262,3 m² = 99,6 %** der doppelt belegten Fläche.
+
+##### Sonderprüfung: fallen `raum_53` und `raum_51` unter die Restflächen-Regel (d)?
+
+**Nein — Befund gegen die Owner-Annahme.**
+
+| Raum | `quelle` | Rang | Fläche | `flag` |
+|---|---|--:|--:|---|
+| `raum_51` (`PODEST`, untypisiert) | **F (Flutung)** | 3 | 137,50 m² | `flutung_unsicher`, Stempel 11,02 m² gegen 137,50 m² berechnet = **+1147,8 %** |
+| `raum_53` (`KINDERWAGENRAUM`) | **F (Flutung)** | 3 | 7,24 m² | `ok`, Stempel 7,23 m² |
+
+Beide sind **Flutungsräume**, keine Restflächen — `rest_komponenten.py` hat
+keinen von beiden erzeugt, ihre `id` trägt auch kein `rest_`-Präfix. Regel (d)
+greift auf dieses Paar **nicht**.
+
+Was stattdessen greift: **(b)**. `raum_53` liegt zu **100,0 %** in `raum_51` →
+beide bleiben, `raum_51` bekommt ein Ringloch. Der zweite Fall von `raum_51`
+(gegen `raum_7`, VORRAUM, Quelle H mit Stempel, 4,35 m²) fällt unter **(a₁)**:
+Rang 1 schlägt Rang 3, `raum_51` verliert die Fläche.
+
+**Regel (d) greift im gesamten Bestand in null Fällen** — passend zu § 14.4:
+„R ↔ irgendwas: 0 Paare, 0,0 m²". Die R-Räume sind die einzigen, die die
+Belegungsprüfung schon heute korrekt machen. (d) ist damit eine **Vorsorgeregel
+für die Zukunft**, kein Werkzeug für den heutigen Bestand — und sie ist in der
+Rangfolge (a) ohnehin als niedrigster Rang enthalten.
+
+##### Was das für die Reihenfolge aus § 14.6 bedeutet
+
+Die Rechnung ändert die Empfehlung nicht: **(a₁) allein löst 37 der 50 Paare und
+180,4 der 261,4 m²**, und alle 37 haben laut § 14.4 einen F-Raum als Verlierer.
+Das ist dieselbe Menge, die Schritt 2 (belegte Flächen in `stempel_flutung.py`
+blockieren) an der **Entstehung** verhindert. Eine nachgelagerte Konfliktregel
+wäre nur nötig für das, was danach übrig bleibt — und das ist erst nach Schritt 2
+messbar, nicht vorher.
+
+Rohausgabe der Rechnung: `_s2_regel_umfang.py` / `_s2_regel_umfang.out`
+(Session-Scratchpad, nur lesend). Der Riegel aus Schritt 1 der Skizze ist
+inzwischen gebaut: `tests/naht/test_ueberlappung_riegel.py`, siehe § 16.
+
 ### 14.7 Was in diesem Schritt gemacht und was nicht gemacht wurde
 
 Gemacht: die Messung oben, dieser Befund, die Bereinigungsskizze als Vorschlag.
 
 Nicht gemacht: keine Datei in `src/` geändert, kein Test hinzugefügt oder
-scharf geschaltet, kein Zielband bewegt, keine Contract-Änderung
+scharf geschaltet, kein Zielband bewegt, keine Contract-Änderung (Stand
+dieses Schritts — der Riegel-Test kam erst im Folgeschritt dazu, § 16)
 (`hauptengine/contracts/**` unberührt, `raum_modell` 1.4.0 wartet weiter auf das
 Approval von @EnisAMG), kein Push, kein PR, kein Merge.
 
@@ -1934,3 +2078,95 @@ der Pipeline, und dieses Verhalten hat sich nicht geändert.
   eine erfundene Zeile.
 - Ein Wiederholungslauf hätte rund 2500 s gekostet (Muthgasse allein 1852 s) und
   per Konstruktion dieselben Zahlen geliefert.
+
+---
+
+## 16. Nachtrag 2026-09-10 — Überlappungs-Riegel gebaut (Punkt 1 des Owner-Auftrags)
+
+Schritt 1 der Bereinigungsskizze § 14.6 ist umgesetzt: **die heutigen
+Überlappungszahlen sind als Obergrenze eingefroren.** Kein Verhalten geändert,
+kein Code in `src/`, kein Contract, kein Zielband bewegt.
+
+**Datei: `tests/naht/test_ueberlappung_riegel.py`.**
+
+### 16.1 Warum dort und warum über `raeume.json`
+
+**Ort `tests/naht/`:** dort liegen die planbezogenen Soll-Bänder über alle
+Familien (`test_soll_barawitzka.py` … `test_soll_rennweg.py`). Der Riegel ist
+genau das — ein Soll-Band gegen die echten Planergebnisse, nicht ein Unit-Test
+einer Funktion. `tests/raumerkennung/` prüft einzelne Bausteine gegen Fakes,
+`tests/contract/` prüft Schemata; beides passt nicht.
+
+**Quelle `Projekte/_ergebnis/<Plan>/raeume.json` statt Provider-Parse — bewusst,
+mit zwei Gründen:**
+
+1. Die DXF-Eingangspläne sind per `.gitignore` **nicht getrackt** (`*.dxf`, nur
+   die Symbol-Library ist ausgenommen). Ein Parse-Test wäre in CI immer geskippt
+   und würde nichts riegeln. `raeume.json` **ist** getrackt (`git ls-files`).
+2. Ein Provider-Parse der Muthgasse dauert ~800 s; die fünf Pläne zusammen wären
+   ein Vielfaches der heutigen Suitenlaufzeit.
+
+**Der Preis, ehrlich benannt:** der Riegel greift erst, wenn die Laufergebnisse
+neu erzeugt und eingecheckt werden. Er fängt keine Regression, die nur im Code
+steht und noch nicht in `Projekte/_ergebnis/` angekommen ist. Das ist derselbe
+Vertrag, unter dem `Projekte/_ergebnis/VERLAUF.md` schon heute geführt wird.
+
+### 16.2 Gemessene Laufzeit
+
+```
+11 passed in 0.24s
+============================= slowest 3 durations =============================
+0.13s setup    tests/naht/test_ueberlappung_riegel.py::test_ueberlapper_je_plan_steigt_nicht[Barawitzka_EG]
+(2 durations < 0.005s hidden.)
+```
+
+**0,24 s für alle fünf Pläne**, davon 0,13 s die einmalige Messung im
+`module`-scope-Fixture. Die Suite wird davon nicht berührt.
+
+### 16.3 Eingefrorene Bänder — selbst nachgemessen
+
+Die Bänder wurden **nicht** aus § 14.2 übernommen, sondern vor dem Einfrieren neu
+gemessen (Ausgabe wörtlich):
+
+```
+Barawitzka_EG: 9 Ueberlapper | 42.25 m2 | Band (9, 42.3)
+Mollgasse_EG: 16 Ueberlapper | 45.84 m2 | Band (16, 45.8)
+Muthgasse_E2: 37 Ueberlapper | 174.24 m2 | Band (37, 174.2)
+Rennweg_EG: 0 Ueberlapper | 0.00 m2 | Band (0, 0.0)
+Rennweg_OG3: 0 Ueberlapper | 0.00 m2 | Band (0, 0.0)
+SUMME: 62 | 262.34 m2
+```
+
+Alle fünf Plan-Werte und die Summe **decken sich exakt mit § 14.2**. Keine Zahl
+ist gesunken, also war kein Band nachzuziehen.
+
+| Band | Anzahl | doppelbelegte Fläche |
+|---|--:|--:|
+| Barawitzka_EG | 9 | 42,3 m² |
+| Mollgasse_EG | 16 | 45,8 m² |
+| Muthgasse_E2 | 37 | 174,2 m² |
+| Rennweg_EG | 0 | 0,0 m² |
+| Rennweg_OG3 | 0 | 0,0 m² |
+| **Summe** | **62** | **262,3 m²** |
+
+Die Flächenbänder sind auf 0,1 m² gerundet; der Test rechnet deshalb mit einer
+Toleranz von 0,05 m² (Mollgasse misst 45,84 gegen Band 45,8). Die Zählbänder
+sind exakt, ohne Toleranz.
+
+### 16.4 Richtung des Riegels
+
+- Zahl **steigt** → Test rot. Das ist die Regression, die der Riegel fangen soll.
+- Zahl **sinkt** → Band im selben Commit nachziehen. Owner-Regel: der Test hält
+  den Fortschritt fest, er bremst ihn nicht.
+- Es gibt **kein** `xfail`-Zielbild mit Sollwert 0 (anders als in der Skizze
+  § 14.6 angedacht). Ein strict-xfail auf „0 Überlapper" würde beim ersten
+  Teilerfolg nicht kippen und trüge keine Information, die der Obergrenzen-Test
+  nicht schon trägt.
+
+### 16.5 Definitionen
+
+Wörtlich aus § 14.1, im Docstring der Testdatei wiederholt: `polygon_mm` als
+`shapely.Polygon` mit `buffer(0)`-Reparatur, Einträge < 3 Punkte ausgeschlossen,
+Rauschschwelle 1 mm², Verhältnis **je Seite getrennt** (`inter / eigene Fläche`),
+Zählung über eine **Menge von Raum-Indizes** (keine Doppelzählung, beide Seiten
+zählbar), doppelbelegte Fläche = Summe der Einzelflächen − `unary_union`-Fläche.
