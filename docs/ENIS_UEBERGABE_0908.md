@@ -2170,3 +2170,382 @@ Wörtlich aus § 14.1, im Docstring der Testdatei wiederholt: `polygon_mm` als
 Rauschschwelle 1 mm², Verhältnis **je Seite getrennt** (`inter / eigene Fläche`),
 Zählung über eine **Menge von Raum-Indizes** (keine Doppelzählung, beide Seiten
 zählbar), doppelbelegte Fläche = Summe der Einzelflächen − `unary_union`-Fläche.
+
+---
+
+## 17. Nachtrag 2026-09-10 — Punkt 4 des zweiten Owner-Blocks: Douglas-Peucker 20 mm (nur gemessen, **nichts angewendet**)
+
+> **Status: reine Messung und Analyse. Es wurde nichts umgesetzt.** Keine Datei in
+> `src/` geändert, kein Contract berührt, kein Test verändert, kein Zielband
+> bewegt, kein Ergebnis-JSON überschrieben. Die Zahlen aus § 14 stehen unverändert
+> daneben und gelten weiter als „vorher".
+
+Datenbasis: `Projekte/_ergebnis/<Plan>/raeume.json`, Stände 10.09. 12:56–13:35 —
+derselbe Lauf, auf dem § 14.2 beruht. Kein Schreibzugriff.
+Messskripte (Scratchpad, nur lesend): `_p4b_simplify.py`, `_p4b_liste17.py`,
+`_p4b_delta.py`.
+Definitionen exakt wie § 14.1 übernommen (Polygon aus `polygon_mm`,
+`buffer(0)`-Reparatur, < 3 Punkte = Stempel ausgeschlossen, Rauschschwelle 1 mm²,
+> 5 % je eigener Fläche, Zählung über Raum-Indizes).
+
+### 17.1 Bestätigung der 15 Räume mit > 200 Punkten
+
+Reproduziert: **245 Räume, 15 mit > 200 Punkten** — Barawitzka 1, Mollgasse 3,
+Muthgasse 9, Rennweg_EG 0, Rennweg_OG3 2. Deckt sich mit § 14.2.
+
+Kaskadenzweig nach `kaskade.py:88–152` (L = Layer-Polygon, H = HATCH,
+F = Stempel-Flutung/Raster, R = Rest-Komponente): **13 von 15 sind Quelle F,
+2 sind R. Kein einziger L- oder H-Raum hat > 200 Punkte.** Das stützt den Befund
+aus § 14.2, dass die Punktzahl ein Artefakt des Rasterverfahrens ist.
+
+### 17.2 Messtabelle der 15, `simplify(20.0, preserve_topology=True)`
+
+Punkte gezählt über die Shapely-Geometrie (Außenring + Innenringe); Spalte „JSON"
+= `len(polygon_mm)` wie in § 14.2.
+
+| Plan | ID | raum_typ | Quelle | JSON | Pkt vor | Pkt nach | Fläche vor m² | Fläche nach m² | Abw. % | > 0,5 % | valid | Multi |
+|---|---|---|---|---:|---:|---:|---:|---:|---:|---|---|---|
+| Barawitzka_EG | raum_43 | TERRASSE | F | 464 | 464 | 112 | 56,643 | 56,587 | 0,100 | nein | ja | nein |
+| Mollgasse_EG | raum_13 | (untypisiert) | F | 205 | 205 | 72 | 31,392 | 31,345 | 0,149 | nein | ja | nein |
+| Mollgasse_EG | raum_41 | (untypisiert) | F | 480 | 480 | 250 | 85,603 | 85,540 | 0,073 | nein | ja | nein |
+| Mollgasse_EG | raum_51 | (untypisiert) | F | 373 | 373 | 163 | 137,505 | 137,504 | 0,001 | nein | ja | nein |
+| Muthgasse_E2 | raum_82 | KÜCHE | F | 229 | 229 | 46 | 19,879 | 19,831 | 0,241 | nein | ja | nein |
+| Muthgasse_E2 | raum_85 | KÜCHE | F | 457 | 457 | 223 | 33,464 | 33,426 | 0,112 | nein | ja | nein |
+| Muthgasse_E2 | raum_86 | KÜCHE | F | 709 | 709 | 282 | 43,659 | 43,602 | 0,132 | nein | ja | nein |
+| Muthgasse_E2 | raum_87 | KÜCHE | F | 738 | 738 | 247 | 39,545 | 39,509 | 0,092 | nein | ja | nein |
+| Muthgasse_E2 | raum_88 | STIEGENHAUS | F | 719 | 719 | 186 | 20,675 | 20,637 | 0,181 | nein | ja | nein |
+| Muthgasse_E2 | raum_90 | ZIMMER | F | 465 | 465 | 176 | 18,952 | 18,915 | 0,196 | nein | ja | nein |
+| Muthgasse_E2 | raum_92 | KÜCHE | F | 453 | 453 | 191 | 20,726 | 20,704 | 0,107 | nein | ja | nein |
+| Muthgasse_E2 | raum_93 | KÜCHE | F | 208 | 208 | 96 | 8,039 | 8,035 | 0,044 | nein | ja | nein |
+| Muthgasse_E2 | raum_94 | GANG | F | 233 | 233 | 130 | 18,096 | 18,088 | 0,046 | nein | ja | nein |
+| Rennweg_OG3 | rest_3 | STIEGENHAUS | R | 234 | 235 | 102 | 21,774 | 21,747 | 0,126 | nein | ja | nein |
+| Rennweg_OG3 | rest_4 | (untypisiert) | R | 239 | 240 | 87 | 10,091 | 10,062 | 0,281 | nein | ja | nein |
+
+Summe der 15: **6 208 → 2 363 Punkte (−61,9 %)**. Flächenabweichung maximal
+**0,281 %** (`rest_4`), Median rund 0,12 %. **Kein einziger der 15 reißt die
+0,5-%-Grenze, keiner wird ungültig, keiner zerfällt in ein MultiPolygon.** Die 15
+Räume tragen 6 208 von 14 149 Punkten = 43,9 % aller Polygonpunkte auf 6,1 % der
+Räume.
+
+### 17.3 Gesamtmessung über alle 245 Räume
+
+| Plan | Räume | Pkt vor | Pkt nach | Reduktion | > 0,5 % | ungültig | Multi | Fläche vor m² | Fläche nach m² | Abw. gesamt |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Barawitzka_EG | 47 | 1 225 | 532 | 56,6 % | 2 | 0 | 0 | 541,1 | 541,0 | 0,018 % |
+| Mollgasse_EG | 62 | 5 811 | 2 001 | 65,6 % | 13 | 0 | 0 | 1 110,4 | 1 109,0 | 0,125 % |
+| Muthgasse_E2 | 101 | 5 994 | 2 632 | 56,1 % | 1 | 0 | 0 | 1 074,1 | 1 073,7 | 0,035 % |
+| Rennweg_EG | 21 | 324 | 249 | 23,1 % | 0 | 0 | 0 | 406,6 | 406,6 | 0,002 % |
+| Rennweg_OG3 | 14 | 795 | 326 | 59,0 % | 1 | 0 | 0 | 197,2 | 197,2 | 0,032 % |
+| **SUMME** | **245** | **14 149** | **5 740** | **59,4 %** | **17** | **0** | **0** | **3 329,4** | **3 327,5** | **0,058 %** |
+
+Die **17 Grenzverletzer** namentlich — auffällig: es sind **nicht** die großen
+Räume, sondern durchweg kleine (1,10–7,24 m²), 15 × Quelle F, 2 × R:
+
+| Plan | ID | typ | Q | Pkt | Fläche vor | nach | Abw. % |
+|---|---|---|---|---:|---:|---:|---:|
+| Barawitzka_EG | raum_44 | BALKON | F | 183 | 4,88 | 4,85 | 0,651 |
+| Barawitzka_EG | rest_3 | SCHACHT | R | 81 | 2,53 | 2,51 | 0,768 |
+| Mollgasse_EG | raum_11 | WC | F | 83 | 1,98 | 1,95 | **1,353** |
+| Mollgasse_EG | raum_12 | BAD | F | 102 | 6,84 | 6,79 | 0,737 |
+| Mollgasse_EG | raum_16 | BAD | F | 101 | 4,85 | 4,81 | 0,794 |
+| Mollgasse_EG | raum_17 | ABSTELLRAUM | F | 88 | 2,33 | 2,32 | 0,566 |
+| Mollgasse_EG | raum_21 | BAD | F | 80 | 4,37 | 4,34 | 0,755 |
+| Mollgasse_EG | raum_24 | ABSTELLRAUM | F | 82 | 2,21 | 2,18 | **1,470** |
+| Mollgasse_EG | raum_26 | WC | F | 84 | 2,03 | 2,01 | 0,893 |
+| Mollgasse_EG | raum_37 | ABSTELLRAUM | F | 85 | 2,58 | 2,56 | 0,743 |
+| Mollgasse_EG | raum_39 | GANG | F | 54 | 1,36 | 1,34 | **1,277** |
+| Mollgasse_EG | raum_46 | (untyp.) | F | 64 | 3,25 | 3,23 | 0,637 |
+| Mollgasse_EG | raum_48 | WC | F | 64 | 2,31 | 2,29 | 0,851 |
+| Mollgasse_EG | raum_50 | GARAGE | F | 50 | 1,10 | 1,09 | **1,177** |
+| Mollgasse_EG | raum_53 | KINDERWAGENRAUM | F | 118 | 7,24 | 7,19 | 0,693 |
+| Muthgasse_E2 | raum_98 | TECHNIK | F | 103 | 3,07 | 3,05 | 0,946 |
+| Rennweg_OG3 | rest_1 | SCHACHT | R | 151 | 1,16 | 1,15 | 0,610 |
+
+Erklärung der Umkehrung: die Toleranz ist **absolut** (20 mm), die Grenze
+**relativ** (0,5 % der Fläche). Der abgeschnittene Fehler skaliert mit dem Umfang,
+die Bezugsgröße mit der Fläche — bei einem 2-m²-WC ist derselbe 20-mm-Schnitt
+prozentual rund zehnmal so teuer wie bei einer 56-m²-Terrasse. Die Räume mit
+vielen Punkten sind also gerade **nicht** die gefährdeten.
+
+### 17.4 Wirkung auf die Überlappungszahlen aus § 14.2
+
+| Plan | Überlapper > 5 % vorher | nachher | Doppelbelegung vorher m² | nachher m² | Paare > 1 mm² vorher | nachher |
+|---|---:|---:|---:|---:|---:|---:|
+| Barawitzka_EG | 9 | 9 | 42,253 | 42,195 | 9 | 9 |
+| Mollgasse_EG | 16 | 16 | 45,845 | 45,792 | 42 | 47 |
+| Muthgasse_E2 | 37 | 37 | 174,245 | 174,056 | 43 | 45 |
+| Rennweg_EG | 0 | 0 | 0,000 | 0,000 | 1 | 1 |
+| Rennweg_OG3 | 0 | 0 | 0,000 | 0,000 | 0 | 0 |
+| **SUMME** | **62** | **62** | **262,342** | **262,043** | **95** | **102** |
+
+**62 bleibt 62** — und zwar nicht nur die Anzahl: die Menge der überlappenden
+Raum-IDs ist auf allen fünf Plänen **identisch** (`s0 == s1` je Plan, keine ID
+kommt hinzu, keine fällt weg). Die Doppelbelegung sinkt um
+**0,299 m² = 0,114 %**, was innerhalb der Flächenungenauigkeit der Vereinfachung
+selbst liegt (Gesamtflächenverlust 1,9 m²). Die Paarzahl **steigt** sogar: 8 neue
+Berührpaare entstehen (Gesamtfläche 0,0014 m²), 1 fällt weg — Vereinfachung
+erzeugt an vorher exakt aneinanderliegenden Kanten neue Mikro-Überschneidungen.
+
+### 17.5 Urteil
+
+**Als Bereinigungsmittel gegen die Überlappung: erledigt.** DP-20 mm senkt
+262,3 m² Doppelbelegung auf 262,0 m² und lässt alle 62 Überlapper unverändert
+bestehen — dieselben IDs, dieselben Partner. Das war zu erwarten und ist jetzt
+belegt: die Überlappungen sind ganze verschluckte Räume (`raum_37` STIEGENHAUS zu
+99 % in `raum_43` TERRASSE, `raum_79` LIFT zu 98 % in `raum_88`), keine
+Kantenausfransung. Eine Kantenglättung greift ein topologisches Problem nicht an.
+§ 14.2 hatte recht mit „Punktzahl ist Symptom, nicht Ursache" — die Umkehrung gilt
+ebenso: Punkte wegnehmen heilt nichts.
+
+**Als reine Datengrößen-/Performance-Vorverarbeitung: technisch sauber, aber ohne
+belegten Nutzen in diesem Auftrag.** 14 149 → 5 740 Punkte (−59,4 %), 0 ungültige
+Polygone, 0 MultiPolygon-Zerfälle, Gesamtflächenfehler 0,058 %. Das ist ein
+billiger Gewinn — nur ist nirgends gemessen, dass die Punktzahl irgendwo weh tut.
+Ohne einen belegten Engpass (Renderzeit, Platzierungslauf, Dateigröße) ist das
+eine Lösung ohne Problem.
+
+**Was es kosten würde:** 17 von 245 Räumen (6,9 %) reißen die 0,5-%-Grenze,
+Maximum 1,47 %. Betroffen sind ausschließlich kleine Räume — WC, Bad,
+Abstellraum, Schacht, Garage —, also genau die Kategorie, in der eine
+Flächenangabe später für Normprüfungen zählt und in der 0,03 m² prozentual viel
+sind. 15 der 17 liegen auf Mollgasse_EG, was den Plan zum Ausreißer macht: dort
+steckt das Rasterartefakt in vielen kleinen F-Räumen statt in wenigen großen.
+
+**Falls der Owner es doch will**, wäre nach dieser Messung nur eine von zwei
+Varianten vertretbar, beide **ohne dass wir sie umgesetzt haben**: (a) Toleranz an
+der Raumgröße bemessen statt fix 20 mm, oder (b) nur auf Räume > 200 Punkte
+anwenden — diese Teilmenge bringt −61,9 % Punkte in den größten Polygonen und
+reißt die 0,5-%-Grenze **null Mal**. Beides ändert an der Überlappung weiterhin
+nichts.
+
+---
+
+## 18. Nachtrag 2026-09-10 — Punkt 5 des zweiten Owner-Blocks: warum Muthgasse_E2 der schlechteste der fünf Pläne ist
+
+> **Status: reine Hypothesenprüfung. Keine Bereinigung, keine Umsetzung.** Nur
+> gemessen — keine Datei in `src/` angefasst, kein Test, kein Contract.
+
+Alle Zahlen aus tatsächlich gelaufenen Skripten gegen
+`Projekte/_ergebnis/<Plan>/raeume.json` (Lauf `47df2d9`).
+Skripte (Scratchpad, alle nur lesend):
+`_p4_overlap.py`, `_p4_herkunft.py` (Vorsession, unverändert nachgefahren), neu:
+`_m5_struktur.py` (+ `_m5_struktur.json`), `_m5_zweige.py`, `_m5_cluster.py`,
+`_m5_fzweig.py`, `_m5_verteilung.py`.
+
+### 18.1 Bestätigte Zahlen (eigener Lauf, § 14.2/14.3 reproduziert)
+
+| Plan | Räume | Überlapper > 5 % | > 200 Punkte | verschluckt LIFT/SCHACHT | Doppelbelegung |
+|---|---|---|---|---|---|
+| Barawitzka_EG | 47 | 9 (19 %) | 1 | 0 | 42,3 von 541,1 m² = 7,8 % |
+| Mollgasse_EG | 62 | 16 (26 %) | 3 | 0 | 45,8 von 1110,4 m² = 4,1 % |
+| **Muthgasse_E2** | **101** | **37 (37 %)** | **9** | **1** | **174,2 von 1074,1 m² = 16,2 %** |
+| Rennweg_EG | 21 | 0 | 0 | 0 | 0,0 m² = 0,0 % |
+| Rennweg_OG3 | 14 | 0 | 2 | 0 | 0,0 m² = 0,0 % |
+| SUMME | 245 | 62 (25,3 %) | 15 | 1 | 262,3 von 3329,4 m² = 7,9 % |
+
+Verschluck-Detail identisch: `Muthgasse_E2 ('raum_88','raum_79','LIFT', 0.9760)`.
+Quellen-Kombis Muthgasse: **31 × F↔L (173,1 m²), 1 × F↔F (1,1 m²)** — 32 relevante
+Paare, sonst keine. Alle Berichtszahlen bestätigt, keine Abweichung.
+
+### 18.2 Hypothesenprüfung
+
+#### Hypothese A — Erkennungsweg (Kaskadenzweig): **trägt, und zwar allein**
+
+Zweigverteilung, alle Räume gegen die Überlapper, dazu Täter (der flächengrößere
+eines relevanten Paares) und Opfer (der kleinere):
+
+| Plan | L ges/üb | H ges/üb | F ges/üb | R ges/üb |
+|---|---|---|---|---|
+| Barawitzka_EG | 2 / 0 | 40 / 7 (18 %) | 2 / 2 (100 %) | 3 / 0 |
+| Mollgasse_EG | 0 / 0 | 10 / 6 (60 %) | 52 / 10 (19 %) | 0 / 0 |
+| **Muthgasse_E2** | **80 / 26 (32 %)** | 1 / 0 | **20 / 11 (55 %)** | **0 / 0** |
+| Rennweg_EG | 19 / 0 | 0 | **0** | 2 / 0 |
+| Rennweg_OG3 | 10 / 0 | 0 | **0** | 4 / 0 |
+
+Muthgasse, Täter/Opfer getrennt: **F = 8 Täter / 5 Opfer, L = 6 Täter /
+21 Opfer.** Die L-Räume sind fast durchweg Opfer, die F-Räume die Täter. Kein
+einziger R-Raum, kein H-Fall.
+
+Die Häufung ist eindeutig: **von 32 relevanten Paaren haben 31 einen F-Raum gegen
+einen L-Raum, 1 F gegen F. 100 % der 174,2 m² Doppelbelegung haben einen F-Raum
+auf mindestens einer Seite.** Ohne F-Zweig gäbe es auf Muthgasse null
+Überlappungen.
+
+Auf dem Hauptgeschoss (Cluster 0, s. § 18.4) liegen 13 der 20 F-Räume —
+**11 davon überlappen, also 85 % aller F-Räume des echten Geschosses.**
+
+**Gegenprobe Rennweg**: Rennweg_EG L 19 / R 2, Rennweg_OG3 L 10 / R 4 — **0
+F-Räume, 0 H-Räume, 0 Überlappungen bei 35 Räumen.** Rennweg_OG3 hat zwei Räume
+mit > 200 Punkten (beide R) und überlappt trotzdem null. Der Zweig, nicht die
+Rasterung, entscheidet.
+
+Die plan-spezifische Verschärfung: **Muthgasse ist der einzige Plan, auf dem ein
+großer L-Bestand und ein großer F-Bestand gleichzeitig existieren** (80 L + 20 F).
+Barawitzka hat 2 L + 2 F, Mollgasse 0 L + 52 F (die F-Räume kollidieren dort fast
+nur untereinander und werden im selben `flute_stempel`-Aufruf per Watershed
+getrennt — deshalb trotz 52 F-Räumen nur 4,1 % Doppelbelegung), Rennweg hat gar
+keine F-Räume. Nur auf Muthgasse trifft eine blinde Flutung auf einen dichten
+Bestand fertiger Layer-Polygone. Das ist der Mechanismus aus § 14.4
+(`flute_stempel` bekommt `belegte` nicht übergeben) — Muthgasse ist der Plan, der
+ihn maximal ausreizt.
+
+Warum überhaupt 20 F-Räume bei vorhandenem Raum-Layer? Gemessen: 99 Einträge mit
+`flaeche_stempel` gegen 80 L-Polygone; **29 Stempel „Wohnküche" (12 → L, 11 → F,
+6 ohne Polygon)**; **33 von 99 Stempeleinträgen tragen einen mehrfach vergebenen
+Flächenwert (11 doppelte Werte)** — Barawitzka 0, Rennweg_EG 0, Mollgasse 8. Der
+Stempelüberschuss gegen die Layer-Polygone erzeugt genau die Stempel, die
+`_ein_polygon_ein_stempel` in die Flutung schiebt.
+
+#### Hypothese B — Rasterauflösung: **trägt nicht**
+
+`flute_stempel(..., raster_mm: float = 50.0)` — `kaskade.py:110` ruft ohne
+`raster_mm` auf, `rest_komponenten.py:110` hat denselben Default. **Die Zellgröße
+ist auf jedem Plan exakt 50 mm.** Gemessen je Plan (mm-Faktor aus `dxf_load`,
+Wand-Extents aus `bounds_mm`):
+
+| Plan | mm-Faktor | Wand-Extents | bbox | Zellgröße | Raster (w×h) | Zellen |
+|---|---|---|---|---|---|---|
+| Barawitzka_EG | 1000,0 | 80,1 × 35,9 m | 2 876,6 m² | 50 mm | 1719 × 836 | 1,44 Mio |
+| Mollgasse_EG | 1000,0 | 54,6 × 48,4 m | 2 644,2 m² | 50 mm | 1210 × 1086 | 1,31 Mio |
+| **Muthgasse_E2** | **10,0** | **503,8 × 275,9 m** | **139 023 m²** | **50 mm** | **10193 × 5636** | **57,45 Mio** |
+| Rennweg_EG | 1,0 | 18,1 × 25,4 m | 461,0 m² | 50 mm | 480 × 626 | 0,30 Mio |
+| Rennweg_OG3 | 1,0 | 16,2 × 16,7 m | 270,7 m² | 50 mm | 442 × 451 | 0,20 Mio |
+
+Der mm-Faktor ist auf allen fünf Plänen plausibel kalibriert (Muthgasse 10 =
+cm-Zeichnung; das Geschoss misst danach 46,8 × 47,9 m, s. § 18.4 — keine
+Fehlkalibrierung). **Muthgasse ist damit weder gröber noch feiner gerastert als
+Rennweg: 50 mm real gegen 50 mm real.**
+
+Was auf Muthgasse tatsächlich anders ist, ist nicht die Auflösung, sondern die
+**Rasterausdehnung**: 57,45 Mio Zellen gegen 0,30 Mio auf Rennweg_EG (Faktor 191),
+weil die Wandkörper über das ganze Blatt (503,8 × 275,9 m) streuen, während das
+eigentliche Geschoss nur 46,8 × 47,9 m groß ist — 0,77 % Füllgrad. Die Reißleine
+`_MAX_RASTER_ZELLEN = 5e8` ist mit 5,7e7 nicht in Reichweite. Folgen sind Laufzeit
+(1852 s) und 7 winzige Flut-Fragmente auf dem zweiten Blattbereich (27 m² gesamt,
+s. § 18.4) — **aber kein einziger Überlapper.** Die Punktzahlen (709/738/719) sind
+ein Symptom der 50-mm-Konturverfolgung über eine große, durch mehrere Räume
+laufende Maske, nicht deren Ursache; Gegenbeleg bleibt Rennweg_OG3 (2 Räume
+> 200 Punkte, 0 % Überlappung).
+
+Urteil: **Rasterauflösung ist widerlegt.** Rasterausdehnung ist ein echter, aber
+davon unabhängiger Mangel mit anderer Wirkung (Laufzeit, Phantom-Fragmente).
+
+#### Hypothese C — Plantyp: **trägt nur teilweise, und nicht über die genannten Merkmale**
+
+Strukturmessung (`_m5_struktur.py`, ganze DXF):
+
+| Metrik | Barawitzka | Mollgasse | **Muthgasse** | Rennweg_EG | Rennweg_OG3 |
+|---|---|---|---|---|---|
+| Dateigröße | 12,9 MB | 10,3 MB | **23,2 MB** | 4,0 MB | 3,8 MB |
+| Entities im Arch.-Raum | **32 707** | 5 914 | 17 002 | 1 073 | 664 |
+| HATCH im Raum / in Blöcken | **5 162 / 5 259** | 306 / 306 | 805 / **1 003** | 36 / 259 | 29 / 243 |
+| INSERT im Raum | 0 | 874 | **1 730** | 250 | 139 |
+| Blockdefinitionen | 5 | 3 012 | **3 043** | 488 | 295 |
+| verschiedene Blöcke im Raum | 0 | 58 | **1 132** | 250 | 139 |
+| max. Blockverschachtelung | 0 | 1 | **1** | **2** | **2** |
+| Layer definiert / belegt | **135 / 129** | 90 / 62 | 66 / 53 | 65 / 27 | 55 / 28 |
+| Wand-Layer | **9** | 3 | 4 (A-WALL, A-WALL-IDEN, A-WALL-PATT, I-WALL) | 2 | 1 |
+| Stempel je 100 m² | 7,0 | 6,8 | **9,2** | 2,0 | 5,1 |
+| Türöffnungen (Cache-Parse) | 106 | 147 | **308** | 41 | 27 |
+
+Was messbar auffällt und was nicht:
+
+- **HATCH-Zahl: widerlegt als Erklärung.** Barawitzka hat mit 5 162 HATCHes
+  sechsmal so viele wie Muthgasse (805) und nur 7,8 % Doppelbelegung.
+- **Layerstruktur: widerlegt.** Muthgasse hat mit 66 definierten Layern die
+  *zweitwenigsten*; Barawitzka hat 135 und 9 Wand-Layer. Die AIA-Layer
+  (`A-WALL`/`I-WALL`) werden von `_wall_layers` sauber erkannt.
+- **Verschachtelte Blöcke: widerlegt.** Max. Tiefe 1 auf Muthgasse gegen **2 auf
+  beiden Rennweg-Plänen** — die überlappungsfreien Pläne sind die stärker
+  verschachtelten.
+- **Stempeldichte: trägt.** 9,2 Stempel je 100 m² — der höchste Wert, 4,6-mal
+  Rennweg_EG. Zusammen mit den 33 mehrfach vergebenen Stempelflächen und den 29
+  „Wohnküche"-Stempeln gegen 12 Wohnküche-L-Polygone ist das der eine
+  Plantyp-Faktor, der wirklich wirkt: **Stempelüberschuss über einem dichten
+  Raum-Layer → 20 F-Räume → 11 Täter.**
+- **Blattausdehnung: trägt, aber nur für Laufzeit/Fragmente** (s. Hypothese B).
+- **Größter Plan im Repo: bestätigt** (Datei, Räume, Stempel, Türen) — aber Größe
+  an sich ist nicht die Ursache: Barawitzka ist bei Entities größer und viel
+  sauberer.
+
+### 18.3 Urteil: eine gemeinsame Ursache, kein Bündel
+
+**Es ist eine Ursache, nicht drei.** Der F-Zweig (`stempel_flutung.flute_stempel`)
+bekommt die bereits belegten Raumpolygone nicht übergeben
+(`stempel_flutung.py:227-233`) und `kaskade.py:110-126` hängt jeden gefluteten
+Raum ohne Überlappungsprüfung an — anders als der R-Zweig, der `belegte` bekommt
+und im Raster blockt (`rest_komponenten.py:147-151`). Beleg auf Muthgasse: 31 von
+32 relevanten Paaren F↔L, 100 % der doppelt belegten Fläche mit F-Beteiligung,
+0 von 0 R-Räumen betroffen, 0 Überlappungen dort, wo kein F-Raum existiert
+(Rennweg, 35 Räume).
+
+Muthgasse ist deshalb der schlechteste Plan, weil dort als einzigem **beide
+Voraussetzungen gleichzeitig vorliegen**: ein dichter L-Bestand von 80
+gezeichneten Raumpolygonen als Angriffsfläche *und* ein F-Bestand von 20 blind
+flutenden Räumen, erzeugt durch Stempelüberschuss (9,2 Stempel/100 m², 33 mehrfach
+vergebene Stempelflächen, 29 Wohnküche-Stempel gegen 12 Wohnküche-Polygone). Das
+ist ein Verstärker derselben Ursache, keine zweite.
+
+**Was nicht trägt**: Rasterauflösung (identisch 50 mm überall — widerlegt),
+HATCH-Zahl (Barawitzka 6 × mehr, 2 × weniger Doppelbelegung — widerlegt),
+Layerstruktur (Muthgasse hat die zweitwenigsten Layer — widerlegt),
+Blockverschachtelung (Rennweg tiefer — widerlegt). **Ein unabhängiger, zweiter
+Mangel existiert**, ist aber für die Überlappung folgenlos: die Blattausdehnung
+von 503,8 × 275,9 m gegenüber 46,8 × 47,9 m echtem Geschoss — sie kostet 57,45 Mio
+Rasterzellen Laufzeit und erzeugt 7 Phantom-Flutfragmente (27 m²), aber null
+Überlapper.
+
+### 18.4 LIFT/SCHACHT und räumliche Verteilung
+
+**Der verschluckte LIFT ist ein Einzelfall dieser Ursache, kein Zufall — aber die
+Stichprobe ist 1.** Inventar aller LIFT/SCHACHT-Räume im Bestand:
+
+| Plan | LIFT/SCHACHT | Quelle | STIEGENHAUS-Räume | F-Räume |
+|---|---|---|---|---|
+| Barawitzka_EG | rest_1, rest_3 (SCHACHT) | **R** | raum_35, raum_37 (H) | 2 |
+| Mollgasse_EG | — | — | — | 52 |
+| **Muthgasse_E2** | **raum_79 (LIFT)** | **L** | **raum_88 (F)** | 20 |
+| Rennweg_EG | — | — | raum_7/14/15 (L), rest_1/2 (R) | **0** |
+| Rennweg_OG3 | rest_1, rest_2 (SCHACHT) | **R** | rest_3 (R) | **0** |
+
+Es gibt im ganzen Bestand **5 LIFT/SCHACHT-Räume. 4 davon stammen aus dem
+R-Zweig** — der läuft zuletzt und schneidet sich um die belegten Flächen herum,
+ist also strukturell nicht angreifbar; ihre Pläne haben zudem 2 bzw. 0 F-Räume.
+**`raum_79` ist der einzige LIFT/SCHACHT-Raum, der aus dem L-Zweig kommt, und
+Muthgasse ist der einzige Plan mit einem STIEGENHAUS aus dem F-Zweig.** Von genau
+einem angreifbaren Kandidaten wurde genau einer verschluckt (98 % seiner Fläche,
+durch `raum_88`, `flag=flutung_unsicher`, Stempel 39,7 m² gegen 20,7 m²
+berechnet). Da Liftschächte baulich am Stiegenhaus liegen, ist das die erwartbare
+Folge derselben Ursache, nicht ein eigener Effekt — belastbar ist die Aussage aber
+nur als 1 von 1.
+
+**Räumliche Verteilung: über den ganzen Plan, nicht geclustert.**
+Single-Link-Clustering der Raumzentroide (30 m):
+
+- **Cluster 0 = das echte Geschoss**: 93 Räume, 1047 m², 46,8 × 47,9 m — enthält
+  **alle 37 Überlapper**.
+- **Cluster 1**: 8 Räume, 27 m², 353 m entfernt, 7 F + 1 H — **0 Überlapper** (die
+  Phantom-Fragmente aus der Blattausdehnung).
+
+Innerhalb des Geschosses, Quadranten:
+
+| Quadrant | Räume | Überlapper | Quote |
+|---|---|---|---|
+| SW | 34 | 16 | 47 % |
+| SO | 2 | 1 | 50 % |
+| NW | 25 | 3 | 12 % |
+| NO | 32 | 17 | 53 % |
+
+Drei von vier Quadranten liegen bei 47–53 %; nur der NW-Flügel ist mit 12 %
+auffällig sauber (dort liegen 25 überwiegend reine L-Räume). Die **11 F-Täter**
+sind über das Geschoss gestreut: paarweise Zentroid-Abstände min 3,0 m,
+**Median 25,1 m**, max 54,9 m. Jeder Täter frisst seine eigene Wohnung:
+`raum_86` → 5 Opfer (BALKON 89 %, ZIMMER 99 %, KÜCHE 99 %, BAD 95 %, BAD 28 %),
+`raum_92` → 5, `raum_87` → 4, `raum_90` → 4, `raum_85` → 3, `raum_88` → 3
+(darunter der LIFT). Es ist also **kein defekter Gebäudeteil, sondern ein über den
+ganzen Grundriss wiederholtes Wohnungsmuster** — konsistent mit der Ursache „ein
+überschüssiger Wohnküche-Stempel je Wohnung wird geflutet und läuft durch die
+Wohnungstüren über die Layer-Räume".
+
+**Nicht gemacht:** keine Bereinigung, keine Datei in `src/` geändert, kein Test,
+kein Contract, kein Zielband bewegt.
