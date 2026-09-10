@@ -62,6 +62,109 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 
 ---
 
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-10, Abschluss zweiter Block) ═══
+
+**Branch:** `selman/extents-ausreisser`, **PR #152 offen, kein Merge.** Commits
+dieser Runde: `f7fb165` (Contract-Freeze-Gate) · `79fc0bb` (Überlappungs-Riegel +
+Enis-Frage + Bereinigungsregeln) + Abschluss-Commit. **Kein Code in `src/`
+geändert**, `hauptengine/contracts/**` unberührt, keine Contract-Änderung.
+
+**Belege dieser Runde (echte Läufe):**
+- Prüfstrecke über alle fünf Pläne **nacheinander, ohne Parallellast**, exit 0 —
+  Barawitzka 258,6 s · Mollgasse 290,6 s · Muthgasse 1840,5 s · Rennweg_EG 56,1 s
+  · Rennweg_OG3 51,1 s. **Keine Kennzahl bewegt sich** gegen den Lauf `47df2d9`,
+  alle fünf `raeume.json` sind **byte-identisch** (`git diff` leer); geändert haben
+  sich nur die Laufzeit-Zeile in `bericht.md` und die Render-PNGs. Das ist das
+  **erwartete** Ergebnis, weil seit `47df2d9` kein `src/`-Code geändert wurde —
+  nicht wegerklärt, sondern gemessen.
+- Volle Suite: **`1211 passed, 10 skipped, 2 deselected, 11 xfailed, 2 warnings in
+  1153.08s (0:19:13)`**, exit 0, **keine XPASS-Zeile**. Die +11 gegen die 1200 des
+  Vorlaufs sind exakt die neuen Riegel-Tests.
+- **Kein xfail gedreht, kein Zielband geändert.** Die 11 XFAIL sind unverändert
+  dieselben: Barawitzka 3 (FLW-Linien fehlen im Plan / ≥90 % Türen / final_exit
+  deckt Endpunkte), Mollgasse 3 (final_exit-Deckung / ≥90 % Türen / final_exit =
+  Endpunktzahl), Muthgasse 3 (≥9 stair_exit / ≥1 stair_exit an echter Blocktür /
+  ≥90 % Türen), Referenzvergleich 1 (≥80 % Trefferquote), Rennweg 1 (≥90 % Türen).
+- `tests/naht/test_ueberlappung_riegel.py` + `tests/contract/test_keine_erfundenen_masse.py`
+  einzeln: **`14 passed in 1.32s`**.
+
+**Leitregel unverändert:** *der Code erfindet keine Maße und keine Typen.* Der
+AST-Riegel `tests/contract/test_keine_erfundenen_masse.py` setzt die Maß-Hälfte
+durch, er wurde nicht umgangen.
+
+**Was diese Runde gebaut hat:**
+
+1. **Contract-Freeze-Gate — Check `contract-freeze`**
+   (`.github/workflows/contract-freeze.yml` + `.github/scripts/contract_freeze_check.py`).
+   Anlass ist der #149-Vorfall (0 Reviews, 55 nachgeschobene Commits, alter Titel,
+   Contract-Bump 1.4.0 auf `main`). Der Check läuft auf `pull_request`
+   **inkl. `synchronize`** — das ist der Riegel gegen genau diese Lücke — und auf
+   `pull_request_review`. Owner-Logins kommen aus `.github/CODEOWNERS`, kein
+   zweiter Pflegeort. Ein Approval zählt nur bei `review.commit_id == head_sha`
+   (nicht `submitted_at`); pro Login zählt das jüngste wertende Review. Berührt ein
+   PR keine Contracts → **grün**, nicht geskippt, damit er als Required Status
+   Check taugt. Gegen echte Daten: **#149 exit 1, #152 exit 0.**
+   **ACHTUNG: das Gate allein verhindert nichts.** Auf `main` gibt es **keine
+   Branch Protection** (`GET .../branches/main/protection` → **404**), und unser
+   Token hat `admin:false`. **@mvpo3 muss sie setzen** — fertige Anleitung inkl.
+   `PUT`-Aufruf und den drei Check-Namen `test` / `contracts` / `contract-freeze`
+   in **`docs/BRANCH_PROTECTION.md`**.
+2. **Überlappungs-Riegel** `tests/naht/test_ueberlappung_riegel.py` (11 Tests,
+   0,24 s): Obergrenzen 9/42,3 · 16/45,8 · 37/174,2 · 0 · 0, Summe **62 / 262,3 m²**.
+   Steigt eine Zahl → rot; sinkt sie → Band im selben Commit nachziehen. Datenquelle
+   sind die eingecheckten `raeume.json` (die DXF sind nicht getrackt).
+3. **SCHLEUSE-Frage an @EnisAMG** in `docs/OFFENE_FRAGEN.md` — vollständig belegt,
+   **nicht geraten**: `Schl.` = Schleuse (Kanon-Typ + Nutzungsklasse nötig) oder
+   Schlafzimmer (`schl → ZIMMER`)? Wirkung gemessen, Falschtrefferrisiko 0.
+4. **§§ 17 + 18 in `docs/ENIS_UEBERGABE_0908.md` — beides NUR gemessen, nichts
+   umgesetzt.** § 17 Douglas-Peucker 20 mm: 14 149 → 5 740 Punkte (−59,4 %), 0
+   ungültige Polygone, 0 MultiPolygon-Zerfälle, Flächenfehler 0,058 % — **aber 17
+   von 245 Räumen reißen die 0,5-%-Grenze** (max 1,47 %, ausschließlich kleine
+   Räume, 15 davon auf Mollgasse), und als Bereinigung taugt es **nicht**: 62
+   bleibt 62 mit identischen IDs, 262,342 → 262,043 m². § 18 Muthgasse: **eine
+   Ursache, kein Bündel** — der F-Zweig bekommt `belegte` nicht übergeben; 31 von
+   32 relevanten Paaren F↔L, 100 % der Doppelfläche mit F-Beteiligung.
+   **Widerlegt**: Rasterauflösung (überall exakt 50 mm), HATCH-Zahl (Barawitzka 6×
+   mehr, 2× weniger Doppelbelegung), Layerstruktur (Muthgasse hat die
+   zweitwenigsten Layer), Blockverschachtelung (Rennweg tiefer). Zweiter,
+   unabhängiger und für die Überlappung folgenloser Mangel: Blattausdehnung
+   503,8 × 275,9 m gegen 46,8 × 47,9 m echtes Geschoss → 57,45 Mio Rasterzellen
+   Laufzeit und 7 Phantom-Fragmente (27 m²), aber **null Überlapper**.
+5. **`Projekte/_ergebnis/VERLAUF.md`** führt die Überlappungszahlen jetzt
+   dauerhaft mit (je Plan Überlapper >5 %, doppelbelegte Fläche absolut und in
+   Prozent, verschluckte LIFT/SCHACHT, plus Summenzeile).
+
+**NÄCHSTER PUNKT: unverändert die Bereinigung (§ 14.6 / § 14.6.1) — weiterhin
+NICHT freigegeben.** Die fünf Owner-Fragen sind offen; die Regelkaskade ist
+gerechnet (löst 62 von 62 Fällen, 0 ungelöst, Regel (d) greift im heutigen
+Bestand null Mal), aber (e) wäre **contract-berührend** (`polygon_roh`,
+`bereinigung`) und der Contract ist eingefroren.
+
+**Offen an @EnisAMG:** die SCHLEUSE-Frage (`Schl.`), die drei älteren
+Vokabular-Fragen (`Vorr.`/`Schrankr.`, `SR`/`Aufzug`), die Mollgasse-
+„Laubengang"-Frage — und das **weiterhin ausstehende Approval für `raum_modell`
+1.4.0**, das mit PR #149 ohne sein Approval auf `main` gelandet ist.
+**Offen an @mvpo3:** die **Branch Protection auf `main` setzen**
+(`docs/BRANCH_PROTECTION.md`) — ohne sie ist der neue Check nur Dekoration; und
+die Überlappungszahlen: `raum_79` (LIFT) liegt zu 97,6 % in `raum_88`
+(STIEGENHAUS), 13 Räume liegen zu >90 % ihrer eigenen Fläche in einem anderen,
+Leuchten können rechnerisch in verschluckten Polygonen landen.
+
+**Vorbestehend rot, nicht von uns und nicht repariert:** `ruff check .` → 4 ×
+`ISC004` in `scripts/plan_pruefen.py:1135,1143,1145,1147`. Die Datei ist in
+unseren Commits unverändert; der CI-Job `test` bleibt aus demselben Grund rot wie
+bei #149.
+
+**Mess- und Prüfskripte dieser Runde** (Session-Scratchpad
+`C:/Users/selma/AppData/Local/Temp/claude/D--KI-Projekt/8fc32369-9bee-42cd-9e07-20d9eeb9eff5/scratchpad`,
+alle nur lesend): `_freeze_probe.sh`, `_freeze_stale_probe.py`,
+`_s2_regel_umfang.py`, `_p4b_simplify.py`, `_p4b_liste17.py`, `_p4b_delta.py`,
+`_m5_struktur.py`, `_m5_zweige.py`, `_m5_cluster.py`, `_m5_fzweig.py`,
+`_m5_verteilung.py`, `_s3b_verlauf_overlap.py`; Rohlogs `_s3b_pruefstrecke.log`,
+`_s3b_pytest.log`.
+
+---
+
 ## ═══ SELMAN: HIER WEITER (Stand 2026-09-10, Abschluss-Runde 3) ═══
 
 **Branch:** `selman/extents-ausreisser`, **nicht gepusht, kein PR, kein Merge** —
