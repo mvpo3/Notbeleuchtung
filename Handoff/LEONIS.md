@@ -49,6 +49,16 @@ Enthält den ganzen Wissensabgleich (F01–F14 minus F11) + main-Sync + heutige 
   Bildlehren_ONL_Zumtobel.md:37-42.
 - **`confidence`/`rolle`-Naht** = Contract-Frage (3-Owner) für den Detektor.
 
+**Tool-Sichtung (Owner brachte 3 GitHub-Repos, nur bewertet, nichts integriert):**
+- **`pascalorg/editor`** = **anschauen wert** — 3D-Gebäude-Editor, **MIT**, agent-native (**MCP**),
+  23k⭐. Plausibles RIVOPLAN-**Front-End/Viewer** (umhüllt unsere Engine, ersetzt sie nicht). ABER:
+  kein DXF/IFC-Interop (eigenes SQLite-3D-Modell → Brücke bauen), 3D-BIM-Scope evtl. > Bedarf,
+  TS-Stack neben Python-Engine. Offen: Pascals MCP-API prüfen + kann man ohne DXF-Import ein Gebäude
+  reinbekommen → dann „Pascal als Hülle + Engine als MCP-Dienst" real baubar.
+- **`kevancress/MeasureIt_ARCH`** = **verworfen** — Blender-Addon (`bpy`), **GPL** (kommerziell-Killer),
+  liest keine externe DXF (exportiert nur). Ideen zu Leader/Bemaßung ja, Code/Integration nein.
+- **`0mondi/AutoCAD-…`** = **irrelevant** — nur DWG-Samples, non-commercial, Maschinenbau-lastig.
+
 ---
 
 ## STAND (2026-09-10) — MULTI-SLICE Wissens-/Normabgleich, Phase 3 LÄUFT (Branch `leonis/wissensabgleich-engine`)
