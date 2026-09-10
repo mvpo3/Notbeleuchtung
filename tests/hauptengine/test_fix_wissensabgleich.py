@@ -197,6 +197,23 @@ def test_redundanz_garantie_und_hardfail():
     assert gesamtstatus(befunde) == "fehler"
 
 
+def test_wf_innen_aussen():
+    """F09 / W07 ([AT-Referenzpraxis]): Der Wartungsfaktor kommt aus der Norm-YAML, nicht
+    hart aus Code. Der Provider setzt für innen liegende (regel-basierte) Räume
+    `anf.wartungsfaktor = 0,80`; die YAML führt außen 0,57 als dokumentierten (noch
+    konsumentenlosen) Wert. Der Konsum-Hook reicht den Wert 1:1 weiter → greift ab jetzt
+    überall gleichzeitig (Deckung/Aufheller/Nachweis)."""
+    from notbeleuchtung.normwissen import En1838NormProvider
+    from notbeleuchtung.platzierung.lux import wartungsfaktor_aus_norm
+
+    prov = En1838NormProvider()
+    anf = prov.fuer_raum("GANG", True)
+    assert anf.wartungsfaktor == 0.80
+    assert wartungsfaktor_aus_norm(anf) == 0.80
+    # Außen-Wert dokumentiert in der Norm-YAML (exakt 0,57), (noch) ohne Lux-Konsument.
+    assert prov._grund["wartungsfaktor"]["aussen"] == 0.57
+
+
 def test_f03_rotation_zur_tuer_ein_helper():
     """F03 / W16: die 4× duplizierte Pfeil-Rotationsformel lebt jetzt in einem Helper.
     Exakte Kardinal-Werte (unten-Block-Basis, atan2+90 auf 90° gerastert)."""
