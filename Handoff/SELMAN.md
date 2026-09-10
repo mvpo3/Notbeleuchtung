@@ -62,6 +62,87 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 
 ---
 
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-10, Abschluss-Runde 3) ═══
+
+**Branch:** `selman/extents-ausreisser`, **nicht gepusht, kein PR, kein Merge** —
+der Owner gibt das GO separat. Commits dieser Runde: `fff9f65` +
+Abschluss-Commit. **Kein Code in `src/` geändert** (`git diff --stat
+47df2d9..HEAD -- src/` ist leer), `hauptengine/contracts/**` unberührt.
+**Suite: 1200 passed, 10 skipped, 2 deselected, 11 xfailed, 0 XPASS, 0 failed
+(19:29 min), exit 0.**
+**Prüfstrecke bewusst NICHT gelaufen** und kein Lauf erfunden: ohne
+`src/`-Änderung liefert sie per Konstruktion die Zahlen des Laufs
+`2026-09-10 13:35 · 47df2d9`; `Projekte/_ergebnis/VERLAUF.md` bleibt deshalb
+unverändert.
+
+**Leitregel unverändert:** *der Code erfindet keine Maße und keine Typen.* Ist
+ein `raum_typ` nicht belegbar, bleibt der Raum untypisiert — ein geratener Typ
+ist schlimmer als keiner. Der AST-Riegel
+`tests/contract/test_keine_erfundenen_masse.py` setzt die Maß-Hälfte durch.
+
+**Was diese Runde geklärt hat (Details: `docs/ENIS_UEBERGABE_0908.md`
+§§ 13 + 14 + 15):**
+
+1. **`raum_65` (Muthgasse E2): nicht umgesetzt, xfail bleibt, Band unverändert.**
+   Der Raum trägt einen vollständigen `A-AREA-IDEN`-Stempel (`E2-VF-11a` /
+   `Schl.` / `13,04 m²` / `Ker.Bel.`), aber `raumtyp_flags('Schl.')` und
+   `classify_room('Schl.')` liefern `None` / `UNKNOWN`, deshalb bricht
+   `stempel_anker.py:219-221` ab und es entsteht gar kein `Stempel`.
+   **Vokabular-Lücke, kein Code-Fehler** — `SCHLEUSE` gibt es im Kanon nicht,
+   und Kanon-Typ + Nutzungsklasse sind Enis' Lane. Nebenbefund: der xfail wäre
+   ohnehin nicht gefallen, weil `tuer_50` **keine Blocktür** ist (780,5 mm zum
+   nächsten `A-DOOR`-INSERT) — Korrektur an § 11.5 / § 12.5 #8 steht in § 13.7.
+   Untypisiert über alle fünf Pläne: **50 von 278 Räumen = 18,0 %**.
+2. **Überlappende Raumpolygone vermessen — nur berichtet, auf Owner-Wunsch
+   NICHTS umgesetzt (§ 14).** **62 von 245 Räumen (25,3 %)** überlappen einen
+   anderen um >5 % ihrer eigenen Fläche (Muthgasse 37/101 = 37 %, Rennweg beide
+   0); **262,3 m² von 3329,4 m² (7,9 %)** Grundfläche gehören mehr als einem
+   Raum. **Ursache ist der F-Zweig (Stempel-Flutung), nicht
+   `rest_komponenten.py`:** 96 % der relevanten Paare haben einen F-Raum auf
+   mindestens einer Seite, aus dem R-Zweig stammt **kein einziger** Überlapper.
+   `flute_stempel` bekommt die belegten Raumpolygone gar nicht übergeben
+   (`stempel_flutung.py:227-233`), der F-Zweig hängt ungeprüft an
+   (`kaskade.py:110-126`), die H-Dedup misst IoU statt Anteil am kleineren
+   Polygon (`kaskade.py:90`). Der R-Zweig blockiert `belegte` im Raster
+   (`rest_komponenten.py:147-151`) und hat 0 von 9 Überlappern — das ist der
+   Gegenbeweis, dass die Rasterisierung nicht das Problem ist.
+
+**NÄCHSTER PUNKT: die REST-/Überlappungs-Bereinigung (§ 14.6).** Sie ist als
+**Vorschlag** ausgearbeitet und **noch nicht freigegeben**. Reihenfolge, wenn
+das GO kommt: (1) Riegel zuerst — ein Test, der 62 Überlapper / 262,3 m² als
+*Obergrenze* einfriert, plus ein `xfail`-Zielbild mit Sollwert 0 (heute gibt es
+**keinen** solchen Test); (2) `flute_stempel` bekommt die belegten Polygone und
+blockiert sie im Raster, exakt nach dem Muster aus `rest_komponenten.py:147-151`
+— adressiert 94 % der Doppelfläche; (3) Metrik in `kaskade.py:90` um „Anteil am
+kleineren Polygon > 0,5" ergänzen (Restposten 2 Paare / 13,9 m²); (4) nachmessen
+und Restfälle namentlich belegen.
+
+**Vor Schritt (2) müssen fünf Owner-Fragen beantwortet sein** (§ 14.6, Kurzform):
+Ursache oder Nachbereinigung? Was passiert mit einem F-Raum, der nach dem Abzug
+unter 1 m² fällt oder in Bruchstücke zerfällt? Darf „Flag ok" sinken, wenn dafür
+die Überlappung verschwindet? Ist die Rangfolge **L > H > F** richtig? Soll
+„Überlappende Räume / doppelt belegte m²" dauerhaft in `VERLAUF.md` und die
+Prüfstrecke? **Ohne diese Antworten nicht anfangen** — Schritt (2) kann Räume
+verschwinden lassen (1-m²-Kriterium `kaskade.py:114`) oder in
+Zusammenhangskomponenten zerlegen.
+
+**Offen an @EnisAMG:** drei Vokabular-Fragen in `docs/OFFENE_FRAGEN.md`
+(`Schl.`, `Vorr.`/`Schrankr.`, `SR`/`Aufzug`); die Mollgasse-„Laubengang"-Frage
+aus `47df2d9`; und das **weiterhin ausstehende Approval für `raum_modell`
+1.4.0**, das mit PR #149 ohne sein Approval auf `main` gelandet ist.
+**Offen an @mvpo3:** `raum_79` (LIFT) liegt zu 98 % in `raum_88` (STIEGENHAUS) —
+Leuchten können rechnerisch in verschluckten LIFT/SCHACHT-Polygonen landen;
+13 Räume liegen zu >90 % ihrer eigenen Fläche in einem anderen.
+
+**Messskripte dieser Runde** (Session-Scratchpad
+`C:/Users/selma/AppData/Local/Temp/claude/D--KI-Projekt/8fc32369-9bee-42cd-9e07-20d9eeb9eff5/scratchpad`,
+alle nur lesend, wiederverwendbar): `_r65_umfeld.py`, `_r65_vokabular.py`,
+`_r65_vf.py`, `_r65_tuer50.py`, `_r65_falschtreffer.py`, `_untyp_tabelle.py`,
+`_p4_overlap.py`, `_p4_detail.py`, `_p4_herkunft.py`, `_p4_top3.py`,
+`_p4_f_rate.py`.
+
+---
+
 ## ═══ SELMAN: HIER WEITER (Stand 2026-09-10, Abschluss-Runde 2) ═══
 
 **Branch:** `selman/extents-ausreisser`, **nicht gepusht, kein PR, kein Merge** —
