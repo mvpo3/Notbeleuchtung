@@ -253,9 +253,159 @@ Ausdrücklich: **nie `False`, nur weil keine Fenster erkannt wurden.**
 | Muthgasse_E2 | **VOLLSTAENDIG** | zwei unabhängige Kanäle (579 Fensterpunkte + 129 ALU_GLAS-Körper); 0 Räume mit Quelle `KEINE` |
 | Mollgasse_EG | **TEILWEISE** | 17 Fensterblöcke bei 64 Räumen, nur ein Blockname-Kanal (Layer ohne Hinweis), 6 Räume `KEINE` |
 | Rennweg_EG / OG3 | **TEILWEISE** | Fenster nur in 3/99 bzw. 2/68 `Wall_*`-Blöcken; 18 bzw. 11 Fenster bei 22 bzw. 15 Räumen; Lage nur über den Sonderpfad Blockgeometrie |
-| Barawitzka_EG | **UNGEPRUEFT** | 0 Fenster-Layer, 0 Fenster-Blöcke, 0 INSERTs im Modelspace; einziges Glas-Signal 4 Texte |
+| Barawitzka_EG | **TEILWEISE** (neu, § 4.5; vorher UNGEPRUEFT) | ein tragender Kanal: 24 Fensteröffnungen über die Rahmen-/Scheiben-Signatur, 0 Falschtreffer auf den vier Vergleichsplänen. Kein zweiter Kanal, kein Referenzbestand auf diesem Plan, 4 `Glaswand`-Texte unerfasst → nicht VOLLSTAENDIG, `False` bleibt dort ausgeschlossen |
 
 Contract-Folge (**VORSCHLAG**, siehe § 8): drei additive Felder in `Raum`, alle Default `None`, `CONTRACT_VERSION` 1.3.0 → 1.4.0, Schema-Regenerierung `scripts/gen_schema.py`. Kein Erzeuger bricht. Ob `belichtung_vollstaendigkeit` besser auf `RaumModell`-Ebene sitzt (es ist eine Plan-Eigenschaft), ist eine Owner-Entscheidung und hier bewusst offen gelassen.
+
+### 4.5 Punkt 5 — Fensterdarstellung in der Barawitzka-Familie
+
+Ausgangsfrage: Barawitzka trägt kein Fensterobjekt (§ 4.2). Trägt stattdessen
+ein **Erscheinungsbild**? Geprüft wurden sechs Hypothesen; fünf tragen nicht,
+eine trägt.
+
+#### 4.5.1 Geprüfte Hypothesen
+
+| Hypothese | geprüft wie | Ergebnis (gemessen) |
+|---|---|---|
+| **A — Layer `…_140 Brüstung`** | alle Entities des Layers, Länge/BBox/Linetype je Entity (`_bara_layer.py`, `_bara_geo.py`) | **trägt nicht.** 123 Entities (LWPOLYLINE 64, LINE 35, WIPEOUT 17, HATCH 7), aber nur **2 räumliche Cluster** auf dem ganzen 20 × 34 m-Grundriss: (6.8–11.0 / −22.5) und (15.1 / −17.1…−15.1). Linetype `Untersicht`, Bauteiltiefen 120/190 mm → Geländer-/Absturzsicherungsdetail, kein flächendeckender Fensterkanal. |
+| **B — Layer `…_165 Fassadengestaltung Bänder`** | dito | **trägt nicht.** 21 Entities = 3 Objekte: eine 18.985 × 0.850 m LWPOLYLINE (Fassadenband/Vordach), eine 5.890 × 0.470 m SOLID-Fläche, ein 150 × 50 mm Detail bei (12.19 / −21.5). Keine Wiederholung entlang der Fassade. |
+| **C — Glaskonstruktion laut `wissen/materialien.yaml` (ALU_GLAS, SOLID-Farbsignatur `(4,(0,232,232))`)** | `bestimme_material(signatur_aus_hatch(h), layer=…)` über alle HATCHes aller 5 Pläne (`_bara_alu.py`) | **trägt auf Barawitzka nicht — Vorbefund § 4.1 verifiziert.** Alle 5162 HATCHes sind `SOLID`, `bestimme_material` liefert **5162× `UNBEKANNT`**, `ALU_GLAS` **0×**. Gegenwert Muthgasse_E2: **129×**; Mollgasse / Rennweg EG / OG3 je 0. |
+| **D — eigenes Hatch-Muster oder eigene Linienart für Glas** | `Counter(pattern_name)`, `Counter(linetype)` (`_bara_alu.py`) | **trägt nicht.** Hatch-Muster ausschließlich `SOLID` (5162). Linetypes: `Continuous 29940, Untersicht 905, Schnittlinie 645, Wipeout_Contour 334, Achse 245, Strichlinie eng 139, Baufluchtlinie 126, Punkt 1_1 118, Untersicht 1_1 89, Dampfsperre 35` — **keine Glas-/Verglasungs-Linienart**. |
+| **E — Wandunterbrechung allein (Öffnung ohne Objekt)** | `finde_wandkoerper` → Union der 595 Außenwandkörper, morphologisches Closing `buffer(800).buffer(-800)`, Differenz = Lücken; Inhalt je Lücke nach Layer/Typ (`_bara_oeffnung.py`, `_bara_inhalt.py`) | **trägt allein nicht.** 174 Rohlücken → 33 formplausible Kandidaten (Kurzseite 80–700 mm, Länge 300–6000 mm), Inhalt unspezifisch (Bodenaufbau, Bemaßung, Entwässerung). Zusätzlich schließt `d = 800 mm` Öffnungen > 1600 mm nicht — das Verfahren übersieht gerade die breiten Fenster. |
+| **F — Rahmenpaar mit parallelen Scheibenlinien in der Wandunterbrechung** | Entity-Dump einzelner Öffnungen (`_bara_dump.py`), Renderings (`_bara_render.py`), dann Detektor über alle 5 Pläne | **trägt.** § 4.5.2 |
+
+#### 4.5.2 Das tragende Muster
+
+Entity-Dump einer einzelnen Wandöffnung, Layer `0._EG PP_2_110 Wand Aussen`:
+
+```
+Element A  Rahmenrechteck  x 0.600–1.927 , y −14.870 / −14.780   (1327 × 90 mm)
+           Innenlinien     y = −14.835 und −14.815               (Abstand 20 mm, volle Länge 1.328 m)
+           kein ARC        →  reines Fenster
+Element B  Rahmenrechteck  x 2.148–2.835 , y −14.845 / −14.755   ( 687 × 90 mm)
+           Innenlinien     y = −14.810 und −14.790               (Abstand 20 mm, volle Länge 0.688 m)
+           ARC center=(2.925,−14.755) r=868 mm  →  Fenster-/Balkontür
+```
+
+Die Wandschraffur (SOLID-HATCH) ist an diesen Stellen unterbrochen; die
+Elemente liegen in der Lücke. Daraus die Signatur (implementiert in
+`raumerkennung/fenster_signatur.py`):
+
+1. **Wand-Layer**, Hauptvariante des Plans (`WALL_PATTERN` + `_varianten_prefix`);
+   Segmente aus `LINE`/`LWPOLYLINE`, ≥ 100 mm, in mm.
+2. **Rahmenpaar**: zwei parallele Segmente (Winkeltoleranz 1°), Normalabstand
+   **80–100 mm** (`RAHMEN_MM`; gemessen 80/81/90 mm), Längsüberlappung
+   **≥ 300 mm** (`MIN_LAENGE_MM`).
+3. **Scheiben**: **≥ 2** weitere parallele Segmente mit Normalabstand zwischen
+   15 % und 85 % der Rahmentiefe, Längsüberlappung ≥ 60 % der Rahmenlänge
+   (gemessener Scheibenabstand durchweg 20 mm).
+4. **Öffnungsbedingung**: Mittelpunkt liegt **nicht** in der Union der
+   Wandkörper (`finde_wandkoerper` → `unary_union`), also in der
+   Wandunterbrechung statt in geschlossener Wand.
+5. **Clustern**: < 200 mm Mittelpunktsabstand = ein Element.
+6. **Türabgrenzung**: `ARC` mit Radius 500–1500 mm, Zentrum ≤ halbe
+   Öffnungsbreite + 400 mm → `hat_tuerbogen = True` (Fenster-/Balkontür).
+
+**Ausbeute Barawitzka_EG** (`_p6_fenster.py`, Modulfunktion
+`finde_fensteroeffnungen`): 1689 gescannte Wandsegmente → **24 Fensteröffnungen**,
+**alle 24 auf `0._EG PP_2_110 Wand Aussen`**, Rahmentiefen {80, 81, 90} mm.
+Öffnungsbreiten in mm:
+`305, 310, 400, 442, 455, 460, 460, 460, 460, 688, 700, 700, 700, 700, 700, 700, 755, 760, 760, 905, 960, 960, 1185, 1328`.
+Davon **13 mit Türbogen** (Fenster-/Balkontür), **11 ohne** (reines Fenster).
+Räumliche Verteilung: drei Fassadenabschnitte (y ≈ −15, −21.5, −30/−31.5);
+Nord-, Ost- und Westwand tragen 0 Kandidaten — die Nordwand ist im Rendering
+durchgehend schraffiert mit zwei Türbögen (Hauseingänge), also fensterlos.
+Konsistent mit einem Baulücken-EG.
+
+#### 4.5.3 Gegenprobe auf den vier anderen Plänen
+
+Referenzbestand = Fenster-INSERTs (`FENSTER|WINDOW|GLAZ|VERGLAS`, Blockabstieg
+Tiefe ≤ 3) + Entities auf `*GLAZ*`-Layern ohne `IDEN`. „Falschtreffer" =
+Kandidat ohne Referenzfenster im 1000-mm-Umkreis.
+
+| Plan | gescannte Wandsegmente | Treffer | Referenzfenster | **Falschtreffer** |
+|---|---:|---:|---:|---:|
+| Barawitzka_EG | 1689 | **24** | 0 (keine vorhanden) | nicht kreuzvalidierbar |
+| Mollgasse_EG | 930 | **0** | 17 | **0** |
+| Muthgasse_E2 | 3155 | **0** | 5126 | **0** |
+| Rennweg_EG | **0** | 0 | 464 | 0 — s. u. |
+| Rennweg_OG3 | **0** | 0 | 604 | 0 — s. u. |
+
+Die Signatur erzeugt auf keinem der vier anderen Pläne einen Treffer:
+**0 Falschtreffer**. Sie ist Barawitzka-spezifisch, aber nicht schädlich.
+
+**Warum die volle Signatur nötig ist** — zwei Zwischenstufen, gemessen und
+verworfen:
+
+- **Nur Scheiben-Doppellinie (15–25 mm), ohne Rahmenpaar** (`_glasdoppel.py`,
+  `_kreuz.py`): Barawitzka 25 Cluster, Mollgasse 9, Muthgasse 32.
+  Kreuzvalidierung: Mollgasse **0 von 9** ≤ 2000 mm an einem echten
+  Fensterblock; Muthgasse **9 von 32** ≤ 500 mm an einem GLAZ-Punkt →
+  überwiegend Falschtreffer (Wandaufbau-Schichtlinien).
+- **Doppellinie + Öffnungsbedingung, ohne Rahmenpaar** (`_kreuz2.py`):
+  Mollgasse 8 Cluster, **0** an einem Referenzfenster; Muthgasse 16 Cluster,
+  **3** an einem Referenzfenster. Immer noch überwiegend falsch.
+- Gap-Histogramm über Barawitzka bei geöffnetem Fenster 3–80 mm
+  (`_gap_hist.py`): `5 mm:80, 25:12, 65:16, 75:15, 50:11, 12:10 …` — der
+  20-mm-Scheibenabstand ist im Wandaufbau kein Alleinstellungsmerkmal. Erst
+  das 90-mm-Rahmenpaar macht die Signatur eindeutig.
+
+**Einschränkung Rennweg (wichtig):** `wandsegmente()` liefert auf Rennweg_EG
+und Rennweg_OG3 **0 Segmente** — die Wände stecken dort in den
+`Wall_*`-Blockdefinitionen, die der Scan nicht betritt. Die 0 in der Tabelle
+heißt für Rennweg **„nicht gesucht", nicht „nicht vorhanden"**. Für Mollgasse
+und Muthgasse (930 bzw. 3155 gescannte Segmente) ist die 0 ein echter Befund.
+
+**Nicht erfasster Restkanal auf Barawitzka:** die 4 `Glaswand`-Texte liegen bei
+(14.94 / −16.40), (12.46 / −16.67), (13.78 / −20.98), (14.80 / −0.83). Abstand
+zum jeweils nächsten Kandidaten: **10586, 9565, 5993, 3034 mm** — die
+Rahmensignatur erfasst sie **nicht**. Diese 4 Glaswände bleiben ein eigener,
+ungemessener Kanal.
+
+#### 4.5.4 Was gebaut ist — und was ausdrücklich nicht
+
+Gebaut: `src/notbeleuchtung/raumerkennung/fenster_signatur.py` mit
+`wandsegmente(plan)`, `finde_rahmenfenster(segmente, wandflaeche)` (rein
+geometrisch, ohne DXF) und `finde_fensteroeffnungen(plan)`; Rückgabetyp
+`Fensteroeffnung` (Modul-eigen). Tests:
+`tests/raumerkennung/test_fenster_signatur.py`, 7 Fälle auf synthetischer
+Geometrie, jeder gegen die zurückgebaute Regel rot geprüft (§ 4.5.5).
+
+**Kein Contract-Touch.** Die drei Belichtungsfelder (§ 4.4) bleiben VORSCHLAG;
+der Owner hat für diesen Punkt keine Contract-Änderung beauftragt. Die
+Erkennung ist deshalb ohne Contract-Feld messbar und prüfbar — sie schreibt
+nichts an `Raum`.
+
+Was `None` mit Quelle `UNBEKANNT` bleiben muss, weil es nicht gemessen ist:
+
+- die **Zuordnung der 24 Öffnungen zu Räumen** (kein Provider-Lauf, keine
+  Kontaktband-Prüfung Raum↔Außenwand durchgeführt),
+- die **4 Glaswände** (eigener, unerfasster Kanal),
+- ob die 24 den Fensterbestand des EG **vollständig** abdecken — auf
+  Barawitzka gibt es keinen unabhängigen Referenzbestand, gegen den sich das
+  prüfen ließe.
+
+Daraus die Höherstufung Barawitzka `UNGEPRUEFT` → **TEILWEISE** (§ 4.4),
+nicht `VOLLSTAENDIG`: § 4.3 Punkt 3 gilt unverändert, `False` bleibt auf
+Barawitzka ausgeschlossen. Die übrigen vier Pläne behalten ihre Stufe — die
+Signatur fügt dort nichts hinzu (0 Treffer), und für Rennweg ist sie nicht
+geprüft, also kein Grund zur Höherstufung.
+
+#### 4.5.5 Läufe
+
+```
+.venv/Scripts/python.exe -m pytest tests/raumerkennung/test_fenster_signatur.py -q -p no:randomly
+7 passed in 1.09s
+```
+
+Rot-Probe (`_p6_rot.py`, jede Regel einzeln zurückgebaut):
+
+```
+== SCHEIBEN_MIN = 0 ==            ohne_scheibenlinien: ROT | eine_scheibenlinie: ROT
+== RAHMEN_MM = (10, 1000) ==      falsche_rahmentiefe: ROT
+== Oeffnungsbedingung aus ==      in_geschlossener_wand: ROT
+== MIN_LAENGE_MM = 100 ==         zu_kurz: ROT
+```
 
 ---
 
@@ -652,7 +802,7 @@ zählst du sie getrennt, steht am Ende `== 5`.
 | Punkt | Umgesetzt | Fehlt |
 |---|---|---|
 | **0 — Paketübernahme** | 7 Dateien hash-identisch im Arbeitsbaum, 2 Diffs angewandt, WIP-Commit `a9ab1b6` | Archiv-Hash nicht prüfbar (§ 2.1); 2 Listeneinträge aus dem `oib_rl2_tabelle6.yaml`-Diff nicht angekommen (§ 3.2); Widerspruch `astv_arbeitsstaetten.yaml:271` vs. § 11.1 nicht nachgezogen (Enis' Datei) |
-| **1 — natürliche Belichtung** | Ist-Stand vollständig erhoben, alle 5 Pläne gemessen, Fensterherkunft je Familie belegt, Regeln True/False/None und drei Feldvorschläge formuliert | **Kein Code.** Contract-Felder `natuerlich_belichtet`, `belichtung_quelle`, `belichtung_vollstaendigkeit` sind Vorschlag. GLASWAND als eigenständige Quelle ungemessen, 500-mm-Toleranz unkalibriert, Arbeitsraum-Eigenschaft (AStV § 1 Abs. 4) fehlt vollständig |
+| **1 — natürliche Belichtung** | Ist-Stand vollständig erhoben, alle 5 Pläne gemessen, Fensterherkunft je Familie belegt, Regeln True/False/None und drei Feldvorschläge formuliert. **Code für Punkt 5:** `raumerkennung/fenster_signatur.py` erkennt die Barawitzka-Fensterdarstellung nach Erscheinungsbild (24 Öffnungen, 0 Falschtreffer auf den 4 Vergleichsplänen), 7 Tests grün, kein Contract-Touch (§ 4.5) | **Kein Belichtungs-Code am Raum.** Contract-Felder `natuerlich_belichtet`, `belichtung_quelle`, `belichtung_vollstaendigkeit` sind Vorschlag. GLASWAND als eigenständige Quelle ungemessen, 500-mm-Toleranz unkalibriert, Arbeitsraum-Eigenschaft (AStV § 1 Abs. 4) fehlt vollständig |
 | **2 — Breitenverlauf** | `breitenprofil.py` repariert (3 Ursachen), +62/−21 in 2 Dateien, 9 Tests grün, 283 passed / 5 skipped in der Regression, ruff grün, alle 5 Pläne gemessen, 2 Belegprofile | **Keine Anbindung**: kein Provider-Aufruf, kein Contract-Feld. `FluchtwegSegment`-Ergänzung ist Vorschlag. 61 Segmente ohne schneidendes Raumpolygon (unsere Lane). Eckfenster verwirft auf GRAPH-Segmenten weiter den Großteil des Profils |
 | **3 — `Tuer.breite_mm`** | 9 Schreibpfade belegt, Herkunft je Plan über 629 Türen ausgezählt, Ursache der 132 Nullen belegt, DL-Beschriftungsfund Muthgasse, Migrationsreihenfolge + gemessene Bruchstellen | **Kein Code.** `breite_quelle`, `lichte_mm`, `lichte_quelle`, `breite_mm: float \| None` sind Vorschlag. Schritt 0 (None-Festigkeit der Konsumenten) nicht ausgeführt. Testauswirkung nur auf 27 % der Suite erhoben. ATTRIB-Befund für Barawitzka/Rennweg nicht messbar. Muthgasse-Aufteilung BLOCKNAME/SCHWENKRADIUS auf ±1 unsicher |
 | **Querschnitt** | Enis' Test `test_kein_contract_wert_und_kein_konsument` wieder grün — Docstring-Quellenangabe in `breitenprofil.py` umformuliert, Test selbst unverändert (§ 3.3) | Entscheidung offen, ob der Wächter dauerhaft per Substring über Dateiinhalte prüfen soll (Enis' Lane) |
@@ -713,6 +863,7 @@ Alle temporär, im Scratchpad `C:/Users/selma/AppData/Local/Temp/claude/D--KI-Pr
 | Thema | Skript | Ausgabe |
 |---|---|---|
 | Belichtung | `_belichtung_ist.py` (+ Ableitungen `_belichtung_ist_fast4.py`, `_belichtung_ist_rennweg.py`, `_belichtung_ist_muth.py`), `_fenster_scan.py` | inline, § 4.3 |
+| Fensterdarstellung Barawitzka (§ 4.5) | `_bara_ist.py`, `_bara_layer.py`, `_bara_geo.py`, `_bara_oeffnung.py`, `_bara_inhalt.py`, `_bara_dump.py`, `_bara_render.py`, `_bara_alu.py`, `_bara_glastext.py`, `_glasdoppel.py`, `_gap_hist.py`, `_kreuz.py`, `_kreuz2.py`, `_rahmen.py`, `_rahmen2.py`, `_bara_marker.py`, `_p6_fenster.py` (Modullauf), `_p6_rot.py` (Rot-Probe) | inline, § 4.5; Bilder `_bara_uebersicht.png`, `_bara_w1.png`, `_bara_nord.png`, `_bara_marker.png` |
 | Belichtung, Verifikation | `_v_fast.py`, `_v_muth.py`, `_adv_check.py`, `_adv_check2.py`, `_adv_check3.py`, `_adv_muth_nk.py` | `_v_muth.out` |
 | Breitenprofil | `_breitenprofil_ist.py`, `_floor_check.py`, `_alt_lauf.py`, `_alt_seg18.py`, `_zickzack_vergleich.py`, `_var/_bp_nur_deckel.py`, `_alt/` (HEAD-Stand via `git show`) | `_nachmessung.json`, `_breitlauf.txt`, `_muth_floor.txt` |
 | Belegprofile | (aus `_breitenprofil_ist.py`) | `_profil_barawitzka.txt`, `_profil_mollgasse.txt`, `_orig_profil_*.txt` |
@@ -734,6 +885,10 @@ Vollständig in `_profil_barawitzka.txt` und `_profil_mollgasse.txt`; die zitier
 | Speicherverbrauch des Muthgasse-Belichtungslaufs | kein Skript instrumentiert Speicher (§ 4.3 Pkt. 7) |
 | GLASWAND als eigenständige Belichtungsquelle | von der Belegreihenfolge verdeckt (§ 4.3 Pkt. 1) |
 | Oberlichter/Lichtkuppeln | auf keinem der fünf Pläne vorhanden |
+| Zuordnung der 24 Barawitzka-Fensteröffnungen zu Räumen | kein Provider-Lauf, keine Kontaktband-Prüfung durchgeführt (§ 4.5.4) |
+| Vollständigkeit des Barawitzka-Fensterbestands | kein unabhängiger Referenzbestand auf diesem Plan (§ 4.5.3) |
+| Rahmensignatur auf Rennweg_EG / OG3 | `wandsegmente()` liefert dort 0 Segmente (Wände in `Wall_*`-Blöcken) — nicht gesucht, nicht widerlegt (§ 4.5.3) |
+| Die 4 `Glaswand`-Texte auf Barawitzka als Belichtungsbeleg | 3034–10586 mm vom nächsten Kandidaten, eigener unerfasster Kanal (§ 4.5.3) |
 | Kalibrierung der 500-mm-Belegtoleranz | nicht durchgeführt |
 | ATTRIBs an Tür-Blöcken, Barawitzka + Rennweg EG/OG3 | 0 Tür-Blöcke im Modelspace; der Scan geht nicht in Blockdefinitionen (§ 6.2) |
 | Testauswirkung der `None`-Migration auf 877 der 1196 Tests | Probelauf umfasste nur 319 Tests (§ 6.3) |
