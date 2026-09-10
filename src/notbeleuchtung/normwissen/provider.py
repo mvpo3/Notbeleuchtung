@@ -27,7 +27,6 @@ from pydantic import BaseModel, Field
 
 from notbeleuchtung.hauptengine.contracts import (
     ErkennungsweiteParameter,
-    FlaechenSchwellen,
     FluchtwegSegment,
     NormAnforderung,
     NormRegelwerk,
@@ -422,15 +421,8 @@ class En1838NormProvider:
         # sie vergeben kann — sonst bricht die Naht-Invariante
         # `Platzierung.norm_quelle ∈ quellen` an der ersten Sonderstelle. Rein
         # additiv: die Menge wird groesser, kein bestehender String faellt weg.
-        flaechen = self._flaechen_schwellen()
-        # Die OVE-Flächen-Schwellen-Quelle gehört in den Audit-Trail (Naht-Invariante:
-        # FlaechenSchwellen.quelle ∈ NormRegelwerk.quellen), sonst fällt der Trigger auf
-        # die Antipanik-Regel-Quelle zurück.
-        flaechen_quellen = {flaechen.quelle} if flaechen.quelle else set()
         quellen = sorted(
-            {r.anforderung.quelle for r in regeln}
-            | set(self._sonderstellen.quellen())
-            | flaechen_quellen
+            {r.anforderung.quelle for r in regeln} | set(self._sonderstellen.quellen())
         )
         return NormRegelwerk(
             norm=self._grund["norm"],
@@ -439,21 +431,7 @@ class En1838NormProvider:
                 z_beleuchtet=e["z_beleuchtet"],
             ),
             regeln=regeln,
-            flaechen_schwellen=flaechen,
             quellen=quellen,
-        )
-
-    def _flaechen_schwellen(self) -> FlaechenSchwellen:
-        """OVE-Flächen-Trigger (F11/W11, [AT-Referenzpraxis]): Antipanik ab ~60 m² /
-        Sanitär ab 8 m². NICHT in EN 1838 — belegt in OVE E 8101:2019 718.560.9.001.AT,
-        SCOPE-GEBUNDEN. Der Konsument (`flaechen_strategy`) wendet sie nur bei
-        OIB-bestätigtem Scope an (fail-closed), nie global. Fehlt die YAML-Sektion →
-        alle None (inert)."""
-        fs = self._grund.get("flaechen_schwellen") or {}
-        return FlaechenSchwellen(
-            antipanik_min_m2=fs.get("antipanik_min_m2"),
-            wc_sanitaer_min_m2=fs.get("wc_sanitaer_min_m2"),
-            quelle=fs.get("quelle"),
         )
 
     def regelwerk_snapshot(self) -> NormRegelwerk:

@@ -214,29 +214,6 @@ def test_wf_innen_aussen():
     assert prov._grund["wartungsfaktor"]["aussen"] == 0.57
 
 
-def test_antipanik_trigger_referenzpraxis():
-    """F11 / W11 [AT-Referenzpraxis]: Die OVE-Flächen-Schwellen (Antipanik 60 m² /
-    Sanitär 8 m²) sind gefüllt und ihre Quelle liegt im Audit-Trail. Die Schwellen-
-    Prüfung greift exakt an der Grenze; die globale Anwendung bleibt OVE-scope-gated
-    (fail-closed) — hier nur die Schwellen-Logik selbst geprüft."""
-    from notbeleuchtung.normwissen import En1838NormProvider
-    from notbeleuchtung.platzierung.flaechen_strategy import (
-        _ist_sanitaer_schwelle,
-        _ist_verkehr_schwelle,
-    )
-
-    schwellen = En1838NormProvider().regelwerk_snapshot().flaechen_schwellen
-    assert schwellen.antipanik_min_m2 == 60.0
-    assert schwellen.wc_sanitaer_min_m2 == 8.0
-    # Verkehr-Schwelle (Antipanik) greift ab 60 m², darunter nicht.
-    assert _ist_verkehr_schwelle(60.0, schwellen) is True
-    assert _ist_verkehr_schwelle(59.9, schwellen) is False
-    # Sanitär-Schwelle nur für WC-Typen ab 8 m².
-    assert _ist_sanitaer_schwelle("WC", 8.0, schwellen) is True
-    assert _ist_sanitaer_schwelle("WC", 7.9, schwellen) is False
-    assert _ist_sanitaer_schwelle("GANG", 50.0, schwellen) is False
-
-
 def test_layer_gruen_gelb(tmp_path):
     """F14 / W06 [AT-Referenzpraxis] (din-Referenzplan V25): Layer-Trennung grün=RZ /
     gelb=SL. Nagelt den **Default** fest (`rz_sl_farbtrennung=True` ohne Argument) und
