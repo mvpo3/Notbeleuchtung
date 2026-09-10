@@ -125,6 +125,23 @@ def raeume_aus_kaskade(plan: DxfPlan,
             raeume.append(r)
             quelle[r.id] = "F"
             zuord[k] = Zuordnung(st, len(raeume) - 1, r, fr.abweichung_prozent, fr.flag)
+    # Stempel-Typ auf L-/H-Räume zurückschreiben: ``finde_stempel``/``ordne_zu``
+    # typisieren layerunabhängig, ``raeume_aus_layer``/``-hatch`` kennen aber nur
+    # den Layer-Namen. Ohne das bleibt der Typ im Stempel stecken (Muthgasse/
+    # M109B: 79 zugeordnete Räume ohne ``raum_typ``, Türtypisierung 4/242).
+    # ERST NACH der Flutung: die Flut-Stufe hängt Zuordnungen auf neue Räume um
+    # bzw. verwirft sie — vorher geschriebene Typen blieben sonst am alten
+    # Polygon hängen (Mollgasse: MUELLRAUM auf einem Gang, Ausgang verloren).
+    for z in zuord:
+        if z.raum is None or z.raum.raum_typ:
+            continue
+        tf = raumtyp_flags(z.stempel.name or "")
+        typ, flucht, communal = tf if tf else (z.stempel.typ or "", False, False)
+        if not typ:
+            continue
+        z.raum.raum_typ = typ
+        z.raum.ist_fluchtweg = z.raum.ist_fluchtweg or flucht
+        z.raum.ist_communal = z.raum.ist_communal or communal
     belegte = [r.polygon_mm for r in raeume if len(r.polygon_mm) >= 3]
     try:
         rest_r = komponenten_ohne_stempel(plan, wk, oeff, belegte)

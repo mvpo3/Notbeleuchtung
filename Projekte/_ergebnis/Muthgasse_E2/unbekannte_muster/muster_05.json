@@ -1,0 +1,23 @@
+{
+  "signatur": {
+    "typ": "solid",
+    "pattern_name": "SOLID",
+    "farbe": 9,
+    "true_color": [
+      203,
+      203,
+      203
+    ]
+  },
+  "layer": [
+    "A-WALL-PATT"
+  ],
+  "anzahl_hatches": 1,
+  "flaeche_mm2_summe": 1222645.3,
+  "beispiel_zentrum_mm": [
+    692348.9,
+    -140550.0
+  ],
+  "ausschnitt_m": 2.0,
+  "bester_kandidat": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+}

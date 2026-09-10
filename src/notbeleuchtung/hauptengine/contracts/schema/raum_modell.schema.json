@@ -654,9 +654,54 @@
           "type": "array"
         },
         "breite_mm": {
-          "default": 0.0,
-          "title": "Breite Mm",
-          "type": "number"
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Breite Mm"
+        },
+        "breite_quelle": {
+          "default": "UNBEKANNT",
+          "enum": [
+            "BLOCKNAME",
+            "GEOMETRIE_SCHWENKRADIUS",
+            "GEOMETRIE_SUMME",
+            "GEOMETRIE_OEFFNUNG",
+            "ATTRIBUT",
+            "STANDARDWERT",
+            "UNBEKANNT"
+          ],
+          "title": "Breite Quelle",
+          "type": "string"
+        },
+        "breite_grund": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Breite Grund"
+        },
+        "lichte_mm": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lichte Mm"
         },
         "von_raum": {
           "anyOf": [
@@ -722,6 +767,30 @@
           "default": false,
           "title": "Ohne Tuerblatt",
           "type": "boolean"
+        },
+        "quelle": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quelle"
+        },
+        "untypisiert_grund": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Untypisiert Grund"
         }
       },
       "required": [
@@ -768,7 +837,7 @@
       "type": "string"
     },
     "contract_version": {
-      "default": "1.2.0",
+      "default": "1.4.0",
       "title": "Contract Version",
       "type": "string"
     },
