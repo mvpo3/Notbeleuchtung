@@ -538,3 +538,135 @@ Abschnitt 1a–1d). Messungen mit ezdxf, Engine-Lauf über `build_default_bundle
   **mangels dokumentierter Kalibrier-Punkte nicht nachrechnen**. Vorschlag: die
   verwendeten Punktpaare je Geschoss mitdokumentieren. **Owner: Autor der
   Erstkalibrierung (2026-09-07).**
+
+## Mollgasse-„Laubengänge" — bewusste Grenze: kein lichtes Polygon (2026-09-10, Selman)
+
+Auftrag war zu prüfen, ob sich für Laubengänge (einseitig offen, Begrenzung
+durch Geländer/Stützen statt Wand) ein lichtes Polygon bilden lässt, ohne auf
+den anderen vier Plänen Phantom-Räume zu erzeugen. **Ergebnis: nein — und es
+gibt auf Mollgasse gar keine Laubengänge.** Die 12 nicht messbaren Segmente
+bleiben `None` mit Grund; es wurde keine Erkennung gebaut.
+
+Messstand (reproduziert, Cache neu geparst: `parse_s=31.8, raeume=64,
+segmente=126`): Barawitzka 12/12 · Mollgasse 107/126 (`flaeche_fehlt` 12,
+`nur_tuer_oder_eckpunkte` 7) · Muthgasse 154/155 · Rennweg EG 9/9 · Rennweg
+OG3 5/5 → **287/307 = 93.5 %**. Diese Zahlen ändern sich durch die
+Entscheidung nicht.
+
+**Was die 12 Mollgasse-Segmente wirklich sind.** Alle 12 haben `quelle=LINIE`
+und stammen aus `zirkulation._weg_polylinien` über `WEG_PREFIX=("09-WEG",)` —
+dem **Außenanlagen-Layer** `09-WEG_G00-LEG-M0`, nicht aus einer Raumgeometrie:
+
+- **6 entartete Polylinien-Endpunkte:** seg_41 = 0.0 mm, seg_27 = 0.3 mm,
+  seg_10 = 20 mm, seg_34 = 50 mm, seg_8 = 68 mm, seg_9 = 105 mm (1–2
+  Abtastpunkte). Sie landen nur deshalb im Topf `flaeche_fehlt` statt bei
+  `nur_tuer_oder_eckpunkte`, weil die Flächensuche vor der Punktzählung greift.
+- **4 Linien = 2 Doppellinien-Paare:** seg_92/seg_94 sind zwei parallele Linien
+  im Abstand **50 mm** über 6.2 m, seg_93/seg_95 dasselbe über 0.85 m — je zwei
+  Zeichnungslinien derselben Wegkante, nicht zwei Wege.
+- **2 echte Außenwege:** seg_4 (7451.5 mm, alle 75 Abtastpunkte außerhalb des
+  `footprint.gebaeude_umriss`, 2002 mm von jeder Wand) und seg_7 (1500 mm,
+  Außenstummel an einer Wartungstür). seg_34 liegt ebenfalls vollständig
+  außerhalb (2287 mm zur nächsten Wand), ist aber mit 50 mm selbst ein Stummel.
+
+Faktisch sind es damit **4 reale Außenwegzüge**, nicht 12 Fehlstellen.
+
+**Darstellungsbefund: Freiraumplanung, keine Laubengänge.** Nächste Texte:
+`MAUERSOCKEL + ZAUN, H = 1.00 m` (439 mm), `SANDKISTE 200x200cm`,
+`KLETTERPFLANZEN`, `PFLANZTROG, h=40cm` (279 mm), `RIGOL`, `GEFÄLLE 2%`,
+`RESTMÜLL 1100 L`. Layergruppe `09-` = Außenanlagen (`09-WEG` 140, `09-NAT`
+115, `09-SYM-GEHSTEIG` 6, `09-VER-GRUNDSTÜCKSGRENZE` 1 Entity). Der Plan trägt
+weder Layer noch Block noch Text `VORDACH|ÜBERDACHUNG|AUSKRAGUNG|LAUBENGANG|
+ARKADE|PERGOLA|CANOPY` — 0 Treffer, deckungsgleich mit dem Befund oben
+(»Überdachung vor dem Haupteingang«) und `aussenbereich.py`. Überdacht ist
+keines der Segmente (Mollgasse: 0 Überdachungen gemessen).
+
+**Warum kein lichtes Polygon gebildet werden kann** (Senkrecht-Strahlen alle
+100 mm, Trefferfenster 300–4000 mm, Deckung + Streuung je Layer und Seite):
+
+| Hypothese | Messergebnis |
+|---|---|
+| beidseitige durchgehende Begrenzung | seg_4 links bester Layer `02-AXO` **8 %** Deckung; rechts `02-AXO` 100 %, d = 346–369 mm, sd 7 — das ist das **Achsraster**, keine Bauteilkante. seg_92/94 rechts `09-SYM-GEHSTEIG` 100 %, d = 2449–2475 mm, sd 8; links `02-HID` 93 % bei d = 418–2540 mm, sd 435. Kein Segment hat beidseitig eine verwertbare Kante. |
+| Stützenreihe | 4 Texte `STB SÄULE …` im ganzen Plan, davon 2 bei seg_92/94 (Abstand 2810 mm) — zwei Stützen auf 6.2 m, keine dritte. 44 STB-Hatches sind 0.3–2.2 m² Wand-/Deckenschraffuren; Lücken auf der Achse 4342/391/1142/390 mm, keine Regelmäßigkeit. |
+| Geländer-/Brüstungslinie | Mollgasse: **0 Entities** auf einem Layer mit `GELÄNDER|BRÜSTUNG`, nur 26 Textannotationen auf `02-TXT`/`05-TXT`. Text trägt keine Geometrie. |
+| Zaun als eigener Layer | existiert nicht (0 Layer mit `ZAUN`). |
+| nächstes Raumpolygon heranziehen | 200.0–1269.6 mm entfernt; bei seg_4/seg_7 **exakt eine Wandstärke** — das Polygon liegt jenseits der Fassade, seine Kante ist die Innenseite eines anderen Raums. Wäre die falsche Fläche. |
+
+**Gegenprobe — jede solche Regel wäre unbrauchbar, und das fällt schon auf
+Mollgasse selbst:** eine Regel „nimm die nächste durchgehende Linie als
+Wegrand" greift bei **107 von 107** heute korrekt gemessenen Segmenten auf das
+Achsraster zu (`AXO<4m` 107/107) und würde jede richtige Messung durch eine
+erfundene ersetzen. Die Gehsteig-Variante berührt 0 der messbaren, steht aber
+auf 6 Entities eines einzigen Plans. Layer-Inventar über alle fünf Pläne
+(Entities AXO/HLP/HID/09-WEG/09-NAT/GEHSTEIG): Mollgasse 267/94/268/140/115/6,
+Barawitzka 0/0/0/0/0/5, Muthgasse 0, Rennweg EG 0, Rennweg OG3 0. Das gesamte
+Begrenzungs-Vokabular existiert **nur auf Mollgasse** — auf den vier anderen
+Plänen wäre die Regel weder wirksam noch prüfbar; man könnte dort nicht einmal
+messen, ob sie Phantom-Räume erzeugt. Barawitzkas 688
+„Geländer/Brüstung"-Entities sind ArchiCAD-Stiftlayer und bereits abgeräumt
+(`docs/ENIS_UEBERGABE_0908.md` § 270: 123 Entities, 2 räumliche Cluster auf
+20 × 34 m → „trägt nicht").
+
+**Entscheidung:** keine Erkennung. Ein aus Gehsteigkante oder Achsraster
+gebautes Polygon wäre ein erfundenes Maß und arbeitete gegen
+`tests/contract/test_keine_erfundenen_masse.py`. Die 12 Segmente bleiben `None`
+mit Grund, ebenso die 8 Stummel unter `nur_tuer_oder_eckpunkte`. Belege
+(Session-Scratchpad): `_lg_seg_tab.py/.json`, `_lg_umfeld2.py` +
+`_lg_umfeld_Mollgasse_EG.json`, `_lg_texte.py`, `_lg_rays.py`,
+`_lg_kandidaten.py`, `_lg_stuetzen.py`, `_lg_gelaender.py`, `_lg_gegen.py`,
+`_lg_phantom.py`, `_lg_aussen.py`, `_p5_mess_lg_repro.json`, Planausschnitte
+`_lg_A_seg4.png` … `_lg_F_seg8.png`.
+
+### @EnisAMG — Fluchtwegbreite auf Wegen im Freien (Hofweg / Vorplatz / Laubengang)
+
+Diese Frage ist von der Erkennungs-Entscheidung **unabhängig** und bleibt auch
+dann offen, wenn wir nie ein Außen-Polygon bauen.
+
+Kontext: `raumerkennung/breitenprofil` misst 287/307 Fluchtwegsegmente. Von den
+20 Resten liegen 12 auf Mollgasse_EG (seg_4/7/8/9/10/27/34/41/92/93/94/95),
+alle aus dem Außenanlagen-Layer `09-WEG_G00-LEG-M0`, ohne Raumpolygon (nächstes
+200.0–1269.6 mm entfernt). Begrenzt sind sie, wenn überhaupt, durch Zäune
+(H = 1.00/1.20/1.50 m), Mauersockel, Pflanztröge (h = 40 cm) und die
+Gehsteigkante — nicht durch Wände. Überdacht ist keiner.
+
+- **Frage 1:** Ist ein Weg im Freien auf Eigengrund (Hofweg, Vorplatz,
+  Laubengang/Außengang) im Sinne von OIB-RL 4 Kapitel 2 ein Fluchtweg **mit**
+  Breitenanforderung — oder endet die Breitenanforderung an der Gebäudehülle,
+  weil der Weg ins Freie dort bereits erreicht ist?
+- **Frage 2:** Falls ja — worauf bezieht sich dann die „Breite"? Bei einem Zaun
+  mit H = 1.00 m oder einem Pflanztrog mit h = 40 cm gibt es keine
+  raumbildende Begrenzung; die nächste durchgehende Linie im Plan ist das
+  Achsraster.
+- **Frage 3:** Falls nein — dürfen wir die betroffenen Segmente dauerhaft mit
+  `None` + Grund führen (kein Zielbandverstoß), oder sollen sie vorher aus der
+  Fluchtwegmenge fallen? Heute zählen sie in den Nenner 307 hinein.
+
+Was unsere eigene Quelle hergibt (`normwissen/data/oib_rl4_fluchtwegbreiten.yaml`,
+gegen das Original geprüft): `anwendungsbereich.gilt_fuer` = „Gebäude; für
+sonstige Bauwerke sind die Bestimmungen sinngemäß anzuwenden" — ob ein Hofweg
+ein „sonstiges Bauwerk" ist, sagt die Richtlinie nicht. `ausnahme_kleingebaeude`
+kennt nur eingeschossige Gebäude ≤ 15 m² BGF, keine Wege.
+`mindestbreiten.gaenge` (2.4.1): Hauptgang 1.20 m, 1.00 m nur in der
+abschließenden Fallliste — „Gang" ist nicht definiert und nicht auf innen/außen
+abgegrenzt. `mindestbreiten.durchgangshoehe` (2.4.8): 2.10 m auch für Gänge —
+im Freien nicht sinnvoll anwendbar, was gegen eine ungeprüfte Ausdehnung des
+Gangbegriffs spricht. Die einzigen Stellen mit „im Freien" sind
+`stadien_versammlungsstaetten_im_freien` (2.4.6) und `tueren.stadien_im_freien`
+(2.8.2) — anderer Gegenstand. `⚠_fertigmass` gilt (Vergleich mit Roh-/Nennmaß
+unzulässig). `status: nicht_pruefbar`; `benoetigte_angaben` verlangt von uns die
+„tatsächliche lichte Breite je Fluchtweg-Abschnitt" — genau die Größe, die hier
+nicht existiert.
+
+`knowledge/` gibt nichts her (Volltextsuche `laubengang|außengang|offener gang|
+im freien` über `knowledge/extracted` und `normwissen/`): nur
+`knowledge/_extracted_text/digests/buecher/Baukonstruktionslehe 1.part11.md:177`
+(„Balkone können Erschließungswege (Laubenganghäuser), Fluchtwege … bilden" —
+Fachbuch, keine Norm, ohne Maßangabe),
+`knowledge/extracted/bildlehren/Bildlehren_GSYSTEMS.md:89` (EN 1838,
+Beleuchtung einschließlich außenliegender Treppen — keine Breitenanforderung)
+und `knowledge/extracted/OVE_E_8101_niederspannungsanlagen.md:69`
+(Fluchtweg-Definition über das Ziel „sicherer Ort im Freien", ohne Aussage zur
+Breite des Wegs dorthin).
+
+Ohne Antwort bleibt die Behandlung wie heute: keine Messung, `None` mit Grund.
+**Owner: Enis (`normwissen/`).**
