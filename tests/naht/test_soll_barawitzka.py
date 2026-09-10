@@ -20,12 +20,17 @@ PLAN = Path("Projekte/_eingang/Barawitzka_EG.dxf")
 
 
 @pytest.fixture(scope="module")
-def rm():
+def provider():
     if not PLAN.exists():                        # pragma: no cover — CAD-Asset fehlt
         pytest.skip(f"Architekturplan nicht vorhanden: {PLAN}")
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
 
-    return ArchitekturRaumProvider().parse(str(PLAN), "EG")
+    return ArchitekturRaumProvider()
+
+
+@pytest.fixture(scope="module")
+def rm(provider):
+    return provider.parse(str(PLAN), "EG")
 
 
 def test_soll_final_exit(rm):
@@ -33,13 +38,45 @@ def test_soll_final_exit(rm):
     assert any(a.typ == "final_exit" for a in rm.ausgaenge), "kein final_exit"
 
 
+def test_soll_genau_ein_final_exit(rm):
+    """Owner-Entscheidung Selman 2026-09-07: »ins Freie« heißt aus dem
+    Flächengrundriss (bis Grundstücksgrenze, inkl. Hof/Garten) HERAUS auf
+    öffentlichen Grund — ein ringsum ummauerter Innenhof ist kein Endausgang.
+
+    Damit fällt der frühere zweite Endausgang exit_durchgang_62 (durchgang_62
+    bei x=8775.0 / y=-22663.0 mm) weg: er führt in den Innenhof, der die beiden
+    Stiegenhäuser raum_35 und raum_37 verbindet und 0.0 m Randlänge an der
+    Straßenkante hat. Übrig bleibt exit_tuer_27 (x=14895.0 / y=-2930.0 mm) am
+    Hof mit echtem Straßenzugang. Ist 2026-09-07 nach den Fixes: 1."""
+    final = [a for a in rm.ausgaenge if a.typ == "final_exit"]
+    assert len(final) == 1, f"{len(final)} final_exit statt 1: {[a.id for a in final]}"
+
+
 @pytest.mark.xfail(
     strict=True,
-    reason="Plan hat KEINE FLW-Linien (Farbe 96 = Katastergrenzen) — s. Modul-Docstring",
+    reason="Plan hat KEINE expliziten Fluchtweg-Linien: die 16 Farbe-96-Linien "
+    "sind KATASTERGRENZEN (Layer »Kataster Grenzen«, Analyse 2026-09, "
+    "docs/OFFENE_FRAGEN.md) — die alte »≥16 Segmente LINIE«-Erwartung ist "
+    "damit widerlegt und auf »explizite Linien vorhanden« umformuliert. Der "
+    "xfail bleibt als Zielbild für einen Plan-Nachtrag des Fachplaners stehen; "
+    "die LINIE-Quelle selbst ist generisch gebaut und greift auf anderen "
+    "Plänen (Mollgasse 103, Muthgasse 139).",
 )
-def test_soll_segmente_aus_expliziten_linien(rm):
+def test_soll_explizite_linien_vorhanden(rm):
     linie = [s for s in rm.zirkulation.segmente if s.quelle == "LINIE"]
-    assert len(linie) >= 16, f"nur {len(linie)} Segmente mit quelle LINIE"
+    assert linie, "keine Segmente mit quelle LINIE (explizite Fluchtweg-Linien)"
+
+
+@pytest.mark.xfail(
+    strict=True,
+    reason="Soll ≥ 90 % typisierte Türen je Familie — Ist Barawitzka 2026-09-07: "
+    "53 % (Haupt-Lücke: unbekannte_kombination/kein_nachbarraum, s. "
+    "untypisiert_grund-Tabelle in bericht.md)",
+)
+def test_soll_90_prozent_tueren_typisiert(rm):
+    typ = sum(1 for t in rm.tueren if t.tuer_detail)
+    assert rm.tueren and typ / len(rm.tueren) >= 0.9, (
+        f"nur {typ}/{len(rm.tueren)} Türen typisiert")
 
 
 def test_soll_brandschutztuer(rm):
@@ -53,3 +90,22 @@ def test_soll_41_raeume_mit_stempel(rm):
     heben die typisierten Räume über die Soll-Schwelle 41 (XPASS-Kipp)."""
     typisiert = [r for r in rm.raeume if r.raum_typ]
     assert len(typisiert) >= 41, f"nur {len(typisiert)} Räume mit Stempel typisiert"
+
+
+@pytest.mark.xfail(
+    strict=True,
+    reason="Soll (Spec 6): alle 16 FLW-Endpunkte an der Außenkante sind mit "
+    "final_exit gedeckt — Ist 2026-09-07 (selbst gemessen): 0 Segmente quelle "
+    "LINIE, damit 0 Endpunkte an der Außenkante und 0 gedeckte (1 final_exit "
+    "existiert, deckt aber keinen Linien-Endpunkt). Ursache: die 16 "
+    "Farbe-96-Linien sind Katastergrenzen, echte FLW-Linien fehlen im Plan "
+    "(s. test_soll_explizite_linien_vorhanden).",
+)
+def test_soll_16_endpunkte_an_der_aussenkante_gedeckt(provider, rm):
+    kc = provider.letzter_kreuzcheck
+    assert len(kc.endpunkte_aussenkante) == 16, (
+        f"{len(kc.endpunkte_aussenkante)} statt 16 FLW-Endpunkte an der "
+        "Außenkante")
+    assert len(kc.gedeckte_endpunkte) == len(kc.endpunkte_aussenkante), (
+        f"nur {len(kc.gedeckte_endpunkte)}/{len(kc.endpunkte_aussenkante)} "
+        "Endpunkte mit final_exit gedeckt")

@@ -80,12 +80,21 @@ def test_symbolzahl_in_erwarteter_groessenordnung(durchstich):
     plzg = durchstich.platzierung.platzierungen
     rz = sum(1 for p in plzg if p.kind == "rz")
     sl = sum(1 for p in plzg if p.kind == "sicherheitsleuchte")
-    # Bänder am 08.09.2026 angehoben (Owner-Korrektur der Türleuchten-Regel):
-    # TECHNIK/MUELLRAUM/KINDERWAGENRAUM tragen an der Tür jetzt ein RETTUNGSZEICHEN
-    # (Pfeil zur Tür) statt einer Sicherheitsleuchte. Mollgasse EG hat 6 solche Räume:
-    # rz 19→25 (RZ-hi 22→30). SL bleibt bei ~41 statt −6, weil die B1-Regel (#135,
-    # `aufheller_je_rz`) hinter jedes RZ — auch die neuen Tür-RZ — einen Aufheller 500 mm
-    # ins Rauminnere setzt (SL-hi 40→44).
+    # Zwei additive Ursachen, beide Seiten des Merges 2026-09-08:
+    # (1) Selman, Außen-Analyse/Türquellen: das EG hat begründete final_exits
+    #     (Hof-/Gartentüren, Durchfahrten — jede Tür trägt `quelle`) statt 5
+    #     → mehr Ausgangs- und Richtungs-RZ.
+    # (2) Owner-Korrektur der Türleuchten-Regel: TECHNIK/MUELLRAUM/KINDERWAGENRAUM
+    #     tragen an der Tür ein RETTUNGSZEICHEN (Pfeil zur Tür) statt einer
+    #     Sicherheitsleuchte — Mollgasse EG hat 6 solche Räume; die B1-Regel
+    #     (#135, `aufheller_je_rz`) setzt hinter JEDES RZ einen Aufheller, also
+    #     wächst SL mit.
+    # Nachgemessen 2026-09-08: RZ 28, SL 35. Beide Ursachen wirken, seit
+    # `KINDERWAGENRAUM` ein eigener Kanon-Typ ist (vorher nach ABSTELLRAUM
+    # eingeebnet, Board-Befund Leonis → Selman): Mollgasse EG hat 2 KIWA-Räume
+    # (Stempel „KIWA" und „FAHRRADRAUM / KIWA"), die jetzt je ein Tür-RZ tragen
+    # → RZ 26 → 28, SL 34 → 35 (ein Aufheller je neuem RZ, der zweite Raum
+    # hatte schon eine Leuchte).
     assert 10 <= rz <= 30, f"RZ={rz} außerhalb des erwarteten Bandes"
     assert 15 <= sl <= 44, f"SL={sl} außerhalb des erwarteten Bandes"
     assert len(plzg) >= 30, f"nur {len(plzg)} Symbole — quasi-leer, Real-Plan-Regress"

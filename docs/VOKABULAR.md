@@ -21,6 +21,7 @@ NIEMALS eine der Listen allein ändern.
 | GANG | **Fluchtweg-Korridor**: Mittellinien-Verdichtung + RZ-GANG-Fallback |
 | GARAGE | LB-adressierbar (`notlicht_kw_garage`) |
 | KELLER | LB-adressierbar |
+| KINDERWAGENRAUM | Türleuchten-Regel (Referenz-Praxis): RZ an der Tür — *neu 2026-09-08: vorher nach ABSTELLRAUM eingeebnet, dadurch griff die Regel auf echten Plänen nie* |
 | KINDERZIMMER | — |
 | KÜCHE | — |
 | LAGER | LB-adressierbar |

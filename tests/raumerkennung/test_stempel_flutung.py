@@ -146,3 +146,28 @@ def test_rennweg_mindestens_ein_raum_flutbar():
     assert len(ergebnisse) == len(stempel)  # NIE verwerfen
     assert any(fr.flag == "ok" for fr in ergebnisse), \
         [f"{fr.stempel.name}: {fr.abweichung_prozent}%" for fr in ergebnisse]
+
+
+def test_entgleiste_extents_warnen_statt_abzustuerzen():
+    """Reißleine: unplausible Wand-Extents → Warnung + [] statt Terabyte-Raster.
+
+    Baufeld-4OG lief vor dem dxf_load-Faktor-Fix auf ein 1.7e6 × 1.6e6-Raster
+    (2.56 TiB bool) und riss den ganzen Parse mit (Meldung Leonis 2026-09-07).
+    """
+    # Zwei Wandstücke 90 km auseinander — in BEIDEN Achsen, sonst bleibt das
+    # Raster (eine Achse schmal) noch unter dem Limit.
+    wk = [_wand(0, 0, 200, 4000),
+          _wand(90_000_000, 90_000_000, 90_000_200, 90_004_000)]
+    with pytest.warns(RuntimeWarning, match="Stempel-Flutung übersprungen"):
+        assert flute_stempel(None, [_stempel(100, 2000, 20.0)], wk, []) == []
+
+
+def test_normale_extents_loesen_die_reissleine_nicht_aus():
+    wk = _raum_mit_tuer(1500, 2500)
+    tuer = TuerOeffnung(xy_mm=(5100, 2000), breite_mm=1000, winkel_grad=None,
+                        quelle="arc")
+    import warnings
+
+    with warnings.catch_warnings():
+        warnings.simplefilter("error", RuntimeWarning)   # jede Warnung = Fehler
+        assert flute_stempel(None, [_stempel(2500, 2000, 20.0)], wk, [tuer])
