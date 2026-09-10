@@ -538,3 +538,325 @@ Abschnitt 1a–1d). Messungen mit ezdxf, Engine-Lauf über `build_default_bundle
   **mangels dokumentierter Kalibrier-Punkte nicht nachrechnen**. Vorschlag: die
   verwendeten Punktpaare je Geschoss mitdokumentieren. **Owner: Autor der
   Erstkalibrierung (2026-09-07).**
+
+## Mollgasse-„Laubengänge" — bewusste Grenze: kein lichtes Polygon (2026-09-10, Selman)
+
+Auftrag war zu prüfen, ob sich für Laubengänge (einseitig offen, Begrenzung
+durch Geländer/Stützen statt Wand) ein lichtes Polygon bilden lässt, ohne auf
+den anderen vier Plänen Phantom-Räume zu erzeugen. **Ergebnis: nein — und es
+gibt auf Mollgasse gar keine Laubengänge.** Die 12 nicht messbaren Segmente
+bleiben `None` mit Grund; es wurde keine Erkennung gebaut.
+
+Messstand (reproduziert, Cache neu geparst: `parse_s=31.8, raeume=64,
+segmente=126`): Barawitzka 12/12 · Mollgasse 107/126 (`flaeche_fehlt` 12,
+`nur_tuer_oder_eckpunkte` 7) · Muthgasse 154/155 · Rennweg EG 9/9 · Rennweg
+OG3 5/5 → **287/307 = 93.5 %**. Diese Zahlen ändern sich durch die
+Entscheidung nicht.
+
+**Was die 12 Mollgasse-Segmente wirklich sind.** Alle 12 haben `quelle=LINIE`
+und stammen aus `zirkulation._weg_polylinien` über `WEG_PREFIX=("09-WEG",)` —
+dem **Außenanlagen-Layer** `09-WEG_G00-LEG-M0`, nicht aus einer Raumgeometrie:
+
+- **6 entartete Polylinien-Endpunkte:** seg_41 = 0.0 mm, seg_27 = 0.3 mm,
+  seg_10 = 20 mm, seg_34 = 50 mm, seg_8 = 68 mm, seg_9 = 105 mm (1–2
+  Abtastpunkte). Sie landen nur deshalb im Topf `flaeche_fehlt` statt bei
+  `nur_tuer_oder_eckpunkte`, weil die Flächensuche vor der Punktzählung greift.
+- **4 Linien = 2 Doppellinien-Paare:** seg_92/seg_94 sind zwei parallele Linien
+  im Abstand **50 mm** über 6.2 m, seg_93/seg_95 dasselbe über 0.85 m — je zwei
+  Zeichnungslinien derselben Wegkante, nicht zwei Wege.
+- **2 echte Außenwege:** seg_4 (7451.5 mm, alle 75 Abtastpunkte außerhalb des
+  `footprint.gebaeude_umriss`, 2002 mm von jeder Wand) und seg_7 (1500 mm,
+  Außenstummel an einer Wartungstür). seg_34 liegt ebenfalls vollständig
+  außerhalb (2287 mm zur nächsten Wand), ist aber mit 50 mm selbst ein Stummel.
+
+Faktisch sind es damit **4 reale Außenwegzüge**, nicht 12 Fehlstellen.
+
+**Darstellungsbefund: Freiraumplanung, keine Laubengänge.** Nächste Texte:
+`MAUERSOCKEL + ZAUN, H = 1.00 m` (439 mm), `SANDKISTE 200x200cm`,
+`KLETTERPFLANZEN`, `PFLANZTROG, h=40cm` (279 mm), `RIGOL`, `GEFÄLLE 2%`,
+`RESTMÜLL 1100 L`. Layergruppe `09-` = Außenanlagen (`09-WEG` 140, `09-NAT`
+115, `09-SYM-GEHSTEIG` 6, `09-VER-GRUNDSTÜCKSGRENZE` 1 Entity). Der Plan trägt
+weder Layer noch Block noch Text `VORDACH|ÜBERDACHUNG|AUSKRAGUNG|LAUBENGANG|
+ARKADE|PERGOLA|CANOPY` — 0 Treffer, deckungsgleich mit dem Befund oben
+(»Überdachung vor dem Haupteingang«) und `aussenbereich.py`. Überdacht ist
+keines der Segmente (Mollgasse: 0 Überdachungen gemessen).
+
+**Warum kein lichtes Polygon gebildet werden kann** (Senkrecht-Strahlen alle
+100 mm, Trefferfenster 300–4000 mm, Deckung + Streuung je Layer und Seite):
+
+| Hypothese | Messergebnis |
+|---|---|
+| beidseitige durchgehende Begrenzung | seg_4 links bester Layer `02-AXO` **8 %** Deckung; rechts `02-AXO` 100 %, d = 346–369 mm, sd 7 — das ist das **Achsraster**, keine Bauteilkante. seg_92/94 rechts `09-SYM-GEHSTEIG` 100 %, d = 2449–2475 mm, sd 8; links `02-HID` 93 % bei d = 418–2540 mm, sd 435. Kein Segment hat beidseitig eine verwertbare Kante. |
+| Stützenreihe | 4 Texte `STB SÄULE …` im ganzen Plan, davon 2 bei seg_92/94 (Abstand 2810 mm) — zwei Stützen auf 6.2 m, keine dritte. 44 STB-Hatches sind 0.3–2.2 m² Wand-/Deckenschraffuren; Lücken auf der Achse 4342/391/1142/390 mm, keine Regelmäßigkeit. |
+| Geländer-/Brüstungslinie | Mollgasse: **0 Entities** auf einem Layer mit `GELÄNDER|BRÜSTUNG`, nur 26 Textannotationen auf `02-TXT`/`05-TXT`. Text trägt keine Geometrie. |
+| Zaun als eigener Layer | existiert nicht (0 Layer mit `ZAUN`). |
+| nächstes Raumpolygon heranziehen | 200.0–1269.6 mm entfernt; bei seg_4/seg_7 **exakt eine Wandstärke** — das Polygon liegt jenseits der Fassade, seine Kante ist die Innenseite eines anderen Raums. Wäre die falsche Fläche. |
+
+**Gegenprobe — jede solche Regel wäre unbrauchbar, und das fällt schon auf
+Mollgasse selbst:** eine Regel „nimm die nächste durchgehende Linie als
+Wegrand" greift bei **107 von 107** heute korrekt gemessenen Segmenten auf das
+Achsraster zu (`AXO<4m` 107/107) und würde jede richtige Messung durch eine
+erfundene ersetzen. Die Gehsteig-Variante berührt 0 der messbaren, steht aber
+auf 6 Entities eines einzigen Plans. Layer-Inventar über alle fünf Pläne
+(Entities AXO/HLP/HID/09-WEG/09-NAT/GEHSTEIG): Mollgasse 267/94/268/140/115/6,
+Barawitzka 0/0/0/0/0/5, Muthgasse 0, Rennweg EG 0, Rennweg OG3 0. Das gesamte
+Begrenzungs-Vokabular existiert **nur auf Mollgasse** — auf den vier anderen
+Plänen wäre die Regel weder wirksam noch prüfbar; man könnte dort nicht einmal
+messen, ob sie Phantom-Räume erzeugt. Barawitzkas 688
+„Geländer/Brüstung"-Entities sind ArchiCAD-Stiftlayer und bereits abgeräumt
+(`docs/ENIS_UEBERGABE_0908.md` § 270: 123 Entities, 2 räumliche Cluster auf
+20 × 34 m → „trägt nicht").
+
+**Entscheidung:** keine Erkennung. Ein aus Gehsteigkante oder Achsraster
+gebautes Polygon wäre ein erfundenes Maß und arbeitete gegen
+`tests/contract/test_keine_erfundenen_masse.py`. Die 12 Segmente bleiben `None`
+mit Grund, ebenso die 8 Stummel unter `nur_tuer_oder_eckpunkte`. Belege
+(Session-Scratchpad): `_lg_seg_tab.py/.json`, `_lg_umfeld2.py` +
+`_lg_umfeld_Mollgasse_EG.json`, `_lg_texte.py`, `_lg_rays.py`,
+`_lg_kandidaten.py`, `_lg_stuetzen.py`, `_lg_gelaender.py`, `_lg_gegen.py`,
+`_lg_phantom.py`, `_lg_aussen.py`, `_p5_mess_lg_repro.json`, Planausschnitte
+`_lg_A_seg4.png` … `_lg_F_seg8.png`.
+
+### @EnisAMG — Fluchtwegbreite auf Wegen im Freien (Hofweg / Vorplatz / Laubengang)
+
+Diese Frage ist von der Erkennungs-Entscheidung **unabhängig** und bleibt auch
+dann offen, wenn wir nie ein Außen-Polygon bauen.
+
+Kontext: `raumerkennung/breitenprofil` misst 287/307 Fluchtwegsegmente. Von den
+20 Resten liegen 12 auf Mollgasse_EG (seg_4/7/8/9/10/27/34/41/92/93/94/95),
+alle aus dem Außenanlagen-Layer `09-WEG_G00-LEG-M0`, ohne Raumpolygon (nächstes
+200.0–1269.6 mm entfernt). Begrenzt sind sie, wenn überhaupt, durch Zäune
+(H = 1.00/1.20/1.50 m), Mauersockel, Pflanztröge (h = 40 cm) und die
+Gehsteigkante — nicht durch Wände. Überdacht ist keiner.
+
+- **Frage 1:** Ist ein Weg im Freien auf Eigengrund (Hofweg, Vorplatz,
+  Laubengang/Außengang) im Sinne von OIB-RL 4 Kapitel 2 ein Fluchtweg **mit**
+  Breitenanforderung — oder endet die Breitenanforderung an der Gebäudehülle,
+  weil der Weg ins Freie dort bereits erreicht ist?
+- **Frage 2:** Falls ja — worauf bezieht sich dann die „Breite"? Bei einem Zaun
+  mit H = 1.00 m oder einem Pflanztrog mit h = 40 cm gibt es keine
+  raumbildende Begrenzung; die nächste durchgehende Linie im Plan ist das
+  Achsraster.
+- **Frage 3:** Falls nein — dürfen wir die betroffenen Segmente dauerhaft mit
+  `None` + Grund führen (kein Zielbandverstoß), oder sollen sie vorher aus der
+  Fluchtwegmenge fallen? Heute zählen sie in den Nenner 307 hinein.
+
+Was unsere eigene Quelle hergibt (`normwissen/data/oib_rl4_fluchtwegbreiten.yaml`,
+gegen das Original geprüft): `anwendungsbereich.gilt_fuer` = „Gebäude; für
+sonstige Bauwerke sind die Bestimmungen sinngemäß anzuwenden" — ob ein Hofweg
+ein „sonstiges Bauwerk" ist, sagt die Richtlinie nicht. `ausnahme_kleingebaeude`
+kennt nur eingeschossige Gebäude ≤ 15 m² BGF, keine Wege.
+`mindestbreiten.gaenge` (2.4.1): Hauptgang 1.20 m, 1.00 m nur in der
+abschließenden Fallliste — „Gang" ist nicht definiert und nicht auf innen/außen
+abgegrenzt. `mindestbreiten.durchgangshoehe` (2.4.8): 2.10 m auch für Gänge —
+im Freien nicht sinnvoll anwendbar, was gegen eine ungeprüfte Ausdehnung des
+Gangbegriffs spricht. Die einzigen Stellen mit „im Freien" sind
+`stadien_versammlungsstaetten_im_freien` (2.4.6) und `tueren.stadien_im_freien`
+(2.8.2) — anderer Gegenstand. `⚠_fertigmass` gilt (Vergleich mit Roh-/Nennmaß
+unzulässig). `status: nicht_pruefbar`; `benoetigte_angaben` verlangt von uns die
+„tatsächliche lichte Breite je Fluchtweg-Abschnitt" — genau die Größe, die hier
+nicht existiert.
+
+`knowledge/` gibt nichts her (Volltextsuche `laubengang|außengang|offener gang|
+im freien` über `knowledge/extracted` und `normwissen/`): nur
+`knowledge/_extracted_text/digests/buecher/Baukonstruktionslehe 1.part11.md:177`
+(„Balkone können Erschließungswege (Laubenganghäuser), Fluchtwege … bilden" —
+Fachbuch, keine Norm, ohne Maßangabe),
+`knowledge/extracted/bildlehren/Bildlehren_GSYSTEMS.md:89` (EN 1838,
+Beleuchtung einschließlich außenliegender Treppen — keine Breitenanforderung)
+und `knowledge/extracted/OVE_E_8101_niederspannungsanlagen.md:69`
+(Fluchtweg-Definition über das Ziel „sicherer Ort im Freien", ohne Aussage zur
+Breite des Wegs dorthin).
+
+Ohne Antwort bleibt die Behandlung wie heute: keine Messung, `None` mit Grund.
+**Owner: Enis (`normwissen/`).**
+
+### @EnisAMG — Raumstempel-Abkürzungen ohne Kanon-Eintrag (Muthgasse E2)
+
+Reine Vokabular-Entscheidung, keine Code-Frage. Belege in
+`docs/ENIS_UEBERGABE_0908.md` § 13.
+
+Alle 10 untypisierten Räume in Muthgasse_E2 tragen einen **vollständigen,
+korrekt gefundenen** Raumstempel auf `A-AREA-IDEN` (Nummer, Name, m², Belag).
+Sie bleiben untypisiert, weil der Name in keinem der drei Wörterbücher in
+`raumtyp.py` steht (`_EXTRA_LABELS:65`, `_EXTRA_DIRECT:95`,
+`_EXTRA_OVERRIDE:125`) und `stempel_anker.py:219-221` ohne erkannten Namen gar
+keinen `Stempel` erzeugt. Wir setzen nichts, solange die Zuordnung nicht
+fachlich entschieden ist — ein geratener `raum_typ` erzeugt eine Leuchte an
+falscher Stelle.
+
+- **Frage 1 — `Schl.` (2 Räume: `raum_65` 13,04 m², `raum_67` 3,73 m²).**
+  Der Plan belegt eine Verkehrsfläche: Nummer `E2-VF-11a`/`-11b`, und das
+  Präfix `VF` trägt in diesem Plan ausschließlich Verkehrsflächen (`STGH`,
+  `Gang`, `Aufzug 1/2`, `FW-Aufzug`, `Podest`, `Stiege`) — kein einziger
+  Wohnungsraum, die tragen Top-Nummern. `raum_65` liegt mit 0 mm Abstand an
+  fünf STIEGENHAUS-Polygonen, hat `Ker.Bel.` und `EI ₂ 30-C`-Türen an beiden
+  Durchgängen. Wir lesen das als **Schleuse** (Brandschutzschleuse vor dem
+  Stiegenhaus), nicht als Schlafzimmer — ausgeschrieben steht es im Plan
+  nirgends.
+  → Bekommt `Schleuse` einen eigenen Kanon-Typ (`docs/VOKABULAR.md` § 1 kennt
+  ihn nicht), und mit welcher Nutzungsklasse? Wirkung, gemessen:
+  `ALLGEMEIN_ERSCHLIESSUNG` würde 2 Räume typisieren und `tuer_50` zur
+  `stiegenhaustuer` machen (+1 `stair_exit` für `test_soll_stair_exits`);
+  `WOHNUNG_PRIVAT` hätte keine Wirkung auf die Ausgänge.
+  → **Ausformuliert mit Planausschnitt, Indizientabelle und Kurzform-Scan über
+  alle fünf Pläne im letzten Abschnitt dieser Datei.**
+- **Frage 2 — `Vorr.` (3 Räume) und `Schrankr.` (1 Raum).**
+  Gilt `Vorr.` als `VORRAUM` und `Schrankr.` als `ABSTELLRAUM`? Beide Kanon-Typen
+  existieren, nur die Abkürzung fehlt im Wörterbuch. Beide führen zu
+  `WOHNUNG_PRIVAT`, also ohne Wirkung auf Ausgänge — sie schließen aber die
+  Türtypisierungs-Lücke `unbekannte_kombination` bei `tuer_11/12/13`.
+- **Frage 3 — `SR` (2 Räume Muthgasse, je 1 in Barawitzka und Mollgasse) sowie
+  `Aufzug 1`/`Aufzug 2` (2 Räume).** `SR` ist ohne Auflösung mehrdeutig.
+  `Aufzug` steht als Token nur über `fw` (`FW-Aufzug`) im Wörterbuch; ein
+  Eintrag `aufzug` hätte über alle fünf Pläne **11 Falschtreffer** (Kabinen- und
+  Bedienfeldbeschriftungen, Maßketten) und ist ohne m²-Kontextbedingung nicht
+  sicher.
+
+Falschtreffer-Messung über alle fünf Pläne (`_r65_falschtreffer.py`,
+token-exakt, „Falschtreffer" = Treffer ohne m²-Nachbar, also kein Raumstempel):
+`schl` 0, `vorr` 0, `schrankr` 0, `sr` 0, `aufzug` 11, `stiege` 4, `podest` 4.
+Die ersten vier wären also risikofrei umsetzbar, sobald das **Label** feststeht.
+
+**Owner: Enis (`normwissen/`).** Bis zur Antwort bleiben die Räume untypisiert;
+das ist gewollt und kein Defekt.
+
+### @EnisAMG — Entscheidung `Schl.`: **Schleuse** oder **Schlafzimmer**? (2026-09-10, Selman)
+
+Ausformulierung der Frage 1 aus dem Abschnitt darüber. Alle Zahlen gemessen
+(`_s2_r65_steckbrief.py`, `_s2_r67.py`, `_s2_kurzform_scan.py`,
+`_s2_kurzform_bilanz.py`), Belege in `docs/ENIS_UEBERGABE_0908.md` § 13.
+**Es ist nichts gesetzt und nichts geraten: der `xfail` bleibt, ein neuer
+Kanon-Typ entsteht erst nach deiner Entscheidung.**
+
+#### Planausschnitt `raum_65` (Muthgasse_E2)
+
+| Feld | Wert |
+|---|---|
+| Fläche | **13,04 m²** (Stempel `13,04 m²`, deckungsgleich mit dem Polygon) |
+| Zentrum (xy_mm) | 335 283 / 108 862 |
+| bbox | x 333 153…337 815, y 106 351…111 004 mm → 4,66 × 4,65 m, **L-förmig um den Stiegenkern gewickelt** |
+| Umfang / Punkte | 15,28 m / 15 Stützpunkte |
+| Stempelgruppe (`A-AREA-IDEN`) | `E2-VF-11a` · **`Schl.`** · `13,04 m²` · `Ker.Bel.` |
+| Heute | `raum_typ` leer, `nutzungsklasse=None`, `flag=kein_stempel`, Kaskadenzweig `L` |
+
+**Nachbarräume (Polygonabstand ≤ 2000 mm):**
+
+| Abstand | Raum | raum_typ | Nutzungsklasse | Fläche |
+|--:|---|---|---|--:|
+| 0 mm | `stiegenhaus_1` | STIEGENHAUS | ALLGEMEIN_ERSCHLIESSUNG | 11,16 m² |
+| 0 mm | `stiegenhaus_2` | STIEGENHAUS | ALLGEMEIN_ERSCHLIESSUNG | 7,89 m² |
+| 0 mm | `stiegenhaus_3` | STIEGENHAUS | ALLGEMEIN_ERSCHLIESSUNG | 8,14 m² |
+| 0 mm | `stiegenhaus_4` | STIEGENHAUS | ALLGEMEIN_ERSCHLIESSUNG | 8,22 m² |
+| 0 mm | `stiegenhaus_5` | STIEGENHAUS | ALLGEMEIN_ERSCHLIESSUNG | 10,66 m² |
+| 180 mm | `raum_52` | untypisiert (Stempel `SR`) | – | 5,19 m² |
+| 180 mm | `raum_46` | GANG | ALLGEMEIN_ERSCHLIESSUNG | 28,52 m² |
+| 267 mm | `raum_89` | BAD | WOHNUNG_PRIVAT | 4,19 m² (**nur Wandkontakt, keine Tür**) |
+| 666 mm | `raum_94` | GANG | ALLGEMEIN_ERSCHLIESSUNG | 18,10 m² |
+| 1522 mm | `raum_50` | ZIMMER | WOHNUNG_PRIVAT | 13,38 m² |
+| 1809 / 1920 mm | `lift_4` / `lift_5` | LIFT | KEIN_RAUM | je 3,73 m² |
+
+**Lage zum Stiegenhaus:** Abstand **0 mm zu fünf STIEGENHAUS-Polygonen**
+(`stiegenhaus_1…5` sind Podest- und Laufteilstücke desselben Kerns),
+gemeinsame Kontaktlänge zusammen ~8,2 m.
+
+**Türen (5 echte Übergänge, dazu 2 Selbstbezüge aus Textankern):**
+
+| Tür | Quelle | lichte Breite | von → nach | Gegenseite |
+|---|---|--:|---|---|
+| `tuer_50` | `arc_aussen+text:E2-VF-12a` | 655 mm | `stiegenhaus_1` → `raum_65` | STIEGENHAUS |
+| `durchgang_140` | `durchgang+text:E2-VF-12a` | 1126 mm | `raum_65` → `stiegenhaus_1` | STIEGENHAUS |
+| `durchgang_141` | `durchgang+text:T-E2-VF-11a-1` | 1513 mm | `raum_65` → `stiegenhaus_2` | STIEGENHAUS |
+| `durchgang_142` | `durchgang` | 1515 mm | `raum_65` → `stiegenhaus_2` | STIEGENHAUS |
+| `durchgang_120` | `durchgang+text:T-E2-VF-11a-2` | 2196 mm | `raum_52` → `raum_65` | untypisiert (`SR`) |
+
+**4 von 5 Übergängen führen direkt ins Stiegenhaus. Kein einziger Übergang
+führt zu einem Raum mit `nutzungsklasse=WOHNUNG_PRIVAT`.** An zwei der
+Stiegenhaus-Durchgänge steht die Türbeschriftung **EI₂30-C** (im DXF in drei
+MTEXT-Fragmente zerlegt: `EI` + Index 2 + `30-C`), dazu `121`/`200` als lichtes
+Maß und `STUK= +11,12`. Im 5-m-Ring: `Glaswand EI90+A2`, 2× `E90`.
+
+#### Indizien für beide Lesarten
+
+| Indiz | Messwert | spricht für |
+|---|---|---|
+| Nummernpräfix | `E2-VF-11a` — `VF` trägt im Plan **ausschließlich** Verkehrsflächen (STGH, Gang, Aufzug, Podest, Stiege); Wohnungsräume tragen Top-Nummern `E2-7-…` bis `E2-10-…` | Schleuse |
+| Wohnungszugehörigkeit | keine Tür zu einem `WOHNUNG_PRIVAT`-Raum | Schleuse |
+| Türen ins Stiegenhaus | 4 von 5 | Schleuse |
+| Brandschutz | 2× vollständige EI₂30-C-Beschriftung, exakt an den beiden Stiegenhaus-Durchgängen | Schleuse |
+| Anzahl Öffnungen | 3 Öffnungen — Durchgangsraum, kein Sackraum | Schleuse |
+| Geometrie | L-förmig, 15 Punkte, um den Stiegenkern gewickelt, 8,2 m gemeinsame Kante, Abstand 0 mm | Schleuse |
+| Belag | `Ker.Bel.` (Keramik). Wohnräume dieses Plans tragen `Parkett` (49×), Nassräume `Ker.Bel.` (26×) | Schleuse |
+| Plan-Vokabular | Schlafräume heißen in diesem Plan ausgeschrieben **`Zimmer` (20×)**; die Tokens `Schlaf…` und `SZ` kommen **null Mal** vor | Schleuse |
+| Zweiter `Schl.`-Raum | `raum_67`, `E2-VF-11b`, **3,73 m²**, Nachbarn `raum_88` STIEGENHAUS (0 mm) und `raum_68` GANG (180 mm), Türen → Stiegenhaus + Gang, ebenfalls `Ker.Bel.` — als Schlafzimmer physisch ausgeschlossen | Schleuse |
+| **Fläche 13,04 m²** | liegt im Zimmer-Flächenband des Plans (19 ZIMMER: min 1,17 / median 10,31 / max 18,95 m²) | **Schlafzimmer** |
+| Nachbarschaft `raum_89` BAD (267 mm) | Wandkontakt, aber **keine Tür** dorthin | neutral |
+
+**Für „Schlafzimmer" spricht ausschließlich die Fläche** — und diese nur bei
+`raum_65`, nicht bei `raum_67` (3,73 m² unter derselben Abkürzung, gleiche
+Nummernserie `E2-VF-11a/b`). Jedes andere gemessene Merkmal spricht für eine
+Rauch-/Brandschutzschleuse vor dem Stiegenhaus.
+
+#### Die Entscheidungsfrage
+
+> **Ist `Schl.` in dieser Plan-Familie eine Schleuse oder ein Schlafzimmer?**
+>
+> - **Schleuse** — Brandschutz-/Rauchschutzschleuse vor dem Stiegenhaus, Teil
+>   der Erschließung, damit **beleuchtungspflichtig**. Dann brauchen wir von dir
+>   das Kanon-Label: eigener Typ `SCHLEUSE` in `docs/VOKABULAR.md` § 1 +
+>   `RoomType` (heute existiert beides nicht), oder Zuordnung auf einen
+>   bestehenden Typ (`VORRAUM`/`GANG`) — plus die Nutzungsklasse
+>   (`ALLGEMEIN_ERSCHLIESSUNG`?).
+> - **Schlafzimmer** — privat, **keine Notbeleuchtung**. Dann Wörterbucheintrag
+>   `schl → ZIMMER`, Nutzungsklasse `WOHNUNG_PRIVAT`.
+
+Gemessene Wirkung der Entscheidung: `ALLGEMEIN_ERSCHLIESSUNG` typisiert 2 Räume
+und macht `tuer_50` zur `stiegenhaustuer` (+1 `stair_exit` in
+`test_soll_stair_exits`); `WOHNUNG_PRIVAT` hat keine Wirkung auf die Ausgänge.
+Falschtrefferrisiko für den Token `schl` über alle fünf Pläne: **0**
+(token-exakt gemessen, „Falschtreffer" = Treffer ohne m²-Nachbar).
+
+Ersatzweise `GANG`/`VORRAUM` **zu raten** ist der einzige Weg, den wir nicht
+gehen: er entscheidet über Leuchte oder keine Leuchte.
+
+#### Kurzform-Scan über die anderen vier Pläne — ist das ein Einzelfall?
+
+Methode: alle m²-verankerten Stempelgruppen (r=1500 mm, wie
+`stempel_anker._stempel_aus_texten`, zusätzlich auf den Layer des m²-Ankers
+eingegrenzt) plus alle INSERT/ATTRIB-Stempel aus `finde_stempel`.
+„Nicht aufgelöst" = kein Kandidat der Gruppe liefert `raumtyp_flags(...)` ungleich `None`.
+
+| Plan | Stempelgruppen | aufgelöst | **nicht aufgelöst** | INSERT-Stempel ohne Typ |
+|---|--:|--:|--:|--:|
+| Barawitzka_EG | 65 | 36 | **29** | 0 |
+| Mollgasse_EG | 4 | 0 | **4** | **27** |
+| Muthgasse_E2 | 130 | 99 | **31** | 0 |
+| Rennweg_EG | 0 | 0 | 0 | **5** |
+| Rennweg_OG3 | 0 | 0 | 0 | 0 |
+
+Echte Abkürzungen ohne Kanon-Auflösung (je `raumtyp_flags=None`,
+`classify_room=UNKNOWN`):
+
+| Kurzform | Bara. | Moll. | Muth. | Renn_EG | Renn_OG3 | Σ |
+|---|--:|--:|--:|--:|--:|--:|
+| `Vorr.` | 0 | 0 | 8 | 0 | 0 | **8** |
+| `SR` | 1 | 1 | 3 | 0 | 0 | **5** |
+| **`Schl.`** | 0 | 0 | **2** | 0 | 0 | **2** |
+| `Schrankr.` | 0 | 0 | 1 | 0 | 0 | **1** |
+| `gärtn. gest.` | 2 | 0 | 0 | 0 | 0 | 2 |
+
+**`Schl.` kommt nur in Muthgasse_E2 vor, dort zweimal — in den anderen vier
+Plänen null Mal.** Es ist damit kein einmaliger Ausrutscher, aber auch nicht die
+Spitze: Platz 3 hinter `Vorr.` (8) und `SR` (5).
+
+Wirkung auf die Untypisiert-Zahl (50 untypisierte Räume über fünf Pläne,
+identisch mit § 13.6): `Schl.` kostet **2 von 50** (4 %). Die vier Kurzformen
+zusammen (`SR` 4, `Vorr.` 3, `Schl.` 2, `Schrankr.` 1) kosten **10 Räume =
+20 %**. Die Mehrheit (Mollgasse 28, Rennweg_EG 5) hängt dagegen an
+**ausgeschriebenen** Außenraum- und Nutzungsbegriffen (`EIGENGARTEN`, `GEHWEG`,
+`VORPLATZ`, `TOP n`, `GESCHÄFTSLOKAL`, `Müllplatz`), nicht an Abkürzungen — das
+ist eine getrennte Vokabularfrage und nicht Teil dieser Entscheidung.
+
+**Owner: Enis (`normwissen/`).** Bis zur Antwort bleiben `raum_65` und
+`raum_67` untypisiert, der `xfail` bleibt stehen, und es entsteht **kein neuer
+Kanon-Typ**.
