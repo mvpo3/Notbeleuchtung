@@ -983,7 +983,8 @@ def _blatt_pruefvermerk(msp, S, dx, dy, pruefung: dict | None, photometrie) -> b
 
 
 def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None,
-                       pruefung: dict | None = None, photometrie=None):
+                       pruefung: dict | None = None, photometrie=None,
+                       platzierung=None):
     """Owner-Blatt-Vorlage um den Plan legen — im MODELSPACE (kein Viewport).
 
     Referenz Selo-Design-Montageplan: Planfenster links, rechte Spalte Legende +
@@ -1012,23 +1013,45 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None,
     # GESCHOSS-Extents (echte Räume, Ausreißer-robust via _geschoss_extents) statt
     # Gebäude-bounds — sonst sitzt ein kleines EG verloren im Riesen-Rahmen.
     min_x, min_y, max_x, max_y = _geschoss_extents(raum)
-    # Architektur-Unterlage (bereits gezeichnet) ins Fenster einbeziehen — sie ist
-    # meist etwas größer als die Raum-Polygone (Außenwände/Gelände). Gedeckelt auf
-    # das 1,6-fache der Raum-Extents je Achse, damit Unterlage-Ausreißer das
-    # Fenster nicht wieder aufblasen.
-    unterlage = [e for e in msp if e.dxf.layer == LAYER_UNTERLAGE]
-    if unterlage:
-        from ezdxf import bbox as _ub
-        uext = _ub.extents(unterlage, fast=True)
-        if uext.has_data:
-            w, h = max_x - min_x, max_y - min_y
-            min_x = max(min(min_x, uext.extmin.x), min_x - 0.3 * w)
-            max_x = min(max(max_x, uext.extmax.x), max_x + 0.3 * w)
-            min_y = max(min(min_y, uext.extmin.y), min_y - 0.3 * h)
-            max_y = min(max(max_y, uext.extmax.y), max_y + 0.3 * h)
+    # Fenster-Fit auf ALLE gezeichneten Plan-Inhalte (Owner-Anforderung 2026-09-10: kein
+    # Teil des Grundrisses darf aus dem Planfenster ragen). Zu diesem Zeitpunkt sind
+    # Unterlage, Räume, Türen (inkl. Schwenkbögen), Fluchtweg UND die Symbole + Stromkreis-
+    # Labels bereits gezeichnet (Symbol-Zeichnung wurde bewusst VOR den Blatt-Bau gezogen).
+    # `gext` fasst also die echten, asymmetrischen Block-Extents. Jeder Punkt wird gegen
+    # einen Ausreißer-Cap geklemmt.
+    w0 = max(max_x - min_x, 1.0)
+    h0 = max(max_y - min_y, 1.0)
+    # Ausreißer-Cap auf der GRÖSSTEN Basis-Achse (nicht je Achse): `_geschoss_extents`
+    # clustert L-Grundrisse auf EINEN Arm — ein per-Achse-Cap würde den zweiten Arm als
+    # Ausreißer verwerfen. 1,5× die größte Achse hält legitime Inhalte (zweiter L-Arm,
+    # Außenleuchte, Tür-Bogen, Rand-Symbole), verwirft aber echte Phantom-Ausreißer
+    # (Plankopf-Raum hunderte Meter weg).
+    pad = 1.5 * max(w0, h0)
+    cx_lo, cx_hi = min_x - pad, max_x + pad
+    cy_lo, cy_hi = min_y - pad, max_y + pad
+    grenzen = [min_x, min_y, max_x, max_y]
+
+    def _fasse(x, y):
+        x = min(max(x, cx_lo), cx_hi)
+        y = min(max(y, cy_lo), cy_hi)
+        grenzen[0] = min(grenzen[0], x)
+        grenzen[1] = min(grenzen[1], y)
+        grenzen[2] = max(grenzen[2], x)
+        grenzen[3] = max(grenzen[3], y)
+
+    from ezdxf import bbox as _bb
+    # fast=False: akkurate Extents, sonst unterschätzt der Schnell-Modus die ARC-
+    # Ausdehnung (Tür-Schwenkbogen-Scheitel) → der Bogen ragte sonst über den Rand.
+    gext = _bb.extents(list(msp), fast=False)
+    if gext.has_data:
+        _fasse(gext.extmin.x, gext.extmin.y)
+        _fasse(gext.extmax.x, gext.extmax.y)
+    min_x, min_y, max_x, max_y = grenzen
     plan_w = max(max_x - min_x, 1.0)
     plan_h = max(max_y - min_y, 1.0)
-    S = max(plan_w / fenster_w, plan_h / fenster_h) * 1.06
+    # 1,12 = 12 % Rand rundum: der Plan (inkl. Rand-Symbole/Tür-Bögen) sitzt mit sichtbarem
+    # Abstand IM Planfenster, nichts stößt an die Fenster-/Legenden-Kante (Owner 2026-09-10).
+    S = max(plan_w / fenster_w, plan_h / fenster_h) * 1.12
     # Fenster-Mitte → Plan-Mitte.
     dx = (min_x + max_x) / 2.0 - (FX0 + FX1) / 2.0 * S
     dy = (min_y + max_y) / 2.0 - (FY0 + FY1) / 2.0 * S
@@ -1305,10 +1328,26 @@ def render_dxf(
     n_raeume_drawn = _draw_raeume(msp, raum)
     n_tueren_drawn = _draw_tueren(msp, raum)
     n_segmente = _draw_segmente(msp, raum)
+    # din-Farbtrennung: Rettungszeichen grün (SAFETY_LAYER), reine Sicherheits-/Antipanik-
+    # leuchten auf den gelben Zwilling (Aus → alles grün, Owner #102). Symbole + Stromkreis-
+    # Labels werden VOR dem Blatt gezeichnet, damit der Blatt-Fit (`_baue_blatt_layout`) ihre
+    # echten, asymmetrischen Block-Extents fasst — sonst ragt ein Randsymbol (Ausgang) aus
+    # dem Planfenster (Owner-Anforderung 2026-09-10).
+    _SL_KINDS = ("sicherheitsleuchte", "antipanik")
+    by_kind: dict[str, int] = {}
+    for p in platzierung.platzierungen:
+        lyr = (
+            library.SAFETY_LAYER_SL
+            if rz_sl_farbtrennung and p.kind in _SL_KINDS
+            else library.SAFETY_LAYER
+        )
+        inserter.insert_platzierung(doc, p, layer=lyr)
+        by_kind[p.kind] = by_kind.get(p.kind, 0) + 1
+    nodeids_drawn, stromkreisnummern_drawn = _draw_nodeid_labels(msp, platzierung)
     # Template-Modus: KEIN Modelspace-Blatt (#115-Pfad) — Layout1 IST das Blatt.
     blatt_bbox = (
         None if template_path is not None
-        else _baue_blatt_layout(msp, raum, plankopf, pruefung, photometrie)
+        else _baue_blatt_layout(msp, raum, plankopf, pruefung, photometrie, platzierung)
     )
     _panel_x0_override.clear()
     if blatt_bbox is not None or template_path is not None:
@@ -1339,22 +1378,7 @@ def render_dxf(
         belegung_drawn = _draw_stromkreis_belegung(msp, raum, platzierung)
     anlage_drawn = _draw_anlage(msp, raum, lb)
 
-    # din-Farbtrennung (Referenzplan V25): Rettungszeichen grün (SAFETY_LAYER),
-    # reine Sicherheits-/Antipanikleuchten auf den gelben Zwilling. Aus → alles grün
-    # (Owner-Fixierung #102). RZ und alles Übrige bleiben immer grün.
-    _SL_KINDS = ("sicherheitsleuchte", "antipanik")
-    by_kind: dict[str, int] = {}
-    for p in platzierung.platzierungen:
-        lyr = (
-            library.SAFETY_LAYER_SL
-            if rz_sl_farbtrennung and p.kind in _SL_KINDS
-            else library.SAFETY_LAYER
-        )
-        inserter.insert_platzierung(doc, p, layer=lyr)
-        by_kind[p.kind] = by_kind.get(p.kind, 0) + 1
-
-    nodeids_drawn, stromkreisnummern_drawn = _draw_nodeid_labels(msp, platzierung)
-
+    # (Symbole + Stromkreis-Labels sind bereits VOR dem Blatt gezeichnet — s.o.)
     blatt_drawn = blatt_bbox is not None
     _panel_x0_override.clear()
     _set_vport(doc, raum, platzierung)
