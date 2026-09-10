@@ -281,6 +281,39 @@ def test_layer_gruen_gelb(tmp_path):
     assert library.SAFETY_LAYER_SL in layer_je_kind     # SL + Antipanik gelb
 
 
+def test_stiege_hoehe_warnung():
+    """F13 / W01 [AT-Referenzpraxis]: Ein Rettungszeichen über der Montagehöhen-Schranke
+    (10 m) gibt eine WEICHE Warnung (real bis 10,8 m gebaut, Barawitzka) — KEIN Hard-Stop.
+    Der Grenzwert kommt aus der Norm (`NormAnforderung.montagehoehe_max_mm`), nicht aus
+    einer Konstante. (Podest-gestaffelte Höhe selbst = Selman/3-Owner-Handoff, s.
+    docs/audit/HANDOFF_B_ENIS.md — Podest-Contract trägt keine Elevation.)"""
+    from notbeleuchtung.hauptengine.contracts import (
+        BBox,
+        Platzierung,
+        PlatzierungsErgebnis,
+        RaumModell,
+    )
+    from notbeleuchtung.hauptengine.validierung import gesamtstatus, pruefe
+    from notbeleuchtung.normwissen import En1838NormProvider
+
+    norm = En1838NormProvider()
+    assert norm.fuer_raum("GANG", True).montagehoehe_max_mm == 10000
+    raum = RaumModell(floor="S", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(1000.0, 1000.0)))
+
+    def _pruefe(h):
+        p = Platzierung(xy_mm=(0.0, 0.0), catalog_key="k", kind="rz",
+                        height_mm=h, circuit_hint="AGV-A-F13")
+        return pruefe(raum, PlatzierungsErgebnis(floor="S", platzierungen=[p]), norm=norm)
+
+    hoch = _pruefe(10800.0)
+    b = next(x for x in hoch if "Montagehöhe ≤ 10 m" in x.regel)
+    assert b.status == "warnung"
+    assert gesamtstatus(hoch) != "fehler"   # weich, kein Hard-Stop
+
+    ok = next(x for x in _pruefe(2400.0) if "Montagehöhe ≤ 10 m" in x.regel)
+    assert ok.status == "ok"
+
+
 def test_f03_rotation_zur_tuer_ein_helper():
     """F03 / W16: die 4× duplizierte Pfeil-Rotationsformel lebt jetzt in einem Helper.
     Exakte Kardinal-Werte (unten-Block-Basis, atan2+90 auf 90° gerastert)."""

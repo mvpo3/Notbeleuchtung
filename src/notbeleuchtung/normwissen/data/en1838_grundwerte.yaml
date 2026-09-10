@@ -37,6 +37,13 @@ norm: "ÖNORM EN 1838:2013"
 # „Hard Floor" ist strenger als die Norm (bewusst konservativ).
 montagehoehe_min_mm: 2000
 
+# [PRAXIS / AT-Referenzpraxis] F13/W01 — obere Montagehöhen-Schranke für Rettungszeichen.
+# Oberhalb wird die Erkennbarkeit (l = z·h, §5.5) fraglich; EN 1838 nennt KEINEN harten
+# Höchstwert. Real bis 10,8 m im Stiegenhaus gebaut (Barawitzka Stiege A) → deshalb eine
+# WEICHE Warnung bei Überschreitung, kein Hard-Stop. Podest-gestaffelte Höhe selbst bleibt
+# offen (Podest-Contract trägt keine Elevation → Selman/3-Owner-Handoff).
+rz_montagehoehe_max_mm: 10000
+
 # [BELEGT] §4.2.5 / §4.3.5 / §5.4.5 — Notbetriebsdauer mind. 1 Stunde.
 dauer_min: 60
 

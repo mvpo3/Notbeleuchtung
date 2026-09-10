@@ -86,3 +86,30 @@ bleibt inert. Voller `pytest` grün, KEIN Golden-Shift (keine Fixture trägt den
 inert, bis der Scope real bewertbar wird. `sanitaer_scope` wäre für Verkaufsstätten
 > 3.000 m² begründbar. Das eigentliche Scope-Gate-Design (`BLOCKER2_FLAECHEN_SCOPE.md`)
 bleibt deine/3-Owner-Entscheidung — hier sind nur die Werte + der Audit-Trail gesetzt.
+
+---
+
+## F13 — RZ-Montagehöhen-Schranke 10 m (weiche Warnung)  (W01, A1 F07/08)
+
+**Contract-Bump 1.3.0 → 1.4.0**, Schema regeneriert.
+
+**Contract** (`norm_regelwerk.py`): additives Feld `NormAnforderung.montagehoehe_max_mm:
+int | None = None`. `CONTRACT_VERSION` 1.3.0 → **1.4.0** + `gen_schema.py`.
+
+**YAML** (`en1838_grundwerte.yaml`): `rz_montagehoehe_max_mm: 10000`.
+
+**Provider** (`provider.py`): `_rz_montagehoehe_max_mm()` → in jede `NormAnforderung`.
+
+**validierung** (`validierung.py`): neue Regel **1b** — RZ mit `height_mm > montagehoehe_max`
+geben eine **WEICHE Warnung** (kein Hard-Stop; real bis 10,8 m gebaut, Barawitzka). Grenzwert
+aus `_rz_hoehe_max_mm(norm)` (Norm-Lookup via `fuer_raum`), None → Regel inaktiv.
+
+**Geltung:** `[AT-Referenzpraxis]` (EN 1838 §5.5 l=z·h stützt das Prinzip; der 10-m-Wert
+selbst ist Praxis, nicht beziffert). Inert auf aktuellen Fixtures (Höhen ≤ 2400 mm).
+
+**NICHT gebaut — Handoff an Selman/3-Owner:** die **podest-gestaffelte Montagehöhe** selbst.
+Grund: `Podest` (`raum_modell.py`) trägt **keine Elevation/Höhe** — nur `polygon_mm` +
+`ist_hauptpodest`. Ohne Podest-Höhe je Geschoss kann die Staffelung nicht datengetrieben
+gesetzt werden. Braucht ein Höhenfeld am `Podest`/`Treppenlauf`-Contract (3-Owner) +
+Selman-Befüllung. Bis dahin bleibt der Norm-Floor (2000 mm) Untergrenze und die 10-m-Warnung
+der obere Guard.

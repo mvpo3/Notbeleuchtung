@@ -111,6 +111,15 @@ def _redundanz_radius_mm(norm: NormProvider | None) -> float:
     return norm.erkennungsweite_m(0.15, hinterleuchtet=True) * 1000.0
 
 
+def _rz_hoehe_max_mm(norm: NormProvider | None) -> float | None:
+    """Obere RZ-Montagehöhen-Schranke aus der Norm (F13/W01, [AT-Referenzpraxis]), NICHT
+    als Code-Konstante. None, wenn kein Provider oder die Norm keine Schranke führt →
+    Regel wird dann nicht geprüft (kein Befund)."""
+    if norm is None:
+        return None
+    return getattr(norm.fuer_raum("GANG", True), "montagehoehe_max_mm", None)
+
+
 def pruefe(
     raum: RaumModell,
     platzierung: PlatzierungsErgebnis,
@@ -132,6 +141,19 @@ def pruefe(
         "fehler" if zu_niedrig else "ok",
         f"{len(zu_niedrig)} Symbol(e) unter 2000 mm" if zu_niedrig else "alle Symbole ≥ 2000 mm",
     ))
+
+    # 1b. Obere Montagehöhen-Schranke für Rettungszeichen (F13/W01, EN 1838 §5.5 l=z·h):
+    #     oberhalb ~10 m wird die Erkennbarkeit fraglich. WEICHE Warnung (real bis 10,8 m
+    #     gebaut, Barawitzka) — kein Hard-Stop. Nur geprüft, wenn die Norm eine Schranke führt.
+    rz_max = _rz_hoehe_max_mm(norm)
+    if rz_max is not None:
+        zu_hoch = [p for p in plzg if p.kind == "rz" and p.height_mm > rz_max]
+        befunde.append(Befund(
+            "Rettungszeichen-Montagehöhe ≤ 10 m (EN 1838 §5.5, Erkennbarkeit)",
+            "warnung" if zu_hoch else "ok",
+            f"{len(zu_hoch)} RZ über {rz_max / 1000:.0f} m" if zu_hoch
+            else f"alle RZ ≤ {rz_max / 1000:.0f} m",
+        ))
 
     # 2. Getrennter Sicherheitskreis (jedes Symbol trägt eine F13-Kreis-Kennung).
     #    HARD-STOP (F06/W13, Kernmission): der eigene SV-Kreis ist nicht optional —
