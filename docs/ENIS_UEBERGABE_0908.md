@@ -1037,3 +1037,181 @@ wäre bei strict-xfail auch ein Suite-Fehler und die Suite ist grün.
 - Die 3 verlorenen Muthgasse-Türtypisierungen (§ 10.2) nicht aufgeklärt.
 - Die Nennerfrage Muthgasse `A-DETL` (§ 5) nicht entschieden — sie ist eine
   Entscheidung, keine Messung.
+
+---
+
+## 11. Nachtrag 2026-09-10 — die „3 verlorenen Türtypisierungen" (Muthgasse E2)
+
+Offen aus § 10.6. Aufgeklärt durch **zwei tatsächlich gelaufene Provider-Parses
+derselben DXF** aus zwei git-worktrees: Stand **`0d7c5db`** (= `8b35e53^`, vor
+dem Fahnen-Ausschluss) gegen **`1d9c03a`** (HEAD). Belege:
+`_p2_vorher.json` / `_p2_nachher.json` (+ `.log`), Diff `_p2_diff.py/.json`,
+Detailauswertung `_p2_detail.py`, Geometrie `_p2_geo.py`, DXF-Blockebene
+`_p2_bloecke.py/.json` im Session-Scratchpad; Worktree `D:/nbwt_vorher`
+(detached auf `0d7c5db`, nichts gelöscht).
+
+### 11.1 Gesamtbild beider Stände
+
+| | vorher `0d7c5db` | nachher `1d9c03a` |
+|---|---|---|
+| Türen | 308 | 291 |
+| Räume | 114 | 113 |
+| `stair_exit` | 12 | 5 |
+| `final_exit` | 2 | 5 |
+| Parse-Dauer | 862 s | 859 s |
+
+### 11.2 Die „3 echten Türen" gibt es nicht — die 3 war eine Saldo-Zahl
+
+Kandidaten (`tuer_detail ∈ {stiegenhaustuer, brandschutztuer}` mit Stiegenhaus-
+Seite): vorher 15, nachher 7; 15 − 5 Fahnen − 7 = 3. Das ist Arithmetik, keine
+Mengendifferenz. **Lagebezogen** (die IDs `durchgang_N` verschieben sich
+zwischen den Ständen und sind kein Schlüssel) sind es: **11 Ausgänge weg,
+1 geblieben, 4 neu** (`exit_tuer_118`, `exit_durchgang_148`, `_165`, `_168`).
+Von den 11 sind 5 Beschriftungs-Fahnen und 6 Kontaktzonen-Artefakte.
+
+### 11.3 Je Tür: Position, beide Nachbarräume, greifende Regel vorher / warum nicht mehr
+
+**Die 5 Fahnen** (Layer `A-DOOR-IDEN`, Blockdef = genau 1 LINE, kein ARC,
+`breite_mm = 0.0`; nächster ARC 2,3–5,0 m entfernt mit r = 125 mm, unter
+`_ARC_MIN_MM` = 600 → kein Türblatt). Alle liefen über
+`tuer_typisierung.py:154-156` (Regel 3b: STIEGENHAUS-Typ auf einer Seite,
+ALLGEMEIN_ERSCHLIESSUNG auf der anderen) → `stiegenhaustuer`, dann
+`ausgaenge.py:62-64` → `stair_exit`:
+
+| Ausgang vorher | xy_mm | von → nach (vorher) | warum jetzt nicht mehr |
+|---|---|---|---|
+| `exit_tuer_75` | 331792,5 / 104258,3 | raum_88 STIEGENHAUS → raum_88 STIEGENHAUS | INSERT fällt aus `_DOOR_EXCLUDE` (BESCHRIFT) — ist gar keine Tür mehr |
+| `exit_tuer_76` | 332814,0 / 102739,8 | raum_88 → raum_88 | dito |
+| `exit_tuer_77` | 333811,1 / 101257,4 | raum_88 → raum_88 | dito |
+| `exit_tuer_98` | 339310,4 / 102745,1 | raum_88 → raum_88 | dito |
+| `exit_tuer_99` | 338412,1 / 106674,3 | raum_95 GANG → stiegenhaus_2 STIEGENHAUS | dito |
+
+Bei **vier von fünf** war `von_raum == nach_raum == raum_88`: die Regel feuerte,
+weil beide Seiten **derselbe** Raum sind. Das ist ein eigener Regel-Nebenbefund
+(siehe § 11.6).
+
+**Die 6 Nicht-Fahnen** — alle `quelle="durchgang"`, `ohne_tuerblatt=True`, alle
+aus `tuer_zuordnung.py:120-161` (`durchgaenge_ohne_tuerblatt`: Kontaktzone
+`pa.buffer(250) ∩ pb.buffer(250)`; bei **überlappenden** Polygonen ist das die
+ganze Überlappung, und die Langseite ihres `minimum_rotated_rectangle` wird zur
+„Breite"). Regel vorher immer `tuer_typisierung.py:154-156` → `stiegenhaustuer`,
+`ausgaenge.py:62-64` → `stair_exit`:
+
+| Ausgang vorher | xy_mm | „Breite" | Nachbarräume VORHER | Nachbarräume NACHHER | warum die Regel jetzt nicht mehr greift |
+|---|---|---|---|---|---|
+| `exit_durchgang_103` | 330938,7 / 107255,8 | 2861 mm | raum_46 GANG / ALLGEMEIN_ERSCHLIESSUNG — raum_88 STIEGENHAUS (41,3 m²) | Tür existiert nicht mehr | `durchgaenge_ohne_tuerblatt` erzeugt dort keine Öffnung mehr: `raum_88` liegt nicht mehr an dieser Stelle |
+| `exit_durchgang_150` | 335184,8 / 104728,5 | **4862 mm** | raum_88 STIEGENHAUS — stiegenhaus_1 STIEGENHAUS (11,2 m²) | Tür weg; 695 mm daneben `durchgang_166` (stiegenhaus_1 ↔ stiegenhaus_5) | Regel greift bei `durchgang_166` weiter, der Ausgang fällt aber im **Dedupe `provider.py:148-157`** (1500 mm Manhattan, L1 = 1269 mm zu `exit_durchgang_165`) |
+| `exit_durchgang_151` | 337596,3 / 102640,4 | 1601 mm | raum_88 STIEGENHAUS — stiegenhaus_1 STIEGENHAUS | keine Tür | Kontaktzone entfällt mit dem Artefakt-Raum |
+| `exit_durchgang_152` | 337206,9 / 106980,6 | 1062 mm | raum_88 STIEGENHAUS — stiegenhaus_2 STIEGENHAUS (7,9 m²) | keine Tür | dito |
+| `exit_durchgang_154` | 337042,5 / 105349,2 | **4807 mm** | raum_88 STIEGENHAUS — stiegenhaus_2 STIEGENHAUS | keine Tür | dito |
+| `exit_durchgang_160` | 336186,8 / 103692,1 | 968 mm | stiegenhaus_1 STIEGENHAUS — stiegenhaus_8 STIEGENHAUS (0,2 m², = 100 % `lift_5`) | `durchgang_167`, d = 0 mm, identische Räume, `tuer_detail=stiegenhaustuer` | Regel greift unverändert; fällt im **Dedupe** (L1 = 1435 mm zu `exit_durchgang_165`) |
+
+Geblieben ist genau einer: `exit_durchgang_161` (291600 / 108599, 2082 mm,
+stiegenhaus_6 ↔ stiegenhaus_7) — nachher `durchgang_169`.
+
+Ein 4,8-m-Türblatt gibt es nicht: **keine** dieser 6 war eine Tür.
+
+### 11.4 Ursache ist der Raumsatz, nicht die Türzuordnung — und die NEUE Ermittlung ist die richtige
+
+- `tuer_zuordnung.py` ist zwischen beiden Ständen **byte-identisch**; `8b35e53`
+  ändert in `src/` nur `tueren.py` (eine Regex-Zeile). Auch
+  `tuer_typisierung.py` ist unverändert — es gibt **keinen Regressionsfehler**
+  in der Typisierung zu beheben.
+- Von den 225 Nicht-Fahnen-Türen vorher sind 170 lagegleich (< 5 mm) auch
+  nachher da; nur 16 haben andere Nachbarräume, 14 davon wegen geänderter
+  Räume/Umnummerierung (raum_95 GANG 34,7 → raum_94 GANG 18,1 m²; raum_88
+  41,3 → 20,7 m²).
+- Der Unterschied sitzt im **Raumsatz**: `rest_komponenten.py` zeichnet
+  Türöffnungen als Trennstempel in die Wandmaske. Die 83 Phantom-Öffnungen
+  waren 83 falsche Trennstempel → die Restfläche wurde anders zerschnitten.
+
+**Geometrie-Beleg (kein Testergebnis):** VORHER war `raum_88` ein REST-Raum mit
+**693 Polygonpunkten**, 41,3 m², bbox 329757…341861 × 97621…108017 (12,1 × 10,4 m).
+Er überlappte gleichzeitig fünf gestempelte STIEGENHAUS-Polygone (28–41 %)
+**und** verschluckte `raum_79`/LIFT zu 99 %. Ein Raum kann nicht gleichzeitig
+fünf andere Räume und ein Aufzugsschacht sein. NACHHER liegt `raum_88`
+(20,7 m², bbox 328771…336507 × 93978…101814) an anderer Stelle und überlappt
+**kein** STIEGENHAUS-Polygon mehr. → Die alte Nachbarraum-Ermittlung war falsch,
+die neue ist richtig; es ist nichts zu reparieren und nichts zurückzunehmen.
+
+### 11.5 Der echte Defekt — und was mit dem Band geschieht
+
+**Härtester Einzelbeleg:** von den 18 Türen, die an ihrer Position einen echten
+`A-DOOR`/`A-GLAZ`-Block tragen (Blockdef 8–110 LINEs, Türblatt-ARC
+r = 900/950/1020 mm), hat **in beiden Ständen 0** eine STIEGENHAUS-Seite.
+Keine der 12 alten und keine der 5 heutigen `stair_exit` sitzt an einem echten
+Türblatt. Nächster Abstand einer echten Blocktür zu einem STIEGENHAUS-Polygon:
+vorher 1281 mm, nachher 0 mm (1 Stück).
+
+Konkreter Ansatzpunkt, gemessen: `tuer_50` (nachher) bei 334453 / 106403,
+`quelle="arc_aussen+text:E2-VF-12a"`, `von_raum=stiegenhaus_1` (STIEGENHAUS),
+`nach_raum=raum_65` — bleibt untypisiert, weil `raum_65` keinen `raum_typ`
+trägt. Eine echte Tür an einem echten Stiegenhaus, die an der **Raumtypisierung
+der Gegenseite** scheitert, nicht an der Türregel.
+
+**Entscheidung zum Band `>= 9`:** das Zielbild stammt aus `ebf867a`
+(2026-09-07), gesetzt nach der Konvention „Bänder knapp unter Ist", Ist damals
+12 — und von diesen 12 entsprach keine einzige einem echten Türblatt. Die 9 ist
+ein eingefrorener Falschpositiv-Stand, kein Fachziel. **Abgesenkt wurde es
+trotzdem nicht:** der einzige durch Messung gedeckte Wert wäre die 5, und die
+ist der Ist-Stand selbst — aus dem Ist abgeleitete Bänder sind in diesem Auftrag
+ausgeschlossen, und auch die 5 ruht auf denselben Artefakten.
+`test_soll_stair_exits` bleibt darum strict-xfail mit unverändertem Band;
+korrigiert wurde nur die **Begründung** (der alte `reason` behauptete „3 echte
+Türen haben ihre Typisierung verloren" — das ist widerlegt).
+
+Neu dazu, mit belegtem Zielwert statt Zählband:
+
+| Test | Art | Ist | Soll |
+|---|---|---|---|
+| `test_soll_echte_blocktueren_im_modell` | grün, Klammer | 18 Türen auf `A-DOOR`/`A-GLAZ`-INSERTs, davon 16 mit Türblatt-Breite (8× 900, 5× 950, 3× 1000 mm); `tuer_8` und `tuer_17` haben `breite_mm=None` mit `breite_quelle='UNBEKANNT'` — regelkonform, kein Fehler | ≥ 15 Türen, ≥ 14 mit Breite |
+| `test_soll_stair_exit_aus_echter_blocktuer` | **strict-xfail** | 0 von 5 | ≥ 1 |
+
+Der Zielwert 1 ist nicht aus dem Ist abgeleitet, sondern aus einer benennbaren
+echten Stiegenhaustür im Plan (`tuer_50`, oben).
+
+### 11.6 Nebenbefunde (ohne Bezug zu `8b35e53`, nicht angefasst)
+
+- `provider.py:148-157` entkoppelt die Kennzahl von den Türen: 1500-mm-Manhattan-
+  Dedupe, vorher 15 Kandidaten → 12 Ausgänge, nachher 7 → 5. Die Zahl misst
+  Positions-Cluster, nicht Türen.
+- `tuer_typisierung.py:152-156` feuert auch bei `von_raum == nach_raum`
+  (4 der 5 Fahnen, und heute `exit_tuer_118` mit
+  `von_raum == nach_raum == stiegenhaus_2`). Eine Tür von einem Raum in denselben
+  Raum sollte keine `stiegenhaustuer` sein.
+- Die 9 STIEGENHAUS-Polygone sind höchstens 4 verschiedene Kerne:
+  `stiegenhaus_1 ≡ _5` (100 % Überlappung), `_2 ≡ _3 ≡ _4` (100 %), `_6`, `_7`,
+  plus `_8` (0,2 m², = 100 % `lift_5`). Vorher wie nachher gleich defekt.
+
+Die Zeilenangabe `tests/naht/test_soll_muthgasse.py:107` in § 10.5 ist durch
+diesen Nachtrag verschoben; `test_soll_stair_exits` bleibt xfail, es kommt genau
+ein weiterer strict-xfail hinzu (`test_soll_stair_exit_aus_echter_blocktuer`).
+
+### 11.7 Testlauf (wörtlich)
+
+`.venv/Scripts/python.exe -m pytest tests/naht/test_soll_muthgasse.py -q -rA`:
+
+```
+.....x.x.x.                                                              [100%]
+PASSED tests/naht/test_soll_muthgasse.py::test_soll_faktor_kalibrierung_x10
+PASSED tests/naht/test_soll_muthgasse.py::test_soll_wand_layer_erkannt
+PASSED tests/naht/test_soll_muthgasse.py::test_soll_98_stempel_mit_flaeche_und_typ
+PASSED tests/naht/test_soll_muthgasse.py::test_soll_wandkoerper_band
+PASSED tests/naht/test_soll_muthgasse.py::test_soll_raeume_tueren_ausgaenge
+PASSED tests/naht/test_soll_muthgasse.py::test_soll_echte_blocktueren_im_modell
+PASSED tests/naht/test_soll_muthgasse.py::test_soll_raeume_flaechendeckend_typisiert
+PASSED tests/naht/test_soll_muthgasse.py::test_soll_keine_beschriftungsfahnen_als_tueren
+XFAIL tests/naht/test_soll_muthgasse.py::test_soll_stair_exits
+XFAIL tests/naht/test_soll_muthgasse.py::test_soll_stair_exit_aus_echter_blocktuer
+XFAIL tests/naht/test_soll_muthgasse.py::test_soll_90_prozent_tueren_typisiert
+8 passed, 3 xfailed in 597.21s (0:09:57)
+```
+
+Der AST-Riegel bleibt grün: `pytest tests/contract/test_keine_erfundenen_masse.py -q`
+→ `3 passed in 1.50s`. `ruff check tests/naht/test_soll_muthgasse.py` →
+`All checks passed!`. Im ersten Lauf (600,77 s) war
+`test_soll_echte_blocktueren_im_modell` rot, weil er zunächst von jeder
+Blocktür eine Breite verlangte — `tuer_8` und `tuer_17` haben
+`breite_mm=None` mit Quelle `UNBEKANNT`. Die **Erwartung** war falsch, nicht
+der Code; korrigiert auf ≥ 14 von 18. **Kein Code in `src/` wurde geändert**
+— der Befund ist Test- und Berichtsarbeit.
