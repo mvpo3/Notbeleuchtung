@@ -9,9 +9,15 @@ F1 (`richtung_durch_tuer`) konsumiert `RaumModell.tueren` an den ECHTEN Öffnung
    je Türblatt-ARC (r≈600–1300 mm) eine Tür am Drehpunkt. Fallback, wenn (1) leer.
 
 **Außentüren** (``WET_AUSSEN``/``SCHIEBETÜR``/…) tragen ``ist_notausgang=True``.
+
+**Kein Maß wird erfunden:** Beschriftungs-Fahnen (Blockname „Beschriftung", z.B.
+Muthgasse ``HNP_Beschriftung Türen … Durchgangslichte…``) heißen nach Türen,
+sind aber keine — ``_DOOR_EXCLUDE`` verwirft sie, statt sie mit ``breite_mm=0``
+als Tür zu führen. Verworfene Kandidaten stehen in ``_verworfene_bloecke``.
 """
 from __future__ import annotations
 
+import logging
 import math
 import re
 from dataclasses import dataclass
@@ -20,10 +26,19 @@ from notbeleuchtung.hauptengine.contracts.raum_modell import BBox, Tuer
 
 from .dxf_load import XY, DxfPlan
 
+log = logging.getLogger(__name__)
+
+#: Blockname → Anzahl verworfener Tür-Kandidaten (Marker/Beschläge/Fahnen).
+#: Prozessweiter Zähler, damit der Ausschluss nachvollziehbar bleibt.
+_verworfene_bloecke: dict[str, int] = {}
+
 # Kandidat: Blockname nennt eine Tür/Öffnung …
 _DOOR_HINT = re.compile(r"T(?:Ü|UE)R|ÖFFNUNG|OEFFNUNG|\bBST\b|F\+H", re.IGNORECASE)
-# … aber diese sind Marker/Beschläge, keine Tür-Blätter:
-_DOOR_EXCLUDE = re.compile(r"ACHSE|ÖFFNER|OEFFNER|QUALIT", re.IGNORECASE)
+# … aber diese sind Marker/Beschläge/Beschriftungs-Fahnen, keine Tür-Blätter.
+# BESCHRIFT: Muthgasse trägt 83 INSERTs "HNP_Beschriftung Türen - AF 50 -
+# Durchgangslichte…" — Blockdef = 1× LINE (Führungslinie), keine Türgeometrie.
+# Gemessen (alle fünf Prüfpläne): fängt 83/83 Fahnen, 0 echte Türen.
+_DOOR_EXCLUDE = re.compile(r"ACHSE|ÖFFNER|OEFFNER|QUALIT|BESCHRIFT", re.IGNORECASE)
 # Außen-/Eingangstür-Blöcke → Ausgang. WET = Wohnungseingangstür.
 _AUSSENTUER = re.compile(r"AUSSEN|EINGANG|\bWET\b|WET_|SCHIEBET|FENSTERT", re.IGNORECASE)
 _OEFFNUNG = re.compile(r"ÖFFNUNG|OEFFNUNG", re.IGNORECASE)
@@ -34,6 +49,11 @@ _ARC_MIN_MM, _ARC_MAX_MM = 600.0, 1300.0  # Türblatt-Schwenkbogen-Radius
 
 def _ist_tuer_block(name: str) -> bool:
     if _DOOR_EXCLUDE.search(name):
+        # Nicht stillschweigend verwerfen: verworfene Kandidaten je Blockname
+        # zählbar (``_verworfene_bloecke``) + im Log nachvollziehbar.
+        if _DOOR_HINT.search(name) or _AUSSENTUER.search(name):
+            _verworfene_bloecke[name] = _verworfene_bloecke.get(name, 0) + 1
+            log.debug("Tuer-Kandidat verworfen (Marker/Beschriftung): %s", name)
         return False
     return bool(_DOOR_HINT.search(name) or _AUSSENTUER.search(name))
 
