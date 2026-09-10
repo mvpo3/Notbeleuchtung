@@ -1376,8 +1376,15 @@ def render_dxf(
     _setze_photometrie_eigenschaft(doc, photometrie)
 
     n_unterlage = _draw_unterlage(msp, unterlage_dxf, raum)
-    n_raeume_drawn = _draw_raeume(msp, raum)
-    n_tueren_drawn = _draw_tueren(msp, raum)
+    # Liegt die ORIGINAL-Architektur als Unterlage vor (echter Plan), zeichnet die Engine
+    # ihre eigene Interpretation NICHT nach — sonst erscheinen Raum-Umrisse + Tür-
+    # Schwenkbögen doppelt („neue Türen" über dem echten Plan; Owner-Feedback 2026-09-10).
+    # Der Grundriss = die Unterlage; darüber nur Fluchtweg + Notbeleuchtung + Blatt.
+    if unterlage_dxf is not None and n_unterlage > 0:
+        n_raeume_drawn = n_tueren_drawn = 0
+    else:
+        n_raeume_drawn = _draw_raeume(msp, raum)
+        n_tueren_drawn = _draw_tueren(msp, raum)
     n_segmente = _draw_segmente(msp, raum)
     # din-Farbtrennung: Rettungszeichen grün (SAFETY_LAYER), reine Sicherheits-/Antipanik-
     # leuchten auf den gelben Zwilling (Aus → alles grün, Owner #102). Symbole + Stromkreis-
