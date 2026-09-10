@@ -80,7 +80,15 @@ class Abschnitt:
     breite_mm: float
     #: Groesster gemessener Wert der Punkte dieses Abschnitts; None = nicht
     #: bestimmt. Kein Normwert, kein Ersatzwert, kein Mittel.
-    breite_max_mm: float | None = None
+    #:
+    #: KEYWORD-ONLY mit Absicht: vor diesem Feld war ``quelle`` das vierte
+    #: Positionsargument. Waere ``breite_max_mm`` positional, wuerde der frueher
+    #: gueltige Aufruf ``Abschnitt(v, b, breite, "gemessen")`` still zu
+    #: ``breite_max_mm="gemessen"`` — ein stiller Bedeutungswechsel statt eines
+    #: Fehlers. ``kw_only`` haelt die bisherige Positionsfolge unveraendert und
+    #: nimmt keine bisher erlaubte Aufrufform weg (Python >= 3.10; das Projekt
+    #: verlangt >= 3.11).
+    breite_max_mm: float | None = field(default=None, kw_only=True)
     quelle: str = "gemessen"   # Audit-Trail; NIE ein Normwert
 
     @property
