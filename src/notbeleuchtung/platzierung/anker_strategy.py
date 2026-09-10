@@ -159,6 +159,9 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
 # Sichtlinien-Grenze: max. Abstand zwischen zwei RZ entlang des Gangs. Ist ein
 # Gang-Stück länger, muss ein RZ dazwischen (EN 1838 §4.1.1: von jedem Punkt des
 # Fluchtwegs ist ein RZ sichtbar). Konservativer Default; exakt = Erkennungsweite l=z·h.
+# HINWEIS (F08/W17): nur Referenzwert — im Produktiv-Pfad ist er UNBENUTZT. Die aktive
+# RZ-Dichte zieht l=z·h aus `norm.erkennungsweite_m` (gang_strategy._abstand_mm) bzw. den
+# Deckungs-Radius (validierung._redundanz_radius_mm, F04). Siehe plan_rettungszeichen_sichtlinie.
 _MAX_RZ_ABSTAND_MM = 12000.0
 
 
@@ -188,6 +191,15 @@ def plan_rettungszeichen_sichtlinie(
     hinterleuchtet: bool = HINTERLEUCHTET_DEFAULT,
 ) -> list[Platzierung]:
     """RZ nach der Sichtlinien-Regel — **so wenige wie nötig, so sichtbar wie möglich**.
+
+    **TEST-ONLY PROTOTYP (F08/W17).** Dieser Pfad ist NICHT im Produktiv-`place()`-Pfad
+    verdrahtet — einziger Aufrufer sind die Tests (`tests/platzierung/test_sichtlinie.py`).
+    Im Produktivlauf zieht die RZ-Dichte die Erkennungsweite l=z·h bereits aus
+    `norm.erkennungsweite_m`: über `gang_strategy._abstand_mm` (Kette
+    `_plan_rettungszeichen`→`_sichtlinien_garantie`→`plan_rettungszeichen_gang`) und über
+    den Redundanz-Radius (`validierung._redundanz_radius_mm`, F04). Prototyp für eine
+    künftige reine Sichtlinien-Strategie; bis dahin nicht aktivieren.
+    [AT-verbindlich: ÖNORM EN 1838 §4.1.1 — von jedem Punkt des Fluchtwegs ist ein RZ sichtbar]
 
     RZ entstehen an drei Sorten von Punkten, Richtung immer **zum nächsten Ausgang**:
 

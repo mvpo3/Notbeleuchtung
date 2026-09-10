@@ -120,6 +120,34 @@ def test_getrennter_kreis_hardstop():
     assert kreis_mit.status == "ok"
 
 
+def test_erkennungsweite_im_prod_pfad():
+    """F08 / W17: Die RZ-Dichte im Produktiv-`place()`-Pfad zieht die Erkennungsweite
+    l=z·h aus der Norm (`gang_strategy._abstand_mm` aus `anf.erkennungsweite_m`), nicht aus
+    einer Konstante; der Sichtlinien-Pfad (`plan_rettungszeichen_sichtlinie`) ist test-only —
+    kein Produktiv-Modul importiert ihn."""
+    import pathlib
+
+    from notbeleuchtung.platzierung.gang_strategy import (
+        _DEFAULT_RZ_ABSTAND_MM,
+        _abstand_mm,
+    )
+
+    # Prod-Pfad: Abstand skaliert exakt mit der Norm-Erkennungsweite (m → mm).
+    assert _abstand_mm(30.0) == 30000.0     # hinterleuchtetes 0,15-m-Pikto, z=200
+    assert _abstand_mm(16.0) == 16000.0     # kleineres/beleuchtetes Pikto
+    assert _abstand_mm(None) == _DEFAULT_RZ_ABSTAND_MM   # ohne Norm-Wert: Default
+    assert _abstand_mm(0.0) == _DEFAULT_RZ_ABSTAND_MM    # 0 falsy → Default
+
+    # sichtlinie-Pfad ist test-only: KEIN Produktiv-Modul (außer der Definition) nennt ihn.
+    src = pathlib.Path(__file__).resolve().parents[2] / "src" / "notbeleuchtung"
+    treffer = [
+        p.name for p in src.rglob("*.py")
+        if "plan_rettungszeichen_sichtlinie" in p.read_text(encoding="utf-8")
+        and p.name != "anker_strategy.py"   # die Definition selbst
+    ]
+    assert treffer == []
+
+
 def test_f03_rotation_zur_tuer_ein_helper():
     """F03 / W16: die 4× duplizierte Pfeil-Rotationsformel lebt jetzt in einem Helper.
     Exakte Kardinal-Werte (unten-Block-Basis, atan2+90 auf 90° gerastert)."""
