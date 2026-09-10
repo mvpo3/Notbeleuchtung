@@ -8,6 +8,16 @@ Reine Geometrie/Topologie, kein Norm-Urteil.
 - `floor`, `coordinate_system="mm"`, `bounds_mm`
 - `raeume[]`: `id, raum_typ, polygon_mm, flaeche_m2, ist_fluchtweg, ist_communal`
 - `tueren[]`: `id, xy_mm, breite_mm, von_raum, nach_raum, ist_notausgang, schwenk_richtung`
+  - v1.4.0: `breite_mm: float | None` — **None = nicht gemessen** (früher `0.0`);
+    `breite_quelle ∈ {BLOCKNAME, GEOMETRIE_SCHWENKRADIUS, GEOMETRIE_SUMME,
+    GEOMETRIE_OEFFNUNG, ATTRIBUT, STANDARDWERT, UNBEKANNT}`, `breite_grund`
+    (nur bei `UNBEKANNT`). Der Code erfindet keine Maße: kein Default, kein
+    Normwert, kein Mittelwert.
+  - v1.4.0: `lichte_mm: int | None` — nutzbare Durchgangslichte (Fertigmaß).
+    Bleibt `None`, solange kein Beleg im Plan steht; **nie** aus `breite_mm`
+    abgeleitet (es gibt keine belegte Umrechnung). Norm-Prüfungen gegen
+    Türbreiten dürfen nur `lichte_mm` verwenden — `None` heißt „nicht
+    nachgewiesen", nie „unterschritten".
 - `ausgaenge[]`: `id, xy_mm, typ ∈ {final_exit, stair_exit, door}`
 - `zirkulation`: `nodes[], edges[], segmente[]`
   - `segment`: `segment_id, polyline_mm, laenge_mm, reason ∈ {exit, corner, long_run, direction_change}`

@@ -40,9 +40,15 @@ def test_mollgasse_tueren(mollgasse_eg):
     tueren = tueren_aus_dxf(lade_dxf(mollgasse_eg))
     # EG hat mehrere Türen; Achsmarker/Türöffner sind ausgeschlossen.
     assert len(tueren) >= 10
-    # Innentüren tragen plausible Nennbreiten; Außentüren (WET/…) ggf. 0.
+    # Innentüren tragen plausible Nennbreiten aus dem Blocknamen; ohne Zahl im
+    # Namen (WET/…) ist die Breite None mit Grund (v1.4.0, nie 0.0/Default).
     innen = [t for t in tueren if not t.ist_notausgang]
-    assert all(600.0 <= t.breite_mm <= 1300.0 for t in innen)
+    assert all(600.0 <= t.breite_mm <= 1300.0 for t in innen
+               if t.breite_mm is not None)
+    assert all(t.breite_quelle == "BLOCKNAME" for t in innen
+               if t.breite_mm is not None)
+    assert all(t.breite_quelle == "UNBEKANNT" and t.breite_grund
+               for t in innen if t.breite_mm is None)
 
 
 # ── Beschriftungs-Fahnen sind keine Türen (Muthgasse-Regression) ────────────
@@ -100,3 +106,36 @@ def test_beschriftungsfahne_wird_verworfen_und_gezaehlt(tmp_path):
     assert [round(o.xy_mm[0]) for o in oeff] == [9000], (
         f"Fahne als TuerOeffnung durchgekommen: {oeff}"
     )
+
+
+# ── v1.4.0: keine Messung ist None mit Quelle/Grund, nie 0.0 ────────────────
+
+def test_keine_messung_ist_none_mit_quelle_und_grund(tmp_path):
+    """Ein Öffnungs-Marker trägt eine ID, keine Breite → None + UNBEKANNT.
+
+    Gegenprobe im selben Plan: eine benannte Tür trägt ihr Nennmaß mit
+    breite_quelle="BLOCKNAME". Der Code darf nirgends ein Maß erfinden —
+    kein Default, kein Normwert, kein Mittelwert.
+    """
+    doc = ezdxf.new(setup=True)
+    doc.header["$INSUNITS"] = 4
+    msp = doc.modelspace()
+    for name in ("TÜR-90", "Öffnung_81"):
+        blk = doc.blocks.new(name=name)
+        blk.add_line((0, 0), (900, 0))
+    msp.add_blockref("TÜR-90", (4000, 4000))
+    msp.add_blockref("Öffnung_81", (8000, 4000))
+    p = tmp_path / "none.dxf"
+    doc.saveas(str(p))
+
+    tueren = tueren_aus_dxf(lade_dxf(p))
+    assert len(tueren) == 2
+    gemessen = [t for t in tueren if t.breite_mm is not None]
+    ohne = [t for t in tueren if t.breite_mm is None]
+    assert len(gemessen) == len(ohne) == 1
+    assert gemessen[0].breite_mm == 900.0
+    assert gemessen[0].breite_quelle == "BLOCKNAME"
+    assert gemessen[0].breite_grund is None
+    assert ohne[0].breite_quelle == "UNBEKANNT"
+    assert ohne[0].breite_grund                      # Grund ist Pflicht
+    assert ohne[0].lichte_mm is None                 # nie abgeleitet

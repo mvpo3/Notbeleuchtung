@@ -139,7 +139,7 @@ def typisiere_tueren(tueren: list[Tuer], raeume: list[Raum], geschoss: str,
         if AUSSEN in klassen:
             endet_flw = any(math.dist(t.xy_mm, p) < _FLW_ENDE_NAH_MM
                             for p in fluchtweg_enden)
-            if endet_flw or t.breite_mm > _DOPPELFLUEGEL_MM:
+            if endet_flw or (t.breite_mm or 0.0) > _DOPPELFLUEGEL_MM:
                 t.ist_notausgang = True
         if AUSSEN in klassen and "ALLGEMEIN_ERSCHLIESSUNG" in klassen:
             if eg and not (kein_weg_ins_freie is not None
@@ -158,7 +158,7 @@ def typisiere_tueren(tueren: list[Tuer], raeume: list[Raum], geschoss: str,
             detail = "zimmertuer"
         elif "WOHNUNG_PRIVAT" in klassen and "ALLGEMEIN_ERSCHLIESSUNG" in klassen:
             detail = "wohnungseingang"
-        elif "GARAGE" in typen and t.breite_mm > _GARAGENTOR_MM:
+        elif "GARAGE" in typen and (t.breite_mm or 0.0) > _GARAGENTOR_MM:
             # Garagentor/Rolltor > 2.2 m — auch Tor GARAGE↔AUSSEN (Durchfahrt).
             # Endausgang wird es NUR, wenn ein Fluchtweg dort endet (Regel (e),
             # entscheidet leite_ausgaenge) — der Breiten-Notausgang gilt nicht.

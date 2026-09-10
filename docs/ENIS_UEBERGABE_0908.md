@@ -571,6 +571,80 @@ Die drei zusätzlichen Fehler der Probe:
 
 Der vierte Fehler ist der vorbestehende aus § 2.3. Kein Test assertiert `breite_mm == 0.0` als Bedeutung; die Tests auf Zahlen (`test_tueren.py:14` `== 800.0`, `:36` `== 900.0`, `:46` `600 ≤ b ≤ 1300`, `test_tuer_zuordnung.py:52` `> 800`, `test_provider.py:69` `== 1600.0`) setzen ihre Werte selbst und bleiben gültig.
 
+### 6.4 Nachtrag 2026-09-10 — Migration UMGESETZT (Contract v1.4.0)
+
+Punkt 2 ist jetzt Code, nicht mehr Vorschlag. `CONTRACT_VERSION` **1.3.0 → 1.4.0**,
+Schema regeneriert, Drift-Gate grün. Alles additiv mit Default — bestehende Erzeuger
+brechen nicht, die vier Fixtures mit `contract_version 1.1.0` laden unverändert.
+
+Neue Felder an `Tuer` (`hauptengine/contracts/raum_modell.py`):
+
+| Feld | Typ | Bedeutung |
+|---|---|---|
+| `breite_mm` | `float \| None = None` | **None = nicht gemessen** (vorher `0.0`) |
+| `breite_quelle` | `BreiteQuelle = "UNBEKANNT"` | `BLOCKNAME`, `GEOMETRIE_SCHWENKRADIUS`, `GEOMETRIE_SUMME`, `GEOMETRIE_OEFFNUNG`, `ATTRIBUT` (reserviert, kein Erzeuger), `STANDARDWERT` (Reserve, gehört nicht ins Modell), `UNBEKANNT` |
+| `breite_grund` | `str \| None = None` | warum keine Messung — nur bei `UNBEKANNT` |
+| `lichte_mm` | `int \| None = None` | Durchgangslichte; **bleibt None**, kein Erzeuger, nie aus `breite_mm` abgeleitet |
+
+Alle neun Schreibpfade setzen `breite_quelle` mit; `_breite_mm()` und
+`_blattbreite_aus_block()` geben `None` statt `0.0`; `text_tueren` schreibt
+`breite_mm=None, breite_quelle="UNBEKANNT", breite_grund="nur Text-Beleg, keine
+Geometrie"`. Konsumenten sind None-fest (Schritt 0 aus § 6.3, vollständig
+umgesetzt), `plan_pruefen.py` weist `—` plus eine eigene Spalte `Breiten-Quelle`
+aus statt zu formatieren. `lichte_quelle` ist **nicht** angelegt — ohne Erzeuger
+wäre es ein totes Feld; kommt mit dem `lichte_mm`-Slice.
+
+**Ist-Verteilung nach der Migration, gemessen über die fünf Prüfpläne**
+(`…/scratchpad/_breite_quelle_nachher.py|.json`, Provider-Parse, 2026-09-10;
+612 Türen — nicht mehr 629, weil die 83 Muthgasse-Beschriftungsfahnen seit
+Commit `8b35e53` keine Türen mehr sind):
+
+| Plan | Türen | BLOCKNAME | GEO_SCHWENKRADIUS | GEO_SUMME | GEO_OEFFNUNG | UNBEKANNT |
+|---|---:|---:|---:|---:|---:|---:|
+| Rennweg_OG3 | 27 | 0 | 3 | 0 | 24 | 0 |
+| Rennweg_EG | 41 | 0 | 10 | 0 | 30 | 1 |
+| Barawitzka_EG | 106 | 0 | 36 | **2** | 68 | 0 |
+| Mollgasse_EG | 147 | 40 | 27 | 0 | 76 | 4 |
+| Muthgasse_E2 | 291 | 18 | 28 | 0 | 170 | 75 |
+| **Summe** | **612** | **58** | **104** | **2** | **368** | **80** |
+
+Drei Gegenproben, alle 0: **keine** Tür trägt `breite_mm == 0.0`, **keine** Tür
+mit `breite_mm is None` steht ohne `breite_grund` da, und `lichte_mm` ist auf
+keiner der 612 Türen gesetzt.
+
+`dxf_renderer.py:524` (`t.breite_mm or 900.0`) ist **unverändert** — Leonis' Lane,
+nicht einseitig angefasst. Nach der Migration ist das der einzige Ort, der ein Maß
+erfindet, und er tut es jetzt für alle `None`-Türen statt nur für die `0.0`.
+
+**Vorschlag an @EnisAMG (deine Lane, von uns NICHT geändert) — vierter Befund.**
+`oib_rl4_fluchtwegbreiten.yaml::tuerbreite_herkunft` führt drei `befunde`, gemessen
+sind **vier** Herkünfte. Kleinste ehrliche Anpassung:
+
+1. Vierten Befund ergänzen: `pfad: "tueren.py:259 :: verschmelze_doppelfluegel"`,
+   `was:` „Summe zweier Schwenkradien zweier Türblätter, ohne Abzug des
+   Mittelstoßes — eine vierte Herkunft im selben Feld"; `geprueft_gegen:` auf den
+   aktuellen Stand nachziehen; in `folge:` und `vor_jeder_pruefung_zu_klaeren[0]`
+   „drei" → „vier".
+2. `tests/normwissen/test_quellenblock_e07_rl4.py:301`: `== 3` → `== 4`.
+   Ausdrücklich **nicht** `>= 3` — die Zahl ist eine gemessene Aussage über den
+   Code und soll scharf gepinnt bleiben, damit ein fünfter Schreibpfad wieder rot
+   wird.
+3. Docstring-Satz „mindestens drei Bedeutungen" (Z. 288-296) → „vier Bedeutungen
+   plus 0.0/None = keine Messung", sonst steht die Begründung des Tests falsch da.
+
+Status heute: Zeile 301 ist **grün**, weil wir die YAML nicht angefasst haben und
+die Fixtures unverändert sind (Zeile 307 prüft Fixture-Werte `{900, 1000, 1400}` —
+sie wird erst rot, wenn eine Fixture `"breite_mm": null` trägt, also im
+Fixture-Schritt). Belegzahlen für den vierten Befund: 629 Türen / fünf Pläne,
+davon 360 `GEOMETRIE_OEFFNUNG`, 77 `GEOMETRIE_SCHWENKRADIUS`, 58 `BLOCKNAME`,
+**2 `GEOMETRIE_SUMME`** (Barawitzka_EG), 132 ohne Messung.
+
+Offen und von der YAML-Ergänzung nicht berührt: dein Befund nennt
+`tuer_zuordnung.py:155`, tatsächlich schreiben dort **zwei** Stellen (`:157`
+`durchgaenge_ohne_tuerblatt` und `:218` `aussen_durchgaenge`). Wir zählen sie als
+**einen** Befund (gleiche Herkunft `GEOMETRIE_OEFFNUNG`, gleiches Verfahren) —
+zählst du sie getrennt, steht am Ende `== 5`.
+
 ---
 
 ## 7. Was ist umgesetzt / was fehlt

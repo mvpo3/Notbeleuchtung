@@ -681,7 +681,7 @@ def _bild_fluchtweg(plan: DxfPlan, zoom, modell, wpolys: dict,
         w = _wandwinkel_bei(plan, t.xy_mm) or 0.0
         # Bogen-Durchmesser gedeckelt: breite Durchgänge (bis 3.8 m) würden
         # sonst das Bild dominieren (Barawitzka-Sichtbefund).
-        d = min(max(t.breite_mm, 400.0), 1500.0) / f
+        d = min(max(t.breite_mm or 0.0, 400.0), 1500.0) / f
         ax.add_patch(Arc((t.xy_mm[0] / f, t.xy_mm[1] / f), d, d, angle=w,
                          theta1=0.0, theta2=180.0, color="#994400", lw=1.5,
                          zorder=ztop + 2))
@@ -963,15 +963,19 @@ def _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz,
          + ", ".join(f"{v}={k}" for k, v in _TUER_KUERZEL.items())
          + "; ? = untypisiert (keine Regel greift), /NA = Notausgang, "
          "* = ohne Türblatt.", "",
-         "| ID | raum_a | raum_b | Typ | Breite mm | Notausgang | Quelle | "
-         "Grund |",
-         "|---|---|---|---|--:|---|---|---|"]
+         ("| ID | raum_a | raum_b | Typ | Breite mm | Breiten-Quelle | "
+          "Notausgang | Quelle | Grund |"),
+         "|---|---|---|---|--:|---|---|---|---|"]
     for t in modell.tueren:
         # Grund nur bei untypisierten Türen (Spec 5: für JEDE einzeln).
         grund = t.untypisiert_grund if t.tuer_detail is None else None
         quelle = (t.quelle or "")[:40]
+        # v1.4.0: keine Messung ist None — nichts erfinden, „—" ausweisen.
+        breite = "—" if t.breite_mm is None else f"{t.breite_mm:.0f}"
+        b_grund = (f"{t.breite_quelle} ({t.breite_grund})"
+                   if t.breite_grund else t.breite_quelle)
         l.append(f"| {t.id} | {t.von_raum or '—'} | {t.nach_raum or '—'} | "
-                 f"{t.tuer_detail or '—'} | {t.breite_mm:.0f} | "
+                 f"{t.tuer_detail or '—'} | {breite} | {b_grund} | "
                  f"{'ja' if t.ist_notausgang else '—'} | {quelle or '—'} | "
                  f"{grund or ''} |")
     l += ["", f"## Ausgänge ({len(modell.ausgaenge)})", "",
