@@ -17,6 +17,7 @@ import subprocess
 import sys
 
 CONTRACTS_PREFIX = "src/notbeleuchtung/hauptengine/contracts/"
+SRC_PREFIX = "src/"
 CODEOWNERS_PATH = ".github/CODEOWNERS"
 CODEOWNERS_MATCH = "hauptengine/contracts/"
 MARKER = "<!-- contract-freeze-stale-approval -->"
@@ -79,9 +80,11 @@ def main():
     touched = sorted(
         f["filename"] for f in files
         if f["filename"].startswith(CONTRACTS_PREFIX)
-        # CONTRACT_VERSION nur in Python-Quellen werten — in Doku/Berichten steht
-        # der Bezeichner als Prosa und wuerde jeden Doku-PR faelschlich rot faerben.
-        or (f["filename"].endswith(".py")
+        # CONTRACT_VERSION nur in Python-Quellen UNTER src/ werten. In Doku und
+        # Berichten steht der Bezeichner als Prosa; und dieses Pruefskript selbst
+        # nennt ihn ebenfalls — beides wuerde den PR sonst faelschlich rot faerben.
+        or (f["filename"].startswith(SRC_PREFIX)
+            and f["filename"].endswith(".py")
             and "CONTRACT_VERSION" in (f.get("patch") or ""))
     )
     if not touched:
