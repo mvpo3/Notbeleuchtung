@@ -61,49 +61,49 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 
 24 / 41 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
 
-| ID | raum_a | raum_b | Typ | Breite mm | Notausgang | Quelle | Grund |
-|---|---|---|---|--:|---|---|---|
-| tuer_1 | KEIN_RAUM | AUSSEN | — | 1110 | — | arc | kein_nachbarraum |
-| tuer_2 | KEIN_RAUM | AUSSEN | — | 1110 | — | arc | kein_nachbarraum |
-| tuer_3 | KEIN_RAUM | AUSSEN | — | 1110 | — | arc | kein_nachbarraum |
-| tuer_4 | KEIN_RAUM | KEIN_RAUM | — | 1110 | — | arc | tuer_ins_nichts |
-| tuer_5 | KEIN_RAUM | KEIN_RAUM | — | 1110 | — | arc | tuer_ins_nichts |
-| tuer_6 | KEIN_RAUM | KEIN_RAUM | — | 1110 | — | arc | tuer_ins_nichts |
-| tuer_7 | KEIN_RAUM | raum_17 | — | 1180 | — | arc | kein_nachbarraum |
-| tuer_8 | KEIN_RAUM | KEIN_RAUM | — | 1180 | — | arc | tuer_ins_nichts |
-| tuer_9 | raum_12 | raum_17 | — | 1180 | — | arc | unbekannte_kombination |
-| tuer_10 | KEIN_RAUM | KEIN_RAUM | hauseingang | 900 | — | arc+text:TÜRSCHLIESSER |  |
-| tuer_11 | AUSSEN | raum_14 | hauseingang | 0 | — | text:TÜRSCHLIESSER |  |
-| durchgang_1 | raum_1 | raum_2 | zimmertuer | 3906 | — | durchgang |  |
-| durchgang_2 | raum_1 | raum_6 | wohnungseingang | 2649 | — | durchgang |  |
-| durchgang_3 | raum_1 | raum_8 | balkontuer | 5959 | — | durchgang |  |
-| durchgang_4 | raum_2 | raum_3 | zimmertuer | 3458 | — | durchgang |  |
-| durchgang_5 | raum_2 | raum_6 | wohnungseingang | 2100 | — | durchgang |  |
-| durchgang_6 | raum_3 | raum_4 | zimmertuer | 3490 | — | durchgang |  |
-| durchgang_7 | raum_3 | raum_6 | wohnungseingang | 2298 | — | durchgang |  |
-| durchgang_8 | raum_4 | raum_6 | wohnungseingang | 4189 | — | durchgang |  |
-| durchgang_9 | raum_4 | raum_7 | wohnungseingang | 3479 | — | durchgang |  |
-| durchgang_10 | raum_5 | raum_6 | garagentor | 2631 | — | durchgang |  |
-| durchgang_11 | raum_5 | raum_7 | garagentor | 3635 | — | durchgang |  |
-| durchgang_12 | raum_5 | raum_9 | — | 1223 | — | durchgang | unbekannte_kombination |
-| durchgang_13 | raum_5 | raum_19 | garagentor | 4799 | — | durchgang |  |
-| durchgang_14 | raum_6 | raum_7 | wohnungseingang | 2600 | — | durchgang |  |
-| durchgang_15 | raum_9 | raum_19 | — | 3426 | — | durchgang | beide_seiten_untypisiert |
-| durchgang_16 | raum_10 | raum_11 | brandschutztuer | 860 | — | durchgang |  |
-| durchgang_17 | raum_11 | raum_13 | — | 3396 | — | durchgang | unbekannte_kombination |
-| durchgang_18 | raum_11 | raum_14 | wohnungseingang | 880 | — | durchgang |  |
-| durchgang_19 | raum_12 | raum_14 | — | 5493 | — | durchgang | unbekannte_kombination |
-| durchgang_20 | raum_12 | raum_14 | — | 1786 | — | durchgang | unbekannte_kombination |
-| durchgang_21 | raum_12 | raum_16 | — | 980 | — | durchgang+text:TÜRSCHLIESSER | unbekannte_kombination |
-| durchgang_22 | raum_13 | raum_16 | — | 2137 | — | durchgang | unbekannte_kombination |
-| durchgang_23 | raum_14 | raum_15 | stiegenhaustuer | 2080 | — | durchgang |  |
-| durchgang_24 | raum_15 | raum_16 | stiegenhaustuer | 2100 | — | durchgang |  |
-| durchgang_25 | raum_15 | rest_1 | stiegenhaustuer | 1507 | — | durchgang |  |
-| durchgang_26 | raum_15 | rest_1 | stiegenhaustuer | 1496 | — | durchgang |  |
-| durchgang_27 | raum_15 | rest_2 | stiegenhaustuer | 2133 | — | durchgang |  |
-| durchgang_28 | rest_1 | rest_2 | stiegenhaustuer | 2187 | — | durchgang |  |
-| aussenoeffnung_1 | raum_13 | AUSSEN | — | 1235 | — | oeffnung_aussenwand | unbekannte_kombination |
-| aussenoeffnung_2 | raum_16 | AUSSEN | hauseingang | 1019 | ja | oeffnung_aussenwand+windfang |  |
+| ID | raum_a | raum_b | Typ | Breite mm | Breiten-Quelle | Notausgang | Quelle | Grund |
+|---|---|---|---|--:|---|---|---|---|
+| tuer_1 | KEIN_RAUM | AUSSEN | — | 1110 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
+| tuer_2 | KEIN_RAUM | AUSSEN | — | 1110 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
+| tuer_3 | KEIN_RAUM | AUSSEN | — | 1110 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
+| tuer_4 | KEIN_RAUM | KEIN_RAUM | — | 1110 | GEOMETRIE_SCHWENKRADIUS | — | arc | tuer_ins_nichts |
+| tuer_5 | KEIN_RAUM | KEIN_RAUM | — | 1110 | GEOMETRIE_SCHWENKRADIUS | — | arc | tuer_ins_nichts |
+| tuer_6 | KEIN_RAUM | KEIN_RAUM | — | 1110 | GEOMETRIE_SCHWENKRADIUS | — | arc | tuer_ins_nichts |
+| tuer_7 | KEIN_RAUM | raum_17 | — | 1180 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
+| tuer_8 | KEIN_RAUM | KEIN_RAUM | — | 1180 | GEOMETRIE_SCHWENKRADIUS | — | arc | tuer_ins_nichts |
+| tuer_9 | raum_12 | raum_17 | — | 1180 | GEOMETRIE_SCHWENKRADIUS | — | arc | unbekannte_kombination |
+| tuer_10 | KEIN_RAUM | KEIN_RAUM | hauseingang | 900 | GEOMETRIE_SCHWENKRADIUS | — | arc+text:TÜRSCHLIESSER |  |
+| tuer_11 | AUSSEN | raum_14 | hauseingang | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | — | text:TÜRSCHLIESSER |  |
+| durchgang_1 | raum_1 | raum_2 | zimmertuer | 3906 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_2 | raum_1 | raum_6 | wohnungseingang | 2649 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_3 | raum_1 | raum_8 | balkontuer | 5959 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_4 | raum_2 | raum_3 | zimmertuer | 3458 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_5 | raum_2 | raum_6 | wohnungseingang | 2100 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_6 | raum_3 | raum_4 | zimmertuer | 3490 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_7 | raum_3 | raum_6 | wohnungseingang | 2298 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_8 | raum_4 | raum_6 | wohnungseingang | 4189 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_9 | raum_4 | raum_7 | wohnungseingang | 3479 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_10 | raum_5 | raum_6 | garagentor | 2631 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_11 | raum_5 | raum_7 | garagentor | 3635 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_12 | raum_5 | raum_9 | — | 1223 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
+| durchgang_13 | raum_5 | raum_19 | garagentor | 4799 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_14 | raum_6 | raum_7 | wohnungseingang | 2600 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_15 | raum_9 | raum_19 | — | 3426 | GEOMETRIE_OEFFNUNG | — | durchgang | beide_seiten_untypisiert |
+| durchgang_16 | raum_10 | raum_11 | brandschutztuer | 860 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_17 | raum_11 | raum_13 | — | 3396 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
+| durchgang_18 | raum_11 | raum_14 | wohnungseingang | 880 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_19 | raum_12 | raum_14 | — | 5493 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
+| durchgang_20 | raum_12 | raum_14 | — | 1786 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
+| durchgang_21 | raum_12 | raum_16 | — | 980 | GEOMETRIE_OEFFNUNG | — | durchgang+text:TÜRSCHLIESSER | unbekannte_kombination |
+| durchgang_22 | raum_13 | raum_16 | — | 2137 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
+| durchgang_23 | raum_14 | raum_15 | stiegenhaustuer | 2080 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_24 | raum_15 | raum_16 | stiegenhaustuer | 2100 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_25 | raum_15 | rest_1 | stiegenhaustuer | 1507 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_26 | raum_15 | rest_1 | stiegenhaustuer | 1496 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_27 | raum_15 | rest_2 | stiegenhaustuer | 2133 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_28 | rest_1 | rest_2 | stiegenhaustuer | 2187 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| aussenoeffnung_1 | raum_13 | AUSSEN | — | 1235 | GEOMETRIE_OEFFNUNG | — | oeffnung_aussenwand | unbekannte_kombination |
+| aussenoeffnung_2 | raum_16 | AUSSEN | hauseingang | 1019 | GEOMETRIE_OEFFNUNG | ja | oeffnung_aussenwand+windfang |  |
 
 ## Ausgänge (8)
 
@@ -241,4 +241,4 @@ Quellen: FALLBACK: 1, GRAPH: 8
 | tuer_ins_nichts | 4 |
 | beide_seiten_untypisiert | 1 |
 
-Laufzeit: 56.0 s
+Laufzeit: 55.5 s
