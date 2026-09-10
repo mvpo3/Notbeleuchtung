@@ -191,7 +191,10 @@ def test_tuerleuchte_ist_rz_an_der_tuer(typ):
     p = out[0]
     assert p.kind == "rz"                    # Rettungszeichen, nicht Sicherheitsleuchte
     assert p.richtung == "unten"
-    assert p.xy_mm == (5000.0, 0.0)          # exakt an der Tür
+    # Owner-Korrektur 2026-09-10 (AutoCAD-Diff L-Demo): das Tür-RZ sitzt nicht mehr exakt
+    # auf der Schwelle, sondern ~150 mm IM bedienten Raum (Richtung Raum-Inneres).
+    assert math.hypot(p.xy_mm[0] - 5000.0, p.xy_mm[1] - 0.0) <= 160.0   # nahe der Tür
+    assert point_in_polygon(p.xy_mm, _RAUM_POLY)                        # leicht im Raum
     # Tür (5000,0) liegt unter dem Raum-Zentrum (5000,4000) → Pfeil zeigt nach unten (rot 0°).
     assert p.rotation_deg == 0.0
     assert p.norm_quelle == QUELLE_TUERLEUCHTE
@@ -232,7 +235,9 @@ def test_tuerleuchte_bevorzugt_erschliessungs_tuer():
         ],
     )
     out = tuerleuchte_pflichtraeume(rm, FakeNormProvider())
-    assert out[0].xy_mm == (9000.0, 0.0)     # RZ an der Tür zum GANG
+    # RZ an der Tür zum GANG (nach Owner-Korrektur ~150 mm ins Raum-Innere versetzt).
+    assert math.hypot(out[0].xy_mm[0] - 9000.0, out[0].xy_mm[1] - 0.0) <= 160.0
+    assert point_in_polygon(out[0].xy_mm, _RAUM_POLY)
 
 
 def test_grosser_tiefer_raum_bekommt_mittige_antipanik():

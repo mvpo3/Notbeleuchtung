@@ -711,6 +711,19 @@ def _draw_nodeid_labels(msp, platzierung: PlatzierungsErgebnis) -> tuple[int, in
             "char_height": NODEID_HEIGHT_MM,
         })
         mt.set_location((tx, ty), attachment_point=MTextEntityAlignment.MIDDLE_CENTER)
+        # Owner-Korrektur 2026-09-10 (AutoCAD-Diff L-Demo): Führungslinie (Leader) vom
+        # Symbol zum versetzten Label — das Label sitzt nie auf dem Symbol, der Leader
+        # macht die Zuordnung eindeutig. Nur zeichnen, wenn das Label wirklich versetzt
+        # ist (sonst überflüssig). Start am Symbolrand, Ende knapp vor dem Label.
+        halb = _NODEID_HALBBREITE_MM.get(p.kind, 435.0)
+        dxl, dyl = tx - p.xy_mm[0], ty - p.xy_mm[1]
+        dl = math.hypot(dxl, dyl)
+        if dl > halb + 150.0:
+            sx = p.xy_mm[0] + dxl / dl * halb
+            sy = p.xy_mm[1] + dyl / dl * halb
+            ex = tx - dxl / dl * (NODEID_HEIGHT_MM * 0.6)
+            ey = ty - dyl / dl * (NODEID_HEIGHT_MM * 0.6)
+            msp.add_lwpolyline([(sx, sy), (ex, ey)], dxfattribs={"layer": LAYER_NODEID})
         drawn += 1
     return drawn, mit_kreis
 

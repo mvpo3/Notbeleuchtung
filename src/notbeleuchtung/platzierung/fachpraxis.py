@@ -44,6 +44,10 @@ from .lux import lux_punkte, wartungsfaktor_aus_norm
 
 AUFHELLER_KEY = "sicherheitsleuchte_aufheller"
 QUELLE_AUFHELLER = "fachpraxis: aufheller-500mm"
+# Owner-Korrektur 2026-09-10 (AutoCAD-Diff L-Demo): das Tür-RZ eines Nebenraums (Technik/
+# Müll) sitzt nicht exakt auf der Schwelle, sondern leicht IM bedienten Raum (Richtung
+# Raum-Inneres, weg vom Gang) — dort ist es klar dem Raum zugeordnet, nicht dem Gang.
+_RZ_INS_RAUM_MM = 150.0
 
 #: Regel 2026-09-07: diese Raumtypen bekommen IMMER eine Sicherheitsleuchte an
 #: der Tür — fensterlose Innen-/Nebenräume, bei Netzausfall muss die Tür
@@ -302,9 +306,13 @@ def tuerleuchte_pflichtraeume(raum: RaumModell, norm: NormProvider) -> list[Plat
         if math.hypot(dx, dy) < 50.0:
             dx, dy = 0.0, -1.0
         rot = _rotation_zur_tuer(dx, dy)
+        # Owner-Korrektur: RZ ~150 mm ins Raum-Innere versetzen (Richtung Zentrum = weg
+        # vom Gang). (dx, dy) zeigt vom Zentrum zur Tür (raus) → −Einheitsvektor = rein.
+        _n = math.hypot(dx, dy) or 1.0
+        rz_xy = (tx - dx / _n * _RZ_INS_RAUM_MM, ty - dy / _n * _RZ_INS_RAUM_MM)
         out.append(
             Platzierung(
-                xy_mm=(tx, ty),
+                xy_mm=rz_xy,
                 catalog_key=rz_key,
                 rotation_deg=rot,
                 mirror_x=False,
