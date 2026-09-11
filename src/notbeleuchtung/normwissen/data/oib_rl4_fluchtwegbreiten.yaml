@@ -237,10 +237,18 @@ tuerbreite_herkunft:
         sich nur im Ort. Rohbaumass ohne Zarge, systematisch GROESSER als die
         Durchgangslichte.
   keine_messung:
-    pfad: "tueren.py::_breite_mm (Oeffnungs-Marker)"
+    pfad: "tueren.py::_breite_mm (:69, Oeffnungs-Marker); Tuer-Erzeugung :95-:97 und :175-:177"
     was: >
-      Traegt der Block einen Oeffnungs-Marker, wird 0.0 zurueckgegeben —
-      ⚠️ 0.0 bedeutet KEINE MESSUNG, nicht "Breite null".
+      Traegt der Block einen Oeffnungs-Marker, liefert `_breite_mm` **None**.
+      Die Tuer entsteht dann mit `breite_mm = None`,
+      `breite_quelle = "UNBEKANNT"` und einem `breite_grund` — keine Messung ist
+      damit als Zustand lesbar, nicht als Zahl.
+    ⚠_0_0_ist_ueberholt: >
+      Bis Contract `raum_modell` 1.3.0 stand hier 0.0 fuer "keine Messung"; seit
+      **1.4.0** ist das ueberholt: `Tuer.breite_mm` ist `float | None`, `None`
+      heisst nicht gemessen, und 0.0 wuerde "gemessen null" heissen und kommt
+      nicht mehr vor. Aeltere Fassungen dieser Datei und Zitate daraus sind an
+      dieser Stelle nicht mehr gueltig.
     ⚠_kein_befund: >
       Steht bewusst NICHT in `befunde`: das ist keine Messherkunft, sondern der
       Fall "nicht gemessen". Er wird deshalb getrennt gefuehrt und getrennt
@@ -253,9 +261,26 @@ tuerbreite_herkunft:
     UNZULAESSIG — er wuerde ein Nennmass gegen ein lichtes Fertigmass pruefen und
     systematisch zu guenstig ausfallen (Zarge und Blatt fehlen).
   vor_jeder_pruefung_zu_klaeren:
-    - "Welche der drei Herkuenfte liegt im konkreten Modell vor?"
-    - "Ist eine Umrechnung Nennmass -> Durchgangslichte belegt (Quelle, nicht Schaetzung)?"
-    - "Wie wird 0.0 = keine Messung von einer echten Messung unterschieden?"
+    - frage: "Welche der vier Herkuenfte liegt im konkreten Modell vor?"
+      stand: beantwortet
+      wodurch: >
+        `Tuer.breite_quelle` (Contract 1.4.0) traegt die Herkunft je Tuer;
+        sie muss nicht mehr erschlossen werden.
+    - frage: "Ist eine Umrechnung Nennmass -> Durchgangslichte belegt (Quelle, nicht Schaetzung)?"
+      stand: offen
+      wodurch: >
+        Unveraendert kein Beleg im Bestand. `Tuer.lichte_mm` existiert seit
+        1.4.0, hat aber keinen Erzeuger und wird NIE aus `breite_mm` abgeleitet.
+    - frage: "Wie wird keine Messung von einer echten Messung unterschieden?"
+      stand: beantwortet
+      wodurch: >
+        `breite_mm is None` zusammen mit `breite_quelle = "UNBEKANNT"` und
+        `breite_grund`. Die frueher dafuer benutzte 0.0 kommt nicht mehr vor.
+  ⚠_status_bleibt: >
+    Zwei der drei Fragen sind beantwortet, `status` bleibt trotzdem
+    `blockiert_bis_semantik_geklaert`: geklaert ist die HERKUNFT, nicht die
+    VERGLEICHBARKEIT mit RL 4. Dafuer fehlt die nutzbare Durchgangslichte
+    (`lichte_mm` ohne Erzeuger) — Frage 2.
   status: blockiert_bis_semantik_geklaert
 
 # ── Zulaessige Einengungen — der Grund, warum Soll ≠ Ist ──────────────────

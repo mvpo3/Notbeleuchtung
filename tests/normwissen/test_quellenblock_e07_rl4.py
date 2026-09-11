@@ -326,7 +326,10 @@ def test_rl4_tuerpruefung_bleibt_bis_zur_semantik_blockiert() -> None:
     assert "NICHT die Zwei-Tueren-Regel" in summe["was"]
     assert "UNZULAESSIG" in herkunft["folge"]
     # „nicht gemessen" ist keine Messherkunft und steht deshalb außerhalb.
-    assert "0.0 bedeutet KEINE MESSUNG" in herkunft["keine_messung"]["was"]
+    keine = herkunft["keine_messung"]
+    assert "None" in keine["was"] and '"UNBEKANNT"' in keine["was"]
+    assert "0.0" not in keine["was"], "0.0 ist seit Contract 1.4.0 keine gültige Lesart"
+    assert "1.4.0" in keine["⚠_0_0_ist_ueberholt"]
     assert RL4["anwendungsbereich"]["⚠_fertigmass"].strip().startswith('"Alle in dieser')
 
     fixtures = sorted((Path(__file__).parents[1] / "fixtures").glob("raum_modell_*.json"))
@@ -337,6 +340,31 @@ def test_rl4_tuerpruefung_bleibt_bis_zur_semantik_blockiert() -> None:
     # Beobachtung, kein Nachweis: die Werte sind 900/1000/1400 — typische
     # NENNmaße, was den Befund oben stützt.
     assert set(breiten) <= {900.0, 1000.0, 1400.0}, sorted(set(breiten))
+
+
+def test_keine_messung_heisst_none_nicht_null() -> None:
+    """Die YAML-Aussage über „keine Messung" muss zum Contract passen.
+
+    Seit `raum_modell` 1.4.0 ist `Tuer.breite_mm` `float | None`: `None` heißt
+    **nicht gemessen**, `0.0` hieße **gemessen null** und kommt nicht mehr vor.
+    Steht in unserer YAML wieder die alte 0.0-Lesart, prüft RL 4 gegen eine
+    Bedeutung, die es nicht gibt — genau das fängt dieser Test.
+    """
+    from notbeleuchtung.hauptengine.contracts.raum_modell import Tuer
+
+    ohne_messung = Tuer(id="t1", xy_mm=(0.0, 0.0))
+    assert ohne_messung.breite_mm is None
+    assert ohne_messung.breite_quelle == "UNBEKANNT"
+
+    herkunft = RL4["tuerbreite_herkunft"]
+    fragen = herkunft["vor_jeder_pruefung_zu_klaeren"]
+    assert [f["stand"] for f in fragen] == ["beantwortet", "offen", "beantwortet"]
+    # Die offene Frage ist die Umrechnung zur Durchgangslichte — und nur sie
+    # hält den Status.
+    offen = next(f for f in fragen if f["stand"] == "offen")
+    assert "Durchgangslichte" in offen["frage"]
+    assert herkunft["status"] == "blockiert_bis_semantik_geklaert"
+    assert "VERGLEICHBARKEIT" in herkunft["⚠_status_bleibt"]
 
 
 def test_drei_breitenbegriffe_bleiben_getrennt() -> None:
