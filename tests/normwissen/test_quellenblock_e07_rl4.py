@@ -34,7 +34,12 @@ def _lade(name: str) -> dict:
 _BEWACHTE_DATEIEN = ("ove_e07_funktionserhalt", "oib_rl4_fluchtwegbreiten")
 
 #: Aufzählende Zugriffe: damit ließe sich eine Datei ohne Namensnennung laden.
-_ENUMERATION = ("glob", "rglob", "iterdir", "listdir", "scandir")
+#: Pfad-Methoden (``p.glob(…)``) und Modulfunktionen (``os.listdir(p)``,
+#: ``from os import listdir``) werden gleich behandelt.
+_ENUM_METHODEN = ("glob", "rglob", "iterdir")
+_ENUM_FUNKTIONEN = ("listdir", "scandir", "walk", "glob", "iglob")
+#: Module, aus denen eine aufzählende Funktion importiert worden sein kann.
+_ENUM_MODULE = ("os", "os.path", "glob")
 
 
 def _docstring_knoten(baum: ast.Module) -> set[int]:
@@ -58,6 +63,105 @@ def _code_strings(baum: ast.Module) -> Iterator[tuple[int, str]]:
         if (isinstance(knoten, ast.Constant) and isinstance(knoten.value, str)
                 and id(knoten) not in docs):
             yield knoten.lineno, knoten.value
+
+
+def _zeigt_auf_daten(knoten: ast.AST, namen: set[str]) -> bool:
+    """Zeigt dieser Ausdruck auf ein Datenverzeichnis?
+
+    Erkannt wird ein Pfadbestandteil ``"data"`` (``Path(__file__).parent /
+    "data"``), ein bereits als Datenpfad bekannter Name und ein Attribut wie
+    ``provider.DATA_DIR``. Namen mit ``data`` im Bezeichner zählen mit — genau
+    so heißt der Einstiegspunkt im Produktivcode (``DATA_DIR``).
+    """
+    for teil in ast.walk(knoten):
+        if (isinstance(teil, ast.Constant) and isinstance(teil.value, str)
+                and "data" in teil.value.lower()):
+            return True
+        if isinstance(teil, ast.Name) and (teil.id in namen or "data" in teil.id.lower()):
+            return True
+        if isinstance(teil, ast.Attribute) and "data" in teil.attr.lower():
+            return True
+    return False
+
+
+def _daten_namen(baum: ast.Module) -> set[str]:
+    """Namen, die (auch über mehrere Zuweisungen) auf ein Datenverzeichnis zeigen.
+
+    Deckt die Umbenennung ab, an der ein reiner Textvergleich vorbeiläuft:
+    ``ROOT = DATA_DIR`` bzw. ``ROOT = Path(__file__).parent / "data"`` — danach
+    ist ``ROOT.glob("*.yaml")`` ein Verzeichniszugriff auf die Normdaten.
+    """
+    namen: set[str] = set()
+    geaendert = True
+    while geaendert:                      # Fixpunkt: Ketten von Zuweisungen
+        geaendert = False
+        for knoten in ast.walk(baum):
+            if isinstance(knoten, ast.Assign):
+                ziele, wert = knoten.targets, knoten.value
+            elif isinstance(knoten, ast.AnnAssign) and knoten.value is not None:
+                ziele, wert = [knoten.target], knoten.value
+            else:
+                continue
+            if not _zeigt_auf_daten(wert, namen):
+                continue
+            for ziel in ziele:
+                if isinstance(ziel, ast.Name) and ziel.id not in namen:
+                    namen.add(ziel.id)
+                    geaendert = True
+    return namen
+
+
+def _enum_namen(baum: ast.Module) -> set[str]:
+    """Lokale Namen aufzählender Funktionen, inklusive Import-Aliassen.
+
+    ``from os import listdir`` → ``listdir``; ``from os import listdir as ls``
+    → ``ls``. Ohne diese Zuordnung bliebe der direkt importierte Aufruf
+    unsichtbar, weil er kein Attribut-Zugriff ist.
+    """
+    namen: set[str] = set()
+    for knoten in ast.walk(baum):
+        if isinstance(knoten, ast.ImportFrom) and (knoten.module or "") in _ENUM_MODULE:
+            for alias in knoten.names:
+                if alias.name in _ENUM_FUNKTIONEN:
+                    namen.add(alias.asname or alias.name)
+    return namen
+
+
+def _aufzaehlungen(quelle: str, baum: ast.Module) -> list[tuple[int, str]]:
+    """Aufzählende Zugriffe auf ein Datenverzeichnis — Zeile und Quelltext.
+
+    Drei Formen, alle mit Namensauflösung im Modul:
+
+    * ``DATA_DIR.glob("*.yaml")`` und ``ROOT.iterdir()`` (Pfad-Methode),
+    * ``os.listdir(DATA_DIR)`` (Modul-Attribut),
+    * ``listdir(DATA_DIR)`` nach ``from os import listdir`` (Import-Alias).
+
+    ⚠️ **Grenzen, ausdrücklich:** nicht auflösbar sind Zugriffe über
+    Funktionsgrenzen hinweg (das Verzeichnis wird übergeben und anderswo
+    aufgezählt), Pfade, die ohne erkennbaren ``data``-Bestandteil aus Variablen
+    zusammengesetzt werden, sowie zur Laufzeit gebildete Namen
+    (``getattr``, ``importlib.resources``, f-Strings). Der Wächter ist damit
+    eine **Schranke gegen das Naheliegende**, kein Beweis der Abwesenheit.
+    """
+    daten = _daten_namen(baum)
+    enum_lokal = _enum_namen(baum)
+    treffer: list[tuple[int, str]] = []
+    for knoten in ast.walk(baum):
+        if not isinstance(knoten, ast.Call):
+            continue
+        funktion = knoten.func
+        if isinstance(funktion, ast.Attribute) and (
+                funktion.attr in _ENUM_METHODEN or funktion.attr in _ENUM_FUNKTIONEN):
+            kandidaten = [funktion.value, *knoten.args]      # Empfänger und Argumente
+        elif isinstance(funktion, ast.Name) and (
+                funktion.id in enum_lokal or funktion.id in _ENUM_FUNKTIONEN):
+            kandidaten = list(knoten.args)
+        else:
+            continue
+        if any(_zeigt_auf_daten(k, daten) for k in kandidaten):
+            treffer.append((knoten.lineno,
+                            ast.get_source_segment(quelle, knoten) or "<Aufruf>"))
+    return treffer
 
 
 E07 = _lade("ove_e07_funktionserhalt.yaml")
@@ -215,8 +319,14 @@ def test_kein_contract_wert_und_kein_konsument() -> None:
 
     Die zweite Hälfte schließt die Lücke, die ein reiner Namensvergleich lässt:
     wird irgendwo im Produktivcode ein **Datenverzeichnis aufgezählt**
-    (`glob`/`iterdir`/…), ließe sich eine Datei ohne Namensnennung laden — dann
-    trägt dieser Wächter nicht mehr und sagt das, statt still grün zu bleiben.
+    (`DATA_DIR.glob(…)`, `os.listdir(DATA_DIR)`, `listdir(DATA_DIR)` nach
+    `from os import listdir`), ließe sich eine Datei ohne Namensnennung laden —
+    dann trägt dieser Wächter nicht mehr und sagt das, statt still grün zu
+    bleiben. Umbenennungen (`ROOT = DATA_DIR`) werden dabei aufgelöst.
+
+    ⚠️ Die Grenzen dieser Auflösung stehen bei `_aufzaehlungen`: über
+    Funktionsgrenzen hinweg, ohne erkennbaren `data`-Bestandteil oder zur
+    Laufzeit gebildet bleibt ein Zugriff unsichtbar.
     """
     snap = En1838NormProvider().regelwerk_snapshot()
     assert snap.arbeitsplatz_lux.min_lux_absolut is None
@@ -231,19 +341,67 @@ def test_kein_contract_wert_und_kein_konsument() -> None:
         for zeile, wert in _code_strings(baum):
             if any(name in wert for name in _BEWACHTE_DATEIEN):
                 zugriffe.append(f"{rel}:{zeile} -> {wert!r}")
-        for knoten in ast.walk(baum):
-            if (isinstance(knoten, ast.Call)
-                    and isinstance(knoten.func, ast.Attribute)
-                    and knoten.func.attr in _ENUMERATION):
-                text = ast.get_source_segment(quelle, knoten) or ""
-                if "data" in text.lower():
-                    aufzaehlungen.append(f"{rel}:{knoten.lineno} -> {text}")
+        aufzaehlungen += [f"{rel}:{zeile} -> {text}"
+                          for zeile, text in _aufzaehlungen(quelle, baum)]
 
     assert zugriffe == [], zugriffe
     assert aufzaehlungen == [], (
         "Ein Datenverzeichnis wird aufgezählt — der Namensvergleich oben kann "
         f"einen Verbraucher dann nicht mehr ausschließen: {aufzaehlungen}"
     )
+
+
+def test_waechter_erkennt_umbenanntes_verzeichnis_und_direkten_import() -> None:
+    """Zwei Zugriffsformen, die der frühere Textvergleich übersehen hat.
+
+    Geprüft wird der **tatsächlich verwendete** Prüfer `_aufzaehlungen`, nicht
+    eine Nachbildung: `ROOT.glob("*.yaml")` mit `ROOT` auf dem Normdaten-
+    verzeichnis (der Quelltext nennt an der Aufrufstelle kein „data"), und
+    `listdir(DATA_DIR)` nach `from os import listdir` (kein Attribut-Zugriff).
+    """
+    umbenannt = (
+        'from pathlib import Path\n'
+        'ROOT = Path(__file__).parent / "data"\n'
+        'def laden():\n'
+        '    return [p for p in ROOT.glob("*.yaml")]\n'
+    )
+    direkt_importiert = (
+        'from os import listdir\n'
+        'from pathlib import Path\n'
+        'DATA_DIR = Path(__file__).parent / "data"\n'
+        'def laden():\n'
+        '    return listdir(DATA_DIR)\n'
+    )
+    for quelle in (umbenannt, direkt_importiert):
+        treffer = _aufzaehlungen(quelle, ast.parse(quelle))
+        assert treffer, quelle
+
+    # Kette über zwei Zuweisungen — dieselbe Lücke, eine Stufe tiefer.
+    kette = (
+        'from pathlib import Path\n'
+        'DATA_DIR = Path(__file__).parent / "data"\n'
+        'ROOT = DATA_DIR\n'
+        'ORDNER = ROOT\n'
+        'def laden():\n'
+        '    return list(ORDNER.iterdir())\n'
+    )
+    assert _aufzaehlungen(kette, ast.parse(kette))
+
+    # Aufzählung, die nichts mit den Normdaten zu tun hat, bleibt erlaubt.
+    fremd = (
+        'from pathlib import Path\n'
+        'def plaene():\n'
+        '    return list(Path("Projekte").glob("*.dxf"))\n'
+    )
+    assert _aufzaehlungen(fremd, ast.parse(fremd)) == []
+
+    # Prosa bleibt Prosa — auch für diesen Prüfer.
+    prosa = (
+        '"""Lädt nichts; beschreibt nur DATA_DIR.glob(\'*.yaml\')."""\n'
+        '# auch als Kommentar: os.listdir(DATA_DIR)\n'
+        'WERT = 1\n'
+    )
+    assert _aufzaehlungen(prosa, ast.parse(prosa)) == []
 
 
 def test_waechter_sieht_code_aber_keine_prosa(tmp_path: Path) -> None:
