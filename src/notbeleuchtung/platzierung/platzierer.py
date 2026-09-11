@@ -247,6 +247,12 @@ class NotlichtPlatzierer:
         # durch die Tür — nie in die Aufschlagrichtung. Rotations-Nachpass, No-op ohne
         # `tuer_detail="hauseingang"`. Nach dem Snap (Positionen final für die Richtung).
         platzierungen = fachpraxis.pfeil_durch_hauseingang(platzierungen, raum)
+        # R8 (Owner 2026-09-11): das RZ am Stiegen-Zugang gehört INS Stiegenhaus (Wand),
+        # Pfeil in Abstiegs-Richtung — nicht davor in den Gang. No-op ohne stair_exit.
+        platzierungen = fachpraxis.stiegenhaus_rz_nachpass(platzierungen, raum)
+        # R7 (Owner 2026-09-11, „RZ NICHT in der Wohnung"): Segment-RZ in privaten
+        # Stiegen-Vorräumen (Erkennungs-Artefakt: Wohnungs-„GANG"-Stempel) entfernen.
+        platzierungen = fachpraxis.entferne_wohnungs_vorraum_rz(platzierungen, raum)
         # Kollisionen an der Strategie-Naht auflösen (Dubletten mergen, verschieden-artige
         # entzerren) — nach lb_override (das SL hinzufügt), vor der Deckungs-Zuordnung,
         # damit diese die finalen Positionen sieht.

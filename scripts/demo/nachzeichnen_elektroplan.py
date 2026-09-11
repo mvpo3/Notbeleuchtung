@@ -52,7 +52,7 @@ from notbeleuchtung.hauptengine.render.lux_nachweis_bericht import schreibe_beri
 from notbeleuchtung.hauptengine.render.pdf_export import dxf_zu_pdf
 
 P4 = Path(r"C:\Users\mvpst\Documents\KI-Projekt\Notbeleuchtung\Projektbeispiele-demo-Platzierungslogik")
-OUT = P4 / "nachgezeichnet_out" / "v3"
+OUT = P4 / "nachgezeichnet_out" / "v4"
 
 #: R1 (Owner-Korrektur 2026-09-11): Block-Namen der Allgemeinbeleuchtung im Quellplan —
 #: deren Reihe ist die Montagelinie der Gang-Notleuchten.
@@ -107,6 +107,17 @@ def _type_raum(raum: RaumModell, xy_mm, typ, *, fluchtweg=None, communal=None, b
     return raum.model_copy(update={"raeume": neu}), r.id
 
 
+def _mark_communal(raum: RaumModell, xy_mm, beleg=""):
+    """Communal-Flag am Raum unterm Stempel setzen (Typ bleibt unangetastet)."""
+    r = _raum_bei(raum, xy_mm)
+    if r is None or r.ist_communal:
+        return raum
+    neu = [x.model_copy(update={"ist_communal": True}) if x.id == r.id else x
+           for x in raum.raeume]
+    print(f"    + {r.id} -> ist_communal [{beleg}]")
+    return raum.model_copy(update={"raeume": neu})
+
+
 def _tuer_detail(raum: RaumModell, xy_mm, detail, toleranz_mm=400.0):
     """tuer_detail an der Tür nächst xy setzen (nur wenn leer)."""
     best = min(raum.tueren, key=lambda t: (t.xy_mm[0] - xy_mm[0]) ** 2 + (t.xy_mm[1] - xy_mm[1]) ** 2,
@@ -135,6 +146,10 @@ def nachzeichnen(raum: RaumModell, floor: str) -> RaumModell:
         # Stempel-Position — das Raumpolygon hat eine Stiegen-Aussparung, Mittelpunkte liegen im Void.
         raum, stgh_id = _type_raum(raum, (2890860, 1736770), "STIEGENHAUS", communal=True,
                                    beleg="Stempel STGH + Treppen/Lift-Block")
+        # Fahrradraum ist GEMEINSCHAFTLICH (Stempel „Fahrradraum" @2879.06/1731.72;
+        # Owner-Korrektur „Hier hast du es Vergessen") — Erkennung typt ABSTELLRAUM
+        # ohne communal-Flag → Türleuchten-Regel schlief.
+        raum = _mark_communal(raum, (2879060, 1731720), beleg="Stempel Fahrradraum")
         # Hauseingang: Fassadentür (WET @2876.07/1737.06; Öffnung x 2875.53..2876.68).
         raum = _tuer_detail(raum, (2876070, 1737057), "hauseingang")
         ausgaenge = [*raum.ausgaenge,

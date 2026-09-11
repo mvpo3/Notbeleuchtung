@@ -358,3 +358,96 @@ def test_pfeil_durch_hauseingang_zeigt_zum_ausgang():
     # RZ weit weg von der Tür bleibt unveraendert:
     fern = falsch.model_copy(update={"xy_mm": (500.0, 500.0), "rotation_deg": 90.0})
     assert pfeil_durch_hauseingang([fern], rm)[0].rotation_deg == 90.0
+
+
+# ── R5: communal Nebenraum generalisiert (Spielraum) — Owner 2026-09-11 Runde 2 ─
+def test_tuerleuchte_communal_zimmer_spielraum():
+    """„Im Spielraum gehört auch eine Notleuchte": JEDER communal Nebenraum
+    (hier ZIMMER/Spielraum) bekommt das Tür-RZ; privates ZIMMER nicht."""
+    m = _raum_mit_tuer("ZIMMER")
+    communal = m.model_copy(update={"raeume": [
+        m.raeume[0].model_copy(update={"ist_communal": True}), m.raeume[1]]})
+    out = tuerleuchte_pflichtraeume(communal, FakeNormProvider())
+    assert len(out) == 1
+    assert out[0].kind == "rz"
+    assert tuerleuchte_pflichtraeume(m, FakeNormProvider()) == []
+
+
+def test_tuerleuchte_nicht_fuer_communal_erschliessung():
+    """Erschließungs-/Vorraum-Flächen sind ausgenommen — die Erkennung flaggt
+    private Wohnungs-Vorräume real mit communal=True (Elektroplan DE)."""
+    for typ in ("VORRAUM", "GANG", "STIEGENHAUS", "BALKON"):
+        m = _raum_mit_tuer(typ)
+        communal = m.model_copy(update={"raeume": [
+            m.raeume[0].model_copy(update={"ist_communal": True}), m.raeume[1]]})
+        assert tuerleuchte_pflichtraeume(communal, FakeNormProvider()) == [], typ
+
+
+# ── R7: kein RZ im Wohnungs-Vorraum an der Stiege — Owner 2026-09-11 Runde 2 ────
+from notbeleuchtung.platzierung.fachpraxis import (
+    entferne_wohnungs_vorraum_rz,
+    stiegenhaus_rz_nachpass,
+)
+
+
+def _raum_wohnungs_vorraum():
+    vr_poly = [(0.0, 0.0), (2000.0, 0.0), (2000.0, 1400.0), (0.0, 1400.0)]  # 2,8 m²
+    return RaumModell(
+        floor="1OG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 8000.0)),
+        raeume=[
+            Raum(id="vr", raum_typ="GANG", polygon_mm=vr_poly, flaeche_m2=2.8,
+                 ist_fluchtweg=True, ist_communal=True),
+            Raum(id="wz", raum_typ="WOHNZIMMER",
+                 polygon_mm=[(0.0, 1400.0), (2000.0, 1400.0), (2000.0, 5000.0), (0.0, 5000.0)]),
+            Raum(id="stgh", raum_typ="STIEGENHAUS", ist_communal=True,
+                 polygon_mm=[(2000.0, 0.0), (5000.0, 0.0), (5000.0, 3000.0), (2000.0, 3000.0)]),
+        ],
+        tueren=[
+            Tuer(id="t-wz", xy_mm=(1000.0, 1400.0), von_raum="vr", nach_raum="wz"),
+            Tuer(id="t-stgh", xy_mm=(2000.0, 700.0), von_raum="vr", nach_raum="stgh"),
+        ],
+    )
+
+
+def test_wohnungs_vorraum_rz_wird_entfernt():
+    """„RZ NICHT in der Wohnung": kleiner Stiegen-Vorraum, übrige Türen privat →
+    Segment-RZ darin fliegt; Tür-RZ der Pflichträume bliebe."""
+    rm = _raum_wohnungs_vorraum()
+    drin = _rz(xy=(1000.0, 700.0)).model_copy(update={"richtung": "unten"})
+    assert entferne_wohnungs_vorraum_rz([drin], rm) == []
+    tuer_rz = drin.model_copy(update={"norm_quelle": QUELLE_TUERLEUCHTE})
+    assert entferne_wohnungs_vorraum_rz([tuer_rz], rm) == [tuer_rz]
+
+
+def test_wohnungs_vorraum_mit_communal_anbindung_bleibt():
+    """Grenzt der kleine GANG zusätzlich an eine COMMUNAL Fläche (echter
+    Erschließungs-Knoten), bleibt sein RZ."""
+    rm = _raum_wohnungs_vorraum()
+    raeume = [r.model_copy(update={"ist_communal": True}) if r.id == "wz" else r
+              for r in rm.raeume]
+    rm2 = rm.model_copy(update={"raeume": raeume})
+    drin = _rz(xy=(1000.0, 700.0))
+    assert entferne_wohnungs_vorraum_rz([drin], rm2) == [drin]
+
+
+# ── R8: Stiegenhaus-RZ an die Wand, Richtung Abstieg — Owner 2026-09-11 Runde 2 ─
+def test_stiegenhaus_rz_wandert_ins_stiegenhaus():
+    """„RZ im Stiegenhaus … zeigt in die Richtung wie man in den Erdgeschoß kommt":
+    das unten-RZ am stair_exit wird INS Stiegenhaus versetzt, Pfeil Richtung
+    Stiegen-Zentrum (Abstieg)."""
+    stgh_poly = [(2000.0, 0.0), (5000.0, 0.0), (5000.0, 3000.0), (2000.0, 3000.0)]
+    rm = RaumModell(
+        floor="1OG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 8000.0)),
+        raeume=[Raum(id="stgh", raum_typ="STIEGENHAUS", polygon_mm=stgh_poly,
+                     ist_communal=True)],
+        ausgaenge=[Ausgang(id="X", xy_mm=(2000.0, 1500.0), typ="stair_exit")],
+    )
+    rz = _rz(xy=(1900.0, 1500.0), key="notlicht_ks_stiege", rot=270.0)
+    rz = rz.model_copy(update={"richtung": "unten"})
+    out = stiegenhaus_rz_nachpass([rz], rm)
+    assert point_in_polygon(out[0].xy_mm, stgh_poly)      # IM Stiegenhaus
+    # Exit (2000,1500) → Zentrum (3500,1500): Richtung +x → unten-Block rot 90.
+    assert out[0].rotation_deg == 90.0
+    # RZ fern vom stair_exit bleibt unangetastet:
+    fern = rz.model_copy(update={"xy_mm": (9000.0, 7000.0)})
+    assert stiegenhaus_rz_nachpass([fern], rm)[0].xy_mm == (9000.0, 7000.0)
