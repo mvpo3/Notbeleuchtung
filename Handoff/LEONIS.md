@@ -4,7 +4,61 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-10 SPÄTABEND) — Branch `leonis/demo-l-gebaeude` (basiert auf wissensabgleich→main), SYNC + Owner-Regeln + Demo. HIER WEITER.
+## STAND (2026-09-11 ABEND) — Elektroplan DE nachgezeichnet + 8 Owner-Regeln (R1–R8). HIER WEITER.
+
+**Branch `leonis/demo-l-gebaeude`, 1191 grün, ruff clean, NICHTS gepusht.** 3 neue Commits:
+
+1. **`07ce756` Nachzeichnen-Runner** `scripts/demo/nachzeichnen_elektroplan.py` — Owner-Auftrag
+   „Projekt bestmöglich nachzeichnen + rohe Hauptengine": Selman-Erkennung als Basis, NUR Lücken
+   mit belegten Plan-Fakten gefüllt (EINGANG-Windfang→GANG · NIEDERSP.→TECHNIK · STGH→STIEGENHAUS
+   +Modell · **echte Ausgänge**: EG `final_exit` an der Fassadentür/WET-Block, 1OG `stair_exit`
+   an der Stiege · EG-Flucht-Stub Gang→Eingang · Fahrradraum communal). Dann roh
+   `pipeline._run_mit_quelle`. **Drei gelöste Fallen:** (a) **`pdf_quelle=True` + Modelspace-
+   Sibling ist der A0-Blatt-Weg** — ohne das liefert `dxf_zu_pdf` aufs Layout-DXF nur 305×133 mm
+   ohne Blatt (ezdxf rastert Paperspace nicht; SO erklärt sich der dünne Elektroplan-Output vom
+   10.09.!); (b) `_clip_unterlage` — Quellplan trägt Entities km-weit draußen → Blatt-Fit
+   platzte (Anker-Punkt je Entity; fast-bbox liefert bei INSERTs oft nichts); (c) AutoCAD-Lock
+   auf v1-Output → Versions-Ordner (v1…v4).
+2. **`f657146` R1–R4** (AutoCAD-Diff Owner-Korrektur Runde 1): **R1** Gang-Notleuchten auf die
+   **Linie der Bestands-Allgemeinbeleuchtung** (Spot-Reihe der Unterlage; neues Kontext-Feld
+   `PlatzierungsKontext.bestand_leuchten_mm`, `place(bestand_leuchten_mm=…)`, Pipeline reicht
+   optional durch, Fakes unberührt) · **R2** `fachpraxis.aussen_tuer_rz`: communal-Raum+AUSSEN-Tür
+   = Notausgang-RZ §4.1.2g (Müllraum-Hoftür; greift auch Mollgasse → **E2E-Band RZ 30→34**
+   begründet nachgezogen) · **R3** Türleuchten-Regel + communal ABSTELLRAUM (Fahrradraum) ·
+   **R4** `pfeil_durch_hauseingang` (RZ-Pfeil = Fluchtrichtung zum Ausgang, nie Aufschlag).
+3. **`05b3ce5` R5–R8** (Runde 2, **rote Klartext-Notizen im Korrektur-DXF** — ACI-rot filtern!):
+   **R5** Türleuchten-Regel GENERALISIERT = jeder communal Nebenraum (Spielraum/Hausbetreuung),
+   Ausnahmen `_TUERLEUCHTE_KEIN_COMMUNAL` (VORRAUM drin — Erkennung flaggt PRIVATE Vorräume
+   communal!) · **R6** `mittellinie_snap._laengs_ausweichen`: nie AUF einem Bestands-Spot
+   („mitten in der Lampe"; <800 mm → Spot-Lückenmitte). **R1 ohne R6 war die EG-
+   „Verschlechterung"** · **R7** `entferne_wohnungs_vorraum_rz` („RZ NICHT in der Wohnung":
+   kleiner Stiegen-Vorraum <6 m², übrige Türen privat) · **R8** `stiegenhaus_rz_nachpass`
+   (RZ am stair_exit INS STGH an die Wand, Pfeil Richtung Stiegen-Zentrum = Abstieg;
+   Approximation). **Golden `platzierung_4og.json` R8-nachgezogen** (stgh_a-Exit-RZ
+   −71743/34491 → −72532.95/34144.15, unten/270).
+
+**Output:** `Projektbeispiele-demo-Platzierungslogik\nachgezeichnet_out\v4\` (EG/1OG A0-1:50-
+Blatt-PDF + Lichtberechnung + DXF, %%EOF geprüft). 1OG Lux **ERFÜLLT** (0,94 lx); EG 1/2
+(raum_13-Zacken, s.u.). v1 = Owner-Korrektur Runde 1, v3-1OG = Runde 2 (als Referenz behalten).
+Diff-Werkzeuge: `scratchpad/elektroplan_nachzeichnen/diff_korrektur*.py` (SIBEL-Symbole matchen
++ ROTE Texte extrahieren).
+
+**OFFEN / Resume 2026-09-12:**
+- **Push/PR** weiter ausstehend (Owner-GO) — jetzt 3 Commits mehr auf dem Branch.
+- **Außen-SL-Türachse** (Rest-Delta Runde 1, dem Owner angeboten): Außenleuchte vor dem Eingang
+  sitzt x=2875300 statt Türachse 2876126 (+830 mm) — Normalen-Ableitung in `aussen_strategy`.
+- **Selman-Nähte NEU:** (a) Müllraum-Südtür (140er) kommt als `tuer_21` mit von==nach==raum_12
+  → nicht als AUSSEN-Tür erkennbar; R2 setzt an der erkannten Ost-Öffnung statt Owner-Südtür;
+  (b) EG-Lux raum_13 Emin 0,03 lx = Polygon-Zacken (Mollgasse-Klasse); (c) **Stiegenlauf-
+  Geometrie** fehlt im Contract → R8-Pfeilrichtung nur Approximation; (d) private Wohnungs-
+  Vorräume kommen mit communal=True/fluchtweg=True aus der Erkennung (raum_1/raum_2/raum_5) —
+  R7 ist der Engine-Workaround.
+- Alles Weitere (Wissensabgleich-PR, F11/verkehr_scope, Brandabschnitt-Slice, Slice-3b,
+  Tool-Sichtung) im Stand vom 10.09. unten — unverändert offen.
+
+---
+
+## STAND (2026-09-10 SPÄTABEND) — Branch `leonis/demo-l-gebaeude` (basiert auf wissensabgleich→main), SYNC + Owner-Regeln + Demo.
 
 **AKTIVER Branch = `leonis/demo-l-gebaeude`.** 1173 grün, ruff clean, **NICHTS gepusht.**
 Enthält den ganzen Wissensabgleich (F01–F14 minus F11) + main-Sync + heutige Owner-Arbeit.
