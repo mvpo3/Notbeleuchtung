@@ -955,3 +955,281 @@ Bis zu deiner Antwort bleibt `raum_67` **untypisiert** mit dem Hinweis
 Zum Entscheiden brauchen wir von dir genau eine Aussage: **`E2-VF-11b` = auch
 `SCHLEUSE`** (dann ein zweiter Register-Eintrag) **oder ein anderer Typ** (dann
 welcher) **oder bleibt untypisiert**.
+
+## Auflage A — `lichte_quelle` mit dem ersten Erzeuger von `lichte_mm` (Enis, Contract 1.4.0)
+
+Stand 2026-09-12, Selman. Auflage von @EnisAMG zur Zustimmung `raum_modell`
+1.4.0: **„`lichte_quelle` samt Test spätestens mit dem ersten Erzeuger von
+`lichte_mm`."** Heute setzt **kein** Code `lichte_mm`: das Feld ist nur
+deklariert (`hauptengine/contracts/raum_modell.py:107`),
+`tests/raumerkennung/test_tueren.py:141` pinnt `lichte_mm is None`, und
+`lichte_quelle` ist bewusst nicht angelegt (`docs/ENIS_UEBERGABE_0908.md:744-745`
+— ohne Erzeuger wäre es ein totes Feld). Gemessen über die fünf Prüfpläne
+(612 Türen, echter Provider-Lauf): **`lichte_mm` gesetzt bei 0 Türen.**
+
+**Auslöser-Regel.** Wer `lichte_mm` zum ersten Mal auf einen Wert ungleich
+`None` setzt, legt **im selben PR** an:
+
+1. `Tuer.lichte_quelle: str | None = None` — Beleg im Format `text:<Beleg>`
+   oder `blockname:<Blockname>`, gesetzt genau dann, wenn `lichte_mm` gesetzt ist;
+2. den Test „kein `lichte_mm` ohne `lichte_quelle`; ohne Beleg bleibt
+   `lichte_mm` `None`" — **fertige Skizze unten**, Ziel
+   `tests/raumerkennung/test_tueren.py` neben dem None-Pin Z. 141;
+3. die Contract-Änderung mit `CONTRACT_VERSION`-Bump, `python
+   scripts/gen_schema.py` (Drift-Gate `tests/contract/test_schema_drift.py`) und
+   Approval aller drei Owner auf dem aktuellen Head (Check `contract-freeze`).
+
+Ein PR, der `lichte_mm` ohne 1.–3. setzt, bekommt kein Approval.
+
+**Wo der erste Erzeuger sitzen wird.** Gemessen an Muthgasse_E2, dem einzigen
+der fünf Prüfpläne mit Lichte-Angaben; die anderen vier haben 0 DL-Blöcke und
+0 `b/h`-Texte.
+
+| Beleg im Plan | Codestelle heute | Was dort fehlt |
+|---|---|---|
+| **Blockname mit `DL`**: 16 INSERTs in 15 Namen, `TU DF 1 - Umfassungszarge flächenbündig - DL - 800 x 2490` (einmal `x 2000`) | `raumerkennung/tueren.py::_block_tueren` Z. 92–98 — die einzige Stelle, an der ein Blockname zu einer `Tuer` mit Maß wird (`b = _breite_mm(e.dxf.name)` Z. 92, `Tuer(…, breite_quelle="BLOCKNAME" …)` Z. 93–98). Dort käme `lichte_mm=…, lichte_quelle=f"blockname:{e.dxf.name}"` dazu. | Die DL-Blöcke kommen dort **nicht an**: `_ist_tuer_block` (Z. 50–58, Filter Z. 89) liefert für alle 16 `False`, weil `_DOOR_HINT` (Z. 36) `TU DF` nicht kennt. 12 der 16 sieht die Pipeline heute nur über ihren Schwenkbogen, als `TuerOeffnung(quelle="arc", breite_mm=800.0, GEOMETRIE_SCHWENKRADIUS)` 400 mm neben dem INSERT (`tuer_oeffnungen` Z. 182–194); 1 in 1635 mm Abstand, 2 ohne Öffnung in der Nähe, 1 liegt 0 mm auf einem Türblock `…_95x200` (→ 950 mm BLOCKNAME). Der erste Erzeuger muss also die Tür-Erkennung Z. 36/50–58 mit erweitern — das ändert die Türmenge von Muthgasse und braucht einen Prüfstreckenlauf. |
+| **Texte `90` / `200`** neben einer der 83 Durchgangslichte-Fahnen (`docs/ENIS_UEBERGABE_0908.md:639-652`) | keine Stelle | Die Fahnen verwirft `_ist_tuer_block` Z. 51–57; übrig bleibt nur der Zähler `_verworfene_bloecke` (Z. 33), die Position geht verloren. „90/200" steht in keinem Prüfplan als **ein** Text (0 Treffer; Muthgasse hat 26 `b/h`-Einzeltexte, häufigster `45,5/100` 12×, keiner `90/200`). Ein Text-Erzeuger wäre eine neue Funktion neben `text_tueren` (`tueren.py:336-353`), aufgerufen in `provider.py::parse` nach Z. 135 (dort ist die Türmenge vollständig, IDs sind neu vergeben) und vor `typisiere_tueren` Z. 141. |
+
+**Kein Erzeuger-Kandidat:** `tuer_zuordnung.py:155-159` und `:217-222` liefern
+`GEOMETRIE_OEFFNUNG`, also die Rohbauöffnung, die systematisch **größer** als die
+Durchgangslichte ist (`ENIS_UEBERGABE_0908.md:622`). `provider.py:91-98` baut
+Türen aus `TuerOeffnung`; die Dataclass (`tueren.py:129-138`) hat kein
+Lichte-Feld, und der Pfad greift nur, wenn `tueren_aus_dxf` leer ist (Rennweg,
+0 DL-Blöcke).
+
+**Die heutigen 19 BLOCKNAME-INSERTs von Muthgasse tragen keinen einzigen
+DL-Token:** `…_1DF_90x200` 8, `…_1DF_95x200` 6, `FE TÜR 2 tlg … 1000 x 2550` 3,
+`2D_barrierefrei_Türbereich 150_200 - r75` 2. Damit ist § 6.2 der Übergabe
+(`ENIS_UEBERGABE_0908.md:625`, „die 18 BLOCKNAME-Türen trügen DL-Notation")
+**durch Messung widerlegt** — die `- DL -`-Blöcke sind gar keine Tür-Blöcke. Ob
+`90x200` die Durchgangslichte nennt, ist Enis' offene Frage 9
+(`ENIS_UEBERGABE_0908.md:848`); bis zur Antwort ist das kein Beleg und
+`lichte_mm` bleibt dort `None`. Ein Messpunkt dazu, ausdrücklich als
+Interpretation und nur ein Einzelfall: an einer Position liegt der DL-Block
+`DL - 800 x 2490` genau (0 mm) auf einem Türblock `…_95x200` (→ `breite_mm` 950).
+Beschreiben beide dieselbe Tür, kann `95x200` dort nicht die Durchgangslichte
+sein.
+
+**Randbedingung für den Parser:** `2D_barrierefrei_Türbereich 150_200 - r75`
+ergibt über die „erste Zahl"-Heuristik von `_breite_mm` (`tueren.py:77-83`)
+750 mm BLOCKNAME — das ist vermutlich ein Radius, nicht eine Türbreite
+(semantisch nicht geprüft). Ein Lichte-Parser darf diese Heuristik deshalb
+**nicht** übernehmen, sondern muss an den `DL`-Token gebunden sein.
+
+**Was der bestehende Riegel schon leistet — und was nicht.** `lichte_mm` ist
+über die Endung `_mm` automatisch Messfeld von
+`tests/contract/test_keine_erfundenen_masse.py` (`_messfelder()` Z. 48–58,
+nachgeprüft: `lichte_mm in MESSFELDER` = True). `Tuer(lichte_mm=900)` oder
+`t.lichte_mm or 900` wird damit rot (Z. 98–108). Ein aus Blockname oder Text
+**geparster** Wert ist aber kein Zahl-Literal und geht durch; ob er belegt ist,
+sieht der AST nicht. Genau diese Lücke schließt `lichte_quelle` samt Test.
+
+**Test-Skizze (fertig, nicht als lebende Testdatei eingecheckt).** Unverändert
+als Scratchpad-Kopie gegen den heutigen Code gelaufen: **`2 passed, 2 xfailed`**
+— die Invariante und der Negativfall sind heute grün, die beiden Positivfälle
+sind strict-xfail. Der Erzeuger-PR dreht sie auf XPASS (= rot) und muss die
+xfails entfernen.
+
+```python
+"""Auflage A (Enis, Contract 1.4.0): lichte_mm nur mit Beleg in lichte_quelle.
+
+Jede Tuer mit ``lichte_mm is not None`` traegt ``lichte_quelle`` im Format
+``text:<Beleg>`` oder ``blockname:<Blockname>``. Ohne Beleg bleibt lichte_mm
+None — nie aus breite_mm abgeleitet, kein Abschlag, kein Faktor.
+"""
+import re
+
+import ezdxf
+import pytest
+
+from notbeleuchtung.raumerkennung.dxf_load import lade_dxf
+from notbeleuchtung.raumerkennung.tueren import text_tueren, tueren_aus_dxf
+
+_LICHTE_QUELLE = re.compile(r"^(text|blockname):\S.*$")
+
+# echte Blocknamen aus Muthgasse_E2 (Projekte/_eingang/Muthgasse_E2.dxf)
+DL_BLOCK = ("TU DF 1 - Umfassungszarge flächenbündig - DL - 800 x 2490 "
+            "-Glas-V147-E 2 - FOK AF 300")
+FAHNE = ("HNP_Beschriftung Türen - AF 50 - Durchgangslichte_ Nummer_ "
+         "Brandschutz_ STUK oben Projekt-12188994-1")
+TUERBLATT = "HNP_T_BZ_1-DF - HNP_T32_BZ-S_H_EI230_1DF_90x200 WET-16703914-1"
+
+
+def _tueren(plan):
+    # ANPASSEN im Erzeuger-PR: die Kette aufrufen, die lichte_mm setzt.
+    t = tueren_aus_dxf(plan)
+    return t + text_tueren(plan, t)
+
+
+def _verstoesse(tueren) -> list[str]:
+    return [f"{t.id}: lichte_mm={t.lichte_mm} "
+            f"lichte_quelle={getattr(t, 'lichte_quelle', None)!r}"
+            for t in tueren
+            if t.lichte_mm is not None
+            and not _LICHTE_QUELLE.match(getattr(t, "lichte_quelle", None) or "")]
+
+
+@pytest.fixture
+def lichte_plan(tmp_path):
+    """Drei Tueren nebeneinander (je 6 m Abstand, ausserhalb _TEXT_TUER_NAH_MM):
+    (a) Blockname mit DL-Token, (b) Tuerblatt + Durchgangslichte-Fahne mit den
+    Texten "90"/"200" (so steht es in Muthgasse, ENIS_UEBERGABE_0908.md:639-652),
+    (c) Negativfall: Nennmass im Namen + ein b/h-Text OHNE Fahne."""
+    doc = ezdxf.new(setup=True)
+    doc.header["$INSUNITS"] = 4
+    msp = doc.modelspace()
+    for name, r in ((DL_BLOCK, 800), (TUERBLATT, 900), ("TÜR-80", 800)):
+        doc.blocks.new(name=name).add_arc((0, 0), r, 0, 90)
+    doc.blocks.new(name=FAHNE).add_line((0, 0), (0, 1200))
+    msp.add_blockref(DL_BLOCK, (2000, 4000))                        # (a)
+    msp.add_blockref(TUERBLATT, (8000, 4000))                       # (b)
+    msp.add_blockref(FAHNE, (8300, 4300))
+    msp.add_text("200", dxfattribs={"insert": (8300, 4400)})
+    msp.add_text("90", dxfattribs={"insert": (8300, 4450)})
+    msp.add_blockref("TÜR-80", (14000, 4000))                       # (c)
+    msp.add_text("45,5/100", dxfattribs={"insert": (14300, 4300)})
+    p = tmp_path / "lichte.dxf"
+    doc.saveas(str(p))
+    return lade_dxf(p)
+
+
+def _bei(tueren, x):
+    return [t for t in tueren if abs(t.xy_mm[0] - x) < 1500]
+
+
+def test_lichte_nur_mit_beleg(lichte_plan):
+    """Invariante — gilt heute (leer) und muss jeden kuenftigen Erzeuger ueberleben."""
+    assert not _verstoesse(_tueren(lichte_plan))
+
+
+def test_ohne_beleg_bleibt_lichte_none(lichte_plan):
+    (t,) = _bei(_tueren(lichte_plan), 14000)
+    assert t.breite_mm == 800.0 and t.breite_quelle == "BLOCKNAME"
+    assert t.lichte_mm is None          # nie aus breite_mm, nie aus "45,5/100"
+
+
+@pytest.mark.xfail(strict=True, reason="Auflage A: noch kein Erzeuger von lichte_mm")
+def test_blockname_dl_setzt_lichte_mit_quelle(lichte_plan):
+    (t,) = _bei(_tueren(lichte_plan), 2000)
+    assert t.lichte_mm == 800
+    assert t.lichte_quelle == f"blockname:{DL_BLOCK}"
+
+
+@pytest.mark.xfail(strict=True, reason="Auflage A: noch kein Erzeuger von lichte_mm")
+def test_text_an_fahne_setzt_lichte_mit_quelle(lichte_plan):
+    (t,) = _bei(_tueren(lichte_plan), 8000)
+    assert t.lichte_mm == 900
+    assert t.lichte_quelle.startswith("text:")
+```
+
+**Contract-Skizze (künftige Änderung, hier NICHT umgesetzt):**
+
+```python
+class Tuer(BaseModel):
+    ...
+    lichte_mm: int | None = None
+    # Beleg fuer lichte_mm: "text:<Beleg>" | "blockname:<Blockname>".
+    # Gesetzt genau dann, wenn lichte_mm gesetzt ist.
+    lichte_quelle: str | None = None
+```
+
+Dazu eine Zeile in `docs/CONTRACTS.md` bei den `tueren[]`-Punkten. Die
+Versionsstufe legt die 3-Owner-Runde fest (sie hängt auch davon ab, ob Auflage B
+vorher umgesetzt wird).
+
+**Offen, weil nicht aus dem Plan entscheidbar:** das Format von `text:<Beleg>`
+bei zusammengesetzten Angaben — in Muthgasse stehen `90` und `200` als getrennte
+Texte. `text:90/200` wäre zusammengesetzt und nicht wörtlich. Die Paarungsregel
+Fahne ↔ Texte ↔ Tür ist eine Interpretation und braucht Enis' Zustimmung.
+
+**Owner:** Erzeuger und Test = Selman (`raumerkennung/`); die Contract-Änderung
+braucht alle drei; die DL-Lesart entscheidet Enis.
+
+## Auflage B — `STANDARDWERT` ersatzlos streichen? (Vorschlag an Enis, Contract 1.4.0)
+
+Stand 2026-09-12, Selman. **Nur Vorschlag. Der Contract wird nicht ohne
+Abstimmung zu dritt geändert** (Check `contract-freeze`, CODEOWNERS). Hier ist
+nichts umgesetzt.
+
+@EnisAMG fragt als Auflage zur Zustimmung `raum_modell` 1.4.0, ob
+`STANDARDWERT` in `Tuer.breite_quelle` gebraucht wird. Unsere Antwort: **nein.**
+Der Wert hat seit dem Riegel gegen erfundene Maße keinen legitimen Erzeuger
+mehr, und im Modell hatte er nie einen.
+
+**Ist-Zählung über die fünf Prüfpläne** (echter Provider-Lauf, Stand `804e6af`,
+`src/` identisch mit `main` `e79276b`; Dumps je Plan aus
+`ArchitekturRaumProvider().parse(...)` wie `plan_pruefen.py:1169-1171`):
+
+| | Barawitzka_EG | Mollgasse_EG | Muthgasse_E2 | Rennweg_EG | Rennweg_OG3 | **Summe** |
+|---|--:|--:|--:|--:|--:|--:|
+| Türen | 106 | 147 | 291 | 41 | 27 | **612** |
+| `STANDARDWERT` | 0 | 0 | 0 | 0 | 0 | **0** |
+| `ATTRIBUT` | 0 | 0 | 0 | 0 | 0 | **0** |
+| BLOCKNAME | 0 | 40 | 18 | 0 | 0 | 58 |
+| GEOMETRIE_SCHWENKRADIUS | 36 | 27 | 28 | 10 | 3 | 104 |
+| GEOMETRIE_SUMME | 2 | 0 | 0 | 0 | 0 | 2 |
+| GEOMETRIE_OEFFNUNG | 68 | 76 | 170 | 30 | 24 | 368 |
+| UNBEKANNT | 0 | 4 | 75 | 1 | 0 | 80 |
+
+Dazu: `breite_mm is None` 80, davon **80 mit `breite_grund`**, 0 ohne;
+`breite_mm == 0.0` **0**; `lichte_mm` gesetzt **0**. Es gibt also **keine
+einzige Tür mit `STANDARDWERT`** — die Spalte ist über alle fünf Pläne leer.
+
+**Fundstellen, vollständig** (`grep -rIn`, auch ohne Groß-/Kleinschreibung, ohne
+`.venv`/`__pycache__`): `hauptengine/contracts/raum_modell.py:41` (Literal, mit
+dem Kommentar „Reserve; gehoert NICHT ins Modell (nur Render)"),
+`hauptengine/contracts/schema/raum_modell.schema.json:676` (generiert),
+`docs/CONTRACTS.md:13` (Spezifikation), dazu historisch
+`docs/ENIS_UEBERGABE_0908.md:581/:611/:735` und `docs/COORDINATION.md:371/:375`.
+**Erzeuger in `src/` und `scripts/`: 0. Tests: 0. Fixtures/JSON-Daten: 0.** Kein
+Code zählt das Vokabular auf; `BreiteQuelle` erscheint nur in
+`raum_modell.py:35` und `:105` sowie in einem Kommentar in `tueren.py:137`. Der
+einzige Leser von `breite_quelle` außerhalb des Modells,
+`scripts/plan_pruefen.py:982-983`, gibt den String nur aus.
+
+**Warum der Wert keinen legitimen Erzeuger mehr hat.**
+
+- Er war nie mehr als der Name für den Zeichen-Default des Renderers. Den gibt
+  es weiterhin, aber als benannte Konstante **außerhalb** des Modells:
+  `hauptengine/render/dxf_renderer.py:520` `_ZEICHEN_ERSATZBREITE_MM = 900.0`,
+  benutzt in `:533` (`breite = t.breite_mm or _ZEICHEN_ERSATZBREITE_MM`).
+  Kommentar `:515-519`: „ZEICHEN-ERSATZMASS, KEINE MESSUNG … reine Bildgroesse:
+  er wird nirgends zurueckgeschrieben, verlaesst `_draw_tueren` nicht und ist
+  KEIN Mass der Tuer." (Die Docs zitieren dafür noch die alte Zeile `:524`.)
+- Ein `STANDARDWERT`-Erzeuger im Modell müsste eine Zahl **ohne Messung** in
+  `breite_mm` schreiben. Genau das verbietet
+  `tests/contract/test_keine_erfundenen_masse.py`: „der Code erfindet keine
+  Masse. Fehlt eine Messung, ist das Feld `None` mit `quelle=UNBEKANNT` und
+  einem Grund — nie ein Default, nie ein Normwert, nie ein Mittelwert" (Z. 3–5),
+  durchgesetzt über `feld or <Zahl>` (Z. 98–103), `feld=<Zahl>` im Aufruf
+  (Z. 105–108) und `min/max(feld, <Zahl>)` (Z. 110–119). Für „nicht gemessen"
+  gibt es `UNBEKANNT` + `breite_grund` — 80 von 80 Fällen halten das ein.
+- **Grenze des Riegels, gemessen:** er erkennt nur Zahlen-**Literale** (`_zahl`
+  Z. 64–69) und prüft nur `src/**`. In einer Probe über 11 Muster fängt er 4;
+  `Tuer(breite_mm=_KONSTANTE, breite_quelle="STANDARDWERT")`,
+  `t.breite_mm = 900.0`, `model_copy(update=…)` und `x if y else 900.0` gehen
+  durch, und `breite_quelle` prüft er überhaupt nicht. Ein Enum-Wert, der genau
+  den verbotenen Fall benennt, lädt also dazu ein. Streichen macht daraus einen
+  Pydantic-`ValidationError` — ohne neuen Riegel.
+
+**Was eine Streichung berühren würde (nicht umgesetzt):**
+
+1. `hauptengine/contracts/raum_modell.py:41` — Zeile aus `BreiteQuelle`.
+2. `raum_modell.py:18` — `CONTRACT_VERSION`. Eine Einengung des Enums ist
+   formal **nicht** additiv (die Bumps bis 1.4.0 waren additiv). Datenbestand
+   mit dem Wert: 0. Die Stufe legt die 3-Owner-Runde fest.
+3. `contracts/schema/raum_modell.schema.json:676` — per `python
+   scripts/gen_schema.py` neu erzeugen; bis dahin ist
+   `tests/contract/test_schema_drift.py` rot.
+4. `docs/CONTRACTS.md:13` — den Wert aus der Aufzählung nehmen.
+5. Tests: keiner referenziert `STANDARDWERT`; außer dem Drift-Gate ist nichts
+   anzupassen. Optional ein Pin: `Tuer(…, breite_quelle="STANDARDWERT")` →
+   `ValidationError`.
+6. **Nicht anfassen:** die historischen Stellen (`ENIS_UEBERGABE_0908.md`,
+   `COORDINATION.md`) bleiben stehen und bekommen einen Nachtrag.
+   `dxf_renderer.py` (Leonis' Lane) ist nicht betroffen.
+7. Approval aller drei Owner auf dem Head des PR (`contract-freeze`).
+
+**Owner:** Contract = alle drei; die Entscheidung stößt Enis an. Der Vorschlag
+ist zusätzlich als Kommentar in PR #154 hinterlegt
+(`#154 issuecomment-5641436979`).
