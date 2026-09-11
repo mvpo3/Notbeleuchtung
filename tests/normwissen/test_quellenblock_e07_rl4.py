@@ -534,10 +534,16 @@ def test_rl4_tuerpruefung_bleibt_bis_zur_semantik_blockiert() -> None:
     Ein Vergleich wäre systematisch zu günstig. Der Messwert der Fixtures steht
     hier nur als Beobachtung, nicht als Freigabe.
 
-    Die Zahl ist **scharf** gepinnt (`== 4`, ausdrücklich nicht `>= 4`): ein
-    fünfter Schreibpfad soll rot werden statt still mitzulaufen. `befunde` zählt
+    Geprüft wird der **dokumentierte Bestand** und die **Gültigkeit seiner
+    Herkunftsnamen**: genau vier Einträge, ihre Reihenfolge, und dass jeder Name
+    im Contract-Vokabular `BreiteQuelle` vorkommt. `befunde` zählt
     **Bedeutungen**, nicht Codestellen — `tuer_zuordnung.py:158` und `:220`
     setzen dieselbe Bedeutung und stehen deshalb in **einem** Befund.
+
+    ⚠️ **Keine Erzeugerabdeckung.** Dieser Test liest die YAML und den Contract,
+    **nicht** den Erkennungscode: ein fünfter Schreibpfad in `raumerkennung/`
+    macht ihn **nicht** rot. Die Reichweite der Aussage ist der Stand in
+    `geprueft_gegen` — die Gegenprobe am Code bleibt Handarbeit.
     """
     import json
 
@@ -552,6 +558,7 @@ def test_rl4_tuerpruefung_bleibt_bis_zur_semantik_blockiert() -> None:
     ]
     # Die Namen sind nicht frei gewählt: sie müssen im Contract-Vokabular
     # `BreiteQuelle` stehen, sonst beschreibt die YAML etwas, das es nicht gibt.
+    # (Das prüft die Gültigkeit der Namen — nicht, ob jeder Erzeuger erfasst ist.)
     from typing import get_args
 
     from notbeleuchtung.hauptengine.contracts.raum_modell import BreiteQuelle
@@ -564,6 +571,7 @@ def test_rl4_tuerpruefung_bleibt_bis_zur_semantik_blockiert() -> None:
     # Der Doppelflügel-Befund darf nicht mit RL 4 Punkt 2.8.1 begründet werden.
     summe = next(b for b in herkunft["befunde"] if b["herkunft"] == "GEOMETRIE_SUMME")
     assert "NICHT die Zwei-Tueren-Regel" in summe["was"]
+    assert "NICHT den Erkennungscode" in herkunft["⚠_was_der_test_leistet"]
     assert "UNZULAESSIG" in herkunft["folge"]
     # „nicht gemessen" ist keine Messherkunft und steht deshalb außerhalb.
     keine = herkunft["keine_messung"]

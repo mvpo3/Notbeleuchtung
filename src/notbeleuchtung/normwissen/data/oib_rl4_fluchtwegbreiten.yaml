@@ -204,10 +204,17 @@ tuerbreite_herkunft:
   ⚠_zaehlweise: >
     `befunde` zaehlt BEDEUTUNGEN (Messherkuenfte) des Feldes `Tuer.breite_mm`,
     nicht Codestellen: misst eine zweite Stelle dieselbe Groesse, steht sie als
-    weitere Fundstelle IM SELBEN Befund. Die Zahl ist in
-    tests/normwissen/test_quellenblock_e07_rl4.py scharf gepinnt (== 4, nicht
-    >= 4), damit ein fuenfter Schreibpfad rot wird statt still mitzulaufen.
-    Die Namen sind das Vokabular von `BreiteQuelle` (Contract 1.4.0).
+    weitere Fundstelle IM SELBEN Befund. Die Namen stammen aus dem Vokabular
+    `BreiteQuelle` (Contract 1.4.0).
+  ⚠_was_der_test_leistet: >
+    tests/normwissen/test_quellenblock_e07_rl4.py pinnt den hier
+    DOKUMENTIERTEN Bestand: genau vier Eintraege, ihre Reihenfolge, und dass
+    jeder Name im Contract-Vokabular `BreiteQuelle` vorkommt. Der Test liest
+    diese Datei und den Contract — NICHT den Erkennungscode.
+    ⚠️ Ein fuenfter Schreibpfad in `raumerkennung/` macht ihn deshalb NICHT rot;
+    er faellt erst auf, wenn jemand den Code erneut gegen diese Datei prueft.
+    Der Stand, gegen den zuletzt geprueft wurde, steht in `geprueft_gegen` —
+    er ist die Reichweite der Aussage, keine laufende Ueberwachung.
   befunde:
     - herkunft: BLOCKNAME
       pfad: "tueren.py::_breite_mm (:69); gesetzt in :95 und :173"
