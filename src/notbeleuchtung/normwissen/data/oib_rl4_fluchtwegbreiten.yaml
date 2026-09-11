@@ -197,25 +197,58 @@ tueren:
 
 # ── Herkunft des vorhandenen Feldes `Tuer.breite_mm` (geprueft am Code) ───
 tuerbreite_herkunft:
-  geprueft_gegen: "origin/main 4c5df91, src/notbeleuchtung/raumerkennung/tueren.py und tuer_zuordnung.py"
+  geprueft_gegen: >
+    origin/main e79276b (Contract `raum_modell` 1.4.0),
+    src/notbeleuchtung/raumerkennung/tueren.py und tuer_zuordnung.py.
+    Zeilenangaben beziehen sich auf genau diesen Stand.
+  ⚠_zaehlweise: >
+    `befunde` zaehlt BEDEUTUNGEN (Messherkuenfte) des Feldes `Tuer.breite_mm`,
+    nicht Codestellen: misst eine zweite Stelle dieselbe Groesse, steht sie als
+    weitere Fundstelle IM SELBEN Befund. Die Zahl ist in
+    tests/normwissen/test_quellenblock_e07_rl4.py scharf gepinnt (== 4, nicht
+    >= 4), damit ein fuenfter Schreibpfad rot wird statt still mitzulaufen.
+    Die Namen sind das Vokabular von `BreiteQuelle` (Contract 1.4.0).
   befunde:
-    - pfad: "tueren.py::_breite_mm"
+    - herkunft: BLOCKNAME
+      pfad: "tueren.py::_breite_mm (:69); gesetzt in :95 und :173"
       was: >
         NENNBREITE aus dem Blocknamen: die erste Zahl im cm-Tuerbereich 60-130
         wird mal 10 genommen ("TUER-80" -> 800 mm), alternativ ein mm-Mass
         600-1300. Das ist ein Bestell-/Nennmass des Tuerblatts.
-    - pfad: "tueren.py::_breite_mm (Oeffnungs-Marker)"
+    - herkunft: GEOMETRIE_SCHWENKRADIUS
+      pfad: "tueren.py::_arc_tueren (:110); Blockwalk-Fallback (:175); Blockwalk-ARC (:194)"
       was: >
-        Traegt der Block einen Oeffnungs-Marker, wird 0.0 zurueckgegeben —
-        ⚠️ 0.0 bedeutet KEINE MESSUNG, nicht "Breite null".
-    - pfad: "tuer_zuordnung.py:155"
+        TUERBLATTBREITE aus dem Radius des Schwenkbogens (ARC). Gemessen wird das
+        Blatt, nicht die lichte Oeffnung — beim geoeffneten Blatt ist die Lichte
+        um Anschlag, Blattdicke und Zargenfalz kleiner. Keine belegte Umrechnung.
+    - herkunft: GEOMETRIE_SUMME
+      pfad: "tueren.py::verschmelze_doppelfluegel (:264); gesetzt in :299"
       was: >
-        Auf einem anderen Pfad wird die Breite aus der Geometrie gerundet
-        uebernommen — also eine dritte Herkunft im selben Feld.
+        SUMME der beiden Blattbreiten eines Doppelfluegels
+        (`breite_mm = t1.breite_mm + t2.breite_mm`), OHNE Abzug des
+        Mittelstosses. ⚠️ Die Zusammenfuehrung loest ein CAD-Problem (eine Tuer,
+        zwei gezeichnete Blaetter) und ist NICHT die Zwei-Tueren-Regel aus
+        RL 4 Punkt 2.8.1 — siehe `tueren.im_verlauf_von_fluchtwegen.zwei_tueren_regel`.
+    - herkunft: GEOMETRIE_OEFFNUNG
+      pfad: "tuer_zuordnung.py:158 (Innendurchgang) und :220 (Aussenwandoeffnung)"
+      was: >
+        Lichte WANDOEFFNUNG aus der Geometrie, gerundet. ⚠️ Ein Befund, ZWEI
+        Fundstellen: beide Stellen setzen dieselbe Bedeutung und unterscheiden
+        sich nur im Ort. Rohbaumass ohne Zarge, systematisch GROESSER als die
+        Durchgangslichte.
+  keine_messung:
+    pfad: "tueren.py::_breite_mm (Oeffnungs-Marker)"
+    was: >
+      Traegt der Block einen Oeffnungs-Marker, wird 0.0 zurueckgegeben —
+      ⚠️ 0.0 bedeutet KEINE MESSUNG, nicht "Breite null".
+    ⚠_kein_befund: >
+      Steht bewusst NICHT in `befunde`: das ist keine Messherkunft, sondern der
+      Fall "nicht gemessen". Er wird deshalb getrennt gefuehrt und getrennt
+      geprueft.
   folge: >
-    ⚠️ `Tuer.breite_mm` traegt heute mindestens drei verschiedene Bedeutungen
-    (Nennmass aus dem Namen, geometrisch abgeleitetes Mass, 0.0 = unbekannt) und
-    ist in keinem Fall die von RL 4 verlangte NUTZBARE DURCHGANGSLICHTE als
+    ⚠️ `Tuer.breite_mm` traegt heute vier verschiedene Messherkuenfte
+    (Nennmass aus dem Namen, Schwenkradius, Doppelfluegel-Summe, Wandoeffnung)
+    und ist in keinem Fall die von RL 4 verlangte NUTZBARE DURCHGANGSLICHTE als
     Fertigmass. Ein Vergleich mit den 80/90/100-cm-Werten ist deshalb HEUTE
     UNZULAESSIG — er wuerde ein Nennmass gegen ein lichtes Fertigmass pruefen und
     systematisch zu guenstig ausfallen (Zarge und Blatt fehlen).
