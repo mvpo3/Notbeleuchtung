@@ -31,6 +31,10 @@ class PlatzierungsKontext:
     i_cd_fn: Callable | None = None
     #: catalog_key → Lichtstärke-Callable je Leuchtenfamilie (Registry-Katalog).
     i_cd_fn_je_key: Mapping[str, Callable] = field(default_factory=dict)
+    #: R1 (Owner-Korrektur 2026-09-11): Positionen der BESTANDS-Allgemeinbeleuchtung
+    #: (mm, z.B. Spot-Reihe der Architektur-Unterlage) — Gang-Notleuchten werden auf
+    #: deren Linie gesnappt („immer in einer Linie mit der Beleuchtung"). Leer = Bbox-Mitte.
+    bestand_leuchten_mm: tuple[tuple[float, float], ...] = ()
 
 
 #: Leerer Default — Strategien ohne expliziten Kontext verhalten sich wie bisher.

@@ -59,6 +59,11 @@ _RZ_INS_RAUM_MM = 150.0
 #: `ABSTELLRAUM`, nicht `KINDERWAGENRAUM` — bis die Erkennung den Typ erhält,
 #: greift diese Regel nur, wo der Plan den Literal `KINDERWAGENRAUM` führt
 #: (docs/COORDINATION.md 2026-09-07).
+#: Owner-Korrektur 2026-09-11 (AutoCAD-Diff Elektroplan DE, „Hier hast du es
+#: vergessen" am Fahrradraum): zusätzlich greift die Regel für ABSTELLRAUM mit
+#: `ist_communal=True` — der GEMEINSAME Abstell-/Fahrradraum ist dieselbe Klasse
+#: fensterloser Nebenraum; der PRIVATE Wohnungs-Abstellraum (ist_communal=False)
+#: bleibt bewusst draußen (Owner-Entscheid 2026-09-07 unverändert).
 _TUERLEUCHTE_RAUMTYPEN = {"TECHNIK", "MUELLRAUM", "KINDERWAGENRAUM"}
 #: Symbol = din-AP3-Antipanikleuchte, die in der SICHERHEITSLEUCHTEN-Rolle als
 #: Universal-Leuchte verwendet wird (Rolle ≠ Produkt) — die knowledge-gestützte
@@ -280,7 +285,11 @@ def tuerleuchte_pflichtraeume(raum: RaumModell, norm: NormProvider) -> list[Plat
     (`fuer_fluchtweg_abschnitt`); die Provenienz `QUELLE_TUERLEUCHTE` markiert, dass die
     PLATZIERUNG Referenz-Praxis ist (die Norm mandatiert sie in diesen Räumen nicht).
     """
-    pflicht = [r for r in raum.raeume if (r.raum_typ or "").upper() in _TUERLEUCHTE_RAUMTYPEN]
+    pflicht = [
+        r for r in raum.raeume
+        if (r.raum_typ or "").upper() in _TUERLEUCHTE_RAUMTYPEN
+        or ((r.raum_typ or "").upper() == "ABSTELLRAUM" and r.ist_communal)
+    ]
     if not pflicht:
         return []
     assign_building = _building_assigner(
@@ -350,4 +359,119 @@ def tuerleuchte_pflichtraeume(raum: RaumModell, norm: NormProvider) -> list[Plat
                 norm_quelle=QUELLE_TUERLEUCHTE,
             )
         )
+    return out
+
+
+#: R2 (Owner-Korrektur 2026-09-11, AutoCAD-Diff Elektroplan DE): max. Abstand, in dem ein
+#: bereits modellierter Ausgang die AUSSEN-Tür „abdeckt" (dann setzt der Anker-Pfad das
+#: Exit-RZ, keine Dublette hier).
+_AUSSEN_TUER_AUSGANG_MM = 2000.0
+
+
+def aussen_tuer_rz(raum: RaumModell, norm: NormProvider) -> list[Platzierung]:
+    """R2 (Owner-Korrektur 2026-09-11, „Hier ist der Ausgang vom Müllraum"): eine Tür
+    von einem COMMUNAL Raum nach AUSSEN ist ein Notausgang und trägt ein Rettungszeichen
+    (EN 1838 §4.1.2 g) — Pfeil DURCH die Tür nach draußen, ~150 mm im Raum-Inneren
+    (gleiches Muster wie das Tür-RZ der Pflichträume).
+
+    Bewusst NUR communal (Müll-/Fahrrad-/Technikraum-Außentüren): Balkon-/Terrassentüren
+    privater Räume sind KEINE Notausgänge. Türen mit `tuer_detail="hauseingang"` und
+    Türen, die ein modellierter Ausgang schon abdeckt, überspringt die Regel (der
+    Anker-Pfad setzt dort das Exit-RZ)."""
+    kandidaten = []
+    for t in raum.tueren:
+        seiten = {t.von_raum, t.nach_raum}
+        if "AUSSEN" not in seiten or getattr(t, "tuer_detail", None) == "hauseingang":
+            continue
+        innen_id = next((s for s in (t.von_raum, t.nach_raum) if s != "AUSSEN"), None)
+        r = next((x for x in raum.raeume if x.id == innen_id), None)
+        if r is None or not r.ist_communal or len(r.polygon_mm) < 3:
+            continue
+        if any(
+            math.hypot(a.xy_mm[0] - t.xy_mm[0], a.xy_mm[1] - t.xy_mm[1]) <= _AUSSEN_TUER_AUSGANG_MM
+            for a in raum.ausgaenge
+        ):
+            continue
+        kandidaten.append((t, r))
+    if not kandidaten:
+        return []
+    assign_building = _building_assigner(
+        [find_center_visual(r.polygon_mm)[0] for r in raum.raeume if len(r.polygon_mm) >= 3]
+    )
+    out: list[Platzierung] = []
+    for t, r in kandidaten:
+        tx, ty = t.xy_mm
+        zentrum = find_center_visual(r.polygon_mm)
+        dx, dy = tx - zentrum[0], ty - zentrum[1]     # Raum-Inneres → Tür = Fluchtrichtung raus
+        if math.hypot(dx, dy) < 50.0:
+            continue                                   # fail-closed: Richtung unbestimmbar
+        anf = norm.fuer_fluchtweg_abschnitt(
+            FluchtwegSegment(segment_id=f"aussen_tuer_{t.id}", polyline_mm=[(tx, ty)], reason="exit")
+        )
+        rz_key, _ = _select_key(anf.symbol_katalog_keys, "unten")
+        _n = math.hypot(dx, dy)
+        out.append(
+            Platzierung(
+                xy_mm=(tx - dx / _n * _RZ_INS_RAUM_MM, ty - dy / _n * _RZ_INS_RAUM_MM),
+                catalog_key=rz_key,
+                rotation_deg=_rotation_zur_tuer(dx, dy),
+                mirror_x=False,
+                height_mm=float(anf.montagehoehe_mm),
+                kind="rz",
+                richtung="unten",
+                circuit_hint=f"AGV-{assign_building(tx)}-F{_AGV_SV_F}",
+                covers_segment=[],
+                norm_quelle=anf.quelle,
+            )
+        )
+    return out
+
+
+#: R4 (Owner-Korrektur 2026-09-11): Suchradien des Hauseingang-Pfeil-Nachpasses.
+_HAUSEINGANG_RZ_MM = 1500.0     # RZ gilt als „an der Tür", wenn näher als das
+_HAUSEINGANG_EXIT_MM = 3500.0   # nächster modellierter Ausgang = Fluchtziel-Referenz
+
+
+def pfeil_durch_hauseingang(
+    platzierungen: list[Platzierung], raum: RaumModell
+) -> list[Platzierung]:
+    """R4 (Owner-Korrektur 2026-09-11, „Pfeil zeigt Richtung Ausgang, nicht wohin die
+    Tür aufgeht"): das RZ an einer Tür mit `tuer_detail="hauseingang"` zeigt in
+    FLUCHTRICHTUNG durch die Tür nach draußen — nie in die Aufschlagrichtung.
+
+    Rotations-Nachpass: Fluchtrichtung = Vektor zum nächsten modellierten Ausgang
+    (primär), sonst Tür-Position minus RZ-Position (durch die Tür). Nur Pfeil-unten-
+    Basis-RZ (Rotation trägt die Richtung); Tür-RZ der Pflichträume bleiben unberührt."""
+    eingaenge = [t for t in raum.tueren if getattr(t, "tuer_detail", None) == "hauseingang"]
+    if not eingaenge:
+        return platzierungen
+    out: list[Platzierung] = []
+    for p in platzierungen:
+        if p.kind != "rz" or p.richtung != "unten" or p.norm_quelle == QUELLE_TUERLEUCHTE:
+            out.append(p)
+            continue
+        tuer = min(
+            eingaenge,
+            key=lambda t: math.hypot(t.xy_mm[0] - p.xy_mm[0], t.xy_mm[1] - p.xy_mm[1]),
+        )
+        if math.hypot(tuer.xy_mm[0] - p.xy_mm[0], tuer.xy_mm[1] - p.xy_mm[1]) > _HAUSEINGANG_RZ_MM:
+            out.append(p)
+            continue
+        exits = [
+            a for a in raum.ausgaenge
+            if math.hypot(a.xy_mm[0] - tuer.xy_mm[0], a.xy_mm[1] - tuer.xy_mm[1])
+            <= _HAUSEINGANG_EXIT_MM
+        ]
+        if exits:
+            ziel = min(
+                exits,
+                key=lambda a: math.hypot(a.xy_mm[0] - tuer.xy_mm[0], a.xy_mm[1] - tuer.xy_mm[1]),
+            )
+            dx, dy = ziel.xy_mm[0] - p.xy_mm[0], ziel.xy_mm[1] - p.xy_mm[1]
+        else:
+            dx, dy = tuer.xy_mm[0] - p.xy_mm[0], tuer.xy_mm[1] - p.xy_mm[1]
+        if math.hypot(dx, dy) < 50.0:
+            out.append(p)
+            continue
+        out.append(p.model_copy(update={"rotation_deg": _rotation_zur_tuer(dx, dy)}))
     return out
