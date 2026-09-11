@@ -117,6 +117,20 @@ _EXTRA_DIRECT: dict[str, tuple[str, bool, bool]] = {
     # flur", VOKABULAR.md Track C) — wie GANG/VORRAUM Fluchtweg + communal.
     "aufzugsvorplatz": ("AUFZUGSVORPLATZ", True, True),
     "aufzugsvorraum": ("AUFZUGSVORPLATZ", True, True),
+    # Schleuse = Rauch-/Brandschutzschleuse vor dem Stiegenkern, Erschließungs-
+    # fläche → wie GANG/STIEGENHAUS/AUFZUGSVORPLATZ Fluchtweg + communal
+    # (Entscheidung Enis 2026-09-11, docs/VOKABULAR.md §1). Das AUSGESCHRIEBENE
+    # Wort ist eindeutig und darf hier stehen; das mehrdeutige Kürzel »Schl.«
+    # NICHT — das löst `kuerzel_entscheid.py` nur mit Beleg + Owner-Entscheidung
+    # je Stempelnummer auf. Gemessen 2026-09-12: Token `schleuse` kommt in den
+    # fünf PRÜFPLÄNEN 0× vor (inkl. Blocknamen, ATTRIBs, Blocktexte) — dort
+    # ändert dieser Eintrag nichts. ACHTUNG, darüber hinaus gilt das NICHT: im
+    # Gesamtkorpus tragen 2 Stempel den ausgeschriebenen Namen `SCHLEUSE`
+    # (`Projekte/_ergebnis_alle/2.Kellergeschoß/raeume.json:18` und `:379`,
+    # bisher `typ: null`); dort ändert der Eintrag Typ, Flags und damit
+    # Türtypisierung und Ausgänge. NICHT nachgemessen — der Quellplan liegt
+    # nicht in `Projekte/_eingang` (nur die fünf Prüfpläne, `*.dxf` gitignored).
+    "schleuse": ("SCHLEUSE", True, True),
 }
 
 # Labels, die der Port FALSCH typen würde (Kompositum-Kopf „…küche" → KITCHEN):

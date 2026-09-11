@@ -1233,14 +1233,16 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
 
 # ---------------------------------------------------------------- Hauptlauf
 
-def _raum_kaskade(plan: DxfPlan, stempel) -> tuple[list[Zuordnung], list, list, dict, str]:
+def _raum_kaskade(plan: DxfPlan,
+                  stempel) -> tuple[list[Zuordnung], list, list, dict, str, list[str]]:
     """Raum-Kaskade L→H→F→R — Orchestrierung liegt in ``raumerkennung.kaskade``.
 
     Eine Quelle der Wahrheit: Prüfstrecke und ``ArchitekturRaumProvider.parse``
-    rufen dieselbe ``raeume_aus_kaskade``.
+    rufen dieselbe ``raeume_aus_kaskade``. Letztes Element sind die Hinweise der
+    Kürzel-Auflösung (``kuerzel_entscheid``) — nur durchgereicht, für bericht.md.
     """
     e = raeume_aus_kaskade(plan, stempel)
-    return e.zuordnungen, e.raeume, e.rest_raeume, e.quelle, e.kette
+    return e.zuordnungen, e.raeume, e.rest_raeume, e.quelle, e.kette, e.hinweise
 
 
 #: Raumtyp → (Füllfarbe, Konturfarbe) fürs 02-Bild.
@@ -1305,7 +1307,8 @@ def plan_pruefen(dxf: Path) -> dict:
 
     plan = lade_dxf(dxf)
     stempel = finde_stempel(plan)
-    zuordnungen, raeume, rest_r, quelle, raum_quelle = _raum_kaskade(plan, stempel)
+    (zuordnungen, raeume, rest_r, quelle, raum_quelle,
+     kuerzel_hinweise) = _raum_kaskade(plan, stempel)
     rest = restflaechen(raeume, zuordnungen) + rest_r
     rot, rot_vermerk = _rotation(plan)
 
@@ -1400,7 +1403,7 @@ def plan_pruefen(dxf: Path) -> dict:
     rest_untyp = len(rest_r) - rest_typ
     _bericht(ziel / "bericht.md", name, zuordnungen, rest, raum_quelle,
              rot_vermerk, iou_zeilen, iou_mittel, laufzeit, len(raeume),
-             material_block + f3["md"], quelle)
+             material_block + f3["md"], quelle, kuerzel_hinweise)
     flags = sum(1 for z in zuordnungen if z.flag != "ok")
     # Zählung aus derselben Quelle wie raeume.json: Stempel-Einträge + Rest-Einträge.
     rest_n = sum(1 for e in eintraege if e["flag"] == "kein_stempel")
@@ -1422,7 +1425,8 @@ def _bericht(pfad: Path, name: str, zuordnungen: list[Zuordnung], rest,
              raum_quelle: str, rot_vermerk: str,
              iou_zeilen, iou_mittel, laufzeit: float, n_raeume: int = 0,
              material_block: list[str] | None = None,
-             quelle: dict | None = None) -> None:
+             quelle: dict | None = None,
+             kuerzel_hinweise: list[str] | None = None) -> None:
     quelle = quelle or {}
     l = [f"# Prüfbericht {name}", "",
          f"Raum-Polygon-Quelle: `{raum_quelle}` — {rot_vermerk}", ""]
@@ -1455,6 +1459,12 @@ def _bericht(pfad: Path, name: str, zuordnungen: list[Zuordnung], rest,
              if z.abweichung_prozent is not None and abs(z.abweichung_prozent) > 10]
     l += ["", f"## Warnungen ({len(warn)})", ""]
     l += [f"- {w}" for w in warn] or ["- keine"]
+    # Mehrdeutige Stempel-Kürzel: was typisiert wurde UND was bewusst untypisiert
+    # bleibt (kein Zusatzbeleg / Entscheidung ausstehend) — sonst wäre die
+    # Nicht-Typisierung im Bericht unsichtbar.
+    if kuerzel_hinweise:
+        l += ["", f"## Hinweise Kürzel-Auflösung ({len(kuerzel_hinweise)})", ""]
+        l += [f"- {h}" for h in kuerzel_hinweise]
     ausbruch = [z for z in zuordnungen
                 if z.flag == "flutung_unsicher" and z.raum is not None
                 and z.abweichung_prozent is not None and z.abweichung_prozent > 200]
