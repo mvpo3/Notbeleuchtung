@@ -29,6 +29,18 @@ Artefakte aus ``durchgaenge_ohne_tuerblatt`` (Breiten bis 4862 mm — es gibt ke
 Polygonpunkte, 41,3 m², überlappte fünf STIEGENHAUS-Polygone zu 28–41 % und
 ``raum_79``/LIFT zu 99 %) und den Räumen, die er überdeckte. Kein Regressions-
 fehler in ``tuer_typisierung.py`` (zwischen beiden Ständen byte-identisch).
+
+Nachtrag 2026-09-12 (SCHLEUSE-Typisierung, ``raumerkennung/kuerzel_entscheid``):
+die Zahlen oben bleiben als Ist ihres Standes stehen. Neu gemessen, nachdem
+``raum_65`` (Stempelnummer ``E2-VF-11a``) als SCHLEUSE typisiert wird:
+**101 Stempel** -- 99 mit Typ, dazu 2 bewusst TYPLOSE Kuerzel-Stempel
+»Schl.« (die Invariante "jeder Stempel traegt einen Typ" gilt damit nicht
+mehr; das Band ``>= 98`` bleibt unveraendert) · **7 stair_exit** statt 5 (neu
+``exit_tuer_50`` und ``exit_durchgang_141``, beide an ``raum_65``) ·
+5 final_exit · **209/291 Tueren typisiert = 71,8 %** statt 205/291 ·
+**148 Segmente** statt 143 · 113 Raeume, 104 typisiert · 9 Stiegenhaeuser.
+Kein Band nachgezogen, kein xfail gedreht: 7 < 9, kein stair_exit sitzt auf
+einer echten Blocktuer, 71,8 % < 90 %.
 """
 from pathlib import Path
 
@@ -107,7 +119,9 @@ def test_soll_raeume_tueren_ausgaenge(rm):
     "Das Band bleibt bei 9 und wird NICHT abgesenkt: siehe Docstring — es gibt "
     "keinen gemessenen Ersatz-Zielwert, nur den Ist-Stand, und aus dem Ist "
     "abgeleitete Bänder sind hier verboten. Der fachlich belegte Zielwert steht "
-    "in test_soll_stair_exit_aus_echter_blocktuer (≥ 1, Ist 0).",
+    "in test_soll_stair_exit_aus_echter_blocktuer (≥ 1, Ist 0). Nachtrag "
+    "2026-09-12: nach der SCHLEUSE-Typisierung von raum_65 sind es 7 statt 5 "
+    "stair_exit — weiter unter 9, Band unverändert.",
 )
 def test_soll_stair_exits(rm):
     """Zahlenband ohne fachliche Deckung — bewusst unverändert stehen gelassen.
@@ -184,7 +198,9 @@ def test_soll_echte_blocktueren_im_modell(plan, rm):
     "Block hat keine eine STIEGENHAUS-Seite; alle 5 stair_exit ruhen auf "
     "Kontaktzonen-Artefakten aus durchgaenge_ohne_tuerblatt. Der frühere "
     "Anker tuer_50 ist widerlegt (keine Blocktür, 780,5 mm zum nächsten "
-    "A-DOOR-INSERT) — Belege in docs/ENIS_UEBERGABE_0908.md § 13.7.",
+    "A-DOOR-INSERT) — Belege in docs/ENIS_UEBERGABE_0908.md § 13.7. Nachtrag "
+    "2026-09-12: mit der SCHLEUSE-Typisierung sind es 7 stair_exit (vorher 5), "
+    "davon 0 auf einer echten Blocktür — der Befund ist unverändert.",
 )
 def test_soll_stair_exit_aus_echter_blocktuer(plan, rm):
     """Fachliches Zielbild als Ersatz für das reine Zählband oben.
@@ -245,6 +261,37 @@ def test_soll_90_prozent_tueren_typisiert(rm):
     typ = sum(1 for t in rm.tueren if t.tuer_detail)
     assert rm.tueren and typ / len(rm.tueren) >= 0.9, (
         f"nur {typ}/{len(rm.tueren)} Türen typisiert")
+
+
+def test_soll_schl_nur_mit_entscheidung_typisiert(rm):
+    """`Schl.` typisiert NUR dort, wo eine Owner-Entscheidung vorliegt.
+
+    Entscheidung Enis 2026-09-11 (docs/OFFENE_FRAGEN.md): Stempelnummer
+    `E2-VF-11a` = SCHLEUSE. Die Lagen sind die gemessenen MTEXT-Positionen der
+    beiden `Schl.`-Stempel auf `A-AREA-IDEN` (Inventar 2026-09-11):
+    335 239 / 108 646 (`E2-VF-11a`, 13,04 m²) und 333 017 / 97 219
+    (`E2-VF-11b`, 3,73 m² — Entscheidung ausstehend, bleibt untypisiert).
+
+    Der zweite Punkt liegt in ZWEI Räumen (zu 99,3 % im F-Artefakt `raum_88`,
+    STIEGENHAUS) — deshalb wird nicht auf „untypisiert" geprüft, sondern
+    darauf, dass dort KEIN Raum SCHLEUSE trägt.
+    """
+    from shapely.geometry import Point, Polygon
+
+    def deckende(xy):
+        p = Point(xy)
+        return [r for r in rm.raeume if len(r.polygon_mm) >= 3
+                and Polygon(r.polygon_mm).buffer(0).covers(p)]
+
+    entschieden = deckende((335239.0, 108646.0))
+    assert entschieden, "kein Raum an der Lage von E2-VF-11a"
+    assert any(r.raum_typ == "SCHLEUSE" for r in entschieden), (
+        "E2-VF-11a nicht als SCHLEUSE typisiert: "
+        + repr([(r.id, r.raum_typ) for r in entschieden]))
+    offen = deckende((333017.0, 97219.0))
+    assert not any(r.raum_typ == "SCHLEUSE" for r in offen), (
+        "E2-VF-11b typisiert, obwohl die Entscheidung aussteht: "
+        + repr([(r.id, r.raum_typ) for r in offen]))
 
 
 def test_soll_keine_beschriftungsfahnen_als_tueren(plan, rm):

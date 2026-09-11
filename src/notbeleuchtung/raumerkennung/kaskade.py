@@ -19,6 +19,7 @@ from shapely.geometry import Point, Polygon
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
 
 from .dxf_load import DxfPlan
+from .kuerzel_entscheid import kandidat_kuerzel, loese_kuerzel
 from .raumlayer import raeume_aus_hatch, raeume_aus_layer
 from .raumtyp import raumtyp_flags
 from .rest_komponenten import komponenten_ohne_stempel
@@ -48,6 +49,9 @@ class KaskadeErgebnis:
     kette: str = ""
     wandkoerper: list[Wandkoerper] = field(default_factory=list)
     tueroeffnungen: list[TuerOeffnung] = field(default_factory=list)
+    # Klartext-Hinweise der Kürzel-Auflösung (`kuerzel_entscheid`) — auch für die
+    # NICHT typisierten Fälle; der Prüfbericht druckt sie.
+    hinweise: list[str] = field(default_factory=list)
 
     @property
     def alle_raeume(self) -> list[Raum]:
@@ -142,6 +146,19 @@ def raeume_aus_kaskade(plan: DxfPlan,
         z.raum.raum_typ = typ
         z.raum.ist_fluchtweg = z.raum.ist_fluchtweg or flucht
         z.raum.ist_communal = z.raum.ist_communal or communal
+    # Mehrdeutige Stempel-Kürzel (»Schl.«) NACH der Typ-Rückschreibung auflösen:
+    # nur Räume, die dort keinen Typ bekommen haben, und nur mit Zusatzbeleg UND
+    # Owner-Entscheidung für genau diese Stempelnummer (`kuerzel_entscheid`).
+    # Im Fehlerschutz wie die Rest-Stufe darunter: das ist Zusatz-Typisierung,
+    # ein Fehler darin darf keinen Plan-Lauf killen.
+    hinweise: list[str] = []
+    try:
+        kand = [(z.raum, z.stempel) for z in zuord
+                if z.raum is not None and not (z.raum.raum_typ or "").strip()
+                and kandidat_kuerzel(z.stempel.name or "")]
+        hinweise = loese_kuerzel(plan, kand, raeume)
+    except Exception as exc:  # noqa: BLE001 — Kürzel-Auflösung darf den Lauf nie killen
+        print(f"   kuerzel_entscheid fehlgeschlagen: {exc}")
     belegte = [r.polygon_mm for r in raeume if len(r.polygon_mm) >= 3]
     try:
         rest_r = komponenten_ohne_stempel(plan, wk, oeff, belegte)
@@ -155,4 +172,4 @@ def raeume_aus_kaskade(plan: DxfPlan,
              f"F:{n.get('F', 0)} R:{n.get('R', 0)}")
     return KaskadeErgebnis(zuordnungen=zuord, raeume=raeume, rest_raeume=rest_r,
                            quelle=quelle, kette=kette, wandkoerper=wk,
-                           tueroeffnungen=oeff)
+                           tueroeffnungen=oeff, hinweise=hinweise)

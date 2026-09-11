@@ -860,3 +860,98 @@ ist eine getrennte Vokabularfrage und nicht Teil dieser Entscheidung.
 **Owner: Enis (`normwissen/`).** Bis zur Antwort bleiben `raum_65` und
 `raum_67` untypisiert, der `xfail` bleibt stehen, und es entsteht **kein neuer
 Kanon-Typ**.
+
+### Entscheidung `Schl.` (Enis, 2026-09-11) + Entscheidungsvorlage für die übrigen Vorkommen
+
+Antwort auf die Frage im Abschnitt darüber — der bleibt als Herleitung stehen,
+**zwei seiner Zahlen sind unten korrigiert**. Alle Zahlen hier aus einem
+Inventar-Lauf über 13 DXF (fünf Prüfpläne + Muthgasse DD/E2–E9), Texte gelesen
+wie `stempel_anker.finde_stempel` (TEXT, MTEXT `plain_text()`, ATTRIB,
+Blocktexte), Token-Regel `raumtyp._WORT`.
+
+**Entschieden: `E2-VF-11a` = `SCHLEUSE`** (Rauch-/Brandschutzschleuse vor dem
+Stiegenkern), Nutzungsklasse `ALLGEMEIN_ERSCHLIESSUNG`, Fluchtweg + communal.
+Die **Notbeleuchtungsanforderung bleibt ausdrücklich offen** und ist gesondert
+zu prüfen (`normwissen/data/regel_deckung.yaml` → `SCHLEUSE: offen`, Owner
+Enis). Begründung (Enis): Lage beim Stiegenkern und der ausgeschriebene
+Vergleichstext `DBA-Abstr. Schleuse` in E8/E9 an derselben Lage.
+
+Umgesetzt ist genau das — und nicht mehr:
+
+- Kanon-Typ `SCHLEUSE` in `docs/VOKABULAR.md` §1, `raumtyp._EXTRA_DIRECT`
+  (**nur das ausgeschriebene Wort** `schleuse`), `nutzungsklasse._MAP`,
+  Enis' LB-Stützliste und `regel_deckung.yaml`.
+- Das **Kürzel** `Schl.` steht bewusst NICHT im Wörterbuch. Es löst nur
+  `raumerkennung/kuerzel_entscheid.py` auf, und nur bei **Zusatzbeleg UND
+  Owner-Entscheidung für genau diese Stempelnummer**. Beleg ohne Entscheidung →
+  untypisiert + Hinweis „Entscheidung ausstehend"; kein Beleg → untypisiert +
+  Hinweis „kein Zusatzbeleg". Beide Hinweise stehen im Prüfbericht
+  (`bericht.md` → „Hinweise Kürzel-Auflösung").
+
+#### Inventar: alle `Schl.`-Vorkommen über die fünf Prüfpläne
+
+`Schl.` kommt **nur in Muthgasse_E2** vor, dort 2×. Token `schl` in den anderen
+vier Plänen: **0** (die Substring-Treffer `Anschluß`, `Lüftungsschlitz`,
+`TÜRSCHLIESSER`, `Frischluftansaugung`, `E-HAUSANSCHLUSSKASTEN` sind keine
+Tokens). Token `schleuse` in allen fünf Plänen: **0** — der neue
+Wörterbuch-Eintrag ändert an den fünf Plänen also nichts.
+
+| Vorkommen | Lage (xy_mm) | Stempelgruppe | Raum (`raeume.json`) | Belege | was fehlt |
+|---|---|---|---|---|---|
+| `E2-VF-11a` | 335 239 / 108 646, MTEXT `A-AREA-IDEN` | `E2-VF-11a` · `Schl.` · `13,04 m²` · `Ker.Bel.` | `raum_65`, Quelle L, Typ leer, 13,04 m², 15 Punkte | Stiegenkern-Lage (0 mm zu den Treppen-Extents) · Text `DBA` in 1495 mm (ab Namens-Text; der Code misst ab dem m²-Anker `Stempel.position_mm`: 1663 mm bei Radius 2000 mm) · E8 `DBA-Abstr. Schleuse` 627 mm, E9 10 mm | **nichts — entschieden** |
+| `E2-VF-11b` | 333 017 / 97 219, MTEXT `A-AREA-IDEN` | `E2-VF-11b` · `Schl.` · `3,73 m²` · `Ker.Bel.` (Nummerntext 350 mm) | `raum_67`, Quelle L, Typ leer, 3,73 m², 8 Punkte; liegt zu **99,3 %** in `raum_88` (Quelle F, STIEGENHAUS) | Stiegenkern-Lage (0 mm zu `raum_88`) · Text `WDB DBA` in 1042 mm (ab m²-Anker 1232 mm), `DBA` in 1787 mm | **Owner-Entscheidung** (s. offene Frage unten) |
+| Barawitzka_EG, Mollgasse_EG, Rennweg_EG, Rennweg_OG3 | — | 0 Treffer | — | — | — |
+
+#### Zwei Korrekturen am Abschnitt darüber (gemessen, nicht geglättet)
+
+1. **„~8,2 m gemeinsame Kontaktlänge" ist mit der dortigen Definition nicht
+   reproduzierbar.** Nachgemessen ergibt die gemeinsame Kante von `raum_65` zu
+   `stiegenhaus_1…5` **Σ 4,72 m** (Gegenrichtung gemessen **Σ 5,21 m**), nicht
+   8,2 m. Die Einzelkanten: 662 / 1132 / 1131 / 1131 / 662 mm.
+2. **„0 mm Abstand zu fünf STIEGENHAUS-Polygonen" beruht auf Überlappung mit
+   Treppen-Rechtecken, nicht auf Wandkontakt zu Raumpolygonen.** Die Räume
+   `stiegenhaus_1…8` sind Bounding-Rechtecke der Treppen-Blockreferenzen
+   (`geometrie_typ.py:47-63`, `:89`) und stehen nur im Provider-Dump, **nicht in
+   `raeume.json`**. Geometrisch sind die fünf nur **2 Lagen** (IoU 0,960–0,991
+   bzw. 0,956). Gegen das STIEGENHAUS-Polygon `raum_88` aus `raeume.json` ist
+   `raum_65` **4848 mm** entfernt. Und: dieselbe 0-mm-Klasse enthält die Küchen
+   `raum_29`, `raum_91`, `raum_86` — **das Merkmal trennt Schleuse nicht von
+   Küche.** Genau darum ist die Stiegenkern-Lage im Code nur *Beleg*, nie
+   Entscheidung.
+
+#### Der eigentliche Unterscheider: das Vergleichsgeschoss
+
+E3–E9 teilen das Koordinatensystem von E2 (häufigster Versatz je Geschoss
+`0 / 0`; der Text `DBA` steht in E2–E9 exakt bei 331 620 / 98 334).
+
+| Geschoss | an der Lage von `raum_65` | an der Lage von `raum_67` |
+|---|---|---|
+| E3–E6 | `Schl.` `E?-VF-11a`, 13,03–13,04 m², IoU ≥ 0,999 | `Schl.` `E?-VF-11b`, 3,73 m², IoU ≥ 0,999 |
+| E7 | `Schl.` `E7-VF-11`, 13,03 m² | **WC** `E7-SF-32`, 4,36 m² |
+| E8 | `Schl.` `E8-VF-11`, 13,03 m² | **SR** `E8-114-06`, 6,07 m², Parkett |
+| E9 | KIWA + Gang (`Schl.` dort verlegt) | **SR** `E9-121-06`, 6,07 m² |
+
+`DBA-Abstr. Schleuse` steht in **E8** bei 332 846 / 108 857 = **627 mm von
+`raum_65`**, 9791 mm von `raum_67`; in **E9** **10 mm von `raum_65`**.
+In E2 selbst kommen `Schleuse` und `Abstr` **nicht** vor.
+
+**Folge für den Code:** ein Einzelplan-Parse sieht die Nachbargeschosse nicht —
+dieser Beleg steckt deshalb in der *Entscheidung* (Register in
+`kuerzel_entscheid.py`), nicht in einer Erkennungsregel.
+
+#### @EnisAMG — offene Frage: gilt die Entscheidung auch für `E2-VF-11b` (`raum_67`)?
+
+Bis zu deiner Antwort bleibt `raum_67` **untypisiert** mit dem Hinweis
+„Entscheidung ausstehend" im Prüfbericht. Das ist gewollt und kein Defekt.
+
+| spricht dafür (auch Schleuse) | spricht dagegen |
+|---|---|
+| gleiche Nummernserie `E2-VF-11a/b`, gleicher Belag `Ker.Bel.` | **3,73 m²** — klein für eine Schleuse, und identisch mit der Fläche von `lift_4`/`lift_5` |
+| 0 mm zum STIEGENHAUS-Polygon `raum_88`, 180 mm zum GANG `raum_68` | liegt zu **99,3 %** in `raum_88` (F-Artefakt) — die Lage ist also teilweise dieselbe Fläche, kein eigener Vorraum |
+| Text-Beleg `WDB DBA` in 1042 mm (ab m²-Anker 1232 mm) | `DBA-Abstr. Schleuse` steht in E8/E9 **9,8 m entfernt**, also an `raum_65`, nicht hier |
+| E3–E6 tragen an derselben Lage `Schl.` `E?-VF-11b` | **E7 trägt dort ein WC**, **E8/E9 ein SR** (6,07 m², Parkett) — die Lage ist über die Geschosse nicht stabil erschließungsgenutzt |
+| 2 Übergänge (Stiegenhaus + Gang), kein Sackraum | nur 1 `EI`+`30-C`-Beschriftung im Polygon + 500-mm-Ring (bei `raum_65`: 3) |
+
+Zum Entscheiden brauchen wir von dir genau eine Aussage: **`E2-VF-11b` = auch
+`SCHLEUSE`** (dann ein zweiter Register-Eintrag) **oder ein anderer Typ** (dann
+welcher) **oder bleibt untypisiert**.
