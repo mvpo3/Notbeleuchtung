@@ -4,8 +4,8 @@
   "floor": "EG",
   "contract_version": "1.4.0",
   "bild_px": [
-    1800,
-    1469
+    2400,
+    2115
   ],
   "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
   "kategorien": {
@@ -96,7 +96,7 @@
     }
   ],
   "tueren_gesamt": 93,
-  "laufzeit_s": 73.5,
+  "laufzeit_s": 73.2,
   "nicht_erkannt": [
     "**untypisierte Räume: 5** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
     "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",

@@ -4,8 +4,8 @@
   "floor": "DG",
   "contract_version": "1.4.0",
   "bild_px": [
-    1707,
-    1800
+    2400,
+    869
   ],
   "rotation": "Rotation: dominante Richtung bereits horizontal (0°).",
   "kategorien": {
@@ -94,7 +94,7 @@
     }
   ],
   "tueren_gesamt": 75,
-  "laufzeit_s": 85.9,
+  "laufzeit_s": 85.7,
   "nicht_erkannt": [
     "**untypisierte Räume: 9** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
     "`final_exit`: **0** — kein Ausgang ins Freie erkannt (in Obergeschossen erwartungsgemäß, s. provider.py).",

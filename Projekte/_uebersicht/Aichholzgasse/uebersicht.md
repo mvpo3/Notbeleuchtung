@@ -6,10 +6,10 @@ DXF: `C:\Users\selma\AppData\Local\Temp\claude\D--KI-Projekt\8fc32369-9bee-42cd-
 
 ```
 Traceback (most recent call last):
-  File "D:\KI Projekt\Notbeleuchtung\scripts\analyse\uebersicht_karte.py", line 485, in main
+  File "D:\KI Projekt\Notbeleuchtung\scripts\analyse\uebersicht_karte.py", line 529, in main
     d = karte_bauen(p, a.floor, out, a.name if a.dxf else None)
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\KI Projekt\Notbeleuchtung\scripts\analyse\uebersicht_karte.py", line 417, in karte_bauen
+  File "D:\KI Projekt\Notbeleuchtung\scripts\analyse\uebersicht_karte.py", line 456, in karte_bauen
     modell = provider.parse(str(dxf), geschoss)
              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "D:\KI Projekt\Notbeleuchtung\src\notbeleuchtung\raumerkennung\provider.py", line 75, in parse

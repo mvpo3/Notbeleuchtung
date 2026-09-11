@@ -4,8 +4,8 @@
   "floor": "EG",
   "contract_version": "1.4.0",
   "bild_px": [
-    1800,
-    1662
+    2400,
+    2159
   ],
   "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
   "kategorien": {
@@ -120,7 +120,7 @@
   ],
   "ueberlappungen": [],
   "tueren_gesamt": 97,
-  "laufzeit_s": 69.8,
+  "laufzeit_s": 69.5,
   "nicht_erkannt": [
     "**untypisierte Räume: 19** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
     "Außenflächen (BALKON/TERRASSE): **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",

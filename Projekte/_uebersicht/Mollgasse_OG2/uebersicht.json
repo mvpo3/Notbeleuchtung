@@ -4,8 +4,8 @@
   "floor": "EG",
   "contract_version": "1.4.0",
   "bild_px": [
-    1800,
-    1495
+    2400,
+    2085
   ],
   "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
   "kategorien": {
@@ -85,7 +85,7 @@
   ],
   "ueberlappungen": [],
   "tueren_gesamt": 178,
-  "laufzeit_s": 111.5,
+  "laufzeit_s": 111.3,
   "nicht_erkannt": [
     "**untypisierte Räume: 8** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
     "`final_exit`: **0** — kein Ausgang ins Freie erkannt (in Obergeschossen erwartungsgemäß, s. provider.py).",

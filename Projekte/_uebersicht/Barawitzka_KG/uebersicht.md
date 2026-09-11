@@ -1,6 +1,6 @@
 # Übersicht — Barawitzka_KG
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Barawitzkagasse\415_260415_PP_VA_1_2 -1 KG.dxf` · Geschoss: `KG` · Bild: 1395×1800 px · Laufzeit 315.4 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Barawitzkagasse\415_260415_PP_VA_1_2 -1 KG.dxf` · Geschoss: `KG` · Bild: 2400×689 px · Laufzeit 315.7 s
 
 ## Erkannte Kategorien
 

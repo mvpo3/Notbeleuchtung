@@ -1,6 +1,6 @@
 # Übersicht — Barawitzka_2DG
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Barawitzkagasse\415_260415_PP_VA_1_8 2 DG.dxf` · Geschoss: `DG` · Bild: 1707×1800 px · Laufzeit 79.4 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Barawitzkagasse\415_260415_PP_VA_1_8 2 DG.dxf` · Geschoss: `DG` · Bild: 2400×869 px · Laufzeit 79.6 s
 
 ## Erkannte Kategorien
 

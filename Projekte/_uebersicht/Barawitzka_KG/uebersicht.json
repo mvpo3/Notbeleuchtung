@@ -4,8 +4,8 @@
   "floor": "KG",
   "contract_version": "1.4.0",
   "bild_px": [
-    1395,
-    1800
+    2400,
+    689
   ],
   "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
   "kategorien": {
@@ -428,7 +428,7 @@
     }
   ],
   "tueren_gesamt": 102,
-  "laufzeit_s": 315.4,
+  "laufzeit_s": 315.7,
   "nicht_erkannt": [
     "**untypisierte Räume: 28** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
     "Gänge (GANG/VORRAUM/AUFZUGSVORPLATZ): **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",

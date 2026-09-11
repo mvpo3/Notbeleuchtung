@@ -1,6 +1,6 @@
 # Übersicht — Muthgasse_E9
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Pläne 19., Muthgasse 109B - 2026-05-07_13-12\Architekt\Ausführungsplan\M109B_-Plan - AR-AF-A-GR-E9 100 - GRUNDRISS E9.dxf` · Geschoss: `EG` · Bild: 2400×1503 px · Laufzeit 620.1 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Pläne 19., Muthgasse 109B - 2026-05-07_13-12\Architekt\Ausführungsplan\M109B_-Plan - AR-AF-A-GR-E9 100 - GRUNDRISS E9.dxf` · Geschoss: `EG` · Bild: 2400×1777 px · Laufzeit 416.4 s
 
 ## Erkannte Kategorien
 

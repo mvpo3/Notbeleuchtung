@@ -1,6 +1,6 @@
 # Übersicht — Fischamend_BT2_OG1
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\BVH Fischamenderstraße\BT2\260320_938-AR-PP-21010-A_1.OBERGESCHOSS BT2.dxf` · Geschoss: `EG` · Bild: 1091×1800 px · Laufzeit 43.8 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\BVH Fischamenderstraße\BT2\260320_938-AR-PP-21010-A_1.OBERGESCHOSS BT2.dxf` · Geschoss: `EG` · Bild: 1195×1800 px · Laufzeit 43.6 s
 
 ## Erkannte Kategorien
 

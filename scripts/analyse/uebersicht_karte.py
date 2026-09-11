@@ -188,6 +188,89 @@ def _legende(fig, ax, zaehl: dict, n_wohnungen: int) -> None:
               title_fontproperties={"weight": "bold", "size": 10})
 
 
+def _inhalts_bounds(plan, modell, hoefe, rand=0.06):
+    """Bounds (Plan-Koordinaten) dessen, was die Karte ZEIGT: Raumpolygone,
+    Ausgänge, Fluchtweg, Höfe.
+
+    Die Variantenbounds aus ``plan_pruefen`` spannen den ganzen Layer-Satz auf.
+    Trägt eine Zeichnung zusätzliche Plankoepfe oder einen Lageplan (Muthgasse),
+    schrumpft der Grundriss darin auf einen Fleck. Hier zaehlt nur, was auch
+    beschriftet wird.
+
+    ``None``, wenn nichts erkannt wurde — dann bleibt es beim alten Zoom, damit
+    ein leeres Ergebnis nicht in einen leeren Ausschnitt hineinzoomt.
+    """
+    f = plan.factor
+    xs: list[float] = []
+    ys: list[float] = []
+
+    def _nimm(koordinaten):
+        for x, y in koordinaten:
+            xs.append(x / f)
+            ys.append(y / f)
+
+    for r in modell.raeume:
+        if r.polygon_mm and len(r.polygon_mm) >= 3:
+            _nimm(r.polygon_mm)
+    for a in modell.ausgaenge:
+        _nimm([a.xy_mm])
+    for seg in modell.zirkulation.segmente:
+        _nimm(getattr(seg, "polyline_mm", None) or [])
+    for h in hoefe:
+        _nimm(h.exterior.coords)
+
+    if not xs:
+        return None
+    x0, x1, y0, y1 = min(xs), max(xs), min(ys), max(ys)
+    dx, dy = max(x1 - x0, 1.0), max(y1 - y0, 1.0)
+    m = rand * max(dx, dy)
+    return x0 - m, x1 + m, y0 - m, y1 + m
+
+
+def _haupt_cluster(modell, plan, abstand_mm=5000.0):
+    """Bounds des flaechengroessten zusammenhaengenden Raum-Clusters.
+
+    Manche Zeichnungen tragen mehrere Planvarianten oder Detailauszuege auf
+    EINEM Blatt (Muthgasse). Die Erkennung findet dann in jeder davon Raeume,
+    und ein Ausschnitt ueber alle Raeume zeigt nur noch Briefmarken. Hier
+    gewinnt der Cluster mit der groessten Raumflaeche — das ist der Grundriss,
+    die anderen sind Beiwerk.
+
+    Rueckgabe: (bounds, raeume_ausserhalb) oder (None, 0), wenn es nur einen
+    Cluster gibt bzw. nichts erkannt wurde.
+    """
+    from shapely.geometry import Polygon
+    from shapely.ops import unary_union
+
+    polys = []
+    for r in modell.raeume:
+        if r.polygon_mm and len(r.polygon_mm) >= 3:
+            g = Polygon(r.polygon_mm)
+            if not g.is_valid:
+                g = g.buffer(0)
+            if not g.is_empty and g.area > 0:
+                polys.append(g)
+    if len(polys) < 2:
+        return None, 0
+
+    huellen = unary_union([g.buffer(abstand_mm) for g in polys])
+    teile = list(getattr(huellen, "geoms", [huellen]))
+    if len(teile) < 2:
+        return None, 0
+
+    bestes, beste_flaeche = None, -1.0
+    for t in teile:
+        fl = sum(g.area for g in polys if t.contains(g.representative_point()))
+        if fl > beste_flaeche:
+            bestes, beste_flaeche = t, fl
+    draussen = sum(1 for g in polys
+                   if not bestes.contains(g.representative_point()))
+
+    f = plan.factor
+    x0, y0, x1, y1 = bestes.bounds
+    return (x0 / f, x1 / f, y0 / f, y1 / f), draussen
+
+
 def _karte(plan, zoom, rot, modell, hoefe, wpolys, ueber, ziel: Path,
            titel: str) -> tuple[int, int]:
     """Ein Render des Modelspace, Overlays drauf, danach Rotation + Legende.
@@ -424,6 +507,15 @@ def karte_bauen(dxf: Path, floor: str | None, out: Path,
     zoom = pp._varianten_bounds(plan, prefix, stempel)
     rot, rot_vermerk = pp._rotation(plan)
 
+    # Auf das zoomen, was die Karte zeigt — siehe _inhalts_bounds.
+    inhalt = _inhalts_bounds(plan, modell, hoefe)
+    if inhalt is not None:
+        zoom = inhalt
+    # Mehrere Planvarianten auf einem Blatt: auf den groessten Cluster zoomen.
+    haupt, ausserhalb = _haupt_cluster(modell, plan)
+    if haupt is not None:
+        zoom = haupt
+
     wpolys = pp._wohnungs_umrisse(modell)
     ueber = _verschluckt(modell.raeume)
 
@@ -457,6 +549,7 @@ def karte_bauen(dxf: Path, floor: str | None, out: Path,
         "ueberlappungen": ueber,
         "tueren_gesamt": len(modell.tueren),
         "laufzeit_s": round(time.time() - t0, 1),
+        "raeume_ausserhalb_ausschnitt": ausserhalb,
     }
     daten["nicht_erkannt"] = _nicht_erkannt(daten, modell, hoefe)
     (ziel / "uebersicht.json").write_text(

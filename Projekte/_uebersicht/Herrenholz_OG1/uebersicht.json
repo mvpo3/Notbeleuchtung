@@ -5,7 +5,7 @@
   "contract_version": "1.4.0",
   "bild_px": [
     2400,
-    782
+    1028
   ],
   "rotation": "Rotation: dominante Richtung 172° (schräg) — unsicher, 0° belassen.",
   "kategorien": {
@@ -85,7 +85,7 @@
   "stiegenhaeuser": [],
   "ueberlappungen": [],
   "tueren_gesamt": 640,
-  "laufzeit_s": 205.6,
+  "laufzeit_s": 205.7,
   "nicht_erkannt": [
     "**untypisierte Räume: 23** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
     "Stiegenhäuser: **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",

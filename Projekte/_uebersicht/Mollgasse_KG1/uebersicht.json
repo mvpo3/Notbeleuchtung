@@ -4,8 +4,8 @@
   "floor": "EG",
   "contract_version": "1.4.0",
   "bild_px": [
-    1206,
-    1800
+    2400,
+    2161
   ],
   "rotation": "Rotation: dominante Richtung bereits horizontal (0°).",
   "kategorien": {
@@ -57,7 +57,7 @@
   ],
   "ueberlappungen": [],
   "tueren_gesamt": 76,
-  "laufzeit_s": 43.2,
+  "laufzeit_s": 43.9,
   "nicht_erkannt": [
     "**untypisierte Räume: 24** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
     "Außenflächen (BALKON/TERRASSE): **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",

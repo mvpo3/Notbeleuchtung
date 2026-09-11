@@ -1,6 +1,6 @@
 # Übersicht — Mollgasse_EG
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Mollgasse\Erdgeschoß.dxf` · Geschoss: `EG` · Bild: 1800×1592 px · Laufzeit 87.3 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Mollgasse\Erdgeschoß.dxf` · Geschoss: `EG` · Bild: 2400×2217 px · Laufzeit 87.9 s
 
 ## Erkannte Kategorien
 

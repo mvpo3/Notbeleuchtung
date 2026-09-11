@@ -1,6 +1,6 @@
 # Übersicht — Barawitzka_FDM
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Barawitzkagasse\415_260415_PP_VA_1_1 -2 FDM.dxf` · Geschoss: `EG` · Bild: 2400×522 px · Laufzeit 22.9 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Barawitzkagasse\415_260415_PP_VA_1_1 -2 FDM.dxf` · Geschoss: `EG` · Bild: 2400×1106 px · Laufzeit 23.4 s
 
 ## Erkannte Kategorien
 

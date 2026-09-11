@@ -1,6 +1,6 @@
 # Übersicht — Rennweg_EG
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Rennweg\EG - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf` · Geschoss: `EG` · Bild: 1307×2400 px · Laufzeit 13.2 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Rennweg\EG - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf` · Geschoss: `EG` · Bild: 1307×2400 px · Laufzeit 13.0 s
 
 ## Erkannte Kategorien
 

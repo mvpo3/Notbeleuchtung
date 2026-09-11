@@ -5,7 +5,7 @@
   "contract_version": "1.4.0",
   "bild_px": [
     2400,
-    1772
+    1879
   ],
   "rotation": "Rotation: dominante Richtung bereits horizontal (0°).",
   "kategorien": {
@@ -331,7 +331,7 @@
     }
   ],
   "tueren_gesamt": 313,
-  "laufzeit_s": 393.8,
+  "laufzeit_s": 401.7,
   "nicht_erkannt": [
     "**untypisierte Räume: 13** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
     "Innenhöfe: **0** — `provider.letzte_aussenbereiche.geschlossen` ist leer (oder es gab keine Wandkörper-Analyse).",

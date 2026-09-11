@@ -5,7 +5,7 @@
   "contract_version": "1.4.0",
   "bild_px": [
     2400,
-    776
+    943
   ],
   "rotation": "Rotation: dominante Richtung 172° (schräg) — unsicher, 0° belassen.",
   "kategorien": {
@@ -138,7 +138,7 @@
     }
   ],
   "tueren_gesamt": 239,
-  "laufzeit_s": 126.1,
+  "laufzeit_s": 127.1,
   "nicht_erkannt": [
     "**untypisierte Räume: 38** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
     "Stiegenhäuser: **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",
