@@ -136,6 +136,9 @@ def _aufzaehlungen(quelle: str, baum: ast.Module) -> list[tuple[int, str]]:
     * ``os.listdir(DATA_DIR)`` (Modul-Attribut),
     * ``listdir(DATA_DIR)`` nach ``from os import listdir`` (Import-Alias).
 
+    Positions- und **Schlüsselwort-Argumente** werden gleich behandelt
+    (``listdir(path=DATA_DIR)``, ``glob("*.yaml", root_dir=ROOT)``).
+
     ⚠️ **Grenzen, ausdrücklich:** nicht auflösbar sind Zugriffe über
     Funktionsgrenzen hinweg (das Verzeichnis wird übergeben und anderswo
     aufgezählt), Pfade, die ohne erkennbaren ``data``-Bestandteil aus Variablen
@@ -158,6 +161,9 @@ def _aufzaehlungen(quelle: str, baum: ast.Module) -> list[tuple[int, str]]:
             kandidaten = list(knoten.args)
         else:
             continue
+        # Schlüsselwort-Argumente zählen wie Positionsargumente:
+        # ``listdir(path=DATA_DIR)``, ``glob("*.yaml", root_dir=ROOT)``.
+        kandidaten.extend(keyword.value for keyword in knoten.keywords)
         if any(_zeigt_auf_daten(k, daten) for k in kandidaten):
             treffer.append((knoten.lineno,
                             ast.get_source_segment(quelle, knoten) or "<Aufruf>"))
@@ -375,6 +381,34 @@ def test_waechter_erkennt_umbenanntes_verzeichnis_und_direkten_import() -> None:
     for quelle in (umbenannt, direkt_importiert):
         treffer = _aufzaehlungen(quelle, ast.parse(quelle))
         assert treffer, quelle
+
+    # Schlüsselwort-Argumente: dasselbe Verzeichnis, nur benannt übergeben.
+    schluesselwoerter = (
+        'from os import listdir\n'
+        'from os import listdir as ls\n'
+        'from glob import glob\n'
+        'from pathlib import Path\n'
+        'DATA_DIR = Path(__file__).parent / "data"\n'
+        'ROOT = DATA_DIR\n'
+        'def a():\n'
+        '    return listdir(path=DATA_DIR)\n'
+        'def b():\n'
+        '    return ls(path=DATA_DIR)\n'
+        'def c():\n'
+        '    return glob("*.yaml", root_dir=ROOT)\n'
+    )
+    assert len(_aufzaehlungen(schluesselwoerter, ast.parse(schluesselwoerter))) == 3
+
+    # Gegenprobe: dasselbe Schlüsselwort, aber ein fremdes Verzeichnis.
+    fremdes_schluesselwort = (
+        'from glob import glob\n'
+        'from pathlib import Path\n'
+        'ROOT = Path("Projekte")\n'
+        'def plaene():\n'
+        '    return glob("*.dxf", root_dir=ROOT)\n'
+    )
+    assert _aufzaehlungen(fremdes_schluesselwort,
+                          ast.parse(fremdes_schluesselwort)) == []
 
     # Kette über zwei Zuweisungen — dieselbe Lücke, eine Stufe tiefer.
     kette = (
