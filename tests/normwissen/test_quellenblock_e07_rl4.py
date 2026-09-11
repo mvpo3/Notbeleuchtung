@@ -287,20 +287,46 @@ def test_zwanzig_leuchten_zwei_verschiedene_aussagen() -> None:
 def test_rl4_tuerpruefung_bleibt_bis_zur_semantik_blockiert() -> None:
     """⚠️ Korrektur: `Tuer.breite_mm` taugt HEUTE nicht als Prüfgröße.
 
-    Am Code von `origin/main` geprüft: das Feld trägt mindestens drei
-    Bedeutungen — Nennmaß aus dem Blocknamen (`TUER-80` → 800 mm), ein
-    geometrisch abgeleitetes Maß aus `tuer_zuordnung.py`, und `0.0` für
-    „keine Messung". RL 4 verlangt dagegen die **nutzbare Durchgangslichte als
-    Fertigmaß** (Vorbemerkungen). Ein Vergleich wäre systematisch zu günstig.
-    Der Messwert der Fixtures steht hier nur als Beobachtung, nicht als Freigabe.
+    Am Code von `origin/main` `e79276b` geprüft: das Feld trägt **vier**
+    Messherkünfte — Nennmaß aus dem Blocknamen (`TUER-80` → 800 mm),
+    Schwenkradius, Doppelflügel-Summe und lichte Wandöffnung. RL 4 verlangt
+    dagegen die **nutzbare Durchgangslichte als Fertigmaß** (Vorbemerkungen).
+    Ein Vergleich wäre systematisch zu günstig. Der Messwert der Fixtures steht
+    hier nur als Beobachtung, nicht als Freigabe.
+
+    Die Zahl ist **scharf** gepinnt (`== 4`, ausdrücklich nicht `>= 4`): ein
+    fünfter Schreibpfad soll rot werden statt still mitzulaufen. `befunde` zählt
+    **Bedeutungen**, nicht Codestellen — `tuer_zuordnung.py:158` und `:220`
+    setzen dieselbe Bedeutung und stehen deshalb in **einem** Befund.
     """
     import json
 
     herkunft = RL4["tuerbreite_herkunft"]
     assert herkunft["status"] == "blockiert_bis_semantik_geklaert"
-    assert len(herkunft["befunde"]) == 3
+    assert len(herkunft["befunde"]) == 4
+    assert [b["herkunft"] for b in herkunft["befunde"]] == [
+        "BLOCKNAME",
+        "GEOMETRIE_SCHWENKRADIUS",
+        "GEOMETRIE_SUMME",
+        "GEOMETRIE_OEFFNUNG",
+    ]
+    # Die Namen sind nicht frei gewählt: sie müssen im Contract-Vokabular
+    # `BreiteQuelle` stehen, sonst beschreibt die YAML etwas, das es nicht gibt.
+    from typing import get_args
+
+    from notbeleuchtung.hauptengine.contracts.raum_modell import BreiteQuelle
+
+    assert {b["herkunft"] for b in herkunft["befunde"]} <= set(get_args(BreiteQuelle))
+    # Jede Herkunft nennt ihre Fundstelle im Erkennungscode — sonst ist der
+    # Befund nicht nachprüfbar.
+    assert all(b["pfad"].split("::")[0].split(":")[0].endswith(".py")
+               for b in herkunft["befunde"])
+    # Der Doppelflügel-Befund darf nicht mit RL 4 Punkt 2.8.1 begründet werden.
+    summe = next(b for b in herkunft["befunde"] if b["herkunft"] == "GEOMETRIE_SUMME")
+    assert "NICHT die Zwei-Tueren-Regel" in summe["was"]
     assert "UNZULAESSIG" in herkunft["folge"]
-    assert "0.0 bedeutet KEINE MESSUNG" in " ".join(b["was"] for b in herkunft["befunde"])
+    # „nicht gemessen" ist keine Messherkunft und steht deshalb außerhalb.
+    assert "0.0 bedeutet KEINE MESSUNG" in herkunft["keine_messung"]["was"]
     assert RL4["anwendungsbereich"]["⚠_fertigmass"].strip().startswith('"Alle in dieser')
 
     fixtures = sorted((Path(__file__).parents[1] / "fixtures").glob("raum_modell_*.json"))
