@@ -59,12 +59,19 @@ _RZ_INS_RAUM_MM = 150.0
 #: `ABSTELLRAUM`, nicht `KINDERWAGENRAUM` — bis die Erkennung den Typ erhält,
 #: greift diese Regel nur, wo der Plan den Literal `KINDERWAGENRAUM` führt
 #: (docs/COORDINATION.md 2026-09-07).
-#: Owner-Korrektur 2026-09-11 (AutoCAD-Diff Elektroplan DE, „Hier hast du es
-#: vergessen" am Fahrradraum): zusätzlich greift die Regel für ABSTELLRAUM mit
-#: `ist_communal=True` — der GEMEINSAME Abstell-/Fahrradraum ist dieselbe Klasse
-#: fensterloser Nebenraum; der PRIVATE Wohnungs-Abstellraum (ist_communal=False)
-#: bleibt bewusst draußen (Owner-Entscheid 2026-09-07 unverändert).
+#: Owner-Korrektur 2026-09-11 (AutoCAD-Diff Elektroplan DE, zwei Runden): erst
+#: „Hier hast du es Vergessen" am Fahrradraum (communal ABSTELLRAUM), dann „Im
+#: Spielraum gehört auch eine Notleuchte" (communal ZIMMER) → GENERALISIERT:
+#: JEDER communal Nebenraum bekommt das Tür-RZ — außer Erschließungs-/Außen-/
+#: Schacht-Flächen (`_TUERLEUCHTE_KEIN_COMMUNAL`). Private Räume (ist_communal=
+#: False) bleiben draußen (Owner-Entscheid 2026-09-07 unverändert). VORRAUM ist
+#: ausgenommen, weil die Erkennung private Wohnungs-Vorräume real mit
+#: communal=True flaggt (Elektroplan DE raum_2/raum_5) — sonst „RZ in der Wohnung".
 _TUERLEUCHTE_RAUMTYPEN = {"TECHNIK", "MUELLRAUM", "KINDERWAGENRAUM"}
+_TUERLEUCHTE_KEIN_COMMUNAL = (
+    _KORRIDOR_TYPEN
+    | {"STIEGENHAUS", "VORRAUM", "AUFZUGSVORPLATZ", "LIFT", "SCHACHT", "BALKON", "TERRASSE"}
+)
 #: Symbol = din-AP3-Antipanikleuchte, die in der SICHERHEITSLEUCHTEN-Rolle als
 #: Universal-Leuchte verwendet wird (Rolle ≠ Produkt) — die knowledge-gestützte
 #: Darstellung der Raum-Sicherheitsbeleuchtung. KEIN Aufheller (Zusatz-/Fülllicht).
@@ -288,7 +295,7 @@ def tuerleuchte_pflichtraeume(raum: RaumModell, norm: NormProvider) -> list[Plat
     pflicht = [
         r for r in raum.raeume
         if (r.raum_typ or "").upper() in _TUERLEUCHTE_RAUMTYPEN
-        or ((r.raum_typ or "").upper() == "ABSTELLRAUM" and r.ist_communal)
+        or (r.ist_communal and (r.raum_typ or "").upper() not in _TUERLEUCHTE_KEIN_COMMUNAL)
     ]
     if not pflicht:
         return []
@@ -474,4 +481,117 @@ def pfeil_durch_hauseingang(
             out.append(p)
             continue
         out.append(p.model_copy(update={"rotation_deg": _rotation_zur_tuer(dx, dy)}))
+    return out
+
+
+#: R7 (Owner-Korrektur 2026-09-11, „RZ NICHT in der Wohnung"): Wohnungs-Vorraum-Heuristik.
+_WOHNUNGS_VORRAUM_MAX_M2 = 6.0
+_WOHNUNGS_VORRAUM_TYPEN = {"GANG", "VORRAUM"}
+
+
+def entferne_wohnungs_vorraum_rz(
+    platzierungen: list[Platzierung], raum: RaumModell
+) -> list[Platzierung]:
+    """R7 (Owner-Korrektur 2026-09-11, „RZ NICHT in der Wohnung"): die Erkennung flaggt
+    kleine Wohnungs-Vorräume an der Stiege real als Fluchtweg-GANG (Stempel „GANG 2.75m2"
+    IN der Wohnung) — dort landete ein Segment-RZ. Heuristik „privater Stiegen-Vorraum":
+    kleiner GANG/VORRAUM (< 6 m²), der ans STIEGENHAUS grenzt und dessen übrige Türen
+    ausschließlich zu PRIVATEN Räumen führen → alle RZ darin entfernen (außer Tür-RZ der
+    Pflichträume und Räume mit Hauseingang/Ausgang — die sind echte Fluchtweg-Knoten)."""
+    typen = {r.id: (r.raum_typ or "").upper() for r in raum.raeume}
+    communal = {r.id: r.ist_communal for r in raum.raeume}
+
+    def _ist_wohnungs_vorraum(r) -> bool:
+        if (r.raum_typ or "").upper() not in _WOHNUNGS_VORRAUM_TYPEN or len(r.polygon_mm) < 3:
+            return False
+        if (r.flaeche_m2 or 0.0) >= _WOHNUNGS_VORRAUM_MAX_M2:
+            return False
+        if any(point_in_polygon(a.xy_mm, r.polygon_mm) for a in raum.ausgaenge):
+            return False                                   # echter Ausgangs-Knoten
+        stgh_tuer = False
+        for t in raum.tueren:
+            if r.id not in (t.von_raum, t.nach_raum):
+                continue
+            if getattr(t, "tuer_detail", None) == "hauseingang":
+                return False                               # Hauseingang = Fluchtweg-Knoten
+            andere = t.nach_raum if t.von_raum == r.id else t.von_raum
+            if typen.get(andere or "") == "STIEGENHAUS":
+                stgh_tuer = True
+            elif communal.get(andere):
+                return False                               # an communal Fläche angebunden
+        return stgh_tuer
+
+    vorraeume = [r for r in raum.raeume if _ist_wohnungs_vorraum(r)]
+    if not vorraeume:
+        return platzierungen
+    return [
+        p for p in platzierungen
+        if p.kind != "rz"
+        or p.norm_quelle == QUELLE_TUERLEUCHTE
+        or not any(point_in_polygon(p.xy_mm, r.polygon_mm) for r in vorraeume)
+    ]
+
+
+#: R8 (Owner-Korrektur 2026-09-11): Radien des Stiegenhaus-RZ-Nachpasses.
+_STGH_RZ_SUCHRADIUS_MM = 1500.0   # RZ gilt als „am Stiegen-Zugang"
+_STGH_EXIT_RADIUS_MM = 2500.0     # stair_exit gehört zu diesem Stiegenhaus
+
+
+def stiegenhaus_rz_nachpass(
+    platzierungen: list[Platzierung], raum: RaumModell
+) -> list[Platzierung]:
+    """R8 (Owner-Korrektur 2026-09-11, „RZ im Stiegenhaus meistens an den Wänden, zeigt
+    in die Richtung wie man in den Erdgeschoß kommt"): das RZ am Stiegen-Zugang gehört
+    IN das Stiegenhaus, Pfeil in Abstiegs-Richtung — nicht davor in den Gang.
+
+    Approximation (ohne Stiegenlauf-Geometrie im Contract): Position auf der Strecke
+    stair_exit → Stiegenhaus-Zentrum (erster Probepunkt im Polygon), Rotation = Pfeil in
+    diese Richtung. Nur Pfeil-unten-Basis-RZ nahe einem stair_exit; No-op ohne
+    STIEGENHAUS-Raum oder stair_exit."""
+    stghs = [
+        r for r in raum.raeume
+        if (r.raum_typ or "").upper() == "STIEGENHAUS" and len(r.polygon_mm) >= 3
+    ]
+    stair_exits = [a for a in raum.ausgaenge if a.typ == "stair_exit"]
+    if not stghs or not stair_exits:
+        return platzierungen
+    out: list[Platzierung] = []
+    for p in platzierungen:
+        if p.kind != "rz" or p.richtung != "unten" or p.norm_quelle == QUELLE_TUERLEUCHTE:
+            out.append(p)
+            continue
+        ex = min(
+            stair_exits,
+            key=lambda a: math.hypot(a.xy_mm[0] - p.xy_mm[0], a.xy_mm[1] - p.xy_mm[1]),
+        )
+        if math.hypot(ex.xy_mm[0] - p.xy_mm[0], ex.xy_mm[1] - p.xy_mm[1]) > _STGH_RZ_SUCHRADIUS_MM:
+            out.append(p)
+            continue
+        stgh = min(
+            stghs,
+            key=lambda r: (find_center_visual(r.polygon_mm)[0] - ex.xy_mm[0]) ** 2
+            + (find_center_visual(r.polygon_mm)[1] - ex.xy_mm[1]) ** 2,
+        )
+        cx, cy = find_center_visual(stgh.polygon_mm)
+        if math.hypot(cx - ex.xy_mm[0], cy - ex.xy_mm[1]) > _STGH_EXIT_RADIUS_MM * 2:
+            out.append(p)
+            continue
+        dx, dy = cx - ex.xy_mm[0], cy - ex.xy_mm[1]
+        if math.hypot(dx, dy) < 50.0:
+            out.append(p)
+            continue
+        # erster Probepunkt Richtung Zentrum, der IM Stiegenhaus liegt (Wand-Nähe).
+        ziel = None
+        for t in (0.35, 0.5, 0.65, 0.8):
+            probe = (ex.xy_mm[0] + dx * t, ex.xy_mm[1] + dy * t)
+            if point_in_polygon(probe, stgh.polygon_mm):
+                ziel = probe
+                break
+        if ziel is None:
+            out.append(p)
+            continue
+        out.append(p.model_copy(update={
+            "xy_mm": ziel,
+            "rotation_deg": _rotation_zur_tuer(dx, dy),
+        }))
     return out

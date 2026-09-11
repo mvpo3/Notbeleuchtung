@@ -53,3 +53,24 @@ def test_bestand_ausserhalb_des_gangs_zaehlt_nicht():
     bestand = ((3000.0, 5000.0), (9000.0, 5000.0))   # nicht im Gang-Polygon
     out = snappe_auf_mittellinie([_sl((10000.0, 400.0))], _raum(), bestand_leuchten_mm=bestand)
     assert out[0].xy_mm == pytest.approx((10000.0, 750.0))
+
+
+# ── R6: nicht „mitten in der Lampe" — Owner-Korrektur 2026-09-11 Runde 2 ────────
+def test_laengs_ausweichen_in_die_lueckenmitte():
+    """Symbol längs < 800 mm an einem Bestands-Spot → Mitte der Lücke, in der es
+    steht (2ד So nicht mitten in der Lampe")."""
+    bestand = ((5000.0, 1000.0), (10000.0, 1000.0), (15000.0, 1000.0))
+    out = snappe_auf_mittellinie([_sl((9800.0, 400.0))], _raum(), bestand_leuchten_mm=bestand)
+    assert out[0].xy_mm == pytest.approx((7500.0, 1000.0))
+
+
+def test_laengs_weit_genug_bleibt():
+    bestand = ((5000.0, 1000.0), (10000.0, 1000.0), (15000.0, 1000.0))
+    out = snappe_auf_mittellinie([_sl((12000.0, 400.0))], _raum(), bestand_leuchten_mm=bestand)
+    assert out[0].xy_mm == pytest.approx((12000.0, 1000.0))
+
+
+def test_laengs_vor_der_reihe_weicht_nach_aussen():
+    bestand = ((5000.0, 1000.0), (10000.0, 1000.0))
+    out = snappe_auf_mittellinie([_sl((4600.0, 400.0))], _raum(), bestand_leuchten_mm=bestand)
+    assert out[0].xy_mm == pytest.approx((4200.0, 1000.0))

@@ -36,6 +36,10 @@ _MIN_SNAP_MM = 20.0    # kleinere Verschiebung = schon zentriert, unverändert l
 #: sonst ist es keine Linie (z.B. versetzte Wandleuchten) und die Bbox-Mitte bleibt.
 _BESTAND_QUER_SPREAD_MM = 600.0
 _BESTAND_MIN_PUNKTE = 2
+#: R6 (Owner-Korrektur 2026-09-11, 2ד So nicht mitten in der Lampe"): eine Notleuchte
+#: auf der Bestandslinie darf nicht AUF einer Bestands-Leuchte sitzen — unter diesem
+#: Längsabstand weicht sie in die Mitte der Spot-Lücke aus, in der sie steht.
+_BESTAND_MIN_LAENGS_MM = 800.0
 
 
 def _korridor_achse(polygon):
@@ -51,16 +55,32 @@ def _korridor_achse(polygon):
 
 
 def _bestand_mitte(achse, polygon, bestand_leuchten_mm):
-    """R1: Querkoordinaten-Median der Bestands-Leuchten IM Korridor — oder None,
-    wenn keine belastbare Reihe da ist (zu wenige Punkte / zu breit gestreut)."""
-    quer = [
-        p[1] if achse == "y" else p[0]
-        for p in bestand_leuchten_mm
-        if point_in_polygon((p[0], p[1]), polygon)
-    ]
+    """R1: (quer_median, laengs_sortiert) der Bestands-Leuchten IM Korridor — oder
+    (None, ()) wenn keine belastbare Reihe da ist (zu wenige Punkte / zu breit gestreut)."""
+    drin = [p for p in bestand_leuchten_mm if point_in_polygon((p[0], p[1]), polygon)]
+    quer = [p[1] if achse == "y" else p[0] for p in drin]
     if len(quer) < _BESTAND_MIN_PUNKTE or max(quer) - min(quer) > _BESTAND_QUER_SPREAD_MM:
-        return None
-    return statistics.median(quer)
+        return None, ()
+    laengs = tuple(sorted(p[0] if achse == "y" else p[1] for p in drin))
+    return statistics.median(quer), laengs
+
+
+def _laengs_ausweichen(laengs: float, spots: tuple[float, ...]) -> float:
+    """R6: sitzt die Leuchte längs näher als `_BESTAND_MIN_LAENGS_MM` an einem
+    Bestands-Spot, weicht sie in die Mitte der Lücke aus, in der sie steht
+    (vor/nach der Reihe: auf Mindestabstand vom Randspot)."""
+    if not spots:
+        return laengs
+    naechster = min(spots, key=lambda s: abs(s - laengs))
+    if abs(naechster - laengs) >= _BESTAND_MIN_LAENGS_MM:
+        return laengs
+    i = spots.index(naechster)
+    if laengs <= spots[0]:
+        return spots[0] - _BESTAND_MIN_LAENGS_MM
+    if laengs >= spots[-1]:
+        return spots[-1] + _BESTAND_MIN_LAENGS_MM
+    lo, hi = (spots[i - 1], naechster) if laengs < naechster else (naechster, spots[i + 1])
+    return (lo + hi) / 2.0
 
 
 def snappe_auf_mittellinie(
@@ -72,16 +92,16 @@ def snappe_auf_mittellinie(
         r for r in raum.raeume
         if (r.raum_typ or "").upper() in _KORRIDOR_TYPEN and len(r.polygon_mm) >= 3
     ]
-    achsen = {r.id: _korridor_achse(r.polygon_mm) for r in korridore}
+    achsen = {r.id: (*_korridor_achse(r.polygon_mm), ()) for r in korridore}
     if bestand_leuchten_mm:
         for r in korridore:
-            achse, mitte = achsen[r.id]
+            achse, mitte, _ = achsen[r.id]
             if achse is None:
                 continue
-            bm = _bestand_mitte(achse, r.polygon_mm, bestand_leuchten_mm)
+            bm, laengs = _bestand_mitte(achse, r.polygon_mm, bestand_leuchten_mm)
             if bm is not None:
-                achsen[r.id] = (achse, bm)   # R1: Bestandslinie schlägt Bbox-Mitte
-    if not any(a for a, _ in achsen.values()):
+                achsen[r.id] = (achse, bm, laengs)   # R1: Bestandslinie schlägt Bbox-Mitte
+    if not any(a for a, _, _ in achsen.values()):
         return platzierungen
     out: list[Platzierung] = []
     for p in platzierungen:
@@ -89,12 +109,15 @@ def snappe_auf_mittellinie(
             out.append(p)
             continue
         korr = next((r for r in korridore if point_in_polygon(p.xy_mm, r.polygon_mm)), None)
-        achse, mitte = achsen[korr.id] if korr else (None, 0.0)
+        achse, mitte, laengs_spots = achsen[korr.id] if korr else (None, 0.0, ())
         if achse is None:
             out.append(p)
             continue
         x, y = p.xy_mm
-        neu = (x, mitte) if achse == "y" else (mitte, y)
+        if achse == "y":
+            neu = (_laengs_ausweichen(x, laengs_spots), mitte)   # R6 längs · R1 quer
+        else:
+            neu = (mitte, _laengs_ausweichen(y, laengs_spots))
         if (neu[0] - x) ** 2 + (neu[1] - y) ** 2 <= _MIN_SNAP_MM ** 2:
             out.append(p)
         else:
