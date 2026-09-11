@@ -186,6 +186,7 @@ def _run_mit_quelle(
     photometrie,
     template_path=None,
     pdf_quelle=False,
+    bestand_leuchten_mm=(),
 ) -> Output:
     # 2. Input (optional): LB parsen, falls ein LB-Provider verdrahtet + ein LB-Pfad da ist.
     # Fail-Closed (Enis' LB-Parser): bei blockierendem Zweifel wirft parse_lb `LbFehler`.
@@ -205,10 +206,13 @@ def _run_mit_quelle(
     oib_befund = None
     if bundle.oib is not None and projekt_kontext is not None:
         oib_befund = bundle.oib.bewerte_oib(projekt_kontext)
+    # R1 (Owner 2026-09-11): Bestands-Leuchten-Linie nur durchreichen, wenn vorhanden —
+    # Provider ohne das kwarg (Fakes) bleiben unberührt.
+    extra = {"bestand_leuchten_mm": tuple(bestand_leuchten_mm)} if bestand_leuchten_mm else {}
     if oib_befund is not None:
-        platzierung = bundle.platzierer.place(raum, bundle.norm, lb, oib=oib_befund)
+        platzierung = bundle.platzierer.place(raum, bundle.norm, lb, oib=oib_befund, **extra)
     else:
-        platzierung = bundle.platzierer.place(raum, bundle.norm, lb)
+        platzierung = bundle.platzierer.place(raum, bundle.norm, lb, **extra)
     pruef = pruefbericht(
         raum, platzierung, lb, norm=bundle.norm, oib=oib_befund,
         photometrie=photometrie, projekt_kontext=projekt_kontext,

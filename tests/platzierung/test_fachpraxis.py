@@ -18,6 +18,8 @@ from notbeleuchtung.platzierung.fachpraxis import (
     TUERLEUCHTE_KEY,
     FachpraxisRegeln,
     aufheller_je_rz,
+    aussen_tuer_rz,
+    pfeil_durch_hauseingang,
     tuerleuchte_pflichtraeume,
 )
 from notbeleuchtung.platzierung.geometry import point_in_polygon
@@ -280,3 +282,79 @@ def test_verwinkelter_kleiner_raum_bekommt_mittigen_aufheller():
     assert out[0].kind == "rz"
     assert out[1].kind == "sicherheitsleuchte"
     assert out[1].catalog_key == AUFHELLER_KEY
+
+
+# ── R3: communal ABSTELLRAUM (Fahrradraum) — Owner-Korrektur 2026-09-11 ─────────
+def test_tuerleuchte_communal_abstellraum():
+    """AutoCAD-Diff Elektroplan DE („Hier hast du es Vergessen" am Fahrradraum):
+    der GEMEINSAME Abstellraum (ist_communal=True) bekommt das Tür-RZ wie
+    TECHNIK/MUELLRAUM; der private Wohnungs-Abstellraum bleibt draußen."""
+    m = _raum_mit_tuer("ABSTELLRAUM")
+    communal = m.model_copy(update={"raeume": [
+        m.raeume[0].model_copy(update={"ist_communal": True}), m.raeume[1]]})
+    out = tuerleuchte_pflichtraeume(communal, FakeNormProvider())
+    assert len(out) == 1
+    assert out[0].kind == "rz"
+    assert out[0].norm_quelle == QUELLE_TUERLEUCHTE
+    # privater Abstellraum unveraendert ohne Tuer-RZ (Owner-Entscheid 2026-09-07):
+    assert tuerleuchte_pflichtraeume(m, FakeNormProvider()) == []
+
+
+# ── R2: communal Raum + AUSSEN-Tür = Notausgang-RZ — Owner-Korrektur 2026-09-11 ─
+def _raum_mit_aussentuer(communal=True, ausgaenge=(), detail=None):
+    tuer = Tuer(id="d1", xy_mm=(5000.0, 0.0), von_raum="m1", nach_raum="AUSSEN",
+                tuer_detail=detail)
+    return RaumModell(
+        floor="EG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 8000.0)),
+        raeume=[Raum(id="m1", raum_typ="MUELLRAUM", polygon_mm=_RAUM_POLY,
+                     ist_communal=communal)],
+        tueren=[tuer], ausgaenge=list(ausgaenge),
+    )
+
+
+def test_aussen_tuer_rz_am_muellraum_ausgang():
+    """„Hier ist der Ausgang vom Müllraum": AUSSEN-Tür eines communal Raums traegt
+    ein RZ (EN 1838 §4.1.2 g) — Pfeil DURCH die Tür nach draußen, ~150 mm im Raum."""
+    out = aussen_tuer_rz(_raum_mit_aussentuer(), FakeNormProvider())
+    assert len(out) == 1
+    p = out[0]
+    assert p.kind == "rz"
+    assert p.richtung == "unten"
+    # Zentrum (5000,4000) → Tür (5000,0): Fluchtrichtung nach unten = rot 0.
+    assert p.rotation_deg == 0.0
+    assert p.xy_mm[0] == pytest.approx(5000.0, abs=1.0)
+    assert p.xy_mm[1] == pytest.approx(150.0, abs=1.0)   # 150 mm im Raum-Inneren
+    assert p.norm_quelle != QUELLE_TUERLEUCHTE           # echte Norm-Quelle (§4.1.2 g)
+
+
+def test_aussen_tuer_rz_nicht_fuer_private_balkontuer():
+    assert aussen_tuer_rz(_raum_mit_aussentuer(communal=False), FakeNormProvider()) == []
+
+
+def test_aussen_tuer_rz_skip_bei_nahem_ausgang_und_hauseingang():
+    # Modellierter Ausgang ≤2 m an der Tür → Anker-Pfad zeichnet, keine Dublette.
+    nah = _raum_mit_aussentuer(ausgaenge=[Ausgang(id="E", xy_mm=(5000.0, 0.0), typ="final_exit")])
+    assert aussen_tuer_rz(nah, FakeNormProvider()) == []
+    # Hauseingang ist R4-Domäne (Anker-Exit-RZ), nicht R2.
+    assert aussen_tuer_rz(_raum_mit_aussentuer(detail="hauseingang"), FakeNormProvider()) == []
+
+
+# ── R4: Hauseingang-Pfeil = Fluchtrichtung — Owner-Korrektur 2026-09-11 ─────────
+def test_pfeil_durch_hauseingang_zeigt_zum_ausgang():
+    """„Pfeil zeigt Richtung Ausgang, nicht wohin die Tür aufgeht": RZ nahe der
+    hauseingang-Tür wird auf die Fluchtrichtung (zum modellierten Ausgang) rotiert."""
+    rm = RaumModell(
+        floor="EG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 8000.0)),
+        raeume=[Raum(id="g", raum_typ="GANG", polygon_mm=_RAUM_POLY, ist_fluchtweg=True)],
+        tueren=[Tuer(id="he", xy_mm=(5000.0, 5000.0), von_raum="g", nach_raum="AUSSEN",
+                     tuer_detail="hauseingang", ist_notausgang=True)],
+        ausgaenge=[Ausgang(id="E", xy_mm=(5000.0, 6000.0), typ="final_exit")],
+    )
+    falsch = _rz(xy=(5000.0, 4600.0), key="notlicht_ks_stiege", rot=90.0)
+    falsch = falsch.model_copy(update={"richtung": "unten"})
+    out = pfeil_durch_hauseingang([falsch], rm)
+    # Ausgang liegt noerdlich → Pfeil nach oben = unten-Block rot 180.
+    assert out[0].rotation_deg == 180.0
+    # RZ weit weg von der Tür bleibt unveraendert:
+    fern = falsch.model_copy(update={"xy_mm": (500.0, 500.0), "rotation_deg": 90.0})
+    assert pfeil_durch_hauseingang([fern], rm)[0].rotation_deg == 90.0

@@ -52,7 +52,21 @@ from notbeleuchtung.hauptengine.render.lux_nachweis_bericht import schreibe_beri
 from notbeleuchtung.hauptengine.render.pdf_export import dxf_zu_pdf
 
 P4 = Path(r"C:\Users\mvpst\Documents\KI-Projekt\Notbeleuchtung\Projektbeispiele-demo-Platzierungslogik")
-OUT = P4 / "nachgezeichnet_out" / "v2"
+OUT = P4 / "nachgezeichnet_out" / "v3"
+
+#: R1 (Owner-Korrektur 2026-09-11): Block-Namen der Allgemeinbeleuchtung im Quellplan —
+#: deren Reihe ist die Montagelinie der Gang-Notleuchten.
+_BESTAND_BLOCKS = {"spots", "deckenauslass"}
+
+
+def _bestand_leuchten(quelle_dxf: str, faktor: float = 1000.0):
+    """Positionen der Bestands-Allgemeinbeleuchtung (Quellplan in Metern → mm)."""
+    doc = ezdxf.readfile(quelle_dxf)
+    return tuple(
+        (e.dxf.insert[0] * faktor, e.dxf.insert[1] * faktor)
+        for e in doc.modelspace().query("INSERT")
+        if e.dxf.name.lower().strip() in _BESTAND_BLOCKS
+    )
 
 
 def _enthaelt(poly, xy) -> bool:
@@ -229,7 +243,8 @@ def main():
             res = pipeline._run_mit_quelle(
                 bundle, raum, quelle_dxf, out_path=str(out_dxf), lb_path=None,
                 plankopf={"projekt": f"Elektroplan DE (nachgezeichnet) · {floor}"},
-                projekt_kontext=None, photometrie=None, pdf_quelle=True)
+                projekt_kontext=None, photometrie=None, pdf_quelle=True,
+                bestand_leuchten_mm=_bestand_leuchten(quelle_dxf))
             plan_pdf = OUT / f"{floor}_plan.pdf"
             # PDF aus dem Modelspace-Sibling (Modus 1): ezdxf rastert Paperspace-Viewports
             # nicht — das Sibling trägt den Blatt-Rahmen, dxf_zu_pdf liefert A0 1:50

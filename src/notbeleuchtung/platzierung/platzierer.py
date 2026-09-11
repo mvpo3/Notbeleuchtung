@@ -194,12 +194,14 @@ class NotlichtPlatzierer:
         lb: LBVorgabe | None = None,
         *,
         oib: OibBefund | None = None,
+        bestand_leuchten_mm: tuple[tuple[float, float], ...] = (),
     ) -> PlatzierungsErgebnis:
         # Querschneidende Eingaben EINMAL bündeln — künftige Nähte sind ein
         # Kontext-Feld statt neuer Parameter-Fädelei durch alle Signaturen.
         kontext = PlatzierungsKontext(
             lb=lb, oib=oib,
             i_cd_fn=self._i_cd_fn, i_cd_fn_je_key=self._i_cd_fn_je_key,
+            bestand_leuchten_mm=tuple(bestand_leuchten_mm),
         )
         platzierungen = [
             *_plan_rettungszeichen(raum, norm),          # Anker
@@ -210,6 +212,10 @@ class NotlichtPlatzierer:
             # Merge behält bei Gleichstand die früher gelistete → die Pflicht-Leuchte
             # bleibt AN der Tür, eine zufällig <2 m benachbarte SL weicht (netto-neutral).
             *fachpraxis.tuerleuchte_pflichtraeume(raum, norm),
+            # R2 (Owner-Korrektur 2026-09-11): AUSSEN-Tür eines COMMUNAL Raums =
+            # Notausgang → RZ, Pfeil durch die Tür (EN 1838 §4.1.2 g). Balkontüren
+            # privater Räume bleiben außen vor (nicht communal).
+            *fachpraxis.aussen_tuer_rz(raum, norm),
             *plan_sicherheitsleuchten(raum, norm),       # Betonungspunkte (Aufheller)
             *plan_antipanik(raum, norm, kontext=kontext),  # Fläche (Trigger OIB-gegated)
             *plan_sonderstellen(raum, norm, kontext=kontext),  # Pflichtstellen §4.1.2
@@ -234,7 +240,13 @@ class NotlichtPlatzierer:
         # snappen (Querachse zentrieren, Längsachse erhalten). VOR dem Entzerren, damit ein
         # Aufheller, der dabei auf sein RZ fällt, vom abstand_nachpass aufgelöst wird.
         # Tür-RZ ausgenommen.
-        platzierungen = mittellinie_snap.snappe_auf_mittellinie(platzierungen, raum)
+        platzierungen = mittellinie_snap.snappe_auf_mittellinie(
+            platzierungen, raum, bestand_leuchten_mm=kontext.bestand_leuchten_mm
+        )
+        # R4 (Owner-Korrektur 2026-09-11): RZ am Hauseingang zeigt in FLUCHTRICHTUNG
+        # durch die Tür — nie in die Aufschlagrichtung. Rotations-Nachpass, No-op ohne
+        # `tuer_detail="hauseingang"`. Nach dem Snap (Positionen final für die Richtung).
+        platzierungen = fachpraxis.pfeil_durch_hauseingang(platzierungen, raum)
         # Kollisionen an der Strategie-Naht auflösen (Dubletten mergen, verschieden-artige
         # entzerren) — nach lb_override (das SL hinzufügt), vor der Deckungs-Zuordnung,
         # damit diese die finalen Positionen sieht.

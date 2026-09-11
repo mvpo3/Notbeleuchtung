@@ -11,8 +11,17 @@ Mitte ist exakt die Bbox-Mitte der kurzen Achse.
 
 Ausgenommen: Tür-RZ (`QUELLE_TUERLEUCHTE`, gehört an die Tür) und quadratische Räume
 (Pocket/Knoten ohne klare Längsachse). Render-frei, kein Contract berührt.
+
+R1 (Owner-Korrektur 2026-09-11, AutoCAD-Diff Elektroplan DE, 3× notiert „immer in einer
+Linie mit der Beleuchtung"): liegen BESTANDS-Leuchten der Allgemeinbeleuchtung im Gang
+(z.B. die Spot-Reihe der Architektur-Unterlage), ist DEREN Linie die Montagelinie — die
+Notleuchten sitzen in einer Reihe mit dem Bestand, nicht auf der geometrischen Bbox-Mitte
+(Beleg: Spot-Reihe y=1735,829, Owner-Symbole exakt darauf; Bbox-Mitte lag 300 mm daneben).
+Ohne Bestands-Punkte: bisheriges Verhalten (Bbox-Mitte).
 """
 from __future__ import annotations
+
+import statistics
 
 from notbeleuchtung.hauptengine.contracts import Platzierung, RaumModell
 
@@ -23,6 +32,10 @@ from .geometry import _bbox, point_in_polygon
 _KINDS = ("rz", "sicherheitsleuchte", "antipanik")
 _LAENGS_FAKTOR = 2.0   # Arm gilt erst als „gerader Korridor", wenn lang >= 2× kurz
 _MIN_SNAP_MM = 20.0    # kleinere Verschiebung = schon zentriert, unverändert lassen
+#: R1: Bestands-Leuchten gelten nur als „Reihe", wenn ihre Querstreuung im Arm klein ist —
+#: sonst ist es keine Linie (z.B. versetzte Wandleuchten) und die Bbox-Mitte bleibt.
+_BESTAND_QUER_SPREAD_MM = 600.0
+_BESTAND_MIN_PUNKTE = 2
 
 
 def _korridor_achse(polygon):
@@ -37,12 +50,37 @@ def _korridor_achse(polygon):
     return None, 0.0
 
 
-def snappe_auf_mittellinie(platzierungen: list[Platzierung], raum: RaumModell) -> list[Platzierung]:
+def _bestand_mitte(achse, polygon, bestand_leuchten_mm):
+    """R1: Querkoordinaten-Median der Bestands-Leuchten IM Korridor — oder None,
+    wenn keine belastbare Reihe da ist (zu wenige Punkte / zu breit gestreut)."""
+    quer = [
+        p[1] if achse == "y" else p[0]
+        for p in bestand_leuchten_mm
+        if point_in_polygon((p[0], p[1]), polygon)
+    ]
+    if len(quer) < _BESTAND_MIN_PUNKTE or max(quer) - min(quer) > _BESTAND_QUER_SPREAD_MM:
+        return None
+    return statistics.median(quer)
+
+
+def snappe_auf_mittellinie(
+    platzierungen: list[Platzierung],
+    raum: RaumModell,
+    bestand_leuchten_mm: tuple[tuple[float, float], ...] = (),
+) -> list[Platzierung]:
     korridore = [
         r for r in raum.raeume
         if (r.raum_typ or "").upper() in _KORRIDOR_TYPEN and len(r.polygon_mm) >= 3
     ]
     achsen = {r.id: _korridor_achse(r.polygon_mm) for r in korridore}
+    if bestand_leuchten_mm:
+        for r in korridore:
+            achse, mitte = achsen[r.id]
+            if achse is None:
+                continue
+            bm = _bestand_mitte(achse, r.polygon_mm, bestand_leuchten_mm)
+            if bm is not None:
+                achsen[r.id] = (achse, bm)   # R1: Bestandslinie schlägt Bbox-Mitte
     if not any(a for a, _ in achsen.values()):
         return platzierungen
     out: list[Platzierung] = []
