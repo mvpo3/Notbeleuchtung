@@ -5,7 +5,7 @@
   "contract_version": "1.4.0",
   "bild_px": [
     2400,
-    1515
+    1846
   ],
   "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
   "kategorien": {
@@ -246,7 +246,8 @@
     }
   ],
   "tueren_gesamt": 233,
-  "laufzeit_s": 376.6,
+  "laufzeit_s": 267.8,
+  "raeume_ausserhalb_ausschnitt": 0,
   "nicht_erkannt": [
     "**untypisierte Räume: 8** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
     "Innenhöfe: **0** — `provider.letzte_aussenbereiche.geschlossen` ist leer (oder es gab keine Wandkörper-Analyse).",

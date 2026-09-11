@@ -5,7 +5,7 @@
   "contract_version": "1.4.0",
   "bild_px": [
     2400,
-    522
+    1106
   ],
   "rotation": "Rotation: dominante Richtung bereits horizontal (0°).",
   "kategorien": {
@@ -38,7 +38,7 @@
   ],
   "ueberlappungen": [],
   "tueren_gesamt": 0,
-  "laufzeit_s": 22.9,
+  "laufzeit_s": 23.4,
   "nicht_erkannt": [
     "**untypisierte Räume: 3** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
     "Gänge (GANG/VORRAUM/AUFZUGSVORPLATZ): **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",

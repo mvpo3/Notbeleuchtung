@@ -4,8 +4,8 @@
   "floor": "EG",
   "contract_version": "1.4.0",
   "bild_px": [
-    1582,
-    1800
+    1800,
+    1776
   ],
   "rotation": "Rotation: dominante Richtung bereits horizontal (0°).",
   "kategorien": {
@@ -207,7 +207,7 @@
     }
   ],
   "tueren_gesamt": 164,
-  "laufzeit_s": 46.1,
+  "laufzeit_s": 45.8,
   "nicht_erkannt": [
     "**untypisierte Räume: 7** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
     "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",

@@ -4,8 +4,8 @@
   "floor": "DG",
   "contract_version": "1.4.0",
   "bild_px": [
-    2400,
-    1378
+    1607,
+    1800
   ],
   "rotation": "Rotation: keine dominante Kantenrichtung — 0° belassen.",
   "kategorien": {
@@ -89,7 +89,7 @@
     }
   ],
   "tueren_gesamt": 29,
-  "laufzeit_s": 13.8,
+  "laufzeit_s": 13.5,
   "nicht_erkannt": [
     "untypisierte Räume: 0 — jeder Raum trägt einen `raum_typ`.",
     "Innenhöfe: **0** — `provider.letzte_aussenbereiche.geschlossen` ist leer (oder es gab keine Wandkörper-Analyse).",

@@ -4,7 +4,7 @@
   "floor": "EG",
   "contract_version": "1.4.0",
   "bild_px": [
-    1153,
+    1160,
     1800
   ],
   "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
@@ -108,7 +108,7 @@
     }
   ],
   "tueren_gesamt": 106,
-  "laufzeit_s": 54.9,
+  "laufzeit_s": 52.4,
   "nicht_erkannt": [
     "**untypisierte Räume: 6** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
     "`stair_exit`: **0** — kein Stiegenhaus-Ausgang erkannt.",

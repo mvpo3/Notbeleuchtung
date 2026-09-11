@@ -1,6 +1,6 @@
 # Übersicht — Herrenholz_UG
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\DXF_Herrenholzgasse\20230228_po_ug_V.dxf` · Geschoss: `UG` · Bild: 2400×776 px · Laufzeit 123.3 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\DXF_Herrenholzgasse\20230228_po_ug_V.dxf` · Geschoss: `UG` · Bild: 2400×943 px · Laufzeit 125.8 s
 
 ## Erkannte Kategorien
 

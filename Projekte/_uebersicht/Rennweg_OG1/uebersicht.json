@@ -4,8 +4,8 @@
   "floor": "OG1",
   "contract_version": "1.4.0",
   "bild_px": [
-    1800,
-    1774
+    1359,
+    1800
   ],
   "rotation": "Rotation: keine dominante Kantenrichtung — 0° belassen.",
   "kategorien": {
@@ -78,7 +78,7 @@
   ],
   "ueberlappungen": [],
   "tueren_gesamt": 29,
-  "laufzeit_s": 12.8,
+  "laufzeit_s": 12.2,
   "nicht_erkannt": [
     "**untypisierte Räume: 1** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
     "Innenhöfe: **0** — `provider.letzte_aussenbereiche.geschlossen` ist leer (oder es gab keine Wandkörper-Analyse).",

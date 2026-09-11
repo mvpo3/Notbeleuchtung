@@ -1,6 +1,6 @@
 # Übersicht — Rennweg_OG2
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Rennweg\OG2 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf` · Geschoss: `OG2` · Bild: 1800×1774 px · Laufzeit 14.6 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Rennweg\OG2 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf` · Geschoss: `OG2` · Bild: 1388×1800 px · Laufzeit 14.2 s
 
 ## Erkannte Kategorien
 

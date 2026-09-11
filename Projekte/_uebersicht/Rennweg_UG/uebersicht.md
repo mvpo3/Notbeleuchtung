@@ -1,6 +1,6 @@
 # Übersicht — Rennweg_UG
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Rennweg\UG - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf` · Geschoss: `UG` · Bild: 1800×1765 px · Laufzeit 11.4 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Rennweg\UG - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf` · Geschoss: `UG` · Bild: 1355×1800 px · Laufzeit 11.0 s
 
 ## Erkannte Kategorien
 

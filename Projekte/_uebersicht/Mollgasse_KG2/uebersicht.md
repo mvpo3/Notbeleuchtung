@@ -1,6 +1,6 @@
 # Übersicht — Mollgasse_KG2
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Mollgasse\2.Kellergeschoß.dxf` · Geschoss: `EG` · Bild: 1800×1662 px · Laufzeit 69.8 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Mollgasse\2.Kellergeschoß.dxf` · Geschoss: `EG` · Bild: 2400×2159 px · Laufzeit 69.5 s
 
 ## Erkannte Kategorien
 

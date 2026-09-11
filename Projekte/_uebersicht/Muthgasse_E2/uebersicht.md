@@ -1,6 +1,6 @@
 # Übersicht — Muthgasse_E2
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Pläne 19., Muthgasse 109B - 2026-05-07_13-12\Architekt\Ausführungsplan\M109B_-Plan - AR-AF-A-GR-E2 100 - GRUNDRISS E2.dxf` · Geschoss: `EG` · Bild: 2400×1608 px · Laufzeit 951.5 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Pläne 19., Muthgasse 109B - 2026-05-07_13-12\Architekt\Ausführungsplan\M109B_-Plan - AR-AF-A-GR-E2 100 - GRUNDRISS E2.dxf` · Geschoss: `EG` · Bild: 2326×2400 px · Laufzeit 664.1 s
 
 ## Erkannte Kategorien
 

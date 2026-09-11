@@ -1,6 +1,6 @@
 # Übersicht — Barawitzka_1ST
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Barawitzkagasse\415_260415_PP_VA_1_4 1 St.dxf` · Geschoss: `EG` · Bild: 1800×731 px · Laufzeit 147.6 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Barawitzkagasse\415_260415_PP_VA_1_4 1 St.dxf` · Geschoss: `EG` · Bild: 2400×732 px · Laufzeit 146.7 s
 
 ## Erkannte Kategorien
 

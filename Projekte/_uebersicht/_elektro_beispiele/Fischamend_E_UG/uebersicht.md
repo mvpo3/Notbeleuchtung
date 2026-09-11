@@ -1,6 +1,6 @@
 # Übersicht — Fischamend_E_UG
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\BVH Fischamenderstraße\fertige Elektromontagepläne\UG\Elektromontageplan_Untergeschoß.dxf` · Geschoss: `EG` · Bild: 1800×1241 px · Laufzeit 40.3 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\BVH Fischamenderstraße\fertige Elektromontagepläne\UG\Elektromontageplan_Untergeschoß.dxf` · Geschoss: `EG` · Bild: 1800×1590 px · Laufzeit 40.3 s
 
 ## Erkannte Kategorien
 

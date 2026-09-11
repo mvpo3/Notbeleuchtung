@@ -1,6 +1,6 @@
 # Übersicht — Fischamend_E_BT2_OG1
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\BVH Fischamenderstraße\fertige Elektromontagepläne\BT2\Elektromontageplan_1.OBERGESCHOSS BT2.dxf` · Geschoss: `EG` · Bild: 1091×1800 px · Laufzeit 47.3 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\BVH Fischamenderstraße\fertige Elektromontagepläne\BT2\Elektromontageplan_1.OBERGESCHOSS BT2.dxf` · Geschoss: `EG` · Bild: 1195×1800 px · Laufzeit 47.3 s
 
 ## Erkannte Kategorien
 

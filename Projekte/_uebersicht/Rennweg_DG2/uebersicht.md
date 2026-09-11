@@ -1,6 +1,6 @@
 # Übersicht — Rennweg_DG2
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Rennweg\DG2 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf` · Geschoss: `DG` · Bild: 2400×1378 px · Laufzeit 13.8 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Rennweg\DG2 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf` · Geschoss: `DG` · Bild: 1607×1800 px · Laufzeit 13.5 s
 
 ## Erkannte Kategorien
 

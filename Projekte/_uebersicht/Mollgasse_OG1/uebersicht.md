@@ -1,6 +1,6 @@
 # Übersicht — Mollgasse_OG1
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Mollgasse\1.Obergeschoß.dxf` · Geschoss: `EG` · Bild: 1800×1468 px · Laufzeit 110.5 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\Mollgasse\1.Obergeschoß.dxf` · Geschoss: `EG` · Bild: 2400×2078 px · Laufzeit 110.0 s
 
 ## Erkannte Kategorien
 

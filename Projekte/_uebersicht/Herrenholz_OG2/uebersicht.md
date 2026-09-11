@@ -1,6 +1,6 @@
 # Übersicht — Herrenholz_OG2
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\DXF_Herrenholzgasse\20230228_po_2og_V.dxf` · Geschoss: `2OG` · Bild: 2400×776 px · Laufzeit 126.1 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\DXF_Herrenholzgasse\20230228_po_2og_V.dxf` · Geschoss: `2OG` · Bild: 2400×943 px · Laufzeit 127.1 s
 
 ## Erkannte Kategorien
 

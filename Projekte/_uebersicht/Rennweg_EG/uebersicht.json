@@ -122,7 +122,7 @@
   ],
   "ueberlappungen": [],
   "tueren_gesamt": 41,
-  "laufzeit_s": 13.2,
+  "laufzeit_s": 13.0,
   "nicht_erkannt": [
     "**untypisierte Räume: 5** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
     "Innenhöfe: **0** — `provider.letzte_aussenbereiche.geschlossen` ist leer (oder es gab keine Wandkörper-Analyse).",

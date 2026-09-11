@@ -1,6 +1,6 @@
 # Übersicht — Herrenholz_EG
 
-DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\DXF_Herrenholzgasse\20230228_po_eg_V.dxf` · Geschoss: `EG` · Bild: 2400×718 px · Laufzeit 468.9 s
+DXF: `D:\KI Projekt\Notbeleuchtung\Projekte\DXF_Herrenholzgasse\20230228_po_eg_V.dxf` · Geschoss: `EG` · Bild: 2400×933 px · Laufzeit 472.4 s
 
 ## Erkannte Kategorien
 

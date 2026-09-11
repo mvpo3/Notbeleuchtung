@@ -1,6 +1,6 @@
 # Übersicht — BaufeldE2_NB_UG
 
-DXF: `C:\Users\selma\AppData\Local\Temp\claude\D--KI-Projekt\8fc32369-9bee-42cd-9e07-20d9eeb9eff5\scratchpad\zips\Baufeld_E2_NB\Elektromontageplan_UG.dxf` · Geschoss: `UG` · Bild: 2232×2400 px · Laufzeit 711.3 s
+DXF: `C:\Users\selma\AppData\Local\Temp\claude\D--KI-Projekt\8fc32369-9bee-42cd-9e07-20d9eeb9eff5\scratchpad\zips\Baufeld_E2_NB\Elektromontageplan_UG.dxf` · Geschoss: `UG` · Bild: 2400×2320 px · Laufzeit 718.4 s
 
 ## Erkannte Kategorien
 
