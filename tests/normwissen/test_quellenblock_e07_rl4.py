@@ -12,6 +12,8 @@ sichern deshalb nicht Verhalten, sondern die **Grenzen der Aussage**:
 """
 from __future__ import annotations
 
+import ast
+from collections.abc import Iterator
 from pathlib import Path
 
 import yaml
@@ -25,6 +27,37 @@ SRC = Path(__file__).parents[2] / "src" / "notbeleuchtung"
 def _lade(name: str) -> dict:
     with open(DATA / name, encoding="utf-8") as fh:
         return yaml.safe_load(fh)
+
+
+#: Dateien, die Quellenarbeit ohne Verbraucher sind — niemand im Produktivcode
+#: darf sie laden, solange die zugehörige Semantik nicht geklärt ist.
+_BEWACHTE_DATEIEN = ("ove_e07_funktionserhalt", "oib_rl4_fluchtwegbreiten")
+
+#: Aufzählende Zugriffe: damit ließe sich eine Datei ohne Namensnennung laden.
+_ENUMERATION = ("glob", "rglob", "iterdir", "listdir", "scandir")
+
+
+def _docstring_knoten(baum: ast.Module) -> set[int]:
+    """`id()` aller Konstanten, die Docstring sind — die zählen nicht als Zugriff."""
+    ids: set[int] = set()
+    for knoten in ast.walk(baum):
+        if not isinstance(knoten, ast.Module | ast.ClassDef
+                          | ast.FunctionDef | ast.AsyncFunctionDef):
+            continue
+        erste = knoten.body[0] if knoten.body else None
+        if (isinstance(erste, ast.Expr) and isinstance(erste.value, ast.Constant)
+                and isinstance(erste.value.value, str)):
+            ids.add(id(erste.value))
+    return ids
+
+
+def _code_strings(baum: ast.Module) -> Iterator[tuple[int, str]]:
+    """Alle String-Literale **außerhalb** von Docstrings (Kommentare hat der AST nie)."""
+    docs = _docstring_knoten(baum)
+    for knoten in ast.walk(baum):
+        if (isinstance(knoten, ast.Constant) and isinstance(knoten.value, str)
+                and id(knoten) not in docs):
+            yield knoten.lineno, knoten.value
 
 
 E07 = _lade("ove_e07_funktionserhalt.yaml")
@@ -170,17 +203,66 @@ def test_rl4_benennt_die_fehlenden_eingaben_mit_adressat() -> None:
 
 # ── Beide Blöcke: keine Aktivierung ──────────────────────────────────────────
 def test_kein_contract_wert_und_kein_konsument() -> None:
-    """Weder E07 noch RL 4 verändern das Regelwerk oder werden irgendwo geladen."""
+    """Weder E07 noch RL 4 verändern das Regelwerk oder werden irgendwo geladen.
+
+    Geprüft wird der **Zugriff**, nicht der Dateiinhalt: der Wächter liest jedes
+    Modul unter `src/` als AST und sieht nur String-Literale, die im **Code**
+    stehen — Ladepfad (`_lade("…yaml")`, Importname) und Dateizugriff
+    (`open(DATA_DIR / "…")`) gleichermaßen. **Docstrings und Kommentare sind
+    ausgenommen**: eine wörtliche Quellenangabe in Prosa ist ein Beleg, kein
+    Verbraucher (zuvor schlug der Substring-Wächter genau daran an —
+    `raumerkennung/breitenprofil.py`, Modul-Docstring).
+
+    Die zweite Hälfte schließt die Lücke, die ein reiner Namensvergleich lässt:
+    wird irgendwo im Produktivcode ein **Datenverzeichnis aufgezählt**
+    (`glob`/`iterdir`/…), ließe sich eine Datei ohne Namensnennung laden — dann
+    trägt dieser Wächter nicht mehr und sagt das, statt still grün zu bleiben.
+    """
     snap = En1838NormProvider().regelwerk_snapshot()
     assert snap.arbeitsplatz_lux.min_lux_absolut is None
     assert snap.flaechen_schwellen.antipanik_min_m2 is None
-    treffer = [
-        p.relative_to(SRC).as_posix()
-        for p in SRC.rglob("*.py")
-        if any(name in p.read_text(encoding="utf-8")
-               for name in ("ove_e07_funktionserhalt", "oib_rl4_fluchtwegbreiten"))
-    ]
-    assert treffer == [], treffer
+
+    zugriffe: list[str] = []
+    aufzaehlungen: list[str] = []
+    for pfad in sorted(SRC.rglob("*.py")):
+        quelle = pfad.read_text(encoding="utf-8")
+        baum = ast.parse(quelle, filename=str(pfad))
+        rel = pfad.relative_to(SRC).as_posix()
+        for zeile, wert in _code_strings(baum):
+            if any(name in wert for name in _BEWACHTE_DATEIEN):
+                zugriffe.append(f"{rel}:{zeile} -> {wert!r}")
+        for knoten in ast.walk(baum):
+            if (isinstance(knoten, ast.Call)
+                    and isinstance(knoten.func, ast.Attribute)
+                    and knoten.func.attr in _ENUMERATION):
+                text = ast.get_source_segment(quelle, knoten) or ""
+                if "data" in text.lower():
+                    aufzaehlungen.append(f"{rel}:{knoten.lineno} -> {text}")
+
+    assert zugriffe == [], zugriffe
+    assert aufzaehlungen == [], (
+        "Ein Datenverzeichnis wird aufgezählt — der Namensvergleich oben kann "
+        f"einen Verbraucher dann nicht mehr ausschließen: {aufzaehlungen}"
+    )
+
+
+def test_waechter_sieht_code_aber_keine_prosa(tmp_path: Path) -> None:
+    """Der Wächter unterscheidet Ladepfad von Quellenangabe — beides gezielt geprüft."""
+    prosa = ast.parse(
+        '"""Quelle: oib_rl4_fluchtwegbreiten.yaml, Punkt 2.7.1."""\n'
+        "# auch als Kommentar: oib_rl4_fluchtwegbreiten.yaml\n"
+        "WERT = 1\n"
+    )
+    assert not [w for _, w in _code_strings(prosa)
+                if any(n in w for n in _BEWACHTE_DATEIEN)]
+
+    for quelltext in (
+        '_lade("oib_rl4_fluchtwegbreiten.yaml")',              # Ladepfad
+        'open(DATA_DIR / "ove_e07_funktionserhalt.yaml")',     # Dateizugriff
+    ):
+        baum = ast.parse(quelltext)
+        assert [w for _, w in _code_strings(baum)
+                if any(n in w for n in _BEWACHTE_DATEIEN)], quelltext
 
 
 # ── E05 / E06: Anwendungsbereich und Bezugsnorm binden ───────────────────────
