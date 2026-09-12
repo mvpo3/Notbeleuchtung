@@ -232,4 +232,9 @@ Legende: ✔=bestätigt, ✚=verfeinert, ∅=nicht prüfbar.
   **freie Verlaufs-RZ in Gangmitte**, KEINE Tür-RZ. Präzisiert R-G: im Keller/UG wird
   der Pfeil-unten-Block auch im Verlauf gesetzt (din-Praxis; Kandidat „kellergang_rz"
   — Kette in Gangmitte mit ~6–7-m-Takt, deutlich enger als die 30-m-Sichtweite).
-- Frage 1 (SIMA_ET-Doppelwelt): offen, Detail-Sichtung angefordert.
+- **Frage 1 GEKLÄRT — SIMA_ET wird IGNORIERT (Owner-Entscheid 2026-09-12):** Sichtung
+  (AM_RAIN_SICHTUNG_FRAGE1.pdf) zeigte reines Symbol-Overlay ohne Architektur, Blöcke
+  ohne eigene Grafik, ATTRIBs nur GEBEZ/Z=1, keine Produktdaten → Alt-/Fremdsystem.
+  **Maßgeblich ist die din-Welt (106 Symbole, Gebäude-Koordinaten, volles Datenmodell).**
+  SIMA_ET_*-Layer/-Blöcke gehören NICHT in den Lern-Korpus und NICHT ins
+  Import-Vokabular; beim UG-Symbol-Band zählt nur die din-Welt (106, nicht 213).
