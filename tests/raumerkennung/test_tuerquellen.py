@@ -219,6 +219,11 @@ def test_terrassentuer_im_geschlossenen_hof_kein_hauseingang():
                     von_raum="sh", nach_raum="hof")
     ohne = _tuer()
     typisiere_tueren([ohne], [sh, hof], "EG")
+    # ZURUECKGEDREHT 2026-09-12: hier stand kurzzeitig `== "balkontuer"`, weil
+    # die Freiflaechen-Regel zuerst auch im EG griff. Das war falsch — sie
+    # gilt nur ausserhalb des Erdgeschosses (Owner: im EG mit Ausgang ins
+    # Gelaende bleiben Freiflaechen moeglich). Die urspruengliche Erwartung
+    # ist damit wieder die richtige.
     assert ohne.tuer_detail == "hauseingang"
 
     mit = _tuer()

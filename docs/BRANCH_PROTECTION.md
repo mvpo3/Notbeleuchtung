@@ -120,3 +120,50 @@ berührt** (nicht „skipped") — nur so ist er als Required Check brauchbar.
 2. `contract-freeze` einmal auf einem PR laufen lassen, damit der Name in der
    Check-Auswahl der UI auftaucht.
 3. Regel setzen, danach mit dem `--jq`-Aufruf aus Abschnitt 4 gegenprüfen.
+
+## 7. Stand 2026-09-11 — was `b00420a` schließt und was offen bleibt
+
+Mit PR #152 ist Enis' Korrektur `b00420a` auf `main` (gemerged 2026-09-10
+23:31 UTC). `owners()` las `.github/CODEOWNERS` bisher mit `open()` aus dem
+Arbeitsbaum — bei `on: pull_request` ist das der **PR-Stand**, ein PR konnte sich
+die benötigte Zustimmung also im selben Commit wegdefinieren. Jetzt kommt die
+Owner-Liste über die API aus `CODEOWNERS` am **`BASE_SHA`** des PR; jede
+unlesbare Prüfgrundlage endet in `sys.exit` („Abbruch statt Freigabe").
+Unabhängig nachgeprüft am Stand `804e6af`: `tests/ci` 14 passed,
+`tests/ci tests/contract` 70 passed, `ruff check .` clean.
+
+Das schließt **eine** Lücke, nicht zwei. Offen bleiben zwei **verschiedene**
+Fragen, die nicht vermischt werden dürfen:
+
+### 7.1 Vertrauenswürdige Ausführung des Prüfers — eine Workflow-Umstellung
+
+Bei `on: pull_request` laufen `contract-freeze.yml` **und**
+`.github/scripts/contract_freeze_check.py` aus dem **PR-Head**. Ein PR, der eine
+der beiden Dateien ändert, verändert damit den Prüfer selbst — Workflow und
+Prüfskript sind **vom PR beeinflussbar**. Abhilfe wäre eine
+**Workflow-Umstellung**, die den Prüfer in einer Fassung laufen lässt, die der PR
+nicht bestimmt (z. B. Ausführung der Basis-Fassung des Workflows, ohne
+PR-Inhalte auszuführen). Das ist mit GitHub-Mitteln erreichbar und **bewusst
+nicht** Teil von Enis' Paket. Stand: nicht beauftragt, nicht entschieden.
+
+### 7.2 Von GitHub erzwungene Mergesperre — eine Repo-Einstellung
+
+Davon unabhängig: ein **Required Status Check** (`contract-freeze` in
+`required_status_checks`, Abschnitte 3 und 4) ist keine Code-, sondern eine
+**Repo-Einstellung**. Sie liegt beim Kontoinhaber **@mvpo3 (Leonis)** und ist
+laut aktuellem Plan **möglicherweise nicht verfügbar**. Heute lesend
+nachgemessen (2026-09-11 21:19 UTC), unverändert gegen Abschnitt 1:
+
+```
+branches/main/protection → 404 Not Found
+permissions              → {"admin":false,"maintain":false,"pull":true,"push":true,"triage":true}
+rulesets                 → 403 "Upgrade to GitHub Pro or make this repository public to enable this feature."
+repo                     → {"owner_type":"User","plan":null,"private":true,"visibility":"private"}
+```
+
+Keiner der beiden Punkte ersetzt den anderen: 7.2 allein sperrt zwar den Merge,
+lässt aber einen PR durch, der den Prüfer selbst umschreibt; 7.1 allein macht den
+Prüfer unbeeinflussbar, verhindert aber keinen Merge.
+
+> **Bis beides geklärt ist, ist `contract-freeze` eine verlässliche Anzeige,
+> keine technisch erzwungene Sperre.** (Enis, Übergabe zu `b00420a`, § 6)

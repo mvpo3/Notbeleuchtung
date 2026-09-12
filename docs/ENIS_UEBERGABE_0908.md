@@ -2549,3 +2549,981 @@ Wohnungstüren über die Layer-Räume".
 
 **Nicht gemacht:** keine Bereinigung, keine Datei in `src/` geändert, kein Test,
 kein Contract, kein Zielband bewegt.
+
+---
+
+## 19. Nachtrag 2026-09-12 — `Schl.` entschieden: Kanon-Typ SCHLEUSE, aber nur für `E2-VF-11a`
+
+> **Status: umgesetzt.** Commit `96dcef6`. Kein Band abgesenkt, kein xfail
+> gedreht, `hauptengine/contracts/**` von diesem Schritt unberührt.
+
+Enis hat die offene Frage aus § 13 / `docs/OFFENE_FRAGEN.md` beantwortet:
+`raum_65` (Muthgasse E2, Stempelnummer `E2-VF-11a`, Stempel `Schl.`, 13,04 m²,
+`Ker.Bel.`) ist eine **SCHLEUSE**, Nutzungsklasse `ALLGEMEIN_ERSCHLIESSUNG`;
+Grundlage ist die Lage beim Stiegenkern und der Vergleich mit E8, wo
+„DBA-Abstr. Schleuse" ausgeschrieben steht. **Die Notbeleuchtungsanforderung
+bleibt ausdrücklich offen** (`normwissen/data/regel_deckung.yaml`: `offen`,
+Owner Enis). Die Entscheidung gilt **nur für diesen Raum**.
+
+### 19.1 Inventar — `Schl.` kommt in den fünf Prüfplänen genau zweimal vor
+
+| Plan | Text | xy_mm | Stempelgruppe | Raum |
+|---|---|---|---|---|
+| Muthgasse_E2 | `Schl.` (MTEXT, `A-AREA-IDEN`) | 335 239 / 108 646 | `E2-VF-11a` · 13,04 m² · `Ker.Bel.` | `raum_65`, Quelle L, 15 Punkte |
+| Muthgasse_E2 | `Schl.` (MTEXT, `A-AREA-IDEN`) | 333 017 / 97 219 | `E2-VF-11b` · 3,73 m² · `Ker.Bel.` | `raum_67`, Quelle L, 8 Punkte, liegt zu **99,3 %** in `raum_88` (F, STIEGENHAUS) |
+| Barawitzka_EG, Mollgasse_EG, Rennweg_EG, Rennweg_OG3 | — | — | **0 Treffer** | — |
+
+Token `schl` außerhalb dieser zwei Stempel: **0** in allen fünf Plänen (auch in
+Blocknamen, ATTRIBs und rekursiven Blocktexten). Token `schleuse`: **0**.
+
+### 19.2 Die In-Plan-Belege trennen die beiden NICHT — gemessen
+
+Das ist der wichtigste Befund dieses Schritts, und er korrigiert zwei Sätze aus
+der früheren Fassung von `docs/OFFENE_FRAGEN.md`:
+
+- Die dort genannten „0 mm zu fünf STIEGENHAUS-Polygonen" stammen aus den
+  **Treppen-Block-Extents** (`geometrie_typ.stiege_rechtecke`, Räume
+  `stiegenhaus_1…8` entstehen erst im Provider, nicht in `raeume.json`). In
+  derselben 0-mm-Klasse liegen auch die **Küchen** `raum_29`, `raum_91`,
+  `raum_86`. Gegen das STIEGENHAUS-Polygon `raum_88` aus `raeume.json` ist
+  `raum_65` **4848 mm** entfernt — während `raum_67` darin liegt.
+- Die „~8,2 m gemeinsame Kontaktlänge" ist mit der dort angegebenen Definition
+  **nicht reproduzierbar**: gemessen 4,72 m (Einzelkanten 662/1132/1131/1131/662
+  mm), in der Gegenrichtung 5,21 m.
+- Text-Belege: `DBA` liegt bei `raum_65` in 1663 mm, `WDB DBA` bei `raum_67` in
+  1232 mm (beides ab dem m²-Anker `Stempel.position_mm`). „Schleuse" und
+  „Abstr" kommen in E2 **gar nicht** vor.
+
+**Der einzige echte Unterscheider ist das Vergleichsgeschoss.** E3–E9 teilen die
+Koordinaten von E2 (Versatz 0/0, über eindeutige identische Texte bestimmt).
+Der Text „DBA-Abstr. Schleuse" (`A-GENM-IDEN`) steht in E8 bei 332 846 / 108 857
+= **627 mm von `raum_65`** und 9791 mm von `raum_67`; in E9 **10 mm** von
+`raum_65`. An der Lage von `raum_67` trägt E7 ein WC (4,36 m²), E8 ein SR
+(6,07 m², Parkett). Ein Einzelplan-Parse sieht die Nachbargeschosse nicht — der
+Vergleichsbeleg steckt deshalb in der **Entscheidung**, nicht im Code.
+
+### 19.3 Umsetzung — drei Bedingungen, alle nötig
+
+Das ausgeschriebene Wort ist eindeutig und steht regulär im Kanon
+(`raumtyp._EXTRA_DIRECT`: `schleuse` → `SCHLEUSE`, Fluchtweg + communal).
+Das **mehrdeutige Kürzel** läuft über das neue Modul
+`raumerkennung/kuerzel_entscheid.py`:
+
+```
+Kandidaten-Kürzel  +  Zusatzbeleg im Plan  +  Owner-Entscheidung für GENAU
+diese Stempelnummer                        →  raum_typ
+```
+
+Fehlt eines davon, bleibt der Raum untypisiert und bekommt einen Hinweis, den
+`bericht.md` druckt („## Hinweise Kürzel-Auflösung"). Das Register wird **vor**
+den Belegen aufgelöst — sonst wäre „Beleg weggefallen" im Bericht nicht von
+„niemand hat entschieden" zu unterscheiden, und der Text-Beleg von `E2-VF-11a`
+hat nur ~340 mm Luft zum Radius (1663 mm gegen 2000 mm).
+`stempel_anker` bildet für Kandidaten-Kürzel überhaupt erst einen Stempel;
+`Stempel.typ` bleibt dabei `None` — es wird kein Typ erfunden.
+
+Ehrlich benannt: **die Sicherheit ruht auf dem Register-Eintrag, nicht auf der
+Geometrie.** `raum_67` erfüllt beide Belege und wird allein durch die fehlende
+Entscheidung gehalten.
+
+### 19.4 Gemessene Wirkung (Muthgasse_E2, Kaskade vorher → nachher)
+
+| Kennzahl | vorher | nachher |
+|---|--:|--:|
+| Stempel | 99 (0 ohne Typ) | **101** (2 ohne Typ — die Kürzel-Stempel) |
+| mit Stempel | 90 | **92** |
+| Flag ok | 73 | **75** |
+| Kaskadenkette | L:80 H:1 F:20 R:0 | **unverändert** |
+| `finde_stempel` Barawitzka/Mollgasse/Rennweg_EG/OG3 | 38/83/19/10 | **unverändert** |
+
+Provider-Parse: genau **ein** SCHLEUSE-Raum (`raum_65`, 13,04 m²,
+`ALLGEMEIN_ERSCHLIESSUNG`, Fluchtweg + communal), `raum_67` untypisiert
+(`nutzungsklasse: null`). `stair_exit` 5 → 7, Türen typisiert 205 → 209 von 291,
+Segmente 143 → 148. Kein Kandidaten-Stempel geriet in die Flutung (F:20
+unverändert), deshalb war keine Zusatzlogik in `kaskade.py` nötig.
+
+### 19.5 Der strict-xfail „stair_exit aus echter Blocktür" bleibt xfail
+
+Die Annahme, der Test scheitere nur am fehlenden `raum_typ` auf `raum_65`, ist
+**gemessen widerlegt**: nach der Typisierung gibt es 7 statt 5 `stair_exit` (neu
+`exit_tuer_50` und `exit_durchgang_141`, beide an `raum_65`), aber **keiner**
+davon sitzt auf einer echten `A-DOOR`/`A-GLAZ`-Blocktür — genau das verlangt der
+Test. Damit bleibt der Befund aus § 13.7 unverändert: alle `stair_exit` stammen
+aus Kontaktzonen-Artefakten. `test_soll_stair_exits` (≥ 9) bleibt ebenfalls
+xfail (7 < 9), `test_soll_90_prozent_tueren_typisiert` ebenfalls (71,8 %).
+Lauf: `tests/naht/test_soll_muthgasse.py` → **9 passed, 3 xfailed, 0 XPASS**.
+
+### 19.6 Was offen bleibt
+
+- **`E2-VF-11b` (`raum_67`)** — Entscheidungsvorlage in
+  `docs/OFFENE_FRAGEN.md`: E3–E6 tragen an derselben Lage ebenfalls `Schl.`,
+  E7 ein WC, E8/E9 ein SR; 3,73 m²; liegt zu 99,3 % im F-Artefaktraum `raum_88`.
+- **Notbeleuchtungsanforderung SCHLEUSE** — `regel_deckung.yaml`, Owner Enis.
+  Dort steht ausdrücklich, dass „offen" nicht „wirkungslos" heißt: die
+  Nutzungsklasse wirkt heute schon auf Türtypisierung und Ausgänge.
+- **Außerhalb der fünf Prüfpläne**: im Gesamtkorpus tragen 2 Stempel den
+  ausgeschriebenen Namen `SCHLEUSE`
+  (`Projekte/_ergebnis_alle/2.Kellergeschoß`, bisher untypisiert). Dort ändert
+  der Kanon-Eintrag Typ und Flags — **nicht nachgemessen**, der Quellplan liegt
+  nicht in `Projekte/_eingang`.
+
+---
+
+## 20. Nachtrag 2026-09-12 — Bereinigung der Raumüberlappungen (§ 14.6/§ 14.6.1 umgesetzt)
+
+> **Status: umgesetzt.** Commit `6ebf676`, Contract `raum_modell` 1.4.0 → **1.5.0**
+> (rein additiv). Prüfstreckenlauf `2026-09-12 02:58 · 6ebf676` über alle fünf
+> Pläne, exit 0, lastfrei.
+
+### 20.1 Ergebnis in einem Satz
+
+**62 von 62 Überlappern gelöst, 262,342 m² doppelt belegte Fläche auf 0,39 mm²
+gesenkt** — und zwar nicht destruktiv: `polygon_roh` hält den Ring vor der
+Bereinigung, `bereinigung[]` bucht jeden Abzug mit Regel und Gegenspieler.
+
+| Plan | Überlapper vorher → nachher | doppelbelegt vorher → nachher |
+|---|--:|--:|
+| Barawitzka_EG | 9 → **0** | 42,253 m² → 0,05 mm² |
+| Mollgasse_EG | 16 → **0** | 45,845 m² → 0,14 mm² |
+| Muthgasse_E2 | 37 → **0** | 174,245 m² → 0,20 mm² |
+| Rennweg_EG | 0 → 0 | 0,000 m² → 0,00 mm² |
+| Rennweg_OG3 | 0 → 0 | 0,000 m² → 0,00 mm² |
+| **Summe** | **62 → 0** | **262,342 m² → 0,39 mm²** |
+
+Kein Restpaar über der Rauschschwelle von 1 mm² (Akzeptanzkriterium (c) des
+Messskripts).
+
+### 20.2 Regel für Regel — welche Regel löst wie viele der 62
+
+Gerechnet mit `scripts/analyse/ueberlappung_regeln.py` über die eingecheckten
+`raeume.json` (Roh-Polygone aus `polygon_roh`), Definitionen wörtlich § 14.1,
+kumulativ:
+
+| Stufe | Überlapper | gelöst (kumulativ) | doppelt belegt | entfallen | Zerfall |
+|---|--:|--:|--:|--:|--:|
+| `{}` | 62 | 0 | 262 342 446,80 mm² | 0 | 0,000 m² |
+| `{1}` LIFT/SCHACHT | 61 | **1** | 258 398 069,63 mm² | 0 | 0,054 m² |
+| `{1,2}` + Enthaltensein | 46 | **16** | 168 939 486,15 mm² | 0 | 28,540 m² |
+| `{1,2,3}` + Quellen-Rang/Stempelnähe | **0** | **62** | 13 093,01 mm² | 5 | 14,829 m² |
+| `{1,2,3,4}` + Schwerpunkt | 0 | 62 | **0,38 mm²** | 5 | 14,829 m² |
+| `{1,2,3,4,5}` + Restfläche | 0 | 62 | 0,38 mm² | 5 | 14,829 m² |
+
+Stufe `{}` reproduziert die Riegel-Messung exakt (62 / 262,342 m², je Plan
+9/16/37/0/0; die Bänder im Test sind auf 0,1 m² gerundet).
+
+**Buchungen im vollen Lauf:** `QUELLE_RANG` 53 · `STEMPEL_NAEHE` 29 ·
+`ZERFALL` 17 · `ENTHALTENSEIN` 7 · `SCHWERPUNKT` 5 · `ENTFALL` 5 ·
+`LIFT_SCHACHT` 1 · `SCHLITZ` 1 · **`RESTFLAECHE` 0**.
+
+**Regel 5 greift im heutigen Bestand in null Fällen** — sie ist Vorsorge und nur
+durch einen synthetischen Test belegt, nicht durch Bestandsdaten. Das deckt sich
+mit § 14.6.1 („(d) greift in null Fällen").
+
+### 20.3 Fläche je Raum vorher/nachher und die Abweichung vom Stempel
+
+Owner-Auftrag: „Fläche pro Raum vor und nach der Bereinigung vergleichen,
+Abweichung über 5 % gegenüber dem Stempel melden." Ergebnis je Plan
+(`> 5 %` gegen den Stempelwert, roh → bereinigt):
+
+| Plan | > 5 % vorher | > 5 % nachher | davon **neu** |
+|---|--:|--:|---|
+| Barawitzka_EG | 2 | 2 | 0 |
+| Mollgasse_EG | 23 | 23 | 0 |
+| Muthgasse_E2 | 21 | **22** | **2** — `raum_85` (+2,9 % → **−96,7 %**), `raum_29` (0,0 % → **−15,6 %**) |
+| Rennweg_EG | 0 | 0 | 0 |
+| Rennweg_OG3 | 0 | 0 | 0 |
+
+Die zwölf geänderten Muthgasse-Räume im Detail (Stempel / roh → bereinigt):
+
+| Raum | Quelle | Typ | Stempel | roh | bereinigt | Abw. roh → ber. | Regeln |
+|---|---|---|--:|--:|--:|---|---|
+| `raum_84` | F | KÜCHE | 32,53 | 11,41 | 3,07 | −64,9 % → −90,6 % | QUELLE_RANG ×3, ZERFALL |
+| `raum_85` | F | KÜCHE | 32,53 | 33,46 | 1,06 | +2,9 % → −96,7 % | QUELLE_RANG ×4, ZERFALL |
+| `raum_29` | L | KÜCHE | 16,52 | 16,52 | 13,94 | 0,0 % → −15,6 % | ENTHALTENSEIN, ZERFALL |
+| `raum_87` | F | KÜCHE | 24,20 | 39,55 | 24,62 | +63,4 % → **+1,7 %** | QUELLE_RANG ×5, ZERFALL |
+| `raum_88` | F | STIEGENHAUS | 39,70 | 20,67 | 3,82 | −47,9 % → −90,4 % | **LIFT_SCHACHT**, ENTHALTENSEIN, QUELLE_RANG, STEMPEL_NAEHE, ZERFALL |
+| `raum_89` | F | BAD | 4,15 | 4,19 | 4,17 | +0,9 % → +0,5 % | QUELLE_RANG |
+| `raum_90` | F | ZIMMER | 13,83 | 18,95 | 3,99 | +37,0 % → −71,1 % | QUELLE_RANG ×4, ZERFALL |
+| `raum_94` | F | GANG | 31,25 | 18,10 | 16,48 | −42,1 % → −47,3 % | QUELLE_RANG ×5 |
+| `raum_82` | F | KÜCHE | 51,32 | 19,88 | **entfallen** | −61,3 % → — | QUELLE_RANG ×2, ZERFALL, **ENTFALL** |
+| `raum_86` | F | KÜCHE | 41,25 | 43,66 | **entfallen** | +5,8 % → — | ENTHALTENSEIN, QUELLE_RANG ×5, ZERFALL, **ENTFALL** |
+| `raum_92` | F | KÜCHE | 84,72 | 20,73 | **entfallen** | −75,5 % → — | QUELLE_RANG ×4, STEMPEL_NAEHE ×2, ZERFALL, **ENTFALL** |
+| `raum_93` | F | KÜCHE | 5,74 | 8,04 | **entfallen** | +40,0 % → — | QUELLE_RANG ×2, ZERFALL, **ENTFALL** |
+
+**Elf der zwölf sind F-Räume (Stempel-Flutung), neun davon „Wohnküche".** Das
+ist dieselbe Ursache wie in § 18: ein überschüssiger Wohnküche-Stempel je
+Wohnung wird geflutet und läuft über die Layer-Räume. Die Bereinigung schneidet
+diese Flutungen jetzt auf ihr eigenes Gebiet zurück — `raum_87` kommt dadurch
+von +63,4 % auf +1,7 % an seinen Stempelwert, während die Reste der übrigen
+sichtbar machen, wie wenig eigenes Gebiet ihnen bleibt.
+
+### 20.4 Entfallene Räume — namentlich, mit Restkörper
+
+Ein Raum entfällt, wenn nach dem Abzug **unter 1 m²** bleiben (dasselbe
+Kriterium wie die degenerierte Flutung in `kaskade.py:115`). Roh-Polygon,
+Stempel und die volle Regelkette stehen weiter in `raeume.json` unter
+`entfallen` — nichts wird gelöscht.
+
+| Plan | Raum | Stempel | Name | roh | Restkörper |
+|---|---|--:|---|--:|--:|
+| Barawitzka_EG | `raum_44` | 5,31 | „Loggia" (BALKON, F) | 4,879 | 0,2242 |
+| Muthgasse_E2 | `raum_82` | 51,32 | „Wohnküche" | 19,879 | 0,3605 |
+| Muthgasse_E2 | `raum_86` | 41,25 | „Wohnküche" | 43,659 | 0,9385 |
+| Muthgasse_E2 | `raum_92` | 84,72 | „Wohnküche" | 20,726 | 0,1411 |
+| Muthgasse_E2 | `raum_93` | 5,74 | „Wohnküche" | 8,039 | 0,0851 |
+| | | | | | **Σ 1,7494 m²** |
+
+Dazu **14,829 m² verworfene Nebenkomponenten** (`ZERFALL`, Barawitzka 3,512 ·
+Mollgasse 3,073 · Muthgasse 8,244): wenn ein Abzug eine geflutete Maske in
+Stücke zerlegt, bleibt die größte. Beide Posten sind gebucht, die Bilanz geht
+**exakt** auf: Fläche(roh) − Fläche(bereinigt) == Σ der Buchungen, gemessen
+0,000000 mm² unbucht über alle fünf Pläne.
+
+### 20.5 Muthgasse gesondert — der verschluckte LIFT ist weg
+
+Muthgasse war der einzige Plan mit einem verschluckten LIFT/SCHACHT
+(§ 14.2/§ 18.4): `raum_88` (STIEGENHAUS, F) überdeckte `raum_79` (LIFT, L) zu
+**97,6 %**. Nach der Bereinigung, mit derselben Messdefinition:
+
+```
+vorher (Roh):   [('raum_88', 'raum_79', 'LIFT', 0.9760)]
+nachher:        keine
+```
+
+Regel 1 hat den LIFT ausgestanzt (Buchung `LIFT_SCHACHT` an `raum_88`, 3,944 m²).
+**Bleibt eine gemeinsame Ursache übrig? Ja — aber nicht mehr als Überlappung.**
+Der F-Zweig flutet weiter blind: 11 der 12 geänderten Räume sind F-Flutungen,
+4 davon verlieren so viel, dass sie entfallen, und `raum_88` (Stempel 39,70 m²)
+bleibt mit 3,82 m² übrig. Die Überlappung ist gelöst, die **Ursache** nicht: sie
+sitzt weiterhin in `stempel_flutung.flute_stempel`, das die belegten Flächen
+nicht übergeben bekommt (§ 14.4 Punkt 2 der Skizze, weiterhin nicht umgesetzt).
+Die Bereinigung ist die nachgelagerte Auflösung, die der Owner beauftragt hat —
+sie macht die Ursache sichtbar, statt sie zu verdecken.
+
+### 20.6 Grenzen, ehrlich benannt
+
+1. **Löcher.** Der Contract-Ring ist eine Punktliste und kann keine Innenringe
+   tragen. Ein Loch wird als **1-mm-Schlitz** zur Außenkontur kodiert. Gemessen:
+   Fläche, `point_in_polygon`, shapely `covers` und `grid_points` sehen das Loch
+   korrekt als außen; **Konsumenten der Bbox-Mitte nicht**
+   (`platzierung/geometry.py` `find_center_diagonal`, und `find_center_visual`
+   oberhalb Fläche/bbox ≥ 0,9). Derselbe Effekt besteht heute schon beim
+   50-mm-Schlitz der `lift_erkennung`. Im Bestand betrifft das genau **einen**
+   Raum: `Mollgasse raum_51` (Schlitzverlust 2115,2 mm²). `platzierung/` ist
+   fremde Lane (@mvpo3) — eigener Arbeitsschritt, hier nicht angefasst.
+2. **`raeume.json` und `RaumModell` sind nur für die Kaskaden-Räume
+   deckungsgleich.** `typisiere_geometrisch` und `finde_lifte` legen danach
+   eigene Räume an (`stiegenhaus_*`, `lift_*`), die die Bereinigung nicht sieht.
+   Deshalb führt der Bericht die **Modell-Restüberlappung** getrennt:
+   Muthgasse **12 / 38,279 m²**, Barawitzka **4 / 7,131 m²**, Mollgasse und
+   Rennweg 0. Der Riegel auf `raeume.json` misst 0 — diese Differenz ist kein
+   Widerspruch, sondern zwei verschiedene Messbasen.
+3. **Abweichung von der Kaskadenreihenfolge in § 14.6.1, ausdrücklich
+   deklariert:** dort steht **(d) Restfläche weicht an Position 2**, umgesetzt
+   ist sie zuletzt (Regel 5). An Position 2 unterläuft (d) das „LIFT und SCHACHT
+   werden IMMER ausgestanzt", weil 4 der 5 LIFT/SCHACHT-Räume im Bestand aus dem
+   R-Zweig kommen (Barawitzka `rest_1`/`rest_3`, Rennweg_OG3 `rest_1`/`rest_2` —
+   zwei davon 1,157/1,152 m², also nur 0,15 m² über der Entfall-Schwelle).
+   Gemessener Wirkungsunterschied (konstruiert, im Bestand folgenlos): ein
+   R-Raum vollständig in einem Nicht-R-Raum bleibt hier erhalten, unter der
+   Owner-Reihenfolge würde er entfallen. **Owner-Entscheid dazu steht aus.**
+   → **ENTSCHIEDEN am 2026-09-12: Restfläche an Position 2, siehe § 22.**
+4. **Regel 2 vor Regel 3** (Owner-Reihenfolge, umgesetzt) kostet genau einen
+   Fall: `raum_91` (F, Rang 3) liegt zu 99,97 % in `raum_29` (L mit Stempel,
+   Rang 1) — deshalb bekommt der **bessere** Raum das Loch und fällt auf
+   −15,6 %. Die Ein-Zeilen-Alternative („Regel 2 nur bei Rang(innen) ≤
+   Rang(außen)") ist gerechnet und nicht umgesetzt.
+   → **ENTSCHIEDEN am 2026-09-12: Regel 2 bleibt vor Regel 3, aber mit einem
+   10-%-Stempelschutz. Siehe § 22 — greift im Bestand 6×, nicht nur bei
+   `raum_29`.**
+   → **Nachtrag 2026-09-12 (Owner-Nachentscheid, § 22.8): der Schutz greift
+   nur noch, wenn der Verlierer den strikt besseren Quellen-Rang hat. Damit
+   greift er im Bestand genau 1× und ausschließlich bei `raum_29`. Die 6 oben
+   galten für den breiten Schutz und sind überholt.**
+5. **„0 Überlapper" ist zu einem Teil durch Entfall erkauft.** Der Riegel liest
+   nur `raeume[]` und kann das nicht sehen. Gegenmaßnahme im selben Commit:
+   `BAND_RAEUME` in `tests/naht/test_ueberlappung_riegel.py` — eine
+   **Untergrenze** über `raeume` + `entfallen` (47/62/101/21/14), die rot wird,
+   sobald ein weiterer Raum verschwindet.
+6. **Die `SCHACHT`-Lücke in `lift_erkennung.py:171`** (der Skip prüft nur
+   `raum_typ == "LIFT"`) ist gemessen und **nicht** behoben: `Barawitzka lift_2`
+   überdeckt `rest_3` (SCHACHT, R) zu 100 %. Eigener Arbeitsschritt.
+7. **§ 14.6.1 (c) nennt „LIFT/SCHACHT/AUFZUG"** — Regel 1 greift auf `LIFT` und
+   `SCHACHT`; für „AUFZUG" gibt es im Kanon kein Label (`raumtyp.py` vergibt nur
+   LIFT, SCHACHT, AUFZUGSVORPLATZ), die Auslassung ist kein Versehen.
+
+### 20.7 Robustheit und Contract
+
+Kein `assert` im Produktionspfad: `bereinige_kaskade` läuft im Fehlerschutz der
+Rest-Stufe, die Schlitz-Kodierung bricht ohne Ausnahme ab (der Raum bleibt beim
+Roh-Ring), und die drei Überlappungsmessungen in `plan_pruefen.py` sind
+gekapselt — ohne sie hätte ein GEOS-Fehler auf den 400–738-Punkt-Rasterpolygonen
+den ganzen Lauf inklusive der bereits fertigen Pläne abgerissen.
+
+Contract `raum_modell` **1.5.0**, rein additiv: `Raum.polygon_roh`,
+`Raum.bereinigung[]` mit dem Literal `BereinigungsRegel` (LIFT_SCHACHT,
+ENTHALTENSEIN, QUELLE_RANG, STEMPEL_NAEHE, SCHWERPUNKT, RESTFLAECHE, ZERFALL,
+SCHLITZ, ENTFALL). Schema regeneriert (nur `raum_modell.schema.json`),
+`contracts/__init__` und `docs/CONTRACTS.md` nachgezogen. **Das braucht das
+Approval aller drei Owner auf dem dann aktuellen `head_sha`** (Check
+`contract-freeze`); jeder nachgeschobene Commit entwertet ein erteiltes Approval.
+
+### 20.8 Determinismus
+
+Der Regelentscheid liest ausschließlich Roh-Attribute (Typ, Quelle, Stempelwert,
+Roh-Fläche, Roh-Schwerpunkt, Roh-Geometrie), die Paarliste ist nach
+(Regelnummer, −Schnittfläche, ids) sortiert. Gegenprobe: fünf gesetzte Shuffles
+plus `reversed()` je Plan, verglichen auf 9 Dezimalen — **identische Ergebnisse
+auf allen fünf Plänen**.
+
+---
+
+## 21. Nachtrag 2026-09-12 — Abschluss: Prüfstrecke, Suite, Bänder, xfail-Bilanz
+
+### 21.1 Was gelaufen ist
+
+| Prüfung | Ergebnis |
+|---|---|
+| Prüfstrecke über alle fünf Pläne, **ohne Parallellast** (`scripts/plan_pruefen.py`, Lauf `2026-09-12 02:58 · 6ebf676`) | exit 0 · Laufzeiten 251,0 / 286,2 / 1813,0 / 56,8 / 51,7 s = **2459 s**; Delta gegen `79fc0bb`: Muthgasse 1840,5 → 1813,0 s (−1,5 %), alles andere im Rauschen — die Bereinigung kostet keine messbare Laufzeit (Kern < 0,1 s je Plan) |
+| `pytest tests/naht/test_soll_muthgasse.py -q -rX` (nach dem Auslagern des Türbands) | **9 passed, 4 xfailed, 0 XPASS** in 610,66 s |
+| `pytest tests/naht/test_ueberlappung_riegel.py tests/raumerkennung/test_bereinigung.py tests/raumerkennung/test_kuerzel_entscheid.py -q` | **49 passed** in 1,55 s |
+| `pytest tests/raumerkennung/test_bereinigung.py -q` (Kern, 24 Fälle) | **24 passed** |
+| `pytest tests/contract tests/raumerkennung -q` | **333 passed, 5 skipped** |
+| `scripts/gen_schema.py --check` | **schema in sync**, genau eine Schema-Datei geändert |
+| `ruff check .` | **All checks passed!** |
+| Messskript-Akzeptanzkriterien (a)–(d) | alle **OK** |
+
+**Volle Suite nach dem Auslagern des Türbands: `1264 passed, 10 skipped, 2 deselected, 12 xfailed, 2 warnings in 1181.23s (0:19:41)`, exit 0, **keine XPASS-Zeile**.** Der Vollauf davor hatte genau einen Fehler (§ 21.3). Das Delta ist vollständig erklärt: +1 passed (derselbe Test, jetzt ohne die Türzahl-Assertion), +5 passed (die neuen `BAND_RAEUME`-Fälle), xfail 11 → 12 (das ausgelagerte Türband).
+
+### 21.2 Riegel-Bänder nachgezogen — und eine neue Untergrenze dazu
+
+`tests/naht/test_ueberlappung_riegel.py`: die Obergrenzen sind auf den gemessenen
+Ist-Stand nach unten gezogen — je Plan **(0, 0.0)**, Summe **(0, 0.0)**; vorher
+9/42,3 · 16/45,8 · 37/174,2 · 0 · 0 und Summe 62/262,3. Die Restflächen (max.
+0,20 mm²) liegen unter der Rauschschwelle von 1 mm².
+
+Neu daneben: **`BAND_RAEUME` = 47 / 62 / 101 / 21 / 14** als *Untergrenze* über
+die Einträge mit ≥ 3 Punkten in `raeume` **plus** `entfallen`. Grund: „0
+Überlapper" ist zum Teil durch den Entfall von 5 Räumen erkauft, und der Riegel
+liest nur `raeume[]` — Räume zu entfernen senkt die Überlappungszahl immer. Ohne
+diese Gegenprobe wäre das Band gegen genau diesen Weg blind. Sie wird rot, sobald
+ein weiterer Raum verschwindet; das ist dann eine Owner-Entscheidung, kein
+Nachziehen.
+
+### 21.3 Das eine Band, das gebrochen ist — und warum es nicht abgesenkt wurde
+
+Der Vollauf **vor** dieser Entscheidung war `1 failed, 1258 passed, 10 skipped,
+2 deselected, 11 xfailed` (19:51 min); der Fehler war genau eine Zeile:
+`test_soll_raeume_tueren_ausgaenge` → `assert 270 >= 280` (Muthgasse-Türzahl).
+
+Aus dem Ist abgeleitete Bänder sind in dieser Datei verboten (§ 11.5), also ist
+das Band **nicht** auf 270 gesenkt worden. Stattdessen ist die Türzahl in einen
+eigenen **strict-xfail** `test_soll_tuerzahl_band` ausgelagert, mit dem
+gemessenen Grund; Räume, Segmente und Stiegenhäuser bleiben im alten Test
+scharf. Beleg für die Ursache, aus den Türtabellen des alten und des neuen
+`bericht.md` (kein zusätzlicher Parse):
+
+| Türherkunft (ID-Präfix) | vorher | nachher |
+|---|--:|--:|
+| `durchgang_*` (Kontaktzonen, `durchgaenge_ohne_tuerblatt`, `_KONTAKT_MM = 250`) | 169 | **148** |
+| `tuer_*` (Block-, ARC-, Text-Türen) | 121 | **121** |
+| `aussenoeffnung_*` | 1 | **1** |
+| **Summe** | **291** | **270** |
+| Zeilen mit `GEOMETRIE_OEFFNUNG` | 170 | 149 |
+
+**Weggefallen sind ausschließlich Kontaktzonen-Durchgänge** — der Bestand echter
+Türen ist unberührt. Das ist die erwartbare Folge der Bereinigung: wo eine
+F-Flutung nicht mehr über die Layer-Räume liegt (und wo 4 F-Räume ganz
+entfallen), entsteht keine Kontaktzone mehr. Gründe der untypisierten Türen
+verschieben sich passend: `unbekannte_kombination` 49 → 48,
+`beide_seiten_untypisiert` 15 → 12, `kein_nachbarraum` 14 → 14,
+`tuer_in_schacht` 4 → 4, `tuer_ins_nichts` 3 → 3.
+
+**Offene Owner-Entscheidung:** ob das Band fachlich auf „Türen ohne
+Kontaktzonen-Durchgänge" umgestellt wird (diese Menge ist nachweislich
+unverändert) oder bei ≥ 280 bleibt und als Zielbild sichtbar rot/xfail geführt
+wird. Bis dahin steht es als strict-xfail mit Beleg.
+
+> **Nachtrag 2026-09-12: `test_soll_tuerzahl_band` existiert nicht mehr.** Die
+> 280 stammte selbst aus einem alten Ist, deshalb ist das Band auf
+> Owner-Entscheid nicht gesenkt, sondern **abgelöst** worden — durch ein
+> plan-abgeleitetes Zielbild. `_plan_tuerbloecke()` liest die **72** echten
+> A-DOOR-Blocktüren mit Türblatt-ARC (Radien 800×52, 900×14, 950×5, 655×3,
+> 700×1 — Summe 75, weil drei zweiflügelige Blöcke je ZWEI In-Band-Radien
+> tragen), `_paarung()` paart sie per Kuhn gegen die Modelltüren. Daraus drei
+> Tests: `test_soll_plan_tuerbloecke_vorhanden` (≥ 70),
+> `test_soll_plan_tuerbloecke_im_modell` (1:1 bei 500 mm, ≥ 40) und der
+> strict-xfail `test_soll_jeder_plan_tuerblock_ist_tuer` (± 2 mm == 72, Ist
+> **13**). Die Paarung ist matchingunabhängig: Hopcroft-Karp, scipy-Min-Cost
+> und permutiertes Kuhn liefern identisch 13 / 13 / 44 / 59 / 63 von 72.
+
+### 21.4 XFAIL-Bilanz — 12 strict-xfails, keiner zu XPASS gedreht
+
+Vorher 11, jetzt **12**: neu ist ausschließlich `test_soll_tuerzahl_band`
+(§ 21.3). Kein bestehender xfail ist entfernt, keiner ist gekippt — der gezielte
+Muthgasse-Lauf meldet `0 XPASS` bei aktivem `-rX`. Die drei Muthgasse-Zielbilder
+im Einzelnen:
+
+- `test_soll_stair_exits` (≥ 9): Ist **6** nach der Bereinigung (7 nach der
+  SCHLEUSE-Typisierung, davor 5) — bleibt xfail, Band unverändert.
+- `test_soll_stair_exit_aus_echter_blocktuer` (≥ 1): unverändert **0** — von den
+  Türen mit echtem `A-DOOR`/`A-GLAZ`-Block hat keine eine STIEGENHAUS-Seite. Die
+  Annahme, ein `raum_typ` auf `raum_65` drehe diesen Test, ist damit gemessen
+  widerlegt (§ 19.5).
+- `test_soll_90_prozent_tueren_typisiert`: Ist **189/270 = 70,0 %** (vorher
+  206/291 = 70,8 %) — bleibt xfail.
+
+> **Nachtrag 2026-09-12:** Diese Bilanz gilt für den Stand von § 21.3. Mit der
+> Ablösung (siehe dort) ist `test_soll_tuerzahl_band` **entfernt** und
+> `test_soll_jeder_plan_tuerblock_ist_tuer` an seine Stelle getreten. Der
+> gezielte Muthgasse-Lauf meldet **11 passed / 4 xfailed, 0 XPASS** (747,5 s).
+> Die XFAIL-Bilanz der vollen Suite steht in § 23.
+
+### 21.5 Kennzahlen-Delta gegen den Lauf `79fc0bb`, je Plan
+
+| Plan | Räume | mit Stempel | Flag ok | Kaskade | Türen typisiert | Ausgänge |
+|---|---|---|---|---|---|---|
+| Barawitzka_EG | 47 → **46** | 37 → **36** | 36 → **35** | F:2 → **F:1** | 55/106 → **54/104** | final 1 (unverändert) |
+| Mollgasse_EG | 62 | 60 | 46 | unverändert | 70/147 → **69/149** | final 9 → **10**, stair 4 → **2** |
+| Muthgasse_E2 | 101 → **97** | 90 → **88** | 73 → **74** | F:20 → **F:16** | 206/291 → **189/270** | stair 5 → **6**, final 5 |
+| Rennweg_EG | 21 | 19 | 19 | unverändert | 24/41 | unverändert |
+| Rennweg_OG3 | 14 | 10 | 10 | unverändert | 15/27 | unverändert |
+
+Die Raumzahlen sinken um genau die entfallenen Räume (Barawitzka 1, Muthgasse 4);
+Muthgasse gewinnt zwei Stempel (die typlosen Kürzel-Stempel »Schl.«) und ein
+`Flag ok`. Rennweg bewegt sich in keiner Kennzahl — dort gibt es keine F-Räume
+und keine Überlappung, das ist die Gegenprobe.
+
+### 21.6 Was in diesem Schritt ausdrücklich NICHT gemacht wurde
+
+- **Die Ursache im F-Zweig ist nicht behoben.** `flute_stempel` bekommt die
+  belegten Flächen weiterhin nicht übergeben (Punkt 2 der Skizze § 14.6). Die
+  Bereinigung ist die nachgelagerte Auflösung, die der Owner beauftragt hat.
+- **Kein Band abgesenkt, kein xfail gedreht, kein Zielbild geglättet.**
+- **`platzierung/**` und `hauptengine/render/**` nicht angefasst** (fremde Lane
+  @mvpo3) — das gilt auch für `geometry.py:226`, wo die Bbox-Mitte ein
+  Schlitz-Loch nicht sieht (§ 20.6 Punkt 1).
+- **`lift_erkennung.py:171`** (Skip prüft nur `raum_typ == "LIFT"`, nicht
+  `SCHACHT`) ist gemessen und gemeldet, nicht behoben (§ 20.6 Punkt 6).
+- **Kein Merge.** Der Contract-Bump 1.5.0 braucht das Approval aller drei Owner
+  auf dem aktuellen `head_sha`; jeder nachgeschobene Commit entwertet es.
+
+## 22. Nachtrag 2026-09-12 — zwei Owner-Entscheide zur Bereinigung umgesetzt
+
+> **Status: Code umgesetzt, Prüfstrecke NICHT gelaufen.** Alle Zahlen unten
+> kommen aus `scripts/analyse/ueberlappung_regeln.py` über die **eingecheckten**
+> `raeume.json` (Roh-Ringe aus `polygon_roh`), nicht aus einem frischen
+> Plan-Lauf. Contract unberührt: `raum_modell` bleibt 1.5.0, die Buchungsnamen
+> des Literals `BereinigungsRegel` sind unverändert. Kein Schema-Regen.
+>
+> **Jede Überlapper-, Flächen- und Bandzahl in diesem Abschnitt ist eine
+> MESSSKRIPT-Zahl auf den eingecheckten Roh-Ringen — keine Prognose und kein
+> Ergebnis eines Planlaufs.** Was ein Planlauf daraus macht, kann abweichen:
+> `plan_pruefen.py` legt nach der Kaskade eigene Räume an
+> (`typisiere_geometrisch`, `finde_lifte`), die die Bereinigung nicht sieht
+> (§ 20.6 Punkt 2). Die Bandprognose für `tests/naht/test_ueberlappung_riegel.py`
+> ist damit genau das: eine Prognose aus dem Messskript.
+>
+> **Der Owner hat nach diesem Abschnitt nachentschieden** (Stempelschutz nur bei
+> besserem Quellen-Rang des Verlierers). § 22.2 bis § 22.5 stehen auf dem
+> NACHENTSCHIEDENEN Stand; was der erste, breitere Schutz gemessen hatte, steht
+> zum Vergleich in § 22.8.
+
+### 22.1 Die zwei Entscheide
+
+**(i) Restflächen-Regel an Position 2, nicht zuletzt.** Owner wörtlich: „sonst
+kann eine Restfläche in Regel 4 über Schwerpunktnähe Fläche gewinnen, obwohl sie
+nachrangig ist." Damit gilt genau die angewandte Kaskade aus § 14.6.1:
+
+| Nr. | Regel | Buchung | vorher Nr. |
+|--:|---|---|--:|
+| 1 | LIFT/SCHACHT ausstanzen | `LIFT_SCHACHT` | 1 |
+| 2 | genau eine Seite quelle R → sie verliert | `RESTFLAECHE` | 5 |
+| 3 | Enthaltensein → Ringloch, **mit Stempelschutz** | `ENTHALTENSEIN` | 2 |
+| 4 | Quellen-Rang, bei Gleichstand Stempelnähe | `QUELLE_RANG` / `STEMPEL_NAEHE` | 3 |
+| 5 | Schwerpunktnähe | `SCHWERPUNKT` | 4 |
+
+Die **Nummern** haben sich verschoben, die **Buchungsnamen** nicht. Regel 1
+bleibt vor Regel 2 (4 der 5 LIFT/SCHACHT-Räume im Bestand haben quelle R);
+festgehalten in `test_regel1_vor_regel2_schacht_gewinnt`. Der frühere
+Regel-5-**Schlusspass** (R minus Vereinigung aller Nicht-R nach den Paaren) ist
+**entfernt** — Regel 2 zieht den Schnitt schon als Paar-Regel ab. Nachweis, dass
+die Zusage dadurch nicht fällt: neues Akzeptanzkriterium **(e)** im Messskript,
+„kein R-Polygon über einem Nicht-R-Polygon nach dem vollen Lauf" → **OK über
+alle fünf Pläne**, plus `test_kein_r_polygon_ueber_nicht_r`.
+
+**(ii) 10-%-Stempelschutz bei Regel 3.** Geprüft wird der Verlierer der
+Enthaltensein-Regel (der äußere Raum, der das Loch bekäme): hat er eine
+Stempelfläche S und gilt `|(A_nach − S) / S| > 0,10`, greift Regel 3 für dieses
+Paar **nicht**. Das Paar bleibt ungelöst und wird ausdrücklich **nicht** an
+Regel 4/5 weitergegeben; es entsteht eine Warnung mit Raum-ids, Stempelwert,
+Fläche vorher/nachher und Abweichung. Weitergabe: neues Feld
+`KaskadeErgebnis.bereinigung_warnungen` (**kein** Contract-Feld), durchgereicht
+in `plan_pruefen.py` → Unterabschnitt „Stempelschutz — nicht ausgestanzt" in
+`bericht.md`, Kennzahl in Rückgabe-Dict, VERLAUF-Zeile und Konsolenzeile. Der
+Kern (`bereinige`) druckt nichts, er liefert die Warnungen als Daten.
+
+### 22.2 Kumulative Wirkung, neue Stufenbedeutung
+
+| Stufe | Überlapper | gelöst | doppelt belegt | entfallen | Zerfall | Warn |
+|---|--:|--:|--:|--:|--:|--:|
+| `{}` | 62 | 0 | 262 342 446,80 mm² | 0 | 0,000 m² | 0 |
+| `{1}` LIFT/SCHACHT | 61 | 1 | 258 398 069,63 mm² | 0 | 0,054 m² | 0 |
+| `{1,2}` + Restfläche | 61 | 1 | 258 398 069,63 mm² | 0 | 0,054 m² | 0 |
+| `{1,2,3}` + Enthaltensein | 48 | 14 | 171 491 842,95 mm² | 0 | 28,510 m² | 1 |
+| `{1,2,3,4}` + Rang/Stempelnähe | 2 | 60 | 2 565 449,81 mm² | 5 | 14,799 m² | 1 |
+| `{1,2,3,4,5}` + Schwerpunkt | **2** | 60 | **2 552 357,18 mm²** | 5 | 14,799 m² | 1 |
+
+**Stufe für Stufe gegen den Lauf `6ebf676`** (alt: `{}` 62 / 262,342 m² · `{1}`
+61 · `{1,2}` 46 · `{1,2,3}` 0 / 13 093 mm² · `{1,2,3,4}` 0 / 0,38 mm²). Die
+Stufenzahlen sind ab Position 2 **nicht namensgleich vergleichbar**, weil
+`RESTFLAECHE` neu an Position 2 steht; verglichen wird nach INHALT:
+
+| Inhalt der Stufe | alt | neu | Erklärung der Abweichung |
+|---|--:|--:|---|
+| keine Regel | 62 / 262,342 m² | 62 / 262,342 m² | identisch, keine Regel aktiv |
+| + LIFT/SCHACHT | 61 | 61 | identisch, Regel 1 unverändert |
+| + Restfläche | — | 61 | **Regel 2 greift im Bestand 0×** → Stufe `{1,2}` == `{1}` |
+| + Enthaltensein | 46 / 168 939 486 mm² | 48 / 171 491 843 mm² | **Stempelschutz blockiert 1 der 7 Enthaltensein-Paare** (6 werden gestanzt, 14 statt 16 gelöste Überlapper) |
+| + Rang/Stempelnähe | 0 / 13 093,01 mm² | 2 / 2 565 449,81 mm² | das eine geschützte Paar bleibt offen und wird nicht an Regel 4 weitergegeben |
+| voller Lauf | 0 / 0,38 mm² | 2 / 2 552 357,18 mm² | = das eine Stempelschutz-Paar, nichts sonst (Kriterium (c)) |
+
+### 22.3 Was nach dem vollen Lauf übrig bleibt — je Plan
+
+| Plan | Überlapper | doppelt belegt | Warnungen | entfallen |
+|---|--:|--:|--:|---|
+| Barawitzka_EG | 0 | 0,05 mm² | 0 | 1 (`raum_44`) |
+| Mollgasse_EG | 0 | 0,14 mm² | 0 | 0 |
+| Muthgasse_E2 | 2 | 2 552 357,00 mm² = 2,552 m² | 1 | 4 (`raum_82`, `raum_86`, `raum_92`, `raum_93`) |
+| Rennweg_EG | 0 | 0,00 mm² | 0 | 0 |
+| Rennweg_OG3 | 0 | 0,00 mm² | 0 | 0 |
+| **Summe** | **2** | **2 552 357,18 mm² = 2,552 m²** | **1** | **5** |
+
+Die verbleibende doppelt belegte Fläche ist **vollständig** die des einen
+Stempelschutz-Paars (`raum_29` ∩ `raum_91`, 2 552 356,80 mm²; der Rest von
+0,38 mm² ist das bekannte Rauschen aus Barawitzka und Mollgasse).
+Akzeptanzkriterium (c) bestätigt: **kein** Paar > 1 mm² ohne Stempelschutz.
+Die beiden gezählten Überlapper sind die zwei Seiten dieses einen Paars.
+
+### 22.4 Die sechs geschützten Paare, mit allen Zahlen
+
+| Plan | äußerer Raum (Verlierer) | Rang | enthält (Gewinner) | Rang | Stempel | Fläche vorher | Fläche nachher | Abw. vorher | Abw. nachher | jetzt noch geschützt? |
+|---|---|--:|---|--:|--:|--:|--:|--:|--:|---|
+| Barawitzka_EG | `raum_43` (F) | 3 | `raum_15` (H) | 2 | 8,79 | 56,64 | 42,52 | +544,4 % | +383,8 % | nein — Gewinner besser |
+| Barawitzka_EG | `raum_43` (F) | 3 | `raum_37` (H, Stempel) | 1 | 8,79 | 56,64 | 43,89 | +544,4 % | +399,3 % | nein — Gewinner besser |
+| Mollgasse_EG | `raum_51` (F) | 3 | `raum_53` (F) | 3 | 11,02 | 137,50 | 130,26 | +1147,8 % | +1082,1 % | nein — gleicher Rang |
+| Muthgasse_E2 | `raum_86` (F) | 3 | `raum_26` (L, Stempel) | 1 | 41,25 | 43,66 | 25,77 | +5,8 % | −37,5 % | nein — Gewinner besser |
+| Muthgasse_E2 | `raum_29` (L, Stempel) | 1 | `raum_91` (F) | 3 | 16,52 | 16,52 | 13,97 | +0,0 % | −15,4 % | **ja** |
+| Muthgasse_E2 | `raum_88` (F) | 3 | `raum_67` (L, Stempel) | 1 | 39,70 | 20,67 | 16,97 | −47,9 % | −57,3 % | nein — Gewinner besser |
+
+> **Korrektur gegenüber der ersten Fassung dieses Abschnitts** (Gegenprüfung):
+> dort standen **+383,7 %**, **+1147,7 %** und **+1082,0 %**. Diese drei Werte
+> waren auf den gerundeten Zwischenwerten der Tabelle nachgerechnet; gemessen
+> sind **+383,8 %**, **+1147,8 %** und **+1082,1 %**. Die Spalten „Rang" und
+> „jetzt noch geschützt?" sind mit dem Nachentscheid (§ 22.8) neu.
+>
+> **Zweite Korrektur 2026-09-12** (Gegenprüfung des Nachentscheids, selbst
+> nachgemessen über `bereinigung._rang` auf den eingecheckten `raeume.json`):
+> drei Zellen der Rang-Spalten waren falsch. `raum_15` stand als (F)/3, ist
+> aber quelle **H ohne Stempel → Rang 2**; `raum_37` stand als (F)/3, ist aber
+> quelle **H mit Stempel 12,88 → Rang 1**; `raum_67` stand als (L)/2, hat aber
+> **Stempel 3,73 → Rang 1**. Damit lautet die Begründung der zwei
+> Barawitzka-Zeilen „Gewinner besser“ (3 > 2 bzw. 3 > 1), nicht „gleicher
+> Rang“. Am Ergebnis „nicht geschützt“ ändert das in keiner der drei Zeilen
+> etwas, an Code und Kennzahlen nichts. `raum_86` steht nicht in
+> `raeume.json` — er entfällt; sein Rang (F/3) stammt aus der Roh-Messung.
+
+**Befund, der eine Owner-Antwort braucht: der Schutz greift 6×, nicht 1×.** Der
+Auftrag nennt `raum_29` (−15,6 %) als Testfall; der Wortlaut („weicht ein
+gestempelter Raum durch das Ausstanzen um mehr als 10 % vom Stempelwert ab")
+trifft aber auch **vier Räume, die schon VOR dem Ausstanzen weit jenseits von
+10 % lagen** — bei `raum_43` (+544 %), `raum_51` (+1148 %) und `raum_88`
+(−48 %) würde das Ausstanzen die Stempeltreue sogar **verbessern**, der Schutz
+verhindert das. Nur `raum_86` (+5,8 %) und `raum_29` (0,0 %) sind Fälle, in denen
+ein gut passender Raum durch das Ausstanzen verdorben würde. Eine Lesart
+„schützen nur, wenn der Raum VORHER innerhalb 10 % lag" ist gerechnet und
+**nicht** umgesetzt: sie träfe 2 der 6 Paare, die anderen 4 würden wie bisher
+gestanzt. Entscheidung liegt beim Owner.
+
+> **Entschieden am 2026-09-12 (§ 22.8): keine der beiden Lesarten, sondern der
+> Rang-Nachentscheid — Schutz nur bei strikt besserem Quellen-Rang des
+> Verlierers. Er trifft 1 der 6 Paare (`raum_29`). Die Trennung läuft damit
+> über den Rang, nicht über die Vorher-Abweichung.**
+
+Zu `raum_29`: die hier gemessenen 13,97 m² / −15,4 % sind die reine
+Roh-Differenz `Fläche(roh) − Schnitt`, auf der der Regelentscheid arbeitet
+(Determinismus-Vorgabe). Die −15,6 % aus § 20.3 sind die Fläche NACH Zerfall und
+Schlitz-Kodierung, also 13,94 m². Beide Zahlen sind richtig, sie messen zwei
+verschiedene Punkte im Ablauf.
+
+### 22.5 Greift Regel 2 im Bestand? Nein — Entfall und Zerfall ändern sich trotzdem
+
+- **`RESTFLAECHE`: 0 Buchungen** über alle fünf Pläne, auf jeder Stufe. Stufe
+  `{1,2}` ist zahlengleich mit `{1}`. Regel 2 bleibt damit — wie schon § 14.6.1
+  feststellte — eine **Vorsorgeregel**, belegt nur durch synthetische Tests
+  (`test_regel2_*`, `test_kein_r_polygon_ueber_nicht_r`).
+- **`ENTFALL`: 5 → 5**, also unverändert gegenüber dem Lauf `6ebf676`.
+  `raum_86` (Muthgasse) entfällt wieder, weil sein Enthaltensein-Paar nach dem
+  Nachentscheid nicht mehr geschützt ist (unter dem ersten, breiten Schutz waren
+  es 4). Die Summe `raeume` + `entfallen` je Plan bleibt unverändert (Muthgasse
+  97 + 4 = 101), die löschungsfeste Untergrenze `BAND_RAEUME` ist nicht berührt.
+- **`ZERFALL`: 14,829 → 14,799 m²** (unter dem breiten Schutz 9,300 m²): die
+  Paare werden wieder gestanzt und erzeugen wieder Nebenkomponenten.
+- Buchungen im vollen Lauf neu: `QUELLE_RANG` 53 · `STEMPEL_NAEHE` 29 ·
+  `ZERFALL` 16 · `ENTHALTENSEIN` 6 · `SCHWERPUNKT` 5 · `ENTFALL` 5 ·
+  `LIFT_SCHACHT` 1 · `SCHLITZ` 1 · `RESTFLAECHE` 0. Die Flächen-Buchhaltung geht
+  weiter **exakt** auf (Kriterium (d): OK, ohne Toleranzschlupf).
+
+### 22.6 Akzeptanzkriterium (a) meldet ABWEICHUNG — und zwar schon vorher
+
+`(a) Stufe {} == Riegel-Basis je Plan` meldet ABWEICHUNG (Barawitzka 9/42,253
+gegen 0/0,000 usw.). **Das ist kein Effekt dieser Änderung.** Die Riegel-Basis
+liest `raeume[].polygon_mm` aus den eingecheckten Ergebnissen — die sind seit
+Lauf `6ebf676` **bereinigt** (0 Überlapper) —, während Stufe `{}` auf
+`polygon_roh` misst (62 Überlapper). Das Kriterium kann auf bereinigten
+Ergebnissen nicht mehr aufgehen. Belegt mit dem **committeten** Skriptstand
+(`git show HEAD:scripts/analyse/ueberlappung_regeln.py` in den Scratchpad
+extrahiert und dort ausgeführt):
+
+```
+  (a) Stufe {} == Riegel-Basis je Plan: ABWEICHUNG
+      Barawitzka_EG: Stufe {} (9, 42.252763555265425) vs Riegel (0, 4.59e-08)
+      Mollgasse_EG:  Stufe {} (16, 45.844918308126566) vs Riegel (0, 1.41e-07)
+      Muthgasse_E2:  Stufe {} (37, 174.24474492405426) vs Riegel (0, 1.97e-07)
+  (c) kein Paar > 1 mm² nach dem vollen Lauf: ABWEICHUNG in Barawitzka_EG, ...
+```
+
+`git diff` berührt keine Zeile der Riegel-/Stufe-0-Messung. Kriterium (a) ist
+damit als **Kriterium überholt**, seit die Ergebnisse bereinigt eingecheckt sind
+— es wurde hier **nicht** umformuliert, weil das eine eigene Owner-Entscheidung
+ist. Kriterium (c) wurde dagegen präzisiert: es zählt jetzt nur noch Paare, die
+der Stempelschutz **nicht** erklärt, und weist die geschützten getrennt und
+namentlich aus.
+
+### 22.7 Was in diesem Schritt nicht gemacht wurde
+
+Keine Prüfstrecke (`scripts/plan_pruefen.py`) und keine volle Suite — beides
+lastfrei durch den Planer. Keine Bänder in `tests/naht/**` angefasst, kein xfail
+gedreht: die Überlapper-Kennzahl steigt durch (ii) von 0 auf **2** (Messskript,
+nach dem Nachentscheid in § 22.8; unter dem ersten breiten Schutz waren es 11)
+und reißt damit voraussichtlich `tests/naht/test_ueberlappung_riegel.py`
+(`BAND` je Plan `(0, 0.0)`) — **voraussichtlich**, weil der Riegel die
+eingecheckten `raeume[].polygon_mm` liest und nicht neu bereinigt; solange die
+Ergebnisse nicht neu erzeugt sind, bleibt er grün (nachgeprüft: grün).
+Nachziehen ist Owner-/Planer-Sache nach dem Prüfstreckenlauf. Contract, Schema,
+fremde Lanes (`platzierung/**`, `hauptengine/render/**`, `normwissen/**`,
+`tests/fixtures/**`, `stempel_flutung.py`, `rest_komponenten.py`) unberührt.
+
+### 22.8 Owner-Nachentscheid 2026-09-12 — Stempelschutz nur bei besserem Rang
+
+Der Befund aus § 22.4 („der Schutz greift 6×, nicht 1×") ist entschieden: **der
+Schutz greift ab jetzt nur, wenn der Verlierer der Enthaltensein-Regel den
+BESSEREN Quellen-Rang hat als der Gewinner** — `Rang(Verlierer) < Rang(Gewinner)`
+in der bestehenden Rangfunktion (1 = L/H mit Stempel, 2 = L/H ohne, 3 = F,
+4 = R und unbekannt). Bei **gleichem** Rang greift der Schutz **nicht**.
+
+Begründung des Owners: geschützt werden soll ein gezeichneter, gestempelter
+Raum, der durch das Ausstanzen von seinem Stempelwert wegwandert — nicht eine
+Flutung, die ihren Stempelwert ohnehin nur durch Übergriff erreicht.
+
+| Kennzahl (Messskript, eingecheckte Roh-Ringe) | erster Schutz (nur 10 %) | nach dem Nachentscheid |
+|---|--:|--:|
+| geschützte Paare / Warnungen | 6 | **1** |
+| Überlapper nach dem vollen Lauf | 11 | **2** |
+| doppelt belegt | 58 259 504,34 mm² = 58,260 m² | **2 552 357,18 mm² = 2,552 m²** |
+| `ENTHALTENSEIN`-Buchungen (7 Paare erkannt) | 1 | **6** |
+| `ENTFALL` | 4 | **5** (`raum_86` entfällt wieder) |
+| `ZERFALL` | 9,300 m² | **14,799 m²** |
+| `SCHLITZ` | 0 | **1** |
+| Flächen-Buchhaltung (d) / R-über-Nicht-R (e) | OK / OK | **OK / OK** |
+
+Geschützt bleibt genau ein Paar: **Muthgasse `raum_29`** (quelle L mit Stempel,
+Rang 1, Stempel 16,52 m²) enthält **`raum_91`** (quelle F, Rang 3) — roh
+16,52 → 13,97 m² = −15,4 %. Das ist genau der Fall, den der Owner-Auftrag als
+Testfall genannt hatte. Die anderen fünf Paare aus § 22.4 werden wieder
+gestanzt; je Plan bleiben Barawitzka 0 / 0,05 mm², Mollgasse 0 / 0,14 mm²,
+Muthgasse 2 / 2 552 357,00 mm², Rennweg 0 / 0,00.
+
+**Zweite Änderung im selben Schritt: LIFT/SCHACHT ist nie Regel-2-Verlierer.**
+Die Gegenprüfung hat eine Lücke belegt — sind BEIDE Seiten LIFT/SCHACHT und nur
+eine davon quelle R, greift Regel 1 per XOR nicht und Regel 2 löschte die
+R-Seite. Das widerspricht „LIFT und SCHACHT werden IMMER aus jedem umgebenden
+Raum ausgestanzt" (§ 14.6.1 (c) über (d)); bei Rennweg_OG3 liegen `rest_1`
+1,157 m² und `rest_2` 1,152 m² nur 0,15 m² über der Entfall-Schwelle. Ein Raum
+mit `raum_typ` LIFT oder SCHACHT verliert Regel 2 jetzt **nie**, das Paar fällt
+auf Regel 3/4/5. Im Bestand **0 Vorkommen** (0 `RESTFLAECHE`-Buchungen), also
+reine Vorsorge. Der Test, der die Lücke festschrieb
+(`test_regel1_beide_lift_schacht_dann_regel2`), steht jetzt auf dem neuen
+Verhalten; neu dazu `test_stempelschutz_nur_bei_besserem_rang_des_verlierers`.
+
+**Vier Grenzen des Schutzes, jetzt im Modul-Docstring festgehalten** (alle aus
+der Gegenprüfung, alle gemessen):
+
+1. Geprüft wird die **Roh-Differenz** `Fläche(roh) − Schnitt`, nicht die
+   Endfläche nach Zerfall und Schlitz — bewusst, weil die Endfläche
+   reihenfolgeabhängig wäre. Gemessener Grenzfall: geprüft −10,0000 %,
+   tatsächliche Endfläche −10,0039 %.
+2. Der Rand bei **genau 10 %** entscheidet sich am Gleitkomma-Rauschen
+   (0,10000000000000003 schützt, 0,099999999999999936 nicht) — nicht garantiert.
+3. **Stempelwert 0,00 m²** gilt als „Stempel vorhanden" und ergibt unendliche
+   Abweichung, würde also immer schützen; im Bestand 0 Fälle.
+4. Der Schutz gilt **nur für Regel 3**. Ein gestempelter R-Raum verliert über
+   Regel 2 ohne Schutz und ohne Warnung; im Bestand 0 Fälle.
+
+Präzisiert ist außerdem die Aussage „der Kern druckt nichts": der **Warnpfad**
+druckt nichts, die zwei bestehenden Fehlermeldungen (Schlitz-Kodierung,
+Roh-Ring-Rückfall) bleiben.
+
+**`plan_pruefen.py`:** scheiterte die Überlappungsmessung, fiel bisher der ganze
+Bereinigungsblock weg — samt der Stempelschutz-Warnungen, obwohl die unabhängig
+von dieser Messung vorliegen. Sie werden jetzt auch im Fehlerfall ausgegeben
+(Kennzahlen und Tabelle entfallen weiter).
+
+**Contract-Kommentare nachgezogen:** am Literal `BereinigungsRegel` in
+`hauptengine/contracts/raum_modell.py` trugen die Kommentare noch die alte
+Nummerierung (ENTHALTENSEIN 2, QUELLE_RANG 3a, STEMPEL_NAEHE 3b, SCHWERPUNKT 4,
+RESTFLAECHE 5). Geändert wurde **ausschließlich Kommentartext** — keine
+Feldnamen, keine Literalwerte, keine Version, keine Reihenfolge der Einträge;
+`python scripts/gen_schema.py --check` meldet weiter `schema in sync`.
+
+**Korrektur einer Umfangsangabe:** die Angabe „Doku 2986 → 3151 Zeilen" aus dem
+Abschluss dieses Schrittes ist falsch. Belegt (`git show HEAD:docs/…`): der
+committete Stand `7915168` hat **2982** Zeilen, der Arbeitsbaum vor diesem
+Nachtrag 3151. Richtig ist also **2982 → 3151**. (Die falsche Zahl stand nicht
+im Text dieses Abschnitts, sondern in der Abschlussmeldung; korrigiert ist sie
+damit hier.)
+
+## 23. Abschluss 2026-09-12 — Nachentscheide, Türband-Ablösung, Slice-3b-Vorarbeit
+
+Alle Zahlen dieses Abschnitts sind in diesem Lauf selbst gemessen. Wo eine
+frühere Angabe fällt, steht sie als überholt daneben — gelöscht wird keine.
+
+### 23.1 Die zwei Belege
+
+**Volle Suite:** `1296 passed, 11 skipped, 2 deselected, 12 xfailed, 2 warnings
+in 1229.06s (0:20:29)`, exit 0, **keine XPASS-Zeile**. Delta gegen den vorigen
+Vollauf (`1264 passed, 10 skipped, 2 deselected, 12 xfailed`) vollständig
+erklärt: **+23 passed und +1 skipped** aus den drei neuen Slice-3b-Testdateien
+(der Skip ist der Parquet-Roundtrip ohne `pyarrow`), **+2** aus den zwei neuen
+Plan-Türblock-Tests, **+7** aus `test_bereinigung` (24 → 31).
+
+**Prüfstrecke** über die fünf Pläne, ohne Parallellast, exit 0, kein Traceback:
+271,6 / 306,2 / 1888,0 / 57,0 / 51,4 s = **2574,2 s**. Voriger Lauf 2459 s; das
+Plus steckt fast vollständig in Muthgasse (1813 → 1888 s), Ursache ist die
+zusätzliche Stempelschutz-Prüfung in Regel 3.
+
+### 23.2 XFAIL-Bilanz — weiter 12, aber ein anderer Satz
+
+Die Zahl ist unverändert 12, die Zusammensetzung nicht: `test_soll_tuerzahl_band`
+ist **entfernt**, `test_soll_jeder_plan_tuerblock_ist_tuer` ist **neu**. Kein
+bestehender xfail wurde entfernt, keiner ist gekippt. Der gezielte
+Muthgasse-Lauf meldet 11 passed / 4 xfailed / 0 XPASS in 747,5 s.
+
+### 23.3 Bereinigung nach dem Nachentscheid
+
+| | vor dem Schutz | breiter Schutz | Nachentscheid |
+|---|--:|--:|--:|
+| geschützte Paare | 0 | 6 | **1** |
+| Überlapper | 0 | 11 | **2** |
+| doppelt belegt | 0,38 mm² | 58,260 m² | **2,552 m²** |
+
+Je Plan: Barawitzka 9 → 0 (0,05 mm²) · Mollgasse 16 → 0 (0,14 mm²) · Muthgasse
+37 → **2** (2 552 357,00 mm²) · Rennweg 0 → 0 · Rennweg_OG3 0 → 0. Entfall 5
+(`raum_44`; `raum_82`/`raum_86`/`raum_92`/`raum_93`), Zerfall 14,799 m²,
+Schlitze nur Mollgasse 2115,2 mm², Stempelschutz-Warnungen 1.
+
+Geschützt bleibt genau `raum_29` gegen `raum_91`. Alle fünf Akzeptanzkriterien
+des Messskripts sind **OK**; Kriterium (a) war veraltet und ist umformuliert
+(volle Stufe gegen Riegel-Basis, ± 0,0001 m², statt Stufe `{}` — seit die
+Bereinigung im Lauf steckt, trägt `polygon_mm` den bereinigten Stand, und die
+gemeldete Abweichung war kein Fehler, sondern ein falsches Kriterium).
+
+### 23.4 Riegel-Bänder — ANGEHOBEN, und das ist ein Owner-Entscheid
+
+`BAND["Muthgasse_E2"]` und `BAND_SUMME` gehen von `(0, 0.0)` auf **`(2, 2.6)`**.
+Das ist die einzige erlaubte Anhebung dieses Bandes, und die Begründung steht im
+Code darüber: der Stempelschutz lässt `raum_29` (quelle L, Stempel 16,52 m²,
+Rang 1) bewusst nicht gegen `raum_91` (quelle F, Rang 3) ausstanzen, weil der
+Raum dadurch um 15,4 % vom Stempelwert abwiche. **Ohne Schutz wäre der Ist
+0 / 0,20 mm²** — die Kennzahl ist gegen Stempeltreue eingetauscht, nicht
+gefallen. Steigt sie über 2 oder über 2,6 m², ist es eine Regression.
+
+Die löschungsfeste Untergrenze `BAND_RAEUME` bleibt **unverändert**
+47/62/101/21/14 und ist nach dem Nachentscheid nachgemessen (46+1 / 62+0 /
+97+4 / 21+0 / 14+0). Lauf: 16 passed.
+
+Zweite Messbasis, weiter getrennt mitgeführt: **Modell-Restüberlappung**
+Muthgasse 13 / 40,835 m² (voriger Lauf 12 / 38,279), Barawitzka 4 / 7,131 m²,
+Mollgasse und Rennweg 0 — `typisiere_geometrisch` und `finde_lifte` legen nach
+der Kaskade eigene Räume an, die die Bereinigung nicht sieht.
+
+### 23.5 Korrekturen an eigenen Angaben dieser Übergabe
+
+- **§ 22.4, drei Rang-Zellen:** `raum_15` stand als (F)/3, ist aber quelle H
+  ohne Stempel → Rang 2; `raum_37` stand als (F)/3, ist quelle H mit Stempel
+  12,88 → Rang 1; `raum_67` stand als (L)/2, hat Stempel 3,73 → Rang 1. Damit
+  lautet die Begründung der zwei Barawitzka-Zeilen „Gewinner besser", nicht
+  „gleicher Rang". Am Ergebnis „nicht geschützt" ändert das nichts.
+- **§ 20.6:** „greift im Bestand 6×, nicht nur bei `raum_29`" ist überholt —
+  nach dem Nachentscheid greift der Schutz genau 1×.
+- **§ 21.3/21.4:** beide nannten den entfernten `test_soll_tuerzahl_band` als
+  existierend; Nachträge gesetzt.
+- **Modul-Docstring `bereinigung.py`:** die Aussage zu Stempelwert 0,00 m² war
+  zu stark (er erfüllt die 10-%-Bedingung immer, schützt aber nur bei besserem
+  Rang), und der Grenzwert −10,0039 % war ohne die Konstruktion nicht
+  reproduzierbar → jetzt mit Konstruktion und „rund −10,003 %".
+
+### 23.6 Türband abgelöst, letzte Fremdangaben gemessen
+
+Das Zählband 280 stammte selbst aus einem alten Ist und ist nicht gesenkt,
+sondern **ersetzt**: 72 echte A-DOOR-Blocktüren mit Türblatt-ARC, Paarung per
+Kuhn. Matchingunabhängig belegt — Hopcroft-Karp, scipy-Min-Cost und permutiertes
+Kuhn liefern identisch **13 / 13 / 44 / 59 / 63** von 72.
+
+Ein Provider-Parse (716 s) hat die letzten Fremdangaben geschlossen. Bestätigt:
+`tuer_48` → nächster Plan-Türblock **399,81 mm**, die 28 `arc_aussen` mit min
+399,81 / Median 405,96 / max 780,57 mm, die 14 von 72, und die Zuordnung
+`tuer_18`–`tuer_21` auf 0,00 mm. Gefallen: **„103 der 121" → 108** (die 103 ist
+121 − 18 und verwechselte die 18 echten Blocktüren mit den 72 Plan-Türblöcken),
+**„8–110 LINEs" → 2–110** (neun Blockdefinitionen liegen darunter), „kleinster
+Abstand überhaupt" gilt nur innerhalb der 28 (über alle 121 Türen sind es
+0,105 mm), und die Familien-Kurzform lautet 37/17/13/5.
+
+### 23.7 Slice-3b-Vorarbeit — gebaut, aufruferlos, mit drei offenen Befunden
+
+Leonis' Schritte 1, 3 und 4; Schritt 2 nur als Smoke-Test. Kein Konsument außer
+Tests und Analyse-Skript, `CONTRACT_VERSION` unverändert **1.5.0**.
+
+Zwei Befunde sind belastbarer als der Code: **Layernamen taugen nicht als
+Label** (Regel gegen Namensregel: Barawitzka 57 Treffer / 72 Abweichungen,
+Mollgasse 33/51, EG_Grundriss 23/28), und **der Baum schlägt „immer `rest`"
+nicht** — LOPO über 501 Zeilen ergibt acc **0,792** gegen eine
+Mehrheits-Basislinie von **0,815**, macro-F1 0,333, `raumkontur` F1 0,000. Das
+stützt die Vorgabe „Modell erst bei etwa 20 Büros" mit einer Messung.
+
+Behoben aus der Gegenprüfung: Restklassen-Deckel (`UEBERNEHMEN` 70 → 16, davon
+`rolle=rest` 57 → **0**), kein Selbstbezug in Runde 2 mehr (das Triple 1,000
+fällt korpusweit 70 → 5), Determinismus (8 von 37 wandernden Merkmalen → **0**),
+und `faktor_plausibel` (markierte alle 51 Layer des Meter-Plans falsch).
+
+**Drei Befunde bleiben offen** und stehen als `lf-3`-Runde in
+`docs/OFFENE_FRAGEN.md`: der Korpus trägt kein Label (gespeichert ist `rolle`,
+also die Ausgabe der Regel — 209 von 501 Zeilen widersprechen dem behaupteten
+`label_quelle`, und ein Training darauf wäre genau Leonis' Zirkularitäts-Einwand),
+`runde2_belegt` steht auf 87 Zeilen auf True, die drei Felder strukturell nicht
+messen können, und der neutrale Wert 0,0 ist arithmetisch kein Neutrum.
+
+### 23.8 Was in diesem Schritt ausdrücklich NICHT gemacht wurde
+
+- **Kein Merge.** Push aktualisiert PR #155.
+- **`contract-freeze` bleibt pending**, bis @mvpo3 und @EnisAMG auf dem dann
+  aktuellen `head_sha` approven. Jeder nachgeschobene Commit entwertet ein
+  erteiltes Approval — deshalb Approvals erst nach dem letzten Commit.
+- **Leonis' Einwand 5** (Gebäudeausgänge am 02-TWA/L04-Dialekt) ist aufgenommen,
+  hat Vorrang vor `lf-3` und ist **nicht gebaut**.
+- **Der `lf-3`-Neuschrieb** ist nicht gemacht; der Owner-Entscheid dazu
+  (zweites Flag oder Renormierung der Gewichte) steht aus.
+- **Die Raumzahl** steht in `test_soll_muthgasse.py` dreifach (114 / 113 / 109).
+  Welche gilt, entscheidet ein Parse auf sauberem Baum; das Band `>= 98` hält,
+  also nichts akut.
+- **Contract-Vorschlag 1.6.0** (`rolle` + `confidence` durch die Naht) ist ein
+  Vorschlag in `docs/proposals/` und nicht in 1.5.0 nachgeschoben.
+
+## 24. Belegkorrekturen für @EnisAMG (2026-09-12, Commit-Stand `91ad7cc`)
+
+Alle Zahlen dieses Abschnitts sind auf `91ad7cc` selbst gemessen. Ab hier gilt
+die Owner-Regel: **jede Kennzahl trägt den Commit-SHA ihrer Erhebung**, ältere
+Angaben ohne Neumessung sind als veraltet gekennzeichnet.
+
+### 24.1 Das E8/E9-Messverfahren — so ist es nachrechenbar
+
+Die Zahlen **627 mm** (E8) und **10 mm** (E9) sind bestätigt. Sie entstehen
+NICHT aus dem Schwerpunktabstand — das war ein Bezugspunkt-Irrtum bei der
+ersten Nachmessung dieser Runde (Schwerpunkt hätte 2302 mm bzw. 1536 mm
+ergeben). Gemessen wird der Abstand vom **TEXT-Einfügepunkt zur POLYGONKANTE**
+des Raums.
+
+Vollständiges Verfahren, ohne den Autor wiederholbar:
+
+| Schritt | Wert |
+|---|---|
+| Datei E8 | `Projekte/Pläne 19., Muthgasse 109B - 2026-05-07_13-12/Architekt/Ausführungsplan/M109B_-Plan - AR-AF-A-GR-E8 100 - GRUNDRISS E8.dxf` |
+| Datei E9 | dieselbe Ablage, `… - AR-AF-A-GR-E9 100 - GRUNDRISS E9.dxf` |
+| Entity | `TEXT` bzw. `MTEXT` mit Inhalt `DBA-Abstr. Schleuse` |
+| Layer | `A-GENM-IDEN` (beide Geschosse) |
+| mm-Faktor | **10.0**, aus `dxf_load.lade_dxf` (geometrisch kalibriert, nicht `$INSUNITS`) |
+| Einfügepunkt E8 | x = 332 846 mm, y = 108 857 mm |
+| Einfügepunkt E9 | x = 333 613 mm, y = 109 003 mm |
+| Bezugsgeometrie | `polygon_mm` aus `Projekte/_ergebnis/Muthgasse_E2/raeume.json` |
+| Bezugspunkt | **Polygonkante**, gerechnet als `shapely.Polygon.distance(Point)` |
+| Räume | `raum_65` (13,04 m², 15 Punkte) und `raum_67` (3,73 m², 8 Punkte) |
+
+Ergebnis, beide Richtungen gemessen:
+
+| Geschoss | → `raum_65` Kante | → `raum_67` Kante | Verhältnis |
+|---|--:|--:|--:|
+| E8 | **627 mm** | **9 791 mm** | 1 : 15,6 |
+| E9 | **10 mm** | 9 924 mm | 1 : 992 |
+
+Damit ist die Trennschärfe der Entscheidung `E2-VF-11a` = `SCHLEUSE` unabhängig
+vom Bezugspunkt belegt: in beiden Vergleichsgeschossen liegt der Schleusen-Text
+unter 2,5 m von `raum_65` und über 9,7 m von `raum_67` — auch in der
+Schwerpunkt-Lesart (E8 2302 gegen 11 114 mm, E9 1536 gegen 11 268 mm). Die
+Wahl des Bezugspunkts ändert die Zahlen, nicht die Aussage.
+
+Nebenbefund: E8 trägt sechs `DBA`-Texte, E9 vier. Nur je einer lautet
+`DBA-Abstr. Schleuse`; die übrigen sind `DBA`, `WDB DBA`, `2 x WDB DBA`,
+`4 x WDB DBA`. Wer nach `DBA` allein sucht, findet in E8 einen Treffer
+**1 431 mm von `raum_67`** — das Wort allein trennt die beiden Räume also
+NICHT, erst der Zusatz `Abstr. Schleuse`.
+
+### 24.2 „7 stair_exit" und „62" — geprüft und getrennt
+
+**„7 stair_exit" hat null Fundstellen.** Volltextsuche über `docs/`,
+`Projekte/_ergebnis/`, `Projekte/_uebersicht/` und `Handoff/`: kein Treffer in
+irgendeiner Schreibweise. Die 7 lebt ausschließlich in
+`tests/naht/test_soll_muthgasse.py` als datierter **Zwischenstand** (reiner
+Provider-Parse nach `96dcef6`, ohne Prüfstreckenlauf) und trägt dort bereits
+den Nachtrag auf den Ist-Wert **6**. Es ist also nichts zu trennen — die
+Zeitreihe lautet 12 → 5 → 7 → **6**, und nur die 6 ist der Ist auf `91ad7cc`.
+
+**„62" ist in jeder Fundstelle eindeutig** und in keiner eine
+`stair_exit`-Zahl. Die Quellen, je mit ihrer Bedeutung:
+
+| Fundstelle | Bedeutung von 62 |
+|---|---|
+| § 14.2, § 14.6, § 22 | Überlapper-Räume: **62 von 245**, 262,342 m² doppelt belegt |
+| `BAND_RAEUME` 47/**62**/101/21/14 | Mollgasse-Untergrenze der Löschsicherung |
+| `VERLAUF.md`, Mollgasse | „Räume gesamt 62" (Kaskaden-Räume dieses Plans) |
+| `ausgaenge.py:62-64` | **Codestelle**, keine Zahl |
+| Übersichtskarten | „für 62 von 63 Plänen erzeugt" |
+| § 4 / § 8 | Diffstat `+62/−21` in zwei Dateien |
+| § 14.4 | Paarklasse F ↔ H: 12 Paare, **62,3 m²** |
+| `DOD_GEBAEUDE_MOLLGASSE.md:28` | Leuchten-Spalte „62/64" im Geschoss 1KG |
+
+Dass Mollgasse zufällig **62 Räume** hat und die Überlapper-Summe über alle
+fünf Pläne ebenfalls **62** ist, ist die einzige echte Verwechslungsgefahr —
+beide stehen in derselben Tabelle in § 14.2. Deshalb hier ausdrücklich: die
+eine Zahl zählt Räume EINES Plans, die andere Überlapper über FÜNF Pläne.
+
+### 24.3 Was diese Korrekturen NICHT berühren
+
+Je ein Satz, worauf die Zahlen tatsächlich beruhen:
+
+- **Belichtung** (`natuerlich_belichtet`): beruht auf der Fenstererkennung an
+  der Außenwand, nicht auf Raumpolygon-Kanten oder Türbelegen — die
+  `Schl.`-Korrekturen und die Bereinigung berühren sie nicht.
+- **Breitenverlauf** (`breitenprofil.py`, Messstand 287/307): beruht auf
+  Fluchtwegsegmenten gegen schneidende Raumpolygone. **Achtung:** die
+  Messbarkeit hängt damit an den Raumpolygonen, und die hat Contract 1.5.0
+  verändert — diese Zahl ist deshalb als **veraltet** zu behandeln, bis sie auf
+  `91ad7cc` neu gemessen ist (eigener Punkt in `docs/ENIS_STAND_1_5_0.md`).
+- **Türbreiten** (612 Türen, `STANDARDWERT` 0-mal): beruhen auf Blocknamen,
+  Schwenkradius-Geometrie und Türtexten, alle drei unabhängig von Raumpolygonen
+  — von den Korrekturen unberührt.
+
+**Contract 1.5.0 hat die Raumpolygone geändert.** `Raum.polygon_roh` hält den
+Ring VOR der Bereinigung, `polygon_mm` trägt den bereinigten Stand, und
+`Raum.bereinigung[]` bucht jeden Abzug mit Regel und Gegenspieler. Wer eine
+Kennzahl auf Raumpolygonen gemessen hat, muss also sagen, auf welchem Stand —
+genau deshalb gilt ab hier die SHA-Pflicht je Kennzahl.

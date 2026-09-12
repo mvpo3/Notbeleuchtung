@@ -62,6 +62,282 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 
 ---
 
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-12, Abschluss-Runde 4) ═══
+
+**Branch:** `selman/extents-ausreisser`, **PR #155**, **kein Merge**. Commits
+dieser Runde: `f29bf5b` (Stempelschutz-Nachentscheid) · `12f23f2` (Riegel-Bänder
+ANGEHOBEN) · `f12edee` (Türband abgelöst + A5 nachgemessen) · `354840d`
+(SCHLEUSE-Ist-Nachtrag) · `87b74c3` (Slice-3b-Vorarbeit) + Doku- und
+Ergebnis-Commit.
+
+**⚠️ CONTRACT:** `raum_modell` bleibt **1.5.0**. In dieser Runde wurde dort
+**nur Kommentartext** geändert (die Regelnummern am Literal
+`BereinigungsRegel` trugen die alte Kaskade), `gen_schema --check` in sync. Der
+Check `contract-freeze` bleibt trotzdem pending, bis @mvpo3 und @EnisAMG auf dem
+**dann aktuellen** `head_sha` approven — **jeder nachgeschobene Commit entwertet
+ein erteiltes Approval.** Also: erst alles fertig, dann Approvals einsammeln.
+
+**Belege:** volle Suite `1296 passed, 11 skipped, 2 deselected, 12 xfailed,
+2 warnings in 1229.06s (0:20:29)`, exit 0, **keine XPASS-Zeile** · Prüfstrecke
+über alle fünf Pläne **ohne Parallellast**, exit 0, 271,6 / 306,2 / 1888,0 /
+57,0 / 51,4 s = **2574,2 s** · `test_soll_muthgasse` 11 passed / 4 xfailed /
+**0 XPASS** (747,5 s) · Riegel 16 passed · `test_bereinigung` 31 passed · alle
+fünf Akzeptanzkriterien des Messskripts **OK** · `ruff` clean.
+
+**Leitregel unverändert:** *der Code erfindet keine Maße und keine Typen, und er
+löscht keine Flächen unbelegt.* Neu dazu: **ein Band wird nur nach unten
+nachgezogen — steigt es, ist das ein Owner-Entscheid und muss im Code begründet
+stehen.** Genau das ist bei Muthgasse passiert.
+
+### Was diese Runde erledigt hat (Details: `docs/ENIS_UEBERGABE_0908.md` § 23)
+
+1. **Stempelschutz verengt.** Er griff bei 6 von 7 Paaren, auch dort, wo das
+   Ausstanzen die Stempeltreue **verbessert** hätte. Jetzt nur bei strikt
+   besserem Quellen-Rang des Verlierers: geschützte Paare **6 → 1**, Überlapper
+   **11 → 2**, doppelt belegt **58,260 → 2,552 m²**. Geschützt bleibt genau
+   `raum_29` gegen `raum_91`.
+2. **Riegel-Band für Muthgasse ANGEHOBEN** `(0, 0.0) → (2, 2.6)`. Kein
+   Nachlassen: ohne Schutz wäre der Ist 0 / 0,20 mm². `BAND_RAEUME`
+   47/62/101/21/14 unverändert und nachgemessen.
+3. **Türband abgelöst statt abgesenkt** — die 280 stammte selbst aus einem alten
+   Ist. Jetzt 72 echte A-DOOR-Blocktüren, Paarung per Kuhn,
+   **matchingunabhängig** belegt (Hopcroft-Karp, scipy-Min-Cost, permutiertes
+   Kuhn: identisch 13/13/44/59/63 von 72).
+4. **A5 geschlossen:** ein Provider-Parse (716 s) hat die letzte Fremdangabe
+   gemessen — `tuer_48` → 399,81 mm **bestätigt**. Gefallen: „103 der 121" →
+   **108** (die 103 ist 121 − 18), „8–110 LINEs" → **2–110**.
+5. **Slice-3b-Vorarbeit** (Schritte 1/3/4, Schritt 2 nur Smoke), aufruferlos.
+   Zwei Messbefunde tragen mehr als der Code: **Layernamen taugen nicht als
+   Label** (Barawitzka 57 Treffer / 72 Abweichungen) und **der Baum schlägt
+   „immer `rest`" nicht** (LOPO acc 0,792 gegen Basislinie 0,815).
+6. **Korrekturen an eigenen Angaben**, alle selbst nachgemessen: drei Rang-Zellen
+   in § 22.4, die „6×"-Aussage in § 20.6, die zwei Stellen, die den entfernten
+   `test_soll_tuerzahl_band` als existierend führten, Board-Zeilennummern und
+   Fundstellen-Zuordnungen. Alte Aussagen bleiben als überholt zitiert.
+
+### Was als Nächstes dran ist — in dieser Reihenfolge
+
+1. **Leonis' Einwand 5** (Gebäudeausgänge und Fluchtziel am 02-TWA/L04-Dialekt),
+   `docs/OFFENE_FRAGEN.md`. **Owner-Vorgabe: Vorrang vor Slice 3b.** Aufgenommen,
+   **nicht gebaut**. Darin der Befund, dass Balkontüren heute fälschlich als
+   Ausgänge behandelt werden.
+2. **`lf-3`-Neuschrieb von Slice 3b**, drei Befunde in einem Durchgang
+   (`docs/OFFENE_FRAGEN.md`, Abschnitt zur `lf-3`-Runde). Der wichtigste: **der
+   Korpus trägt kein Label** — gespeichert ist `rolle`, also die Ausgabe der
+   Regel, und bei **209 von 501 Zeilen** widerspricht das dem behaupteten
+   `label_quelle`. Ein Training darauf wäre genau Leonis' Zirkularitäts-Einwand.
+   Dazu `runde2_belegt=True` auf 87 Zeilen, die drei Felder strukturell nicht
+   messen können, und der neutrale Wert 0,0, der arithmetisch kein Neutrum ist.
+   **Offener Owner-Entscheid:** zweites Flag (MAJOR 2) oder Renormierung der
+   Gewichte (MAJOR 3) — beide belegbar, die Renormierung ändert mehr Zahlen.
+3. **Raumzahl in `test_soll_muthgasse.py` klären** — sie steht dreifach
+   (114 / 113 / 109). Die 109 stammen aus einem Parse auf dem schmutzigen
+   Arbeitsbaum; welche gilt, entscheidet ein Parse auf sauberem Baum. Das Band
+   `>= 98` hält, also nichts akut.
+
+### Was bei anderen liegt
+
+- **@EnisAMG:** Notbeleuchtungsanforderung der `SCHLEUSE` (eigener
+  `raumtyp_regeln`-Eintrag oder `default(rz)`) · `E2-VF-11b` / `raum_67` bleibt
+  untypisiert bis zur Entscheidung · Auflage A (`lichte_quelle` beim ersten
+  Erzeuger von `lichte_mm`) · Auflage B (Vorschlag: `STANDARDWERT` streichen,
+  0 von 612 Türen tragen ihn).
+- **@mvpo3:** Branch Protection auf `main` fehlt weiter (heute gemessen:
+  `protection` 404, `rulesets` 403, Token `admin:false`) · Bbox-Mitte sieht den
+  1-mm-Schlitz nicht (`platzierung/geometry.py`) · `lift_erkennung.py:171`
+  prüft nur `LIFT`, nicht `SCHACHT` · Contract-Vorschlag 1.6.0 in
+  `docs/proposals/` liegt zur Stellungnahme.
+- **Zu dritt:** ob der Layer-Korpus getrackt wird (`corpus/` ist heute
+  gitignored — Kunden-Layernamen im Klartext).
+
+
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-12, Bereinigung + SCHLEUSE) ═══
+
+**Branch:** `selman/extents-ausreisser`, **gepusht**, **neuer PR als Nachfolger
+von #152** (das war am 2026-09-10 23:31 UTC von @EnisAMG gemerged, ein Push
+aktualisiert es nicht mehr), **kein Merge**. Commits dieser Runde: `731a7d5`
+(WIP-Sicherung der Übersichtskarten vor dem Sync) · `804e6af` (Merge
+`origin/main`) · `64527f0` (BRANCH_PROTECTION § 7) · `7d41907` (Enis' Auflagen
+A/B) · `96dcef6` (SCHLEUSE + Kürzel-Auflösung) · `6ebf676` (**Bereinigung +
+Contract `raum_modell` 1.5.0**) + Abschluss-Commit.
+
+**⚠️ CONTRACT-TOUCH:** `raum_modell` 1.4.0 → **1.5.0**, additiv
+(`Raum.polygon_roh`, `Raum.bereinigung[]`), Schema regeneriert. Der Check
+`contract-freeze` verlangt das Approval **aller drei** Owner auf dem aktuellen
+`head_sha` — **jeder nachgeschobene Commit entwertet ein erteiltes Approval.**
+Also: erst alles fertig, dann Approvals einsammeln.
+
+**Suite:** `1264 passed, 10 skipped, 2 deselected, 12 xfailed, 2 warnings in 1181.23s (0:19:41)`, exit 0, keine XPASS-Zeile · Prüfstrecke über alle fünf Pläne **ohne Parallellast**,
+exit 0, 251,0 / 286,2 / 1813,0 / 56,8 / 51,7 s = 2459 s · `test_soll_muthgasse`
+9 passed / 4 xfailed / **0 XPASS** · Riegel + Bereinigung + Kürzel 49 passed ·
+`ruff` clean · `gen_schema --check` in sync.
+
+**Leitregel unverändert:** *der Code erfindet keine Maße und keine Typen.* Neu
+dazu: **er löscht auch keine Flächen unbelegt** — jeder Abzug der Bereinigung
+ist mit Regel und Gegenspieler gebucht, die Bilanz geht exakt auf
+(0,000000 mm² unbucht).
+
+**Was diese Runde erledigt hat (Details: `docs/ENIS_UEBERGABE_0908.md`
+§§ 19 + 20 + 21):**
+
+1. **Bereinigung der Raumüberlappungen umgesetzt** (§ 14.6/§ 14.6.1, neues
+   Modul `raumerkennung/bereinigung.py`, 430 Zeilen, 24 eigene Tests):
+   **62 von 62 Überlappern gelöst**, doppelt belegte Fläche **262,342 m² →
+   0,39 mm²**, kein Restpaar > 1 mm². Regel für Regel: Regel 1 löst 1,
+   +Regel 2 → 16, +Regel 3 → **62**, Regel 4 nur Mikroflächen, **Regel 5 greift
+   in null Fällen**. 5 Räume entfallen (Restkörper < 1 m², Σ 1,7494 m²),
+   14,829 m² Zerfall-Nebenkomponenten — beides gebucht und namentlich im
+   Bericht. Riegel-Bänder auf (0, 0.0) nachgezogen, **plus neue löschungsfeste
+   Untergrenze `BAND_RAEUME` 47/62/101/21/14**.
+2. **Muthgasse gesondert:** der einzige verschluckte LIFT ist weg (`raum_88` ⊃
+   `raum_79`, 97,6 % → kein Fall). Die **Ursache** bleibt sichtbar, nicht
+   behoben: 11 der 12 geänderten Muthgasse-Räume sind F-Flutungen
+   („Wohnküche"), `raum_88` behält 3,82 m² gegen 39,70 m² Stempel.
+3. **SCHLEUSE entschieden umgesetzt, nur für `E2-VF-11a`**: Kanon-Typ +
+   Nutzungsklasse `ALLGEMEIN_ERSCHLIESSUNG`, `regel_deckung.yaml` `offen`
+   (Owner Enis). `Schl.` typisiert **nur** mit Zusatzbeleg UND eingetragener
+   Owner-Entscheidung; `raum_67` bleibt untypisiert mit Hinweis im Prüfbericht.
+   Gemessen und wichtig: die In-Plan-Belege trennen die beiden Räume **nicht**
+   (die alten „0 mm / 8,2 m"-Angaben sind korrigiert) — der Unterscheider ist
+   das Vergleichsgeschoss (E8 627 mm, E9 10 mm von `raum_65`).
+4. **Enis' CODEOWNERS-Patch übernommen und unabhängig nachgeprüft**
+   (Kommentar in #152, Zahlen dort), **BRANCH_PROTECTION § 7** trennt die zwei
+   offenen Punkte (Workflow-Umstellung vs. Required Status Check).
+5. **Enis' zwei Auflagen dokumentiert** (`docs/OFFENE_FRAGEN.md`): A mit
+   Erzeuger-Codestelle und lauffähiger Test-Skizze (2 passed / 2 strict-xfail),
+   B mit der gemessenen Null (`STANDARDWERT` 0 von 612 Türen) und dem
+   Streich-Vorschlag. **PR #154 geprüft, kein Approval** — vier belegte Mängel
+   bei „fehlende Messung = None", die anderen drei Punkte passen.
+
+**NÄCHSTER PUNKT: die vier offenen Owner-Entscheidungen, nicht neuer Code.**
+
+- **Regel-Reihenfolge (d):** § 14.6.1 ordnet die Restflächen-Regel an Position 2,
+  umgesetzt ist sie zuletzt — sonst unterläuft sie „LIFT und SCHACHT werden
+  IMMER ausgestanzt" (4 der 5 LIFT/SCHACHT-Räume kommen aus dem R-Zweig, zwei
+  davon nur 0,15 m² über der Entfall-Schwelle). Im Docstring deklariert,
+  Wirkungsunterschied gemessen.
+- **Regel 2 vor Regel 3:** kostet genau einen Fall — `raum_29` (L mit Stempel)
+  fällt auf −15,6 %, weil `raum_91` (F) zu 99,97 % darin liegt. Ein-Zeilen-
+  Alternative gerechnet, nicht umgesetzt.
+- **Muthgasse-Türband:** Türen 291 → 270, **ausschließlich** Kontaktzonen-
+  Durchgänge (`durchgang_*` 169 → 148, `tuer_*` unverändert 121). Band **nicht**
+  abgesenkt, sondern als eigener strict-xfail `test_soll_tuerzahl_band` mit
+  Beleg; Räume/Segmente/Stiegenhäuser bleiben scharf. Entscheidung: Band
+  fachlich auf „Türen ohne Kontaktzonen-Durchgänge" umstellen oder bei ≥ 280
+  als Zielbild führen?
+- **Ursache im F-Zweig** (`flute_stempel` bekommt `belegte` nicht übergeben,
+  Punkt 2 der Skizze § 14.6): weiterhin offen. Die Bereinigung ist die
+  nachgelagerte Auflösung.
+
+**Offen an @EnisAMG:** `E2-VF-11b` (`raum_67`) — Entscheidungsvorlage liegt ·
+Notbeleuchtungsanforderung SCHLEUSE (`regel_deckung.yaml`) · Auflage A beim
+ersten `lichte_mm`-Erzeuger · Auflage B (`STANDARDWERT` streichen?) ·
+**Approval für `raum_modell` 1.5.0** und das weiterhin ausstehende für 1.4.0 ·
+die vier Mängel in #154 · die drei älteren Vokabular-Fragen und die
+Mollgasse-„Laubengang"-Frage.
+**Offen an @mvpo3:** **Branch Protection auf `main`** (heute nachgemessen:
+`protection` 404, `rulesets` 403, Token `admin:false`) · **Bbox-Mitte sieht ein
+Schlitz-Loch nicht** (`platzierung/geometry.py:226`; betroffen heute genau
+`Mollgasse raum_51`) · **Modell-Restüberlappung** Muthgasse 12 / 38,279 m²,
+Barawitzka 4 / 7,131 m² aus `stiegenhaus_*`/`lift_*` · **`SCHACHT`-Lücke** in
+`lift_erkennung.py:171` (`Barawitzka lift_2` ⊃ `rest_3` zu 100 %) · die
+Flächenschwellen rechnen ab jetzt mit der **bereinigten** Fläche ·
+**Approval für `raum_modell` 1.5.0**.
+
+**Mess- und Prüfskripte dieser Runde** (Session-Scratchpad
+`C:/Users/selma/AppData/Local/Temp/claude/D--KI-Projekt/15c400f4-f6ff-4226-8584-4bd9ac336bc7/scratchpad`,
+alle nur lesend): `_nachmessung.py` (Riegel-Basis, `BAND_RAEUME`, Muthgasse-
+Verschluck, >5 %-Bilanz, Entfall-Liste) · `_gp_leck.py` (Flächenbilanz) ·
+`_gp_pruef.py`, `_gp_reihenfolge.py` (Determinismus, Regelreihenfolge) ·
+`_schl_*.py` (Schl.-Inventar inkl. Vergleichsgeschosse) · `_tuer_ist.py` +
+`_tuer_zaehlen.py` (612 Türen, Breiten-Herkünfte) · `_gegenprobe`-Aufbau für die
+14 CI-Tests am alten Skript. Rohlogs: `_pruefstrecke.log`, `_suite_vorher.log`,
+`_suite_nachher.log`, `_suite_final.log`, `_nachlauf_muthgasse.log`.
+Im Repo dauerhaft: `scripts/analyse/ueberlappung_regeln.py` (kumulative
+Regel-Messung, Akzeptanzkriterien (a)–(d) prüft es selbst).
+
+---
+
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-11, Übersichtskarten-Sweep) ═══
+
+**Branch:** `selman/extents-ausreisser`, **PR #152 offen, kein Merge, kein Push.**
+**Kein Code in `src/` geändert**, `hauptengine/contracts/**` unberührt, keine
+Contract-Änderung. Neu ist genau ein dauerhaftes Skript + Ausgabe-Artefakte.
+
+**Was diese Runde gebaut hat:**
+
+1. **`scripts/analyse/uebersicht_karte.py`** (neu) — eine Übersichtskarte je Plan:
+   `uebersicht.png` (Räume nach Kategorie eingefärbt: Wohnräume / Sanitär / sonstige
+   typisierte / Außenflächen / Gänge / Stiegenhäuser / Schächte+Lifte / **untypisiert
+   magenta schraffiert**, dazu Innenhöfe, Wohnungen farbcodiert, Ausgänge nach
+   `Ausgang.typ`, Fluchtweg-Segmente, verschluckte Räume), `uebersicht.json`
+   (maschinenlesbar) und `uebersicht.md` (Kennzahlen + Abschnitt „nicht erkannt“).
+   **Wiederverwendet `scripts/plan_pruefen.py`** (`import plan_pruefen as pp`) für
+   Ladepfad, Rotation, Maßstab, Farbwahl und die matplotlib-Konventionen — dort war das
+   schon gelöst, nichts davon wurde neu erfunden. Argument `--name <Ausgabename>` gibt dem
+   Ausgabeordner einen lesbaren Namen; `dxf:` in JSON/MD führt weiter den echten
+   Originalpfad. ruff sauber.
+
+2. **Sweep über alle Pläne:** 63 gerechnet, **62 ok, 1 nicht auswertbar**. Rund **133 min**
+   Wanduhr (111,2 min bei 2 parallel + 22,2 min zwei serielle Nachläufe), 219,9 min CPU.
+   Ausgabe `Projekte/_uebersicht/<plan>/`; die **17 fertigen Elektro-/Notbeleuchtungspläne**
+   (Ergebnisbeispiele, enthalten bereits Leuchten — **keine** leeren Architekturpläne)
+   getrennt unter `Projekte/_uebersicht/_elektro_beispiele/<plan>/`.
+
+3. **`Projekte/_uebersicht/INDEX.md`** — eine Zeile je Plan (Projekt / Geschoss / Pfad /
+   Räume / untypisiert / Wohnungen / Stiegenhäuser / Gänge / Innenhöfe / Schächte+Lifte /
+   final_exit / stair_exit / Fluchtwegsegmente), nach Projekt gruppiert, Summenzeile je
+   Projekt und über alles, Elektro-Gruppe in eigenem, als solchem gekennzeichnetem
+   Abschnitt. Dazu die Abschnitte **„Was die Karte NICHT zeigt“** und **„Auffälligkeiten“**.
+
+**Zahlen (Σ, aus den 62 `uebersicht.json`):** Architektur (45 Karten) 3507 Räume · 666
+untypisiert · 348 Wohnungen · 127 Stiegenhäuser · 403 Gänge · 53 Innenhöfe · 140
+Schächte+Lifte · 77 `final_exit` · 75 `stair_exit` · 2422 Fluchtweg-Segmente. Elektro-
+Beispiele (17 Karten) 2681 / 404 / 151 / 91 / 463 / 33 / 38 / 30 / 120 / 2425.
+
+**Die harten Befunde (Details in INDEX.md, Abschnitt „Auffälligkeiten“):**
+- **7 Pläne mit 0 erkannten Ausgängen:** `Barawitzka_2DG`, `Barawitzka_FDM`,
+  `Barawitzka_KG`, `Herrenholz_OG1`, `Herrenholz_OG2`, `Herrenholz_UG`, `Rennweg_OG2`.
+  Härtester Fall `Herrenholz_OG1`: 300 Räume, 640 Türen, 55 Segmente, **kein** Ausgang.
+- **Untypisierung häuft sich in UG/KG:** `BaufeldE2_NB_UG` 237/266 · `Mollgasse_KG1` 24/31 ·
+  `Fischamend_E_UG` 30/43 · `Barawitzka_KG` 28/41 · `Mollgasse_KG2` 19/30 ·
+  `Fischamend_BT1_UG` 21/44 · `Rennweg_UG` 10/23. Absolut größter: `Herrenholz_EG` mit 244.
+- **Verschluckte Räume (>90 % in einem anderen Raum):** `Herrenholz_EG` 257 Paare /
+  127 Räume · `BaufeldE2_NB_UG` 201 / 201 · `Barawitzka_KG` 54 Paare bei 41 Räumen.
+  Verschluckte **LIFT/SCHACHT**-Polygone: alle acht Muthgasse-Pläne (2–3 je Plan), die
+  Fischamend-Obergeschosse (1–2), Barawitzka 1DG/EG (2).
+- **Dublette hart bestätigt:** `Herrenholz_UG` und `Herrenholz_OG2` liefern Zeile für Zeile
+  identische Werte, 28.284.638 vs. 28.284.639 Byte. Derselbe Plan zweimal. **Welcher das
+  echte Geschoss ist, entscheidet der Owner.**
+- **`floor`-Feld unbrauchbar:** 43 von 62 Plänen melden `floor == "EG"`. Die Geschoss-Spalte
+  im INDEX kommt deshalb aus dem Dateinamen, nicht aus dem Modell. Nicht korrigiert — die
+  Erkennung soll nichts erfinden.
+- **Renderlast reproduziert (Leonis' Befund):** `BaufeldE2_NB_OG1` / `_OG3` sind bei
+  2 parallel mit `MemoryError` in `LineCollection.set_segments` gestorben, seriell dann ok
+  (512,5 s / 819,4 s); ein Prozess stand bei 22,3 GB.
+
+**Was NICHT geht / offen ist:**
+- **`Aichholzgasse`** (`26_0507_AICH.dxf`, 146 MB, 10 Grundrisse in einem Modelspace) ist
+  **nicht auswertbar**: `ValueError: Keine Wand-Entities gefunden — Layer-Muster prüfen.`
+  (`dxf_load.py:258`, aus `provider.parse`), Abbruch nach 84,9 s vor dem Render. Die
+  Layer-Benennung dieses Büros passt nicht auf die Wand-Muster. Traceback:
+  `Projekte/_uebersicht/Aichholzgasse/uebersicht.md`.
+- **Die 8 Muthgasse-Karten sind so nicht vorzeigbar.** Zahlen stimmen, PNG nicht: der
+  Modelspace enthält mehrere abgesetzte Zeichnungen, der Auto-Zoom umfasst alles, der
+  Grundriss sitzt als briefmarkengroßer Fleck oben links, die Legende liegt darüber.
+  `pp._varianten_bounds` kennt nur den Barawitzka-Stempel-Prefix → **nächster Schritt:
+  eigene Bounds-Heuristik für Muthgasse.**
+- **`Baufeld_E2.zip`** (zweite Fassung, gleiche Dateinamen, andere MD5, minimal kleiner)
+  ist **nicht** geprüft. Gerechnet wurde `Baufeld_E2_Notbeleuchtungsplaene.zip`.
+- **`Barawitzka_FDM`** ist ein Fundamentplan (Ebene −2, 8 Räume, 0 Türen) — als Draufsicht
+  mitgerechnet, inhaltlich wahrscheinlich kein Grundriss. Owner-Entscheidung.
+- **Sichtgeprüft sind nur 3 PNGs** (`Rennweg_UG`, `Herrenholz_EG`, `Muthgasse_E2`). Die
+  übrigen ~59 wurden **nicht** einzeln angesehen — das wird hier nicht behauptet.
+- Board-Eintrag mit den Lane-Auswirkungen (@mvpo3 Ausgänge, @EnisAMG Vokabular) steht in
+  `docs/COORDINATION.md` unter „## Log“.
+
+---
+
 ## ═══ SELMAN: HIER WEITER (Stand 2026-09-10, Abschluss zweiter Block) ═══
 
 **Branch:** `selman/extents-ausreisser`, **PR #152 offen, kein Merge.** Commits

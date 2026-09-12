@@ -1,0 +1,76 @@
+{
+  "plan": "Rennweg_OG2",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\Rennweg\\OG2 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf",
+  "floor": "OG2",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    1388,
+    1800
+  ],
+  "rotation": "Rotation: keine dominante Kantenrichtung — 0° belassen.",
+  "kategorien": {
+    "wohnen": 5,
+    "untypisiert": 1,
+    "gang": 5,
+    "sanitaer": 4,
+    "aussen": 2,
+    "stiege": 1,
+    "schacht": 1,
+    "hof": 0,
+    "ueberlappung": 2,
+    "segmente": 2
+  },
+  "raeume_gesamt": 19,
+  "raeume_typisiert": 18,
+  "raum_typen": {
+    "ZIMMER": 5,
+    "VORRAUM": 4,
+    "BAD": 3,
+    "GANG": 1,
+    "WC": 1,
+    "TERRASSE": 2,
+    "STIEGENHAUS": 1,
+    "LIFT": 1
+  },
+  "wohnungen": {
+    "anzahl": 2,
+    "raeume_je_wohnung": {
+      "top_1": 11,
+      "top_2": 1
+    },
+    "ohne_wohnung": 7
+  },
+  "innenhoefe_m2": [],
+  "ausgaenge": [],
+  "stiegenhaeuser": [
+    "rest_1"
+  ],
+  "ueberlappungen": [
+    {
+      "raum_id": "raum_1",
+      "raum_typ": "ZIMMER",
+      "in_raum_id": "raum_17",
+      "in_raum_typ": "VORRAUM",
+      "anteil_prozent": 92.3
+    },
+    {
+      "raum_id": "raum_11",
+      "raum_typ": "BAD",
+      "in_raum_id": "raum_17",
+      "in_raum_typ": "VORRAUM",
+      "anteil_prozent": 96.5
+    }
+  ],
+  "tueren_gesamt": 38,
+  "laufzeit_s": 14.2,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 1** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "Innenhöfe: **0** — `provider.letzte_aussenbereiche.geschlossen` ist leer (oder es gab keine Wandkörper-Analyse).",
+    "`final_exit`: **0** — kein Ausgang ins Freie erkannt (in Obergeschossen erwartungsgemäß, s. provider.py).",
+    "`stair_exit`: **0** — kein Stiegenhaus-Ausgang erkannt.",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

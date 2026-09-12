@@ -1,0 +1,106 @@
+{
+  "plan": "Barawitzka_1DG",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\Barawitzkagasse\\415_260415_PP_VA_1_7 1 DG.dxf",
+  "floor": "DG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    2400,
+    869
+  ],
+  "rotation": "Rotation: dominante Richtung bereits horizontal (0°).",
+  "kategorien": {
+    "sanitaer": 6,
+    "aussen": 3,
+    "stiege": 3,
+    "untypisiert": 9,
+    "wohnen": 8,
+    "nebenraum": 2,
+    "gang": 2,
+    "schacht": 7,
+    "hof": 3,
+    "ueberlappung": 3,
+    "segmente": 4,
+    "stair_exit": 1
+  },
+  "raeume_gesamt": 40,
+  "raeume_typisiert": 31,
+  "raum_typen": {
+    "BAD": 2,
+    "BALKON": 2,
+    "STIEGENHAUS": 3,
+    "TERRASSE": 1,
+    "KÜCHE": 2,
+    "WC": 4,
+    "ZIMMER": 6,
+    "ABSTELLRAUM": 2,
+    "VORRAUM": 1,
+    "GANG": 1,
+    "SCHACHT": 3,
+    "LIFT": 4
+  },
+  "wohnungen": {
+    "anzahl": 6,
+    "raeume_je_wohnung": {
+      "top_1": 1,
+      "top_2": 3,
+      "top_3": 4,
+      "top_4": 5,
+      "top_5": 2,
+      "top_6": 3
+    },
+    "ohne_wohnung": 22
+  },
+  "innenhoefe_m2": [
+    19.1,
+    14.4,
+    15.5
+  ],
+  "ausgaenge": [
+    {
+      "id": "exit_durchgang_4",
+      "typ": "stair_exit",
+      "xy_mm": [
+        143447.10995486059,
+        27789.25149088377
+      ]
+    }
+  ],
+  "stiegenhaeuser": [
+    "raum_4",
+    "raum_8",
+    "rest_2"
+  ],
+  "ueberlappungen": [
+    {
+      "raum_id": "raum_1",
+      "raum_typ": "BAD",
+      "in_raum_id": "raum_8",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 98.9
+    },
+    {
+      "raum_id": "lift_3",
+      "raum_typ": "LIFT",
+      "in_raum_id": "raum_10",
+      "in_raum_typ": "WC",
+      "anteil_prozent": 94.4
+    },
+    {
+      "raum_id": "lift_4",
+      "raum_typ": "LIFT",
+      "in_raum_id": "raum_9",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 96.1
+    }
+  ],
+  "tueren_gesamt": 75,
+  "laufzeit_s": 85.7,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 9** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "`final_exit`: **0** — kein Ausgang ins Freie erkannt (in Obergeschossen erwartungsgemäß, s. provider.py).",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}
