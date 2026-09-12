@@ -199,3 +199,106 @@ def test_ecke_im_weiten_raum_deckelt_auf_eckfenster() -> None:
     # Fenster ±ECKE_FENSTER_MM um den Knick bei 3000 mm, nicht ±3500 mm.
     assert len(ecken) <= 11, f"{len(ecken)} Punkte verworfen"
     assert all(abs(m.laufmeter_mm - 3000.0) <= ECKE_FENSTER_MM for m in ecken)
+
+
+# ── breite_max_mm: die breiteste erfasste Stelle eines Abschnitts ────────────
+# Der Median einer Abschnittsbreite verdeckt breitere Stellen im selben
+# Abschnitt — innerhalb des Toleranzbandes und erst recht über eine
+# zusammengezogene kurze Störstelle hinweg. breite_max_mm macht sie sichtbar.
+# Es ist das Maximum der ERFASSTEN Punkte, kein Nachweis lückenloser Geometrie.
+def test_breite_max_bei_konstanter_breite_gleich_der_abschnittsbreite() -> None:
+    p = miss_breitenprofil("seg_max_1", [(0, 600), (6000, 600)],
+                           _gerader_gang(1200, 6000))
+    assert len(p.abschnitte) == 1
+    a = p.abschnitte[0]
+    assert a.breite_mm == 1200.0
+    assert a.breite_max_mm == 1200.0        # nichts Breiteres vorhanden
+    assert a.quelle == "gemessen"
+
+
+def test_median_unter_2000_aber_messwert_darueber_bleibt_sichtbar() -> None:
+    """Aufweitung INNERHALB des Toleranzbandes: ein Abschnitt, Median 1950,
+    aber 2030 mm gemessen. Ohne breite_max_mm verschwände die Überschreitung
+    der 2-m-Grenze in der Zusammenfassung."""
+    flaeche = Polygon([(0, 0), (8000, 0), (8000, 1950), (4600, 1950),
+                       (4600, 2030), (4000, 2030), (4000, 1950), (0, 1950)])
+    p = miss_breitenprofil("seg_max_2", [(0, 975), (8000, 975)], flaeche)
+    assert len(p.abschnitte) == 1, p.abschnitte
+    a = p.abschnitte[0]
+    assert a.breite_mm < 2000.0             # Median unter der Grenze
+    assert a.breite_max_mm is not None and a.breite_max_mm > 2000.0
+    # Der Messwert selbst ist unverändert im Profil vorhanden:
+    assert max(m.breite_mm for m in p.profil if m.breite_mm is not None) == a.breite_max_mm
+    assert p.breite_min_mm == 1950.0        # Minimum unberührt
+
+
+def test_zusammenfuehrung_ueber_kurze_stoerstelle_behaelt_das_maximum() -> None:
+    """Eine 300 mm kurze Aufweitung auf 2100 mm erreicht die Mindestlänge
+    nicht und wird dem Nachbarn zugeschlagen. Ihr Messwert darf dabei NICHT
+    verlorengehen."""
+    flaeche = Polygon([(0, 0), (8000, 0), (8000, 1600), (4300, 1600),
+                       (4300, 2100), (4000, 2100), (4000, 1600), (0, 1600)])
+    p = miss_breitenprofil("seg_max_3", [(0, 800), (8000, 800)], flaeche)
+    assert [a.breite_mm for a in p.abschnitte] == [1600.0], p.abschnitte
+    a = p.abschnitte[0]
+    assert a.von_mm <= 4000.0 and a.bis_mm >= 4300.0   # Störstelle liegt drin
+    assert a.breite_max_mm == 2100.0
+    assert p.breite_min_mm == 1600.0
+    assert p.engstellen == []               # eine Aufweitung ist keine Engstelle
+
+
+def test_messluecken_und_tuerpunkte_heben_das_maximum_nicht() -> None:
+    """Nicht messbare Punkte und Türdurchgänge gehen nicht in das Maximum ein;
+    sie bleiben im Profil sichtbar."""
+    # (a) Messlücke: die Fläche endet bei 4000, die Achse läuft bis 8000.
+    p = miss_breitenprofil("seg_max_4", [(0, 600), (8000, 600)],
+                           _gerader_gang(1200, 4000))
+    assert p.messbar
+    ohne = [m for m in p.profil if m.breite_mm is None]
+    assert ohne and all(m.grund for m in ohne), "Lücke ohne Grund"
+    assert all(a.breite_max_mm == 1200.0 for a in p.abschnitte), p.abschnitte
+
+    # (b) Türdurchgang: der schmale Türwert taucht im Maximum nicht auf, der
+    # Gangwert bleibt das Maximum.
+    flaeche = _gerader_gang(1600, 8000).difference(
+        Polygon([(3900, 1250), (4100, 1250), (4100, 1610), (3900, 1610)])
+    )
+    q = miss_breitenprofil("seg_max_5", [(0, 800), (8000, 800)], flaeche,
+                           tueren_mm=[(4000, 800)])
+    assert q.tuerpunkte
+    assert [a.breite_mm for a in q.abschnitte] == [1600.0]
+    assert all(a.breite_max_mm == 1600.0 for a in q.abschnitte)
+
+
+def test_breite_max_ist_ohne_bestimmung_none() -> None:
+    """Default des Modells: nicht bestimmt heißt None, nie 0.0."""
+    from notbeleuchtung.raumerkennung.breitenprofil import Abschnitt
+    assert Abschnitt(0.0, 100.0, 1200.0).breite_max_mm is None
+
+
+def test_alter_positionsaufruf_mit_quelle_bleibt_unveraendert() -> None:
+    """Regression zur Einführung von breite_max_mm.
+
+    Vorher war ``quelle`` das VIERTE Positionsargument. Stünde das neue Feld
+    positional davor, würde ``Abschnitt(v, b, breite, "handmessung")`` still zu
+    ``breite_max_mm="handmessung"`` — ein Bedeutungswechsel ohne Fehlermeldung.
+    Deshalb ist ``breite_max_mm`` keyword-only; dieser Test hält die
+    Positionsfolge fest.
+    """
+    import inspect
+
+    from notbeleuchtung.raumerkennung.breitenprofil import Abschnitt
+
+    a = Abschnitt(0.0, 100.0, 1200.0, "handmessung")
+    assert (a.von_mm, a.bis_mm, a.breite_mm) == (0.0, 100.0, 1200.0)
+    assert a.quelle == "handmessung"        # NICHT in breite_max_mm gelandet
+    assert a.breite_max_mm is None          # ohne Angabe bleibt es None
+
+    b = Abschnitt(0.0, 100.0, 1200.0)       # Aufruf ohne quelle, wie bisher
+    assert b.quelle == "gemessen" and b.breite_max_mm is None
+
+    par = inspect.signature(Abschnitt).parameters
+    assert [n for n, p in par.items()
+            if p.kind is p.POSITIONAL_OR_KEYWORD] == [
+        "von_mm", "bis_mm", "breite_mm", "quelle"], par
+    assert par["breite_max_mm"].kind is par["breite_max_mm"].KEYWORD_ONLY
