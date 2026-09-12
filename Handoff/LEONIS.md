@@ -4,6 +4,57 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-09-12 ABEND) — Owner-Fachdoku eingebaut (S0–S3), PR #156 offen. HIER WEITER.
+
+**Branch `leonis/demo-l-gebaeude` GEPUSHT, PR #156 OFFEN (3-Owner wegen norm_regelwerk 1.4.0).**
+Owner lieferte „Notbeleuchtung zeichnen lernen.pdf" (v2, 12 S., AUTORITATIV; Bilder maßgeblich)
++ korrigierte Referenz-DXF (`nachgezeichnet_out/v5/*_korrigiert.dxf` — Lehrdateien: eigene
+Blockdefs, „Vorher"-Kopie um −46 324 m x-verschoben, Ground truth an Originalkoordinaten).
+Digest: `knowledge/extracted/NOTBELEUCHTUNG_ZEICHNEN_LERNEN.md` (R-A…R-K).
+
+**Gebaut (je 1 Commit):**
+1. **S0** `11d8bca` Digest+INDEX.
+2. **S1** `3d3e9ce` **R-B: Tür-RZ-Rotation = Piktogramm INS Rauminnere** —
+   `bausteine.rotation_piktogramm_in_raum` (= rotation_zur_tuer(−dx,−dy), kalibriert am
+   Ground truth: Nebenräume 0°/Hauseingang 0°/Müllraum-Südtür 180°). Alle Tür-RZ-Sites
+   umgestellt (fachpraxis Türleuchte/aussen_tuer_rz/R4, anker, communal, gang-Fallback);
+   R8/STGH bewusst NICHT (Laufrichtungs-Naht). 6 Tests nachgezogen.
+3. **S2** `5fae5f2` **R-C: Tür-RZ raumseitig** — RZ_INS_RAUM_MM (150) nach bausteine,
+   Anker-/communal-Exit-RZ versetzen jetzt auch; 4og-Golden 1 Position nachgezogen
+   (exakt 150 mm). + `b1317f2`/Nachzüge Lint.
+4. **S3** `8359354` **R-F: Sichtkette** — neues `sichtkette.kette_ausduennen` (Nachpass:
+   redundante Gang-RZ fallen, wenn jeder Fluchtweg-Punkt [Türen+Ausgänge+Segment-Sampling]
+   ≥1 RZ sieht und jedes Korridor-RZ weiterführt; Sicht = l=z·h aus NormProvider + Strahl
+   bleibt in GANG-Polygonen). 12-m-Arm-Gap → Erkennungsweite (Fallback 12 m). Wohnbau-EG-
+   Band: 1×links-Verlaufs-RZ fällt begründet. Schutz: Exit-/Kreuzungs-/Tür-RZ.
+5. **S2-Nachzug** (Snap): Tür-nahe RZ (≤500 mm) vom Mittellinien-Snap ausgenommen —
+   der R1-Snap zog das Hauseingang-RZ auf die Bestandslinie AUSSERHALB (v6-Befund).
+6. **Außen-SL-Türachse-Fix** `c61dd55` (vor der Fachdoku): `_wand_normale`.
+
+**Output:** `nachgezeichnet_out/v7/` (EG+1OG A0-PDF, %%EOF ok). v7-Abgleich mit KORR:
+Nebenraum-Tür-RZ-Rotationen EXAKT Ground truth (180→0) ✓ · Hauseingang-RZ bleibt an der
+Tür ✓ · Suite 1191+ grün, ruff clean, nur begründete Band-/Golden-Shifts.
+
+**OFFEN / Resume:**
+- **Hauseingang-RZ-Rotation** v7 zeigt 180 statt 0 (KORR): ein Nachpass dreht zurück
+  (Kandidaten: R4-Reihenfolge vs. Versatz, communal-Zweig). Tracen + fixen (klein).
+- **S4 Aufheller=Lichtberechnung (R-J):** Ground truth EG 5→1 Gang-Aufheller; unsere
+  `verdichte_fluchtweg` ist konservativer (MF 0,80 aktiv, RZ-Leuchten zählen nicht als
+  Lichtquelle, LDT-Beitrag prüfen). = KALIBRIER-Slice, nicht raten.
+- **S5 Außen-Dreifall (R-E):** Überdachung→Antipanik mittig auf RZ-Achse · ohne+einseitig→
+  Wand nutzbare Seite · ohne+beidseitig→KEINE. Braucht Überdachungs-Polygon (Selman Track C;
+  `scripts/plan_pruefen.py` hat schon eine Überdachungs-Analyse als Vorlage!) + Ersetzt
+  1-m-Regel. Sackgassen-Seite: kein Automatismus (Owner), Parameter/Review.
+- **S3 wirkt am Elektroplan EG noch nicht** (Gang-RZ 7 unverändert): Gang-RZ liegen
+  außerhalb des zackigen raum_13-Polygons → alles „geschützt". Hängt an Selman-Naht (b)
+  (raum_13-Zacken) ODER Puffer-Toleranz im point_in_polygon-Check.
+- **1OG-KORR trägt Altstand** (Tür-RZ rot 180, wo Regel 0 sagt): Owner-Frage gestellt,
+  R-B gilt ausnahmslos → Regel implementiert, 1OG-Referenz nicht nachgezogen.
+- PR #156 wartet auf Enis+Selman (norm_regelwerk 1.4.0). #154 approved (Leonis).
+- Rest vom 11.09. unten unverändert (Müllraum-Südtür=Selman (a), Wissensabgleich-Punkte).
+
+---
+
 ## STAND (2026-09-11 ABEND) — Elektroplan DE nachgezeichnet + 8 Owner-Regeln (R1–R8). HIER WEITER.
 
 **Branch `leonis/demo-l-gebaeude`, 1191 grün, ruff clean, NICHTS gepusht.** 3 neue Commits:
