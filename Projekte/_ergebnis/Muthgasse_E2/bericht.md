@@ -172,8 +172,8 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:16 R:0` — Rotation: Wände vertikal-d
 
 ## Hinweise Kürzel-Auflösung (2)
 
-- raum_67: Stempel »Schl.« (Kuerzel `schl`), Nummer E2-VF-11b (350 mm) - bleibt untypisiert: Entscheidung ausstehend. Belege: Stiegenkern-Lage (0 mm Kontakt/Überlappung); Text-Beleg »WDB DBA« in 1232 mm
-- raum_65: Stempel »Schl.« (Kuerzel `schl`), Nummer E2-VF-11a (350 mm) -> SCHLEUSE (Entscheidung Enis 2026-09-11: Lage beim Stiegenkern; Vergleichsgeschoss E8 'DBA-Abstr. Schleuse' 627 mm (E9 10 mm) an derselben Lage; docs/OFFENE_FRAGEN.md § Entscheidung Schl. (Enis, 2026-09-11)). Belege: Stiegenkern-Lage (0 mm Kontakt/Überlappung); Text-Beleg »DBA« in 1663 mm
+- raum_67: Stempel »Schl.« (Kuerzel `schl`), Nummer E2-VF-11b (350 mm) - bleibt untypisiert: Entscheidung ausstehend. Belege: Stiegenkern-Lage (0 mm Kontakt/Überlappung); KORREKTUR 2026-09-12: die 0 mm sind Kontakt zu Treppen-Block-Extents bzw. zum STIEGENHAUS-Polygon, NICHT Wandkontakt zu Raumpolygonen -- gegen raum_88 ist raum_65 5652 mm entfernt, die Kuechen raum_29/raum_91 6354/6346 mm, raum_67 aber 0 mm. Das Merkmal trennt Schleuse nicht von Kueche; tragend ist das Vergleichsgeschoss (E8 627 mm, E9 10 mm zur Polygonkante von raum_65). Die frueher genannte Kontaktlaenge ~8,2 m ist nicht reproduzierbar (Vorsession: 4,72 m).; Text-Beleg »WDB DBA« in 1232 mm
+- raum_65: Stempel »Schl.« (Kuerzel `schl`), Nummer E2-VF-11a (350 mm) -> SCHLEUSE (Entscheidung Enis 2026-09-11: Lage beim Stiegenkern; Vergleichsgeschoss E8 'DBA-Abstr. Schleuse' 627 mm (E9 10 mm) an derselben Lage; docs/OFFENE_FRAGEN.md § Entscheidung Schl. (Enis, 2026-09-11)). Belege: Stiegenkern-Lage (0 mm Kontakt/Überlappung); KORREKTUR 2026-09-12: die 0 mm sind Kontakt zu Treppen-Block-Extents bzw. zum STIEGENHAUS-Polygon, NICHT Wandkontakt zu Raumpolygonen -- gegen raum_88 ist raum_65 5652 mm entfernt, die Kuechen raum_29/raum_91 6354/6346 mm, raum_67 aber 0 mm. Das Merkmal trennt Schleuse nicht von Kueche; tragend ist das Vergleichsgeschoss (E8 627 mm, E9 10 mm zur Polygonkante von raum_65). Die frueher genannte Kontaktlaenge ~8,2 m ist nicht reproduzierbar (Vorsession: 4,72 m).; Text-Beleg »DBA« in 1663 mm
 
 ## Raumbereinigung (ENIS_UEBERGABE_0908 § 14.6.1)
 
@@ -825,6 +825,10 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | exit_durchgang_148 | stair_exit | 291.60 | 108.60 |
 | exit_aussenoeffnung_1 | final_exit | 325.94 | 105.25 |
 
+### Kein Endausgang wegen Freifläche (0 Türen ins Freie an BALKON/TERRASSE)
+
+keine — auf diesem Plan führt keine Tür an einem typisierten BALKON/TERRASSE-Raum vorbei.
+
 ## Fluchtweg-Segmente (148)
 
 Quellen: FALLBACK: 3, GRAPH: 6, LINIE: 139
@@ -1166,4 +1170,4 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_tuer_109, exit_tuer_11
 | tuer_in_schacht | 4 |
 | tuer_ins_nichts | 3 |
 
-Laufzeit: 1888.0 s
+Laufzeit: 1832.8 s

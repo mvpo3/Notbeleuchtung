@@ -343,6 +343,10 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 |---|---|--:|--:|
 | exit_tuer_27 | final_exit | 14.90 | -2.93 |
 
+### Kein Endausgang wegen Freifläche (0 Türen ins Freie an BALKON/TERRASSE)
+
+keine — auf diesem Plan führt keine Tür an einem typisierten BALKON/TERRASSE-Raum vorbei.
+
 ## Fluchtweg-Segmente (12)
 
 Quellen: FALLBACK: 1, GRAPH: 11
@@ -492,4 +496,4 @@ Quellen: FALLBACK: 1, GRAPH: 11
 | sicherheitsleuchte | (12.23, -7.16) | 0 |
 | sicherheitsleuchte | (11.44, -23.01) | 0 |
 
-Laufzeit: 271.6 s
+Laufzeit: 262.1 s

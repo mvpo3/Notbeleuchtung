@@ -148,6 +148,10 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | exit_durchgang_27 | stair_exit | 12549.97 | 356218.82 |
 | exit_aussenoeffnung_2 | final_exit | 12555.26 | 356222.92 |
 
+### Kein Endausgang wegen Freifläche (0 Türen ins Freie an BALKON/TERRASSE)
+
+keine — auf diesem Plan führt keine Tür an einem typisierten BALKON/TERRASSE-Raum vorbei.
+
 ## Fluchtweg-Segmente (9)
 
 Quellen: FALLBACK: 1, GRAPH: 8
@@ -271,4 +275,4 @@ Quellen: FALLBACK: 1, GRAPH: 8
 | tuer_ins_nichts | 4 |
 | beide_seiten_untypisiert | 1 |
 
-Laufzeit: 57.0 s
+Laufzeit: 57.7 s
