@@ -313,6 +313,30 @@ def _raum_mit_aussentuer(communal=True, ausgaenge=(), detail=None):
     )
 
 
+def test_phantom_durchgang_ist_keine_tuer():
+    """Owner-Befund 2026-09-12 („dort gibt es aber keine Tür, dort ist eine Wand"):
+    die Erkennung lieferte die Wand Müllraum↔Gang als 6064-mm-GEOMETRIE_OEFFNUNG-
+    „Durchgang" — das Tür-RZ hing an der Wand. Öffnungen jenseits jedes Türmaßes
+    (> 1300 mm, Selmans Nennmaßbereich 60–130 cm) sind keine Türen: das RZ gehört
+    an die echte 900er-Tür."""
+    from notbeleuchtung.hauptengine.contracts import Tuer
+
+    raum = _raum_mit_tuer("MUELLRAUM")
+    echte = raum.tueren[0]                               # 900er an (5000, 0)
+    raum.tueren.insert(0, Tuer(id="phantom", xy_mm=(9900.0, 4000.0),
+                               von_raum="r1", nach_raum="gang",
+                               breite_mm=6064.0, ohne_tuerblatt=True))
+    raum.raeume.append(Raum(id="gang", raum_typ="GANG",
+                            polygon_mm=[(10000.0, 0.0), (12000.0, 0.0),
+                                        (12000.0, 8000.0), (10000.0, 8000.0)],
+                            ist_fluchtweg=True, ist_communal=True))
+    out = tuerleuchte_pflichtraeume(raum, FakeNormProvider())
+    rz = [p for p in out if p.kind == "rz"]
+    assert len(rz) == 1
+    d = math.hypot(rz[0].xy_mm[0] - echte.xy_mm[0], rz[0].xy_mm[1] - echte.xy_mm[1])
+    assert d <= 200.0, f"RZ hängt {d:.0f} mm von der echten Tür (an der Phantom-Wand?)"
+
+
 def test_aussen_tuer_rz_am_muellraum_ausgang():
     """„Hier ist der Ausgang vom Müllraum": AUSSEN-Tür eines communal Raums traegt
     ein RZ (EN 1838 §4.1.2 g) — Piktogramm blickt ins Rauminnere (R-B), ~150 mm im Raum."""
