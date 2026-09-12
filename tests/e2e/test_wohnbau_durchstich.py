@@ -94,11 +94,13 @@ def test_eg_rz_muster_und_aussenleuchte(tmp_path):
     """Die abgenommenen EG-Eigenschaften: RZ-Richtungsmuster + Außenleuchte §4.1.2 b
     vor dem final_exit. Seit der Türleuchten-Korrektur (Owner 08.09.2026) tragen die
     3 Pflichträume (TECHNIK/MUELLRAUM/KINDERWAGENRAUM) je ein unten-RZ an der Tür →
-    6×unten (3 wie v8 + 3 Tür-RZ) + 1×links."""
+    6×unten. Das frühere 1×links-Verlaufs-RZ fällt seit R-F (Fachdoku v2 S.7,
+    Sichtkette: „ist das nächste Zeichen bereits sichtbar, wird kein weiteres
+    gesetzt") begründet weg — die Kette hält im geraden v8-Gang ohne es."""
     raum, erg, _pruef, _summary, _out = _lauf("eg", tmp_path)
     rz_keys = sorted(p.catalog_key for p in erg.platzierungen if p.kind == "rz")
     assert rz_keys.count("notlicht_ks_stiege_unten") == 6
-    assert rz_keys.count("notlicht_ks_stiege_links") == 1
+    assert rz_keys.count("notlicht_ks_stiege_links") == 0
     (exit_,) = [a for a in raum.ausgaenge if a.typ == "final_exit"]
     sl = [p for p in erg.platzierungen if p.kind == "sicherheitsleuchte"]
     naechste = min(
