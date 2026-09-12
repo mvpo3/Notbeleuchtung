@@ -21,6 +21,7 @@ gekennzeichnet; ältere Angaben ohne Neumessung sind als veraltet zu behandeln.
 | Datum dieses Commits | 2026-09-12 02:17:40 +0200 |
 | Titel | „raumerkennung — Raumueberlappungen nicht destruktiv bereinigen (Contract raum_modell 1.5.0)" |
 | Messstand dieses Dokuments | **`91ad7ccfa0a1638490c9605f929f8d8b145b016a`** |
+| Nachgemessen in § 5c | **`5ccdc27634c6d4bbff7c731452c83c72a2344220`** |
 
 Der Sprung 1.4.0 → 1.5.0 ist additiv: `Raum.polygon_roh` (Ring **vor** der
 Bereinigung), `Raum.bereinigung[]` (jeder Abzug mit Regel und Gegenspieler),
@@ -31,10 +32,15 @@ welchem.
 Nachgeprüft, nicht angenommen: `git log -S'CONTRACT_VERSION = "1.5.0"'` liefert
 genau diesen einen Commit.
 
-> **Hinweis zur Ehrlichkeit:** die Messungen unten laufen auf dem Arbeitsbaum
-> über `91ad7cc`. Dieser Baum trägt die noch nicht committeten Änderungen der
-> Runde vom 2026-09-12 (Balkontüren-Regel, Belegkorrekturen). Am Contract ändert
-> davon **nichts** — `CONTRACT_VERSION` steht unverändert auf `1.5.0`.
+> **Hinweis zur Ehrlichkeit:** die Messungen der Abschnitte 2 bis 5b liefen auf
+> dem Arbeitsbaum über `91ad7cc`, also vor dem Commit der Runde vom 2026-09-12
+> (Balkontüren-Regel, Belegkorrekturen). Dieser Stand ist inzwischen als
+> `e5b742c`…`5ccdc27` committet; die Zahlen sind davon unberührt, weil jene
+> Commits weder Räume noch Türen noch die Bereinigung verändern. Die
+> Nachmessung in § 5c lief auf **`5ccdc27`** und ist dort so ausgewiesen. Am
+> Contract ändert die ganze Runde **nichts** — `CONTRACT_VERSION` steht
+> unverändert auf `1.5.0`, und `git diff 91ad7cc..5ccdc27 -- contracts/` ist
+> leer.
 
 ## 2. Die 62 Überlappungen: welche Projekte, welche Geschosse
 
@@ -276,9 +282,41 @@ Kontaktzonen-Durchgänge.
 sondern weil sich seine **Grundmenge** geändert hat. Eine Aussage „93,5 %" auf
 `91ad7cc` ist unbelegt, solange der Zähler nicht gegen die 300 neu gemessen ist.
 
-**Status: Nenner neu gemessen (300), Zähler ausstehend.** Die Neumessung des
-Zählers braucht Provider-Parses über alle fünf Pläne (Summe ~42 min) — sie ist
-beauftragt, aber noch nicht gelaufen.
+### Nachtrag 2026-09-12, `5ccdc27`: der Zähler ist jetzt gemessen
+
+Gelaufen über alle fünf Pläne mit Provider-Parse, je Segment
+`begrenzende_flaechen` plus `miss_breitenprofil` (Laufzeit 10,4 / 31,0 / 580,6 /
+2,6 / 1,8 s):
+
+| Plan | neu | § 10.4 (2026-09-10) |
+|---|--:|--:|
+| Barawitzka_EG | **12/12** | 12/12 |
+| Mollgasse_EG | **110/126** | 107/126 |
+| Muthgasse_E2 | **145/148** | 154/155 |
+| Rennweg_EG | **9/9** | 9/9 |
+| Rennweg_OG3 | **5/5** | 5/5 |
+| **Summe** | **281/300 = 93,7 %** | 287/307 = 93,5 % |
+
+**Die Quote hält, die Mengen haben sich verschoben.** Im Einzelnen:
+
+- **Mollgasse 107 → 110 messbare Segmente** bei gleichem Nenner 126. Drei
+  Segmente sind durch die Bereinigung messbar geworden — die Raumpolygone sind
+  dort enger geschnitten, also greift `begrenzende_flaechen` sauberer.
+- **Muthgasse 154/155 → 145/148.** Der Nenner fällt um 7 (weggefallene
+  Kontaktzonen-Durchgänge), der Zähler um 9. Netto verliert dieser Plan also
+  zwei messbare Segmente mehr, als er Segmente verliert.
+- Barawitzka und beide Rennweg-Pläne sind **unverändert**.
+
+Gründe-Verteilung neu: `kein_abschnitt_ueber_mindestlaenge` 126 ·
+`flaeche_fehlt` **13** · `nur_tuer_oder_eckpunkte` **6**. Gegen § 10.4
+(`flaeche_fehlt` 12, alle Mollgasse; `nur_tuer_oder_eckpunkte` 8): die 12
+Mollgasse-Fälle sind **unverändert** vorhanden, dazu **einer neu in Muthgasse**.
+`kein_abschnitt_ueber_mindestlaenge` ist kein Messausfall — diese Segmente sind
+`messbar=True`, nur ohne Abschnitt über der Mindestlänge.
+
+**Damit ist die Zahl neu erhoben und der alte Bruch abgelöst:** gültig auf
+`5ccdc27` ist **281/300 (93,7 %)**. Die 287/307 bleibt als Angabe ihres Standes
+(2026-09-10, vor der Bereinigung) stehen und ist nicht mehr aktuell.
 
 ## 6. Deine Regel zur Belichtung — festgehalten und per Test gesichert
 
