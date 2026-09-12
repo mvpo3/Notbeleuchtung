@@ -33,6 +33,7 @@ aus dem Index zitieren — immer der autoritativen YAML/dem Contract folgen.**
 - [Bild-Lehren — ABB Kaufel Planungsgrundlagen](knowledge/extracted/bildlehren/Bildlehren_Kaufel.md) — **Methode:** Planungs-Kapitel vollständig als Bild gesichtet (110 dpi), Katalogteil stichprobenartig, 2026-08-28.
 - [Bild-Lehren — licht.wissen 10](knowledge/extracted/bildlehren/Bildlehren_LichtWissen10.md) — **Methode:** Bildstarke Seiten gesichtet (110 dpi), 2026-08-28. ~30 Seiten-Views,
 - [Bild-Lehren — Zumtobel „Sicherheitsbeleuchtung Österreich"](knowledge/extracted/bildlehren/Bildlehren_ONL_Zumtobel.md) — **Methode:** Alle 48 Seiten als Bild gesichtet (110 dpi), 2026-08-28. Kritische
+- [din Planungsunterstützung V25 — Analyse eines realen Referenz-Notbeleuchtungsplans](knowledge/extracted/DIN_PLANUNGSUNTERSTUETZUNG_V25_ANALYSE.md) — **Quelle:** `DIN-Notbeleuchtungspläne(Beispiele)/din Planungsunterstützung_V25.dxf` (11 MB, AC1032/R2018).
 - [EN 1838:2019 — Angewandte Lichttechnik — Notbeleuchtung](knowledge/extracted/EN_1838_notbeleuchtung.md) — **Quelle:** knowledge/EN 1838 - Notbeleuchtung 2019 (1).pdf · **Extrahiert:** 2026-08-28, Volltext via pypdf
 - [ESV 2012 — Verordnung über den Schutz der Arbeitnehmer/innen vor Gefahren durch den elektrischen Strom (Elektroschutzverordnung 2012 – ESV 2012)](knowledge/extracted/ESV_2012.md) — **Quelle:** knowledge/esv_2012.pdf · **Extrahiert:** 2026-08-28, Volltext via pypdf
 - [ETG 1992 — Bundesgesetz über Sicherheitsmaßnahmen, Normalisierung und Typisierung auf dem Gebiete der Elektrotechnik (Elektrotechnikgesetz 1992 – ETG 1992)](knowledge/extracted/ETG_1992.md) — **Quelle:** knowledge/etg_1992.pdf · **Extrahiert:** 2026-08-28, Volltext via pypdf
@@ -46,6 +47,7 @@ aus dem Index zitieren — immer der autoritativen YAML/dem Contract folgen.**
 - [Lichtberechnungs-Referenz — echte Profi-Notberechnungen (extrahiert 2026-09-08)](knowledge/extracted/LICHTBERECHNUNG_REFERENZ.md) — **Erste echte professionelle Lichtberechnungen mit Zahlenwerten im Repo.** Zwei
 - [licht.wissen 10 — Notbeleuchtung, Sicherheitsbeleuchtung (Februar 2016)](knowledge/extracted/LichtWissen_10_Notbeleuchtung.md) — **Quelle:** knowledge/1603_lw10_Notbeleuchtung_web.pdf · **Extrahiert:** 2026-08-28, Volltext via pypdf
 - [Wissens-Digest — Muthgasse 109B Polierpläne: Brandschutz-Gerüst + 6. CAD-Familie](knowledge/extracted/MUTHGASSE_POLIERPLAN_BRANDSCHUTZ.md) — Quellen: `Projekte/Pläne 19., Muthgasse 109B - 2026-05-07_13-12/Architekt/Ausführungsplan/`
+- [Wissens-Digest: Notbeleuchtungspläne zeichnen — Recherche-Erweiterung](knowledge/extracted/NOTBELEUCHTUNGSPLAENE_ZEICHNEN_WEB.md) — <!-- Quelle: ultracode-Web-Recherche-Workflow (7 Angles, adversarial verifiziert), 2026-09-09.
 - [Nullungsverordnung — Verordnung über die Anforderungen an öffentliche Verteilungsnetze mit der Nennspannung 400/230 V und an diese angeschlossene Verbraucheranlagen zur grundsätzlichen Anwendung der Schutzmaßnahme Nullung](knowledge/extracted/Nullungsverordnung.md) — **Quelle:** knowledge/Nullungsverordnung (1).pdf (RIS, Bundesrecht konsolidiert, Fassung vom 22.04.2024, 5 S.; StF BGBl. II Nr. 322/1998) ·…
 - [ÖNORM E 8014 — OVE E 8014 „Fundamenterder und ergänzende Maßnahmen mit Erdung und Potentialausgleich für Einrichtungen der Informationstechnik" (Ausgabe 2019-01-01)](knowledge/extracted/OENORM_E_8014.md) — **Quelle:** knowledge/ÖNORM E 8014 (1).pdf · **Extrahiert:** 2026-08-28, Volltext via pypdf
 - [Sicherheitsbeleuchtung Österreich (Normenbroschüre) — Zumtobel Lighting GmbH, 02/2020](knowledge/extracted/ONL_Normen_AT.md) — **Quelle:** knowledge/ONL_Normen_AT.pdf · **Extrahiert:** 2026-08-28, Volltext via pypdf
@@ -100,7 +102,7 @@ aus dem Index zitieren — immer der autoritativen YAML/dem Contract folgen.**
 *Rollen, Packages, Contracts, Slice-Stände je Owner.*
 
 - [Handoff — Enis (Normwissen + LB)](Handoff/ENIS.md) — 1. **`origin/main` = `1092d77`.** (Der frühere Stand `5e4a46e` steht weiter unten
-- [Handoff — Leonis (Platzierung + Integration)](Handoff/LEONIS.md) — **Enis' gemeinsame L1/L3-Fassung reviewt** (Commit `8801aa6`, Branch
+- [Handoff — Leonis (Platzierung + Integration)](Handoff/LEONIS.md) — **origin/main ≈ `97a5f3a`.** Kompletter Master-Plan (plan-Datei `.claude/plans/deep-strolling-naur.md`)
 - [Handoff — Perfekter Start je Owner](Handoff/README.md) — Jeder von euch arbeitet in einer **eigenen Claude-Code-Session im Repo-Ordner**.
 - [Handoff — Selman (Raumerkennung)](Handoff/SELMAN.md) — Du bist ein Agent — **führe diese Schritte selbst aus**, frag nicht lang nach.
 - [SYNC — Stand nachziehen, ohne Arbeit zu verlieren](Handoff/SYNC.md) — **Auslöser:** Der Owner schreibt in seiner Session **„Sync"** (oder „GitHub wurde
