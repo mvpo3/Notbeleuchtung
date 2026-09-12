@@ -55,6 +55,7 @@ from .geometry import point_in_polygon
 from .graph import build_circulation_graph, kreuzungs_anker
 from .kontext import PlatzierungsKontext
 from .sonderstellen_strategy import plan_flag_raeume, plan_sonderstellen
+from .stgh_strategy import plan_stiegenhaus_rz
 
 # Ein Gang-Raum gilt erst ab dieser Länge (Bounding-Box-Längsseite) als eigener
 # begehbarer Arm, der ein eigenes RZ braucht. Fragmentierte Erkennung (Mollgasse: 62
@@ -290,6 +291,9 @@ class NotlichtPlatzierer:
             *plan_antipanik(raum, norm, kontext=kontext),  # Fläche (Trigger OIB-gegated)
             *plan_sonderstellen(raum, norm, kontext=kontext),  # Pflichtstellen §4.1.2
             *plan_flag_raeume(raum, norm),               # barrierefrei/Gefährdung (Flags)
+            # Punkt 4 (Owner-Reihe 2026-09-13): din-2-RZ-Modul — Richtungs-RZ am
+            # Hauptpodest aus den Treppenläufen (fail-open ohne laeufe).
+            *plan_stiegenhaus_rz(raum, norm),
             *plan_aussenleuchten(raum, norm),            # außerhalb Schlussausgang (§4.1.2 b)
             *verdichte_fluchtweg(raum, norm, kontext=kontext),  # Linie + Deckung (Lux)
         ]
