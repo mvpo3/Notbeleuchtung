@@ -219,3 +219,17 @@ Legende: ✔=bestätigt, ✚=verfeinert, ∅=nicht prüfbar.
 6. **Kellergang-PU-Ketten im UG** (y=8227.5, 6,7-m-Takt; zweite Kette x=14832.9): sitzen die PU an Abteil-/Zwischentüren (R-G-konform) oder frei im Gang (PU als Verlaufs-RZ → Keller-/Garagen-Ausnahme nötig, vgl. auch die 4 freien Fahrgassen-PU)? Tür-Kontext-Sichtung im DXF/AutoCAD.
 7. **Anlagen- und Typenschlüssel:** Zuordnungstabelle „Anlage 1–5“ → Brandabschnitt/Stiege (direkt für circuit_hint/Anlagen-Labels verwertbar)? Wo liegt die Typenlegende (Layout-Blatt?) zum gebäudeweiten Typ-Letter-Schema — 1:1 in unsere #7-Stückliste übernehmen, Artikel-Attribute im Klartext statt #v1?
 8. **PLPR-Trigger & Gang-Tür-RZ:** (a) Bestätigt der Ost-Core-Befund den Trigger „nach Durchtritt zwei Fluchtrichtungen ⇒ beidseitiges PLPR statt einfachem Pfeil“ (R-G(D)-Präzisierung)? (b) Gilt für GANG-seitige Tür-RZ die Praxis-Variante „mit dem nächsten Gang-RZ kollinear einreihen (Längs-Position an der Tür halten)“ statt des 150-mm-Wand-Offsets, während Raum-seitige Tür-RZ (Pflichträume) beim Offset bleiben?
+
+## 8. Owner-Antworten (2026-09-12, Sichtungsblatt)
+
+- **Frage 2 GEKLÄRT — Blocknull-Konvention:** Owner-Sichtung des EG-RZ_PU (9793.2,
+  23965.9, rot=0): „Die RZ schaut in den Raum rein" — der bediente Raum liegt SÜDLICH
+  → **STANDARD_RZ_PU bei rot=0 blickt nach −Y**. Identisch mit der Engine-Konvention
+  (`bausteine.rotation_piktogramm_in_raum`, S1-Kalibrierung Elektroplan DE). R-B ist
+  damit an allen din-Referenzplänen maschinell prüfbar (Checker-Kandidat).
+- **Frage 6 GEKLÄRT — Keller-Verlaufs-PU:** Owner: „Die sind am Gang in der Mitte vom
+  Gang, zwischen den Kellerabteilen" → die UG-PU-Ketten (y=8227.5, 6,7-m-Takt) sind
+  **freie Verlaufs-RZ in Gangmitte**, KEINE Tür-RZ. Präzisiert R-G: im Keller/UG wird
+  der Pfeil-unten-Block auch im Verlauf gesetzt (din-Praxis; Kandidat „kellergang_rz"
+  — Kette in Gangmitte mit ~6–7-m-Takt, deutlich enger als die 30-m-Sichtweite).
+- Frage 1 (SIMA_ET-Doppelwelt): offen, Detail-Sichtung angefordert.
