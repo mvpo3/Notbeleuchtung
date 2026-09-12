@@ -48,6 +48,12 @@ def rotation_zur_tuer(dx: float, dy: float) -> float:
     return (round((math.degrees(math.atan2(dy, dx)) + 90.0) / 90.0) * 90.0) % 360.0
 
 
+#: R-C (Owner-Fachdoku v2, S.3/S.5): Tür-RZ sitzt raumseitig „über bzw. neben der
+#: Türöffnung" — Versatz von der Schwelle ins Rauminnere (Owner-Maß Runde 1, ~150 mm;
+#: Ground truth Nebenraum ~176 mm / Hauseingang ~420 mm = Wand-Offsets, kein Normmaß).
+RZ_INS_RAUM_MM = 150.0
+
+
 def rotation_piktogramm_in_raum(dx_zur_tuer: float, dy_zur_tuer: float) -> float:
     """R-B (Owner-Fachdoku „Notbeleuchtung zeichnen lernen" v2, S.3–5, AUSNAHMSLOS):
     jede Pfeil-unten-RZ an einer Tür wird so rotiert, dass das Piktogramm INS

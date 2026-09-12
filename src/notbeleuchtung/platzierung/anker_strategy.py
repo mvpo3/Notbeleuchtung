@@ -31,6 +31,7 @@ from notbeleuchtung.hauptengine.contracts import (
 from .bausteine import (
     AGV_SV_F as _AGV_SV_F,
 )
+from .bausteine import RZ_INS_RAUM_MM as _RZ_INS_RAUM_MM
 from .bausteine import (
     building_assigner as _building_assigner,
 )
@@ -191,9 +192,13 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
                     # dem Wegenetz): Durchgangs-Richtung = Normale der Türwand
                     # (nächste Raum-Polygon-Kante), Vorzeichen weg vom Gang (origin/main).
                     dx, dy = _tuer_durchgangsrichtung(raum, tuer.xy_mm, pos)
-                # F03: dieselbe Rotationsformel aus EINEM Helper (bausteine.rotation_zur_tuer)
-                # statt inline — formel-identisch zur main-Fassung, aber nicht mehr dupliziert.
+                # R-B (Fachdoku v2): Piktogramm blickt ins Rauminnere (EIN Helper).
                 rotation = _rotation_piktogramm_in_raum(dx, dy)
+                # R-C: Tür-RZ raumseitig — von der Schwelle ins Rauminnere versetzen
+                # (entgegen der Fluchtachse (dx, dy)).
+                _n = math.hypot(dx, dy)
+                if _n > 0.0:
+                    nx_, ny = nx_ - dx / _n * _RZ_INS_RAUM_MM, ny - dy / _n * _RZ_INS_RAUM_MM
         out.append(
             Platzierung(
                 xy_mm=(nx_, ny),
