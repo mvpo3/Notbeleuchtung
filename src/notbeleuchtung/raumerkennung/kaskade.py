@@ -58,6 +58,11 @@ class KaskadeErgebnis:
     # Sie stehen NICHT mehr in `raeume`/`rest_raeume`, tragen aber `polygon_roh`
     # und `bereinigung`, damit Bericht und raeume.json den Entfall ausweisen.
     entfallen: list[tuple[Raum, Stempel | None]] = field(default_factory=list)
+    # Stempelschutz-Meldungen der Bereinigung (Regel 3, Owner-Entscheid): Paare,
+    # die NICHT ausgestanzt wurden, weil der äußere Raum dadurch > 10 % von
+    # seinem Stempelwert abgewichen wäre. KEIN Contract-Feld — nur der
+    # Prüfbericht und die VERLAUF-Zeile lesen sie.
+    bereinigung_warnungen: list[str] = field(default_factory=list)
 
     @property
     def alle_raeume(self) -> list[Raum]:
@@ -174,12 +179,15 @@ def raeume_aus_kaskade(plan: DxfPlan,
     for r in rest_r:
         quelle[r.id] = "R"
     # Überlappungen nach den Owner-Regeln 1-5 entzerren (docs/ENIS_UEBERGABE_0908.md
-    # § 14.6.1) — NACH der R-Stufe, weil Regel 5 die R-Polygone einbezieht. Im
-    # Fehlerschutz wie die Rest-Stufe darüber: ein GEOS-Fehler auf den
-    # Rasterpolygonen darf keinen Plan-Lauf und keinen Provider-Parse killen.
+    # § 14.6.1) — NACH der R-Stufe, weil Regel 2 (Restfläche weicht) die
+    # R-Polygone einbezieht. Im Fehlerschutz wie die Rest-Stufe darüber: ein
+    # GEOS-Fehler auf den Rasterpolygonen darf keinen Plan-Lauf und keinen
+    # Provider-Parse killen.
     entfallen: list[tuple[Raum, Stempel | None]] = []
+    ber_warnungen: list[str] = []
     try:
-        entfallen = bereinige_kaskade(raeume, rest_r, zuord, quelle)
+        entfallen = bereinige_kaskade(raeume, rest_r, zuord, quelle,
+                                      warnungen=ber_warnungen)
     except Exception as exc:  # noqa: BLE001 — Bereinigung darf den Lauf nie killen
         print(f"   bereinigung fehlgeschlagen: {exc}")
     # Kette über die ÜBERLEBENDEN Räume (quelle behält die entfallenen ids für
@@ -190,4 +198,5 @@ def raeume_aus_kaskade(plan: DxfPlan,
     return KaskadeErgebnis(zuordnungen=zuord, raeume=raeume, rest_raeume=rest_r,
                            quelle=quelle, kette=kette, wandkoerper=wk,
                            tueroeffnungen=oeff, hinweise=hinweise,
-                           entfallen=entfallen)
+                           entfallen=entfallen,
+                           bereinigung_warnungen=ber_warnungen)

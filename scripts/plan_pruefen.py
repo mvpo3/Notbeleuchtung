@@ -1251,18 +1251,19 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
 
 def _raum_kaskade(plan: DxfPlan,
                   stempel) -> tuple[list[Zuordnung], list, list, dict, str,
-                                    list[str], list]:
+                                    list[str], list, list[str]]:
     """Raum-Kaskade L→H→F→R — Orchestrierung liegt in ``raumerkennung.kaskade``.
 
     Eine Quelle der Wahrheit: Prüfstrecke und ``ArchitekturRaumProvider.parse``
-    rufen dieselbe ``raeume_aus_kaskade``. Vorletztes Element sind die Hinweise
-    der Kürzel-Auflösung (``kuerzel_entscheid``), letztes die durch die
-    Bereinigung entfallenen Räume als ``(Raum, Stempel | None)`` (§ 14.6.1) —
-    beides nur durchgereicht, für bericht.md und raeume.json.
+    rufen dieselbe ``raeume_aus_kaskade``. Die letzten drei Elemente sind die
+    Hinweise der Kürzel-Auflösung (``kuerzel_entscheid``), die durch die
+    Bereinigung entfallenen Räume als ``(Raum, Stempel | None)`` (§ 14.6.1) und
+    die Stempelschutz-Warnungen der Bereinigung (Regel 3) — alles nur
+    durchgereicht, für bericht.md und raeume.json.
     """
     e = raeume_aus_kaskade(plan, stempel)
     return (e.zuordnungen, e.raeume, e.rest_raeume, e.quelle, e.kette,
-            e.hinweise, e.entfallen)
+            e.hinweise, e.entfallen, e.bereinigung_warnungen)
 
 
 #: Raumtyp → (Füllfarbe, Konturfarbe) fürs 02-Bild.
@@ -1376,13 +1377,17 @@ def _entfallen_eintraege(entfallen, quelle: dict) -> list[dict]:
     return out
 
 
-def _bereinigung_kennzahlen(raeume, rest_r, entfallen) -> dict:
+def _bereinigung_kennzahlen(raeume, rest_r, entfallen, warnungen=()) -> dict:
     """Überlappung vorher/nachher + Buchungen der Bereinigung.
 
     Vorher = Roh-Ringe ALLER Räume plus die der entfallenen — sonst sähe die
     Kennzahl besser aus, nur weil Räume verschwunden sind. Nachher = die
     Polygone der Überlebenden. Doppelbelegung nachher in mm², damit „fast null"
     nicht als „0,000 m²" gelesen wird.
+
+    ``warnungen`` sind die Stempelschutz-Meldungen (Regel 3): Paare, die bewusst
+    NICHT ausgestanzt wurden. Sie sind der Grund, wenn ``nachher_n`` über 0
+    liegt — deshalb stehen sie in derselben Kennzahl-Struktur.
     """
     lebend = list(raeume) + list(rest_r)
     weg = [r for r, _ in entfallen]
@@ -1395,7 +1400,9 @@ def _bereinigung_kennzahlen(raeume, rest_r, entfallen) -> dict:
         n_idx, n_mm2 = ueberlappung([r.polygon_mm for r in lebend])
     except Exception as exc:  # noqa: BLE001 — Messung darf den Lauf nie killen
         print(f"   bereinigung: Ueberlappungsmessung fehlgeschlagen: {exc}")
-        return {}
+        # Die Stempelschutz-Warnungen liegen UNABHAENGIG von dieser Messung vor
+        # (sie kommen aus `bereinige`) — sie duerfen mit ihr nicht verschwinden.
+        return {"warnungen": list(warnungen), "warnungen_n": len(warnungen)}
     regeln: Counter = Counter()
     summen = {"ZERFALL": 0.0, "SCHLITZ": 0.0, "ENTFALL": 0.0}
     geaendert = 0
@@ -1423,6 +1430,7 @@ def _bereinigung_kennzahlen(raeume, rest_r, entfallen) -> dict:
         "regeln": dict(sorted(regeln.items())),
         "zerfall_m2": summen["ZERFALL"], "schlitz_m2": summen["SCHLITZ"],
         "entfall_rest_m2": summen["ENTFALL"],
+        "warnungen": list(warnungen), "warnungen_n": len(warnungen),
     }
 
 
@@ -1435,8 +1443,8 @@ def plan_pruefen(dxf: Path) -> dict:
     plan = lade_dxf(dxf)
     stempel = finde_stempel(plan)
     (zuordnungen, raeume, rest_r, quelle, raum_quelle,
-     kuerzel_hinweise, entfallen) = _raum_kaskade(plan, stempel)
-    bereinigt = _bereinigung_kennzahlen(raeume, rest_r, entfallen)
+     kuerzel_hinweise, entfallen, ber_warnungen) = _raum_kaskade(plan, stempel)
+    bereinigt = _bereinigung_kennzahlen(raeume, rest_r, entfallen, ber_warnungen)
     rest = restflaechen(raeume, zuordnungen) + rest_r
     rot, rot_vermerk = _rotation(plan)
 
@@ -1557,12 +1565,19 @@ def _bereinigung_md(zuordnungen, rest, entfallen, ber: dict, quelle: dict,
                     modell_ueberlapp) -> list[str]:
     """bericht.md-Block „Raumbereinigung" (§ 14.6.1) — inkl. der Grenzen.
 
-    Leeres ``ber`` heisst: die Ueberlappungsmessung ist fehlgeschlagen (gekapselt
-    in ``_bereinigung_kennzahlen``). Dann faellt der Block weg, statt mit einem
-    KeyError den Bericht zu verlieren.
+    Fehlt ``vorher_n``, ist die Ueberlappungsmessung fehlgeschlagen (gekapselt
+    in ``_bereinigung_kennzahlen``). Dann fallen Kennzahlen und Tabelle weg,
+    statt mit einem KeyError den Bericht zu verlieren — die Stempelschutz-
+    Warnungen der Regel 3 stehen davon unabhaengig und werden trotzdem gedruckt.
     """
     if not ber:
         return []
+    if "vorher_n" not in ber:
+        return ["", "## Raumbereinigung (ENIS_UEBERGABE_0908 § 14.6.1)", "",
+                ("Überlappungsmessung fehlgeschlagen — Kennzahlen und Tabelle "
+                 "entfallen. Die Stempelschutz-Warnungen der Regel 3 liegen "
+                 "unabhängig von dieser Messung vor:"), ""] + (
+                [f"- {w}" for w in ber.get("warnungen") or []] or ["- keine"])
     z_je_raum: dict = {}
     for z in zuordnungen:
         if z.raum is not None:
@@ -1578,7 +1593,8 @@ def _bereinigung_md(zuordnungen, rest, entfallen, ber: dict, quelle: dict,
           f"überlebende) · entfallen {ber['entfallen_n']} · "
           f"Zerfall {ber['zerfall_m2']:.3f} m² · "
           f"Schlitzverlust {ber['schlitz_m2'] * 1e6:.1f} mm² · Restkörper "
-          f"entfallener Räume {ber['entfall_rest_m2']:.3f} m²"), "",
+          f"entfallener Räume {ber['entfall_rest_m2']:.3f} m² · Stempelschutz "
+          f"{ber.get('warnungen_n', 0)}"), "",
          f"Einträge je Regel: {ber['regeln'] or '—'}", "",
          ("Nicht destruktiv: `polygon_roh` hält den Ring vor der Bereinigung, "
           "jeder Abzug ist mit Regel und Gegenspieler gebucht. Invariante: "
@@ -1621,6 +1637,17 @@ def _bereinigung_md(zuordnungen, rest, entfallen, ber: dict, quelle: dict,
                    if st is not None and st.flaeche_m2 is not None else "—")
                 + f", Restkörper {rest_m2:.3f} m² · "
                 + ", ".join(b.regel for b in raum.bereinigung))
+    schutz = ber.get("warnungen") or []
+    l += ["", f"### Stempelschutz — nicht ausgestanzt ({len(schutz)})", ""]
+    if schutz:
+        l += [("Regel 3 (Enthaltensein) hat für diese Paare NICHT gegriffen: der "
+               "äußere Raum wäre durch das Ausstanzen um mehr als 10 % von seinem "
+               "Stempelwert abgewichen (Owner-Entscheid). Das Paar bleibt "
+               "überlappend und wird ausdrücklich NICHT an Regel 4/5 "
+               "weitergegeben — die Überlapper-Kennzahl oben enthält es."), ""]
+        l += [f"- {w}" for w in schutz]
+    else:
+        l += ["- keine"]
     war, neu = [], []
     for r in geaendert:
         z = z_je_raum.get(r.id)
@@ -1776,7 +1803,9 @@ def _verlauf_bereinigung(r: dict) -> str:
                f"{r['bereinigung_entfall_rest_m2']:.3f} m²)" if ids else "")
             + f", Zerfall {r['bereinigung_zerfall_m2']:.3f} m², Schlitze "
             f"{r['bereinigung_schlitz_m2'] * 1e6:.1f} mm², Regeln "
-            f"{r['bereinigung_regeln']}, Modell-Restueberlappung {modell}")
+            f"{r['bereinigung_regeln']}, Stempelschutz "
+            f"{r.get('bereinigung_warnungen_n', 0)}"
+            f", Modell-Restueberlappung {modell}")
 
 
 def _verlauf_schreiben(ergebnisse: list[dict], commit: str) -> None:
@@ -1869,15 +1898,24 @@ def main() -> int:
               f"{r['mit_stempel']}, Flag ok {r['flag_ok']}, Rest typisiert "
               f"{r['rest_typisiert']} / untypisiert {r['rest_untypisiert']} "
               f"({r['quellen_mix']})")
-        print(f"   Bereinigung: Überlapper >5 % {r['bereinigung_vorher_n']}→"
-              f"{r['bereinigung_nachher_n']}, doppelbelegt "
-              f"{r['bereinigung_vorher_m2']:.3f} m²→"
-              f"{r['bereinigung_nachher_mm2']:.2f} mm², geändert "
-              f"{r['bereinigung_geaendert']}, entfallen "
-              f"{r['bereinigung_entfallen_n']} "
-              f"{r['bereinigung_entfallen_ids'] or ''}, Zerfall "
-              f"{r['bereinigung_zerfall_m2']:.3f} m², Regeln "
-              f"{r['bereinigung_regeln']}")
+        # Schlägt die Überlappungsmessung fehl, fehlen die Kennzahlen-
+        # Schlüssel (nur die Warnungen kommen zurück) — diese Konsolenzeile
+        # darf den Plan-Lauf dann nicht mit KeyError abbrechen.
+        if "bereinigung_vorher_n" in r:
+            print(f"   Bereinigung: Überlapper >5 % {r['bereinigung_vorher_n']}→"
+                  f"{r['bereinigung_nachher_n']}, doppelbelegt "
+                  f"{r['bereinigung_vorher_m2']:.3f} m²→"
+                  f"{r['bereinigung_nachher_mm2']:.2f} mm², geändert "
+                  f"{r['bereinigung_geaendert']}, entfallen "
+                  f"{r['bereinigung_entfallen_n']} "
+                  f"{r['bereinigung_entfallen_ids'] or ''}, Zerfall "
+                  f"{r['bereinigung_zerfall_m2']:.3f} m², Regeln "
+                  f"{r['bereinigung_regeln']}, Stempelschutz "
+                  f"{r.get('bereinigung_warnungen_n', 0)}")
+        else:
+            print("   Bereinigung: Messung fehlgeschlagen, keine "
+                  f"Kennzahlen; Stempelschutz "
+                  f"{r.get('bereinigung_warnungen_n', 0)}")
         print(f"   F3: Türen {r['tueren_typisiert']}/{r['tueren_gesamt']} "
               f"typisiert, Ausgänge {r['ausgaenge_typ']}, Segmente "
               f"{r['segmente_quelle']}, Wohnungen {r['wohnungen']}, Leuchten "

@@ -1,33 +1,109 @@
 """bereinigung — überlappende Raumpolygone nicht destruktiv entzerren.
 
 Reine Geometrie über ``Raum``-Objekten: kein DXF, kein ezdxf, kein Dateizugriff.
-Grundlage ist ``docs/ENIS_UEBERGABE_0908.md`` § 14.6/§ 14.6.1 mit den fünf
-Owner-Regeln (Reihenfolge = Vorrang):
+Grundlage ist ``docs/ENIS_UEBERGABE_0908.md`` § 14.6/§ 14.6.1. Die Reihenfolge
+ist genau die „angewandte Kaskade" aus § 14.6.1 (Owner-Entscheid, Reihenfolge =
+Vorrang):
 
-1. LIFT/SCHACHT wird IMMER aus jedem umgebenden Raum ausgestanzt.
-2. Enthaltensein: liegt ein Raum vollständig in einem anderen, bleiben beide —
-   der äußere bekommt ein Loch.
-3. Vorrang nach Quelle: Stempel-Polygon > Layer/HATCH ohne Stempel > Flutung >
-   Restfläche (3a). Bei gleicher Quelle gewinnt das Polygon, dessen Fläche näher
-   am Stempelwert liegt (3b).
-4. Teilüberlappung: die gemeinsame Fläche geht an den näheren Schwerpunkt.
-5. Restflächen (R) sind nachrangig und ragen nie über ein anderes Polygon.
+1. LIFT/SCHACHT wird IMMER aus jedem umgebenden Raum ausgestanzt (§ 14.6.1 (c)):
+   genau EINE Seite ist exakt LIFT oder SCHACHT → sie gewinnt. Beide Seiten →
+   weiter zur nächsten Regel.
+2. RESTFLÄCHE (§ 14.6.1 (d)): hat genau EINE Seite quelle „R", VERLIERT diese
+   Seite — AUSSER ihr ``raum_typ`` ist LIFT oder SCHACHT, dann verliert sie NIE
+   (s. unten). Beide R → weiter zur nächsten Regel.
+3. Enthaltensein (§ 14.6.1 (b)): Schnitt/kleinere Fläche >= 0,99 und kein
+   Duplikat → die kleinere gewinnt, die größere bekommt das Loch. MIT
+   Stempelschutz, siehe unten.
+4. Vorrang nach Quelle (§ 14.6.1 (a)): Stempel-Polygon > Layer/HATCH ohne
+   Stempel > Flutung > Restfläche (``QUELLE_RANG``). Bei gleichem Rang gewinnt
+   das Polygon, dessen Fläche näher am Stempelwert liegt (``STEMPEL_NAEHE``).
+5. Teilüberlappung: die gemeinsame Fläche geht an den näheren Schwerpunkt
+   (``SCHWERPUNKT``).
 
-Regel 1 steht VOR Regel 5: ein R-Raum, der selbst LIFT/SCHACHT ist, ist nie
-Regel-5-Verlierer (``rest_komponenten`` typisiert kleine Komponenten als
-SCHACHT — ohne die Ausnahme stanzte Regel 5 genau die Räume wieder aus, die
-Regel 1 schützt).
+Die Buchungsnamen des Contract-Literals ``BereinigungsRegel`` sind UNVERÄNDERT;
+verschoben haben sich nur die Regel-NUMMERN: ``RESTFLAECHE`` 5 → 2,
+``ENTHALTENSEIN`` 2 → 3, ``QUELLE_RANG``/``STEMPEL_NAEHE`` 3 → 4,
+``SCHWERPUNKT`` 4 → 5. ``ALLE_REGELN`` bleibt die Menge 1-5.
 
-ABWEICHUNG VON § 14.6.1, ausdrücklich deklariert: die dortige „angewandte
-Kaskade" (§ 14.6.1, Z. 1975-1984) ordnet **(d) Restfläche weicht an Position 2**
-— hier steht sie zuletzt (Regel 5). Grund ist dieselbe Kollision wie oben: an
-Position 2 unterläuft (d) das „LIFT und SCHACHT werden IMMER ausgestanzt", weil
-4 der 5 LIFT/SCHACHT-Räume im Bestand aus dem R-Zweig kommen. Gemessener
-Wirkungsunterschied (nur konstruiert, im Bestand greift Regel 5 in 0 Fällen):
-liegt ein R-Raum VOLLSTÄNDIG in einem Nicht-R-Raum, bleibt er hier erhalten und
-der äußere bekommt ein Loch (Regel 2), während (d) an Position 2 den R-Raum
-verlieren und damit entfallen ließe. Bei Teilüberlappung ist das Ergebnis
-gleich, weil Rang 4 ohnehin verliert. Die Owner-Entscheidung dazu steht aus.
+Owner-Begründung für Regel 2 an Position 2 (wörtlich): „sonst kann eine
+Restfläche in Regel 4 über Schwerpunktnähe Fläche gewinnen, obwohl sie
+nachrangig ist." Damit ist der frühere Regel-5-SCHLUSSPASS (R minus Vereinigung
+aller Nicht-R nach den Paaren) ÜBERFLÜSSIG und entfernt — Regel 2 zieht den
+Schnitt für jedes gemischte Paar schon als Paar-Regel ab.
+
+Regel 1 steht VOR Regel 2, und das ist nicht verhandelbar: 4 der 5
+LIFT/SCHACHT-Räume im Bestand haben quelle R (Barawitzka ``rest_1`` 2,304 m²
+und ``rest_3`` 2,534 m², Rennweg_OG3 ``rest_1`` 1,157 m² und ``rest_2``
+1,152 m² — die beiden letzten nur 0,15 m² über der Entfall-Schwelle). Stünde
+Regel 2 vorn, stanzte die Restflächen-Regel genau die Räume aus, die Regel 1
+schützt (``rest_komponenten`` typisiert kleine Komponenten als SCHACHT).
+Festgehalten in ``test_regel1_vor_regel2_schacht_gewinnt``.
+
+Dieselbe Reihenfolge hatte eine LÜCKE, jetzt geschlossen: sind BEIDE Seiten
+LIFT/SCHACHT und nur eine davon quelle R, greift Regel 1 per XOR nicht und
+Regel 2 löschte die R-Seite — also genau den Raum, den Regel 1 schützt. Darum
+ist ein Raum mit ``raum_typ`` LIFT oder SCHACHT NIE Verlierer der Regel 2; das
+Paar fällt dann auf Regel 3/4/5 (``test_regel1_beide_lift_schacht_dann_regel2``,
+der vorher die Lücke festschrieb). Reine Vorsorge: im Bestand kommt das Paar
+nicht vor (0 RESTFLAECHE-Buchungen über alle fünf Pläne) — bei Rennweg_OG3 lägen
+``rest_1`` 1,157 m² und ``rest_2`` 1,152 m² aber nur 0,15 m² über der
+Entfall-Schwelle.
+
+STEMPELSCHUTZ bei Regel 3 (Owner-Entscheid, ``STEMPEL_SCHUTZ`` = 10 %): „Regel 2
+bleibt vor Regel 3 (Geometrie vor Herkunft), aber mit Schutz." Geprüft wird der
+VERLIERER der Enthaltensein-Regel — der äußere, größere Raum, der das Loch
+bekäme. Er wird nur dann NICHT gestanzt, wenn BEIDE Bedingungen gelten:
+
+1. ``_rang(Verlierer) < _rang(Gewinner)`` — der äußere Raum hat den BESSEREN
+   Quellen-Rang (1 = L/H mit Stempel, 2 = L/H ohne, 3 = F, 4 = R/unbekannt).
+   Bei GLEICHEM Rang greift der Schutz NICHT.
+2. Er hat eine Stempelfläche S und wiche seine Fläche NACH dem Abzug um mehr
+   als 10 % von S ab (``|(A_nach − S) / S| > 0,10``).
+
+Bedingung 1 ist der Owner-NACHENTSCHEID; der erste Entscheid hatte nur
+Bedingung 2 und war damit zu breit. Begründung des Owners: geschützt werden soll
+ein gezeichneter, gestempelter Raum, der durch das Ausstanzen von seinem
+Stempelwert wegwandert — nicht eine Flutung, die ihren Stempelwert ohnehin nur
+durch Übergriff erreicht.
+
+GEMESSEN mit ``scripts/analyse/ueberlappung_regeln.py`` über die eingecheckten
+Roh-Ringe der fünf Pläne (Messskript-Zahlen, kein Planlauf). Nur mit
+Bedingung 2 schützte die Regel SECHS Paare, es blieben 11 Überlapper /
+58,260 m² doppelt belegt. MIT Bedingung 1 bleibt genau EIN Paar geschützt —
+Muthgasse ``raum_29`` (quelle L mit Stempel, Rang 1) enthält ``raum_91``
+(quelle F, Rang 3) zu 99,97 %, Stempel 16,52 m², roh 16,52 → 13,97 m² =
+−15,4 % — und es bleiben 2 Überlapper / 2,552 m². Die anderen fünf Paare werden
+wieder gestanzt: dort ist der äußere Raum eine Flutung (F) gegen einen
+L/H-Gewinner oder F gegen F. Mitbewegt gegenüber dem breiten Schutz:
+ENTHALTENSEIN 1 → 6 Buchungen (7 Paare erkannt, 6 gestanzt, 1 geschützt),
+ENTFALL 4 → 5 (``raum_86`` entfällt wieder), ZERFALL 9,300 → 14,799 m²,
+SCHLITZ 0 → 1.
+
+Das geschützte Paar bleibt ungelöst und wird ausdrücklich NICHT an Regel 4/5
+weitergegeben; stattdessen entsteht eine Zeile in ``warnungen`` mit Raum-ids,
+Stempelwert, Fläche vorher, Fläche nachher und Abweichung in Prozent. Folge,
+bewusst in Kauf genommen: das Paar bleibt überlappend, die Überlapper-Kennzahl
+steigt (ohne Schutz 0, mit Schutz 2).
+
+VIER GRENZEN des Schutzes, alle gemessen:
+(a) Geprüft wird die ROH-Differenz ``Fläche(roh) − Schnitt``, NICHT die
+    Endfläche nach Zerfall und Schlitz-Kodierung — bewusst, weil die Endfläche
+    reihenfolgeabhängig wäre und der Entscheid deterministisch bleiben muss.
+    Gemessener Grenzfall (Konstruktion: 100,000 m² außen, 10,000 m² mittiges
+    Loch, Stempel 100,00 m²): geprüft −10,0000 % — nicht > 10 %, also
+    gestanzt; die Endfläche liegt bei rund −10,003 % (Schlitzverlust
+    ≈ 3000 mm²). Ohne die Konstruktion ist die zweite Dezimale nicht
+    reproduzierbar, sie hängt allein an der Schlitzlänge.
+(b) Der Rand bei genau 10 % entscheidet sich am Gleitkomma-Rauschen
+    (0,10000000000000003 schützt, 0,099999999999999936 nicht) — nicht garantiert.
+(c) Stempelwert 0,00 m² gilt als „Stempel vorhanden" und ergibt unendliche
+    Abweichung (``_stempel_abweichung``), erfüllt die 10-%-Bedingung also
+    IMMER — schützt aber nur zusammen mit Bedingung 1: bei besserem Rang
+    des Verlierers stets, bei gleichem oder schlechterem Rang gar nicht.
+    Gegenfall gemessen: S=0,00 und beide Seiten F → kein Schutz, Buchungen
+    ENTHALTENSEIN + SCHLITZ, keine Warnung. Im Bestand 0 Fälle.
+(d) Der Schutz gilt ausdrücklich NUR für Regel 3. Ein gestempelter R-Raum
+    verliert über Regel 2 ohne Schutz und ohne Warnung; im Bestand 0 Fälle.
 
 Nicht destruktiv: ``Raum.polygon_roh`` behält den Ring vor der Bereinigung,
 ``Raum.bereinigung[]`` bucht jeden Abzug mit Regel und Gegenspieler. Prüfbare
@@ -64,6 +140,9 @@ from .stempel_anker import Stempel, Zuordnung
 
 XY = tuple[float, float]
 
+#: Alle Regeln. Die MENGE bleibt 1-5, die BEDEUTUNG der Nummern folgt der
+#: angewandten Kaskade aus § 14.6.1 (Modul-Docstring): 1 LIFT_SCHACHT,
+#: 2 RESTFLAECHE, 3 ENTHALTENSEIN, 4 QUELLE_RANG/STEMPEL_NAEHE, 5 SCHWERPUNKT.
 ALLE_REGELN: frozenset[int] = frozenset({1, 2, 3, 4, 5})
 RAUSCH_MM2 = 1.0        # Rauschschwelle § 14.1
 ENTFALL_MM2 = 1e6       # 1 m², dasselbe Kriterium wie kaskade.py:115
@@ -74,6 +153,11 @@ SCHLITZ_MM = 1.0        # Schlitzbreite (0,5 mm Puffer je Seite, square caps)
 #: nur LIFT, SCHACHT, AUFZUGSVORPLATZ), die Auslassung ist also kein Versehen.
 LIFT_SCHACHT = frozenset({"LIFT", "SCHACHT"})
 _ENTHALTEN = 0.99       # „vollständig in" — Anteil der eigenen Fläche
+#: Stempelschutz bei Regel 3 (Owner-Entscheid): weicht der Verlierer NACH dem
+#: Abzug um mehr als das vom Stempelwert ab UND hat er den besseren
+#: Quellen-Rang als der Gewinner (Owner-Nachentscheid), wird NICHT ausgestanzt,
+#: sondern gewarnt — das Paar bleibt ungelöst (keine Weitergabe an Regel 4/5).
+STEMPEL_SCHUTZ = 0.10
 
 
 @dataclass(frozen=True)
@@ -117,7 +201,7 @@ def _ring(p: Polygon) -> list[XY]:
 
 def _rang(raum_id: str, quelle: Mapping[str, str],
           stempel_m2: Mapping[str, float | None]) -> int:
-    """Quellen-Rang für Regel 3a: kleiner gewinnt."""
+    """Quellen-Rang für Regel 4 (``QUELLE_RANG``): kleiner gewinnt."""
     q = (quelle.get(raum_id) or "").strip().upper()
     if q in ("L", "H"):
         return 1 if stempel_m2.get(raum_id) is not None else 2
@@ -127,47 +211,106 @@ def _rang(raum_id: str, quelle: Mapping[str, str],
 
 
 def _stempel_abweichung(flaeche_mm2: float, stempel_m2: float) -> float:
-    """Relative Abweichung |A − S| / S für Regel 3b. S == 0 und A > 0 → unendlich."""
+    """Relative Abweichung |A − S| / S. S == 0 und A > 0 → unendlich.
+
+    Zwei Verwender: Regel 4 (``STEMPEL_NAEHE``, kleinere Abweichung gewinnt) und
+    der Stempelschutz in Regel 3 (Abweichung NACH dem Abzug gegen
+    ``STEMPEL_SCHUTZ``).
+    """
     a = flaeche_mm2 / 1e6
     if stempel_m2 == 0:
         return math.inf if a > 0 else 0.0
     return abs(a - stempel_m2) / stempel_m2
 
 
+def _ist_rest(raum_id: str, quelle: Mapping[str, str]) -> bool:
+    """Regel 2: quelle „R" = Restfläche aus ``rest_komponenten``."""
+    return (quelle.get(raum_id) or "").strip().upper() == "R"
+
+
+def _schutz_warnung(gross: str, klein: str, stempel_m2: float,
+                    vorher_mm2: float, nachher_mm2: float) -> str:
+    """Eine Zeile je geschütztem Paar — DATEN, kein Druck (der WARNPFAD druckt
+    nicht; die zwei Fehlermeldungen zu Schlitz-Kodierung und Roh-Ring-Rückfall
+    drucken weiter).
+
+    Enthält alles, was der Bericht braucht: beide Raum-ids, Stempelwert, Fläche
+    vorher, Fläche nachher, Abweichung in Prozent.
+    """
+    nach = nachher_mm2 / 1e6
+    abw = ("unendlich (Stempel 0,00 m2)" if stempel_m2 == 0
+           else f"{(nach - stempel_m2) / stempel_m2 * 100:+.1f} %")
+    return (f"{gross} nicht ausgestanzt (enthaelt {klein}): Stempel "
+            f"{stempel_m2:.2f} m2, Flaeche {vorher_mm2 / 1e6:.2f} m2 -> "
+            f"{nach:.2f} m2 = {abw} Abweichung, ueber Stempelschutz "
+            f"{STEMPEL_SCHUTZ * 100:.0f} % -> Paar bleibt ueberlappend")
+
+
 def _entscheid(a: str, b: str, roh: Mapping[str, Polygon], inter,
                typ: Mapping[str, str], quelle: Mapping[str, str],
                stempel_m2: Mapping[str, float | None],
-               regeln: frozenset[int]) -> tuple[int, str, str, str] | None:
+               regeln: frozenset[int],
+               warnungen: list[str]) -> tuple[int, str, str, str] | None:
     """(Regelnummer, Regel-Label, Gewinner-id, Verlierer-id) oder None (Paar offen).
 
     Entscheidet AUSSCHLIESSLICH auf Roh-Attributen — dadurch ist das Ergebnis
     unabhängig von der Abarbeitungsreihenfolge der Paare.
+
+    ``None`` heißt „das Paar bleibt überlappend". Zwei Wege dorthin: keine Regel
+    greift, ODER der Stempelschutz bricht Regel 3 ab — dann hängt diese Funktion
+    eine Zeile an ``warnungen`` und gibt das Paar ausdrücklich NICHT an Regel 4/5
+    weiter (Owner-Entscheid). Der Schutz greift nur, wenn der Verlierer den
+    besseren Quellen-Rang hat als der Gewinner (Owner-Nachentscheid, s.
+    Modul-Docstring).
     """
     if 1 in regeln:
         a_ls, b_ls = typ[a] in LIFT_SCHACHT, typ[b] in LIFT_SCHACHT
         if a_ls != b_ls:
             return (1, "LIFT_SCHACHT", a, b) if a_ls else (1, "LIFT_SCHACHT", b, a)
     if 2 in regeln:
+        a_r, b_r = _ist_rest(a, quelle), _ist_rest(b, quelle)
+        if a_r != b_r:
+            gewinner, verlierer = (b, a) if a_r else (a, b)
+            # LIFT/SCHACHT ist NIE Regel-2-Verlierer: § 14.6.1 (c) („IMMER
+            # ausgestanzt") steht über (d). Greifbar wird das nur, wenn BEIDE
+            # Seiten LIFT/SCHACHT sind — dann greift Regel 1 per XOR nicht und
+            # Regel 2 löschte die R-Seite. Das Paar fällt dann auf Regel 3/4/5.
+            if typ[verlierer] not in LIFT_SCHACHT:
+                return (2, "RESTFLAECHE", gewinner, verlierer)
+    if 3 in regeln:
         klein, gross = sorted((a, b), key=lambda i: (roh[i].area, i))
         if (inter.area / roh[klein].area >= _ENTHALTEN
                 and inter.area / roh[gross].area < _ENTHALTEN):
-            return (2, "ENTHALTENSEIN", klein, gross)
-    if 3 in regeln:
+            # Stempelschutz: der äußere Raum bekäme das Loch. Er wird nur dann
+            # NICHT gestanzt, wenn er den besseren Quellen-Rang hat als der
+            # innere UND danach um > STEMPEL_SCHUTZ von seinem Stempelwert
+            # abwiche (Owner-Nachentscheid, s. Modul-Docstring).
+            s = stempel_m2.get(gross)
+            nach = roh[gross].area - inter.area
+            if (s is not None
+                    and _rang(gross, quelle, stempel_m2)
+                    < _rang(klein, quelle, stempel_m2)
+                    and _stempel_abweichung(nach, s) > STEMPEL_SCHUTZ):
+                warnungen.append(
+                    _schutz_warnung(gross, klein, s, roh[gross].area, nach))
+                return None
+            return (3, "ENTHALTENSEIN", klein, gross)
+    if 4 in regeln:
         ra, rb = (_rang(a, quelle, stempel_m2), _rang(b, quelle, stempel_m2))
         if ra != rb:
-            return (3, "QUELLE_RANG", a, b) if ra < rb else (3, "QUELLE_RANG", b, a)
+            return (4, "QUELLE_RANG", a, b) if ra < rb else (4, "QUELLE_RANG", b, a)
         sa, sb = stempel_m2.get(a), stempel_m2.get(b)
         if sa is not None and sb is not None:
             da = _stempel_abweichung(roh[a].area, sa)
             db = _stempel_abweichung(roh[b].area, sb)
             if da != db:
-                return (3, "STEMPEL_NAEHE", a, b) if da < db else (3, "STEMPEL_NAEHE", b, a)
-    if 4 in regeln:
+                return (4, "STEMPEL_NAEHE", a, b) if da < db else (4, "STEMPEL_NAEHE", b, a)
+    if 5 in regeln:
         za = roh[a].centroid.distance(inter.centroid)
         zb = roh[b].centroid.distance(inter.centroid)
         if za != zb:
-            return (4, "SCHWERPUNKT", a, b) if za < zb else (4, "SCHWERPUNKT", b, a)
-        return (4, "SCHWERPUNKT", a, b) if a < b else (4, "SCHWERPUNKT", b, a)
+            return (5, "SCHWERPUNKT", a, b) if za < zb else (5, "SCHWERPUNKT", b, a)
+        return (5, "SCHWERPUNKT", a, b) if a < b else (5, "SCHWERPUNKT", b, a)
     return None
 
 
@@ -226,12 +369,19 @@ def _schlitz(p: Polygon) -> tuple[Polygon, float, bool]:
 def bereinige(raeume: Sequence[Raum],
               quelle: Mapping[str, str],                 # raum.id -> "L"|"H"|"F"|"R"
               stempel_m2: Mapping[str, float | None],    # raum.id -> Stempelfläche (m²)
-              regeln: frozenset[int] = ALLE_REGELN) -> dict[str, Bereinigt]:
+              regeln: frozenset[int] = ALLE_REGELN,
+              warnungen: list[str] | None = None) -> dict[str, Bereinigt]:
     """Raumbereinigung nach den Owner-Regeln 1-5. Mutiert NICHTS.
 
     ``regeln`` schaltet einzelne Regeln ab (kumulative Messung in
     ``scripts/analyse/ueberlappung_regeln.py``). Räume mit < 3 Punkten oder
     Fläche 0 nehmen nicht teil und fehlen im Ergebnis-Dict.
+
+    ``warnungen``: wer die Stempelschutz-Meldungen (Regel 3) braucht, gibt eine
+    Liste herein — sie wird ANGEHÄNGT. Der WARNPFAD druckt nichts, die
+    Warnungen sind Daten; die zwei bestehenden Fehlermeldungen
+    (Schlitz-Kodierung, Roh-Ring-Rückfall) bleiben und drucken weiter.
+    ``bereinige_kaskade`` reicht die Liste durch.
 
     Räume ohne Abzug kommen mit ``eintraege == []`` zurück, ihr ``polygon_mm``
     ist dann der ``buffer(0)``-REPARIERTE Ring, nicht zwingend der Eingabering.
@@ -239,6 +389,7 @@ def bereinige(raeume: Sequence[Raum],
     zurück), für Messskripte aber relevant: der Überlappungs-Riegel misst die
     Originale aus ``raeume.json``.
     """
+    warn = warnungen if warnungen is not None else []
     roh: dict[str, Polygon] = {}
     typ: dict[str, str] = {}
     for r in raeume:
@@ -266,40 +417,16 @@ def bereinige(raeume: Sequence[Raum],
             paare.append((i, ids[m], inter))
 
     entschieden = []
-    regel1_paare: set[tuple[str, str]] = set()
     for i, j, inter in paare:
-        e = _entscheid(i, j, roh, inter, typ, quelle, stempel_m2, regeln)
+        e = _entscheid(i, j, roh, inter, typ, quelle, stempel_m2, regeln, warn)
         if e is None:
-            continue                      # Paar bleibt offen (nur für die Messung)
+            continue        # keine Regel greift ODER Stempelschutz → Paar offen
         nummer, label, gewinner, verlierer = e
-        if nummer == 1:
-            regel1_paare.add((i, j))
         entschieden.append((nummer, -inter.area, (i, j), label, gewinner, verlierer))
     entschieden.sort(key=lambda t: t[:3])
 
     for _, _, _, label, gewinner, verlierer in entschieden:
         _abziehen(aktuell, eintraege, verlierer, aktuell[gewinner], label, gewinner)
-
-    # Regel 5 zum Schluss: R weicht jedem Nicht-R-Polygon. Ausnahme (Owner-
-    # Reihenfolge 1 vor 5): ein R-Raum, der selbst LIFT/SCHACHT ist, ist nie
-    # Verlierer, und ein von Regel 1 entschiedenes Paar wird nicht erneut angefasst.
-    if 5 in regeln:
-        nicht_r = [i for i in ids if (quelle.get(i) or "").strip().upper() != "R"]
-        for i in [i for i in ids if (quelle.get(i) or "").strip().upper() == "R"]:
-            if typ[i] in LIFT_SCHACHT:
-                continue
-            gegner = []
-            for j in nicht_r:
-                if tuple(sorted((i, j))) in regel1_paare:
-                    continue
-                if aktuell[i] is None or aktuell[j] is None:
-                    continue
-                s = aktuell[i].intersection(aktuell[j])
-                if s.is_empty or s.area <= RAUSCH_MM2:
-                    continue
-                gegner.append((-s.area, j))
-            for _, j in sorted(gegner):
-                _abziehen(aktuell, eintraege, i, aktuell[j], "RESTFLAECHE", j)
 
     ergebnis: dict[str, Bereinigt] = {}
     for i in ids:
@@ -377,8 +504,14 @@ def ueberlappung(polygone: Sequence[Sequence[XY]],
 
 def bereinige_kaskade(raeume: list[Raum], rest_raeume: list[Raum],
                       zuordnungen: list[Zuordnung],
-                      quelle: dict[str, str]) -> list[tuple[Raum, Stempel | None]]:
+                      quelle: dict[str, str],
+                      warnungen: list[str] | None = None,
+                      ) -> list[tuple[Raum, Stempel | None]]:
     """Kern auf ein Kaskaden-Ergebnis anwenden (IN PLACE) → entfallene Räume.
+
+    ``warnungen`` wird — falls übergeben — mit den Stempelschutz-Meldungen der
+    Regel 3 gefüllt (durchgereicht an ``bereinige``). Kein Contract-Feld: die
+    Zeilen gehen über ``KaskadeErgebnis.bereinigung_warnungen`` an den Bericht.
 
     Nicht destruktiv am Objekt: ``polygon_roh`` bekommt den Ring vor der
     Bereinigung, ``bereinigung`` die Buchungen. Entfallene Räume verlassen
@@ -398,7 +531,7 @@ def bereinige_kaskade(raeume: list[Raum], rest_raeume: list[Raum],
         stempel_m2.setdefault(z.raum.id, z.stempel.flaeche_m2)
         stempel_je_raum.setdefault(z.raum.id, z.stempel)
 
-    erg = bereinige(alle, quelle, stempel_m2)
+    erg = bereinige(alle, quelle, stempel_m2, warnungen=warnungen)
     entfallen: list[tuple[Raum, Stempel | None]] = []
     for r in alle:
         b = erg.get(r.id)
