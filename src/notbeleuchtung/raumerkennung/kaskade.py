@@ -18,6 +18,7 @@ from shapely.geometry import Point, Polygon
 
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
 
+from .bereinigung import bereinige_kaskade
 from .dxf_load import DxfPlan
 from .kuerzel_entscheid import kandidat_kuerzel, loese_kuerzel
 from .raumlayer import raeume_aus_hatch, raeume_aus_layer
@@ -52,6 +53,11 @@ class KaskadeErgebnis:
     # Klartext-Hinweise der Kürzel-Auflösung (`kuerzel_entscheid`) — auch für die
     # NICHT typisierten Fälle; der Prüfbericht druckt sie.
     hinweise: list[str] = field(default_factory=list)
+    # Räume, die die Bereinigung (`bereinigung.py`, § 14.6.1) auf einen Restkörper
+    # unter 1 m² zusammengeschnitten hat — samt Stempel, falls einer dran hing.
+    # Sie stehen NICHT mehr in `raeume`/`rest_raeume`, tragen aber `polygon_roh`
+    # und `bereinigung`, damit Bericht und raeume.json den Entfall ausweisen.
+    entfallen: list[tuple[Raum, Stempel | None]] = field(default_factory=list)
 
     @property
     def alle_raeume(self) -> list[Raum]:
@@ -167,9 +173,21 @@ def raeume_aus_kaskade(plan: DxfPlan,
         rest_r = []
     for r in rest_r:
         quelle[r.id] = "R"
-    n = Counter(quelle.values())
+    # Überlappungen nach den Owner-Regeln 1-5 entzerren (docs/ENIS_UEBERGABE_0908.md
+    # § 14.6.1) — NACH der R-Stufe, weil Regel 5 die R-Polygone einbezieht. Im
+    # Fehlerschutz wie die Rest-Stufe darüber: ein GEOS-Fehler auf den
+    # Rasterpolygonen darf keinen Plan-Lauf und keinen Provider-Parse killen.
+    entfallen: list[tuple[Raum, Stempel | None]] = []
+    try:
+        entfallen = bereinige_kaskade(raeume, rest_r, zuord, quelle)
+    except Exception as exc:  # noqa: BLE001 — Bereinigung darf den Lauf nie killen
+        print(f"   bereinigung fehlgeschlagen: {exc}")
+    # Kette über die ÜBERLEBENDEN Räume (quelle behält die entfallenen ids für
+    # den Bericht).
+    n = Counter(quelle[r.id] for r in raeume + rest_r)
     kette = (f"kaskade L:{n.get('L', 0)} H:{n.get('H', 0)} "
              f"F:{n.get('F', 0)} R:{n.get('R', 0)}")
     return KaskadeErgebnis(zuordnungen=zuord, raeume=raeume, rest_raeume=rest_r,
                            quelle=quelle, kette=kette, wandkoerper=wk,
-                           tueroeffnungen=oeff, hinweise=hinweise)
+                           tueroeffnungen=oeff, hinweise=hinweise,
+                           entfallen=entfallen)

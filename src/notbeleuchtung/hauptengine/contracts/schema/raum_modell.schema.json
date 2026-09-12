@@ -156,6 +156,48 @@
       "title": "BBox",
       "type": "object"
     },
+    "Bereinigung": {
+      "description": "v1.5.0 — ein Flächenabzug an DIESEM Raum.\n\nGewinner behalten ihr Polygon und bekommen keinen Eintrag. Invariante:\nFläche(polygon_roh) − Fläche(polygon_mm) == Summe aller ``flaeche_m2``\ndieses Raums (± 1 mm²), Entfall eingeschlossen.",
+      "properties": {
+        "regel": {
+          "enum": [
+            "LIFT_SCHACHT",
+            "ENTHALTENSEIN",
+            "QUELLE_RANG",
+            "STEMPEL_NAEHE",
+            "SCHWERPUNKT",
+            "RESTFLAECHE",
+            "ZERFALL",
+            "SCHLITZ",
+            "ENTFALL"
+          ],
+          "title": "Regel",
+          "type": "string"
+        },
+        "gegenspieler": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gegenspieler"
+        },
+        "flaeche_m2": {
+          "title": "Flaeche M2",
+          "type": "number"
+        }
+      },
+      "required": [
+        "regel",
+        "flaeche_m2"
+      ],
+      "title": "Bereinigung",
+      "type": "object"
+    },
     "Edge": {
       "properties": {
         "from": {
@@ -445,6 +487,30 @@
           ],
           "default": null,
           "title": "Wohnung Id"
+        },
+        "polygon_roh": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Polygon Roh",
+          "type": "array"
+        },
+        "bereinigung": {
+          "items": {
+            "$ref": "#/$defs/Bereinigung"
+          },
+          "title": "Bereinigung",
+          "type": "array"
         }
       },
       "required": [
@@ -837,7 +903,7 @@
       "type": "string"
     },
     "contract_version": {
-      "default": "1.4.0",
+      "default": "1.5.0",
       "title": "Contract Version",
       "type": "string"
     },
