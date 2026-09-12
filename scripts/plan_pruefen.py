@@ -991,6 +991,36 @@ def _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz,
     for a in modell.ausgaenge:
         l.append(f"| {a.id} | {a.typ} | {a.xy_mm[0] / 1000:.2f} | "
                  f"{a.xy_mm[1] / 1000:.2f} |")
+    # Owner-Auflage 2026-09-12 (Leonis’ Einwand 5): eine Tür, die wegen
+    # einer Freifläche KEINEN Endausgang erzeugt, wird nicht stillschweigend
+    # gestrichen — sie steht hier namentlich. Der Owner lässt Terrassen im EG
+    # mit Ausgang ins Gelände ausdrücklich zu, "dann aber belegt"; dieser
+    # Beleg ist heute nicht führbar (kein Höhen-Datum, dxf_load verwirft z),
+    # deshalb fällt die Tür auch im EG heraus und gilt als belegpflichtig.
+    _frei = {r.id for r in modell.raeume
+             if r.raum_typ in ("BALKON", "TERRASSE")}
+    # NUR Tueren INS FREIE: eine Seite traegt den AUSSEN-Sentinel. Eine Tuer
+    # zwischen zwei Innenraeumen haette auch ohne die Regel keinen Endausgang
+    # erzeugt -- sie hier zu listen wuerde die Wirkung der Regel
+    # ueberzeichnen (gemessen: sonst 23 statt 1 auf Barawitzka).
+    _frei_tueren = [t for t in modell.tueren
+                    if t.tuer_detail == "balkontuer"
+                    and (t.von_raum in _frei or t.nach_raum in _frei)
+                    and "AUSSEN" in (t.von_raum, t.nach_raum)]
+    _titel = ("### Kein Endausgang wegen Freifläche "
+              f"({len(_frei_tueren)} Türen ins Freie an BALKON/TERRASSE)")
+    l += ["", _titel, ""]
+    if _frei_tueren:
+        l += ["| Tür | Seiten | Breite mm | belegpflichtig |",
+              "|---|---|--:|---|"]
+        for t in _frei_tueren:
+            breite = "—" if t.breite_mm is None else f"{t.breite_mm:.0f}"
+            l.append(f"| {t.id} | {t.von_raum or '—'} ↔ "
+                     f"{t.nach_raum or '—'} | {breite} | "
+                     "Beleg Geländeniveau heute nicht führbar |")
+    else:
+        l.append("keine — auf diesem Plan führt keine Tür an einem "
+                 "typisierten BALKON/TERRASSE-Raum vorbei.")
     l += ["", f"## Fluchtweg-Segmente ({len(modell.zirkulation.segmente)})", "",
           "Quellen: " + ", ".join(f"{q}: {n}" for q, n in sorted(seg_q.items())),
           "", "| Segment | Quelle | Länge m | Grund | Ziel-Ausgang |",
