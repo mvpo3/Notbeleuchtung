@@ -1,0 +1,102 @@
+{
+  "plan": "Rennweg_DG2",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\Rennweg\\DG2 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf",
+  "floor": "DG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    1607,
+    1800
+  ],
+  "rotation": "Rotation: keine dominante Kantenrichtung — 0° belassen.",
+  "kategorien": {
+    "gang": 3,
+    "wohnen": 2,
+    "aussen": 1,
+    "sanitaer": 1,
+    "stiege": 5,
+    "schacht": 2,
+    "hof": 0,
+    "ueberlappung": 2,
+    "segmente": 18,
+    "stair_exit": 3
+  },
+  "raeume_gesamt": 14,
+  "raeume_typisiert": 14,
+  "raum_typen": {
+    "VORRAUM": 3,
+    "ZIMMER": 2,
+    "TERRASSE": 1,
+    "BAD": 1,
+    "STIEGENHAUS": 5,
+    "SCHACHT": 1,
+    "LIFT": 1
+  },
+  "wohnungen": {
+    "anzahl": 1,
+    "raeume_je_wohnung": {
+      "top_1": 4
+    },
+    "ohne_wohnung": 10
+  },
+  "innenhoefe_m2": [],
+  "ausgaenge": [
+    {
+      "id": "exit_durchgang_27",
+      "typ": "stair_exit",
+      "xy_mm": [
+        12552104.49291358,
+        356216698.4696168
+      ]
+    },
+    {
+      "id": "exit_durchgang_28",
+      "typ": "stair_exit",
+      "xy_mm": [
+        12548052.527645543,
+        356219963.22593075
+      ]
+    },
+    {
+      "id": "exit_durchgang_29",
+      "typ": "stair_exit",
+      "xy_mm": [
+        12549252.32118863,
+        356219152.56802624
+      ]
+    }
+  ],
+  "stiegenhaeuser": [
+    "rest_1",
+    "rest_2",
+    "rest_3",
+    "rest_4",
+    "stiegenhaus_2"
+  ],
+  "ueberlappungen": [
+    {
+      "raum_id": "rest_3",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "stiegenhaus_2",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 96.9
+    },
+    {
+      "raum_id": "rest_4",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "stiegenhaus_2",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 99.5
+    }
+  ],
+  "tueren_gesamt": 29,
+  "laufzeit_s": 13.5,
+  "nicht_erkannt": [
+    "untypisierte Räume: 0 — jeder Raum trägt einen `raum_typ`.",
+    "Innenhöfe: **0** — `provider.letzte_aussenbereiche.geschlossen` ist leer (oder es gab keine Wandkörper-Analyse).",
+    "`final_exit`: **0** — kein Ausgang ins Freie erkannt (in Obergeschossen erwartungsgemäß, s. provider.py).",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

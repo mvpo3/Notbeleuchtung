@@ -37,16 +37,83 @@ RAUSCHEN_MM2 = 1.0
 
 # Ist-Stand 2026-09-10 (Lauf 47df2d9), § 14.2. Obergrenzen — nur nach unten
 # nachziehen, niemals anheben.
+#
+# NACHGEZOGEN 2026-09-12 (Lauf `6ebf676`, Bereinigung nach § 14.6/§ 14.6.1).
+# Vorher standen hier 9/42,3 · 16/45,8 · 37/174,2 · 0 · 0, Summe 62/262,3.
+# Gemessene Ausgabe dieses Laufs (Prüfstrecke, je Plan vorher → nachher):
+#   Barawitzka_EG   9 → 0 Überlapper ·  42,253 m² → 0,05 mm²
+#   Mollgasse_EG   16 → 0 Überlapper ·  45,845 m² → 0,14 mm²
+#   Muthgasse_E2   37 → 2 Überlapper · 174,245 m² → 2,552 m² (Stempelschutz)
+#   Rennweg_EG      0 → 0 Überlapper ·   0,000 m² → 0,00 mm²
+#   Rennweg_OG3     0 → 0 Überlapper ·   0,000 m² → 0,00 mm²
+# Die Restflächen (max. 0,20 mm²) liegen unter der Rauschschwelle von 1 mm² und
+# damit unter dem Band 0.0 + TOLERANZ_M2 — das gilt für VIER der fünf Pläne.
+#
+# ANGEHOBEN 2026-09-12 für Muthgasse_E2 und die Summe — AUSNAHME von der Regel
+# oben, und der einzige Fall, in dem dieses Band steigen darf. Grund ist ein
+# OWNER-ENTSCHEID, keine Regression: der Stempelschutz der Regel 3 lässt
+# `raum_29` (quelle L, Stempel 16,52 m², Rang 1) NICHT gegen `raum_91`
+# (quelle F, Rang 3) ausstanzen, weil der Raum dadurch um 15,4 % vom
+# Stempelwert abweichen würde. Das Paar bleibt deshalb bewusst überlappend:
+# 2 Überlapper / 2,552357 m². Ohne den Schutz wäre der Ist 0 / 0,20 mm² — die
+# Kennzahl ist also nicht gefallen, sondern eingetauscht gegen Stempeltreue
+# (§ 22.8 der Übergabe, Nachentscheid vom 2026-09-12: Schutz nur bei strikt
+# besserem Quellen-Rang des Verlierers; er greift im Bestand genau 1×).
+# Steigt die Zahl ÜBER 2 oder die Fläche über 2,6 m², ist es eine Regression.
 BAND: dict[str, tuple[int, float]] = {
     # Plan: (Überlapper >5 %, doppelbelegte Fläche in m²)
-    "Barawitzka_EG": (9, 42.3),
-    "Mollgasse_EG": (16, 45.8),
-    "Muthgasse_E2": (37, 174.2),
+    "Barawitzka_EG": (0, 0.0),
+    "Mollgasse_EG": (0, 0.0),
+    "Muthgasse_E2": (2, 2.6),   # Ist 2 / 2,552357 m² — Stempelschutz, s. o.
     "Rennweg_EG": (0, 0.0),
     "Rennweg_OG3": (0, 0.0),
 }
-BAND_SUMME = (62, 262.3)
+BAND_SUMME = (2, 2.6)   # = die eine geschützte Paarung, sonst 0 / 0,19 mm²
 TOLERANZ_M2 = 0.05  # Rundung der Bänder auf 0,1 m²
+
+# Löschungsfeste UNTERGRENZE — die Gegenprobe zum Band oben. „0 Überlapper" ist
+# zum Teil durch ENTFALL erkauft (5 Räume, Restkörper < 1 m², § 14.6.1), und
+# Räume aus `raeume` zu entfernen senkt die Überlappungszahl IMMER. Gezählt
+# werden deshalb die Einträge mit ≥ 3 Punkten in `raeume` PLUS die Liste
+# `entfallen` (dort steht das Roh-Polygon in `polygon_roh`). Sinkt die Summe,
+# ist ein weiterer Raum verschwunden — das ist eine Owner-Entscheidung und kein
+# Nachziehen.
+# Ist 2026-09-12 (Lauf `7915168`): 46+1 · 62+0 · 97+4 · 21+0 · 14+0.
+# Unverändert nachgemessen nach dem Nachentscheid.
+BAND_RAEUME: dict[str, int] = {
+    "Barawitzka_EG": 47,
+    "Mollgasse_EG": 62,
+    "Muthgasse_E2": 101,
+    "Rennweg_EG": 21,
+    "Rennweg_OG3": 14,
+}
+
+
+def _zaehle_raeume(plan: str) -> tuple[int, int]:
+    """(Räume mit Polygon in ``raeume``, entfallene Räume mit Roh-Polygon)."""
+    daten = json.loads((BASIS / plan / "raeume.json").read_text(encoding="utf-8"))
+    lebend = sum(1 for e in daten["raeume"] if len(e.get("polygon_mm") or []) >= 3)
+    weg = sum(1 for e in daten.get("entfallen", [])
+              if len(e.get("polygon_roh") or []) >= 3)
+    return lebend, weg
+
+
+@pytest.mark.parametrize("plan", sorted(BAND_RAEUME))
+def test_raeume_verschwinden_nicht(plan):
+    """Gegenprobe zum Überlappungsband: die Raumzahl darf nicht sinken.
+
+    Ohne diesen Test wäre der Riegel blind gegen den einfachsten Weg zu
+    „0 Überlapper": Räume löschen. Er liest dieselbe Datei, aber die Anzahl.
+    """
+    if not BASIS.exists():  # pragma: no cover — Laufergebnisse fehlen
+        pytest.skip(f"Laufergebnisse nicht vorhanden: {BASIS}")
+    lebend, weg = _zaehle_raeume(plan)
+    band = BAND_RAEUME[plan]
+    assert lebend + weg >= band, (
+        f"{plan}: {lebend} Räume + {weg} entfallen = {lebend + weg} gegen "
+        f"Untergrenze {band}. Sinkt = Räume sind verschwunden (Entfall oder "
+        "verlorene Erkennung) — Owner-Entscheidung, kein Nachziehen."
+    )
 
 
 def _messe(plan: str) -> tuple[int, float]:

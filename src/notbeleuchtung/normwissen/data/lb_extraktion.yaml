@@ -308,11 +308,18 @@ raum_typ_vokabular:
 # Stand 2026-09-06: SCHACHT (rest_komponenten + Stempel), AUFZUGSVORPLATZ
 # (Stempel, Pflicht-POI "Aufzugsflur") und WASCHKÜCHE (_EXTRA_OVERRIDE, vorher
 # ausserhalb des Guards) sind neu — s. docs/VOKABULAR.md.
+# Stand 2026-09-11: SCHLEUSE ist neu (Entscheidung Enis, Stempelnummer
+# E2-VF-11a in Muthgasse_E2). Diese Datei gehoert Enis; die Zeile steht hier
+# trotzdem im selben PR, weil der Guard tests/contract/test_lb_raumtyp_naht.py
+# beide Richtungen prueft: ein Kanon-Typ ohne Eintrag hier blockiert im
+# LB-Parser eine Vorgabe, die der Platzierer erfuellen koennte. Die NORM-
+# Anforderung von SCHLEUSE bleibt offen (regel_deckung.yaml: offen/Enis) —
+# Stuetzliste heisst "parsebar", nicht "beleuchtungspflichtig".
 unterstuetzte_raum_typen:
   [STIEGENHAUS, GANG, VORRAUM, WOHNZIMMER, SCHLAFZIMMER, KINDERZIMMER, ZIMMER,
    KÜCHE, BAD, WC, ABSTELLRAUM, BALKON, TERRASSE,
    GARAGE, TECHNIK, LAGER, MUELLRAUM, KELLER, LIFT,
-   SCHACHT, AUFZUGSVORPLATZ, WASCHKÜCHE, KINDERWAGENRAUM]
+   SCHACHT, AUFZUGSVORPLATZ, WASCHKÜCHE, KINDERWAGENRAUM, SCHLEUSE]
 
 # Negation: „ist KEINE LED-Sicherheitsbeleuchtung herzustellen"
 negation_muster:

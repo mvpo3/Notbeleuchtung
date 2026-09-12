@@ -7,6 +7,13 @@ JSON-Schema generiert nach `contracts/schema/`. Dieses Doc = Prosa-Referenz.
 Reine Geometrie/Topologie, kein Norm-Urteil.
 - `floor`, `coordinate_system="mm"`, `bounds_mm`
 - `raeume[]`: `id, raum_typ, polygon_mm, flaeche_m2, ist_fluchtweg, ist_communal`
+  - v1.5.0: `polygon_roh`, `bereinigung[]{regel, gegenspieler, flaeche_m2}` —
+    nicht destruktive Raumbereinigung nach `ENIS_UEBERGABE_0908.md § 14.6/§ 14.6.1`;
+    `polygon_roh` **leer** = `polygon_mm` ist unverändert das Roh-Polygon.
+    `flaeche_m2` ist die Fläche von `polygon_mm` (bereinigt). Löcher sind als
+    1-mm-Schlitz zur Außenkontur kodiert; Bbox-Mitte-Konsumenten sehen ein
+    solches Loch NICHT. Invariante: Fläche(`polygon_roh`) − Fläche(`polygon_mm`)
+    == Σ `bereinigung[].flaeche_m2` (± 1 mm²).
 - `tueren[]`: `id, xy_mm, breite_mm, von_raum, nach_raum, ist_notausgang, schwenk_richtung`
   - v1.4.0: `breite_mm: float | None` — **None = nicht gemessen** (früher `0.0`);
     `breite_quelle ∈ {BLOCKNAME, GEOMETRIE_SCHWENKRADIUS, GEOMETRIE_SUMME,
