@@ -54,6 +54,49 @@ def rotation_zur_tuer(dx: float, dy: float) -> float:
 RZ_INS_RAUM_MM = 150.0
 
 
+#: Obergrenze „das ist noch eine TÜR" (Selmans Nennmaß-Türbereich endet bei 130 cm,
+#: raumerkennung/tueren.py::_breite_mm 60–130). Breitere GEOMETRIE_OEFFNUNG-Durchgänge
+#: sind Wandlücken, keine Türen (Owner-Befund Müllraum 2026-09-12).
+TUER_MAX_BREITE_MM = 1300.0
+
+
+def ist_echte_tuer(t) -> bool:
+    """Phantom-Öffnungen von echten Türen trennen (EINE Quelle; Konsumenten:
+    fachpraxis-Türwahl, sichtkette-Türbarrieren)."""
+    breite = t.breite_mm
+    if breite is not None and breite > TUER_MAX_BREITE_MM:
+        return False
+    return not (getattr(t, "ohne_tuerblatt", False) and breite is None)
+
+
+#: Abteil-/Nebenraum-Typen, deren Gang-Türen nach AUSSEN (in den Gang) aufschlagen —
+#: nur DIESE Türen sind Sichtbarrieren/Lücken-Trigger der Verlaufs-Kette (Punkt 2,
+#: Owner-Bild Kellerabteil-Gang). Wohnungs-/Zimmertüren schlagen in den Raum und
+#: sind lt. Fachdoku (S.8: „von den Wohnungstüren aus ist RZ (B) sichtbar") KEINE.
+ABTEIL_TYPEN = {"ABSTELLRAUM", "KELLERABTEIL", "KELLER", "LAGER", "TECHNIK",
+                "MUELLRAUM", "KINDERWAGENRAUM", "FAHRRADRAUM"}
+#: Kleiner Nebenraum ohne klaren Typ zählt ab dieser Fläche NICHT mehr als Abteil.
+_ABTEIL_MAX_M2 = 8.0
+
+
+def ist_abteil_tuer(t, raeume_by_id: dict, korridor_ids: set) -> bool:
+    """Tür verbindet einen Korridor mit einem Abteil-/kleinen Nebenraum
+    (Aufschlag in den Gang) — die Sichtbarrieren-Klasse der Verlaufs-Kette."""
+    if not ist_echte_tuer(t) or not t.breite_mm:
+        return False
+    seiten = {t.von_raum, t.nach_raum}
+    if not (seiten & korridor_ids):
+        return False
+    ziel = next((x for x in seiten if x not in korridor_ids), None)
+    r = raeume_by_id.get(ziel or "")
+    if r is None:
+        return False                                  # unbekannt → konservativ keine Barriere
+    typ = (r.raum_typ or "").upper()
+    if typ in ABTEIL_TYPEN:
+        return True
+    return bool(r.flaeche_m2) and r.flaeche_m2 < _ABTEIL_MAX_M2 and not typ.startswith("WOHN")
+
+
 def rotation_piktogramm_in_raum(dx_zur_tuer: float, dy_zur_tuer: float) -> float:
     """R-B (Owner-Fachdoku „Notbeleuchtung zeichnen lernen" v2, S.3–5, AUSNAHMSLOS):
     jede Pfeil-unten-RZ an einer Tür wird so rotiert, dass das Piktogramm INS

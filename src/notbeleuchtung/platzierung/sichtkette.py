@@ -30,6 +30,7 @@ from itertools import pairwise
 from notbeleuchtung.hauptengine.contracts import NormProvider, Platzierung, RaumModell
 
 from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
+from .bausteine import ist_abteil_tuer as _ist_abteil_tuer
 from .geometry import point_in_polygon
 from .graph import build_circulation_graph
 
@@ -44,12 +45,31 @@ _SAMPLES = 12
 _RAND_ANTEIL = 0.08
 
 
+def _segment_punkt_abstand(a, b, q) -> float:
+    ex, ey = b[0] - a[0], b[1] - a[1]
+    l2 = ex * ex + ey * ey
+    if l2 == 0.0:
+        return math.hypot(q[0] - a[0], q[1] - a[1])
+    t = max(0.0, min(1.0, ((q[0] - a[0]) * ex + (q[1] - a[1]) * ey) / l2))
+    return math.hypot(q[0] - (a[0] + t * ex), q[1] - (a[1] + t * ey))
+
+
 def _sicht_frei(
     a: tuple[float, float], b: tuple[float, float],
     polys: list[list[tuple[float, float]]], weite_mm: float,
+    barrieren: tuple[tuple[float, float, float], ...] = (),
 ) -> bool:
     if math.hypot(b[0] - a[0], b[1] - a[1]) > weite_mm:
         return False
+    # Punkt-2-Regel (Owner 2026-09-12, Kellerabteil-Gang, gilt in ALLEN Gängen):
+    # ein aufschlagender Türflügel verstellt die Sicht — der Strahl gilt als
+    # unterbrochen, wenn er den Aufschlagkreis (Radius = Türblattbreite) quert.
+    # Start/Ziel direkt AN der Tür (Tür-RZ) blockieren sich nicht selbst.
+    for (tx, ty, r) in barrieren:
+        if (math.hypot(a[0] - tx, a[1] - ty) > r + 50.0
+                and math.hypot(b[0] - tx, b[1] - ty) > r + 50.0
+                and _segment_punkt_abstand(a, b, (tx, ty)) < r):
+            return False
     for i in range(_SAMPLES):
         t = _RAND_ANTEIL + (1.0 - 2.0 * _RAND_ANTEIL) * i / (_SAMPLES - 1)
         p = (a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t)
@@ -85,6 +105,15 @@ def kette_ausduennen(
 
     rz = [p for p in platzierungen if p.kind == "rz"]
     rest = [p for p in platzierungen if p.kind != "rz"]
+
+    # Türaufschlag-Barrieren: echte Türen mit gemessener Blattbreite, die einen
+    # Korridor referenzieren (keine erfundenen Maße: ohne breite_mm keine Barriere).
+    raeume_by_id = {r.id: r for r in raum.raeume}
+    barrieren = tuple(
+        (t.xy_mm[0], t.xy_mm[1], float(t.breite_mm))
+        for t in raum.tueren
+        if _ist_abteil_tuer(t, raeume_by_id, korridor_ids)
+    )
 
     G = build_circulation_graph(raum)
     knoten_pos = {n.id: n.xy_mm for n in raum.zirkulation.nodes}
@@ -130,20 +159,20 @@ def kette_ausduennen(
     def _kette_haelt(bleibend: list[Platzierung]) -> bool:
         punkte = [p.xy_mm for p in fest + bleibend]
         if einzug and not all(
-            any(_sicht_frei(e, q, polys, weite_mm) for q in punkte) for e in einzug
+            any(_sicht_frei(e, q, polys, weite_mm, barrieren) for q in punkte) for e in einzug
         ):
             return False
         # Jedes Korridor-RZ führt weiter: sieht ein anderes RZ oder einen Ausgang.
         for q in punkte:
             weiter = [w for w in punkte if w != q] + ausgaenge
-            if not any(_sicht_frei(q, w, polys, weite_mm) for w in weiter):
+            if not any(_sicht_frei(q, w, polys, weite_mm, barrieren) for w in weiter):
                 return False
         return True
 
     # Redundanteste zuerst probieren (meiste Sicht-Nachbarn).
     def _redundanz(p: Platzierung) -> int:
         andere = [q.xy_mm for q in fest + kandidaten if q is not p]
-        return sum(_sicht_frei(p.xy_mm, q, polys, weite_mm) for q in andere)
+        return sum(_sicht_frei(p.xy_mm, q, polys, weite_mm, barrieren) for q in andere)
 
     bleibend = list(kandidaten)
     for p in sorted(kandidaten, key=_redundanz, reverse=True):

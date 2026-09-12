@@ -81,3 +81,47 @@ def test_tuer_rz_und_nicht_gang_rz_bleiben_unberuehrt():
     out = kette_ausduennen([tuer_rz, stgh_rz, _rz((23500.0, 1500.0))],
                            raum, FakeNormProvider())
     assert tuer_rz in out and stgh_rz in out
+
+
+def test_kellergang_tuerbarrieren_verdichten_die_kette():
+    """Punkt 2 (Owner 2026-09-12, Kellerabteil-Gang): Türaufschläge sind
+    Sichtbarrieren → im türreichen Abteilgang bleiben MEHR Verlaufs-RZ in
+    Gangmitte als im türfreien Gang gleicher Länge (kein fester Takt — die
+    Dichte kommt aus der Sicht-Logik)."""
+    from notbeleuchtung.platzierung.platzierer import NotlichtPlatzierer
+
+    def _gang(mit_tueren: bool) -> RaumModell:
+        tueren, abteile = [], []
+        if mit_tueren:
+            # 8 Abteiltüren beidseitig versetzt, 800er Blätter, alle 2,4 m —
+            # Abteile ALS Räume modelliert (KELLERABTEIL, klein): nur so zählen
+            # die Türen als Aufschlag-Barrieren (Wohnungstüren täten es nicht).
+            for i in range(8):
+                x = 2000.0 + i * 2400.0
+                y = 0.0 if i % 2 == 0 else 2400.0
+                tueren.append(Tuer(id=f"ka{i}", xy_mm=(x, y), breite_mm=800.0,
+                                   von_raum=f"abteil{i}", nach_raum="gang"))
+                ay = (-2000.0, 0.0) if i % 2 == 0 else (2400.0, 4400.0)
+                abteile.append(Raum(id=f"abteil{i}", raum_typ="KELLERABTEIL",
+                                    flaeche_m2=3.0,
+                                    polygon_mm=_rect(x - 1000.0, ay[0], x + 1000.0, ay[1])))
+        return RaumModell(
+            floor="UG", bounds_mm=BBox(min_xy=(0.0, -2000.0), max_xy=(22000.0, 4400.0)),
+            raeume=[Raum(id="gang", raum_typ="GANG", ist_fluchtweg=True, ist_communal=True,
+                         polygon_mm=_rect(0.0, 0.0, 22000.0, 2400.0)), *abteile],
+            tueren=tueren,
+            ausgaenge=[Ausgang(id="E", xy_mm=(21800.0, 1200.0), typ="final_exit")],
+            zirkulation={"nodes": [], "edges": [], "segmente": [
+                {"segment_id": "s1", "reason": "exit", "ziel_ausgang": "E",
+                 "polyline_mm": [(500.0, 1200.0), (21800.0, 1200.0)]}]},
+        )
+
+    norm = FakeNormProvider()
+    mit = [p for p in NotlichtPlatzierer().place(_gang(True), norm).platzierungen
+           if p.kind == "rz"]
+    ohne = [p for p in NotlichtPlatzierer().place(_gang(False), norm).platzierungen
+            if p.kind == "rz"]
+    assert len(mit) > len(ohne), (len(mit), len(ohne))
+    # Verlaufs-RZ liegen in Gangmitte (quer zentriert):
+    verlauf = [p for p in mit if 2000.0 < p.xy_mm[0] < 20000.0]
+    assert verlauf and all(abs(p.xy_mm[1] - 1200.0) < 600.0 for p in verlauf)

@@ -129,6 +129,59 @@ def _mittel_arm_rz(rz: list, korridore: list, raum: RaumModell, norm: NormProvid
     return zusatz
 
 
+def _tuer_luecken_rz(rz: list, korridore: list, raum: RaumModell, norm: NormProvider) -> list:
+    """Punkt-2-Erzeuger (Owner 2026-09-12, Kellerabteil-Gang — gilt in ALLEN Gängen):
+    Verlaufs-RZ-KANDIDATEN in den Lücken zwischen den Gang-Türen (Gangmitte,
+    „zwischen den Kellerabteilen"). Kein fester Takt — die Sichtkette (mit
+    Türaufschlag-Barrieren) dünnt anschließend aus, was redundant ist; die Dichte
+    ergibt sich aus der Sicht-Logik (Am Rain UG: ~6,7 m, ohne dass der Wert hier
+    steht)."""
+    import math
+
+    from .bausteine import AGV_SV_F as _AGV_SV_F
+    from .bausteine import ist_abteil_tuer as _ist_abteil_tuer
+    from .bausteine import key_und_rotation as _kr
+    from .bausteine import richtung_und_rotation as _rr
+    from .geometry import _bbox
+    ziele = _flucht_ziele(raum)
+    zusatz: list = []
+    for r in korridore:
+        x0, y0, x1, y1 = _bbox(r.polygon_mm)
+        laengs = 0 if (x1 - x0) >= (y1 - y0) else 1
+        quer = (y0 + y1) / 2.0 if laengs == 0 else (x0 + x1) / 2.0
+        raeume_by_id = {x.id: x for x in raum.raeume}
+        tueren = sorted(
+            t.xy_mm[laengs] for t in raum.tueren
+            if _ist_abteil_tuer(t, raeume_by_id, {r.id})
+        )
+        if len(tueren) < 3:
+            continue                     # Tür-Lücken-Muster erst ab Abteil-Dichte
+        vorhanden = [p.xy_mm[laengs] for p in (rz + zusatz)
+                     if p.kind == "rz" and point_in_polygon(p.xy_mm, r.polygon_mm)]
+        for a, b in pairwise(tueren):
+            if b - a < 1500.0:
+                continue                 # Türgruppe ohne nutzbare Lücke
+            mid = (a + b) / 2.0
+            if any(a < v < b for v in vorhanden):
+                continue
+            pt = (mid, quer) if laengs == 0 else (quer, mid)
+            if not point_in_polygon(pt, r.polygon_mm):
+                continue
+            ziel = min(ziele, key=lambda z: math.hypot(z[0] - pt[0], z[1] - pt[1]),
+                       default=None)
+            richtung, _ = _rr(ziel[0] - pt[0], ziel[1] - pt[1]) if ziel else ("unten", 0.0)
+            seg = FluchtwegSegment(segment_id=f"tuerluecke_{r.id}_{int(mid)}",
+                                   polyline_mm=[pt], reason="long_run")
+            anf = norm.fuer_fluchtweg_abschnitt(seg)
+            key, rot, mirror = _kr(anf.symbol_katalog_keys, richtung)
+            zusatz.append(Platzierung(
+                xy_mm=pt, catalog_key=key, rotation_deg=rot, mirror_x=mirror,
+                height_mm=float(anf.montagehoehe_mm), kind="rz", richtung=richtung,
+                circuit_hint=f"AGV-A-F{_AGV_SV_F}", covers_segment=[], norm_quelle=anf.quelle))
+            vorhanden.append(mid)
+    return zusatz
+
+
 def _sichtlinien_garantie(rz: list, raum: RaumModell, norm: NormProvider) -> list:
     """Owner-Regel 2026-09-09: aus jeder Wohnungstür muss beim Blick in den Gang ein
     Rettungszeichen sichtbar sein. Anker- und Segment-Pfad setzen RZ nur an Ausgängen/
@@ -163,6 +216,8 @@ def _sichtlinien_garantie(rz: list, raum: RaumModell, norm: NormProvider) -> lis
         gefuellt = list(rz)
     # R-F: Lücken > Erkennungsweite bekommen ein Zwischen-RZ …
     voll = gefuellt + _mittel_arm_rz(gefuellt, korridore, raum, norm)
+    # … Punkt 2: Tür-Lücken-Kandidaten (Kellerabteil-Muster, alle Gänge) …
+    voll = voll + _tuer_luecken_rz(voll, korridore, raum, norm)
     # … und die fertige Kette wird auf die lückenlose SICHTKETTE ausgedünnt
     # (Fachdoku v2: „Ist das nächste Zeichen bereits sichtbar, wird kein
     # weiteres gesetzt" — Ground truth EG: Gang-RZ 4→1).
