@@ -121,6 +121,10 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 |---|---|--:|--:|
 | exit_durchgang_22 | stair_exit | 12551.93 | 356218.26 |
 
+### Kein Endausgang wegen Freifläche (0 Türen ins Freie an BALKON/TERRASSE)
+
+keine — auf diesem Plan führt keine Tür an einem typisierten BALKON/TERRASSE-Raum vorbei.
+
 ## Fluchtweg-Segmente (5)
 
 Quellen: GRAPH: 5
@@ -199,4 +203,4 @@ Restweg im EG (Rennweg_EG.dxf): 4.6–13.5 m (Stiegenhaustür → nächster fina
 | tuer_in_schacht | 3 |
 | tuer_ins_nichts | 1 |
 
-Laufzeit: 51.4 s
+Laufzeit: 51.8 s
