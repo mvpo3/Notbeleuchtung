@@ -246,6 +246,24 @@ def aufheller_je_rz(
     return out
 
 
+#: Obergrenze „das ist noch eine TÜR": Selmans eigener Nennmaß-Türbereich endet bei
+#: 130 cm (`raumerkennung/tueren.py::_breite_mm`, 60–130). Eine breitere „Öffnung"
+#: (GEOMETRIE_OEFFNUNG-Durchgänge, Elektroplan DE: 6064-mm-„durchgang_12" = die WAND
+#: Müllraum↔Gang mit Erkennungsloch) ist keine Tür — dort hängt kein Tür-RZ
+#: (Owner-Befund 2026-09-12: „dort gibt es aber keine Tür, dort ist eine Wand").
+_TUER_MAX_BREITE_MM = 1300.0
+
+
+def _ist_echte_tuer(t) -> bool:
+    """Phantom-Öffnungen von echten Türen trennen: Wandlücken-Durchgänge ohne
+    Türblatt oberhalb jedes Türmaßes zählen nicht (fail-closed Richtung
+    „keine Leuchte an geratener Stelle")."""
+    breite = t.breite_mm
+    if breite is not None and breite > _TUER_MAX_BREITE_MM:
+        return False
+    return not (getattr(t, "ohne_tuerblatt", False) and breite is None)
+
+
 def _tuer_des_raums(raum: RaumModell, r):
     """Die (Haupt-)Tür eines Raums oder None.
 
@@ -253,10 +271,12 @@ def _tuer_des_raums(raum: RaumModell, r):
     Stiegenhaus) führt — das ist die „Ausgangs"-Tür; sonst die erste referenzierte
     Tür; sonst geometrisch die dem Raum-Zentrum nächste Tür, die im Raumpolygon
     liegt. Fehlt jede Tür-Information, None (der Aufrufer platziert dann nichts —
-    fail-closed, keine Leuchte an geratener Stelle).
+    fail-closed, keine Leuchte an geratener Stelle). Phantom-Öffnungen
+    (`_ist_echte_tuer`) sind von vornherein raus.
     """
     typen = {x.id: (x.raum_typ or "").upper() for x in raum.raeume}
-    referenziert = [t for t in raum.tueren if r.id in (t.von_raum, t.nach_raum)]
+    referenziert = [t for t in raum.tueren
+                    if r.id in (t.von_raum, t.nach_raum) and _ist_echte_tuer(t)]
     if referenziert:
         def _zielraum(t):
             return t.nach_raum if t.von_raum == r.id else t.von_raum
@@ -266,7 +286,8 @@ def _tuer_des_raums(raum: RaumModell, r):
         ]
         return (erschliessung or referenziert)[0]
     if len(r.polygon_mm) >= 3:
-        drin = [t for t in raum.tueren if point_in_polygon(t.xy_mm, r.polygon_mm)]
+        drin = [t for t in raum.tueren
+                if _ist_echte_tuer(t) and point_in_polygon(t.xy_mm, r.polygon_mm)]
         if drin:
             cx, cy = find_center_visual(r.polygon_mm)
             return min(drin, key=lambda t: (t.xy_mm[0] - cx) ** 2 + (t.xy_mm[1] - cy) ** 2)
