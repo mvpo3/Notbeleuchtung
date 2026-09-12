@@ -12,6 +12,8 @@ sichern deshalb nicht Verhalten, sondern die **Grenzen der Aussage**:
 """
 from __future__ import annotations
 
+import ast
+from collections.abc import Iterator
 from pathlib import Path
 
 import yaml
@@ -25,6 +27,147 @@ SRC = Path(__file__).parents[2] / "src" / "notbeleuchtung"
 def _lade(name: str) -> dict:
     with open(DATA / name, encoding="utf-8") as fh:
         return yaml.safe_load(fh)
+
+
+#: Dateien, die Quellenarbeit ohne Verbraucher sind — niemand im Produktivcode
+#: darf sie laden, solange die zugehörige Semantik nicht geklärt ist.
+_BEWACHTE_DATEIEN = ("ove_e07_funktionserhalt", "oib_rl4_fluchtwegbreiten")
+
+#: Aufzählende Zugriffe: damit ließe sich eine Datei ohne Namensnennung laden.
+#: Pfad-Methoden (``p.glob(…)``) und Modulfunktionen (``os.listdir(p)``,
+#: ``from os import listdir``) werden gleich behandelt.
+_ENUM_METHODEN = ("glob", "rglob", "iterdir")
+_ENUM_FUNKTIONEN = ("listdir", "scandir", "walk", "glob", "iglob")
+#: Module, aus denen eine aufzählende Funktion importiert worden sein kann.
+_ENUM_MODULE = ("os", "os.path", "glob")
+
+
+def _docstring_knoten(baum: ast.Module) -> set[int]:
+    """`id()` aller Konstanten, die Docstring sind — die zählen nicht als Zugriff."""
+    ids: set[int] = set()
+    for knoten in ast.walk(baum):
+        if not isinstance(knoten, ast.Module | ast.ClassDef
+                          | ast.FunctionDef | ast.AsyncFunctionDef):
+            continue
+        erste = knoten.body[0] if knoten.body else None
+        if (isinstance(erste, ast.Expr) and isinstance(erste.value, ast.Constant)
+                and isinstance(erste.value.value, str)):
+            ids.add(id(erste.value))
+    return ids
+
+
+def _code_strings(baum: ast.Module) -> Iterator[tuple[int, str]]:
+    """Alle String-Literale **außerhalb** von Docstrings (Kommentare hat der AST nie)."""
+    docs = _docstring_knoten(baum)
+    for knoten in ast.walk(baum):
+        if (isinstance(knoten, ast.Constant) and isinstance(knoten.value, str)
+                and id(knoten) not in docs):
+            yield knoten.lineno, knoten.value
+
+
+def _zeigt_auf_daten(knoten: ast.AST, namen: set[str]) -> bool:
+    """Zeigt dieser Ausdruck auf ein Datenverzeichnis?
+
+    Erkannt wird ein Pfadbestandteil ``"data"`` (``Path(__file__).parent /
+    "data"``), ein bereits als Datenpfad bekannter Name und ein Attribut wie
+    ``provider.DATA_DIR``. Namen mit ``data`` im Bezeichner zählen mit — genau
+    so heißt der Einstiegspunkt im Produktivcode (``DATA_DIR``).
+    """
+    for teil in ast.walk(knoten):
+        if (isinstance(teil, ast.Constant) and isinstance(teil.value, str)
+                and "data" in teil.value.lower()):
+            return True
+        if isinstance(teil, ast.Name) and (teil.id in namen or "data" in teil.id.lower()):
+            return True
+        if isinstance(teil, ast.Attribute) and "data" in teil.attr.lower():
+            return True
+    return False
+
+
+def _daten_namen(baum: ast.Module) -> set[str]:
+    """Namen, die (auch über mehrere Zuweisungen) auf ein Datenverzeichnis zeigen.
+
+    Deckt die Umbenennung ab, an der ein reiner Textvergleich vorbeiläuft:
+    ``ROOT = DATA_DIR`` bzw. ``ROOT = Path(__file__).parent / "data"`` — danach
+    ist ``ROOT.glob("*.yaml")`` ein Verzeichniszugriff auf die Normdaten.
+    """
+    namen: set[str] = set()
+    geaendert = True
+    while geaendert:                      # Fixpunkt: Ketten von Zuweisungen
+        geaendert = False
+        for knoten in ast.walk(baum):
+            if isinstance(knoten, ast.Assign):
+                ziele, wert = knoten.targets, knoten.value
+            elif isinstance(knoten, ast.AnnAssign) and knoten.value is not None:
+                ziele, wert = [knoten.target], knoten.value
+            else:
+                continue
+            if not _zeigt_auf_daten(wert, namen):
+                continue
+            for ziel in ziele:
+                if isinstance(ziel, ast.Name) and ziel.id not in namen:
+                    namen.add(ziel.id)
+                    geaendert = True
+    return namen
+
+
+def _enum_namen(baum: ast.Module) -> set[str]:
+    """Lokale Namen aufzählender Funktionen, inklusive Import-Aliassen.
+
+    ``from os import listdir`` → ``listdir``; ``from os import listdir as ls``
+    → ``ls``. Ohne diese Zuordnung bliebe der direkt importierte Aufruf
+    unsichtbar, weil er kein Attribut-Zugriff ist.
+    """
+    namen: set[str] = set()
+    for knoten in ast.walk(baum):
+        if isinstance(knoten, ast.ImportFrom) and (knoten.module or "") in _ENUM_MODULE:
+            for alias in knoten.names:
+                if alias.name in _ENUM_FUNKTIONEN:
+                    namen.add(alias.asname or alias.name)
+    return namen
+
+
+def _aufzaehlungen(quelle: str, baum: ast.Module) -> list[tuple[int, str]]:
+    """Aufzählende Zugriffe auf ein Datenverzeichnis — Zeile und Quelltext.
+
+    Drei Formen, alle mit Namensauflösung im Modul:
+
+    * ``DATA_DIR.glob("*.yaml")`` und ``ROOT.iterdir()`` (Pfad-Methode),
+    * ``os.listdir(DATA_DIR)`` (Modul-Attribut),
+    * ``listdir(DATA_DIR)`` nach ``from os import listdir`` (Import-Alias).
+
+    Positions- und **Schlüsselwort-Argumente** werden gleich behandelt
+    (``listdir(path=DATA_DIR)``, ``glob("*.yaml", root_dir=ROOT)``).
+
+    ⚠️ **Grenzen, ausdrücklich:** nicht auflösbar sind Zugriffe über
+    Funktionsgrenzen hinweg (das Verzeichnis wird übergeben und anderswo
+    aufgezählt), Pfade, die ohne erkennbaren ``data``-Bestandteil aus Variablen
+    zusammengesetzt werden, sowie zur Laufzeit gebildete Namen
+    (``getattr``, ``importlib.resources``, f-Strings). Der Wächter ist damit
+    eine **Schranke gegen das Naheliegende**, kein Beweis der Abwesenheit.
+    """
+    daten = _daten_namen(baum)
+    enum_lokal = _enum_namen(baum)
+    treffer: list[tuple[int, str]] = []
+    for knoten in ast.walk(baum):
+        if not isinstance(knoten, ast.Call):
+            continue
+        funktion = knoten.func
+        if isinstance(funktion, ast.Attribute) and (
+                funktion.attr in _ENUM_METHODEN or funktion.attr in _ENUM_FUNKTIONEN):
+            kandidaten = [funktion.value, *knoten.args]      # Empfänger und Argumente
+        elif isinstance(funktion, ast.Name) and (
+                funktion.id in enum_lokal or funktion.id in _ENUM_FUNKTIONEN):
+            kandidaten = list(knoten.args)
+        else:
+            continue
+        # Schlüsselwort-Argumente zählen wie Positionsargumente:
+        # ``listdir(path=DATA_DIR)``, ``glob("*.yaml", root_dir=ROOT)``.
+        kandidaten.extend(keyword.value for keyword in knoten.keywords)
+        if any(_zeigt_auf_daten(k, daten) for k in kandidaten):
+            treffer.append((knoten.lineno,
+                            ast.get_source_segment(quelle, knoten) or "<Aufruf>"))
+    return treffer
 
 
 E07 = _lade("ove_e07_funktionserhalt.yaml")
@@ -170,17 +313,148 @@ def test_rl4_benennt_die_fehlenden_eingaben_mit_adressat() -> None:
 
 # ── Beide Blöcke: keine Aktivierung ──────────────────────────────────────────
 def test_kein_contract_wert_und_kein_konsument() -> None:
-    """Weder E07 noch RL 4 verändern das Regelwerk oder werden irgendwo geladen."""
+    """Weder E07 noch RL 4 verändern das Regelwerk oder werden irgendwo geladen.
+
+    Geprüft wird der **Zugriff**, nicht der Dateiinhalt: der Wächter liest jedes
+    Modul unter `src/` als AST und sieht nur String-Literale, die im **Code**
+    stehen — Ladepfad (`_lade("…yaml")`, Importname) und Dateizugriff
+    (`open(DATA_DIR / "…")`) gleichermaßen. **Docstrings und Kommentare sind
+    ausgenommen**: eine wörtliche Quellenangabe in Prosa ist ein Beleg, kein
+    Verbraucher (zuvor schlug der Substring-Wächter genau daran an —
+    `raumerkennung/breitenprofil.py`, Modul-Docstring).
+
+    Die zweite Hälfte schließt die Lücke, die ein reiner Namensvergleich lässt:
+    wird irgendwo im Produktivcode ein **Datenverzeichnis aufgezählt**
+    (`DATA_DIR.glob(…)`, `os.listdir(DATA_DIR)`, `listdir(DATA_DIR)` nach
+    `from os import listdir`), ließe sich eine Datei ohne Namensnennung laden —
+    dann trägt dieser Wächter nicht mehr und sagt das, statt still grün zu
+    bleiben. Umbenennungen (`ROOT = DATA_DIR`) werden dabei aufgelöst.
+
+    ⚠️ Die Grenzen dieser Auflösung stehen bei `_aufzaehlungen`: über
+    Funktionsgrenzen hinweg, ohne erkennbaren `data`-Bestandteil oder zur
+    Laufzeit gebildet bleibt ein Zugriff unsichtbar.
+    """
     snap = En1838NormProvider().regelwerk_snapshot()
     assert snap.arbeitsplatz_lux.min_lux_absolut is None
     assert snap.flaechen_schwellen.antipanik_min_m2 is None
-    treffer = [
-        p.relative_to(SRC).as_posix()
-        for p in SRC.rglob("*.py")
-        if any(name in p.read_text(encoding="utf-8")
-               for name in ("ove_e07_funktionserhalt", "oib_rl4_fluchtwegbreiten"))
-    ]
-    assert treffer == [], treffer
+
+    zugriffe: list[str] = []
+    aufzaehlungen: list[str] = []
+    for pfad in sorted(SRC.rglob("*.py")):
+        quelle = pfad.read_text(encoding="utf-8")
+        baum = ast.parse(quelle, filename=str(pfad))
+        rel = pfad.relative_to(SRC).as_posix()
+        for zeile, wert in _code_strings(baum):
+            if any(name in wert for name in _BEWACHTE_DATEIEN):
+                zugriffe.append(f"{rel}:{zeile} -> {wert!r}")
+        aufzaehlungen += [f"{rel}:{zeile} -> {text}"
+                          for zeile, text in _aufzaehlungen(quelle, baum)]
+
+    assert zugriffe == [], zugriffe
+    assert aufzaehlungen == [], (
+        "Ein Datenverzeichnis wird aufgezählt — der Namensvergleich oben kann "
+        f"einen Verbraucher dann nicht mehr ausschließen: {aufzaehlungen}"
+    )
+
+
+def test_waechter_erkennt_umbenanntes_verzeichnis_und_direkten_import() -> None:
+    """Zwei Zugriffsformen, die der frühere Textvergleich übersehen hat.
+
+    Geprüft wird der **tatsächlich verwendete** Prüfer `_aufzaehlungen`, nicht
+    eine Nachbildung: `ROOT.glob("*.yaml")` mit `ROOT` auf dem Normdaten-
+    verzeichnis (der Quelltext nennt an der Aufrufstelle kein „data"), und
+    `listdir(DATA_DIR)` nach `from os import listdir` (kein Attribut-Zugriff).
+    """
+    umbenannt = (
+        'from pathlib import Path\n'
+        'ROOT = Path(__file__).parent / "data"\n'
+        'def laden():\n'
+        '    return [p for p in ROOT.glob("*.yaml")]\n'
+    )
+    direkt_importiert = (
+        'from os import listdir\n'
+        'from pathlib import Path\n'
+        'DATA_DIR = Path(__file__).parent / "data"\n'
+        'def laden():\n'
+        '    return listdir(DATA_DIR)\n'
+    )
+    for quelle in (umbenannt, direkt_importiert):
+        treffer = _aufzaehlungen(quelle, ast.parse(quelle))
+        assert treffer, quelle
+
+    # Schlüsselwort-Argumente: dasselbe Verzeichnis, nur benannt übergeben.
+    schluesselwoerter = (
+        'from os import listdir\n'
+        'from os import listdir as ls\n'
+        'from glob import glob\n'
+        'from pathlib import Path\n'
+        'DATA_DIR = Path(__file__).parent / "data"\n'
+        'ROOT = DATA_DIR\n'
+        'def a():\n'
+        '    return listdir(path=DATA_DIR)\n'
+        'def b():\n'
+        '    return ls(path=DATA_DIR)\n'
+        'def c():\n'
+        '    return glob("*.yaml", root_dir=ROOT)\n'
+    )
+    assert len(_aufzaehlungen(schluesselwoerter, ast.parse(schluesselwoerter))) == 3
+
+    # Gegenprobe: dasselbe Schlüsselwort, aber ein fremdes Verzeichnis.
+    fremdes_schluesselwort = (
+        'from glob import glob\n'
+        'from pathlib import Path\n'
+        'ROOT = Path("Projekte")\n'
+        'def plaene():\n'
+        '    return glob("*.dxf", root_dir=ROOT)\n'
+    )
+    assert _aufzaehlungen(fremdes_schluesselwort,
+                          ast.parse(fremdes_schluesselwort)) == []
+
+    # Kette über zwei Zuweisungen — dieselbe Lücke, eine Stufe tiefer.
+    kette = (
+        'from pathlib import Path\n'
+        'DATA_DIR = Path(__file__).parent / "data"\n'
+        'ROOT = DATA_DIR\n'
+        'ORDNER = ROOT\n'
+        'def laden():\n'
+        '    return list(ORDNER.iterdir())\n'
+    )
+    assert _aufzaehlungen(kette, ast.parse(kette))
+
+    # Aufzählung, die nichts mit den Normdaten zu tun hat, bleibt erlaubt.
+    fremd = (
+        'from pathlib import Path\n'
+        'def plaene():\n'
+        '    return list(Path("Projekte").glob("*.dxf"))\n'
+    )
+    assert _aufzaehlungen(fremd, ast.parse(fremd)) == []
+
+    # Prosa bleibt Prosa — auch für diesen Prüfer.
+    prosa = (
+        '"""Lädt nichts; beschreibt nur DATA_DIR.glob(\'*.yaml\')."""\n'
+        '# auch als Kommentar: os.listdir(DATA_DIR)\n'
+        'WERT = 1\n'
+    )
+    assert _aufzaehlungen(prosa, ast.parse(prosa)) == []
+
+
+def test_waechter_sieht_code_aber_keine_prosa(tmp_path: Path) -> None:
+    """Der Wächter unterscheidet Ladepfad von Quellenangabe — beides gezielt geprüft."""
+    prosa = ast.parse(
+        '"""Quelle: oib_rl4_fluchtwegbreiten.yaml, Punkt 2.7.1."""\n'
+        "# auch als Kommentar: oib_rl4_fluchtwegbreiten.yaml\n"
+        "WERT = 1\n"
+    )
+    assert not [w for _, w in _code_strings(prosa)
+                if any(n in w for n in _BEWACHTE_DATEIEN)]
+
+    for quelltext in (
+        '_lade("oib_rl4_fluchtwegbreiten.yaml")',              # Ladepfad
+        'open(DATA_DIR / "ove_e07_funktionserhalt.yaml")',     # Dateizugriff
+    ):
+        baum = ast.parse(quelltext)
+        assert [w for _, w in _code_strings(baum)
+                if any(n in w for n in _BEWACHTE_DATEIEN)], quelltext
 
 
 # ── E05 / E06: Anwendungsbereich und Bezugsnorm binden ───────────────────────
@@ -287,20 +561,57 @@ def test_zwanzig_leuchten_zwei_verschiedene_aussagen() -> None:
 def test_rl4_tuerpruefung_bleibt_bis_zur_semantik_blockiert() -> None:
     """⚠️ Korrektur: `Tuer.breite_mm` taugt HEUTE nicht als Prüfgröße.
 
-    Am Code von `origin/main` geprüft: das Feld trägt mindestens drei
-    Bedeutungen — Nennmaß aus dem Blocknamen (`TUER-80` → 800 mm), ein
-    geometrisch abgeleitetes Maß aus `tuer_zuordnung.py`, und `0.0` für
-    „keine Messung". RL 4 verlangt dagegen die **nutzbare Durchgangslichte als
-    Fertigmaß** (Vorbemerkungen). Ein Vergleich wäre systematisch zu günstig.
-    Der Messwert der Fixtures steht hier nur als Beobachtung, nicht als Freigabe.
+    Am Code von `origin/main` `e79276b` geprüft: das Feld trägt **vier**
+    Messherkünfte — Nennmaß aus dem Blocknamen (`TUER-80` → 800 mm),
+    Schwenkradius, Doppelflügel-Summe und lichte Wandöffnung. RL 4 verlangt
+    dagegen die **nutzbare Durchgangslichte als Fertigmaß** (Vorbemerkungen).
+    Ein Vergleich wäre systematisch zu günstig. Der Messwert der Fixtures steht
+    hier nur als Beobachtung, nicht als Freigabe.
+
+    Geprüft wird der **dokumentierte Bestand** und die **Gültigkeit seiner
+    Herkunftsnamen**: genau vier Einträge, ihre Reihenfolge, und dass jeder Name
+    im Contract-Vokabular `BreiteQuelle` vorkommt. `befunde` zählt
+    **Bedeutungen**, nicht Codestellen — `tuer_zuordnung.py:158` und `:220`
+    setzen dieselbe Bedeutung und stehen deshalb in **einem** Befund.
+
+    ⚠️ **Keine Erzeugerabdeckung.** Dieser Test liest die YAML und den Contract,
+    **nicht** den Erkennungscode: ein fünfter Schreibpfad in `raumerkennung/`
+    macht ihn **nicht** rot. Die Reichweite der Aussage ist der Stand in
+    `geprueft_gegen` — die Gegenprobe am Code bleibt Handarbeit.
     """
     import json
 
     herkunft = RL4["tuerbreite_herkunft"]
     assert herkunft["status"] == "blockiert_bis_semantik_geklaert"
-    assert len(herkunft["befunde"]) == 3
+    assert len(herkunft["befunde"]) == 4
+    assert [b["herkunft"] for b in herkunft["befunde"]] == [
+        "BLOCKNAME",
+        "GEOMETRIE_SCHWENKRADIUS",
+        "GEOMETRIE_SUMME",
+        "GEOMETRIE_OEFFNUNG",
+    ]
+    # Die Namen sind nicht frei gewählt: sie müssen im Contract-Vokabular
+    # `BreiteQuelle` stehen, sonst beschreibt die YAML etwas, das es nicht gibt.
+    # (Das prüft die Gültigkeit der Namen — nicht, ob jeder Erzeuger erfasst ist.)
+    from typing import get_args
+
+    from notbeleuchtung.hauptengine.contracts.raum_modell import BreiteQuelle
+
+    assert {b["herkunft"] for b in herkunft["befunde"]} <= set(get_args(BreiteQuelle))
+    # Jede Herkunft nennt ihre Fundstelle im Erkennungscode — sonst ist der
+    # Befund nicht nachprüfbar.
+    assert all(b["pfad"].split("::")[0].split(":")[0].endswith(".py")
+               for b in herkunft["befunde"])
+    # Der Doppelflügel-Befund darf nicht mit RL 4 Punkt 2.8.1 begründet werden.
+    summe = next(b for b in herkunft["befunde"] if b["herkunft"] == "GEOMETRIE_SUMME")
+    assert "NICHT die Zwei-Tueren-Regel" in summe["was"]
+    assert "NICHT den Erkennungscode" in herkunft["⚠_was_der_test_leistet"]
     assert "UNZULAESSIG" in herkunft["folge"]
-    assert "0.0 bedeutet KEINE MESSUNG" in " ".join(b["was"] for b in herkunft["befunde"])
+    # „nicht gemessen" ist keine Messherkunft und steht deshalb außerhalb.
+    keine = herkunft["keine_messung"]
+    assert "None" in keine["was"] and '"UNBEKANNT"' in keine["was"]
+    assert "0.0" not in keine["was"], "0.0 ist seit Contract 1.4.0 keine gültige Lesart"
+    assert "1.4.0" in keine["⚠_0_0_ist_ueberholt"]
     assert RL4["anwendungsbereich"]["⚠_fertigmass"].strip().startswith('"Alle in dieser')
 
     fixtures = sorted((Path(__file__).parents[1] / "fixtures").glob("raum_modell_*.json"))
@@ -311,6 +622,31 @@ def test_rl4_tuerpruefung_bleibt_bis_zur_semantik_blockiert() -> None:
     # Beobachtung, kein Nachweis: die Werte sind 900/1000/1400 — typische
     # NENNmaße, was den Befund oben stützt.
     assert set(breiten) <= {900.0, 1000.0, 1400.0}, sorted(set(breiten))
+
+
+def test_keine_messung_heisst_none_nicht_null() -> None:
+    """Die YAML-Aussage über „keine Messung" muss zum Contract passen.
+
+    Seit `raum_modell` 1.4.0 ist `Tuer.breite_mm` `float | None`: `None` heißt
+    **nicht gemessen**, `0.0` hieße **gemessen null** und kommt nicht mehr vor.
+    Steht in unserer YAML wieder die alte 0.0-Lesart, prüft RL 4 gegen eine
+    Bedeutung, die es nicht gibt — genau das fängt dieser Test.
+    """
+    from notbeleuchtung.hauptengine.contracts.raum_modell import Tuer
+
+    ohne_messung = Tuer(id="t1", xy_mm=(0.0, 0.0))
+    assert ohne_messung.breite_mm is None
+    assert ohne_messung.breite_quelle == "UNBEKANNT"
+
+    herkunft = RL4["tuerbreite_herkunft"]
+    fragen = herkunft["vor_jeder_pruefung_zu_klaeren"]
+    assert [f["stand"] for f in fragen] == ["beantwortet", "offen", "beantwortet"]
+    # Die offene Frage ist die Umrechnung zur Durchgangslichte — und nur sie
+    # hält den Status.
+    offen = next(f for f in fragen if f["stand"] == "offen")
+    assert "Durchgangslichte" in offen["frage"]
+    assert herkunft["status"] == "blockiert_bis_semantik_geklaert"
+    assert "VERGLEICHBARKEIT" in herkunft["⚠_status_bleibt"]
 
 
 def test_drei_breitenbegriffe_bleiben_getrennt() -> None:

@@ -91,7 +91,18 @@ Konsum über `getattr`, kein paketübergreifender Import.
 ```
 
 Rein additiv; `raum_modell`-`CONTRACT_VERSION` **1.1.0 → 1.2.0**, Schema-Regen,
-Fixture-Nachzug. Die Erkennung (Wandabstand quer zur Wegachse) kann später
+Fixture-Nachzug.
+
+> ⚠️ **Nachtrag 2026-09-11 — die Sprungangabe ist ein Stand, kein Ziel.**
+> „1.1.0 → 1.2.0" war der Ist-Stand beim Verfassen. Gemessen an `origin/main`
+> **`e79276b`** steht `CONTRACT_VERSION` heute auf **1.4.0**
+> (`hauptengine/contracts/raum_modell.py:18`); 1.2.0, 1.3.0 und 1.4.0 sind
+> inzwischen ohne dieses Feld vergeben worden. **Hier wird kein neues Ziel
+> festgeschrieben** — insbesondere nicht 1.5.0: Die Zielversion ergibt sich aus
+> dem dann geltenden Stand und der Art der Änderung und wird **mit dem Antrag**
+> in der 3-Owner-Runde bestimmt, nicht vorab in diesem Dokument. Additiv bliebe
+> es ein Minor-Schritt; ob der Schritt additiv **ist**, entscheidet die dann
+> vorgeschlagene Feldform. Die Erkennung (Wandabstand quer zur Wegachse) kann später
 folgen — bis dahin bleibt das Feld `None`, was ehrlich ist.
 
 ### 4b. Konsumption — @mvpo3
