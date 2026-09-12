@@ -47,22 +47,15 @@ from notbeleuchtung.hauptengine.contracts import (
 )
 
 from .bausteine import AGV_SV_F as _AGV_SV_F
+from .bausteine import TOILETTE_EINDEUTIG as _TOILETTEN_TYPEN
 from .bausteine import building_assigner as _building_assigner
 from .bausteine import referenz_anforderung as _referenz
-from .flaechen_strategy import _WC_TYPEN
 from .geometry import find_center_visual
 from .kontext import PlatzierungsKontext
 
-#: Raumtypen, die EINDEUTIG eine Toilette im Sinne von §4.3.8 sind.
-_TOILETTEN_TYPEN = {"WC", "TOILETTE"}
-
-#: Sanitär-Raumtypen, die eine Toilettennutzung WEDER belegen NOCH ausschließen.
-#: Ein barrierefreies Bad ist keine barrierefreie Toilette — hier wird die
-#: Norm-Pflicht deshalb nicht behauptet. Die Fälle sind nicht verloren: Prüfregel
-#: 12c im Prüfbericht macht sie sichtbar. Abgeleitet aus der WC/Sanitär-Liste des
-#: Flächen-Triggers (`flaechen_strategy._WC_TYPEN`) — dieselbe Vokabular-Quelle,
-#: aber fachlich getrennt ausgewertet.
-_SANITAER_MEHRDEUTIG = (_WC_TYPEN | {"TOILETTE"}) - _TOILETTEN_TYPEN
+# Toiletten-Scope §4.3.8 kommt aus der EINEN Quelle `bausteine.TOILETTE_EINDEUTIG`
+# (W10/F05, geteilt mit validierung); der mehrdeutige Sanitär-Rest liegt dort als
+# `TOILETTE_MEHRDEUTIG` und wird von Prüfregel 12c ausgewertet.
 
 #: LB-Schlüssel, der ein Rettungszeichen an Niveauänderungen anfordert
 #: (`LBVorgabe.rz_stellen`, Literal `RzStelle`).
@@ -149,7 +142,7 @@ def plan_flag_raeume(raum: RaumModell, norm: NormProvider) -> list[Platzierung]:
       für Menschen mit Behinderung", nicht „barrierefreie Räume" und nicht
       „Sanitärräume". Drei Fälle:
       – **eindeutig** (WC, TOILETTE) → Antipanik-Leuchte;
-      – **mehrdeutig** (`_SANITAER_MEHRDEUTIG`: BAD, DUSCHE, NASSRAUM, SANITÄR) →
+      – **mehrdeutig** (`bausteine.TOILETTE_MEHRDEUTIG`: BAD, DUSCHE, NASSRAUM, SANITÄR) →
         **keine** automatische Norm-Pflicht; Prüfregel 12c meldet den Fall;
       – **außerhalb** (z.B. ZIMMER) → die Regel greift nicht.
       Andere Anforderungen an den Raum (Raumtyp-Regel, Fluchtweg, Flächen-Trigger)

@@ -4,6 +4,294 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-09-12 ABEND) — Owner-Fachdoku eingebaut (S0–S3), PR #156 offen. HIER WEITER.
+
+**Branch `leonis/demo-l-gebaeude` GEPUSHT, PR #156 OFFEN (3-Owner wegen norm_regelwerk 1.4.0).**
+Owner lieferte „Notbeleuchtung zeichnen lernen.pdf" (v2, 12 S., AUTORITATIV; Bilder maßgeblich)
++ korrigierte Referenz-DXF (`nachgezeichnet_out/v5/*_korrigiert.dxf` — Lehrdateien: eigene
+Blockdefs, „Vorher"-Kopie um −46 324 m x-verschoben, Ground truth an Originalkoordinaten).
+Digest: `knowledge/extracted/NOTBELEUCHTUNG_ZEICHNEN_LERNEN.md` (R-A…R-K).
+
+**Gebaut (je 1 Commit):**
+1. **S0** `11d8bca` Digest+INDEX.
+2. **S1** `3d3e9ce` **R-B: Tür-RZ-Rotation = Piktogramm INS Rauminnere** —
+   `bausteine.rotation_piktogramm_in_raum` (= rotation_zur_tuer(−dx,−dy), kalibriert am
+   Ground truth: Nebenräume 0°/Hauseingang 0°/Müllraum-Südtür 180°). Alle Tür-RZ-Sites
+   umgestellt (fachpraxis Türleuchte/aussen_tuer_rz/R4, anker, communal, gang-Fallback);
+   R8/STGH bewusst NICHT (Laufrichtungs-Naht). 6 Tests nachgezogen.
+3. **S2** `5fae5f2` **R-C: Tür-RZ raumseitig** — RZ_INS_RAUM_MM (150) nach bausteine,
+   Anker-/communal-Exit-RZ versetzen jetzt auch; 4og-Golden 1 Position nachgezogen
+   (exakt 150 mm). + `b1317f2`/Nachzüge Lint.
+4. **S3** `8359354` **R-F: Sichtkette** — neues `sichtkette.kette_ausduennen` (Nachpass:
+   redundante Gang-RZ fallen, wenn jeder Fluchtweg-Punkt [Türen+Ausgänge+Segment-Sampling]
+   ≥1 RZ sieht und jedes Korridor-RZ weiterführt; Sicht = l=z·h aus NormProvider + Strahl
+   bleibt in GANG-Polygonen). 12-m-Arm-Gap → Erkennungsweite (Fallback 12 m). Wohnbau-EG-
+   Band: 1×links-Verlaufs-RZ fällt begründet. Schutz: Exit-/Kreuzungs-/Tür-RZ.
+5. **S2-Nachzug** (Snap): Tür-nahe RZ (≤500 mm) vom Mittellinien-Snap ausgenommen —
+   der R1-Snap zog das Hauseingang-RZ auf die Bestandslinie AUSSERHALB (v6-Befund).
+6. **Außen-SL-Türachse-Fix** `c61dd55` (vor der Fachdoku): `_wand_normale`.
+
+**Output:** `nachgezeichnet_out/v7/` (EG+1OG A0-PDF, %%EOF ok). v7-Abgleich mit KORR:
+Nebenraum-Tür-RZ-Rotationen EXAKT Ground truth (180→0) ✓ · Hauseingang-RZ bleibt an der
+Tür ✓ · Suite 1191+ grün, ruff clean, nur begründete Band-/Golden-Shifts.
+
+**OFFEN / Resume:**
+- **Hauseingang-RZ-Rotation** v7 zeigt 180 statt 0 (KORR): ein Nachpass dreht zurück
+  (Kandidaten: R4-Reihenfolge vs. Versatz, communal-Zweig). Tracen + fixen (klein).
+- **S4 Aufheller=Lichtberechnung (R-J):** Ground truth EG 5→1 Gang-Aufheller; unsere
+  `verdichte_fluchtweg` ist konservativer (MF 0,80 aktiv, RZ-Leuchten zählen nicht als
+  Lichtquelle, LDT-Beitrag prüfen). = KALIBRIER-Slice, nicht raten.
+- **S5 Außen-Dreifall (R-E):** Überdachung→Antipanik mittig auf RZ-Achse · ohne+einseitig→
+  Wand nutzbare Seite · ohne+beidseitig→KEINE. Braucht Überdachungs-Polygon (Selman Track C;
+  `scripts/plan_pruefen.py` hat schon eine Überdachungs-Analyse als Vorlage!) + Ersetzt
+  1-m-Regel. Sackgassen-Seite: kein Automatismus (Owner), Parameter/Review.
+- **S3 wirkt am Elektroplan EG noch nicht** (Gang-RZ 7 unverändert): Gang-RZ liegen
+  außerhalb des zackigen raum_13-Polygons → alles „geschützt". Hängt an Selman-Naht (b)
+  (raum_13-Zacken) ODER Puffer-Toleranz im point_in_polygon-Check.
+- **1OG-KORR trägt Altstand** (Tür-RZ rot 180, wo Regel 0 sagt): Owner-Frage gestellt,
+  R-B gilt ausnahmslos → Regel implementiert, 1OG-Referenz nicht nachgezogen.
+- PR #156 wartet auf Enis+Selman (norm_regelwerk 1.4.0). #154 approved (Leonis).
+- Rest vom 11.09. unten unverändert (Müllraum-Südtür=Selman (a), Wissensabgleich-Punkte).
+
+---
+
+## STAND (2026-09-11 ABEND) — Elektroplan DE nachgezeichnet + 8 Owner-Regeln (R1–R8). HIER WEITER.
+
+**Branch `leonis/demo-l-gebaeude`, 1191 grün, ruff clean, NICHTS gepusht.** 3 neue Commits:
+
+1. **`07ce756` Nachzeichnen-Runner** `scripts/demo/nachzeichnen_elektroplan.py` — Owner-Auftrag
+   „Projekt bestmöglich nachzeichnen + rohe Hauptengine": Selman-Erkennung als Basis, NUR Lücken
+   mit belegten Plan-Fakten gefüllt (EINGANG-Windfang→GANG · NIEDERSP.→TECHNIK · STGH→STIEGENHAUS
+   +Modell · **echte Ausgänge**: EG `final_exit` an der Fassadentür/WET-Block, 1OG `stair_exit`
+   an der Stiege · EG-Flucht-Stub Gang→Eingang · Fahrradraum communal). Dann roh
+   `pipeline._run_mit_quelle`. **Drei gelöste Fallen:** (a) **`pdf_quelle=True` + Modelspace-
+   Sibling ist der A0-Blatt-Weg** — ohne das liefert `dxf_zu_pdf` aufs Layout-DXF nur 305×133 mm
+   ohne Blatt (ezdxf rastert Paperspace nicht; SO erklärt sich der dünne Elektroplan-Output vom
+   10.09.!); (b) `_clip_unterlage` — Quellplan trägt Entities km-weit draußen → Blatt-Fit
+   platzte (Anker-Punkt je Entity; fast-bbox liefert bei INSERTs oft nichts); (c) AutoCAD-Lock
+   auf v1-Output → Versions-Ordner (v1…v4).
+2. **`f657146` R1–R4** (AutoCAD-Diff Owner-Korrektur Runde 1): **R1** Gang-Notleuchten auf die
+   **Linie der Bestands-Allgemeinbeleuchtung** (Spot-Reihe der Unterlage; neues Kontext-Feld
+   `PlatzierungsKontext.bestand_leuchten_mm`, `place(bestand_leuchten_mm=…)`, Pipeline reicht
+   optional durch, Fakes unberührt) · **R2** `fachpraxis.aussen_tuer_rz`: communal-Raum+AUSSEN-Tür
+   = Notausgang-RZ §4.1.2g (Müllraum-Hoftür; greift auch Mollgasse → **E2E-Band RZ 30→34**
+   begründet nachgezogen) · **R3** Türleuchten-Regel + communal ABSTELLRAUM (Fahrradraum) ·
+   **R4** `pfeil_durch_hauseingang` (RZ-Pfeil = Fluchtrichtung zum Ausgang, nie Aufschlag).
+3. **`05b3ce5` R5–R8** (Runde 2, **rote Klartext-Notizen im Korrektur-DXF** — ACI-rot filtern!):
+   **R5** Türleuchten-Regel GENERALISIERT = jeder communal Nebenraum (Spielraum/Hausbetreuung),
+   Ausnahmen `_TUERLEUCHTE_KEIN_COMMUNAL` (VORRAUM drin — Erkennung flaggt PRIVATE Vorräume
+   communal!) · **R6** `mittellinie_snap._laengs_ausweichen`: nie AUF einem Bestands-Spot
+   („mitten in der Lampe"; <800 mm → Spot-Lückenmitte). **R1 ohne R6 war die EG-
+   „Verschlechterung"** · **R7** `entferne_wohnungs_vorraum_rz` („RZ NICHT in der Wohnung":
+   kleiner Stiegen-Vorraum <6 m², übrige Türen privat) · **R8** `stiegenhaus_rz_nachpass`
+   (RZ am stair_exit INS STGH an die Wand, Pfeil Richtung Stiegen-Zentrum = Abstieg;
+   Approximation). **Golden `platzierung_4og.json` R8-nachgezogen** (stgh_a-Exit-RZ
+   −71743/34491 → −72532.95/34144.15, unten/270).
+
+**Output:** `Projektbeispiele-demo-Platzierungslogik\nachgezeichnet_out\v4\` (EG/1OG A0-1:50-
+Blatt-PDF + Lichtberechnung + DXF, %%EOF geprüft). 1OG Lux **ERFÜLLT** (0,94 lx); EG 1/2
+(raum_13-Zacken, s.u.). v1 = Owner-Korrektur Runde 1, v3-1OG = Runde 2 (als Referenz behalten).
+Diff-Werkzeuge: `scratchpad/elektroplan_nachzeichnen/diff_korrektur*.py` (SIBEL-Symbole matchen
++ ROTE Texte extrahieren).
+
+**OFFEN / Resume 2026-09-12:**
+- **Push/PR** weiter ausstehend (Owner-GO) — jetzt 3 Commits mehr auf dem Branch.
+- **Außen-SL-Türachse** (Rest-Delta Runde 1, dem Owner angeboten): Außenleuchte vor dem Eingang
+  sitzt x=2875300 statt Türachse 2876126 (+830 mm) — Normalen-Ableitung in `aussen_strategy`.
+- **Selman-Nähte NEU:** (a) Müllraum-Südtür (140er) kommt als `tuer_21` mit von==nach==raum_12
+  → nicht als AUSSEN-Tür erkennbar; R2 setzt an der erkannten Ost-Öffnung statt Owner-Südtür;
+  (b) EG-Lux raum_13 Emin 0,03 lx = Polygon-Zacken (Mollgasse-Klasse); (c) **Stiegenlauf-
+  Geometrie** fehlt im Contract → R8-Pfeilrichtung nur Approximation; (d) private Wohnungs-
+  Vorräume kommen mit communal=True/fluchtweg=True aus der Erkennung (raum_1/raum_2/raum_5) —
+  R7 ist der Engine-Workaround.
+- Alles Weitere (Wissensabgleich-PR, F11/verkehr_scope, Brandabschnitt-Slice, Slice-3b,
+  Tool-Sichtung) im Stand vom 10.09. unten — unverändert offen.
+
+---
+
+## STAND (2026-09-10 SPÄTABEND) — Branch `leonis/demo-l-gebaeude` (basiert auf wissensabgleich→main), SYNC + Owner-Regeln + Demo.
+
+**AKTIVER Branch = `leonis/demo-l-gebaeude`.** 1173 grün, ruff clean, **NICHTS gepusht.**
+Enthält den ganzen Wissensabgleich (F01–F14 minus F11) + main-Sync + heutige Owner-Arbeit.
+
+**Was heute passierte (chronologisch):**
+1. **Wissensabgleich Block 2+3 gepusht** auf `leonis/wissensabgleich-engine` (F07/F08/F09/F11/F13/F14),
+   PR bewusst OFFEN gelassen für Enis/Selman-Review (Owner-Wunsch).
+2. **Demo-Branch `leonis/demo-l-gebaeude`** (vom wissensabgleich-HEAD): synthetisches L-Gebäude aus
+   `Four-story-Apartment.dxf` gebaut (`scripts/demo/build_l_gebaeude.py` Generator + `run_demo.py` +
+   `demo_report.py`). Artefakte in `Projektbeispiele-demo-Platzierungslogik/demo/` (NICHT im Repo).
+3. **Blatt-Härtung** (`aaf5eba`, `dxf_renderer._baue_blatt_layout`): Fit fasst ALLE Inhalte
+   (Symbole vor Blatt gezeichnet + akkurate Bbox + Ausreißer-Cap auf größter Achse + 12% Rand) →
+   kein Plan-Teil ragt aus dem Fenster. **Owner-Regel: Pläne IMMER PDF, nie PNG** (Memory).
+4. **SYNC von origin/main** (59 Commits: Selman raumerkennung + `Tuer.breite_mm 0.0→None` Contract
+   **raum_modell 1.4.0**; Enis normwissen; F2 render). 1 Merge-Konflikt (anker_strategy, meine Lane)
+   gelöst = mains Türwand-Richtung + mein F03-Helper. `merge 70b2575`.
+5. **F11 ZURÜCKGENOMMEN** (`77006d7`, Owner-Entscheid): Sync brachte Enis' NEUE Guard-Tests
+   (`test_astv_arbeitsstaetten`, `test_quellenblock_e07_rl4`: `flaechen_schwellen is None`) → meine
+   F11-Füllung (60/8) kollidierte → revertet. `flaechen_schwellen` wieder leer, Enis-Guards grün.
+6. **4 Owner-Korrektur-Regeln** aus AutoCAD-Diff der korrigierten Demo-Pläne (`428fe82`):
+   **A** `mittellinie_snap.py` (RZ/Aufheller im Gang auf Bbox-Kurzachsen-Mitte, Tür-RZ ausgenommen) ·
+   **B** Leader-Beschriftung (`_draw_nodeid_labels`: LWPOLYLINE Symbol→Label) ·
+   **C** `_mittel_arm_rz` (langer Gang-Arm > 12 m Lücke → Zwischen-RZ) · **D** Tür-RZ ~150 mm ins
+   Raum-Innere (`fachpraxis`). test_fachpraxis nachgezogen.
+7. **Unterlage-Fix** (`17e08da`): bei Original-DXF als `unterlage_dxf` zeichnet die Engine keine
+   eigenen Räume/Türen mehr (Owner: „keine neuen Türen") — nur Unterlage + Fluchtweg + Symbole + Blatt.
+8. **Neues Projekt getestet:** `EG/1OG_Elektroplan_DE_NEU.dxf` (in P4). Erkennung typt 16/12 Räume
+   korrekt (02-TWA-Wände greifen!), ABER **0 Gebäude-Ausgänge** (AUSSEN-Türen = Balkone) + Gang
+   nicht als Fluchtziel → dünn. Enrichment (`run_projekt_neu.py`: Ausgänge an Gang-Enden) → voller
+   Plan. Output `Projektbeispiele-demo-Platzierungslogik/elektroplan_out/`.
+9. **Board-Notiz** (`7286f04`): Slice-3b (trainierter Dialekt-Detektor) Review für Selman in
+   `docs/COORDINATION.md` — Scope-Trennung, Skalen-Detekt, `confidence` durch die Naht.
+
+**OFFEN / Resume (Owner-GO nötig):**
+- **Push/PR** von `leonis/demo-l-gebaeude` (nichts gepusht). Enthält main-Sync + F11-Revert + Owner-Regeln.
+- **Selman-Nähte** (Board-Notiz gemacht, seine Lane): (a) Slice-3b-Detektor-Design; (b) **Ausgangs-/
+  Korridor-Ableitung auf `02-*-L04`-Dialekt** (Elektroplan → keine Gebäude-Ausgänge erkannt).
+- **Brandabschnitt-Slice** (3-Owner, nur Wissen da, nicht gebaut): OVE E 8101 §560.9 = **≥2 Kreise je
+  Brandabschnitt, ≤20 Leuchten/Kreis, Stiegenhaus eigener Strang**. `circuit_zuordnung` kennt heute
+  KEINE Brandabschnitte (`din_brandabschnitte`-Layer nicht erkannt/konsumiert). Selman erkennt →
+  RaumModell-Feld · Enis Schwellen · ich konsumiere. Quellen: PLATZIERUNGS_KONZEPTE.md:200,
+  Bildlehren_ONL_Zumtobel.md:37-42.
+- **`confidence`/`rolle`-Naht** = Contract-Frage (3-Owner) für den Detektor.
+
+**Tool-Sichtung (Owner brachte 3 GitHub-Repos, nur bewertet, nichts integriert):**
+- **`pascalorg/editor`** = **anschauen wert** — 3D-Gebäude-Editor, **MIT**, agent-native (**MCP**),
+  23k⭐. Plausibles RIVOPLAN-**Front-End/Viewer** (umhüllt unsere Engine, ersetzt sie nicht). ABER:
+  kein DXF/IFC-Interop (eigenes SQLite-3D-Modell → Brücke bauen), 3D-BIM-Scope evtl. > Bedarf,
+  TS-Stack neben Python-Engine. Offen: Pascals MCP-API prüfen + kann man ohne DXF-Import ein Gebäude
+  reinbekommen → dann „Pascal als Hülle + Engine als MCP-Dienst" real baubar.
+- **`kevancress/MeasureIt_ARCH`** = **verworfen** — Blender-Addon (`bpy`), **GPL** (kommerziell-Killer),
+  liest keine externe DXF (exportiert nur). Ideen zu Leader/Bemaßung ja, Code/Integration nein.
+- **`0mondi/AutoCAD-…`** = **irrelevant** — nur DWG-Samples, non-commercial, Maschinenbau-lastig.
+
+---
+
+## STAND (2026-09-10) — MULTI-SLICE Wissens-/Normabgleich, Phase 3 LÄUFT (Branch `leonis/wissensabgleich-engine`)
+
+**AKTIVE AUFGABE. Hier weitermachen.** Owner-Task: Wissens-/Normabgleich + Verbesserung
+Platzierungslogik & Lichtberechnung. Multi-Phasen mit STOP-Gates. Branch
+`leonis/wissensabgleich-engine`, basiert auf main `fd65839`. **Noch NICHTS gepusht.**
+
+**Bindende Regeln (Owner):** Scope FIX_SRC/FIX_YAML/FIX_CONTRACTS/FIX_FIXTURES = JA.
+Contract-Touch → `contract_version`-Bump + `scripts/gen_schema.py` + Protokoll in
+`docs/audit/HANDOFF_B_ENIS.md` (Protokoll, KEINE Freigabe-Anfrage). Je Fix: 3–8 Z. Pseudocode +
+Dateiliste VOR Code · ein Fix = ein Commit (em-dash, Fix-ID im Betreff) · ein Test mit EXAKTER
+Assertion (keine Toleranz) · neue Regeln über NormProvider-Lookup, nicht als Konstante · nach
+jedem Fix `pytest -q` + `ruff check .` grün, sonst Fix zurücknehmen statt Test anpassen.
+**STOP-Gates nur drei:** nach Phase 0 · nach Phase 2 (beide passiert) · **vor Push/Merge** (da
+stehe ich bald). Dazwischen durchziehen. **Push/PR/Merge nur auf explizites Owner-GO.**
+
+**Noch bindende Prompt-Regeln (v.a. Block 3):**
+- **Entscheidungs-Hierarchie:** LB-explizit → Referenz-Praxis → EN-1838/ÖNorm-Default → OVE-Verbote
+  (Hard Stop). LB übersteuert Norm-Default. Audit-Trail: `norm_quelle`/`lb_quelle`.
+- **Geltungs-Regel (je Befund GENAU EIN Tag):** `[AT-verbindlich]` (OVE E 8101:2025 · ÖNORM EN 1838) /
+  `[AT-Referenzpraxis]` / `[DE-only]`. **Ohne Tag ist der Befund ungültig.** DE-only wird NIE Default,
+  nur Referenz-Praxis-Fallback (z.B. F11 60/8 m², F13, F14).
+- **Beleg-Regel:** jeder Befund/Fix braucht `datei.py:zeile`, `Plan X, S.n` oder Regel-ID; sonst in
+  Abschnitt „Unbelegt". Bei Fremdmaterial P1 zitieren, NICHT ins Repo kopieren.
+- **Inputs:** P1 = `"DIN-Notbeleuchtungspläne(Beispiele)"` (Fremd, DIN/DE — nur lesen/zitieren; Pfade
+  mit Klammern+Umlauten in der Shell QUOTEN). P2 = `knowledge/`. P3 = Repo (main-Stand).
+- **Am STOP liefern:** Commit-Liste + Sichtprüfungs-Abweichungen (`docs/audit/07_sichtpruefung.md`).
+
+**Audit liegt in `docs/audit/`** (versioniert, Commit `1a358d3`): `REPORT.md`, `FIX_PLAN.md`,
+`01_plan_forensik/02_wissens_coverage/03_engine_ist/05_widersprueche/06_naht_owner_matrix.md`.
+`FIX_PLAN.md` = die Fix-Liste F01–F18 + mein Vote. **Zugesagt: Block 1+2+3 (F01–F14). Block 4
+(F15–F18) = Handoff, NICHT bauen.**
+
+**COMMITS auf dem Branch (git log):**
+- `238d0d1` F04 — Redundanz-Reichweite aus `norm.erkennungsweite_m` statt Konstante (W08)
+- `9c277a3` F03 — Pfeil-Rotation `bausteine.rotation_zur_tuer` (4× Dup → 1) (W16)
+- `0c37b90` F01 — Wartungsfaktor im Lux-Nachweis-Bericht aus EINER Quelle, 0,80 nicht hart (W09)
+- `cec7d05` F02 — Wartungsfaktor `lux.wartungsfaktor_aus_norm` (5× getattr → 1 Helper) (W09)
+- `72662f5` **W-LIB** (Extra-Fund) — `symbols/library.py` Normalisierungs-Cache per Doc-Objekt
+  (`WeakKeyDictionary`) statt `id(doc)`. **Root Cause eines Ordering-Flakes** (render/test_pfeilrichtung
+  kippte je nach Suite-Ordering) **+ echter Batch-Render-Bug** (id()-Reuse nach GC → un-zentrierte
+  Blöcke). Ohne den Fix ist der Vollauf ordnungsabhängig rot. Regression: `tests/render/test_library_cache.py`.
+- `23e3918` F05 — Toiletten-Scope §4.3.8 aus EINER Quelle `bausteine.TOILETTE_EINDEUTIG/_MEHRDEUTIG`
+  (vorher 3× hart in sonderstellen_strategy + validierung) (W10)
+- `db8cac3` docs — dieser Handoff-STAND
+- `859bfdc` F06 — getrennter Kreis Warnung→**fehler** (Hard-Stop, W13). **BLOCK 1 KOMPLETT.**
+
+**Voller `pytest` zuletzt GRÜN: 1032 passed, 36 skipped.** ruff clean (getrackt). Schema in sync.
+
+### UPDATE 2026-09-10 SPÄT — Block 2 + 3 DURCH, GEPUSHT (Owner-GO)
+**Alle zugesagten Fixes gebaut + auf GitHub gepusht** (Branch `leonis/wissensabgleich-engine`). Neu:
+- `b49e968` **F08** — erkennungsweite_m Prod-Pfad belegt, sichtlinie test-only (doc, W17)
+- `0d06660` **F07** — ≥2-Leuchten-Redundanz garantiert (`deckung.garantiere_redundanz`, Aufruf in
+  `place()` vor circuit_zuordnung) + validierung Regel 4b warnung→**fehler** (W19). Segment-genau/No-op.
+- `8e60044` **F09** — Wartungsfaktor innen 0,80/außen 0,57 aus Norm-YAML (W07). **Contract 1.2.0→1.3.0.**
+- `f33ec9b` **F11** — Antipanik-Schwellen 60/8 m² gefüllt (Owner-Entscheid; Enis' 2 Guard-Tests
+  nachgezogen). OVE-scope-gated + fail-closed → inert ohne OIB-Scope.
+- `1390c06` **F14** — Layer grün=RZ/gelb=SL Regression-Test (Default festgenagelt).
+- `7320e1b` **F13** — RZ-Montagehöhen-10-m-Warnung (weich, W01). **Contract 1.3.0→1.4.0.**
+- `b09c66e` docs — `07_sichtpruefung.md` (Verify + Sichtprüfung).
+
+**Kein Golden-Shift** (alle Fixes auf Fixtures inert). Contract/YAML-Protokoll: `docs/audit/HANDOFF_B_ENIS.md`.
+
+**OFFEN / Resume-Punkt:**
+1. **PR noch NICHT angelegt** (nur Branch gepusht). Die 2 additiven Contract-Bumps (1.3.0/1.4.0)
+   berühren `hauptengine/contracts` = **3-Owner-CODEOWNERS** → Enis+Selman-Kenntnisnahme bei PR/Merge.
+2. **F11 gemeinsam ansehen** (Owner-Wunsch): soll `verkehr_scope` je `anwendbar` werden? Heute nie →
+   60-m²-Antipanik faktisch weiter inert. Scope-Gate-Design = `BLOCKER2_FLAECHEN_SCOPE.md` (3-Owner).
+3. **NICHT gebaut (Handoff):** F12 (Randbereich seitenselektiv — kollidiert mit Enis' umlaufender
+   §4.3.1-Lesart, Norm-Abstimmung) · F13-Podest-Höhe (Podest-Contract ohne Elevation → Selman/3-Owner) ·
+   F10 (Blendung, braucht Enis-cd) · F15–F18 (Block 4, 3-Owner).
+
+**FALLEN / gelernt in dieser Session:**
+- **Voller `pytest` ~8 min** — nur an Verhaltens-Fixes (F07/F09) + einmal in Phase 4 nötig, sonst
+  targeted. Läuft via `run_in_background`, Notification abwarten (nicht pollen).
+- **`git commit` Heredoc scheiterte in PS** → Message in scratchpad-Datei + `git commit -F`.
+- **NIE `git add -A`** (zieht scratchpad/.bak/Zips rein). Nur die Fix-Dateien einzeln stagen
+  (Working-Tree hat viele untracked Zips/.bak/scratchpad — die bleiben draußen). `docs/audit/`
+  ist jetzt versioniert (`1a358d3`).
+- **W-LIB-Lektion:** Wenn ein Render-/Symbol-Test ordnungsabhängig kippt, Verdacht `id()`-gekeyter
+  Cache in `symbols/library.py` (jetzt gefixt). platzierung+render-Kombo war der schnelle Repro.
+- **Naht-Grenzen (aus Audit):** `sonderstellen.raumtyp_scope`/YAML-Vokabular liegt am konkreten
+  `OveZusatzKatalog`, NICHT am 4-Methoden-Port `NormProvider` (ports.py:43). Consumer an die YAML zu
+  hängen braucht neue Port-Methode = contracts/** = 3-Owner → F15/F16-Handoff. `norm_quelle`-Praxis-
+  Präfixe brechen die Naht-Invariante → decision_source-Contract = F15.
+
+## STAND (2026-09-08, Session-Ende F1 SPÄT) — Master-Plan durch, Skills/Tools, #129-Salvage, Demo
+
+**origin/main ≈ `97a5f3a`.** Kompletter Master-Plan (plan-Datei `.claude/plans/deep-strolling-naur.md`)
+abgearbeitet + Tooling. Alles gemergt außer den Vorschlägen unten. Suite grün, ruff clean.
+
+**Heute auf main gebracht:**
+- **6-Branch-Stack + Rotations-Fork** gemergt (#132 ausgabeluecken · #133 slice-4.1 · **#134
+  slice-3.1 = Fork-Sieger, orientation.py Ein-Rahmen kanonisch** · #135 slice-2.3 fachpraxis ·
+  #136 slice-3.4 layout · #137 tuerleuchte). „ZIP-Landmine" war Phantom (Rebase zog main's ZIP).
+- **3 Konsum-Slices:** #138 `lux.py` Extents-Cap (8 Mio) · #139 `verbotszonen_nachpass` (S1) ·
+  #140 `flaechen_strategy` WOHNUNG_PRIVAT-Skip (S2).
+- **Türleuchten-KORREKTUR #141** (Owner): TECHNIK/MUELL/KINDERWAGEN → **RZ an der Tür** (Pfeil
+  zur Tür) statt SL; mittige Zusatzleuchte NUR wenn groß/L-Form (Aufheller <60 m² / Antipanik ≥60).
+- **Skills (Projekt, `.claude/skills/`, via Sync bei allen 3):** `plan-verify` (generieren+prüfen),
+  `sync-review` (Fremd-PR-Review), `wissen` (Second-Brain, Norm nur zitieren nie umschreiben).
+  **Tools:** `scripts/dxf_healthcheck.py` (Eingabe-DXF-Gesundheit, kapselt 4OG-Diagnose),
+  `scripts/wissen_index.py` (+`knowledge/INDEX.md`), `scripts/norm_coverage.py` (Wissens-Konsum
+  je Plan: norm/praxis/unbegruendet). Alle mit Tests, ruff clean.
+- **Enis L1/L3** 2× Windows-gegengeprüft (`19c987d`→Issue #131; **`0b66485` rebased → „zur
+  Übernahme empfohlen"**, 101 passed, T1/L2 separat).
+
+**OFFEN für nächste Session (nichts blockierter Leonis-Code):**
+1. **#146 = Salvage von Selmans #129** (`selman/grundstuecksgrenze-hof-neu`): aktuelles main +
+   Contract v1.3.0 (`Tuer.quelle`/`untypisiert_grund`) + Selmans raumerkennung, **Rotations-Teil
+   gedroppt** (durch 3.1 ersetzt), Ruff gefixt. 1044+7 grün, schema in sync. **Contract=3-Owner →
+   Enis+Selman-Approval, nicht einseitig mergen.** Kommentar auf #129 zeigt auf #146; Selman muss
+   raumerkennung fachlich abnehmen + ggf. #129 schließen.
+2. **Baufeld 4OG** = Koordinaten-Versatz (61 % Entities bei y≈347.535 km, `dxf_healthcheck`
+   flaggt NO-GO). Fix = User-AutoCAD-`MOVE`/`PURGE` ODER Selman `rest_komponenten` ausreißer-robust
+   (`_geschoss_extents`-Muster). 7/8 Geschosse sauber + renderbar (`scripts/projekt_batch_worker.py`
+   im OWNER-Terminal via `!` — Hintergrund-Renders werden hier gekillt).
+3. **Demo-/Grundriss-Lektion** (Owner-Feedback, Memory `demo-grundriss-grenze.md`): synthetische
+   Grundrisse selbst zeichnen ist schwach (Stiegenhaus MUSS an den Gang = Fluchtziel!). Für echte
+   Pläne realen Architektur-DXF nutzen. **Lichtberechnung = `render/lux_nachweis_bericht.
+   schreibe_bericht`** (NICHT `render_dxf`; `pipeline.run` ruft es auto — bei place()+render_dxf
+   selbst aufrufen). Demo-Skripte `scratchpad/demo_l/gen3.py`+`render3.py`.
+4. **Türleuchte-Detail offen:** B1-Aufheller hinter dem Tür-RZ behalten oder ausnehmen (Owner).
+5. **Phase 6:** `decision_source`-Contract (3-Owner), A1-Format.
+
+---
+
 ## STAND (2026-09-08, Session-Ende F2) — Lichtberechnung IN der Hauptengine + Platzierungs-Fixes
 
 **origin/main = `f6a753b`.** Alles gepusht/gemergt, `leonis/f2-work` == main. F2-Worktree

@@ -23,6 +23,20 @@ import numpy as np
 
 Point = tuple[float, float]
 
+
+def wartungsfaktor_aus_norm(anf) -> float:
+    """Wartungsfaktor (MF) aus der NormAnforderung — die EINE Quelle (W09/F02).
+
+    Alle Konsumenten (Deckung, Fachpraxis, Nachweis, Bericht) lesen den MF hier statt
+    je eigenem inline-getattr; sonst driften Platzierung und Nachweis auseinander (der
+    Bericht rechnete 0,80, die Deckung 1,0 — W09). Defensiv via getattr: die reale
+    NormAnforderung trägt das Feld heute noch nicht; F09 füllt es (innen 0,80
+    [AT-verbindlich] / außen 0,57 [AT-Referenzpraxis]), dann greift der Wert an allen
+    Stellen gleichzeitig. Fallback 1,0 = kein MF (Bestandsschutz).
+    """
+    return float(getattr(anf, "wartungsfaktor", None) or 1.0)
+
+
 def _i_cd_vektor(i_cd_fn, gamma_grad, c_grad):
     """Lichtstärke je Punkt — **mit** C-Ebene, wenn das Callable sie annimmt.
 

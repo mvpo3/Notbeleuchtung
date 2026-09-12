@@ -31,6 +31,7 @@ from notbeleuchtung.hauptengine.contracts import (
 from .bausteine import (
     AGV_SV_F as _AGV_SV_F,
 )
+from .bausteine import RZ_INS_RAUM_MM as _RZ_INS_RAUM_MM
 from .bausteine import (
     building_assigner as _building_assigner,
 )
@@ -40,6 +41,7 @@ from .bausteine import (
 from .bausteine import (
     richtung_und_rotation as _richtung_und_rotation,
 )
+from .bausteine import rotation_piktogramm_in_raum as _rotation_piktogramm_in_raum
 from .deckungs_zuordnung import HINTERLEUCHTET_DEFAULT
 from .graph import build_circulation_graph, distanz_zu_ausgang, kreuzungs_anker
 
@@ -178,6 +180,29 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
             if d_tuer <= 2000.0:
                 if d_tuer > 50.0:
                     dx, dy = tuer.xy_mm[0] - nx_, tuer.xy_mm[1] - ny
+                    # Vorzeichen-Härtung (v8-Befund Hauseingang): liegt der Exit-
+                    # Knoten schon JENSEITS der Tür (Tür-Block-Insert innen, z.B.
+                    # WET 243 mm südlich des Ausgangs), zeigt tuer−exit ZURÜCK in
+                    # den Gang — die Fluchtachse muss aber vom Anlauf WEG (raus)
+                    # zeigen, sonst kippen R-B-Blick und R-C-Versatz gemeinsam.
+                    nb_xy = None
+                    if nid in G:
+                        nb = min((m for m in G.neighbors(nid) if m in pos),
+                                 key=lambda m: math.hypot(pos[m][0] - nx_, pos[m][1] - ny),
+                                 default=None)
+                        nb_xy = pos[nb] if nb is not None else None
+                    if nb_xy is None:
+                        # graphloser Exit: Anlauf = nächster Zirkulations-Punkt
+                        # (Muster _tuer_durchgangsrichtung).
+                        kandidaten = [q for q in pos.values()
+                                      if math.hypot(q[0] - nx_, q[1] - ny) > 250.0]
+                        nb_xy = min(kandidaten,
+                                    key=lambda q: math.hypot(q[0] - nx_, q[1] - ny),
+                                    default=None)
+                    if nb_xy is not None:
+                        ax, ay = nx_ - nb_xy[0], ny - nb_xy[1]
+                        if dx * ax + dy * ay < 0.0:
+                            dx, dy = -dx, -dy
                 elif nbrs or (nid in G and any(True for _ in G.neighbors(nid))):
                     # RZ sitzt AUF der Tür → Anlauf-Richtung aus dem Gang-Nachbarn
                     # (Pfeil zeigt weiter DURCH die Tür).
@@ -188,9 +213,15 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
                 else:
                     # Graphloser Ausgang AUF der Tür (reale Pläne: Exits liegen neben
                     # dem Wegenetz): Durchgangs-Richtung = Normale der Türwand
-                    # (nächste Raum-Polygon-Kante), Vorzeichen weg vom Gang.
+                    # (nächste Raum-Polygon-Kante), Vorzeichen weg vom Gang (origin/main).
                     dx, dy = _tuer_durchgangsrichtung(raum, tuer.xy_mm, pos)
-                rotation = (round((math.degrees(math.atan2(dy, dx)) + 90.0) / 90.0) * 90.0) % 360.0
+                # R-B (Fachdoku v2): Piktogramm blickt ins Rauminnere (EIN Helper).
+                rotation = _rotation_piktogramm_in_raum(dx, dy)
+                # R-C: Tür-RZ raumseitig — von der Schwelle ins Rauminnere versetzen
+                # (entgegen der Fluchtachse (dx, dy)).
+                _n = math.hypot(dx, dy)
+                if _n > 0.0:
+                    nx_, ny = nx_ - dx / _n * _RZ_INS_RAUM_MM, ny - dy / _n * _RZ_INS_RAUM_MM
         out.append(
             Platzierung(
                 xy_mm=(nx_, ny),
@@ -211,6 +242,9 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
 # Sichtlinien-Grenze: max. Abstand zwischen zwei RZ entlang des Gangs. Ist ein
 # Gang-Stück länger, muss ein RZ dazwischen (EN 1838 §4.1.1: von jedem Punkt des
 # Fluchtwegs ist ein RZ sichtbar). Konservativer Default; exakt = Erkennungsweite l=z·h.
+# HINWEIS (F08/W17): nur Referenzwert — im Produktiv-Pfad ist er UNBENUTZT. Die aktive
+# RZ-Dichte zieht l=z·h aus `norm.erkennungsweite_m` (gang_strategy._abstand_mm) bzw. den
+# Deckungs-Radius (validierung._redundanz_radius_mm, F04). Siehe plan_rettungszeichen_sichtlinie.
 _MAX_RZ_ABSTAND_MM = 12000.0
 
 
@@ -240,6 +274,15 @@ def plan_rettungszeichen_sichtlinie(
     hinterleuchtet: bool = HINTERLEUCHTET_DEFAULT,
 ) -> list[Platzierung]:
     """RZ nach der Sichtlinien-Regel — **so wenige wie nötig, so sichtbar wie möglich**.
+
+    **TEST-ONLY PROTOTYP (F08/W17).** Dieser Pfad ist NICHT im Produktiv-`place()`-Pfad
+    verdrahtet — einziger Aufrufer sind die Tests (`tests/platzierung/test_sichtlinie.py`).
+    Im Produktivlauf zieht die RZ-Dichte die Erkennungsweite l=z·h bereits aus
+    `norm.erkennungsweite_m`: über `gang_strategy._abstand_mm` (Kette
+    `_plan_rettungszeichen`→`_sichtlinien_garantie`→`plan_rettungszeichen_gang`) und über
+    den Redundanz-Radius (`validierung._redundanz_radius_mm`, F04). Prototyp für eine
+    künftige reine Sichtlinien-Strategie; bis dahin nicht aktivieren.
+    [AT-verbindlich: ÖNORM EN 1838 §4.1.1 — von jedem Punkt des Fluchtwegs ist ein RZ sichtbar]
 
     RZ entstehen an drei Sorten von Punkten, Richtung immer **zum nächsten Ausgang**:
 

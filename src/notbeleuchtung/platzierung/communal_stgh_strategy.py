@@ -37,6 +37,7 @@ from notbeleuchtung.hauptengine.contracts import (
 from .bausteine import (
     AGV_SV_F as _AGV_SV_F,
 )
+from .bausteine import RZ_INS_RAUM_MM as _RZ_INS_RAUM_MM
 from .bausteine import (
     building_assigner as _building_assigner,
 )
@@ -46,6 +47,7 @@ from .bausteine import (
 from .bausteine import (
     richtung_und_rotation as _richtung_und_rotation,
 )
+from .bausteine import rotation_piktogramm_in_raum as _rotation_piktogramm_in_raum
 from .bausteine import (
     select_key as _select_key,
 )
@@ -100,12 +102,23 @@ def plan_rettungszeichen(raum: RaumModell, norm: NormProvider) -> list[Platzieru
             # Pfeil ZUR/DURCH die Tür zeigt (Anlauf-Richtung, wenn RZ auf der Tür sitzt).
             if d_tuer > 50.0:
                 dx, dy = tuer.xy_mm[0] - ex, tuer.xy_mm[1] - ey
+                # Vorzeichen-Härtung (v8-Befund Hauseingang, wie anker_strategy):
+                # liegt der Exit-Punkt schon JENSEITS der Tür (Tür-Block-Insert
+                # innen), zeigt tuer−exit ZURÜCK in den Gang — die Fluchtachse
+                # muss vom Anlauf WEG zeigen, sonst kippen R-B-Blick + R-C-Versatz.
+                ax, ay = ex - anlauf[0], ey - anlauf[1]
+                if (ax or ay) and dx * ax + dy * ay < 0.0:
+                    dx, dy = -dx, -dy
             else:
                 dx, dy = ex - anlauf[0], ey - anlauf[1]
             richtung = "unten"
             catalog_key, _ = _select_key(anf.symbol_katalog_keys, "unten")
-            rotation = (round((math.degrees(math.atan2(dy, dx)) + 90.0) / 90.0) * 90.0) % 360.0
+            rotation = _rotation_piktogramm_in_raum(dx, dy)
             mirror_x = False
+            # R-C: Tür-RZ raumseitig — entgegen der Fluchtachse versetzen.
+            _n = math.hypot(dx, dy)
+            if _n > 0.0:
+                ex, ey = ex - dx / _n * _RZ_INS_RAUM_MM, ey - dy / _n * _RZ_INS_RAUM_MM
         elif naechster is not None and d_exit > 1000.0:
             # Kein Tür-Anker → Pfeil zeigt ZUM nächsten Ausgang (nie ins blinde Ende).
             richtung, _ = _richtung_und_rotation(

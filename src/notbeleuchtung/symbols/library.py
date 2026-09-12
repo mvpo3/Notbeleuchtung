@@ -15,6 +15,7 @@ from __future__ import annotations
 import logging
 import os
 import threading
+import weakref
 from pathlib import Path
 from typing import Any
 
@@ -67,7 +68,13 @@ _REQUIRED_FIELDS = ("block_name", "label", "category")
 _lock = threading.RLock()
 _library_doc: Drawing | None = None
 _mapping: dict[str, dict[str, Any]] | None = None
-_normalized_blocks_by_doc: dict[int, set[str]] = {}
+# Normalisierungs-Status je Output-Doc. Key ist das Doc-OBJEKT (WeakKeyDictionary),
+# NICHT `id(doc)`: eine id() ist nur unter LEBENDEN Objekten eindeutig — wird ein
+# früherer Drawing GC'd, kann ein späterer dieselbe id() erben und würde das stale
+# „schon normalisiert"-Set erben → Blöcke blieben un-zentriert (falsche Geometrie in
+# Tests UND im Batch-Rendering mehrerer Pläne je Prozess). Der Weak-Key stirbt mit dem
+# Doc, ein lebendes Doc ist immer ein eigener Key.
+_normalized_blocks_by_doc: weakref.WeakKeyDictionary[Drawing, set[str]] = weakref.WeakKeyDictionary()
 
 
 def _resolve_library_path(path: Path | str | None = None) -> Path:
@@ -211,7 +218,7 @@ def import_block(output_doc: Drawing, block_name: str) -> None:
 
 def _normalized_blocks_for(output_doc: Drawing) -> set[str]:
     """Persistenter Normalisierungs-Status je Output-Dokument."""
-    return _normalized_blocks_by_doc.setdefault(id(output_doc), set())
+    return _normalized_blocks_by_doc.setdefault(output_doc, set())
 
 
 def _normalize_block_origin_recursive(
@@ -269,4 +276,4 @@ def reset_cache() -> None:
     with _lock:
         _library_doc = None
         _mapping = None
-        _normalized_blocks_by_doc = {}
+        _normalized_blocks_by_doc = weakref.WeakKeyDictionary()

@@ -176,13 +176,13 @@ def test_konformer_plan_ist_ok():
     assert all(b.status == "ok" for b in befunde)
 
 
-def test_redundanz_einzelne_leuchte_ist_warnung():
-    # Nur 1 Leuchte am Abschnitt → kein Ausfallschutz (EN 50172) → Warnung, kein Fehler.
+def test_redundanz_einzelne_leuchte_ist_fehler():
+    # F07/W19: Nur 1 Leuchte am Abschnitt → kein Ausfallschutz (EN 50172) → HARD-FAIL.
     befunde = pruefe(_raum("s1"), _erg(_rz(xy=(0.0, 0.0))))
     b = next(b for b in befunde if "Redundanz" in b.regel)
-    assert b.status == "warnung"
+    assert b.status == "fehler"
     assert "1/1" in b.detail
-    assert gesamtstatus(befunde) != "fehler"
+    assert gesamtstatus(befunde) == "fehler"
 
 
 def test_redundanz_zwei_leuchten_ist_ok():
@@ -199,10 +199,12 @@ def test_zu_niedrige_montagehoehe_ist_fehler():
     assert gesamtstatus(befunde) == "fehler"
 
 
-def test_fehlender_sicherheitskreis_ist_warnung():
+def test_fehlender_sicherheitskreis_ist_fehler():
+    # F06/W13: getrennter SV-Kreis ist Kernmission -> Hard-Stop, nicht mehr Warnung.
     befunde = pruefe(_raum("s1"), _erg(_rz(circuit="AGV-A-F5")))
     kreis = next(b for b in befunde if "Sicherheitskreis" in b.regel)
-    assert kreis.status == "warnung"
+    assert kreis.status == "fehler"
+    assert gesamtstatus(befunde) == "fehler"
 
 
 def test_ungedecktes_segment_ist_warnung():

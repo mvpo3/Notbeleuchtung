@@ -135,8 +135,25 @@ class En1838NormProvider:
             dauer_min=int(self._grund["dauer_min"]),
             gleichmaessigkeit_max=self._gleichmaessigkeit(regel),
             umschaltzeit_max_s=self._umschaltzeit(),
+            wartungsfaktor=self._wartungsfaktor_innen(),
+            montagehoehe_max_mm=self._rz_montagehoehe_max_mm(),
             quelle=self._quelle(regel["quelle_ref"]),
         )
+
+    def _rz_montagehoehe_max_mm(self) -> int | None:
+        """Obere RZ-Montagehöhen-Schranke (F13/W01, [AT-Referenzpraxis] 10 m). Weiche
+        Warnung bei Überschreitung (real bis 10,8 m gebaut). None, falls die YAML keinen
+        Wert führt → keine Schranke geprüft."""
+        wert = self._grund.get("rz_montagehoehe_max_mm")
+        return int(wert) if wert is not None else None
+
+    def _wartungsfaktor_innen(self) -> float | None:
+        """Wartungsfaktor für innen liegende Räume (F09/W07, [AT-Referenzpraxis] 0,80).
+        Regel-basierte Räume sind alle innen; der Außen-Wert 0,57 hat (noch) keinen
+        Lux-Konsumenten. None, falls die YAML keinen Wert führt (inert → Konsument 1,0)."""
+        wf = self._grund.get("wartungsfaktor") or {}
+        wert = wf.get("innen")
+        return float(wert) if wert is not None else None
 
     def _montagehoehe(self, regel: dict) -> int:
         """Fachpraxis-Montagehöhe, nie unter dem Norm-Floor §4.1.1 (2000 mm)."""

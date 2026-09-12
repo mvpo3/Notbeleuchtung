@@ -1,0 +1,301 @@
+"""Fix-Tests des Branches leonis/wissensabgleich-engine.
+
+Je Fix eine maschinelle, exakte Assertion (keine Toleranzbereiche). Befund-IDs
+verweisen auf docs/audit/FIX_PLAN.md bzw. 05_widersprueche.md.
+"""
+from __future__ import annotations
+
+
+def test_f04_redundanz_radius_kommt_aus_der_norm():
+    """F04 / W08: Die Redundanz-Reichweite ist nicht mehr die Konstante 30000, sondern
+    `norm.erkennungsweite_m(0,15, hinterleuchtet)*1000`. Ohne Provider: Fallback-Konstante."""
+    from notbeleuchtung.hauptengine.validierung import (
+        _REDUNDANZ_REICHWEITE_MM,
+        _redundanz_radius_mm,
+    )
+
+    class _StubNorm:
+        def erkennungsweite_m(self, piktogramm_hoehe_m, hinterleuchtet):
+            return 12.0  # bewusst != 30 m Default
+
+    assert _redundanz_radius_mm(_StubNorm()) == 12000.0
+    assert _redundanz_radius_mm(None) == _REDUNDANZ_REICHWEITE_MM
+
+
+def test_lux_nachweis_wf_eine_quelle():
+    """F01 / W09: Heatmap-Feld und Nachweis ziehen den Wartungsfaktor aus EINER Quelle
+    (`anf.wartungsfaktor`), 0,80 nicht mehr hart. `_lux_feld` skaliert exakt linear mit wf;
+    `_wf` liest genau das Norm-Feld (Fallback 1,0)."""
+    import numpy as np
+
+    from notbeleuchtung.hauptengine.render.lux_nachweis_bericht import _lux_feld, _wf
+
+    gx, gy = np.meshgrid(np.linspace(0.0, 3000.0, 5), np.linspace(0.0, 3000.0, 5))
+    sl = [(1500.0, 1500.0, 0.0)]
+    def icd(gamma, c):
+        return 45.0  # generische cd im Test
+    feld_10 = _lux_feld(gx, gy, sl, icd, 1.0)
+    feld_08 = _lux_feld(gx, gy, sl, icd, 0.8)
+    assert np.array_equal(feld_08, feld_10 * 0.8)   # WF = einziger linearer Skalar
+
+    class _Anf:
+        def __init__(self, wf):
+            if wf is not None:
+                self.wartungsfaktor = wf
+
+    class _Raum:
+        raum_typ, ist_fluchtweg = "GANG", True
+
+    class _Norm:
+        def __init__(self, wf):
+            self._wf = wf
+
+        def fuer_raum(self, raum_typ, ist_fluchtweg):
+            return _Anf(self._wf)
+
+    assert _wf(_Raum(), _Norm(0.57)) == 0.57       # genau das Norm-Feld
+    assert _wf(_Raum(), _Norm(None)) == 1.0        # Fallback ohne Feld
+
+
+def test_deckung_wf_aus_norm():
+    """F02 / W09: Der Wartungsfaktor kommt aus EINER Funktion (`wartungsfaktor_aus_norm`)
+    statt je eigenem inline-getattr in Deckung/Fachpraxis/Nachweis/Bericht. Exakte Werte,
+    Fallback 1,0 (fehlend ODER falsy)."""
+    from notbeleuchtung.platzierung.lux import wartungsfaktor_aus_norm
+
+    class _Anf:
+        wartungsfaktor = 0.57
+
+    class _AnfNull:
+        wartungsfaktor = 0.0
+
+    class _AnfOhne:
+        pass
+
+    assert wartungsfaktor_aus_norm(_Anf()) == 0.57
+    assert wartungsfaktor_aus_norm(_AnfOhne()) == 1.0   # Feld fehlt → kein MF
+    assert wartungsfaktor_aus_norm(_AnfNull()) == 1.0   # 0 falsy → Fallback
+    assert isinstance(wartungsfaktor_aus_norm(_Anf()), float)
+
+
+def test_toiletten_scope_single_source():
+    """F05 / W10: Toiletten-Scope §4.3.8 kommt aus EINER Quelle (`bausteine`); die
+    vorher dreifach hartkodierten Sets sind weg. Exakte Werte, disjunkt, gleiche Identität
+    in beiden Konsumenten (kein kopiertes Set)."""
+    from notbeleuchtung.platzierung import bausteine
+    from notbeleuchtung.platzierung import sonderstellen_strategy as ss
+
+    assert bausteine.TOILETTE_EINDEUTIG == {"WC", "TOILETTE"}
+    assert bausteine.TOILETTE_MEHRDEUTIG == {"SANITAER", "SANITÄR", "BAD", "DUSCHE", "NASSRAUM"}
+    assert bausteine.TOILETTE_EINDEUTIG.isdisjoint(bausteine.TOILETTE_MEHRDEUTIG)
+    # sonderstellen_strategy konsumiert dasselbe Objekt (Alias, keine Kopie).
+    assert ss._TOILETTEN_TYPEN is bausteine.TOILETTE_EINDEUTIG
+
+
+def test_getrennter_kreis_hardstop():
+    """F06 / W13: Ein Symbol ohne F13-SV-Kreis ist ein Hard-Stop (fehler), kein Warnhinweis;
+    mit F13 bleibt die Regel 'ok'. Exakte Status-Assertion + gesamtstatus."""
+    from notbeleuchtung.hauptengine.contracts import (
+        BBox,
+        Platzierung,
+        PlatzierungsErgebnis,
+        RaumModell,
+    )
+    from notbeleuchtung.hauptengine.validierung import gesamtstatus, pruefe
+
+    raum = RaumModell(floor="X", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(1000.0, 1000.0)))
+
+    def _pruefe(circuit):
+        p = Platzierung(xy_mm=(0.0, 0.0), catalog_key="k", kind="rz",
+                        height_mm=2400.0, circuit_hint=circuit)
+        return pruefe(raum, PlatzierungsErgebnis(floor="X", platzierungen=[p]))
+
+    ohne = _pruefe("AGV-A-F5")
+    kreis_ohne = next(b for b in ohne if "Sicherheitskreis" in b.regel)
+    assert kreis_ohne.status == "fehler"
+    assert gesamtstatus(ohne) == "fehler"
+
+    mit = _pruefe("AGV-A-F13")
+    kreis_mit = next(b for b in mit if "Sicherheitskreis" in b.regel)
+    assert kreis_mit.status == "ok"
+
+
+def test_erkennungsweite_im_prod_pfad():
+    """F08 / W17: Die RZ-Dichte im Produktiv-`place()`-Pfad zieht die Erkennungsweite
+    l=z·h aus der Norm (`gang_strategy._abstand_mm` aus `anf.erkennungsweite_m`), nicht aus
+    einer Konstante; der Sichtlinien-Pfad (`plan_rettungszeichen_sichtlinie`) ist test-only —
+    kein Produktiv-Modul importiert ihn."""
+    import pathlib
+
+    from notbeleuchtung.platzierung.gang_strategy import (
+        _DEFAULT_RZ_ABSTAND_MM,
+        _abstand_mm,
+    )
+
+    # Prod-Pfad: Abstand skaliert exakt mit der Norm-Erkennungsweite (m → mm).
+    assert _abstand_mm(30.0) == 30000.0     # hinterleuchtetes 0,15-m-Pikto, z=200
+    assert _abstand_mm(16.0) == 16000.0     # kleineres/beleuchtetes Pikto
+    assert _abstand_mm(None) == _DEFAULT_RZ_ABSTAND_MM   # ohne Norm-Wert: Default
+    assert _abstand_mm(0.0) == _DEFAULT_RZ_ABSTAND_MM    # 0 falsy → Default
+
+    # sichtlinie-Pfad ist test-only: KEIN Produktiv-Modul (außer der Definition) nennt ihn.
+    src = pathlib.Path(__file__).resolve().parents[2] / "src" / "notbeleuchtung"
+    treffer = [
+        p.name for p in src.rglob("*.py")
+        if "plan_rettungszeichen_sichtlinie" in p.read_text(encoding="utf-8")
+        and p.name != "anker_strategy.py"   # die Definition selbst
+    ]
+    assert treffer == []
+
+
+def test_redundanz_garantie_und_hardfail():
+    """F07 / W19 (EN 50172 §5.1.8): (a) ein Fluchtweg-Abschnitt mit nur 1 Leuchte bekommt
+    durch `garantiere_redundanz` die fehlende zweite Sicherheitsleuchte (segment-genau, in
+    Erkennungsweite, schon konform = No-op); (b) ein Abschnitt mit < 2 Leuchten ist in der
+    Prüfung ein Hard-Fail (fehler)."""
+    from fakes import FakeNormProvider
+    from notbeleuchtung.hauptengine.contracts import (
+        BBox,
+        FluchtwegSegment,
+        Platzierung,
+        PlatzierungsErgebnis,
+        RaumModell,
+        ZirkulationsGraph,
+    )
+    from notbeleuchtung.hauptengine.validierung import gesamtstatus, pruefe
+    from notbeleuchtung.platzierung.deckung import (
+        _dist_punkt_polyline,
+        _redundanz_radius_mm,
+        garantiere_redundanz,
+    )
+
+    seg = FluchtwegSegment(
+        segment_id="S1", polyline_mm=[(0.0, 0.0), (10000.0, 0.0)], reason="long_run"
+    )
+    raum = RaumModell(
+        floor="X", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 3000.0)),
+        zirkulation=ZirkulationsGraph(segmente=[seg]),
+    )
+    norm = FakeNormProvider()
+    einzel = [Platzierung(xy_mm=(0.0, 0.0), catalog_key="k", kind="rz",
+                          height_mm=2400.0, circuit_hint="AGV-A-F13")]
+
+    # (a) Garantie: genau 1 Zusatz-SL, am Abschnitt, in Erkennungsweite.
+    mit_garantie = garantiere_redundanz(einzel, raum, norm)
+    zusatz = mit_garantie[len(einzel):]
+    assert len(zusatz) == 1
+    assert zusatz[0].kind == "sicherheitsleuchte"
+    assert zusatz[0].covers_segment == ["S1"]
+    assert _dist_punkt_polyline(zusatz[0].xy_mm, seg.polyline_mm) <= _redundanz_radius_mm(norm)
+    # schon konform (2 Leuchten in Reichweite) → No-op:
+    assert garantiere_redundanz(mit_garantie, raum, norm) == mit_garantie
+
+    # (b) Hard-Fail: 1 Leuchte am Abschnitt → fehler.
+    befunde = pruefe(raum, PlatzierungsErgebnis(floor="X", platzierungen=einzel))
+    b = next(x for x in befunde if "Redundanz" in x.regel)
+    assert b.status == "fehler"
+    assert gesamtstatus(befunde) == "fehler"
+
+
+def test_wf_innen_aussen():
+    """F09 / W07 ([AT-Referenzpraxis]): Der Wartungsfaktor kommt aus der Norm-YAML, nicht
+    hart aus Code. Der Provider setzt für innen liegende (regel-basierte) Räume
+    `anf.wartungsfaktor = 0,80`; die YAML führt außen 0,57 als dokumentierten (noch
+    konsumentenlosen) Wert. Der Konsum-Hook reicht den Wert 1:1 weiter → greift ab jetzt
+    überall gleichzeitig (Deckung/Aufheller/Nachweis)."""
+    from notbeleuchtung.normwissen import En1838NormProvider
+    from notbeleuchtung.platzierung.lux import wartungsfaktor_aus_norm
+
+    prov = En1838NormProvider()
+    anf = prov.fuer_raum("GANG", True)
+    assert anf.wartungsfaktor == 0.80
+    assert wartungsfaktor_aus_norm(anf) == 0.80
+    # Außen-Wert dokumentiert in der Norm-YAML (exakt 0,57), (noch) ohne Lux-Konsument.
+    assert prov._grund["wartungsfaktor"]["aussen"] == 0.57
+
+
+def test_layer_gruen_gelb(tmp_path):
+    """F14 / W06 [AT-Referenzpraxis] (din-Referenzplan V25): Layer-Trennung grün=RZ /
+    gelb=SL. Nagelt den **Default** fest (`rz_sl_farbtrennung=True` ohne Argument) und
+    deckt die Antipanik-Rolle mit ab (gehört wie die Sicherheitsleuchte auf Gelb) — damit
+    der Default nicht still auf „alles grün" zurückkippt."""
+    import ezdxf
+
+    from notbeleuchtung.hauptengine.contracts import (
+        BBox,
+        Platzierung,
+        PlatzierungsErgebnis,
+        Raum,
+        RaumModell,
+    )
+    from notbeleuchtung.hauptengine.render import render_dxf
+    from notbeleuchtung.symbols import library
+
+    def _p(x, kind):
+        return Platzierung(
+            xy_mm=(x, 1000.0), catalog_key="sicherheitsleuchte_aufheller" if kind != "rz"
+            else "notlicht_ks_stiege_rechts", rotation_deg=0.0, mirror_x=False,
+            height_mm=2400.0, kind=kind, richtung="gerade", circuit_hint="AGV-A-F13",
+            covers_segment=[], norm_quelle="EN 1838")
+    erg = PlatzierungsErgebnis(floor="T", platzierungen=[
+        _p(1000.0, "rz"), _p(2000.0, "sicherheitsleuchte"), _p(2500.0, "antipanik")])
+    raum = RaumModell(
+        floor="T", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(3000.0, 3000.0)),
+        raeume=[Raum(id="r", raum_typ="GANG",
+                     polygon_mm=[(0.0, 0.0), (3000.0, 0.0), (3000.0, 3000.0), (0.0, 3000.0)],
+                     ist_fluchtweg=True)])
+
+    # DEFAULT-Aufruf (kein rz_sl_farbtrennung-Argument) → Trennung aktiv.
+    render_dxf(erg, raum, tmp_path / "default.dxf")
+    doc = ezdxf.readfile(str(tmp_path / "default.dxf"))
+    layer_je_kind: dict[str, set[str]] = {}
+    for e in doc.modelspace().query("INSERT"):
+        if not e.has_xdata("NOTBELEUCHTUNG"):
+            continue
+        # RZ-Block grün, SL/Antipanik-Block gelb — Zuordnung über den Layer je Block.
+        layer_je_kind.setdefault(e.dxf.layer, set()).add(e.dxf.name)
+    assert library.SAFETY_LAYER in layer_je_kind       # RZ grün
+    assert library.SAFETY_LAYER_SL in layer_je_kind     # SL + Antipanik gelb
+
+
+def test_stiege_hoehe_warnung():
+    """F13 / W01 [AT-Referenzpraxis]: Ein Rettungszeichen über der Montagehöhen-Schranke
+    (10 m) gibt eine WEICHE Warnung (real bis 10,8 m gebaut, Barawitzka) — KEIN Hard-Stop.
+    Der Grenzwert kommt aus der Norm (`NormAnforderung.montagehoehe_max_mm`), nicht aus
+    einer Konstante. (Podest-gestaffelte Höhe selbst = Selman/3-Owner-Handoff, s.
+    docs/audit/HANDOFF_B_ENIS.md — Podest-Contract trägt keine Elevation.)"""
+    from notbeleuchtung.hauptengine.contracts import (
+        BBox,
+        Platzierung,
+        PlatzierungsErgebnis,
+        RaumModell,
+    )
+    from notbeleuchtung.hauptengine.validierung import gesamtstatus, pruefe
+    from notbeleuchtung.normwissen import En1838NormProvider
+
+    norm = En1838NormProvider()
+    assert norm.fuer_raum("GANG", True).montagehoehe_max_mm == 10000
+    raum = RaumModell(floor="S", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(1000.0, 1000.0)))
+
+    def _pruefe(h):
+        p = Platzierung(xy_mm=(0.0, 0.0), catalog_key="k", kind="rz",
+                        height_mm=h, circuit_hint="AGV-A-F13")
+        return pruefe(raum, PlatzierungsErgebnis(floor="S", platzierungen=[p]), norm=norm)
+
+    hoch = _pruefe(10800.0)
+    b = next(x for x in hoch if "Montagehöhe ≤ 10 m" in x.regel)
+    assert b.status == "warnung"
+    assert gesamtstatus(hoch) != "fehler"   # weich, kein Hard-Stop
+
+    ok = next(x for x in _pruefe(2400.0) if "Montagehöhe ≤ 10 m" in x.regel)
+    assert ok.status == "ok"
+
+
+def test_f03_rotation_zur_tuer_ein_helper():
+    """F03 / W16: die 4× duplizierte Pfeil-Rotationsformel lebt jetzt in einem Helper.
+    Exakte Kardinal-Werte (unten-Block-Basis, atan2+90 auf 90° gerastert)."""
+    from notbeleuchtung.platzierung.bausteine import rotation_zur_tuer as r
+    assert r(1.0, 0.0) == 90.0     # Ziel rechts
+    assert r(0.0, 1.0) == 180.0    # Ziel oben
+    assert r(-1.0, 0.0) == 270.0   # Ziel links
+    assert r(0.0, -1.0) == 0.0     # Ziel unten

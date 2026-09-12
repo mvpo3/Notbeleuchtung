@@ -29,7 +29,7 @@ from matplotlib.path import Path as MPath
 
 from notbeleuchtung.hauptengine.contracts import NormProvider, PlatzierungsErgebnis, RaumModell
 from notbeleuchtung.platzierung.geometry import _bbox, point_in_polygon
-from notbeleuchtung.platzierung.lux import lux_punkte
+from notbeleuchtung.platzierung.lux import lux_punkte, wartungsfaktor_aus_norm
 from notbeleuchtung.platzierung.mittellinie import mittellinie
 
 _ROOT = Path(__file__).resolve().parents[4]
@@ -38,7 +38,11 @@ _LDT = _ROOT / "CAD_Symbole" / "photometrie" / "sl_nlkbu433_3h_corridor.ldt"
 _NAVY, _GREEN, _INK = "#1f3b57", "#127a3a", "#222222"
 _KORR = {"GANG", "FLUR", "KORRIDOR"}
 _LICHT = {"sicherheitsleuchte", "antipanik"}
-MF, HM, _ICD = 0.80, 2.4, 45.0                     # Wartungsfaktor · Montagehöhe · generische cd
+HM, _ICD = 2.4, 45.0                               # Montagehöhe · generische cd
+# Wartungsfaktor (W09/F01): NICHT mehr hart 0,80. Der Bericht zieht ihn aus DERSELBEN
+# Quelle wie der Nachweis (`anf.wartungsfaktor`, s. `_wf`/`_rw_stats`) — sonst zeigt die
+# Heatmap einen anderen MF als die Nachweis-Tabelle (Divergenz). Fallback 1,0, bis Enis
+# das Norm-Feld füllt (F09: innen 0,80 [AT-verbindlich] / außen 0,57 [AT-Referenzpraxis]).
 _VMIN, _VMAX = 0.5, 6.0
 _ISO = [0.5, 1.0, 2.0, 3.0, 4.0, 5.0]
 _CMAP = "RdYlGn_r"
@@ -57,7 +61,15 @@ def _lade_photo():
         return None
 
 
-def _lux_feld(gx, gy, sl, i_cd_fn):
+def _wf(r, norm) -> float:
+    """Wartungsfaktor aus der Norm — die EINE Quelle für Heatmap UND Nachweis (W09/F01).
+
+    Identisch zu `_rw_stats`: `anf.wartungsfaktor` defensiv via getattr, Fallback 1,0.
+    """
+    return wartungsfaktor_aus_norm(norm.fuer_raum(r.raum_typ, r.ist_fluchtweg))
+
+
+def _lux_feld(gx, gy, sl, i_cd_fn, wf):
     h = HM * 1000.0
     e = np.zeros_like(gx)
     ivec = np.vectorize(i_cd_fn)
@@ -67,7 +79,7 @@ def _lux_feld(gx, gy, sl, i_cd_fn):
         gamma = np.degrees(np.arctan2(d_h, h))
         c = (np.degrees(np.arctan2(gy - ly, gx - lx)) - az) % 360.0
         e += ivec(gamma, c) * cos_t**3 / (HM**2)
-    return e * MF
+    return e * wf
 
 
 def _band(linie, breite_mm):
@@ -89,7 +101,7 @@ def _band(linie, breite_mm):
 
 def _rw_stats(r, norm, sl, i_cd_fn):
     anf = norm.fuer_raum(r.raum_typ, r.ist_fluchtweg)
-    h, wf = anf.montagehoehe_mm / 1000.0, (getattr(anf, "wartungsfaktor", None) or 1.0)
+    h, wf = anf.montagehoehe_mm / 1000.0, wartungsfaktor_aus_norm(anf)
     drin = [(x, y, az) for (x, y, az) in sl if point_in_polygon((x, y), r.polygon_mm)]
     bb = _bbox(r.polygon_mm)
     breite = min(bb[2] - bb[0], bb[3] - bb[1])
@@ -158,7 +170,8 @@ def schreibe_bericht(
     ny = max(60, int(nx * (mxy - mny) / (mxx - mnx)))
     xs, ys = np.linspace(mnx, mxx, nx), np.linspace(mny, mxy, ny)
     gx, gy = np.meshgrid(xs, ys)
-    e = _lux_feld(gx, gy, sl3, icd)
+    wf = _wf(korr[0], norm)                         # eine Quelle für Heatmap + Nachweis (W09/F01)
+    e = _lux_feld(gx, gy, sl3, icd, wf)
     grid_pts = np.column_stack([gx.ravel(), gy.ravel()])
     korr_mask, inside = {}, np.zeros(gx.size, bool)
     for r in korr:
@@ -330,7 +343,7 @@ def schreibe_bericht(
 
     fig.add_artist(plt.Line2D([0.07, 0.93], [0.05, 0.05], color=_NAVY, lw=1.2))
     quelle = "echte Hersteller-Photometrie (EULUMDAT/LDT)" if (i_cd_fn or photo) else "generische Lichtstärke-Annahme"
-    fig.text(0.07, 0.038, f"Berechnung: Punktmethode E = I(γ,C)·cos³θ/h² · Wartungsfaktor 0,80 · ohne Reflexion · {quelle}.",
+    fig.text(0.07, 0.038, f"Berechnung: Punktmethode E = I(γ,C)·cos³θ/h² · Wartungsfaktor {f'{wf:.2f}'.replace('.', ',')} · ohne Reflexion · {quelle}.",
              fontsize=6.6, color="#777")
     fig.text(0.07, 0.024, "Erstellt mit Notbeleuchtung-Engine", fontsize=7, color=_NAVY)
     fig.text(0.93, 0.024, f"Rivoplan · www.rivoplan.com    Seite {seite}", fontsize=7, color=_NAVY, ha="right")

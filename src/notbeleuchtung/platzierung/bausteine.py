@@ -12,6 +12,8 @@ symbols-Mapping-/Orientierungs-Funktionen (+stdlib) — nie eine Strategie.
 """
 from __future__ import annotations
 
+import math
+
 from notbeleuchtung.hauptengine.contracts import NormProvider
 from notbeleuchtung.symbols.orientation import transformation as _transformation
 
@@ -26,6 +28,88 @@ KORRIDOR_TYPEN = {"GANG", "FLUR", "KORRIDOR"}
 
 #: Sanitär-Raumtypen für den WC-Flächen-Trigger (OVE 718.560.9.001.AT Punkt 1).
 WC_TYPEN = {"WC", "SANITAER", "SANITÄR", "BAD", "DUSCHE", "NASSRAUM"}
+
+#: Toiletten-Scope §4.3.8 („Antipanik in Toiletten für Menschen mit Behinderung") —
+#: EINE Quelle (W10/F05) für sonderstellen_strategy (Antipanik-Pflicht) UND validierung
+#: (Prüfregel 12c). Vorher dreifach hartkodiert (sonderstellen + validierung, wertgleich
+#: aber unabhängig → Drift-Risiko). Normativ pflegt Enis das Vokabular in
+#: `normwissen/data/sonderstellen.yaml` (raumtypen_eindeutig/-mehrdeutig); bis eine
+#: NormProvider-Query es exponiert (Handoff F15/F16, 3-Owner-Port), spiegelt diese
+#: Konstante es consumer-seitig.
+TOILETTE_EINDEUTIG = {"WC", "TOILETTE"}                  # belegt eine Toilettennutzung
+TOILETTE_MEHRDEUTIG = WC_TYPEN - TOILETTE_EINDEUTIG      # Sanitär: weder Beleg noch Ausschluss
+
+
+def rotation_zur_tuer(dx: float, dy: float) -> float:
+    """Rotation des „Pfeil-unten"-Blocks, sodass der Pfeil in Richtung (dx, dy) zeigt —
+    auf 90° gerastert, Ergebnis in [0, 360). Unten-Block-Basis 270° → ziel−basis ≡
+    atan2(dy,dx)+90. Einzige Quelle der Owner-Regel #111 (F03/W16): vorher 4× wortgleich
+    in anker/gang/fachpraxis/communal_stgh dupliziert."""
+    return (round((math.degrees(math.atan2(dy, dx)) + 90.0) / 90.0) * 90.0) % 360.0
+
+
+#: R-C (Owner-Fachdoku v2, S.3/S.5): Tür-RZ sitzt raumseitig „über bzw. neben der
+#: Türöffnung" — Versatz von der Schwelle ins Rauminnere (Owner-Maß Runde 1, ~150 mm;
+#: Ground truth Nebenraum ~176 mm / Hauseingang ~420 mm = Wand-Offsets, kein Normmaß).
+RZ_INS_RAUM_MM = 150.0
+
+
+#: Obergrenze „das ist noch eine TÜR" (Selmans Nennmaß-Türbereich endet bei 130 cm,
+#: raumerkennung/tueren.py::_breite_mm 60–130). Breitere GEOMETRIE_OEFFNUNG-Durchgänge
+#: sind Wandlücken, keine Türen (Owner-Befund Müllraum 2026-09-12).
+TUER_MAX_BREITE_MM = 1300.0
+
+
+def ist_echte_tuer(t) -> bool:
+    """Phantom-Öffnungen von echten Türen trennen (EINE Quelle; Konsumenten:
+    fachpraxis-Türwahl, sichtkette-Türbarrieren)."""
+    breite = t.breite_mm
+    if breite is not None and breite > TUER_MAX_BREITE_MM:
+        return False
+    return not (getattr(t, "ohne_tuerblatt", False) and breite is None)
+
+
+#: Abteil-/Nebenraum-Typen, deren Gang-Türen nach AUSSEN (in den Gang) aufschlagen —
+#: nur DIESE Türen sind Sichtbarrieren/Lücken-Trigger der Verlaufs-Kette (Punkt 2,
+#: Owner-Bild Kellerabteil-Gang). Wohnungs-/Zimmertüren schlagen in den Raum und
+#: sind lt. Fachdoku (S.8: „von den Wohnungstüren aus ist RZ (B) sichtbar") KEINE.
+ABTEIL_TYPEN = {"ABSTELLRAUM", "KELLERABTEIL", "KELLER", "LAGER", "TECHNIK",
+                "MUELLRAUM", "KINDERWAGENRAUM", "FAHRRADRAUM"}
+#: Kleiner Nebenraum ohne klaren Typ zählt ab dieser Fläche NICHT mehr als Abteil.
+_ABTEIL_MAX_M2 = 8.0
+
+
+def ist_abteil_tuer(t, raeume_by_id: dict, korridor_ids: set) -> bool:
+    """Tür verbindet einen Korridor mit einem Abteil-/kleinen Nebenraum
+    (Aufschlag in den Gang) — die Sichtbarrieren-Klasse der Verlaufs-Kette."""
+    if not ist_echte_tuer(t) or not t.breite_mm:
+        return False
+    seiten = {t.von_raum, t.nach_raum}
+    if not (seiten & korridor_ids):
+        return False
+    ziel = next((x for x in seiten if x not in korridor_ids), None)
+    r = raeume_by_id.get(ziel or "")
+    if r is None:
+        return False                                  # unbekannt → konservativ keine Barriere
+    typ = (r.raum_typ or "").upper()
+    if typ in ABTEIL_TYPEN:
+        return True
+    return bool(r.flaeche_m2) and r.flaeche_m2 < _ABTEIL_MAX_M2 and not typ.startswith("WOHN")
+
+
+def rotation_piktogramm_in_raum(dx_zur_tuer: float, dy_zur_tuer: float) -> float:
+    """R-B (Owner-Fachdoku „Notbeleuchtung zeichnen lernen" v2, S.3–5, AUSNAHMSLOS):
+    jede Pfeil-unten-RZ an einer Tür wird so rotiert, dass das Piktogramm INS
+    RAUMINNERE schaut — die flüchtende Person ist im Raum und muss es lesen
+    (Blick = Gegenrichtung der Fluchtachse durch die Tür). Ersetzt die frühere
+    Pfeil-zur-Tür-Ableitung (#111) an Tür-RZ; die Pfeilrichtung im 2D-Plan ist
+    Darstellung, keine Gehrichtung (R-I).
+
+    Input wie bisher an den Callsites vorhanden: (dx, dy) = Richtung ZUR/DURCH die
+    Tür (Fluchtachse raus). Kalibriert am Ground-Truth-DXF Elektroplan DE EG
+    (Nebenräume 0° · Hauseingang 0° · Müllraum-Südtür ~180°):
+    Pfeil-Achse = Rauminnen-Normale = Gegenrichtung."""
+    return rotation_zur_tuer(-dx_zur_tuer, -dy_zur_tuer)
 
 
 def richtung_und_rotation(dx: float, dy: float) -> tuple[str, float]:

@@ -7,9 +7,13 @@ aus dem Index zitieren — immer der autoritativen YAML/dem Contract folgen.**
 ## Norm-Wissen — AUTORITATIV (nur abfragen, nie umschreiben; Enis' Lane)
 *Single-Source-of-Truth der EN-1838/ÖNorm-Werte. Änderungen NUR über Enis + Contract.*
 
+- [astv_arbeitsstaetten](src/notbeleuchtung/normwissen/data/astv_arbeitsstaetten.yaml) — astv_arbeitsstaetten.yaml — Arbeitsstaetten-Pfad: AStV § 9 (Ebene A) und
 - [en1838_grundwerte](src/notbeleuchtung/normwissen/data/en1838_grundwerte.yaml) — en1838_grundwerte.yaml — Norm-Grundwerte Notbeleuchtung (ÖNORM EN 1838:2013)
 - [lb_extraktion](src/notbeleuchtung/normwissen/data/lb_extraktion.yaml) — lb_extraktion.yaml — Vokabular + Muster für das LB-Parsing (2. Input)
 - [oib_rl2_tabelle6](src/notbeleuchtung/normwissen/data/oib_rl2_tabelle6.yaml) — oib_rl2_tabelle6.yaml — OIB-Richtlinie 2, Punkt 5.4 + Tabelle 6
+- [oib_rl4_fluchtwegbreiten](src/notbeleuchtung/normwissen/data/oib_rl4_fluchtwegbreiten.yaml) — oib_rl4_fluchtwegbreiten.yaml — OIB-Richtlinie 4, Kapitel 2
+- [ove_e05_e06_anlagen](src/notbeleuchtung/normwissen/data/ove_e05_e06_anlagen.yaml) — ove_e05_e06_anlagen.yaml — OVE-Fachinformationen E05 (Garagen) und
+- [ove_e07_funktionserhalt](src/notbeleuchtung/normwissen/data/ove_e07_funktionserhalt.yaml) — ove_e07_funktionserhalt.yaml — Funktionserhalt der Leitungsanlagen
 - [ove_e8101_zusatz](src/notbeleuchtung/normwissen/data/ove_e8101_zusatz.yaml) — ove_e8101_zusatz.yaml — belegte Zusatz-Anforderungen aus OVE E 8101
 - [platzierung_regeln](src/notbeleuchtung/normwissen/data/platzierung_regeln.yaml) — platzierung_regeln.yaml — Placement-Decision-Matrix Notbeleuchtung
 - [raumtyp_regeln](src/notbeleuchtung/normwissen/data/raumtyp_regeln.yaml) — raumtyp_regeln.yaml — Raumtyp × Fluchtweg → NormAnforderung
@@ -19,6 +23,7 @@ aus dem Index zitieren — immer der autoritativen YAML/dem Contract folgen.**
 ## Extrahiertes Wissen / Digests
 *Produkt-/Norm-/Referenz-Digests, Wettbewerb. Prosa — KI darf verlinken/zusammenfassen.*
 
+- [AM_RAIN_NOTBELEUCHTUNG_ANALYSE](knowledge/extracted/AM_RAIN_NOTBELEUCHTUNG_ANALYSE.md) — **Quelle:** 6 din-Referenz-DXF in `DIN-Notbeleuchtungspläne(Beispiele)/Am Rain Notbeleuchtungspläne/` (NUR LESEN, AutoCAD-Locks — `.dwl/.dw…
 - [Analyse — Notbeleuchtung Baufeld E2 (Referenz-Praxis vs. EN 1838)](knowledge/extracted/ANALYSE_Baufeld_E2_Notbeleuchtung.md) — **Ziel:** Die vom Planer gesetzte Notbeleuchtung in den 9 Elektromontageplänen
 - [ÖVE/ÖNORM E 8002 (2007) — Sicherheitsstromversorgung in baulichen Anlagen für Menschenansammlungen](knowledge/extracted/aus_elektroplaner/OENORM_E_8002_Menschenansammlungen.md) — **Quelle:** elektro-planer knowledge/normen/OEVE_OENORM_E_8002-{1,2,8}.txt, via Teil-Digests (`digests/normen/OEVE_OENORM_E_8002-1.part0.md…
 - [ÖVE/ÖNORM E 8007 (2007) — Sicherheitsstromversorgung in Krankenhäusern/medizinischen Räumen](knowledge/extracted/aus_elektroplaner/OENORM_E_8007_medizinisch.md) — **Quelle:** elektro-planer knowledge/normen/OEVE_OENORM_E_8007*.txt, via Teil-Digests · **Übernommen:** 2026-08-28
@@ -33,6 +38,7 @@ aus dem Index zitieren — immer der autoritativen YAML/dem Contract folgen.**
 - [Bild-Lehren — ABB Kaufel Planungsgrundlagen](knowledge/extracted/bildlehren/Bildlehren_Kaufel.md) — **Methode:** Planungs-Kapitel vollständig als Bild gesichtet (110 dpi), Katalogteil stichprobenartig, 2026-08-28.
 - [Bild-Lehren — licht.wissen 10](knowledge/extracted/bildlehren/Bildlehren_LichtWissen10.md) — **Methode:** Bildstarke Seiten gesichtet (110 dpi), 2026-08-28. ~30 Seiten-Views,
 - [Bild-Lehren — Zumtobel „Sicherheitsbeleuchtung Österreich"](knowledge/extracted/bildlehren/Bildlehren_ONL_Zumtobel.md) — **Methode:** Alle 48 Seiten als Bild gesichtet (110 dpi), 2026-08-28. Kritische
+- [din Planungsunterstützung V25 — Analyse eines realen Referenz-Notbeleuchtungsplans](knowledge/extracted/DIN_PLANUNGSUNTERSTUETZUNG_V25_ANALYSE.md) — **Quelle:** `DIN-Notbeleuchtungspläne(Beispiele)/din Planungsunterstützung_V25.dxf` (11 MB, AC1032/R2018).
 - [EN 1838:2019 — Angewandte Lichttechnik — Notbeleuchtung](knowledge/extracted/EN_1838_notbeleuchtung.md) — **Quelle:** knowledge/EN 1838 - Notbeleuchtung 2019 (1).pdf · **Extrahiert:** 2026-08-28, Volltext via pypdf
 - [ESV 2012 — Verordnung über den Schutz der Arbeitnehmer/innen vor Gefahren durch den elektrischen Strom (Elektroschutzverordnung 2012 – ESV 2012)](knowledge/extracted/ESV_2012.md) — **Quelle:** knowledge/esv_2012.pdf · **Extrahiert:** 2026-08-28, Volltext via pypdf
 - [ETG 1992 — Bundesgesetz über Sicherheitsmaßnahmen, Normalisierung und Typisierung auf dem Gebiete der Elektrotechnik (Elektrotechnikgesetz 1992 – ETG 1992)](knowledge/extracted/ETG_1992.md) — **Quelle:** knowledge/etg_1992.pdf · **Extrahiert:** 2026-08-28, Volltext via pypdf
@@ -46,6 +52,8 @@ aus dem Index zitieren — immer der autoritativen YAML/dem Contract folgen.**
 - [Lichtberechnungs-Referenz — echte Profi-Notberechnungen (extrahiert 2026-09-08)](knowledge/extracted/LICHTBERECHNUNG_REFERENZ.md) — **Erste echte professionelle Lichtberechnungen mit Zahlenwerten im Repo.** Zwei
 - [licht.wissen 10 — Notbeleuchtung, Sicherheitsbeleuchtung (Februar 2016)](knowledge/extracted/LichtWissen_10_Notbeleuchtung.md) — **Quelle:** knowledge/1603_lw10_Notbeleuchtung_web.pdf · **Extrahiert:** 2026-08-28, Volltext via pypdf
 - [Wissens-Digest — Muthgasse 109B Polierpläne: Brandschutz-Gerüst + 6. CAD-Familie](knowledge/extracted/MUTHGASSE_POLIERPLAN_BRANDSCHUTZ.md) — Quellen: `Projekte/Pläne 19., Muthgasse 109B - 2026-05-07_13-12/Architekt/Ausführungsplan/`
+- [Notbeleuchtung zeichnen lernen — Owner-Fachdoku (AUTORITATIV)](knowledge/extracted/NOTBELEUCHTUNG_ZEICHNEN_LERNEN.md) — **Quelle:** `knowledge/sonstiges Wissen Notbeleuchtung/Notbeleuchtung zeichnen lernen.pdf`
+- [Wissens-Digest: Notbeleuchtungspläne zeichnen — Recherche-Erweiterung](knowledge/extracted/NOTBELEUCHTUNGSPLAENE_ZEICHNEN_WEB.md) — <!-- Quelle: ultracode-Web-Recherche-Workflow (7 Angles, adversarial verifiziert), 2026-09-09.
 - [Nullungsverordnung — Verordnung über die Anforderungen an öffentliche Verteilungsnetze mit der Nennspannung 400/230 V und an diese angeschlossene Verbraucheranlagen zur grundsätzlichen Anwendung der Schutzmaßnahme Nullung](knowledge/extracted/Nullungsverordnung.md) — **Quelle:** knowledge/Nullungsverordnung (1).pdf (RIS, Bundesrecht konsolidiert, Fassung vom 22.04.2024, 5 S.; StF BGBl. II Nr. 322/1998) ·…
 - [ÖNORM E 8014 — OVE E 8014 „Fundamenterder und ergänzende Maßnahmen mit Erdung und Potentialausgleich für Einrichtungen der Informationstechnik" (Ausgabe 2019-01-01)](knowledge/extracted/OENORM_E_8014.md) — **Quelle:** knowledge/ÖNORM E 8014 (1).pdf · **Extrahiert:** 2026-08-28, Volltext via pypdf
 - [Sicherheitsbeleuchtung Österreich (Normenbroschüre) — Zumtobel Lighting GmbH, 02/2020](knowledge/extracted/ONL_Normen_AT.md) — **Quelle:** knowledge/ONL_Normen_AT.pdf · **Extrahiert:** 2026-08-28, Volltext via pypdf
@@ -73,10 +81,20 @@ aus dem Index zitieren — immer der autoritativen YAML/dem Contract folgen.**
 - [ADR-0006 — Fluchtweg-SL: `rotation_deg` = Optik-Zusicherung aus der Korridor-Achse](docs/adr/0006-rotation-als-optik-zusicherung.md) — **Status:** bindend · **Datum:** 2026-09-06 (#119, Leonis; adressiert Enis'
 - [ADRs — bindende Entscheidungen (nicht neu aufrollen)](docs/adr/README.md) — Kurzform-Architecture-Decision-Records: was entschieden wurde, warum, und was
 - [Mollgasse UG — unabhängige Notbeleuchtungs-Referenz aus den GU-Plänen](docs/analyse/mollgasse_ug_notbeleuchtung.md) — **Slice 4.1 (MEGA-Prompt 2026-09-07).** Quelle: GU-Elektro-Grundrisse
+- [01 — Plan-Forensik (P1 = `DIN-Notbeleuchtungspläne(Beispiele)`)](docs/audit/01_plan_forensik.md) — **Subagent A1 · Scope P1 nur.** Fremdmaterial (DIN/DE-Herkunft, Hersteller **din
+- [02 — Wissens-Coverage-Audit (A2)](docs/audit/02_wissens_coverage.md) — **Frage:** Welches Normwissen ist WIRKLICH in der Engine aktiv, welches ist totes
+- [A3 — Engine-IST + Lichtberechnung (Call-Graph-basiert)](docs/audit/03_engine_ist.md) — Stand 2026-09-09. Alle Befunde mit Beleg `datei:zeile`, Geltungs-Tag
+- [05 — Widerspruchs-Matrix (A4)](docs/audit/05_widersprueche.md) — **Subagent A4.** Synthese aus A1 (`01_plan_forensik.md`), A2 (`02_wissens_coverage.md`),
+- [06 — Naht- und Owner-Matrix (A5)](docs/audit/06_naht_owner_matrix.md) — Prüfung: Sind Enis · Leonis · Selman zueinander grün? Belege am Code (`datei:zeile`),
+- [07 — Sichtprüfung & Verify (Wissensabgleich, Branch `leonis/wissensabgleich-engine`)](docs/audit/07_sichtpruefung.md) — Stand 2026-09-10, **vor Push** (STOP-Gate). Basis main `fd65839`.
+- [FIX_PLAN — leonis/wissensabgleich-engine](docs/audit/FIX_PLAN.md) — Reihenfolge-Logik (Vorgabe): **Korrektheit → Norm-Aktivierung → Lichtberechnung → Enis-Wissens-Integration.**
+- [HANDOFF B — an Enis (normwissen-Lane)](docs/audit/HANDOFF_B_ENIS.md) — **Protokoll, keine Freigabe-Anfrage.** Der Owner hat die Contract-/YAML-Berührungen für
+- [REPORT — Wissens-/Normabgleich + Engine-Audit (Branch leonis/wissensabgleich-engine)](docs/audit/REPORT.md) — Synthese aus A1 (Plan-Forensik P1) · A2 (Wissens-Coverage) · A3 (Engine-Ist + Lichtberechnung) ·
 - [Contracts — menschenlesbare Spezifikation](docs/CONTRACTS.md) — Code = Wahrheit (`src/notbeleuchtung/hauptengine/contracts/*.py`, Pydantic).
 - [COORDINATION — 2-Fenster-Parallelbetrieb](docs/COORDINATION.md) — **Zweck:** Zwei Claude-Code-Sessions arbeiten parallel in getrennten Worktrees. Diese
 - [DoD-Sichtprüfungs-Bericht — Mollgasse Notbeleuchtungsplan (8 Geschosse)](docs/DOD_GEBAEUDE_MOLLGASSE.md) — **NEIN — das Gebäude-Plan-Set ist nicht auslieferbar.** Kein einziges der 8 Geschosse ist abnahmefähig. Zwei strukturelle Ursachen dominier…
 - [DoD-Sichtprüfung — Real-Plan Mollgasse EG](docs/DOD_SICHTPRUEFUNG.md) — **Stand:** 2026-08-31 · **Prüfer:** Leonis (F1) · **Fall:** `Projekte/Mollgasse/Erdgeschoß.dxf`
+- [Normwissen-Übergabe 0908 — Ergebnisbericht](docs/ENIS_UEBERGABE_0908.md) — Empfänger: @EnisAMG (normwissen/), @mvpo3 (platzierung/), 3-Owner-Runde
 - [0001 — Raumerkennung: Sprache (Python bleibt) + ML-Strategie](docs/entscheidungen/0001-raumerkennung-sprache-python-und-ml.md) — **Status:** angenommen · **Datum:** 2026-08-30 · **Betrifft:** Selman
 - [Infrastruktur — Entscheidung (Stand 2026-08-27)](docs/INFRASTRUKTUR.md) — **Leitsatz:** Infra folgt der Phase, nicht dem Hype. Solange die Engine gebaut
 - [Hauptengine in eine eigene App integrieren](docs/INTEGRATION.md) — Für Host-/Demo-Apps, die die Notbeleuchtungs-Engine aufrufen wollen (Raumerkennung +
@@ -91,6 +109,7 @@ aus dem Index zitieren — immer der autoritativen YAML/dem Contract folgen.**
 - [Blocker 2 — Scope-Gate der Flächen-Schwellen, je Schwelle getrennt](docs/proposals/BLOCKER2_FLAECHEN_SCOPE.md) — **Einzige Änderung 2019 → 2025 an dieser Stelle:** in Punkt 1) heißt es statt
 - [Vorschlag — Quellen-Naht für Sonderstellen (Umsetzung von SPEC §8)](docs/proposals/SONDERSTELLEN_QUELLEN_NAHT.md) — Eine Pflicht-Leuchte an einer Sonderstelle trägt heute die `quelle` der
 - [Wegbreite > 2 m und Randstreifen — Befund und Anschlussvorschlag](docs/proposals/WEGBREITE_RANDSTREIFEN.md) — Drei Punkte, die auseinandergehalten werden müssen:
+- [Referenz-Platzierung — Muster aus Fachplaner-Plan, Beispielbildern und Wissensquellen](docs/REFERENZ_PLATZIERUNG.md) — **Zweck:** Die beobachteten Platzierungs-MUSTER der Referenz-Praxis, als Vorbild für
 - [Spec — ProjektKontext + OibErgebnis (Enis → Leonis)](docs/SPEC_PROJEKTKONTEXT_OIB.md) — **Absender:** Enis (`src/notbeleuchtung/normwissen/`) · **Adressat:** Leonis (Owner
 - [Spec — Sonderstellen im `RaumModell` (Contract-Vorschlag)](docs/SPEC_SONDERSTELLEN_CONTRACT.md) — EN 1838 §4.1.2 verlangt, dass bestimmte **Stellen** hervorgehoben werden — jeder
 - [Stempel-Report — Projekte/_eingang](docs/STEMPEL_REPORT.md) — Erzeugt mit `scripts/stempel_report.py` am 2026-09-05.
@@ -100,7 +119,7 @@ aus dem Index zitieren — immer der autoritativen YAML/dem Contract folgen.**
 *Rollen, Packages, Contracts, Slice-Stände je Owner.*
 
 - [Handoff — Enis (Normwissen + LB)](Handoff/ENIS.md) — 1. **`origin/main` = `1092d77`.** (Der frühere Stand `5e4a46e` steht weiter unten
-- [Handoff — Leonis (Platzierung + Integration)](Handoff/LEONIS.md) — **Enis' gemeinsame L1/L3-Fassung reviewt** (Commit `8801aa6`, Branch
+- [Handoff — Leonis (Platzierung + Integration)](Handoff/LEONIS.md) — **Branch `leonis/demo-l-gebaeude` GEPUSHT, PR #156 OFFEN (3-Owner wegen norm_regelwerk 1.4.0).**
 - [Handoff — Perfekter Start je Owner](Handoff/README.md) — Jeder von euch arbeitet in einer **eigenen Claude-Code-Session im Repo-Ordner**.
 - [Handoff — Selman (Raumerkennung)](Handoff/SELMAN.md) — Du bist ein Agent — **führe diese Schritte selbst aus**, frag nicht lang nach.
 - [SYNC — Stand nachziehen, ohne Arbeit zu verlieren](Handoff/SYNC.md) — **Auslöser:** Der Owner schreibt in seiner Session **„Sync"** (oder „GitHub wurde

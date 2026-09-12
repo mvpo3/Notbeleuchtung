@@ -1163,8 +1163,8 @@ def _aussen_md(ab, ueber=(), exits=()) -> list[str]:
     ``exits`` = final_exit-Ausgänge für den Abstands-Hinweis.
     """
     if ab is None:
-        return ["", "## Außenbereich", "",
-                ("- keine Außen-Analyse (keine Wandkörper im Plan)")]
+        return ["", "## Außenbereich", "", ("- keine Außen-Analyse "
+                "(keine Wandkörper im Plan)")]
 
     def _fl(polys):
         return sum(p.area for p in polys) / 1e6      # mm² → m²

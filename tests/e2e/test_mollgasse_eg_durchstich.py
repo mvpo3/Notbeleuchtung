@@ -95,7 +95,15 @@ def test_symbolzahl_in_erwarteter_groessenordnung(durchstich):
     # (Stempel „KIWA" und „FAHRRADRAUM / KIWA"), die jetzt je ein Tür-RZ tragen
     # → RZ 26 → 28, SL 34 → 35 (ein Aufheller je neuem RZ, der zweite Raum
     # hatte schon eine Leuchte).
-    assert 10 <= rz <= 30, f"RZ={rz} außerhalb des erwarteten Bandes"
+    # Band-Obergrenze RZ am 11.09.2026 von 30 auf 34 (Leonis, Owner-Korrektur R2
+    # aus dem AutoCAD-Diff Elektroplan DE): die AUSSEN-Tür eines COMMUNAL Raums
+    # ist ein Notausgang und trägt ein RZ (EN 1838 §4.1.2 g, `fachpraxis.
+    # aussen_tuer_rz`). Auf Mollgasse EG genau +1 (nachgemessen: Müllraum-Hoftür
+    # `aussenoeffnung_1`, raum_30/MUELLRAUM) — die Klasse, die der Owner am
+    # Elektroplan händisch nachgetragen hat („Hier ist der Ausgang vom Müllraum").
+    # 28 → 31 gesamt: das Band war durch Selmans Türquellen-Ausgänge (Ursache 1)
+    # bereits am Rand.
+    assert 10 <= rz <= 34, f"RZ={rz} außerhalb des erwarteten Bandes"
     assert 15 <= sl <= 44, f"SL={sl} außerhalb des erwarteten Bandes"
     assert len(plzg) >= 30, f"nur {len(plzg)} Symbole — quasi-leer, Real-Plan-Regress"
 

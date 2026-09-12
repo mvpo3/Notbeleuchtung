@@ -23,16 +23,15 @@ _MIN_MONTAGEHOEHE_MM = 2000.0   # EN 1838 §4.1 (Montagehöhe ≥ 2 m)
 # §4.1.2 i) Brandbekämpfungs-/Meldeeinrichtungen — je 5 lx VERTIKAL (Enis-Review #95).
 _SONDERSTELLEN_MIT_LUX = {"erste_hilfe", "feuerloescher", "hydrant", "brandmelder"}
 
-# §4.3.8 nennt „Toiletten für Menschen mit Behinderung". Eindeutig sind WC und
-# TOILETTE; die übrigen Sanitär-Raumtypen belegen eine Toilettennutzung NICHT —
-# ein barrierefreies Bad ist keine barrierefreie Toilette. Für sie wird die
-# Norm-Pflicht weder behauptet noch verneint (Regel 12c).
-_TOILETTE_EINDEUTIG = {"WC", "TOILETTE"}
-_TOILETTE_MEHRDEUTIG = {"SANITAER", "SANITÄR", "BAD", "DUSCHE", "NASSRAUM"}
+# §4.3.8 nennt „Toiletten für Menschen mit Behinderung". Der mehrdeutige Sanitär-Scope
+# (WC/TOILETTE eindeutig, BAD/DUSCHE/NASSRAUM/SANITÄR nicht) kommt aus DERSELBEN Quelle
+# wie in der Platzierung — `bausteine.TOILETTE_MEHRDEUTIG` (W10/F05); vorher hier
+# unabhängig hartkodiert (wertgleich, aber Drift-Risiko). Import erfolgt lazy in Regel
+# 12c (wie die übrigen platzierung-Zugriffe), um einen Import-Zyklus zu vermeiden.
 _SV_KENNUNG = "F13"             # getrennter Sicherheitskreis (SV, dauergeschaltet)
 _AUSGANG_RZ_RADIUS_MM = 2000.0  # EN 1838: „nahe" = < 2 m → RZ gilt als „am Ausgang"
 _KOLLISION_MM = 250.0           # zwei Symbole näher als das = Kollision/Doppelung
-_REDUNDANZ_REICHWEITE_MM = 30000.0  # EN-1838-Erkennungsweite hinterleuchtet (z=200·h=0,15=30 m)
+_REDUNDANZ_REICHWEITE_MM = 30000.0  # Fallback ohne NormProvider (z=200·h=0,15=30 m); sonst norm.erkennungsweite_m
 _REDUNDANZ_MIN = 2              # EN 50172: je Fluchtweg-Abschnitt ≥ 2 Leuchten (1 Ausfall ≠ dunkel)
 _MIN_RAEUME_PLAUSIBEL = 15      # ab so vielen Räumen ist ein (fast) leerer Plan unplausibel
 _MIN_TUEREN_GEBAEUDE = 30       # so viele Türen = ganzes Gebäude → Räume MÜSSEN erschlossen sein
@@ -103,6 +102,24 @@ def _norm_umschaltzeit_max_s(norm: NormProvider) -> float | None:
     return min(werte) if werte else None
 
 
+def _redundanz_radius_mm(norm: NormProvider | None) -> float:
+    """Redundanz-Reichweite = Erkennungsweite l=z·h aus der Norm (hinterleuchtet,
+    Standard-Piktogramm 0,15 m), NICHT als Code-Konstante (F04, W08). Ohne Provider
+    Fallback auf `_REDUNDANZ_REICHWEITE_MM` — Single Source bleibt `erkennungsweite_m`."""
+    if norm is None:
+        return _REDUNDANZ_REICHWEITE_MM
+    return norm.erkennungsweite_m(0.15, hinterleuchtet=True) * 1000.0
+
+
+def _rz_hoehe_max_mm(norm: NormProvider | None) -> float | None:
+    """Obere RZ-Montagehöhen-Schranke aus der Norm (F13/W01, [AT-Referenzpraxis]), NICHT
+    als Code-Konstante. None, wenn kein Provider oder die Norm keine Schranke führt →
+    Regel wird dann nicht geprüft (kein Befund)."""
+    if norm is None:
+        return None
+    return getattr(norm.fuer_raum("GANG", True), "montagehoehe_max_mm", None)
+
+
 def pruefe(
     raum: RaumModell,
     platzierung: PlatzierungsErgebnis,
@@ -125,12 +142,30 @@ def pruefe(
         f"{len(zu_niedrig)} Symbol(e) unter 2000 mm" if zu_niedrig else "alle Symbole ≥ 2000 mm",
     ))
 
+    # 1b. Obere Montagehöhen-Schranke für Rettungszeichen (F13/W01, EN 1838 §5.5 l=z·h):
+    #     oberhalb ~10 m wird die Erkennbarkeit fraglich. WEICHE Warnung (real bis 10,8 m
+    #     gebaut, Barawitzka) — kein Hard-Stop. Nur geprüft, wenn die Norm eine Schranke führt.
+    rz_max = _rz_hoehe_max_mm(norm)
+    if rz_max is not None:
+        zu_hoch = [p for p in plzg if p.kind == "rz" and p.height_mm > rz_max]
+        befunde.append(Befund(
+            "Rettungszeichen-Montagehöhe ≤ 10 m (EN 1838 §5.5, Erkennbarkeit)",
+            "warnung" if zu_hoch else "ok",
+            f"{len(zu_hoch)} RZ über {rz_max / 1000:.0f} m" if zu_hoch
+            else f"alle RZ ≤ {rz_max / 1000:.0f} m",
+        ))
+
     # 2. Getrennter Sicherheitskreis (jedes Symbol trägt eine F13-Kreis-Kennung).
+    #    HARD-STOP (F06/W13, Kernmission): der eigene SV-Kreis ist nicht optional —
+    #    fällt der Allgemeinstromkreis, muss die Sicherheitsbeleuchtung weiterlaufen
+    #    (EN 1838 / OVE E 8101). Ein Symbol ohne F13-Kennung ist ein Norm-Verstoß, keine
+    #    Anmerkung → "fehler" (gesamtstatus fehler). Alle Strategien setzen den F13-Hint,
+    #    daher normal leer/„ok"; greift nur bei echtem Fehler.
     if plzg:
         ohne_kreis = [p for p in plzg if _SV_KENNUNG not in (p.circuit_hint or "")]
         befunde.append(Befund(
             "Getrennter Sicherheitskreis (EN 1838)",
-            "warnung" if ohne_kreis else "ok",
+            "fehler" if ohne_kreis else "ok",
             f"{len(ohne_kreis)} Symbol(e) ohne F13-Kreis" if ohne_kreis
             else "alle Symbole auf getrenntem SV-Kreis",
         ))
@@ -158,19 +193,21 @@ def pruefe(
 
         # 4b. 2-Leuchten-Redundanz je Fluchtweg-Abschnitt (EN 50172 / §5.1.8): fällt eine
         #     Leuchte aus, muss der Abschnitt minimal beleuchtet bleiben → ≥ 2 Leuchten
-        #     (RZ/SL) in Erkennungsweite. WARNUNG, kein Hard-Fail — Bestandspläne erfüllen
-        #     das oft nicht flächendeckend; erst sichtbar machen, Hard-Fail folgt später.
+        #     (RZ/SL) in Erkennungsweite. HARD-FAIL (F07/W19): Ausfallschutz ist norm-
+        #     verbindlich, kein bloßer Hinweis. Die Platzierung garantiert das proaktiv
+        #     (`deckung.garantiere_redundanz`), die Prüfung zieht den Boden ein.
         leuchten = [p for p in plzg if p.kind in ("rz", "sicherheitsleuchte")]
+        redundanz_radius = _redundanz_radius_mm(norm)
         unterversorgt = [
             s.segment_id for s in raum.zirkulation.segmente
             if sum(
                 1 for p in leuchten
-                if _dist_punkt_polyline(p.xy_mm, s.polyline_mm) <= _REDUNDANZ_REICHWEITE_MM
+                if _dist_punkt_polyline(p.xy_mm, s.polyline_mm) <= redundanz_radius
             ) < _REDUNDANZ_MIN
         ]
         befunde.append(Befund(
             "2-Leuchten-Redundanz je Fluchtweg-Abschnitt (EN 50172)",
-            "warnung" if unterversorgt else "ok",
+            "fehler" if unterversorgt else "ok",
             f"{len(unterversorgt)}/{len(segmente)} Abschnitt(e) mit < {_REDUNDANZ_MIN} "
             "Leuchten in Reichweite" if unterversorgt
             else f"alle {len(segmente)} Abschnitte mit ≥ {_REDUNDANZ_MIN} Leuchten",
@@ -355,9 +392,10 @@ def pruefe(
     #      die Quelle nicht hergibt"). Der Fall darf aber auch nicht verschwinden:
     #      enthält der Raum eine barrierefreie Toilette, fehlt sonst eine
     #      Pflicht-Leuchte, ohne dass man es dem Plan ansieht.
+    from notbeleuchtung.platzierung.bausteine import TOILETTE_MEHRDEUTIG
     unklar = [
         r for r in raum.raeume
-        if r.ist_barrierefrei and r.raum_typ.upper() in _TOILETTE_MEHRDEUTIG
+        if r.ist_barrierefrei and r.raum_typ.upper() in TOILETTE_MEHRDEUTIG
     ]
     if unklar:
         typen = sorted({r.raum_typ for r in unklar})
