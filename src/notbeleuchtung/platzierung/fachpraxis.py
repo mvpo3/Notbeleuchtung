@@ -38,6 +38,7 @@ from .bausteine import AGV_SV_F as _AGV_SV_F
 from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
 from .bausteine import RZ_INS_RAUM_MM as _RZ_INS_RAUM_MM
 from .bausteine import building_assigner as _building_assigner
+from .bausteine import ist_echte_tuer as _ist_echte_tuer
 from .bausteine import rotation_piktogramm_in_raum as _rotation_piktogramm_in_raum
 from .bausteine import rotation_zur_tuer as _rotation_zur_tuer
 from .bausteine import select_key as _select_key
@@ -246,22 +247,8 @@ def aufheller_je_rz(
     return out
 
 
-#: Obergrenze „das ist noch eine TÜR": Selmans eigener Nennmaß-Türbereich endet bei
-#: 130 cm (`raumerkennung/tueren.py::_breite_mm`, 60–130). Eine breitere „Öffnung"
-#: (GEOMETRIE_OEFFNUNG-Durchgänge, Elektroplan DE: 6064-mm-„durchgang_12" = die WAND
-#: Müllraum↔Gang mit Erkennungsloch) ist keine Tür — dort hängt kein Tür-RZ
-#: (Owner-Befund 2026-09-12: „dort gibt es aber keine Tür, dort ist eine Wand").
-_TUER_MAX_BREITE_MM = 1300.0
-
-
-def _ist_echte_tuer(t) -> bool:
-    """Phantom-Öffnungen von echten Türen trennen: Wandlücken-Durchgänge ohne
-    Türblatt oberhalb jedes Türmaßes zählen nicht (fail-closed Richtung
-    „keine Leuchte an geratener Stelle")."""
-    breite = t.breite_mm
-    if breite is not None and breite > _TUER_MAX_BREITE_MM:
-        return False
-    return not (getattr(t, "ohne_tuerblatt", False) and breite is None)
+# Tür-Echtheit: EINE Quelle in bausteine (ist_echte_tuer) — Elektroplan-DE-Befund
+# „6064-mm-durchgang_12 = Wand mit Erkennungsloch" (Owner 2026-09-12).
 
 
 def _tuer_des_raums(raum: RaumModell, r):
