@@ -46,8 +46,8 @@ def extrahiere(pfad: Path) -> dict:
                     texte_not.append(eintrag)
                 if e.dxf.get("color", 256) == 1 or "rot" in layer.lower():
                     texte_rot.append(eintrag)
-        except Exception:
-            continue
+        except (AttributeError, ezdxf.DXFError, UnicodeDecodeError):
+            continue                       # kaputte Einzel-Entity: Analyse-Tool, skip
 
     # Blockdefinitionen der Notlicht-Blöcke: Entity-Arten (für Basis-/Symbolik-Fragen)
     blockdefs = {}
@@ -56,14 +56,14 @@ def extrahiere(pfad: Path) -> dict:
             blk = doc.blocks.get(bname)
             arten = Counter(x.dxftype() for x in blk)
             blockdefs[bname] = dict(arten)
-        except Exception:
-            pass
+        except (KeyError, AttributeError, ezdxf.DXFError):
+            pass                           # Blockdef fehlt/defekt: Zählung reicht
 
     ext = None
     try:
         ext = [round(v, 0) for v in (*doc.header["$EXTMIN"][:2], *doc.header["$EXTMAX"][:2])]
-    except Exception:
-        pass
+    except (KeyError, TypeError):
+        ext = None                         # Header ohne Extents: bewusst leer
 
     return {
         "datei": pfad.name,
