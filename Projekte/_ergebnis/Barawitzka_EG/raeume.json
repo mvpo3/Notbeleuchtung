@@ -10,13 +10,255 @@
       "abweichung_prozent": null,
       "flag": "kein_polygon",
       "quelle": null,
-      "stempel_quelle": "MTEXT"
+      "stempel_quelle": "MTEXT",
+      "raum_typ": null,
+      "polygon_roh": [],
+      "flaeche_roh": null,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
     },
     {
       "id": "raum_43",
       "typ": "TERRASSE",
       "name": "Terrasse",
       "polygon_mm": [
+        [
+          5432.257229598232,
+          -21369.632344956648
+        ],
+        [
+          5433.481178933641,
+          -21367.273312159567
+        ],
+        [
+          5434.948636934244,
+          -21365.057538089448
+        ],
+        [
+          5434.999196125827,
+          -21364.989366911206
+        ],
+        [
+          5435.028825221261,
+          -21364.386252818338
+        ],
+        [
+          5435.028825221261,
+          -21300.6136839238
+        ],
+        [
+          5435.000087121796,
+          -21300.02870647053
+        ],
+        [
+          5434.415109668553,
+          -21299.999968371067
+        ],
+        [
+          5430.95085053846,
+          -21299.999968371067
+        ],
+        [
+          5430.948905542089,
+          -21299.99992064817
+        ],
+        [
+          5385.028838765305,
+          -21283.298134842797
+        ],
+        [
+          5385.028838765305,
+          -20304.428981290974
+        ],
+        [
+          5474.743329410803,
+          -20124.999999999978
+        ],
+        [
+          5549.743329410803,
+          -20099.999999999978
+        ],
+        [
+          5899.743329410803,
+          -19749.999999999978
+        ],
+        [
+          5949.743329410803,
+          -19749.999999999978
+        ],
+        [
+          6224.743329410803,
+          -19524.999999999978
+        ],
+        [
+          6224.743329410803,
+          -19490.000002089957
+        ],
+        [
+          6885.000013544028,
+          -19490.000002089957
+        ],
+        [
+          6885.000013544028,
+          -17614.743315866755
+        ],
+        [
+          6935.000013544042,
+          -17564.74331586674
+        ],
+        [
+          6935.000013544042,
+          -19490.0000336108
+        ],
+        [
+          12094.743262189162,
+          -19490.0000336108
+        ],
+        [
+          12024.743329410803,
+          -19524.999999999978
+        ],
+        [
+          12024.743329410803,
+          -19774.999999999978
+        ],
+        [
+          11974.743329410803,
+          -19824.999999999978
+        ],
+        [
+          11974.743329410803,
+          -20924.999999999978
+        ],
+        [
+          10849.743329410803,
+          -20949.999999999978
+        ],
+        [
+          10845.64248082905,
+          -20989.999999999993
+        ],
+        [
+          10845.057503375805,
+          -20990.028738099456
+        ],
+        [
+          10845.02876527634,
+          -20990.61371555271
+        ],
+        [
+          10845.02876527634,
+          -21019.386284447282
+        ],
+        [
+          10845.055813308461,
+          -21019.936859789443
+        ],
+        [
+          10845.251366902392,
+          -21021.212871519267
+        ],
+        [
+          10845.505178725463,
+          -21023.683266976244
+        ],
+        [
+          10845.512641987392,
+          -21026.1666554789
+        ],
+        [
+          10845.273683043408,
+          -21028.63853184686
+        ],
+        [
+          10845.223983941374,
+          -21028.88917333979
+        ],
+        [
+          10845.058770008034,
+          -21030.00295520811
+        ],
+        [
+          10845.02876527634,
+          -21030.613715552707
+        ],
+        [
+          11493.657953146556,
+          -21110.00000209003
+        ],
+        [
+          10845.028768940501,
+          -21110.00000209003
+        ],
+        [
+          10845.028768940501,
+          -22520.000094093077
+        ],
+        [
+          10345.028878431047,
+          -22520.000094093077
+        ],
+        [
+          10345.028878431047,
+          -22360.000019805597
+        ],
+        [
+          7295.028878464036,
+          -22360.000019805597
+        ],
+        [
+          7295.028878464036,
+          -22520.000094093077
+        ],
+        [
+          6795.028768940494,
+          -22520.000094093077
+        ],
+        [
+          6795.028768940494,
+          -21110.000019805586
+        ],
+        [
+          5435.02883876532,
+          -21110.000019805586
+        ],
+        [
+          5435.02883876532,
+          -21294.999970461115
+        ],
+        [
+          5435.02883876532,
+          -21639.28062507314
+        ],
+        [
+          5430.028825221262,
+          -21489.99977474049
+        ],
+        [
+          5430.028825221262,
+          -21379.950020701755
+        ],
+        [
+          5430.17008697553,
+          -21377.296130570245
+        ],
+        [
+          5430.592275847673,
+          -21374.672231892782
+        ],
+        [
+          5431.290620706435,
+          -21372.107977191787
+        ]
+      ],
+      "flaeche_stempel": 8.79,
+      "flaeche_berechnet": 15.533187843071579,
+      "abweichung_prozent": 544.4,
+      "flag": "flutung_unsicher",
+      "quelle": "F",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "TERRASSE",
+      "polygon_roh": [
         [
           9719.292359325853,
           -23879.460165245135
@@ -1874,12 +2116,50 @@
           -23879.460165245135
         ]
       ],
-      "flaeche_stempel": 8.79,
-      "flaeche_berechnet": 56.64326657570563,
-      "abweichung_prozent": 544.4,
-      "flag": "flutung_unsicher",
-      "quelle": "F",
-      "stempel_quelle": "MTEXT"
+      "flaeche_roh": 56.64326657570563,
+      "abweichung_bereinigt_prozent": 76.71,
+      "bereinigung": [
+        {
+          "regel": "ENTHALTENSEIN",
+          "gegenspieler": "raum_15",
+          "flaeche_m2": 14.118773936346978
+        },
+        {
+          "regel": "ENTHALTENSEIN",
+          "gegenspieler": "raum_37",
+          "flaeche_m2": 12.755621725871825
+        },
+        {
+          "regel": "QUELLE_RANG",
+          "gegenspieler": "raum_39",
+          "flaeche_m2": 8.174852456288338
+        },
+        {
+          "regel": "QUELLE_RANG",
+          "gegenspieler": "raum_12",
+          "flaeche_m2": 1.3086244987362325
+        },
+        {
+          "regel": "QUELLE_RANG",
+          "gegenspieler": "raum_14",
+          "flaeche_m2": 1.0826813170731031
+        },
+        {
+          "regel": "QUELLE_RANG",
+          "gegenspieler": "raum_16",
+          "flaeche_m2": 0.10278492324056476
+        },
+        {
+          "regel": "QUELLE_RANG",
+          "gegenspieler": "raum_38",
+          "flaeche_m2": 0.07835505852407217
+        },
+        {
+          "regel": "ZERFALL",
+          "gegenspieler": null,
+          "flaeche_m2": 3.4883848165529425
+        }
+      ]
     },
     {
       "id": "raum_32",
@@ -1916,11 +2196,16 @@
       "abweichung_prozent": -0.01,
       "flag": "ok",
       "quelle": "H",
-      "stempel_quelle": "MTEXT"
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "ABSTELLRAUM",
+      "polygon_roh": [],
+      "flaeche_roh": 25.66706884214484,
+      "abweichung_bereinigt_prozent": -0.01,
+      "bereinigung": []
     },
     {
       "id": "raum_33",
-      "typ": "ABSTELLRAUM",
+      "typ": "KINDERWAGENRAUM",
       "name": "Fahrrad+ KiWa",
       "polygon_mm": [
         [
@@ -1961,7 +2246,12 @@
       "abweichung_prozent": -0.02,
       "flag": "ok",
       "quelle": "H",
-      "stempel_quelle": "MTEXT"
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "KINDERWAGENRAUM",
+      "polygon_roh": [],
+      "flaeche_roh": 18.647000650693474,
+      "abweichung_bereinigt_prozent": -0.02,
+      "bereinigung": []
     },
     {
       "id": "raum_34",
@@ -2002,7 +2292,12 @@
       "abweichung_prozent": -0.1,
       "flag": "ok",
       "quelle": "H",
-      "stempel_quelle": "MTEXT"
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "WASCHKÜCHE",
+      "polygon_roh": [],
+      "flaeche_roh": 4.455450228859678,
+      "abweichung_bereinigt_prozent": -0.1,
+      "bereinigung": []
     },
     {
       "id": "raum_35",
@@ -2147,7 +2442,12 @@
       "abweichung_prozent": 0.01,
       "flag": "ok",
       "quelle": "H",
-      "stempel_quelle": "MTEXT"
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "STIEGENHAUS",
+      "polygon_roh": [],
+      "flaeche_roh": 30.022972461863844,
+      "abweichung_bereinigt_prozent": 0.01,
+      "bereinigung": []
     },
     {
       "id": "raum_37",
@@ -2260,7 +2560,12 @@
       "abweichung_prozent": -0.01,
       "flag": "ok",
       "quelle": "H",
-      "stempel_quelle": "MTEXT"
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "STIEGENHAUS",
+      "polygon_roh": [],
+      "flaeche_roh": 12.878200528323624,
+      "abweichung_bereinigt_prozent": -0.01,
+      "bereinigung": []
     },
     {
       "id": "raum_7",
@@ -2321,7 +2626,12 @@
       "abweichung_prozent": 0.02,
       "flag": "ok",
       "quelle": "H",
-      "stempel_quelle": "MTEXT"
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "KÜCHE",
+      "polygon_roh": [],
+      "flaeche_roh": 28.104644326458693,
+      "abweichung_bereinigt_prozent": 0.02,
+      "bereinigung": []
     },
     {
       "id": "raum_8",
@@ -2350,7 +2660,12 @@
       "abweichung_prozent": -0.0,
       "flag": "ok",
       "quelle": "H",
-      "stempel_quelle": "MTEXT"
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "ZIMMER",
+      "polygon_roh": [],
+      "flaeche_roh": 13.029499769494254,
+      "abweichung_bereinigt_prozent": -0.0,
+      "bereinigung": []
     },
     {
       "id": "raum_9",
@@ -2407,7 +2722,12 @@
       "abweichung_prozent": 0.08,
       "flag": "ok",
       "quelle": "H",
-      "stempel_quelle": "MTEXT"
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "VORRAUM",
+      "polygon_roh": [],
+      "flaeche_roh": 5.594425212336629,
+      "abweichung_bereinigt_prozent": 0.08,
+      "bereinigung": []
     },
     {
       "id": "raum_10",
@@ -2444,7 +2764,12 @@
       "abweichung_prozent": 0.08,
       "flag": "ok",
       "quelle": "H",
-      "stempel_quelle": "MTEXT"
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "BAD",
+      "polygon_roh": [],
+      "flaeche_roh": 5.7845250185328005,
+      "abweichung_bereinigt_prozent": 0.08,
+      "bereinigung": []
     },
     {
       "id": "raum_42",
@@ -2477,7 +2802,12 @@
       "abweichung_prozent": 0.01,
       "flag": "ok",
       "quelle": "H",
-      "stempel_quelle": "MTEXT"
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "BALKON",
+      "polygon_roh": [],
+      "flaeche_roh": 7.2908422915513045,
+      "abweichung_bereinigt_prozent": 0.01,
+      "bereinigung": []
     },
     {
       "id": "raum_3",
@@ -2514,7 +2844,12 @@
       "abweichung_prozent": 0.01,
       "flag": "ok",
       "quelle": "H",
-      "stempel_quelle": "MTEXT"
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "BAD",
+      "polygon_roh": [],
+      "flaeche_roh": 4.040400223310068,
+      "abweichung_bereinigt_prozent": 0.01,
+      "bereinigung": []
     },
     {
       "id": "raum_11",
@@ -2543,7 +2878,12 @@
       "abweichung_prozent": -0.23,
       "flag": "ok",
       "quelle": "H",
-      "stempel_quelle": "MTEXT"
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "WC",
+      "polygon_roh": [],
+      "flaeche_roh": 1.2869999338894762,
+      "abweichung_bereinigt_prozent": -0.23,
+      "bereinigung": []
     },
     {
       "id": "raum_12",
@@ -2604,7 +2944,12 @@
       "abweichung_prozent": 0.07,
       "flag": "ok",
       "quelle": "H",
-      "stempel_quelle": "MTEXT"
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "VORRAUM",
+      "polygon_roh": [],
+      "flaeche_roh": 6.044100000000298,
+      "abweichung_bereinigt_prozent": 0.07,
+      "bereinigung": []
     },
     {
       "id": "raum_13",
@@ -2649,13 +2994,2146 @@
       "abweichung_prozent": 0.0,
       "flag": "ok",
       "quelle": "H",
-      "stempel_quelle": "MTEXT"
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "KÜCHE",
+      "polygon_roh": [],
+      "flaeche_roh": 26.830681902136842,
+      "abweichung_bereinigt_prozent": 0.0,
+      "bereinigung": []
     },
+    {
+      "id": "stempel_17",
+      "typ": "BALKON",
+      "name": "Loggia",
+      "polygon_mm": [],
+      "flaeche_stempel": 5.31,
+      "flaeche_berechnet": null,
+      "abweichung_prozent": null,
+      "flag": "kein_polygon",
+      "quelle": null,
+      "stempel_quelle": "MTEXT",
+      "raum_typ": null,
+      "polygon_roh": [],
+      "flaeche_roh": null,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_16",
+      "typ": "WC",
+      "name": "WC",
+      "polygon_mm": [
+        [
+          254.45036623187116,
+          -19540.000002089968
+        ],
+        [
+          2555.0000135440496,
+          -19540.000002089968
+        ],
+        [
+          3955.000013544108,
+          -19540.000002089946
+        ],
+        [
+          5385.028838765305,
+          -19540.000002089946
+        ],
+        [
+          5385.028838765305,
+          -21294.999970461115
+        ],
+        [
+          254.13379202205033,
+          -21294.999970461115
+        ]
+      ],
+      "flaeche_stempel": 9.0,
+      "flaeche_berechnet": 9.00444285088602,
+      "abweichung_prozent": 0.05,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "WC",
+      "polygon_roh": [],
+      "flaeche_roh": 9.00444285088602,
+      "abweichung_bereinigt_prozent": 0.05,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_17",
+      "typ": "WC",
+      "name": "WC",
+      "polygon_mm": [
+        [
+          5025.02883876532,
+          -22539.999970461107
+        ],
+        [
+          3500.0288387653127,
+          -22539.999970461107
+        ],
+        [
+          3500.0288387653127,
+          -21674.999970461096
+        ],
+        [
+          5025.02883876532,
+          -21674.999970461096
+        ]
+      ],
+      "flaeche_stempel": 1.32,
+      "flaeche_berechnet": 1.319125000000023,
+      "abweichung_prozent": -0.07,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "WC",
+      "polygon_roh": [],
+      "flaeche_roh": 1.319125000000023,
+      "abweichung_bereinigt_prozent": -0.07,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_18",
+      "typ": "KÜCHE",
+      "name": "Wohnküche",
+      "polygon_mm": [
+        [
+          13310.000033437187,
+          -14690.000002090059
+        ],
+        [
+          9735.00001354405,
+          -14690.000002090037
+        ],
+        [
+          9735.00001354405,
+          -10475.000002090037
+        ],
+        [
+          9505.000013544028,
+          -10475.000002090037
+        ],
+        [
+          9505.000013544028,
+          -9675.000002090037
+        ],
+        [
+          9685.000013544035,
+          -9675.000002090037
+        ],
+        [
+          9685.000013544035,
+          -9025.000002090048
+        ],
+        [
+          13310.000033437187,
+          -9025.000002090048
+        ],
+        [
+          13310.000033437187,
+          -9255.000002090037
+        ]
+      ],
+      "flaeche_stempel": 20.47,
+      "flaeche_berechnet": 20.468875112694654,
+      "abweichung_prozent": -0.01,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "KÜCHE",
+      "polygon_roh": [],
+      "flaeche_roh": 20.468875112694654,
+      "abweichung_bereinigt_prozent": -0.01,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_5",
+      "typ": "BAD",
+      "name": "Bad",
+      "polygon_mm": [
+        [
+          2935.0000135440423,
+          -5855.000002089975
+        ],
+        [
+          331.4704307592656,
+          -5855.000002089975
+        ],
+        [
+          324.7237640925814,
+          -4015.000002089959
+        ],
+        [
+          2935.0000135440423,
+          -4015.0000020899715
+        ]
+      ],
+      "flaeche_stempel": 4.8,
+      "flaeche_berechnet": 4.796701365657365,
+      "abweichung_prozent": -0.07,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "BAD",
+      "polygon_roh": [],
+      "flaeche_roh": 4.796701365657365,
+      "abweichung_bereinigt_prozent": -0.07,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_19",
+      "typ": "VORRAUM",
+      "name": "VR",
+      "polygon_mm": [
+        [
+          3735.0000135440496,
+          -7325.000002090032
+        ],
+        [
+          4795.000013544064,
+          -7325.000002090032
+        ],
+        [
+          6345.000013544035,
+          -7325.000002090032
+        ],
+        [
+          6585.00001354405,
+          -7325.000002090032
+        ],
+        [
+          6585.00001354405,
+          -8525.000002090048
+        ],
+        [
+          6055.00001354405,
+          -8525.000002090048
+        ],
+        [
+          3735.0000135440496,
+          -8525.000002090048
+        ]
+      ],
+      "flaeche_stempel": 3.42,
+      "flaeche_berechnet": 3.4200000000000466,
+      "abweichung_prozent": 0.0,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "VORRAUM",
+      "polygon_roh": [],
+      "flaeche_roh": 3.4200000000000466,
+      "abweichung_bereinigt_prozent": 0.0,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_20",
+      "typ": "ZIMMER",
+      "name": "Zimmer",
+      "polygon_mm": [
+        [
+          6685.000013544042,
+          -14690.000002090037
+        ],
+        [
+          3735.0000135440496,
+          -14690.000002090037
+        ],
+        [
+          3735.0000135440496,
+          -10725.000002090037
+        ],
+        [
+          6685.000013544042,
+          -10725.000002090037
+        ]
+      ],
+      "flaeche_stempel": 11.7,
+      "flaeche_berechnet": 11.696749999999971,
+      "abweichung_prozent": -0.03,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "ZIMMER",
+      "polygon_roh": [],
+      "flaeche_roh": 11.696749999999971,
+      "abweichung_bereinigt_prozent": -0.03,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_21",
+      "typ": "ZIMMER",
+      "name": "Zimmer",
+      "polygon_mm": [
+        [
+          6935.000013544042,
+          -10600.000002090037
+        ],
+        [
+          9635.00001354405,
+          -10600.000002090037
+        ],
+        [
+          9635.00001354405,
+          -14690.000002090037
+        ],
+        [
+          6935.000013544042,
+          -14690.000002090037
+        ]
+      ],
+      "flaeche_stempel": 11.04,
+      "flaeche_berechnet": 11.04300000000003,
+      "abweichung_prozent": 0.03,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "ZIMMER",
+      "polygon_roh": [],
+      "flaeche_roh": 11.04300000000003,
+      "abweichung_bereinigt_prozent": 0.03,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_22",
+      "typ": "BAD",
+      "name": "Bad/WC",
+      "polygon_mm": [
+        [
+          3885.000013544057,
+          -8805.000002090046
+        ],
+        [
+          6005.000013544028,
+          -8805.000002090046
+        ],
+        [
+          6005.000013544028,
+          -8835.000002090048
+        ],
+        [
+          6005.000013544028,
+          -9145.000002090037
+        ],
+        [
+          6585.00001354405,
+          -9145.000002090037
+        ],
+        [
+          6735.00001354405,
+          -9145.000002090037
+        ],
+        [
+          6735.00001354405,
+          -10475.000002090037
+        ],
+        [
+          3885.000013544057,
+          -10475.000002090037
+        ]
+      ],
+      "flaeche_stempel": 4.51,
+      "flaeche_berechnet": 4.511299999999961,
+      "abweichung_prozent": 0.03,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "BAD",
+      "polygon_roh": [],
+      "flaeche_roh": 4.511299999999961,
+      "abweichung_bereinigt_prozent": 0.03,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_23",
+      "typ": "ZIMMER",
+      "name": "Zimmer",
+      "polygon_mm": [
+        [
+          12305.02883876529,
+          -25750.000093199076
+        ],
+        [
+          14865.02883876529,
+          -25750.000093199076
+        ],
+        [
+          14885.028838765305,
+          -25750.000093199076
+        ],
+        [
+          14885.028838765305,
+          -29800.00000209002
+        ],
+        [
+          12305.02883876529,
+          -29800.00000209002
+        ]
+      ],
+      "flaeche_stempel": 10.45,
+      "flaeche_berechnet": 10.44899976493869,
+      "abweichung_prozent": -0.01,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "ZIMMER",
+      "polygon_roh": [],
+      "flaeche_roh": 10.44899976493869,
+      "abweichung_bereinigt_prozent": -0.01,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_24",
+      "typ": "ZIMMER",
+      "name": "Zimmer",
+      "polygon_mm": [
+        [
+          9605.028838765327,
+          -26070.000093199087
+        ],
+        [
+          11125.02883876537,
+          -26070.000093199087
+        ],
+        [
+          11125.02883876537,
+          -26050.000093199087
+        ],
+        [
+          11125.02883876537,
+          -25750.000093199076
+        ],
+        [
+          12205.028838765298,
+          -25750.000093199076
+        ],
+        [
+          12205.028838765298,
+          -29800.00000209002
+        ],
+        [
+          12205.028838765298,
+          -30700.000002090015
+        ],
+        [
+          9605.028838765298,
+          -30700.000002090015
+        ]
+      ],
+      "flaeche_stempel": 12.38,
+      "flaeche_berechnet": 12.383599763116333,
+      "abweichung_prozent": 0.03,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "ZIMMER",
+      "polygon_roh": [],
+      "flaeche_roh": 12.383599763116333,
+      "abweichung_bereinigt_prozent": 0.03,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_25",
+      "typ": "KÜCHE",
+      "name": "Wohnküche",
+      "polygon_mm": [
+        [
+          3395.028815607904,
+          -24044.9999704611
+        ],
+        [
+          3395.028815607904,
+          -24695.0000066386
+        ],
+        [
+          3395.028815607904,
+          -26050.000100917867
+        ],
+        [
+          3855.0288051243842,
+          -26050.000100917867
+        ],
+        [
+          3855.0288051243842,
+          -31200.000002090015
+        ],
+        [
+          376.4792727689164,
+          -31200.000002090022
+        ],
+        [
+          367.56153749954683,
+          -24044.999970461115
+        ]
+      ],
+      "flaeche_stempel": 24.0,
+      "flaeche_berechnet": 23.998625173102653,
+      "abweichung_prozent": -0.01,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "KÜCHE",
+      "polygon_roh": [],
+      "flaeche_roh": 23.998625173102653,
+      "abweichung_bereinigt_prozent": -0.01,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_26",
+      "typ": "ZIMMER",
+      "name": "Zimmer",
+      "polygon_mm": [
+        [
+          6665.028838765371,
+          -26050.000093199087
+        ],
+        [
+          7695.028838765364,
+          -26050.000093199087
+        ],
+        [
+          9355.028838765327,
+          -26050.000093199087
+        ],
+        [
+          9355.028838765313,
+          -30700.000002090015
+        ],
+        [
+          9355.028838765313,
+          -31200.000002090015
+        ],
+        [
+          6665.028838765371,
+          -31200.000002090015
+        ]
+      ],
+      "flaeche_stempel": 13.85,
+      "flaeche_berechnet": 13.853499754916331,
+      "abweichung_prozent": 0.03,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "ZIMMER",
+      "polygon_roh": [],
+      "flaeche_roh": 13.853499754916331,
+      "abweichung_bereinigt_prozent": 0.03,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_28",
+      "typ": "ABSTELLRAUM",
+      "name": "AR",
+      "polygon_mm": [
+        [
+          13650.028838712424,
+          -23995.000093198996
+        ],
+        [
+          12645.028838765298,
+          -23995.000093198996
+        ],
+        [
+          12645.028838765298,
+          -22024.999970461107
+        ],
+        [
+          13650.02883876532,
+          -22024.999970461107
+        ]
+      ],
+      "flaeche_stempel": 1.98,
+      "flaeche_berechnet": 1.9798501232995187,
+      "abweichung_prozent": -0.01,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "ABSTELLRAUM",
+      "polygon_roh": [],
+      "flaeche_roh": 1.9798501232995187,
+      "abweichung_bereinigt_prozent": -0.01,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_6",
+      "typ": "TERRASSE",
+      "name": "tERRASSE",
+      "polygon_mm": [
+        [
+          9662.280446545315,
+          -32369.525756077997
+        ],
+        [
+          9665.028831331612,
+          -31580.000002064135
+        ],
+        [
+          9665.028838765298,
+          -31080.00000209003
+        ],
+        [
+          12515.028838765335,
+          -31080.00000209003
+        ],
+        [
+          18411.07461188751,
+          -31080.00000209003
+        ],
+        [
+          18411.03176251825,
+          -31089.999973646965
+        ],
+        [
+          18385.041259871934,
+          -31089.999973646965
+        ],
+        [
+          18385.041259871934,
+          -31209.99997129761
+        ],
+        [
+          18371.72525969238,
+          -31117.379059534152
+        ]
+      ],
+      "flaeche_stempel": 5.87,
+      "flaeche_berechnet": 5.777217487304616,
+      "abweichung_prozent": -1.58,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "BALKON",
+      "polygon_roh": [],
+      "flaeche_roh": 5.777217487304616,
+      "abweichung_bereinigt_prozent": -1.58,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_29",
+      "typ": "WC",
+      "name": "WC",
+      "polygon_mm": [
+        [
+          6135.000013544057,
+          -5945.00000209005
+        ],
+        [
+          5785.000013544042,
+          -5945.00000209005
+        ],
+        [
+          5785.000013544042,
+          -5605.000002090033
+        ],
+        [
+          4895.00001354405,
+          -5605.000002090033
+        ],
+        [
+          4895.00001354405,
+          -4115.0000020899515
+        ],
+        [
+          6135.000013544057,
+          -4115.000002089966
+        ]
+      ],
+      "flaeche_stempel": 1.97,
+      "flaeche_berechnet": 1.966600000000114,
+      "abweichung_prozent": -0.17,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "WC",
+      "polygon_roh": [],
+      "flaeche_roh": 1.966600000000114,
+      "abweichung_bereinigt_prozent": -0.17,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_30",
+      "typ": "VORRAUM",
+      "name": "Gard.",
+      "polygon_mm": [
+        [
+          3035.0000135440423,
+          -3915.000002089979
+        ],
+        [
+          4795.000013544064,
+          -3915.0000020899643
+        ],
+        [
+          4795.000013544064,
+          -5605.000002090033
+        ],
+        [
+          4795.000013544064,
+          -6225.000002090052
+        ],
+        [
+          4795.000013544064,
+          -7325.000002090032
+        ],
+        [
+          3735.0000135440496,
+          -7325.000002090032
+        ],
+        [
+          3735.0000135440496,
+          -6225.000002090052
+        ],
+        [
+          3735.0000135440496,
+          -6045.000002090044
+        ],
+        [
+          3035.0000135440423,
+          -6045.000002090057
+        ]
+      ],
+      "flaeche_stempel": 5.11,
+      "flaeche_berechnet": 5.105600000000185,
+      "abweichung_prozent": -0.09,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "VORRAUM",
+      "polygon_roh": [],
+      "flaeche_roh": 5.105600000000185,
+      "abweichung_bereinigt_prozent": -0.09,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_40",
+      "typ": "ABSTELLRAUM",
+      "name": "AR",
+      "polygon_mm": [
+        [
+          4920.000013544035,
+          -6225.000002090052
+        ],
+        [
+          6235.00001354405,
+          -6225.000002090052
+        ],
+        [
+          6345.000013544035,
+          -6225.000311359545
+        ],
+        [
+          6345.000013544035,
+          -7225.000002090052
+        ],
+        [
+          4920.000013544035,
+          -7225.000002090052
+        ]
+      ],
+      "flaeche_stempel": 1.42,
+      "flaeche_berechnet": 1.4249999829901778,
+      "abweichung_prozent": 0.35,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "ABSTELLRAUM",
+      "polygon_roh": [],
+      "flaeche_roh": 1.4249999829901778,
+      "abweichung_bereinigt_prozent": 0.35,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_31",
+      "typ": "VORRAUM",
+      "name": "VR",
+      "polygon_mm": [
+        [
+          6835.000013544035,
+          -9025.000002090048
+        ],
+        [
+          9505.000013544028,
+          -9025.000002090048
+        ],
+        [
+          9505.000013544028,
+          -9675.000002090037
+        ],
+        [
+          9505.000013544028,
+          -10475.000002090037
+        ],
+        [
+          6935.000013544042,
+          -10475.000002090037
+        ],
+        [
+          6835.000013544035,
+          -10475.000002090037
+        ]
+      ],
+      "flaeche_stempel": 3.87,
+      "flaeche_berechnet": 3.8714999999999606,
+      "abweichung_prozent": 0.04,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "VORRAUM",
+      "polygon_roh": [],
+      "flaeche_roh": 3.8714999999999606,
+      "abweichung_bereinigt_prozent": 0.04,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_38",
+      "typ": "TERRASSE",
+      "name": "Terrasse",
+      "polygon_mm": [
+        [
+          255.2566769568475,
+          -15070.000002090048
+        ],
+        [
+          6885.000013544028,
+          -15070.000002090037
+        ],
+        [
+          6885.000013544028,
+          -16800.07080520504
+        ],
+        [
+          255.2566769568475,
+          -16800.07080520505
+        ]
+      ],
+      "flaeche_stempel": 11.47,
+      "flaeche_berechnet": 11.46992537877572,
+      "abweichung_prozent": -0.0,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "TERRASSE",
+      "polygon_roh": [],
+      "flaeche_roh": 11.46992537877572,
+      "abweichung_bereinigt_prozent": -0.0,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_39",
+      "typ": "TERRASSE",
+      "name": "Terrasse",
+      "polygon_mm": [
+        [
+          6935.000013544042,
+          -15070.000002090037
+        ],
+        [
+          12234.985635202618,
+          -15070.000002090037
+        ],
+        [
+          12234.985635202618,
+          -16800.070836725874
+        ],
+        [
+          6935.000013544042,
+          -16800.070836725874
+        ]
+      ],
+      "flaeche_stempel": 9.17,
+      "flaeche_berechnet": 9.169350548020788,
+      "abweichung_prozent": -0.01,
+      "flag": "ok",
+      "quelle": "H",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "TERRASSE",
+      "polygon_roh": [],
+      "flaeche_roh": 9.169350548020788,
+      "abweichung_bereinigt_prozent": -0.01,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_2",
+      "typ": "BALKON",
+      "name": "Loggia",
+      "polygon_mm": [
+        [
+          509.13413817304064,
+          -32807.73695112676
+        ],
+        [
+          507.9586651122999,
+          -32386.88011105149
+        ],
+        [
+          9541.570283360188,
+          -32386.88011105149
+        ],
+        [
+          198.9718697430209,
+          -33730.05456036745
+        ],
+        [
+          198.9718697430209,
+          -33329.99999999998
+        ],
+        [
+          509.13413817304064,
+          -33329.99999999998
+        ]
+      ],
+      "flaeche_stempel": 5.98,
+      "flaeche_berechnet": 5.982096888476448,
+      "abweichung_prozent": 0.04,
+      "flag": "ok",
+      "quelle": "L",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "TERRASSE",
+      "polygon_roh": [],
+      "flaeche_roh": 5.982096888476448,
+      "abweichung_bereinigt_prozent": 0.04,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_1",
+      "typ": null,
+      "name": null,
+      "polygon_mm": [
+        [
+          8539.999368592698,
+          -7434.999890537021
+        ],
+        [
+          12804.99977637829,
+          -7434.999890537021
+        ],
+        [
+          12804.99977637829,
+          -8775.000000000005
+        ],
+        [
+          8539.999368592698,
+          -8775.000000000005
+        ]
+      ],
+      "flaeche_stempel": null,
+      "flaeche_berechnet": 5.715101013292357,
+      "abweichung_prozent": null,
+      "flag": "kein_stempel",
+      "quelle": "L",
+      "stempel_quelle": null,
+      "raum_typ": null,
+      "polygon_roh": [],
+      "flaeche_roh": 5.715101013292357,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_4",
+      "typ": null,
+      "name": null,
+      "polygon_mm": [
+        [
+          15510.000013544057,
+          -15070.000002090037
+        ],
+        [
+          15510.000013544057,
+          -14675.000002090037
+        ],
+        [
+          18871.372782476683,
+          -14675.000002090037
+        ],
+        [
+          18843.006419462778,
+          -21294.999970461115
+        ],
+        [
+          13685.000013544064,
+          -21294.999970461115
+        ],
+        [
+          13685.000013544064,
+          -16640.000002090048
+        ],
+        [
+          15130.000013336496,
+          -16640.000002090048
+        ],
+        [
+          15130.000013336496,
+          -15070.000002090037
+        ]
+      ],
+      "flaeche_stempel": null,
+      "flaeche_berechnet": 31.250369905492995,
+      "abweichung_prozent": null,
+      "flag": "kein_stempel",
+      "quelle": "H",
+      "stempel_quelle": null,
+      "raum_typ": null,
+      "polygon_roh": [],
+      "flaeche_roh": 31.250369905492995,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_14",
+      "typ": "TERRASSE",
+      "name": null,
+      "polygon_mm": [
+        [
+          255.2566769568475,
+          -16800.07080520505
+        ],
+        [
+          6885.000013544028,
+          -16800.07080520504
+        ],
+        [
+          6885.000013544028,
+          -19490.000002089957
+        ],
+        [
+          3955.0000135440496,
+          -19490.000002089957
+        ],
+        [
+          3955.000013544108,
+          -18950.000002089946
+        ],
+        [
+          2555.0000135440714,
+          -18950.000002089957
+        ],
+        [
+          2555.0000135440496,
+          -19490.000002089968
+        ],
+        [
+          255.2566769568475,
+          -19490.000002089968
+        ]
+      ],
+      "flaeche_stempel": null,
+      "flaeche_berechnet": 17.07754016893906,
+      "abweichung_prozent": null,
+      "flag": "kein_stempel",
+      "quelle": "H",
+      "stempel_quelle": null,
+      "raum_typ": "TERRASSE",
+      "polygon_roh": [],
+      "flaeche_roh": 17.07754016893906,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_15",
+      "typ": "TERRASSE",
+      "name": null,
+      "polygon_mm": [
+        [
+          6935.000013544042,
+          -16800.070836725874
+        ],
+        [
+          12234.985635202618,
+          -16800.070836725874
+        ],
+        [
+          12234.985635202618,
+          -19490.0000336108
+        ],
+        [
+          6935.000013544042,
+          -19490.0000336108
+        ]
+      ],
+      "flaeche_stempel": null,
+      "flaeche_berechnet": 14.256586066769703,
+      "abweichung_prozent": null,
+      "flag": "kein_stempel",
+      "quelle": "H",
+      "stempel_quelle": null,
+      "raum_typ": "TERRASSE",
+      "polygon_roh": [],
+      "flaeche_roh": 14.256586066769703,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_27",
+      "typ": null,
+      "name": null,
+      "polygon_mm": [
+        [
+          5225.028838765313,
+          -25950.000093199076
+        ],
+        [
+          5225.028838765313,
+          -24700.000093198996
+        ],
+        [
+          5225.028838765313,
+          -24100.000093198996
+        ],
+        [
+          7445.028838765364,
+          -24100.000093198996
+        ],
+        [
+          7445.028838765364,
+          -24350.000093198996
+        ],
+        [
+          7695.028838765364,
+          -24350.000093198996
+        ],
+        [
+          7695.028838765364,
+          -25950.000093199076
+        ]
+      ],
+      "flaeche_stempel": null,
+      "flaeche_berechnet": 4.507000000000293,
+      "abweichung_prozent": null,
+      "flag": "kein_stempel",
+      "quelle": "H",
+      "stempel_quelle": null,
+      "raum_typ": null,
+      "polygon_roh": [],
+      "flaeche_roh": 4.507000000000293,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_36",
+      "typ": null,
+      "name": null,
+      "polygon_mm": [
+        [
+          15410.000013544064,
+          -6225.000311359561
+        ],
+        [
+          15410.000013544064,
+          -3110.000002090028
+        ],
+        [
+          18544.65978316019,
+          -3110.000002090028
+        ],
+        [
+          18538.36212789086,
+          -4999.296582883484
+        ],
+        [
+          18512.74311649349,
+          -12685.000002090048
+        ],
+        [
+          15140.00001354405,
+          -12685.000002090048
+        ],
+        [
+          15410.000013544064,
+          -12595.000002090028
+        ]
+      ],
+      "flaeche_stempel": null,
+      "flaeche_berechnet": 29.873716252407593,
+      "abweichung_prozent": null,
+      "flag": "kein_stempel",
+      "quelle": "H",
+      "stempel_quelle": null,
+      "raum_typ": null,
+      "polygon_roh": [],
+      "flaeche_roh": 29.873716252407593,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
+    },
+    {
+      "id": "raum_41",
+      "typ": null,
+      "name": null,
+      "polygon_mm": [
+        [
+          18411.07461188751,
+          -31080.00000209003
+        ],
+        [
+          12515.028838765335,
+          -31080.00000209003
+        ],
+        [
+          12515.028838765335,
+          -31048.50925926944
+        ],
+        [
+          12515.028838765335,
+          -30180.00000209003
+        ],
+        [
+          18414.931066092155,
+          -30180.00000209003
+        ]
+      ],
+      "flaeche_stempel": null,
+      "flaeche_berechnet": 5.3081766002020485,
+      "abweichung_prozent": null,
+      "flag": "kein_stempel",
+      "quelle": "H",
+      "stempel_quelle": null,
+      "raum_typ": null,
+      "polygon_roh": [],
+      "flaeche_roh": 5.3081766002020485,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
+    },
+    {
+      "id": "rest_1",
+      "typ": "SCHACHT",
+      "name": null,
+      "polygon_mm": [
+        [
+          12899.743329410803,
+          -19249.999999999978
+        ],
+        [
+          13099.743329410803,
+          -19349.999999999978
+        ],
+        [
+          13399.743329410803,
+          -19349.999999999978
+        ],
+        [
+          13449.743329410803,
+          -19299.999999999978
+        ],
+        [
+          13574.743329410803,
+          -19324.999999999978
+        ],
+        [
+          13574.743329410803,
+          -21224.999999999978
+        ],
+        [
+          12349.743329410803,
+          -21249.999999999978
+        ],
+        [
+          12335.64254077397,
+          -21299.999968371063
+        ],
+        [
+          12335.057563320725,
+          -21300.028706470526
+        ],
+        [
+          12335.02882522126,
+          -21300.61368392378
+        ],
+        [
+          12335.02882522126,
+          -21364.386252818353
+        ],
+        [
+          12335.058454316693,
+          -21364.989366911203
+        ],
+        [
+          12335.10901350828,
+          -21365.05753808945
+        ],
+        [
+          12336.576471508883,
+          -21367.27331215957
+        ],
+        [
+          12337.800420844293,
+          -21369.63234495665
+        ],
+        [
+          12338.767029736087,
+          -21372.10797719179
+        ],
+        [
+          12339.46537459485,
+          -21374.672231892786
+        ],
+        [
+          12339.887563466995,
+          -21377.29613057025
+        ],
+        [
+          12340.028825221261,
+          -21379.95002070176
+        ],
+        [
+          12340.028825221261,
+          -22415.00004943095
+        ],
+        [
+          12339.908443388067,
+          -22417.45047793919
+        ],
+        [
+          12339.548457231342,
+          -22419.877307481354
+        ],
+        [
+          12338.952333614567,
+          -22422.257166362313
+        ],
+        [
+          12338.125813534043,
+          -22424.56713524008
+        ],
+        [
+          12337.07685682997,
+          -22426.7849678516
+        ],
+        [
+          12335.815565528825,
+          -22428.889305256438
+        ],
+        [
+          12334.35408655533,
+          -22430.85988153504
+        ],
+        [
+          12332.706494750924,
+          -22432.677718960615
+        ],
+        [
+          12330.888657325353,
+          -22434.32531076502
+        ],
+        [
+          12328.918081046751,
+          -22435.786789738515
+        ],
+        [
+          12326.813743641911,
+          -22437.04808103966
+        ],
+        [
+          12324.595911030388,
+          -22438.097037743733
+        ],
+        [
+          12322.285942152623,
+          -22438.923557824255
+        ],
+        [
+          12319.906083271664,
+          -22439.51968144103
+        ],
+        [
+          12317.4792537295,
+          -22439.879667597754
+        ],
+        [
+          12315.028825221261,
+          -22440.00004943095
+        ],
+        [
+          12249.743329410803,
+          -22399.999999999978
+        ],
+        [
+          12185.02883007976,
+          -21020.000215332355
+        ],
+        [
+          12185.028839017707,
+          -21019.99985130475
+        ],
+        [
+          12185.018289589794,
+          -20990.398943618085
+        ],
+        [
+          12185.000102558895,
+          -20990.028738099456
+        ],
+        [
+          12184.415125105652,
+          -20989.999999999993
+        ],
+        [
+          12124.743329410803,
+          -20924.999999999978
+        ],
+        [
+          12124.743329410803,
+          -20624.999999999978
+        ],
+        [
+          12224.743329410803,
+          -20524.999999999978
+        ],
+        [
+          12324.743329410803,
+          -20224.999999999978
+        ],
+        [
+          12499.743329410803,
+          -20149.999999999978
+        ],
+        [
+          12724.743329410803,
+          -19924.999999999978
+        ],
+        [
+          12824.743329410803,
+          -19724.999999999978
+        ],
+        [
+          12824.743329410803,
+          -19524.999999999978
+        ],
+        [
+          12874.743329410803,
+          -19474.999999999978
+        ],
+        [
+          12824.743329410803,
+          -19424.999999999978
+        ],
+        [
+          12824.743329410803,
+          -19274.999999999978
+        ]
+      ],
+      "flaeche_stempel": null,
+      "flaeche_berechnet": 2.3038761036443494,
+      "abweichung_prozent": null,
+      "flag": "kein_stempel",
+      "quelle": "R",
+      "stempel_quelle": null,
+      "raum_typ": "SCHACHT",
+      "polygon_roh": [],
+      "flaeche_roh": 2.3038761036443494,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
+    },
+    {
+      "id": "rest_2",
+      "typ": null,
+      "name": null,
+      "polygon_mm": [
+        [
+          14049.743329410803,
+          -14799.999999999978
+        ],
+        [
+          14074.743329410803,
+          -15024.999999999978
+        ],
+        [
+          14224.743329410803,
+          -15324.999999999978
+        ],
+        [
+          14449.743329410803,
+          -15549.999999999978
+        ],
+        [
+          14749.743329410803,
+          -15699.999999999978
+        ],
+        [
+          15024.743329410803,
+          -15724.999999999978
+        ],
+        [
+          15024.743329410803,
+          -16474.999999999978
+        ],
+        [
+          14349.743329410803,
+          -16499.999999999978
+        ],
+        [
+          14099.743329410803,
+          -16299.999999999978
+        ],
+        [
+          13999.743329410803,
+          -16299.999999999978
+        ],
+        [
+          13949.743329410803,
+          -16249.999999999978
+        ],
+        [
+          13749.743329410803,
+          -16249.999999999978
+        ],
+        [
+          13699.743329410803,
+          -16199.999999999978
+        ],
+        [
+          13649.743329410803,
+          -16249.999999999978
+        ],
+        [
+          13449.743329410803,
+          -16249.999999999978
+        ],
+        [
+          13149.743329410803,
+          -16399.999999999978
+        ],
+        [
+          12974.743329410803,
+          -16574.999999999978
+        ],
+        [
+          12949.743329410803,
+          -16649.999999999978
+        ],
+        [
+          12749.743329410803,
+          -16699.999999999978
+        ],
+        [
+          12474.743329410803,
+          -16974.999999999978
+        ],
+        [
+          12474.743329410803,
+          -17024.999999999978
+        ],
+        [
+          12399.743329410803,
+          -17099.999999999978
+        ],
+        [
+          12364.371906105851,
+          -15275.0
+        ],
+        [
+          12364.956883559105,
+          -15274.971261900535
+        ],
+        [
+          12364.98562165857,
+          -15274.38628444728
+        ],
+        [
+          12364.98562165857,
+          -15089.999963095974
+        ],
+        [
+          12365.106003496418,
+          -15087.549534540505
+        ],
+        [
+          12365.465989667007,
+          -15085.122704952477
+        ],
+        [
+          12366.062113306594,
+          -15082.742846028368
+        ],
+        [
+          12366.888633418434,
+          -15080.432877111463
+        ],
+        [
+          12367.93759016172,
+          -15078.215044466051
+        ],
+        [
+          12369.198881509205,
+          -15076.110707033722
+        ],
+        [
+          12370.660360535252,
+          -15074.140130735082
+        ],
+        [
+          12372.307952397372,
+          -15072.322293297844
+        ],
+        [
+          12374.12578988465,
+          -15070.67470149094
+        ],
+        [
+          12376.096366227683,
+          -15069.213222524746
+        ],
+        [
+          12378.20070369832,
+          -15067.951931241176
+        ],
+        [
+          12380.418536375593,
+          -15066.902974565253
+        ],
+        [
+          12382.728505317602,
+          -15066.076454523574
+        ],
+        [
+          12385.108364259817,
+          -15065.480330956272
+        ],
+        [
+          12387.53519385878,
+          -15065.120344859393
+        ],
+        [
+          12389.985622417904,
+          -15064.999963095974
+        ],
+        [
+          13605.00002586184,
+          -15065.0
+        ],
+        [
+          13609.38629439385,
+          -15065.0
+        ],
+        [
+          13609.971271847104,
+          -15064.971261900535
+        ],
+        [
+          13610.000009946569,
+          -15064.38628444728
+        ],
+        [
+          13624.743329410803,
+          -14924.999999999978
+        ],
+        [
+          13610.000009946569,
+          -14895.0
+        ],
+        [
+          13610.120391779763,
+          -14892.549571491762
+        ],
+        [
+          13610.480377936488,
+          -14890.122741949597
+        ],
+        [
+          13611.076501553263,
+          -14887.742883068639
+        ],
+        [
+          13611.903021633787,
+          -14885.432914190873
+        ],
+        [
+          13612.95197833786,
+          -14883.21508157935
+        ],
+        [
+          13614.213269639005,
+          -14881.11074417451
+        ],
+        [
+          13615.6747486125,
+          -14879.140167895908
+        ],
+        [
+          13617.322340416906,
+          -14877.322330470337
+        ],
+        [
+          13619.140177842477,
+          -14875.674738665932
+        ],
+        [
+          13621.110754121079,
+          -14874.213259692437
+        ],
+        [
+          13623.215091525919,
+          -14872.951968391291
+        ],
+        [
+          13625.432924137442,
+          -14871.903011687218
+        ],
+        [
+          13627.742893015207,
+          -14871.076491606695
+        ],
+        [
+          13630.122751896166,
+          -14870.48036798992
+        ],
+        [
+          13632.54958143833,
+          -14870.120381833194
+        ],
+        [
+          13635.000009946569,
+          -14870.0
+        ],
+        [
+          13684.386294393851,
+          -14870.0
+        ],
+        [
+          13684.971271847106,
+          -14869.971261900535
+        ],
+        [
+          13685.00000994657,
+          -14869.38628444728
+        ],
+        [
+          13685.00000994657,
+          -14805.613715552709
+        ],
+        [
+          13684.938909292117,
+          -14804.369983159106
+        ],
+        [
+          13684.935900456401,
+          -14801.979460003142
+        ],
+        [
+          13685.161228192172,
+          -14799.599578194355
+        ],
+        [
+          13685.612832243214,
+          -14797.252097887009
+        ],
+        [
+          13686.286583423876,
+          -14794.958482976252
+        ],
+        [
+          13687.17632137377,
+          -14792.739704845655
+        ],
+        [
+          13688.273910884263,
+          -14790.616050617971
+        ],
+        [
+          13689.569316281742,
+          -14788.606937662342
+        ],
+        [
+          13691.05069318756,
+          -14786.730736053985
+        ],
+        [
+          13692.704496815644,
+          -14785.004600609696
+        ],
+        [
+          13694.515605817556,
+          -14783.4443140349
+        ],
+        [
+          13696.46746054268,
+          -14782.064142616451
+        ],
+        [
+          13698.542214449331,
+          -14780.876705780598
+        ],
+        [
+          13700.435203146393,
+          -14780.02187387379
+        ],
+        [
+          13701.11515100243,
+          -14779.672615643125
+        ],
+        [
+          13749.743329410803,
+          -14799.999999999978
+        ]
+      ],
+      "flaeche_stempel": null,
+      "flaeche_berechnet": 3.4003079174835142,
+      "abweichung_prozent": null,
+      "flag": "kein_stempel",
+      "quelle": "R",
+      "stempel_quelle": null,
+      "raum_typ": null,
+      "polygon_roh": [],
+      "flaeche_roh": 3.4003079174835142,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
+    },
+    {
+      "id": "rest_3",
+      "typ": "SCHACHT",
+      "name": null,
+      "polygon_mm": [
+        [
+          10749.99999999999,
+          -4224.999999999916
+        ],
+        [
+          10747.549571491752,
+          -4224.879618166721
+        ],
+        [
+          10745.122741949588,
+          -4224.519632009997
+        ],
+        [
+          10742.74288306863,
+          -4223.923508393222
+        ],
+        [
+          10740.432914190864,
+          -4223.096988312698
+        ],
+        [
+          10709.567085809118,
+          -4226.9030116871345
+        ],
+        [
+          10711.78491842064,
+          -4227.951968391208
+        ],
+        [
+          10713.889255825481,
+          -4229.213259692353
+        ],
+        [
+          10715.859832104083,
+          -4230.674738665848
+        ],
+        [
+          10717.677669529654,
+          -4232.322330470252
+        ],
+        [
+          10719.32526133406,
+          -4234.1401678958255
+        ],
+        [
+          10720.786740307554,
+          -4236.110744174426
+        ],
+        [
+          10722.0480316087,
+          -4238.215081579267
+        ],
+        [
+          10723.096988312773,
+          -4240.432914190789
+        ],
+        [
+          10723.923508393296,
+          -4242.742883068555
+        ],
+        [
+          10724.519632010071,
+          -4245.1227419495135
+        ],
+        [
+          10724.879618166797,
+          -4247.549571491677
+        ],
+        [
+          10724.99999999999,
+          -4249.999999999916
+        ],
+        [
+          10725.613715552723,
+          -5905.000000000001
+        ],
+        [
+          10725.028738099456,
+          -5904.971261900535
+        ],
+        [
+          10724.99999999999,
+          -5904.386284447283
+        ],
+        [
+          10499.743329410803,
+          -5899.999999999978
+        ],
+        [
+          10399.743329410803,
+          -5799.999999999978
+        ],
+        [
+          10199.743329410803,
+          -5699.999999999978
+        ],
+        [
+          9699.743329410803,
+          -5699.999999999978
+        ],
+        [
+          9649.743329410803,
+          -5749.999999999978
+        ],
+        [
+          9499.743329410803,
+          -5749.999999999978
+        ],
+        [
+          9299.743329410803,
+          -5899.999999999978
+        ],
+        [
+          9105.000000000035,
+          -5904.386284447283
+        ],
+        [
+          9104.97126190057,
+          -5904.971261900535
+        ],
+        [
+          9104.386284447302,
+          -5905.000000000001
+        ],
+        [
+          9105.000000000035,
+          -4249.999999999916
+        ],
+        [
+          9105.120381833229,
+          -4247.549571491677
+        ],
+        [
+          9105.480367989954,
+          -4245.1227419495135
+        ],
+        [
+          9106.07649160673,
+          -4242.742883068555
+        ],
+        [
+          9106.903011687253,
+          -4240.432914190789
+        ],
+        [
+          9103.096988312816,
+          -4209.567085809043
+        ],
+        [
+          9102.048031608743,
+          -4211.784918420566
+        ],
+        [
+          9100.786740307598,
+          -4213.8892558254065
+        ],
+        [
+          9099.325261334103,
+          -4215.859832104007
+        ],
+        [
+          9097.677669529698,
+          -4217.67766952958
+        ],
+        [
+          9095.859832104126,
+          -4219.325261333985
+        ],
+        [
+          9093.889255825525,
+          -4220.78674030748
+        ],
+        [
+          9091.784918420684,
+          -4222.048031608625
+        ],
+        [
+          9089.567085809162,
+          -4223.096988312698
+        ],
+        [
+          9087.257116931396,
+          -4223.923508393222
+        ],
+        [
+          9084.877258050437,
+          -4224.519632009997
+        ],
+        [
+          9082.450428508273,
+          -4224.879618166721
+        ],
+        [
+          9080.000000000035,
+          -4224.999999999916
+        ],
+        [
+          9105.000000000035,
+          -4199.999999999916
+        ],
+        [
+          9104.87961816684,
+          -4202.450428508156
+        ],
+        [
+          9104.519632010115,
+          -4204.877258050319
+        ],
+        [
+          9103.92350839334,
+          -4207.257116931278
+        ],
+        [
+          9107.951968391326,
+          -4238.215081579267
+        ],
+        [
+          9109.213259692471,
+          -4236.110744174426
+        ],
+        [
+          9110.674738665966,
+          -4234.1401678958255
+        ],
+        [
+          9112.322330470372,
+          -4232.322330470252
+        ],
+        [
+          9114.140167895943,
+          -4230.674738665848
+        ],
+        [
+          9116.110744174544,
+          -4229.213259692353
+        ],
+        [
+          9118.215081579385,
+          -4227.951968391208
+        ],
+        [
+          9120.432914190907,
+          -4226.9030116871345
+        ],
+        [
+          9122.742883068673,
+          -4226.076491606611
+        ],
+        [
+          9125.122741949632,
+          -4225.480367989836
+        ],
+        [
+          9127.549571491796,
+          -4225.120381833111
+        ],
+        [
+          9130.000000000035,
+          -4224.999999999916
+        ],
+        [
+          10699.99999999999,
+          -4224.999999999916
+        ],
+        [
+          10702.45042850823,
+          -4225.120381833111
+        ],
+        [
+          10704.877258050394,
+          -4225.480367989836
+        ],
+        [
+          10707.257116931352,
+          -4226.076491606611
+        ],
+        [
+          10738.215081579341,
+          -4222.048031608625
+        ],
+        [
+          10736.1107441745,
+          -4220.78674030748
+        ],
+        [
+          10734.1401678959,
+          -4219.325261333985
+        ],
+        [
+          10732.322330470328,
+          -4217.67766952958
+        ],
+        [
+          10730.674738665923,
+          -4215.859832104007
+        ],
+        [
+          10729.213259692428,
+          -4213.8892558254065
+        ],
+        [
+          10727.951968391282,
+          -4211.784918420566
+        ],
+        [
+          10726.903011687209,
+          -4209.567085809043
+        ],
+        [
+          10726.076491606686,
+          -4207.257116931278
+        ],
+        [
+          10725.48036798991,
+          -4204.877258050319
+        ],
+        [
+          10725.120381833185,
+          -4202.450428508156
+        ],
+        [
+          10724.99999999999,
+          -4199.999999999916
+        ]
+      ],
+      "flaeche_stempel": null,
+      "flaeche_berechnet": 2.5343478375433093,
+      "abweichung_prozent": null,
+      "flag": "kein_stempel",
+      "quelle": "R",
+      "stempel_quelle": null,
+      "raum_typ": "SCHACHT",
+      "polygon_roh": [],
+      "flaeche_roh": 2.5343478375433093,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
+    }
+  ],
+  "entfallen": [
     {
       "id": "raum_44",
       "typ": "BALKON",
       "name": "Loggia",
-      "polygon_mm": [
+      "polygon_mm": [],
+      "flaeche_stempel": 5.31,
+      "flaeche_berechnet": 0.0,
+      "flag": "entfallen",
+      "quelle": "F",
+      "stempel_quelle": "MTEXT",
+      "raum_typ": "BALKON",
+      "polygon_roh": [
         [
           15570.028724023181,
           -30174.99996358951
@@ -3389,1959 +5867,30 @@
           -30174.99996358951
         ]
       ],
-      "flaeche_stempel": 5.31,
-      "flaeche_berechnet": 4.878688509257909,
-      "abweichung_prozent": -8.1,
-      "flag": "ok",
-      "quelle": "F",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_16",
-      "typ": "WC",
-      "name": "WC",
-      "polygon_mm": [
-        [
-          254.45036623187116,
-          -19540.000002089968
-        ],
-        [
-          2555.0000135440496,
-          -19540.000002089968
-        ],
-        [
-          3955.000013544108,
-          -19540.000002089946
-        ],
-        [
-          5385.028838765305,
-          -19540.000002089946
-        ],
-        [
-          5385.028838765305,
-          -21294.999970461115
-        ],
-        [
-          254.13379202205033,
-          -21294.999970461115
-        ]
-      ],
-      "flaeche_stempel": 9.0,
-      "flaeche_berechnet": 9.00444285088602,
-      "abweichung_prozent": 0.05,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_17",
-      "typ": "WC",
-      "name": "WC",
-      "polygon_mm": [
-        [
-          5025.02883876532,
-          -22539.999970461107
-        ],
-        [
-          3500.0288387653127,
-          -22539.999970461107
-        ],
-        [
-          3500.0288387653127,
-          -21674.999970461096
-        ],
-        [
-          5025.02883876532,
-          -21674.999970461096
-        ]
-      ],
-      "flaeche_stempel": 1.32,
-      "flaeche_berechnet": 1.319125000000023,
-      "abweichung_prozent": -0.07,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_18",
-      "typ": "KÜCHE",
-      "name": "Wohnküche",
-      "polygon_mm": [
-        [
-          13310.000033437187,
-          -14690.000002090059
-        ],
-        [
-          9735.00001354405,
-          -14690.000002090037
-        ],
-        [
-          9735.00001354405,
-          -10475.000002090037
-        ],
-        [
-          9505.000013544028,
-          -10475.000002090037
-        ],
-        [
-          9505.000013544028,
-          -9675.000002090037
-        ],
-        [
-          9685.000013544035,
-          -9675.000002090037
-        ],
-        [
-          9685.000013544035,
-          -9025.000002090048
-        ],
-        [
-          13310.000033437187,
-          -9025.000002090048
-        ],
-        [
-          13310.000033437187,
-          -9255.000002090037
-        ]
-      ],
-      "flaeche_stempel": 20.47,
-      "flaeche_berechnet": 20.468875112694654,
-      "abweichung_prozent": -0.01,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_5",
-      "typ": "BAD",
-      "name": "Bad",
-      "polygon_mm": [
-        [
-          2935.0000135440423,
-          -5855.000002089975
-        ],
-        [
-          331.4704307592656,
-          -5855.000002089975
-        ],
-        [
-          324.7237640925814,
-          -4015.000002089959
-        ],
-        [
-          2935.0000135440423,
-          -4015.0000020899715
-        ]
-      ],
-      "flaeche_stempel": 4.8,
-      "flaeche_berechnet": 4.796701365657365,
-      "abweichung_prozent": -0.07,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_19",
-      "typ": "VORRAUM",
-      "name": "VR",
-      "polygon_mm": [
-        [
-          3735.0000135440496,
-          -7325.000002090032
-        ],
-        [
-          4795.000013544064,
-          -7325.000002090032
-        ],
-        [
-          6345.000013544035,
-          -7325.000002090032
-        ],
-        [
-          6585.00001354405,
-          -7325.000002090032
-        ],
-        [
-          6585.00001354405,
-          -8525.000002090048
-        ],
-        [
-          6055.00001354405,
-          -8525.000002090048
-        ],
-        [
-          3735.0000135440496,
-          -8525.000002090048
-        ]
-      ],
-      "flaeche_stempel": 3.42,
-      "flaeche_berechnet": 3.4200000000000466,
-      "abweichung_prozent": 0.0,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_20",
-      "typ": "ZIMMER",
-      "name": "Zimmer",
-      "polygon_mm": [
-        [
-          6685.000013544042,
-          -14690.000002090037
-        ],
-        [
-          3735.0000135440496,
-          -14690.000002090037
-        ],
-        [
-          3735.0000135440496,
-          -10725.000002090037
-        ],
-        [
-          6685.000013544042,
-          -10725.000002090037
-        ]
-      ],
-      "flaeche_stempel": 11.7,
-      "flaeche_berechnet": 11.696749999999971,
-      "abweichung_prozent": -0.03,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_21",
-      "typ": "ZIMMER",
-      "name": "Zimmer",
-      "polygon_mm": [
-        [
-          6935.000013544042,
-          -10600.000002090037
-        ],
-        [
-          9635.00001354405,
-          -10600.000002090037
-        ],
-        [
-          9635.00001354405,
-          -14690.000002090037
-        ],
-        [
-          6935.000013544042,
-          -14690.000002090037
-        ]
-      ],
-      "flaeche_stempel": 11.04,
-      "flaeche_berechnet": 11.04300000000003,
-      "abweichung_prozent": 0.03,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_22",
-      "typ": "BAD",
-      "name": "Bad/WC",
-      "polygon_mm": [
-        [
-          3885.000013544057,
-          -8805.000002090046
-        ],
-        [
-          6005.000013544028,
-          -8805.000002090046
-        ],
-        [
-          6005.000013544028,
-          -8835.000002090048
-        ],
-        [
-          6005.000013544028,
-          -9145.000002090037
-        ],
-        [
-          6585.00001354405,
-          -9145.000002090037
-        ],
-        [
-          6735.00001354405,
-          -9145.000002090037
-        ],
-        [
-          6735.00001354405,
-          -10475.000002090037
-        ],
-        [
-          3885.000013544057,
-          -10475.000002090037
-        ]
-      ],
-      "flaeche_stempel": 4.51,
-      "flaeche_berechnet": 4.511299999999961,
-      "abweichung_prozent": 0.03,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_23",
-      "typ": "ZIMMER",
-      "name": "Zimmer",
-      "polygon_mm": [
-        [
-          12305.02883876529,
-          -25750.000093199076
-        ],
-        [
-          14865.02883876529,
-          -25750.000093199076
-        ],
-        [
-          14885.028838765305,
-          -25750.000093199076
-        ],
-        [
-          14885.028838765305,
-          -29800.00000209002
-        ],
-        [
-          12305.02883876529,
-          -29800.00000209002
-        ]
-      ],
-      "flaeche_stempel": 10.45,
-      "flaeche_berechnet": 10.44899976493869,
-      "abweichung_prozent": -0.01,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_24",
-      "typ": "ZIMMER",
-      "name": "Zimmer",
-      "polygon_mm": [
-        [
-          9605.028838765327,
-          -26070.000093199087
-        ],
-        [
-          11125.02883876537,
-          -26070.000093199087
-        ],
-        [
-          11125.02883876537,
-          -26050.000093199087
-        ],
-        [
-          11125.02883876537,
-          -25750.000093199076
-        ],
-        [
-          12205.028838765298,
-          -25750.000093199076
-        ],
-        [
-          12205.028838765298,
-          -29800.00000209002
-        ],
-        [
-          12205.028838765298,
-          -30700.000002090015
-        ],
-        [
-          9605.028838765298,
-          -30700.000002090015
-        ]
-      ],
-      "flaeche_stempel": 12.38,
-      "flaeche_berechnet": 12.383599763116333,
-      "abweichung_prozent": 0.03,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_25",
-      "typ": "KÜCHE",
-      "name": "Wohnküche",
-      "polygon_mm": [
-        [
-          3395.028815607904,
-          -24044.9999704611
-        ],
-        [
-          3395.028815607904,
-          -24695.0000066386
-        ],
-        [
-          3395.028815607904,
-          -26050.000100917867
-        ],
-        [
-          3855.0288051243842,
-          -26050.000100917867
-        ],
-        [
-          3855.0288051243842,
-          -31200.000002090015
-        ],
-        [
-          376.4792727689164,
-          -31200.000002090022
-        ],
-        [
-          367.56153749954683,
-          -24044.999970461115
-        ]
-      ],
-      "flaeche_stempel": 24.0,
-      "flaeche_berechnet": 23.998625173102653,
-      "abweichung_prozent": -0.01,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_26",
-      "typ": "ZIMMER",
-      "name": "Zimmer",
-      "polygon_mm": [
-        [
-          6665.028838765371,
-          -26050.000093199087
-        ],
-        [
-          7695.028838765364,
-          -26050.000093199087
-        ],
-        [
-          9355.028838765327,
-          -26050.000093199087
-        ],
-        [
-          9355.028838765313,
-          -30700.000002090015
-        ],
-        [
-          9355.028838765313,
-          -31200.000002090015
-        ],
-        [
-          6665.028838765371,
-          -31200.000002090015
-        ]
-      ],
-      "flaeche_stempel": 13.85,
-      "flaeche_berechnet": 13.853499754916331,
-      "abweichung_prozent": 0.03,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_28",
-      "typ": "ABSTELLRAUM",
-      "name": "AR",
-      "polygon_mm": [
-        [
-          13650.028838712424,
-          -23995.000093198996
-        ],
-        [
-          12645.028838765298,
-          -23995.000093198996
-        ],
-        [
-          12645.028838765298,
-          -22024.999970461107
-        ],
-        [
-          13650.02883876532,
-          -22024.999970461107
-        ]
-      ],
-      "flaeche_stempel": 1.98,
-      "flaeche_berechnet": 1.9798501232995187,
-      "abweichung_prozent": -0.01,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_6",
-      "typ": "TERRASSE",
-      "name": "tERRASSE",
-      "polygon_mm": [
-        [
-          9662.280446545315,
-          -32369.525756077997
-        ],
-        [
-          9665.028831331612,
-          -31580.000002064135
-        ],
-        [
-          9665.028838765298,
-          -31080.00000209003
-        ],
-        [
-          12515.028838765335,
-          -31080.00000209003
-        ],
-        [
-          18411.07461188751,
-          -31080.00000209003
-        ],
-        [
-          18411.03176251825,
-          -31089.999973646965
-        ],
-        [
-          18385.041259871934,
-          -31089.999973646965
-        ],
-        [
-          18385.041259871934,
-          -31209.99997129761
-        ],
-        [
-          18371.72525969238,
-          -31117.379059534152
-        ]
-      ],
-      "flaeche_stempel": 5.87,
-      "flaeche_berechnet": 5.777217487304616,
-      "abweichung_prozent": -1.58,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_29",
-      "typ": "WC",
-      "name": "WC",
-      "polygon_mm": [
-        [
-          6135.000013544057,
-          -5945.00000209005
-        ],
-        [
-          5785.000013544042,
-          -5945.00000209005
-        ],
-        [
-          5785.000013544042,
-          -5605.000002090033
-        ],
-        [
-          4895.00001354405,
-          -5605.000002090033
-        ],
-        [
-          4895.00001354405,
-          -4115.0000020899515
-        ],
-        [
-          6135.000013544057,
-          -4115.000002089966
-        ]
-      ],
-      "flaeche_stempel": 1.97,
-      "flaeche_berechnet": 1.966600000000114,
-      "abweichung_prozent": -0.17,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_30",
-      "typ": "VORRAUM",
-      "name": "Gard.",
-      "polygon_mm": [
-        [
-          3035.0000135440423,
-          -3915.000002089979
-        ],
-        [
-          4795.000013544064,
-          -3915.0000020899643
-        ],
-        [
-          4795.000013544064,
-          -5605.000002090033
-        ],
-        [
-          4795.000013544064,
-          -6225.000002090052
-        ],
-        [
-          4795.000013544064,
-          -7325.000002090032
-        ],
-        [
-          3735.0000135440496,
-          -7325.000002090032
-        ],
-        [
-          3735.0000135440496,
-          -6225.000002090052
-        ],
-        [
-          3735.0000135440496,
-          -6045.000002090044
-        ],
-        [
-          3035.0000135440423,
-          -6045.000002090057
-        ]
-      ],
-      "flaeche_stempel": 5.11,
-      "flaeche_berechnet": 5.105600000000185,
-      "abweichung_prozent": -0.09,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_40",
-      "typ": "ABSTELLRAUM",
-      "name": "AR",
-      "polygon_mm": [
-        [
-          4920.000013544035,
-          -6225.000002090052
-        ],
-        [
-          6235.00001354405,
-          -6225.000002090052
-        ],
-        [
-          6345.000013544035,
-          -6225.000311359545
-        ],
-        [
-          6345.000013544035,
-          -7225.000002090052
-        ],
-        [
-          4920.000013544035,
-          -7225.000002090052
-        ]
-      ],
-      "flaeche_stempel": 1.42,
-      "flaeche_berechnet": 1.4249999829901778,
-      "abweichung_prozent": 0.35,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_31",
-      "typ": "VORRAUM",
-      "name": "VR",
-      "polygon_mm": [
-        [
-          6835.000013544035,
-          -9025.000002090048
-        ],
-        [
-          9505.000013544028,
-          -9025.000002090048
-        ],
-        [
-          9505.000013544028,
-          -9675.000002090037
-        ],
-        [
-          9505.000013544028,
-          -10475.000002090037
-        ],
-        [
-          6935.000013544042,
-          -10475.000002090037
-        ],
-        [
-          6835.000013544035,
-          -10475.000002090037
-        ]
-      ],
-      "flaeche_stempel": 3.87,
-      "flaeche_berechnet": 3.8714999999999606,
-      "abweichung_prozent": 0.04,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_38",
-      "typ": "TERRASSE",
-      "name": "Terrasse",
-      "polygon_mm": [
-        [
-          255.2566769568475,
-          -15070.000002090048
-        ],
-        [
-          6885.000013544028,
-          -15070.000002090037
-        ],
-        [
-          6885.000013544028,
-          -16800.07080520504
-        ],
-        [
-          255.2566769568475,
-          -16800.07080520505
-        ]
-      ],
-      "flaeche_stempel": 11.47,
-      "flaeche_berechnet": 11.46992537877572,
-      "abweichung_prozent": -0.0,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_39",
-      "typ": "TERRASSE",
-      "name": "Terrasse",
-      "polygon_mm": [
-        [
-          6935.000013544042,
-          -15070.000002090037
-        ],
-        [
-          12234.985635202618,
-          -15070.000002090037
-        ],
-        [
-          12234.985635202618,
-          -16800.070836725874
-        ],
-        [
-          6935.000013544042,
-          -16800.070836725874
-        ]
-      ],
-      "flaeche_stempel": 9.17,
-      "flaeche_berechnet": 9.169350548020788,
-      "abweichung_prozent": -0.01,
-      "flag": "ok",
-      "quelle": "H",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_2",
-      "typ": "BALKON",
-      "name": "Loggia",
-      "polygon_mm": [
-        [
-          509.13413817304064,
-          -32807.73695112676
-        ],
-        [
-          507.9586651122999,
-          -32386.88011105149
-        ],
-        [
-          9541.570283360188,
-          -32386.88011105149
-        ],
-        [
-          198.9718697430209,
-          -33730.05456036745
-        ],
-        [
-          198.9718697430209,
-          -33329.99999999998
-        ],
-        [
-          509.13413817304064,
-          -33329.99999999998
-        ]
-      ],
-      "flaeche_stempel": 5.98,
-      "flaeche_berechnet": 5.982096888476448,
-      "abweichung_prozent": 0.04,
-      "flag": "ok",
-      "quelle": "L",
-      "stempel_quelle": "MTEXT"
-    },
-    {
-      "id": "raum_1",
-      "typ": null,
-      "name": null,
-      "polygon_mm": [
-        [
-          8539.999368592698,
-          -7434.999890537021
-        ],
-        [
-          12804.99977637829,
-          -7434.999890537021
-        ],
-        [
-          12804.99977637829,
-          -8775.000000000005
-        ],
-        [
-          8539.999368592698,
-          -8775.000000000005
-        ]
-      ],
-      "flaeche_stempel": null,
-      "flaeche_berechnet": 5.715101013292357,
-      "abweichung_prozent": null,
-      "flag": "kein_stempel",
-      "quelle": "L",
-      "stempel_quelle": null
-    },
-    {
-      "id": "raum_4",
-      "typ": null,
-      "name": null,
-      "polygon_mm": [
-        [
-          15510.000013544057,
-          -15070.000002090037
-        ],
-        [
-          15510.000013544057,
-          -14675.000002090037
-        ],
-        [
-          18871.372782476683,
-          -14675.000002090037
-        ],
-        [
-          18843.006419462778,
-          -21294.999970461115
-        ],
-        [
-          13685.000013544064,
-          -21294.999970461115
-        ],
-        [
-          13685.000013544064,
-          -16640.000002090048
-        ],
-        [
-          15130.000013336496,
-          -16640.000002090048
-        ],
-        [
-          15130.000013336496,
-          -15070.000002090037
-        ]
-      ],
-      "flaeche_stempel": null,
-      "flaeche_berechnet": 31.250369905492995,
-      "abweichung_prozent": null,
-      "flag": "kein_stempel",
-      "quelle": "H",
-      "stempel_quelle": null
-    },
-    {
-      "id": "raum_14",
-      "typ": "TERRASSE",
-      "name": null,
-      "polygon_mm": [
-        [
-          255.2566769568475,
-          -16800.07080520505
-        ],
-        [
-          6885.000013544028,
-          -16800.07080520504
-        ],
-        [
-          6885.000013544028,
-          -19490.000002089957
-        ],
-        [
-          3955.0000135440496,
-          -19490.000002089957
-        ],
-        [
-          3955.000013544108,
-          -18950.000002089946
-        ],
-        [
-          2555.0000135440714,
-          -18950.000002089957
-        ],
-        [
-          2555.0000135440496,
-          -19490.000002089968
-        ],
-        [
-          255.2566769568475,
-          -19490.000002089968
-        ]
-      ],
-      "flaeche_stempel": null,
-      "flaeche_berechnet": 17.07754016893906,
-      "abweichung_prozent": null,
-      "flag": "kein_stempel",
-      "quelle": "H",
-      "stempel_quelle": null
-    },
-    {
-      "id": "raum_15",
-      "typ": "TERRASSE",
-      "name": null,
-      "polygon_mm": [
-        [
-          6935.000013544042,
-          -16800.070836725874
-        ],
-        [
-          12234.985635202618,
-          -16800.070836725874
-        ],
-        [
-          12234.985635202618,
-          -19490.0000336108
-        ],
-        [
-          6935.000013544042,
-          -19490.0000336108
-        ]
-      ],
-      "flaeche_stempel": null,
-      "flaeche_berechnet": 14.256586066769703,
-      "abweichung_prozent": null,
-      "flag": "kein_stempel",
-      "quelle": "H",
-      "stempel_quelle": null
-    },
-    {
-      "id": "raum_27",
-      "typ": null,
-      "name": null,
-      "polygon_mm": [
-        [
-          5225.028838765313,
-          -25950.000093199076
-        ],
-        [
-          5225.028838765313,
-          -24700.000093198996
-        ],
-        [
-          5225.028838765313,
-          -24100.000093198996
-        ],
-        [
-          7445.028838765364,
-          -24100.000093198996
-        ],
-        [
-          7445.028838765364,
-          -24350.000093198996
-        ],
-        [
-          7695.028838765364,
-          -24350.000093198996
-        ],
-        [
-          7695.028838765364,
-          -25950.000093199076
-        ]
-      ],
-      "flaeche_stempel": null,
-      "flaeche_berechnet": 4.507000000000293,
-      "abweichung_prozent": null,
-      "flag": "kein_stempel",
-      "quelle": "H",
-      "stempel_quelle": null
-    },
-    {
-      "id": "raum_36",
-      "typ": null,
-      "name": null,
-      "polygon_mm": [
-        [
-          15410.000013544064,
-          -6225.000311359561
-        ],
-        [
-          15410.000013544064,
-          -3110.000002090028
-        ],
-        [
-          18544.65978316019,
-          -3110.000002090028
-        ],
-        [
-          18538.36212789086,
-          -4999.296582883484
-        ],
-        [
-          18512.74311649349,
-          -12685.000002090048
-        ],
-        [
-          15140.00001354405,
-          -12685.000002090048
-        ],
-        [
-          15410.000013544064,
-          -12595.000002090028
-        ]
-      ],
-      "flaeche_stempel": null,
-      "flaeche_berechnet": 29.873716252407593,
-      "abweichung_prozent": null,
-      "flag": "kein_stempel",
-      "quelle": "H",
-      "stempel_quelle": null
-    },
-    {
-      "id": "raum_41",
-      "typ": null,
-      "name": null,
-      "polygon_mm": [
-        [
-          18411.07461188751,
-          -31080.00000209003
-        ],
-        [
-          12515.028838765335,
-          -31080.00000209003
-        ],
-        [
-          12515.028838765335,
-          -31048.50925926944
-        ],
-        [
-          12515.028838765335,
-          -30180.00000209003
-        ],
-        [
-          18414.931066092155,
-          -30180.00000209003
-        ]
-      ],
-      "flaeche_stempel": null,
-      "flaeche_berechnet": 5.3081766002020485,
-      "abweichung_prozent": null,
-      "flag": "kein_stempel",
-      "quelle": "H",
-      "stempel_quelle": null
-    },
-    {
-      "id": "rest_1",
-      "typ": "SCHACHT",
-      "name": null,
-      "polygon_mm": [
-        [
-          12899.743329410803,
-          -19249.999999999978
-        ],
-        [
-          13099.743329410803,
-          -19349.999999999978
-        ],
-        [
-          13399.743329410803,
-          -19349.999999999978
-        ],
-        [
-          13449.743329410803,
-          -19299.999999999978
-        ],
-        [
-          13574.743329410803,
-          -19324.999999999978
-        ],
-        [
-          13574.743329410803,
-          -21224.999999999978
-        ],
-        [
-          12349.743329410803,
-          -21249.999999999978
-        ],
-        [
-          12335.64254077397,
-          -21299.999968371063
-        ],
-        [
-          12335.057563320725,
-          -21300.028706470526
-        ],
-        [
-          12335.02882522126,
-          -21300.61368392378
-        ],
-        [
-          12335.02882522126,
-          -21364.386252818353
-        ],
-        [
-          12335.058454316693,
-          -21364.989366911203
-        ],
-        [
-          12335.10901350828,
-          -21365.05753808945
-        ],
-        [
-          12336.576471508883,
-          -21367.27331215957
-        ],
-        [
-          12337.800420844293,
-          -21369.63234495665
-        ],
-        [
-          12338.767029736087,
-          -21372.10797719179
-        ],
-        [
-          12339.46537459485,
-          -21374.672231892786
-        ],
-        [
-          12339.887563466995,
-          -21377.29613057025
-        ],
-        [
-          12340.028825221261,
-          -21379.95002070176
-        ],
-        [
-          12340.028825221261,
-          -22415.00004943095
-        ],
-        [
-          12339.908443388067,
-          -22417.45047793919
-        ],
-        [
-          12339.548457231342,
-          -22419.877307481354
-        ],
-        [
-          12338.952333614567,
-          -22422.257166362313
-        ],
-        [
-          12338.125813534043,
-          -22424.56713524008
-        ],
-        [
-          12337.07685682997,
-          -22426.7849678516
-        ],
-        [
-          12335.815565528825,
-          -22428.889305256438
-        ],
-        [
-          12334.35408655533,
-          -22430.85988153504
-        ],
-        [
-          12332.706494750924,
-          -22432.677718960615
-        ],
-        [
-          12330.888657325353,
-          -22434.32531076502
-        ],
-        [
-          12328.918081046751,
-          -22435.786789738515
-        ],
-        [
-          12326.813743641911,
-          -22437.04808103966
-        ],
-        [
-          12324.595911030388,
-          -22438.097037743733
-        ],
-        [
-          12322.285942152623,
-          -22438.923557824255
-        ],
-        [
-          12319.906083271664,
-          -22439.51968144103
-        ],
-        [
-          12317.4792537295,
-          -22439.879667597754
-        ],
-        [
-          12315.028825221261,
-          -22440.00004943095
-        ],
-        [
-          12249.743329410803,
-          -22399.999999999978
-        ],
-        [
-          12185.02883007976,
-          -21020.000215332355
-        ],
-        [
-          12185.028839017707,
-          -21019.99985130475
-        ],
-        [
-          12185.018289589794,
-          -20990.398943618085
-        ],
-        [
-          12185.000102558895,
-          -20990.028738099456
-        ],
-        [
-          12184.415125105652,
-          -20989.999999999993
-        ],
-        [
-          12124.743329410803,
-          -20924.999999999978
-        ],
-        [
-          12124.743329410803,
-          -20624.999999999978
-        ],
-        [
-          12224.743329410803,
-          -20524.999999999978
-        ],
-        [
-          12324.743329410803,
-          -20224.999999999978
-        ],
-        [
-          12499.743329410803,
-          -20149.999999999978
-        ],
-        [
-          12724.743329410803,
-          -19924.999999999978
-        ],
-        [
-          12824.743329410803,
-          -19724.999999999978
-        ],
-        [
-          12824.743329410803,
-          -19524.999999999978
-        ],
-        [
-          12874.743329410803,
-          -19474.999999999978
-        ],
-        [
-          12824.743329410803,
-          -19424.999999999978
-        ],
-        [
-          12824.743329410803,
-          -19274.999999999978
-        ]
-      ],
-      "flaeche_stempel": null,
-      "flaeche_berechnet": 2.3038761036443494,
-      "abweichung_prozent": null,
-      "flag": "kein_stempel",
-      "quelle": "R",
-      "stempel_quelle": null
-    },
-    {
-      "id": "rest_2",
-      "typ": null,
-      "name": null,
-      "polygon_mm": [
-        [
-          14049.743329410803,
-          -14799.999999999978
-        ],
-        [
-          14074.743329410803,
-          -15024.999999999978
-        ],
-        [
-          14224.743329410803,
-          -15324.999999999978
-        ],
-        [
-          14449.743329410803,
-          -15549.999999999978
-        ],
-        [
-          14749.743329410803,
-          -15699.999999999978
-        ],
-        [
-          15024.743329410803,
-          -15724.999999999978
-        ],
-        [
-          15024.743329410803,
-          -16474.999999999978
-        ],
-        [
-          14349.743329410803,
-          -16499.999999999978
-        ],
-        [
-          14099.743329410803,
-          -16299.999999999978
-        ],
-        [
-          13999.743329410803,
-          -16299.999999999978
-        ],
-        [
-          13949.743329410803,
-          -16249.999999999978
-        ],
-        [
-          13749.743329410803,
-          -16249.999999999978
-        ],
-        [
-          13699.743329410803,
-          -16199.999999999978
-        ],
-        [
-          13649.743329410803,
-          -16249.999999999978
-        ],
-        [
-          13449.743329410803,
-          -16249.999999999978
-        ],
-        [
-          13149.743329410803,
-          -16399.999999999978
-        ],
-        [
-          12974.743329410803,
-          -16574.999999999978
-        ],
-        [
-          12949.743329410803,
-          -16649.999999999978
-        ],
-        [
-          12749.743329410803,
-          -16699.999999999978
-        ],
-        [
-          12474.743329410803,
-          -16974.999999999978
-        ],
-        [
-          12474.743329410803,
-          -17024.999999999978
-        ],
-        [
-          12399.743329410803,
-          -17099.999999999978
-        ],
-        [
-          12364.371906105851,
-          -15275.0
-        ],
-        [
-          12364.956883559105,
-          -15274.971261900535
-        ],
-        [
-          12364.98562165857,
-          -15274.38628444728
-        ],
-        [
-          12364.98562165857,
-          -15089.999963095974
-        ],
-        [
-          12365.106003496418,
-          -15087.549534540505
-        ],
-        [
-          12365.465989667007,
-          -15085.122704952477
-        ],
-        [
-          12366.062113306594,
-          -15082.742846028368
-        ],
-        [
-          12366.888633418434,
-          -15080.432877111463
-        ],
-        [
-          12367.93759016172,
-          -15078.215044466051
-        ],
-        [
-          12369.198881509205,
-          -15076.110707033722
-        ],
-        [
-          12370.660360535252,
-          -15074.140130735082
-        ],
-        [
-          12372.307952397372,
-          -15072.322293297844
-        ],
-        [
-          12374.12578988465,
-          -15070.67470149094
-        ],
-        [
-          12376.096366227683,
-          -15069.213222524746
-        ],
-        [
-          12378.20070369832,
-          -15067.951931241176
-        ],
-        [
-          12380.418536375593,
-          -15066.902974565253
-        ],
-        [
-          12382.728505317602,
-          -15066.076454523574
-        ],
-        [
-          12385.108364259817,
-          -15065.480330956272
-        ],
-        [
-          12387.53519385878,
-          -15065.120344859393
-        ],
-        [
-          12389.985622417904,
-          -15064.999963095974
-        ],
-        [
-          13605.00002586184,
-          -15065.0
-        ],
-        [
-          13609.38629439385,
-          -15065.0
-        ],
-        [
-          13609.971271847104,
-          -15064.971261900535
-        ],
-        [
-          13610.000009946569,
-          -15064.38628444728
-        ],
-        [
-          13624.743329410803,
-          -14924.999999999978
-        ],
-        [
-          13610.000009946569,
-          -14895.0
-        ],
-        [
-          13610.120391779763,
-          -14892.549571491762
-        ],
-        [
-          13610.480377936488,
-          -14890.122741949597
-        ],
-        [
-          13611.076501553263,
-          -14887.742883068639
-        ],
-        [
-          13611.903021633787,
-          -14885.432914190873
-        ],
-        [
-          13612.95197833786,
-          -14883.21508157935
-        ],
-        [
-          13614.213269639005,
-          -14881.11074417451
-        ],
-        [
-          13615.6747486125,
-          -14879.140167895908
-        ],
-        [
-          13617.322340416906,
-          -14877.322330470337
-        ],
-        [
-          13619.140177842477,
-          -14875.674738665932
-        ],
-        [
-          13621.110754121079,
-          -14874.213259692437
-        ],
-        [
-          13623.215091525919,
-          -14872.951968391291
-        ],
-        [
-          13625.432924137442,
-          -14871.903011687218
-        ],
-        [
-          13627.742893015207,
-          -14871.076491606695
-        ],
-        [
-          13630.122751896166,
-          -14870.48036798992
-        ],
-        [
-          13632.54958143833,
-          -14870.120381833194
-        ],
-        [
-          13635.000009946569,
-          -14870.0
-        ],
-        [
-          13684.386294393851,
-          -14870.0
-        ],
-        [
-          13684.971271847106,
-          -14869.971261900535
-        ],
-        [
-          13685.00000994657,
-          -14869.38628444728
-        ],
-        [
-          13685.00000994657,
-          -14805.613715552709
-        ],
-        [
-          13684.938909292117,
-          -14804.369983159106
-        ],
-        [
-          13684.935900456401,
-          -14801.979460003142
-        ],
-        [
-          13685.161228192172,
-          -14799.599578194355
-        ],
-        [
-          13685.612832243214,
-          -14797.252097887009
-        ],
-        [
-          13686.286583423876,
-          -14794.958482976252
-        ],
-        [
-          13687.17632137377,
-          -14792.739704845655
-        ],
-        [
-          13688.273910884263,
-          -14790.616050617971
-        ],
-        [
-          13689.569316281742,
-          -14788.606937662342
-        ],
-        [
-          13691.05069318756,
-          -14786.730736053985
-        ],
-        [
-          13692.704496815644,
-          -14785.004600609696
-        ],
-        [
-          13694.515605817556,
-          -14783.4443140349
-        ],
-        [
-          13696.46746054268,
-          -14782.064142616451
-        ],
-        [
-          13698.542214449331,
-          -14780.876705780598
-        ],
-        [
-          13700.435203146393,
-          -14780.02187387379
-        ],
-        [
-          13701.11515100243,
-          -14779.672615643125
-        ],
-        [
-          13749.743329410803,
-          -14799.999999999978
-        ]
-      ],
-      "flaeche_stempel": null,
-      "flaeche_berechnet": 3.4003079174835142,
-      "abweichung_prozent": null,
-      "flag": "kein_stempel",
-      "quelle": "R",
-      "stempel_quelle": null
-    },
-    {
-      "id": "rest_3",
-      "typ": "SCHACHT",
-      "name": null,
-      "polygon_mm": [
-        [
-          10749.99999999999,
-          -4224.999999999916
-        ],
-        [
-          10747.549571491752,
-          -4224.879618166721
-        ],
-        [
-          10745.122741949588,
-          -4224.519632009997
-        ],
-        [
-          10742.74288306863,
-          -4223.923508393222
-        ],
-        [
-          10740.432914190864,
-          -4223.096988312698
-        ],
-        [
-          10709.567085809118,
-          -4226.9030116871345
-        ],
-        [
-          10711.78491842064,
-          -4227.951968391208
-        ],
-        [
-          10713.889255825481,
-          -4229.213259692353
-        ],
-        [
-          10715.859832104083,
-          -4230.674738665848
-        ],
-        [
-          10717.677669529654,
-          -4232.322330470252
-        ],
-        [
-          10719.32526133406,
-          -4234.1401678958255
-        ],
-        [
-          10720.786740307554,
-          -4236.110744174426
-        ],
-        [
-          10722.0480316087,
-          -4238.215081579267
-        ],
-        [
-          10723.096988312773,
-          -4240.432914190789
-        ],
-        [
-          10723.923508393296,
-          -4242.742883068555
-        ],
-        [
-          10724.519632010071,
-          -4245.1227419495135
-        ],
-        [
-          10724.879618166797,
-          -4247.549571491677
-        ],
-        [
-          10724.99999999999,
-          -4249.999999999916
-        ],
-        [
-          10725.613715552723,
-          -5905.000000000001
-        ],
-        [
-          10725.028738099456,
-          -5904.971261900535
-        ],
-        [
-          10724.99999999999,
-          -5904.386284447283
-        ],
-        [
-          10499.743329410803,
-          -5899.999999999978
-        ],
-        [
-          10399.743329410803,
-          -5799.999999999978
-        ],
-        [
-          10199.743329410803,
-          -5699.999999999978
-        ],
-        [
-          9699.743329410803,
-          -5699.999999999978
-        ],
-        [
-          9649.743329410803,
-          -5749.999999999978
-        ],
-        [
-          9499.743329410803,
-          -5749.999999999978
-        ],
-        [
-          9299.743329410803,
-          -5899.999999999978
-        ],
-        [
-          9105.000000000035,
-          -5904.386284447283
-        ],
-        [
-          9104.97126190057,
-          -5904.971261900535
-        ],
-        [
-          9104.386284447302,
-          -5905.000000000001
-        ],
-        [
-          9105.000000000035,
-          -4249.999999999916
-        ],
-        [
-          9105.120381833229,
-          -4247.549571491677
-        ],
-        [
-          9105.480367989954,
-          -4245.1227419495135
-        ],
-        [
-          9106.07649160673,
-          -4242.742883068555
-        ],
-        [
-          9106.903011687253,
-          -4240.432914190789
-        ],
-        [
-          9103.096988312816,
-          -4209.567085809043
-        ],
-        [
-          9102.048031608743,
-          -4211.784918420566
-        ],
-        [
-          9100.786740307598,
-          -4213.8892558254065
-        ],
-        [
-          9099.325261334103,
-          -4215.859832104007
-        ],
-        [
-          9097.677669529698,
-          -4217.67766952958
-        ],
-        [
-          9095.859832104126,
-          -4219.325261333985
-        ],
-        [
-          9093.889255825525,
-          -4220.78674030748
-        ],
-        [
-          9091.784918420684,
-          -4222.048031608625
-        ],
-        [
-          9089.567085809162,
-          -4223.096988312698
-        ],
-        [
-          9087.257116931396,
-          -4223.923508393222
-        ],
-        [
-          9084.877258050437,
-          -4224.519632009997
-        ],
-        [
-          9082.450428508273,
-          -4224.879618166721
-        ],
-        [
-          9080.000000000035,
-          -4224.999999999916
-        ],
-        [
-          9105.000000000035,
-          -4199.999999999916
-        ],
-        [
-          9104.87961816684,
-          -4202.450428508156
-        ],
-        [
-          9104.519632010115,
-          -4204.877258050319
-        ],
-        [
-          9103.92350839334,
-          -4207.257116931278
-        ],
-        [
-          9107.951968391326,
-          -4238.215081579267
-        ],
-        [
-          9109.213259692471,
-          -4236.110744174426
-        ],
-        [
-          9110.674738665966,
-          -4234.1401678958255
-        ],
-        [
-          9112.322330470372,
-          -4232.322330470252
-        ],
-        [
-          9114.140167895943,
-          -4230.674738665848
-        ],
-        [
-          9116.110744174544,
-          -4229.213259692353
-        ],
-        [
-          9118.215081579385,
-          -4227.951968391208
-        ],
-        [
-          9120.432914190907,
-          -4226.9030116871345
-        ],
-        [
-          9122.742883068673,
-          -4226.076491606611
-        ],
-        [
-          9125.122741949632,
-          -4225.480367989836
-        ],
-        [
-          9127.549571491796,
-          -4225.120381833111
-        ],
-        [
-          9130.000000000035,
-          -4224.999999999916
-        ],
-        [
-          10699.99999999999,
-          -4224.999999999916
-        ],
-        [
-          10702.45042850823,
-          -4225.120381833111
-        ],
-        [
-          10704.877258050394,
-          -4225.480367989836
-        ],
-        [
-          10707.257116931352,
-          -4226.076491606611
-        ],
-        [
-          10738.215081579341,
-          -4222.048031608625
-        ],
-        [
-          10736.1107441745,
-          -4220.78674030748
-        ],
-        [
-          10734.1401678959,
-          -4219.325261333985
-        ],
-        [
-          10732.322330470328,
-          -4217.67766952958
-        ],
-        [
-          10730.674738665923,
-          -4215.859832104007
-        ],
-        [
-          10729.213259692428,
-          -4213.8892558254065
-        ],
-        [
-          10727.951968391282,
-          -4211.784918420566
-        ],
-        [
-          10726.903011687209,
-          -4209.567085809043
-        ],
-        [
-          10726.076491606686,
-          -4207.257116931278
-        ],
-        [
-          10725.48036798991,
-          -4204.877258050319
-        ],
-        [
-          10725.120381833185,
-          -4202.450428508156
-        ],
-        [
-          10724.99999999999,
-          -4199.999999999916
-        ]
-      ],
-      "flaeche_stempel": null,
-      "flaeche_berechnet": 2.5343478375433093,
-      "abweichung_prozent": null,
-      "flag": "kein_stempel",
-      "quelle": "R",
-      "stempel_quelle": null
+      "flaeche_roh": 4.878688509257909,
+      "abweichung_bereinigt_prozent": -100.0,
+      "bereinigung": [
+        {
+          "regel": "QUELLE_RANG",
+          "gegenspieler": "raum_6",
+          "flaeche_m2": 3.1231679125425305
+        },
+        {
+          "regel": "QUELLE_RANG",
+          "gegenspieler": "raum_41",
+          "flaeche_m2": 1.507901680698119
+        },
+        {
+          "regel": "ZERFALL",
+          "gegenspieler": null,
+          "flaeche_m2": 0.023428698535212754
+        },
+        {
+          "regel": "ENTFALL",
+          "gegenspieler": null,
+          "flaeche_m2": 0.2241902174820469
+        }
+      ]
     }
   ],
   "wandkoerper": [

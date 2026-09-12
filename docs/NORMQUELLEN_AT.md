@@ -294,6 +294,11 @@ Ausgaben-Bruch. **Für andere Zeilen ist das nicht geprüft.**
 | „die Gleichsetzung Tabelle-6-Erforderlichkeit = erhöhte Anforderungen ist eine unbelegte Auslegung" | **für Zeile 4 belegt** (Spalten-Entsprechung, s.o.); für alle anderen Zeilen unverändert offen |
 | „`sanitaer_scope` kann nie `anwendbar` werden" | **für Verkaufsstätten > 3 000 m² Verkaufsfläche wäre `anwendbar` jetzt begründbar** — die Umsetzung bleibt offen (Beleuchtungsart + Nachweis, s. `BLOCKER2_FLAECHEN_SCOPE.md` 9) |
 
+**Status 2026-09-09:** R 12-2/AC:2019-07-01 beschafft, #116 gemergt, autoritativ
+aktiv in `normwissen/data/ove_e8101_zusatz.yaml` (`r12_2`) — Verkaufsstätten-
+Erforderlichkeit (Regel 14) belegt. Frühere Notiz „verworfen" war eine Verwechslung
+mit der verworfenen Tür-RZ-links-Regel (G3), NICHT mit R 12-2.
+
 ## 3. Fehlt — kostenlos beschaffbar
 1. **AStV, ASchG, KennV inkl. Anhang 1** als amtliche RIS-Ausdrucke (Gesetzesnummern s.o.).
 2. Kommentierte AStV der Arbeitsinspektion (nur verlinkt).

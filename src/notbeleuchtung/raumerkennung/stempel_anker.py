@@ -28,6 +28,7 @@ from shapely.geometry import Point, Polygon
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
 
 from .dxf_load import XY, DxfPlan
+from .kuerzel_entscheid import kandidat_kuerzel
 from .raumtyp import raumtyp_flags
 
 # Fläche: '38,35 m2', '1.84m2', '100.95 m²', '25,67^  m2^' (Stacking-Reste), '12 qm'.
@@ -35,7 +36,7 @@ _FLAECHE = re.compile(r"(\d+(?:[.,]\d+)?)\s*(?:m\s*[²2]|qm)(?!\w)", re.IGNORECA
 # Belag-Vokabular (kurze Materialzeile, keine Zahlen).
 _BELAG = re.compile(
     r"parkett|fliesen|estrich|estr\.|gu[ßs]s?asphalt|asphalt|platten|rasen|beton"
-    r"|teppich|laminat|linoleum|kies|feinsteinzeug|fstz",
+    r"|teppich|laminat|linoleum|kies|feinsteinzeug|fstz|ker\.?\s*bel",
     re.IGNORECASE,
 )
 _BLOCK_SUFFIX = re.compile(r"__\d+$")
@@ -180,6 +181,11 @@ def _stempel_aus_insert(plan: DxfPlan, ins) -> Stempel | None:
             belag = txt
     # Blockname-Stempel ohne Raumtyp UND ohne m² sind Möbel-/Detail-Blöcke
     # ('BodenWandaufbau', 'Spüle', 'schnittführung') — keine Raumstempel.
+    # Kandidaten-Kürzel brauchen hier KEINE Ausnahme: ein »Schl.«-Blockname MIT
+    # m² passiert die Bedingung schon (`flaeche is not None`). Gemessen
+    # 2026-09-12 über alle fünf Prüfpläne: 0 Blocknamen, 0 ATTRIBs, 0 Blocktexte
+    # mit Token `schl` — eine Lockerung hätte hier nur Möbel-/Detail-Blöcke OHNE
+    # m² hereingelassen ('Schl__2', 'Schl_Detail' treffen über `_blockname_als_name`).
     if quelle == "INSERT-Block" and _typ(name) is None and flaeche is None:
         return None
     return Stempel(
@@ -216,7 +222,13 @@ def _stempel_aus_texten(
         # NUR Wörterbuch-Treffer: lose m²-Texte ohne erkannten Raumtyp sind
         # Maßketten/Detail-/Möbel-Beschriftung ('WP BD 0,63…'), keine Stempel.
         # INSERT-Stempel (ATTRIB/Blockname) laufen separat und bleiben ungefiltert.
-        name_frag = next((f for f in kandidaten if _typ(f[0])), None)
+        # Kandidaten-Kürzel (»Schl.«) bilden ebenfalls einen Stempel, damit die
+        # Kaskade sie überhaupt sehen kann — `typ` bleibt None, hier wird KEIN
+        # Typ erfunden; die Auflösung macht `kuerzel_entscheid` mit Beleg +
+        # Owner-Entscheidung. Ohne diesen Zweig entstünde gar kein Stempel
+        # (gemessen Muthgasse_E2: die zwei »Schl.«-MTEXT waren unsichtbar).
+        name_frag = next((f for f in kandidaten
+                          if _typ(f[0]) or kandidat_kuerzel(f[0])), None)
         if name_frag is None:
             continue
         txt, _xy, layer, quelle = name_frag

@@ -26,3 +26,44 @@ def test_mollgasse_leer_ist_meter_kalibriert(mollgasse_blank_eg):
     bb = bounds_mm(plan)
     # Nach Kalibrierung liegt die Ausdehnung im mm-Bereich eines Geschosses.
     assert 8_000 < bb.max_xy[0] - bb.min_xy[0] < 500_000
+
+
+def _plan_mit_wand_im_block(tmp_path, ausreisser=False):
+    """DXF, dessen Wände NUR in einer Blockdefinition liegen (Baufeld-Muster).
+
+    $INSUNITS=6 (Meter) lügt: die Zeichnung steht in mm. Ohne Block-Abstieg
+    findet die Kalibrierung 0 Wandpunkte und fällt auf $INSUNITS zurück → ×1000.
+    """
+    import ezdxf
+
+    doc = ezdxf.new()
+    doc.header["$INSUNITS"] = 6                      # behauptet Meter
+    blk = doc.blocks.new("GRUNDRISS")
+    for i in range(12):                              # 30 m × 20 m Wandrechteck
+        blk.add_line((0, i * 1000), (30000, i * 1000),
+                     dxfattribs={"layer": "A-WALL"})
+    msp = doc.modelspace()
+    # Baufeld-Muster: die INSERTs SELBST liegen auf dem Wand-Layer (damit der
+    # Modelspace als Architektur-Raum gewählt wird), die Linien stecken aber
+    # ausschließlich in der Blockdefinition.
+    for k in range(12):
+        msp.add_blockref("GRUNDRISS", (0, 0), dxfattribs={"layer": "A-WALL"})
+        del k
+    if ausreisser:
+        # Zwei Phantom-Punkte 400 km daneben (Baufeld-4OG-Muster).
+        msp.add_line((0, 0), (4e8, 4e8), dxfattribs={"layer": "A-WALL"})
+    p = tmp_path / ("ausreisser.dxf" if ausreisser else "block.dxf")
+    doc.saveas(p)
+    return p
+
+
+def test_wand_im_block_kalibriert_nicht_ueber_insunits(tmp_path):
+    """Baufeld 1OG/2OG/4OG: Wände nur im Block → früher Faktor 1000 statt 1."""
+    plan = lade_dxf(_plan_mit_wand_im_block(tmp_path))
+    assert plan.factor == 1.0
+
+
+def test_ausreisser_kippen_den_faktor_nicht(tmp_path):
+    """Ein paar Phantom-Punkte dürfen die Dekaden-Wahl nicht verschieben."""
+    plan = lade_dxf(_plan_mit_wand_im_block(tmp_path, ausreisser=True))
+    assert plan.factor == 1.0

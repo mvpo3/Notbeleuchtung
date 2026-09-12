@@ -79,13 +79,12 @@ _EXTRA_LABELS: dict[str, RoomType] = {
     "gard": RoomType.ENTRANCE_HALL,  # „Gard." = Garderobe, Wohnungs-Vorraum
     "garderobe": RoomType.ENTRANCE_HALL,
     "loggia": RoomType.BALCONY,      # überdachter Freisitz ~ Balkon
-    # Fahrrad-/Kinderwagenraum = Abstellraum. Token-exakt inkl. Kompositum-Token
+    # Fahrradraum = Abstellraum. Token-exakt inkl. Kompositum-Token
     # „fahrradraum" (echter Stempel, ein Token) — so bleiben „Fahrradrampe",
     # „Fahrradabstellplätze" und „Fahrräder" (≠„fahrrad") UNKNOWN.
+    # Kinderwagenraum NICHT hier: er ist ein eigener Kanon-Typ (s. _EXTRA_DIRECT).
     "fahrrad": RoomType.STORAGE,
     "fahrradraum": RoomType.STORAGE,
-    "kinderwagen": RoomType.STORAGE,
-    "kinderwagenraum": RoomType.STORAGE,
 }
 _WORT = re.compile(r"[A-Za-zÄÖÜäöüß]+")
 
@@ -118,12 +117,37 @@ _EXTRA_DIRECT: dict[str, tuple[str, bool, bool]] = {
     # flur", VOKABULAR.md Track C) — wie GANG/VORRAUM Fluchtweg + communal.
     "aufzugsvorplatz": ("AUFZUGSVORPLATZ", True, True),
     "aufzugsvorraum": ("AUFZUGSVORPLATZ", True, True),
+    # Schleuse = Rauch-/Brandschutzschleuse vor dem Stiegenkern, Erschließungs-
+    # fläche → wie GANG/STIEGENHAUS/AUFZUGSVORPLATZ Fluchtweg + communal
+    # (Entscheidung Enis 2026-09-11, docs/VOKABULAR.md §1). Das AUSGESCHRIEBENE
+    # Wort ist eindeutig und darf hier stehen; das mehrdeutige Kürzel »Schl.«
+    # NICHT — das löst `kuerzel_entscheid.py` nur mit Beleg + Owner-Entscheidung
+    # je Stempelnummer auf. Gemessen 2026-09-12: Token `schleuse` kommt in den
+    # fünf PRÜFPLÄNEN 0× vor (inkl. Blocknamen, ATTRIBs, Blocktexte) — dort
+    # ändert dieser Eintrag nichts. ACHTUNG, darüber hinaus gilt das NICHT: im
+    # Gesamtkorpus tragen 2 Stempel den ausgeschriebenen Namen `SCHLEUSE`
+    # (`Projekte/_ergebnis_alle/2.Kellergeschoß/raeume.json:18` und `:379`,
+    # bisher `typ: null`); dort ändert der Eintrag Typ, Flags und damit
+    # Türtypisierung und Ausgänge. NICHT nachgemessen — der Quellplan liegt
+    # nicht in `Projekte/_eingang` (nur die fünf Prüfpläne, `*.dxf` gitignored).
+    "schleuse": ("SCHLEUSE", True, True),
 }
 
 # Labels, die der Port FALSCH typen würde (Kompositum-Kopf „…küche" → KITCHEN):
 # token-exakt VOR classify_room geprüft. Waschküche/-raum = communale Nasszelle,
 # keine Wohnungsküche.
 _EXTRA_OVERRIDE: dict[str, tuple[str, bool, bool]] = {
+    # Kinderwagenraum = GEMEINSAMER Abstellraum im Erschließungsbereich, nicht der
+    # private Wohnungs-Abstellraum — deshalb eigener Typ statt STORAGE/ABSTELLRAUM
+    # (die Türleuchten-Regel in platzierung/fachpraxis.py adressiert genau ihn).
+    # Als OVERRIDE, weil reale Stempel Mischräume beschriften („FAHRRADRAUM / KIWA",
+    # „Fahrrad+ KiWa") und das generische `fahrrad`-Token sonst gewinnt — es steht in
+    # _EXTRA_LABELS, das vor _EXTRA_DIRECT geprüft wird. Gemessene Schreibweisen in
+    # den Repo-Plänen: „KIWA" (Mollgasse), „KiWa" (Barawitzka); das ausgeschriebene
+    # „Kinderwagen(raum)" kommt real nicht vor, bleibt aber als Vokabular gültig.
+    "kiwa": ("KINDERWAGENRAUM", False, True),
+    "kinderwagen": ("KINDERWAGENRAUM", False, True),
+    "kinderwagenraum": ("KINDERWAGENRAUM", False, True),
     "waschküche": ("WASCHKÜCHE", False, True),
     "waschkueche": ("WASCHKÜCHE", False, True),
     "waschraum": ("WASCHKÜCHE", False, True),

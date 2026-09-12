@@ -15,6 +15,7 @@ from __future__ import annotations
 import itertools
 import json
 import math
+import os
 import os.path
 import re
 import subprocess
@@ -31,6 +32,7 @@ sys.stdout.reconfigure(encoding="utf-8")
 import matplotlib
 
 matplotlib.use("Agg")
+import ezdxf
 import matplotlib.pyplot as plt
 import numpy as np
 from ezdxf.addons.drawing import Frontend, RenderContext
@@ -39,6 +41,8 @@ from ezdxf.addons.drawing.properties import LayoutProperties
 from shapely.geometry import Point, Polygon
 from shapely.ops import unary_union
 
+from notbeleuchtung.raumerkennung.aussenbereich import ueberdachungen
+from notbeleuchtung.raumerkennung.bereinigung import ueberlappung
 from notbeleuchtung.raumerkennung.dxf_load import WALL_PATTERN, DxfPlan, lade_dxf
 from notbeleuchtung.raumerkennung.fluchtweg import _KEIN_FLW_LAYER
 from notbeleuchtung.raumerkennung.kaskade import iou, raeume_aus_kaskade
@@ -60,7 +64,10 @@ from notbeleuchtung.raumerkennung.tuer_typisierung import (
 )
 
 EINGANG = REPO / "Projekte" / "_eingang"
-ERGEBNIS = REPO / "Projekte" / "_ergebnis"
+# Ausgabeordner überschreibbar (Sammelläufe über alle Repo-Grundrisse
+# schreiben nach _ergebnis_alle, damit _ergebnis die gepflegten fünf bleibt).
+ERGEBNIS = Path(os.environ.get("PLAN_PRUEFEN_ERGEBNIS",
+                               REPO / "Projekte" / "_ergebnis"))
 
 _FARBEN = plt.cm.tab20.colors  # type: ignore[attr-defined]
 
@@ -572,6 +579,12 @@ _ANKER_KUERZEL = {
     "RICHTUNGSWECHSEL": "RW", "KREUZUNG": "K", "ENDE": "E", "STRECKE": "S",
 }
 _SEG_FARBE = {"LINIE": "#0055cc", "GRAPH": "#00a040", "FALLBACK": "#888888"}
+# ZEICHEN-ERSATZMASSE, KEINE MESSUNG: Klemmgrenzen fuer den Tuer-Bogen im
+# Pruefbild. Sie bestimmen nur, wie gross der Bogen gemalt wird, und wandern in
+# kein Datenfeld. Eine Tuer ohne gemessene Breite (breite_mm is None) erscheint
+# damit so gross wie eine 400er — das ist Darstellung, kein Mass.
+_BOGEN_ZEICHEN_MIN_MM = 400.0
+_BOGEN_ZEICHEN_MAX_MM = 1500.0
 _AUSGANG_FARBE = {"final_exit": "#dd0000", "stair_exit": "#ff8800",
                   "door": "#777777"}
 _KIND_MARKER = {"rz": ("s", "#00a040"), "sicherheitsleuchte": ("o", "#0055cc"),
@@ -592,9 +605,17 @@ def _tuer_kuerzel(t) -> str:
     return k
 
 
+#: Wand-Segmente kürzer als das sind Tür-Laibungen/Jambs, keine Türwand.
+_MIN_WAND_SEGMENT_MM = 300.0
+
+
 def _wandwinkel_bei(plan: DxfPlan, xy_mm, max_mm: float = 600.0) -> float | None:
     """Winkel (° mod 180) des nächsten Wand-Segments am Punkt (mm) — Messbasis
-    der Rotationsprüfung (Türwandwinkel). None, wenn keine Wand in max_mm."""
+    der Rotationsprüfung (Türwandwinkel). None, wenn keine Wand in max_mm.
+    Kurze Segmente (< 300 mm, Tür-Laibungen quer zur Wand) zählen nur, wenn die
+    Tür praktisch AUF ihnen liegt (≤ 200 mm = Wandstärken-Band) — sonst maßen
+    sie die Laibung statt der Türwand (Mollgasse durchgang_65), während echte
+    kurze Wand-Stummel an der Tür (Mollgasse tuer_30) weiter zählen."""
     px, py = xy_mm
     best, best_d = None, max_mm
     for e in plan.wall_entities():
@@ -603,8 +624,11 @@ def _wandwinkel_bei(plan: DxfPlan, xy_mm, max_mm: float = 600.0) -> float | None
             l2 = dx * dx + dy * dy
             if l2 < 1.0:
                 continue
+            kurz = l2 < _MIN_WAND_SEGMENT_MM * _MIN_WAND_SEGMENT_MM
             t = max(0.0, min(1.0, ((px - x1) * dx + (py - y1) * dy) / l2))
             d = math.hypot(px - (x1 + t * dx), py - (y1 + t * dy))
+            if kurz and d > 200.0:
+                continue
             if d < best_d:
                 best_d = d
                 best = math.degrees(math.atan2(dy, dx)) % 180.0
@@ -632,9 +656,10 @@ def _wohnungs_umrisse(modell) -> dict[str, object]:
 
 
 def _bild_fluchtweg(plan: DxfPlan, zoom, modell, wpolys: dict,
-                    pfad: Path, rot: int) -> None:
+                    pfad: Path, rot: int, kandidaten=()) -> None:
     """05_fluchtweg.png: Türen (Bögen + Typkürzel), Ausgänge (Kreise),
-    Fluchtweg-Segmente (Farbe je Quelle, Pfeil Richtung Ausgang), Wohnungen."""
+    Fluchtweg-Segmente (Farbe je Quelle, Pfeil Richtung Ausgang), Wohnungen,
+    Kreuzcheck-Kandidaten (gestrichelt rot — Prüf-Output, keine Ausgänge)."""
     from matplotlib.patches import Arc
     f = plan.factor
     fig, ax = _figur(plan, zoom)
@@ -662,8 +687,9 @@ def _bild_fluchtweg(plan: DxfPlan, zoom, modell, wpolys: dict,
     for t in modell.tueren:
         w = _wandwinkel_bei(plan, t.xy_mm) or 0.0
         # Bogen-Durchmesser gedeckelt: breite Durchgänge (bis 3.8 m) würden
-        # sonst das Bild dominieren (Barawitzka-Sichtbefund).
-        d = min(max(t.breite_mm, 400.0), 1500.0) / f
+        # sonst das Bild dominieren (Barawitzka-Sichtbefund). Reine Bildgröße,
+        # siehe _BOGEN_ZEICHEN_MIN_MM/_MAX — kein Maß der Tür.
+        d = min(max(t.breite_mm or 0.0, _BOGEN_ZEICHEN_MIN_MM), _BOGEN_ZEICHEN_MAX_MM) / f
         ax.add_patch(Arc((t.xy_mm[0] / f, t.xy_mm[1] / f), d, d, angle=w,
                          theta1=0.0, theta2=180.0, color="#994400", lw=1.5,
                          zorder=ztop + 2))
@@ -673,6 +699,13 @@ def _bild_fluchtweg(plan: DxfPlan, zoom, modell, wpolys: dict,
         ax.plot(a.xy_mm[0] / f, a.xy_mm[1] / f, "o", ms=11, mfc="none",
                 mec=_AUSGANG_FARBE.get(a.typ, "#777777"), mew=2.5,
                 zorder=ztop + 3)
+    # Kreuzcheck: notausgang_kandidat = gestrichelt roter Kreis (kein Ausgang).
+    for k in kandidaten:
+        ax.plot(k.xy_mm[0] / f, k.xy_mm[1] / f, "o", ms=14, mfc="none",
+                mec="#dd0000", mew=2.0, ls="none", zorder=ztop + 3)
+        ax.add_patch(plt.Circle((k.xy_mm[0] / f, k.xy_mm[1] / f), 900.0 / f,
+                                fill=False, ec="#dd0000", ls="--", lw=1.6,
+                                zorder=ztop + 3))
     _speichern(fig, pfad, rot)
 
 
@@ -730,6 +763,136 @@ def _bild_platzierung(plan: DxfPlan, zoom, modell, platz,
     _speichern(fig, pfad, rot)
 
 
+# ------------------------------------------------- Referenzvergleich (Fachplaner)
+
+#: Fachplaner-Referenzplan (46 Leuchten + Controller; docs/REFERENZ_PLATZIERUNG.md).
+_REFERENZ_DXF = (REPO / "DIN-Notbeleuchtungspläne(Beispiele)"
+                 / "din_support_ReMi_Barawitzkagasse_28.04.2026.dxf")
+#: Plan-Name → (Frame-Offset m, Frame-Fenster in REF-mm). our_mm = ref_mm +
+#: offset·1000 (EG-Frame, Ø 0.19 m). Das Fenster wählt das Geschoss-Frame im
+#: Referenz-Modelspace (mehrere Frames nebeneinander — Bounds-Filter reichte
+#: nicht: UG/OG-Leuchten fielen mit EG-Offset in die Plan-Bounds).
+_REFERENZ_FRAME = {
+    "Barawitzka_EG": ((-48.44, -39.04), (45_000.0, 5_000.0, 70_000.0, 45_000.0)),
+}
+_REF_LAYER_KIND = {
+    "din_SIBEL_10_emergency_lighting": "rz",
+    "din_SIBEL_10_emergency_lighting_yellow": "sicherheitsleuchte",
+    "din_SIBEL_11_emergency_lighting_system": "system",
+}
+_REF_TREFFER_MM = 1000.0
+_REF_ROT_TOL_GRAD = 10.0
+
+
+def _referenz_leuchten(name: str, bounds_mm) -> list[dict]:
+    """Fachplaner-Leuchten des passenden Geschoss-Frames (Fenster in REF-mm),
+    in unser mm-System verschoben."""
+    off_fenster = _REFERENZ_FRAME.get(name)
+    if off_fenster is None or not _REFERENZ_DXF.exists():
+        return []
+    off, (fx1, fy1, fx2, fy2) = off_fenster
+    doc = ezdxf.readfile(str(_REFERENZ_DXF))
+    out = []
+    for e in doc.modelspace().query("INSERT"):
+        kind = _REF_LAYER_KIND.get(e.dxf.layer)
+        if kind is None:
+            continue
+        rx, ry = e.dxf.insert.x, e.dxf.insert.y
+        if not (fx1 <= rx <= fx2 and fy1 <= ry <= fy2):
+            continue
+        x, y = rx + off[0] * 1000.0, ry + off[1] * 1000.0
+        att = {a.dxf.tag: a.dxf.text for a in e.attribs}
+        out.append({"x": x, "y": y, "rot": float(e.dxf.rotation) % 360.0,
+                    "block": e.dxf.name, "typ": att.get("TYPENUMBER", ""),
+                    "kind": kind})
+    return out
+
+
+def _referenz_match(refs: list[dict], platz):
+    """Greedy-Match Referenz→eigene Leuchte: ≤1 m UND Rotations-Δ ≤10° (mod 180,
+    Panel-Achse — Referenz wie wir im 90°-Raster). Controller zählt nicht."""
+    unsere = list(platz.platzierungen)
+    frei = set(range(len(unsere)))
+    treffer, fehlend = [], []
+    for r in (x for x in refs if x["kind"] != "system"):
+        best, best_d = None, _REF_TREFFER_MM
+        for i in frei:
+            p = unsere[i]
+            d = math.hypot(p.xy_mm[0] - r["x"], p.xy_mm[1] - r["y"])
+            if d > best_d:
+                continue
+            if abs((p.rotation_deg - r["rot"] + 90.0) % 180.0 - 90.0) > _REF_ROT_TOL_GRAD:
+                continue
+            best, best_d = i, d
+        if best is None:
+            fehlend.append(r)
+        else:
+            treffer.append((r, unsere[best], best_d))
+            frei.discard(best)
+    return treffer, fehlend, [unsere[i] for i in frei]
+
+
+def _bild_referenzvergleich(plan: DxfPlan, zoom, modell, platz, refs,
+                            treffer, fehlend, pfad: Path, rot: int) -> None:
+    """07_referenzvergleich.png: eigene Platzierung (Symbole wie 06) ÜBER den
+    Fachplaner-Leuchten (Kreise mit Typ; grün = getroffen, rot = ohne Gegenstück)."""
+    f = plan.factor
+    fig, ax = _figur(plan, zoom)
+    _meterraster(ax, plan)
+    ax.autoscale(False)
+    ztop = _ztop(ax)
+    for r in modell.raeume:
+        if len(r.polygon_mm) >= 3:
+            ax.fill([x / f for x, _ in r.polygon_mm],
+                    [y / f for _, y in r.polygon_mm],
+                    fc="white", ec="#909090", alpha=0.25, lw=0.8, zorder=ztop)
+    getroffen = {id(r) for r, _p, _d in treffer}
+    radius = 450.0 / f
+    for r in refs:
+        farbe = ("#777777" if r["kind"] == "system"
+                 else "#00a040" if id(r) in getroffen else "#dd0000")
+        ax.add_patch(plt.Circle((r["x"] / f, r["y"] / f), radius, fill=False,
+                                ec=farbe, lw=1.8, zorder=ztop + 2))
+        ax.text(r["x"] / f, (r["y"] + 550.0) / f, r["typ"] or r["block"],
+                ha="center", va="bottom", fontsize=5, color=farbe, zorder=ztop + 2)
+    for p in platz.platzierungen:
+        marker, farbe = _KIND_MARKER.get(p.kind, ("D", "#000000"))
+        ax.plot(p.xy_mm[0] / f, p.xy_mm[1] / f, marker, ms=6, mfc="none",
+                mec=farbe, mew=1.5, zorder=ztop + 3)
+    ax.set_title(f"Referenzvergleich: {len(treffer)} Treffer / "
+                 f"{len(fehlend)} fehlend (Fachplaner-Kreise, eigene Symbole)",
+                 fontsize=8)
+    _speichern(fig, pfad, rot)
+
+
+def _referenzvergleich(name: str, plan: DxfPlan, zoom, modell, platz,
+                       ziel: Path, rot: int) -> dict | None:
+    """Nur für Pläne mit Referenz (Barawitzka_EG): Bild + Kennzahlen + md-Block."""
+    refs = _referenz_leuchten(name, modell.bounds_mm)
+    if not refs:
+        return None
+    treffer, fehlend, ueber = _referenz_match(refs, platz)
+    _bild_referenzvergleich(plan, zoom, modell, platz, refs, treffer, fehlend,
+                            ziel / "07_referenzvergleich.png", rot)
+    basis = len(treffer) + len(fehlend)
+    quote = len(treffer) / basis if basis else 0.0
+    l = ["", f"## Referenzvergleich Fachplaner ({basis} Referenz-Leuchten im Frame)", "",
+         (f"- Treffer (≤{_REF_TREFFER_MM / 1000:.0f} m, Rotation ≤{_REF_ROT_TOL_GRAD:.0f}°): "
+          f"**{len(treffer)}/{basis} = {quote * 100:.0f} %**"),
+         f"- überzählig (eigene ohne Referenz-Gegenstück): {len(ueber)}"]
+    if fehlend:
+        l += ["", "| fehlende Referenz | xy m | rot° |", "|---|---|--:|"]
+        l += [f"| {r['block']} {r['typ']} | ({r['x'] / 1000:.2f}, {r['y'] / 1000:.2f}) "
+              f"| {r['rot']:.0f} |" for r in fehlend]
+    if ueber:
+        # Spec V1 verlangt fehlende UND ueberzaehlige einzeln, nicht nur die Zahl.
+        l += ["", "| überzählige eigene | xy m | rot° |", "|---|---|--:|"]
+        l += [f"| {p.kind} | ({p.xy_mm[0] / 1000:.2f}, {p.xy_mm[1] / 1000:.2f}) "
+              f"| {p.rotation_deg:.0f} |" for p in ueber]
+    return {"md": l, "treffer": len(treffer), "fehlend": len(fehlend),
+            "ueberzaehlig": len(ueber), "quote": quote}
+
+
 def _leuchten_je_klasse(modell, platz) -> tuple[Counter, int]:
     """(Zählung Nutzungsklasse→n mit LIFT/SCHACHT separat, n auf Treppenläufen)."""
     polys = [(r, Polygon(r.polygon_mm).buffer(0)) for r in modell.raeume
@@ -752,7 +915,14 @@ def _leuchten_je_klasse(modell, platz) -> tuple[Counter, int]:
 
 def _rotations_pruefung(plan: DxfPlan, modell, platz) -> list[tuple]:
     """RZ über einer Tür: rotation_deg gegen den Türwandwinkel MESSEN
-    (nur berichten — Platzierung wird nicht geändert)."""
+    (nur berichten — Platzierung wird nicht geändert).
+
+    Messbasis-Fix (Rotationsfix 2026-09-07): (1) Vergleichbar ist die
+    **unten-Block-äquivalente** Rotation — direktionale links/rechts-Blöcke
+    tragen ihre Pfeilrichtung im Block, nicht in rotation_deg; roh verglichen
+    war jede links/rechts-Platzierung an einer vertikalen Wand fälschlich
+    „abweichend". Äquivalenz: rot_eq = Pfeil-Azimut − 270° (Block-Nullrichtung,
+    docs/REFERENZ_PLATZIERUNG.md §4)."""
     zeilen = []
     for p in platz.platzierungen:
         if p.kind != "rz" or not modell.tueren:
@@ -763,8 +933,13 @@ def _rotations_pruefung(plan: DxfPlan, modell, platz) -> list[tuple]:
         w = _wandwinkel_bei(plan, t.xy_mm)
         if w is None:
             continue
-        delta = abs((p.rotation_deg - w + 90.0) % 180.0 - 90.0)
-        zeilen.append((t.id, p.xy_mm, p.rotation_deg, w, delta))
+        # Block-lokale Pfeilrichtung aus dem KEY (nicht aus `richtung` — der
+        # unten-Block kann jede richtung tragen, dann steckt sie in rotation_deg).
+        lokal = (180.0 if p.catalog_key.endswith("_links")
+                 else 0.0 if p.catalog_key.endswith("_rechts") else 270.0)
+        rot_eq = (p.rotation_deg + lokal - 270.0) % 360.0
+        delta = abs((rot_eq - w + 90.0) % 180.0 - 90.0)
+        zeilen.append((t.id, p.xy_mm, rot_eq, w, delta))
     return zeilen
 
 
@@ -796,17 +971,56 @@ def _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz,
          + ", ".join(f"{v}={k}" for k, v in _TUER_KUERZEL.items())
          + "; ? = untypisiert (keine Regel greift), /NA = Notausgang, "
          "* = ohne Türblatt.", "",
-         "| ID | raum_a | raum_b | Typ | Breite mm | Notausgang |",
-         "|---|---|---|---|--:|---|"]
+         ("| ID | raum_a | raum_b | Typ | Breite mm | Breiten-Quelle | "
+          "Notausgang | Quelle | Grund |"),
+         "|---|---|---|---|--:|---|---|---|---|"]
     for t in modell.tueren:
+        # Grund nur bei untypisierten Türen (Spec 5: für JEDE einzeln).
+        grund = t.untypisiert_grund if t.tuer_detail is None else None
+        quelle = (t.quelle or "")[:40]
+        # v1.4.0: keine Messung ist None — nichts erfinden, „—" ausweisen.
+        breite = "—" if t.breite_mm is None else f"{t.breite_mm:.0f}"
+        b_grund = (f"{t.breite_quelle} ({t.breite_grund})"
+                   if t.breite_grund else t.breite_quelle)
         l.append(f"| {t.id} | {t.von_raum or '—'} | {t.nach_raum or '—'} | "
-                 f"{t.tuer_detail or '—'} | {t.breite_mm:.0f} | "
-                 f"{'ja' if t.ist_notausgang else '—'} |")
+                 f"{t.tuer_detail or '—'} | {breite} | {b_grund} | "
+                 f"{'ja' if t.ist_notausgang else '—'} | {quelle or '—'} | "
+                 f"{grund or ''} |")
     l += ["", f"## Ausgänge ({len(modell.ausgaenge)})", "",
           "| ID | Typ | x m | y m |", "|---|---|--:|--:|"]
     for a in modell.ausgaenge:
         l.append(f"| {a.id} | {a.typ} | {a.xy_mm[0] / 1000:.2f} | "
                  f"{a.xy_mm[1] / 1000:.2f} |")
+    # Owner-Auflage 2026-09-12 (Leonis’ Einwand 5): eine Tür, die wegen
+    # einer Freifläche KEINEN Endausgang erzeugt, wird nicht stillschweigend
+    # gestrichen — sie steht hier namentlich. Der Owner lässt Terrassen im EG
+    # mit Ausgang ins Gelände ausdrücklich zu, "dann aber belegt"; dieser
+    # Beleg ist heute nicht führbar (kein Höhen-Datum, dxf_load verwirft z),
+    # deshalb fällt die Tür auch im EG heraus und gilt als belegpflichtig.
+    _frei = {r.id for r in modell.raeume
+             if r.raum_typ in ("BALKON", "TERRASSE")}
+    # NUR Tueren INS FREIE: eine Seite traegt den AUSSEN-Sentinel. Eine Tuer
+    # zwischen zwei Innenraeumen haette auch ohne die Regel keinen Endausgang
+    # erzeugt -- sie hier zu listen wuerde die Wirkung der Regel
+    # ueberzeichnen (gemessen: sonst 23 statt 1 auf Barawitzka).
+    _frei_tueren = [t for t in modell.tueren
+                    if t.tuer_detail == "balkontuer"
+                    and (t.von_raum in _frei or t.nach_raum in _frei)
+                    and "AUSSEN" in (t.von_raum, t.nach_raum)]
+    _titel = ("### Kein Endausgang wegen Freifläche "
+              f"({len(_frei_tueren)} Türen ins Freie an BALKON/TERRASSE)")
+    l += ["", _titel, ""]
+    if _frei_tueren:
+        l += ["| Tür | Seiten | Breite mm | belegpflichtig |",
+              "|---|---|--:|---|"]
+        for t in _frei_tueren:
+            breite = "—" if t.breite_mm is None else f"{t.breite_mm:.0f}"
+            l.append(f"| {t.id} | {t.von_raum or '—'} ↔ "
+                     f"{t.nach_raum or '—'} | {breite} | "
+                     "Beleg Geländeniveau heute nicht führbar |")
+    else:
+        l.append("keine — auf diesem Plan führt keine Tür an einem "
+                 "typisierten BALKON/TERRASSE-Raum vorbei.")
     l += ["", f"## Fluchtweg-Segmente ({len(modell.zirkulation.segmente)})", "",
           "Quellen: " + ", ".join(f"{q}: {n}" for q, n in sorted(seg_q.items())),
           "", "| Segment | Quelle | Länge m | Grund | Ziel-Ausgang |",
@@ -880,6 +1094,105 @@ def _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz,
     return l
 
 
+def _restweg_im_eg(dxf: Path, geschoss: str) -> str | None:
+    """Für OG-Pläne: Restweg im EG (Stiegenhaustür → final_exit) aus dem
+    EG-Plan derselben Projektfamilie in Projekte/_eingang; sonst 'unbekannt'.
+    """
+    from notbeleuchtung.raumerkennung.tuer_typisierung import ist_obergeschoss
+    if not ist_obergeschoss(geschoss):
+        return None
+    familie = dxf.stem.split("_")[0].split(" ")[0]
+    kandidaten = sorted(Path("Projekte/_eingang").glob(f"{familie}*EG*.dxf"))
+    if not kandidaten:
+        return "Restweg im EG: unbekannt (kein EG-Plan in Projekte/_eingang)"
+    from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
+    eg = ArchitekturRaumProvider().parse(str(kandidaten[0]), "EG")
+    stg = {f"seg_graph_{t.id}" for t in eg.tueren
+           if t.tuer_detail == "stiegenhaustuer"}
+    laengen = [s.laenge_mm for s in eg.zirkulation.segmente
+               if s.segment_id in stg]
+    if not laengen:
+        return (f"Restweg im EG: unbekannt ({kandidaten[0].name}: kein Segment "
+                "Stiegenhaustür→final_exit)")
+    return (f"Restweg im EG ({kandidaten[0].name}): "
+            f"{min(laengen) / 1000:.1f}–{max(laengen) / 1000:.1f} m "
+            "(Stiegenhaustür → nächster final_exit)")
+
+
+def _kreuzcheck_md(modell, kc, flw_warnungen: list[str],
+                   restweg: str | None) -> list[str]:
+    """Markdown-Block: Kreuzcheck + Fluchtweg-Warnungen + untypisierte Türen."""
+    l = ["", "## Kreuzcheck Fluchtweglinien ↔ Endausgänge", ""]
+    if restweg:
+        l += [restweg, ""]
+    if kc is None:
+        l += ["keine Außenkontur — Kreuzcheck nicht möglich."]
+    else:
+        l += [(f"{len(kc.endpunkte_aussenkante)} Linien-Endpunkte an der "
+               f"Außenkante, davon {len(kc.gedeckte_endpunkte)} mit final_exit "
+               f"≤ 1.5 m gedeckt.")]
+        for w in kc.warnungen:
+            l.append(f"- ⚠ {w}")
+        if kc.kandidaten:
+            l += ["", ("Kandidaten (typ notausgang_kandidat — Prüf-Output, "
+                       "KEINE Ausgänge; gestrichelt rot in 05_fluchtweg.png):"),
+                  ""]
+            for k in kc.kandidaten:
+                l.append(f"- ({k.xy_mm[0] / 1000:.2f}, {k.xy_mm[1] / 1000:.2f}) "
+                         f"Tür {k.tuer_id or '—'} — {k.grund}")
+        if kc.unbenutzte_exits:
+            l += ["", "final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): "
+                  + ", ".join(kc.unbenutzte_exits)]
+    if flw_warnungen:
+        l += ["", "### Fluchtweg-Warnungen", ""]
+        l += [f"- ⚠ {w}" for w in flw_warnungen]
+    # Gründe-Tabelle untypisierte Türen (Fachteil „untypisierte Türen").
+    gruende = Counter(t.untypisiert_grund for t in modell.tueren
+                      if t.tuer_detail is None and t.untypisiert_grund)
+    if gruende:
+        l += ["", "### Untypisierte Türen — Gründe", "",
+              "| Grund | Anzahl |", "|---|--:|"]
+        l += [f"| {g} | {n} |" for g, n in gruende.most_common()]
+    return l
+
+
+def _aussen_md(ab, ueber=(), exits=()) -> list[str]:
+    """Markdown-Abschnitt „Außenbereich" (Spec 2) aus ``AussenBereiche``.
+
+    ``ueber`` = erkannte Überdachungen (Prüfstrecken-Output, kein Contract),
+    ``exits`` = final_exit-Ausgänge für den Abstands-Hinweis.
+    """
+    if ab is None:
+        return ["", "## Außenbereich", "",
+                ("- keine Außen-Analyse (keine Wandkörper im Plan)")]
+
+    def _fl(polys):
+        return sum(p.area for p in polys) / 1e6      # mm² → m²
+
+    komp = ", ".join(f"{p.area / 1e6:.1f}" for p in ab.komponenten) or "—"
+    return ["", "## Außenbereich", "",
+            (f"- Gebäude-Komponenten: {len(ab.komponenten)} "
+             f"(Flächen m²: {komp}; Summe {_fl(ab.komponenten):.1f})"),
+            (f"- offene AUSSEN-Flächen: {len(ab.offen)} "
+             f"({_fl(ab.offen):.1f} m²)"),
+            (f"- geschlossene Höfe (AUSSEN_GESCHLOSSEN): "
+             f"{len(ab.geschlossen)} ({_fl(ab.geschlossen):.1f} m²)"),
+            (f"- Überdachungen über offener Außenfläche: {len(ueber)} "
+             f"({_fl(ueber):.1f} m²)")] + [
+        f"  - {a.area / 1e6:.1f} m² — {d / 1000:.2f} m zu {eid}"
+        for a, d, eid in _ueberdachung_exit_abstand(ueber, exits) if d <= 5000]
+
+
+def _ueberdachung_exit_abstand(ueber, exits):
+    """Je Überdachung der Abstand (mm) zum nächsten final_exit + dessen ID."""
+    ziele = [a for a in exits if a.typ == "final_exit"]
+    for u in ueber:
+        if not ziele:
+            continue
+        e = min(ziele, key=lambda a: u.distance(Point(a.xy_mm)))
+        yield u, u.distance(Point(e.xy_mm)), e.id
+
+
 def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     """RaumModell + Platzierung (Pipeline-Smoke, Default-Bundle) → 05/06-PNGs
     + bericht-Block + VERLAUF-Kennzahlen."""
@@ -888,9 +1201,12 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     bundle = build_default_bundle()
     modell = bundle.raum.parse(str(dxf), geschoss)
     platz = bundle.platzierer.place(modell, bundle.norm, None)
+    kc = getattr(bundle.raum, "letzter_kreuzcheck", None)
+    flw_warnungen = list(getattr(bundle.raum, "fluchtweg_warnungen", []))
 
     wpolys = _wohnungs_umrisse(modell)
-    _bild_fluchtweg(plan, zoom, modell, wpolys, ziel / "05_fluchtweg.png", rot)
+    _bild_fluchtweg(plan, zoom, modell, wpolys, ziel / "05_fluchtweg.png", rot,
+                    kandidaten=kc.kandidaten if kc else ())
     _bild_platzierung(plan, zoom, modell, platz, ziel / "06_platzierung.png", rot)
 
     segs = {s.segment_id: s for s in modell.zirkulation.segmente}
@@ -910,11 +1226,38 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     rotz = _rotations_pruefung(plan, modell, platz)
     bst_texte = _brandschutz_texte(plan)
     md = _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz, bst_texte)
+    ab = getattr(bundle.raum, "letzte_aussenbereiche", None)
+    # Vordach-Signal: Prüfstrecken-Output, als Attribut am Provider abgelegt
+    # (wie letzte_aussenbereiche) — KEIN Contract-Feld am Ausgang.
+    ueber = (ueberdachungen(plan, unary_union(ab.komponenten), ab.offen)
+             if ab is not None and ab.komponenten else [])
+    bundle.raum.letzte_ueberdachungen = ueber
+    md = md + _aussen_md(ab, ueber, modell.ausgaenge)
+    md = md + _kreuzcheck_md(modell, kc, flw_warnungen,
+                             _restweg_im_eg(dxf, geschoss))
+    refz = _referenzvergleich(dxf.stem, plan, zoom, modell, platz, ziel, rot)
+    if refz is not None:
+        md = md + refz["md"]
     ausg_typ = Counter(a.typ for a in modell.ausgaenge)
     seg_q = Counter((s.quelle or "?") for s in modell.zirkulation.segmente)
     kind_n = Counter(p.kind for p in platz.platzierungen)
+    # Rest-Überlappung IM MODELL: der Provider legt nach der Kaskade eigene
+    # Räume an (`typisiere_geometrisch`, `finde_lifte`), die die Bereinigung
+    # nicht sieht — raeume.json und RaumModell sind nur für die Kaskaden-Räume
+    # deckungsgleich. Die Differenz gehört ehrlich in den Bericht.
+    # Gekapselt wie die Kennzahlen-Messung: ein GEOS-Fehler hier darf den Plan
+    # nicht reissen. Ohne Messung steht im Bericht und in VERLAUF ein „—".
+    try:
+        m_idx, m_mm2 = ueberlappung([r.polygon_mm for r in modell.raeume])
+        modell_n: int | None = len(m_idx)
+        modell_m2: float | None = m_mm2 / 1e6
+    except Exception as exc:  # noqa: BLE001 — Messung darf den Lauf nie killen
+        print(f"   bereinigung: Modell-Ueberlappungsmessung fehlgeschlagen: {exc}")
+        modell_n, modell_m2 = None, None
     return {
         "md": md,
+        "modell_ueberlapper": modell_n,
+        "modell_doppelt_m2": modell_m2,
         "tueren_typisiert": sum(1 for t in modell.tueren if t.tuer_detail),
         "tueren_gesamt": len(modell.tueren),
         "ausgaenge_typ": dict(ausg_typ),
@@ -925,19 +1268,32 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
         "leuchten_lauf": lauf,
         "rot_abweichend": sum(1 for *_x, d in rotz if d > _ROT_TOLERANZ_GRAD),
         "rot_gemessen": len(rotz),
+        "kreuzcheck_warnungen": len(kc.warnungen) if kc else 0,
+        "notausgang_kandidaten": len(kc.kandidaten) if kc else 0,
+        "unbenutzte_exits": len(kc.unbenutzte_exits) if kc else 0,
+        **({"referenz_treffer": refz["treffer"], "referenz_fehlend": refz["fehlend"],
+            "referenz_ueberzaehlig": refz["ueberzaehlig"],
+            "referenz_quote": refz["quote"]} if refz is not None else {}),
     }
 
 
 # ---------------------------------------------------------------- Hauptlauf
 
-def _raum_kaskade(plan: DxfPlan, stempel) -> tuple[list[Zuordnung], list, list, dict, str]:
+def _raum_kaskade(plan: DxfPlan,
+                  stempel) -> tuple[list[Zuordnung], list, list, dict, str,
+                                    list[str], list, list[str]]:
     """Raum-Kaskade L→H→F→R — Orchestrierung liegt in ``raumerkennung.kaskade``.
 
     Eine Quelle der Wahrheit: Prüfstrecke und ``ArchitekturRaumProvider.parse``
-    rufen dieselbe ``raeume_aus_kaskade``.
+    rufen dieselbe ``raeume_aus_kaskade``. Die letzten drei Elemente sind die
+    Hinweise der Kürzel-Auflösung (``kuerzel_entscheid``), die durch die
+    Bereinigung entfallenen Räume als ``(Raum, Stempel | None)`` (§ 14.6.1) und
+    die Stempelschutz-Warnungen der Bereinigung (Regel 3) — alles nur
+    durchgereicht, für bericht.md und raeume.json.
     """
     e = raeume_aus_kaskade(plan, stempel)
-    return e.zuordnungen, e.raeume, e.rest_raeume, e.quelle, e.kette
+    return (e.zuordnungen, e.raeume, e.rest_raeume, e.quelle, e.kette,
+            e.hinweise, e.entfallen, e.bereinigung_warnungen)
 
 
 #: Raumtyp → (Füllfarbe, Konturfarbe) fürs 02-Bild.
@@ -965,6 +1321,37 @@ def _typ_stil(typ: str | None, name: str | None = None) -> tuple[str, str]:
     return "#d3d3d3", "#b0b0b0"                          # UNBEKANNT hellgrau
 
 
+def _roh_m2(raum) -> float:
+    """Fläche VOR der Bereinigung. Leeres ``polygon_roh`` = unverändert."""
+    if raum is None:
+        return 0.0
+    if len(raum.polygon_roh) >= 3:
+        return Polygon(raum.polygon_roh).area / 1e6
+    return raum.flaeche_m2
+
+
+def _bereinigung_felder(raum, stempel_m2: float | None) -> dict:
+    """v1.5.0-Zusatzfelder je Eintrag (Contract ``Raum.polygon_roh``/``bereinigung``).
+
+    ``flaeche_berechnet`` bleibt die BEREINIGTE Fläche und ``abweichung_prozent``
+    der Erkennungswert (roh) — beides unverändert. Daneben kommt, was die
+    Bereinigung ausweist, damit im Bericht keine Zeile drei Zahlen mischt, die
+    zusammen nicht stimmen.
+    """
+    if raum is None:
+        return {"raum_typ": None, "polygon_roh": [], "flaeche_roh": None,
+                "abweichung_bereinigt_prozent": None, "bereinigung": []}
+    return {
+        "raum_typ": raum.raum_typ or None,
+        "polygon_roh": [list(p) for p in raum.polygon_roh],
+        "flaeche_roh": _roh_m2(raum),
+        "abweichung_bereinigt_prozent": (
+            round((raum.flaeche_m2 - stempel_m2) / stempel_m2 * 100, 2)
+            if stempel_m2 else None),
+        "bereinigung": [b.model_dump() for b in raum.bereinigung],
+    }
+
+
 def _json_eintraege(zuordnungen: list[Zuordnung], rest, quelle: dict) -> list[dict]:
     out = []
     for n, z in enumerate(zuordnungen, start=1):
@@ -981,6 +1368,7 @@ def _json_eintraege(zuordnungen: list[Zuordnung], rest, quelle: dict) -> list[di
             "flag": z.flag,
             "quelle": quelle.get(z.raum.id) if z.raum else None,
             "stempel_quelle": st.quelle,
+            **_bereinigung_felder(z.raum, st.flaeche_m2),
         })
     for r in rest:
         out.append({
@@ -990,8 +1378,90 @@ def _json_eintraege(zuordnungen: list[Zuordnung], rest, quelle: dict) -> list[di
             "abweichung_prozent": None, "flag": "kein_stempel",
             "quelle": quelle.get(r.id),
             "stempel_quelle": None,
+            **_bereinigung_felder(r, None),
         })
     return out
+
+
+def _entfallen_eintraege(entfallen, quelle: dict) -> list[dict]:
+    """Top-Level-Liste ``entfallen`` für raeume.json (§ 14.6.1).
+
+    Eigene Liste, damit ``raeume`` weiter „was im Modell steht" bleibt und der
+    Überlappungs-Riegel unberührt messbar ist — der Entfall wird dadurch aber
+    NICHT unsichtbar: Roh-Polygon, Stempel und die volle Regelkette stehen hier.
+    """
+    out = []
+    for raum, st in entfallen:
+        out.append({
+            "id": raum.id,
+            "typ": st.typ if st else None,
+            "name": st.name if st else None,
+            "polygon_mm": [],
+            "flaeche_stempel": st.flaeche_m2 if st else None,
+            "flaeche_berechnet": raum.flaeche_m2,
+            "flag": "entfallen",
+            "quelle": quelle.get(raum.id),
+            "stempel_quelle": st.quelle if st else None,
+            **_bereinigung_felder(raum, st.flaeche_m2 if st else None),
+        })
+    return out
+
+
+def _bereinigung_kennzahlen(raeume, rest_r, entfallen, warnungen=()) -> dict:
+    """Überlappung vorher/nachher + Buchungen der Bereinigung.
+
+    Vorher = Roh-Ringe ALLER Räume plus die der entfallenen — sonst sähe die
+    Kennzahl besser aus, nur weil Räume verschwunden sind. Nachher = die
+    Polygone der Überlebenden. Doppelbelegung nachher in mm², damit „fast null"
+    nicht als „0,000 m²" gelesen wird.
+
+    ``warnungen`` sind die Stempelschutz-Meldungen (Regel 3): Paare, die bewusst
+    NICHT ausgestanzt wurden. Sie sind der Grund, wenn ``nachher_n`` über 0
+    liegt — deshalb stehen sie in derselben Kennzahl-Struktur.
+    """
+    lebend = list(raeume) + list(rest_r)
+    weg = [r for r, _ in entfallen]
+    # Gekapselt: ein GEOS-Fehler im `unary_union` über die Rasterpolygone (bis
+    # 738 Punkte) darf weder diesen Plan noch den Gesamtlauf reißen. Ohne
+    # Kennzahlen lässt der Bericht den Block weg, die VERLAUF-Zeile bleibt leer.
+    try:
+        v_idx, v_mm2 = ueberlappung(
+            [(r.polygon_roh or r.polygon_mm) for r in lebend + weg])
+        n_idx, n_mm2 = ueberlappung([r.polygon_mm for r in lebend])
+    except Exception as exc:  # noqa: BLE001 — Messung darf den Lauf nie killen
+        print(f"   bereinigung: Ueberlappungsmessung fehlgeschlagen: {exc}")
+        # Die Stempelschutz-Warnungen liegen UNABHAENGIG von dieser Messung vor
+        # (sie kommen aus `bereinige`) — sie duerfen mit ihr nicht verschwinden.
+        return {"warnungen": list(warnungen), "warnungen_n": len(warnungen)}
+    regeln: Counter = Counter()
+    summen = {"ZERFALL": 0.0, "SCHLITZ": 0.0, "ENTFALL": 0.0}
+    geaendert = 0
+    geaendert_lebend = 0
+    for r in lebend + weg:
+        if not r.bereinigung:
+            continue
+        geaendert += 1
+        if r.polygon_mm:                      # entfallene Räume tragen []
+            geaendert_lebend += 1
+        for b in r.bereinigung:
+            regeln[b.regel] += 1
+            if b.regel in summen:
+                summen[b.regel] += b.flaeche_m2
+    return {
+        "vorher_n": len(v_idx), "vorher_m2": v_mm2 / 1e6,
+        "nachher_n": len(n_idx), "nachher_mm2": n_mm2,
+        # `geaendert` zählt die entfallenen Räume MIT (sie sind geändert worden);
+        # die Tabelle im Bericht listet nur `geaendert_lebend` — sonst stünde eine
+        # Kopfzahl über einer Tabelle mit weniger Zeilen.
+        "geaendert": geaendert,
+        "geaendert_lebend": geaendert_lebend,
+        "entfallen_n": len(entfallen),
+        "entfallen_ids": [r.id for r, _ in entfallen],
+        "regeln": dict(sorted(regeln.items())),
+        "zerfall_m2": summen["ZERFALL"], "schlitz_m2": summen["SCHLITZ"],
+        "entfall_rest_m2": summen["ENTFALL"],
+        "warnungen": list(warnungen), "warnungen_n": len(warnungen),
+    }
 
 
 def plan_pruefen(dxf: Path) -> dict:
@@ -1002,7 +1472,9 @@ def plan_pruefen(dxf: Path) -> dict:
 
     plan = lade_dxf(dxf)
     stempel = finde_stempel(plan)
-    zuordnungen, raeume, rest_r, quelle, raum_quelle = _raum_kaskade(plan, stempel)
+    (zuordnungen, raeume, rest_r, quelle, raum_quelle,
+     kuerzel_hinweise, entfallen, ber_warnungen) = _raum_kaskade(plan, stempel)
+    bereinigt = _bereinigung_kennzahlen(raeume, rest_r, entfallen, ber_warnungen)
     rest = restflaechen(raeume, zuordnungen) + rest_r
     rot, rot_vermerk = _rotation(plan)
 
@@ -1069,6 +1541,7 @@ def plan_pruefen(dxf: Path) -> dict:
     doppelt = [i for i, n in Counter(ids).items() if n > 1]
     assert not doppelt, f"{name}: Mehrfach-Zuordnung auf {doppelt}"
     daten = {"raeume": eintraege,
+             "entfallen": _entfallen_eintraege(entfallen, quelle),
              "wandkoerper": [{k: v for k, v in w.items() if not k.startswith("_")}
                              for w in koerper]}
     (ziel / "raeume.json").write_text(
@@ -1097,7 +1570,9 @@ def plan_pruefen(dxf: Path) -> dict:
     rest_untyp = len(rest_r) - rest_typ
     _bericht(ziel / "bericht.md", name, zuordnungen, rest, raum_quelle,
              rot_vermerk, iou_zeilen, iou_mittel, laufzeit, len(raeume),
-             material_block + f3["md"], quelle)
+             material_block + f3["md"], quelle, kuerzel_hinweise,
+             entfallen, bereinigt,
+             (f3.get("modell_ueberlapper"), f3.get("modell_doppelt_m2")))
     flags = sum(1 for z in zuordnungen if z.flag != "ok")
     # Zählung aus derselben Quelle wie raeume.json: Stempel-Einträge + Rest-Einträge.
     rest_n = sum(1 for e in eintraege if e["flag"] == "kein_stempel")
@@ -1112,33 +1587,180 @@ def plan_pruefen(dxf: Path) -> dict:
             "flag_ok": flag_ok, "rest_typisiert": rest_typ,
             "rest_untypisiert": rest_untyp,
             "quellen_mix": raum_quelle,
+            **{f"bereinigung_{k}": v for k, v in bereinigt.items()},
             **{k: v for k, v in f3.items() if k != "md"}}
+
+
+def _bereinigung_md(zuordnungen, rest, entfallen, ber: dict, quelle: dict,
+                    modell_ueberlapp) -> list[str]:
+    """bericht.md-Block „Raumbereinigung" (§ 14.6.1) — inkl. der Grenzen.
+
+    Fehlt ``vorher_n``, ist die Ueberlappungsmessung fehlgeschlagen (gekapselt
+    in ``_bereinigung_kennzahlen``). Dann fallen Kennzahlen und Tabelle weg,
+    statt mit einem KeyError den Bericht zu verlieren — die Stempelschutz-
+    Warnungen der Regel 3 stehen davon unabhaengig und werden trotzdem gedruckt.
+    """
+    if not ber:
+        return []
+    if "vorher_n" not in ber:
+        return ["", "## Raumbereinigung (ENIS_UEBERGABE_0908 § 14.6.1)", "",
+                ("Überlappungsmessung fehlgeschlagen — Kennzahlen und Tabelle "
+                 "entfallen. Die Stempelschutz-Warnungen der Regel 3 liegen "
+                 "unabhängig von dieser Messung vor:"), ""] + (
+                [f"- {w}" for w in ber.get("warnungen") or []] or ["- keine"])
+    z_je_raum: dict = {}
+    for z in zuordnungen:
+        if z.raum is not None:
+            z_je_raum.setdefault(z.raum.id, z)
+    raeume = [z.raum for z in zuordnungen if z.raum is not None] + list(rest)
+    geaendert = sorted({r.id: r for r in raeume if r.bereinigung}.values(),
+                       key=lambda r: r.id)
+    l = ["", "## Raumbereinigung (ENIS_UEBERGABE_0908 § 14.6.1)", "",
+         (f"Überlapper >5 % {ber['vorher_n']} → {ber['nachher_n']} · doppelbelegt "
+          f"{ber['vorher_m2']:.3f} → {ber['nachher_mm2'] / 1e6:.6f} m² "
+          f"({ber['nachher_mm2']:.2f} mm²) · geändert {ber['geaendert']} "
+          f"(Tabelle unten: {ber.get('geaendert_lebend', ber['geaendert'])} "
+          f"überlebende) · entfallen {ber['entfallen_n']} · "
+          f"Zerfall {ber['zerfall_m2']:.3f} m² · "
+          f"Schlitzverlust {ber['schlitz_m2'] * 1e6:.1f} mm² · Restkörper "
+          f"entfallener Räume {ber['entfall_rest_m2']:.3f} m² · Stempelschutz "
+          f"{ber.get('warnungen_n', 0)}"), "",
+         f"Einträge je Regel: {ber['regeln'] or '—'}", "",
+         ("Nicht destruktiv: `polygon_roh` hält den Ring vor der Bereinigung, "
+          "jeder Abzug ist mit Regel und Gegenspieler gebucht. Invariante: "
+          "Fläche(roh) − Fläche(bereinigt) == Σ der Buchungen."), ""]
+    if geaendert:
+        l += [("| id | Name | Quelle | Flag | m² Stempel | m² roh | m² bereinigt "
+               "| Abw. roh % | Abw. ber. % | Regeln (Gegenspieler) |"),
+              "|---|---|---|---|--:|--:|--:|--:|--:|---|"]
+        for r in geaendert:
+            z = z_je_raum.get(r.id)
+            st = z.stempel if z else None
+            s_m2 = st.flaeche_m2 if st else None
+            regeln = ", ".join(
+                b.regel + (f"({b.gegenspieler})" if b.gegenspieler else "")
+                for b in r.bereinigung)
+            l.append("| {} | {} | {} | {} | {} | {:.2f} | {:.2f} | {} | {} | {} |".format(
+                r.id,
+                " / ".join(st.name.replace("|", "/").splitlines()) if st else "—",
+                quelle.get(r.id, "—"), z.flag if z else "kein_stempel",
+                f"{s_m2:.2f}" if s_m2 is not None else "—",
+                _roh_m2(r), r.flaeche_m2,
+                f"{z.abweichung_prozent:+.1f}"
+                if z is not None and z.abweichung_prozent is not None else "—",
+                f"{(r.flaeche_m2 - s_m2) / s_m2 * 100:+.1f}" if s_m2 else "—",
+                regeln))
+    if entfallen:
+        l += ["", f"### Entfallen durch Bereinigung ({len(entfallen)})", "",
+              ("Restkörper unter 1 m² — dasselbe Kriterium wie die degenerierte "
+               "Flutung in `kaskade.py:115`. Diese Räume stehen NICHT mehr im "
+               "Modell; Roh-Polygon, Stempel und Regelkette stehen in "
+               "`raeume.json` unter `entfallen`."), ""]
+        for raum, st in entfallen:
+            rest_m2 = sum(b.flaeche_m2 for b in raum.bereinigung
+                          if b.regel == "ENTFALL")
+            l.append(
+                f"- {raum.id} [{quelle.get(raum.id, '?')}] "
+                f"„{' / '.join(st.name.splitlines()) if st else '—'}“ "
+                f"({raum.raum_typ or '—'}): roh {_roh_m2(raum):.2f} m², Stempel "
+                + (f"{st.flaeche_m2:.2f} m²"
+                   if st is not None and st.flaeche_m2 is not None else "—")
+                + f", Restkörper {rest_m2:.3f} m² · "
+                + ", ".join(b.regel for b in raum.bereinigung))
+    schutz = ber.get("warnungen") or []
+    l += ["", f"### Stempelschutz — nicht ausgestanzt ({len(schutz)})", ""]
+    if schutz:
+        l += [("Regel 3 (Enthaltensein) hat für diese Paare NICHT gegriffen: der "
+               "äußere Raum wäre durch das Ausstanzen um mehr als 10 % von seinem "
+               "Stempelwert abgewichen (Owner-Entscheid). Das Paar bleibt "
+               "überlappend und wird ausdrücklich NICHT an Regel 4/5 "
+               "weitergegeben — die Überlapper-Kennzahl oben enthält es."), ""]
+        l += [f"- {w}" for w in schutz]
+    else:
+        l += ["- keine"]
+    war, neu = [], []
+    for r in geaendert:
+        z = z_je_raum.get(r.id)
+        s_m2 = z.stempel.flaeche_m2 if z else None
+        if not s_m2:
+            continue
+        ber_abw = (r.flaeche_m2 - s_m2) / s_m2 * 100
+        if abs(ber_abw) <= 5:
+            continue
+        roh_abw = z.abweichung_prozent
+        zeile = (f"- {r.id} „{' / '.join(z.stempel.name.splitlines())}“: Stempel "
+                 f"{s_m2:.2f} m², roh "
+                 + (f"{roh_abw:+.1f} %" if roh_abw is not None else "—")
+                 + f" → bereinigt {ber_abw:+.1f} %")
+        (war if roh_abw is not None and abs(roh_abw) > 5 else neu).append(zeile)
+    l += ["", f"### Abweichung bereinigt > 5 % vom Stempel ({len(war) + len(neu)})", ""]
+    l += [f"**war schon > 5 % ({len(war)})**", *(war or ["- keine"])]
+    l += ["", f"**neu > 5 % ({len(neu)})**", *(neu or ["- keine"])]
+    if modell_ueberlapp and modell_ueberlapp[0] is not None:
+        l += ["", (f"**Rest-Überlappung im RaumModell: {modell_ueberlapp[0]} "
+                   f"Überlapper / {modell_ueberlapp[1]:.3f} m².** Die Bereinigung "
+                   "greift am Kaskaden-Ende; `typisiere_geometrisch` und "
+                   "`finde_lifte` legen danach im Provider eigene Räume an "
+                   "(`stiegenhaus_*`, `lift_*`), die sie nicht sieht. "
+                   "`raeume.json` und `RaumModell` sind nur für die "
+                   "Kaskaden-Räume deckungsgleich — der Überlappungs-Riegel "
+                   "misst auf `raeume.json`.")]
+    schlitz = [r.id for r in geaendert
+               if any(b.regel == "SCHLITZ" for b in r.bereinigung)]
+    if schlitz:
+        l += ["", (f"**Grenze der Loch-Kodierung** (betrifft {', '.join(schlitz)}): "
+                   "ein Loch wird als 1-mm-Schlitz zur Außenkontur kodiert, weil "
+                   "der Contract-Ring keine Innenringe kennt. Fläche, "
+                   "`point_in_polygon`, shapely `covers` und `grid_points` sehen "
+                   "das Loch korrekt als außen; Konsumenten der **Bbox-Mitte** "
+                   "NICHT (`platzierung/geometry.py` `find_center_diagonal`, und "
+                   "`find_center_visual` oberhalb Fläche/bbox ≥ 0,9) — dort kann "
+                   "ein Raum-Zentrum im Loch landen. Bestehender Effekt (der "
+                   "50-mm-Schlitz der `lift_erkennung` hat ihn heute schon), "
+                   "eigener Arbeitsschritt für `platzierung/**`.")]
+    l += ["", ("**`lift_*` und SCHACHT:** `lift_erkennung.finde_lifte` "
+               "überspringt eine Stelle nur, wenn dort ein Raum mit `raum_typ` "
+               "„LIFT“ liegt — „SCHACHT“ ist nicht abgedeckt. Ein "
+               "Regel-1-Gewinner mit `raum_typ` „SCHACHT“ kann danach von einem "
+               "`lift_*`-Raum überdeckt werden, den die Bereinigung nicht mehr "
+               "sieht. Eigener Arbeitsschritt.")]
+    return l
 
 
 def _bericht(pfad: Path, name: str, zuordnungen: list[Zuordnung], rest,
              raum_quelle: str, rot_vermerk: str,
              iou_zeilen, iou_mittel, laufzeit: float, n_raeume: int = 0,
              material_block: list[str] | None = None,
-             quelle: dict | None = None) -> None:
+             quelle: dict | None = None,
+             kuerzel_hinweise: list[str] | None = None,
+             entfallen: list | None = None,
+             ber: dict | None = None,
+             modell_ueberlapp: tuple | None = None) -> None:
     quelle = quelle or {}
     l = [f"# Prüfbericht {name}", "",
          f"Raum-Polygon-Quelle: `{raum_quelle}` — {rot_vermerk}", ""]
     l += [
          "## Räume", "",
-         "| Quelle | Name | Typ | m² Stempel | m² berechnet | Abw. % | Flag |",
-         "|---|---|---|--:|--:|--:|---|"]
+         ("„m² roh“ = Polygon VOR der Raumbereinigung (§ 14.6.1), "
+          "„m² bereinigt“ = `polygon_mm`/`flaeche_m2` des Contracts. „Abw. %“ "
+          "bleibt der ERKENNUNGS-Wert (Roh-Polygon gegen Stempel) — die "
+          "bereinigte Abweichung steht im Bereinigungs-Block."), "",
+         ("| Quelle | Name | Typ | m² Stempel | m² roh | m² bereinigt "
+          "| Abw. % (Erkennung, roh) | Flag |"),
+         "|---|---|---|--:|--:|--:|--:|---|"]
     for z in zuordnungen:
         st = z.stempel
-        l.append("| {} | {} | {} | {} | {} | {} | {} |".format(
+        l.append("| {} | {} | {} | {} | {} | {} | {} | {} |".format(
             quelle.get(z.raum.id, "—") if z.raum else "—",
             " / ".join(st.name.replace("|", "/").splitlines()), st.typ or "—",
             f"{st.flaeche_m2:.2f}" if st.flaeche_m2 is not None else "—",
+            f"{_roh_m2(z.raum):.2f}" if z.raum else "—",
             f"{z.raum.flaeche_m2:.2f}" if z.raum else "—",
             f"{z.abweichung_prozent:+.1f}" if z.abweichung_prozent is not None else "—",
             z.flag))
     for r in rest:
-        l.append("| {} | {} | {} | — | {:.2f} | — | kein_stempel |".format(
-            quelle.get(r.id, "—"), r.id, r.raum_typ or "—", r.flaeche_m2))
+        l.append("| {} | {} | {} | — | {:.2f} | {:.2f} | — | kein_stempel |".format(
+            quelle.get(r.id, "—"), r.id, r.raum_typ or "—", _roh_m2(r), r.flaeche_m2))
     l += ["", f"## Restflächen ohne Stempel ({len(rest)})", ""]
     for r in rest:
         cx, cy = zentrum(r)
@@ -1147,11 +1769,18 @@ def _bericht(pfad: Path, name: str, zuordnungen: list[Zuordnung], rest,
     warn = [f"Stempel ohne Polygon: „{z.stempel.name}“"
             for z in zuordnungen if z.polygon_index is None]
     warn += [f"Polygon ohne Stempel: {r.id} ({r.flaeche_m2:.2f} m²)" for r in rest]
-    warn += [f"Abweichung > 10 %: „{z.stempel.name}“ ({z.abweichung_prozent:+.1f} %)"
+    warn += [f"Abweichung > 10 % (Erkennung, roh): „{z.stempel.name}“ "
+             f"({z.abweichung_prozent:+.1f} %)"
              for z in zuordnungen
              if z.abweichung_prozent is not None and abs(z.abweichung_prozent) > 10]
     l += ["", f"## Warnungen ({len(warn)})", ""]
     l += [f"- {w}" for w in warn] or ["- keine"]
+    # Mehrdeutige Stempel-Kürzel: was typisiert wurde UND was bewusst untypisiert
+    # bleibt (kein Zusatzbeleg / Entscheidung ausstehend) — sonst wäre die
+    # Nicht-Typisierung im Bericht unsichtbar.
+    if kuerzel_hinweise:
+        l += ["", f"## Hinweise Kürzel-Auflösung ({len(kuerzel_hinweise)})", ""]
+        l += [f"- {h}" for h in kuerzel_hinweise]
     ausbruch = [z for z in zuordnungen
                 if z.flag == "flutung_unsicher" and z.raum is not None
                 and z.abweichung_prozent is not None and z.abweichung_prozent > 200]
@@ -1165,7 +1794,12 @@ def _bericht(pfad: Path, name: str, zuordnungen: list[Zuordnung], rest,
               "Flutfläche auf 3× Stempelfläche trifft zwar genau diese Fälle, "
               "verletzt aber die Modul-Invariante „NIE verwerfen“ "
               "(`test_stempel_flutung.py::test_riesenbereich_unsicher`). Die "
-               "Fälle bleiben darum als `flutung_unsicher` ehrlich geflaggt."), ""]
+               "Fälle bleiben darum als `flutung_unsicher` ehrlich geflaggt."), "",
+              ("Ergänzung § 14.6.1: die Invariante „NIE verwerfen“ gilt der "
+               "FLUTUNG. Die Raumbereinigung danach kann einen Raum auf einen "
+               "Restkörper < 1 m² zusammenschneiden — der entfällt dann aus dem "
+               "Modell und steht namentlich im Bereinigungs-Block sowie in "
+               "`raeume.json` unter `entfallen`."), ""]
         l += [f"- „{' / '.join(z.stempel.name.splitlines())}“: "
               f"{z.stempel.flaeche_m2:.2f} m² Stempel → {z.raum.flaeche_m2:.2f} m² "
               f"geflutet ({z.abweichung_prozent:+.0f} %)" for z in ausbruch]
@@ -1173,9 +1807,35 @@ def _bericht(pfad: Path, name: str, zuordnungen: list[Zuordnung], rest,
         l += ["", "## Referenz-Vergleich (IoU)", "", "| Raum | IoU |", "|---|--:|"]
         l += [f"| {n} | {v:.3f} |" for n, v in iou_zeilen]
         l += ["", f"**Mittelwert: {iou_mittel:.3f}**"]
+    if ber:
+        l += _bereinigung_md(zuordnungen, rest, entfallen or [], ber, quelle,
+                             modell_ueberlapp)
     l += material_block or []
     l += ["", f"Laufzeit: {laufzeit:.1f} s", ""]
     pfad.write_text("\n".join(l), encoding="utf-8")
+
+
+def _verlauf_bereinigung(r: dict) -> str:
+    """BEREINIGUNG-Teil der VERLAUF-Zeile; leer, wenn der Lauf sie nicht kennt."""
+    if "bereinigung_vorher_n" not in r:
+        return ""
+    ids = r.get("bereinigung_entfallen_ids") or []
+    modell = (f"{r['modell_ueberlapper']} / {r['modell_doppelt_m2']:.3f} m²"
+              if r.get("modell_ueberlapper") is not None else "—")
+    return (f" · BEREINIGUNG: Ueberlapper >5 % {r['bereinigung_vorher_n']}→"
+            f"{r['bereinigung_nachher_n']}, doppelbelegt "
+            f"{r['bereinigung_vorher_m2']:.3f}→"
+            f"{r['bereinigung_nachher_mm2'] / 1e6:.3f} m² "
+            f"(Rest {r['bereinigung_nachher_mm2']:.2f} mm²), geaendert "
+            f"{r['bereinigung_geaendert']}, entfallen "
+            f"{r['bereinigung_entfallen_n']}"
+            + (f" ({', '.join(ids)}; Restkoerper "
+               f"{r['bereinigung_entfall_rest_m2']:.3f} m²)" if ids else "")
+            + f", Zerfall {r['bereinigung_zerfall_m2']:.3f} m², Schlitze "
+            f"{r['bereinigung_schlitz_m2'] * 1e6:.1f} mm², Regeln "
+            f"{r['bereinigung_regeln']}, Stempelschutz "
+            f"{r.get('bereinigung_warnungen_n', 0)}"
+            f", Modell-Restueberlappung {modell}")
 
 
 def _verlauf_schreiben(ergebnisse: list[dict], commit: str) -> None:
@@ -1209,7 +1869,8 @@ def _verlauf_schreiben(ergebnisse: list[dict], commit: str) -> None:
             + ", Segmente " + (" ".join(f"{q}:{n}" for q, n in
                                         sorted(r.get("segmente_quelle", {}).items()))
                                or "0")
-            + f", Wohnungen {r.get('wohnungen', 0)}")
+            + f", Wohnungen {r.get('wohnungen', 0)}"
+            + _verlauf_bereinigung(r))
     out = ["# Verlauf plan_pruefen"]
     for i, z in enumerate(zeilen):
         if z.startswith("## Lauf") and (i + 1 >= len(zeilen)
@@ -1222,8 +1883,15 @@ def _verlauf_schreiben(ergebnisse: list[dict], commit: str) -> None:
 
 
 def _material_report(ergebnisse: list[dict]) -> None:
-    """docs/MATERIAL_REPORT.md — je Plan eine Sektion, idempotent ersetzt."""
-    pfad = REPO / "docs" / "MATERIAL_REPORT.md"
+    """docs/MATERIAL_REPORT.md — je Plan eine Sektion, idempotent ersetzt.
+
+    Nur der Standard-Lauf (Projekte/_eingang → Projekte/_ergebnis) pflegt das
+    Repo-Dokument; ein umgelenkter Sammellauf schreibt neben seine Ergebnisse,
+    sonst überschreibt er den gepflegten Bericht der Prüfstrecken-Pläne.
+    """
+    pfad = (REPO / "docs" / "MATERIAL_REPORT.md"
+            if ERGEBNIS == REPO / "Projekte" / "_ergebnis"
+            else ERGEBNIS / "MATERIAL_REPORT.md")
     alt = pfad.read_text(encoding="utf-8") if pfad.exists() else ""
     sektionen: dict[str, str] = {}
     for block in re.split(r"^(?=# Plan )", alt, flags=re.MULTILINE):
@@ -1260,12 +1928,34 @@ def main() -> int:
               f"{r['mit_stempel']}, Flag ok {r['flag_ok']}, Rest typisiert "
               f"{r['rest_typisiert']} / untypisiert {r['rest_untypisiert']} "
               f"({r['quellen_mix']})")
+        # Schlägt die Überlappungsmessung fehl, fehlen die Kennzahlen-
+        # Schlüssel (nur die Warnungen kommen zurück) — diese Konsolenzeile
+        # darf den Plan-Lauf dann nicht mit KeyError abbrechen.
+        if "bereinigung_vorher_n" in r:
+            print(f"   Bereinigung: Überlapper >5 % {r['bereinigung_vorher_n']}→"
+                  f"{r['bereinigung_nachher_n']}, doppelbelegt "
+                  f"{r['bereinigung_vorher_m2']:.3f} m²→"
+                  f"{r['bereinigung_nachher_mm2']:.2f} mm², geändert "
+                  f"{r['bereinigung_geaendert']}, entfallen "
+                  f"{r['bereinigung_entfallen_n']} "
+                  f"{r['bereinigung_entfallen_ids'] or ''}, Zerfall "
+                  f"{r['bereinigung_zerfall_m2']:.3f} m², Regeln "
+                  f"{r['bereinigung_regeln']}, Stempelschutz "
+                  f"{r.get('bereinigung_warnungen_n', 0)}")
+        else:
+            print("   Bereinigung: Messung fehlgeschlagen, keine "
+                  f"Kennzahlen; Stempelschutz "
+                  f"{r.get('bereinigung_warnungen_n', 0)}")
         print(f"   F3: Türen {r['tueren_typisiert']}/{r['tueren_gesamt']} "
               f"typisiert, Ausgänge {r['ausgaenge_typ']}, Segmente "
               f"{r['segmente_quelle']}, Wohnungen {r['wohnungen']}, Leuchten "
               f"{r['leuchten_kind']} je Klasse {r['leuchten_klasse']}, "
               f"Lauf {r['leuchten_lauf']}, Rotation "
               f"{r['rot_abweichend']}/{r['rot_gemessen']} abweichend")
+        if "referenz_quote" in r:
+            print(f"   Referenzvergleich: {r['referenz_treffer']} Treffer / "
+                  f"{r['referenz_fehlend']} fehlend / {r['referenz_ueberzaehlig']} "
+                  f"überzählig ({r['referenz_quote'] * 100:.0f} %)")
         ergebnisse.append(r)
     if ergebnisse:
         _verlauf_schreiben(ergebnisse, commit)

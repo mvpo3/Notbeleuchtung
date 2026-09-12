@@ -1,0 +1,122 @@
+{
+  "plan": "Fischamend_BT1_UG",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\BVH Fischamenderstraße\\BT1\\260320_938-AR-PP-11990-A_UNTERGESCHOSS BT1.dxf",
+  "floor": "EG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    1800,
+    1518
+  ],
+  "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
+  "kategorien": {
+    "nebenraum": 15,
+    "gang": 3,
+    "untypisiert": 21,
+    "stiege": 1,
+    "schacht": 4,
+    "hof": 2,
+    "ueberlappung": 3,
+    "segmente": 114,
+    "stair_exit": 2,
+    "final_exit": 3
+  },
+  "raeume_gesamt": 44,
+  "raeume_typisiert": 23,
+  "raum_typen": {
+    "TECHNIK": 12,
+    "GANG": 3,
+    "STIEGENHAUS": 1,
+    "GARAGE": 2,
+    "KINDERWAGENRAUM": 1,
+    "SCHACHT": 3,
+    "LIFT": 1
+  },
+  "wohnungen": {
+    "anzahl": 0,
+    "raeume_je_wohnung": {},
+    "ohne_wohnung": 44
+  },
+  "innenhoefe_m2": [
+    7.9,
+    41.4
+  ],
+  "ausgaenge": [
+    {
+      "id": "exit_tuer_26",
+      "typ": "stair_exit",
+      "xy_mm": [
+        53277.433811737166,
+        84016.94314825482
+      ]
+    },
+    {
+      "id": "exit_tuer_28",
+      "typ": "stair_exit",
+      "xy_mm": [
+        57269.93381173727,
+        83337.99843211162
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_1",
+      "typ": "final_exit",
+      "xy_mm": [
+        60819.86382937053,
+        85342.99843211177
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_4",
+      "typ": "final_exit",
+      "xy_mm": [
+        70571.95115043146,
+        88402.40837102046
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_5",
+      "typ": "final_exit",
+      "xy_mm": [
+        75168.68750557977,
+        88604.14965711752
+      ]
+    }
+  ],
+  "stiegenhaeuser": [
+    "raum_28"
+  ],
+  "ueberlappungen": [
+    {
+      "raum_id": "raum_29",
+      "raum_typ": "TECHNIK",
+      "in_raum_id": "raum_34",
+      "in_raum_typ": "TECHNIK",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "lift_1",
+      "raum_typ": "LIFT",
+      "in_raum_id": "raum_29",
+      "in_raum_typ": "TECHNIK",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "lift_1",
+      "raum_typ": "LIFT",
+      "in_raum_id": "raum_34",
+      "in_raum_typ": "TECHNIK",
+      "anteil_prozent": 100.0
+    }
+  ],
+  "tueren_gesamt": 115,
+  "laufzeit_s": 27.6,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 21** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "Außenflächen (BALKON/TERRASSE): **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Wohnungen: **0** — keine `wohnung_id` vergeben.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

@@ -21,6 +21,7 @@ NIEMALS eine der Listen allein ändern.
 | GANG | **Fluchtweg-Korridor**: Mittellinien-Verdichtung + RZ-GANG-Fallback |
 | GARAGE | LB-adressierbar (`notlicht_kw_garage`) |
 | KELLER | LB-adressierbar |
+| KINDERWAGENRAUM | Türleuchten-Regel (Referenz-Praxis): RZ an der Tür — *neu 2026-09-08: vorher nach ABSTELLRAUM eingeebnet, dadurch griff die Regel auf echten Plänen nie* |
 | KINDERZIMMER | — |
 | KÜCHE | — |
 | LAGER | LB-adressierbar |
@@ -28,6 +29,7 @@ NIEMALS eine der Listen allein ändern.
 | MUELLRAUM | LB-adressierbar |
 | SCHACHT | — (kein begehbarer Raum) — *neu 2026-09: `rest_komponenten` vergab das Label schon geometrisch (türlose Kleinfläche/STO-Kästchen); jetzt im Kanon statt außerhalb* |
 | SCHLAFZIMMER | — |
+| SCHLEUSE | **offen** — Notbeleuchtungsanforderung gesondert zu prüfen (`normwissen/data/regel_deckung.yaml`: `offen`, Owner Enis); Nutzungsklasse `ALLGEMEIN_ERSCHLIESSUNG`, Fluchtweg + communal — *neu 2026-09-11: Entscheidung Enis für die Rauch-/Brandschutzschleuse vor dem Stiegenkern. Begründung: Lage beim Stiegenkern (0 mm Kontakt zu den Treppen-Extents) und der ausgeschriebene Vergleichstext `DBA-Abstr. Schleuse` im Vergleichsgeschoss E8 (627 mm) bzw. E9 (10 mm) an derselben Lage. Fundstelle: Muthgasse_E2, Stempel `Schl.` / Stempelnummer `E2-VF-11a` (MTEXT `A-AREA-IDEN`, 335 239 / 108 646). Das AUSGESCHRIEBENE Wort steht im Wörterbuch (`raumtyp._EXTRA_DIRECT`); das mehrdeutige Kürzel `Schl.` typisiert NUR mit Zusatzbeleg + Owner-Entscheidung je Stempelnummer (`raumerkennung/kuerzel_entscheid.py`) — `E2-VF-11b` bleibt offen. **Nachtrag 2026-09-12:** außerhalb der fünf Prüfpläne tragen 2 Stempel den ausgeschriebenen Namen `SCHLEUSE` (`Projekte/_ergebnis_alle/2.Kellergeschoß`, bisher untypisiert); dort ändert der Kanon-Eintrag Typ und Flags — nicht nachgemessen, der Quellplan liegt nicht in `Projekte/_eingang`* |
 | STIEGENHAUS | Fluchtweg + communal; Ausgangs-Anker; **Nachweis-Lücke offen** (Enis-Punkt 5) |
 | TECHNIK | LB-adressierbar; Anlagen-Symbol-Standort |
 | TERRASSE | — |
