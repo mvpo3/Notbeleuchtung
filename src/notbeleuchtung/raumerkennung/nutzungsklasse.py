@@ -25,6 +25,11 @@ _MAP: dict[str, Nutzungsklasse] = {
     "GANG": "ALLGEMEIN_ERSCHLIESSUNG",
     "STIEGENHAUS": "ALLGEMEIN_ERSCHLIESSUNG",
     "AUFZUGSVORPLATZ": "ALLGEMEIN_ERSCHLIESSUNG",
+    # SCHLEUSE: Erschließungslage ist Tatsache (Schleuse vor dem Stiegenkern,
+    # Vorgabe Enis 2026-09-11) — die NOTBELEUCHTUNGS-Anforderung dagegen ist
+    # ausdrücklich offen (`normwissen/data/regel_deckung.yaml`: offen/Enis).
+    # Nutzungsklasse ≠ Norm-Urteil, deshalb kein Widerspruch.
+    "SCHLEUSE": "ALLGEMEIN_ERSCHLIESSUNG",
     # ALLGEMEIN_NEBENRAUM — communale Nebenräume.
     "KELLER": "ALLGEMEIN_NEBENRAUM",
     "TECHNIK": "ALLGEMEIN_NEBENRAUM",
@@ -32,6 +37,7 @@ _MAP: dict[str, Nutzungsklasse] = {
     "LAGER": "ALLGEMEIN_NEBENRAUM",
     "MUELLRAUM": "ALLGEMEIN_NEBENRAUM",
     "WASCHKÜCHE": "ALLGEMEIN_NEBENRAUM",
+    "KINDERWAGENRAUM": "ALLGEMEIN_NEBENRAUM",
     # AUSSEN — Freibereiche (LOGGIA typt in raumtyp.py als BALKON).
     "BALKON": "AUSSEN",
     "TERRASSE": "AUSSEN",

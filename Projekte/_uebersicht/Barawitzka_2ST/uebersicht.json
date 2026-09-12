@@ -1,0 +1,133 @@
+{
+  "plan": "Barawitzka_2ST",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\Barawitzkagasse\\415_260415_PP_VA_1_5 2 St.dxf",
+  "floor": "EG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    2400,
+    726
+  ],
+  "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
+  "kategorien": {
+    "sanitaer": 8,
+    "wohnen": 13,
+    "untypisiert": 11,
+    "stiege": 4,
+    "nebenraum": 3,
+    "gang": 4,
+    "aussen": 3,
+    "schacht": 7,
+    "hof": 7,
+    "ueberlappung": 0,
+    "segmente": 5,
+    "stair_exit": 1,
+    "final_exit": 5
+  },
+  "raeume_gesamt": 53,
+  "raeume_typisiert": 42,
+  "raum_typen": {
+    "BAD": 4,
+    "KÜCHE": 5,
+    "STIEGENHAUS": 4,
+    "ABSTELLRAUM": 3,
+    "VORRAUM": 4,
+    "BALKON": 2,
+    "WC": 4,
+    "ZIMMER": 8,
+    "TERRASSE": 1,
+    "SCHACHT": 3,
+    "LIFT": 4
+  },
+  "wohnungen": {
+    "anzahl": 11,
+    "raeume_je_wohnung": {
+      "top_1": 1,
+      "top_9": 6,
+      "top_6": 2,
+      "top_2": 5,
+      "top_3": 4,
+      "top_4": 1,
+      "top_5": 1,
+      "top_7": 1,
+      "top_8": 2,
+      "top_10": 1,
+      "top_11": 4
+    },
+    "ohne_wohnung": 25
+  },
+  "innenhoefe_m2": [
+    20.1,
+    18.1,
+    22.7,
+    14.2,
+    22.0,
+    18.6,
+    15.5
+  ],
+  "ausgaenge": [
+    {
+      "id": "exit_durchgang_4",
+      "typ": "stair_exit",
+      "xy_mm": [
+        178124.70050463866,
+        32317.57232731974
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_1",
+      "typ": "final_exit",
+      "xy_mm": [
+        7655.098337586715,
+        -8712.193446147776
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_2",
+      "typ": "final_exit",
+      "xy_mm": [
+        173265.1272456761,
+        39660.958404205696
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_3",
+      "typ": "final_exit",
+      "xy_mm": [
+        181729.30748494656,
+        39647.27070304976
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_4",
+      "typ": "final_exit",
+      "xy_mm": [
+        183663.60119102485,
+        37731.57853975825
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_5",
+      "typ": "final_exit",
+      "xy_mm": [
+        179838.03664318775,
+        35765.64251922069
+      ]
+    }
+  ],
+  "stiegenhaeuser": [
+    "raum_4",
+    "raum_5",
+    "rest_2",
+    "stiegenhaus_2"
+  ],
+  "ueberlappungen": [],
+  "tueren_gesamt": 108,
+  "laufzeit_s": 143.6,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 11** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

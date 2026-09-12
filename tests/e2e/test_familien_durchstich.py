@@ -12,9 +12,10 @@ nicht — sondern das ehrliche Festhalten des Ist-Stands als Regressionsschranke
 * **Herrenholz EG** (ArchiCAD-Konvention, 473 typisierte Räume): die Engine läuft
   durch, platziert aber 0 Symbole → die Plausibilitäts-Regel MUSS „fehler" sagen
   (fail-closed). Verstummt sie je, bricht dieser Test.
-* **Muthgasse 109B E2** (5. Familie, via ODA aus DWG konvertiert): die Wand-Layer-
-  Muster greifen gar nicht → `lade_dxf`/`bounds_mm` bricht ab. Ist-Stand = Crash-
-  Klasse; erschließt Selman die Familie, kippt der raises-Assert sichtbar.
+* **Muthgasse 109B E2** (AIA-Familie, via ODA aus DWG konvertiert): seit
+  2026-09-07 ERSCHLOSSEN (WALL_PATTERN `[AI]-WALL`, ×10-Kalibrierung über
+  A-DOOR-Block-ARCs). Hier nur der schnelle Erschließungs-Beleg; volle Bänder
+  in tests/naht/test_soll_muthgasse.py.
 
 Toleranz-Bänder statt starrer Goldens; Skip, wenn das CAD-Asset fehlt (CI ohne
 Projekte/).
@@ -116,16 +117,23 @@ def test_barawitzka_tueren_und_raeume_erkannt(barawitzka):
 
 # ---- Muthgasse 109B E2 ----
 
-def test_muthgasse_ist_stand_wand_layer_unerschlossen():
-    """Ist-Stand der 5. Familie: kein Wand-Layer-Muster greift → definierter Abbruch
-    (kein stilles Leer-Ergebnis). Erschließt die Raumerkennung Muthgasse später,
-    bricht der raises-Assert — dann wie bei den anderen Familien Bänder aufbauen."""
+def test_muthgasse_familie_erschlossen():
+    """GEKIPPT 2026-09-07 (laut eigener Anleitung: raises-Assert brach nach dem
+    WALL_PATTERN-/Kalibrierungs-Fix): die AIA-Familie ist erschlossen —
+    `lade_dxf` findet die Wand-Layer und kalibriert ×10 (Tür-ARCs aus
+    A-DOOR-Blöcken statt der Kurvenwand-×1-Falle).
+
+    Bänder wie bei den anderen Familien: die VOLLEN Parse-Bänder (98 Stempel,
+    ≥ 650 Wandkörper, Räume/Türen/Ausgänge) liegen in
+    tests/naht/test_soll_muthgasse.py — hier nur der schnelle
+    Erschließungs-Beleg, damit der teure 23-MB-Parse nicht doppelt läuft."""
     if not MUTHGASSE_E2.exists():                  # pragma: no cover — CAD-Asset fehlt
         pytest.skip(f"Architekturplan nicht vorhanden: {MUTHGASSE_E2}")
-    from notbeleuchtung.hauptengine.pipeline import run
+    from notbeleuchtung.raumerkennung.dxf_load import lade_dxf
 
-    with pytest.raises(ValueError, match="Wand-Entities"):
-        run(build_default_bundle(), str(MUTHGASSE_E2), "E2")
+    plan = lade_dxf(str(MUTHGASSE_E2))
+    assert {"A-WALL", "I-WALL"} <= set(plan.wall_layers)
+    assert plan.factor == 10.0
 
 
 def test_barawitzka_pruefung_ohne_befund(barawitzka):
@@ -140,9 +148,19 @@ def test_barawitzka_pruefung_ohne_befund(barawitzka):
     Abschnitte mit ≥2 Leuchten gedeckt → jede Prüfregel „ok".
 
     Der Test bleibt als Regressionsschranke: kippt eine Regel zurück auf
-    Befund, bricht er sichtbar."""
+    Befund, bricht er sichtbar.
+
+    **Kipp 2026-09-07 (Außen-Analyse/Türquellen, Selman):** die Raumerkennung
+    findet jetzt einen ZWEITEN Notausgang (Hoftür des Südtrakts — vorher
+    verschluckte die Ein-Konturen-Heuristik den ganzen Trakt). Die Platzierung
+    setzt dort noch kein RZ → genau EINE Warnung »Rettungszeichen an
+    Notausgängen (EN 1838 §4.1.2 g): 1/2 ohne RZ in Reichweite«. Das ist ein
+    echter, gewollter Befund der Prüfung (mehr erkannte Ausgänge als gedeckte)
+    — als bekannter Ist-Stand gepinnt, offene Frage an Leonis in
+    docs/OFFENE_FRAGEN.md. Jede ANDERE Regel muss weiter »ok« sein."""
     pruef = barawitzka.render_summary["pruefung"]
     assert pruef["befunde"], "keine einzige Prüfregel ausgewertet"
     nicht_ok = [b for b in pruef["befunde"] if b["status"] != "ok"]
-    assert pruef["status"] == "ok", f"Befunde zurück: {nicht_ok}"
-    assert not nicht_ok, f"Regel nicht ok: {nicht_ok}"
+    andere = [b for b in nicht_ok if "Notausg" not in b["regel"]]
+    assert not andere, f"Regel nicht ok: {andere}"
+    assert len(nicht_ok) <= 1, f"mehr als der bekannte Notausgang-Befund: {nicht_ok}"

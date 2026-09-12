@@ -1,0 +1,120 @@
+{
+  "plan": "Barawitzka_EG",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\Barawitzkagasse\\415_260415_PP_VA_1_3 0 EG.dxf",
+  "floor": "EG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    1160,
+    1800
+  ],
+  "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
+  "kategorien": {
+    "untypisiert": 6,
+    "aussen": 9,
+    "sanitaer": 8,
+    "wohnen": 10,
+    "gang": 5,
+    "nebenraum": 5,
+    "stiege": 2,
+    "schacht": 5,
+    "hof": 2,
+    "ueberlappung": 5,
+    "segmente": 12,
+    "final_exit": 1
+  },
+  "raeume_gesamt": 50,
+  "raeume_typisiert": 44,
+  "raum_typen": {
+    "TERRASSE": 6,
+    "BAD": 4,
+    "BALKON": 3,
+    "KÜCHE": 4,
+    "ZIMMER": 6,
+    "VORRAUM": 5,
+    "WC": 4,
+    "ABSTELLRAUM": 3,
+    "KINDERWAGENRAUM": 1,
+    "WASCHKÜCHE": 1,
+    "STIEGENHAUS": 2,
+    "SCHACHT": 2,
+    "LIFT": 3
+  },
+  "wohnungen": {
+    "anzahl": 7,
+    "raeume_je_wohnung": {
+      "top_1": 11,
+      "top_4": 7,
+      "top_2": 1,
+      "top_3": 1,
+      "top_5": 1,
+      "top_6": 1,
+      "top_7": 1
+    },
+    "ohne_wohnung": 27
+  },
+  "innenhoefe_m2": [
+    190.2,
+    23.5
+  ],
+  "ausgaenge": [
+    {
+      "id": "exit_tuer_27",
+      "typ": "final_exit",
+      "xy_mm": [
+        14895.00000778547,
+        -2929.999999999985
+      ]
+    }
+  ],
+  "stiegenhaeuser": [
+    "raum_35",
+    "raum_37"
+  ],
+  "ueberlappungen": [
+    {
+      "raum_id": "raum_15",
+      "raum_typ": "TERRASSE",
+      "in_raum_id": "raum_43",
+      "in_raum_typ": "TERRASSE",
+      "anteil_prozent": 99.0
+    },
+    {
+      "raum_id": "raum_34",
+      "raum_typ": "WASCHKÜCHE",
+      "in_raum_id": "lift_1",
+      "in_raum_typ": "LIFT",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_37",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "raum_43",
+      "in_raum_typ": "TERRASSE",
+      "anteil_prozent": 99.0
+    },
+    {
+      "raum_id": "rest_3",
+      "raum_typ": "SCHACHT",
+      "in_raum_id": "lift_2",
+      "in_raum_typ": "LIFT",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "lift_1",
+      "raum_typ": "LIFT",
+      "in_raum_id": "raum_34",
+      "in_raum_typ": "WASCHKÜCHE",
+      "anteil_prozent": 92.8
+    }
+  ],
+  "tueren_gesamt": 106,
+  "laufzeit_s": 52.4,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 6** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "`stair_exit`: **0** — kein Stiegenhaus-Ausgang erkannt.",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

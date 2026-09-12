@@ -1,0 +1,217 @@
+{
+  "plan": "BaufeldE2_NB_OG2",
+  "dxf": "C:\\Users\\selma\\AppData\\Local\\Temp\\claude\\D--KI-Projekt\\8fc32369-9bee-42cd-9e07-20d9eeb9eff5\\scratchpad\\zips\\Baufeld_E2_NB\\Elektromontageplan_2OG.dxf",
+  "floor": "2OG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    2133,
+    2400
+  ],
+  "rotation": "Rotation: keine dominante Kantenrichtung — 0° belassen.",
+  "kategorien": {
+    "sanitaer": 66,
+    "wohnen": 98,
+    "gang": 60,
+    "untypisiert": 13,
+    "aussen": 33,
+    "nebenraum": 20,
+    "stiege": 9,
+    "schacht": 2,
+    "hof": 3,
+    "ueberlappung": 3,
+    "segmente": 277,
+    "stair_exit": 12
+  },
+  "raeume_gesamt": 301,
+  "raeume_typisiert": 288,
+  "raum_typen": {
+    "WC": 33,
+    "ZIMMER": 60,
+    "VORRAUM": 33,
+    "BALKON": 33,
+    "ABSTELLRAUM": 17,
+    "BAD": 33,
+    "KÜCHE": 33,
+    "GANG": 27,
+    "STIEGENHAUS": 9,
+    "WOHNZIMMER": 5,
+    "KINDERWAGENRAUM": 3,
+    "SCHACHT": 2
+  },
+  "wohnungen": {
+    "anzahl": 23,
+    "raeume_je_wohnung": {
+      "top_1": 22,
+      "top_2": 32,
+      "top_5": 2,
+      "top_3": 31,
+      "top_6": 2,
+      "top_7": 10,
+      "top_8": 10,
+      "top_10": 2,
+      "top_9": 2,
+      "top_14": 17,
+      "top_23": 1,
+      "top_4": 1,
+      "top_11": 7,
+      "top_12": 11,
+      "top_13": 3,
+      "top_15": 4,
+      "top_16": 8,
+      "top_17": 2,
+      "top_18": 3,
+      "top_19": 3,
+      "top_20": 6,
+      "top_21": 3,
+      "top_22": 4
+    },
+    "ohne_wohnung": 115
+  },
+  "innenhoefe_m2": [
+    10.9,
+    11.1,
+    10.4
+  ],
+  "ausgaenge": [
+    {
+      "id": "exit_tuer_52",
+      "typ": "stair_exit",
+      "xy_mm": [
+        65060.49753335872,
+        10633.32510914426
+      ]
+    },
+    {
+      "id": "exit_durchgang_259",
+      "typ": "stair_exit",
+      "xy_mm": [
+        15283.22736215472,
+        70246.86605353029
+      ]
+    },
+    {
+      "id": "exit_durchgang_337",
+      "typ": "stair_exit",
+      "xy_mm": [
+        16483.065294639593,
+        78710.6687772969
+      ]
+    },
+    {
+      "id": "exit_durchgang_339",
+      "typ": "stair_exit",
+      "xy_mm": [
+        11343.140226736652,
+        70174.75004803031
+      ]
+    },
+    {
+      "id": "exit_durchgang_340",
+      "typ": "stair_exit",
+      "xy_mm": [
+        15652.712431909584,
+        77394.3650324724
+      ]
+    },
+    {
+      "id": "exit_durchgang_341",
+      "typ": "stair_exit",
+      "xy_mm": [
+        15665.510552579486,
+        72789.97046719451
+      ]
+    },
+    {
+      "id": "exit_durchgang_554",
+      "typ": "stair_exit",
+      "xy_mm": [
+        74169.9696610961,
+        13697.57021055284
+      ]
+    },
+    {
+      "id": "exit_durchgang_573",
+      "typ": "stair_exit",
+      "xy_mm": [
+        42423.853014663044,
+        9397.839116747942
+      ]
+    },
+    {
+      "id": "exit_durchgang_574",
+      "typ": "stair_exit",
+      "xy_mm": [
+        40416.369356296185,
+        5917.052067060501
+      ]
+    },
+    {
+      "id": "exit_durchgang_578",
+      "typ": "stair_exit",
+      "xy_mm": [
+        10457.676701039412,
+        9427.903262577016
+      ]
+    },
+    {
+      "id": "exit_durchgang_579",
+      "typ": "stair_exit",
+      "xy_mm": [
+        10633.430392766864,
+        14571.041376714264
+      ]
+    },
+    {
+      "id": "exit_durchgang_584",
+      "typ": "stair_exit",
+      "xy_mm": [
+        12030.999349550222,
+        12217.15652346185
+      ]
+    }
+  ],
+  "stiegenhaeuser": [
+    "raum_161",
+    "raum_278",
+    "raum_281",
+    "raum_284",
+    "rest_1",
+    "rest_4",
+    "rest_5",
+    "stiegenhaus_1",
+    "stiegenhaus_2"
+  ],
+  "ueberlappungen": [
+    {
+      "raum_id": "raum_278",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "raum_291",
+      "in_raum_typ": "KINDERWAGENRAUM",
+      "anteil_prozent": 99.4
+    },
+    {
+      "raum_id": "raum_279",
+      "raum_typ": "GANG",
+      "in_raum_id": "raum_290",
+      "in_raum_typ": "GANG",
+      "anteil_prozent": 99.4
+    },
+    {
+      "raum_id": "raum_290",
+      "raum_typ": "GANG",
+      "in_raum_id": "raum_279",
+      "in_raum_typ": "GANG",
+      "anteil_prozent": 97.1
+    }
+  ],
+  "tueren_gesamt": 652,
+  "laufzeit_s": 697.9,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 13** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "`final_exit`: **0** — kein Ausgang ins Freie erkannt (in Obergeschossen erwartungsgemäß, s. provider.py).",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

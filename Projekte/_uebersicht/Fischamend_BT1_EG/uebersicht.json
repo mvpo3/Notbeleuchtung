@@ -1,0 +1,222 @@
+{
+  "plan": "Fischamend_BT1_EG",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\BVH Fischamenderstraße\\BT1\\260320_938-AR-PP-11000-A_ERDGESCHOSS BT1.dxf",
+  "floor": "EG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    1800,
+    1377
+  ],
+  "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
+  "kategorien": {
+    "wohnen": 24,
+    "gang": 14,
+    "untypisiert": 7,
+    "aussen": 10,
+    "sanitaer": 12,
+    "nebenraum": 10,
+    "stiege": 1,
+    "schacht": 1,
+    "hof": 0,
+    "ueberlappung": 17,
+    "segmente": 90,
+    "stair_exit": 1,
+    "final_exit": 3
+  },
+  "raeume_gesamt": 79,
+  "raeume_typisiert": 72,
+  "raum_typen": {
+    "ZIMMER": 14,
+    "GANG": 8,
+    "TERRASSE": 7,
+    "BALKON": 3,
+    "BAD": 6,
+    "WC": 6,
+    "KÜCHE": 10,
+    "VORRAUM": 6,
+    "ABSTELLRAUM": 4,
+    "TECHNIK": 3,
+    "STIEGENHAUS": 1,
+    "KINDERWAGENRAUM": 1,
+    "GARAGE": 2,
+    "LIFT": 1
+  },
+  "wohnungen": {
+    "anzahl": 3,
+    "raeume_je_wohnung": {
+      "top_1": 14,
+      "top_2": 16,
+      "top_3": 13
+    },
+    "ohne_wohnung": 36
+  },
+  "innenhoefe_m2": [],
+  "ausgaenge": [
+    {
+      "id": "exit_tuer_37",
+      "typ": "stair_exit",
+      "xy_mm": [
+        18857.66824848518,
+        80230.49843211175
+      ]
+    },
+    {
+      "id": "exit_tuer_71",
+      "typ": "final_exit",
+      "xy_mm": [
+        42402.66824848542,
+        79317.99843211152
+      ]
+    },
+    {
+      "id": "exit_tuer_121",
+      "typ": "final_exit",
+      "xy_mm": [
+        18720.42834965098,
+        89432.45417892796
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_1",
+      "typ": "final_exit",
+      "xy_mm": [
+        20976.081443915504,
+        87838.11957840715
+      ]
+    }
+  ],
+  "stiegenhaeuser": [
+    "raum_63"
+  ],
+  "ueberlappungen": [
+    {
+      "raum_id": "raum_1",
+      "raum_typ": "ZIMMER",
+      "in_raum_id": "raum_74",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 99.8
+    },
+    {
+      "raum_id": "raum_2",
+      "raum_typ": "ZIMMER",
+      "in_raum_id": "raum_73",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_6",
+      "raum_typ": null,
+      "in_raum_id": "raum_72",
+      "in_raum_typ": "BALKON",
+      "anteil_prozent": 94.0
+    },
+    {
+      "raum_id": "raum_16",
+      "raum_typ": "ZIMMER",
+      "in_raum_id": "raum_74",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 99.7
+    },
+    {
+      "raum_id": "raum_19",
+      "raum_typ": "ZIMMER",
+      "in_raum_id": "raum_73",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_20",
+      "raum_typ": "ZIMMER",
+      "in_raum_id": "raum_73",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_21",
+      "raum_typ": "KÜCHE",
+      "in_raum_id": "raum_73",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 99.9
+    },
+    {
+      "raum_id": "raum_45",
+      "raum_typ": "KÜCHE",
+      "in_raum_id": "raum_74",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 99.6
+    },
+    {
+      "raum_id": "raum_48",
+      "raum_typ": "KÜCHE",
+      "in_raum_id": "raum_75",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_51",
+      "raum_typ": "GANG",
+      "in_raum_id": "raum_73",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 99.9
+    },
+    {
+      "raum_id": "raum_52",
+      "raum_typ": "VORRAUM",
+      "in_raum_id": "raum_73",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_53",
+      "raum_typ": "ABSTELLRAUM",
+      "in_raum_id": "raum_73",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_56",
+      "raum_typ": "KÜCHE",
+      "in_raum_id": "raum_72",
+      "in_raum_typ": "BALKON",
+      "anteil_prozent": 94.2
+    },
+    {
+      "raum_id": "raum_57",
+      "raum_typ": "BALKON",
+      "in_raum_id": "raum_72",
+      "in_raum_typ": "BALKON",
+      "anteil_prozent": 91.5
+    },
+    {
+      "raum_id": "raum_59",
+      "raum_typ": "TERRASSE",
+      "in_raum_id": "raum_69",
+      "in_raum_typ": "TERRASSE",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_62",
+      "raum_typ": null,
+      "in_raum_id": "raum_63",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "lift_1",
+      "raum_typ": "LIFT",
+      "in_raum_id": "raum_61",
+      "in_raum_typ": "TECHNIK",
+      "anteil_prozent": 100.0
+    }
+  ],
+  "tueren_gesamt": 274,
+  "laufzeit_s": 68.0,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 7** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "Innenhöfe: **0** — `provider.letzte_aussenbereiche.geschlossen` ist leer (oder es gab keine Wandkörper-Analyse).",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

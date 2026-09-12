@@ -15,7 +15,7 @@ from pydantic import BaseModel, Field
 
 XY = tuple[float, float]
 
-CONTRACT_VERSION = "1.2.0"
+CONTRACT_VERSION = "1.5.0"
 
 # v1.2.0 — rein additive, optionale Felder/Modelle (kein Erzeuger bricht):
 # Nutzungsklassen + Tür-Details + Stiegenhaus-/Anker-Modelle + Segment-Herkunft.
@@ -27,6 +27,19 @@ Nutzungsklasse = Literal[
 TuerDetail = Literal[
     "zimmertuer", "wohnungseingang", "stiegenhaustuer", "hauseingang",
     "balkontuer", "garagentor", "brandschutztuer",
+]
+
+# v1.4.0 — Herkunft eines Tuer-Breitenmasses. Der Code erfindet keine Masse:
+# fehlt eine Messung, ist ``breite_mm`` None und ``breite_quelle`` "UNBEKANNT"
+# (mit ``breite_grund``) — nie ein Default, nie ein Normwert, nie ein Mittel.
+BreiteQuelle = Literal[
+    "BLOCKNAME",                # Nennmass aus dem Blocknamen (tueren.py::_breite_mm)
+    "GEOMETRIE_SCHWENKRADIUS",  # Radius des Tuerblatt-ARC
+    "GEOMETRIE_SUMME",          # Summe zweier Blattbreiten (Doppelfluegel)
+    "GEOMETRIE_OEFFNUNG",       # Wandoeffnung/Rohbaulichte (tuer_zuordnung.py)
+    "ATTRIBUT",                 # DXF-ATTRIB — heute ohne Erzeuger, reserviert
+    "STANDARDWERT",             # Reserve; gehoert NICHT ins Modell (nur Render)
+    "UNBEKANNT",                # keine Messung -> breite_mm is None
 ]
 
 AnkerTyp = Literal[
@@ -63,6 +76,39 @@ class Sonderstelle(BaseModel):
     quelle: str = ""              # Audit-Trail: woher die Angabe stammt
 
 
+# v1.5.0 — Raumbereinigung (docs/ENIS_UEBERGABE_0908.md § 14.6/§ 14.6.1).
+# Die fünf Owner-Regeln, plus drei Buchungen ohne Gegenspieler
+# (Zerfall/Schlitz/Entfall), damit die Flächenbilanz aufgeht. Die Nummer im
+# Kommentar ist die der angewandten Kaskade (§ 14.6.1, Owner-Entscheid):
+# 1 LIFT_SCHACHT, 2 RESTFLAECHE, 3 ENTHALTENSEIN, 4 QUELLE_RANG/STEMPEL_NAEHE,
+# 5 SCHWERPUNKT. Die REIHENFOLGE der Einträge unten ist historisch gewachsen
+# und NICHT die Anwendungsreihenfolge.
+BereinigungsRegel = Literal[
+    "LIFT_SCHACHT",   # Regel 1 — LIFT/SCHACHT aus jedem umgebenden Raum ausgestanzt
+    "ENTHALTENSEIN",  # Regel 3 — der innere Raum bleibt, DIESER Raum bekommt das Loch
+    "QUELLE_RANG",    # Regel 4 — höherer Quellen-Rang gewinnt
+    "STEMPEL_NAEHE",  # Regel 4 — gleicher Rang, näher am Stempelwert gewinnt
+    "SCHWERPUNKT",    # Regel 5 — Schnittfläche an den näheren Schwerpunkt
+    "RESTFLAECHE",    # Regel 2 — Restfläche (R) weicht jedem Nicht-R-Polygon
+    "ZERFALL",        # verworfene Nebenkomponente (gegenspieler None)
+    "SCHLITZ",        # Flächenverlust der 1-mm-Loch-Kodierung (gegenspieler None)
+    "ENTFALL",        # Restkörper eines entfallenen Raums (< 1 m², gegenspieler None)
+]
+
+
+class Bereinigung(BaseModel):
+    """v1.5.0 — ein Flächenabzug an DIESEM Raum.
+
+    Gewinner behalten ihr Polygon und bekommen keinen Eintrag. Invariante:
+    Fläche(polygon_roh) − Fläche(polygon_mm) == Summe aller ``flaeche_m2``
+    dieses Raums (± 1 mm²), Entfall eingeschlossen.
+    """
+
+    regel: BereinigungsRegel
+    gegenspieler: str | None = None   # Raum-id des Gewinners; None bei ZERFALL/SCHLITZ/ENTFALL
+    flaeche_m2: float                 # abgezogene Fläche
+
+
 class Raum(BaseModel):
     id: str
     raum_typ: str                       # z.B. "STIEGENHAUS", "GANG", "WC", "ZIMMER"
@@ -78,12 +124,27 @@ class Raum(BaseModel):
     # nutzungsklasse.py) + Wohnungszugehörigkeit; None/leer = unbestimmt.
     nutzungsklasse: Nutzungsklasse | None = None
     wohnung_id: str | None = None
+    # v1.5.0 — nicht destruktive Bereinigung (raumerkennung/bereinigung.py):
+    # polygon_roh = Ring VOR der Bereinigung. LEER heisst: polygon_mm ist
+    # unverändert das Roh-Polygon. flaeche_m2 ist stets die Fläche von
+    # polygon_mm (bereinigt). Löcher sind als 1-mm-Schlitz zur Außenkontur
+    # kodiert — Konsumenten der Bbox-Mitte sehen ein solches Loch NICHT.
+    polygon_roh: list[XY] = Field(default_factory=list)
+    bereinigung: list[Bereinigung] = Field(default_factory=list)
 
 
 class Tuer(BaseModel):
     id: str
     xy_mm: XY
-    breite_mm: float = 0.0
+    # v1.4.0 — breite_mm ist das GEMESSENE Mass; None = nicht gemessen
+    # (frueher 0.0). breite_quelle sagt, welches Mass es ist, breite_grund
+    # (nur bei UNBEKANNT) warum keine Messung vorliegt. lichte_mm ist die
+    # nutzbare Durchgangslichte (Fertigmass) und bleibt None, solange kein
+    # Beleg im Plan steht — es gibt KEINE belegte Umrechnung aus breite_mm.
+    breite_mm: float | None = None
+    breite_quelle: BreiteQuelle = "UNBEKANNT"
+    breite_grund: str | None = None
+    lichte_mm: int | None = None
     von_raum: str | None = None
     nach_raum: str | None = None
     ist_notausgang: bool = False
@@ -91,6 +152,12 @@ class Tuer(BaseModel):
     # v1.2.0 — Tür-Rolle (None = unbestimmt) + „Öffnung ohne Türblatt".
     tuer_detail: TuerDetail | None = None
     ohne_tuerblatt: bool = False
+    # v1.3.0 — Audit-Trail: Erkennungs-Quelle der Tür ('block' | 'arc' |
+    # 'arc_aussen' | 'durchgang' | 'oeffnung_aussenwand' | 'text:<Wort>' |
+    # 'doppelfluegel' | 'windfang' | …) und, falls keine Rolle bestimmbar,
+    # der Grund dafür (für die Gründe-Tabelle im Prüfbericht).
+    quelle: str | None = None
+    untypisiert_grund: str | None = None
 
 
 class Ausgang(BaseModel):

@@ -1,0 +1,83 @@
+{
+  "plan": "Barawitzka_2DG",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\Barawitzkagasse\\415_260415_PP_VA_1_8 2 DG.dxf",
+  "floor": "DG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    2400,
+    869
+  ],
+  "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
+  "kategorien": {
+    "wohnen": 7,
+    "gang": 1,
+    "untypisiert": 4,
+    "stiege": 2,
+    "sanitaer": 4,
+    "nebenraum": 1,
+    "schacht": 6,
+    "hof": 1,
+    "ueberlappung": 2,
+    "segmente": 2
+  },
+  "raeume_gesamt": 25,
+  "raeume_typisiert": 21,
+  "raum_typen": {
+    "ZIMMER": 6,
+    "VORRAUM": 1,
+    "STIEGENHAUS": 2,
+    "KÜCHE": 1,
+    "WC": 2,
+    "BAD": 2,
+    "ABSTELLRAUM": 1,
+    "SCHACHT": 3,
+    "LIFT": 3
+  },
+  "wohnungen": {
+    "anzahl": 5,
+    "raeume_je_wohnung": {
+      "top_1": 7,
+      "top_2": 1,
+      "top_3": 2,
+      "top_4": 1,
+      "top_5": 1
+    },
+    "ohne_wohnung": 13
+  },
+  "innenhoefe_m2": [
+    27.4
+  ],
+  "ausgaenge": [],
+  "stiegenhaeuser": [
+    "raum_4",
+    "raum_5"
+  ],
+  "ueberlappungen": [
+    {
+      "raum_id": "raum_5",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "lift_3",
+      "in_raum_typ": "LIFT",
+      "anteil_prozent": 90.9
+    },
+    {
+      "raum_id": "rest_2",
+      "raum_typ": "SCHACHT",
+      "in_raum_id": "lift_3",
+      "in_raum_typ": "LIFT",
+      "anteil_prozent": 100.0
+    }
+  ],
+  "tueren_gesamt": 47,
+  "laufzeit_s": 79.6,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 4** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "Außenflächen (BALKON/TERRASSE): **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",
+    "`final_exit`: **0** — kein Ausgang ins Freie erkannt (in Obergeschossen erwartungsgemäß, s. provider.py).",
+    "`stair_exit`: **0** — kein Stiegenhaus-Ausgang erkannt.",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

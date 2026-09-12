@@ -26,7 +26,7 @@ import re
 from ezdxf import bbox
 from shapely.geometry import LineString, Point, Polygon
 
-from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
+from notbeleuchtung.hauptengine.contracts.raum_modell import Bereinigung, Raum
 
 from .dxf_load import DxfPlan
 
@@ -197,6 +197,14 @@ def finde_lifte(plan: DxfPlan, raeume: list[Raum]) -> list[Raum]:
             groesster = max((t for t in teile if not t.is_empty),
                             key=lambda t: t.area, default=None)
             if groesster is not None and groesster.exterior is not None:
+                # v1.5.0 — das Ausstanzen buchen (Contract-Invariante): ohne
+                # polygon_roh behauptet ein hier gestanzter STIEGENHAUS-Raum
+                # „unverändert". Der 50-mm-Schlitz oben bleibt unangetastet.
+                if not r.polygon_roh:
+                    r.polygon_roh = list(r.polygon_mm)
+                r.bereinigung.append(Bereinigung(
+                    regel="LIFT_SCHACHT", gegenspieler=raum.id,
+                    flaeche_m2=(poly.area - groesster.area) / 1e6))
                 r.polygon_mm = [(float(x), float(y))
                                 for x, y in groesster.exterior.coords[:-1]]
                 r.flaeche_m2 = groesster.area / 1e6
