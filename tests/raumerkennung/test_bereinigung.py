@@ -2,7 +2,13 @@
 
 Rein synthetisch (mm-Rechtecke), kein DXF, kein Netz, keine Fixtures. Die
 Konstellationen sind so gebaut, dass jeweils GENAU eine Regel greift — sonst
-prüft der Test die Reihenfolge statt der Regel.
+prüft der Test die Reihenfolge statt der Regel. Ausnahme sind die
+``test_regelX_vor_regelY_*``-Tests: die prüfen genau die Reihenfolge.
+
+Regelnummern = angewandte Kaskade (§ 14.6.1, Owner-Entscheid): 1 LIFT_SCHACHT,
+2 RESTFLAECHE, 3 ENTHALTENSEIN, 4 QUELLE_RANG/STEMPEL_NAEHE, 5 SCHWERPUNKT. Die
+Blöcke unten sind nach diesen Nummern benannt, stehen aber in der gewachsenen
+Dateireihenfolge — der Regel-2-Block (Restfläche) sitzt deshalb hinten.
 """
 from __future__ import annotations
 
@@ -90,17 +96,56 @@ def test_regel1_nur_exakt_lift_und_schacht():
     assert _regeln(erg["a"]) == ["LIFT_SCHACHT"] and _regeln(erg["b"]) == []
 
 
-def test_regel1_beide_lift_schacht_geht_zu_regel2():
+def test_regel1_beide_lift_schacht_dann_regel2():
+    """Beide Seiten LIFT/SCHACHT → Regel 1 greift NICHT (XOR), die Kaskade läuft weiter.
+
+    Regel 2 darf die R-Seite hier NICHT ausstanzen: ein Raum mit raum_typ LIFT
+    oder SCHACHT ist NIE Verlierer der Restflächen-Regel, sonst unterliefe
+    Regel 2 die Owner-Vorgabe „LIFT und SCHACHT werden IMMER aus jedem
+    umgebenden Raum ausgestanzt" (§ 14.6.1 (c) steht über (d)). Das Paar fällt
+    damit auf Regel 3/4/5 — hier auf Regel 3 (Ringloch im äußeren Raum).
+
+    Vorher schrieb dieser Test die Lücke fest (``RESTFLAECHE`` + ``ENTFALL`` am
+    LIFT). Im Bestand kommt das Paar nicht vor (0 RESTFLAECHE-Buchungen über
+    alle fünf Pläne), die Regel ist reine Vorsorge — bei Rennweg_OG3 lägen
+    ``rest_1`` 1,157 m² und ``rest_2`` 1,152 m² aber nur 0,15 m² über der
+    Entfall-Schwelle.
+    """
     gross = _raum("a", _rect(0, 0, 4000, 4000), "SCHACHT")
     klein = _raum("b", _rect(1000, 1000, 3000, 3000), "LIFT")
     erg = bereinige([gross, klein], {"a": "L", "b": "R"}, {})
+    assert _regeln(erg["b"]) == []                    # KEIN RESTFLAECHE-Abzug
+    assert not erg["b"].entfallen
+    assert "ENTHALTENSEIN" in _regeln(erg["a"])       # Regel 3 entscheidet
+    _buchhaltung_haelt([gross, klein], erg)
+    # Ohne R auf einer Seite entscheidet Regel 3 unverändert: Ringloch im äußeren.
+    erg = bereinige([gross, klein], {"a": "L", "b": "H"}, {})
     assert _regeln(erg["b"]) == []
-    assert "ENTHALTENSEIN" in _regeln(erg["a"])    # Regel 2, nicht Regel 1
+    assert "ENTHALTENSEIN" in _regeln(erg["a"])
 
 
-# ----------------------------------------------------------------- Regel 2
+def test_regel1_vor_regel2_schacht_gewinnt():
+    """Owner-Reihenfolge, nicht verhandelbar: Regel 1 VOR Regel 2.
 
-def test_regel2_enthaltensein_beide_bleiben():
+    4 der 5 LIFT/SCHACHT-Räume im Bestand haben quelle R (``rest_komponenten``
+    typisiert kleine Komponenten als SCHACHT); zwei Rennweg-Schächte liegen nur
+    0,15 m² über der Entfall-Schwelle. Stünde Regel 2 vorn, stanzte die
+    Restflächen-Regel genau diese Räume aus.
+    """
+    l_ring = _rect(0, 0, 10000, 10000)
+    li = _raum("l", l_ring, "STIEGENHAUS")
+    schacht = _raum("rest_1", _rect(9000, 4000, 12000, 7000), "SCHACHT")
+    erg = bereinige([li, schacht], {"l": "L", "rest_1": "R"}, {"l": 100.0})
+    assert _regeln(erg["rest_1"]) == []            # kein RESTFLAECHE-Abzug
+    assert not erg["rest_1"].entfallen
+    assert Polygon(erg["rest_1"].polygon_mm).area == pytest.approx(9e6)
+    assert _regeln(erg["l"]) == ["LIFT_SCHACHT"]   # der L-Raum bekommt den Abzug
+    _buchhaltung_haelt([li, schacht], erg)
+
+
+# ----------------------------------------------------------------- Regel 3
+
+def test_regel3_enthaltensein_beide_bleiben():
     gross = _raum("a", _rect(0, 0, 20000, 20000), "ZIMMER")
     klein = _raum("b", _rect(8000, 8000, 12000, 12000), "WC")
     erg = bereinige([gross, klein], {"a": "L", "b": "F"}, {})
@@ -113,8 +158,8 @@ def test_regel2_enthaltensein_beide_bleiben():
     _buchhaltung_haelt([gross, klein], erg)
 
 
-def test_regel2_duplikat_faellt_auf_regel3():
-    # Deckungsgleiche Polygone: beide Verhältnisse 1,0 → Regel 2 greift NICHT.
+def test_regel3_duplikat_faellt_auf_regel4():
+    # Deckungsgleiche Polygone: beide Verhältnisse 1,0 → Regel 3 greift NICHT.
     ring = _rect(0, 0, 4000, 4000)
     a, b = _raum("a", ring), _raum("b", list(ring))
     erg = bereinige([a, b], {"a": "L", "b": "F"}, {"a": 16.0})
@@ -125,9 +170,9 @@ def test_regel2_duplikat_faellt_auf_regel3():
     _buchhaltung_haelt([a, b], erg)
 
 
-# ----------------------------------------------------------------- Regel 3
+# ----------------------------------------------------------------- Regel 4
 
-def test_regel3a_quellen_rang():
+def test_regel4a_quellen_rang():
     a = _raum("a", _rect(0, 0, 6000, 4000))
     b = _raum("b", _rect(5000, 0, 11000, 4000))
     erg = bereinige([a, b], {"a": "L", "b": "F"}, {"a": 24.0})
@@ -138,18 +183,18 @@ def test_regel3a_quellen_rang():
     assert _regeln(erg["b"]) == ["QUELLE_RANG"]
 
 
-def test_regel3b_naeher_am_stempelwert():
+def test_regel4b_naeher_am_stempelwert():
     a = _raum("a", _rect(0, 0, 5000, 4000))        # 20 m², Stempel 20 → Abw 0
     b = _raum("b", _rect(4000, 0, 9000, 4000))     # 20 m², Stempel 10 → Abw 1,0
     erg = bereinige([a, b], {"a": "L", "b": "L"}, {"a": 20.0, "b": 10.0})
     assert _regeln(erg["a"]) == [] and _regeln(erg["b"]) == ["STEMPEL_NAEHE"]
-    # flaeche_stempel == 0.0 zählt als VORHANDEN → Regel 3b greift, nicht Regel 4.
+    # flaeche_stempel == 0.0 zählt als VORHANDEN → Regel 4b greift, nicht Regel 5.
     erg = bereinige([a, b], {"a": "L", "b": "L"}, {"a": 20.0, "b": 0.0})
     assert _regeln(erg["b"]) == ["STEMPEL_NAEHE"]
 
 
-def test_regel4_schwerpunkt():
-    # Beide H ohne Stempel → gleicher Rang, kein Stempelwert: nur Regel 4 bleibt.
+def test_regel5_schwerpunkt():
+    # Beide H ohne Stempel → gleicher Rang, kein Stempelwert: nur Regel 5 bleibt.
     a = _raum("a", _rect(0, 0, 4000, 4000))        # Schwerpunkt 1500 mm entfernt
     b = _raum("b", _rect(3000, 0, 13000, 4000))    # Schwerpunkt 4500 mm entfernt
     erg = bereinige([a, b], {"a": "H", "b": "H"}, {})
@@ -157,13 +202,13 @@ def test_regel4_schwerpunkt():
     assert erg["b"].eintraege[0].flaeche_m2 == pytest.approx(4.0)
 
 
-# ----------------------------------------------------------------- Regel 5
+# ------------------------------------------- Regel 2 (Restfläche, Position 2)
 
-def test_regel5_restflaeche_ragt_nie_ueber():
+def test_regel2_restflaeche_verliert():
     l_ring = _rect(0, 0, 10000, 10000)
     li = _raum("l", l_ring)
     re = _raum("rest_1", _rect(9000, 0, 12000, 3000))
-    erg = bereinige([li, re], {"l": "L", "rest_1": "R"}, {}, regeln=frozenset({5}))
+    erg = bereinige([li, re], {"l": "L", "rest_1": "R"}, {}, regeln=frozenset({2}))
     assert _regeln(erg["l"]) == []
     assert _regeln(erg["rest_1"]) == ["RESTFLAECHE"]
     assert erg["rest_1"].eintraege[0].gegenspieler == "l"
@@ -172,21 +217,139 @@ def test_regel5_restflaeche_ragt_nie_ueber():
     _buchhaltung_haelt([li, re], erg)
 
 
-def test_regel5_stanzt_keinen_schacht_aus():
-    """Owner-Reihenfolge: Regel 1 vor Regel 5 — SCHACHT bleibt SCHACHT.
+def test_regel2_vor_regel3_r_verliert_statt_loch():
+    """Gewollte Wirkungsänderung des Owner-Entscheids gegenüber der Vorfassung.
 
-    Ohne die Ausnahme stanzte Regel 5 die SCHACHT-Räume aus dem R-Zweig
-    (``rest_komponenten.py:98-100``) wieder aus; zwei Rennweg-Schächte liegen
-    nur 0,15 m² über der Entfall-Schwelle.
+    Vorher war die Restflächen-Regel ein Schlusspass an Position 5: ein R-Raum
+    vollständig im Nicht-R-Raum blieb erhalten, der äußere bekam ein Loch
+    (Regel 2 alt = ENTHALTENSEIN). Jetzt verliert der R-Raum und entfällt.
     """
-    l_ring = _rect(0, 0, 10000, 10000)
-    li = _raum("l", l_ring, "STIEGENHAUS")
-    schacht = _raum("rest_1", _rect(9000, 4000, 12000, 7000), "SCHACHT")
-    erg = bereinige([li, schacht], {"l": "L", "rest_1": "R"}, {"l": 100.0})
-    assert _regeln(erg["rest_1"]) == []            # kein RESTFLAECHE-Abzug
+    aussen = _raum("a", _rect(0, 0, 20000, 20000), "ZIMMER")
+    rest = _raum("rest_1", _rect(8000, 8000, 12000, 12000))
+    erg = bereinige([aussen, rest], {"a": "L", "rest_1": "R"}, {})
+    assert _regeln(erg["rest_1"]) == ["RESTFLAECHE", "ENTFALL"]
+    assert erg["rest_1"].entfallen and erg["rest_1"].polygon_mm == []
+    assert _regeln(erg["a"]) == []                     # KEIN Loch im äußeren
+    ring = Polygon(erg["a"].polygon_mm)
+    assert len(ring.interiors) == 0 and ring.covers(Point(10000, 10000))
+    _buchhaltung_haelt([aussen, rest], erg)
+
+
+def test_regel2_vor_regel5_naeherer_schwerpunkt_verliert():
+    """Owner-Begründung für Regel 2 an Position 2, wörtlich: „sonst kann eine
+    Restfläche in Regel 4 über Schwerpunktnähe Fläche gewinnen, obwohl sie
+    nachrangig ist." Derselbe Aufbau, zwei Regelmengen.
+    """
+    a = _raum("a", _rect(0, 0, 10000, 4000))
+    rest = _raum("rest_1", _rect(9000, 0, 12000, 3000))
+    quelle = {"a": "L", "rest_1": "R"}
+    # Nur Regel 5: der nähere Schwerpunkt ist der der Restfläche — sie GEWINNT.
+    nur5 = bereinige([a, rest], quelle, {}, regeln=frozenset({5}))
+    assert _regeln(nur5["a"]) == ["SCHWERPUNKT"] and _regeln(nur5["rest_1"]) == []
+    # Volle Kaskade: Regel 2 sticht das, die Restfläche verliert trotzdem.
+    voll = bereinige([a, rest], quelle, {})
+    assert _regeln(voll["rest_1"]) == ["RESTFLAECHE"] and _regeln(voll["a"]) == []
+
+
+def test_kein_r_polygon_ueber_nicht_r():
+    """Nachfolge des entfallenen Regel-5-Schlusspasses: nach dem VOLLEN Lauf
+    ragt kein R-Polygon über ein Nicht-R-Polygon — geleistet von Regel 2 als
+    Paar-Regel, für JEDES gemischte Paar.
+    """
+    a = _raum("a", _rect(0, 0, 10000, 6000))
+    b = _raum("b", _rect(12000, 0, 20000, 6000))
+    rest = _raum("rest_1", _rect(9000, 1000, 13000, 4000))
+    raeume = [a, b, rest]
+    erg = bereinige(raeume, {"a": "L", "b": "F", "rest_1": "R"}, {})
+    assert _regeln(erg["rest_1"]) == ["RESTFLAECHE", "RESTFLAECHE"]
     assert not erg["rest_1"].entfallen
-    assert Polygon(erg["rest_1"].polygon_mm).area == pytest.approx(9e6)
-    assert _regeln(erg["l"]) == ["LIFT_SCHACHT"]
+    r_poly = Polygon(erg["rest_1"].polygon_mm)
+    for i in ("a", "b"):
+        assert r_poly.intersection(Polygon(erg[i].polygon_mm)).area <= RAUSCH_MM2
+    _buchhaltung_haelt(raeume, erg)
+
+
+# ------------------------------------------- Stempelschutz (Regel 3, 10 %)
+
+def _raum_29_fall() -> tuple[Raum, Raum]:
+    """Synthetischer Nachbau des Bestandsfalls Muthgasse ``raum_29``.
+
+    ``raum_29`` (quelle L, Stempel 16,52 m², Fläche roh 16,52 m², Rang 1)
+    enthält ``raum_91`` (quelle F, 2,58 m², Rang 3) — ausgestanzt fiel raum_29
+    auf 13,94 m² = −15,6 %.
+
+    Nachbau mit gerundeten Kanten: im Bestand sind es 2,553 m² Schnitt und
+    13,969 m² = −15,4 %. Die 13,94 m² / −15,6 % sind der Wert NACH Zerfall
+    und Schlitz-Kodierung (§ 20.3), nicht die Ausstanzung allein.
+    """
+    return (_raum("raum_29", _rect(0, 0, 4000, 4130)),        # 16,52 m²
+            _raum("raum_91", _rect(1000, 1000, 2000, 3580)))  # 2,58 m²
+
+
+def test_stempelschutz_greift():
+    aussen, innen = _raum_29_fall()
+    w: list[str] = []
+    erg = bereinige([aussen, innen], {"raum_29": "L", "raum_91": "F"},
+                    {"raum_29": 16.52}, warnungen=w)
+    # Keine Geometrieänderung, keine Buchung — auf KEINER Seite.
+    assert _regeln(erg["raum_29"]) == [] and _regeln(erg["raum_91"]) == []
+    assert Polygon(erg["raum_29"].polygon_mm).area == pytest.approx(16.52e6)
+    assert Polygon(erg["raum_91"].polygon_mm).area == pytest.approx(2.58e6)
+    # Das Paar wird NICHT an Regel 4 weitergegeben: dort verlöre raum_91 (Rang 3).
+    assert not erg["raum_91"].entfallen
+    # Genau eine Warnung, mit allen Zahlen des Owner-Auftrags.
+    assert len(w) == 1, w
+    assert "raum_29" in w[0] and "raum_91" in w[0]
+    assert "16.52" in w[0] and "13.94" in w[0] and "-15.6" in w[0]
+
+
+def test_stempelschutz_greift_nicht_unter_10_prozent():
+    # Derselbe Aufbau, Stempel 14,50 → Abweichung nach dem Abzug nur −3,9 %.
+    aussen, innen = _raum_29_fall()
+    w: list[str] = []
+    erg = bereinige([aussen, innen], {"raum_29": "L", "raum_91": "F"},
+                    {"raum_29": 14.50}, warnungen=w)
+    assert w == []
+    assert _regeln(erg["raum_29"])[0] == "ENTHALTENSEIN"
+    ring = Polygon(erg["raum_29"].polygon_mm)
+    assert ring.is_valid and not ring.covers(Point(1500, 2000))   # Loch gestanzt
+    _buchhaltung_haelt([aussen, innen], erg)
+
+
+def test_stempelschutz_nur_bei_besserem_rang_des_verlierers():
+    """Owner-Nachentscheid: der Schutz greift NUR, wenn der Verlierer der
+    Enthaltensein-Regel den besseren Quellen-Rang hat als der Gewinner.
+
+    Begründung des Owners: geschützt werden soll ein gezeichneter, gestempelter
+    Raum, der durch das Ausstanzen von seinem Stempelwert wegwandert — nicht
+    eine Flutung, die ihren Stempelwert ohnehin nur durch Übergriff erreicht.
+    Bei GLEICHEM Rang greift der Schutz nicht.
+    """
+    aussen, innen = _raum_29_fall()
+    # Verlierer quelle F (Rang 3) gegen Gewinner quelle L mit Stempel (Rang 1):
+    # Rang(Verlierer) > Rang(Gewinner) → kein Schutz, es wird gestanzt.
+    w: list[str] = []
+    erg = bereinige([aussen, innen], {"raum_29": "F", "raum_91": "L"},
+                    {"raum_29": 16.52, "raum_91": 2.58}, warnungen=w)
+    assert w == []
+    assert "ENTHALTENSEIN" in _regeln(erg["raum_29"])
+    _buchhaltung_haelt([aussen, innen], erg)
+    # Gleicher Rang (beide F) → auch kein Schutz.
+    w = []
+    erg = bereinige([aussen, innen], {"raum_29": "F", "raum_91": "F"},
+                    {"raum_29": 16.52}, warnungen=w)
+    assert w == []
+    assert "ENTHALTENSEIN" in _regeln(erg["raum_29"])
+
+
+def test_stempelschutz_nur_fuer_gestempelte_raeume():
+    # Kein Stempelwert am äußeren Raum → nichts zu schützen, immer ausstanzen.
+    aussen, innen = _raum_29_fall()
+    w: list[str] = []
+    erg = bereinige([aussen, innen], {"raum_29": "L", "raum_91": "F"}, {},
+                    warnungen=w)
+    assert w == []
+    assert "ENTHALTENSEIN" in _regeln(erg["raum_29"])
 
 
 # --------------------------------------------------- Loch-/Schlitz-Kodierung
@@ -250,9 +413,15 @@ def test_entfall_unter_einem_quadratmeter():
 # ------------------------------------------------------------------ Adapter
 
 def _kaskade_fall() -> tuple[list[Raum], list[Raum], list[Zuordnung], dict]:
-    """Gewinner, Verlierer (entfällt) und ein unbeteiligter Raum mit Zuordnungen."""
+    """Gewinner, Verlierer (entfällt) und ein unbeteiligter Raum mit Zuordnungen.
+
+    Teilüberlappung, KEIN Enthaltensein (Schnitt/kleinere Fläche 0,947 < 0,99):
+    sonst greift der Stempelschutz, weil der äußere Raum einen Stempel trägt —
+    dann entfiele nichts und der Adapter bliebe ungeprüft. Entschieden wird also
+    von Regel 4 (Rang 1 gegen Rang 3).
+    """
     gewinner = _raum("raum_1", _rect(0, 0, 4000, 3800))
-    verlierer = _raum("raum_2", _rect(0, 0, 4000, 4000))
+    verlierer = _raum("raum_2", _rect(0, 200, 4000, 4000))
     frei = _raum("raum_3", _rect(20000, 0, 24000, 4000))
     raeume = [gewinner, verlierer, frei]
     zuord = [Zuordnung(_stempel(15.2), 0, gewinner, 0.0, "ok"),
@@ -324,9 +493,10 @@ def test_regeln_parameter_schaltet_regeln_ab():
     leer = bereinige(raeume, quelle, {}, regeln=frozenset())
     assert all(v.eintraege == [] for v in leer.values())
     nur1 = bereinige(raeume, quelle, {}, regeln=frozenset({1}))
-    assert _regeln(nur1["a"]) == ["LIFT_SCHACHT"]      # Regel 2 (c) bleibt offen
-    bis2 = bereinige(raeume, quelle, {}, regeln=frozenset({1, 2}))
-    assert set(_regeln(bis2["a"])) >= {"LIFT_SCHACHT", "ENTHALTENSEIN"}
+    assert _regeln(nur1["a"]) == ["LIFT_SCHACHT"]      # Paar (a, c) bleibt offen
+    # Regel 2 ist jetzt RESTFLAECHE — für das Enthaltensein von c braucht es 3.
+    bis3 = bereinige(raeume, quelle, {}, regeln=frozenset({1, 2, 3}))
+    assert set(_regeln(bis3["a"])) >= {"LIFT_SCHACHT", "ENTHALTENSEIN"}
 
 
 # ---------------------------------------------------------- Contract/Invarianten

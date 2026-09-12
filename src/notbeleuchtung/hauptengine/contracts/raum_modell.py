@@ -77,15 +77,19 @@ class Sonderstelle(BaseModel):
 
 
 # v1.5.0 — Raumbereinigung (docs/ENIS_UEBERGABE_0908.md § 14.6/§ 14.6.1).
-# Die fünf Owner-Regeln in Anwendungsreihenfolge, plus drei Buchungen ohne
-# Gegenspieler (Zerfall/Schlitz/Entfall), damit die Flächenbilanz aufgeht.
+# Die fünf Owner-Regeln, plus drei Buchungen ohne Gegenspieler
+# (Zerfall/Schlitz/Entfall), damit die Flächenbilanz aufgeht. Die Nummer im
+# Kommentar ist die der angewandten Kaskade (§ 14.6.1, Owner-Entscheid):
+# 1 LIFT_SCHACHT, 2 RESTFLAECHE, 3 ENTHALTENSEIN, 4 QUELLE_RANG/STEMPEL_NAEHE,
+# 5 SCHWERPUNKT. Die REIHENFOLGE der Einträge unten ist historisch gewachsen
+# und NICHT die Anwendungsreihenfolge.
 BereinigungsRegel = Literal[
     "LIFT_SCHACHT",   # Regel 1 — LIFT/SCHACHT aus jedem umgebenden Raum ausgestanzt
-    "ENTHALTENSEIN",  # Regel 2 — der innere Raum bleibt, DIESER Raum bekommt das Loch
-    "QUELLE_RANG",    # Regel 3a — höherer Quellen-Rang gewinnt
-    "STEMPEL_NAEHE",  # Regel 3b — gleicher Rang, näher am Stempelwert gewinnt
-    "SCHWERPUNKT",    # Regel 4 — Schnittfläche an den näheren Schwerpunkt
-    "RESTFLAECHE",    # Regel 5 — Restfläche (R) weicht jedem Nicht-R-Polygon
+    "ENTHALTENSEIN",  # Regel 3 — der innere Raum bleibt, DIESER Raum bekommt das Loch
+    "QUELLE_RANG",    # Regel 4 — höherer Quellen-Rang gewinnt
+    "STEMPEL_NAEHE",  # Regel 4 — gleicher Rang, näher am Stempelwert gewinnt
+    "SCHWERPUNKT",    # Regel 5 — Schnittfläche an den näheren Schwerpunkt
+    "RESTFLAECHE",    # Regel 2 — Restfläche (R) weicht jedem Nicht-R-Polygon
     "ZERFALL",        # verworfene Nebenkomponente (gegenspieler None)
     "SCHLITZ",        # Flächenverlust der 1-mm-Loch-Kodierung (gegenspieler None)
     "ENTFALL",        # Restkörper eines entfallenen Raums (< 1 m², gegenspieler None)
