@@ -39,12 +39,16 @@ Raum-Polygon-Quelle: `kaskade L:10 H:0 F:0 R:4` — Rotation: keine dominante Ka
 
 ## Raumbereinigung (ENIS_UEBERGABE_0908 § 14.6.1)
 
-Überlapper >5 % 0 → 0 · doppelbelegt 0.000 → 0.000000 m² (0.00 mm²) · geändert 0 (Tabelle unten: 0 überlebende) · entfallen 0 · Zerfall 0.000 m² · Schlitzverlust 0.0 mm² · Restkörper entfallener Räume 0.000 m²
+Überlapper >5 % 0 → 0 · doppelbelegt 0.000 → 0.000000 m² (0.00 mm²) · geändert 0 (Tabelle unten: 0 überlebende) · entfallen 0 · Zerfall 0.000 m² · Schlitzverlust 0.0 mm² · Restkörper entfallener Räume 0.000 m² · Stempelschutz 0
 
 Einträge je Regel: —
 
 Nicht destruktiv: `polygon_roh` hält den Ring vor der Bereinigung, jeder Abzug ist mit Regel und Gegenspieler gebucht. Invariante: Fläche(roh) − Fläche(bereinigt) == Σ der Buchungen.
 
+
+### Stempelschutz — nicht ausgestanzt (0)
+
+- keine
 
 ### Abweichung bereinigt > 5 % vom Stempel (0)
 
@@ -195,4 +199,4 @@ Restweg im EG (Rennweg_EG.dxf): 4.6–13.5 m (Stiegenhaustür → nächster fina
 | tuer_in_schacht | 3 |
 | tuer_ins_nichts | 1 |
 
-Laufzeit: 51.7 s
+Laufzeit: 51.4 s

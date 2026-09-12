@@ -96,7 +96,7 @@ Ergänzung § 14.6.1: die Invariante „NIE verwerfen“ gilt der FLUTUNG. Die R
 
 ## Raumbereinigung (ENIS_UEBERGABE_0908 § 14.6.1)
 
-Überlapper >5 % 9 → 0 · doppelbelegt 42.253 → 0.000000 m² (0.05 mm²) · geändert 2 (Tabelle unten: 1 überlebende) · entfallen 1 · Zerfall 3.512 m² · Schlitzverlust 0.0 mm² · Restkörper entfallener Räume 0.224 m²
+Überlapper >5 % 9 → 0 · doppelbelegt 42.253 → 0.000000 m² (0.05 mm²) · geändert 2 (Tabelle unten: 1 überlebende) · entfallen 1 · Zerfall 3.512 m² · Schlitzverlust 0.0 mm² · Restkörper entfallener Räume 0.224 m² · Stempelschutz 0
 
 Einträge je Regel: {'ENTFALL': 1, 'ENTHALTENSEIN': 2, 'QUELLE_RANG': 7, 'ZERFALL': 2}
 
@@ -111,6 +111,10 @@ Nicht destruktiv: `polygon_roh` hält den Ring vor der Bereinigung, jeder Abzug 
 Restkörper unter 1 m² — dasselbe Kriterium wie die degenerierte Flutung in `kaskade.py:115`. Diese Räume stehen NICHT mehr im Modell; Roh-Polygon, Stempel und Regelkette stehen in `raeume.json` unter `entfallen`.
 
 - raum_44 [F] „Loggia“ (BALKON): roh 4.88 m², Stempel 5.31 m², Restkörper 0.224 m² · QUELLE_RANG, QUELLE_RANG, ZERFALL, ENTFALL
+
+### Stempelschutz — nicht ausgestanzt (0)
+
+- keine
 
 ### Abweichung bereinigt > 5 % vom Stempel (1)
 
@@ -488,4 +492,4 @@ Quellen: FALLBACK: 1, GRAPH: 11
 | sicherheitsleuchte | (12.23, -7.16) | 0 |
 | sicherheitsleuchte | (11.44, -23.01) | 0 |
 
-Laufzeit: 251.0 s
+Laufzeit: 271.6 s

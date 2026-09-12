@@ -64,7 +64,7 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:16 R:0` — Rotation: Wände vertikal-d
 | L | Bad | BAD | 6.55 | 6.55 | 6.55 | -0.0 | ok |
 | L | Zimmer | ZIMMER | 11.97 | 13.10 | 13.10 | +9.4 | ok |
 | L | Loggia | BALKON | 8.96 | 8.96 | 8.96 | -0.0 | ok |
-| L | Wohnküche | KÜCHE | 16.52 | 16.52 | 13.94 | +0.0 | ok |
+| L | Wohnküche | KÜCHE | 16.52 | 16.52 | 16.52 | +0.0 | ok |
 | L | Zimmer | ZIMMER | 10.16 | 10.16 | 10.16 | -0.0 | ok |
 | L | Bad | BAD | 5.51 | 5.51 | 5.51 | -0.0 | ok |
 | L | Loggia | BALKON | 5.70 | 5.70 | 5.70 | +0.0 | ok |
@@ -177,15 +177,14 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:16 R:0` — Rotation: Wände vertikal-d
 
 ## Raumbereinigung (ENIS_UEBERGABE_0908 § 14.6.1)
 
-Überlapper >5 % 37 → 0 · doppelbelegt 174.245 → 0.000000 m² (0.20 mm²) · geändert 12 (Tabelle unten: 8 überlebende) · entfallen 4 · Zerfall 8.244 m² · Schlitzverlust 0.0 mm² · Restkörper entfallener Räume 1.525 m²
+Überlapper >5 % 37 → 2 · doppelbelegt 174.245 → 2.552357 m² (2552357.00 mm²) · geändert 11 (Tabelle unten: 7 überlebende) · entfallen 4 · Zerfall 8.214 m² · Schlitzverlust 0.0 mm² · Restkörper entfallener Räume 1.525 m² · Stempelschutz 1
 
-Einträge je Regel: {'ENTFALL': 4, 'ENTHALTENSEIN': 3, 'LIFT_SCHACHT': 1, 'QUELLE_RANG': 36, 'STEMPEL_NAEHE': 3, 'ZERFALL': 10}
+Einträge je Regel: {'ENTFALL': 4, 'ENTHALTENSEIN': 2, 'LIFT_SCHACHT': 1, 'QUELLE_RANG': 36, 'STEMPEL_NAEHE': 3, 'ZERFALL': 9}
 
 Nicht destruktiv: `polygon_roh` hält den Ring vor der Bereinigung, jeder Abzug ist mit Regel und Gegenspieler gebucht. Invariante: Fläche(roh) − Fläche(bereinigt) == Σ der Buchungen.
 
 | id | Name | Quelle | Flag | m² Stempel | m² roh | m² bereinigt | Abw. roh % | Abw. ber. % | Regeln (Gegenspieler) |
 |---|---|---|---|--:|--:|--:|--:|--:|---|
-| raum_29 | Wohnküche | L | ok | 16.52 | 16.52 | 13.94 | +0.0 | -15.6 | ENTHALTENSEIN(raum_91), ZERFALL |
 | raum_84 | Wohnküche | F | flutung_unsicher | 32.53 | 11.41 | 3.07 | -64.9 | -90.6 | QUELLE_RANG(raum_13), QUELLE_RANG(raum_16), QUELLE_RANG(raum_68), ZERFALL |
 | raum_85 | Wohnküche | F | ok | 32.53 | 33.46 | 1.06 | +2.9 | -96.7 | QUELLE_RANG(raum_22), QUELLE_RANG(raum_17), QUELLE_RANG(raum_23), QUELLE_RANG(raum_21), ZERFALL |
 | raum_87 | Wohnküche | F | flutung_unsicher | 24.20 | 39.55 | 24.62 | +63.4 | +1.7 | QUELLE_RANG(raum_31), QUELLE_RANG(raum_57), QUELLE_RANG(raum_56), QUELLE_RANG(raum_33), QUELLE_RANG(raum_28), ZERFALL |
@@ -203,7 +202,13 @@ Restkörper unter 1 m² — dasselbe Kriterium wie die degenerierte Flutung in `
 - raum_92 [F] „Wohnküche“ (KÜCHE): roh 20.73 m², Stempel 84.72 m², Restkörper 0.141 m² · QUELLE_RANG, QUELLE_RANG, QUELLE_RANG, QUELLE_RANG, STEMPEL_NAEHE, STEMPEL_NAEHE, ZERFALL, ENTFALL
 - raum_93 [F] „Wohnküche“ (KÜCHE): roh 8.04 m², Stempel 5.74 m², Restkörper 0.085 m² · QUELLE_RANG, QUELLE_RANG, ZERFALL, ENTFALL
 
-### Abweichung bereinigt > 5 % vom Stempel (6)
+### Stempelschutz — nicht ausgestanzt (1)
+
+Regel 3 (Enthaltensein) hat für diese Paare NICHT gegriffen: der äußere Raum wäre durch das Ausstanzen um mehr als 10 % von seinem Stempelwert abgewichen (Owner-Entscheid). Das Paar bleibt überlappend und wird ausdrücklich NICHT an Regel 4/5 weitergegeben — die Überlapper-Kennzahl oben enthält es.
+
+- raum_29 nicht ausgestanzt (enthaelt raum_91): Stempel 16.52 m2, Flaeche 16.52 m2 -> 13.97 m2 = -15.4 % Abweichung, ueber Stempelschutz 10 % -> Paar bleibt ueberlappend
+
+### Abweichung bereinigt > 5 % vom Stempel (5)
 
 **war schon > 5 % (4)**
 - raum_84 „Wohnküche“: Stempel 32.53 m², roh -64.9 % → bereinigt -90.6 %
@@ -211,11 +216,10 @@ Restkörper unter 1 m² — dasselbe Kriterium wie die degenerierte Flutung in `
 - raum_90 „Zimmer“: Stempel 13.83 m², roh +37.0 % → bereinigt -71.1 %
 - raum_94 „Gang“: Stempel 31.25 m², roh -42.1 % → bereinigt -47.3 %
 
-**neu > 5 % (2)**
-- raum_29 „Wohnküche“: Stempel 16.52 m², roh +0.0 % → bereinigt -15.6 %
+**neu > 5 % (1)**
 - raum_85 „Wohnküche“: Stempel 32.53 m², roh +2.9 % → bereinigt -96.7 %
 
-**Rest-Überlappung im RaumModell: 12 Überlapper / 38.279 m².** Die Bereinigung greift am Kaskaden-Ende; `typisiere_geometrisch` und `finde_lifte` legen danach im Provider eigene Räume an (`stiegenhaus_*`, `lift_*`), die sie nicht sieht. `raeume.json` und `RaumModell` sind nur für die Kaskaden-Räume deckungsgleich — der Überlappungs-Riegel misst auf `raeume.json`.
+**Rest-Überlappung im RaumModell: 13 Überlapper / 40.835 m².** Die Bereinigung greift am Kaskaden-Ende; `typisiere_geometrisch` und `finde_lifte` legen danach im Provider eigene Räume an (`stiegenhaus_*`, `lift_*`), die sie nicht sieht. `raeume.json` und `RaumModell` sind nur für die Kaskaden-Räume deckungsgleich — der Überlappungs-Riegel misst auf `raeume.json`.
 
 **`lift_*` und SCHACHT:** `lift_erkennung.finde_lifte` überspringt eine Stelle nur, wenn dort ein Raum mit `raum_typ` „LIFT“ liegt — „SCHACHT“ ist nicht abgedeckt. Ein Regel-1-Gewinner mit `raum_typ` „SCHACHT“ kann danach von einem `lift_*`-Raum überdeckt werden, den die Bereinigung nicht mehr sieht. Eigener Arbeitsschritt.
 
@@ -719,7 +723,7 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | durchgang_62 | raum_28 | raum_87 | zimmertuer | 2550 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_63 | raum_29 | raum_30 | balkontuer | 3160 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_64 | raum_29 | raum_91 | zimmertuer | 2698 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_65 | raum_29 | stiegenhaus_2 | wohnungseingang | 1174 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_65 | raum_29 | stiegenhaus_2 | wohnungseingang | 1462 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_66 | raum_31 | raum_87 | balkontuer | 3214 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_67 | raum_32 | raum_55 | zimmertuer | 2490 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_68 | raum_33 | raum_57 | zimmertuer | 2660 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
@@ -1003,7 +1007,7 @@ Quellen: FALLBACK: 3, GRAPH: 6, LINIE: 139
 | durchgang_45 | 10.0 | Luftlinie | exit_tuer_111 |
 | durchgang_55 | 8.2 | Luftlinie | exit_tuer_111 |
 | durchgang_59 | 4.0 | Luftlinie | exit_tuer_118 |
-| durchgang_65 | 1.1 | Luftlinie | exit_durchgang_147 |
+| durchgang_65 | 0.9 | Luftlinie | exit_durchgang_147 |
 | durchgang_71 | 9.6 | Luftlinie | exit_tuer_118 |
 | durchgang_94 | 7.7 | Luftlinie | exit_tuer_118 |
 | durchgang_98 | 4.1 | Luftlinie | exit_aussenoeffnung_1 |
@@ -1074,16 +1078,15 @@ Quellen: FALLBACK: 3, GRAPH: 6, LINIE: 139
   - AUSTRITT (334.44, 106.71) m, Fluchtrichtung 145°
   - TUER (335.20, 106.40) m, Winkel 0°, Fluchtrichtung 145°
   - RICHTUNGSWECHSEL (336.76, 106.29) m, Fluchtrichtung 265°
-- **stiegenhaus_2**: 5 Läufe, 1 Podeste, 7 Verbotszonen (größte 3.7 m², Summe 10.0 m²), 12 Anker
+- **stiegenhaus_2**: 5 Läufe, 1 Podeste, 7 Verbotszonen (größte 3.7 m², Summe 10.0 m²), 11 Anker
   - PODEST (336.49, 106.25) m, Winkel 124°, Fluchtrichtung 188°
   - ANTRITT (337.73, 106.59) m, Fluchtrichtung 265°
   - AUSTRITT (337.75, 106.85) m, Fluchtrichtung 265°
   - ANTRITT (335.42, 106.85) m, Fluchtrichtung 188°
   - AUSTRITT (336.03, 106.94) m, Fluchtrichtung 188°
   - ANTRITT (338.93, 104.42) m, Fluchtrichtung 80°
-  - TUER (338.83, 105.73) m, Winkel 90°, Fluchtrichtung 157°
+  - TUER (338.89, 105.54) m, Winkel 90°, Fluchtrichtung 157°
   - TUER (336.29, 107.11) m, Winkel 0°, Fluchtrichtung 188°
-  - TUER (338.92, 104.59) m, Winkel 90°, Fluchtrichtung 80°
   - RICHTUNGSWECHSEL (337.95, 106.47) m, Fluchtrichtung 265°
   - RICHTUNGSWECHSEL (336.89, 106.89) m, Fluchtrichtung 265°
   - RICHTUNGSWECHSEL (335.61, 106.41) m, Fluchtrichtung 188°
@@ -1163,4 +1166,4 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_tuer_109, exit_tuer_11
 | tuer_in_schacht | 4 |
 | tuer_ins_nichts | 3 |
 
-Laufzeit: 1813.0 s
+Laufzeit: 1888.0 s
