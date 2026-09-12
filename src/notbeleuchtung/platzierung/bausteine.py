@@ -48,6 +48,21 @@ def rotation_zur_tuer(dx: float, dy: float) -> float:
     return (round((math.degrees(math.atan2(dy, dx)) + 90.0) / 90.0) * 90.0) % 360.0
 
 
+def rotation_piktogramm_in_raum(dx_zur_tuer: float, dy_zur_tuer: float) -> float:
+    """R-B (Owner-Fachdoku „Notbeleuchtung zeichnen lernen" v2, S.3–5, AUSNAHMSLOS):
+    jede Pfeil-unten-RZ an einer Tür wird so rotiert, dass das Piktogramm INS
+    RAUMINNERE schaut — die flüchtende Person ist im Raum und muss es lesen
+    (Blick = Gegenrichtung der Fluchtachse durch die Tür). Ersetzt die frühere
+    Pfeil-zur-Tür-Ableitung (#111) an Tür-RZ; die Pfeilrichtung im 2D-Plan ist
+    Darstellung, keine Gehrichtung (R-I).
+
+    Input wie bisher an den Callsites vorhanden: (dx, dy) = Richtung ZUR/DURCH die
+    Tür (Fluchtachse raus). Kalibriert am Ground-Truth-DXF Elektroplan DE EG
+    (Nebenräume 0° · Hauseingang 0° · Müllraum-Südtür ~180°):
+    Pfeil-Achse = Rauminnen-Normale = Gegenrichtung."""
+    return rotation_zur_tuer(-dx_zur_tuer, -dy_zur_tuer)
+
+
 def richtung_und_rotation(dx: float, dy: float) -> tuple[str, float]:
     """Segment-Laufrichtung → (richtung, rotation_deg), auf die dominante Achse
     gerundet. Pfeil zeigt Richtung Ausgang (= Segment-Endpunkt).

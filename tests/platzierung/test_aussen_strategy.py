@@ -82,9 +82,10 @@ def test_place_integriert_aussenleuchte():
 
 
 def test_ausgangs_rz_pfeil_zeigt_zur_tuer():
-    # Owner-Korrektur (H-Gebäude-DXF 2026-09-05): am Ausgang hängt IMMER das
-    # Pfeil-unten-Zeichen, rotiert, sodass der Pfeil ZUR TÜR zeigt. Referenzfall:
-    # Stiegenhaus-Tür OBERHALB des Gangs → Block um 180° gedreht (Pfeil nach oben).
+    # Owner-Korrektur 2026-09-05 + R-B (Fachdoku v2): am Ausgang hängt IMMER das
+    # Pfeil-unten-Zeichen, rotiert, sodass das PIKTOGRAMM ins Rauminnere blickt
+    # (Gegenrichtung der Fluchtachse). Referenzfall: Stiegenhaus-Tür OBERHALB des
+    # Gangs, Anlauf von unten → Blick nach unten = rot 0.
     from notbeleuchtung.hauptengine.contracts import Edge, Node, Tuer, ZirkulationsGraph
     from notbeleuchtung.platzierung.anker_strategy import plan_rettungszeichen_anker
 
@@ -105,4 +106,4 @@ def test_ausgangs_rz_pfeil_zeigt_zur_tuer():
     assert len(rz) == 1
     # Tür liegt OBERHALB (Anlauf von unten) → unten-Block um 180° = Pfeil nach oben.
     assert rz[0].richtung == "unten"
-    assert abs(rz[0].rotation_deg - 180.0) < 1.0
+    assert abs(rz[0].rotation_deg - 0.0) < 1.0

@@ -186,8 +186,8 @@ def _raum_mit_tuer(raum_typ: str, tuer_xy=(5000.0, 0.0), nach="gang") -> RaumMod
 
 @pytest.mark.parametrize("typ", ["TECHNIK", "MUELLRAUM", "KINDERWAGENRAUM"])
 def test_tuerleuchte_ist_rz_an_der_tuer(typ):
-    # Owner-Korrektur 2026-09-08: an der Tür ein RETTUNGSZEICHEN (Pfeil-unten, zur Tür
-    # rotiert) — NICHT mehr eine Antipanik-SL. Kleiner konvexer Raum → nur das RZ.
+    # Owner-Korrektur 2026-09-08 + R-B (Fachdoku v2): an der Tür ein RETTUNGSZEICHEN
+    # (Pfeil-unten, Piktogramm blickt INS Rauminnere) — NICHT mehr eine Antipanik-SL.
     out = tuerleuchte_pflichtraeume(_raum_mit_tuer(typ), FakeNormProvider())
     assert len(out) == 1
     p = out[0]
@@ -197,8 +197,9 @@ def test_tuerleuchte_ist_rz_an_der_tuer(typ):
     # auf der Schwelle, sondern ~150 mm IM bedienten Raum (Richtung Raum-Inneres).
     assert math.hypot(p.xy_mm[0] - 5000.0, p.xy_mm[1] - 0.0) <= 160.0   # nahe der Tür
     assert point_in_polygon(p.xy_mm, _RAUM_POLY)                        # leicht im Raum
-    # Tür (5000,0) liegt unter dem Raum-Zentrum (5000,4000) → Pfeil zeigt nach unten (rot 0°).
-    assert p.rotation_deg == 0.0
+    # Tür (5000,0) liegt unter dem Raum-Zentrum (5000,4000) → Piktogramm blickt ins
+    # Rauminnere (nach oben) = unten-Block rot 180 (R-B, kalibriert am Elektroplan-DE-EG).
+    assert p.rotation_deg == 180.0
     assert p.norm_quelle == QUELLE_TUERLEUCHTE
     assert "F13" in p.circuit_hint           # getrennter Sicherheitskreis
     assert p.height_mm >= 2000.0             # EN-1838-Mindesthöhe
@@ -314,14 +315,15 @@ def _raum_mit_aussentuer(communal=True, ausgaenge=(), detail=None):
 
 def test_aussen_tuer_rz_am_muellraum_ausgang():
     """„Hier ist der Ausgang vom Müllraum": AUSSEN-Tür eines communal Raums traegt
-    ein RZ (EN 1838 §4.1.2 g) — Pfeil DURCH die Tür nach draußen, ~150 mm im Raum."""
+    ein RZ (EN 1838 §4.1.2 g) — Piktogramm blickt ins Rauminnere (R-B), ~150 mm im Raum."""
     out = aussen_tuer_rz(_raum_mit_aussentuer(), FakeNormProvider())
     assert len(out) == 1
     p = out[0]
     assert p.kind == "rz"
     assert p.richtung == "unten"
-    # Zentrum (5000,4000) → Tür (5000,0): Fluchtrichtung nach unten = rot 0.
-    assert p.rotation_deg == 0.0
+    # Zentrum (5000,4000) → Tür (5000,0): Piktogramm blickt zurück ins Rauminnere
+    # (nach oben) = rot 180 (R-B; Ground truth Müllraum-Südtür ~180°).
+    assert p.rotation_deg == 180.0
     assert p.xy_mm[0] == pytest.approx(5000.0, abs=1.0)
     assert p.xy_mm[1] == pytest.approx(150.0, abs=1.0)   # 150 mm im Raum-Inneren
     assert p.norm_quelle != QUELLE_TUERLEUCHTE           # echte Norm-Quelle (§4.1.2 g)
@@ -341,8 +343,9 @@ def test_aussen_tuer_rz_skip_bei_nahem_ausgang_und_hauseingang():
 
 # ── R4: Hauseingang-Pfeil = Fluchtrichtung — Owner-Korrektur 2026-09-11 ─────────
 def test_pfeil_durch_hauseingang_zeigt_zum_ausgang():
-    """„Pfeil zeigt Richtung Ausgang, nicht wohin die Tür aufgeht": RZ nahe der
-    hauseingang-Tür wird auf die Fluchtrichtung (zum modellierten Ausgang) rotiert."""
+    """R4 + R-B (Fachdoku v2): RZ nahe der hauseingang-Tür wird auf die allgemeine
+    Türregel rotiert — Piktogramm blickt ins Rauminnere (Gegenrichtung der
+    Fluchtachse zum modellierten Ausgang), nie in die Aufschlagrichtung."""
     rm = RaumModell(
         floor="EG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 8000.0)),
         raeume=[Raum(id="g", raum_typ="GANG", polygon_mm=_RAUM_POLY, ist_fluchtweg=True)],
@@ -353,8 +356,9 @@ def test_pfeil_durch_hauseingang_zeigt_zum_ausgang():
     falsch = _rz(xy=(5000.0, 4600.0), key="notlicht_ks_stiege", rot=90.0)
     falsch = falsch.model_copy(update={"richtung": "unten"})
     out = pfeil_durch_hauseingang([falsch], rm)
-    # Ausgang liegt noerdlich → Pfeil nach oben = unten-Block rot 180.
-    assert out[0].rotation_deg == 180.0
+    # Ausgang liegt noerdlich (Fluchtachse +y) → Piktogramm blickt ins Rauminnere
+    # (nach unten) = rot 0 (R-B, allgemeine Türregel gilt auch am Hauseingang).
+    assert out[0].rotation_deg == 0.0
     # RZ weit weg von der Tür bleibt unveraendert:
     fern = falsch.model_copy(update={"xy_mm": (500.0, 500.0), "rotation_deg": 90.0})
     assert pfeil_durch_hauseingang([fern], rm)[0].rotation_deg == 90.0

@@ -37,6 +37,7 @@ from notbeleuchtung.hauptengine.contracts import (
 from .bausteine import AGV_SV_F as _AGV_SV_F
 from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
 from .bausteine import building_assigner as _building_assigner
+from .bausteine import rotation_piktogramm_in_raum as _rotation_piktogramm_in_raum
 from .bausteine import rotation_zur_tuer as _rotation_zur_tuer
 from .bausteine import select_key as _select_key
 from .geometry import _bbox, _bbox_area, find_center_visual, point_in_polygon
@@ -312,8 +313,8 @@ def tuerleuchte_pflichtraeume(raum: RaumModell, norm: NormProvider) -> list[Plat
         hat_polygon = len(r.polygon_mm) >= 3
         zentrum = find_center_visual(r.polygon_mm) if hat_polygon else (tx, ty - 1.0)
 
-        # 1) RZ an der Tür — Pfeil-unten-Block, rotiert ZUR Tür (Muster wie communal_stgh/
-        #    anker: Richtung Raum-Inneres → Tür, rotation = atan2+90 auf 90° gerastert).
+        # 1) RZ an der Tür — Pfeil-unten-Block, Piktogramm blickt INS Rauminnere
+        #    (R-B, Owner-Fachdoku v2 — ersetzt Pfeil-zur-Tür an Tür-RZ).
         anf = norm.fuer_fluchtweg_abschnitt(
             FluchtwegSegment(segment_id=f"tuerleuchte_{r.id}", polyline_mm=[(tx, ty)], reason="exit")
         )
@@ -321,7 +322,7 @@ def tuerleuchte_pflichtraeume(raum: RaumModell, norm: NormProvider) -> list[Plat
         dx, dy = tx - zentrum[0], ty - zentrum[1]
         if math.hypot(dx, dy) < 50.0:
             dx, dy = 0.0, -1.0
-        rot = _rotation_zur_tuer(dx, dy)
+        rot = _rotation_piktogramm_in_raum(dx, dy)
         # Owner-Korrektur: RZ ~150 mm ins Raum-Innere versetzen (Richtung Zentrum = weg
         # vom Gang). (dx, dy) zeigt vom Zentrum zur Tür (raus) → −Einheitsvektor = rein.
         _n = math.hypot(dx, dy) or 1.0
@@ -421,7 +422,7 @@ def aussen_tuer_rz(raum: RaumModell, norm: NormProvider) -> list[Platzierung]:
             Platzierung(
                 xy_mm=(tx - dx / _n * _RZ_INS_RAUM_MM, ty - dy / _n * _RZ_INS_RAUM_MM),
                 catalog_key=rz_key,
-                rotation_deg=_rotation_zur_tuer(dx, dy),
+                rotation_deg=_rotation_piktogramm_in_raum(dx, dy),
                 mirror_x=False,
                 height_mm=float(anf.montagehoehe_mm),
                 kind="rz",
@@ -480,7 +481,7 @@ def pfeil_durch_hauseingang(
         if math.hypot(dx, dy) < 50.0:
             out.append(p)
             continue
-        out.append(p.model_copy(update={"rotation_deg": _rotation_zur_tuer(dx, dy)}))
+        out.append(p.model_copy(update={"rotation_deg": _rotation_piktogramm_in_raum(dx, dy)}))
     return out
 
 

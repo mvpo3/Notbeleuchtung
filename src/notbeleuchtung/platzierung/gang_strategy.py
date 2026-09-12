@@ -33,7 +33,7 @@ from .bausteine import (
 from .bausteine import (
     richtung_und_rotation as _richtung_und_rotation,
 )
-from .bausteine import rotation_zur_tuer as _rotation_zur_tuer
+from .bausteine import rotation_piktogramm_in_raum as _rotation_piktogramm_in_raum
 from .geometry import _bbox
 from .mittellinie import leuchten_auf_linie
 
@@ -141,7 +141,7 @@ def plan_rettungszeichen_gang(raum: RaumModell, norm: NormProvider) -> list[Plat
                 if math.hypot(dx, dy) > 50.0:
                     unten_key, _, _ = _key_und_rotation(anf.symbol_katalog_keys, "unten")
                     catalog_key = unten_key
-                    rotation = _rotation_zur_tuer(dx, dy)
+                    rotation = _rotation_piktogramm_in_raum(dx, dy)
                     mirror_x = False
                     richtung = "unten"
             out.append(
