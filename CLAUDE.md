@@ -105,15 +105,53 @@ Enis:   NormProvider ─► NormRegelwerk┘     └─► Leonis: Platzierer(Ra
 - Atomare Slices, ein Concern pro Commit, em-dash in der Message.
 - Irreversibel (Merge/Push/GitHub-Repo) = explizites User-GO.
 
+## Architektur-Landkarte
+
+- **Provider-Verdrahtung:** `hauptengine/registry.py` = der EINE Ort, wo echte
+  Provider an die Ports binden (Lazy-Import → API antwortet 503 statt
+  ImportError, solange ein Provider fehlt). Tests nutzen `tests/fakes.py`
+  (Fake-Bundle) — grüner E2E heißt nicht „echt verdrahtet".
+- **Validierung = QA-Layer:** `hauptengine/validierung.py` fährt die
+  Norm-Regel-Suite (Status ok/warnung/fehler, „ungeprüft ≠ erfüllt"); Ergebnis
+  fließt in den Prüfbericht. Grüner E2E-Test ≠ valider Plan.
+- **symbols/-Ökosystem:** `library.py` (Schrack-DXF-Import: Layer-Rename →
+  `din_SIBEL_10_emergency_lighting`, explizite Farben → BYLAYER) ·
+  `orientation.py` (DER einzige Rotationsrahmen für Pfeile — gemessene
+  Basis-Orientierungen, keine eigenen Konstanten) · `photometrie_katalog.py`
+  (`catalog_key` → LDT).
+- **Photometrie-Falle:** `c0_azimut_grad` (optische Achse) ≠ `rotation_deg`
+  (Symbol-Rotation) — Verwechslung ergab historisch Faktor-7,7-Fehler.
+- **Port-Material:** `raumerkennung/_port/` + `normwissen/_port_source/` =
+  gestagtes elektro-planer-Material (Referenz zum Adaptieren, kein Scaffold,
+  von ruff/setuptools ausgenommen).
+
 ## Setup / Tests
 
 ```
 python -m venv .venv
 .venv/Scripts/python.exe -m pip install -e ".[dev,api]"
 .venv/Scripts/python.exe -m pytest -q          # Contract + E2E
+.venv/Scripts/python.exe -m pytest tests/platzierung/test_x.py -k name  # Einzeltest
+.venv/Scripts/python.exe -m pytest -m visual   # Sicht-/Golden-Tests (default DESELEKTIERT via addopts!)
 .venv/Scripts/python.exe scripts/gen_schema.py # Schemas regenerieren
 ruff check .
+.venv/Scripts/python.exe -m uvicorn notbeleuchtung.api.main:app --reload  # API lokal
 ```
+
+- **Pipeline-Einstieg:** `hauptengine/pipeline.py` (`pipeline.run`) — ruft den
+  Lux-Nachweis-Bericht automatisch; wer `place()`+`render_dxf` direkt nutzt, muss
+  `render/lux_nachweis_bericht.schreibe_bericht` selbst aufrufen.
+- **Skripte:** `scripts/plan_pruefen.py` (Ausgabe-Check), `scripts/dxf_healthcheck.py`
+  (Eingabe-DXF: Extents/Versatz), `scripts/projekt_batch_worker.py` (Batch über
+  `Projekte/`), `scripts/wissen_index.py` (regeneriert `knowledge/INDEX.md`).
+- **Ausgabe-Regel (Owner):** Pläne IMMER als PDF (A0, 1:50) liefern, nie PNG.
+- **Test-Struktur:** `tests/contract/` = schnelles Naht-Gate (Pydantic +
+  Schema-Drift + Invarianten) · `tests/naht/` = Regressions-E2E gegen echte
+  Pläne (Barawitzka/Mollgasse/…).
+- **CI:** `contract.yml` (`gen_schema.py --check` + `pytest tests/contract`) ·
+  `ci.yml` (ruff + volle Suite + Visual-Smoke `NOTBEL_UPDATE_GOLDEN=1 pytest -m
+  visual` — Golden-PNGs sind maschinenspezifisch, nur LOKALES
+  Regressionswerkzeug, kein Cross-Plattform-Vergleich).
 
 ## Don't
 
