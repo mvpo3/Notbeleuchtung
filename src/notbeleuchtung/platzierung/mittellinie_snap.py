@@ -83,6 +83,10 @@ def _laengs_ausweichen(laengs: float, spots: tuple[float, ...]) -> float:
     return (lo + hi) / 2.0
 
 
+#: RZ näher als das an einer Tür = Tür-RZ (R-C, sitzt 150 mm raumseitig) → nie snappen.
+_TUER_RZ_SNAP_FREI_MM = 500.0
+
+
 def snappe_auf_mittellinie(
     platzierungen: list[Platzierung],
     raum: RaumModell,
@@ -103,9 +107,20 @@ def snappe_auf_mittellinie(
                 achsen[r.id] = (achse, bm, laengs)   # R1: Bestandslinie schlägt Bbox-Mitte
     if not any(a for a, _, _ in achsen.values()):
         return platzierungen
+    # R-C-Nachzug (Fachdoku v2): JEDES RZ, das an einer Tür sitzt (~150 mm raumseitig),
+    # bleibt an der Tür — der Snap auf die Bestandslichtlinie zog das Hauseingang-RZ
+    # sonst aus dem Raum hinaus (v6-Befund: y auf Spot-Reihe AUSSERHALB der Tür,
+    # Rotation kippte mit). Nicht nur QUELLE_TUERLEUCHTE: auch Anker-Exit-RZ.
+    def _an_tuer(p: Platzierung) -> bool:
+        return p.kind == "rz" and any(
+            (t.xy_mm[0] - p.xy_mm[0]) ** 2 + (t.xy_mm[1] - p.xy_mm[1]) ** 2
+            <= _TUER_RZ_SNAP_FREI_MM ** 2
+            for t in raum.tueren
+        )
+
     out: list[Platzierung] = []
     for p in platzierungen:
-        if p.kind not in _KINDS or p.norm_quelle == QUELLE_TUERLEUCHTE:
+        if p.kind not in _KINDS or p.norm_quelle == QUELLE_TUERLEUCHTE or _an_tuer(p):
             out.append(p)
             continue
         korr = next((r for r in korridore if point_in_polygon(p.xy_mm, r.polygon_mm)), None)
