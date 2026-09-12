@@ -7,8 +7,8 @@
   "platzierungen": [
     {
       "xy_mm": [
-        -35749.0,
-        4587.0
+        -35863.29966715009,
+        4684.136945028037
       ],
       "catalog_key": "notlicht_ks_stiege_rechts",
       "rotation_deg": 0.0,
@@ -75,15 +75,15 @@
     },
     {
       "xy_mm": [
-        -71743.0,
-        34491.0
+        -72532.95,
+        34144.15
       ],
-      "catalog_key": "notlicht_ks_stiege_rechts",
-      "rotation_deg": 0.0,
+      "catalog_key": "notlicht_ks_stiege_unten",
+      "rotation_deg": 270.0,
       "mirror_x": false,
       "height_mm": 2400.0,
       "kind": "rz",
-      "richtung": "rechts",
+      "richtung": "unten",
       "circuit_hint": "AGV-A-F13",
       "covers_segment": [
         "seg_stgh_a_2"

@@ -1,6 +1,20 @@
 # Schrack „Not- und Sicherheitsbeleuchtung" — Produktkatalog (k-sibe-at9)
 **Quelle:** elektro-planer knowledge/buecher/k-sibe-at9.pdf (400 S.), via Teil-Digests synthetisiert · **Übernommen:** 2026-08-28
+**Auch im Repo:** `knowledge/sonstiges Wissen Notbeleuchtung/k-sibe-at9.pdf` (identische 400-S.-PDF).
 **Einordnung:** Referenz-Praxis + Hersteller-Produktdaten der Marke, die die Engine rendert (Schrack). Nie alleinige norm_quelle.
+
+> **Re-Verifikation 2026-09-09 (Leonis):** die Repo-Kopie mit 4 Subagenten neu durchgelesen — dieser
+> Digest **bestätigt** (kein Widerspruch): AT-Norm-Kette ÖVE/ÖNORM E 8002-1 + OVE E 8101 + EN 50171/
+> 50172/62034 (autom. Prüfeinrichtung Pflicht), Brandabschnitts-Prinzip LPS(≤1500 W)/CPS + E30-Einsparung,
+> System-Sizing MyControl→MultiControl (Kreise/Leuchten/1h·3h·8h), Einzelbatterie ≤20 SelfControl,
+> **Wartungsfaktor 0,80** in allen Abstandstabellen (deckt sich mit [[session-2026-09-08-lichtberechnung]]),
+> EW-Klassen je Familie (AI15/AM20-22/AX30/…/WX90), Optik-Auswahl (rund→Kreuzung/Antipanik ≤4 m ·
+> Fluroptik→Gang >24 m · Spot/Hochraum ≤16 m). Verifizierte Seiten der Repo-Kopie: E 8002-1 S.272–283 ·
+> EN 62034 S.272/298/306 · EN 50171 S.290 · SelfControl/E 8101 S.3/14 · System S.280–298 · Antipanik S.199.
+> **Engine-Kandidaten** (Enis-/Katalog-Lane, nicht hier hardcoden): EW-Klasse je `catalog_key` →
+> RZ-Dichte [[rz-anzahl-sichtlinie-lzh]]; Optik-Auswahl-Heuristik für `flaechen_strategy`/`deckung`;
+> AT-Norm-Kette als `norm_quelle`; Anlagentyp-Regel (Einzel ≤20 → LPS → CPS) für die Gruppenbatterie-Symbolik.
+> Verwandt: [[din-referenzplan-v25-gelernt]]. (Ein separat begonnener Zweit-Digest wurde als Dublette verworfen.)
 
 ## Relevanz für die Engine
 

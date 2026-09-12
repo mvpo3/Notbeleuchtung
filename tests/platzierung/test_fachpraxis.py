@@ -18,6 +18,8 @@ from notbeleuchtung.platzierung.fachpraxis import (
     TUERLEUCHTE_KEY,
     FachpraxisRegeln,
     aufheller_je_rz,
+    aussen_tuer_rz,
+    pfeil_durch_hauseingang,
     tuerleuchte_pflichtraeume,
 )
 from notbeleuchtung.platzierung.geometry import point_in_polygon
@@ -184,16 +186,20 @@ def _raum_mit_tuer(raum_typ: str, tuer_xy=(5000.0, 0.0), nach="gang") -> RaumMod
 
 @pytest.mark.parametrize("typ", ["TECHNIK", "MUELLRAUM", "KINDERWAGENRAUM"])
 def test_tuerleuchte_ist_rz_an_der_tuer(typ):
-    # Owner-Korrektur 2026-09-08: an der Tür ein RETTUNGSZEICHEN (Pfeil-unten, zur Tür
-    # rotiert) — NICHT mehr eine Antipanik-SL. Kleiner konvexer Raum → nur das RZ.
+    # Owner-Korrektur 2026-09-08 + R-B (Fachdoku v2): an der Tür ein RETTUNGSZEICHEN
+    # (Pfeil-unten, Piktogramm blickt INS Rauminnere) — NICHT mehr eine Antipanik-SL.
     out = tuerleuchte_pflichtraeume(_raum_mit_tuer(typ), FakeNormProvider())
     assert len(out) == 1
     p = out[0]
     assert p.kind == "rz"                    # Rettungszeichen, nicht Sicherheitsleuchte
     assert p.richtung == "unten"
-    assert p.xy_mm == (5000.0, 0.0)          # exakt an der Tür
-    # Tür (5000,0) liegt unter dem Raum-Zentrum (5000,4000) → Pfeil zeigt nach unten (rot 0°).
-    assert p.rotation_deg == 0.0
+    # Owner-Korrektur 2026-09-10 (AutoCAD-Diff L-Demo): das Tür-RZ sitzt nicht mehr exakt
+    # auf der Schwelle, sondern ~150 mm IM bedienten Raum (Richtung Raum-Inneres).
+    assert math.hypot(p.xy_mm[0] - 5000.0, p.xy_mm[1] - 0.0) <= 160.0   # nahe der Tür
+    assert point_in_polygon(p.xy_mm, _RAUM_POLY)                        # leicht im Raum
+    # Tür (5000,0) liegt unter dem Raum-Zentrum (5000,4000) → Piktogramm blickt ins
+    # Rauminnere (nach oben) = unten-Block rot 180 (R-B, kalibriert am Elektroplan-DE-EG).
+    assert p.rotation_deg == 180.0
     assert p.norm_quelle == QUELLE_TUERLEUCHTE
     assert "F13" in p.circuit_hint           # getrennter Sicherheitskreis
     assert p.height_mm >= 2000.0             # EN-1838-Mindesthöhe
@@ -232,7 +238,9 @@ def test_tuerleuchte_bevorzugt_erschliessungs_tuer():
         ],
     )
     out = tuerleuchte_pflichtraeume(rm, FakeNormProvider())
-    assert out[0].xy_mm == (9000.0, 0.0)     # RZ an der Tür zum GANG
+    # RZ an der Tür zum GANG (nach Owner-Korrektur ~150 mm ins Raum-Innere versetzt).
+    assert math.hypot(out[0].xy_mm[0] - 9000.0, out[0].xy_mm[1] - 0.0) <= 160.0
+    assert point_in_polygon(out[0].xy_mm, _RAUM_POLY)
 
 
 def test_grosser_tiefer_raum_bekommt_mittige_antipanik():
@@ -275,3 +283,234 @@ def test_verwinkelter_kleiner_raum_bekommt_mittigen_aufheller():
     assert out[0].kind == "rz"
     assert out[1].kind == "sicherheitsleuchte"
     assert out[1].catalog_key == AUFHELLER_KEY
+
+
+# ── R3: communal ABSTELLRAUM (Fahrradraum) — Owner-Korrektur 2026-09-11 ─────────
+def test_tuerleuchte_communal_abstellraum():
+    """AutoCAD-Diff Elektroplan DE („Hier hast du es Vergessen" am Fahrradraum):
+    der GEMEINSAME Abstellraum (ist_communal=True) bekommt das Tür-RZ wie
+    TECHNIK/MUELLRAUM; der private Wohnungs-Abstellraum bleibt draußen."""
+    m = _raum_mit_tuer("ABSTELLRAUM")
+    communal = m.model_copy(update={"raeume": [
+        m.raeume[0].model_copy(update={"ist_communal": True}), m.raeume[1]]})
+    out = tuerleuchte_pflichtraeume(communal, FakeNormProvider())
+    assert len(out) == 1
+    assert out[0].kind == "rz"
+    assert out[0].norm_quelle == QUELLE_TUERLEUCHTE
+    # privater Abstellraum unveraendert ohne Tuer-RZ (Owner-Entscheid 2026-09-07):
+    assert tuerleuchte_pflichtraeume(m, FakeNormProvider()) == []
+
+
+# ── R2: communal Raum + AUSSEN-Tür = Notausgang-RZ — Owner-Korrektur 2026-09-11 ─
+def _raum_mit_aussentuer(communal=True, ausgaenge=(), detail=None):
+    tuer = Tuer(id="d1", xy_mm=(5000.0, 0.0), von_raum="m1", nach_raum="AUSSEN",
+                tuer_detail=detail)
+    return RaumModell(
+        floor="EG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 8000.0)),
+        raeume=[Raum(id="m1", raum_typ="MUELLRAUM", polygon_mm=_RAUM_POLY,
+                     ist_communal=communal)],
+        tueren=[tuer], ausgaenge=list(ausgaenge),
+    )
+
+
+def test_exit_jenseits_der_tuer_fluchtachse_zeigt_raus():
+    """v8-Befund Hauseingang (Elektroplan DE): der Tür-Block-Insert (WET) liegt
+    ~250 mm INNEN, der Exit-Punkt auf der Schwelle — „tuer − exit" zeigte damit
+    ZURÜCK in den Gang, das Exit-RZ rutschte nach draußen und blickte nach außen
+    (rot 180 statt 0). Die Vorzeichen-Härtung spiegelt die Fluchtachse am Anlauf:
+    RZ sitzt raumseitig (südlich), Piktogramm blickt ins Rauminnere (rot 0)."""
+    from notbeleuchtung.hauptengine.contracts import (
+        Ausgang,
+        BBox,
+        FluchtwegSegment,
+        RaumModell,
+        Tuer,
+    )
+    from notbeleuchtung.hauptengine.contracts import Raum as _Raum
+    from notbeleuchtung.platzierung.communal_stgh_strategy import plan_rettungszeichen
+
+    rm = RaumModell(
+        floor="EG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 8000.0)),
+        raeume=[_Raum(id="gang", raum_typ="GANG", ist_fluchtweg=True, ist_communal=True,
+                      polygon_mm=[(0.0, 0.0), (10000.0, 0.0), (10000.0, 5000.0), (0.0, 5000.0)])],
+        # Tür-Insert 250 mm INNEN (südlich) des Exits auf der Nordwand:
+        tueren=[Tuer(id="he", xy_mm=(5000.0, 4750.0), von_raum="gang", nach_raum="AUSSEN",
+                     ist_notausgang=True, tuer_detail="hauseingang")],
+        ausgaenge=[Ausgang(id="E", xy_mm=(5000.0, 5000.0), typ="final_exit")],
+        zirkulation={"nodes": [], "edges": [], "segmente": [
+            FluchtwegSegment(segment_id="s1", reason="exit", ziel_ausgang="E",
+                             polyline_mm=[(5000.0, 1000.0), (5000.0, 5000.0)])]},
+    )
+    rz = [p for p in plan_rettungszeichen(rm, FakeNormProvider())
+          if math.hypot(p.xy_mm[0] - 5000.0, p.xy_mm[1] - 5000.0) < 1000.0]
+    assert len(rz) == 1
+    assert rz[0].xy_mm[1] < 5000.0          # raumseitig (südlich), NICHT draußen
+    assert rz[0].rotation_deg == 0.0        # Blick ins Rauminnere (−y)
+
+
+def test_phantom_durchgang_ist_keine_tuer():
+    """Owner-Befund 2026-09-12 („dort gibt es aber keine Tür, dort ist eine Wand"):
+    die Erkennung lieferte die Wand Müllraum↔Gang als 6064-mm-GEOMETRIE_OEFFNUNG-
+    „Durchgang" — das Tür-RZ hing an der Wand. Öffnungen jenseits jedes Türmaßes
+    (> 1300 mm, Selmans Nennmaßbereich 60–130 cm) sind keine Türen: das RZ gehört
+    an die echte 900er-Tür."""
+    from notbeleuchtung.hauptengine.contracts import Tuer
+
+    raum = _raum_mit_tuer("MUELLRAUM")
+    echte = raum.tueren[0]                               # 900er an (5000, 0)
+    raum.tueren.insert(0, Tuer(id="phantom", xy_mm=(9900.0, 4000.0),
+                               von_raum="r1", nach_raum="gang",
+                               breite_mm=6064.0, ohne_tuerblatt=True))
+    raum.raeume.append(Raum(id="gang", raum_typ="GANG",
+                            polygon_mm=[(10000.0, 0.0), (12000.0, 0.0),
+                                        (12000.0, 8000.0), (10000.0, 8000.0)],
+                            ist_fluchtweg=True, ist_communal=True))
+    out = tuerleuchte_pflichtraeume(raum, FakeNormProvider())
+    rz = [p for p in out if p.kind == "rz"]
+    assert len(rz) == 1
+    d = math.hypot(rz[0].xy_mm[0] - echte.xy_mm[0], rz[0].xy_mm[1] - echte.xy_mm[1])
+    assert d <= 200.0, f"RZ hängt {d:.0f} mm von der echten Tür (an der Phantom-Wand?)"
+
+
+def test_aussen_tuer_rz_am_muellraum_ausgang():
+    """„Hier ist der Ausgang vom Müllraum": AUSSEN-Tür eines communal Raums traegt
+    ein RZ (EN 1838 §4.1.2 g) — Piktogramm blickt ins Rauminnere (R-B), ~150 mm im Raum."""
+    out = aussen_tuer_rz(_raum_mit_aussentuer(), FakeNormProvider())
+    assert len(out) == 1
+    p = out[0]
+    assert p.kind == "rz"
+    assert p.richtung == "unten"
+    # Zentrum (5000,4000) → Tür (5000,0): Piktogramm blickt zurück ins Rauminnere
+    # (nach oben) = rot 180 (R-B; Ground truth Müllraum-Südtür ~180°).
+    assert p.rotation_deg == 180.0
+    assert p.xy_mm[0] == pytest.approx(5000.0, abs=1.0)
+    assert p.xy_mm[1] == pytest.approx(150.0, abs=1.0)   # 150 mm im Raum-Inneren
+    assert p.norm_quelle != QUELLE_TUERLEUCHTE           # echte Norm-Quelle (§4.1.2 g)
+
+
+def test_aussen_tuer_rz_nicht_fuer_private_balkontuer():
+    assert aussen_tuer_rz(_raum_mit_aussentuer(communal=False), FakeNormProvider()) == []
+
+
+def test_aussen_tuer_rz_skip_bei_nahem_ausgang_und_hauseingang():
+    # Modellierter Ausgang ≤2 m an der Tür → Anker-Pfad zeichnet, keine Dublette.
+    nah = _raum_mit_aussentuer(ausgaenge=[Ausgang(id="E", xy_mm=(5000.0, 0.0), typ="final_exit")])
+    assert aussen_tuer_rz(nah, FakeNormProvider()) == []
+    # Hauseingang ist R4-Domäne (Anker-Exit-RZ), nicht R2.
+    assert aussen_tuer_rz(_raum_mit_aussentuer(detail="hauseingang"), FakeNormProvider()) == []
+
+
+# ── R4: Hauseingang-Pfeil = Fluchtrichtung — Owner-Korrektur 2026-09-11 ─────────
+def test_pfeil_durch_hauseingang_zeigt_zum_ausgang():
+    """R4 + R-B (Fachdoku v2): RZ nahe der hauseingang-Tür wird auf die allgemeine
+    Türregel rotiert — Piktogramm blickt ins Rauminnere (Gegenrichtung der
+    Fluchtachse zum modellierten Ausgang), nie in die Aufschlagrichtung."""
+    rm = RaumModell(
+        floor="EG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 8000.0)),
+        raeume=[Raum(id="g", raum_typ="GANG", polygon_mm=_RAUM_POLY, ist_fluchtweg=True)],
+        tueren=[Tuer(id="he", xy_mm=(5000.0, 5000.0), von_raum="g", nach_raum="AUSSEN",
+                     tuer_detail="hauseingang", ist_notausgang=True)],
+        ausgaenge=[Ausgang(id="E", xy_mm=(5000.0, 6000.0), typ="final_exit")],
+    )
+    falsch = _rz(xy=(5000.0, 4600.0), key="notlicht_ks_stiege", rot=90.0)
+    falsch = falsch.model_copy(update={"richtung": "unten"})
+    out = pfeil_durch_hauseingang([falsch], rm)
+    # Ausgang liegt noerdlich (Fluchtachse +y) → Piktogramm blickt ins Rauminnere
+    # (nach unten) = rot 0 (R-B, allgemeine Türregel gilt auch am Hauseingang).
+    assert out[0].rotation_deg == 0.0
+    # RZ weit weg von der Tür bleibt unveraendert:
+    fern = falsch.model_copy(update={"xy_mm": (500.0, 500.0), "rotation_deg": 90.0})
+    assert pfeil_durch_hauseingang([fern], rm)[0].rotation_deg == 90.0
+
+
+# ── R5: communal Nebenraum generalisiert (Spielraum) — Owner 2026-09-11 Runde 2 ─
+def test_tuerleuchte_communal_zimmer_spielraum():
+    """„Im Spielraum gehört auch eine Notleuchte": JEDER communal Nebenraum
+    (hier ZIMMER/Spielraum) bekommt das Tür-RZ; privates ZIMMER nicht."""
+    m = _raum_mit_tuer("ZIMMER")
+    communal = m.model_copy(update={"raeume": [
+        m.raeume[0].model_copy(update={"ist_communal": True}), m.raeume[1]]})
+    out = tuerleuchte_pflichtraeume(communal, FakeNormProvider())
+    assert len(out) == 1
+    assert out[0].kind == "rz"
+    assert tuerleuchte_pflichtraeume(m, FakeNormProvider()) == []
+
+
+def test_tuerleuchte_nicht_fuer_communal_erschliessung():
+    """Erschließungs-/Vorraum-Flächen sind ausgenommen — die Erkennung flaggt
+    private Wohnungs-Vorräume real mit communal=True (Elektroplan DE)."""
+    for typ in ("VORRAUM", "GANG", "STIEGENHAUS", "BALKON"):
+        m = _raum_mit_tuer(typ)
+        communal = m.model_copy(update={"raeume": [
+            m.raeume[0].model_copy(update={"ist_communal": True}), m.raeume[1]]})
+        assert tuerleuchte_pflichtraeume(communal, FakeNormProvider()) == [], typ
+
+
+# ── R7: kein RZ im Wohnungs-Vorraum an der Stiege — Owner 2026-09-11 Runde 2 ────
+from notbeleuchtung.platzierung.fachpraxis import (
+    entferne_wohnungs_vorraum_rz,
+    stiegenhaus_rz_nachpass,
+)
+
+
+def _raum_wohnungs_vorraum():
+    vr_poly = [(0.0, 0.0), (2000.0, 0.0), (2000.0, 1400.0), (0.0, 1400.0)]  # 2,8 m²
+    return RaumModell(
+        floor="1OG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 8000.0)),
+        raeume=[
+            Raum(id="vr", raum_typ="GANG", polygon_mm=vr_poly, flaeche_m2=2.8,
+                 ist_fluchtweg=True, ist_communal=True),
+            Raum(id="wz", raum_typ="WOHNZIMMER",
+                 polygon_mm=[(0.0, 1400.0), (2000.0, 1400.0), (2000.0, 5000.0), (0.0, 5000.0)]),
+            Raum(id="stgh", raum_typ="STIEGENHAUS", ist_communal=True,
+                 polygon_mm=[(2000.0, 0.0), (5000.0, 0.0), (5000.0, 3000.0), (2000.0, 3000.0)]),
+        ],
+        tueren=[
+            Tuer(id="t-wz", xy_mm=(1000.0, 1400.0), von_raum="vr", nach_raum="wz"),
+            Tuer(id="t-stgh", xy_mm=(2000.0, 700.0), von_raum="vr", nach_raum="stgh"),
+        ],
+    )
+
+
+def test_wohnungs_vorraum_rz_wird_entfernt():
+    """„RZ NICHT in der Wohnung": kleiner Stiegen-Vorraum, übrige Türen privat →
+    Segment-RZ darin fliegt; Tür-RZ der Pflichträume bliebe."""
+    rm = _raum_wohnungs_vorraum()
+    drin = _rz(xy=(1000.0, 700.0)).model_copy(update={"richtung": "unten"})
+    assert entferne_wohnungs_vorraum_rz([drin], rm) == []
+    tuer_rz = drin.model_copy(update={"norm_quelle": QUELLE_TUERLEUCHTE})
+    assert entferne_wohnungs_vorraum_rz([tuer_rz], rm) == [tuer_rz]
+
+
+def test_wohnungs_vorraum_mit_communal_anbindung_bleibt():
+    """Grenzt der kleine GANG zusätzlich an eine COMMUNAL Fläche (echter
+    Erschließungs-Knoten), bleibt sein RZ."""
+    rm = _raum_wohnungs_vorraum()
+    raeume = [r.model_copy(update={"ist_communal": True}) if r.id == "wz" else r
+              for r in rm.raeume]
+    rm2 = rm.model_copy(update={"raeume": raeume})
+    drin = _rz(xy=(1000.0, 700.0))
+    assert entferne_wohnungs_vorraum_rz([drin], rm2) == [drin]
+
+
+# ── R8: Stiegenhaus-RZ an die Wand, Richtung Abstieg — Owner 2026-09-11 Runde 2 ─
+def test_stiegenhaus_rz_wandert_ins_stiegenhaus():
+    """„RZ im Stiegenhaus … zeigt in die Richtung wie man in den Erdgeschoß kommt":
+    das unten-RZ am stair_exit wird INS Stiegenhaus versetzt, Pfeil Richtung
+    Stiegen-Zentrum (Abstieg)."""
+    stgh_poly = [(2000.0, 0.0), (5000.0, 0.0), (5000.0, 3000.0), (2000.0, 3000.0)]
+    rm = RaumModell(
+        floor="1OG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 8000.0)),
+        raeume=[Raum(id="stgh", raum_typ="STIEGENHAUS", polygon_mm=stgh_poly,
+                     ist_communal=True)],
+        ausgaenge=[Ausgang(id="X", xy_mm=(2000.0, 1500.0), typ="stair_exit")],
+    )
+    rz = _rz(xy=(1900.0, 1500.0), key="notlicht_ks_stiege", rot=270.0)
+    rz = rz.model_copy(update={"richtung": "unten"})
+    out = stiegenhaus_rz_nachpass([rz], rm)
+    assert point_in_polygon(out[0].xy_mm, stgh_poly)      # IM Stiegenhaus
+    # Exit (2000,1500) → Zentrum (3500,1500): Richtung +x → unten-Block rot 90.
+    assert out[0].rotation_deg == 90.0
+    # RZ fern vom stair_exit bleibt unangetastet:
+    fern = rz.model_copy(update={"xy_mm": (9000.0, 7000.0)})
+    assert stiegenhaus_rz_nachpass([fern], rm)[0].xy_mm == (9000.0, 7000.0)

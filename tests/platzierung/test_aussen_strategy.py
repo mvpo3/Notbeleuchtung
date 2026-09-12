@@ -35,6 +35,37 @@ def test_final_exit_bekommt_aussenleuchte():
     assert d <= 2000.0
 
 
+def test_aussenleuchte_bleibt_auf_der_tuerachse():
+    # Owner-Korrektur Elektroplan DE (Handoff 2026-09-11): Tür außermittig in der
+    # Südwand → der alte Zentrums-Strahl schob die Leuchte ~830 mm seitlich neben
+    # die Türachse. Mit Wandkanten-Normale bleibt x = Türachse, y geht auswärts.
+    from notbeleuchtung.hauptengine.contracts import Raum
+
+    basis = _raum([])
+    (min_x, min_y), (max_x, _max_y) = _bounds(basis)
+    tuer_x = min_x + (max_x - min_x) * 0.9          # deutlich außermittig
+    ex = (tuer_x, min_y)                            # Schlussausgang in der Südwand
+    raum = _raum([{"id": "ex1", "xy_mm": list(ex), "typ": "final_exit"}])
+    raum.raeume.append(Raum(id="r_eingang", raum_typ="GANG", polygon_mm=[
+        (min_x, min_y), (max_x, min_y), (max_x, min_y + 4000.0), (min_x, min_y + 4000.0),
+    ]))
+    p = plan_aussenleuchten(raum, FakeNormProvider())[0]
+    assert abs(p.xy_mm[0] - tuer_x) < 1.0           # Türachse gehalten (kein Drift)
+    assert abs(p.xy_mm[1] - (min_y - 1000.0)) < 1.0  # 1 m auswärts, senkrecht zur Wand
+
+
+def test_aussenleuchte_faellt_ohne_wandkante_auf_zentrums_strahl_zurueck():
+    # Ohne Polygonkante in Türnähe (Fakes, magere Erkennung) bleibt das alte
+    # Verhalten: auswärts entlang des Strahls von der Gebäudemitte.
+    basis = _raum([])
+    (min_x, min_y), (_max_x, max_y) = _bounds(basis)
+    ex = (min_x, (min_y + max_y) / 2.0)
+    raum = _raum([{"id": "ex1", "xy_mm": list(ex), "typ": "final_exit"}])
+    raum.raeume = []                                # garantiert keine Kante
+    p = plan_aussenleuchten(raum, FakeNormProvider())[0]
+    assert p.xy_mm[0] < min_x
+
+
 def test_stair_exit_loest_nichts_aus():
     raum = _raum([{"id": "s1", "xy_mm": [0.0, 500.0], "typ": "stair_exit"}])
     assert plan_aussenleuchten(raum, FakeNormProvider()) == []
@@ -51,9 +82,10 @@ def test_place_integriert_aussenleuchte():
 
 
 def test_ausgangs_rz_pfeil_zeigt_zur_tuer():
-    # Owner-Korrektur (H-Gebäude-DXF 2026-09-05): am Ausgang hängt IMMER das
-    # Pfeil-unten-Zeichen, rotiert, sodass der Pfeil ZUR TÜR zeigt. Referenzfall:
-    # Stiegenhaus-Tür OBERHALB des Gangs → Block um 180° gedreht (Pfeil nach oben).
+    # Owner-Korrektur 2026-09-05 + R-B (Fachdoku v2): am Ausgang hängt IMMER das
+    # Pfeil-unten-Zeichen, rotiert, sodass das PIKTOGRAMM ins Rauminnere blickt
+    # (Gegenrichtung der Fluchtachse). Referenzfall: Stiegenhaus-Tür OBERHALB des
+    # Gangs, Anlauf von unten → Blick nach unten = rot 0.
     from notbeleuchtung.hauptengine.contracts import Edge, Node, Tuer, ZirkulationsGraph
     from notbeleuchtung.platzierung.anker_strategy import plan_rettungszeichen_anker
 
@@ -69,9 +101,10 @@ def test_ausgangs_rz_pfeil_zeigt_zur_tuer():
                Edge(**{"from": "g0", "to": "g1", "len_mm": 3000}),
                Edge(**{"from": "g2", "to": "g1", "len_mm": 4000})],
     )
+    # R-C: das Tür-RZ sitzt 150 mm raumseitig der Schwelle → per Nähe matchen.
     rz = [p for p in plan_rettungszeichen_anker(raum, FakeNormProvider())
-          if p.xy_mm == (1000.0, 5000.0)]
+          if ((p.xy_mm[0] - 1000.0) ** 2 + (p.xy_mm[1] - 5000.0) ** 2) ** 0.5 <= 200.0]
     assert len(rz) == 1
     # Tür liegt OBERHALB (Anlauf von unten) → unten-Block um 180° = Pfeil nach oben.
     assert rz[0].richtung == "unten"
-    assert abs(rz[0].rotation_deg - 180.0) < 1.0
+    assert abs(rz[0].rotation_deg - 0.0) < 1.0

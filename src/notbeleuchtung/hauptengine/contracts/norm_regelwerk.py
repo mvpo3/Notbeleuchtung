@@ -13,7 +13,7 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-CONTRACT_VERSION = "1.2.0"
+CONTRACT_VERSION = "1.4.0"
 
 Klassifikation = Literal["rz", "antipanik", "sicherheitsleuchte"]
 
@@ -36,6 +36,16 @@ class NormAnforderung(BaseModel):
     umschaltzeit_max_s: float | None = None      # Umschaltzeit auf SV, Vollwert (100 % in 60 s);
     #   die Norm ist zweistufig (§4.2.6/§4.3.6: 50 % in 5 s) — der 5-s-Halbwert liegt als
     #   `umschaltzeit.halbwert_s` in normwissen/data, nicht in diesem Skalar.
+    # v1.3.0 (F09/W07) — Wartungsfaktor (Maintenance Factor): die Norm-Lux sind MAINTAINED
+    #   values, also ist zur Planung durch den MF zu teilen (Alterung/Verschmutzung). Der
+    #   SPEZIFISCHE Wert ist Fachpraxis (0,80 innen / 0,57 außen, s. knowledge/extracted/
+    #   LICHTBERECHNUNG_REFERENZ.md) — NICHT in EN 1838 beziffert. None = kein MF → Konsument
+    #   rechnet mit 1,0 (inert). Konsum: platzierung.lux.wartungsfaktor_aus_norm.
+    wartungsfaktor: float | None = None
+    # v1.4.0 (F13/W01) — obere Montagehöhen-Schranke für Rettungszeichen: oberhalb wird die
+    #   Erkennbarkeit (l=z·h, EN 1838 §5.5) fraglich. Real bis 10,8 m gebaut (Barawitzka),
+    #   daher WEICHE Warnung, kein Hard-Stop. [AT-Referenzpraxis]. None = keine Schranke.
+    montagehoehe_max_mm: int | None = None
     quelle: str = ""                     # "ÖNORM EN 1838:2013 §4.2.1" — rückverfolgbar
 
 

@@ -35,8 +35,11 @@ FLOORS = ("eg", "1og", "dg")
 # RZ-Band-Obergrenze am 08.09.2026 von 6 auf 8 angehoben (Owner-Korrektur der
 # Türleuchten-Regel): TECHNIK/MUELLRAUM/KINDERWAGENRAUM tragen an der Tür jetzt ein
 # RETTUNGSZEICHEN statt einer Sicherheitsleuchte → EG (3 solche Räume) rz 4→7, sl −3.
-RZ_BAND = (3, 8)
-SL_BAND = {"eg": (3, 8), "1og": (5, 10), "dg": (5, 10)}
+RZ_BAND = (3, 9)   # Punkt 2: EG trägt 8×unten + 1×links (s.u.)
+# Punkt 2 (Owner 2026-09-12, Kellerabteil-Regel „gilt überall"): der EG-Gang hat
+# 3 Abteil-Türen (TECHNIK/MUELLRAUM/KINDERWAGENRAUM) → 2 Verlaufs-RZ in den
+# Tür-Lücken + 1 Folge-Aufheller. Bänder begründet nachgezogen (eg SL 8→9).
+SL_BAND = {"eg": (3, 9), "1og": (5, 10), "dg": (5, 10)}
 
 
 @pytest.fixture(autouse=True)
@@ -94,10 +97,14 @@ def test_eg_rz_muster_und_aussenleuchte(tmp_path):
     """Die abgenommenen EG-Eigenschaften: RZ-Richtungsmuster + Außenleuchte §4.1.2 b
     vor dem final_exit. Seit der Türleuchten-Korrektur (Owner 08.09.2026) tragen die
     3 Pflichträume (TECHNIK/MUELLRAUM/KINDERWAGENRAUM) je ein unten-RZ an der Tür →
-    6×unten (3 wie v8 + 3 Tür-RZ) + 1×links."""
+    6×unten. Seit Punkt 2 (Kellerabteil-Regel, Owner 2026-09-12) kommen 2
+    Verlaufs-RZ in den Lücken der 3 Abteil-Türen dazu (Tür-RZ hängen IM Abteil
+    und tragen die Gang-Kette nicht) → 8×unten; und der links-Verlaufs-RZ, den
+    die Sichtkette (S3) im türfreien Modell entfernt hatte, bleibt MIT
+    Türaufschlag-Barrieren zu Recht in der Kette → 1×links."""
     raum, erg, _pruef, _summary, _out = _lauf("eg", tmp_path)
     rz_keys = sorted(p.catalog_key for p in erg.platzierungen if p.kind == "rz")
-    assert rz_keys.count("notlicht_ks_stiege_unten") == 6
+    assert rz_keys.count("notlicht_ks_stiege_unten") == 8
     assert rz_keys.count("notlicht_ks_stiege_links") == 1
     (exit_,) = [a for a in raum.ausgaenge if a.typ == "final_exit"]
     sl = [p for p in erg.platzierungen if p.kind == "sicherheitsleuchte"]

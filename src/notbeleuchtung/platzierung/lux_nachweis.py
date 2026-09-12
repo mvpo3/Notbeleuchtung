@@ -29,7 +29,7 @@ from notbeleuchtung.hauptengine.contracts import (
 
 from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
 from .geometry import _bbox, point_in_polygon
-from .lux import lux_punkte, ud_min_aus_norm
+from .lux import lux_punkte, ud_min_aus_norm, wartungsfaktor_aus_norm
 from .mittellinie import mittellinie
 
 _NACHWEIS_RASTER_MM = 250.0
@@ -102,7 +102,7 @@ def nachweis_fluchtweg(
         h_m = anf.montagehoehe_mm / 1000.0
         ud_min = ud_min_aus_norm(anf.gleichmaessigkeit_max)
         ziel = anf.min_lux or 1.0
-        wf = getattr(anf, "wartungsfaktor", None) or 1.0
+        wf = wartungsfaktor_aus_norm(anf)
 
         drin = [(x, y, az) for (x, y, az) in sl if point_in_polygon((x, y), r.polygon_mm)]
         bounds = _bbox(r.polygon_mm)
