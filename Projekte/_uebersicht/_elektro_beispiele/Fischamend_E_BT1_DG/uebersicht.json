@@ -1,0 +1,129 @@
+{
+  "plan": "Fischamend_E_BT1_DG",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\BVH Fischamenderstraße\\fertige Elektromontagepläne\\BT1\\Elektromontageapläne_DACHGESCHOSS BT1.dxf",
+  "floor": "EG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    1800,
+    1051
+  ],
+  "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
+  "kategorien": {
+    "wohnen": 18,
+    "aussen": 5,
+    "sanitaer": 6,
+    "gang": 8,
+    "untypisiert": 6,
+    "stiege": 1,
+    "schacht": 1,
+    "hof": 0,
+    "ueberlappung": 7,
+    "segmente": 39,
+    "stair_exit": 1,
+    "final_exit": 1
+  },
+  "raeume_gesamt": 45,
+  "raeume_typisiert": 39,
+  "raum_typen": {
+    "WOHNZIMMER": 5,
+    "TERRASSE": 5,
+    "KÜCHE": 8,
+    "ZIMMER": 5,
+    "BAD": 6,
+    "VORRAUM": 6,
+    "STIEGENHAUS": 1,
+    "GANG": 2,
+    "LIFT": 1
+  },
+  "wohnungen": {
+    "anzahl": 2,
+    "raeume_je_wohnung": {
+      "top_1": 20,
+      "top_2": 5
+    },
+    "ohne_wohnung": 20
+  },
+  "innenhoefe_m2": [],
+  "ausgaenge": [
+    {
+      "id": "exit_tuer_25",
+      "typ": "stair_exit",
+      "xy_mm": [
+        18927.66824848519,
+        80212.99843211172
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_1",
+      "typ": "final_exit",
+      "xy_mm": [
+        21072.668248485305,
+        87837.57869241903
+      ]
+    }
+  ],
+  "stiegenhaeuser": [
+    "raum_33"
+  ],
+  "ueberlappungen": [
+    {
+      "raum_id": "raum_2",
+      "raum_typ": "WOHNZIMMER",
+      "in_raum_id": "raum_39",
+      "in_raum_typ": "WOHNZIMMER",
+      "anteil_prozent": 99.7
+    },
+    {
+      "raum_id": "raum_4",
+      "raum_typ": "KÜCHE",
+      "in_raum_id": "raum_40",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 95.9
+    },
+    {
+      "raum_id": "raum_6",
+      "raum_typ": "KÜCHE",
+      "in_raum_id": "raum_39",
+      "in_raum_typ": "WOHNZIMMER",
+      "anteil_prozent": 99.2
+    },
+    {
+      "raum_id": "raum_19",
+      "raum_typ": "VORRAUM",
+      "in_raum_id": "raum_39",
+      "in_raum_typ": "WOHNZIMMER",
+      "anteil_prozent": 93.7
+    },
+    {
+      "raum_id": "raum_28",
+      "raum_typ": "KÜCHE",
+      "in_raum_id": "raum_41",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 98.3
+    },
+    {
+      "raum_id": "raum_31",
+      "raum_typ": "VORRAUM",
+      "in_raum_id": "raum_41",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 98.0
+    },
+    {
+      "raum_id": "lift_1",
+      "raum_typ": "LIFT",
+      "in_raum_id": "raum_27",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    }
+  ],
+  "tueren_gesamt": 147,
+  "laufzeit_s": 33.4,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 6** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "Innenhöfe: **0** — `provider.letzte_aussenbereiche.geschlossen` ist leer (oder es gab keine Wandkörper-Analyse).",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

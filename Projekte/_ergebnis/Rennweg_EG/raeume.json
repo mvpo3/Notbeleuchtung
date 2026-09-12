@@ -27,7 +27,12 @@
       "abweichung_prozent": null,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": "KÜCHE",
+      "polygon_roh": [],
+      "flaeche_roh": 45.604617,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
     },
     {
       "id": "raum_2",
@@ -72,7 +77,12 @@
       "abweichung_prozent": null,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": "ABSTELLRAUM",
+      "polygon_roh": [],
+      "flaeche_roh": 5.0874485,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
     },
     {
       "id": "raum_3",
@@ -117,7 +127,12 @@
       "abweichung_prozent": null,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": "BAD",
+      "polygon_roh": [],
+      "flaeche_roh": 5.098424,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
     },
     {
       "id": "raum_4",
@@ -146,7 +161,12 @@
       "abweichung_prozent": null,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": "ZIMMER",
+      "polygon_roh": [],
+      "flaeche_roh": 11.0655995,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
     },
     {
       "id": "raum_5",
@@ -175,13 +195,51 @@
       "abweichung_prozent": null,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": "GARAGE",
+      "polygon_roh": [],
+      "flaeche_roh": 36.53351875,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
     },
     {
       "id": "raum_6",
       "typ": "VORRAUM",
       "name": "VR",
       "polygon_mm": [
+        [
+          11821111.08425281,
+          355045679.8556739
+        ],
+        [
+          11812125.34792476,
+          355049561.5444833
+        ],
+        [
+          11812977.41427326,
+          355051533.9961448
+        ],
+        [
+          11820035.486326823,
+          355048485.02627677
+        ],
+        [
+          11820035.48254725,
+          355048485.0175274
+        ],
+        [
+          11821963.146821737,
+          355047652.298586
+        ]
+      ],
+      "flaeche_stempel": null,
+      "flaeche_berechnet": 21.031366946533822,
+      "abweichung_prozent": null,
+      "flag": "ok",
+      "quelle": "L",
+      "stempel_quelle": "Attribut",
+      "raum_typ": "VORRAUM",
+      "polygon_roh": [
         [
           11812977.41427326,
           355051533.9961448
@@ -199,12 +257,15 @@
           355047652.3073354
         ]
       ],
-      "flaeche_stempel": null,
-      "flaeche_berechnet": 21.031387,
-      "abweichung_prozent": null,
-      "flag": "ok",
-      "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "flaeche_roh": 21.031386959609044,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": [
+        {
+          "regel": "SCHWERPUNKT",
+          "gegenspieler": "raum_7",
+          "flaeche_m2": 2.0013075221329927e-05
+        }
+      ]
     },
     {
       "id": "raum_7",
@@ -233,7 +294,12 @@
       "abweichung_prozent": null,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": "STIEGENHAUS",
+      "polygon_roh": [],
+      "flaeche_roh": 6.72020825,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
     },
     {
       "id": "raum_8",
@@ -262,7 +328,12 @@
       "abweichung_prozent": null,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": "TERRASSE",
+      "polygon_roh": [],
+      "flaeche_roh": 17.055341,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
     },
     {
       "id": "raum_9",
@@ -291,7 +362,12 @@
       "abweichung_prozent": null,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": null,
+      "polygon_roh": [],
+      "flaeche_roh": 3.9799405,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
     },
     {
       "id": "raum_10",
@@ -320,7 +396,12 @@
       "abweichung_prozent": 0.01,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": null,
+      "polygon_roh": [],
+      "flaeche_roh": 29.1127255,
+      "abweichung_bereinigt_prozent": 0.01,
+      "bereinigung": []
     },
     {
       "id": "raum_11",
@@ -349,7 +430,12 @@
       "abweichung_prozent": -0.0,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": "KÜCHE",
+      "polygon_roh": [],
+      "flaeche_roh": 9.26989275,
+      "abweichung_bereinigt_prozent": -0.0,
+      "bereinigung": []
     },
     {
       "id": "raum_12",
@@ -434,7 +520,12 @@
       "abweichung_prozent": -0.0,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": null,
+      "polygon_roh": [],
+      "flaeche_roh": 111.02993925,
+      "abweichung_bereinigt_prozent": -0.0,
+      "bereinigung": []
     },
     {
       "id": "raum_13",
@@ -503,7 +594,12 @@
       "abweichung_prozent": -0.03,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": "MUELLRAUM",
+      "polygon_roh": [],
+      "flaeche_roh": 12.91552025,
+      "abweichung_bereinigt_prozent": -0.03,
+      "bereinigung": []
     },
     {
       "id": "raum_14",
@@ -532,7 +628,12 @@
       "abweichung_prozent": -0.04,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": "STIEGENHAUS",
+      "polygon_roh": [],
+      "flaeche_roh": 10.88610825,
+      "abweichung_bereinigt_prozent": -0.04,
+      "bereinigung": []
     },
     {
       "id": "raum_15",
@@ -569,7 +670,12 @@
       "abweichung_prozent": -0.04,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": "STIEGENHAUS",
+      "polygon_roh": [],
+      "flaeche_roh": 12.125018,
+      "abweichung_bereinigt_prozent": -0.04,
+      "bereinigung": []
     },
     {
       "id": "raum_16",
@@ -610,7 +716,12 @@
       "abweichung_prozent": 0.0,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": "GANG",
+      "polygon_roh": [],
+      "flaeche_roh": 7.36016625,
+      "abweichung_bereinigt_prozent": 0.0,
+      "bereinigung": []
     },
     {
       "id": "raum_17",
@@ -639,7 +750,12 @@
       "abweichung_prozent": 0.01,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": "TERRASSE",
+      "polygon_roh": [],
+      "flaeche_roh": 29.572033,
+      "abweichung_bereinigt_prozent": 0.01,
+      "bereinigung": []
     },
     {
       "id": "raum_18",
@@ -668,7 +784,12 @@
       "abweichung_prozent": null,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": null,
+      "polygon_roh": [],
+      "flaeche_roh": 5.50148425,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
     },
     {
       "id": "raum_19",
@@ -697,7 +818,12 @@
       "abweichung_prozent": null,
       "flag": "ok",
       "quelle": "L",
-      "stempel_quelle": "Attribut"
+      "stempel_quelle": "Attribut",
+      "raum_typ": null,
+      "polygon_roh": [],
+      "flaeche_roh": 14.0603085,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
     },
     {
       "id": "rest_1",
@@ -1230,7 +1356,12 @@
       "abweichung_prozent": null,
       "flag": "kein_stempel",
       "quelle": "R",
-      "stempel_quelle": null
+      "stempel_quelle": null,
+      "raum_typ": "STIEGENHAUS",
+      "polygon_roh": [],
+      "flaeche_roh": 9.90213708953799,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
     },
     {
       "id": "rest_2",
@@ -1483,9 +1614,15 @@
       "abweichung_prozent": null,
       "flag": "kein_stempel",
       "quelle": "R",
-      "stempel_quelle": null
+      "stempel_quelle": null,
+      "raum_typ": "STIEGENHAUS",
+      "polygon_roh": [],
+      "flaeche_roh": 2.70239064576869,
+      "abweichung_bereinigt_prozent": null,
+      "bereinigung": []
     }
   ],
+  "entfallen": [],
   "wandkoerper": [
     {
       "material": "UNBEKANNT",

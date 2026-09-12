@@ -4,22 +4,24 @@ Raum-Polygon-Quelle: `kaskade L:10 H:0 F:0 R:4` — Rotation: keine dominante Ka
 
 ## Räume
 
-| Quelle | Name | Typ | m² Stempel | m² berechnet | Abw. % | Flag |
-|---|---|---|--:|--:|--:|---|
-| L | Wohnküche | KÜCHE | 38.35 | 38.35 | +0.0 | ok |
-| L | Hobbyraum/Fitness | ZIMMER | 45.36 | 45.36 | -0.0 | ok |
-| L | Zimmer | ZIMMER | 20.25 | 20.25 | -0.0 | ok |
-| L | Zimmer | ZIMMER | 23.27 | 23.27 | +0.0 | ok |
-| L | Bad | BAD | 5.63 | 5.63 | -0.0 | ok |
-| L | Bad | BAD | 6.01 | 6.01 | -0.1 | ok |
-| L | AR | ABSTELLRAUM | 3.51 | 3.51 | +0.0 | ok |
-| L | WC | WC | 1.51 | 1.51 | -0.2 | ok |
-| L | Balkon | BALKON | 9.79 | 9.79 | +0.0 | ok |
-| L | Gang | GANG | 9.38 | 9.38 | -0.1 | ok |
-| R | rest_1 | SCHACHT | — | 1.16 | — | kein_stempel |
-| R | rest_2 | SCHACHT | — | 1.15 | — | kein_stempel |
-| R | rest_3 | STIEGENHAUS | — | 21.77 | — | kein_stempel |
-| R | rest_4 | — | — | 10.09 | — | kein_stempel |
+„m² roh“ = Polygon VOR der Raumbereinigung (§ 14.6.1), „m² bereinigt“ = `polygon_mm`/`flaeche_m2` des Contracts. „Abw. %“ bleibt der ERKENNUNGS-Wert (Roh-Polygon gegen Stempel) — die bereinigte Abweichung steht im Bereinigungs-Block.
+
+| Quelle | Name | Typ | m² Stempel | m² roh | m² bereinigt | Abw. % (Erkennung, roh) | Flag |
+|---|---|---|--:|--:|--:|--:|---|
+| L | Wohnküche | KÜCHE | 38.35 | 38.35 | 38.35 | +0.0 | ok |
+| L | Hobbyraum/Fitness | ZIMMER | 45.36 | 45.36 | 45.36 | -0.0 | ok |
+| L | Zimmer | ZIMMER | 20.25 | 20.25 | 20.25 | -0.0 | ok |
+| L | Zimmer | ZIMMER | 23.27 | 23.27 | 23.27 | +0.0 | ok |
+| L | Bad | BAD | 5.63 | 5.63 | 5.63 | -0.0 | ok |
+| L | Bad | BAD | 6.01 | 6.01 | 6.01 | -0.1 | ok |
+| L | AR | ABSTELLRAUM | 3.51 | 3.51 | 3.51 | +0.0 | ok |
+| L | WC | WC | 1.51 | 1.51 | 1.51 | -0.2 | ok |
+| L | Balkon | BALKON | 9.79 | 9.79 | 9.79 | +0.0 | ok |
+| L | Gang | GANG | 9.38 | 9.38 | 9.38 | -0.1 | ok |
+| R | rest_1 | SCHACHT | — | 1.16 | 1.16 | — | kein_stempel |
+| R | rest_2 | SCHACHT | — | 1.15 | 1.15 | — | kein_stempel |
+| R | rest_3 | STIEGENHAUS | — | 21.77 | 21.77 | — | kein_stempel |
+| R | rest_4 | — | — | 10.09 | 10.09 | — | kein_stempel |
 
 ## Restflächen ohne Stempel (4)
 
@@ -34,6 +36,31 @@ Raum-Polygon-Quelle: `kaskade L:10 H:0 F:0 R:4` — Rotation: keine dominante Ka
 - Polygon ohne Stempel: rest_2 (1.15 m²)
 - Polygon ohne Stempel: rest_3 (21.77 m²)
 - Polygon ohne Stempel: rest_4 (10.09 m²)
+
+## Raumbereinigung (ENIS_UEBERGABE_0908 § 14.6.1)
+
+Überlapper >5 % 0 → 0 · doppelbelegt 0.000 → 0.000000 m² (0.00 mm²) · geändert 0 (Tabelle unten: 0 überlebende) · entfallen 0 · Zerfall 0.000 m² · Schlitzverlust 0.0 mm² · Restkörper entfallener Räume 0.000 m² · Stempelschutz 0
+
+Einträge je Regel: —
+
+Nicht destruktiv: `polygon_roh` hält den Ring vor der Bereinigung, jeder Abzug ist mit Regel und Gegenspieler gebucht. Invariante: Fläche(roh) − Fläche(bereinigt) == Σ der Buchungen.
+
+
+### Stempelschutz — nicht ausgestanzt (0)
+
+- keine
+
+### Abweichung bereinigt > 5 % vom Stempel (0)
+
+**war schon > 5 % (0)**
+- keine
+
+**neu > 5 % (0)**
+- keine
+
+**Rest-Überlappung im RaumModell: 0 Überlapper / 0.000 m².** Die Bereinigung greift am Kaskaden-Ende; `typisiere_geometrisch` und `finde_lifte` legen danach im Provider eigene Räume an (`stiegenhaus_*`, `lift_*`), die sie nicht sieht. `raeume.json` und `RaumModell` sind nur für die Kaskaden-Räume deckungsgleich — der Überlappungs-Riegel misst auf `raeume.json`.
+
+**`lift_*` und SCHACHT:** `lift_erkennung.finde_lifte` überspringt eine Stelle nur, wenn dort ein Raum mit `raum_typ` „LIFT“ liegt — „SCHACHT“ ist nicht abgedeckt. Ein Regel-1-Gewinner mit `raum_typ` „SCHACHT“ kann danach von einem `lift_*`-Raum überdeckt werden, den die Bereinigung nicht mehr sieht. Eigener Arbeitsschritt.
 
 ## Material (Bauteil-Hatches)
 
@@ -93,6 +120,10 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | ID | Typ | x m | y m |
 |---|---|--:|--:|
 | exit_durchgang_22 | stair_exit | 12551.93 | 356218.26 |
+
+### Kein Endausgang wegen Freifläche (0 Türen ins Freie an BALKON/TERRASSE)
+
+keine — auf diesem Plan führt keine Tür an einem typisierten BALKON/TERRASSE-Raum vorbei.
 
 ## Fluchtweg-Segmente (5)
 
@@ -172,4 +203,4 @@ Restweg im EG (Rennweg_EG.dxf): 4.6–13.5 m (Stiegenhaustür → nächster fina
 | tuer_in_schacht | 3 |
 | tuer_ins_nichts | 1 |
 
-Laufzeit: 50.5 s
+Laufzeit: 51.8 s

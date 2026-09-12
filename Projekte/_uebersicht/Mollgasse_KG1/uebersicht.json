@@ -1,0 +1,72 @@
+{
+  "plan": "Mollgasse_KG1",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\Mollgasse\\1.Kellergeschoß.dxf",
+  "floor": "EG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    2400,
+    2161
+  ],
+  "rotation": "Rotation: dominante Richtung bereits horizontal (0°).",
+  "kategorien": {
+    "gang": 2,
+    "untypisiert": 24,
+    "stiege": 2,
+    "nebenraum": 1,
+    "schacht": 2,
+    "hof": 0,
+    "ueberlappung": 0,
+    "segmente": 4,
+    "final_exit": 2
+  },
+  "raeume_gesamt": 31,
+  "raeume_typisiert": 7,
+  "raum_typen": {
+    "GANG": 2,
+    "STIEGENHAUS": 2,
+    "GARAGE": 1,
+    "LIFT": 2
+  },
+  "wohnungen": {
+    "anzahl": 0,
+    "raeume_je_wohnung": {},
+    "ohne_wohnung": 31
+  },
+  "innenhoefe_m2": [],
+  "ausgaenge": [
+    {
+      "id": "exit_aussenoeffnung_1",
+      "typ": "final_exit",
+      "xy_mm": [
+        2771599.177634946,
+        1638959.556891731
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_2",
+      "typ": "final_exit",
+      "xy_mm": [
+        2775277.9125186154,
+        1609707.9570023536
+      ]
+    }
+  ],
+  "stiegenhaeuser": [
+    "raum_5",
+    "rest_13"
+  ],
+  "ueberlappungen": [],
+  "tueren_gesamt": 76,
+  "laufzeit_s": 43.9,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 24** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "Außenflächen (BALKON/TERRASSE): **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",
+    "Innenhöfe: **0** — `provider.letzte_aussenbereiche.geschlossen` ist leer (oder es gab keine Wandkörper-Analyse).",
+    "`stair_exit`: **0** — kein Stiegenhaus-Ausgang erkannt.",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Wohnungen: **0** — keine `wohnung_id` vergeben.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

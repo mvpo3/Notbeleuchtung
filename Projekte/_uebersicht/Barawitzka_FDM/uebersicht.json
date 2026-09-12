@@ -1,0 +1,54 @@
+{
+  "plan": "Barawitzka_FDM",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\Barawitzkagasse\\415_260415_PP_VA_1_1 -2 FDM.dxf",
+  "floor": "EG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    2400,
+    1106
+  ],
+  "rotation": "Rotation: dominante Richtung bereits horizontal (0°).",
+  "kategorien": {
+    "untypisiert": 3,
+    "schacht": 3,
+    "stiege": 2,
+    "hof": 1,
+    "ueberlappung": 0,
+    "segmente": 2
+  },
+  "raeume_gesamt": 8,
+  "raeume_typisiert": 5,
+  "raum_typen": {
+    "SCHACHT": 2,
+    "STIEGENHAUS": 2,
+    "LIFT": 1
+  },
+  "wohnungen": {
+    "anzahl": 0,
+    "raeume_je_wohnung": {},
+    "ohne_wohnung": 8
+  },
+  "innenhoefe_m2": [
+    52.9
+  ],
+  "ausgaenge": [],
+  "stiegenhaeuser": [
+    "stiegenhaus_1",
+    "stiegenhaus_2"
+  ],
+  "ueberlappungen": [],
+  "tueren_gesamt": 0,
+  "laufzeit_s": 23.4,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 3** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "Gänge (GANG/VORRAUM/AUFZUGSVORPLATZ): **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",
+    "Außenflächen (BALKON/TERRASSE): **0** — nicht erkannt (kein Raum mit passendem `raum_typ`).",
+    "`final_exit`: **0** — kein Ausgang ins Freie erkannt (in Obergeschossen erwartungsgemäß, s. provider.py).",
+    "`stair_exit`: **0** — kein Stiegenhaus-Ausgang erkannt.",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Wohnungen: **0** — keine `wohnung_id` vergeben.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}
