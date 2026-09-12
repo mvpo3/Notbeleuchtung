@@ -23,6 +23,7 @@ aus dem Index zitieren — immer der autoritativen YAML/dem Contract folgen.**
 ## Extrahiertes Wissen / Digests
 *Produkt-/Norm-/Referenz-Digests, Wettbewerb. Prosa — KI darf verlinken/zusammenfassen.*
 
+- [AM_RAIN_NOTBELEUCHTUNG_ANALYSE](knowledge/extracted/AM_RAIN_NOTBELEUCHTUNG_ANALYSE.md) — **Quelle:** 6 din-Referenz-DXF in `DIN-Notbeleuchtungspläne(Beispiele)/Am Rain Notbeleuchtungspläne/` (NUR LESEN, AutoCAD-Locks — `.dwl/.dw…
 - [Analyse — Notbeleuchtung Baufeld E2 (Referenz-Praxis vs. EN 1838)](knowledge/extracted/ANALYSE_Baufeld_E2_Notbeleuchtung.md) — **Ziel:** Die vom Planer gesetzte Notbeleuchtung in den 9 Elektromontageplänen
 - [ÖVE/ÖNORM E 8002 (2007) — Sicherheitsstromversorgung in baulichen Anlagen für Menschenansammlungen](knowledge/extracted/aus_elektroplaner/OENORM_E_8002_Menschenansammlungen.md) — **Quelle:** elektro-planer knowledge/normen/OEVE_OENORM_E_8002-{1,2,8}.txt, via Teil-Digests (`digests/normen/OEVE_OENORM_E_8002-1.part0.md…
 - [ÖVE/ÖNORM E 8007 (2007) — Sicherheitsstromversorgung in Krankenhäusern/medizinischen Räumen](knowledge/extracted/aus_elektroplaner/OENORM_E_8007_medizinisch.md) — **Quelle:** elektro-planer knowledge/normen/OEVE_OENORM_E_8007*.txt, via Teil-Digests · **Übernommen:** 2026-08-28
@@ -118,7 +119,7 @@ aus dem Index zitieren — immer der autoritativen YAML/dem Contract folgen.**
 *Rollen, Packages, Contracts, Slice-Stände je Owner.*
 
 - [Handoff — Enis (Normwissen + LB)](Handoff/ENIS.md) — 1. **`origin/main` = `1092d77`.** (Der frühere Stand `5e4a46e` steht weiter unten
-- [Handoff — Leonis (Platzierung + Integration)](Handoff/LEONIS.md) — **Branch `leonis/demo-l-gebaeude`, 1191 grün, ruff clean, NICHTS gepusht.** 3 neue Commits:
+- [Handoff — Leonis (Platzierung + Integration)](Handoff/LEONIS.md) — **Branch `leonis/demo-l-gebaeude` GEPUSHT, PR #156 OFFEN (3-Owner wegen norm_regelwerk 1.4.0).**
 - [Handoff — Perfekter Start je Owner](Handoff/README.md) — Jeder von euch arbeitet in einer **eigenen Claude-Code-Session im Repo-Ordner**.
 - [Handoff — Selman (Raumerkennung)](Handoff/SELMAN.md) — Du bist ein Agent — **führe diese Schritte selbst aus**, frag nicht lang nach.
 - [SYNC — Stand nachziehen, ohne Arbeit zu verlieren](Handoff/SYNC.md) — **Auslöser:** Der Owner schreibt in seiner Session **„Sync"** (oder „GitHub wurde
