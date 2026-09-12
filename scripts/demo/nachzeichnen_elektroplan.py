@@ -52,7 +52,7 @@ from notbeleuchtung.hauptengine.render.lux_nachweis_bericht import schreibe_beri
 from notbeleuchtung.hauptengine.render.pdf_export import dxf_zu_pdf
 
 P4 = Path(r"C:\Users\mvpst\Documents\KI-Projekt\Notbeleuchtung\Projektbeispiele-demo-Platzierungslogik")
-OUT = P4 / "nachgezeichnet_out" / "v5"
+OUT = P4 / "nachgezeichnet_out" / "v7"
 
 #: R1 (Owner-Korrektur 2026-09-11): Block-Namen der Allgemeinbeleuchtung im Quellplan —
 #: deren Reihe ist die Montagelinie der Gang-Notleuchten.
