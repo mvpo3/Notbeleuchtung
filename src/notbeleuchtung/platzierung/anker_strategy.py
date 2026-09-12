@@ -180,6 +180,29 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
             if d_tuer <= 2000.0:
                 if d_tuer > 50.0:
                     dx, dy = tuer.xy_mm[0] - nx_, tuer.xy_mm[1] - ny
+                    # Vorzeichen-Härtung (v8-Befund Hauseingang): liegt der Exit-
+                    # Knoten schon JENSEITS der Tür (Tür-Block-Insert innen, z.B.
+                    # WET 243 mm südlich des Ausgangs), zeigt tuer−exit ZURÜCK in
+                    # den Gang — die Fluchtachse muss aber vom Anlauf WEG (raus)
+                    # zeigen, sonst kippen R-B-Blick und R-C-Versatz gemeinsam.
+                    nb_xy = None
+                    if nid in G:
+                        nb = min((m for m in G.neighbors(nid) if m in pos),
+                                 key=lambda m: math.hypot(pos[m][0] - nx_, pos[m][1] - ny),
+                                 default=None)
+                        nb_xy = pos[nb] if nb is not None else None
+                    if nb_xy is None:
+                        # graphloser Exit: Anlauf = nächster Zirkulations-Punkt
+                        # (Muster _tuer_durchgangsrichtung).
+                        kandidaten = [q for q in pos.values()
+                                      if math.hypot(q[0] - nx_, q[1] - ny) > 250.0]
+                        nb_xy = min(kandidaten,
+                                    key=lambda q: math.hypot(q[0] - nx_, q[1] - ny),
+                                    default=None)
+                    if nb_xy is not None:
+                        ax, ay = nx_ - nb_xy[0], ny - nb_xy[1]
+                        if dx * ax + dy * ay < 0.0:
+                            dx, dy = -dx, -dy
                 elif nbrs or (nid in G and any(True for _ in G.neighbors(nid))):
                     # RZ sitzt AUF der Tür → Anlauf-Richtung aus dem Gang-Nachbarn
                     # (Pfeil zeigt weiter DURCH die Tür).

@@ -102,6 +102,13 @@ def plan_rettungszeichen(raum: RaumModell, norm: NormProvider) -> list[Platzieru
             # Pfeil ZUR/DURCH die Tür zeigt (Anlauf-Richtung, wenn RZ auf der Tür sitzt).
             if d_tuer > 50.0:
                 dx, dy = tuer.xy_mm[0] - ex, tuer.xy_mm[1] - ey
+                # Vorzeichen-Härtung (v8-Befund Hauseingang, wie anker_strategy):
+                # liegt der Exit-Punkt schon JENSEITS der Tür (Tür-Block-Insert
+                # innen), zeigt tuer−exit ZURÜCK in den Gang — die Fluchtachse
+                # muss vom Anlauf WEG zeigen, sonst kippen R-B-Blick + R-C-Versatz.
+                ax, ay = ex - anlauf[0], ey - anlauf[1]
+                if (ax or ay) and dx * ax + dy * ay < 0.0:
+                    dx, dy = -dx, -dy
             else:
                 dx, dy = ex - anlauf[0], ey - anlauf[1]
             richtung = "unten"

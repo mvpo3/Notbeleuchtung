@@ -313,6 +313,41 @@ def _raum_mit_aussentuer(communal=True, ausgaenge=(), detail=None):
     )
 
 
+def test_exit_jenseits_der_tuer_fluchtachse_zeigt_raus():
+    """v8-Befund Hauseingang (Elektroplan DE): der Tür-Block-Insert (WET) liegt
+    ~250 mm INNEN, der Exit-Punkt auf der Schwelle — „tuer − exit" zeigte damit
+    ZURÜCK in den Gang, das Exit-RZ rutschte nach draußen und blickte nach außen
+    (rot 180 statt 0). Die Vorzeichen-Härtung spiegelt die Fluchtachse am Anlauf:
+    RZ sitzt raumseitig (südlich), Piktogramm blickt ins Rauminnere (rot 0)."""
+    from notbeleuchtung.hauptengine.contracts import (
+        Ausgang,
+        BBox,
+        FluchtwegSegment,
+        RaumModell,
+        Tuer,
+    )
+    from notbeleuchtung.hauptengine.contracts import Raum as _Raum
+    from notbeleuchtung.platzierung.communal_stgh_strategy import plan_rettungszeichen
+
+    rm = RaumModell(
+        floor="EG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 8000.0)),
+        raeume=[_Raum(id="gang", raum_typ="GANG", ist_fluchtweg=True, ist_communal=True,
+                      polygon_mm=[(0.0, 0.0), (10000.0, 0.0), (10000.0, 5000.0), (0.0, 5000.0)])],
+        # Tür-Insert 250 mm INNEN (südlich) des Exits auf der Nordwand:
+        tueren=[Tuer(id="he", xy_mm=(5000.0, 4750.0), von_raum="gang", nach_raum="AUSSEN",
+                     ist_notausgang=True, tuer_detail="hauseingang")],
+        ausgaenge=[Ausgang(id="E", xy_mm=(5000.0, 5000.0), typ="final_exit")],
+        zirkulation={"nodes": [], "edges": [], "segmente": [
+            FluchtwegSegment(segment_id="s1", reason="exit", ziel_ausgang="E",
+                             polyline_mm=[(5000.0, 1000.0), (5000.0, 5000.0)])]},
+    )
+    rz = [p for p in plan_rettungszeichen(rm, FakeNormProvider())
+          if math.hypot(p.xy_mm[0] - 5000.0, p.xy_mm[1] - 5000.0) < 1000.0]
+    assert len(rz) == 1
+    assert rz[0].xy_mm[1] < 5000.0          # raumseitig (südlich), NICHT draußen
+    assert rz[0].rotation_deg == 0.0        # Blick ins Rauminnere (−y)
+
+
 def test_phantom_durchgang_ist_keine_tuer():
     """Owner-Befund 2026-09-12 („dort gibt es aber keine Tür, dort ist eine Wand"):
     die Erkennung lieferte die Wand Müllraum↔Gang als 6064-mm-GEOMETRIE_OEFFNUNG-
