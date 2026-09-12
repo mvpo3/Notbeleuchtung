@@ -72,7 +72,7 @@ def _arm_gap_mm(norm: NormProvider) -> float:
     """Zwischen-RZ-Schwelle je Arm = Erkennungsweite l=z·h (R-F); Fallback 12 m."""
     try:
         weite = float(norm.erkennungsweite_m(0.15, True)) * 1000.0
-    except Exception:
+    except (AttributeError, TypeError, ValueError):
         return _MAX_RZ_ARM_GAP_FALLBACK_MM
     return weite if weite > 0.0 else _MAX_RZ_ARM_GAP_FALLBACK_MM
 

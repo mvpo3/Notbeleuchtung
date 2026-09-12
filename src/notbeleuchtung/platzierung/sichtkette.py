@@ -77,7 +77,7 @@ def kette_ausduennen(
     korridor_ids = {r.id for r in korridore}
     try:
         weite_mm = float(norm.erkennungsweite_m(_PIKTO_HOEHE_M, True)) * 1000.0
-    except Exception:
+    except (AttributeError, TypeError, ValueError):
         return platzierungen                     # ohne Norm-Weite keine Ausdünnung
     if weite_mm <= 0.0:
         return platzierungen
