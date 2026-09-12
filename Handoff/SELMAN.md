@@ -62,6 +62,95 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 
 ---
 
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-12, Abschluss-Runde 4) ═══
+
+**Branch:** `selman/extents-ausreisser`, **PR #155**, **kein Merge**. Commits
+dieser Runde: `f29bf5b` (Stempelschutz-Nachentscheid) · `12f23f2` (Riegel-Bänder
+ANGEHOBEN) · `f12edee` (Türband abgelöst + A5 nachgemessen) · `354840d`
+(SCHLEUSE-Ist-Nachtrag) · `87b74c3` (Slice-3b-Vorarbeit) + Doku- und
+Ergebnis-Commit.
+
+**⚠️ CONTRACT:** `raum_modell` bleibt **1.5.0**. In dieser Runde wurde dort
+**nur Kommentartext** geändert (die Regelnummern am Literal
+`BereinigungsRegel` trugen die alte Kaskade), `gen_schema --check` in sync. Der
+Check `contract-freeze` bleibt trotzdem pending, bis @mvpo3 und @EnisAMG auf dem
+**dann aktuellen** `head_sha` approven — **jeder nachgeschobene Commit entwertet
+ein erteiltes Approval.** Also: erst alles fertig, dann Approvals einsammeln.
+
+**Belege:** volle Suite `1296 passed, 11 skipped, 2 deselected, 12 xfailed,
+2 warnings in 1229.06s (0:20:29)`, exit 0, **keine XPASS-Zeile** · Prüfstrecke
+über alle fünf Pläne **ohne Parallellast**, exit 0, 271,6 / 306,2 / 1888,0 /
+57,0 / 51,4 s = **2574,2 s** · `test_soll_muthgasse` 11 passed / 4 xfailed /
+**0 XPASS** (747,5 s) · Riegel 16 passed · `test_bereinigung` 31 passed · alle
+fünf Akzeptanzkriterien des Messskripts **OK** · `ruff` clean.
+
+**Leitregel unverändert:** *der Code erfindet keine Maße und keine Typen, und er
+löscht keine Flächen unbelegt.* Neu dazu: **ein Band wird nur nach unten
+nachgezogen — steigt es, ist das ein Owner-Entscheid und muss im Code begründet
+stehen.** Genau das ist bei Muthgasse passiert.
+
+### Was diese Runde erledigt hat (Details: `docs/ENIS_UEBERGABE_0908.md` § 23)
+
+1. **Stempelschutz verengt.** Er griff bei 6 von 7 Paaren, auch dort, wo das
+   Ausstanzen die Stempeltreue **verbessert** hätte. Jetzt nur bei strikt
+   besserem Quellen-Rang des Verlierers: geschützte Paare **6 → 1**, Überlapper
+   **11 → 2**, doppelt belegt **58,260 → 2,552 m²**. Geschützt bleibt genau
+   `raum_29` gegen `raum_91`.
+2. **Riegel-Band für Muthgasse ANGEHOBEN** `(0, 0.0) → (2, 2.6)`. Kein
+   Nachlassen: ohne Schutz wäre der Ist 0 / 0,20 mm². `BAND_RAEUME`
+   47/62/101/21/14 unverändert und nachgemessen.
+3. **Türband abgelöst statt abgesenkt** — die 280 stammte selbst aus einem alten
+   Ist. Jetzt 72 echte A-DOOR-Blocktüren, Paarung per Kuhn,
+   **matchingunabhängig** belegt (Hopcroft-Karp, scipy-Min-Cost, permutiertes
+   Kuhn: identisch 13/13/44/59/63 von 72).
+4. **A5 geschlossen:** ein Provider-Parse (716 s) hat die letzte Fremdangabe
+   gemessen — `tuer_48` → 399,81 mm **bestätigt**. Gefallen: „103 der 121" →
+   **108** (die 103 ist 121 − 18), „8–110 LINEs" → **2–110**.
+5. **Slice-3b-Vorarbeit** (Schritte 1/3/4, Schritt 2 nur Smoke), aufruferlos.
+   Zwei Messbefunde tragen mehr als der Code: **Layernamen taugen nicht als
+   Label** (Barawitzka 57 Treffer / 72 Abweichungen) und **der Baum schlägt
+   „immer `rest`" nicht** (LOPO acc 0,792 gegen Basislinie 0,815).
+6. **Korrekturen an eigenen Angaben**, alle selbst nachgemessen: drei Rang-Zellen
+   in § 22.4, die „6×"-Aussage in § 20.6, die zwei Stellen, die den entfernten
+   `test_soll_tuerzahl_band` als existierend führten, Board-Zeilennummern und
+   Fundstellen-Zuordnungen. Alte Aussagen bleiben als überholt zitiert.
+
+### Was als Nächstes dran ist — in dieser Reihenfolge
+
+1. **Leonis' Einwand 5** (Gebäudeausgänge und Fluchtziel am 02-TWA/L04-Dialekt),
+   `docs/OFFENE_FRAGEN.md`. **Owner-Vorgabe: Vorrang vor Slice 3b.** Aufgenommen,
+   **nicht gebaut**. Darin der Befund, dass Balkontüren heute fälschlich als
+   Ausgänge behandelt werden.
+2. **`lf-3`-Neuschrieb von Slice 3b**, drei Befunde in einem Durchgang
+   (`docs/OFFENE_FRAGEN.md`, Abschnitt zur `lf-3`-Runde). Der wichtigste: **der
+   Korpus trägt kein Label** — gespeichert ist `rolle`, also die Ausgabe der
+   Regel, und bei **209 von 501 Zeilen** widerspricht das dem behaupteten
+   `label_quelle`. Ein Training darauf wäre genau Leonis' Zirkularitäts-Einwand.
+   Dazu `runde2_belegt=True` auf 87 Zeilen, die drei Felder strukturell nicht
+   messen können, und der neutrale Wert 0,0, der arithmetisch kein Neutrum ist.
+   **Offener Owner-Entscheid:** zweites Flag (MAJOR 2) oder Renormierung der
+   Gewichte (MAJOR 3) — beide belegbar, die Renormierung ändert mehr Zahlen.
+3. **Raumzahl in `test_soll_muthgasse.py` klären** — sie steht dreifach
+   (114 / 113 / 109). Die 109 stammen aus einem Parse auf dem schmutzigen
+   Arbeitsbaum; welche gilt, entscheidet ein Parse auf sauberem Baum. Das Band
+   `>= 98` hält, also nichts akut.
+
+### Was bei anderen liegt
+
+- **@EnisAMG:** Notbeleuchtungsanforderung der `SCHLEUSE` (eigener
+  `raumtyp_regeln`-Eintrag oder `default(rz)`) · `E2-VF-11b` / `raum_67` bleibt
+  untypisiert bis zur Entscheidung · Auflage A (`lichte_quelle` beim ersten
+  Erzeuger von `lichte_mm`) · Auflage B (Vorschlag: `STANDARDWERT` streichen,
+  0 von 612 Türen tragen ihn).
+- **@mvpo3:** Branch Protection auf `main` fehlt weiter (heute gemessen:
+  `protection` 404, `rulesets` 403, Token `admin:false`) · Bbox-Mitte sieht den
+  1-mm-Schlitz nicht (`platzierung/geometry.py`) · `lift_erkennung.py:171`
+  prüft nur `LIFT`, nicht `SCHACHT` · Contract-Vorschlag 1.6.0 in
+  `docs/proposals/` liegt zur Stellungnahme.
+- **Zu dritt:** ob der Layer-Korpus getrackt wird (`corpus/` ist heute
+  gitignored — Kunden-Layernamen im Klartext).
+
+
 ## ═══ SELMAN: HIER WEITER (Stand 2026-09-12, Bereinigung + SCHLEUSE) ═══
 
 **Branch:** `selman/extents-ausreisser`, **gepusht**, **neuer PR als Nachfolger
