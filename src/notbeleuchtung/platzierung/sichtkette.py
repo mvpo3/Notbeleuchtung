@@ -25,6 +25,7 @@ Sichtbarriere dazu (R-F, Owner: „JA sie zählt").
 from __future__ import annotations
 
 import math
+from itertools import pairwise
 
 from notbeleuchtung.hauptengine.contracts import NormProvider, Platzierung, RaumModell
 
@@ -114,7 +115,7 @@ def kette_ausduennen(
     schritt = max(weite_mm / 5.0, 1000.0)
     for seg in raum.zirkulation.segmente:
         pts = seg.polyline_mm
-        for (x1, y1), (x2, y2) in zip(pts, pts[1:]):
+        for (x1, y1), (x2, y2) in pairwise(pts):
             laenge = math.hypot(x2 - x1, y2 - y1)
             n = max(int(laenge / schritt), 1)
             # nur Punkte IN der Korridor-Fläche — ein Segment-Stück außerhalb
