@@ -3428,3 +3428,102 @@ messen können, und der neutrale Wert 0,0 ist arithmetisch kein Neutrum.
   also nichts akut.
 - **Contract-Vorschlag 1.6.0** (`rolle` + `confidence` durch die Naht) ist ein
   Vorschlag in `docs/proposals/` und nicht in 1.5.0 nachgeschoben.
+
+## 24. Belegkorrekturen für @EnisAMG (2026-09-12, Commit-Stand `91ad7cc`)
+
+Alle Zahlen dieses Abschnitts sind auf `91ad7cc` selbst gemessen. Ab hier gilt
+die Owner-Regel: **jede Kennzahl trägt den Commit-SHA ihrer Erhebung**, ältere
+Angaben ohne Neumessung sind als veraltet gekennzeichnet.
+
+### 24.1 Das E8/E9-Messverfahren — so ist es nachrechenbar
+
+Die Zahlen **627 mm** (E8) und **10 mm** (E9) sind bestätigt. Sie entstehen
+NICHT aus dem Schwerpunktabstand — das war ein Bezugspunkt-Irrtum bei der
+ersten Nachmessung dieser Runde (Schwerpunkt hätte 2302 mm bzw. 1536 mm
+ergeben). Gemessen wird der Abstand vom **TEXT-Einfügepunkt zur POLYGONKANTE**
+des Raums.
+
+Vollständiges Verfahren, ohne den Autor wiederholbar:
+
+| Schritt | Wert |
+|---|---|
+| Datei E8 | `Projekte/Pläne 19., Muthgasse 109B - 2026-05-07_13-12/Architekt/Ausführungsplan/M109B_-Plan - AR-AF-A-GR-E8 100 - GRUNDRISS E8.dxf` |
+| Datei E9 | dieselbe Ablage, `… - AR-AF-A-GR-E9 100 - GRUNDRISS E9.dxf` |
+| Entity | `TEXT` bzw. `MTEXT` mit Inhalt `DBA-Abstr. Schleuse` |
+| Layer | `A-GENM-IDEN` (beide Geschosse) |
+| mm-Faktor | **10.0**, aus `dxf_load.lade_dxf` (geometrisch kalibriert, nicht `$INSUNITS`) |
+| Einfügepunkt E8 | x = 332 846 mm, y = 108 857 mm |
+| Einfügepunkt E9 | x = 333 613 mm, y = 109 003 mm |
+| Bezugsgeometrie | `polygon_mm` aus `Projekte/_ergebnis/Muthgasse_E2/raeume.json` |
+| Bezugspunkt | **Polygonkante**, gerechnet als `shapely.Polygon.distance(Point)` |
+| Räume | `raum_65` (13,04 m², 15 Punkte) und `raum_67` (3,73 m², 8 Punkte) |
+
+Ergebnis, beide Richtungen gemessen:
+
+| Geschoss | → `raum_65` Kante | → `raum_67` Kante | Verhältnis |
+|---|--:|--:|--:|
+| E8 | **627 mm** | **9 791 mm** | 1 : 15,6 |
+| E9 | **10 mm** | 9 924 mm | 1 : 992 |
+
+Damit ist die Trennschärfe der Entscheidung `E2-VF-11a` = `SCHLEUSE` unabhängig
+vom Bezugspunkt belegt: in beiden Vergleichsgeschossen liegt der Schleusen-Text
+unter 2,5 m von `raum_65` und über 9,7 m von `raum_67` — auch in der
+Schwerpunkt-Lesart (E8 2302 gegen 11 114 mm, E9 1536 gegen 11 268 mm). Die
+Wahl des Bezugspunkts ändert die Zahlen, nicht die Aussage.
+
+Nebenbefund: E8 trägt sechs `DBA`-Texte, E9 vier. Nur je einer lautet
+`DBA-Abstr. Schleuse`; die übrigen sind `DBA`, `WDB DBA`, `2 x WDB DBA`,
+`4 x WDB DBA`. Wer nach `DBA` allein sucht, findet in E8 einen Treffer
+**1 431 mm von `raum_67`** — das Wort allein trennt die beiden Räume also
+NICHT, erst der Zusatz `Abstr. Schleuse`.
+
+### 24.2 „7 stair_exit" und „62" — geprüft und getrennt
+
+**„7 stair_exit" hat null Fundstellen.** Volltextsuche über `docs/`,
+`Projekte/_ergebnis/`, `Projekte/_uebersicht/` und `Handoff/`: kein Treffer in
+irgendeiner Schreibweise. Die 7 lebt ausschließlich in
+`tests/naht/test_soll_muthgasse.py` als datierter **Zwischenstand** (reiner
+Provider-Parse nach `96dcef6`, ohne Prüfstreckenlauf) und trägt dort bereits
+den Nachtrag auf den Ist-Wert **6**. Es ist also nichts zu trennen — die
+Zeitreihe lautet 12 → 5 → 7 → **6**, und nur die 6 ist der Ist auf `91ad7cc`.
+
+**„62" ist in jeder Fundstelle eindeutig** und in keiner eine
+`stair_exit`-Zahl. Die Quellen, je mit ihrer Bedeutung:
+
+| Fundstelle | Bedeutung von 62 |
+|---|---|
+| § 14.2, § 14.6, § 22 | Überlapper-Räume: **62 von 245**, 262,342 m² doppelt belegt |
+| `BAND_RAEUME` 47/**62**/101/21/14 | Mollgasse-Untergrenze der Löschsicherung |
+| `VERLAUF.md`, Mollgasse | „Räume gesamt 62" (Kaskaden-Räume dieses Plans) |
+| `ausgaenge.py:62-64` | **Codestelle**, keine Zahl |
+| Übersichtskarten | „für 62 von 63 Plänen erzeugt" |
+| § 4 / § 8 | Diffstat `+62/−21` in zwei Dateien |
+| § 14.4 | Paarklasse F ↔ H: 12 Paare, **62,3 m²** |
+| `DOD_GEBAEUDE_MOLLGASSE.md:28` | Leuchten-Spalte „62/64" im Geschoss 1KG |
+
+Dass Mollgasse zufällig **62 Räume** hat und die Überlapper-Summe über alle
+fünf Pläne ebenfalls **62** ist, ist die einzige echte Verwechslungsgefahr —
+beide stehen in derselben Tabelle in § 14.2. Deshalb hier ausdrücklich: die
+eine Zahl zählt Räume EINES Plans, die andere Überlapper über FÜNF Pläne.
+
+### 24.3 Was diese Korrekturen NICHT berühren
+
+Je ein Satz, worauf die Zahlen tatsächlich beruhen:
+
+- **Belichtung** (`natuerlich_belichtet`): beruht auf der Fenstererkennung an
+  der Außenwand, nicht auf Raumpolygon-Kanten oder Türbelegen — die
+  `Schl.`-Korrekturen und die Bereinigung berühren sie nicht.
+- **Breitenverlauf** (`breitenprofil.py`, Messstand 287/307): beruht auf
+  Fluchtwegsegmenten gegen schneidende Raumpolygone. **Achtung:** die
+  Messbarkeit hängt damit an den Raumpolygonen, und die hat Contract 1.5.0
+  verändert — diese Zahl ist deshalb als **veraltet** zu behandeln, bis sie auf
+  `91ad7cc` neu gemessen ist (eigener Punkt in `docs/ENIS_STAND_1_5_0.md`).
+- **Türbreiten** (612 Türen, `STANDARDWERT` 0-mal): beruhen auf Blocknamen,
+  Schwenkradius-Geometrie und Türtexten, alle drei unabhängig von Raumpolygonen
+  — von den Korrekturen unberührt.
+
+**Contract 1.5.0 hat die Raumpolygone geändert.** `Raum.polygon_roh` hält den
+Ring VOR der Bereinigung, `polygon_mm` trägt den bereinigten Stand, und
+`Raum.bereinigung[]` bucht jeden Abzug mit Regel und Gegenspieler. Wer eine
+Kennzahl auf Raumpolygonen gemessen hat, muss also sagen, auf welchem Stand —
+genau deshalb gilt ab hier die SHA-Pflicht je Kennzahl.

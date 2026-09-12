@@ -140,6 +140,34 @@ def _nummer(texte: list[tuple[str, XY]], xy: XY) -> tuple[str | None, float]:
     return nummer, d
 
 
+# KORREKTUR 2026-09-12 zu zwei eigenen Belegsaetzen aus der Schl.-Frage vom
+# 2026-09-10. Der Belegstring darueber bleibt WOERTLICH stehen; dieser Zusatz
+# tritt daneben, damit im Pruefbericht niemand die widerlegte Lesart erbt.
+# Selbst gemessen auf 91ad7cc gegen Projekte/_ergebnis/Muthgasse_E2/raeume.json:
+#   raum_65 -> raum_88 (STIEGENHAUS, 3,82 m2)   5652 mm Kantenabstand
+#   raum_29 (KUECHE, 16,52 m2) -> raum_88       6354 mm
+#   raum_91 (KUECHE, 2,55 m2)  -> raum_88       6346 mm
+#   raum_67 (untypisiert)      -> raum_88          0 mm
+# Die 0-mm-Klasse kann also KEIN Wandkontakt zu Raumpolygonen sein: gegen das
+# echte STIEGENHAUS-Polygon liegt raum_65 5,65 m entfernt, und bei 0 mm liegt
+# ausgerechnet raum_67 -- der Raum, den die Entscheidung NICHT betrifft.
+# Veraltet: die frueher genannten 4848 mm (vor der Bereinigung erhoben; 1.5.0
+# hat die Raumpolygone geaendert). Die "~8,2 m Kontaktlaenge" ist nicht
+# reproduzierbar; die Gegenmessung 4,72 m stammt aus der Vorsession
+# (docs/OFFENE_FRAGEN.md, Abschnitt "Zwei Korrekturen am Abschnitt darueber")
+# und ist hier NICHT selbst nachgemessen, weil die fuenf stiegenhaus_*-Raeume
+# nur im Modell entstehen und in keiner Datei abgelegt sind.
+_STIEGENKERN_KORREKTUR = (
+    "KORREKTUR 2026-09-12: die 0 mm sind Kontakt zu Treppen-Block-Extents "
+    "bzw. zum STIEGENHAUS-Polygon, NICHT Wandkontakt zu Raumpolygonen -- "
+    "gegen raum_88 ist raum_65 5652 mm entfernt, die Kuechen raum_29/raum_91 "
+    "6354/6346 mm, raum_67 aber 0 mm. Das Merkmal trennt Schleuse nicht von "
+    "Kueche; tragend ist das Vergleichsgeschoss (E8 627 mm, E9 10 mm zur "
+    "Polygonkante von raum_65). Die frueher genannte Kontaktlaenge ~8,2 m "
+    "ist nicht reproduzierbar (Vorsession: 4,72 m)."
+)
+
+
 def _belege(raum: Raum, stempel: Stempel, stiegenhaus: list[Polygon],
             stiegen: list[Polygon], texte: list[tuple[str, XY]]) -> list[str]:
     """Zusatzbelege des Kandidaten — mindestens einer nötig, keiner allein genug."""
@@ -150,6 +178,7 @@ def _belege(raum: Raum, stempel: Stempel, stiegenhaus: list[Polygon],
                      if poly.distance(q) <= _KONTAKT_MM), None)
         if kern is not None:
             gefunden.append("Stiegenkern-Lage (0 mm Kontakt/Überlappung)")
+            gefunden.append(_STIEGENKERN_KORREKTUR)
     nah = [(t, round(_abstand(p, stempel.position_mm)))
            for t, p in texte
            if _abstand(p, stempel.position_mm) <= _BELEG_RADIUS_MM
