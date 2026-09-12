@@ -41,6 +41,7 @@ from . import (
     fachpraxis,
     lb_override,
     mittellinie_snap,
+    sichtkette,
     verbotszonen_nachpass,
 )
 from .anker_strategy import plan_rettungszeichen_anker
@@ -60,10 +61,20 @@ from .sonderstellen_strategy import plan_flag_raeume, plan_sonderstellen
 # spikey Teil-Polygone eines Gangs) erzeugt viele Klein-Fragmente — die würden sonst
 # je einzeln aufgefüllt (Überproduktion). Ein echter Flur-Arm ist deutlich länger.
 _MIN_KORRIDOR_ARM_MM = 6000.0
-# Owner-Korrektur 2026-09-10 (AutoCAD-Diff L-Demo): max RZ-Abstand ENTLANG eines Gang-Arms
-# = Praxis-Sichtlinie, enger als die reine Erkennungsweite l=z·h (die einen 15-m-Arm mit
-# End-RZ noch abdecken würde). Übersteigt eine Lücke das, kommt ein Mittel-Arm-RZ dazu.
-_MAX_RZ_ARM_GAP_MM = 12000.0
+# Owner-Korrektur 2026-09-10 (12-m-Praxis-Sichtlinie), ERSETZT durch R-F (Fachdoku v2,
+# S.7: „nicht nach festem Abstand … lückenlose Sichtkette"): die Lücken-Schwelle ist die
+# Norm-Erkennungsweite l=z·h; dieser Wert ist nur noch der FALLBACK, wenn der Provider
+# keine Erkennungsweite liefert.
+_MAX_RZ_ARM_GAP_FALLBACK_MM = 12000.0
+
+
+def _arm_gap_mm(norm: NormProvider) -> float:
+    """Zwischen-RZ-Schwelle je Arm = Erkennungsweite l=z·h (R-F); Fallback 12 m."""
+    try:
+        weite = float(norm.erkennungsweite_m(0.15, True)) * 1000.0
+    except Exception:
+        return _MAX_RZ_ARM_GAP_FALLBACK_MM
+    return weite if weite > 0.0 else _MAX_RZ_ARM_GAP_FALLBACK_MM
 
 
 def _flucht_ziele(raum: RaumModell) -> list:
@@ -78,8 +89,8 @@ def _flucht_ziele(raum: RaumModell) -> list:
 
 
 def _mittel_arm_rz(rz: list, korridore: list, raum: RaumModell, norm: NormProvider) -> list:
-    """Zwischen-RZ in langen Gang-Armen, deren End-RZ eine Lücke > `_MAX_RZ_ARM_GAP_MM`
-    lassen (Owner-Korrektur). Pfeil zeigt zum nächsten Fluchtziel."""
+    """Zwischen-RZ in langen Gang-Armen, deren End-RZ eine Lücke > Erkennungsweite
+    lassen (R-F: Kette reißt erst jenseits l=z·h). Pfeil zeigt zum nächsten Fluchtziel."""
     import math
 
     from .bausteine import AGV_SV_F as _AGV_SV_F
@@ -87,19 +98,20 @@ def _mittel_arm_rz(rz: list, korridore: list, raum: RaumModell, norm: NormProvid
     from .bausteine import richtung_und_rotation as _rr
     from .geometry import _bbox
     ziele = _flucht_ziele(raum)
+    gap_mm = _arm_gap_mm(norm)
     zusatz: list = []
     for r in korridore:
         x0, y0, x1, y1 = _bbox(r.polygon_mm)
         laengs = 0 if (x1 - x0) >= (y1 - y0) else 1     # 0=x-Arm, 1=y-Arm
         lo, hi = (x0, x1) if laengs == 0 else (y0, y1)
         quer = (y0 + y1) / 2.0 if laengs == 0 else (x0 + x1) / 2.0
-        if hi - lo < _MAX_RZ_ARM_GAP_MM:
+        if hi - lo < gap_mm:
             continue
         pos = sorted(p.xy_mm[laengs] for p in (rz + zusatz)
                      if point_in_polygon(p.xy_mm, r.polygon_mm))
         grenzen = [lo, *pos, hi]
         for a, b in pairwise(grenzen):
-            if b - a <= _MAX_RZ_ARM_GAP_MM:
+            if b - a <= gap_mm:
                 continue
             mid = (a + b) / 2.0
             pt = (mid, quer) if laengs == 0 else (quer, mid)
@@ -149,9 +161,12 @@ def _sichtlinien_garantie(rz: list, raum: RaumModell, norm: NormProvider) -> lis
         ]
     else:
         gefuellt = list(rz)
-    # Owner-Korrektur 2026-09-10: lange Arme, deren End-RZ eine Lücke > _MAX_RZ_ARM_GAP_MM
-    # lassen, bekommen ein Zwischen-RZ (Sichtlinie, enger als l=z·h).
-    return gefuellt + _mittel_arm_rz(gefuellt, korridore, raum, norm)
+    # R-F: Lücken > Erkennungsweite bekommen ein Zwischen-RZ …
+    voll = gefuellt + _mittel_arm_rz(gefuellt, korridore, raum, norm)
+    # … und die fertige Kette wird auf die lückenlose SICHTKETTE ausgedünnt
+    # (Fachdoku v2: „Ist das nächste Zeichen bereits sichtbar, wird kein
+    # weiteres gesetzt" — Ground truth EG: Gang-RZ 4→1).
+    return sichtkette.kette_ausduennen(voll, raum, norm)
 
 
 def _plan_rettungszeichen(raum: RaumModell, norm: NormProvider):
