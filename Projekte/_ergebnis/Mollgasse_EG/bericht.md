@@ -152,7 +152,7 @@ Ergänzung § 14.6.1: die Invariante „NIE verwerfen“ gilt der FLUTUNG. Die R
 
 ## Raumbereinigung (ENIS_UEBERGABE_0908 § 14.6.1)
 
-Überlapper >5 % 16 → 0 · doppelbelegt 45.845 → 0.000000 m² (0.14 mm²) · geändert 24 (Tabelle unten: 24 überlebende) · entfallen 0 · Zerfall 3.073 m² · Schlitzverlust 2115.2 mm² · Restkörper entfallener Räume 0.000 m²
+Überlapper >5 % 16 → 0 · doppelbelegt 45.845 → 0.000000 m² (0.14 mm²) · geändert 24 (Tabelle unten: 24 überlebende) · entfallen 0 · Zerfall 3.073 m² · Schlitzverlust 2115.2 mm² · Restkörper entfallener Räume 0.000 m² · Stempelschutz 0
 
 Einträge je Regel: {'ENTHALTENSEIN': 2, 'QUELLE_RANG': 10, 'SCHLITZ': 1, 'SCHWERPUNKT': 4, 'STEMPEL_NAEHE': 26, 'ZERFALL': 5}
 
@@ -184,6 +184,10 @@ Nicht destruktiv: `polygon_roh` hält den Ring vor der Bereinigung, jeder Abzug 
 | raum_56 | GEHWEG | F | flutung_unsicher | 3.65 | 6.83 | 6.82 | +87.0 | +86.9 | STEMPEL_NAEHE(raum_18), QUELLE_RANG(raum_9) |
 | raum_58 | KÜCHE | F | flutung_unsicher | 10.02 | 4.37 | 4.37 | -56.4 | -56.4 | STEMPEL_NAEHE(raum_34) |
 | raum_60 | PODEST | F | flutung_unsicher | 3.66 | 15.25 | 15.25 | +316.7 | +316.7 | QUELLE_RANG(raum_10) |
+
+### Stempelschutz — nicht ausgestanzt (0)
+
+- keine
 
 ### Abweichung bereinigt > 5 % vom Stempel (15)
 
@@ -790,4 +794,4 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_1, exit_2, exit_aussen
 | beide_seiten_untypisiert | 2 |
 | tuer_ins_nichts | 1 |
 
-Laufzeit: 286.2 s
+Laufzeit: 306.2 s

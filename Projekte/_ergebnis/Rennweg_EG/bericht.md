@@ -42,7 +42,7 @@ Raum-Polygon-Quelle: `kaskade L:19 H:0 F:0 R:2` — Rotation: keine dominante Ka
 
 ## Raumbereinigung (ENIS_UEBERGABE_0908 § 14.6.1)
 
-Überlapper >5 % 0 → 0 · doppelbelegt 0.000 → 0.000000 m² (0.00 mm²) · geändert 1 (Tabelle unten: 1 überlebende) · entfallen 0 · Zerfall 0.000 m² · Schlitzverlust 0.0 mm² · Restkörper entfallener Räume 0.000 m²
+Überlapper >5 % 0 → 0 · doppelbelegt 0.000 → 0.000000 m² (0.00 mm²) · geändert 1 (Tabelle unten: 1 überlebende) · entfallen 0 · Zerfall 0.000 m² · Schlitzverlust 0.0 mm² · Restkörper entfallener Räume 0.000 m² · Stempelschutz 0
 
 Einträge je Regel: {'SCHWERPUNKT': 1}
 
@@ -51,6 +51,10 @@ Nicht destruktiv: `polygon_roh` hält den Ring vor der Bereinigung, jeder Abzug 
 | id | Name | Quelle | Flag | m² Stempel | m² roh | m² bereinigt | Abw. roh % | Abw. ber. % | Regeln (Gegenspieler) |
 |---|---|---|---|--:|--:|--:|--:|--:|---|
 | raum_6 | VR | L | ok | — | 21.03 | 21.03 | — | — | SCHWERPUNKT(raum_7) |
+
+### Stempelschutz — nicht ausgestanzt (0)
+
+- keine
 
 ### Abweichung bereinigt > 5 % vom Stempel (0)
 
@@ -267,4 +271,4 @@ Quellen: FALLBACK: 1, GRAPH: 8
 | tuer_ins_nichts | 4 |
 | beide_seiten_untypisiert | 1 |
 
-Laufzeit: 56.8 s
+Laufzeit: 57.0 s
