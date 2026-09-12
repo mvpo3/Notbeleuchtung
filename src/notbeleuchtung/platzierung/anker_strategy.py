@@ -40,7 +40,7 @@ from .bausteine import (
 from .bausteine import (
     richtung_und_rotation as _richtung_und_rotation,
 )
-from .bausteine import rotation_zur_tuer as _rotation_zur_tuer
+from .bausteine import rotation_piktogramm_in_raum as _rotation_piktogramm_in_raum
 from .deckungs_zuordnung import HINTERLEUCHTET_DEFAULT
 from .graph import build_circulation_graph, distanz_zu_ausgang, kreuzungs_anker
 
@@ -193,7 +193,7 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
                     dx, dy = _tuer_durchgangsrichtung(raum, tuer.xy_mm, pos)
                 # F03: dieselbe Rotationsformel aus EINEM Helper (bausteine.rotation_zur_tuer)
                 # statt inline — formel-identisch zur main-Fassung, aber nicht mehr dupliziert.
-                rotation = _rotation_zur_tuer(dx, dy)
+                rotation = _rotation_piktogramm_in_raum(dx, dy)
         out.append(
             Platzierung(
                 xy_mm=(nx_, ny),
