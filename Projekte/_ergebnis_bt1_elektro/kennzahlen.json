@@ -1,0 +1,96 @@
+{
+ "plan": "Projekte\\BVH Fischamenderstraße\\fertige Elektromontagepläne\\BT1\\Elektromontageapläne_ERDGESCHOSS BT1.dxf",
+ "sha256": "d1fc3b0b762609d1c445a29c6229c6b0f403eb7cd3d3d7ec83e44a3eba848107",
+ "bytes": 31523707,
+ "commit": "3d91a2ceebb5e1a034feb4fa4faf5b7a3edf81b4",
+ "wandkoerper": 241,
+ "wk_herkunft": {
+  "msp": 195,
+  "block": 46
+ },
+ "raeume": 72,
+ "tueren": 225,
+ "segmente": 87,
+ "ausgaenge": {
+  "stair_exit": 1,
+  "final_exit": 3
+ },
+ "selbstverbindungen": [],
+ "tuerpaare_unter_50mm": 38,
+ "ueberlappungen": [
+  [
+   20.25,
+   "gang_1",
+   "GANG",
+   30.57,
+   "raum_63",
+   "GANG",
+   41.54
+  ],
+  [
+   1.87,
+   "lift_1",
+   "LIFT",
+   1.87,
+   "raum_60",
+   "GARAGE",
+   2.75
+  ],
+  [
+   0.76,
+   "gang_1",
+   "GANG",
+   30.57,
+   "raum_62",
+   "STIEGENHAUS",
+   20.13
+  ],
+  [
+   0.59,
+   "gang_1",
+   "GANG",
+   30.57,
+   "raum_29",
+   "VORRAUM",
+   3.73
+  ],
+  [
+   0.52,
+   "gang_1",
+   "GANG",
+   30.57,
+   "raum_39",
+   "KÜCHE",
+   20.1
+  ],
+  [
+   0.35,
+   "gang_1",
+   "GANG",
+   30.57,
+   "raum_38",
+   "VORRAUM",
+   4.23
+  ],
+  [
+   0.35,
+   "gang_1",
+   "GANG",
+   30.57,
+   "raum_36",
+   "BAD",
+   6.61
+  ],
+  [
+   0.27,
+   "gang_1",
+   "GANG",
+   30.57,
+   "raum_34",
+   "BAD",
+   5.73
+  ]
+ ],
+ "laufzeit_wk_s": 10.4,
+ "laufzeit_provider_s": 22.2
+}

@@ -1,0 +1,100 @@
+{
+ "plan": "Projekte\\BVH Fischamenderstraße\\BT1\\260320_938-AR-PP-11000-A_ERDGESCHOSS BT1.dxf",
+ "sha256": "dd2e6e7d9908085678a8a0cbc26475c6c9217fcbafc5bcff54234c45305ca407",
+ "bytes": 11717404,
+ "commit": "3d91a2ceebb5e1a034feb4fa4faf5b7a3edf81b4",
+ "wandkoerper": 270,
+ "wk_herkunft": {
+  "msp": 218,
+  "block": 52
+ },
+ "raeume": 79,
+ "tueren": 256,
+ "segmente": 88,
+ "ausgaenge": {
+  "stair_exit": 1,
+  "final_exit": 3
+ },
+ "selbstverbindungen": [
+  "tuer_121",
+  "tuer_122",
+  "tuer_124"
+ ],
+ "tuerpaare_unter_50mm": 38,
+ "ueberlappungen": [
+  [
+   20.25,
+   "gang_1",
+   "GANG",
+   30.57,
+   "raum_64",
+   "GANG",
+   41.54
+  ],
+  [
+   1.91,
+   "lift_1",
+   "LIFT",
+   1.91,
+   "raum_61",
+   "TECHNIK",
+   2.82
+  ],
+  [
+   0.77,
+   "gang_1",
+   "GANG",
+   30.57,
+   "raum_63",
+   "STIEGENHAUS",
+   20.22
+  ],
+  [
+   0.59,
+   "gang_1",
+   "GANG",
+   30.57,
+   "raum_30",
+   "VORRAUM",
+   3.73
+  ],
+  [
+   0.52,
+   "gang_1",
+   "GANG",
+   30.57,
+   "raum_40",
+   "KÜCHE",
+   20.1
+  ],
+  [
+   0.35,
+   "gang_1",
+   "GANG",
+   30.57,
+   "raum_39",
+   "VORRAUM",
+   4.23
+  ],
+  [
+   0.35,
+   "gang_1",
+   "GANG",
+   30.57,
+   "raum_37",
+   "BAD",
+   6.61
+  ],
+  [
+   0.27,
+   "gang_1",
+   "GANG",
+   30.57,
+   "raum_35",
+   "BAD",
+   5.73
+  ]
+ ],
+ "laufzeit_wk_s": 6.7,
+ "laufzeit_provider_s": 19.7
+}
