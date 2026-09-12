@@ -538,3 +538,969 @@ Abschnitt 1a–1d). Messungen mit ezdxf, Engine-Lauf über `build_default_bundle
   **mangels dokumentierter Kalibrier-Punkte nicht nachrechnen**. Vorschlag: die
   verwendeten Punktpaare je Geschoss mitdokumentieren. **Owner: Autor der
   Erstkalibrierung (2026-09-07).**
+
+## Mollgasse-„Laubengänge" — bewusste Grenze: kein lichtes Polygon (2026-09-10, Selman)
+
+Auftrag war zu prüfen, ob sich für Laubengänge (einseitig offen, Begrenzung
+durch Geländer/Stützen statt Wand) ein lichtes Polygon bilden lässt, ohne auf
+den anderen vier Plänen Phantom-Räume zu erzeugen. **Ergebnis: nein — und es
+gibt auf Mollgasse gar keine Laubengänge.** Die 12 nicht messbaren Segmente
+bleiben `None` mit Grund; es wurde keine Erkennung gebaut.
+
+Messstand (reproduziert, Cache neu geparst: `parse_s=31.8, raeume=64,
+segmente=126`): Barawitzka 12/12 · Mollgasse 107/126 (`flaeche_fehlt` 12,
+`nur_tuer_oder_eckpunkte` 7) · Muthgasse 154/155 · Rennweg EG 9/9 · Rennweg
+OG3 5/5 → **287/307 = 93.5 %**. Diese Zahlen ändern sich durch die
+Entscheidung nicht.
+
+**Was die 12 Mollgasse-Segmente wirklich sind.** Alle 12 haben `quelle=LINIE`
+und stammen aus `zirkulation._weg_polylinien` über `WEG_PREFIX=("09-WEG",)` —
+dem **Außenanlagen-Layer** `09-WEG_G00-LEG-M0`, nicht aus einer Raumgeometrie:
+
+- **6 entartete Polylinien-Endpunkte:** seg_41 = 0.0 mm, seg_27 = 0.3 mm,
+  seg_10 = 20 mm, seg_34 = 50 mm, seg_8 = 68 mm, seg_9 = 105 mm (1–2
+  Abtastpunkte). Sie landen nur deshalb im Topf `flaeche_fehlt` statt bei
+  `nur_tuer_oder_eckpunkte`, weil die Flächensuche vor der Punktzählung greift.
+- **4 Linien = 2 Doppellinien-Paare:** seg_92/seg_94 sind zwei parallele Linien
+  im Abstand **50 mm** über 6.2 m, seg_93/seg_95 dasselbe über 0.85 m — je zwei
+  Zeichnungslinien derselben Wegkante, nicht zwei Wege.
+- **2 echte Außenwege:** seg_4 (7451.5 mm, alle 75 Abtastpunkte außerhalb des
+  `footprint.gebaeude_umriss`, 2002 mm von jeder Wand) und seg_7 (1500 mm,
+  Außenstummel an einer Wartungstür). seg_34 liegt ebenfalls vollständig
+  außerhalb (2287 mm zur nächsten Wand), ist aber mit 50 mm selbst ein Stummel.
+
+Faktisch sind es damit **4 reale Außenwegzüge**, nicht 12 Fehlstellen.
+
+**Darstellungsbefund: Freiraumplanung, keine Laubengänge.** Nächste Texte:
+`MAUERSOCKEL + ZAUN, H = 1.00 m` (439 mm), `SANDKISTE 200x200cm`,
+`KLETTERPFLANZEN`, `PFLANZTROG, h=40cm` (279 mm), `RIGOL`, `GEFÄLLE 2%`,
+`RESTMÜLL 1100 L`. Layergruppe `09-` = Außenanlagen (`09-WEG` 140, `09-NAT`
+115, `09-SYM-GEHSTEIG` 6, `09-VER-GRUNDSTÜCKSGRENZE` 1 Entity). Der Plan trägt
+weder Layer noch Block noch Text `VORDACH|ÜBERDACHUNG|AUSKRAGUNG|LAUBENGANG|
+ARKADE|PERGOLA|CANOPY` — 0 Treffer, deckungsgleich mit dem Befund oben
+(»Überdachung vor dem Haupteingang«) und `aussenbereich.py`. Überdacht ist
+keines der Segmente (Mollgasse: 0 Überdachungen gemessen).
+
+**Warum kein lichtes Polygon gebildet werden kann** (Senkrecht-Strahlen alle
+100 mm, Trefferfenster 300–4000 mm, Deckung + Streuung je Layer und Seite):
+
+| Hypothese | Messergebnis |
+|---|---|
+| beidseitige durchgehende Begrenzung | seg_4 links bester Layer `02-AXO` **8 %** Deckung; rechts `02-AXO` 100 %, d = 346–369 mm, sd 7 — das ist das **Achsraster**, keine Bauteilkante. seg_92/94 rechts `09-SYM-GEHSTEIG` 100 %, d = 2449–2475 mm, sd 8; links `02-HID` 93 % bei d = 418–2540 mm, sd 435. Kein Segment hat beidseitig eine verwertbare Kante. |
+| Stützenreihe | 4 Texte `STB SÄULE …` im ganzen Plan, davon 2 bei seg_92/94 (Abstand 2810 mm) — zwei Stützen auf 6.2 m, keine dritte. 44 STB-Hatches sind 0.3–2.2 m² Wand-/Deckenschraffuren; Lücken auf der Achse 4342/391/1142/390 mm, keine Regelmäßigkeit. |
+| Geländer-/Brüstungslinie | Mollgasse: **0 Entities** auf einem Layer mit `GELÄNDER|BRÜSTUNG`, nur 26 Textannotationen auf `02-TXT`/`05-TXT`. Text trägt keine Geometrie. |
+| Zaun als eigener Layer | existiert nicht (0 Layer mit `ZAUN`). |
+| nächstes Raumpolygon heranziehen | 200.0–1269.6 mm entfernt; bei seg_4/seg_7 **exakt eine Wandstärke** — das Polygon liegt jenseits der Fassade, seine Kante ist die Innenseite eines anderen Raums. Wäre die falsche Fläche. |
+
+**Gegenprobe — jede solche Regel wäre unbrauchbar, und das fällt schon auf
+Mollgasse selbst:** eine Regel „nimm die nächste durchgehende Linie als
+Wegrand" greift bei **107 von 107** heute korrekt gemessenen Segmenten auf das
+Achsraster zu (`AXO<4m` 107/107) und würde jede richtige Messung durch eine
+erfundene ersetzen. Die Gehsteig-Variante berührt 0 der messbaren, steht aber
+auf 6 Entities eines einzigen Plans. Layer-Inventar über alle fünf Pläne
+(Entities AXO/HLP/HID/09-WEG/09-NAT/GEHSTEIG): Mollgasse 267/94/268/140/115/6,
+Barawitzka 0/0/0/0/0/5, Muthgasse 0, Rennweg EG 0, Rennweg OG3 0. Das gesamte
+Begrenzungs-Vokabular existiert **nur auf Mollgasse** — auf den vier anderen
+Plänen wäre die Regel weder wirksam noch prüfbar; man könnte dort nicht einmal
+messen, ob sie Phantom-Räume erzeugt. Barawitzkas 688
+„Geländer/Brüstung"-Entities sind ArchiCAD-Stiftlayer und bereits abgeräumt
+(`docs/ENIS_UEBERGABE_0908.md` § 270: 123 Entities, 2 räumliche Cluster auf
+20 × 34 m → „trägt nicht").
+
+**Entscheidung:** keine Erkennung. Ein aus Gehsteigkante oder Achsraster
+gebautes Polygon wäre ein erfundenes Maß und arbeitete gegen
+`tests/contract/test_keine_erfundenen_masse.py`. Die 12 Segmente bleiben `None`
+mit Grund, ebenso die 8 Stummel unter `nur_tuer_oder_eckpunkte`. Belege
+(Session-Scratchpad): `_lg_seg_tab.py/.json`, `_lg_umfeld2.py` +
+`_lg_umfeld_Mollgasse_EG.json`, `_lg_texte.py`, `_lg_rays.py`,
+`_lg_kandidaten.py`, `_lg_stuetzen.py`, `_lg_gelaender.py`, `_lg_gegen.py`,
+`_lg_phantom.py`, `_lg_aussen.py`, `_p5_mess_lg_repro.json`, Planausschnitte
+`_lg_A_seg4.png` … `_lg_F_seg8.png`.
+
+### @EnisAMG — Fluchtwegbreite auf Wegen im Freien (Hofweg / Vorplatz / Laubengang)
+
+Diese Frage ist von der Erkennungs-Entscheidung **unabhängig** und bleibt auch
+dann offen, wenn wir nie ein Außen-Polygon bauen.
+
+Kontext: `raumerkennung/breitenprofil` misst 287/307 Fluchtwegsegmente. Von den
+20 Resten liegen 12 auf Mollgasse_EG (seg_4/7/8/9/10/27/34/41/92/93/94/95),
+alle aus dem Außenanlagen-Layer `09-WEG_G00-LEG-M0`, ohne Raumpolygon (nächstes
+200.0–1269.6 mm entfernt). Begrenzt sind sie, wenn überhaupt, durch Zäune
+(H = 1.00/1.20/1.50 m), Mauersockel, Pflanztröge (h = 40 cm) und die
+Gehsteigkante — nicht durch Wände. Überdacht ist keiner.
+
+- **Frage 1:** Ist ein Weg im Freien auf Eigengrund (Hofweg, Vorplatz,
+  Laubengang/Außengang) im Sinne von OIB-RL 4 Kapitel 2 ein Fluchtweg **mit**
+  Breitenanforderung — oder endet die Breitenanforderung an der Gebäudehülle,
+  weil der Weg ins Freie dort bereits erreicht ist?
+- **Frage 2:** Falls ja — worauf bezieht sich dann die „Breite"? Bei einem Zaun
+  mit H = 1.00 m oder einem Pflanztrog mit h = 40 cm gibt es keine
+  raumbildende Begrenzung; die nächste durchgehende Linie im Plan ist das
+  Achsraster.
+- **Frage 3:** Falls nein — dürfen wir die betroffenen Segmente dauerhaft mit
+  `None` + Grund führen (kein Zielbandverstoß), oder sollen sie vorher aus der
+  Fluchtwegmenge fallen? Heute zählen sie in den Nenner 307 hinein.
+
+Was unsere eigene Quelle hergibt (`normwissen/data/oib_rl4_fluchtwegbreiten.yaml`,
+gegen das Original geprüft): `anwendungsbereich.gilt_fuer` = „Gebäude; für
+sonstige Bauwerke sind die Bestimmungen sinngemäß anzuwenden" — ob ein Hofweg
+ein „sonstiges Bauwerk" ist, sagt die Richtlinie nicht. `ausnahme_kleingebaeude`
+kennt nur eingeschossige Gebäude ≤ 15 m² BGF, keine Wege.
+`mindestbreiten.gaenge` (2.4.1): Hauptgang 1.20 m, 1.00 m nur in der
+abschließenden Fallliste — „Gang" ist nicht definiert und nicht auf innen/außen
+abgegrenzt. `mindestbreiten.durchgangshoehe` (2.4.8): 2.10 m auch für Gänge —
+im Freien nicht sinnvoll anwendbar, was gegen eine ungeprüfte Ausdehnung des
+Gangbegriffs spricht. Die einzigen Stellen mit „im Freien" sind
+`stadien_versammlungsstaetten_im_freien` (2.4.6) und `tueren.stadien_im_freien`
+(2.8.2) — anderer Gegenstand. `⚠_fertigmass` gilt (Vergleich mit Roh-/Nennmaß
+unzulässig). `status: nicht_pruefbar`; `benoetigte_angaben` verlangt von uns die
+„tatsächliche lichte Breite je Fluchtweg-Abschnitt" — genau die Größe, die hier
+nicht existiert.
+
+`knowledge/` gibt nichts her (Volltextsuche `laubengang|außengang|offener gang|
+im freien` über `knowledge/extracted` und `normwissen/`): nur
+`knowledge/_extracted_text/digests/buecher/Baukonstruktionslehe 1.part11.md:177`
+(„Balkone können Erschließungswege (Laubenganghäuser), Fluchtwege … bilden" —
+Fachbuch, keine Norm, ohne Maßangabe),
+`knowledge/extracted/bildlehren/Bildlehren_GSYSTEMS.md:89` (EN 1838,
+Beleuchtung einschließlich außenliegender Treppen — keine Breitenanforderung)
+und `knowledge/extracted/OVE_E_8101_niederspannungsanlagen.md:69`
+(Fluchtweg-Definition über das Ziel „sicherer Ort im Freien", ohne Aussage zur
+Breite des Wegs dorthin).
+
+Ohne Antwort bleibt die Behandlung wie heute: keine Messung, `None` mit Grund.
+**Owner: Enis (`normwissen/`).**
+
+### @EnisAMG — Raumstempel-Abkürzungen ohne Kanon-Eintrag (Muthgasse E2)
+
+Reine Vokabular-Entscheidung, keine Code-Frage. Belege in
+`docs/ENIS_UEBERGABE_0908.md` § 13.
+
+Alle 10 untypisierten Räume in Muthgasse_E2 tragen einen **vollständigen,
+korrekt gefundenen** Raumstempel auf `A-AREA-IDEN` (Nummer, Name, m², Belag).
+Sie bleiben untypisiert, weil der Name in keinem der drei Wörterbücher in
+`raumtyp.py` steht (`_EXTRA_LABELS:65`, `_EXTRA_DIRECT:95`,
+`_EXTRA_OVERRIDE:125`) und `stempel_anker.py:219-221` ohne erkannten Namen gar
+keinen `Stempel` erzeugt. Wir setzen nichts, solange die Zuordnung nicht
+fachlich entschieden ist — ein geratener `raum_typ` erzeugt eine Leuchte an
+falscher Stelle.
+
+- **Frage 1 — `Schl.` (2 Räume: `raum_65` 13,04 m², `raum_67` 3,73 m²).**
+  Der Plan belegt eine Verkehrsfläche: Nummer `E2-VF-11a`/`-11b`, und das
+  Präfix `VF` trägt in diesem Plan ausschließlich Verkehrsflächen (`STGH`,
+  `Gang`, `Aufzug 1/2`, `FW-Aufzug`, `Podest`, `Stiege`) — kein einziger
+  Wohnungsraum, die tragen Top-Nummern. `raum_65` liegt mit 0 mm Abstand an
+  fünf STIEGENHAUS-Polygonen, hat `Ker.Bel.` und `EI ₂ 30-C`-Türen an beiden
+  Durchgängen. Wir lesen das als **Schleuse** (Brandschutzschleuse vor dem
+  Stiegenhaus), nicht als Schlafzimmer — ausgeschrieben steht es im Plan
+  nirgends.
+
+  **Korrekturhinweis 2026-09-12 (Text oben unverändert):** die beiden hier
+  genannten In-Plan-Belege sind gemessen widerlegt — „0 mm Abstand an fünf
+  STIEGENHAUS-Polygonen“ ist Überlappung mit Treppen-Block-Extents (gegen das
+  STIEGENHAUS-Polygon `raum_88` aus `raeume.json`: 4848 mm), und dieselbe
+  0-mm-Klasse enthält die Küchen `raum_29`/`raum_91`/`raum_86`. Die Lesart
+  „Schleuse“ ist dadurch **nicht** widerlegt, nur diese Begründung: entschieden
+  hat es das Vergleichsgeschoss (Enis, 2026-09-11). Details im Abschnitt
+  „Zwei Korrekturen am Abschnitt darüber“ weiter unten.
+  → Bekommt `Schleuse` einen eigenen Kanon-Typ (`docs/VOKABULAR.md` § 1 kennt
+  ihn nicht), und mit welcher Nutzungsklasse? Wirkung, gemessen:
+  `ALLGEMEIN_ERSCHLIESSUNG` würde 2 Räume typisieren und `tuer_50` zur
+  `stiegenhaustuer` machen (+1 `stair_exit` für `test_soll_stair_exits`);
+  `WOHNUNG_PRIVAT` hätte keine Wirkung auf die Ausgänge.
+  → **Ausformuliert mit Planausschnitt, Indizientabelle und Kurzform-Scan über
+  alle fünf Pläne im letzten Abschnitt dieser Datei.**
+- **Frage 2 — `Vorr.` (3 Räume) und `Schrankr.` (1 Raum).**
+  Gilt `Vorr.` als `VORRAUM` und `Schrankr.` als `ABSTELLRAUM`? Beide Kanon-Typen
+  existieren, nur die Abkürzung fehlt im Wörterbuch. Beide führen zu
+  `WOHNUNG_PRIVAT`, also ohne Wirkung auf Ausgänge — sie schließen aber die
+  Türtypisierungs-Lücke `unbekannte_kombination` bei `tuer_11/12/13`.
+- **Frage 3 — `SR` (2 Räume Muthgasse, je 1 in Barawitzka und Mollgasse) sowie
+  `Aufzug 1`/`Aufzug 2` (2 Räume).** `SR` ist ohne Auflösung mehrdeutig.
+  `Aufzug` steht als Token nur über `fw` (`FW-Aufzug`) im Wörterbuch; ein
+  Eintrag `aufzug` hätte über alle fünf Pläne **11 Falschtreffer** (Kabinen- und
+  Bedienfeldbeschriftungen, Maßketten) und ist ohne m²-Kontextbedingung nicht
+  sicher.
+
+Falschtreffer-Messung über alle fünf Pläne (`_r65_falschtreffer.py`,
+token-exakt, „Falschtreffer" = Treffer ohne m²-Nachbar, also kein Raumstempel):
+`schl` 0, `vorr` 0, `schrankr` 0, `sr` 0, `aufzug` 11, `stiege` 4, `podest` 4.
+Die ersten vier wären also risikofrei umsetzbar, sobald das **Label** feststeht.
+
+**Owner: Enis (`normwissen/`).** Bis zur Antwort bleiben die Räume untypisiert;
+das ist gewollt und kein Defekt.
+
+### @EnisAMG — Entscheidung `Schl.`: **Schleuse** oder **Schlafzimmer**? (2026-09-10, Selman)
+
+Ausformulierung der Frage 1 aus dem Abschnitt darüber. Alle Zahlen gemessen
+(`_s2_r65_steckbrief.py`, `_s2_r67.py`, `_s2_kurzform_scan.py`,
+`_s2_kurzform_bilanz.py`), Belege in `docs/ENIS_UEBERGABE_0908.md` § 13.
+**Es ist nichts gesetzt und nichts geraten: der `xfail` bleibt, ein neuer
+Kanon-Typ entsteht erst nach deiner Entscheidung.**
+
+#### Planausschnitt `raum_65` (Muthgasse_E2)
+
+| Feld | Wert |
+|---|---|
+| Fläche | **13,04 m²** (Stempel `13,04 m²`, deckungsgleich mit dem Polygon) |
+| Zentrum (xy_mm) | 335 283 / 108 862 |
+| bbox | x 333 153…337 815, y 106 351…111 004 mm → 4,66 × 4,65 m, **L-förmig um den Stiegenkern gewickelt** |
+| Umfang / Punkte | 15,28 m / 15 Stützpunkte |
+| Stempelgruppe (`A-AREA-IDEN`) | `E2-VF-11a` · **`Schl.`** · `13,04 m²` · `Ker.Bel.` |
+| Heute | `raum_typ` leer, `nutzungsklasse=None`, `flag=kein_stempel`, Kaskadenzweig `L` |
+
+**Nachbarräume (Polygonabstand ≤ 2000 mm):**
+
+| Abstand | Raum | raum_typ | Nutzungsklasse | Fläche |
+|--:|---|---|---|--:|
+| 0 mm | `stiegenhaus_1` | STIEGENHAUS | ALLGEMEIN_ERSCHLIESSUNG | 11,16 m² |
+| 0 mm | `stiegenhaus_2` | STIEGENHAUS | ALLGEMEIN_ERSCHLIESSUNG | 7,89 m² |
+| 0 mm | `stiegenhaus_3` | STIEGENHAUS | ALLGEMEIN_ERSCHLIESSUNG | 8,14 m² |
+| 0 mm | `stiegenhaus_4` | STIEGENHAUS | ALLGEMEIN_ERSCHLIESSUNG | 8,22 m² |
+| 0 mm | `stiegenhaus_5` | STIEGENHAUS | ALLGEMEIN_ERSCHLIESSUNG | 10,66 m² |
+| 180 mm | `raum_52` | untypisiert (Stempel `SR`) | – | 5,19 m² |
+| 180 mm | `raum_46` | GANG | ALLGEMEIN_ERSCHLIESSUNG | 28,52 m² |
+| 267 mm | `raum_89` | BAD | WOHNUNG_PRIVAT | 4,19 m² (**nur Wandkontakt, keine Tür**) |
+| 666 mm | `raum_94` | GANG | ALLGEMEIN_ERSCHLIESSUNG | 18,10 m² |
+| 1522 mm | `raum_50` | ZIMMER | WOHNUNG_PRIVAT | 13,38 m² |
+| 1809 / 1920 mm | `lift_4` / `lift_5` | LIFT | KEIN_RAUM | je 3,73 m² |
+
+**Lage zum Stiegenhaus:** Abstand **0 mm zu fünf STIEGENHAUS-Polygonen**
+(`stiegenhaus_1…5` sind Podest- und Laufteilstücke desselben Kerns),
+gemeinsame Kontaktlänge zusammen ~8,2 m.
+
+**Korrekturhinweis 2026-09-12 (beide Angaben dieses Absatzes sind widerlegt;
+der Text bleibt als Stand seines Datums stehen):** die 0 mm stammen aus
+Überlappung mit den Bounding-Rechtecken der Treppen-Blockreferenzen
+(`geometrie_typ.py:47-63`, `:89`) — gegen das STIEGENHAUS-Polygon `raum_88`
+aus `raeume.json` ist `raum_65` **4848 mm** entfernt, und dieselbe 0-mm-Klasse
+enthält die Küchen `raum_29`/`raum_91`/`raum_86`. Die gemeinsame Kante zu
+`stiegenhaus_1…5` misst **Σ 4,72 m** (Gegenrichtung Σ 5,21 m; Einzelkanten
+662/1132/1131/1131/662 mm), nicht ~8,2 m. Nachmessung: Abschnitt „Zwei
+Korrekturen am Abschnitt darüber“.
+
+**Türen (5 echte Übergänge, dazu 2 Selbstbezüge aus Textankern):**
+
+| Tür | Quelle | lichte Breite | von → nach | Gegenseite |
+|---|---|--:|---|---|
+| `tuer_50` | `arc_aussen+text:E2-VF-12a` | 655 mm | `stiegenhaus_1` → `raum_65` | STIEGENHAUS |
+| `durchgang_140` | `durchgang+text:E2-VF-12a` | 1126 mm | `raum_65` → `stiegenhaus_1` | STIEGENHAUS |
+| `durchgang_141` | `durchgang+text:T-E2-VF-11a-1` | 1513 mm | `raum_65` → `stiegenhaus_2` | STIEGENHAUS |
+| `durchgang_142` | `durchgang` | 1515 mm | `raum_65` → `stiegenhaus_2` | STIEGENHAUS |
+| `durchgang_120` | `durchgang+text:T-E2-VF-11a-2` | 2196 mm | `raum_52` → `raum_65` | untypisiert (`SR`) |
+
+**4 von 5 Übergängen führen direkt ins Stiegenhaus. Kein einziger Übergang
+führt zu einem Raum mit `nutzungsklasse=WOHNUNG_PRIVAT`.** An zwei der
+Stiegenhaus-Durchgänge steht die Türbeschriftung **EI₂30-C** (im DXF in drei
+MTEXT-Fragmente zerlegt: `EI` + Index 2 + `30-C`), dazu `121`/`200` als lichtes
+Maß und `STUK= +11,12`. Im 5-m-Ring: `Glaswand EI90+A2`, 2× `E90`.
+
+#### Indizien für beide Lesarten
+
+| Indiz | Messwert | spricht für |
+|---|---|---|
+| Nummernpräfix | `E2-VF-11a` — `VF` trägt im Plan **ausschließlich** Verkehrsflächen (STGH, Gang, Aufzug, Podest, Stiege); Wohnungsräume tragen Top-Nummern `E2-7-…` bis `E2-10-…` | Schleuse |
+| Wohnungszugehörigkeit | keine Tür zu einem `WOHNUNG_PRIVAT`-Raum | Schleuse |
+| Türen ins Stiegenhaus | 4 von 5 | Schleuse |
+| Brandschutz | 2× vollständige EI₂30-C-Beschriftung, exakt an den beiden Stiegenhaus-Durchgängen | Schleuse |
+| Anzahl Öffnungen | 3 Öffnungen — Durchgangsraum, kein Sackraum | Schleuse |
+| Geometrie | L-förmig, 15 Punkte, um den Stiegenkern gewickelt, 8,2 m gemeinsame Kante, Abstand 0 mm | Schleuse |
+| Belag | `Ker.Bel.` (Keramik). Wohnräume dieses Plans tragen `Parkett` (49×), Nassräume `Ker.Bel.` (26×) | Schleuse |
+| Plan-Vokabular | Schlafräume heißen in diesem Plan ausgeschrieben **`Zimmer` (20×)**; die Tokens `Schlaf…` und `SZ` kommen **null Mal** vor | Schleuse |
+| Zweiter `Schl.`-Raum | `raum_67`, `E2-VF-11b`, **3,73 m²**, Nachbarn `raum_88` STIEGENHAUS (0 mm) und `raum_68` GANG (180 mm), Türen → Stiegenhaus + Gang, ebenfalls `Ker.Bel.` — als Schlafzimmer physisch ausgeschlossen | Schleuse |
+| **Fläche 13,04 m²** | liegt im Zimmer-Flächenband des Plans (19 ZIMMER: min 1,17 / median 10,31 / max 18,95 m²) | **Schlafzimmer** |
+| Nachbarschaft `raum_89` BAD (267 mm) | Wandkontakt, aber **keine Tür** dorthin | neutral |
+
+**Korrekturhinweis 2026-09-12 zu dieser Tabelle (Zeilen unverändert gelassen):**
+zwei Zeilen tragen widerlegte Messwerte. „Geometrie … 8,2 m gemeinsame Kante,
+Abstand 0 mm“ → gemessen **Σ 4,72 m**, und die 0 mm sind Überlappung mit
+Treppen-Block-Extents statt Wandkontakt (gegen `raum_88` aus `raeume.json`:
+4848 mm). „Zweiter `Schl.`-Raum … `raum_88` STIEGENHAUS (0 mm)“ → dasselbe
+0-mm-Merkmal; es trennt Schleuse **nicht** von Küche (`raum_29`/`raum_91`/
+`raum_86` liegen in derselben Klasse). Die Indizienlage insgesamt bleibt
+bestehen, diese beiden Indizien tragen sie aber nicht.
+
+**Für „Schlafzimmer" spricht ausschließlich die Fläche** — und diese nur bei
+`raum_65`, nicht bei `raum_67` (3,73 m² unter derselben Abkürzung, gleiche
+Nummernserie `E2-VF-11a/b`). Jedes andere gemessene Merkmal spricht für eine
+Rauch-/Brandschutzschleuse vor dem Stiegenhaus.
+
+#### Die Entscheidungsfrage
+
+> **Ist `Schl.` in dieser Plan-Familie eine Schleuse oder ein Schlafzimmer?**
+>
+> - **Schleuse** — Brandschutz-/Rauchschutzschleuse vor dem Stiegenhaus, Teil
+>   der Erschließung, damit **beleuchtungspflichtig**. Dann brauchen wir von dir
+>   das Kanon-Label: eigener Typ `SCHLEUSE` in `docs/VOKABULAR.md` § 1 +
+>   `RoomType` (heute existiert beides nicht), oder Zuordnung auf einen
+>   bestehenden Typ (`VORRAUM`/`GANG`) — plus die Nutzungsklasse
+>   (`ALLGEMEIN_ERSCHLIESSUNG`?).
+> - **Schlafzimmer** — privat, **keine Notbeleuchtung**. Dann Wörterbucheintrag
+>   `schl → ZIMMER`, Nutzungsklasse `WOHNUNG_PRIVAT`.
+
+Gemessene Wirkung der Entscheidung: `ALLGEMEIN_ERSCHLIESSUNG` typisiert 2 Räume
+und macht `tuer_50` zur `stiegenhaustuer` (+1 `stair_exit` in
+`test_soll_stair_exits`); `WOHNUNG_PRIVAT` hat keine Wirkung auf die Ausgänge.
+Falschtrefferrisiko für den Token `schl` über alle fünf Pläne: **0**
+(token-exakt gemessen, „Falschtreffer" = Treffer ohne m²-Nachbar).
+
+Ersatzweise `GANG`/`VORRAUM` **zu raten** ist der einzige Weg, den wir nicht
+gehen: er entscheidet über Leuchte oder keine Leuchte.
+
+#### Kurzform-Scan über die anderen vier Pläne — ist das ein Einzelfall?
+
+Methode: alle m²-verankerten Stempelgruppen (r=1500 mm, wie
+`stempel_anker._stempel_aus_texten`, zusätzlich auf den Layer des m²-Ankers
+eingegrenzt) plus alle INSERT/ATTRIB-Stempel aus `finde_stempel`.
+„Nicht aufgelöst" = kein Kandidat der Gruppe liefert `raumtyp_flags(...)` ungleich `None`.
+
+| Plan | Stempelgruppen | aufgelöst | **nicht aufgelöst** | INSERT-Stempel ohne Typ |
+|---|--:|--:|--:|--:|
+| Barawitzka_EG | 65 | 36 | **29** | 0 |
+| Mollgasse_EG | 4 | 0 | **4** | **27** |
+| Muthgasse_E2 | 130 | 99 | **31** | 0 |
+| Rennweg_EG | 0 | 0 | 0 | **5** |
+| Rennweg_OG3 | 0 | 0 | 0 | 0 |
+
+Echte Abkürzungen ohne Kanon-Auflösung (je `raumtyp_flags=None`,
+`classify_room=UNKNOWN`):
+
+| Kurzform | Bara. | Moll. | Muth. | Renn_EG | Renn_OG3 | Σ |
+|---|--:|--:|--:|--:|--:|--:|
+| `Vorr.` | 0 | 0 | 8 | 0 | 0 | **8** |
+| `SR` | 1 | 1 | 3 | 0 | 0 | **5** |
+| **`Schl.`** | 0 | 0 | **2** | 0 | 0 | **2** |
+| `Schrankr.` | 0 | 0 | 1 | 0 | 0 | **1** |
+| `gärtn. gest.` | 2 | 0 | 0 | 0 | 0 | 2 |
+
+**`Schl.` kommt nur in Muthgasse_E2 vor, dort zweimal — in den anderen vier
+Plänen null Mal.** Es ist damit kein einmaliger Ausrutscher, aber auch nicht die
+Spitze: Platz 3 hinter `Vorr.` (8) und `SR` (5).
+
+Wirkung auf die Untypisiert-Zahl (50 untypisierte Räume über fünf Pläne,
+identisch mit § 13.6): `Schl.` kostet **2 von 50** (4 %). Die vier Kurzformen
+zusammen (`SR` 4, `Vorr.` 3, `Schl.` 2, `Schrankr.` 1) kosten **10 Räume =
+20 %**. Die Mehrheit (Mollgasse 28, Rennweg_EG 5) hängt dagegen an
+**ausgeschriebenen** Außenraum- und Nutzungsbegriffen (`EIGENGARTEN`, `GEHWEG`,
+`VORPLATZ`, `TOP n`, `GESCHÄFTSLOKAL`, `Müllplatz`), nicht an Abkürzungen — das
+ist eine getrennte Vokabularfrage und nicht Teil dieser Entscheidung.
+
+**Owner: Enis (`normwissen/`).** Bis zur Antwort bleiben `raum_65` und
+`raum_67` untypisiert, der `xfail` bleibt stehen, und es entsteht **kein neuer
+Kanon-Typ**.
+
+### Entscheidung `Schl.` (Enis, 2026-09-11) + Entscheidungsvorlage für die übrigen Vorkommen
+
+Antwort auf die Frage im Abschnitt darüber — der bleibt als Herleitung stehen,
+**zwei seiner Zahlen sind unten korrigiert**. Alle Zahlen hier aus einem
+Inventar-Lauf über 13 DXF (fünf Prüfpläne + Muthgasse DD/E2–E9), Texte gelesen
+wie `stempel_anker.finde_stempel` (TEXT, MTEXT `plain_text()`, ATTRIB,
+Blocktexte), Token-Regel `raumtyp._WORT`.
+
+**Entschieden: `E2-VF-11a` = `SCHLEUSE`** (Rauch-/Brandschutzschleuse vor dem
+Stiegenkern), Nutzungsklasse `ALLGEMEIN_ERSCHLIESSUNG`, Fluchtweg + communal.
+Die **Notbeleuchtungsanforderung bleibt ausdrücklich offen** und ist gesondert
+zu prüfen (`normwissen/data/regel_deckung.yaml` → `SCHLEUSE: offen`, Owner
+Enis). Begründung (Enis): Lage beim Stiegenkern und der ausgeschriebene
+Vergleichstext `DBA-Abstr. Schleuse` in E8/E9 an derselben Lage.
+
+Umgesetzt ist genau das — und nicht mehr:
+
+- Kanon-Typ `SCHLEUSE` in `docs/VOKABULAR.md` §1, `raumtyp._EXTRA_DIRECT`
+  (**nur das ausgeschriebene Wort** `schleuse`), `nutzungsklasse._MAP`,
+  Enis' LB-Stützliste und `regel_deckung.yaml`.
+- Das **Kürzel** `Schl.` steht bewusst NICHT im Wörterbuch. Es löst nur
+  `raumerkennung/kuerzel_entscheid.py` auf, und nur bei **Zusatzbeleg UND
+  Owner-Entscheidung für genau diese Stempelnummer**. Beleg ohne Entscheidung →
+  untypisiert + Hinweis „Entscheidung ausstehend"; kein Beleg → untypisiert +
+  Hinweis „kein Zusatzbeleg". Beide Hinweise stehen im Prüfbericht
+  (`bericht.md` → „Hinweise Kürzel-Auflösung").
+
+#### Inventar: alle `Schl.`-Vorkommen über die fünf Prüfpläne
+
+`Schl.` kommt **nur in Muthgasse_E2** vor, dort 2×. Token `schl` in den anderen
+vier Plänen: **0** (die Substring-Treffer `Anschluß`, `Lüftungsschlitz`,
+`TÜRSCHLIESSER`, `Frischluftansaugung`, `E-HAUSANSCHLUSSKASTEN` sind keine
+Tokens). Token `schleuse` in allen fünf Plänen: **0** — der neue
+Wörterbuch-Eintrag ändert an den fünf Plänen also nichts.
+
+| Vorkommen | Lage (xy_mm) | Stempelgruppe | Raum (`raeume.json`) | Belege | was fehlt |
+|---|---|---|---|---|---|
+| `E2-VF-11a` | 335 239 / 108 646, MTEXT `A-AREA-IDEN` | `E2-VF-11a` · `Schl.` · `13,04 m²` · `Ker.Bel.` | `raum_65`, Quelle L, Typ leer, 13,04 m², 15 Punkte | Stiegenkern-Lage (0 mm zu den Treppen-Extents) · Text `DBA` in 1495 mm (ab Namens-Text; der Code misst ab dem m²-Anker `Stempel.position_mm`: 1663 mm bei Radius 2000 mm) · E8 `DBA-Abstr. Schleuse` 627 mm, E9 10 mm | **nichts — entschieden** |
+| `E2-VF-11b` | 333 017 / 97 219, MTEXT `A-AREA-IDEN` | `E2-VF-11b` · `Schl.` · `3,73 m²` · `Ker.Bel.` (Nummerntext 350 mm) | `raum_67`, Quelle L, Typ leer, 3,73 m², 8 Punkte; liegt zu **99,3 %** in `raum_88` (Quelle F, STIEGENHAUS) | Stiegenkern-Lage (0 mm zu `raum_88`) · Text `WDB DBA` in 1042 mm (ab m²-Anker 1232 mm), `DBA` in 1787 mm | **Owner-Entscheidung** (s. offene Frage unten) |
+| Barawitzka_EG, Mollgasse_EG, Rennweg_EG, Rennweg_OG3 | — | 0 Treffer | — | — | — |
+
+#### Zwei Korrekturen am Abschnitt darüber (gemessen, nicht geglättet)
+
+1. **„~8,2 m gemeinsame Kontaktlänge" ist mit der dortigen Definition nicht
+   reproduzierbar.** Nachgemessen ergibt die gemeinsame Kante von `raum_65` zu
+   `stiegenhaus_1…5` **Σ 4,72 m** (Gegenrichtung gemessen **Σ 5,21 m**), nicht
+   8,2 m. Die Einzelkanten: 662 / 1132 / 1131 / 1131 / 662 mm.
+2. **„0 mm Abstand zu fünf STIEGENHAUS-Polygonen" beruht auf Überlappung mit
+   Treppen-Rechtecken, nicht auf Wandkontakt zu Raumpolygonen.** Die Räume
+   `stiegenhaus_1…8` sind Bounding-Rechtecke der Treppen-Blockreferenzen
+   (`geometrie_typ.py:47-63`, `:89`) und stehen nur im Provider-Dump, **nicht in
+   `raeume.json`**. Geometrisch sind die fünf nur **2 Lagen** (IoU 0,960–0,991
+   bzw. 0,956). Gegen das STIEGENHAUS-Polygon `raum_88` aus `raeume.json` ist
+   `raum_65` **4848 mm** entfernt. Und: dieselbe 0-mm-Klasse enthält die Küchen
+   `raum_29`, `raum_91`, `raum_86` — **das Merkmal trennt Schleuse nicht von
+   Küche.** Genau darum ist die Stiegenkern-Lage im Code nur *Beleg*, nie
+   Entscheidung.
+
+#### Der eigentliche Unterscheider: das Vergleichsgeschoss
+
+E3–E9 teilen das Koordinatensystem von E2 (häufigster Versatz je Geschoss
+`0 / 0`; der Text `DBA` steht in E2–E9 exakt bei 331 620 / 98 334).
+
+| Geschoss | an der Lage von `raum_65` | an der Lage von `raum_67` |
+|---|---|---|
+| E3–E6 | `Schl.` `E?-VF-11a`, 13,03–13,04 m², IoU ≥ 0,999 | `Schl.` `E?-VF-11b`, 3,73 m², IoU ≥ 0,999 |
+| E7 | `Schl.` `E7-VF-11`, 13,03 m² | **WC** `E7-SF-32`, 4,36 m² |
+| E8 | `Schl.` `E8-VF-11`, 13,03 m² | **SR** `E8-114-06`, 6,07 m², Parkett |
+| E9 | KIWA + Gang (`Schl.` dort verlegt) | **SR** `E9-121-06`, 6,07 m² |
+
+`DBA-Abstr. Schleuse` steht in **E8** bei 332 846 / 108 857 = **627 mm von
+`raum_65`**, 9791 mm von `raum_67`; in **E9** **10 mm von `raum_65`**.
+In E2 selbst kommen `Schleuse` und `Abstr` **nicht** vor.
+
+**Folge für den Code:** ein Einzelplan-Parse sieht die Nachbargeschosse nicht —
+dieser Beleg steckt deshalb in der *Entscheidung* (Register in
+`kuerzel_entscheid.py`), nicht in einer Erkennungsregel.
+
+#### @EnisAMG — offene Frage: gilt die Entscheidung auch für `E2-VF-11b` (`raum_67`)?
+
+Bis zu deiner Antwort bleibt `raum_67` **untypisiert** mit dem Hinweis
+„Entscheidung ausstehend" im Prüfbericht. Das ist gewollt und kein Defekt.
+
+| spricht dafür (auch Schleuse) | spricht dagegen |
+|---|---|
+| gleiche Nummernserie `E2-VF-11a/b`, gleicher Belag `Ker.Bel.` | **3,73 m²** — klein für eine Schleuse, und identisch mit der Fläche von `lift_4`/`lift_5` |
+| 0 mm zum STIEGENHAUS-Polygon `raum_88`, 180 mm zum GANG `raum_68` | liegt zu **99,3 %** in `raum_88` (F-Artefakt) — die Lage ist also teilweise dieselbe Fläche, kein eigener Vorraum |
+| Text-Beleg `WDB DBA` in 1042 mm (ab m²-Anker 1232 mm) | `DBA-Abstr. Schleuse` steht in E8/E9 **9,8 m entfernt**, also an `raum_65`, nicht hier |
+| E3–E6 tragen an derselben Lage `Schl.` `E?-VF-11b` | **E7 trägt dort ein WC**, **E8/E9 ein SR** (6,07 m², Parkett) — die Lage ist über die Geschosse nicht stabil erschließungsgenutzt |
+| 2 Übergänge (Stiegenhaus + Gang), kein Sackraum | nur 1 `EI`+`30-C`-Beschriftung im Polygon + 500-mm-Ring (bei `raum_65`: 3) |
+
+Zum Entscheiden brauchen wir von dir genau eine Aussage: **`E2-VF-11b` = auch
+`SCHLEUSE`** (dann ein zweiter Register-Eintrag) **oder ein anderer Typ** (dann
+welcher) **oder bleibt untypisiert**.
+
+**Owner-Entscheidung 2026-09-12 (Selman): `raum_67` bleibt untypisiert, bis
+Enis entscheidet.** Kein Ersatz-Typ, kein zweiter Register-Eintrag, kein
+Raten — die Lücke ist gewollt und kein Defekt. Der Prüfbericht weist sie **je
+Lauf** aus (`Projekte/_ergebnis/Muthgasse_E2/bericht.md` → „## Hinweise
+Kürzel-Auflösung“: „raum_67: Stempel »Schl.« (Kuerzel `schl`), Nummer
+E2-VF-11b (350 mm) - bleibt untypisiert: Entscheidung ausstehend“), sie ist
+also in jedem Lauf sichtbar und verschwindet nicht still. **Ausdrücklich: die
+Entscheidung für `E2-VF-11a` gilt nur für diese eine Stempelnummer.**
+`raumerkennung/kuerzel_entscheid.py` löst `Schl.` ausschließlich bei
+Zusatzbeleg UND eingetragener Owner-Entscheidung **je Stempelnummer** auf; aus
+`E2-VF-11a` = `SCHLEUSE` folgt für `E2-VF-11b` nichts.
+
+## Auflage A — `lichte_quelle` mit dem ersten Erzeuger von `lichte_mm` (Enis, Contract 1.4.0)
+
+Stand 2026-09-12, Selman. Auflage von @EnisAMG zur Zustimmung `raum_modell`
+1.4.0: **„`lichte_quelle` samt Test spätestens mit dem ersten Erzeuger von
+`lichte_mm`."** Heute setzt **kein** Code `lichte_mm`: das Feld ist nur
+deklariert (`hauptengine/contracts/raum_modell.py:107`),
+`tests/raumerkennung/test_tueren.py:141` pinnt `lichte_mm is None`, und
+`lichte_quelle` ist bewusst nicht angelegt (`docs/ENIS_UEBERGABE_0908.md:744-745`
+— ohne Erzeuger wäre es ein totes Feld). Gemessen über die fünf Prüfpläne
+(612 Türen, echter Provider-Lauf): **`lichte_mm` gesetzt bei 0 Türen.**
+
+**Auslöser-Regel.** Wer `lichte_mm` zum ersten Mal auf einen Wert ungleich
+`None` setzt, legt **im selben PR** an:
+
+1. `Tuer.lichte_quelle: str | None = None` — Beleg im Format `text:<Beleg>`
+   oder `blockname:<Blockname>`, gesetzt genau dann, wenn `lichte_mm` gesetzt ist;
+2. den Test „kein `lichte_mm` ohne `lichte_quelle`; ohne Beleg bleibt
+   `lichte_mm` `None`" — **fertige Skizze unten**, Ziel
+   `tests/raumerkennung/test_tueren.py` neben dem None-Pin Z. 141;
+3. die Contract-Änderung mit `CONTRACT_VERSION`-Bump, `python
+   scripts/gen_schema.py` (Drift-Gate `tests/contract/test_schema_drift.py`) und
+   Approval aller drei Owner auf dem aktuellen Head (Check `contract-freeze`).
+
+Ein PR, der `lichte_mm` ohne 1.–3. setzt, bekommt kein Approval.
+
+**Wo der erste Erzeuger sitzen wird.** Gemessen an Muthgasse_E2, dem einzigen
+der fünf Prüfpläne mit Lichte-Angaben; die anderen vier haben 0 DL-Blöcke und
+0 `b/h`-Texte.
+
+| Beleg im Plan | Codestelle heute | Was dort fehlt |
+|---|---|---|
+| **Blockname mit `DL`**: 16 INSERTs in 15 Namen, `TU DF 1 - Umfassungszarge flächenbündig - DL - 800 x 2490` (einmal `x 2000`) | `raumerkennung/tueren.py::_block_tueren` Z. 92–98 — die einzige Stelle, an der ein Blockname zu einer `Tuer` mit Maß wird (`b = _breite_mm(e.dxf.name)` Z. 92, `Tuer(…, breite_quelle="BLOCKNAME" …)` Z. 93–98). Dort käme `lichte_mm=…, lichte_quelle=f"blockname:{e.dxf.name}"` dazu. | Die DL-Blöcke kommen dort **nicht an**: `_ist_tuer_block` (Z. 50–58, Filter Z. 89) liefert für alle 16 `False`, weil `_DOOR_HINT` (Z. 36) `TU DF` nicht kennt. 12 der 16 sieht die Pipeline heute nur über ihren Schwenkbogen, als `TuerOeffnung(quelle="arc", breite_mm=800.0, GEOMETRIE_SCHWENKRADIUS)` 400 mm neben dem INSERT (`tuer_oeffnungen` Z. 182–194); 1 in 1635 mm Abstand, 2 ohne Öffnung in der Nähe, 1 liegt 0 mm auf einem Türblock `…_95x200` (→ 950 mm BLOCKNAME). Der erste Erzeuger muss also die Tür-Erkennung Z. 36/50–58 mit erweitern — das ändert die Türmenge von Muthgasse und braucht einen Prüfstreckenlauf. |
+| **Texte `90` / `200`** neben einer der 83 Durchgangslichte-Fahnen (`docs/ENIS_UEBERGABE_0908.md:639-652`) | keine Stelle | Die Fahnen verwirft `_ist_tuer_block` Z. 51–57; übrig bleibt nur der Zähler `_verworfene_bloecke` (Z. 33), die Position geht verloren. „90/200" steht in keinem Prüfplan als **ein** Text (0 Treffer; Muthgasse hat 26 `b/h`-Einzeltexte, häufigster `45,5/100` 12×, keiner `90/200`). Ein Text-Erzeuger wäre eine neue Funktion neben `text_tueren` (`tueren.py:336-353`), aufgerufen in `provider.py::parse` nach Z. 135 (dort ist die Türmenge vollständig, IDs sind neu vergeben) und vor `typisiere_tueren` Z. 141. |
+
+**Kein Erzeuger-Kandidat:** `tuer_zuordnung.py:155-159` und `:217-222` liefern
+`GEOMETRIE_OEFFNUNG`, also die Rohbauöffnung, die systematisch **größer** als die
+Durchgangslichte ist (`ENIS_UEBERGABE_0908.md:622`). `provider.py:91-98` baut
+Türen aus `TuerOeffnung`; die Dataclass (`tueren.py:129-138`) hat kein
+Lichte-Feld, und der Pfad greift nur, wenn `tueren_aus_dxf` leer ist (Rennweg,
+0 DL-Blöcke).
+
+**Die heutigen 19 BLOCKNAME-INSERTs von Muthgasse tragen keinen einzigen
+DL-Token:** `…_1DF_90x200` 8, `…_1DF_95x200` 6, `FE TÜR 2 tlg … 1000 x 2550` 3,
+`2D_barrierefrei_Türbereich 150_200 - r75` 2. Damit ist § 6.2 der Übergabe
+(`ENIS_UEBERGABE_0908.md:625`, „die 18 BLOCKNAME-Türen trügen DL-Notation")
+**durch Messung widerlegt** — die `- DL -`-Blöcke sind gar keine Tür-Blöcke. Ob
+`90x200` die Durchgangslichte nennt, ist Enis' offene Frage 9
+(`ENIS_UEBERGABE_0908.md:848`); bis zur Antwort ist das kein Beleg und
+`lichte_mm` bleibt dort `None`. Ein Messpunkt dazu, ausdrücklich als
+Interpretation und nur ein Einzelfall: an einer Position liegt der DL-Block
+`DL - 800 x 2490` genau (0 mm) auf einem Türblock `…_95x200` (→ `breite_mm` 950).
+Beschreiben beide dieselbe Tür, kann `95x200` dort nicht die Durchgangslichte
+sein.
+
+**Randbedingung für den Parser:** `2D_barrierefrei_Türbereich 150_200 - r75`
+ergibt über die „erste Zahl"-Heuristik von `_breite_mm` (`tueren.py:77-83`)
+750 mm BLOCKNAME — das ist vermutlich ein Radius, nicht eine Türbreite
+(semantisch nicht geprüft). Ein Lichte-Parser darf diese Heuristik deshalb
+**nicht** übernehmen, sondern muss an den `DL`-Token gebunden sein.
+
+**Was der bestehende Riegel schon leistet — und was nicht.** `lichte_mm` ist
+über die Endung `_mm` automatisch Messfeld von
+`tests/contract/test_keine_erfundenen_masse.py` (`_messfelder()` Z. 48–58,
+nachgeprüft: `lichte_mm in MESSFELDER` = True). `Tuer(lichte_mm=900)` oder
+`t.lichte_mm or 900` wird damit rot (Z. 98–108). Ein aus Blockname oder Text
+**geparster** Wert ist aber kein Zahl-Literal und geht durch; ob er belegt ist,
+sieht der AST nicht. Genau diese Lücke schließt `lichte_quelle` samt Test.
+
+**Test-Skizze (fertig, nicht als lebende Testdatei eingecheckt).** Unverändert
+als Scratchpad-Kopie gegen den heutigen Code gelaufen: **`2 passed, 2 xfailed`**
+— die Invariante und der Negativfall sind heute grün, die beiden Positivfälle
+sind strict-xfail. Der Erzeuger-PR dreht sie auf XPASS (= rot) und muss die
+xfails entfernen.
+
+```python
+"""Auflage A (Enis, Contract 1.4.0): lichte_mm nur mit Beleg in lichte_quelle.
+
+Jede Tuer mit ``lichte_mm is not None`` traegt ``lichte_quelle`` im Format
+``text:<Beleg>`` oder ``blockname:<Blockname>``. Ohne Beleg bleibt lichte_mm
+None — nie aus breite_mm abgeleitet, kein Abschlag, kein Faktor.
+"""
+import re
+
+import ezdxf
+import pytest
+
+from notbeleuchtung.raumerkennung.dxf_load import lade_dxf
+from notbeleuchtung.raumerkennung.tueren import text_tueren, tueren_aus_dxf
+
+_LICHTE_QUELLE = re.compile(r"^(text|blockname):\S.*$")
+
+# echte Blocknamen aus Muthgasse_E2 (Projekte/_eingang/Muthgasse_E2.dxf)
+DL_BLOCK = ("TU DF 1 - Umfassungszarge flächenbündig - DL - 800 x 2490 "
+            "-Glas-V147-E 2 - FOK AF 300")
+FAHNE = ("HNP_Beschriftung Türen - AF 50 - Durchgangslichte_ Nummer_ "
+         "Brandschutz_ STUK oben Projekt-12188994-1")
+TUERBLATT = "HNP_T_BZ_1-DF - HNP_T32_BZ-S_H_EI230_1DF_90x200 WET-16703914-1"
+
+
+def _tueren(plan):
+    # ANPASSEN im Erzeuger-PR: die Kette aufrufen, die lichte_mm setzt.
+    t = tueren_aus_dxf(plan)
+    return t + text_tueren(plan, t)
+
+
+def _verstoesse(tueren) -> list[str]:
+    return [f"{t.id}: lichte_mm={t.lichte_mm} "
+            f"lichte_quelle={getattr(t, 'lichte_quelle', None)!r}"
+            for t in tueren
+            if t.lichte_mm is not None
+            and not _LICHTE_QUELLE.match(getattr(t, "lichte_quelle", None) or "")]
+
+
+@pytest.fixture
+def lichte_plan(tmp_path):
+    """Drei Tueren nebeneinander (je 6 m Abstand, ausserhalb _TEXT_TUER_NAH_MM):
+    (a) Blockname mit DL-Token, (b) Tuerblatt + Durchgangslichte-Fahne mit den
+    Texten "90"/"200" (so steht es in Muthgasse, ENIS_UEBERGABE_0908.md:639-652),
+    (c) Negativfall: Nennmass im Namen + ein b/h-Text OHNE Fahne."""
+    doc = ezdxf.new(setup=True)
+    doc.header["$INSUNITS"] = 4
+    msp = doc.modelspace()
+    for name, r in ((DL_BLOCK, 800), (TUERBLATT, 900), ("TÜR-80", 800)):
+        doc.blocks.new(name=name).add_arc((0, 0), r, 0, 90)
+    doc.blocks.new(name=FAHNE).add_line((0, 0), (0, 1200))
+    msp.add_blockref(DL_BLOCK, (2000, 4000))                        # (a)
+    msp.add_blockref(TUERBLATT, (8000, 4000))                       # (b)
+    msp.add_blockref(FAHNE, (8300, 4300))
+    msp.add_text("200", dxfattribs={"insert": (8300, 4400)})
+    msp.add_text("90", dxfattribs={"insert": (8300, 4450)})
+    msp.add_blockref("TÜR-80", (14000, 4000))                       # (c)
+    msp.add_text("45,5/100", dxfattribs={"insert": (14300, 4300)})
+    p = tmp_path / "lichte.dxf"
+    doc.saveas(str(p))
+    return lade_dxf(p)
+
+
+def _bei(tueren, x):
+    return [t for t in tueren if abs(t.xy_mm[0] - x) < 1500]
+
+
+def test_lichte_nur_mit_beleg(lichte_plan):
+    """Invariante — gilt heute (leer) und muss jeden kuenftigen Erzeuger ueberleben."""
+    assert not _verstoesse(_tueren(lichte_plan))
+
+
+def test_ohne_beleg_bleibt_lichte_none(lichte_plan):
+    (t,) = _bei(_tueren(lichte_plan), 14000)
+    assert t.breite_mm == 800.0 and t.breite_quelle == "BLOCKNAME"
+    assert t.lichte_mm is None          # nie aus breite_mm, nie aus "45,5/100"
+
+
+@pytest.mark.xfail(strict=True, reason="Auflage A: noch kein Erzeuger von lichte_mm")
+def test_blockname_dl_setzt_lichte_mit_quelle(lichte_plan):
+    (t,) = _bei(_tueren(lichte_plan), 2000)
+    assert t.lichte_mm == 800
+    assert t.lichte_quelle == f"blockname:{DL_BLOCK}"
+
+
+@pytest.mark.xfail(strict=True, reason="Auflage A: noch kein Erzeuger von lichte_mm")
+def test_text_an_fahne_setzt_lichte_mit_quelle(lichte_plan):
+    (t,) = _bei(_tueren(lichte_plan), 8000)
+    assert t.lichte_mm == 900
+    assert t.lichte_quelle.startswith("text:")
+```
+
+**Contract-Skizze (künftige Änderung, hier NICHT umgesetzt):**
+
+```python
+class Tuer(BaseModel):
+    ...
+    lichte_mm: int | None = None
+    # Beleg fuer lichte_mm: "text:<Beleg>" | "blockname:<Blockname>".
+    # Gesetzt genau dann, wenn lichte_mm gesetzt ist.
+    lichte_quelle: str | None = None
+```
+
+Dazu eine Zeile in `docs/CONTRACTS.md` bei den `tueren[]`-Punkten. Die
+Versionsstufe legt die 3-Owner-Runde fest (sie hängt auch davon ab, ob Auflage B
+vorher umgesetzt wird).
+
+**Offen, weil nicht aus dem Plan entscheidbar:** das Format von `text:<Beleg>`
+bei zusammengesetzten Angaben — in Muthgasse stehen `90` und `200` als getrennte
+Texte. `text:90/200` wäre zusammengesetzt und nicht wörtlich. Die Paarungsregel
+Fahne ↔ Texte ↔ Tür ist eine Interpretation und braucht Enis' Zustimmung.
+
+**Owner:** Erzeuger und Test = Selman (`raumerkennung/`); die Contract-Änderung
+braucht alle drei; die DL-Lesart entscheidet Enis.
+
+## Auflage B — `STANDARDWERT` ersatzlos streichen? (Vorschlag an Enis, Contract 1.4.0)
+
+Stand 2026-09-12, Selman. **Nur Vorschlag. Der Contract wird nicht ohne
+Abstimmung zu dritt geändert** (Check `contract-freeze`, CODEOWNERS). Hier ist
+nichts umgesetzt.
+
+@EnisAMG fragt als Auflage zur Zustimmung `raum_modell` 1.4.0, ob
+`STANDARDWERT` in `Tuer.breite_quelle` gebraucht wird. Unsere Antwort: **nein.**
+Der Wert hat seit dem Riegel gegen erfundene Maße keinen legitimen Erzeuger
+mehr, und im Modell hatte er nie einen.
+
+**Ist-Zählung über die fünf Prüfpläne** (echter Provider-Lauf, Stand `804e6af`,
+`src/` identisch mit `main` `e79276b`; Dumps je Plan aus
+`ArchitekturRaumProvider().parse(...)` wie `plan_pruefen.py:1169-1171`):
+
+| | Barawitzka_EG | Mollgasse_EG | Muthgasse_E2 | Rennweg_EG | Rennweg_OG3 | **Summe** |
+|---|--:|--:|--:|--:|--:|--:|
+| Türen | 106 | 147 | 291 | 41 | 27 | **612** |
+| `STANDARDWERT` | 0 | 0 | 0 | 0 | 0 | **0** |
+| `ATTRIBUT` | 0 | 0 | 0 | 0 | 0 | **0** |
+| BLOCKNAME | 0 | 40 | 18 | 0 | 0 | 58 |
+| GEOMETRIE_SCHWENKRADIUS | 36 | 27 | 28 | 10 | 3 | 104 |
+| GEOMETRIE_SUMME | 2 | 0 | 0 | 0 | 0 | 2 |
+| GEOMETRIE_OEFFNUNG | 68 | 76 | 170 | 30 | 24 | 368 |
+| UNBEKANNT | 0 | 4 | 75 | 1 | 0 | 80 |
+
+Dazu: `breite_mm is None` 80, davon **80 mit `breite_grund`**, 0 ohne;
+`breite_mm == 0.0` **0**; `lichte_mm` gesetzt **0**. Es gibt also **keine
+einzige Tür mit `STANDARDWERT`** — die Spalte ist über alle fünf Pläne leer.
+
+**Fundstellen, vollständig** (`grep -rIn`, auch ohne Groß-/Kleinschreibung, ohne
+`.venv`/`__pycache__`): `hauptengine/contracts/raum_modell.py:41` (Literal, mit
+dem Kommentar „Reserve; gehoert NICHT ins Modell (nur Render)"),
+`hauptengine/contracts/schema/raum_modell.schema.json:676` (generiert),
+`docs/CONTRACTS.md:13` (Spezifikation), dazu historisch
+`docs/ENIS_UEBERGABE_0908.md:581/:611/:735` und `docs/COORDINATION.md:371/:375`.
+**Erzeuger in `src/` und `scripts/`: 0. Tests: 0. Fixtures/JSON-Daten: 0.** Kein
+Code zählt das Vokabular auf; `BreiteQuelle` erscheint nur in
+`raum_modell.py:35` und `:105` sowie in einem Kommentar in `tueren.py:137`. Der
+einzige Leser von `breite_quelle` außerhalb des Modells,
+`scripts/plan_pruefen.py:982-983`, gibt den String nur aus.
+
+**Warum der Wert keinen legitimen Erzeuger mehr hat.**
+
+- Er war nie mehr als der Name für den Zeichen-Default des Renderers. Den gibt
+  es weiterhin, aber als benannte Konstante **außerhalb** des Modells:
+  `hauptengine/render/dxf_renderer.py:520` `_ZEICHEN_ERSATZBREITE_MM = 900.0`,
+  benutzt in `:533` (`breite = t.breite_mm or _ZEICHEN_ERSATZBREITE_MM`).
+  Kommentar `:515-519`: „ZEICHEN-ERSATZMASS, KEINE MESSUNG … reine Bildgroesse:
+  er wird nirgends zurueckgeschrieben, verlaesst `_draw_tueren` nicht und ist
+  KEIN Mass der Tuer." (Die Docs zitieren dafür noch die alte Zeile `:524`.)
+- Ein `STANDARDWERT`-Erzeuger im Modell müsste eine Zahl **ohne Messung** in
+  `breite_mm` schreiben. Genau das verbietet
+  `tests/contract/test_keine_erfundenen_masse.py`: „der Code erfindet keine
+  Masse. Fehlt eine Messung, ist das Feld `None` mit `quelle=UNBEKANNT` und
+  einem Grund — nie ein Default, nie ein Normwert, nie ein Mittelwert" (Z. 3–5),
+  durchgesetzt über `feld or <Zahl>` (Z. 98–103), `feld=<Zahl>` im Aufruf
+  (Z. 105–108) und `min/max(feld, <Zahl>)` (Z. 110–119). Für „nicht gemessen"
+  gibt es `UNBEKANNT` + `breite_grund` — 80 von 80 Fällen halten das ein.
+- **Grenze des Riegels, gemessen:** er erkennt nur Zahlen-**Literale** (`_zahl`
+  Z. 64–69) und prüft nur `src/**`. In einer Probe über 11 Muster fängt er 4;
+  `Tuer(breite_mm=_KONSTANTE, breite_quelle="STANDARDWERT")`,
+  `t.breite_mm = 900.0`, `model_copy(update=…)` und `x if y else 900.0` gehen
+  durch, und `breite_quelle` prüft er überhaupt nicht. Ein Enum-Wert, der genau
+  den verbotenen Fall benennt, lädt also dazu ein. Streichen macht daraus einen
+  Pydantic-`ValidationError` — ohne neuen Riegel.
+
+**Was eine Streichung berühren würde (nicht umgesetzt):**
+
+1. `hauptengine/contracts/raum_modell.py:41` — Zeile aus `BreiteQuelle`.
+2. `raum_modell.py:18` — `CONTRACT_VERSION`. Eine Einengung des Enums ist
+   formal **nicht** additiv (die Bumps bis 1.4.0 waren additiv). Datenbestand
+   mit dem Wert: 0. Die Stufe legt die 3-Owner-Runde fest.
+3. `contracts/schema/raum_modell.schema.json:676` — per `python
+   scripts/gen_schema.py` neu erzeugen; bis dahin ist
+   `tests/contract/test_schema_drift.py` rot.
+4. `docs/CONTRACTS.md:13` — den Wert aus der Aufzählung nehmen.
+5. Tests: keiner referenziert `STANDARDWERT`; außer dem Drift-Gate ist nichts
+   anzupassen. Optional ein Pin: `Tuer(…, breite_quelle="STANDARDWERT")` →
+   `ValidationError`.
+6. **Nicht anfassen:** die historischen Stellen (`ENIS_UEBERGABE_0908.md`,
+   `COORDINATION.md`) bleiben stehen und bekommen einen Nachtrag.
+   `dxf_renderer.py` (Leonis' Lane) ist nicht betroffen.
+7. Approval aller drei Owner auf dem Head des PR (`contract-freeze`).
+
+**Owner:** Contract = alle drei; die Entscheidung stößt Enis an. Der Vorschlag
+ist zusätzlich als Kommentar in PR #154 hinterlegt
+(`#154 issuecomment-5641436979`).
+
+## Slice — Gebäudeausgänge und Fluchtziel am 02-TWA/L04-Dialekt (Leonis Einwand 5)
+
+Stand 2026-09-12, Selman. **Nur aufgenommen, nicht gebaut** — kein Code, kein
+Contract, keine Messung von uns. **Owner-Vorgabe dieser Runde: dieser Slice hat
+Vorrang vor Slice 3b** (trainierter Dialekt-Detektor).
+
+Quelle: Leonis' Board-Notiz zur Slice-3b-Review, Einwand (e), auf seinem Branch
+`origin/leonis/demo-l-gebaeude` (`docs/COORDINATION.md`, Eintrag 2026-09-10,
+PR #156) — **nicht in `main` und nicht in unserem Arbeitsbaum**; lesen mit
+`git show origin/leonis/demo-l-gebaeude:docs/COORDINATION.md`.
+
+### Der Befund im Wortlaut — drei Fassungen, zwei davon widersprechen sich
+
+> **(e) Scope-Ehrlichkeit:** 3b löst den Fremd-Dialekt-**Namens**fall; NICHT den
+> heutigen Elektroplan-Fehler (02-TWA-Wände korrekt erkannt, aber **kein GANG
+> typisiert + keine Gebäude-Ausgänge abgeleitet** → Fluchtweg dünn =
+> **Topologie/Semantik downstream**, separater Slice).
+
+— `docs/COORDINATION.md` auf `origin/leonis/demo-l-gebaeude`.
+
+> Erkennung typt 16/12 Räume korrekt (02-TWA-Wände greifen!), ABER **0
+> Gebäude-Ausgänge** (AUSSEN-Türen = Balkone) + Gang nicht als Fluchtziel →
+> dünn.
+
+— `Handoff/LEONIS.md:88`, derselbe Branch.
+
+> sie typt 16/12 Räume korrekt (WOHNZIMMER/KÜCHE/BAD/GANG …). ABER: die einzigen
+> Türen „zu AUSSEN“ sind Wohnungs-Balkone/Fenster, kein Gebäude-Ausgang → 0
+> Fluchtweg-Ausgänge → ohne Ziel bleibt der Plan dünn (1 RZ/1 SL).
+
+— `scripts/demo/run_projekt_neu.py:1-10`, derselbe Branch.
+
+**@mvpo3 — offene Rückfrage, bewusst nicht geglättet:** (e) sagt „kein GANG
+typisiert“. Deine beiden anderen Fassungen zählen **GANG zu den korrekt
+getypten Räumen**, und deine Anreicherung filtert zwingend auf
+`raum_typ == GANG` — ohne erkannten GANG hätte sie keinen Anker. Belegt ist
+damit **„GANG erkannt, aber nicht als Fluchtziel verwendet“**, nicht „nicht
+typisiert“. Welche Fassung gilt? Davon hängt ab, ob der Slice in der
+Typisierung oder in der Ausgangs-/Ziel-Ableitung ansetzt — zwei verschiedene
+Baustellen in zwei verschiedenen Lanes.
+
+### Die Kernblockade
+
+**0 Gebäude-Ausgänge, weil die einzigen Türen nach `AUSSEN` Wohnungs-Balkone
+und Fenster sind.** Ohne Fluchtziel platziert die Engine **1 RZ und 1 SL auf
+den ganzen Plan** — der Plan ist nicht falsch, er ist leer. Das ist keine
+Namensfrage und damit kein Slice-3b-Fall: der Dialekt ist erkannt, die Wände
+sind erkannt, die Räume sind typisiert. Es fehlt die Semantik **danach** —
+welcher Übergang ist ein Gebäude-Ausgang.
+
+### Leonis' Workaround — und warum ein Workaround keine Lösung ist
+
+`scripts/demo/run_projekt_neu.py` setzt an die beiden Enden des erkannten
+GANG-Korridors je einen **künstlichen `final_exit`** plus ein
+Fluchtweg-Segment entlang des Gangs (im Skript GROSS als Anreicherung
+gekennzeichnet, Quelle `FALLBACK`). Damit hat die Platzierung ein Ziel, und der
+Plan füllt sich.
+
+Als gekennzeichnete Demo-Krücke ist das ehrlich. Als Lösung nicht: die zwei
+Ausgänge sind **erfunden** — sie stehen an einer Stelle, für die es keinen
+Planbeleg gibt, und die ganze Kette danach (Fluchtrichtung, Pfeilumkehr,
+Zwischen-RZ, Deckung, Lux-Nachweis) hängt an dieser Erfindung. Es ist dieselbe
+Grenze wie bei den Maßen: fehlt der Beleg, bleibt das Feld leer und der Befund
+sichtbar — nie ein plausibler Ersatzwert.
+
+### Heute nicht messbar: die Quelldatei liegt nicht im Repo
+
+`EG_Elektroplan_DE_NEU.dxf` und `1OG_Elektroplan_DE_NEU.dxf` werden in
+`scripts/demo/run_projekt_neu.py:79` und
+`scripts/demo/nachzeichnen_elektroplan.py:243` aus der Konstante `P4` gebildet,
+die auf Leonis' Maschine zeigt
+(`C:\Users\mvpst\…\Projektbeispiele-demo-Platzierungslogik`). Die Dateien
+liegen **nicht** in `Projekte/_eingang`, sind also **kein Teil der
+Prüfstrecke** und haben keinen `_ergebnis`-Ordner. Der Slice ist damit **heute
+nicht messbar** — jede Zahl dazu müsste von Leonis' Maschine kommen.
+
+**Nächstgelegener eingecheckter Ersatz — ausdrücklich NICHT dieselbe Datei:**
+`Projekte/EG_Grundriss_DE_NEU.dxf` (getrackt, 1 454 425 Byte). Am Header
+gemessen: `$INSUNITS 4` (= Millimeter), aber `$EXTMIN` 2865.52 / 1726.95 und
+`$EXTMAX` 2884.59 / 1740.02 — der Plan ist also **in Metern gezeichnet**, genau
+der Fall aus Leonis' Einwand (c) „INSUNITS lügt“. Derselbe `02-*-L04`-Dialekt.
+**Korrektur 2026-09-12: „INSUNITS lügt“ ist eine Paraphrase, kein Zitat** (der Satz bleibt oben stehen).
+Wörtlich steht im Code, `raumerkennung/dxf_load.py:164-165`: „mm-Faktor aus der Geometrie
+ableiten, NICHT aus $INSUNITS (das lügt oft: leere Pläne in Metern, fertige
+in mm — beide mit gleichem Code).“
+Leonis' STGH-Stempel bei x = 2890.86 liegt **außerhalb** dieser Extents:
+dieselbe Gebäudeumgebung, aber ein anderer Plan.
+
+Eingecheckte Übersicht dazu (`Projekte/_uebersicht/EG_Grundriss_DE_NEU/`):
+14 Räume, 12 typisiert, **4 Gänge**, `final_exit` **1**, `stair_exit` **1**,
+**0 erkannte BALKON/TERRASSE-Flächen**, Zirkulationsgraph **leer (0 Knoten /
+0 Kanten)**. **Präzisierung 2026-09-12 zu „4 Gänge“ (Angabe bleibt stehen):**
+die 4 ist die Kategoriesumme der Übersicht (`uebersicht.json`, `kategorien.gang`
+= 4); als `raum_typ` sind es **2 `GANG`**, dazu **2 `VORRAUM`**, die dieselbe
+Kategorie mitzählt (`raum_typen`: `GANG` 2, `VORRAUM` 2 — selbst nachgezählt).
+Der Ersatzplan zeigt den Fehler also nur halb — er hat einen
+Ausgang. Er taugt für den Skalen- und Dialekt-Teil, **nicht** als Repro der
+0-Ausgänge-Lage.
+
+### Die fachliche Frage, die zu entscheiden ist
+
+**Woran erkennt die Engine einen GEBÄUDE-Ausgang, wenn alle Türen nach `AUSSEN`
+Balkone sind?** Kandidaten, unbewertet und ausdrücklich ungemessen:
+
+- **Grundstücksgrenze / Straßenlage** — die Owner-Entscheidung „ins Freie heißt
+  über die Grundstücksgrenze“ steht schon in dieser Datei und wäre der erste
+  Kandidat;
+- **Überdachung** über dem Übergang — hängt heute an einem einzigen Beleg
+  (Abschnitt „Überdachung vor dem Haupteingang“ oben);
+- **Türbreite** — `breite_mm` ist gemessen, die Lichte `lichte_mm` hat 0
+  Erzeuger (Auflage A);
+- **Schwellenlosigkeit** — im Modell heute nicht geführt;
+- **Treppenhaus-Nachbarschaft** — Vorsicht: genau diese Merkmalsklasse hat sich
+  bei `raum_65` als untrennbar von Küchen erwiesen (siehe „Zwei Korrekturen am
+  Abschnitt darüber“).
+
+Und die Gegenrichtung, die genauso entschieden werden muss: **wie wird ein
+Balkon zuverlässig ausgeschlossen?** Heute gar nicht — auf diesem Dialekt
+werden **BALKON/TERRASSE 0 von 0** erkannt (`uebersicht.md`: „Außenflächen
+(BALKON/TERRASSE): **0** — nicht erkannt (kein Raum mit passendem
+`raum_typ`)“). Beide Kanon-Typen existieren und sind in
+`normwissen/data/regel_deckung.yaml` als `bewusst_keine` (Außenbereich)
+hinterlegt, aber **kein Erzeuger vergibt sie auf diesem Dialekt**. Erst diese
+Lücke macht die Verwechslung möglich: ein nicht erkannter Balkon ist eine Tür
+ins Freie.
+
+**Owner-Vorgabe 2026-09-12: Vorrang vor Slice 3b, und jetzt NICHT gebaut.**
+Dieser Abschnitt nimmt den Slice auf, hält die Blockade und die Rückfrage an
+@mvpo3 fest und benennt die zu entscheidende Frage. Zu entscheiden von @mvpo3
+(Fluchtziel/Platzierung) und Selman (Erkennung/Ausgangs-Ableitung); ohne
+Quelldatei im Repo ist der erste Schritt ohnehin, eine messbare Repro-Basis zu
+bekommen.
+
+## Slice 3b Vorarbeit — drei Befunde, die einen Neuschrieb `lf-3` brauchen (2026-09-12, Selman)
+
+Gebaut sind Leonis' Schritte 1, 3 und 4 (Schritt 2 nur als Smoke-Test, wie
+beauftragt). Das Modul ist **aufruferlos** — außer Tests und dem Analyse-Skript
+konsumiert es niemand, `CONTRACT_VERSION` steht unberührt auf `1.5.0`, und
+`corpus/` ist seit 2026-09-12 gitignored. Kein committetes Artefakt hängt an den
+Befunden unten. Alle Zahlen aus der Gegenprüfung, jede dort selbst gemessen.
+
+### BLOCKER 1 — der Korpus trägt kein Label (älter als der Fix)
+
+Gespeichert wird `b.rolle`, also die **Ausgabe von `entscheide_rolle`**, daneben
+`label_quelle="namensregel_heute"` auf allen 501 Zeilen. Gegen `merkmale.json`
+gemessen: `rolle` == Namensregel-Label bei 292 Zeilen, **ungleich bei 209 von
+501 = 41,7 %**. Für diese 209 Zeilen ist die Herkunftsangabe faktisch falsch.
+
+Folge: die Datei kann nichts trainieren. Wer auf `rolle` trainiert, bringt einem
+Modell bei, `entscheide_rolle` zu imitieren — genau **Leonis' Einwand (a),
+Zirkularität**. Die API erzwingt den Fehler, weil `schreibe_korpus` nur
+`RollenBefund` annimmt und ein Namensregel-Label gar nicht einspeisbar ist.
+
+Korrektur: `_korpus_zeile` um `label` erweitern, `schreibe_korpus` ein
+`labels`-Mapping `(plan_id, layer_name) -> Rolle` mitgeben (`label_aus_namensregel`
+liegt im Aufrufer bereits bereit), `_SKALARFELDER` im Test nachziehen, Korpus neu
+schreiben. **Verschiebt keinen Vektor**, braucht also für sich keinen
+Versionssprung.
+
+Dauerhafter Verlust, ehrlich benannt: die Widerspruchszahlen „16 von 70" und
+„8 von 57" aus der Deckel-Messung sind **nicht mehr belegbar** — der lf-1-Korpus
+hatte kein Label-Feld und die lf-1-`merkmale.json` ist überschrieben.
+
+### MAJOR 2 — `runde2_belegt=True` auf 87 Zeilen, die Nr. 32–34 nicht messen können
+
+87 von 501 Zeilen sind segmentlos mit Geometrie (`laenge_p50_mm == 0`,
+`layer_diag_mm > 0`). Alle 87 tragen `runde2_belegt=True` und
+`wand_naehe_quote = wand_parallel_quote = wand_endpunkt_quote` **exakt 0,0** —
+strukturell, weil `_runde2` über `d.segs` rechnet und die Liste leer ist. 10
+Zeilen haben alle sechs Messfelder auf 0,0 und sind von „gar nicht gemessen"
+nicht unterscheidbar, 14 tragen `rolle=wand`, und **6 der insgesamt nur 16
+`UEBERNEHMEN`-Zeilen** stammen aus dieser Gruppe — dort greift der 0,84-Deckel
+der Restklasse nicht. Die Zusage im Modul-Docstring („ein 0.0 in Nr. 31–37 ist
+nur zusammen mit `runde2_belegt` lesbar") ist für diese 87 Zeilen falsch.
+
+Korrektur: Flag aufspalten — `runde2_belegt` (Referenz nicht leer) plus ein
+zweites Flag „eigene Segmente vorhanden".
+
+### MAJOR 3 — die 0,0 ist arithmetisch kein Neutrum
+
+Von Hand an der einen unbelegten Echtzeile nachgerechnet (Rennweg_OG3
+`New_Archicad Windows_Pen_No__3`): mit 0,0 in 31–37 ergibt sich `s_wand`
+**0,7000**, `s_oeffnung` 0,0000, `s_raum` 0,0000 → `rolle=wand`, conf 0,63.
+`oeffnung` verliert dabei bis zu **0,45** seiner Gewichtsmasse (0,25
+`wand_parallel` + 0,20 `wand_endpunkt`), `raumkontur` bis zu 0,40 — während
+`s_wand` die Wandfern-Dämpfung ganz überspringt: derselbe Layer
+belegt-und-wandfern wäre 0,5600, also **20 % weniger**. „Weder Bonus noch
+Malus" hält damit nicht; die Richtung zeigt systematisch auf `wand` bzw. `rest`.
+
+Korrektur: für nicht messbare Blöcke die Gewichte des betroffenen Scores
+**renormieren** (Term streichen, Restgewichte auf Summe 1 skalieren) statt 0,0
+einzusetzen.
+
+### MAJOR 4 — die Golden-Pins decken genau die geänderten Features nicht
+
+Von `FEATURE_NAMES[30:]` sind nur `runde2` und `wand_abstand_p50_rel` auf einen
+Wert gepinnt, 2 von 7. Einen Pin auf den vollen 37er-Vektor gibt es nirgends.
+Die vorhandenen Pins sind echt aus dem Lauf, nicht erfunden — sie decken nur
+nicht das, was sich geändert hat.
+
+### Was hier zu entscheiden ist
+
+1. **Ein Neuschrieb statt drei.** Jede saubere Lösung von MAJOR 2 und 3
+   verschiebt Vektoren → `lf-3` und Korpus neu. Blocker 1 gehört in denselben
+   Durchgang, sonst wird jede jetzt geschriebene Zeile ein zweites Mal
+   geschrieben.
+2. **MAJOR 2 per zweitem Flag oder MAJOR 3 per Renormierung?** Beide Wege sind
+   belegbar; die Renormierung ändert mehr Zahlen. Owner-Sache, nicht von der
+   Gegenprüfung entschieden.
+3. **Reihenfolge bleibt:** Leonis' Einwand 5 (Abschnitt oben) hat Vorrang vor
+   `lf-3`.
+
+### Was trotz der Befunde belastbar ist
+
+- **Namens-Blindheit**, als Test festgeschrieben: Meter-Plan und mm-Plan liefern
+  denselben Vektor. Layernamen sind Metadatum, nie Merkmal.
+- **Determinismus**: 0 von 37 Features weichen bei getauschter oder gemischter
+  Segmentreihenfolge ab (vorher 8 von 37, Ursache war `random.sample` über eine
+  reihenfolgeabhängige Liste). Einzige Restabweichung: 2 von 37 bei künstlich
+  gleichen gerundeten Koordinaten (Delta 2e-4 mm).
+- **Restklassen-Deckel**: `UEBERNEHMEN` 16 von 501, davon `rolle=rest` **0**;
+  höchste Confidence über alle 319 rest-Zeilen exakt 0,84; 28 geometrielose
+  Zeilen alle `HARD_STOP` bei höchstens 0,590.
+- **Der Smoke-Befund selbst**: LOPO über den Korpus ergibt acc **0,792** gegen
+  eine Mehrheits-Basislinie von **0,815**, macro-F1 0,333, `raumkontur` F1
+  0,000. Der Baum schlägt „immer `rest`" **nicht**. Das stützt die Vorgabe
+  „Modell erst bei etwa 20 Büros" mit einer Messung statt mit einer Vermutung —
+  und entkräftet die Lesart, ein `pip install` liefere die guten Zahlen nach.
+- **Nicht gebaut**, wie beauftragt: Schritt 5 (GBM), Contract-Felder
+  `rolle`/`confidence`, jede Integration in `provider`/`kaskade`/`plan_pruefen`.

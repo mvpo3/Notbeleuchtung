@@ -4,29 +4,31 @@ Raum-Polygon-Quelle: `kaskade L:19 H:0 F:0 R:2` — Rotation: keine dominante Ka
 
 ## Räume
 
-| Quelle | Name | Typ | m² Stempel | m² berechnet | Abw. % | Flag |
-|---|---|---|--:|--:|--:|---|
-| L | Wohnküche | KÜCHE | — | 45.60 | — | ok |
-| L | AR | ABSTELLRAUM | — | 5.09 | — | ok |
-| L | Bad/WC | BAD | — | 5.10 | — | ok |
-| L | Zimmer | ZIMMER | — | 11.07 | — | ok |
-| L | Garage | GARAGE | — | 36.53 | — | ok |
-| L | VR | VORRAUM | — | 21.03 | — | ok |
-| L | Stiegenhaus | STIEGENHAUS | — | 6.72 | — | ok |
-| L | Terrasse | TERRASSE | — | 17.06 | — | ok |
-| L | Müllplatz | — | — | 3.98 | — | ok |
-| L | Geschäftslokal 1 | — | 29.11 | 29.11 | +0.0 | ok |
-| L | v.Küche | KÜCHE | 9.27 | 9.27 | -0.0 | ok |
-| L | GESCHÄFTLOKAL | — | 111.03 | 111.03 | -0.0 | ok |
-| L | MÜLLRAUM | MUELLRAUM | 12.92 | 12.92 | -0.0 | ok |
-| L | TREPPENHAUS | STIEGENHAUS | 10.89 | 10.89 | -0.0 | ok |
-| L | STGH. EG. | STIEGENHAUS | 12.13 | 12.13 | -0.0 | ok |
-| L | GANG | GANG | 7.36 | 7.36 | +0.0 | ok |
-| L | HOF/Terrasse | TERRASSE | 29.57 | 29.57 | +0.0 | ok |
-| L | Zugangsweg | — | — | 5.50 | — | ok |
-| L | Garageneinfahrt | — | — | 14.06 | — | ok |
-| R | rest_1 | STIEGENHAUS | — | 9.90 | — | kein_stempel |
-| R | rest_2 | STIEGENHAUS | — | 2.70 | — | kein_stempel |
+„m² roh“ = Polygon VOR der Raumbereinigung (§ 14.6.1), „m² bereinigt“ = `polygon_mm`/`flaeche_m2` des Contracts. „Abw. %“ bleibt der ERKENNUNGS-Wert (Roh-Polygon gegen Stempel) — die bereinigte Abweichung steht im Bereinigungs-Block.
+
+| Quelle | Name | Typ | m² Stempel | m² roh | m² bereinigt | Abw. % (Erkennung, roh) | Flag |
+|---|---|---|--:|--:|--:|--:|---|
+| L | Wohnküche | KÜCHE | — | 45.60 | 45.60 | — | ok |
+| L | AR | ABSTELLRAUM | — | 5.09 | 5.09 | — | ok |
+| L | Bad/WC | BAD | — | 5.10 | 5.10 | — | ok |
+| L | Zimmer | ZIMMER | — | 11.07 | 11.07 | — | ok |
+| L | Garage | GARAGE | — | 36.53 | 36.53 | — | ok |
+| L | VR | VORRAUM | — | 21.03 | 21.03 | — | ok |
+| L | Stiegenhaus | STIEGENHAUS | — | 6.72 | 6.72 | — | ok |
+| L | Terrasse | TERRASSE | — | 17.06 | 17.06 | — | ok |
+| L | Müllplatz | — | — | 3.98 | 3.98 | — | ok |
+| L | Geschäftslokal 1 | — | 29.11 | 29.11 | 29.11 | +0.0 | ok |
+| L | v.Küche | KÜCHE | 9.27 | 9.27 | 9.27 | -0.0 | ok |
+| L | GESCHÄFTLOKAL | — | 111.03 | 111.03 | 111.03 | -0.0 | ok |
+| L | MÜLLRAUM | MUELLRAUM | 12.92 | 12.92 | 12.92 | -0.0 | ok |
+| L | TREPPENHAUS | STIEGENHAUS | 10.89 | 10.89 | 10.89 | -0.0 | ok |
+| L | STGH. EG. | STIEGENHAUS | 12.13 | 12.13 | 12.13 | -0.0 | ok |
+| L | GANG | GANG | 7.36 | 7.36 | 7.36 | +0.0 | ok |
+| L | HOF/Terrasse | TERRASSE | 29.57 | 29.57 | 29.57 | +0.0 | ok |
+| L | Zugangsweg | — | — | 5.50 | 5.50 | — | ok |
+| L | Garageneinfahrt | — | — | 14.06 | 14.06 | — | ok |
+| R | rest_1 | STIEGENHAUS | — | 9.90 | 9.90 | — | kein_stempel |
+| R | rest_2 | STIEGENHAUS | — | 2.70 | 2.70 | — | kein_stempel |
 
 ## Restflächen ohne Stempel (2)
 
@@ -37,6 +39,34 @@ Raum-Polygon-Quelle: `kaskade L:19 H:0 F:0 R:2` — Rotation: keine dominante Ka
 
 - Polygon ohne Stempel: rest_1 (9.90 m²)
 - Polygon ohne Stempel: rest_2 (2.70 m²)
+
+## Raumbereinigung (ENIS_UEBERGABE_0908 § 14.6.1)
+
+Überlapper >5 % 0 → 0 · doppelbelegt 0.000 → 0.000000 m² (0.00 mm²) · geändert 1 (Tabelle unten: 1 überlebende) · entfallen 0 · Zerfall 0.000 m² · Schlitzverlust 0.0 mm² · Restkörper entfallener Räume 0.000 m² · Stempelschutz 0
+
+Einträge je Regel: {'SCHWERPUNKT': 1}
+
+Nicht destruktiv: `polygon_roh` hält den Ring vor der Bereinigung, jeder Abzug ist mit Regel und Gegenspieler gebucht. Invariante: Fläche(roh) − Fläche(bereinigt) == Σ der Buchungen.
+
+| id | Name | Quelle | Flag | m² Stempel | m² roh | m² bereinigt | Abw. roh % | Abw. ber. % | Regeln (Gegenspieler) |
+|---|---|---|---|--:|--:|--:|--:|--:|---|
+| raum_6 | VR | L | ok | — | 21.03 | 21.03 | — | — | SCHWERPUNKT(raum_7) |
+
+### Stempelschutz — nicht ausgestanzt (0)
+
+- keine
+
+### Abweichung bereinigt > 5 % vom Stempel (0)
+
+**war schon > 5 % (0)**
+- keine
+
+**neu > 5 % (0)**
+- keine
+
+**Rest-Überlappung im RaumModell: 0 Überlapper / 0.000 m².** Die Bereinigung greift am Kaskaden-Ende; `typisiere_geometrisch` und `finde_lifte` legen danach im Provider eigene Räume an (`stiegenhaus_*`, `lift_*`), die sie nicht sieht. `raeume.json` und `RaumModell` sind nur für die Kaskaden-Räume deckungsgleich — der Überlappungs-Riegel misst auf `raeume.json`.
+
+**`lift_*` und SCHACHT:** `lift_erkennung.finde_lifte` überspringt eine Stelle nur, wenn dort ein Raum mit `raum_typ` „LIFT“ liegt — „SCHACHT“ ist nicht abgedeckt. Ein Regel-1-Gewinner mit `raum_typ` „SCHACHT“ kann danach von einem `lift_*`-Raum überdeckt werden, den die Bereinigung nicht mehr sieht. Eigener Arbeitsschritt.
 
 ## Material (Bauteil-Hatches)
 
@@ -117,6 +147,10 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | exit_durchgang_26 | stair_exit | 12550.58 | 356220.24 |
 | exit_durchgang_27 | stair_exit | 12549.97 | 356218.82 |
 | exit_aussenoeffnung_2 | final_exit | 12555.26 | 356222.92 |
+
+### Kein Endausgang wegen Freifläche (0 Türen ins Freie an BALKON/TERRASSE)
+
+keine — auf diesem Plan führt keine Tür an einem typisierten BALKON/TERRASSE-Raum vorbei.
 
 ## Fluchtweg-Segmente (9)
 
@@ -241,4 +275,4 @@ Quellen: FALLBACK: 1, GRAPH: 8
 | tuer_ins_nichts | 4 |
 | beide_seiten_untypisiert | 1 |
 
-Laufzeit: 55.5 s
+Laufzeit: 57.7 s

@@ -1,0 +1,307 @@
+{
+  "plan": "Muthgasse_E9",
+  "dxf": "D:\\KI Projekt\\Notbeleuchtung\\Projekte\\Pläne 19., Muthgasse 109B - 2026-05-07_13-12\\Architekt\\Ausführungsplan\\M109B_-Plan - AR-AF-A-GR-E9 100 - GRUNDRISS E9.dxf",
+  "floor": "EG",
+  "contract_version": "1.4.0",
+  "bild_px": [
+    2400,
+    1777
+  ],
+  "rotation": "Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.",
+  "kategorien": {
+    "gang": 5,
+    "wohnen": 20,
+    "aussen": 8,
+    "sanitaer": 10,
+    "untypisiert": 7,
+    "nebenraum": 5,
+    "schacht": 6,
+    "stiege": 8,
+    "hof": 0,
+    "ueberlappung": 27,
+    "segmente": 89,
+    "final_exit": 2,
+    "stair_exit": 3
+  },
+  "raeume_gesamt": 69,
+  "raeume_typisiert": 62,
+  "raum_typen": {
+    "GANG": 2,
+    "KÜCHE": 11,
+    "ZIMMER": 9,
+    "BALKON": 7,
+    "BAD": 9,
+    "VORRAUM": 3,
+    "WC": 1,
+    "ABSTELLRAUM": 3,
+    "KINDERWAGENRAUM": 1,
+    "LIFT": 6,
+    "TECHNIK": 1,
+    "STIEGENHAUS": 8,
+    "TERRASSE": 1
+  },
+  "wohnungen": {
+    "anzahl": 3,
+    "raeume_je_wohnung": {
+      "top_1": 28,
+      "top_2": 4,
+      "top_3": 1
+    },
+    "ohne_wohnung": 36
+  },
+  "innenhoefe_m2": [],
+  "ausgaenge": [
+    {
+      "id": "exit_tuer_11",
+      "typ": "final_exit",
+      "xy_mm": [
+        312357.6600758836,
+        110809.1409288945
+      ]
+    },
+    {
+      "id": "exit_durchgang_13",
+      "typ": "stair_exit",
+      "xy_mm": [
+        338300.9617987088,
+        106982.85952900905
+      ]
+    },
+    {
+      "id": "exit_durchgang_94",
+      "typ": "stair_exit",
+      "xy_mm": [
+        335802.1910498691,
+        104212.06801562138
+      ]
+    },
+    {
+      "id": "exit_durchgang_96",
+      "typ": "stair_exit",
+      "xy_mm": [
+        338921.96802214417,
+        104592.29119856506
+      ]
+    },
+    {
+      "id": "exit_aussenoeffnung_1",
+      "typ": "final_exit",
+      "xy_mm": [
+        324670.6072624045,
+        109137.0539524897
+      ]
+    }
+  ],
+  "stiegenhaeuser": [
+    "raum_52",
+    "raum_56",
+    "stiegenhaus_1",
+    "stiegenhaus_2",
+    "stiegenhaus_3",
+    "stiegenhaus_4",
+    "stiegenhaus_5",
+    "stiegenhaus_6"
+  ],
+  "ueberlappungen": [
+    {
+      "raum_id": "raum_20",
+      "raum_typ": "KÜCHE",
+      "in_raum_id": "raum_50",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 99.0
+    },
+    {
+      "raum_id": "raum_21",
+      "raum_typ": "ZIMMER",
+      "in_raum_id": "raum_50",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 98.3
+    },
+    {
+      "raum_id": "raum_22",
+      "raum_typ": "ZIMMER",
+      "in_raum_id": "raum_50",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 99.7
+    },
+    {
+      "raum_id": "raum_23",
+      "raum_typ": "VORRAUM",
+      "in_raum_id": "raum_50",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 99.2
+    },
+    {
+      "raum_id": "raum_25",
+      "raum_typ": "BAD",
+      "in_raum_id": "raum_50",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 94.1
+    },
+    {
+      "raum_id": "raum_27",
+      "raum_typ": "KÜCHE",
+      "in_raum_id": "raum_51",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 98.6
+    },
+    {
+      "raum_id": "raum_34",
+      "raum_typ": "ABSTELLRAUM",
+      "in_raum_id": "raum_50",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 98.9
+    },
+    {
+      "raum_id": "raum_39",
+      "raum_typ": "BAD",
+      "in_raum_id": "lift_1",
+      "in_raum_typ": "LIFT",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_44",
+      "raum_typ": null,
+      "in_raum_id": "lift_2",
+      "in_raum_typ": "LIFT",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_45",
+      "raum_typ": null,
+      "in_raum_id": "lift_3",
+      "in_raum_typ": "LIFT",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "raum_53",
+      "raum_typ": "BALKON",
+      "in_raum_id": "raum_14",
+      "in_raum_typ": "KÜCHE",
+      "anteil_prozent": 90.5
+    },
+    {
+      "raum_id": "stiegenhaus_1",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "stiegenhaus_2",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "stiegenhaus_2",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "stiegenhaus_1",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "stiegenhaus_3",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "stiegenhaus_4",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "stiegenhaus_3",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "stiegenhaus_5",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "stiegenhaus_4",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "stiegenhaus_3",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "stiegenhaus_4",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "stiegenhaus_5",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "stiegenhaus_5",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "stiegenhaus_3",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 94.8
+    },
+    {
+      "raum_id": "stiegenhaus_5",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "stiegenhaus_4",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 94.8
+    },
+    {
+      "raum_id": "stiegenhaus_6",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "stiegenhaus_1",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "stiegenhaus_6",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "stiegenhaus_2",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "stiegenhaus_6",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "stiegenhaus_3",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "stiegenhaus_6",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "stiegenhaus_4",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "stiegenhaus_6",
+      "raum_typ": "STIEGENHAUS",
+      "in_raum_id": "stiegenhaus_5",
+      "in_raum_typ": "STIEGENHAUS",
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "lift_1",
+      "raum_typ": "LIFT",
+      "in_raum_id": "raum_39",
+      "in_raum_typ": "BAD",
+      "anteil_prozent": 97.6
+    },
+    {
+      "raum_id": "lift_2",
+      "raum_typ": "LIFT",
+      "in_raum_id": "raum_44",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    },
+    {
+      "raum_id": "lift_3",
+      "raum_typ": "LIFT",
+      "in_raum_id": "raum_45",
+      "in_raum_typ": null,
+      "anteil_prozent": 100.0
+    }
+  ],
+  "tueren_gesamt": 120,
+  "laufzeit_s": 416.4,
+  "raeume_ausserhalb_ausschnitt": 4,
+  "nicht_erkannt": [
+    "**untypisierte Räume: 7** — `raum_typ` leer, `nutzungsklasse` unbestimmt. In der Karte magenta schraffiert.",
+    "Innenhöfe: **0** — `provider.letzte_aussenbereiche.geschlossen` ist leer (oder es gab keine Wandkörper-Analyse).",
+    "`Ausgang.typ == \"door\"`: **0** — wird von `leite_ausgaenge` grundsätzlich nicht erzeugt.",
+    "Zirkulationsgraph: 0 Knoten / 0 Kanten — leer; die Segmente stammen aus dem Fluchtweg-Nachlauf, nicht aus Plan-Layern `09-WEG*`.",
+    "Sonderstellen (Feuerlöscher/Hydrant/Erste Hilfe): **0** — dafür existiert kein automatischer Erzeuger.",
+    "„Ausgang führt auf die Straße\": wird NICHT geführt — das Modell kennt nur `final_exit`/`stair_exit`, keine Straßenzuordnung."
+  ]
+}

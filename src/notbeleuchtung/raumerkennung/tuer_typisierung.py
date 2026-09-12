@@ -53,6 +53,9 @@ _TEXT_NAH_MM = 1500.0
 _WINDFANG_M2 = 8.0
 # Tür „liegt an" der Fläche ohne Weg ins Freie (Türsehne vs. Hofrand).
 _KEIN_WEG_NAH_MM = 600.0
+# Freiflaechen am Gebaeude: aussen, aber kein Weg ins Freie. LOGGIA faellt in
+# raumtyp.py auf BALKON, ist hier also mit abgedeckt.
+_FREIFLAECHE_TYPEN = frozenset({"BALKON", "TERRASSE"})
 
 # Text → Tür-Rolle (Fachteil „Türquellen" (b)): Eingangs-Wörter machen im EG
 # einen hauseingang, Notausgangs-Wörter einen Notausgang.
@@ -141,7 +144,48 @@ def typisiere_tueren(tueren: list[Tuer], raeume: list[Raum], geschoss: str,
                             for p in fluchtweg_enden)
             if endet_flw or (t.breite_mm or 0.0) > _DOPPELFLUEGEL_MM:
                 t.ist_notausgang = True
-        if AUSSEN in klassen and "ALLGEMEIN_ERSCHLIESSUNG" in klassen:
+        # Regel (Leonis Einwand 5, Owner-Auftrag 2026-09-12): eine Tuer an
+        # einem typisierten BALKON/TERRASSE-Raum ist KEIN Weg ins Freie. Der
+        # Zweig steht VOR der hauseingang-Regel, weil BALKON/TERRASSE per
+        # nutzungsklasse.py auf "AUSSEN" abbilden und sonst zwei Wege zum
+        # final_exit offen bleiben: (1) AUSSEN x ALLGEMEIN_ERSCHLIESSUNG
+        # wird hauseingang, (2) bei Sentinel-AUSSEN auf der Gegenseite greift
+        # gar keine Regel, aber das Notausgang-Flag von oben ueberlebt und
+        # leite_ausgaenge feuert darauf. Gemessener Fall: Mollgasse tuer_68
+        # (AUSSEN x raum_61 TERRASSE "TERRASSE TOP 1", 19,48 m2) erzeugte
+        # exit_tuer_68 als final_exit.
+        #
+        # GRENZEN, gemessen und bewusst in Kauf genommen:
+        # - Die Owner-Regel nennt Gelaendeniveau und umlaufendes Gelaender als
+        #   Merkmale. BEIDES ist heute nicht messbar: dxf_load._scale verwirft
+        #   die z-Koordinate, und Gelaender existieren nur als Dialekt-TEXT.
+        #   Deshalb haengt die Regel am Raumtyp, nicht am Niveau.
+        # - Der Owner laesst Terrassen im EG MIT Ausgang ins Gelaende zu,
+        #   "dann aber belegt". Dieser Beleg ist heute nicht fuehrbar, also
+        #   faellt die Tuer auch im EG heraus (fail closed) und der
+        #   Pruefbericht weist sie als belegpflichtigen Einzelfall aus.
+        # - LOGGIA ist kein eigener Typ (raumtyp.py: loggia -> BALKON).
+        # - Nicht erreicht wird footprint.hauptausgaenge (provider.py:102),
+        #   das final_exit ohne jeden Raum-, Typ- und Geschossbezug erzeugt
+        #   (Mollgasse exit_1..exit_4, 4 von 19) — eigener Eingriffspunkt.
+        # - NUR AUSSERHALB DES ERDGESCHOSSES. Erster Versuch griff auch im EG
+        #   und hat einen BELEGTEN Fluchtweg zerstoert: Mollgasse tuer_68 ist
+        #   die Suedgarten-Tuer (Cluster B, 800 mm) an einem Hof, der laut
+        #   Aussen-Analyse Wege ins Freie hat (noerdl. Grundstuecksgrenze,
+        #   Garagentor-Ostkante) — test_soll_mollgasse hielt das scharf fest.
+        #   Der Owner-Auftrag sagt genau das: im EG mit Ausgang ins Gelaende
+        #   bleiben Freiflaechen moeglich. Bedingung ist `not eg`, NICHT
+        #   `ist_obergeschoss`: fuer 41 von 62 Korpusplaenen ist das Geschoss
+        #   leer, und dort sind BEIDE False — mit ist_obergeschoss waere die
+        #   Regel genau auf den Plaenen wirkungslos, die Balkone im OG haben.
+        #   Folge, gemessen: im Bestand greift sie in 0 Faellen (Mollgasse und
+        #   Barawitzka sind EG, Rennweg_OG3 hat 0 final_exit, Muthgasse traegt
+        #   keine Freiflaechentuer mit AUSSEN-Seite). Sie ist damit VORSORGE,
+        #   und ihre Wirksamkeit haengt an der kaputten Geschoss-Erkennung.
+        if typen & _FREIFLAECHE_TYPEN and not eg:
+            detail = "balkontuer"
+            t.ist_notausgang = False
+        elif AUSSEN in klassen and "ALLGEMEIN_ERSCHLIESSUNG" in klassen:
             if eg and not (kein_weg_ins_freie is not None
                            and kein_weg_ins_freie.distance(Point(t.xy_mm))
                            < _KEIN_WEG_NAH_MM):

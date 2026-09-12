@@ -31,6 +31,13 @@ ifc = ["ifcopenshell>=0.8"]
 # Analyse-Werkzeuge (Referenz-Extraktion aus GU-Plan-PDFs, scripts/analyse/) —
 # bewusst KEINE Runtime-Dependency: die Engine liest zur Laufzeit keine Plan-PDFs.
 analyse = ["pdfplumber>=0.11", "pypdfium2>=4.30"]
+# Layer-Merkmals-Korpus + ML-Smoke-Test (scripts/analyse/layer_merkmale.py) —
+# bewusst KEINE Runtime-Dependency: die Engine schreibt/liest zur Laufzeit kein
+# Parquet und trainiert kein Modell. Ohne diese Gruppe faellt der Korpus auf
+# JSONL zurueck (gelesen werden immer BEIDE Suffixe, s. schreibe_korpus); der
+# Smoke-Test laeuft abhaengigkeitsfrei mit eigener CART, sklearn ist nur der
+# optionale Zweitpfad (--smoke-sklearn).
+layerml = ["pyarrow>=15", "scikit-learn>=1.4"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

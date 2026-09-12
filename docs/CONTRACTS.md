@@ -7,6 +7,13 @@ JSON-Schema generiert nach `contracts/schema/`. Dieses Doc = Prosa-Referenz.
 Reine Geometrie/Topologie, kein Norm-Urteil.
 - `floor`, `coordinate_system="mm"`, `bounds_mm`
 - `raeume[]`: `id, raum_typ, polygon_mm, flaeche_m2, ist_fluchtweg, ist_communal`
+  - v1.5.0: `polygon_roh`, `bereinigung[]{regel, gegenspieler, flaeche_m2}` —
+    nicht destruktive Raumbereinigung nach `ENIS_UEBERGABE_0908.md § 14.6/§ 14.6.1`;
+    `polygon_roh` **leer** = `polygon_mm` ist unverändert das Roh-Polygon.
+    `flaeche_m2` ist die Fläche von `polygon_mm` (bereinigt). Löcher sind als
+    1-mm-Schlitz zur Außenkontur kodiert; Bbox-Mitte-Konsumenten sehen ein
+    solches Loch NICHT. Invariante: Fläche(`polygon_roh`) − Fläche(`polygon_mm`)
+    == Σ `bereinigung[].flaeche_m2` (± 1 mm²).
 - `tueren[]`: `id, xy_mm, breite_mm, von_raum, nach_raum, ist_notausgang, schwenk_richtung`
   - v1.4.0: `breite_mm: float | None` — **None = nicht gemessen** (früher `0.0`);
     `breite_quelle ∈ {BLOCKNAME, GEOMETRIE_SCHWENKRADIUS, GEOMETRIE_SUMME,
@@ -38,6 +45,11 @@ symbol_katalog_keys[], mindest_anzahl (RZ=2), dauer_min (60), quelle`.
 - `platzierungen[]`: `xy_mm, catalog_key, rotation_deg, mirror_x, height_mm,
   kind ∈ {rz, sicherheitsleuchte, antipanik}, richtung, circuit_hint,
   covers_segment[], norm_quelle`
+
+## Contract-Freeze (Prozess-Gate)
+Änderungen an `hauptengine/contracts/**` brauchen das Approval aller 3 Owner
+(CODEOWNERS). Ein Approval gilt nur für den Stand, auf dem es erteilt wurde —
+jeder nachgeschobene Commit entwertet es. Prüfung: Check `contract-freeze`.
 
 ## Naht-Invarianten (CI-Gate)
 - `covers_segment ∈ RaumModell.zirkulation.segmente[].segment_id`

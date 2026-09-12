@@ -1,0 +1,48 @@
+name: contract-freeze
+# Prozess-Gate zur Contract-Freeze-Regel: beruehrt ein PR die Contracts, muessen
+# ALLE CODEOWNERS approved haben — und zwar auf GENAU dem aktuellen head_sha.
+# Vorfall PR #149: PR am 09.09. mit anderem Inhalt angelegt, 55 Commits spaeter
+# nachgeschoben, 0 Reviews, gemerged. Deshalb laeuft der Check auf jedem
+# `synchronize` erneut und wertet ein Approval mit altem commit_id als veraltet.
+#
+# ⚠️ Reichweite: `on: pull_request` fuehrt Workflow UND Skript aus dem PR-HEAD aus.
+# Ein PR, der diese Datei oder `.github/scripts/contract_freeze_check.py` aendert,
+# veraendert damit den Pruefer selbst. Das ist KEIN vollstaendiger Freigabeschutz —
+# und es ist auch nicht unloesbar:
+#   (1) Vertrauenswuerdige Ausfuehrung des Pruefers waere mit GitHub-Mitteln
+#       erreichbar (die Basis-Fassung des Workflows ausfuehren, ohne PR-Inhalte
+#       auszufuehren). Das ist eine Workflow-Umstellung und hier bewusst nicht
+#       enthalten. `pull_request_target` fuehrt uebrigens die BASIS-Fassung des
+#       Workflows aus; ungeprueften PR-Code fuehrt es nur dann aus, wenn der Job
+#       ihn auscheckt und startet — das waere zu vermeiden, nicht zwangslaeufig.
+#   (2) Eine von GitHub ERZWUNGENE Mergesperre ist davon unabhaengig und eine
+#       Repo-Einstellung (Branch Protection / Ruleset), laut
+#       docs/BRANCH_PROTECTION.md auf dem aktuellen Plan nicht verfuegbar.
+# Bis beides geklaert ist: verlaessliche Anzeige, keine technische Sperre.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  pull_request_review:
+    types: [submitted, dismissed]
+
+permissions:
+  contents: read
+  pull-requests: write   # nur fuer den Stale-Approval-Kommentar (Teil 2)
+
+jobs:
+  contract-freeze:
+    name: contract-freeze
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Approval-Gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          # CODEOWNERS wird an DIESEM Commit gelesen, nicht im Arbeitsbaum:
+          # sonst setzt sich ein PR seine eigene Pruefgrundlage. Feste Commit-ID,
+          # keine bewegliche Branch-Referenz.
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: python3 .github/scripts/contract_freeze_check.py
