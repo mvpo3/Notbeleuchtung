@@ -62,6 +62,113 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 
 ---
 
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-12, Bereinigung + SCHLEUSE) ═══
+
+**Branch:** `selman/extents-ausreisser`, **gepusht**, **neuer PR als Nachfolger
+von #152** (das war am 2026-09-10 23:31 UTC von @EnisAMG gemerged, ein Push
+aktualisiert es nicht mehr), **kein Merge**. Commits dieser Runde: `731a7d5`
+(WIP-Sicherung der Übersichtskarten vor dem Sync) · `804e6af` (Merge
+`origin/main`) · `64527f0` (BRANCH_PROTECTION § 7) · `7d41907` (Enis' Auflagen
+A/B) · `96dcef6` (SCHLEUSE + Kürzel-Auflösung) · `6ebf676` (**Bereinigung +
+Contract `raum_modell` 1.5.0**) + Abschluss-Commit.
+
+**⚠️ CONTRACT-TOUCH:** `raum_modell` 1.4.0 → **1.5.0**, additiv
+(`Raum.polygon_roh`, `Raum.bereinigung[]`), Schema regeneriert. Der Check
+`contract-freeze` verlangt das Approval **aller drei** Owner auf dem aktuellen
+`head_sha` — **jeder nachgeschobene Commit entwertet ein erteiltes Approval.**
+Also: erst alles fertig, dann Approvals einsammeln.
+
+**Suite:** `1264 passed, 10 skipped, 2 deselected, 12 xfailed, 2 warnings in 1181.23s (0:19:41)`, exit 0, keine XPASS-Zeile · Prüfstrecke über alle fünf Pläne **ohne Parallellast**,
+exit 0, 251,0 / 286,2 / 1813,0 / 56,8 / 51,7 s = 2459 s · `test_soll_muthgasse`
+9 passed / 4 xfailed / **0 XPASS** · Riegel + Bereinigung + Kürzel 49 passed ·
+`ruff` clean · `gen_schema --check` in sync.
+
+**Leitregel unverändert:** *der Code erfindet keine Maße und keine Typen.* Neu
+dazu: **er löscht auch keine Flächen unbelegt** — jeder Abzug der Bereinigung
+ist mit Regel und Gegenspieler gebucht, die Bilanz geht exakt auf
+(0,000000 mm² unbucht).
+
+**Was diese Runde erledigt hat (Details: `docs/ENIS_UEBERGABE_0908.md`
+§§ 19 + 20 + 21):**
+
+1. **Bereinigung der Raumüberlappungen umgesetzt** (§ 14.6/§ 14.6.1, neues
+   Modul `raumerkennung/bereinigung.py`, 430 Zeilen, 24 eigene Tests):
+   **62 von 62 Überlappern gelöst**, doppelt belegte Fläche **262,342 m² →
+   0,39 mm²**, kein Restpaar > 1 mm². Regel für Regel: Regel 1 löst 1,
+   +Regel 2 → 16, +Regel 3 → **62**, Regel 4 nur Mikroflächen, **Regel 5 greift
+   in null Fällen**. 5 Räume entfallen (Restkörper < 1 m², Σ 1,7494 m²),
+   14,829 m² Zerfall-Nebenkomponenten — beides gebucht und namentlich im
+   Bericht. Riegel-Bänder auf (0, 0.0) nachgezogen, **plus neue löschungsfeste
+   Untergrenze `BAND_RAEUME` 47/62/101/21/14**.
+2. **Muthgasse gesondert:** der einzige verschluckte LIFT ist weg (`raum_88` ⊃
+   `raum_79`, 97,6 % → kein Fall). Die **Ursache** bleibt sichtbar, nicht
+   behoben: 11 der 12 geänderten Muthgasse-Räume sind F-Flutungen
+   („Wohnküche"), `raum_88` behält 3,82 m² gegen 39,70 m² Stempel.
+3. **SCHLEUSE entschieden umgesetzt, nur für `E2-VF-11a`**: Kanon-Typ +
+   Nutzungsklasse `ALLGEMEIN_ERSCHLIESSUNG`, `regel_deckung.yaml` `offen`
+   (Owner Enis). `Schl.` typisiert **nur** mit Zusatzbeleg UND eingetragener
+   Owner-Entscheidung; `raum_67` bleibt untypisiert mit Hinweis im Prüfbericht.
+   Gemessen und wichtig: die In-Plan-Belege trennen die beiden Räume **nicht**
+   (die alten „0 mm / 8,2 m"-Angaben sind korrigiert) — der Unterscheider ist
+   das Vergleichsgeschoss (E8 627 mm, E9 10 mm von `raum_65`).
+4. **Enis' CODEOWNERS-Patch übernommen und unabhängig nachgeprüft**
+   (Kommentar in #152, Zahlen dort), **BRANCH_PROTECTION § 7** trennt die zwei
+   offenen Punkte (Workflow-Umstellung vs. Required Status Check).
+5. **Enis' zwei Auflagen dokumentiert** (`docs/OFFENE_FRAGEN.md`): A mit
+   Erzeuger-Codestelle und lauffähiger Test-Skizze (2 passed / 2 strict-xfail),
+   B mit der gemessenen Null (`STANDARDWERT` 0 von 612 Türen) und dem
+   Streich-Vorschlag. **PR #154 geprüft, kein Approval** — vier belegte Mängel
+   bei „fehlende Messung = None", die anderen drei Punkte passen.
+
+**NÄCHSTER PUNKT: die vier offenen Owner-Entscheidungen, nicht neuer Code.**
+
+- **Regel-Reihenfolge (d):** § 14.6.1 ordnet die Restflächen-Regel an Position 2,
+  umgesetzt ist sie zuletzt — sonst unterläuft sie „LIFT und SCHACHT werden
+  IMMER ausgestanzt" (4 der 5 LIFT/SCHACHT-Räume kommen aus dem R-Zweig, zwei
+  davon nur 0,15 m² über der Entfall-Schwelle). Im Docstring deklariert,
+  Wirkungsunterschied gemessen.
+- **Regel 2 vor Regel 3:** kostet genau einen Fall — `raum_29` (L mit Stempel)
+  fällt auf −15,6 %, weil `raum_91` (F) zu 99,97 % darin liegt. Ein-Zeilen-
+  Alternative gerechnet, nicht umgesetzt.
+- **Muthgasse-Türband:** Türen 291 → 270, **ausschließlich** Kontaktzonen-
+  Durchgänge (`durchgang_*` 169 → 148, `tuer_*` unverändert 121). Band **nicht**
+  abgesenkt, sondern als eigener strict-xfail `test_soll_tuerzahl_band` mit
+  Beleg; Räume/Segmente/Stiegenhäuser bleiben scharf. Entscheidung: Band
+  fachlich auf „Türen ohne Kontaktzonen-Durchgänge" umstellen oder bei ≥ 280
+  als Zielbild führen?
+- **Ursache im F-Zweig** (`flute_stempel` bekommt `belegte` nicht übergeben,
+  Punkt 2 der Skizze § 14.6): weiterhin offen. Die Bereinigung ist die
+  nachgelagerte Auflösung.
+
+**Offen an @EnisAMG:** `E2-VF-11b` (`raum_67`) — Entscheidungsvorlage liegt ·
+Notbeleuchtungsanforderung SCHLEUSE (`regel_deckung.yaml`) · Auflage A beim
+ersten `lichte_mm`-Erzeuger · Auflage B (`STANDARDWERT` streichen?) ·
+**Approval für `raum_modell` 1.5.0** und das weiterhin ausstehende für 1.4.0 ·
+die vier Mängel in #154 · die drei älteren Vokabular-Fragen und die
+Mollgasse-„Laubengang"-Frage.
+**Offen an @mvpo3:** **Branch Protection auf `main`** (heute nachgemessen:
+`protection` 404, `rulesets` 403, Token `admin:false`) · **Bbox-Mitte sieht ein
+Schlitz-Loch nicht** (`platzierung/geometry.py:226`; betroffen heute genau
+`Mollgasse raum_51`) · **Modell-Restüberlappung** Muthgasse 12 / 38,279 m²,
+Barawitzka 4 / 7,131 m² aus `stiegenhaus_*`/`lift_*` · **`SCHACHT`-Lücke** in
+`lift_erkennung.py:171` (`Barawitzka lift_2` ⊃ `rest_3` zu 100 %) · die
+Flächenschwellen rechnen ab jetzt mit der **bereinigten** Fläche ·
+**Approval für `raum_modell` 1.5.0**.
+
+**Mess- und Prüfskripte dieser Runde** (Session-Scratchpad
+`C:/Users/selma/AppData/Local/Temp/claude/D--KI-Projekt/15c400f4-f6ff-4226-8584-4bd9ac336bc7/scratchpad`,
+alle nur lesend): `_nachmessung.py` (Riegel-Basis, `BAND_RAEUME`, Muthgasse-
+Verschluck, >5 %-Bilanz, Entfall-Liste) · `_gp_leck.py` (Flächenbilanz) ·
+`_gp_pruef.py`, `_gp_reihenfolge.py` (Determinismus, Regelreihenfolge) ·
+`_schl_*.py` (Schl.-Inventar inkl. Vergleichsgeschosse) · `_tuer_ist.py` +
+`_tuer_zaehlen.py` (612 Türen, Breiten-Herkünfte) · `_gegenprobe`-Aufbau für die
+14 CI-Tests am alten Skript. Rohlogs: `_pruefstrecke.log`, `_suite_vorher.log`,
+`_suite_nachher.log`, `_suite_final.log`, `_nachlauf_muthgasse.log`.
+Im Repo dauerhaft: `scripts/analyse/ueberlappung_regeln.py` (kumulative
+Regel-Messung, Akzeptanzkriterien (a)–(d) prüft es selbst).
+
+---
+
 ## ═══ SELMAN: HIER WEITER (Stand 2026-09-11, Übersichtskarten-Sweep) ═══
 
 **Branch:** `selman/extents-ausreisser`, **PR #152 offen, kein Merge, kein Push.**

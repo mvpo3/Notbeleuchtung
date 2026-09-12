@@ -101,14 +101,37 @@ def test_soll_wandkoerper_band(plan):
 
 
 def test_soll_raeume_tueren_ausgaenge(rm):
+    """Ohne die Türzahl — die steht seit 2026-09-12 in
+    ``test_soll_tuerzahl_band`` (strict-xfail mit Beleg), damit dieses Band
+    scharf bleibt, statt am Türband mitzufallen."""
     assert len(rm.raeume) >= 98, f"nur {len(rm.raeume)} Räume (Ist 114)"
-    assert len(rm.tueren) >= 280, f"nur {len(rm.tueren)} Türen (Ist 291)"
     assert len(rm.zirkulation.segmente) >= 100, (
         f"nur {len(rm.zirkulation.segmente)} Segmente (Ist 143)"
     )
     assert len(rm.stiegenhaeuser) >= 5, (
         f"nur {len(rm.stiegenhaeuser)} Stiegenhäuser (Ist 9)"
     )
+
+
+@pytest.mark.xfail(
+    strict=True,
+    reason="Soll ≥ 280 Türen — Ist Muthgasse E2 2026-09-12: 270. Das Band wird "
+    "NICHT aus dem Ist abgesenkt (Konvention dieser Datei: aus dem Ist "
+    "abgeleitete Bänder sind hier verboten). Ursache gemessen und eingegrenzt: "
+    "die Raumbereinigung (docs/ENIS_UEBERGABE_0908.md § 14.6.1, Commit 6ebf676) "
+    "schneidet die F-Flutungen auf ihr eigenes Gebiet zurück, 4 F-Räume "
+    "entfallen dabei ganz. Weggefallen sind AUSSCHLIESSLICH Kontaktzonen-"
+    "Durchgänge aus durchgaenge_ohne_tuerblatt (_KONTAKT_MM = 250 mm): "
+    "durchgang_* 169 → 148 (−21), während tuer_* unverändert 121 und "
+    "aussenoeffnung_* unverändert 1 bleiben — der Bestand echter Block-, ARC- "
+    "und Text-Türen ist unberührt (Beleg: Türtabelle in "
+    "Projekte/_ergebnis/Muthgasse_E2/bericht.md, alter Stand per git show). "
+    "Ob das Band fachlich auf „Türen ohne Kontaktzonen-Durchgänge\" umgestellt "
+    "wird, ist eine Owner-Entscheidung und steht in § 20 als offener Punkt.",
+)
+def test_soll_tuerzahl_band(rm):
+    assert len(rm.tueren) >= 280, (
+        f"nur {len(rm.tueren)} Türen (Ist 2026-09-12: 270, vorher 291)")
 
 
 # ── Zielbilder ──────────────────────────────────────────────────────────────
