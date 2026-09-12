@@ -35,6 +35,37 @@ def test_final_exit_bekommt_aussenleuchte():
     assert d <= 2000.0
 
 
+def test_aussenleuchte_bleibt_auf_der_tuerachse():
+    # Owner-Korrektur Elektroplan DE (Handoff 2026-09-11): Tür außermittig in der
+    # Südwand → der alte Zentrums-Strahl schob die Leuchte ~830 mm seitlich neben
+    # die Türachse. Mit Wandkanten-Normale bleibt x = Türachse, y geht auswärts.
+    from notbeleuchtung.hauptengine.contracts import Raum
+
+    basis = _raum([])
+    (min_x, min_y), (max_x, _max_y) = _bounds(basis)
+    tuer_x = min_x + (max_x - min_x) * 0.9          # deutlich außermittig
+    ex = (tuer_x, min_y)                            # Schlussausgang in der Südwand
+    raum = _raum([{"id": "ex1", "xy_mm": list(ex), "typ": "final_exit"}])
+    raum.raeume.append(Raum(id="r_eingang", raum_typ="GANG", polygon_mm=[
+        (min_x, min_y), (max_x, min_y), (max_x, min_y + 4000.0), (min_x, min_y + 4000.0),
+    ]))
+    p = plan_aussenleuchten(raum, FakeNormProvider())[0]
+    assert abs(p.xy_mm[0] - tuer_x) < 1.0           # Türachse gehalten (kein Drift)
+    assert abs(p.xy_mm[1] - (min_y - 1000.0)) < 1.0  # 1 m auswärts, senkrecht zur Wand
+
+
+def test_aussenleuchte_faellt_ohne_wandkante_auf_zentrums_strahl_zurueck():
+    # Ohne Polygonkante in Türnähe (Fakes, magere Erkennung) bleibt das alte
+    # Verhalten: auswärts entlang des Strahls von der Gebäudemitte.
+    basis = _raum([])
+    (min_x, min_y), (_max_x, max_y) = _bounds(basis)
+    ex = (min_x, (min_y + max_y) / 2.0)
+    raum = _raum([{"id": "ex1", "xy_mm": list(ex), "typ": "final_exit"}])
+    raum.raeume = []                                # garantiert keine Kante
+    p = plan_aussenleuchten(raum, FakeNormProvider())[0]
+    assert p.xy_mm[0] < min_x
+
+
 def test_stair_exit_loest_nichts_aus():
     raum = _raum([{"id": "s1", "xy_mm": [0.0, 500.0], "typ": "stair_exit"}])
     assert plan_aussenleuchten(raum, FakeNormProvider()) == []
