@@ -10,6 +10,7 @@ Zähl-Summary (`rendered: False`).
 """
 from __future__ import annotations
 
+import inspect
 import tempfile
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -206,9 +207,18 @@ def _run_mit_quelle(
     oib_befund = None
     if bundle.oib is not None and projekt_kontext is not None:
         oib_befund = bundle.oib.bewerte_oib(projekt_kontext)
-    # R1 (Owner 2026-09-11): Bestands-Leuchten-Linie nur durchreichen, wenn vorhanden —
-    # Provider ohne das kwarg (Fakes) bleiben unberührt.
-    extra = {"bestand_leuchten_mm": tuple(bestand_leuchten_mm)} if bestand_leuchten_mm else {}
+    # R1 (Owner 2026-09-11) + Punkt 3 (2026-09-12): Bestands-Leuchten-Linie. Explizit
+    # übergebene Punkte gewinnen; sonst extrahiert die Pipeline sie SELBST aus der
+    # Architektur-Unterlage (bestand_leuchten.extrahiere_fuer, fail-open) — die
+    # R1-/R6-Lichtlinien-Regeln liegen damit auf jedem Plan an, ohne Runner-Handarbeit.
+    # Nur durchreichen, wenn der Platzierer das kwarg kennt (Fakes bleiben unberührt).
+    bestand = tuple(bestand_leuchten_mm)
+    if not bestand and quelle_dxf:
+        from . import bestand_leuchten as _bestand_mod
+        bestand = _bestand_mod.extrahiere_fuer(raum, quelle_dxf)
+    _nimmt_bestand = "bestand_leuchten_mm" in inspect.signature(
+        bundle.platzierer.place).parameters
+    extra = {"bestand_leuchten_mm": bestand} if (bestand and _nimmt_bestand) else {}
     if oib_befund is not None:
         platzierung = bundle.platzierer.place(raum, bundle.norm, lb, oib=oib_befund, **extra)
     else:
@@ -260,6 +270,7 @@ def _run_mit_quelle(
     else:
         render_summary = _summary(raum, platzierung)
     # Coverage-Audit + Norm-Prüfbericht an beide Pfade anhängen.
+    render_summary["bestand_leuchten"] = len(bestand)   # Punkt-3-Sichtbarkeit
     render_summary["coverage"] = _coverage(raum, platzierung, lb)
     render_summary["pruefung"] = pruef
     if photometrie is not None:
