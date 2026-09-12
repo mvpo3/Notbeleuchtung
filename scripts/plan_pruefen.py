@@ -1132,20 +1132,20 @@ def _aussen_md(ab, ueber=(), exits=()) -> list[str]:
     ``exits`` = final_exit-Ausgänge für den Abstands-Hinweis.
     """
     if ab is None:
-        return ["", "## Außenbereich", "", "- keine Außen-Analyse "
-                "(keine Wandkörper im Plan)"]
+        return ["", "## Außenbereich", "", ("- keine Außen-Analyse "
+                "(keine Wandkörper im Plan)")]
 
     def _fl(polys):
         return sum(p.area for p in polys) / 1e6      # mm² → m²
 
     komp = ", ".join(f"{p.area / 1e6:.1f}" for p in ab.komponenten) or "—"
     return ["", "## Außenbereich", "",
-            f"- Gebäude-Komponenten: {len(ab.komponenten)} "
-            f"(Flächen m²: {komp}; Summe {_fl(ab.komponenten):.1f})",
-            f"- offene AUSSEN-Flächen: {len(ab.offen)} "
-            f"({_fl(ab.offen):.1f} m²)",
-            f"- geschlossene Höfe (AUSSEN_GESCHLOSSEN): "
-            f"{len(ab.geschlossen)} ({_fl(ab.geschlossen):.1f} m²)",
+            (f"- Gebäude-Komponenten: {len(ab.komponenten)} "
+             f"(Flächen m²: {komp}; Summe {_fl(ab.komponenten):.1f})"),
+            (f"- offene AUSSEN-Flächen: {len(ab.offen)} "
+             f"({_fl(ab.offen):.1f} m²)"),
+            (f"- geschlossene Höfe (AUSSEN_GESCHLOSSEN): "
+             f"{len(ab.geschlossen)} ({_fl(ab.geschlossen):.1f} m²)"),
             (f"- Überdachungen über offener Außenfläche: {len(ueber)} "
              f"({_fl(ueber):.1f} m²)")] + [
         f"  - {a.area / 1e6:.1f} m² — {d / 1000:.2f} m zu {eid}"
