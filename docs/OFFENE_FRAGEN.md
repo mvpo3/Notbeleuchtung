@@ -694,6 +694,15 @@ falscher Stelle.
   Durchgängen. Wir lesen das als **Schleuse** (Brandschutzschleuse vor dem
   Stiegenhaus), nicht als Schlafzimmer — ausgeschrieben steht es im Plan
   nirgends.
+
+  **Korrekturhinweis 2026-09-12 (Text oben unverändert):** die beiden hier
+  genannten In-Plan-Belege sind gemessen widerlegt — „0 mm Abstand an fünf
+  STIEGENHAUS-Polygonen“ ist Überlappung mit Treppen-Block-Extents (gegen das
+  STIEGENHAUS-Polygon `raum_88` aus `raeume.json`: 4848 mm), und dieselbe
+  0-mm-Klasse enthält die Küchen `raum_29`/`raum_91`/`raum_86`. Die Lesart
+  „Schleuse“ ist dadurch **nicht** widerlegt, nur diese Begründung: entschieden
+  hat es das Vergleichsgeschoss (Enis, 2026-09-11). Details im Abschnitt
+  „Zwei Korrekturen am Abschnitt darüber“ weiter unten.
   → Bekommt `Schleuse` einen eigenen Kanon-Typ (`docs/VOKABULAR.md` § 1 kennt
   ihn nicht), und mit welcher Nutzungsklasse? Wirkung, gemessen:
   `ALLGEMEIN_ERSCHLIESSUNG` würde 2 Räume typisieren und `tuer_50` zur
@@ -760,6 +769,16 @@ Kanon-Typ entsteht erst nach deiner Entscheidung.**
 (`stiegenhaus_1…5` sind Podest- und Laufteilstücke desselben Kerns),
 gemeinsame Kontaktlänge zusammen ~8,2 m.
 
+**Korrekturhinweis 2026-09-12 (beide Angaben dieses Absatzes sind widerlegt;
+der Text bleibt als Stand seines Datums stehen):** die 0 mm stammen aus
+Überlappung mit den Bounding-Rechtecken der Treppen-Blockreferenzen
+(`geometrie_typ.py:47-63`, `:89`) — gegen das STIEGENHAUS-Polygon `raum_88`
+aus `raeume.json` ist `raum_65` **4848 mm** entfernt, und dieselbe 0-mm-Klasse
+enthält die Küchen `raum_29`/`raum_91`/`raum_86`. Die gemeinsame Kante zu
+`stiegenhaus_1…5` misst **Σ 4,72 m** (Gegenrichtung Σ 5,21 m; Einzelkanten
+662/1132/1131/1131/662 mm), nicht ~8,2 m. Nachmessung: Abschnitt „Zwei
+Korrekturen am Abschnitt darüber“.
+
 **Türen (5 echte Übergänge, dazu 2 Selbstbezüge aus Textankern):**
 
 | Tür | Quelle | lichte Breite | von → nach | Gegenseite |
@@ -791,6 +810,15 @@ Maß und `STUK= +11,12`. Im 5-m-Ring: `Glaswand EI90+A2`, 2× `E90`.
 | Zweiter `Schl.`-Raum | `raum_67`, `E2-VF-11b`, **3,73 m²**, Nachbarn `raum_88` STIEGENHAUS (0 mm) und `raum_68` GANG (180 mm), Türen → Stiegenhaus + Gang, ebenfalls `Ker.Bel.` — als Schlafzimmer physisch ausgeschlossen | Schleuse |
 | **Fläche 13,04 m²** | liegt im Zimmer-Flächenband des Plans (19 ZIMMER: min 1,17 / median 10,31 / max 18,95 m²) | **Schlafzimmer** |
 | Nachbarschaft `raum_89` BAD (267 mm) | Wandkontakt, aber **keine Tür** dorthin | neutral |
+
+**Korrekturhinweis 2026-09-12 zu dieser Tabelle (Zeilen unverändert gelassen):**
+zwei Zeilen tragen widerlegte Messwerte. „Geometrie … 8,2 m gemeinsame Kante,
+Abstand 0 mm“ → gemessen **Σ 4,72 m**, und die 0 mm sind Überlappung mit
+Treppen-Block-Extents statt Wandkontakt (gegen `raum_88` aus `raeume.json`:
+4848 mm). „Zweiter `Schl.`-Raum … `raum_88` STIEGENHAUS (0 mm)“ → dasselbe
+0-mm-Merkmal; es trennt Schleuse **nicht** von Küche (`raum_29`/`raum_91`/
+`raum_86` liegen in derselben Klasse). Die Indizienlage insgesamt bleibt
+bestehen, diese beiden Indizien tragen sie aber nicht.
 
 **Für „Schlafzimmer" spricht ausschließlich die Fläche** — und diese nur bei
 `raum_65`, nicht bei `raum_67` (3,73 m² unter derselben Abkürzung, gleiche
@@ -955,6 +983,18 @@ Bis zu deiner Antwort bleibt `raum_67` **untypisiert** mit dem Hinweis
 Zum Entscheiden brauchen wir von dir genau eine Aussage: **`E2-VF-11b` = auch
 `SCHLEUSE`** (dann ein zweiter Register-Eintrag) **oder ein anderer Typ** (dann
 welcher) **oder bleibt untypisiert**.
+
+**Owner-Entscheidung 2026-09-12 (Selman): `raum_67` bleibt untypisiert, bis
+Enis entscheidet.** Kein Ersatz-Typ, kein zweiter Register-Eintrag, kein
+Raten — die Lücke ist gewollt und kein Defekt. Der Prüfbericht weist sie **je
+Lauf** aus (`Projekte/_ergebnis/Muthgasse_E2/bericht.md` → „## Hinweise
+Kürzel-Auflösung“: „raum_67: Stempel »Schl.« (Kuerzel `schl`), Nummer
+E2-VF-11b (350 mm) - bleibt untypisiert: Entscheidung ausstehend“), sie ist
+also in jedem Lauf sichtbar und verschwindet nicht still. **Ausdrücklich: die
+Entscheidung für `E2-VF-11a` gilt nur für diese eine Stempelnummer.**
+`raumerkennung/kuerzel_entscheid.py` löst `Schl.` ausschließlich bei
+Zusatzbeleg UND eingetragener Owner-Entscheidung **je Stempelnummer** auf; aus
+`E2-VF-11a` = `SCHLEUSE` folgt für `E2-VF-11b` nichts.
 
 ## Auflage A — `lichte_quelle` mit dem ersten Erzeuger von `lichte_mm` (Enis, Contract 1.4.0)
 
@@ -1233,3 +1273,234 @@ einzige Leser von `breite_quelle` außerhalb des Modells,
 **Owner:** Contract = alle drei; die Entscheidung stößt Enis an. Der Vorschlag
 ist zusätzlich als Kommentar in PR #154 hinterlegt
 (`#154 issuecomment-5641436979`).
+
+## Slice — Gebäudeausgänge und Fluchtziel am 02-TWA/L04-Dialekt (Leonis Einwand 5)
+
+Stand 2026-09-12, Selman. **Nur aufgenommen, nicht gebaut** — kein Code, kein
+Contract, keine Messung von uns. **Owner-Vorgabe dieser Runde: dieser Slice hat
+Vorrang vor Slice 3b** (trainierter Dialekt-Detektor).
+
+Quelle: Leonis' Board-Notiz zur Slice-3b-Review, Einwand (e), auf seinem Branch
+`origin/leonis/demo-l-gebaeude` (`docs/COORDINATION.md`, Eintrag 2026-09-10,
+PR #156) — **nicht in `main` und nicht in unserem Arbeitsbaum**; lesen mit
+`git show origin/leonis/demo-l-gebaeude:docs/COORDINATION.md`.
+
+### Der Befund im Wortlaut — drei Fassungen, zwei davon widersprechen sich
+
+> **(e) Scope-Ehrlichkeit:** 3b löst den Fremd-Dialekt-**Namens**fall; NICHT den
+> heutigen Elektroplan-Fehler (02-TWA-Wände korrekt erkannt, aber **kein GANG
+> typisiert + keine Gebäude-Ausgänge abgeleitet** → Fluchtweg dünn =
+> **Topologie/Semantik downstream**, separater Slice).
+
+— `docs/COORDINATION.md` auf `origin/leonis/demo-l-gebaeude`.
+
+> Erkennung typt 16/12 Räume korrekt (02-TWA-Wände greifen!), ABER **0
+> Gebäude-Ausgänge** (AUSSEN-Türen = Balkone) + Gang nicht als Fluchtziel →
+> dünn.
+
+— `Handoff/LEONIS.md:88`, derselbe Branch.
+
+> sie typt 16/12 Räume korrekt (WOHNZIMMER/KÜCHE/BAD/GANG …). ABER: die einzigen
+> Türen „zu AUSSEN“ sind Wohnungs-Balkone/Fenster, kein Gebäude-Ausgang → 0
+> Fluchtweg-Ausgänge → ohne Ziel bleibt der Plan dünn (1 RZ/1 SL).
+
+— `scripts/demo/run_projekt_neu.py:1-10`, derselbe Branch.
+
+**@mvpo3 — offene Rückfrage, bewusst nicht geglättet:** (e) sagt „kein GANG
+typisiert“. Deine beiden anderen Fassungen zählen **GANG zu den korrekt
+getypten Räumen**, und deine Anreicherung filtert zwingend auf
+`raum_typ == GANG` — ohne erkannten GANG hätte sie keinen Anker. Belegt ist
+damit **„GANG erkannt, aber nicht als Fluchtziel verwendet“**, nicht „nicht
+typisiert“. Welche Fassung gilt? Davon hängt ab, ob der Slice in der
+Typisierung oder in der Ausgangs-/Ziel-Ableitung ansetzt — zwei verschiedene
+Baustellen in zwei verschiedenen Lanes.
+
+### Die Kernblockade
+
+**0 Gebäude-Ausgänge, weil die einzigen Türen nach `AUSSEN` Wohnungs-Balkone
+und Fenster sind.** Ohne Fluchtziel platziert die Engine **1 RZ und 1 SL auf
+den ganzen Plan** — der Plan ist nicht falsch, er ist leer. Das ist keine
+Namensfrage und damit kein Slice-3b-Fall: der Dialekt ist erkannt, die Wände
+sind erkannt, die Räume sind typisiert. Es fehlt die Semantik **danach** —
+welcher Übergang ist ein Gebäude-Ausgang.
+
+### Leonis' Workaround — und warum ein Workaround keine Lösung ist
+
+`scripts/demo/run_projekt_neu.py` setzt an die beiden Enden des erkannten
+GANG-Korridors je einen **künstlichen `final_exit`** plus ein
+Fluchtweg-Segment entlang des Gangs (im Skript GROSS als Anreicherung
+gekennzeichnet, Quelle `FALLBACK`). Damit hat die Platzierung ein Ziel, und der
+Plan füllt sich.
+
+Als gekennzeichnete Demo-Krücke ist das ehrlich. Als Lösung nicht: die zwei
+Ausgänge sind **erfunden** — sie stehen an einer Stelle, für die es keinen
+Planbeleg gibt, und die ganze Kette danach (Fluchtrichtung, Pfeilumkehr,
+Zwischen-RZ, Deckung, Lux-Nachweis) hängt an dieser Erfindung. Es ist dieselbe
+Grenze wie bei den Maßen: fehlt der Beleg, bleibt das Feld leer und der Befund
+sichtbar — nie ein plausibler Ersatzwert.
+
+### Heute nicht messbar: die Quelldatei liegt nicht im Repo
+
+`EG_Elektroplan_DE_NEU.dxf` und `1OG_Elektroplan_DE_NEU.dxf` werden in
+`scripts/demo/run_projekt_neu.py:79` und
+`scripts/demo/nachzeichnen_elektroplan.py:243` aus der Konstante `P4` gebildet,
+die auf Leonis' Maschine zeigt
+(`C:\Users\mvpst\…\Projektbeispiele-demo-Platzierungslogik`). Die Dateien
+liegen **nicht** in `Projekte/_eingang`, sind also **kein Teil der
+Prüfstrecke** und haben keinen `_ergebnis`-Ordner. Der Slice ist damit **heute
+nicht messbar** — jede Zahl dazu müsste von Leonis' Maschine kommen.
+
+**Nächstgelegener eingecheckter Ersatz — ausdrücklich NICHT dieselbe Datei:**
+`Projekte/EG_Grundriss_DE_NEU.dxf` (getrackt, 1 454 425 Byte). Am Header
+gemessen: `$INSUNITS 4` (= Millimeter), aber `$EXTMIN` 2865.52 / 1726.95 und
+`$EXTMAX` 2884.59 / 1740.02 — der Plan ist also **in Metern gezeichnet**, genau
+der Fall aus Leonis' Einwand (c) „INSUNITS lügt“. Derselbe `02-*-L04`-Dialekt.
+**Korrektur 2026-09-12: „INSUNITS lügt“ ist eine Paraphrase, kein Zitat** (der Satz bleibt oben stehen).
+Wörtlich steht im Code, `raumerkennung/dxf_load.py:164-165`: „mm-Faktor aus der Geometrie
+ableiten, NICHT aus $INSUNITS (das lügt oft: leere Pläne in Metern, fertige
+in mm — beide mit gleichem Code).“
+Leonis' STGH-Stempel bei x = 2890.86 liegt **außerhalb** dieser Extents:
+dieselbe Gebäudeumgebung, aber ein anderer Plan.
+
+Eingecheckte Übersicht dazu (`Projekte/_uebersicht/EG_Grundriss_DE_NEU/`):
+14 Räume, 12 typisiert, **4 Gänge**, `final_exit` **1**, `stair_exit` **1**,
+**0 erkannte BALKON/TERRASSE-Flächen**, Zirkulationsgraph **leer (0 Knoten /
+0 Kanten)**. **Präzisierung 2026-09-12 zu „4 Gänge“ (Angabe bleibt stehen):**
+die 4 ist die Kategoriesumme der Übersicht (`uebersicht.json`, `kategorien.gang`
+= 4); als `raum_typ` sind es **2 `GANG`**, dazu **2 `VORRAUM`**, die dieselbe
+Kategorie mitzählt (`raum_typen`: `GANG` 2, `VORRAUM` 2 — selbst nachgezählt).
+Der Ersatzplan zeigt den Fehler also nur halb — er hat einen
+Ausgang. Er taugt für den Skalen- und Dialekt-Teil, **nicht** als Repro der
+0-Ausgänge-Lage.
+
+### Die fachliche Frage, die zu entscheiden ist
+
+**Woran erkennt die Engine einen GEBÄUDE-Ausgang, wenn alle Türen nach `AUSSEN`
+Balkone sind?** Kandidaten, unbewertet und ausdrücklich ungemessen:
+
+- **Grundstücksgrenze / Straßenlage** — die Owner-Entscheidung „ins Freie heißt
+  über die Grundstücksgrenze“ steht schon in dieser Datei und wäre der erste
+  Kandidat;
+- **Überdachung** über dem Übergang — hängt heute an einem einzigen Beleg
+  (Abschnitt „Überdachung vor dem Haupteingang“ oben);
+- **Türbreite** — `breite_mm` ist gemessen, die Lichte `lichte_mm` hat 0
+  Erzeuger (Auflage A);
+- **Schwellenlosigkeit** — im Modell heute nicht geführt;
+- **Treppenhaus-Nachbarschaft** — Vorsicht: genau diese Merkmalsklasse hat sich
+  bei `raum_65` als untrennbar von Küchen erwiesen (siehe „Zwei Korrekturen am
+  Abschnitt darüber“).
+
+Und die Gegenrichtung, die genauso entschieden werden muss: **wie wird ein
+Balkon zuverlässig ausgeschlossen?** Heute gar nicht — auf diesem Dialekt
+werden **BALKON/TERRASSE 0 von 0** erkannt (`uebersicht.md`: „Außenflächen
+(BALKON/TERRASSE): **0** — nicht erkannt (kein Raum mit passendem
+`raum_typ`)“). Beide Kanon-Typen existieren und sind in
+`normwissen/data/regel_deckung.yaml` als `bewusst_keine` (Außenbereich)
+hinterlegt, aber **kein Erzeuger vergibt sie auf diesem Dialekt**. Erst diese
+Lücke macht die Verwechslung möglich: ein nicht erkannter Balkon ist eine Tür
+ins Freie.
+
+**Owner-Vorgabe 2026-09-12: Vorrang vor Slice 3b, und jetzt NICHT gebaut.**
+Dieser Abschnitt nimmt den Slice auf, hält die Blockade und die Rückfrage an
+@mvpo3 fest und benennt die zu entscheidende Frage. Zu entscheiden von @mvpo3
+(Fluchtziel/Platzierung) und Selman (Erkennung/Ausgangs-Ableitung); ohne
+Quelldatei im Repo ist der erste Schritt ohnehin, eine messbare Repro-Basis zu
+bekommen.
+
+## Slice 3b Vorarbeit — drei Befunde, die einen Neuschrieb `lf-3` brauchen (2026-09-12, Selman)
+
+Gebaut sind Leonis' Schritte 1, 3 und 4 (Schritt 2 nur als Smoke-Test, wie
+beauftragt). Das Modul ist **aufruferlos** — außer Tests und dem Analyse-Skript
+konsumiert es niemand, `CONTRACT_VERSION` steht unberührt auf `1.5.0`, und
+`corpus/` ist seit 2026-09-12 gitignored. Kein committetes Artefakt hängt an den
+Befunden unten. Alle Zahlen aus der Gegenprüfung, jede dort selbst gemessen.
+
+### BLOCKER 1 — der Korpus trägt kein Label (älter als der Fix)
+
+Gespeichert wird `b.rolle`, also die **Ausgabe von `entscheide_rolle`**, daneben
+`label_quelle="namensregel_heute"` auf allen 501 Zeilen. Gegen `merkmale.json`
+gemessen: `rolle` == Namensregel-Label bei 292 Zeilen, **ungleich bei 209 von
+501 = 41,7 %**. Für diese 209 Zeilen ist die Herkunftsangabe faktisch falsch.
+
+Folge: die Datei kann nichts trainieren. Wer auf `rolle` trainiert, bringt einem
+Modell bei, `entscheide_rolle` zu imitieren — genau **Leonis' Einwand (a),
+Zirkularität**. Die API erzwingt den Fehler, weil `schreibe_korpus` nur
+`RollenBefund` annimmt und ein Namensregel-Label gar nicht einspeisbar ist.
+
+Korrektur: `_korpus_zeile` um `label` erweitern, `schreibe_korpus` ein
+`labels`-Mapping `(plan_id, layer_name) -> Rolle` mitgeben (`label_aus_namensregel`
+liegt im Aufrufer bereits bereit), `_SKALARFELDER` im Test nachziehen, Korpus neu
+schreiben. **Verschiebt keinen Vektor**, braucht also für sich keinen
+Versionssprung.
+
+Dauerhafter Verlust, ehrlich benannt: die Widerspruchszahlen „16 von 70" und
+„8 von 57" aus der Deckel-Messung sind **nicht mehr belegbar** — der lf-1-Korpus
+hatte kein Label-Feld und die lf-1-`merkmale.json` ist überschrieben.
+
+### MAJOR 2 — `runde2_belegt=True` auf 87 Zeilen, die Nr. 32–34 nicht messen können
+
+87 von 501 Zeilen sind segmentlos mit Geometrie (`laenge_p50_mm == 0`,
+`layer_diag_mm > 0`). Alle 87 tragen `runde2_belegt=True` und
+`wand_naehe_quote = wand_parallel_quote = wand_endpunkt_quote` **exakt 0,0** —
+strukturell, weil `_runde2` über `d.segs` rechnet und die Liste leer ist. 10
+Zeilen haben alle sechs Messfelder auf 0,0 und sind von „gar nicht gemessen"
+nicht unterscheidbar, 14 tragen `rolle=wand`, und **6 der insgesamt nur 16
+`UEBERNEHMEN`-Zeilen** stammen aus dieser Gruppe — dort greift der 0,84-Deckel
+der Restklasse nicht. Die Zusage im Modul-Docstring („ein 0.0 in Nr. 31–37 ist
+nur zusammen mit `runde2_belegt` lesbar") ist für diese 87 Zeilen falsch.
+
+Korrektur: Flag aufspalten — `runde2_belegt` (Referenz nicht leer) plus ein
+zweites Flag „eigene Segmente vorhanden".
+
+### MAJOR 3 — die 0,0 ist arithmetisch kein Neutrum
+
+Von Hand an der einen unbelegten Echtzeile nachgerechnet (Rennweg_OG3
+`New_Archicad Windows_Pen_No__3`): mit 0,0 in 31–37 ergibt sich `s_wand`
+**0,7000**, `s_oeffnung` 0,0000, `s_raum` 0,0000 → `rolle=wand`, conf 0,63.
+`oeffnung` verliert dabei bis zu **0,45** seiner Gewichtsmasse (0,25
+`wand_parallel` + 0,20 `wand_endpunkt`), `raumkontur` bis zu 0,40 — während
+`s_wand` die Wandfern-Dämpfung ganz überspringt: derselbe Layer
+belegt-und-wandfern wäre 0,5600, also **20 % weniger**. „Weder Bonus noch
+Malus" hält damit nicht; die Richtung zeigt systematisch auf `wand` bzw. `rest`.
+
+Korrektur: für nicht messbare Blöcke die Gewichte des betroffenen Scores
+**renormieren** (Term streichen, Restgewichte auf Summe 1 skalieren) statt 0,0
+einzusetzen.
+
+### MAJOR 4 — die Golden-Pins decken genau die geänderten Features nicht
+
+Von `FEATURE_NAMES[30:]` sind nur `runde2` und `wand_abstand_p50_rel` auf einen
+Wert gepinnt, 2 von 7. Einen Pin auf den vollen 37er-Vektor gibt es nirgends.
+Die vorhandenen Pins sind echt aus dem Lauf, nicht erfunden — sie decken nur
+nicht das, was sich geändert hat.
+
+### Was hier zu entscheiden ist
+
+1. **Ein Neuschrieb statt drei.** Jede saubere Lösung von MAJOR 2 und 3
+   verschiebt Vektoren → `lf-3` und Korpus neu. Blocker 1 gehört in denselben
+   Durchgang, sonst wird jede jetzt geschriebene Zeile ein zweites Mal
+   geschrieben.
+2. **MAJOR 2 per zweitem Flag oder MAJOR 3 per Renormierung?** Beide Wege sind
+   belegbar; die Renormierung ändert mehr Zahlen. Owner-Sache, nicht von der
+   Gegenprüfung entschieden.
+3. **Reihenfolge bleibt:** Leonis' Einwand 5 (Abschnitt oben) hat Vorrang vor
+   `lf-3`.
+
+### Was trotz der Befunde belastbar ist
+
+- **Namens-Blindheit**, als Test festgeschrieben: Meter-Plan und mm-Plan liefern
+  denselben Vektor. Layernamen sind Metadatum, nie Merkmal.
+- **Determinismus**: 0 von 37 Features weichen bei getauschter oder gemischter
+  Segmentreihenfolge ab (vorher 8 von 37, Ursache war `random.sample` über eine
+  reihenfolgeabhängige Liste). Einzige Restabweichung: 2 von 37 bei künstlich
+  gleichen gerundeten Koordinaten (Delta 2e-4 mm).
+- **Restklassen-Deckel**: `UEBERNEHMEN` 16 von 501, davon `rolle=rest` **0**;
+  höchste Confidence über alle 319 rest-Zeilen exakt 0,84; 28 geometrielose
+  Zeilen alle `HARD_STOP` bei höchstens 0,590.
+- **Der Smoke-Befund selbst**: LOPO über den Korpus ergibt acc **0,792** gegen
+  eine Mehrheits-Basislinie von **0,815**, macro-F1 0,333, `raumkontur` F1
+  0,000. Der Baum schlägt „immer `rest`" **nicht**. Das stützt die Vorgabe
+  „Modell erst bei etwa 20 Büros" mit einer Messung statt mit einer Vermutung —
+  und entkräftet die Lesart, ein `pip install` liefere die guten Zahlen nach.
+- **Nicht gebaut**, wie beauftragt: Schritt 5 (GBM), Contract-Felder
+  `rolle`/`confidence`, jede Integration in `provider`/`kaskade`/`plan_pruefen`.
