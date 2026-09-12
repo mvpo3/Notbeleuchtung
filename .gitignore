@@ -54,3 +54,9 @@ spikes/*.ifc
 
 # Sammellauf über alle Repo-Grundrisse (generiert, ~250 MB)
 Projekte/_ergebnis_alle/
+
+# Layer-Merkmalstabelle (Slice-3b-Vorarbeit): generiert von scripts/analyse/layer_merkmale.py
+Projekte/_layermerkmale/
+# Layer-Korpus: aus den Plänen regenerierbar, enthält Kunden-Layernamen im Klartext.
+# Ob die Trainingsdaten getrackt werden, ist eine Entscheidung zu dritt — bis dahin lokal.
+corpus/
