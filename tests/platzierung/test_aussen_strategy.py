@@ -101,8 +101,9 @@ def test_ausgangs_rz_pfeil_zeigt_zur_tuer():
                Edge(**{"from": "g0", "to": "g1", "len_mm": 3000}),
                Edge(**{"from": "g2", "to": "g1", "len_mm": 4000})],
     )
+    # R-C: das Tür-RZ sitzt 150 mm raumseitig der Schwelle → per Nähe matchen.
     rz = [p for p in plan_rettungszeichen_anker(raum, FakeNormProvider())
-          if p.xy_mm == (1000.0, 5000.0)]
+          if ((p.xy_mm[0] - 1000.0) ** 2 + (p.xy_mm[1] - 5000.0) ** 2) ** 0.5 <= 200.0]
     assert len(rz) == 1
     # Tür liegt OBERHALB (Anlauf von unten) → unten-Block um 180° = Pfeil nach oben.
     assert rz[0].richtung == "unten"

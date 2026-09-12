@@ -37,6 +37,7 @@ from notbeleuchtung.hauptengine.contracts import (
 from .bausteine import (
     AGV_SV_F as _AGV_SV_F,
 )
+from .bausteine import RZ_INS_RAUM_MM as _RZ_INS_RAUM_MM
 from .bausteine import (
     building_assigner as _building_assigner,
 )
@@ -107,6 +108,10 @@ def plan_rettungszeichen(raum: RaumModell, norm: NormProvider) -> list[Platzieru
             catalog_key, _ = _select_key(anf.symbol_katalog_keys, "unten")
             rotation = _rotation_piktogramm_in_raum(dx, dy)
             mirror_x = False
+            # R-C: Tür-RZ raumseitig — entgegen der Fluchtachse versetzen.
+            _n = math.hypot(dx, dy)
+            if _n > 0.0:
+                ex, ey = ex - dx / _n * _RZ_INS_RAUM_MM, ey - dy / _n * _RZ_INS_RAUM_MM
         elif naechster is not None and d_exit > 1000.0:
             # Kein Tür-Anker → Pfeil zeigt ZUM nächsten Ausgang (nie ins blinde Ende).
             richtung, _ = _richtung_und_rotation(

@@ -36,6 +36,7 @@ from notbeleuchtung.hauptengine.contracts import (
 
 from .bausteine import AGV_SV_F as _AGV_SV_F
 from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
+from .bausteine import RZ_INS_RAUM_MM as _RZ_INS_RAUM_MM
 from .bausteine import building_assigner as _building_assigner
 from .bausteine import rotation_piktogramm_in_raum as _rotation_piktogramm_in_raum
 from .bausteine import rotation_zur_tuer as _rotation_zur_tuer
@@ -48,7 +49,6 @@ QUELLE_AUFHELLER = "fachpraxis: aufheller-500mm"
 # Owner-Korrektur 2026-09-10 (AutoCAD-Diff L-Demo): das Tür-RZ eines Nebenraums (Technik/
 # Müll) sitzt nicht exakt auf der Schwelle, sondern leicht IM bedienten Raum (Richtung
 # Raum-Inneres, weg vom Gang) — dort ist es klar dem Raum zugeordnet, nicht dem Gang.
-_RZ_INS_RAUM_MM = 150.0
 
 #: Regel 2026-09-07: diese Raumtypen bekommen IMMER eine Sicherheitsleuchte an
 #: der Tür — fensterlose Innen-/Nebenräume, bei Netzausfall muss die Tür
