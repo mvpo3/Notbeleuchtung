@@ -15,7 +15,7 @@ from pydantic import BaseModel, Field
 
 XY = tuple[float, float]
 
-CONTRACT_VERSION = "1.4.0"
+CONTRACT_VERSION = "1.5.0"
 
 # v1.2.0 — rein additive, optionale Felder/Modelle (kein Erzeuger bricht):
 # Nutzungsklassen + Tür-Details + Stiegenhaus-/Anker-Modelle + Segment-Herkunft.
@@ -76,6 +76,35 @@ class Sonderstelle(BaseModel):
     quelle: str = ""              # Audit-Trail: woher die Angabe stammt
 
 
+# v1.5.0 — Raumbereinigung (docs/ENIS_UEBERGABE_0908.md § 14.6/§ 14.6.1).
+# Die fünf Owner-Regeln in Anwendungsreihenfolge, plus drei Buchungen ohne
+# Gegenspieler (Zerfall/Schlitz/Entfall), damit die Flächenbilanz aufgeht.
+BereinigungsRegel = Literal[
+    "LIFT_SCHACHT",   # Regel 1 — LIFT/SCHACHT aus jedem umgebenden Raum ausgestanzt
+    "ENTHALTENSEIN",  # Regel 2 — der innere Raum bleibt, DIESER Raum bekommt das Loch
+    "QUELLE_RANG",    # Regel 3a — höherer Quellen-Rang gewinnt
+    "STEMPEL_NAEHE",  # Regel 3b — gleicher Rang, näher am Stempelwert gewinnt
+    "SCHWERPUNKT",    # Regel 4 — Schnittfläche an den näheren Schwerpunkt
+    "RESTFLAECHE",    # Regel 5 — Restfläche (R) weicht jedem Nicht-R-Polygon
+    "ZERFALL",        # verworfene Nebenkomponente (gegenspieler None)
+    "SCHLITZ",        # Flächenverlust der 1-mm-Loch-Kodierung (gegenspieler None)
+    "ENTFALL",        # Restkörper eines entfallenen Raums (< 1 m², gegenspieler None)
+]
+
+
+class Bereinigung(BaseModel):
+    """v1.5.0 — ein Flächenabzug an DIESEM Raum.
+
+    Gewinner behalten ihr Polygon und bekommen keinen Eintrag. Invariante:
+    Fläche(polygon_roh) − Fläche(polygon_mm) == Summe aller ``flaeche_m2``
+    dieses Raums (± 1 mm²), Entfall eingeschlossen.
+    """
+
+    regel: BereinigungsRegel
+    gegenspieler: str | None = None   # Raum-id des Gewinners; None bei ZERFALL/SCHLITZ/ENTFALL
+    flaeche_m2: float                 # abgezogene Fläche
+
+
 class Raum(BaseModel):
     id: str
     raum_typ: str                       # z.B. "STIEGENHAUS", "GANG", "WC", "ZIMMER"
@@ -91,6 +120,13 @@ class Raum(BaseModel):
     # nutzungsklasse.py) + Wohnungszugehörigkeit; None/leer = unbestimmt.
     nutzungsklasse: Nutzungsklasse | None = None
     wohnung_id: str | None = None
+    # v1.5.0 — nicht destruktive Bereinigung (raumerkennung/bereinigung.py):
+    # polygon_roh = Ring VOR der Bereinigung. LEER heisst: polygon_mm ist
+    # unverändert das Roh-Polygon. flaeche_m2 ist stets die Fläche von
+    # polygon_mm (bereinigt). Löcher sind als 1-mm-Schlitz zur Außenkontur
+    # kodiert — Konsumenten der Bbox-Mitte sehen ein solches Loch NICHT.
+    polygon_roh: list[XY] = Field(default_factory=list)
+    bereinigung: list[Bereinigung] = Field(default_factory=list)
 
 
 class Tuer(BaseModel):
