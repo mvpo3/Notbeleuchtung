@@ -58,11 +58,37 @@ class Messpunkt:
 
 @dataclass(frozen=True)
 class Abschnitt:
-    """Abschnitt konstanter Breite (± ``TOLERANZ_MM``)."""
+    """Abschnitt konstanter Breite (± ``TOLERANZ_MM``).
+
+    ``breite_mm`` ist der MEDIAN der zugehoerigen Messpunkte, ``breite_max_mm``
+    ihr GROESSTER Wert. Beide beschreiben dieselbe Punktmenge, aber nicht
+    dasselbe: innerhalb des Toleranzbandes — und ueber zusammengezogene kurze
+    Stoerstellen hinweg, siehe ``_abschnitte`` — kann der groesste Messwert
+    deutlich ueber dem Median liegen. Wer nur den Median liest, sieht eine
+    breite Stelle im Abschnitt nicht.
+
+    WICHTIG: ``breite_max_mm`` ist das Maximum der ERFASSTEN Messpunkte. Es ist
+    KEIN Nachweis lueckenlos erfasster Geometrie. Nicht messbare Punkte
+    (``Messpunkt.breite_mm is None``), Tuerdurchgaenge und Richtungswechsel
+    gehen nicht ein; sie bleiben ueber ``Breitenprofil.profil``,
+    ``.tuerpunkte`` und ``Messpunkt.grund`` sichtbar. ``None`` heisst
+    "nicht bestimmt", nie "kein breiterer Wert vorhanden".
+    """
 
     von_mm: float
     bis_mm: float
     breite_mm: float
+    #: Groesster gemessener Wert der Punkte dieses Abschnitts; None = nicht
+    #: bestimmt. Kein Normwert, kein Ersatzwert, kein Mittel.
+    #:
+    #: KEYWORD-ONLY mit Absicht: vor diesem Feld war ``quelle`` das vierte
+    #: Positionsargument. Waere ``breite_max_mm`` positional, wuerde der frueher
+    #: gueltige Aufruf ``Abschnitt(v, b, breite, "gemessen")`` still zu
+    #: ``breite_max_mm="gemessen"`` — ein stiller Bedeutungswechsel statt eines
+    #: Fehlers. ``kw_only`` haelt die bisherige Positionsfolge unveraendert und
+    #: nimmt keine bisher erlaubte Aufrufform weg (Python >= 3.10; das Projekt
+    #: verlangt >= 3.11).
+    breite_max_mm: float | None = field(default=None, kw_only=True)
     quelle: str = "gemessen"   # Audit-Trail; NIE ein Normwert
 
     @property
@@ -396,7 +422,16 @@ def _abschnitte(gang: list[Messpunkt], toleranz: float,
     for k, (von, bis, breite) in enumerate(grenzen):
         v = gang[0].laufmeter_mm if k == 0 else (grenzen[k - 1][1] + von) / 2
         b = gang[-1].laufmeter_mm if k == len(grenzen) - 1 else (bis + grenzen[k + 1][0]) / 2
-        out.append(Abschnitt(round(v, 1), round(b, 1), round(breite, 1)))
+        v, b = round(v, 1), round(b, 1)
+        # Maximum ueber die TATSAECHLICH zugehoerigen Punkte, also ueber die
+        # Abschnittsspanne — nicht ueber den behaltenen Lauf allein. Genau so
+        # bleiben die kurzen breiten Stellen erhalten, die oben einem Nachbarn
+        # zugeschlagen wurden (Zusammenfassung in ``grenzen``). Nicht messbare
+        # Punkte sind in ``gang`` gar nicht enthalten und koennen das Maximum
+        # daher weder heben noch senken.
+        werte = [m.breite_mm for m in gang if v <= m.laufmeter_mm <= b]
+        out.append(Abschnitt(v, b, round(breite, 1),
+                             breite_max_mm=round(max(werte), 1) if werte else None))
     return out
 
 

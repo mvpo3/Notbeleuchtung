@@ -19,7 +19,9 @@ von einem regulären Plan nicht unterscheidbar.
 """
 from __future__ import annotations
 
+import copy
 import json
+import os
 import shutil
 import tempfile
 from collections.abc import Callable
@@ -52,15 +54,168 @@ BundleFactory = Callable[[], ProviderBundle]
 # von „kein OIB-Pfad" nicht unterscheidbar).
 _SUMMARY_HEADER_KEYS = ("floor", "n_symbols", "by_kind", "n_raeume", "rendered", "lb_review", "oib")
 
-# HTTP-Header sind längenbegrenzt (uvicorn: ~8 KB je Zeile) und `ensure_ascii` bläht
-# Umlaute auf 6 Zeichen. Die Review-Meldung trägt alle blockierenden Befunde und kann
-# darum beliebig lang werden — im Header wird sie gekappt, der volle Befund bleibt über
-# `LbTextProvider.parse_bericht()` erreichbar.
+# `ensure_ascii` bläht Umlaute auf 6 Zeichen. Die Review-Meldung trägt alle
+# blockierenden Befunde und kann darum beliebig lang werden — im Header wird sie
+# gekappt, der volle Befund bleibt über `LbTextProvider.parse_bericht()` erreichbar.
 _LB_REVIEW_MELDUNG_MAX = 600
+
+# ── Header-Budget ────────────────────────────────────────────────────────────
+# ⚠️ KEINE uvicorn-Grenze unterstellt. Gemessen am echten HTTP-Lauf (2026-09-09,
+# uvicorn + httpx, echter OIB-Provider): der Server liefert auch 25 081 B in
+# `X-Notbeleuchtung` fehlerfrei aus (Status 200, JSON lesbar). Der Server ist also
+# NICHT der Engpass — die Kappung hier ist eine **Kompatibilitäts-Entscheidung**:
+#   * nginx als Reverse-Proxy puffert Antwort-Header per Default mit
+#     `proxy_buffer_size` 4k/8k (je Plattform) und antwortet sonst mit 502;
+#   * CDNs und API-Gateways ziehen ähnliche Grenzen, meist 4–8 KB je Headerzeile;
+#   * ein einzelner Header sollte den ersten Antwort-Puffer nicht sprengen.
+# Deshalb 4 KiB als konservativer Default, per Umgebungsvariable anhebbar, wenn die
+# Betriebsumgebung mehr erlaubt. 0 oder negativ schaltet die Kappung ab.
+_HEADER_MAX_BYTES = int(os.environ.get("NOTBELEUCHTUNG_HEADER_MAX_BYTES", "4096"))
+
+#: Nutzertext zur Kürzung — bewusst ohne interne Begriffe.
+#:
+#: ENTWICKLERINFO (gehört nicht in die Antwort): die vollständige Fassung liegt
+#: serverseitig im Pipeline-Ergebnis (`render_summary["oib"]["hinweise"]` bzw.
+#: `render_summary["pruefung"]`). Ein Endpunkt dafür existiert nicht — das ist die
+#: offene Lücke **L2**, sie wird hier NICHT gebaut. Wieviel übertragen wird,
+#: steuert `NOTBELEUCHTUNG_HEADER_MAX_BYTES` (siehe `docs/INTEGRATION.md`).
+_KUERZUNG_QUELLE = (
+    "Aus Groessengruenden gekuerzt: nicht alle Hinweise stehen in dieser Antwort. "
+    "Die vollstaendigen Hinweise sind ueber diese Schnittstelle derzeit nicht "
+    "abrufbar; die uebertragenen Hinweise und alle Stufen je Gebaeudeteil sind "
+    "vollstaendig und unveraendert."
+)
+
+#: Fehlertext, wenn selbst die geschützten Felder das Budget sprengen.
+_BUDGET_FEHLER = (
+    "Plan erzeugt, aber nicht auslieferbar: die Zusammenfassung im Antwort-Header "
+    "ist mit {ist} Byte groesser als die hier zulaessigen {budget} Byte, und sie "
+    "laesst sich nicht weiter kuerzen, ohne den Zustand je Gebaeudeteil zu "
+    "verlieren. Das passiert bei sehr vielen Gebaeudeteilen in einem Projekt. "
+    "Bitte den Betrieb informieren (zulaessige Groesse anheben) oder das Projekt "
+    "in kleinere Anfragen teilen. Die vollstaendigen Hinweise sind ueber diese "
+    "Schnittstelle derzeit nicht abrufbar."
+)
+
+
+def _als_header(summary: dict) -> str:
+    """Serialisierung exakt so, wie sie in den Header geht (ASCII, kompakt).
+
+    ⚠️ Das Budget misst **genau diesen Wert** — den JSON-Text des Headers
+    `X-Notbeleuchtung`. **Nicht** gemessen sind der Headername samt `: ` und CRLF
+    (20 B) und **nicht** der gesamte HTTP-Headerblock (Statuszeile,
+    `content-type`, `content-length`, `content-disposition`, `date`, `server` …),
+    der je nach Server und Datei noch einige hundert Byte dazulegt. Wer eine
+    harte Gesamtgrenze einhalten muss, setzt `NOTBELEUCHTUNG_HEADER_MAX_BYTES`
+    entsprechend niedriger.
+    """
+    return json.dumps(summary, ensure_ascii=True)
+
+
+def _kuerze_auf_budget(summary: dict) -> dict:
+    """Hält den Header im Budget, ohne offene Vorbehalte unbemerkt zu verlieren.
+
+    Gekürzt wird **nur** die Liste `oib["hinweise"]` — und zwar sichtbar: die Zahl
+    der übertragenen und der zurückgehaltenen Hinweise steht im Block, dazu ein
+    Zeiger auf die vollständige Fassung. Alles, was ein Verbraucher zum Erkennen
+    des Zustands braucht (`stufen`, `raum_genau`, `raum_zuordnung`, `lb_review`,
+    die Zählfelder), bleibt **unangetastet**. Der interne Prüfbericht wird nicht
+    berührt — hier arbeitet eine tiefe Kopie.
+    """
+    if _HEADER_MAX_BYTES <= 0 or len(_als_header(summary).encode()) <= _HEADER_MAX_BYTES:
+        return summary
+
+    gekuerzt = copy.deepcopy(summary)
+    oib = gekuerzt.get("oib")
+    if not isinstance(oib, dict) or not isinstance(oib.get("hinweise"), list):
+        # Nichts Kürzbares vorhanden: dann wurde auch nichts gekürzt — sagen, dass
+        # der Header über dem Budget liegt, statt eine Kürzung zu behaupten.
+        return _ueber_budget(gekuerzt, gekuerzt_wurde=False)
+
+    alle: list[str] = list(oib["hinweise"])
+    # Von hinten wegnehmen, bis es passt: die Reihenfolge der übertragenen
+    # Hinweise bleibt damit die des Providers (Gebäudeteil-Reihenfolge).
+    for k in range(len(alle), -1, -1):
+        oib["hinweise"] = alle[:k]
+        oib["hinweise_gesamt"] = len(alle)
+        oib["hinweise_uebertragen"] = k
+        oib["hinweise_zurueckgehalten"] = len(alle) - k
+        oib["hinweise_gekuerzt"] = k < len(alle)
+        oib["hinweise_kuerzung"] = _KUERZUNG_QUELLE
+        gekuerzt["header_gekuerzt"] = k < len(alle)
+        gekuerzt["header_kuerzung"] = _KUERZUNG_QUELLE
+        if len(_als_header(gekuerzt).encode()) <= _HEADER_MAX_BYTES:
+            if not gekuerzt["header_gekuerzt"]:  # nichts entfernt → keine Marke
+                del gekuerzt["header_gekuerzt"], gekuerzt["header_kuerzung"]
+            return gekuerzt
+    # Auch ohne einen einzigen Hinweis noch zu groß: der Rest (Stufen je
+    # Gebäudeteil, lb_review, Zählfelder) IST der Zustand und wird NICHT geopfert —
+    # lieber ein übergroßer Header als ein stiller Verlust. Definiertes Verhalten:
+    # ausliefern und **als über dem Budget markieren**, damit ein Verbraucher den
+    # Fall vom normalen Kürzen unterscheiden kann.
+    return _ueber_budget(gekuerzt, gekuerzt_wurde=bool(alle))
+
+
+def _ueber_budget(summary: dict, *, gekuerzt_wurde: bool) -> dict:
+    """Markiert einen Header, der auch nach der Kürzung über dem Budget liegt.
+
+    Der Fall ist selten (sehr viele Gebäudeteile in `stufen`), aber definiert: die
+    nicht kürzbaren Felder tragen den Zustand und bleiben vollständig. Damit das
+    nicht als „passt schon" durchgeht, sagen es die Marken ausdrücklich — samt
+    gemessener Größe und geltendem Budget.
+    """
+    summary["header_ueber_budget"] = True
+    summary["header_bytes"] = len(_als_header(summary).encode())
+    summary["header_budget_bytes"] = _HEADER_MAX_BYTES
+    summary["header_kuerzung"] = _KUERZUNG_QUELLE
+    if gekuerzt_wurde:
+        summary["header_gekuerzt"] = True
+    else:
+        summary.pop("header_gekuerzt", None)
+    # `header_bytes` selbst vergrößert den Header — einmal nachziehen, damit der
+    # Wert zur ausgelieferten Länge passt.
+    summary["header_bytes"] = len(_als_header(summary).encode())
+    return summary
+
+
+def _header_wert(summary: dict) -> str:
+    """Der fertige Headerwert — **oder** ein sauberer Fehler statt Überschreitung.
+
+    Das Budget wird **durchgesetzt**: bleibt der Header auch nach der zulässigen
+    Kürzung (nur `oib["hinweise"]`) zu groß, wird **kein** übergroßer Header als
+    erfolgreiche Planauslieferung gesendet. Stattdessen **503** — dieselbe
+    Semantik wie beim fehlenden ODA-Konverter und beim nicht verdrahteten Provider:
+    die Anfrage war in Ordnung, die **Betriebsumgebung** kann sie so nicht
+    ausliefern; ein Betreiber behebt es durch Anheben der zulässigen Größe. Ein
+    422 wäre falsch — der Client hat nichts falsch gemacht und kann die Anfrage
+    unverändert wiederholen, sobald der Betrieb nachgezogen hat.
+
+    ⚠️ `_HEADER_MAX_BYTES <= 0` schaltet die Prüfung **ausdrücklich ab**: dann wird
+    weder gekürzt noch abgebrochen (bewusste Betriebsentscheidung, z. B. hinter
+    einem Gateway, das große Header sicher transportiert).
+
+    Das Pipeline-Ergebnis bleibt in **beiden** Fällen unangetastet — gekürzt wird
+    eine Kopie, und der Fehlerfall ändert an den erzeugten Daten nichts.
+    """
+    wert = _als_header(summary)
+    if _HEADER_MAX_BYTES <= 0:
+        return wert
+    ist = len(wert.encode())
+    if ist > _HEADER_MAX_BYTES:
+        raise HTTPException(
+            status_code=503,
+            detail=_BUDGET_FEHLER.format(ist=ist, budget=_HEADER_MAX_BYTES),
+        )
+    return wert
 
 
 def _header_summary(render_summary: dict) -> dict:
-    """Die Header-tauglichen Felder aus dem Pipeline-Summary — `lb_review` gekürzt."""
+    """Die Header-tauglichen Felder aus dem Pipeline-Summary.
+
+    `lb_review` wird gekürzt, danach hält `_kuerze_auf_budget` den ganzen Header im
+    Budget. Beides ist **sichtbar** markiert; `render_summary` selbst bleibt
+    unverändert (der interne Prüfbericht ist die vollständige Fassung).
+    """
     summary = {k: render_summary[k] for k in _SUMMARY_HEADER_KEYS if k in render_summary}
     review = summary.get("lb_review")
     if isinstance(review, dict):
@@ -69,7 +224,7 @@ def _header_summary(render_summary: dict) -> dict:
         if len(meldung) > _LB_REVIEW_MELDUNG_MAX:
             summary["lb_review"]["meldung"] = meldung[:_LB_REVIEW_MELDUNG_MAX] + "…"
             summary["lb_review"]["gekuerzt"] = True
-    return summary
+    return _kuerze_auf_budget(summary)
 
 
 def _als_dxf(plan_pfad: Path, workdir: Path) -> Path:
@@ -176,7 +331,7 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
                 resp_path,
                 media_type=media,
                 filename=resp_path.name,
-                headers={"X-Notbeleuchtung": json.dumps(summary, ensure_ascii=True)},
+                headers={"X-Notbeleuchtung": _header_wert(summary)},
                 background=cleanup,
             )
         except HTTPException:
@@ -224,7 +379,9 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
                 erg.combined_pdf,
                 media_type="application/pdf",
                 filename="projekt_notbeleuchtung.pdf",
-                headers={"X-Notbeleuchtung": json.dumps(erg.summary, ensure_ascii=True)},
+                # Gleiches Budget wie bei /plan: der Projekt-Summary traegt denselben
+                # `oib`-Block und wuerde sonst mit jedem Gebaeudeteil weiterwachsen.
+                headers={"X-Notbeleuchtung": _header_wert(_kuerze_auf_budget(erg.summary))},
                 background=cleanup,
             )
         except HTTPException:
