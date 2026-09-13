@@ -14,15 +14,24 @@ hält das scharf fest und wurde rot. Der Owner-Auftrag sagt genau das, was ich
 
 Die Regel gilt deshalb **nur außerhalb des Erdgeschosses**, und die Bedingung
 lautet ``not ist_erdgeschoss(geschoss)``, nicht ``ist_obergeschoss(geschoss)``:
-``geschoss_aus(None, "Muthgasse_E2.dxf")`` liefert einen leeren String, und dort
-sind **beide** Prädikate False. Mit ``ist_obergeschoss`` wäre die Regel genau auf
-den 41 von 62 Korpusplänen wirkungslos, deren Geschoss nicht erkannt wird — also
-gerade dort, wo Balkone im Obergeschoss liegen.
+bei UNBEKANNTem Geschoss sind **beide** Prädikate False, und mit
+``ist_obergeschoss`` wäre die Regel genau auf den Plänen wirkungslos, deren
+Geschoss nicht erkannt wird — also gerade dort, wo Balkone im Obergeschoss
+liegen.
 
-**Wirkung im Bestand: 0 Fälle.** Mollgasse und Barawitzka sind EG, Rennweg_OG3
-hat 0 ``final_exit``, Muthgasse trägt keine Freiflächentür mit ``AUSSEN``-Seite.
-Die Regel ist damit **Vorsorge**, und ihre Wirksamkeit hängt an der kaputten
-Geschoss-Erkennung — das ist keine Beschönigung, sondern der gemessene Stand.
+**Korrektur 2026-09-13 an dieser Datei.** Hier stand, ``geschoss_aus(None,
+"Muthgasse_E2.dxf")`` liefere einen leeren String und das Geschoss sei auf
+``41 von 62`` Korpusplänen leer. Beides stimmt nicht mehr: der Aufruf liefert
+seit der mehrstufigen Bestimmung ``"2OG"`` (``E2`` = 2. Obergeschoss), und die
+``41 von 62`` waren OHNE geladenen Plan gezählt — im Produktionspfad sind es
+26 von 83. Der Leerstring-Fall unten bleibt als Regel-Test gültig, sein
+Beispielplan ist es nicht.
+
+**Wirkung im Bestand, nachgemessen gegen die neue Geschoss-Erkennung:** ``eg``
+kippt auf 6 von 83 Plänen, auf den übrigen 77 ist die Regel beweisbar
+unverändert. Auf den 6 ändert sich die Menge der ``balkontuer``-Türen mit
+``AUSSEN``-Seite genau einmal — Mollgasse ``Erdgeschoss`` 1 → 0, eine
+FREIGEGEBENE Tür. Es geht **nirgends** ein belegter ``final_exit`` verloren.
 
 Nicht messbar und daher nicht Teil der Regel: Geländeniveau (``dxf_load``
 verwirft die z-Koordinate, es gibt kein Höhen-Datum) und ein umlaufendes
@@ -79,10 +88,13 @@ def test_terrassentuer_im_obergeschoss_ist_kein_hauseingang():
 
 
 def test_regel_greift_auch_ohne_erkanntes_geschoss():
-    """Der Fall Muthgasse_E2: ``geschoss_aus`` liefert einen leeren String.
+    """UNBEKANNTes Geschoss: ``ist_erdgeschoss`` UND ``ist_obergeschoss`` sind
+    False, die Regel muss trotzdem greifen.
 
-    Dort sind ``ist_erdgeschoss`` UND ``ist_obergeschoss`` False. Die Regel muss
-    trotzdem greifen, sonst ist sie auf 41 von 62 Korpusplänen wirkungslos.
+    NICHT mehr Muthgasse_E2 als Beispiel: ``geschoss_aus(None,
+    "Muthgasse_E2.dxf")`` liefert seit der mehrstufigen Bestimmung ``"2OG"``.
+    Leer bleibt das Geschoss im Produktionspfad auf 26 von 83 Korpusplänen
+    (früher hier: „41 von 62", ohne geladenen Plan gezählt).
     """
     assert not ist_erdgeschoss("")
     assert not ist_obergeschoss("")

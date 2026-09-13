@@ -31,8 +31,8 @@ def _detail(tuer, geschoss="EG", **kw):
 
 
 def test_geschoss_aus():
-    assert geschoss_aus("OG3", None) == "OG3"
-    assert geschoss_aus(None, "Projekte/OG3 - Rennweg 15.dxf") == "OG3"
+    assert geschoss_aus("OG3", None) == "3OG"      # kanonisch: Ziffer vorn
+    assert geschoss_aus(None, "Projekte/OG3 - Rennweg 15.dxf") == "3OG"
     assert geschoss_aus(None, "Erdgeschoss_EG.dxf") == "EG"
     assert geschoss_aus(None, None) == ""
     assert ist_erdgeschoss("EG") and not ist_erdgeschoss("OG3")
