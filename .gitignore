@@ -67,3 +67,9 @@ Projekte/_layermerkmale/
 # Layer-Korpus: aus den Plänen regenerierbar, enthält Kunden-Layernamen im Klartext.
 # Ob die Trainingsdaten getrackt werden, ist eine Entscheidung zu dritt — bis dahin lokal.
 corpus/
+
+# Raumerkennungs-Darstellung: Zwischenstufen je Plan (Cache + Kulisse) bleiben lokal
+Projekte/_ergebnis_raumerkennung/**/_cache.pkl
+Projekte/_ergebnis_raumerkennung/**/_hintergrund_*.png
+Projekte/_ergebnis_raumerkennung/**/_voll.png
+Projekte/_ergebnis_raumerkennung/_einzel/
