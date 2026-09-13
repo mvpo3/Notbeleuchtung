@@ -274,7 +274,11 @@ class NotlichtPlatzierer:
             i_cd_fn=self._i_cd_fn, i_cd_fn_je_key=self._i_cd_fn_je_key,
             bestand_leuchten_mm=tuple(bestand_leuchten_mm),
         )
-        platzierungen = [
+        # Alle Strategien VOR der Fluchtweg-Deckung — ihre RZ werden Stützpunkte der
+        # Deckungs-Drossel (S4, Owner 2026-09-13): decken RZ (inkl. der Nebenraum-Tür-RZ
+        # am Gangrand) einen Gang, ersetzt EIN Lücken-Aufheller die verdichtete SL-Reihe
+        # (Owner-Muster EG: RZ an den Gang-Enden + 1 Aufheller in der Mittellücke).
+        vor_deckung = [
             *_plan_rettungszeichen(raum, norm),          # Anker
             # Owner-Praxisregel (fachpraxis, 2026-09-07): TECHNIK/MUELLRAUM tragen
             # IMMER eine Sicherheitsleuchte an der Tür (fensterlose Nebenräume, oft
@@ -295,7 +299,12 @@ class NotlichtPlatzierer:
             # Hauptpodest aus den Treppenläufen (fail-open ohne laeufe).
             *plan_stiegenhaus_rz(raum, norm),
             *plan_aussenleuchten(raum, norm),            # außerhalb Schlussausgang (§4.1.2 b)
-            *verdichte_fluchtweg(raum, norm, kontext=kontext),  # Linie + Deckung (Lux)
+        ]
+        bestehende_rz = [p for p in vor_deckung if p.kind == "rz"]
+        platzierungen = [
+            *vor_deckung,
+            *verdichte_fluchtweg(raum, norm, kontext=kontext,
+                                 bestehende_rz=bestehende_rz),  # Linie + Deckung (Lux)
         ]
         # Owner-Praxisregel B1 (fachpraxis, G4-Entscheid 2026-09-07): je RZ ein
         # Aufheller 500 mm hinter dem Zeichen (Rauminneres). Vor lb_override

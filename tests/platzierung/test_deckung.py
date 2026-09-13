@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 from fakes import FakeNormProvider
-from notbeleuchtung.hauptengine.contracts import BBox, Raum, RaumModell
+from notbeleuchtung.hauptengine.contracts import BBox, Platzierung, Raum, RaumModell
 from notbeleuchtung.platzierung.deckung import verdichte_fluchtweg
 
 FIXTURES = Path(__file__).parents[1] / "fixtures"
@@ -18,6 +18,10 @@ def _gang_raum() -> RaumModell:
     )
 
 
+def _rz(x: float, y: float) -> Platzierung:
+    return Platzierung(xy_mm=(x, y), catalog_key="notlicht_ks", kind="rz", norm_quelle="q")
+
+
 def test_verdichtet_gang_mit_sicherheitsleuchten():
     out = verdichte_fluchtweg(_gang_raum(), FakeNormProvider())
     assert len(out) >= 2
@@ -26,6 +30,40 @@ def test_verdichtet_gang_mit_sicherheitsleuchten():
     # alle innerhalb des Gangs
     for p in out:
         assert 0.0 <= p.xy_mm[0] <= 15000.0 and 0.0 <= p.xy_mm[1] <= 2400.0
+
+
+def test_drossel_stuetzende_rz_ersetzen_reihe_durch_einen_fueller():
+    # S4-Drossel: 15-m-Gang mit RZ an beiden Enden → keine verdichtete Reihe, sondern
+    # GENAU ein Aufheller in der Mittellücke (> 8 m). Ground-truth-Muster EG.
+    out = verdichte_fluchtweg(_gang_raum(), FakeNormProvider(),
+                              bestehende_rz=[_rz(0.0, 1200.0), _rz(15000.0, 1200.0)])
+    assert len(out) == 1
+    assert out[0].kind == "sicherheitsleuchte"
+    assert abs(out[0].xy_mm[0] - 7500.0) < 1.0   # exakt mittig zwischen den End-RZ
+
+
+def test_drossel_tuer_rz_am_gangrand_stuetzt_innerhalb_toleranz():
+    # Nebenraum-Tür-RZ knapp außerhalb des Gangs (1500 mm < 2000 mm Toleranz) zählen als
+    # Stützpunkte → Drossel greift (1 Füller). Weiter draußen (2500 mm) nicht → volle Reihe.
+    innen = verdichte_fluchtweg(_gang_raum(), FakeNormProvider(),
+                                bestehende_rz=[_rz(0.0, -1500.0), _rz(15000.0, -1500.0)])
+    aussen = verdichte_fluchtweg(_gang_raum(), FakeNormProvider(),
+                                 bestehende_rz=[_rz(0.0, -2500.0), _rz(15000.0, -2500.0)])
+    assert len(innen) == 1
+    assert len(aussen) >= 2   # kein Stützpunkt → unveränderte Lux-Verdichtung
+
+
+def test_drossel_kurzer_gang_kein_fueller():
+    # Gang kürzer als die Lücken-Schwelle (8 m): die RZ decken ihn allein → 0 Aufheller.
+    kurz = RaumModell(
+        floor="X", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(7000.0, 2400.0)),
+        raeume=[Raum(id="g", raum_typ="GANG",
+                     polygon_mm=[(0.0, 0.0), (7000.0, 0.0), (7000.0, 2400.0), (0.0, 2400.0)],
+                     ist_fluchtweg=True)],
+    )
+    out = verdichte_fluchtweg(kurz, FakeNormProvider(),
+                              bestehende_rz=[_rz(0.0, 1200.0), _rz(7000.0, 1200.0)])
+    assert out == []
 
 
 def test_niedrige_lichtstaerke_verdichtet_staerker():
