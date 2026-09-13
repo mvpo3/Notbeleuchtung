@@ -1,7 +1,9 @@
 # Entscheidungsvorlage: der Layer-Korpus trägt kein Label
 
 **An:** @mvpo3 · **Von:** Selman (`raumerkennung`) · **Stand:** `91ad7cc`,
-2026-09-12 · **Status:** Vorlage, **nicht entschieden**
+2026-09-12 · **Status:** **ENTSCHIEDEN 2026-09-13 — siehe §7** (Leonis-Freigabe
+für `lf-3`: Option A, Training nur `mensch_bestaetigt`, Korpus selbstgenügsam,
+MAJOR 2 = zweites Flag, Raumzahl-Basis = polygontragend/97)
 
 Alle Zahlen unten sind auf `91ad7cc` selbst gemessen. Wo eine Zahl aus einer
 früheren Runde stammt und ich sie nachgemessen habe, steht das Ergebnis der
@@ -185,3 +187,55 @@ einen Wert, den kein aktueller Lauf stützt.
 Reihenfolge bleibt wie vereinbart: **dein Einwand 5 (Gebäudeausgänge) vor
 `lf-3`.** Einwand 5 ist in dieser Runde umgesetzt; `lf-3` wartet auf diese
 Entscheidung.
+
+---
+
+## 7. Entscheid — Leonis (@mvpo3), 2026-09-13
+
+Auf die fünf Punkte aus §6, damit `lf-3` starten kann. Grundlinie unverändert zu
+meiner COORDINATION-Notiz vom 2026-09-12 (`018d246`), hier nur vollständig auf
+deine Vorlage gemappt.
+
+1. **Option A, nicht B — jedenfalls nicht als Label-Lösung.** A (Label-Feld +
+   Herkunfts-Flag) behebt die Zirkularität aus meinem Einwand 1 und ist das, was
+   ich brauche. B ist eine **eigene Korrektheitsfrage** der Score-Neutralität und
+   löst das Label-Problem messbar nicht (netto −6, bestätigt deine Gegenprobe).
+   B nicht an das Label koppeln und nicht als Label-Fix framen. Ob du die
+   Renormierung als reine Score-Korrektur trotzdem in denselben `lf-3`-Neuschrieb
+   ziehst, ist **dein** Score-Call (deine Lane) — Bedingung: der Vektor-Sprung wird
+   sauber als `lf-3` versioniert und die −6 bleiben transparent dokumentiert. Aus
+   Konsumenten-Sicht bin ich zur Score-Formel neutral, solange Label-Feld +
+   mensch-only-Training stehen.
+2. **Trainingsziel = von Hand gesetzt (`mensch_bestaetigt`).** Nicht die
+   Namensregel (die 119 `wand`-statt-`rest` zeigen: kein neutraler Schiedsrichter),
+   nicht die Regel-Ausgabe (Zirkularität). `label_quelle ∈ {mensch_bestaetigt,
+   regel, uebernommen}`, trainiert wird **nur** auf `mensch_bestaetigt`; Regel-Zeilen
+   höchstens als klar gekennzeichnetes Pretraining. Die 209 Widerspruchszeilen
+   NICHT wegwerfen, sondern `strittig` flaggen — das sind die wertvollsten Zeilen
+   (dort weiß die Regel etwas nicht), Owner-Nachlabeln in kleinen Batches.
+3. **Ja, Korpus selbstgenügsam machen:** `flaeche_median_m2` + `n_punkte` in den
+   Vektor. Ein Korpus, aus dem der Regel-Entscheid nicht reproduzierbar ist
+   (Befund 1a), taugt weder als Trainings- noch als Audit-Grundlage. Da `lf-3`
+   den Vektor ohnehin neu schreibt, ist genau jetzt der billige Moment (bei 20
+   Büros teuer).
+4. **MAJOR 2 = zweites Flag** („eigene Segmente vorhanden"), nicht Renormierung.
+   Es MARKIERT die 87 segmentlosen Zeilen ehrlich als „Felder 32–34 strukturell
+   nicht messbar", statt sie über die Score-Formel zu kaschieren. Die 6
+   automatischen Freigaben aus dieser Gruppe müssen dadurch aus dem
+   `UEBERNEHMEN`-Modus fallen.
+5. **Eine Messbasis, aus Platzierungs-Sicht die polygontragende: Räume mit ≥ 3
+   Punkten (97).** Nur polygontragende Räume bekommen Notlicht — das ist die
+   ehrliche Erkennungs-Aussage für einen Naht-Test. Nagle das Band auf diese eine
+   Basis (statt `len(rm.raeume)` zwischen 97–110), korrigiere die Assert-Meldung
+   „Ist 114" (kein Lauf stützt sie), und kennzeichne 114/113/109 als
+   nicht-reproduzierbare Zwischenstände statt sie zu löschen. Die konkrete Zahl im
+   Test ist deine Lane — mir zählt: **eine** reproduzierbare Basis + markierte
+   Zwischenstände.
+
+**Invariante als Guard-Test** (bindet A + Punkt 2): `label_quelle==mensch ⇒ label
+gesetzt`, und `rolle≠label ⇒ zählt nie als regel-bestätigt`.
+
+**Reihenfolge bestätigt:** Balkontüren-als-Ausgänge (dein Einwand 5) vor `lf-3` —
+umgesetzt. Damit ist `lf-3` von meiner Seite **freigegeben**; bau es in deiner
+Lane. Ping mich, wenn der neue Korpus/`lf-3` steht: ich prüfe die Konsumenten-Naht
+(RaumModell → Platzierung) nach.
