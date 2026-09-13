@@ -4,6 +4,66 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-09-13 SEHR SPÄT) — S4-Drossel + Sync + Fischamend-Test + D1–D6-Diagnose. HIER WEITER.
+
+**Branch `leonis/demo-l-gebaeude`, HEAD `3c640cb`, alles GEPUSHT. Sync mit origin/main
+gemacht (`0329ae4`, 21 Commits konfliktfrei), Suite 1347 grün.** #150 wurde auf main
+gemergt (`27eb23a`); #131 (L1/L3-Fontfix-Review) geschlossen (überholt).
+
+**Gebaut/erledigt diese Session:**
+1. **S4-Gang-Deckungs-Drossel `f53cc6b`** (`deckung.verdichte_fluchtweg` + `platzierer`):
+   stützt ≥1 RZ (im Gang ODER `_DROSSEL_RANDNAH_MM`=2000 vom Rand = Nebenraum-Tür-RZ)
+   einen Gang → Lux-Reihe ersetzt durch 1 Aufheller je Längslücke > `_DROSSEL_LUECKE_MM`=8000
+   (2×_MIN_ABSTAND). EG Gang-Reihe 4→1. **Diagnose-Kern: MF 0,80 war NICHT der Faktor**
+   (0,80=1,0 identisch), sondern fehlende RZ-Stützung. 3 exakte Tests in `test_deckung.py`.
+2. **NetworkX voll analysiert + Hebel b VERWORFEN.** Messung: Anker-Pfad 0/7 tot, weil
+   `graph.build_circulation_graph` aus `zirkulation.nodes/edges` baut — die sind leer, nur
+   `segmente` gefüllt (Board-Notiz `9553f1c`). Hebel b (Segment-Graph noden, `graph.py`+
+   `anker_strategy.py`) technisch scharf, ABER kippte das abgenommene wohnbau-EG-Muster
+   (8+1→7+0, 1 Test rot) → **zurückgerollt**. Anker-Pfad ist inkompatibel mit der
+   kalibrierten Fallback-Logik. Additiver Weg (Dijkstra im Fallback) bleibt Option.
+3. **Sync `0329ae4`:** Selmans `breitenprofil.py` + Enis Türbreite/AStV + PR #150/#156 rein.
+   Board-Eintrag `80cd52d`.
+4. **Fischamend-Test (roh):** `pipeline._run_mit_quelle` auf BVH Fischamenderstraße BT1+BT2,
+   9 Geschosse, alle gerendert (44–79 Räume, 6× ok / 3× warnung, 0 Crash). Output
+   `Projekte/BVH Fischamenderstraße/notbeleuchtung_out/` (untracked). Runner-Muster: parse
+   → `_run_mit_quelle` mit `pdf_quelle=True` → `dxf_zu_pdf(modelspace-sibling)` → merge.
+5. **CAD-ZIPs `3c640cb`:** 2 Owner-Ordner ("Projekte mit Notbeleuchtung",
+   "Projekte_Leere Architektpläne (Input)") → 12 DXF-only-ZIPs je Projekt (<100 MB,
+   ~243 MB statt 2,2 GB roh). `.gitignore`: `*.bak` + Rohordner-Wildcards. FALLE:
+   Direkt-Push von 2,2 GB / Dateien >100 MB = GitHub-Reject; DXF komprimiert ~90 %.
+
+**OFFEN / RESUME (Prio):**
+1. **Defekt-Slice D1–D6 (BVH Fischamend) — Diagnose FERTIG, Bau wartet auf Owner-GO.**
+   Root Causes belegt (am Output verankert): **D1** Aufheller-Inflation = `aufheller_je_rz`
+   1:1 je RZ, Punkt-Lux-Gate greift nicht (i_cd_fn IST geladen, aber prüft nur SL/AP an
+   1 Punkt) → ~40–48 % aller Symbole Aufheller; verletzt R-J. **D2** Aufzug (LIFT in
+   `_TUERLEUCHTE_KEIN_COMMUNAL:75` ausgenommen → Track B: Erkennung typt LIFT nicht) +
+   Guard. **D3** Rotation-Call-Sites (Vorzeichen). **D4** STGH-Variante = fehlender
+   `Treppenlauf` (Track B) + R8-Fallback. **D5** Tür-Position seitlich (`anker_strategy.
+   _tuer_durchgangsrichtung:79`, Default `(0,-1)` nur bei gar-keiner-Wand). **D6** Gang-
+   Dichte (`_mittel_arm_rz`/`_tuer_luecken_rz`/`verdichte_fluchtweg` + Sichtkette-Ausdünnung
+   bei Zacken). **Reihenfolge:** D2→D5→D1→(D3+D4)→D6. **F2-Split:** S1=`anker_strategy`+
+   `fachpraxis` (D5/D2/D1), S2=`stgh`/`communal_stgh`/`bausteine`/`deckung`+Gang-`platzierer`
+   (D4/D3/D6); geteilt nur `place()` → D2-Guard als Funktion in `fachpraxis`, Merge S1→S2.
+   **VOR Bau:** Verifikations-`place()` für D2 (welcher raum_typ/Geschoss) + D5 (Türposition).
+2. **Selman-Prompt (Wohnung-Fluchtweg-Differenzierung) FERTIG erstellt** (generisch, S1–S4:
+   Wohnungen einzeln trennen, Zirkulation an Wohnungseingangstür STOPPEN, `ist_fluchtweg`
+   differenzieren, Fluchtwege sauberer zeichnen). **Das ist die WURZEL** von „Notbeleuchtung
+   in Wohnungen": Selmans Fluchtweg-Zirkulation läuft in die Wohnungen (an `uebersicht.png`
+   BT1 EG/OG1 belegt: EG 3 Wohnungen aber Zirkulation läuft rein; OG1 1 Riesen-Umriss statt
+   ~8; alle Gänge = ein Typ „GANG"). Selman hat Wohnungs-Umrisse NEU (gut), nutzt sie aber
+   noch nicht zum Fluchtweg-Stopp. Prompt liegt in dieser Session-Historie / Owner gibt ihn weiter.
+3. **S4-Rest-Concerns** (EG total SL 5→4, Owner will 1): Müllraum-Türleuchte
+   (`tuerleuchte_pflichtraeume`, Owner ersetzte durch RZ), raum_9-Redundanz-Min (EN 50172
+   Hard-Stop, norm-korrekt), Stiegenhaus-`aufheller_je_rz`-Nebeneffekt.
+4. **CLAUDE.md-Drift:** Enis führt origin/main-`b80df96` + meine `0d9756f`-Präzisierungen
+   zusammen (er übernimmt, ich arbeite nicht mehr dran).
+5. Karpathy-Repos bewertet: nichts direkt einbaubar; nur `lf-3` (sklearn RandomForest,
+   `micrograd` als Konzept). Kein Slice draus.
+
+---
+
 ## STAND (2026-09-13 ABEND) — Owner-Reihe 1–4 gebaut, PR-Hygiene, Am Rain. HIER WEITER.
 
 **Branch `leonis/demo-l-gebaeude`, alles GEPUSHT, PR #156 OFFEN+MERGEABLE** (main-Merge
