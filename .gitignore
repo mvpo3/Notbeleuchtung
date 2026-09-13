@@ -48,6 +48,13 @@ spikes/*.ifc
 # AutoCAD-Lock-Dateien (transient, nicht versionieren)
 *.dwl
 *.dwl2
+# AutoCAD-Backups (transient, oft >100 MB — GitHub-Killer)
+*.bak
+
+# CAD-Projekt-Rohordner lokal; gepusht werden je Projekt DXF-only-ZIPs (<100 MB).
+# Die *.zip liegen direkt im Top-Ordner und bleiben getrackt.
+Projekte mit Notbeleuchtung/*/
+Projekte_Leere*/*/
 
 # Rennweg OG3: Referenzplan der Stempel-Anker-Tests (ArchiCAD-Export)
 !Projekte/Rennweg/**
