@@ -8,7 +8,8 @@ Antipanik nach EN 1838, getrennter Sicherheitskreis) → DXF/PDF.
 **Nordstern (Produkt):** Chat-Interface — Nutzer lädt Plan (+ LB) hoch → bekommt
 den kompletten Notbeleuchtungsplan zurück. `pipeline.run(arch_dxf, lb) → Plan` IST
 die Engine; das Chat-Interface ist eine dünne Hülle über der FastAPI (`api/main.py`,
-`POST /plan`).
+`POST /plan`). Konzept-Kurzform — echte Signatur (`hauptengine/pipeline.py`) ist
+bundle-first: `run(bundle, dxf_path, floor, out_path=None, lb_path=None, …) → Output`.
 
 Ausgegliedert aus `elektro-planer` (dort für Notbeleuchtung **eingefroren**; die
 Raumerkennung wird portiert, nicht neu gebaut). Voller Status:
@@ -52,6 +53,7 @@ OVE/EN-Verbote sind Hard Stops. Jede Platzierung trägt ihre Entscheidungs-Quell
 | **Leonis** | `mvpo3` | `src/notbeleuchtung/platzierung/` | Platzierungs-Logik: wie/wann/wo Notbeleuchtungs-Symbole. Konsumiert Raum + Norm + LB → PlatzierungsErgebnis. |
 | **Enis** | `EnisAMG` | `src/notbeleuchtung/normwissen/` | Normwissen (EN 1838/ÖNorm): Lux, Erkennungsweite l=z×h, Höhe, RZ-vs-Antipanik (`data/*.yaml`) **+ LB-Parsing** (2. Input → Contract `LBVorgabe`, explizite Auftraggeber-Vorgaben). |
 | **gemeinsam** | alle 3 | `src/notbeleuchtung/hauptengine/` | Integration: **besitzt die Contracts** + Pipeline + Render + API. |
+| **gemeinsam** | alle 3 | `src/notbeleuchtung/symbols/` · `wissen/` | Render-seitig geteilt: `symbols/` = Schrack-Library/Orientierung/Photometrie-Katalog (siehe Architektur-Landkarte), `wissen/` = statische YAML-Wissensdaten. |
 
 **LB-Parsing (2. Input) = Enis.** Enis besitzt beide Wissens-Inputs für Leonis: das
 statische `NormRegelwerk` (EN 1838/ÖNorm) und die projektspezifische `LBVorgabe`
@@ -63,7 +65,9 @@ kommt im Slice „LB-Input".
 
 Dependency-Inversion / Ports & Adapters. Die **Hauptengine besitzt die Contracts**
 (`hauptengine/contracts/`), die Owner-Packages implementieren die Protocols
-(`ports.py`). **Kein Owner-Package importiert ein anderes** — Kommunikation läuft
+(alle definiert in `hauptengine/contracts/ports.py`: `RaumProvider`, `NormProvider`,
+`LBProvider`, `Platzierer`, `OibProvider`, `ProviderBundle`). **Kein Owner-Package
+importiert ein anderes** — Kommunikation läuft
 ausschließlich über die Contract-Objekte, die durch `pipeline.run()` fließen:
 
 ```
