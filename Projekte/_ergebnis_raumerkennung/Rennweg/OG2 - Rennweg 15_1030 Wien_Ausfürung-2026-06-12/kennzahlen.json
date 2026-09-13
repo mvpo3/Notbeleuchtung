@@ -1,0 +1,66 @@
+{
+  "plan": "OG2 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12",
+  "projekt": "Rennweg",
+  "dxf": "Projekte_Leere Architektpläne (Input)/Rennweg/OG2 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf",
+  "sha256": "58cddfaa2abdf52adcf84db488db5425b8e563b58e9a68fd241406d2b087ab64",
+  "bytes": 3969147,
+  "commit": "538d8d8",
+  "status": "ok",
+  "raeume_gesamt": 18,
+  "raeume_je_typ": {
+    "ZIMMER": 5,
+    "VORRAUM": 3,
+    "BAD": 3,
+    "TERRASSE": 2,
+    "UNBEKANNT": 1,
+    "GANG": 1,
+    "WC": 1,
+    "STIEGENHAUS": 1,
+    "LIFT": 1
+  },
+  "raeume_unbekannt": 1,
+  "raeume_mit_stempel": 15,
+  "stempel_abweichung_gt10": 0,
+  "wohnungen": 2,
+  "raeume_je_wohnung": {
+    "top_1": 10,
+    "top_2": 1
+  },
+  "kontext": {
+    "raeume_ohne_polygon": 0,
+    "raeume_ohne_label": 0,
+    "raeume_nicht_gezeigt": 0,
+    "stempel_gesamt": 16,
+    "stempel_ohne_raum": 1,
+    "stempel_nicht_im_zugeordneten_raum": 0,
+    "stempel_raum_nicht_im_endmodell": 0,
+    "stempel_flags": {
+      "ok": 15,
+      "kein_polygon": 1
+    },
+    "raeume_mit_mehreren_stempeln": 0,
+    "zuordnung_quelle": "Erkennung (KaskadeErgebnis.zuordnungen, 16 Stempel)",
+    "geschoss": "2OG",
+    "geschoss_quelle": "dateiname",
+    "kein_gebaeudeumriss": false,
+    "aussen_offen": 1,
+    "aussen_geschlossen": 0,
+    "rotation": "Rotation: keine dominante Kantenrichtung — 0° belassen."
+  },
+  "bilder": [
+    {
+      "datei": "uebersicht.png",
+      "px": [
+        3192,
+        3516
+      ],
+      "raeume": 18,
+      "ohne_label": 0
+    }
+  ],
+  "laufzeit_s": {
+    "erkennung": 17.5,
+    "zeichnen": 3.3,
+    "gesamt": 20.8
+  }
+}
