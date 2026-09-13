@@ -1,0 +1,56 @@
+{
+  "plan": "DG2 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12",
+  "dxf": "Projekte/Rennweg/DG2 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf",
+  "sha256": "b38a0dc930806f654dadc08d35ad7c865da3919659e98d3fc6fa8940779cb6e2",
+  "bytes": 4109875,
+  "bild_px": [
+    2470,
+    2286
+  ],
+  "laufzeit_s": 12.0,
+  "geschoss": "DG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname 'DG2 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12' → 'DG'",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 14,
+  "raeume_unbekannt": 0,
+  "raum_typen": {
+    "VORRAUM": 3,
+    "ZIMMER": 2,
+    "TERRASSE": 1,
+    "BAD": 1,
+    "STIEGENHAUS": 5,
+    "SCHACHT": 1,
+    "LIFT": 1
+  },
+  "kategorien": {
+    "stiege": 8,
+    "wohnen": 2,
+    "freiflaeche": 1,
+    "nass": 1,
+    "schacht": 2
+  },
+  "tueren_gesamt": 29,
+  "tueren_typisiert": 28,
+  "tuer_typen": {
+    "zimmertuer": 4,
+    "wohnungseingang": 18,
+    "balkontuer": 3,
+    "UNBEKANNT": 1,
+    "stiegenhaustuer": 3
+  },
+  "tueren_notausgang": 0,
+  "ausgaenge": {
+    "stair_exit": 3
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 18,
+  "segmente_je_quelle": {
+    "GRAPH": 18
+  },
+  "segmente_richtung_unbekannt": 0,
+  "wohnungen": 1,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 5,
+  "contract_version": "1.5.0"
+}

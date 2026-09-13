@@ -1,0 +1,92 @@
+{
+  "plan": "Mollgasse_EG",
+  "dxf": "Projekte/_eingang/Mollgasse_EG.dxf",
+  "sha256": "4a0b66084d258a183dbbb81c2703820b00c9b18cf0a5a2b2b345fb999800f527",
+  "bytes": 10282242,
+  "bild_px": [
+    2870,
+    2263
+  ],
+  "laufzeit_s": 71.3,
+  "geschoss": "EG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname 'Mollgasse_EG' → 'EG'",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 64,
+  "raeume_unbekannt": 11,
+  "raum_typen": {
+    "GANG": 10,
+    "VORRAUM": 5,
+    "ABSTELLRAUM": 5,
+    "WC": 5,
+    "BAD": 6,
+    "STIEGENHAUS": 2,
+    "ZIMMER": 10,
+    "MUELLRAUM": 2,
+    "GARAGE": 1,
+    "KINDERWAGENRAUM": 2,
+    "TECHNIK": 1,
+    "KÜCHE": 1,
+    "TERRASSE": 1,
+    "LIFT": 2
+  },
+  "kategorien": {
+    "unbekannt": 11,
+    "gang_allg": 6,
+    "stiege": 7,
+    "neben": 11,
+    "nass": 11,
+    "wohnen": 10,
+    "gang_priv": 4,
+    "kueche": 1,
+    "freiflaeche": 1,
+    "schacht": 2
+  },
+  "tueren_gesamt": 149,
+  "tueren_typisiert": 69,
+  "tuer_typen": {
+    "UNBEKANNT": 80,
+    "wohnungseingang": 30,
+    "zimmertuer": 35,
+    "stiegenhaustuer": 2,
+    "hauseingang": 2
+  },
+  "tueren_notausgang": 12,
+  "ausgaenge": {
+    "final_exit": 10,
+    "stair_exit": 2
+  },
+  "ausgaenge_unbelastbar": [
+    {
+      "id": "exit_1",
+      "typ": "final_exit",
+      "grund": "ohne Türbezug"
+    },
+    {
+      "id": "exit_2",
+      "typ": "final_exit",
+      "grund": "ohne Türbezug"
+    },
+    {
+      "id": "exit_3",
+      "typ": "final_exit",
+      "grund": "ohne Türbezug"
+    },
+    {
+      "id": "exit_4",
+      "typ": "final_exit",
+      "grund": "ohne Türbezug"
+    }
+  ],
+  "segmente_gesamt": 126,
+  "segmente_je_quelle": {
+    "LINIE": 103,
+    "GRAPH": 19,
+    "FALLBACK": 4
+  },
+  "segmente_richtung_unbekannt": 4,
+  "wohnungen": 9,
+  "innenhoefe_geschlossen": 1,
+  "stiegenhaeuser": 2,
+  "contract_version": "1.5.0"
+}

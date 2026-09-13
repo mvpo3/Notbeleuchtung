@@ -1,0 +1,58 @@
+{
+  "plan": "OG2 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12",
+  "dxf": "Projekte/Rennweg/OG2 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf",
+  "sha256": "58cddfaa2abdf52adcf84db488db5425b8e563b58e9a68fd241406d2b087ab64",
+  "bytes": 3969147,
+  "bild_px": [
+    2470,
+    2639
+  ],
+  "laufzeit_s": 12.7,
+  "geschoss": "2OG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname 'OG2 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12' → 'OG2'",
+  "ausgangs_warnungen": [
+    "AusgangsWarnung(geschoss='2OG', grund='kein Geschossausgang ableitbar', gescheiterte_regeln=['final_exit: keine hauseingang-/Notausgangstür ins Freie (EG)', 'stair_exit: keine stiegenhaustuer/wohnungseingang am STIEGENHAUS'])"
+  ],
+  "raeume_gesamt": 18,
+  "raeume_unbekannt": 1,
+  "raum_typen": {
+    "ZIMMER": 5,
+    "VORRAUM": 3,
+    "BAD": 3,
+    "GANG": 1,
+    "WC": 1,
+    "TERRASSE": 2,
+    "STIEGENHAUS": 1,
+    "LIFT": 1
+  },
+  "kategorien": {
+    "wohnen": 5,
+    "unbekannt": 1,
+    "stiege": 4,
+    "nass": 4,
+    "gang_priv": 1,
+    "freiflaeche": 2,
+    "schacht": 1
+  },
+  "tueren_gesamt": 33,
+  "tueren_typisiert": 26,
+  "tuer_typen": {
+    "balkontuer": 5,
+    "UNBEKANNT": 7,
+    "zimmertuer": 16,
+    "wohnungseingang": 5
+  },
+  "tueren_notausgang": 0,
+  "ausgaenge": {},
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 2,
+  "segmente_je_quelle": {
+    "FALLBACK": 2
+  },
+  "segmente_richtung_unbekannt": 2,
+  "wohnungen": 2,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 1,
+  "contract_version": "1.5.0"
+}

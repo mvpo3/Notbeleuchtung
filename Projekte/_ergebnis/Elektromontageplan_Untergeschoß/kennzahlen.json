@@ -1,0 +1,57 @@
+{
+  "plan": "Elektromontageplan_Untergeschoß",
+  "dxf": "Projekte/BVH Fischamenderstraße/fertige Elektromontagepläne/UG/Elektromontageplan_Untergeschoß.dxf",
+  "sha256": "61fc90714fddc59d7281ab554134acec81d3e0edc6d99c1b693365b3c70040f2",
+  "bytes": 29433086,
+  "bild_px": [
+    2470,
+    1812
+  ],
+  "laufzeit_s": 32.4,
+  "geschoss": "UG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname 'Elektromontageplan_Untergeschoß' → 'Untergeschoß'",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 43,
+  "raeume_unbekannt": 29,
+  "raum_typen": {
+    "TECHNIK": 2,
+    "GANG": 3,
+    "SCHLEUSE": 1,
+    "STIEGENHAUS": 1,
+    "GARAGE": 2,
+    "KINDERWAGENRAUM": 2,
+    "SCHACHT": 2,
+    "LIFT": 1
+  },
+  "kategorien": {
+    "neben": 6,
+    "gang_allg": 3,
+    "unbekannt": 29,
+    "stiege": 2,
+    "schacht": 3
+  },
+  "tueren_gesamt": 126,
+  "tueren_typisiert": 8,
+  "tuer_typen": {
+    "UNBEKANNT": 118,
+    "stiegenhaustuer": 6,
+    "garagentor": 2
+  },
+  "tueren_notausgang": 3,
+  "ausgaenge": {
+    "stair_exit": 3,
+    "final_exit": 3
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 122,
+  "segmente_je_quelle": {
+    "LINIE": 111,
+    "GRAPH": 11
+  },
+  "segmente_richtung_unbekannt": 0,
+  "wohnungen": 0,
+  "innenhoefe_geschlossen": 1,
+  "stiegenhaeuser": 1,
+  "contract_version": "1.5.0"
+}

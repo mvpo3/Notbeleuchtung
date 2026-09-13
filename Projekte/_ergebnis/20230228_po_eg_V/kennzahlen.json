@@ -1,0 +1,59 @@
+{
+  "plan": "20230228_po_eg_V",
+  "dxf": "Projekte/DXF_Herrenholzgasse/20230228_po_eg_V.dxf",
+  "sha256": "f4d58fb3a4c5e441f12785bbb9af043e521c8969aed658a442b2b926d679005a",
+  "bytes": 100279663,
+  "bild_px": [
+    2870,
+    1089
+  ],
+  "laufzeit_s": 373.3,
+  "geschoss": "EG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname '20230228_po_eg_V' → 'eg'",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 483,
+  "raeume_unbekannt": 229,
+  "raum_typen": {
+    "TERRASSE": 46,
+    "TECHNIK": 9,
+    "KÜCHE": 46,
+    "ABSTELLRAUM": 46,
+    "WC": 46,
+    "VORRAUM": 46,
+    "MUELLRAUM": 5,
+    "ZIMMER": 9,
+    "SCHACHT": 1
+  },
+  "kategorien": {
+    "unbekannt": 229,
+    "freiflaeche": 46,
+    "neben": 60,
+    "kueche": 46,
+    "nass": 46,
+    "stiege": 46,
+    "wohnen": 9,
+    "schacht": 1
+  },
+  "tueren_gesamt": 750,
+  "tueren_typisiert": 253,
+  "tuer_typen": {
+    "UNBEKANNT": 497,
+    "balkontuer": 35,
+    "hauseingang": 14,
+    "zimmertuer": 188,
+    "wohnungseingang": 16
+  },
+  "tueren_notausgang": 79,
+  "ausgaenge": {
+    "final_exit": 15
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 0,
+  "segmente_je_quelle": {},
+  "segmente_richtung_unbekannt": 0,
+  "wohnungen": 49,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 0,
+  "contract_version": "1.5.0"
+}

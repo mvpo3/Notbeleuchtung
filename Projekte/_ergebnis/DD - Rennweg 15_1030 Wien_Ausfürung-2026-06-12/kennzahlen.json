@@ -1,0 +1,44 @@
+{
+  "plan": "DD - Rennweg 15_1030 Wien_Ausfürung-2026-06-12",
+  "dxf": "Projekte/Rennweg/DD - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf",
+  "sha256": "26d98dc5f28af29d231b5d21864a85c76b239691c4bc8b73f3f52042b62b61bd",
+  "bytes": 4741043,
+  "bild_px": [
+    2470,
+    1903
+  ],
+  "laufzeit_s": 13.7,
+  "geschoss": "",
+  "geschoss_quelle": "unbekannt",
+  "geschoss_beleg": "Geschoss unbekannt, Endausgang nicht bestimmbar",
+  "ausgangs_warnungen": [
+    "AusgangsWarnung(geschoss='', grund='Geschoss unbekannt, Endausgang nicht bestimmbar', gescheiterte_regeln=['final_exit: Geschoss weder aus floor/Dateiname noch aus Schriftfeld/Plantext/Höhenkote belegt (kein Standardwert EG)'])",
+    "AusgangsWarnung(geschoss='', grund='kein Geschossausgang ableitbar', gescheiterte_regeln=['final_exit: keine hauseingang-/Notausgangstür ins Freie (EG)', 'stair_exit: keine stiegenhaustuer/wohnungseingang am STIEGENHAUS'])"
+  ],
+  "raeume_gesamt": 3,
+  "raeume_unbekannt": 2,
+  "raum_typen": {
+    "STIEGENHAUS": 1
+  },
+  "kategorien": {
+    "unbekannt": 2,
+    "stiege": 1
+  },
+  "tueren_gesamt": 3,
+  "tueren_typisiert": 0,
+  "tuer_typen": {
+    "UNBEKANNT": 3
+  },
+  "tueren_notausgang": 1,
+  "ausgaenge": {},
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 1,
+  "segmente_je_quelle": {
+    "FALLBACK": 1
+  },
+  "segmente_richtung_unbekannt": 1,
+  "wohnungen": 0,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 1,
+  "contract_version": "1.5.0"
+}

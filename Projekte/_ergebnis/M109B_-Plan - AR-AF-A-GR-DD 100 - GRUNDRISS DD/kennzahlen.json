@@ -1,0 +1,39 @@
+{
+  "plan": "M109B_-Plan - AR-AF-A-GR-DD 100 - GRUNDRISS DD",
+  "dxf": "Projekte/Pläne 19., Muthgasse 109B - 2026-05-07_13-12/Architekt/Ausführungsplan/M109B_-Plan - AR-AF-A-GR-DD 100 - GRUNDRISS DD.dxf",
+  "sha256": "26914c08c8aba1661a2dda9dc58c570998135239eea81467d885c236636e6dee",
+  "bytes": 12423143,
+  "bild_px": [
+    2470,
+    2078
+  ],
+  "laufzeit_s": 70.0,
+  "geschoss": "",
+  "geschoss_quelle": "unbekannt",
+  "geschoss_beleg": "Geschoss unbekannt, Endausgang nicht bestimmbar",
+  "ausgangs_warnungen": [
+    "AusgangsWarnung(geschoss='', grund='Geschoss unbekannt, Endausgang nicht bestimmbar', gescheiterte_regeln=['final_exit: Geschoss weder aus floor/Dateiname noch aus Schriftfeld/Plantext/Höhenkote belegt (kein Standardwert EG)'])",
+    "AusgangsWarnung(geschoss='', grund='kein Geschossausgang ableitbar', gescheiterte_regeln=['final_exit: keine hauseingang-/Notausgangstür ins Freie (EG)', 'stair_exit: keine stiegenhaustuer/wohnungseingang am STIEGENHAUS'])"
+  ],
+  "raeume_gesamt": 4,
+  "raeume_unbekannt": 4,
+  "raum_typen": {},
+  "kategorien": {
+    "unbekannt": 4
+  },
+  "tueren_gesamt": 2,
+  "tueren_typisiert": 0,
+  "tuer_typen": {
+    "UNBEKANNT": 2
+  },
+  "tueren_notausgang": 0,
+  "ausgaenge": {},
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 0,
+  "segmente_je_quelle": {},
+  "segmente_richtung_unbekannt": 0,
+  "wohnungen": 0,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 0,
+  "contract_version": "1.5.0"
+}

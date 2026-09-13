@@ -1,0 +1,57 @@
+{
+  "plan": "260320_938-AR-PP-11990-A_UNTERGESCHOSS BT1",
+  "dxf": "Projekte/BVH Fischamenderstraße/BT1/260320_938-AR-PP-11990-A_UNTERGESCHOSS BT1.dxf",
+  "sha256": "1dc4ec9bc0828939e7495afd833c8f9f52afd8723d87cb733a222f1c0a471fdd",
+  "bytes": 7657084,
+  "bild_px": [
+    2470,
+    1492
+  ],
+  "laufzeit_s": 23.9,
+  "geschoss": "UG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname '260320_938-AR-PP-11990-A_UNTERGESCHOSS BT1' → 'UNTERGESCHOSS'",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 44,
+  "raeume_unbekannt": 20,
+  "raum_typen": {
+    "TECHNIK": 12,
+    "GANG": 3,
+    "SCHLEUSE": 1,
+    "STIEGENHAUS": 1,
+    "GARAGE": 2,
+    "KINDERWAGENRAUM": 1,
+    "SCHACHT": 3,
+    "LIFT": 1
+  },
+  "kategorien": {
+    "neben": 15,
+    "gang_allg": 3,
+    "unbekannt": 20,
+    "stiege": 2,
+    "schacht": 4
+  },
+  "tueren_gesamt": 116,
+  "tueren_typisiert": 8,
+  "tuer_typen": {
+    "UNBEKANNT": 108,
+    "stiegenhaustuer": 6,
+    "brandschutztuer": 2
+  },
+  "tueren_notausgang": 4,
+  "ausgaenge": {
+    "stair_exit": 3,
+    "final_exit": 4
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 143,
+  "segmente_je_quelle": {
+    "LINIE": 111,
+    "GRAPH": 32
+  },
+  "segmente_richtung_unbekannt": 0,
+  "wohnungen": 0,
+  "innenhoefe_geschlossen": 2,
+  "stiegenhaeuser": 1,
+  "contract_version": "1.5.0"
+}

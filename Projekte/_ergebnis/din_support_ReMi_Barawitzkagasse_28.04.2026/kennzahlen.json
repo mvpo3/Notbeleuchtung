@@ -1,0 +1,5 @@
+{
+  "plan": "din_support_ReMi_Barawitzkagasse_28.04.2026",
+  "dxf": "DIN-Notbeleuchtungspläne(Beispiele)/din_support_ReMi_Barawitzkagasse_28.04.2026.dxf",
+  "fehler": "Traceback (most recent call last):\n  File \"D:\\KI Projekt\\Notbeleuchtung\\scripts\\analyse\\gesamtdarstellung.py\", line 659, in main\n    d = plan_bauen(p, out, a.floor)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\KI Projekt\\Notbeleuchtung\\scripts\\analyse\\gesamtdarstellung.py\", line 442, in plan_bauen\n    modell = provider.parse(str(dxf), floor or \"\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\KI Projekt\\Notbeleuchtung\\src\\notbeleuchtung\\raumerkennung\\provider.py\", line 71, in parse\n    bounds = bounds_mm(plan)\n             ^^^^^^^^^^^^^^^\n  File \"D:\\KI Projekt\\Notbeleuchtung\\src\\notbeleuchtung\\raumerkennung\\dxf_load.py\", line 258, in bounds_mm\n    raise ValueError(\"Keine Wand-Entities gefunden — Layer-Muster prüfen.\")\nValueError: Keine Wand-Entities gefunden — Layer-Muster prüfen.\n"
+}

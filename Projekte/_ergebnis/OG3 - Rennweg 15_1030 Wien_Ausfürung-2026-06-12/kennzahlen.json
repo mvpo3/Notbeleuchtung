@@ -1,0 +1,63 @@
+{
+  "plan": "OG3 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12",
+  "dxf": "Projekte/Rennweg/OG3 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf",
+  "sha256": "edada9ddb77dbc9c629d335f4cae5527671090928ce930e8f8efe0d8e840d430",
+  "bytes": 3842236,
+  "bild_px": [
+    2470,
+    2412
+  ],
+  "laufzeit_s": 11.2,
+  "geschoss": "3OG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname 'OG3 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12' → 'OG3'",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 15,
+  "raeume_unbekannt": 1,
+  "raum_typen": {
+    "KÜCHE": 1,
+    "ZIMMER": 3,
+    "BAD": 2,
+    "ABSTELLRAUM": 1,
+    "WC": 1,
+    "BALKON": 1,
+    "GANG": 1,
+    "SCHACHT": 2,
+    "STIEGENHAUS": 1,
+    "LIFT": 1
+  },
+  "kategorien": {
+    "kueche": 1,
+    "wohnen": 3,
+    "nass": 3,
+    "neben": 1,
+    "freiflaeche": 1,
+    "gang_allg": 1,
+    "schacht": 3,
+    "stiege": 1,
+    "unbekannt": 1
+  },
+  "tueren_gesamt": 27,
+  "tueren_typisiert": 15,
+  "tuer_typen": {
+    "balkontuer": 1,
+    "zimmertuer": 8,
+    "UNBEKANNT": 12,
+    "wohnungseingang": 5,
+    "stiegenhaustuer": 1
+  },
+  "tueren_notausgang": 1,
+  "ausgaenge": {
+    "stair_exit": 1
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 5,
+  "segmente_je_quelle": {
+    "GRAPH": 5
+  },
+  "segmente_richtung_unbekannt": 0,
+  "wohnungen": 2,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 1,
+  "contract_version": "1.5.0"
+}

@@ -1,0 +1,64 @@
+{
+  "plan": "Dachgeschoß",
+  "dxf": "Projekte/Mollgasse/Dachgeschoß.dxf",
+  "sha256": "ae64f7e4a6eeca5909ee33b81b3f21d2e131965bd70a9dfb5878ae56db8250e6",
+  "bytes": 5487719,
+  "bild_px": [
+    2470,
+    3162
+  ],
+  "laufzeit_s": 43.0,
+  "geschoss": "DG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname 'Dachgeschoß' → 'Dachgeschoß'",
+  "ausgangs_warnungen": [
+    "AusgangsWarnung(geschoss='DG', grund='kein Geschossausgang ableitbar', gescheiterte_regeln=['final_exit: keine hauseingang-/Notausgangstür ins Freie (EG)', 'stair_exit: keine stiegenhaustuer/wohnungseingang am STIEGENHAUS'])"
+  ],
+  "raeume_gesamt": 35,
+  "raeume_unbekannt": 1,
+  "raum_typen": {
+    "VORRAUM": 3,
+    "ZIMMER": 9,
+    "KÜCHE": 2,
+    "BAD": 6,
+    "STIEGENHAUS": 1,
+    "GANG": 2,
+    "WC": 3,
+    "ABSTELLRAUM": 4,
+    "TERRASSE": 1,
+    "SCHACHT": 1,
+    "LIFT": 2
+  },
+  "kategorien": {
+    "stiege": 4,
+    "wohnen": 9,
+    "kueche": 2,
+    "nass": 9,
+    "gang_priv": 1,
+    "gang_allg": 1,
+    "neben": 4,
+    "unbekannt": 1,
+    "freiflaeche": 1,
+    "schacht": 3
+  },
+  "tueren_gesamt": 66,
+  "tueren_typisiert": 58,
+  "tuer_typen": {
+    "wohnungseingang": 9,
+    "zimmertuer": 39,
+    "UNBEKANNT": 8,
+    "balkontuer": 10
+  },
+  "tueren_notausgang": 7,
+  "ausgaenge": {},
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 3,
+  "segmente_je_quelle": {
+    "FALLBACK": 3
+  },
+  "segmente_richtung_unbekannt": 3,
+  "wohnungen": 5,
+  "innenhoefe_geschlossen": 2,
+  "stiegenhaeuser": 1,
+  "contract_version": "1.5.0"
+}

@@ -128,3 +128,40 @@ def test_doppellinien_fallback(doppellinien_dxf):
 def test_bounds_aus_wandkoerpern_leer():
     with pytest.raises(ValueError):
         bounds_aus_wandkoerpern([])
+
+
+# ── Fischamender BT1 EG (Wrapper-Block-Plan, ein Layer A_Waende) ─────────────
+BT1_EG = (REPO_ROOT / "Projekte" / "BVH Fischamenderstraße"
+          / "fertige Elektromontagepläne" / "BT1"
+          / "Elektromontageapläne_ERDGESCHOSS BT1.dxf")
+
+
+def test_fischamender_bt1_eg_wandkoerper():
+    """Die Familie liefert Wandkörper — ausdrücklich NICHT 0.
+
+    Bauform: `plan.space` ist der Wrapper-Block '65465465' (nicht der
+    Modelspace), die Wände liegen doppelt dargestellt (HATCH + Linienzug) auf
+    EINEM Layer `A_Waende`, überwiegend direkt im Wrapper, ein Teil eine
+    Block-Ebene tiefer — `finde_wandkoerper` steigt dafür selbst ab.
+
+    Ist-Stand 3d91a2c (selbst gemessen, 12 s): 241 Wandkörper, davon 195 `msp`
+    + 46 aus Blöcken, 210 auf `A_Waende`. Die Bänder (≥150 / ≥150) sind
+    GESETZT, nicht kalibriert — Abstand zum Ist als Luft für Plan-Varianten.
+    Anlass: die Behauptung »BT1-EG hat 0 Wandkörper« (2026-09-12) war ein
+    Messfehler (`len(getattr(modell, "wandkoerper", []))` auf einem
+    RaumModell, das dieses Feld nicht führt). Fällt diese Familie je wirklich
+    auf 0, bricht dieser Test statt still 126 Durchgangs-Türen zu verlieren.
+    """
+    if not BT1_EG.exists():
+        pytest.skip(f"Plan fehlt: {BT1_EG}")
+    plan = lade_dxf(BT1_EG)
+    # Mindestaussagen statt Gleichheit: die konkrete Block-Nummer und der
+    # genaue Layer-Name sind Ist-Werte DIESER einen Datei — ein Variantenexport
+    # wuerde sie ohne Sachgrund brechen. Tragend ist die BAUFORM: plan.space
+    # ist nicht der Modelspace, und es gibt einen erkannten Wand-Layer.
+    assert plan.space is not plan.doc.modelspace()
+    assert plan.wall_layers
+    wk = finde_wandkoerper(plan)
+    assert len(wk) >= 150, f"nur {len(wk)} Wandkörper — Fischamender-Regress"
+    assert sum(1 for k in wk if k.layer == "A_Waende") >= 150
+    assert any(k.quelle.startswith("block:") for k in wk)

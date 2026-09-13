@@ -20,28 +20,34 @@ Regelkette (die ERSTE greifende Regel setzt das Detail):
    Brandschutz-Priorität dokumentiert im Modul-Docstring; ein eigenes
    Zusatzfeld gibt der Contract nicht her).
 
-Geschoss: ``geschoss_aus(floor, dxf_pfad)`` — floor-Parameter zuerst, sonst
-EG/OG\\d/UG/KG/DG aus dem Dateinamen. Im OG entstehen keine hauseingang-
-Endausgänge.
+Geschoss: ``geschoss.geschoss_befund`` bestimmt es mehrstufig (Dateiname →
+Schriftfeld/Plantext → Höhenkote → UNBEKANNT) und trägt die entscheidende
+Quelle mit; ``geschoss_aus`` ist die dünne Hülle darüber und wird hier
+weiter re-exportiert, damit die Bestands-Aufrufer unverändert bleiben. Im OG
+entstehen keine hauseingang-Endausgänge, bei UNBEKANNT gar keine (fail closed,
+``ausgaenge.ohne_unzulaessige_final_exits``).
 """
 from __future__ import annotations
 
 import math
 import re
-from pathlib import Path
 
 from shapely.geometry import Point
 from shapely.geometry.base import BaseGeometry
 
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum, Tuer
 
+from .geschoss import (
+    geschoss_aus,  # noqa: F401 — Re-Export: Bestands-Aufrufer importieren
+    geschoss_bekannt,  # noqa: F401   diese Namen aus tuer_typisierung
+    ist_erdgeschoss,
+    ist_obergeschoss,  # noqa: F401
+)
 from .nutzungsklasse import nutzungsklasse_fuer
 from .tuer_zuordnung import AUSSEN
 
 XY = tuple[float, float]
 
-_GESCHOSS_RE = re.compile(r"(?<![A-Z0-9])(EG|UG\d*|KG\d*|DG|OG\s?\d+|\d+\.?\s?OG)",
-                          re.IGNORECASE)
 _BRANDSCHUTZ_RE = re.compile(r"\bBST\b|T\s?30|T\s?90|EI\s?30|EI\s?90", re.IGNORECASE)
 _BST_NAH_MM = 500.0
 # Fluchtweg-Ende „an der Tür": 2 m — die 09-WEG-Annotation endet oft kurz vor
@@ -63,26 +69,6 @@ _EINGANG_TEXT = re.compile(
     r"T(?:Ü|UE|.)RSCHLIE|AUTOMATIKT|SCHIEBET|EINGANG|WINDFANG", re.IGNORECASE)
 _NOTAUSGANG_TEXT = re.compile(
     r"NOTAUSGANG|FLUCHTT|PANIK|\bE[12]\b", re.IGNORECASE)
-
-
-def geschoss_aus(floor: str | None, dxf_pfad: str | None = None) -> str:
-    """Geschoss-Kürzel: floor-Parameter zuerst, sonst aus dem Dateinamen."""
-    for quelle in (floor, Path(dxf_pfad).stem if dxf_pfad else None):
-        if not quelle:
-            continue
-        m = _GESCHOSS_RE.search(quelle)
-        if m:
-            return m.group(1).upper().replace(" ", "").replace(".", "")
-    return ""
-
-
-def ist_erdgeschoss(geschoss: str) -> bool:
-    return geschoss.upper().startswith("EG")
-
-
-def ist_obergeschoss(geschoss: str) -> bool:
-    g = geschoss.upper()
-    return "OG" in g and not g.startswith("EG") or g == "DG"
 
 
 def brandschutz_hinweise_aus_dxf(plan) -> list[XY]:
@@ -175,13 +161,21 @@ def typisiere_tueren(tueren: list[Tuer], raeume: list[Raum], geschoss: str,
         #   Garagentor-Ostkante) — test_soll_mollgasse hielt das scharf fest.
         #   Der Owner-Auftrag sagt genau das: im EG mit Ausgang ins Gelaende
         #   bleiben Freiflaechen moeglich. Bedingung ist `not eg`, NICHT
-        #   `ist_obergeschoss`: fuer 41 von 62 Korpusplaenen ist das Geschoss
-        #   leer, und dort sind BEIDE False — mit ist_obergeschoss waere die
-        #   Regel genau auf den Plaenen wirkungslos, die Balkone im OG haben.
-        #   Folge, gemessen: im Bestand greift sie in 0 Faellen (Mollgasse und
-        #   Barawitzka sind EG, Rennweg_OG3 hat 0 final_exit, Muthgasse traegt
-        #   keine Freiflaechentuer mit AUSSEN-Seite). Sie ist damit VORSORGE,
-        #   und ihre Wirksamkeit haengt an der kaputten Geschoss-Erkennung.
+        #   `ist_obergeschoss`: ein UNBEKANNTes Geschoss ist auch kein
+        #   Obergeschoss, und dort sind BEIDE Praedikate False — mit
+        #   ist_obergeschoss waere die Regel genau auf den Plaenen wirkungslos,
+        #   die Balkone im OG haben. Im Produktionspfad (mit geladenem Plan)
+        #   sind das 26 von 83 Korpusplaenen; die frueher hier genannten
+        #   "41 von 62" waren OHNE Plan gezaehlt und galten nie fuer die
+        #   Produktion.
+        #   NACHGEMESSEN 2026-09-13 gegen die neue Geschosserkennung: `eg`
+        #   kippt auf 6 von 83 Plaenen, auf den uebrigen 77 ist die Regel
+        #   beweisbar unveraendert. Auf den 6 aendert sich die Menge der
+        #   balkontuer-Tueren mit AUSSEN-Seite genau einmal — Mollgasse
+        #   `Erdgeschoss` 1 -> 0, also eine FREIGEGEBENE Tuer. Es geht
+        #   NIRGENDS ein belegter final_exit verloren; die Fischamend-
+        #   Erdgeschosse (BT1/BT2, Architektur + Elektromontage) behalten ihre
+        #   Freiflaechentueren unveraendert (0->0, 1->1).
         if typen & _FREIFLAECHE_TYPEN and not eg:
             detail = "balkontuer"
             t.ist_notausgang = False
