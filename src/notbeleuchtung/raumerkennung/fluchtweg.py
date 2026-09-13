@@ -36,8 +36,12 @@ from notbeleuchtung.hauptengine.contracts.raum_modell import (
 )
 
 from .dxf_load import DxfPlan
+from .geschoss import (
+    GESCHOSS_UNBEKANNT_WARNUNG,
+    geschoss_bekannt,
+    ist_obergeschoss,
+)
 from .nutzungsklasse import nutzungsklasse_fuer
-from .tuer_typisierung import ist_obergeschoss
 from .tuer_zuordnung import AUSSEN, KEIN_RAUM
 from .zirkulation import WEG_PREFIX, _laenge, _reason
 
@@ -195,14 +199,20 @@ def fluchtwege(raeume: list[Raum], tueren: list[Tuer], ausgaenge: list[Ausgang],
     Zielwahl nach Geschoss: **EG/UG** → jeder Weg endet an einem
     ``final_exit`` (stair_exit sind nur Zwischenknoten; je Stiegenhaustür
     entsteht zusätzlich das Segment Stiegenhaustür→nächster final_exit);
-    **OG** → Ziel ist der ``stair_exit``. Leeres ``geschoss`` zählt als
-    EG-artig (konservativ: der Weg soll ins Freie führen).
+    **OG** → Ziel ist der ``stair_exit``. Bei UNBEKANNTem ``geschoss`` wird
+    GAR KEIN Ziel gewählt, sondern gewarnt: fail closed hat der Plan dann
+    keinen ``final_exit`` (``ausgaenge.ohne_unzulaessige_final_exits``), und
+    der Ersatzgriff auf „irgendeinen Ausgang" hätte den Weg an einem
+    ``stair_exit`` enden lassen — gezählt als erfüllter Fluchtweg, obwohl
+    niemand weiß, ob er ins Freie führt. Das ist das Gegenteil von
+    konservativ.
 
     Startpunkte, in deren Nähe schon eine explizite LINIE verläuft, werden
     übersprungen — der Plan hat dort selbst geplant. ``warnungen`` (optional,
     in-place): Starts im EG/UG ohne erreichbaren final_exit mit Endraum+Grund.
     """
     og = ist_obergeschoss(geschoss)
+    bekannt = geschoss_bekannt(geschoss)
     erschliessung = {r.id: r for r in raeume
                      if _klasse(r) == "ALLGEMEIN_ERSCHLIESSUNG"
                      and len(r.polygon_mm) >= 3}
@@ -220,7 +230,18 @@ def fluchtwege(raeume: list[Raum], tueren: list[Tuer], ausgaenge: list[Ausgang],
     # (lieber ein Weg zum falschen Ausgangstyp als gar keiner — die Lücke
     # meldet `warnungen`).
     ziel_typ = "stair_exit" if og else "final_exit"
-    ziel_ausgaenge = [a for a in ausgaenge if a.typ == ziel_typ] or ausgaenge
+    ziel_ausgaenge = [a for a in ausgaenge if a.typ == ziel_typ]
+    if not bekannt:
+        # Kein Ziel erfinden: ohne belegtes Geschoss gibt es keinen final_exit,
+        # und der Fallback auf `ausgaenge` würde den Weg am stair_exit enden
+        # lassen und ihn als erfüllt zählen.
+        ziel_ausgaenge = []
+        if warnungen is not None:
+            warnungen.append(
+                f"{GESCHOSS_UNBEKANNT_WARNUNG} — kein Fluchtweg-Ziel "
+                "bestimmbar, keine GRAPH-Wege erzeugt")
+    elif not ziel_ausgaenge:
+        ziel_ausgaenge = ausgaenge
     tuer_by_id = {t.id: t for t in tueren}
     ziele: dict[str, Ausgang] = {}
     for a in ziel_ausgaenge:
@@ -275,7 +296,7 @@ def fluchtwege(raeume: list[Raum], tueren: list[Tuer], ausgaenge: list[Ausgang],
             starts.append(t)
 
     out: list[FluchtwegSegment] = []
-    kein_finales_ziel = (not og
+    kein_finales_ziel = (not og and bekannt
                          and not any(a.typ == "final_exit" for a in ausgaenge))
     if warnungen is not None and kein_finales_ziel and starts:
         warnungen.append(
@@ -298,7 +319,7 @@ def fluchtwege(raeume: list[Raum], tueren: list[Tuer], ausgaenge: list[Ausgang],
             if laenge < best_len:
                 best, best_len = pfad, laenge
         if best is None or len(best) < 2:
-            if warnungen is not None and not og:
+            if warnungen is not None and not og and bekannt:
                 endraum = next((s for s in (start.von_raum, start.nach_raum)
                                 if s not in erschliessung), start.von_raum)
                 grund = (_final_exit_fehlt_grund(tueren) if kein_finales_ziel
