@@ -113,3 +113,32 @@ def test_astv_entscheidet_nicht_ueber_erforderlichkeit() -> None:
     for bef in _astv_befunde(b):
         assert bef["status"] == "warnung"
         assert "erforderlich ist" not in bef["detail"].lower()
+
+
+def test_befund_nennt_die_ebene_der_fundstelle() -> None:
+    """Review-Auflage 1 (Enis, 2026-09-09): die Ebene reist mit.
+
+    Ohne sie ist im Prüfbericht nicht erkennbar, ob hinter einem offenen Punkt eine
+    Rechtsquelle (A), eine Norm (C) oder eine Fachinformation (D) steht — genau die
+    Unterscheidung, die `normwissen/astv.py` sorgfältig führt. Der Wert wird aus
+    `AstvPruefpunkt.ebene` übernommen, nicht im Prüfbericht gesetzt.
+    """
+    from notbeleuchtung.normwissen.astv import ArbeitsstaettenWissen
+
+    bericht = _bericht_mit(_teil("bt_a", True))
+    punkte = _pruefpunkte(bericht, "bt_a")
+    assert punkte, "ohne Prüfpunkte prüft dieser Test nichts"
+
+    erwartet = {p.kennung: p.ebene for p in ArbeitsstaettenWissen().pruefpunkte(True)}
+    for b in punkte:
+        kennung = b["regel"].rsplit("(", 1)[1].rstrip(")")
+        assert f"[Ebene {erwartet[kennung]}]" in b["regel"], b["regel"]
+
+    # Und alles Bisherige bleibt: Fundstelle, Gebäudeteil-Marke, ungeprüfter Zustand,
+    # Abgrenzung.
+    eine = punkte[0]
+    assert "AStV § 9 Abs. 1" in eine["regel"]
+    assert "[Gebäudeteil bt_a]" in eine["regel"]
+    assert eine["detail"].startswith("[ungeprueft]")
+    assert "Abgrenzung:" in eine["detail"]
+    assert eine["status"] == "warnung"
