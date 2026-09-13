@@ -91,7 +91,9 @@ aus `Projekte_Leere Architektpläne (Input)/` (7 DXF), nicht alle 59 Eingangspl�
   Stempel→Raum ist die echte Zuordnung (`KaskadeErgebnis.zuordnungen`), nicht
   Punkt-in-Polygon wie in `gesamtdarstellung`.
 - Ergebnis: **`Projekte/_ergebnis_raumerkennung/index.html`**, Befunde in
-  **`Projekte/_ergebnis_raumerkennung/BERICHT.md`**. 7/7 ausgewertet ·
+  **`Projekte/_ergebnis_raumerkennung/BERICHT.md`**. Für Leonis und Enis im
+  GitHub-Browser: `README.md` je Ordner mit eingebetteten Bildern (`511ad36`).
+  Gegenprobe auf reinem `origin/main`: alle Owner-Kennzahlen identisch. 7/7 ausgewertet ·
   125 Räume · 19 UNBEKANNT · 94 mit Stempel · 1 Abweichung > 10 % · 15 Wohnungen.
 - Geprüft vor dem Commit: Review-Workflow (4 Linsen, je 3 Skeptiker, 18 Befunde
   am Skript bestätigt und behoben), Sichtprüfung aller 8 Bilder,
