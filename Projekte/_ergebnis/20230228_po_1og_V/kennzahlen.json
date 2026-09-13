@@ -1,0 +1,54 @@
+{
+  "plan": "20230228_po_1og_V",
+  "dxf": "Projekte/DXF_Herrenholzgasse/20230228_po_1og_V.dxf",
+  "sha256": "45b1e0d1ef5d25fd549f3ea066a8926b108dfa5a34e4b1d4b7248856cfbf3848",
+  "bytes": 44136382,
+  "bild_px": [
+    2870,
+    803
+  ],
+  "laufzeit_s": 178.4,
+  "geschoss": "1OG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname '20230228_po_1og_V' → '1og'",
+  "ausgangs_warnungen": [
+    "AusgangsWarnung(geschoss='1OG', grund='kein Geschossausgang ableitbar', gescheiterte_regeln=['final_exit: keine hauseingang-/Notausgangstür ins Freie (EG)', 'stair_exit: keine stiegenhaustuer/wohnungseingang am STIEGENHAUS'])"
+  ],
+  "raeume_gesamt": 300,
+  "raeume_unbekannt": 23,
+  "raum_typen": {
+    "GANG": 55,
+    "WC": 46,
+    "ZIMMER": 107,
+    "BAD": 46,
+    "ABSTELLRAUM": 23
+  },
+  "kategorien": {
+    "gang_allg": 21,
+    "nass": 92,
+    "wohnen": 107,
+    "gang_priv": 34,
+    "neben": 23,
+    "unbekannt": 23
+  },
+  "tueren_gesamt": 640,
+  "tueren_typisiert": 429,
+  "tuer_typen": {
+    "UNBEKANNT": 211,
+    "balkontuer": 73,
+    "zimmertuer": 308,
+    "wohnungseingang": 48
+  },
+  "tueren_notausgang": 24,
+  "ausgaenge": {},
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 55,
+  "segmente_je_quelle": {
+    "FALLBACK": 55
+  },
+  "segmente_richtung_unbekannt": 55,
+  "wohnungen": 47,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 0,
+  "contract_version": "1.5.0"
+}

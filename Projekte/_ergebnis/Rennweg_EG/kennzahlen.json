@@ -1,0 +1,69 @@
+{
+  "plan": "Rennweg_EG",
+  "dxf": "Projekte/_eingang/Rennweg_EG.dxf",
+  "sha256": "7044ff3bed0a7d80b77eab79fcc6140f40679eadd7e6f0ab873ec3070663bc8f",
+  "bytes": 4015763,
+  "bild_px": [
+    2470,
+    2570
+  ],
+  "laufzeit_s": 9.6,
+  "geschoss": "EG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname 'Rennweg_EG' → 'EG'",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 22,
+  "raeume_unbekannt": 5,
+  "raum_typen": {
+    "KÜCHE": 2,
+    "ABSTELLRAUM": 1,
+    "BAD": 1,
+    "ZIMMER": 1,
+    "GARAGE": 1,
+    "VORRAUM": 1,
+    "STIEGENHAUS": 5,
+    "TERRASSE": 2,
+    "MUELLRAUM": 1,
+    "GANG": 1,
+    "LIFT": 1
+  },
+  "kategorien": {
+    "kueche": 2,
+    "neben": 3,
+    "nass": 1,
+    "wohnen": 1,
+    "stiege": 6,
+    "freiflaeche": 2,
+    "unbekannt": 5,
+    "gang_allg": 1,
+    "schacht": 1
+  },
+  "tueren_gesamt": 41,
+  "tueren_typisiert": 24,
+  "tuer_typen": {
+    "UNBEKANNT": 17,
+    "hauseingang": 3,
+    "zimmertuer": 3,
+    "wohnungseingang": 7,
+    "balkontuer": 1,
+    "garagentor": 3,
+    "brandschutztuer": 1,
+    "stiegenhaustuer": 6
+  },
+  "tueren_notausgang": 1,
+  "ausgaenge": {
+    "final_exit": 3,
+    "stair_exit": 5
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 9,
+  "segmente_je_quelle": {
+    "GRAPH": 8,
+    "FALLBACK": 1
+  },
+  "segmente_richtung_unbekannt": 1,
+  "wohnungen": 2,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 5,
+  "contract_version": "1.5.0"
+}

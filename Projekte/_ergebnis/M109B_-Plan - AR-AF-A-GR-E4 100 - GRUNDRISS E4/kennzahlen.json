@@ -1,0 +1,66 @@
+{
+  "plan": "M109B_-Plan - AR-AF-A-GR-E4 100 - GRUNDRISS E4",
+  "dxf": "Projekte/Pläne 19., Muthgasse 109B - 2026-05-07_13-12/Architekt/Ausführungsplan/M109B_-Plan - AR-AF-A-GR-E4 100 - GRUNDRISS E4.dxf",
+  "sha256": "ef7998f49f0b677a9f1f0d8efa8fd6325df5a8211768d08d4010a44b65325416",
+  "bytes": 24486024,
+  "bild_px": [
+    2870,
+    1925
+  ],
+  "laufzeit_s": 298.0,
+  "geschoss": "4OG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname 'M109B_-Plan - AR-AF-A-GR-E4 100 - GRUNDRISS E4' → 'E4'",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 124,
+  "raeume_unbekannt": 12,
+  "raum_typen": {
+    "BALKON": 17,
+    "KÜCHE": 20,
+    "BAD": 18,
+    "ZIMMER": 23,
+    "WC": 7,
+    "ABSTELLRAUM": 8,
+    "VORRAUM": 3,
+    "GANG": 3,
+    "KINDERWAGENRAUM": 1,
+    "LIFT": 6,
+    "STIEGENHAUS": 6
+  },
+  "kategorien": {
+    "freiflaeche": 17,
+    "kueche": 20,
+    "nass": 25,
+    "wohnen": 23,
+    "neben": 9,
+    "stiege": 9,
+    "unbekannt": 12,
+    "gang_allg": 2,
+    "gang_priv": 1,
+    "schacht": 6
+  },
+  "tueren_gesamt": 262,
+  "tueren_typisiert": 199,
+  "tuer_typen": {
+    "wohnungseingang": 37,
+    "zimmertuer": 120,
+    "UNBEKANNT": 63,
+    "balkontuer": 37,
+    "stiegenhaustuer": 5
+  },
+  "tueren_notausgang": 17,
+  "ausgaenge": {
+    "stair_exit": 3
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 185,
+  "segmente_je_quelle": {
+    "LINIE": 180,
+    "FALLBACK": 5
+  },
+  "segmente_richtung_unbekannt": 5,
+  "wohnungen": 5,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 6,
+  "contract_version": "1.5.0"
+}

@@ -1,0 +1,65 @@
+{
+  "plan": "EG_Grundriss_DE_NEU",
+  "dxf": "Projekte/EG_Grundriss_DE_NEU.dxf",
+  "sha256": "f7a1dd65bb50c0e20568e9ba1e50d0723942fc9b6b709641931a6b6703412242",
+  "bytes": 1454425,
+  "bild_px": [
+    2470,
+    1416
+  ],
+  "laufzeit_s": 6.1,
+  "geschoss": "EG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname 'EG_Grundriss_DE_NEU' → 'EG'",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 14,
+  "raeume_unbekannt": 2,
+  "raum_typen": {
+    "GANG": 2,
+    "WOHNZIMMER": 1,
+    "VORRAUM": 2,
+    "KÜCHE": 2,
+    "ZIMMER": 1,
+    "ABSTELLRAUM": 1,
+    "BAD": 1,
+    "STIEGENHAUS": 1,
+    "SCHACHT": 1
+  },
+  "kategorien": {
+    "gang_allg": 1,
+    "wohnen": 2,
+    "stiege": 3,
+    "kueche": 2,
+    "gang_priv": 1,
+    "neben": 1,
+    "unbekannt": 2,
+    "nass": 1,
+    "schacht": 1
+  },
+  "tueren_gesamt": 30,
+  "tueren_typisiert": 17,
+  "tuer_typen": {
+    "wohnungseingang": 3,
+    "UNBEKANNT": 13,
+    "balkontuer": 5,
+    "zimmertuer": 7,
+    "stiegenhaustuer": 1,
+    "hauseingang": 1
+  },
+  "tueren_notausgang": 6,
+  "ausgaenge": {
+    "stair_exit": 1,
+    "final_exit": 1
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 5,
+  "segmente_je_quelle": {
+    "GRAPH": 4,
+    "FALLBACK": 1
+  },
+  "segmente_richtung_unbekannt": 1,
+  "wohnungen": 4,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 1,
+  "contract_version": "1.5.0"
+}
