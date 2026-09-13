@@ -1,0 +1,73 @@
+{
+  "plan": "260320_938-AR-PP-21000-A_ERDGESCHOSS BT2",
+  "dxf": "Projekte/BVH Fischamenderstraße/BT2/260320_938-AR-PP-21000-A_ERDGESCHOSS BT2.dxf",
+  "sha256": "8736bcae033fe391b8fa8229acedb731a023814ba3d9a7df2de5228766ee877d",
+  "bytes": 9805888,
+  "bild_px": [
+    2470,
+    2019
+  ],
+  "laufzeit_s": 39.3,
+  "geschoss": "EG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname '260320_938-AR-PP-21000-A_ERDGESCHOSS BT2' → 'ERDGESCHOSS'",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 55,
+  "raeume_unbekannt": 7,
+  "raum_typen": {
+    "KÜCHE": 8,
+    "GANG": 4,
+    "TERRASSE": 4,
+    "BALKON": 2,
+    "ABSTELLRAUM": 2,
+    "WC": 5,
+    "VORRAUM": 4,
+    "ZIMMER": 6,
+    "BAD": 4,
+    "GARAGE": 2,
+    "KINDERWAGENRAUM": 1,
+    "MUELLRAUM": 1,
+    "TECHNIK": 2,
+    "STIEGENHAUS": 1,
+    "SCHACHT": 1,
+    "LIFT": 1
+  },
+  "kategorien": {
+    "kueche": 8,
+    "unbekannt": 7,
+    "gang_allg": 2,
+    "freiflaeche": 6,
+    "neben": 8,
+    "nass": 9,
+    "stiege": 5,
+    "wohnen": 6,
+    "gang_priv": 2,
+    "schacht": 2
+  },
+  "tueren_gesamt": 157,
+  "tueren_typisiert": 120,
+  "tuer_typen": {
+    "UNBEKANNT": 37,
+    "wohnungseingang": 42,
+    "zimmertuer": 54,
+    "stiegenhaustuer": 4,
+    "balkontuer": 18,
+    "hauseingang": 2
+  },
+  "tueren_notausgang": 10,
+  "ausgaenge": {
+    "stair_exit": 2,
+    "final_exit": 4
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 53,
+  "segmente_je_quelle": {
+    "GRAPH": 52,
+    "FALLBACK": 1
+  },
+  "segmente_richtung_unbekannt": 1,
+  "wohnungen": 1,
+  "innenhoefe_geschlossen": 1,
+  "stiegenhaeuser": 1,
+  "contract_version": "1.5.0"
+}

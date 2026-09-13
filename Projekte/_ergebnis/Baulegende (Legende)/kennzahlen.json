@@ -1,0 +1,5 @@
+{
+  "plan": "Baulegende (Legende)",
+  "dxf": "Projekte/Rennweg/Legende/Baulegende.dxf",
+  "fehler": "Traceback (most recent call last):\n  File \"<string>\", line 11, in <module>\n  File \"D:\\KI Projekt\\Notbeleuchtung\\scripts/analyse\\gesamtdarstellung.py\", line 462, in plan_bauen\n    modell = provider.parse(str(dxf), floor or \"\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\KI Projekt\\Notbeleuchtung\\src\\notbeleuchtung\\raumerkennung\\provider.py\", line 71, in parse\n    bounds = bounds_mm(plan)\n             ^^^^^^^^^^^^^^^\n  File \"D:\\KI Projekt\\Notbeleuchtung\\src\\notbeleuchtung\\raumerkennung\\dxf_load.py\", line 258, in bounds_mm\n    raise ValueError(\"Keine Wand-Entities gefunden — Layer-Muster prüfen.\")\nValueError: Keine Wand-Entities gefunden — Layer-Muster prüfen.\n"
+}

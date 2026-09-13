@@ -1,0 +1,57 @@
+{
+  "plan": "UG - Rennweg 15_1030 Wien_Ausfürung-2026-06-12",
+  "dxf": "Projekte/Rennweg/UG - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf",
+  "sha256": "f8888a5691760ba2ff5743e0e19449bfa44ca37fb52eebd03c46f8aac802f1ef",
+  "bytes": 3274744,
+  "bild_px": [
+    2470,
+    2702
+  ],
+  "laufzeit_s": 9.6,
+  "geschoss": "UG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname 'UG - Rennweg 15_1030 Wien_Ausfürung-2026-06-12' → 'UG'",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 23,
+  "raeume_unbekannt": 10,
+  "raum_typen": {
+    "TECHNIK": 1,
+    "WC": 3,
+    "VORRAUM": 1,
+    "ABSTELLRAUM": 1,
+    "GANG": 2,
+    "KINDERWAGENRAUM": 1,
+    "STIEGENHAUS": 3,
+    "LIFT": 1
+  },
+  "kategorien": {
+    "neben": 3,
+    "unbekannt": 10,
+    "nass": 3,
+    "stiege": 4,
+    "gang_allg": 2,
+    "schacht": 1
+  },
+  "tueren_gesamt": 32,
+  "tueren_typisiert": 7,
+  "tuer_typen": {
+    "UNBEKANNT": 25,
+    "wohnungseingang": 4,
+    "stiegenhaustuer": 3
+  },
+  "tueren_notausgang": 0,
+  "ausgaenge": {
+    "stair_exit": 2
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 6,
+  "segmente_je_quelle": {
+    "GRAPH": 2,
+    "FALLBACK": 4
+  },
+  "segmente_richtung_unbekannt": 4,
+  "wohnungen": 4,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 3,
+  "contract_version": "1.5.0"
+}

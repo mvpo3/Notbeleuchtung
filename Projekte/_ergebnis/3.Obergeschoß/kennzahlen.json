@@ -1,0 +1,64 @@
+{
+  "plan": "3.Obergeschoß",
+  "dxf": "Projekte/Mollgasse/3.Obergeschoß.dxf",
+  "sha256": "0f8c2b368f1d0b7b61c01e9afaeddb0cee278eb98fa11d3556ff2d0e0cbfb33e",
+  "bytes": 9272380,
+  "bild_px": [
+    2470,
+    2073
+  ],
+  "laufzeit_s": 68.1,
+  "geschoss": "3OG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname '3.Obergeschoß' → '3.Obergeschoß'",
+  "ausgangs_warnungen": [
+    "AusgangsWarnung(geschoss='3OG', grund='kein Geschossausgang ableitbar', gescheiterte_regeln=['final_exit: keine hauseingang-/Notausgangstür ins Freie (EG)', 'stair_exit: keine stiegenhaustuer/wohnungseingang am STIEGENHAUS'])"
+  ],
+  "raeume_gesamt": 64,
+  "raeume_unbekannt": 10,
+  "raum_typen": {
+    "VORRAUM": 6,
+    "KÜCHE": 3,
+    "ZIMMER": 11,
+    "GANG": 6,
+    "ABSTELLRAUM": 7,
+    "BAD": 8,
+    "WC": 7,
+    "WOHNZIMMER": 1,
+    "STIEGENHAUS": 1,
+    "BALKON": 2,
+    "LIFT": 2
+  },
+  "kategorien": {
+    "stiege": 7,
+    "kueche": 3,
+    "wohnen": 12,
+    "gang_priv": 5,
+    "neben": 7,
+    "nass": 15,
+    "unbekannt": 10,
+    "freiflaeche": 2,
+    "gang_allg": 1,
+    "schacht": 2
+  },
+  "tueren_gesamt": 133,
+  "tueren_typisiert": 71,
+  "tuer_typen": {
+    "UNBEKANNT": 62,
+    "zimmertuer": 47,
+    "wohnungseingang": 14,
+    "balkontuer": 10
+  },
+  "tueren_notausgang": 15,
+  "ausgaenge": {},
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 7,
+  "segmente_je_quelle": {
+    "FALLBACK": 7
+  },
+  "segmente_richtung_unbekannt": 7,
+  "wohnungen": 12,
+  "innenhoefe_geschlossen": 4,
+  "stiegenhaeuser": 1,
+  "contract_version": "1.5.0"
+}

@@ -1,0 +1,41 @@
+{
+  "plan": "20230228_po_dd_V",
+  "dxf": "Projekte/DXF_Herrenholzgasse/20230228_po_dd_V.dxf",
+  "sha256": "38f3ce3785d2ba8032ef4457b9896a57a1c1b234762ff5abdf0f5157c0e3c2f6",
+  "bytes": 25385619,
+  "bild_px": [
+    2470,
+    1012
+  ],
+  "laufzeit_s": 67.4,
+  "geschoss": "",
+  "geschoss_quelle": "unbekannt",
+  "geschoss_beleg": "Geschoss unbekannt, Endausgang nicht bestimmbar",
+  "ausgangs_warnungen": [
+    "AusgangsWarnung(geschoss='', grund='Geschoss unbekannt, Endausgang nicht bestimmbar', gescheiterte_regeln=['final_exit: Geschoss weder aus floor/Dateiname noch aus Schriftfeld/Plantext/Höhenkote belegt (kein Standardwert EG)'])",
+    "AusgangsWarnung(geschoss='', grund='kein Geschossausgang ableitbar', gescheiterte_regeln=['final_exit: keine hauseingang-/Notausgangstür ins Freie (EG)', 'stair_exit: keine stiegenhaustuer/wohnungseingang am STIEGENHAUS'])"
+  ],
+  "raeume_gesamt": 3,
+  "raeume_unbekannt": 0,
+  "raum_typen": {
+    "MUELLRAUM": 3
+  },
+  "kategorien": {
+    "neben": 3
+  },
+  "tueren_gesamt": 4,
+  "tueren_typisiert": 0,
+  "tuer_typen": {
+    "UNBEKANNT": 4
+  },
+  "tueren_notausgang": 1,
+  "ausgaenge": {},
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 0,
+  "segmente_je_quelle": {},
+  "segmente_richtung_unbekannt": 0,
+  "wohnungen": 0,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 0,
+  "contract_version": "1.5.0"
+}
