@@ -46,6 +46,12 @@ _MAX_ABSTAND_MM = 30000.0  # Sanity-Cap (Hersteller-Maximum Hochdecken-Optik ~35
 _NACHWEIS_RASTER_MM = 250.0
 _REDUNDANZ_MIN = 2         # EN 50172 §5.1.8: je Fluchtweg-Abschnitt ≥ 2 Leuchten (= validierung._REDUNDANZ_MIN)
 _REDUNDANZ_RADIUS_FALLBACK_MM = 30000.0  # z=200·h=0,15=30 m, nur falls Provider keine Erkennungsweite liefert
+# Drossel (S4, Owner 2026-09-13): ein RZ zählt als Gang-Stützpunkt, wenn es IM Gang oder
+# höchstens so weit vom Gangrand entfernt ist — deckt die Nebenraum-Tür-RZ ab, die in den
+# Gang münden (gemessen EG: Tür-RZ 115–168 mm, Gang-RZ 0). Ein Lücken-Aufheller kommt nur,
+# wo zwei aufeinanderfolgende Stützpunkte weiter als _DROSSEL_LUECKE_MM auseinander liegen.
+_DROSSEL_RANDNAH_MM = 2000.0
+_DROSSEL_LUECKE_MM = 2.0 * _MIN_ABSTAND_MM   # 8 m — konservativer als max_leuchtenabstand (norm-sicher)
 
 
 def _dist(a: tuple[float, float], b: tuple[float, float]) -> float:
@@ -169,18 +175,60 @@ def _nachweis_punkte(linie: list, breite_mm: float) -> tuple[list, list]:
     return linie, band
 
 
+def _rz_stuetz_positionen(bestehende_rz, r) -> tuple[list, int]:
+    """RZ-Positionen, die den Korridor `r` stützen — projiziert auf seine Längsachse
+    (`laengs`: 0=x, 1=y) und sortiert. Ein RZ zählt, wenn es IM Gang-Polygon liegt oder
+    höchstens `_DROSSEL_RANDNAH_MM` vom Rand entfernt ist (Nebenraum-Tür-RZ am Gang).
+    Konvention identisch zu `platzierer._mittel_arm_rz` (Positions-Projektion via bbox)."""
+    from .geometry import point_in_polygon
+    x0, y0, x1, y1 = _bbox(r.polygon_mm)
+    laengs = 0 if (x1 - x0) >= (y1 - y0) else 1
+    poly = [tuple(c) for c in r.polygon_mm]
+    pos = [
+        p.xy_mm[laengs] for p in bestehende_rz
+        if p.kind == "rz" and (point_in_polygon(p.xy_mm, r.polygon_mm)
+                               or _dist_punkt_polyline(p.xy_mm, poly) <= _DROSSEL_RANDNAH_MM)
+    ]
+    return sorted(pos), laengs
+
+
+def _drossel_fueller(r, stuetz_pos: list, laengs: int) -> list:
+    """Statt der verdichteten SL-Reihe: EIN Aufheller in der Mitte jeder Längslücke
+    zwischen aufeinanderfolgenden Stützpunkten (RZ + Gang-Enden), die > `_DROSSEL_LUECKE_MM`
+    ist. Kurze Gänge / dicht gestützte Abschnitte bleiben leer (RZ decken sie)."""
+    x0, y0, x1, y1 = _bbox(r.polygon_mm)
+    lo, hi = (x0, x1) if laengs == 0 else (y0, y1)
+    quer = (y0 + y1) / 2.0 if laengs == 0 else (x0 + x1) / 2.0
+    az = 0.0 if laengs == 0 else 90.0
+    out = []
+    for a, b in pairwise([lo, *stuetz_pos, hi]):
+        if b - a <= _DROSSEL_LUECKE_MM:
+            continue
+        mid = (a + b) / 2.0
+        pt = (mid, quer) if laengs == 0 else (quer, mid)
+        out.append((pt[0], pt[1], az))
+    return out
+
+
 def verdichte_fluchtweg(
     raum: RaumModell, norm: NormProvider, *,
     i_cd: float = 200.0,
     i_cd_fn: Callable[[float], float] | None = None,
     kontext: PlatzierungsKontext | None = None,
+    bestehende_rz: list[Platzierung] | tuple = (),
 ) -> list[Platzierung]:
     """Sicherheitsleuchten entlang jeder Korridor-Mittellinie, verdichtet bis 1 lx / Ud≥1:40.
 
     `i_cd` = konstante Lichtstärke-Annahme; `i_cd_fn(γ)` = richtungsabhängige Hersteller-
     Photometrie (EULUMDAT/LDT, überschreibt `i_cd`), von der Hauptengine injiziert.
     `kontext` bündelt die querschneidenden Eingaben; ein explizites `i_cd_fn` gewinnt.
-    """
+
+    **Deckungs-Drossel (S4, Owner-Muster 2026-09-13):** stützt mindestens ein RZ den
+    Korridor (IM Gang oder als Nebenraum-Tür-RZ am Gangrand, `bestehende_rz`), wird die
+    verdichtete SL-Reihe NICHT aufgespannt — stattdessen füllt EIN Aufheller jede Längslücke
+    zwischen aufeinanderfolgenden RZ/Gang-Enden, die weiter als `_DROSSEL_LUECKE_MM` ist
+    (Ground-truth EG: RZ an den Gang-Enden + 1 Aufheller mittig statt 4 SL). Korridore ohne
+    stützendes RZ behalten die volle Lux-Verdichtung (kein Golden-Shift dort)."""
     if i_cd_fn is None and kontext is not None:
         i_cd_fn = kontext.i_cd_fn
     korridore = [
@@ -217,31 +265,36 @@ def verdichte_fluchtweg(
             min_mm=_MIN_ABSTAND_MM, max_mm=_MAX_ABSTAND_MM, optik_entlang_reihe=True,
             wartungsfaktor=wf,
         )
-        kandidaten = leuchten_auf_linie_mit_richtung(r.polygon_mm, abstand)
-        for _ in range(_MAX_VERDICHTUNGEN):
-            if not linie:   # degeneriertes Polygon → alter Flächen-Nachweis als Fallback
-                res = lux_raster(
-                    kandidaten, bounds, montagehoehe_m=h_m, i_cd=i_cd, i_cd_fn=i_cd_fn,
-                    ziel_lux=ziel, ud_min=ud_min, wartungsfaktor=wf,
-                )
-                erfuellt = res.erfuellt_min and res.erfuellt_ud
-            else:
-                mitte = lux_punkte(
-                    kandidaten, linie, montagehoehe_m=h_m, i_cd=i_cd, i_cd_fn=i_cd_fn,
-                    ziel_lux=ziel, ud_min=ud_min, wartungsfaktor=wf,
-                )
-                halbband = lux_punkte(
-                    kandidaten, band, montagehoehe_m=h_m, i_cd=i_cd, i_cd_fn=i_cd_fn,
-                    ziel_lux=ziel / 2.0, ud_min=0.0, wartungsfaktor=wf,
-                ) if band else None
-                erfuellt = (
-                    mitte.erfuellt_min and mitte.erfuellt_ud
-                    and (halbband is None or halbband.erfuellt_min)
-                )
-            if erfuellt or abstand <= _MIN_ABSTAND_MM:
-                break
-            abstand = max(_MIN_ABSTAND_MM, abstand / _VERDICHTUNGS_FAKTOR)
+        stuetz_pos, laengs = _rz_stuetz_positionen(bestehende_rz, r)
+        if stuetz_pos:
+            # Drossel: RZ decken den Gang → Reihe durch Lücken-Aufheller ersetzen.
+            kandidaten = _drossel_fueller(r, stuetz_pos, laengs)
+        else:
             kandidaten = leuchten_auf_linie_mit_richtung(r.polygon_mm, abstand)
+            for _ in range(_MAX_VERDICHTUNGEN):
+                if not linie:   # degeneriertes Polygon → alter Flächen-Nachweis als Fallback
+                    res = lux_raster(
+                        kandidaten, bounds, montagehoehe_m=h_m, i_cd=i_cd, i_cd_fn=i_cd_fn,
+                        ziel_lux=ziel, ud_min=ud_min, wartungsfaktor=wf,
+                    )
+                    erfuellt = res.erfuellt_min and res.erfuellt_ud
+                else:
+                    mitte = lux_punkte(
+                        kandidaten, linie, montagehoehe_m=h_m, i_cd=i_cd, i_cd_fn=i_cd_fn,
+                        ziel_lux=ziel, ud_min=ud_min, wartungsfaktor=wf,
+                    )
+                    halbband = lux_punkte(
+                        kandidaten, band, montagehoehe_m=h_m, i_cd=i_cd, i_cd_fn=i_cd_fn,
+                        ziel_lux=ziel / 2.0, ud_min=0.0, wartungsfaktor=wf,
+                    ) if band else None
+                    erfuellt = (
+                        mitte.erfuellt_min and mitte.erfuellt_ud
+                        and (halbband is None or halbband.erfuellt_min)
+                    )
+                if erfuellt or abstand <= _MIN_ABSTAND_MM:
+                    break
+                abstand = max(_MIN_ABSTAND_MM, abstand / _VERDICHTUNGS_FAKTOR)
+                kandidaten = leuchten_auf_linie_mit_richtung(r.polygon_mm, abstand)
         cx = (bounds[0] + bounds[2]) / 2
         building = assign_building(cx)
         for px, py, az in kandidaten:
