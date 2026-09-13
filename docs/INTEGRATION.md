@@ -90,3 +90,31 @@ Ist die Host-App nicht Python, statt In-Process-Import die FastAPI als Backend n
 `POST /plan` (DXF-Upload + optional LB → DXF/PDF, Statistik im Header `X-Notbeleuchtung`),
 `POST /projekt` (mehrere Geschosse → Sammel-PDF), `GET /health`. Für ein Browser-Frontend
 muss noch CORS aktiviert werden (aktuell nicht gesetzt).
+
+### Größenbudget des Headers `X-Notbeleuchtung` (Betrieb)
+
+Der Summary-Header wächst mit der Zahl der Gebäudeteile (Stufen + Hinweise je Teil).
+Gemessen: uvicorn liefert auch 25 KB fehlerfrei aus — die Grenze ist **kein**
+Server-Limit, sondern Kompatibilität mit Reverse-Proxies und Gateways (nginx
+`proxy_buffer_size` 4k/8k, CDNs ähnlich).
+
+| | |
+|---|---|
+| Variable | **`NOTBELEUCHTUNG_HEADER_MAX_BYTES`** |
+| Default | **4096** |
+| Gemessen wird | der **JSON-Wert** des Headers — **nicht** Headername + CRLF (20 B) und **nicht** der gesamte HTTP-Headerblock (Statuszeile, `content-type`, `content-length`, `content-disposition`, `date`, `server` …) |
+| `0` oder negativ | Prüfung **aus**: weder kürzen noch abbrechen (bewusste Betriebsentscheidung hinter einem Gateway, das große Header sicher transportiert) |
+
+**Verhalten bei Überschreitung:** zuerst wird **nur** `oib["hinweise"]` gekürzt —
+sichtbar und gezählt (`hinweise_gesamt`, `hinweise_uebertragen`,
+`hinweise_zurueckgehalten`, `hinweise_gekuerzt`). Reichen auch **null** Hinweise
+nicht, weil schon die geschützten Felder (`stufen` je Gebäudeteil, `lb_review`,
+Zählfelder) zu groß sind, antwortet die API mit **503** statt einen übergroßen
+Header als Erfolg zu senden — dieselbe Semantik wie beim fehlenden ODA-Konverter:
+die Anfrage ist in Ordnung, die Betriebsumgebung kann sie so nicht ausliefern.
+Abhilfe: Budget anheben oder das Projekt in kleinere Anfragen teilen.
+
+⚠️ Die vollständigen Hinweise liegen dann **nur serverseitig** im Pipeline-Ergebnis
+(`render_summary["oib"]["hinweise"]`, `render_summary["pruefung"]`). Ein Endpunkt,
+der den Prüfbericht ausliefert, existiert **nicht** — das ist die offene Lücke
+**L2**; sie wird durch das Budget **nicht** gelöst und hier nicht gebaut.
