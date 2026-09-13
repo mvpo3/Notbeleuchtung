@@ -421,7 +421,9 @@ def test_ausfuehrungs_verweise_je_stufe():
     uneingeschraenkt = _erg(nutzungsart="PFLEGEHEIM", betten_anzahl=17)
     review = _erg(nutzungsart="PFLEGEHEIM")
 
-    assert len(eingeschraenkt.ausfuehrungs_verweise) == 3
+    # v2-Paket (Enis, 2026-09-09): +2 Verweise unter 'eingeschraenkt' aus R 12-2/AC
+    # Fußnote a (Bemessungsbetriebsdauer 1 h + Antipanik-Vorbehalt) → 3 → 5.
+    assert len(eingeschraenkt.ausfuehrungs_verweise) == 5
     assert any("Abweichung möglich" in v for v in eingeschraenkt.ausfuehrungs_verweise)
     assert any("NICHT auf Fluchtwege" in v for v in uneingeschraenkt.ausfuehrungs_verweise)
     assert any("OHNE die" in v for v in uneingeschraenkt.ausfuehrungs_verweise)
