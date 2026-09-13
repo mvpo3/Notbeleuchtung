@@ -14,18 +14,20 @@ Stand: **2026-09-13** · Owner Selman (`raumerkennung`)
 | | |
 |---|---|
 | Branch | **`selman/geschoss-erkennung`** (gepusht, lokal = remote) |
-| Commit | **`1e642ad`** + Handoff-Commit dieser Datei |
-| Basis | `27eb23a` (origin/main, nach `pull --rebase` ohne Konflikte) |
+| Commit | Stand nach dem Rennweg-Durchgang — siehe Commit-Tabelle unten |
+| Basis | `c820b68` (origin/main), am 13.09. per `git merge` eingeholt (`fbbc050`) — `git rebase` lehnt der Auto-Modus als destruktiv ab |
 | PR | **keiner** — PR #155 wurde am 12.09. von `mvpo3` in main gemergt (`c506662`), der Branch hat seither keinen offenen Kanal |
 | Merge | **nicht gemergt, nicht mergen** ohne Owner-Freigabe |
 
-Drei eigene Commits über `origin/main`:
+Eigene Commits über `origin/main`:
 
 | SHA | Inhalt |
 |---|---|
 | `47e9e44` | Geschoss mehrstufig + fail-closed — **ARBEITSSTAND, NICHT FREIGEGEBEN** |
 | `4a5e873` | `scripts/analyse/gesamtdarstellung.py` (Werkzeug) |
 | `1e642ad` | Gesamtdarstellung aller 83 Repo-Pläne (Bilder, Kennzahlen, Index) |
+| `538d8d8` | `scripts/analyse/raumerkennung_darstellung.py` — nur Räume, Ordner für Ordner (§ 2.3) |
+| danach | Kommentar-Korrektur im Skript · Ergebnis Rennweg + `BERICHT.md` · dieser Nachtrag |
 
 **Nicht verlieren:** `47e9e44` enthält einen offenen BLOCKER (§ 3). Der Commit
 ist bewusst so betitelt, damit ihn niemand für freigegeben hält.
@@ -77,6 +79,46 @@ dafür dienen die geschlossenen Innenhöfe aus `provider.letzte_aussenbereiche`.
 Neustart des Laufs:
 `.venv/Scripts/python.exe scripts/analyse/gesamtdarstellung.py`
 (nur Index: `--nur-index`, ein Plan: `<pfad.dxf>`).
+
+### 2.3 Raumerkennungs-Darstellung Rennweg (`538d8d8`) — nur messen, nichts repariert
+
+Owner-Auftrag 13.09. abends: reiner Raumerkennungs-Output ohne Fluchtwege,
+Ausgänge, Türtypen und Platzierung; Owner-Farbtabelle; Stempel, die nicht im
+zugeordneten Raum liegen, als Linie. Auf Owner-Korrektur **nur `Rennweg.zip`**
+aus `Projekte_Leere Architektpläne (Input)/` (7 DXF), nicht alle 59 Eingangspläne.
+
+- Werkzeug: `scripts/analyse/raumerkennung_darstellung.py --ordner Rennweg`.
+  Stempel→Raum ist die echte Zuordnung (`KaskadeErgebnis.zuordnungen`), nicht
+  Punkt-in-Polygon wie in `gesamtdarstellung`.
+- Ergebnis: **`Projekte/_ergebnis_raumerkennung/index.html`**, Befunde in
+  **`Projekte/_ergebnis_raumerkennung/BERICHT.md`**. 7/7 ausgewertet ·
+  125 Räume · 19 UNBEKANNT · 94 mit Stempel · 1 Abweichung > 10 % · 15 Wohnungen.
+- Geprüft vor dem Commit: Review-Workflow (4 Linsen, je 3 Skeptiker, 18 Befunde
+  am Skript bestätigt und behoben), Sichtprüfung aller 8 Bilder,
+  Headless-Chrome-Screenshot beider Index-Seiten.
+- Testschranke nach dem Merge von `c820b68`, volle Suite **allein** auf `f97d1e1`:
+  **1420 passed, 11 skipped, 14 xfailed, 0 failed** (19:53 min), `ruff check .`
+  grün. Ein erster Lauf parallel zum 59er-Probelauf ergab 2 failed + 12 errors,
+  alle `MemoryError` (Muthgasse-/Mollgasse-Fixtures, `test_extents_ausreisser_kein_oom`);
+  dieselben Dateien einzeln: 22 passed, 4 xfailed.
+
+Nebenbefunde aus dem **verworfenen** Probelauf über alle 59 Eingangspläne
+(Stand `fbbc050`, nicht committet — die Ergebnisse lagen nur im Session-Scratchpad):
+
+- **Aichholz und Am Rain: `Keine Wand-Entities`** auf 7 von 9 bzw. 6 von 6 Plänen.
+  Es sind echte Grundrisse, aber `dxf_load.WALL_PATTERN` greift nicht. Gemessene
+  Layernamen: Aichholz `1-zwischenwand`, `5-stahlbeton`, `1-stb`; Am Rain
+  `Wand Beton tragend`, `Wand Mauerwerk tragend`, `Wand Trockenbau`,
+  `Wand brüstungshoch`. Aichholz 1DG und 1OG endeten nach 2 s mit Exitcode 1
+  ohne Ergebnis — Ursache nicht gesichert, lief unter Speicherdruck.
+- **Baufeld E2:** 6 von 8 Plänen `MemoryError`, während 4 Worker parallel liefen
+  (ein Worker gemessen bei 9,2 GB). Das Skript hat dafür jetzt ein Byte-Budget.
+- **Papierbereich-Drehung:** alle 7 Barawitzka- und alle 8 Baufeld-E2-Pläne tragen
+  VIEWPORTs mit View-Twist ≠ 0. Das Skript dreht nur in 90°-Schritten aus dem
+  Modelspace — für diese Ordner ist „wie geplottet" **nicht** erfüllt.
+  Rennweg hat keine Viewports.
+- `plan_pruefen._rotation` lieferte auf allen 35 erkannten Plänen 0°; der
+  90°-Zweig des Skripts ist nie gelaufen.
 
 ---
 
@@ -212,6 +254,17 @@ Beides bleibt im Bild stehen statt geglättet zu werden. Die Zuordnung läuft in
 Stempel-Raum-Zuordnung der Erkennung (`stempel_anker.py`). Noch nicht gemessen,
 auf wie vielen Plänen das auftritt.
 
+### 4.7 Nachmessung zu 4.6 — mit der echten Zuordnung
+
+Mit `KaskadeErgebnis.zuordnungen` statt Punkt-in-Polygon (Erkennung wie `538d8d8`):
+
+- „BAD/WC" 6,93 m² ist **keinem Raum zugeordnet** (`kein_polygon`); er liegt nur
+  geometrisch im 22,5-m²-ZIMMER. Das ZIMMER trägt den Stempel „ZIMMER" 11,89 m²
+  (`flutung_unsicher`, +89 %). Die Aussage in 4.6 „BAD/WC sitzt auf dem ZIMMER"
+  war ein Artefakt der Darstellung, nicht der Erkennung.
+- „Top 1" 55,36 m² → UNBEKANNT 13,3 m² ist bestätigt (`flutung_unsicher`):
+  der Wohnungsstempel wird wie ein Raumstempel geflutet.
+
 ---
 
 ## 5. Ältere offene Entscheidungen (aus der ZERFALL/SCHLITZ-Prüfung)
@@ -260,3 +313,10 @@ Vier Owner-Entscheidungen sind dort weiterhin offen:
    noch eine eigene Messung, bevor er repariert wird.
 4. **Kanalfrage**: der Branch hat keinen offenen PR. Ob ein Nachfolge-PR
    aufgemacht wird, entscheidet der Owner.
+5. **Rennweg-Befunde** aus `Projekte/_ergebnis_raumerkennung/BERICHT.md` § 2
+   priorisieren — vor allem Einraum-„Wohnungen" (8 von 15) und Außenbereiche
+   auf Räumen (bis 122,6 m² je Plan). Jeder Befund braucht vor einer Reparatur
+   einen Test, der ihn fängt.
+6. Weitere Eingangsordner nur mit `--ordner <Name>` rechnen und nicht parallel
+   zur Testsuite (MemoryError). Für Barawitzka und Baufeld E2 ist die
+   Papierbereich-Drehung offen (2.3).
