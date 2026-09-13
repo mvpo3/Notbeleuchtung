@@ -4,6 +4,70 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-09-13 ABEND) — Owner-Reihe 1–4 gebaut, PR-Hygiene, Am Rain. HIER WEITER.
+
+**Branch `leonis/demo-l-gebaeude`, alles GEPUSHT, PR #156 OFFEN+MERGEABLE** (main-Merge
+`0eb69dc` drin: COORDINATION per Union, plan_pruefen HEAD-Fassung; 1304 grün danach).
+
+**Erledigt 2026-09-12/13 (nach S0–S3, siehe Stand unten):**
+1. **Owner-Reihe Punkt 1** `c61dd55`→Trace→Fix: Hauseingang-RZ — Fluchtachse „tuer−exit"
+   kehrte sich um, wenn der Tür-Insert INNEN des Exits liegt (WET ~250 mm) →
+   Vorzeichen-Härtung am Anlauf in anker (pos-Fallback für graphlose Exits) +
+   communal_stgh. EG exakt Ground truth (raumseitig, rot 0). ⚠️ MERKE: EG läuft im
+   SEGMENT-Pfad — Rotations-Bugs immer erst dispatchen!
+2. **Punkt 2** `b559cb0`: Kellerabteil-Verlaufs-RZ — Türaufschlag-BARRIEREN
+   (Radius=Blattbreite) in `sichtkette` + Lücken-Erzeuger `platzierer._tuer_luecken_rz`
+   (Gangmitte, ab 3 Abteil-Türen). KEIN Takt-Wert (Owner: „variiert"). Nur
+   `bausteine.ist_abteil_tuer` (KELLERABTEIL/ABSTELL/…/<8 m²) — Wohnungstüren sind
+   lt. Fachdoku S.8 KEINE Barrieren (sonst 1OG 14 statt 8 RZ!). Wohnbau-Bänder
+   begründet nachgezogen (EG 8×unten+1×links, RZ≤9, SL eg≤9).
+3. **Punkt 3** `30f175e`: `hauptengine/bestand_leuchten.py` — Bestands-Allgemein-
+   beleuchtung auto aus Quell-DXF (Vokabular; mm-Faktor GEGEN RaumModell-Bounds
+   kalibriert, Tie-Break Spannweite = filtert 34-km-Inseln), pipeline reicht durch
+   (Signatur-Check schützt Fakes), Summary `bestand_leuchten`. R1/R6 = Engine-Standard.
+4. **Punkt 4** `ad24211`: `stgh_strategy.py` — din-2-RZ-Modul: Richtungs-RZ am
+   Hauptpodest aus `Treppenlauf.antritt/austritt/richtung` („ab"=Fluchtrichtung,
+   „auf"=invers), EG-final_exit=No-op, fail-open ohne laeufe; R8 nutzt echte
+   Laufrichtung (⚠️ Einheitsvektor ×1000 — 50-mm-Gate). Phantom-Tür-Filter
+   `bausteine.ist_echte_tuer` (>1300 mm = Wandloch, Owner: „dort ist eine Wand").
+5. **PR-Hygiene:** #154 (Enis) reviewt+APPROVED · #155 (raum_modell 1.5.0, war schon
+   gemergt) nachträglich APPROVED (Review auf gemergtem PR GEHT; 1.5.0 rein additiv,
+   Suite grün) · **#146 GESCHLOSSEN** (Salvage überholt durch Selmans #149/#152/#155;
+   grundstuecksgrenze lebt in aussenbereich.py) · **#150 repariert, UNGEPUSHT** (s.u.).
+6. **Am Rain:** `Projekte/Am Rain.zip` (21,6 MB DXF-only) auf MAIN `172a24d` (Owner-GO)
+   → Enis/Selman kriegen es beim Sync. Ultracode-Analyse (66 Agenten, 44 verifizierte
+   Findings) → `knowledge/extracted/AM_RAIN_NOTBELEUCHTUNG_ANALYSE.md` + §8
+   Owner-Antworten: RZ_PU-Blocknull=Blick −Y (bestätigt Engine-Konvention) ·
+   UG-PU=freie Verlaufs-RZ Gangmitte · SIMA_ET-Zweitwelt IGNORIEREN (din-Welt=Referenz,
+   UG-Band 106). Extraktor: `scripts/analyse/am_rain_extract.py`.
+7. **Board:** Selman-Antworten (Korpus-Label = ZWEITES Flag, strittig-Zeilen behalten,
+   Training nur mensch_bestätigt `018d246`; 3b-Konsens + 1.6.0-Konsumentenpunkte;
+   4 Erkennungs-Nähte a–d). Elektroplan-Output: **v9** (EG 6 RZ, Eingang exakt KORR).
+
+**OFFEN / Resume (nächste Session):**
+1. **#150 PUSHEN:** Worktree `../nb-150` (Branch leonis/astv-integration-0909) hat
+   main-Merge `d0bffde` + Fix `edea499` (Enis' 2 verlorene YAML-Einträge wieder drin =
+   Selman-Befund COORDINATION 2026-09-10 Punkt 0 GEHEILT; Guard-Test auf abgestimmte
+   Konsumenten-Fassung). Voller pytest lief bei Session-Ende noch — **bei Grün: im
+   Worktree `git push`, dann `git worktree remove --force ../nb-150`**; bei Rot: Log
+   in Temp-Task bsgx2epf0. Editable-Install ist schon auf den Haupt-Tree restauriert.
+2. **Owner-Reihe weiter:** 5 = S4-Aufheller-KALIBRIERUNG (Lux-Vergleichsrechnung EG:
+   warum 4–5 statt Owner-1; Verdächtige MF 0,80/F09, RZ-Leuchten zählen nicht als
+   Quelle, LDT) · 6 = S5-Außen-Dreifall (braucht Überdachungs-Polygon: Selman Track C
+   ODER Owner-Antwort Wandausleger [Am-Rain-Digest §7 Frage 4]; `plan_pruefen.py` hat
+   Überdachungs-Analyse als Vorlage) · 7 = PLPR/wasserscheiden + Brandschutztür-RZ
+   (3-Owner). Kandidaten-Tabelle: AM_RAIN-Digest §6.
+3. **Selman-Pings ausstehend:** (a) Balkontüren-als-Ausgänge-Fix (er baut VOR 3b) →
+   dann Elektroplan+Bänder re-testen (ist_echte_tuer/R2 hängen dran); (b) raum_13-
+   Zacken/Überlappungs-Bereinigung 62→0 → Sichtkette am Elektroplan re-testen (Gang-RZ
+   liegen außerhalb des Zacken-Polygons → alle „geschützt", dünnt nicht aus);
+   (c) Treppenläufe am 02-TWA → stgh_strategy springt automatisch an.
+4. **#156-Merge** wartet auf Enis+Selman-Approval (norm_regelwerk 1.2.0→1.4.0 additiv).
+5. 1.6.0-Proposal (docs/proposals/) lesen + Konsum-Slice zusagen (Board-Punkte gelten).
+6. Rest unten (Wissensabgleich-Punkte, Brandabschnitt-Slice) unverändert.
+
+---
+
 ## STAND (2026-09-12 ABEND) — Owner-Fachdoku eingebaut (S0–S3), PR #156 offen. HIER WEITER.
 
 **Branch `leonis/demo-l-gebaeude` GEPUSHT, PR #156 OFFEN (3-Owner wegen norm_regelwerk 1.4.0).**
