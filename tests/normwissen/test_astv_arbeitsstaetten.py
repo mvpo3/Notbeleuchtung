@@ -286,19 +286,20 @@ def test_astv_wissen_ist_kein_protocol_mitglied() -> None:
     assert not hasattr(En1838NormProvider, "pruefpunkte")
 
 
-def test_kein_konsument_ruft_die_auskunft_auf() -> None:
-    """Ehrliche Grenze: das Modul wirkt heute NUR über den OIB-Hinweis.
+def test_konsument_ruft_die_auskunft_auf() -> None:
+    """Seit dem AStV-Integrationsschritt (2026-09-09, Enis-Paket v2) hat die Auskunft
+    einen echten Konsumenten: `hauptengine/validierung.py` speist die § 9-Prüfpunkte
+    je Gebäudeteil in den Prüfbericht.
 
-    Solange kein Paket `ArbeitsstaettenWissen` importiert, ist die strukturierte
-    Auskunft Wissen auf Vorrat — dieser Test hält den Zustand sichtbar, statt
-    Nutzung zu behaupten.
+    Vorher hielt dieser Test den Zustand „kein Konsument" fest (Wissen auf Vorrat);
+    mit Enis abgestimmt umgestellt (MANIFEST v2: „auf den neuen Konsumenten umstellen").
     """
     treffer = [
         p.relative_to(SRC).as_posix()
         for p in SRC.rglob("*.py")
         if p.name != "astv.py" and "ArbeitsstaettenWissen" in p.read_text(encoding="utf-8")
     ]
-    assert treffer == [], treffer
+    assert "hauptengine/validierung.py" in treffer, treffer
 
 
 def test_lazy_load_kein_dateizugriff_beim_aufbau(tmp_path: Path) -> None:
