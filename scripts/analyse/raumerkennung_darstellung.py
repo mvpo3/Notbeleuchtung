@@ -936,46 +936,48 @@ def _lz(kz: dict) -> float:
     return lz["gesamt"] if isinstance(lz, dict) else lz
 
 
-def _tabelle(d: dict) -> str:
-    def z(label, wert, klasse="num"):
-        return f"<tr><th>{label}</th><td class='{klasse}'>{wert}</td></tr>"
-
-    def warn(n):
-        return f"<span class='warn'>{n}</span>" if n else "0"
-
-    typen = ", ".join(
-        (f"<span class='warn'>{escape(k)} {v}</span>" if k == "UNBEKANNT" else f"{escape(k)} {v}")
-        for k, v in d["raeume_je_typ"].items())
-    je_w = ", ".join(f"{escape(k)} {v}" for k, v in d["raeume_je_wohnung"].items()) or "—"
+def _owner_zeilen(d: dict) -> list[tuple[str, str, bool]]:
+    """Die Owner-Kennzahlen als (Bezeichnung, Wert, auffällig) — für HTML und README."""
     lz = d["laufzeit_s"]
-    rows = [
-        z("Räume gesamt", d["raeume_gesamt"]),
-        z("je Typ", typen or "—", ""),
-        z("davon UNBEKANNT", warn(d["raeume_unbekannt"])),
-        z("Räume mit Stempel", d["raeume_mit_stempel"]),
-        z("davon Flächenabweichung &gt; 10 %", warn(d["stempel_abweichung_gt10"])),
-        z("Wohnungen", d["wohnungen"]),
-        z("Räume je Wohnung", je_w, ""),
-        z("Laufzeit", f"{lz['gesamt']} s (Erkennung {lz['erkennung']} s, Bild {lz['zeichnen']} s)"),
+    return [
+        ("Räume gesamt", str(d["raeume_gesamt"]), False),
+        ("je Typ", ", ".join(f"{k} {v}" for k, v in d["raeume_je_typ"].items()) or "—", False),
+        ("davon UNBEKANNT", str(d["raeume_unbekannt"]), d["raeume_unbekannt"] > 0),
+        ("Räume mit Stempel", str(d["raeume_mit_stempel"]), False),
+        ("davon Flächenabweichung > 10 %", str(d["stempel_abweichung_gt10"]),
+         d["stempel_abweichung_gt10"] > 0),
+        ("Wohnungen", str(d["wohnungen"]), False),
+        ("Räume je Wohnung", ", ".join(f"{k} {v}" for k, v in d["raeume_je_wohnung"].items()) or "—",
+         False),
+        ("Laufzeit", f"{lz['gesamt']} s (Erkennung {lz['erkennung']} s, Bild {lz['zeichnen']} s)", False),
     ]
-    # Unter der Tabelle nur, was das Bild erklärt — keine weiteren Kennzahlen.
-    k, hinweise = d.get("kontext", {}), []
-    bilder = d.get("bilder", [])
+
+
+def _hinweise(d: dict) -> list[str]:
+    """Unter der Tabelle nur, was das Bild erklärt — keine weiteren Kennzahlen."""
+    k, bilder, out = d.get("kontext", {}), d.get("bilder", []), []
     if len(bilder) > 1:
-        hinweise.append(f"<span class='warn'>{len(bilder)} Ausschnitte</span> — Räume liegen im "
-                        "Modelspace weit auseinander")
+        out.append(f"{len(bilder)} Ausschnitte — Räume liegen im Modelspace weit auseinander")
     if k.get("raeume_nicht_gezeigt"):
-        hinweise.append(f"<span class='warn'>{k['raeume_nicht_gezeigt']} Räume in keinem Bild</span>")
+        out.append(f"{k['raeume_nicht_gezeigt']} Räume in keinem Bild")
     if k.get("raeume_ohne_label"):
-        hinweise.append(f"<span class='warn'>{k['raeume_ohne_label']} Räume ohne Platz für die "
-                        "Beschriftung</span> (im Bild □)")
+        out.append(f"{k['raeume_ohne_label']} Räume ohne Platz für die Beschriftung (im Bild □)")
     if k.get("raeume_ohne_polygon"):
-        hinweise.append(f"<span class='warn'>{k['raeume_ohne_polygon']} Räume ohne Polygon</span> "
-                        "(nicht gezeichnet)")
+        out.append(f"{k['raeume_ohne_polygon']} Räume ohne Polygon (nicht gezeichnet)")
     if not k.get("zuordnung_quelle", "Erkennung").startswith("Erkennung"):
-        hinweise.append(f"<span class='warn'>Stempel-Zuordnung {escape(k['zuordnung_quelle'])}</span>")
-    tab = "<div class='tab'><table>" + "".join(rows) + "</table></div>"
-    return tab + (f"<div class='hinweis'>{' · '.join(hinweise)}</div>" if hinweise else "")
+        out.append(f"Stempel-Zuordnung {k['zuordnung_quelle']}")
+    return out
+
+
+def _tabelle(d: dict) -> str:
+    rows = "".join(
+        f"<tr><th>{escape(label)}</th><td class='{'num' if wert.isdigit() else ''}'>"
+        + (f"<span class='warn'>{escape(wert)}</span>" if auffaellig else escape(wert))
+        + "</td></tr>"
+        for label, wert, auffaellig in _owner_zeilen(d))
+    h = _hinweise(d)
+    return (f"<div class='tab'><table>{rows}</table></div>"
+            + (f"<div class='hinweis warn'>{escape(' · '.join(h))}</div>" if h else ""))
 
 
 def _eintraege(ordner: Path) -> list[tuple[Path, dict]]:
@@ -1030,6 +1032,7 @@ def _index_projekt(out: Path, projekt: str) -> Path:
     teile.append("</body></html>")
     ziel = ordner / "index.html"
     ziel.write_text("".join(teile), encoding="utf-8")
+    _readme_projekt(out, projekt, plaene)
     return ziel
 
 
@@ -1109,6 +1112,80 @@ def _index_gesamt(out: Path) -> Path:
     teile.append("</body></html>")
     ziel = out / "index.html"
     ziel.write_text("".join(teile), encoding="utf-8")
+    _readme_gesamt(out, aktuell, fremd, zeilen, summe, besonderes)
+    return ziel
+
+
+# ── README.md: dieselben Inhalte, im GitHub-Browser lesbar ──────────────────
+# GitHub zeigt index.html nur als Quelltext (Repo privat, kein Pages). Die
+# README.md je Ordner rendert GitHub direkt unter der Dateiliste — Bilder
+# inklusive. Pfade mit Leerzeichen/Umlauten sind URL-kodiert.
+
+def _md(text) -> str:
+    return str(text).replace("|", "\\|")
+
+
+def _readme_projekt(out: Path, projekt: str, plaene: list[tuple[Path, dict]]) -> Path:
+    bericht = " · [Bericht](../BERICHT.md)" if (out / "BERICHT.md").exists() else ""
+    md = [f"# {projekt} — Raumerkennung, nur Räume", "",
+          f"[← Gesamtübersicht](../README.md){bericht}", "",
+          ("Die Legende steht in jedem Bild; ein Klick aufs Bild öffnet es in voller Größe. "
+           "Offline mit allen Details: `index.html` in diesem Ordner lokal im Browser öffnen."), "",
+          "| Plan | Status | Räume | UNBEKANNT | mit Stempel | Abw. > 10 % | Wohnungen |",
+          "|---|---|--:|--:|--:|--:|--:|"]
+    for d, kz in plaene:
+        if kz["status"] == "ok":
+            md.append(f"| [{_md(d.name)}]({quote(d.name)}/{kz['bilder'][0]['datei']}) | ausgewertet | "
+                      f"{kz['raeume_gesamt']} | {kz['raeume_unbekannt']} | {kz['raeume_mit_stempel']} | "
+                      f"{kz['stempel_abweichung_gt10']} | {kz['wohnungen']} |")
+        else:
+            md.append(f"| {_md(d.name)} | {_STATUS_TEXT[kz['status']]} | | | | | |")
+    for d, kz in plaene:
+        md += ["", f"## {d.name}", "",
+               f"`{kz.get('dxf', '')}` · gerechnet auf Commit `{kz.get('commit', '?')}`", ""]
+        if kz["status"] != "ok":
+            grund = kz["grund"].strip().splitlines()[-1] if kz["status"] == "fehler" else kz["grund"]
+            md.append(f"**{_STATUS_TEXT[kz['status']]}** — {_md(grund)}")
+            continue
+        n = len(kz["bilder"])
+        for i, b in enumerate(kz["bilder"], start=1):
+            if n > 1:
+                md += [f"**Ausschnitt {i} von {n}** — {b['raeume']} Räume", ""]
+            md += [f"![{_md(d.name)}]({quote(d.name)}/{b['datei']})", ""]
+        md += ["| Kennzahl | Wert |", "|---|---|"]
+        md += [f"| {_md(label)} | " + (f"**{_md(wert)}**" if auffaellig else _md(wert)) + " |"
+               for label, wert, auffaellig in _owner_zeilen(kz)]
+        if h := _hinweise(kz):
+            md += ["", "**Hinweis:** " + _md(" · ".join(h))]
+    ziel = out / projekt / "README.md"
+    ziel.write_text("\n".join(md) + "\n", encoding="utf-8")
+    return ziel
+
+
+def _readme_gesamt(out: Path, aktuell: str, fremd: int, zeilen: list, summe: Counter,
+                   besonderes: list) -> Path:
+    kopf = ["Ordner", "Pläne", "ausgewertet", "kein Grundriss (Name)", "kein Grundriss erkannt",
+            "Dubletten", "Fehler", "Räume", "UNBEKANNT", "mit Stempel", "Abw. > 10 %",
+            "Wohnungen", "Laufzeit s"]
+    stand = f"Stand `{aktuell}`" + (f" · **{fremd} Pläne auf anderem Commit gerechnet**" if fremd else "")
+    bericht = " · [Bericht](BERICHT.md)" if (out / "BERICHT.md").exists() else ""
+    md = ["# Raumerkennung, nur Räume — Gesamtübersicht", "",
+          (f"{stand} · Eingang `{_rel(EINGANG)}` · {summe['plaene']} Pläne in {len(zeilen)} "
+           f"Ordnern{bericht}"), "",
+          ("Ordner anklicken: Bilder mit Legende und Kennzahlen je Plan. Offline mit allen Details: "
+           "`index.html` lokal im Browser öffnen."), "",
+          "| " + " | ".join(kopf) + " |", "|---|" + "--:|" * (len(kopf) - 1)]
+    md += [f"| [{_md(name)}]({quote(name)}/README.md) | " + " | ".join(str(z[k]) for k in _SPALTEN) + " |"
+           for name, z in zeilen]
+    md.append("| **gesamt** | " + " | ".join(str(summe[k]) for k in _SPALTEN) + " |")
+    if besonderes:
+        md += ["", "## Übersprungen / kein Grundriss erkannt / Fehler", "",
+               "| Ordner | Plan | Status | Grund |", "|---|---|---|---|"]
+        for pn, name, kz in besonderes:
+            grund = kz["grund"].strip().splitlines()[-1] if kz["status"] == "fehler" else kz["grund"]
+            md.append(f"| {_md(pn)} | {_md(name)} | {_STATUS_TEXT[kz['status']]} | {_md(grund)} |")
+    ziel = out / "README.md"
+    ziel.write_text("\n".join(md) + "\n", encoding="utf-8")
     return ziel
 
 
