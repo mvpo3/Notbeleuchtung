@@ -1,11 +1,15 @@
 # Raumerkennung Rennweg — Bericht
 
 Stand **2026-09-13** · Owner Selman (`raumerkennung`) · Branch `selman/geschoss-erkennung`
-Gerechnet auf Commit **`538d8d8`** (sauber; `src/` identisch mit `origin/main` `c820b68`)
+Gerechnet auf Commit **`511ad36`** (identische Kennzahlen wie der erste Lauf auf `538d8d8`).
+`src/` ist dort `origin/main` `c820b68` plus der eigene,
+nicht freigegebene Geschoss-Commit `47e9e44`. **Gegenprobe auf reinem `origin/main`:** alle
+Owner-Kennzahlen der 7 Pläne identisch; nur das Geschoss fehlt dort (leer statt DG/EG/1OG …).
 
 - **Eingang:** `Projekte_Leere Architektpläne (Input)/Rennweg.zip` → 7 DXF, entpackt nach
   `Projekte_Leere Architektpläne (Input)/Rennweg/` (gitignored, so in `main` vorgesehen).
-- **Ausgabe:** `Projekte/_ergebnis_raumerkennung/index.html` → `Rennweg/index.html`.
+- **Ausgabe:** `Projekte/_ergebnis_raumerkennung/README.md` → `Rennweg/README.md` (im
+  GitHub-Browser lesbar, Bilder eingebettet). Offline dieselben Inhalte als `index.html`.
 
 Dieser Durchgang ist **nur Messen und Darstellen**. An der Erkennung wurde nichts geändert.
 Alles unter § 2 ist offen.

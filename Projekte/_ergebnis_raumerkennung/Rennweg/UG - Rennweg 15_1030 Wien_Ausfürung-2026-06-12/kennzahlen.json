@@ -4,7 +4,7 @@
   "dxf": "Projekte_Leere Architektpläne (Input)/Rennweg/UG - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf",
   "sha256": "f8888a5691760ba2ff5743e0e19449bfa44ca37fb52eebd03c46f8aac802f1ef",
   "bytes": 3274744,
-  "commit": "538d8d8",
+  "commit": "511ad36",
   "status": "ok",
   "raeume_gesamt": 23,
   "raeume_je_typ": {
@@ -60,8 +60,8 @@
     }
   ],
   "laufzeit_s": {
-    "erkennung": 13.3,
+    "erkennung": 11.1,
     "zeichnen": 3.6,
-    "gesamt": 16.9
+    "gesamt": 14.8
   }
 }
