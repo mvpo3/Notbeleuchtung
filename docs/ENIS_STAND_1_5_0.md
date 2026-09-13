@@ -121,6 +121,20 @@ der **Elektromontageplan** aus Enis' Diagnose; der zweite Kandidat
 (`260320_938-AR-PP-11000-A_ERDGESCHOSS BT1.dxf`) ist der Architekturplan und
 nicht gemeint.
 
+> **KORREKTUR 2026-09-13: die Zuordnung oben ist falsch — gemessen wurde der
+> falsche Plan.** Enis' Diagnose gehört zum **Architekturplan**
+> `260320_938-AR-PP-11000-A_ERDGESCHOSS BT1.dxf`, nicht zum Elektromontageplan.
+> Belegt über seine IDs im eingecheckten Ergebnis
+> `Projekte/_ergebnis_alle/260320_938-AR-PP-11000-A_ERDGESCHOSS BT1/`:
+> `tuer_111` 1×, `tuer_121` 3×, `exit_tuer_121` 2× und **3 Selbstverbindungen**
+> von 361 Türzeilen — genau seine vier Befunde. Im hier gemessenen
+> Elektromontageplan existiert keine dieser IDs (höchste ist `tuer_98`) und es
+> gibt 0 Selbstverbindungen. Meine Begründung „aus Enis' Diagnose" war eine
+> Annahme, die ich nie geprüft habe; es gab zwei Kandidaten und ich habe den
+> falschen genommen. **Folge: alle Zahlen dieses Abschnitts gelten für den
+> Elektromontageplan und sind KEINE Antwort auf Enis' Befunde.** Der Lauf am
+> richtigen Plan steht aus.
+
 ### Kennzahlen des Laufs
 
 | Kennzahl | Wert |
@@ -129,7 +143,7 @@ nicht gemeint.
 | Türen | 225 |
 | davon typisiert | 192 |
 | Fluchtweg-Segmente | 87 |
-| **Wandkörper** | **0** |
+| **Wandkörper** | **241** (Korrektur 2026-09-13, hier stand **0** — s. u.) |
 | Ausgänge | `stair_exit` 1 · `final_exit` 3 |
 
 Raumtypen: ZIMMER 14 · KÜCHE 12 · GANG 8 · BAD 6 · WC 6 · VORRAUM 6 ·
@@ -138,14 +152,120 @@ KINDERWAGENRAUM 1 · LIFT 1.
 
 Zwei Befunde, die ich nicht glätte:
 
-- **0 Wandkörper.** Der Plan ist ein Wrapper-Plan (Block `65465465`, Faktor 1000
-  bei `$INSUNITS` 6); die Wände stecken in Blockdefinitionen. Räume und Türen
-  entstehen trotzdem, Wandkörper nicht.
+- **~~0 Wandkörper.~~ KORREKTUR 2026-09-13: es sind 241.** Die 0 war ein
+  Messfehler von mir, keine Eigenschaft des Plans: mein Skript zählte
+  `len(getattr(modell, "wandkoerper", []) or [])` auf einem `RaumModell` — und
+  der Contract führt dieses Feld **nicht** (Felder: `contract`,
+  `contract_version`, `floor`, `coordinate_system`, `bounds_mm`, `raeume`,
+  `tueren`, `ausgaenge`, `zirkulation`, `sonderstellen`, `stiegenhaeuser`,
+  `anker`). Der `getattr`-Default greift, also ist die Zahl für **jeden** Plan 0,
+  auch für Muthgasse mit 737. Wandkörper leben nur im `KaskadeErgebnis`, das der
+  Provider nicht herausgibt.
+  **Ist-Wert, selbst gemessen auf `3d91a2c`: 241 Wandkörper**, davon 195 direkt
+  im Wrapper und 46 aus Blöcken, 210 auf dem Layer `A_Waende`. Auch die
+  Begründung oben war falsch: die Wände liegen **doppelt dargestellt**
+  (HATCH + Linienzug) auf einem Layer, überwiegend direkt im Wrapper-Block, und
+  `finde_wandkoerper` steigt selbst ab. Gegenbeweis aus den eigenen Daten: die
+  126 `durchgang_*`-Türen dieses Laufs entstehen ausschließlich im Zweig
+  `if k.wandkoerper:` (`provider.py:132-135`) — mit 0 Wandkörpern gäbe es keine
+  einzige davon. Die Gegenprobe über alle Pläne zeigt **keinen** Plan mit
+  Wandkörper-Mangel (WK/Raum: Mollgasse 2,76 · BT1-EG 3,44 · Muthgasse 7,60 ·
+  Rennweg_EG 9,14 · Rennweg_OG3 14,57 · Barawitzka 27,02). Festgeschrieben in
+  `tests/raumerkennung/test_wandkoerper.py`.
 - **Die 3 `final_exit` hängen NICHT an Freiflächen.** Der Plan trägt 7
   Freiflächen-Räume (5 TERRASSE, 2 BALKON) und 20 `balkontuer`, davon **0 mit
   AUSSEN-Seite**. Die neue Balkon-Regel greift hier also in null Fällen, und
   `exit_tuer_87`, `exit_tuer_97`, `exit_aussenoeffnung_1` bleiben unberührt —
   eine unabhängige Gegenprobe auf einem sechsten Plan.
+
+## 3b. BT1-EG am RICHTIGEN Plan — Enis' Plan, Nachlauf 2026-09-13
+
+Abschnitt 3 misst den Elektromontageplan. Enis' Diagnose gehört zum
+**Architekturplan** (Beleg: seine IDs, siehe Korrektur in § 3). Dieser Abschnitt
+holt die Messung dort nach, auf `3d91a2c`.
+
+| Angabe | Wert |
+|---|---|
+| Eingabe | `Projekte/BVH Fischamenderstraße/BT1/260320_938-AR-PP-11000-A_ERDGESCHOSS BT1.dxf` |
+| **SHA-256** | **`dd2e6e7d9908085678a8a0cbc26475c6c9217fcbafc5bcff54234c45305ca407`** |
+| Größe | 11 717 404 Bytes |
+| Commit-SHA | `3d91a2ceebb5e1a034feb4fa4faf5b7a3edf81b4` |
+| Aufruf | `ArchitekturRaumProvider().parse(<pfad>, 'EG')`, ausschließlich Raumerkennung |
+| Laufzeit | Wandkörper 6,7 s · Provider 19,7 s |
+| Ablage | `Projekte/_ergebnis_bt1_arch/` |
+
+| Kennzahl | Architekturplan | Elektromontageplan (§ 3) |
+|---|--:|--:|
+| **Wandkörper** | **270** (218 msp / 52 block) | **241** (195 / 46) |
+| Räume | 79 | 72 |
+| Türen | 256 | 225 |
+| Fluchtweg-Segmente | 88 | 87 |
+| Ausgänge | `stair_exit` 1 · `final_exit` 3 | `stair_exit` 1 · `final_exit` 3 |
+
+Der Architekturplan ist **kein** Wrapper-Plan — `plan.space` ist der Modelspace,
+Faktor 1000, ein Wand-Layer `A_Waende` (192 der 270 Körper; dazu `M-EQPM` 34,
+`A-DETL-GENF_` 18, `A_2D` 8, `A-DETL-MBND` 7). Die Wandkörper-Erkennung hat also
+auf **keinem** der beiden Pläne eine Lücke; die „0" war allein mein Messfehler.
+
+### Enis' vier Befunde, an seinem Plan reproduziert
+
+**1. Selbstverbindungen: 3 — bestätigt, und eine davon trägt einen Ausgang.**
+
+| Tür | Räume | `tuer_detail` | Quelle |
+|---|---|---|---|
+| `tuer_121` | `raum_76` == `raum_76` | **`hauseingang`** | `text:EINGANG BT1` |
+| `tuer_122` | `raum_70` == `raum_70` | — | `text:RWA Garage BT1 Abluft` |
+| `tuer_124` | `rest_1` == `rest_1` | — | `text:RWA BT1 ER´s + KiWa` |
+
+`tuer_121` wird zu **`exit_tuer_121`** (`final_exit`) verwertet. Gemeinsame
+Ursache, gemessen: **alle drei entstehen aus Türtexten**, nicht aus Geometrie —
+zwei davon aus `RWA`-Beschriftungen (Rauch- und Wärmeabzug), die keine Türen
+sind. Im Elektromontageplan gibt es 0 Selbstverbindungen.
+
+**2. Türdubletten: 38 Paare unter 50 mm, davon 36 bei genau 10,00 mm.** Auf
+beiden Plänen identisch. Das Muster ist durchgehend dasselbe und **nicht**
+„Block gegen Bogen": **beide Partner haben `quelle=block`**, einer mit
+`BLOCKNAME`-Breite, der andere mit `UNBEKANNT`, gleiches `tuer_detail`, exakt
+10 mm versetzt — etwa `tuer_2` (900 mm, BLOCKNAME) ↔ `tuer_73` (None,
+UNBEKANNT), beide `wohnungseingang`. Das ist ein doppelt eingefügter Türblock.
+
+**3. Überlappungen: 8 Paare über 0,01 m², Summe 25,01 m², davon 2 über 1 m².**
+Enis' Zahl ist exakt, meine frühere Zuordnung war falsch:
+
+| Fläche | Paar |
+|--:|---|
+| **20,25 m²** | `gang_1` (GANG, 30,57 m²) ↔ **`raum_64`** (GANG, 41,54 m²) |
+| 1,91 m² | `lift_1` (LIFT) ↔ `raum_61` (TECHNIK, 2,82 m²) |
+| 0,77 m² | `gang_1` ↔ `raum_63` (STIEGENHAUS, 20,22 m²) |
+| 0,59 · 0,52 · 0,35 · 0,35 · 0,27 m² | `gang_1` ↔ `raum_30`/`raum_40`/`raum_39`/`raum_37`/`raum_35` |
+
+Sechs der acht Paare hängen an **`gang_1`**, dem im Provider nachträglich
+angelegten Gang (`geometrie_typ.py`) — er überlappt die Kaskaden-Räume, weil die
+Bereinigung ihn nicht sieht. Das ist dieselbe zweite Messbasis, die schon bei
+Muthgasse als Modell-Restüberlappung dokumentiert ist.
+
+**4. Wohnungsflure: 14 GANG/VORRAUM, und die Einordnung widerspricht sich.**
+**Alle 14** tragen `ist_communal=True` — auch die drei mit `WOHNUNG_PRIVAT` und
+gesetzter `wohnung_id` (`raum_4`/top_3, `raum_46`/top_1, `raum_51`/top_2). Die
+Türnachbarschaft spricht bei mehreren gegen `ALLGEMEIN_ERSCHLIESSUNG`:
+
+| Raum | Fläche | Klasse | Türen | davon in private Räume | Details |
+|---|--:|---|--:|--:|---|
+| `raum_24` | 7,42 m² | ALLGEMEIN_ERSCHLIESSUNG | 16 | **15** | 16× `wohnungseingang` |
+| `raum_43` | 6,25 m² | ALLGEMEIN_ERSCHLIESSUNG | 12 | **11** | 12× `wohnungseingang` |
+| `raum_50` | 3,80 m² | ALLGEMEIN_ERSCHLIESSUNG | 12 | **11** | 12× `wohnungseingang` |
+| `raum_64` | 41,54 m² | ALLGEMEIN_ERSCHLIESSUNG | 26 | 4 | 16× `wohnungseingang`, **2× `stiegenhaustuer`**, **1× `hauseingang`** |
+
+Nur `raum_64` hat mit Stiegenhaus- und Hauseingangstür eine echte
+gemeinschaftliche Anbindung. Der Owner-Fallback („ein Gang, der nur an private
+Räume grenzt und keine Tür ins Stiegenhaus oder ins Freie hat, ist privat")
+würde bei `raum_24`, `raum_43` und `raum_50` greifen.
+
+**Zur Ausgangshypothese:** die vier Befunde haben tatsächlich einen gemeinsamen
+Nenner, aber **nicht** die Wandkörper — Befund 1 kommt aus Türtexten, Befund 2
+aus doppelt eingefügten Türblöcken, Befund 3 aus dem nachträglich angelegten
+`gang_1`, Befund 4 aus der Wohnungsbildung. Behoben ist in diesem Auftrag
+**nichts**: er war eine Prüfung.
 
 ## 4. Die fünf entfallenen Räume
 

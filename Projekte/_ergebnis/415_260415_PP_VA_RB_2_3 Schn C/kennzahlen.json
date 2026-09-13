@@ -1,0 +1,39 @@
+{
+  "plan": "415_260415_PP_VA_RB_2_3 Schn C",
+  "dxf": "Projekte/Barawitzkagasse/Schnitte/415_260415_PP_VA_RB_2_3 Schn C.dxf",
+  "sha256": "78377edc0f5a7024c0af3d28811a07238e0d1813fe01caa05d2b5532b7eba7d1",
+  "bytes": 4164404,
+  "bild_px": [
+    2470,
+    2972
+  ],
+  "laufzeit_s": 8.9,
+  "geschoss": "",
+  "geschoss_quelle": "unbekannt",
+  "geschoss_beleg": "Geschoss unbekannt, Endausgang nicht bestimmbar",
+  "ausgangs_warnungen": [
+    "AusgangsWarnung(geschoss='', grund='Geschoss unbekannt, Endausgang nicht bestimmbar', gescheiterte_regeln=['final_exit: Geschoss weder aus floor/Dateiname noch aus Schriftfeld/Plantext/Höhenkote belegt (kein Standardwert EG)'])",
+    "AusgangsWarnung(geschoss='', grund='kein Geschossausgang ableitbar', gescheiterte_regeln=['final_exit: keine hauseingang-/Notausgangstür ins Freie (EG)', 'stair_exit: keine stiegenhaustuer/wohnungseingang am STIEGENHAUS'])"
+  ],
+  "raeume_gesamt": 11,
+  "raeume_unbekannt": 11,
+  "raum_typen": {},
+  "kategorien": {
+    "unbekannt": 11
+  },
+  "tueren_gesamt": 40,
+  "tueren_typisiert": 0,
+  "tuer_typen": {
+    "UNBEKANNT": 40
+  },
+  "tueren_notausgang": 0,
+  "ausgaenge": {},
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 0,
+  "segmente_je_quelle": {},
+  "segmente_richtung_unbekannt": 0,
+  "wohnungen": 0,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 0,
+  "contract_version": "1.5.0"
+}

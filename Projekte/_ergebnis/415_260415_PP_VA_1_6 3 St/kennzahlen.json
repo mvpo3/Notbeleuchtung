@@ -1,0 +1,64 @@
+{
+  "plan": "415_260415_PP_VA_1_6 3 St",
+  "dxf": "Projekte/Barawitzkagasse/415_260415_PP_VA_1_6 3 St.dxf",
+  "sha256": "570052ad89de0d903851617aa787a251a8386963ee2f191b679bb08c6e1d6f99",
+  "bytes": 11207238,
+  "bild_px": [
+    2470,
+    1946
+  ],
+  "laufzeit_s": 87.2,
+  "geschoss": "EG",
+  "geschoss_quelle": "plantext",
+  "geschoss_beleg": "MTEXT/TEXT/ATTRIB-Wortform: EG 2×",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 36,
+  "raeume_unbekannt": 11,
+  "raum_typen": {
+    "BAD": 2,
+    "STIEGENHAUS": 3,
+    "WC": 4,
+    "ZIMMER": 5,
+    "ABSTELLRAUM": 2,
+    "VORRAUM": 1,
+    "KÜCHE": 1,
+    "BALKON": 1,
+    "SCHACHT": 3,
+    "LIFT": 3
+  },
+  "kategorien": {
+    "nass": 6,
+    "unbekannt": 11,
+    "stiege": 4,
+    "wohnen": 5,
+    "neben": 2,
+    "kueche": 1,
+    "freiflaeche": 1,
+    "schacht": 6
+  },
+  "tueren_gesamt": 75,
+  "tueren_typisiert": 26,
+  "tuer_typen": {
+    "zimmertuer": 9,
+    "UNBEKANNT": 49,
+    "balkontuer": 5,
+    "wohnungseingang": 6,
+    "stiegenhaustuer": 1,
+    "hauseingang": 5
+  },
+  "tueren_notausgang": 5,
+  "ausgaenge": {
+    "stair_exit": 1,
+    "final_exit": 7
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 7,
+  "segmente_je_quelle": {
+    "GRAPH": 7
+  },
+  "segmente_richtung_unbekannt": 0,
+  "wohnungen": 9,
+  "innenhoefe_geschlossen": 3,
+  "stiegenhaeuser": 3,
+  "contract_version": "1.5.0"
+}

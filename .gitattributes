@@ -7,5 +7,6 @@
 *.shx   binary
 *.tif   binary
 *.tiff  binary
+*.png   binary
 *.pdf   binary
 *.zip   binary

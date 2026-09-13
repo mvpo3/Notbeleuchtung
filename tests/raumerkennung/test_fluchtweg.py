@@ -57,7 +57,10 @@ def _gang_szene():
 
 def test_graph_segment_vom_wohnungseingang_zum_ausgang():
     raeume, tueren, ausgaenge = _gang_szene()
-    segs = fluchtwege(raeume, tueren, ausgaenge, [])
+    # geschoss explizit: der Leerstring heisst seit der Owner-Entscheidung
+    # 2026-09-13 UNBEKANNT (fail closed, kein Ziel) und nicht mehr "EG-artig".
+    # Dieser Test prueft den GRAPH-Mechanismus, nicht die Geschoss-Regel.
+    segs = fluchtwege(raeume, tueren, ausgaenge, [], geschoss="EG")
     graph = [s for s in segs if s.quelle == "GRAPH"]
     assert len(graph) == 1
     s = graph[0]
@@ -73,7 +76,7 @@ def test_graph_segment_vom_wohnungseingang_zum_ausgang():
 def test_start_nahe_expliziter_linie_wird_uebersprungen():
     raeume, tueren, ausgaenge = _gang_szene()
     linie = linien_segmente([[(1500.0, 1900.0), (19000.0, 1900.0)]], 0)
-    segs = fluchtwege(raeume, tueren, ausgaenge, linie)
+    segs = fluchtwege(raeume, tueren, ausgaenge, linie, geschoss="EG")
     assert [s for s in segs if s.quelle == "GRAPH"] == []
 
 
@@ -164,3 +167,18 @@ def test_grund_tuer_ohne_nachbarraum_vs_aussenbereich_nicht_erkannt():
                       nach_raum=KEIN_RAUM, breite_mm=900.0)
     assert "ohne Nachbarraum" in _final_exit_fehlt_grund([einseitig])
     assert "Außenbereich nicht erkannt" in _final_exit_fehlt_grund([beidseitig])
+
+
+def test_unbekanntes_geschoss_erfindet_kein_fluchtweg_ziel():
+    """Fail closed (Owner 2026-09-13): ohne belegtes Geschoss gibt es keinen
+    ``final_exit``. Vorher griff der Fallback ``or ausgaenge``, der Weg endete
+    am ``stair_exit`` und zählte als erfüllter Fluchtweg — das Gegenteil von
+    konservativ. Jetzt: kein Ziel, dafür die Warnung.
+    """
+    raeume, tueren, ausgaenge = _stiegen_szene()
+    nur_stair = [a for a in ausgaenge if a.typ == "stair_exit"]
+    warnungen: list[str] = []
+    segs = fluchtwege(raeume, tueren, nur_stair, [], geschoss="",
+                      warnungen=warnungen)
+    assert [s for s in segs if s.quelle == "GRAPH"] == []
+    assert any("Geschoss unbekannt" in w for w in warnungen), warnungen

@@ -1,0 +1,67 @@
+{
+  "plan": "260320_938-AR-PP-21020-A_2.OBERGESCHOSS BT2",
+  "dxf": "Projekte/BVH Fischamenderstraße/BT2/260320_938-AR-PP-21020-A_2.OBERGESCHOSS BT2.dxf",
+  "sha256": "b25b674153d48a2d1a80463b9cce314033ad94070c810a2f4790e0b40cfb166e",
+  "bytes": 9878180,
+  "bild_px": [
+    2470,
+    3046
+  ],
+  "laufzeit_s": 37.9,
+  "geschoss": "2OG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname '260320_938-AR-PP-21020-A_2.OBERGESCHOSS BT2' → '2.OBERGESCHOSS'",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 63,
+  "raeume_unbekannt": 3,
+  "raum_typen": {
+    "KÜCHE": 10,
+    "BALKON": 6,
+    "ZIMMER": 11,
+    "VORRAUM": 8,
+    "WC": 6,
+    "BAD": 8,
+    "GANG": 4,
+    "ABSTELLRAUM": 3,
+    "TECHNIK": 1,
+    "STIEGENHAUS": 1,
+    "LIFT": 2
+  },
+  "kategorien": {
+    "kueche": 10,
+    "freiflaeche": 6,
+    "wohnen": 11,
+    "stiege": 9,
+    "nass": 14,
+    "gang_allg": 2,
+    "gang_priv": 2,
+    "neben": 4,
+    "unbekannt": 3,
+    "schacht": 2
+  },
+  "tueren_gesamt": 185,
+  "tueren_typisiert": 165,
+  "tuer_typen": {
+    "UNBEKANNT": 20,
+    "wohnungseingang": 68,
+    "zimmertuer": 70,
+    "stiegenhaustuer": 2,
+    "balkontuer": 21,
+    "brandschutztuer": 4
+  },
+  "tueren_notausgang": 0,
+  "ausgaenge": {
+    "stair_exit": 2
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 72,
+  "segmente_je_quelle": {
+    "GRAPH": 70,
+    "FALLBACK": 2
+  },
+  "segmente_richtung_unbekannt": 2,
+  "wohnungen": 5,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 1,
+  "contract_version": "1.5.0"
+}

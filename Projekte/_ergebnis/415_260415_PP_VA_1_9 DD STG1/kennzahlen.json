@@ -1,0 +1,48 @@
+{
+  "plan": "415_260415_PP_VA_1_9 DD STG1",
+  "dxf": "Projekte/Barawitzkagasse/415_260415_PP_VA_1_9 DD STG1.dxf",
+  "sha256": "8bb20291475637d561dc35c5471ea8d720897a2d4cbe32608c148bac3d38ae57",
+  "bytes": 14184692,
+  "bild_px": [
+    2470,
+    1919
+  ],
+  "laufzeit_s": 24.4,
+  "geschoss": "",
+  "geschoss_quelle": "unbekannt",
+  "geschoss_beleg": "Geschoss unbekannt, Endausgang nicht bestimmbar",
+  "ausgangs_warnungen": [
+    "AusgangsWarnung(geschoss='', grund='Geschoss unbekannt, Endausgang nicht bestimmbar', gescheiterte_regeln=['final_exit: Geschoss weder aus floor/Dateiname noch aus Schriftfeld/Plantext/Höhenkote belegt (kein Standardwert EG)'])"
+  ],
+  "raeume_gesamt": 7,
+  "raeume_unbekannt": 1,
+  "raum_typen": {
+    "STIEGENHAUS": 3,
+    "LIFT": 3
+  },
+  "kategorien": {
+    "stiege": 3,
+    "unbekannt": 1,
+    "schacht": 3
+  },
+  "tueren_gesamt": 4,
+  "tueren_typisiert": 1,
+  "tuer_typen": {
+    "UNBEKANNT": 3,
+    "stiegenhaustuer": 1
+  },
+  "tueren_notausgang": 1,
+  "ausgaenge": {
+    "stair_exit": 1
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 3,
+  "segmente_je_quelle": {
+    "FALLBACK": 3
+  },
+  "segmente_richtung_unbekannt": 3,
+  "wohnungen": 0,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 3,
+  "contract_version": "1.5.0"
+}
