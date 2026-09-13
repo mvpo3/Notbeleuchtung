@@ -279,7 +279,7 @@ def _ausschnitte(polys: list[Polygon], f: float, rand: float = 0.06,
     """Bild-Ausschnitte (Plan-Koordinaten) samt der Räume darin.
 
     Ein Modelspace kann mehrere Grundrisse weit auseinander tragen (Rennweg EG:
-    zweite Zeichnung 740 m entfernt, Barawitzka: Planvarianten nebeneinander) —
+    zweite Zeichnung rund 1,4 km entfernt, Barawitzka: Planvarianten nebeneinander) —
     ein Gesamtausschnitt zeigte nur Briefmarken, ein Cluster-Zoom ließ die
     Hälfte der Räume stumm verschwinden. Räume werden über 5 m gruppiert; wäre
     der Gesamtausschnitt höchstens 2,5× so groß wie der der größten Gruppe
