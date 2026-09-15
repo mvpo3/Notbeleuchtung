@@ -17,7 +17,7 @@ from notbeleuchtung.hauptengine.contracts import RaumModell
 from notbeleuchtung.hauptengine.contracts.raum_modell import Tuer
 
 from .ausgaenge import leite_ausgaenge, ohne_unzulaessige_final_exits
-from .aussenbereich import erkenne_aussenbereiche
+from .aussenbereich import erkenne_aussenbereiche, waehle_innen_zonen
 from .dxf_load import bounds_mm, lade_dxf
 from .fluchtweg import explizite_linien, fluchtwege, linien_segmente
 from .footprint import hauptausgaenge
@@ -111,7 +111,13 @@ class ArchitekturRaumProvider:
         # Außen-Analyse je Gebäude-Komponente (Barawitzka: 2 Trakte) + Hof-
         # Erkennung (Mollgasse: Hof mit Weg ins Freie = AUSSEN → Hoftüren
         # werden Endausgänge). Fallback = alte Ein-Konturen-Heuristik.
-        aussen = erkenne_aussenbereiche(plan, k.wandkoerper) if k.wandkoerper else None
+        # Innen-Zonen mitgeben (Diagnose U8, Slice S2, Owner-Entscheid F6
+        # Option 4): Räume und Stempel liegen längst vor — ohne sie legt die
+        # Außenanalyse Wohn-/Bad-Zonen hinter dünnen Fassaden ins Freie.
+        aussen = None
+        if k.wandkoerper:
+            aussen = erkenne_aussenbereiche(
+                plan, k.wandkoerper, waehle_innen_zonen(plan, raeume, k.zuordnungen))
         self.letzte_aussenbereiche = aussen   # Prüfstrecken-Output (Bericht)
         if aussen is not None and aussen.komponenten:
             kontur = aussen.gedeckt()
