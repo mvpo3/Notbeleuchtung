@@ -70,36 +70,47 @@ def stiege_rechtecke(plan: DxfPlan) -> list[tuple[list[XY], XY, float]]:
     return out
 
 
-def stiege_huellen(plan: DxfPlan) -> list[Polygon]:
-    """Konvexe Hüllen (mm) der Linien in Treppen-Blockreferenzen — Drehung bleibt erhalten."""
-    out: list[Polygon] = []
+def _stiege_anker(plan: DxfPlan) -> list[tuple[XY, Polygon | None]]:
+    """Je Treppen-Blockreferenz: Bbox-Mitte (mm) und konvexe Hülle ihrer Linien.
+
+    Die Hülle hält die Drehung fest, die `stiege_rechtecke` in der Achs-Bbox
+    verliert (Diagnose Rennweg U1). ``None`` = Block ohne Liniengeometrie, also
+    ein Zonenstempel (`Stiegenhaus__16`) und keine Treppe.
+    """
+    out: list[tuple[XY, Polygon | None]] = []
     f = plan.factor
     for e in plan.space:
         if e.dxftype() != "INSERT" or not _STAIR_BLOCK.search(e.dxf.name or ""):
             continue
+        b = bbox.extents([e])          # leere/fehlende Geometrie → has_data == False
+        if not b.has_data or b.extmax[0] <= b.extmin[0] or b.extmax[1] <= b.extmin[1]:
+            continue                   # Index bleibt deckungsgleich mit `stiege_rechtecke`
         try:
             pts = [p for v in e.virtual_entities() for p in _wcs_pts(v, f)]
         except Exception as exc:  # noqa: BLE001 — kaputter Block darf nicht killen
             print(f"   virtual_entities({e.dxf.name}) fehlgeschlagen: {exc}")
-            continue
+            pts = []
         huelle = MultiPoint(pts).convex_hull if len(pts) >= 3 else None
-        if huelle is not None and huelle.area > 0:
-            out.append(huelle)
+        mitte = ((b.extmin[0] + b.extmax[0]) / 2 * f, (b.extmin[1] + b.extmax[1]) / 2 * f)
+        out.append((mitte, huelle if huelle is not None and huelle.area > 0 else None))
     return out
 
 
-def typisiere_stiegenhaus(raeume: list[Raum], stiegen: list[tuple[list[XY], XY, float]],
-                          huellen: Sequence[Polygon] = ()) -> list[Raum]:
+def typisiere_stiegenhaus(raeume: list[Raum],
+                          stiegen: Sequence[tuple[XY, Polygon | None]]) -> list[Raum]:
     """STIEGENHAUS setzen: echten Raum um den Treppen-Anker typisieren, sonst Raum anlegen.
 
-    Ein Treppen-Anker in einem echten (≥2 m²) noch untypisierten Raum färbt diesen;
-    fehlt ein solcher Raum (Fragmente/label-los), wird das Treppen-Rechteck selbst
-    ein STIEGENHAUS-Raum — außer die gedrehte Treppen-Hülle (``huellen``) ist schon
-    zu ``_ANTEIL_NEU`` von Räumen gedeckt. Bereits typisierte Räume bleiben unangetastet.
+    Ein Treppen-Anker (Bbox-Mitte) in einem echten (≥2 m²) noch untypisierten Raum
+    färbt diesen. Deckt kein solcher Raum den Anker — Fragmente/label-los, oder die
+    Bbox-Mitte einer gedrehten Treppe liegt in einer Wand (Diagnose Rennweg U1,
+    DG2 `Stair_2`) —, entscheidet die gedrehte Hülle des Blocks: ohne Hülle ist er
+    ein Zonenstempel und keine Treppe; ist die Hülle schon zu ``_ANTEIL_NEU`` von
+    Räumen gedeckt, bleibt es bei den vorhandenen Räumen; sonst wird ihr ungedeckter
+    Teil ein eigener STIEGENHAUS-Raum. Typisierte Räume bleiben unangetastet.
     """
     polys = [(r, Polygon(r.polygon_mm)) for r in raeume if len(r.polygon_mm) >= 3]
-    raum_union = None
-    for i, (rect, center, area) in enumerate(stiegen, start=1):
+    raum_union = unary_union([p.buffer(0) for _r, p in polys])
+    for i, (center, huelle) in enumerate(stiegen, start=1):
         pt = Point(center)
         cover = next(
             (r for r, poly in polys
@@ -111,27 +122,26 @@ def typisiere_stiegenhaus(raeume: list[Raum], stiegen: list[tuple[list[XY], XY, 
                 cover.raum_typ = "STIEGENHAUS"
                 cover.ist_fluchtweg = True
                 cover.ist_communal = True
-        else:
-            # Diagnose Rennweg U1, Slice S9: Die Bbox-Mitte einer gedrehten Treppe kann
-            # in einer Wand liegen (DG2 `Stair_2`), obwohl Räume die Treppe schon
-            # decken. Deckung darum an der eigenen Hülle messen (größte Hülle im Rechteck).
-            fp = max((h for h in huellen if Polygon(rect).buffer(1.0).covers(h)),
-                     key=lambda h: h.area, default=None)
-            if fp is not None:
-                if raum_union is None:
-                    raum_union = unary_union([p.buffer(0) for _r, p in polys])
-                if fp.intersection(raum_union).area / fp.area >= _ANTEIL_NEU:
-                    continue
-            raeume.append(
-                Raum(
-                    id=f"stiegenhaus_{i}",
-                    raum_typ="STIEGENHAUS",
-                    polygon_mm=rect,
-                    flaeche_m2=area,
-                    ist_fluchtweg=True,
-                    ist_communal=True,
-                )
+            continue
+        if huelle is None:
+            continue                                   # Zonenstempel, keine Treppe
+        rest = huelle.difference(raum_union)           # ungedeckter Teil der gedrehten Hülle
+        if 1.0 - rest.area / huelle.area >= _ANTEIL_NEU:
+            continue                                   # Räume decken die Treppe schon
+        teil = max(rest.geoms, key=lambda g: g.area) if hasattr(rest, "geoms") else rest
+        # größte Komponente, Außenkontur: `Raum.polygon_mm` trägt genau einen Ring.
+        polygon = [(float(x), float(y)) for x, y in teil.exterior.coords[:-1]]
+        raeume.append(
+            Raum(
+                id=f"stiegenhaus_{i}",
+                raum_typ="STIEGENHAUS",
+                polygon_mm=polygon,
+                flaeche_m2=_flaeche_m2(polygon),
+                ist_fluchtweg=True,
+                ist_communal=True,
             )
+        )
+        raum_union = unary_union([raum_union, teil])    # deckt die nächste Treppe mit
     return raeume
 
 
@@ -195,5 +205,5 @@ def typisiere_gang(raeume: list[Raum], gang_polys: list[list[XY]]) -> list[Raum]
 
 def typisiere_geometrisch(plan: DxfPlan, raeume: list[Raum]) -> list[Raum]:
     """Alle geometrischen Typ-Ableitungen: STIEGENHAUS (Treppen-Blöcke) + GANG (Fluchtweg)."""
-    raeume = typisiere_stiegenhaus(raeume, stiege_rechtecke(plan), stiege_huellen(plan))
+    raeume = typisiere_stiegenhaus(raeume, _stiege_anker(plan))
     return typisiere_gang(raeume, gang_polygone(plan))
