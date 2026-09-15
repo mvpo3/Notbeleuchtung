@@ -292,6 +292,28 @@ def test_freiflaeche_mit_moebeln_innerhalb_der_maske_bleibt_aussen():
     assert not ab.gedeckt().covers(drinnen)
 
 
+def test_durchgang_zwischen_innen_zonen_bleibt_gedeckt():
+    """Rennweg OG3: der Ausschnitt ließ 1,99 m² „offen" als Splitter in den
+    Wandöffnungen ZWISCHEN den Zonen stehen (Raumpolygone enden an den
+    Wandflächen, die Türöffnung gehört zu keinem Raum). Die Löcher in
+    ``gedeckt()`` las ``tuer_zuordnung.aussen_durchgaenge`` als Fassaden-
+    öffnung: eine Phantomtür rest_3 (STIEGENHAUS) → AUSSEN im 1,55-m-Durchgang
+    zum Zimmer, und darüber Notlicht in einer Privatwohnung
+    (tests/naht/test_soll_rennweg.py).
+    """
+    koerper = _ring_mit_luecke(0, 0, 20000, 20000)          # undichte Fassade
+    koerper += [_wk(9850, 500, 10150, 12000),               # 300-mm-Innenwand
+                _wk(9850, 13500, 10150, 19500)]             # mit 1,5-m-Durchgang
+    links = _raum("raum_1", "ZIMMER", _rect(500, 500, 9850, 19500))
+    rechts = _raum("raum_2", "ZIMMER", _rect(10150, 500, 19500, 19500))
+    plan = _grenz_plan("polyline")
+    zonen = aussenbereich.waehle_innen_zonen(plan, [links, rechts], [])
+    ab = erkenne_aussenbereiche(plan, koerper, zonen)
+    durchgang = Point(10000, 12750)                          # 0,48 m² Splitter
+    assert not any(p.covers(durchgang) for p in ab.offen), "Splitter im Durchgang"
+    assert ab.gedeckt().covers(durchgang), "Durchgang zwischen den Zonen nicht gedeckt"
+
+
 def test_zone_ausserhalb_der_gebaeudemaske_bleibt_aussen():
     """Rennweg DG2 (U9/F5): die ArchiCAD-Zone ragt 1,5 m über die Fassade —
     der Zuschnitt auf die Gebäudemaske lässt den Dachstreifen offen."""
