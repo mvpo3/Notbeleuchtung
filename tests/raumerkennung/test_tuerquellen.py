@@ -62,15 +62,19 @@ def test_aussentor_aus_bogen_an_der_kontur():
 
 
 # ── (a) Öffnung in der Außenwand ─────────────────────────────────────────────
-def test_aussen_durchgang_allgemeinraum_ohne_tuerblatt():
-    # Gang 0..6000×0..2000, rundum 600er-Wand; oben eine 1340-mm-Lücke.
+def _gang_mit_wandluecke():
+    """Gang 0..6000×0..2000, rundum 600er-Wand; oben eine 1340-mm-Lücke."""
     gang = Raum(id="g", raum_typ="GANG",
                 polygon_mm=[(0, 0), (6000, 0), (6000, 2000), (0, 2000)])
     wand = (box(-600, -600, 6600, 0)
             .union(box(-600, 0, 0, 2600)).union(box(6000, 0, 6600, 2600))
             .union(box(-600, 2000, 2000, 2600)).union(box(3340, 2000, 6600, 2600)))
-    kontur = box(-600, -600, 6600, 2600)
-    neu = aussen_durchgaenge([gang], [], wand, kontur)
+    return gang, wand, box(-600, -600, 6600, 2600)
+
+
+def test_aussen_durchgang_allgemeinraum_ohne_tuerblatt():
+    gang, wand, kontur = _gang_mit_wandluecke()
+    neu = aussen_durchgaenge([gang], [], wand, kontur, "EG")
     assert len(neu) == 1
     t = neu[0]
     assert t.ohne_tuerblatt and t.nach_raum == "AUSSEN" and t.von_raum == "g"
@@ -79,7 +83,26 @@ def test_aussen_durchgang_allgemeinraum_ohne_tuerblatt():
     # WOHNUNG-Raum: keine Tür aus der Fensteröffnung.
     zi = Raum(id="z", raum_typ="ZIMMER",
               polygon_mm=[(0, 0), (6000, 0), (6000, 2000), (0, 2000)])
-    assert aussen_durchgaenge([zi], [], wand, kontur) == []
+    assert aussen_durchgaenge([zi], [], wand, kontur, "EG") == []
+
+
+def test_aussen_durchgang_nicht_im_obergeschoss():
+    """Rennweg OG3 (Diagnose U8): die undichte Fassade lässt am Stiegenhaus eine
+    1547-mm-Lücke. Sobald S2 die Innen-Zonen deckt, ist die Kontur dort sauber
+    und die Lücke liest sich als Durchgang ins Freie — im Obergeschoss ist das
+    ein Fenster, kein Weg (Folge gemessen: Notlicht in einer Privatwohnung,
+    tests/naht/test_soll_rennweg.py). Dieselbe Geschossregel wie für
+    ``final_exit`` (ausgaenge.ohne_unzulaessige_final_exits).
+
+    UNBEKANNTes Geschoss bleibt durchlässig — anders als beim final_exit: hier
+    wöge eine fehlende EG-Tür schwerer als ein Fenster zu viel.
+    """
+    gang, wand, kontur = _gang_mit_wandluecke()
+    assert len(aussen_durchgaenge([gang], [], wand, kontur, "EG")) == 1
+    assert len(aussen_durchgaenge([gang], [], wand, kontur, "UG")) == 1
+    assert len(aussen_durchgaenge([gang], [], wand, kontur, "")) == 1
+    assert aussen_durchgaenge([gang], [], wand, kontur, "OG3") == []
+    assert aussen_durchgaenge([gang], [], wand, kontur, "DG") == []
 
 
 # ── (b) Text-Türen + Text-Typisierung ────────────────────────────────────────
