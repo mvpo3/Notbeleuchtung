@@ -265,6 +265,33 @@ def test_innen_zonen_option_4_stempel_moebel_und_aussen_vokabular():
     assert _offen((5000, -2000)), "TERRASSE mit Möbeln wurde Innen-Zone"
 
 
+def test_freiflaeche_mit_moebeln_innerhalb_der_maske_bleibt_aussen():
+    """F6 (Owner 2026-09-15): Möbel machen eine Freifläche nie innen — auch eine
+    zurückspringende Loggia/Terrasse INNERHALB des Wandrings (Rennweg OG2
+    raum_13/raum_14, DG2 raum_3) bleibt AUSSEN.
+
+    Kontrollierter Vergleich: dieselbe Geometrie mit demselben Möbel-Block,
+    einmal als ZIMMER, einmal als LOGGIA. Der ZIMMER-Lauf belegt, dass die
+    Gebäudemaske diese Fläche deckt — die Loggia bleibt also wegen der
+    Freiflächen-Regel offen, nicht wegen des Maskenzuschnitts.
+    """
+    koerper = _ring_mit_luecke(0, 0, 20000, 20000)
+    plan = _grenz_plan("polyline")
+    _setze_block(plan, "Chair 02", (10000, 10000))     # Möbel-Beleg im Polygon
+    poly = _rect(500, 500, 19500, 19500)
+    drinnen = Point(10000, 10000)
+
+    def _ab(typ):
+        raum = _raum("raum_1", typ, poly)
+        zonen = aussenbereich.waehle_innen_zonen(plan, [raum], [])
+        return erkenne_aussenbereiche(plan, koerper, zonen)
+
+    assert _ab("ZIMMER").gedeckt().covers(drinnen), "Maske deckt die Fläche nicht"
+    ab = _ab("LOGGIA")
+    assert any(p.covers(drinnen) for p in ab.offen), "Loggia mit Möbeln wurde Innen-Zone"
+    assert not ab.gedeckt().covers(drinnen)
+
+
 def test_zone_ausserhalb_der_gebaeudemaske_bleibt_aussen():
     """Rennweg DG2 (U9/F5): die ArchiCAD-Zone ragt 1,5 m über die Fassade —
     der Zuschnitt auf die Gebäudemaske lässt den Dachstreifen offen."""
