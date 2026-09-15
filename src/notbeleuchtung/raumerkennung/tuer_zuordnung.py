@@ -127,7 +127,12 @@ def durchgaenge_ohne_tuerblatt(raeume: list[Raum], tueren: list[Tuer],
     """
     if wand_union_geom is None or wand_union_geom.is_empty:
         return []
-    polys = _raum_polys(raeume)
+    from .nutzungsklasse import nutzungsklasse_fuer
+    # Diagnose Rennweg U13, Slice S5a: SCHACHT/LIFT (KEIN_RAUM) sind nicht
+    # begehbar — Paare mit so einer Seite geben keinen Durchgang. Statische Map,
+    # weil Raum.nutzungsklasse hier noch None ist (lift_* entstehen erst später).
+    polys = [x for x in _raum_polys(raeume)
+             if nutzungsklasse_fuer(x[0].raum_typ) != KEIN_RAUM]
     tuer_punkte = [t.xy_mm for t in tueren]
     out: list[Tuer] = []
     for i, (ra, pa, _) in enumerate(polys):
