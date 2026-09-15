@@ -1,4 +1,9 @@
 """geometrie_typ — STIEGENHAUS aus Treppen-Blöcken (Typisierung ohne Text-Label)."""
+import ezdxf
+from shapely.affinity import rotate, translate
+from shapely.geometry import Polygon, box
+from shapely.ops import unary_union
+
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
 from notbeleuchtung.raumerkennung.dxf_load import lade_dxf
 from notbeleuchtung.raumerkennung.geometrie_typ import (
@@ -49,6 +54,53 @@ def test_fragment_wird_nicht_typisiert_sondern_raum_angelegt():
     out = typisiere_stiegenhaus([frag], [stair])
     assert frag.raum_typ == ""               # Fragment bleibt untypisiert
     assert len(out) == 2 and any(r.raum_typ == "STIEGENHAUS" for r in out)
+
+
+# Diagnose Rennweg U1, Slice S9: gedrehte Treppe (Muster DG2 `Stair_2`), deren
+# Achs-Bbox-Mitte in einer Wand liegt.
+_WAND = "02-TWA-G00-LEG-M0"
+_TREPPE_XY, _TREPPE_GRAD = (8000.0, 3000.0), 30.0
+
+
+def _gedrehte_treppe(tmp_path):
+    """Mini-DXF (mm): Wandrechteck, Treppen-Block 3,0 × 1,2 m (Umriss + Stufen), 30° gedreht."""
+    doc = ezdxf.new(setup=True)
+    doc.header["$INSUNITS"] = 4                      # mm
+    doc.layers.add(_WAND)
+    msp = doc.modelspace()
+    ecken = [(0, 0), (20000, 0), (20000, 12000), (0, 12000)]
+    for i in range(4):
+        msp.add_line(ecken[i], ecken[(i + 1) % 4], dxfattribs={"layer": _WAND})
+    blk = doc.blocks.new("Stair_2")
+    blk.add_lwpolyline([(0, 0), (3000, 0), (3000, 1200), (0, 1200)], close=True)
+    for x in range(250, 3000, 250):
+        blk.add_line((x, 0), (x, 1200))
+    msp.add_blockref("Stair_2", _TREPPE_XY, dxfattribs={"rotation": _TREPPE_GRAD})
+    pfad = tmp_path / "treppe_gedreht.dxf"
+    doc.saveas(str(pfad))
+    return lade_dxf(pfad)
+
+
+def test_gedrehte_treppe_huelle_gedeckt_haengt_nicht_an(tmp_path):
+    """Bbox-Mitte in einer 250-mm-Wand, Hülle zu ~90 % von Räumen gedeckt → kein Anhang."""
+    plan = _gedrehte_treppe(tmp_path)
+    ((_rect, (cx, cy), _area),) = stiege_rechtecke(plan)
+    links = _raum("links", [(cx - 4000, cy - 3000), (cx - 125, cy - 3000),
+                            (cx - 125, cy + 3000), (cx - 4000, cy + 3000)])
+    rechts = _raum("rechts", [(cx + 125, cy - 3000), (cx + 4000, cy - 3000),
+                              (cx + 4000, cy + 3000), (cx + 125, cy + 3000)])
+    huelle = translate(rotate(box(0, 0, 3000, 1200), _TREPPE_GRAD, origin=(0, 0)), *_TREPPE_XY)
+    gedeckt = huelle.intersection(
+        unary_union([Polygon(links.polygon_mm), Polygon(rechts.polygon_mm)])).area / huelle.area
+    assert 0.89 < gedeckt < 0.91                     # Vorbedingung: Hülle zu ~90 % gedeckt
+    out = typisiere_geometrisch(plan, [links, rechts])
+    assert [r.id for r in out] == ["links", "rechts"]   # kein achsparalleles stiegenhaus_1
+
+
+def test_freistehende_gedrehte_treppe_haengt_an(tmp_path):
+    """Gegenprobe: dieselbe Treppe, kein Raum deckt die Hülle → STIEGENHAUS wird angehängt."""
+    out = typisiere_geometrisch(_gedrehte_treppe(tmp_path), [_raum("fern", _QUAD)])
+    assert [(r.id, r.raum_typ) for r in out] == [("fern", ""), ("stiegenhaus_1", "STIEGENHAUS")]
 
 
 _KORRIDOR = [(0.0, 0.0), (10000.0, 0.0), (10000.0, 5000.0), (0.0, 5000.0)]   # deckt (2500,2500)
