@@ -29,14 +29,18 @@ EG enthält die Slab-Union den Türschließer-Eingang (Beleg docs/OFFENE_FRAGEN.
 from __future__ import annotations
 
 import re
+from collections.abc import Sequence
 from dataclasses import dataclass, field
 from itertools import combinations
 
 from shapely.geometry import LineString, MultiPolygon, Point, Polygon
 from shapely.ops import polygonize, unary_union
 
+from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
+
 from .dxf_load import DxfPlan
 from .raumlayer import _hatch_pfad_mm
+from .stempel_anker import Zuordnung
 from .wandkoerper import Wandkoerper, finde_wandkoerper
 
 XY = tuple[float, float]
@@ -79,6 +83,41 @@ _STRASSE_LAYER = re.compile(
     r"GEHSTEIG|GEHWEG|RANDSTEIN|BORDSTEIN", re.IGNORECASE)
 _STRASSE_MM = 3000.0
 
+# ── Innen-Zonen (Diagnose Rennweg U8, Slice S2) ──────────────────────────────
+# Fachregel S-C: ein Raum liegt nie im Außenbereich. Owner-Entscheid F6
+# Option 4 (Selman, 2026-09-15): innen ist ein Raum OHNE Ausschluss mit
+# mindestens einem Grund. Vokabular und Regexe sind die der Diagnose-Metrik M2
+# — aus ArchiCAD-Blocknamen EINER Familie abgeleitet, also familienabhängig.
+_INNEN_TYPEN = frozenset({"WOHNZIMMER", "ZIMMER", "SCHLAFZIMMER", "KINDERZIMMER",
+                          "BAD", "WC", "ABSTELLRAUM", "VORRAUM", "STIEGENHAUS"})
+# Freiflächen sind nie Innen-Zone (S-C, F6). Sie werden nur NICHT geometrisch
+# ausgeschnitten — die Nutzungsklasse AUSSEN von BALKON/TERRASSE bleibt, wie
+# sie ist (F6-Zusatz unentschieden, kein Contract-Bump).
+_FREI_TYPEN = frozenset({"TERRASSE", "BALKON", "LOGGIA"})
+# Außen-Vokabular im Raumstempel schlägt jeden Grund: Möbel auf einer
+# Freifläche (Rennweg EG „HOF/Terrasse" mit runden Tischen) dürfen sie nicht
+# innen machen. Nur aus Rennweg abgeleitet — Mollgasse EIGENGARTEN/VORPLATZ
+# hängen an genau dieser Liste.
+_AUSSEN_STEMPEL = re.compile(
+    r"HOF|ZUGANG|EINFAHRT|M(Ü|UE)LLPLATZ|GARTEN|VORPLATZ", re.IGNORECASE)
+# ArchiCAD-Zonenstempel („Bad__4") sind Beschriftung, kein Einrichtungsobjekt.
+_STEMPELBLOCK = re.compile(r"__\d+$")
+_SANITAER = re.compile(
+    r"(?<![a-z])WC(?![a-z])|WASCH(BECKEN|TISCH)|DUSCH|SHOWER|WANNE|BATHTUB|URINAL|SP(Ü|UE)LE"
+    r"|(?<![a-z])SINK(?![a-z])|BIDET|TOILET", re.IGNORECASE)
+_MOEBEL = re.compile(
+    r"CHAIR|ST(U|Ü|UE)HL|TISCH|TABLE|SOFA|COUCH|BETT|(?<![a-z])BED(?![a-z])|SCHRANK|WARDROBE"
+    r"|REGAL|K(Ü|UE)CHE|KITCHEN|KOCHFELD|PANEL TV|HOME-TRAINER|HANTELBANK|LAUFBAND"
+    r"|R(Ü|UE)CKENTRAINER", re.IGNORECASE)
+_BLOCK_TIEFE = 4         # Rekursionstiefe über virtual_entities (wie M2)
+# Gebäudemaske für den Zuschnitt der Innen-Zonen: Komponenten der Wand-Union,
+# geschlossen mit diesem Radius. ponytail: Knopf, an Rennweg gemessen (Diagnose
+# B.2 — der DG2-Dachstreifen bis 1,27 m vor der Fassade bleibt draußen, alle
+# echten Innen-Zonen liegen drin). Nachmessen, wenn eine Innen-Zone offen
+# bleibt (Maske zu klein) oder ein Hof/Vorplatz gedeckt wird (zu groß), und
+# vor dem Merge auf Barawitzka/Mollgasse/Muthgasse.
+_MASKE_MM = 5000.0
+
 
 @dataclass
 class AussenBereiche:
@@ -87,12 +126,15 @@ class AussenBereiche:
     komponenten: list[Polygon] = field(default_factory=list)   # Kontur je Trakt
     offen: list[Polygon] = field(default_factory=list)         # AUSSEN
     geschlossen: list[Polygon] = field(default_factory=list)   # AUSSEN_GESCHLOSSEN
+    # Innen-Zonen (S2), auf die Gebäudemaske zugeschnitten.
+    innen: list[Polygon] = field(default_factory=list)
 
     def gedeckt(self):
         """Fläche, die für die Türzuordnung als „nicht AUSSEN" gilt:
         alle Komponenten-Konturen minus der offenen Außenflächen, plus
-        geschlossene Höfe (dort kein final_exit)."""
-        u = unary_union([*self.komponenten, *self.geschlossen])
+        geschlossene Höfe (dort kein final_exit) und die Innen-Zonen — eine
+        Zone außerhalb der Komponenten-Kontur bliebe sonst ungedeckt (S2)."""
+        u = unary_union([*self.komponenten, *self.geschlossen, *self.innen])
         if self.offen:
             u = u.difference(unary_union(self.offen))
         return u
@@ -224,9 +266,86 @@ def _strassenkante(plan: DxfPlan, rand):
     return rand.intersection(unary_union(geo).buffer(_STRASSE_MM))
 
 
+def _teilflaechen(g) -> list[Polygon]:
+    """Nicht-leere Polygon-Teile einer Geometrie (Union-/Differenz-Ergebnis)."""
+    geoms = list(g.geoms) if hasattr(g, "geoms") else [g]
+    return [p for p in geoms if p.geom_type == "Polygon" and not p.is_empty]
+
+
+def _beleg_punkte(plan: DxfPlan) -> list[XY]:
+    """Einfügepunkte (mm, WCS) aller Sanitär-/Möbel-Blöcke — rekursiv über
+    ``virtual_entities`` bis ``_BLOCK_TIEFE``, EINMAL je Plan.
+
+    Der Einfügepunkt liegt gemessen 391-836 mm neben der Block-Mitte; für die
+    Raumzugehörigkeit reicht das. Zonenstempel-Blöcke zählen nicht.
+    """
+    out: list[XY] = []
+
+    def _walk(entities, tiefe: int) -> None:
+        for e in entities:
+            if e.dxftype() != "INSERT":
+                continue
+            name = str(e.dxf.name)
+            if not _STEMPELBLOCK.search(name) and (_SANITAER.search(name)
+                                                   or _MOEBEL.search(name)):
+                try:
+                    p = e.ocs().to_wcs(e.dxf.insert)
+                except Exception:  # noqa: BLE001 — kaputte OCS-Matrix: Rohpunkt
+                    p = e.dxf.insert
+                out.append(plan._scale(p))
+            if tiefe < _BLOCK_TIEFE:
+                try:
+                    sub = list(e.virtual_entities())
+                except Exception:  # noqa: BLE001, S112 — kaputter Block killt den Walk nicht
+                    continue
+                _walk(sub, tiefe + 1)
+
+    _walk(plan.space, 0)
+    return out
+
+
+def waehle_innen_zonen(plan: DxfPlan, raeume: list[Raum],
+                       zuordnungen: Sequence[Zuordnung] = ()) -> list[Polygon]:
+    """Raumpolygone, die nie Außenbereich sein dürfen (Fachregel S-C).
+
+    Owner-Entscheid F6 Option 4 (Selman, 2026-09-15): innen ist ein Raum ohne
+    Ausschluss — Freiflächen-Typ oder Außen-Vokabular in einem zugeordneten
+    Stempel — mit mindestens einem Grund: Typ aus ``_INNEN_TYPEN``,
+    zugeordneter Raumstempel (auch untypisiert, „TV Raum") oder ein Sanitär-/
+    Möbel-Block im Polygon.
+    """
+    stempel_je_raum: dict[str, list[str]] = {}
+    for z in zuordnungen:
+        if z.raum is not None:
+            stempel_je_raum.setdefault(z.raum.id, []).append(z.stempel.name or "")
+    zonen: list[Polygon] = []
+    ohne_grund: list[Polygon] = []     # nur noch ein Block-Beleg kann sie tragen
+    for r in raeume:
+        if len(r.polygon_mm) < 3:
+            continue
+        typ = r.raum_typ or ""
+        stempel = stempel_je_raum.get(r.id, [])
+        if typ in _FREI_TYPEN or any(_AUSSEN_STEMPEL.search(n) for n in stempel):
+            continue                   # Ausschluss hat Vorrang
+        g = Polygon(r.polygon_mm).buffer(0)
+        if g.is_empty:
+            continue
+        (zonen if (typ in _INNEN_TYPEN or stempel) else ohne_grund).append(g)
+    if ohne_grund:
+        punkte = _beleg_punkte(plan)
+        zonen += [g for g in ohne_grund if any(g.covers(Point(p)) for p in punkte)]
+    return zonen
+
+
 def erkenne_aussenbereiche(plan: DxfPlan,
-                           koerper: list[Wandkoerper]) -> AussenBereiche:
-    """Außen-Analyse: Komponenten-Konturen + offene/geschlossene Außenflächen."""
+                           koerper: list[Wandkoerper],
+                           innen_zonen: list[Polygon] | None = None) -> AussenBereiche:
+    """Außen-Analyse: Komponenten-Konturen + offene/geschlossene Außenflächen.
+
+    ``innen_zonen`` (aus ``waehle_innen_zonen``): Raumpolygone, die nie AUSSEN
+    sein dürfen (S2) — sie fallen aus jedem freien Teil heraus und zählen als
+    gedeckt. Ohne das Argument bleibt das Verhalten unverändert.
+    """
     if not koerper:
         return AussenBereiche()
     # Geschlossene Wand-Union MIT Löchern — Höfe/Innenräume bleiben Löcher;
@@ -235,6 +354,15 @@ def erkenne_aussenbereiche(plan: DxfPlan,
     komponenten = _komponenten_aus(wand_zu)
     if not komponenten:
         return AussenBereiche()
+    # Diagnose Rennweg U8, Slice S2: Innen-Zonen auf die Gebäudemaske
+    # zuschneiden — eine Zone, die über die Fassade hinausragt (Rennweg DG2:
+    # Dachstreifen bis 1,27 m, U9/F5), darf den Außenraum nicht mit abdecken.
+    innen = None
+    if innen_zonen:
+        maske = _komponenten_aus(_wand_geschlossen(koerper, _MASKE_MM))
+        if maske:
+            innen = unary_union(list(innen_zonen)).intersection(unary_union(maske))
+            innen = None if innen.is_empty else innen
     # Bezug ist der Flächengrundriss bis zur Grundstücksgrenze; ohne Grenz-
     # Layer bleibt die konvexe Hülle der Fallback (Verhalten unverändert).
     grund = grundstuecksgrenze(plan, wand_zu)
@@ -243,8 +371,7 @@ def erkenne_aussenbereiche(plan: DxfPlan,
     # Raum zwischen den Trakten, Höfe (Löcher) UND Innenräume — letztere
     # filtert die Indiz-/Rand-Pflicht unten heraus.
     frei = bezug.difference(wand_zu)
-    teile = (list(frei.geoms) if hasattr(frei, "geoms")
-             else ([frei] if not frei.is_empty else []))
+    teile = _teilflaechen(frei)
 
     indizien = aussen_indizien(plan)
     rand = bezug.exterior
@@ -274,9 +401,13 @@ def erkenne_aussenbereiche(plan: DxfPlan,
         hals = t.buffer(-_HALS_MM).buffer(_HALS_MM + 20.0)
         weg_ins_freie = (not hals.is_empty and not kante.is_empty
                          and hals.distance(kante) < _RAND_EPS_MM)
-        (offen if weg_ins_freie else geschlossen).append(t)
+        ziel = offen if weg_ins_freie else geschlossen
+        # S2: Die Innen-Zonen fallen aus dem Teil heraus; die Reste erben
+        # seinen Status — ein Rest wird nie neu „offen".
+        ziel.extend(_teilflaechen(t.difference(innen)) if innen is not None else [t])
     return AussenBereiche(komponenten=komponenten, offen=offen,
-                          geschlossen=geschlossen)
+                          geschlossen=geschlossen,
+                          innen=_teilflaechen(innen) if innen is not None else [])
 
 
 # ------------------------------------------------------------ Überdachungen
