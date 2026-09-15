@@ -187,9 +187,13 @@ def _zuordnung(raum: Raum, name: str) -> Zuordnung:
                      abweichung_prozent=None, flag="ok")
 
 
-def _ring_mit_luecke(x0, y0, x1, y1, d=300.0, luecke=(8500.0, 11500.0)) -> list[Wandkoerper]:
+def _ring_mit_luecke(x0, y0, x1, y1, d=500.0, luecke=(8500.0, 11500.0)) -> list[Wandkoerper]:
     """Wand-Ring mit 3-m-Fensterlücke in der Südwand: die 1200-mm-Versiegelung
-    (`_SCHLIESS_MM`) überbrückt sie nicht — die Außenfläche fließt ins Haus."""
+    (`_SCHLIESS_MM`) überbrückt sie nicht — die Außenfläche fließt ins Haus.
+
+    500-mm-Fassade, weil erst ab dieser Dicke die 5-m-Gebäudemaske den Ring
+    über der Lücke schließt (gemessen: bei 300 mm bleibt sie offen, die Maske
+    ist dann nur das Wandband selbst)."""
     a, b = luecke
     return [
         _wk(x0, y0, a, y0 + d), _wk(b, y0, x1, y0 + d), _wk(x0, y1 - d, x1, y1),
@@ -215,7 +219,7 @@ def test_gestempelte_innenzone_hinter_fensterluecke_ist_nicht_aussen():
     3-m-Fensterlücke ist nie AUSSEN und zählt als gedeckt; die TERRASSE vor der
     Fassade bleibt offen (Freifläche, F6)."""
     koerper = _ring_mit_luecke(0, 0, 20000, 20000)
-    zimmer = _raum("raum_1", "ZIMMER", _rect(300, 300, 19700, 19700))
+    zimmer = _raum("raum_1", "ZIMMER", _rect(500, 500, 19500, 19500))
     terrasse = _raum("raum_2", "TERRASSE", _rect(2000, -4000, 8000, -300))
     plan = _grenz_plan("polyline")
     zonen = aussenbereich.waehle_innen_zonen(
@@ -234,11 +238,11 @@ def test_innen_zonen_option_4_stempel_moebel_und_aussen_vokabular():
     Außen-Vokabular im Stempel) hat Vorrang. ArchiCAD-Zonenstempel-Blöcke
     (»Dusche__4«) sind Beschriftung, kein Beleg."""
     koerper = _ring_mit_luecke(0, 0, 20000, 20000)
-    tv = _raum("raum_1", "", _rect(300, 300, 4000, 19700))         # Stempel »TV Raum«
-    hof = _raum("raum_2", "", _rect(4000, 300, 8000, 19700))       # Stempel »Hof«
-    schlaf = _raum("raum_3", "", _rect(8000, 300, 12000, 19700))   # Möbel-Beleg
-    bad = _raum("raum_4", "", _rect(12000, 300, 16000, 19700))     # Sanitär-Beleg (im Block)
-    rest = _raum("raum_5", "", _rect(16000, 300, 19700, 19700))    # nur Zonenstempel-Block
+    tv = _raum("raum_1", "", _rect(500, 500, 4000, 19500))         # Stempel »TV Raum«
+    hof = _raum("raum_2", "", _rect(4000, 500, 8000, 19500))       # Stempel »Hof«
+    schlaf = _raum("raum_3", "", _rect(8000, 500, 12000, 19500))   # Möbel-Beleg
+    bad = _raum("raum_4", "", _rect(12000, 500, 16000, 19500))     # Sanitär-Beleg (im Block)
+    rest = _raum("raum_5", "", _rect(16000, 500, 19500, 19500))    # nur Zonenstempel-Block
     terrasse = _raum("raum_6", "TERRASSE", _rect(2000, -4000, 8000, -300))
     plan = _grenz_plan("polyline")
     _setze_block(plan, "Doppelbett 01", (10000, 10000))
@@ -265,7 +269,7 @@ def test_zone_ausserhalb_der_gebaeudemaske_bleibt_aussen():
     """Rennweg DG2 (U9/F5): die ArchiCAD-Zone ragt 1,5 m über die Fassade —
     der Zuschnitt auf die Gebäudemaske lässt den Dachstreifen offen."""
     koerper = _ring_mit_luecke(0, 0, 20000, 20000)
-    zimmer = _raum("raum_1", "ZIMMER", _rect(300, -1500, 19700, 19700))
+    zimmer = _raum("raum_1", "ZIMMER", _rect(500, -1500, 19500, 19500))
     plan = _grenz_plan("polyline")
     zonen = aussenbereich.waehle_innen_zonen(plan, [zimmer], [])
     ab = erkenne_aussenbereiche(plan, koerper, zonen)
