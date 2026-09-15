@@ -403,8 +403,14 @@ def erkenne_aussenbereiche(plan: DxfPlan,
                          and hals.distance(kante) < _RAND_EPS_MM)
         ziel = offen if weg_ins_freie else geschlossen
         # S2: Die Innen-Zonen fallen aus dem Teil heraus; die Reste erben
-        # seinen Status — ein Rest wird nie neu „offen".
-        ziel.extend(_teilflaechen(t.difference(innen)) if innen is not None else [t])
+        # seinen Status — ein Rest wird nie neu „offen". Ein Rest unter der
+        # Hof-Mindestfläche ist wie jede freie Fläche darunter keine
+        # Außenfläche, sondern eine Nische: Raumpolygone enden an den
+        # Wandflächen, die Türöffnung dazwischen gehört zu keinem Raum —
+        # ohne den Deckel bleiben dort Splitter als AUSSEN stehen (Rennweg
+        # OG3 gemessen: 1,99 m² in 8 Wandöffnungen).
+        reste = _teilflaechen(t.difference(innen)) if innen is not None else [t]
+        ziel.extend(r for r in reste if r.area >= _MIN_HOF_M2 * 1e6)
     return AussenBereiche(komponenten=komponenten, offen=offen,
                           geschlossen=geschlossen,
                           innen=_teilflaechen(innen) if innen is not None else [])
