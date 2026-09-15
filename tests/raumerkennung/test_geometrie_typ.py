@@ -21,8 +21,7 @@ def _raum(rid: str, poly: list[tuple[float, float]], typ: str = "") -> Raum:
 
 
 _QUAD = [(0.0, 0.0), (5000.0, 0.0), (5000.0, 5000.0), (0.0, 5000.0)]      # 25 m²
-_STAIR = ([(1000.0, 1000.0), (3000.0, 1000.0), (3000.0, 3000.0), (1000.0, 3000.0)],
-          (2000.0, 2000.0), 4.0)
+_STAIR = ((2000.0, 2000.0), box(1000.0, 1000.0, 3000.0, 3000.0))          # Anker + Hülle 4 m²
 
 
 def test_stiege_in_echtem_raum_typisiert_diesen():
@@ -34,11 +33,10 @@ def test_stiege_in_echtem_raum_typisiert_diesen():
 
 
 def test_stiege_ohne_raum_legt_stiegenhaus_an():
-    rect = [(0.0, 0.0), (4800.0, 0.0), (4800.0, 1200.0), (0.0, 1200.0)]
-    out = typisiere_stiegenhaus([], [(rect, (2400.0, 600.0), 5.8)])
+    out = typisiere_stiegenhaus([], [((2400.0, 600.0), box(0.0, 0.0, 4800.0, 1200.0))])
     assert len(out) == 1
     assert out[0].raum_typ == "STIEGENHAUS"
-    assert out[0].flaeche_m2 == 5.8
+    assert out[0].flaeche_m2 == pytest.approx(5.76)    # Fläche der Hülle selbst
 
 
 def test_bereits_typisierter_raum_bleibt_unangetastet():
@@ -51,10 +49,11 @@ def test_bereits_typisierter_raum_bleibt_unangetastet():
 def test_fragment_wird_nicht_typisiert_sondern_raum_angelegt():
     # 0.25 m² Fragment deckt den Anker, ist aber zu klein für „echten" Raum.
     frag = _raum("f", [(0.0, 0.0), (500.0, 0.0), (500.0, 500.0), (0.0, 500.0)])
-    stair = ([(0.0, 0.0), (1000.0, 0.0), (1000.0, 1000.0), (0.0, 1000.0)], (250.0, 250.0), 1.0)
+    stair = ((250.0, 250.0), box(0.0, 0.0, 1000.0, 1000.0))
     out = typisiere_stiegenhaus([frag], [stair])
     assert frag.raum_typ == ""               # Fragment bleibt untypisiert
     assert len(out) == 2 and any(r.raum_typ == "STIEGENHAUS" for r in out)
+    assert out[-1].flaeche_m2 == pytest.approx(0.75)   # Hülle ohne das gedeckte Fragment
 
 
 # Diagnose Rennweg U1, Slice S9: gedrehte Treppe (Muster DG2 `Stair_2`), deren
