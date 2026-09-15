@@ -93,6 +93,18 @@ def test_schacht_text_schlaegt_treppenmarker():
     klein = _klein(komponenten_ohne_stempel(plan, _WAENDE_S3A, [_TUER], [_LINKS]))
     assert klein.flaeche_m2 < 3.0
     assert klein.raum_typ == "SCHACHT"
+    # SCHACHT ist KEIN_RAUM (nutzungsklasse.py) — Fluchtweg-Flag wäre falsch.
+    assert not klein.ist_fluchtweg
+    assert not klein.ist_communal
+
+
+def test_bdb_text_ist_evidenz():
+    """Zweiter Wortzweig `F?BDB|DDB`: „SCHACHTTYP" scheitert an der Wortgrenze,
+    „DDB" trägt die Evidenz allein (gemessener Mollgasse-Text)."""
+    plan = _plan(texte=[("S1.2 SCHACHTTYP A DDB 79.5/38", _SCHACHT_MITTE)],
+                 stiegen=[_SCHACHT_MITTE])
+    klein = _klein(komponenten_ohne_stempel(plan, _WAENDE_S3A, [_TUER], [_LINKS]))
+    assert klein.raum_typ == "SCHACHT"
 
 
 def test_sto_kaestchen_schlaegt_treppenmarker():
@@ -100,6 +112,8 @@ def test_sto_kaestchen_schlaegt_treppenmarker():
     plan = _plan(stiegen=[_SCHACHT_MITTE], sto=[_SCHACHT_MITTE])
     klein = _klein(komponenten_ohne_stempel(plan, _WAENDE_S3A, [_TUER], [_LINKS]))
     assert klein.raum_typ == "SCHACHT"
+    assert not klein.ist_fluchtweg
+    assert not klein.ist_communal
 
 
 def test_tuerlose_kleinflaeche_am_marker_bleibt_stiegenhaus():
@@ -117,6 +131,21 @@ def test_grosse_flaeche_mit_text_und_marker_bleibt_stiegenhaus():
     gross = max(raeume, key=lambda r: r.flaeche_m2)
     assert gross.flaeche_m2 >= 3.0
     assert gross.raum_typ == "STIEGENHAUS"
+
+
+def test_ausschlussliste_stoppt_raum_treppen_lifttexte():
+    """Ausschlussliste RAUM/TREPP/STIEG/AUFZUG/LIFT: beide Texte treffen den
+    Wortschatz („SCHACHT" bzw. „DDB") und werden erst hier gestoppt.
+
+    Kein gemessener Plan löst den Ausschluss heute aus (Rennweg UG..DG2,
+    Barawitzka/Mollgasse/Muthgasse EG: 0 Treffer) — er ist der Guard gegen
+    Treppen-/Lifttexte aus U2 (Z.478), nicht der heutige Normalfall.
+    """
+    plan = _plan(texte=[("Schacht Treppenlauf", _SCHACHT_MITTE),
+                        ("Liftschacht DDB 79/38", _SCHACHT_MITTE)],
+                 stiegen=[_SCHACHT_MITTE])
+    klein = _klein(komponenten_ohne_stempel(plan, _WAENDE_S3A, [_TUER], [_LINKS]))
+    assert klein.raum_typ == "STIEGENHAUS"
 
 
 def test_text_ohne_schacht_wortgrenze_ist_keine_evidenz():
