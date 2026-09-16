@@ -306,6 +306,29 @@ def test_zone_ausserhalb_der_gebaeudemaske_bleibt_aussen():
     assert ab.gedeckt().covers(Point(10000, 10000)), "Zone in der Maske nicht gedeckt"
 
 
+def test_maske_ueberbrueckt_den_abstand_zwischen_zwei_trakten_nicht():
+    """Gegenprobe NACH OBEN zum Maskenknopf (`_MASKE_MM`, heute 5000 mm).
+
+    Die Tests halten die Maske bisher nur nach unten fest (zu klein → Innen-Zone
+    bleibt offen). Das dokumentierte Risiko der anderen Richtung ist „Maske zu
+    groß → ein Hof/Vorplatz wird gedeckt" (Diagnose Z.1230). Hier im
+    Barawitzka-Muster: zwei Trakte mit 12 m Abstand, eine ZIMMER-Zone ragt 6 m
+    in den Zwischenraum. Mit 5000 mm bleiben es zwei Maskenkomponenten, der
+    Zwischenraum bleibt AUSSEN; ein deutlich größerer Knopf verbindet die
+    Trakte und deckt ihn mit (gemessen: bei `_MASKE_MM` = 60000 fällt genau
+    dieser Test, die vier übrigen S2-Tests bleiben grün).
+    """
+    koerper = _ring(0, 0, 20000, 20000) + _ring(32000, 0, 52000, 20000)
+    zimmer = _raum("raum_1", "ZIMMER", _rect(1500, 1500, 26000, 18500))
+    plan = _leerer_plan()
+    zonen = aussenbereich.waehle_innen_zonen(plan, [zimmer], [])
+    ab = erkenne_aussenbereiche(plan, koerper, zonen)
+    zwischen = Point(24000, 10000)      # im Zwischenraum, aber INNERHALB der Zone
+    assert any(p.covers(zwischen) for p in ab.offen), "Zwischenraum nicht mehr AUSSEN"
+    assert not ab.gedeckt().covers(zwischen), "Maske deckt den Trakt-Abstand mit"
+    assert ab.gedeckt().covers(Point(10000, 10000)), "Zone im Trakt nicht gedeckt"
+
+
 def _decke_plan(rechteck) -> DxfPlan:
     """Plan mit EINER geschlossenen Deckenfläche auf einem Decken-Layer."""
     doc = ezdxf.new()
