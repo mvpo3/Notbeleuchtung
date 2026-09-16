@@ -251,15 +251,21 @@ def erkenne_aussenbereiche(plan: DxfPlan,
     kante = _strassenkante(plan, rand)
     if kante is None:
         kante = rand           # kein Straßen-Indiz → ganzer Rand zählt
+    # Gefüllte Komponenten (+1 mm Rundung) für den Loch-Test unten.
+    komp_u = unary_union(komponenten).buffer(1.0)
     offen: list[Polygon] = []
     geschlossen: list[Polygon] = []
     for t in teile:
         if t.area < _MIN_HOF_M2 * 1e6:
             continue
         hat_indiz = any(t.covers(Point(p)) for p in indizien)
-        beruehrt_rand = t.distance(rand) < _RAND_EPS_MM
+        # Owner-Entscheid F7 (Selman, 2026-09-15): ein Loch der Komponenten
+        # berührt den Rand nie, egal wie nah (Rennweg DG1/OG3: Innenraum-
+        # Loch 193 mm vor der Hülle) — ohne Außen-Indiz ist es nie AUSSEN.
+        ist_loch = t.within(komp_u)
+        beruehrt_rand = not ist_loch and t.distance(rand) < _RAND_EPS_MM
         if not (hat_indiz or beruehrt_rand):
-            continue                      # Innenraum-Loch ohne Außen-Indiz
+            continue                      # Loch/Innenraum ohne Außen-Indiz
         # Weg ins Freie ⇔ die Fläche reicht bis an die STRASSENKANTE, also aus
         # dem Flächengrundriss heraus auf öffentlichen Grund. Ein ringsum
         # ummauerter Innenhof erreicht sie nicht → AUSSEN_GESCHLOSSEN.

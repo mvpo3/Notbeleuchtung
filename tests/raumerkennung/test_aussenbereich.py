@@ -80,6 +80,22 @@ def test_hof_ohne_indiz_bleibt_unklassifiziert():
         not p.covers(Point(15000, 15000)) for p in ab.geschlossen + ab.offen)
 
 
+def test_loch_hinter_duenner_fassade_ohne_indiz_ist_nie_aussen():
+    """Owner-Entscheid F7 (2026-09-15): Ein Loch der Komponenten ohne Außen-
+    Indiz ist nie AUSSEN, auch < 250 mm vor dem Hüllrand (Rennweg DG1:
+    Wohnzimmer-Loch 193 mm vor der Hülle wurde offen, Diagnose U7)."""
+    koerper = _ring(0, 0, 20000, 20000, d=150.0)   # 150-mm-Restbarriere zur Hülle
+    innen = Point(10000, 10000)
+    ab = erkenne_aussenbereiche(_leerer_plan(), koerper)
+    assert not any(p.covers(innen) for p in ab.offen), "Innenraum-Loch als AUSSEN offen"
+    assert not any(p.covers(innen) for p in ab.geschlossen)
+    assert ab.gedeckt().covers(innen)
+    # Gegenprobe: gleiches Loch mit Baum-Block bleibt AUSSEN.
+    ab_baum = erkenne_aussenbereiche(_leerer_plan(baum_xy=(10000, 10000)), koerper)
+    assert any(p.covers(innen) for p in ab_baum.offen + ab_baum.geschlossen), \
+        "Loch mit Außen-Indiz nicht AUSSEN"
+
+
 def test_aussen_indizien_baum_und_gruenlayer():
     plan = _leerer_plan(baum_xy=(1000, 2000),
                         gruen_linie=((0, 0), (5000, 0)))
