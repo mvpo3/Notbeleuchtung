@@ -2,9 +2,11 @@
 from __future__ import annotations
 
 import ezdxf
-from shapely.geometry import Point
+from shapely.geometry import Point, Polygon
 from shapely.ops import unary_union
 
+from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
+from notbeleuchtung.raumerkennung import aussenbereich
 from notbeleuchtung.raumerkennung.aussenbereich import (
     _SCHLIESS_MM,
     _wand_geschlossen,
@@ -15,6 +17,7 @@ from notbeleuchtung.raumerkennung.aussenbereich import (
     ueberdachungen,
 )
 from notbeleuchtung.raumerkennung.dxf_load import DxfPlan
+from notbeleuchtung.raumerkennung.stempel_anker import Stempel, Zuordnung
 from notbeleuchtung.raumerkennung.wandkoerper import Wandkoerper
 
 
@@ -165,6 +168,165 @@ def test_hof_ohne_strassenkante_bleibt_geschlossen():
 
     ab2 = erkenne_aussenbereiche(_plan(gehsteig_y=-12000), koerper)
     assert any(p.covers(hof) for p in ab2.offen), "Straßenkante im Süden nicht erkannt"
+
+
+def _rect(x0, y0, x1, y1) -> list:
+    return [(x0, y0), (x1, y0), (x1, y1), (x0, y1)]
+
+
+def _raum(rid: str, typ: str, poly: list) -> Raum:
+    return Raum(id=rid, raum_typ=typ, polygon_mm=poly,
+                flaeche_m2=Polygon(poly).area / 1e6)
+
+
+def _zuordnung(raum: Raum, name: str) -> Zuordnung:
+    """Stempel-Zuordnung der Kaskade — nur Name und Raum zählen für S2."""
+    s = Stempel(name=name, typ=None, flaeche_m2=None, belag=None,
+                position_mm=(0.0, 0.0), quelle="MTEXT", layer="text")
+    return Zuordnung(stempel=s, polygon_index=None, raum=raum,
+                     abweichung_prozent=None, flag="ok")
+
+
+def _ring_mit_luecke(x0, y0, x1, y1, d=500.0, luecke=(8500.0, 11500.0)) -> list[Wandkoerper]:
+    """Wand-Ring mit 3-m-Fensterlücke in der Südwand: die 1200-mm-Versiegelung
+    (`_SCHLIESS_MM`) überbrückt sie nicht — die Außenfläche fließt ins Haus.
+
+    500-mm-Fassade, weil erst ab dieser Dicke die 5-m-Gebäudemaske den Ring
+    über der Lücke schließt (gemessen: bei 300 mm bleibt sie offen, die Maske
+    ist dann nur das Wandband selbst)."""
+    a, b = luecke
+    return [
+        _wk(x0, y0, a, y0 + d), _wk(b, y0, x1, y0 + d), _wk(x0, y1 - d, x1, y1),
+        _wk(x0, y0, x0 + d, y1), _wk(x1 - d, y0, x1, y1),
+    ]
+
+
+def _setze_block(plan: DxfPlan, name: str, xy, wrapper: str | None = None) -> None:
+    """INSERT `name` an xy (mm) — direkt oder über einen Wrapper-Block
+    (Einfügepunkt-Rekursion über `virtual_entities`)."""
+    if name not in plan.doc.blocks:
+        plan.doc.blocks.new(name)
+    if wrapper is None:
+        plan.space.add_blockref(name, xy)
+        return
+    blk = plan.doc.blocks.new(wrapper)
+    blk.add_blockref(name, (xy[0] - 1000.0, xy[1]))
+    plan.space.add_blockref(wrapper, (1000.0, 0.0))
+
+
+def test_gestempelte_innenzone_hinter_fensterluecke_ist_nicht_aussen():
+    """Diagnose Rennweg U8, Slice S2: ein gestempeltes ZIMMER hinter einer
+    3-m-Fensterlücke ist nie AUSSEN und zählt als gedeckt; die TERRASSE vor der
+    Fassade bleibt offen (Freifläche, F6)."""
+    koerper = _ring_mit_luecke(0, 0, 20000, 20000)
+    zimmer = _raum("raum_1", "ZIMMER", _rect(500, 500, 19500, 19500))
+    terrasse = _raum("raum_2", "TERRASSE", _rect(2000, -4000, 8000, -300))
+    plan = _grenz_plan("polyline")
+    zonen = aussenbereich.waehle_innen_zonen(
+        plan, [zimmer, terrasse], [_zuordnung(zimmer, "Zimmer 18,20 m2")])
+    ab = erkenne_aussenbereiche(plan, koerper, zonen)
+    drinnen, davor = Point(10000, 10000), Point(5000, -2000)
+    assert not any(p.covers(drinnen) for p in ab.offen), "Innenzone weiter AUSSEN"
+    assert ab.gedeckt().covers(drinnen), "Innenzone nicht gedeckt"
+    assert any(p.covers(davor) for p in ab.offen), "TERRASSE vor der Fassade nicht offen"
+    assert not ab.gedeckt().covers(davor)
+
+
+def test_innen_zonen_option_4_stempel_moebel_und_aussen_vokabular():
+    """Owner-Entscheid F6 Option 4 (2026-09-15): Grund = Innen-Typ ODER
+    zugeordneter Stempel ODER Sanitär-/Möbel-Beleg; der Ausschluss (Freifläche,
+    Außen-Vokabular im Stempel) hat Vorrang. ArchiCAD-Zonenstempel-Blöcke
+    (»Dusche__4«) sind Beschriftung, kein Beleg."""
+    koerper = _ring_mit_luecke(0, 0, 20000, 20000)
+    tv = _raum("raum_1", "", _rect(500, 500, 4000, 19500))         # Stempel »TV Raum«
+    hof = _raum("raum_2", "", _rect(4000, 500, 8000, 19500))       # Stempel »Hof«
+    schlaf = _raum("raum_3", "", _rect(8000, 500, 12000, 19500))   # Möbel-Beleg
+    bad = _raum("raum_4", "", _rect(12000, 500, 16000, 19500))     # Sanitär-Beleg (im Block)
+    rest = _raum("raum_5", "", _rect(16000, 500, 19500, 19500))    # nur Zonenstempel-Block
+    terrasse = _raum("raum_6", "TERRASSE", _rect(2000, -4000, 8000, -300))
+    plan = _grenz_plan("polyline")
+    _setze_block(plan, "Doppelbett 01", (10000, 10000))
+    _setze_block(plan, "Waschbecken 01", (14000, 10000), wrapper="Bad Gruppe")
+    _setze_block(plan, "Dusche__4", (18000, 10000))
+    _setze_block(plan, "Chair 02", (5000, -2000))      # Möbel auf der Freifläche
+    zonen = aussenbereich.waehle_innen_zonen(
+        plan, [tv, hof, schlaf, bad, rest, terrasse],
+        [_zuordnung(tv, "TV Raum"), _zuordnung(hof, "Hof 23,50 m2")])
+    ab = erkenne_aussenbereiche(plan, koerper, zonen)
+
+    def _offen(xy) -> bool:
+        return any(p.covers(Point(xy)) for p in ab.offen)
+
+    assert not _offen((2000, 10000)), "untypisierter Raum mit Stempel blieb AUSSEN"
+    assert _offen((6000, 10000)), "Stempel »Hof« bekam ein Innen-Veto"
+    assert not _offen((10000, 10000)), "Möbel-Beleg ohne Wirkung"
+    assert not _offen((14000, 10000)), "Sanitär-Beleg ohne Wirkung"
+    assert _offen((18000, 10000)), "Zonenstempel-Block als Sanitär-Beleg gewertet"
+    assert _offen((5000, -2000)), "TERRASSE mit Möbeln wurde Innen-Zone"
+
+
+def test_freiflaeche_mit_moebeln_innerhalb_der_maske_bleibt_aussen():
+    """F6 (Owner 2026-09-15): Möbel machen eine Freifläche nie innen — auch eine
+    zurückspringende Loggia/Terrasse INNERHALB des Wandrings (Rennweg OG2
+    raum_13/raum_14, DG2 raum_3) bleibt AUSSEN.
+
+    Kontrollierter Vergleich: dieselbe Geometrie mit demselben Möbel-Block,
+    einmal als ZIMMER, einmal als LOGGIA. Der ZIMMER-Lauf belegt, dass die
+    Gebäudemaske diese Fläche deckt — die Loggia bleibt also wegen der
+    Freiflächen-Regel offen, nicht wegen des Maskenzuschnitts.
+    """
+    koerper = _ring_mit_luecke(0, 0, 20000, 20000)
+    plan = _grenz_plan("polyline")
+    _setze_block(plan, "Chair 02", (10000, 10000))     # Möbel-Beleg im Polygon
+    poly = _rect(500, 500, 19500, 19500)
+    drinnen = Point(10000, 10000)
+
+    def _ab(typ):
+        raum = _raum("raum_1", typ, poly)
+        zonen = aussenbereich.waehle_innen_zonen(plan, [raum], [])
+        return erkenne_aussenbereiche(plan, koerper, zonen)
+
+    assert _ab("ZIMMER").gedeckt().covers(drinnen), "Maske deckt die Fläche nicht"
+    ab = _ab("LOGGIA")
+    assert any(p.covers(drinnen) for p in ab.offen), "Loggia mit Möbeln wurde Innen-Zone"
+    assert not ab.gedeckt().covers(drinnen)
+
+
+def test_zone_ausserhalb_der_gebaeudemaske_bleibt_aussen():
+    """Rennweg DG2 (U9/F5): die ArchiCAD-Zone ragt 1,5 m über die Fassade —
+    der Zuschnitt auf die Gebäudemaske lässt den Dachstreifen offen."""
+    koerper = _ring_mit_luecke(0, 0, 20000, 20000)
+    zimmer = _raum("raum_1", "ZIMMER", _rect(500, -1500, 19500, 19500))
+    plan = _grenz_plan("polyline")
+    zonen = aussenbereich.waehle_innen_zonen(plan, [zimmer], [])
+    ab = erkenne_aussenbereiche(plan, koerper, zonen)
+    streifen = Point(5000, -800)
+    assert any(p.covers(streifen) for p in ab.offen), "Dachstreifen nicht mehr AUSSEN"
+    assert not ab.gedeckt().covers(streifen), "Zone außerhalb der Maske gedeckt"
+    assert ab.gedeckt().covers(Point(10000, 10000)), "Zone in der Maske nicht gedeckt"
+
+
+def test_maske_ueberbrueckt_den_abstand_zwischen_zwei_trakten_nicht():
+    """Gegenprobe NACH OBEN zum Maskenknopf (`_MASKE_MM`, heute 5000 mm).
+
+    Die Tests halten die Maske bisher nur nach unten fest (zu klein → Innen-Zone
+    bleibt offen). Das dokumentierte Risiko der anderen Richtung ist „Maske zu
+    groß → ein Hof/Vorplatz wird gedeckt" (Diagnose Z.1230). Hier im
+    Barawitzka-Muster: zwei Trakte mit 12 m Abstand, eine ZIMMER-Zone ragt 6 m
+    in den Zwischenraum. Mit 5000 mm bleiben es zwei Maskenkomponenten, der
+    Zwischenraum bleibt AUSSEN; ein deutlich größerer Knopf verbindet die
+    Trakte und deckt ihn mit (gemessen: bei `_MASKE_MM` = 60000 fällt genau
+    dieser Test, die vier übrigen S2-Tests bleiben grün).
+    """
+    koerper = _ring(0, 0, 20000, 20000) + _ring(32000, 0, 52000, 20000)
+    zimmer = _raum("raum_1", "ZIMMER", _rect(1500, 1500, 26000, 18500))
+    plan = _leerer_plan()
+    zonen = aussenbereich.waehle_innen_zonen(plan, [zimmer], [])
+    ab = erkenne_aussenbereiche(plan, koerper, zonen)
+    zwischen = Point(24000, 10000)      # im Zwischenraum, aber INNERHALB der Zone
+    assert any(p.covers(zwischen) for p in ab.offen), "Zwischenraum nicht mehr AUSSEN"
+    assert not ab.gedeckt().covers(zwischen), "Maske deckt den Trakt-Abstand mit"
+    assert ab.gedeckt().covers(Point(10000, 10000)), "Zone im Trakt nicht gedeckt"
 
 
 def _decke_plan(rechteck) -> DxfPlan:

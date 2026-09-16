@@ -175,6 +175,13 @@ def aussen_durchgaenge(raeume: list[Raum], tueren: list[Tuer],
     Kontaktzone = Raum-Puffer ∩ Außenring (2 m um die gedeckte Kontur),
     minus Wandkörper. Nur ALLGEMEIN-Räume (Rennweg-EG-Muster: Rampenkorridor
     mit 1340-mm-Lücke) — Wohnungs-Fensteröffnungen bleiben draußen.
+
+    OFFEN (Diagnose U8, Slice S5c Z.1271-1274, Frage F8 Z.1406): Sobald S2 die
+    Innen-Zonen deckt, liest diese Funktion am Rennweg OG3 eine 1547-mm-Lücke
+    in der Stiegenhausfassade als Weg ins Freie (gemessene Folge: Notlicht in
+    einer Privatwohnung). Ob eine Fassadenlücke im Obergeschoss ein Fenster
+    oder ein Durchgang ist, entscheidet F8; das Querungskriterium dafür gehört
+    zu S5c. S2 nimmt weder das eine noch das andere vorweg.
     """
     if (wand_union_geom is None or wand_union_geom.is_empty
             or kontur is None or kontur.is_empty):
