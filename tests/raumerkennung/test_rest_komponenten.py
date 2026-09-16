@@ -1,8 +1,14 @@
-"""Tests rest_komponenten — synthetische Wandkörper, keine DXF nötig."""
+"""Tests rest_komponenten — synthetische Wandkörper, keine DXF-Datei nötig.
+
+Die Typ-Marker (Treppen-Insert, Schacht-Text, STO-Kästchen) kommen aus einem
+In-Memory-``DxfPlan`` (factor 1.0 → Plan-Koordinaten sind mm).
+"""
 from __future__ import annotations
 
+import ezdxf
 from shapely.geometry import Point, Polygon
 
+from notbeleuchtung.raumerkennung.dxf_load import XY, DxfPlan
 from notbeleuchtung.raumerkennung.rest_komponenten import komponenten_ohne_stempel
 from notbeleuchtung.raumerkennung.tueren import TuerOeffnung
 from notbeleuchtung.raumerkennung.wandkoerper import Wandkoerper
@@ -27,6 +33,39 @@ _TUER = TuerOeffnung(xy_mm=(4000.0, 1950.0), breite_mm=900.0,
                      winkel_grad=None, quelle="block")
 _LINKS = [(200.0, 200.0), (3900.0, 200.0), (3900.0, 3800.0), (200.0, 3800.0)]
 
+# S3a-Layout: wie oben, aber die Schacht-Box misst innen 1.4 × 0.9 m (≈1.2 m²,
+# Muster Rennweg DG2 `rest_2` mit 1,16 m²).
+_WAENDE_S3A = _WAENDE[:6] + [
+    _wk(5500, 1500, 7100, 1600), _wk(5500, 2500, 7100, 2600),
+    _wk(5500, 1500, 5600, 2600), _wk(7000, 1500, 7100, 2600),
+]
+_SCHACHT_MITTE: XY = (6300.0, 2050.0)      # Mitte der Schacht-Box
+_IM_GROSSEN_REST: XY = (4500.0, 3000.0)    # im rechten Raum, außerhalb der Box
+
+
+def _plan(texte: list[tuple[str, XY]] | None = None,
+          stiegen: list[XY] | None = None, sto: list[XY] | None = None) -> DxfPlan:
+    """In-Memory-Plan mit den Typ-Markern (Wände kommen als ``Wandkoerper``)."""
+    doc = ezdxf.new(setup=True)
+    msp = doc.modelspace()
+    for txt, xy in texte or []:
+        msp.add_text(txt, dxfattribs={"insert": xy})
+    if stiegen:
+        doc.blocks.new("STIEGE_1")
+        for xy in stiegen:
+            msp.add_blockref("STIEGE_1", xy)
+    if sto:
+        doc.layers.add("04-STO")
+        for x, y in sto:
+            msp.add_lwpolyline([(x - 100, y - 100), (x + 100, y - 100),
+                                (x + 100, y + 100), (x - 100, y + 100)],
+                               close=True, dxfattribs={"layer": "04-STO"})
+    return DxfPlan(doc=doc, space=msp, factor=1.0)
+
+
+def _klein(raeume):
+    return min(raeume, key=lambda r: r.flaeche_m2)
+
 
 def test_rest_findet_rechten_raum_und_schacht():
     raeume = komponenten_ohne_stempel(None, _WAENDE, [_TUER], [_LINKS])
@@ -44,3 +83,75 @@ def test_rest_findet_rechten_raum_und_schacht():
 
 def test_ohne_waende_leer():
     assert komponenten_ohne_stempel(None, [], [], []) == []
+
+
+# --- S3a: Schacht-Evidenz vor der Treppenmarker-Regel (Diagnose Rennweg U2) ---
+
+def test_schacht_text_schlaegt_treppenmarker():
+    """DG2 `rest_2`: „DBA SCHACHT" im Polygon, Treppenmarker 700 mm daneben."""
+    plan = _plan(texte=[("DBA SCHACHT", _SCHACHT_MITTE)], stiegen=[(7700.0, 2050.0)])
+    klein = _klein(komponenten_ohne_stempel(plan, _WAENDE_S3A, [_TUER], [_LINKS]))
+    assert klein.flaeche_m2 < 3.0
+    assert klein.raum_typ == "SCHACHT"
+    # SCHACHT ist KEIN_RAUM (nutzungsklasse.py) — Fluchtweg-Flag wäre falsch.
+    assert not klein.ist_fluchtweg
+    assert not klein.ist_communal
+
+
+def test_bdb_text_ist_evidenz():
+    """Zweiter Wortzweig `F?BDB|DDB`: „SCHACHTTYP" scheitert an der Wortgrenze,
+    „DDB" trägt die Evidenz allein (gemessener Mollgasse-Text)."""
+    plan = _plan(texte=[("S1.2 SCHACHTTYP A DDB 79.5/38", _SCHACHT_MITTE)],
+                 stiegen=[_SCHACHT_MITTE])
+    klein = _klein(komponenten_ohne_stempel(plan, _WAENDE_S3A, [_TUER], [_LINKS]))
+    assert klein.raum_typ == "SCHACHT"
+
+
+def test_sto_kaestchen_schlaegt_treppenmarker():
+    """Zweiter Evidenz-Zweig: STO-Kästchen im Polygon, Marker mitten drin."""
+    plan = _plan(stiegen=[_SCHACHT_MITTE], sto=[_SCHACHT_MITTE])
+    klein = _klein(komponenten_ohne_stempel(plan, _WAENDE_S3A, [_TUER], [_LINKS]))
+    assert klein.raum_typ == "SCHACHT"
+    assert not klein.ist_fluchtweg
+    assert not klein.ist_communal
+
+
+def test_tuerlose_kleinflaeche_am_marker_bleibt_stiegenhaus():
+    """Ohne Planzeichen bleibt die Markerregel vorn (Liftringe; S3b/F4 offen)."""
+    plan = _plan(stiegen=[_SCHACHT_MITTE])
+    klein = _klein(komponenten_ohne_stempel(plan, _WAENDE_S3A, [_TUER], [_LINKS]))
+    assert klein.flaeche_m2 < 3.0
+    assert klein.raum_typ == "STIEGENHAUS"
+
+
+def test_grosse_flaeche_mit_text_und_marker_bleibt_stiegenhaus():
+    """Deckelung < 3 m²: der Treppenlauf bleibt STIEGENHAUS trotz Schacht-Text."""
+    plan = _plan(texte=[("DBA SCHACHT", _IM_GROSSEN_REST)], stiegen=[_IM_GROSSEN_REST])
+    raeume = komponenten_ohne_stempel(plan, _WAENDE_S3A, [_TUER], [_LINKS])
+    gross = max(raeume, key=lambda r: r.flaeche_m2)
+    assert gross.flaeche_m2 >= 3.0
+    assert gross.raum_typ == "STIEGENHAUS"
+
+
+def test_ausschlussliste_stoppt_raum_treppen_lifttexte():
+    """Ausschlussliste RAUM/TREPP/STIEG/AUFZUG/LIFT: beide Texte treffen den
+    Wortschatz („SCHACHT" bzw. „DDB") und werden erst hier gestoppt.
+
+    Kein gemessener Plan löst den Ausschluss heute aus (Rennweg UG..DG2,
+    Barawitzka/Mollgasse/Muthgasse EG: 0 Treffer) — er ist der Guard gegen
+    Treppen-/Lifttexte aus U2 (Z.478), nicht der heutige Normalfall.
+    """
+    plan = _plan(texte=[("Schacht Treppenlauf", _SCHACHT_MITTE),
+                        ("Liftschacht DDB 79/38", _SCHACHT_MITTE)],
+                 stiegen=[_SCHACHT_MITTE])
+    klein = _klein(komponenten_ohne_stempel(plan, _WAENDE_S3A, [_TUER], [_LINKS]))
+    assert klein.raum_typ == "STIEGENHAUS"
+
+
+def test_text_ohne_schacht_wortgrenze_ist_keine_evidenz():
+    """Negativ: „DBA" allein, „DBA Raum" und „Schachtverzug" sind kein Planzeichen."""
+    plan = _plan(texte=[("DBA", _SCHACHT_MITTE), ("DBA Raum", _SCHACHT_MITTE),
+                        ("Schachtverzug im Zimmer", _SCHACHT_MITTE)],
+                 stiegen=[_SCHACHT_MITTE])
+    klein = _klein(komponenten_ohne_stempel(plan, _WAENDE_S3A, [_TUER], [_LINKS]))
+    assert klein.raum_typ == "STIEGENHAUS"
