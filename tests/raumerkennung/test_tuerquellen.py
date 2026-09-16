@@ -62,14 +62,23 @@ def test_aussentor_aus_bogen_an_der_kontur():
 
 
 # ── (a) Öffnung in der Außenwand ─────────────────────────────────────────────
-def test_aussen_durchgang_allgemeinraum_ohne_tuerblatt():
-    # Gang 0..6000×0..2000, rundum 600er-Wand; oben eine 1340-mm-Lücke.
+def _gang_mit_wandluecke():
+    """Gang 0..6000×0..2000, rundum 600er-Wand; oben eine 1340-mm-Lücke."""
     gang = Raum(id="g", raum_typ="GANG",
                 polygon_mm=[(0, 0), (6000, 0), (6000, 2000), (0, 2000)])
     wand = (box(-600, -600, 6600, 0)
             .union(box(-600, 0, 0, 2600)).union(box(6000, 0, 6600, 2600))
             .union(box(-600, 2000, 2000, 2600)).union(box(3340, 2000, 6600, 2600)))
-    kontur = box(-600, -600, 6600, 2600)
+    return gang, wand, box(-600, -600, 6600, 2600)
+
+
+def test_aussen_durchgang_allgemeinraum_ohne_tuerblatt():
+    """Die Signatur trägt KEIN Geschoss: die Geschossregel für Wandöffnungen
+    (»im Obergeschoss ist eine Fassadenlücke ein Fenster«) ist ein eigener
+    Concern — Diagnose Z.1271-1274 weist ``aussen_durchgaenge`` dem Slice S5c
+    zu, und F8 (Z.1406, »Soll jede Wandöffnung geschlossen werden?«) ist
+    unentschieden. S2 entscheidet sie nicht vor."""
+    gang, wand, kontur = _gang_mit_wandluecke()
     neu = aussen_durchgaenge([gang], [], wand, kontur)
     assert len(neu) == 1
     t = neu[0]
