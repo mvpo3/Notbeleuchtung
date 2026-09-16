@@ -1,0 +1,97 @@
+{
+  "plan": "DG2 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12",
+  "projekt": "Rennweg",
+  "dxf": "_arbeit/eingang_rennweg_v2/Rennweg/DG2 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf",
+  "sha256": "b38a0dc930806f654dadc08d35ad7c865da3919659e98d3fc6fa8940779cb6e2",
+  "bytes": 4109875,
+  "commit": "59583ff",
+  "version": "v2",
+  "datum": "2026-09-16",
+  "slices": [
+    "S1",
+    "S2",
+    "S5a",
+    "S3a",
+    "S9"
+  ],
+  "status": "ok",
+  "raeume_gesamt": 13,
+  "raeume_je_typ": {
+    "VORRAUM": 3,
+    "STIEGENHAUS": 3,
+    "ZIMMER": 2,
+    "SCHACHT": 2,
+    "TERRASSE": 1,
+    "BAD": 1,
+    "LIFT": 1
+  },
+  "raeume_unbekannt": 0,
+  "raeume_mit_stempel": 7,
+  "stempel_abweichung_gt10": 0,
+  "wohnungen": 1,
+  "raeume_je_wohnung": {
+    "top_1": 4
+  },
+  "schaechte_erkannt": 2,
+  "raeume_nische": 0,
+  "aussen_ueberlagerung_kanon": 3,
+  "aussen_ueberlagerung_kanon_liste": [
+    {
+      "id": "raum_2",
+      "typ": "ZIMMER",
+      "flaeche_m2": 59.28,
+      "schnitt_offen_m2": 4.65,
+      "schnitt_geschlossen_m2": 0.0
+    },
+    {
+      "id": "raum_4",
+      "typ": "BAD",
+      "flaeche_m2": 24.0,
+      "schnitt_offen_m2": 1.28,
+      "schnitt_geschlossen_m2": 0.0
+    },
+    {
+      "id": "rest_5",
+      "typ": "SCHACHT",
+      "flaeche_m2": 1.42,
+      "schnitt_offen_m2": 0.08,
+      "schnitt_geschlossen_m2": 0.0
+    }
+  ],
+  "kontext": {
+    "raeume_ohne_polygon": 0,
+    "raeume_ohne_label": 0,
+    "raeume_nicht_gezeigt": 0,
+    "stempel_gesamt": 7,
+    "stempel_ohne_raum": 0,
+    "stempel_nicht_im_zugeordneten_raum": 0,
+    "stempel_raum_nicht_im_endmodell": 0,
+    "stempel_flags": {
+      "ok": 7
+    },
+    "raeume_mit_mehreren_stempeln": 0,
+    "zuordnung_quelle": "Erkennung (KaskadeErgebnis.zuordnungen, 7 Stempel)",
+    "geschoss": "DG",
+    "geschoss_quelle": "dateiname",
+    "kein_gebaeudeumriss": false,
+    "aussen_offen": 2,
+    "aussen_geschlossen": 0,
+    "rotation": "Rotation: keine dominante Kantenrichtung — 0° belassen."
+  },
+  "bilder": [
+    {
+      "datei": "uebersicht.png",
+      "px": [
+        3199,
+        2988
+      ],
+      "raeume": 13,
+      "ohne_label": 0
+    }
+  ],
+  "laufzeit_s": {
+    "erkennung": 12.6,
+    "zeichnen": 3.3,
+    "gesamt": 15.9
+  }
+}
