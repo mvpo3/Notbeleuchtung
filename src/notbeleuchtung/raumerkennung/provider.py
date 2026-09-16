@@ -141,8 +141,7 @@ class ArchitekturRaumProvider:
         if k.wandkoerper:
             wu = wand_union(k.wandkoerper)
             tueren = tueren + durchgaenge_ohne_tuerblatt(raeume, tueren, wu)
-            tueren = tueren + aussen_durchgaenge(raeume, tueren, wu, kontur,
-                                                 geschoss)
+            tueren = tueren + aussen_durchgaenge(raeume, tueren, wu, kontur)
         for s in zirkulation.segmente:      # 09-WEG = explizite Linien
             s.quelle = "LINIE"
         flw_enden = [p for s in zirkulation.segmente

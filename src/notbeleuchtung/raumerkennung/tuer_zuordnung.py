@@ -167,7 +167,7 @@ _AUSSEN_DURCHGANG_MAX_MM = 2600.0  # breiter = Fassaden-Artefakt, keine Tür
 
 
 def aussen_durchgaenge(raeume: list[Raum], tueren: list[Tuer],
-                       wand_union_geom, kontur, geschoss: str) -> list[Tuer]:
+                       wand_union_geom, kontur) -> list[Tuer]:
     """Öffnungen > 800 mm in der Außenwand eines ALLGEMEIN-Raums ohne
     Bogen/Block → ``Tuer(ohne_tuerblatt=True, nach_raum=AUSSEN)``.
 
@@ -176,18 +176,13 @@ def aussen_durchgaenge(raeume: list[Raum], tueren: list[Tuer],
     minus Wandkörper. Nur ALLGEMEIN-Räume (Rennweg-EG-Muster: Rampenkorridor
     mit 1340-mm-Lücke) — Wohnungs-Fensteröffnungen bleiben draußen.
 
-    ``geschoss``: dieselbe Regel wie für ``final_exit``
-    (``ausgaenge.ohne_unzulaessige_final_exits``) — Obergeschosse haben keinen
-    Weg ins Freie, eine Lücke in ihrer Fassade ist ein Fenster. Rennweg OG3
-    gemessen: 1547-mm-Lücke in der Stiegenhausfassade (Diagnose U8), die als
-    Durchgang Notlicht in eine Privatwohnung gezogen hat. UNBEKANNTes Geschoss
-    bleibt durchlässig — anders als beim ``final_exit``: dort ist „kein
-    Ausgang" fail closed, hier wöge eine fehlende EG-Tür schwerer als ein
-    Fenster zu viel.
+    OFFEN (Diagnose U8, Slice S5c Z.1271-1274, Frage F8 Z.1406): Sobald S2 die
+    Innen-Zonen deckt, liest diese Funktion am Rennweg OG3 eine 1547-mm-Lücke
+    in der Stiegenhausfassade als Weg ins Freie (gemessene Folge: Notlicht in
+    einer Privatwohnung). Ob eine Fassadenlücke im Obergeschoss ein Fenster
+    oder ein Durchgang ist, entscheidet F8; das Querungskriterium dafür gehört
+    zu S5c. S2 nimmt weder das eine noch das andere vorweg.
     """
-    from .geschoss import geschoss_bekannt, ist_obergeschoss
-    if geschoss_bekannt(geschoss) and ist_obergeschoss(geschoss):
-        return []
     if (wand_union_geom is None or wand_union_geom.is_empty
             or kontur is None or kontur.is_empty):
         return []
