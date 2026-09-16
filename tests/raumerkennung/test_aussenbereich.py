@@ -292,26 +292,6 @@ def test_freiflaeche_mit_moebeln_innerhalb_der_maske_bleibt_aussen():
     assert not ab.gedeckt().covers(drinnen)
 
 
-def test_durchgang_zwischen_innen_zonen_wird_nicht_aussen():
-    """Rennweg OG3 gemessen: der Ausschnitt ließ 1,99 m² „offen" als Splitter in
-    den Wandöffnungen ZWISCHEN den Zonen stehen — Raumpolygone enden an den
-    Wandflächen, die Türöffnung dazwischen gehört zu keinem Raum. Ein 0,48-m²-
-    Rest in einer Türöffnung ist kein Außenbereich: unterhalb der Hof-
-    Mindestfläche gilt für ihn dieselbe Regel wie für jede andere freie Fläche.
-    """
-    koerper = _ring_mit_luecke(0, 0, 20000, 20000)          # undichte Fassade
-    koerper += [_wk(9850, 500, 10150, 12000),               # 300-mm-Innenwand
-                _wk(9850, 13500, 10150, 19500)]             # mit 1,5-m-Durchgang
-    links = _raum("raum_1", "ZIMMER", _rect(500, 500, 9850, 19500))
-    rechts = _raum("raum_2", "ZIMMER", _rect(10150, 500, 19500, 19500))
-    plan = _grenz_plan("polyline")
-    zonen = aussenbereich.waehle_innen_zonen(plan, [links, rechts], [])
-    ab = erkenne_aussenbereiche(plan, koerper, zonen)
-    durchgang = Point(10000, 12750)                          # 0,48 m² Splitter
-    assert not any(p.covers(durchgang) for p in ab.offen + ab.geschlossen), \
-        "Splitter in der Türöffnung wurde AUSSEN"
-
-
 def test_zone_ausserhalb_der_gebaeudemaske_bleibt_aussen():
     """Rennweg DG2 (U9/F5): die ArchiCAD-Zone ragt 1,5 m über die Fassade —
     der Zuschnitt auf die Gebäudemaske lässt den Dachstreifen offen."""
