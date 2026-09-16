@@ -1,6 +1,7 @@
 """tuer_zuordnung — von_raum/nach_raum aus Probepunkten beidseits der Sehne."""
 from __future__ import annotations
 
+import pytest
 from shapely.geometry import Polygon, box
 
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum, Tuer
@@ -51,6 +52,22 @@ def test_durchgang_ohne_tuerblatt():
     (d,) = durchgaenge_ohne_tuerblatt(raeume, [], wand)
     assert d.ohne_tuerblatt and d.breite_mm > 800
     assert {d.von_raum, d.nach_raum} == {"a", "b"}
+
+
+@pytest.mark.parametrize(("typ_a", "typ_b", "anzahl"), [
+    ("ZIMMER", "SCHACHT", 0),
+    ("LIFT", "GANG", 0),       # gestempelter LIFT, KEIN_RAUM auf der a-Seite
+    ("ZIMMER", "ZIMMER", 1),   # Gegenprobe: gleiche Kante bleibt Durchgang
+])
+def test_kein_durchgang_an_kein_raum(typ_a, typ_b, anzahl):
+    # Diagnose Rennweg U13, Slice S5a: SCHACHT/LIFT (Klasse KEIN_RAUM) sind
+    # nicht begehbar. 200-mm-Wand mit 1,2-m-Lücke, gemeinsame Kante 2 m, keine
+    # bekannte Tür; Raum.nutzungsklasse ist an dieser Stelle noch None.
+    raeume = [_raum("a", 0, 0, 5000, 4000, typ_a),
+              _raum("b", 5200, 1000, 6700, 3000, typ_b)]
+    assert all(r.nutzungsklasse is None for r in raeume)
+    wand = box(5000, 0, 5200, 1400).union(box(5000, 2600, 5200, 4000))
+    assert len(durchgaenge_ohne_tuerblatt(raeume, [], wand)) == anzahl
 
 
 def test_durchgang_nicht_wo_tuer_ist():
