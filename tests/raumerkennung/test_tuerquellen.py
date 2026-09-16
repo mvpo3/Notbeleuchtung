@@ -73,8 +73,13 @@ def _gang_mit_wandluecke():
 
 
 def test_aussen_durchgang_allgemeinraum_ohne_tuerblatt():
+    """Die Signatur trägt KEIN Geschoss: die Geschossregel für Wandöffnungen
+    (»im Obergeschoss ist eine Fassadenlücke ein Fenster«) ist ein eigener
+    Concern — Diagnose Z.1271-1274 weist ``aussen_durchgaenge`` dem Slice S5c
+    zu, und F8 (Z.1406, »Soll jede Wandöffnung geschlossen werden?«) ist
+    unentschieden. S2 entscheidet sie nicht vor."""
     gang, wand, kontur = _gang_mit_wandluecke()
-    neu = aussen_durchgaenge([gang], [], wand, kontur, "EG")
+    neu = aussen_durchgaenge([gang], [], wand, kontur)
     assert len(neu) == 1
     t = neu[0]
     assert t.ohne_tuerblatt and t.nach_raum == "AUSSEN" and t.von_raum == "g"
@@ -83,26 +88,7 @@ def test_aussen_durchgang_allgemeinraum_ohne_tuerblatt():
     # WOHNUNG-Raum: keine Tür aus der Fensteröffnung.
     zi = Raum(id="z", raum_typ="ZIMMER",
               polygon_mm=[(0, 0), (6000, 0), (6000, 2000), (0, 2000)])
-    assert aussen_durchgaenge([zi], [], wand, kontur, "EG") == []
-
-
-def test_aussen_durchgang_nicht_im_obergeschoss():
-    """Rennweg OG3 (Diagnose U8): die undichte Fassade lässt am Stiegenhaus eine
-    1547-mm-Lücke. Sobald S2 die Innen-Zonen deckt, ist die Kontur dort sauber
-    und die Lücke liest sich als Durchgang ins Freie — im Obergeschoss ist das
-    ein Fenster, kein Weg (Folge gemessen: Notlicht in einer Privatwohnung,
-    tests/naht/test_soll_rennweg.py). Dieselbe Geschossregel wie für
-    ``final_exit`` (ausgaenge.ohne_unzulaessige_final_exits).
-
-    UNBEKANNTes Geschoss bleibt durchlässig — anders als beim final_exit: hier
-    wöge eine fehlende EG-Tür schwerer als ein Fenster zu viel.
-    """
-    gang, wand, kontur = _gang_mit_wandluecke()
-    assert len(aussen_durchgaenge([gang], [], wand, kontur, "EG")) == 1
-    assert len(aussen_durchgaenge([gang], [], wand, kontur, "UG")) == 1
-    assert len(aussen_durchgaenge([gang], [], wand, kontur, "")) == 1
-    assert aussen_durchgaenge([gang], [], wand, kontur, "OG3") == []
-    assert aussen_durchgaenge([gang], [], wand, kontur, "DG") == []
+    assert aussen_durchgaenge([zi], [], wand, kontur) == []
 
 
 # ── (b) Text-Türen + Text-Typisierung ────────────────────────────────────────
