@@ -1523,7 +1523,14 @@ ArchiCAD-Türblock** als Tür erkannt (Ursache U12 der Diagnose, Slice S4a).
 ohne Türblatt" ausgibt (Lesart A: eine Verbindung ist eine Verbindung), oder erst, wenn
 sie eine Tür mit Türblatt ist (Lesart B: „Türverbindung" = erkannte Tür)?
 
-Bis zur Antwort steht M17-04-c im Gate als **NICHT_MESSBAR** (nie PASS bei Mehrdeutigkeit);
-die Gate-Regel wertet den späteren Übergang NICHT_MESSBAR → NICHT_BESTANDEN nicht als
-Verstoß. Nach Lesart B wäre der Fall heute NICHT_BESTANDEN und würde erst mit S4a (Türblöcke)
-bestehen können.
+**Entschieden (Enis, 2026-09-18, über Selman): Lesart B.** Die Referenz meint die
+tatsächliche Türöffnung an O zwischen WC und privatem Vorraum, basierend auf dem
+ArchiCAD-Türblock `Zargentür_1_Fl 10[9]`. `durchgang_21` zählt nicht — er ist synthetisch
+ohne Türblatt und liegt 534 mm von O entfernt. Folgen: M17-04-c in der Nullmessung auf
+`f15d03f` **NICHT_BESTANDEN** (Bilanz 16 / 2 / 0); Gate-Regel: für den Merge des Türstapels
+müssen **beide** roten Fälle drehen (M17-02-b und M17-04-c), die übrigen 16 dürfen nicht
+regressieren (`docs/GATE_TUERSTAPEL.md`). Die Referenz selbst bleibt unverändert.
+
+**Weiter offen (bewusst nicht pauschal entschieden):** ob ein Durchgang ohne Türblatt
+*anderswo* — außerhalb dieses Falls — als Türverbindung gelten kann. Das wird je Fall
+entschieden, nicht per Regel.

@@ -13,7 +13,7 @@ Türpunkte der Erkennung), nie auf exportierten/gerundeten Werten. Toleranzen:
 Die technische ``wand_union`` (Fugenschluss mit 25-mm-Puffer) ist kein Urteil,
 sie läuft nur als Messwert ``in_wand_union_technisch`` mit.
 
-Zwei Stellen sind bewusst STRENGER bzw. enger als die Referenz:
+Drei Stellen sind bewusst STRENGER bzw. enger als die Referenz:
 
 * ``physical_wall_covers_probe`` mit ``expected=true`` verlangt hier IMMER
   zusätzlich „kein Raumpolygon deckt die Sonde". Die Referenz fordert das nur
@@ -23,6 +23,13 @@ Zwei Stellen sind bewusst STRENGER bzw. enger als die Referenz:
 * ``direct_portal_in_probe_segment`` fragt geometrisch (Tür im clip und nah an
   der markierten Wand), nicht über ``von_raum``/``nach_raum`` — eine Öffnung
   verschwindet sonst allein dadurch, dass eine Tür anders beschriftet wird.
+* ``distinct_rooms_connected_by_door`` gilt in LESART B (Entscheidung Enis,
+  2026-09-18): „Türverbindung" ist NUR eine Verbindung MIT Türblatt (die
+  tatsächliche Türöffnung aus dem ArchiCAD-Türblock). Ein synthetischer
+  Durchgang ohne Türblatt zählt nicht; er bleibt als Messwert
+  ``ohne_tuerblatt`` stehen (Dubletten-Kandidat für S4b), entscheidet den
+  Status aber nicht. Ob ein Durchgang ohne Türblatt ANDERSWO als Türverbindung
+  gelten kann, ist damit nicht entschieden (Doku).
 
 Die Referenz selbst liegt AUSSERHALB des Repos (Übergabepaket) und wird zur
 Laufzeit gelesen (``referenz_pfad``). Rangfolge der Suche:
@@ -329,22 +336,26 @@ class _Messer:
             if t.breite_mm is not None and abstand > float(t.breite_mm) / 2:
                 continue
             verb.append({**self._tuer_info(t), "abstand_zu_O_mm": round(abstand)})
-        mw = {"raum_a": ra, "raum_b": rb, "sonde": oname, "verbindungen": verb}
-        if len(verb) != 1:
-            return "NICHT_BESTANDEN", (
-                f"{len(verb)} Verbindung(en) zwischen {ra} und {rb} an Sonde {oname} im "
-                "markierten Stück, erwartet: genau eine"), mw
-        eine = verb[0]
-        if eine["ohne_tuerblatt"]:
-            return "NICHT_MESSBAR", (
-                "Referenz mehrdeutig (Frage an Enis in docs/OFFENE_FRAGEN.md): einzige "
-                f"Verbindung {eine['id']} ist ein Durchgang ohne Türblatt "
-                f"({eine['breite_mm']} mm, tuer_detail {eine['tuer_detail']}, "
-                f"{eine['abstand_zu_O_mm']} mm von {oname}); zählt das als "
-                "'Türverbindung'?"), mw
-        return "BESTANDEN", (
-            f"genau eine Türverbindung {eine['id']} zwischen {ra} und {rb} an Sonde "
-            f"{oname}"), mw
+        # Lesart B (Enis, 2026-09-18): nur eine Verbindung MIT Türblatt ist eine
+        # Türverbindung. Durchgänge ohne Türblatt bleiben als Messwert stehen
+        # (Dubletten-Kandidaten für S4b), entscheiden den Status aber nicht.
+        tuerverbindungen = [v for v in verb if not v["ohne_tuerblatt"]]
+        ohne = [v for v in verb if v["ohne_tuerblatt"]]
+        mw = {"raum_a": ra, "raum_b": rb, "sonde": oname, "verbindungen": verb,
+              "tuerverbindungen": [v["id"] for v in tuerverbindungen], "ohne_tuerblatt": ohne}
+        if len(tuerverbindungen) == 1:
+            return "BESTANDEN", (
+                f"genau eine Türverbindung {tuerverbindungen[0]['id']} zwischen {ra} und "
+                f"{rb} an Sonde {oname}"), mw
+        grund = (f"{len(tuerverbindungen)} Türverbindung(en) mit Türblatt zwischen {ra} und "
+                 f"{rb} an Sonde {oname} im markierten Stück (Verbindungen gesamt "
+                 f"{len(verb)}, davon ohne Türblatt {len(ohne)}), erwartet: genau eine")
+        if not tuerverbindungen and ohne:
+            grund += "; " + ", ".join(
+                f"{v['id']} ist ein Durchgang ohne Türblatt ({v['breite_mm']} mm, "
+                f"{v['abstand_zu_O_mm']} mm von {oname}) und zählt nach Lesart B "
+                "(Enis, 2026-09-18) nicht als Türverbindung" for v in ohne)
+        return "NICHT_BESTANDEN", grund, mw
 
     def _k_physical_wall_intersects_route(self, fall, check):
         route = fall.get("route_wcs_source_units")

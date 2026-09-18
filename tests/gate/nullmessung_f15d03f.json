@@ -1,7 +1,7 @@
 {
  "meta": {
-  "datum": "2026-09-18T01:53:27+02:00",
-  "commit_head": "1827488ba569197b11c28b89dd9a1dc621825278",
+  "datum": "2026-09-18T13:47:09+02:00",
+  "commit_head": "f52a721e62d8d716a12ad5412fa41e3e4c662c1f",
   "arbeitsbaum_src_scripts_sauber": true,
   "raumerkennung_tree": "431cf980b6df0b1101318ffbeb334a0ffe56cf72",
   "basis_commit": "f15d03fe1a082c78b180e940b7dcd666fccaf37d",
@@ -23,7 +23,7 @@
    "DG1": "d7683c48f2994ea7dec94220fcc9149fba282c56db4d4abe7835afd85e22a9b9",
    "DG2": "b38a0dc930806f654dadc08d35ad7c865da3919659e98d3fc6fa8940779cb6e2"
   },
-  "laufzeit_s": 46.0
+  "laufzeit_s": 88.8
  },
  "m17": [
   {
@@ -235,13 +235,24 @@
    "fall": "M17-04",
    "kind": "distinct_rooms_connected_by_door",
    "expected": true,
-   "status": "NICHT_MESSBAR",
-   "grund": "Referenz mehrdeutig (Frage an Enis in docs/OFFENE_FRAGEN.md): einzige Verbindung durchgang_21 ist ein Durchgang ohne Türblatt (2506.0 mm, tuer_detail wohnungseingang, 534 mm von O); zählt das als 'Türverbindung'?",
+   "status": "NICHT_BESTANDEN",
+   "grund": "0 Türverbindung(en) mit Türblatt zwischen raum_13 und raum_12 an Sonde O im markierten Stück (Verbindungen gesamt 1, davon ohne Türblatt 1), erwartet: genau eine; durchgang_21 ist ein Durchgang ohne Türblatt (2506.0 mm, 534 mm von O) und zählt nach Lesart B (Enis, 2026-09-18) nicht als Türverbindung",
    "messwerte": {
     "raum_a": "raum_13",
     "raum_b": "raum_12",
     "sonde": "O",
     "verbindungen": [
+     {
+      "id": "durchgang_21",
+      "breite_mm": 2506.0,
+      "ohne_tuerblatt": true,
+      "quelle": "durchgang",
+      "tuer_detail": "wohnungseingang",
+      "abstand_zu_O_mm": 534
+     }
+    ],
+    "tuerverbindungen": [],
+    "ohne_tuerblatt": [
      {
       "id": "durchgang_21",
       "breite_mm": 2506.0,
