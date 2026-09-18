@@ -37,7 +37,9 @@ kein Contract-Touch.** Sync davor: main `2f610cc` (Selman #158 geschoss.py etc. 
    - [x] ~~2OG-Läufer-Trio blickt Ost~~ ERLEDIGT 2026-09-18: KEIN DXF-Fehler — unser Abgleich hatte Regel #8 (xs>0 → Blick=180°+rot) nicht angewandt; Blick 168,7° = West = Fluchtrichtung ✓ (Owner-Hinweis, Doku korrigiert).
    - [ ] Arbeits-/Kopier-Reste außerhalb der Grundrisse löschen: EG `2137C` (Duplikat), 1OG `9568D`, 3OG-Fragment A1 (`78D6A/78D6C/78D6D`), 4OG `41221`, DG `206D6`/`206DB`.
    - [ ] **UG-Kapitel + 1.UG/2.UG-Erklärungs-DXFs liefern** (inkl. Kellerabteil-Gang) → dann Abgleich-Strecke erneut fahren, Regelbasis erweitern.
-   - [ ] Owner-Antworten offene_fragen.md: Tür-RZ-Versatz (Engine 150 vs. gemessen 735–930 mm), RZ-Zweitgröße 446 mm (wann?), AP-Skalen 296/539/630, unerklärte Leuchten (`202CC`+`2137C`, `2072F`, `8532F`, `78DFD`-Szene), FREIHEIT/KEINE-FREIHEIT-Bedeutung, down-RZ-Rotationsregel (Welt-Pfeil entgegen Laufrichtung) als expliziten Satz in die PDF.
+   - [ ] Owner-Antworten offene_fragen.md (REST): RZ-Zweitgröße 446 mm (wann?), unerklärte Leuchten (`202CC`+`2137C`, `2072F`, `8532F`, `78DFD`-Szene), FREIHEIT/KEINE-FREIHEIT-Bedeutung, down-RZ-Rotationsregel als expliziten Satz in die PDF.
+   - [x] ~~Tür-RZ-Versatz~~ BEANTWORTET 2026-09-18: „in einer Linie mit der Tür-Wand, kein fixer Sollwert" → RZ_INS_RAUM_MM=0 gebaut (`e5ac91b`).
+   - [x] ~~AP-Skalen~~ BEANTWORTET via „vergrößern, passend zum Plan": Legenden-Soll ×50 (RZ 883/AP 586/Aufheller+Spot 192/Anlage 852) gebaut (`95c6b82`); Probe-PDF Mollgasse EG an Owner (Abnahme offen).
 
 5. **OFFEN / RESUME (Engine):** (a) Regel-Integration als eigene Slices NACH
    Owner-GO (Kandidaten in regeln.md „Integration"; NB-R05/R06/R07 berühren die
