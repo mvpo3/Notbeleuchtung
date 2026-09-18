@@ -369,7 +369,9 @@ def test_exit_jenseits_der_tuer_fluchtachse_zeigt_raus():
     rz = [p for p in plan_rettungszeichen(rm, FakeNormProvider())
           if math.hypot(p.xy_mm[0] - 5000.0, p.xy_mm[1] - 5000.0) < 1000.0]
     assert len(rz) == 1
-    assert rz[0].xy_mm[1] < 5000.0          # raumseitig (südlich), NICHT draußen
+    # Owner 2026-09-18 (Wandlinien-Regel, RZ_INS_RAUM_MM=0): RZ darf exakt AUF der
+    # Wandlinie (y=5000) sitzen — der Guard richtet sich nur gegen „draußen" (>5000).
+    assert rz[0].xy_mm[1] <= 5000.0         # auf der Wandlinie, NICHT draußen
     assert rz[0].rotation_deg == 0.0        # Blick ins Rauminnere (−y)
 
 
@@ -399,7 +401,8 @@ def test_phantom_durchgang_ist_keine_tuer():
 
 def test_aussen_tuer_rz_am_muellraum_ausgang():
     """„Hier ist der Ausgang vom Müllraum": AUSSEN-Tür eines communal Raums traegt
-    ein RZ (EN 1838 §4.1.2 g) — Piktogramm blickt ins Rauminnere (R-B), ~150 mm im Raum."""
+    ein RZ (EN 1838 §4.1.2 g) — Piktogramm blickt ins Rauminnere (R-B), Symbol auf
+    der Wandlinie (Owner 2026-09-18: kein fixer Versatz, RZ_INS_RAUM_MM=0)."""
     out = aussen_tuer_rz(_raum_mit_aussentuer(), FakeNormProvider())
     assert len(out) == 1
     p = out[0]
@@ -409,7 +412,7 @@ def test_aussen_tuer_rz_am_muellraum_ausgang():
     # (nach oben) = rot 180 (R-B; Ground truth Müllraum-Südtür ~180°).
     assert p.rotation_deg == 180.0
     assert p.xy_mm[0] == pytest.approx(5000.0, abs=1.0)
-    assert p.xy_mm[1] == pytest.approx(150.0, abs=1.0)   # 150 mm im Raum-Inneren
+    assert p.xy_mm[1] == pytest.approx(0.0, abs=1.0)   # auf der Wandlinie (Tür-Achse)
     assert p.norm_quelle != QUELLE_TUERLEUCHTE           # echte Norm-Quelle (§4.1.2 g)
 
 
