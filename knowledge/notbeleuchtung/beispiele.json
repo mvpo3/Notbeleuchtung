@@ -957,15 +957,15 @@
     "label": "(2OG)",
     "x": -123251.3,
     "y": 4898.4,
-    "blickrichtung_grad": 348.7,
-    "herkunft": "Gang H852C8 (blickt Ost, ENTGEGEN Fluchtrichtung West)"
+    "blickrichtung_grad": 168.7,
+    "herkunft": "Gang H852C8 (Blick West = Fluchtrichtung; Korrektur 2026-09-18: Regel #8 xs>0 -> Blick=180+rot)"
    },
    {
     "label": "(2OG)",
     "x": -119140.6,
     "y": 4897.8,
-    "blickrichtung_grad": 348.7,
-    "herkunft": "Gang H852C7"
+    "blickrichtung_grad": 168.7,
+    "herkunft": "Gang H852C7 (Blick West, Regel #8)"
    },
    {
     "label": "-",
