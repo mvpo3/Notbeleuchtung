@@ -10,7 +10,7 @@ Pfeilrichtung neu aus der importierten Library-Geometrie:
   Pfeilrichtung (Betrag ~0.086 Library-Units, Winkelabweichung gemessen ≤2°).
 
 OCS-Falle (bewusst über ezdxf.path.from_hatch gelöst): der Block
-'…richtungspfeil nach rechts' trägt eine HATCH mit extrusion=(0,0,-1). Wer die
+'RIVO-RZ-ARR_right' (wie sein historischer Vorgänger) kann eine HATCH mit extrusion=(0,0,-1) tragen. Wer die
 Stützpunkte roh liest, misst den Pfeil spiegelverkehrt (Azimut 178° statt 358°)
 und „belegt" damit einen Fehler, den es nicht gibt.
 
@@ -36,7 +36,11 @@ TOL_GRAD = 10.0
 
 
 def _pfeil_polygon(doc, block_name: str) -> list[tuple[float, float]] | None:
-    """Das Pfeil-7-Eck der Block-HATCH in WCS (from_hatch löst die OCS auf)."""
+    """Das Pfeil-7-Eck der Block-HATCH in WCS (from_hatch löst die OCS auf).
+
+    Die RIVO-Blöcke der Owner-Bibliothek führen das Pfeil-7-Eck teils DOPPELT
+    (Umriss-HATCH + Füll-HATCH, gemessen ±0°-identisch) — mehrere Funde sind
+    ok, solange alle dieselbe Richtung messen (±5°); sonst uneindeutig → None."""
     gefunden = []
     for e in doc.blocks[block_name]:
         if e.dxftype() != "HATCH":
@@ -50,7 +54,12 @@ def _pfeil_polygon(doc, block_name: str) -> list[tuple[float, float]] | None:
                 vs.pop()
             if len(vs) == 7:
                 gefunden.append(vs)
-    return gefunden[0] if len(gefunden) == 1 else None
+    if not gefunden:
+        return None
+    az0 = _gemessener_azimut(gefunden[0])
+    if all(_winkel_diff(_gemessener_azimut(g), az0) <= 5.0 for g in gefunden[1:]):
+        return gefunden[0]
+    return None
 
 
 def _gemessener_azimut(poly: list[tuple[float, float]]) -> float:
@@ -105,11 +114,17 @@ def test_basistabelle_invarianten():
     """Struktur-Invarianten, unabhängig von der Library-Geometrie."""
     assert all(v % 90.0 == 0.0 for v in _BLOCK_BASE_DEG.values()), _BLOCK_BASE_DEG
     assert all(k == k.strip().lower() for k in _BLOCK_BASE_DEG), "Keys nicht normalisiert"
-    basen = {k.rsplit(" ", 1)[-1]: v for k, v in _BLOCK_BASE_DEG.items()}
-    assert set(basen) == {"unten", "links", "rechts"}
-    # links/rechts sind X-Spiegel voneinander: 180° - Basis.
-    assert basen["links"] == (180.0 - basen["rechts"]) % 360.0
-    # Die Mapping-Blöcke müssen dieselbe Schreibweise tragen wie die Tabelle,
-    # sonst greift basis_deg() nie (stiller Rückfall auf rotation 0).
+
+    def _suffix(k: str) -> str:
+        # RIVO-Namensschema: ...-down / ...-left / ..._right (Binde-/Unterstrich).
+        return k.replace("_", "-").rsplit("-", 1)[-1]
+
+    basen = {_suffix(k): v for k, v in _BLOCK_BASE_DEG.items()}
+    assert set(basen) == {"down", "left", "right"}
+    assert basen["down"] == 270.0
+    # links/rechts sind Gegenrichtungen auf der X-Achse: 180° - Basis.
+    assert basen["left"] == (180.0 - basen["right"]) % 360.0
+    # Die Registry-Blöcke müssen (lowercase-normalisiert) dieselben Namen tragen
+    # wie die Tabelle, sonst greift basis_deg() nie (stiller Rückfall auf rot 0).
     bloecke = {e["block_name"].strip().lower() for e in load_symbol_mapping().values()}
     assert set(_BLOCK_BASE_DEG) <= bloecke, set(_BLOCK_BASE_DEG) - bloecke

@@ -24,7 +24,8 @@ tests/failures/
 # DXF — nur die kanonische Symbol-Library ist getrackt
 *.dxf
 !assets/E-Symbole.dxf
-!CAD_Symbole/Notbeleuchtungssymbole.dxf
+# Kanonische Symbol-Library seit 2026-09-18 (Migration Phase A): neue Owner-Bibliothek.
+!CAD_Symbole/Notbeleuchtungssymbole_neu+.dxf
 # Vorlagen (Legende etc.) fürs ganze Team
 !Vorlagen-Legende/**
 # Wissens-Konvertate (z.B. Stromkreisnummer via ODA aus DWG) bleiben getrackt

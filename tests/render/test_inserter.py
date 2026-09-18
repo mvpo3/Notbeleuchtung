@@ -38,7 +38,12 @@ def test_insert_fixture_platzierungen(ergebnis):
         assert ins.dxf.rotation == pytest.approx(p.rotation_deg)
         # Fixture-Keys ohne Mapping-mirror_x → effektive Spiegelung = Contract
         assert (ins.dxf.xscale < 0) == p.mirror_x
-        assert ins.dxf.yscale == pytest.approx(inserter.DE_GLOBAL_SCALE)
+        # Migration Phase A: Skala je Registry-Eintrag (scale_abs, kalibriert an
+        # den Owner-Erklärungsplänen) statt globalem DE-Faktor.
+        entry = mapping[p.catalog_key]
+        erwartet = float(entry.get(
+            "scale_abs", inserter.DE_GLOBAL_SCALE * float(entry.get("scale", 1.0))))
+        assert ins.dxf.yscale == pytest.approx(erwartet)
     inserts = doc.modelspace().query("INSERT")
     assert len(inserts) == 5
 
@@ -49,7 +54,7 @@ def test_xor_mirror_mapping_entry(monkeypatch):
     # (die Pfeil-Blöcke sind seit dem Rechts-Fix alle unge­spiegelt gemappt).
     fake = dict(library.load_mapping())
     fake["_mirror_probe"] = {
-        "block_name": "notbeleuchtung- richtungspfeil nach unten",
+        "block_name": "RIVO-SIBEL-ARR-down",
         "label": "probe",
         "category": "notlicht",
         "mirror_x": True,
@@ -142,18 +147,17 @@ def test_gerade_nur_bei_rz_doppelpfeil(catalog_key, kind):
     assert ins.dxf.name == mapping[catalog_key]["block_name"]
 
 
-def test_sl_aufheller_kein_hardcode_blau():
-    # Der Lib-Block trägt einen SOLID-HATCH mit expliziter Farbe ACI 150 (blau),
-    # die den Layer-Grün-Override übergeht — Notlicht muss grün rendern. Import
-    # stellt blaue Hardcode-Farben auf BYLAYER (erbt Schrack-Grün des INSERT-Layers).
+def test_sl_aufheller_behaelt_owner_blau():
+    """Migration Phase A (2026-09-18, „Erscheinungsbild ist Wahrheit"): der
+    Owner-Aufheller ist ein voll BLAU gefüllter Kreis (SOLID-HATCH ACI 150,
+    grüner Rand) — die Library-Farben werden beim Import NICHT mehr auf
+    BYLAYER umgeschrieben (das frühere Verhalten hätte ihn grün gefärbt)."""
     doc = ezdxf.new("R2018")
     library.sync_layers(doc)
     p = Platzierung(xy_mm=(0.0, 0.0), catalog_key="sicherheitsleuchte_aufheller",
                     kind="sicherheitsleuchte")
     ins = inserter.insert_platzierung(doc, p)
 
-    # Rekursiv über den Block-Baum (der kleine Aufheller verschachtelt den alten
-    # Kreis-Block @ Scale 0.394): nirgends darf eine blaue Hardcode-Farbe bleiben.
     def entities(name):
         for e in doc.blocks[name]:
             yield e
@@ -162,5 +166,4 @@ def test_sl_aufheller_kein_hardcode_blau():
 
     alle = list(entities(ins.dxf.name))
     farben = {e.dxftype(): e.dxf.color for e in alle}
-    assert farben["HATCH"] == 256  # BYLAYER statt ACI 150
-    assert not any(getattr(e.dxf, "color", None) in library._BLAUE_ACI for e in alle)
+    assert farben["HATCH"] == 150  # Owner-Blau bleibt

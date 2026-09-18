@@ -2,8 +2,8 @@
 
 Slice 2: das Mapping-Vokabular (`schrack_symbol_mapping.yaml`), gegen das die
 Naht-Invariante `catalog_key ∈ Mapping` prüft. Slice 3: echte Insert-Infra in
-`library.py` (Notbeleuchtungssymbole.dxf-Loader, Layer-Sync, Block-Import) + `inserter.py`
-(Platzierung → INSERT).
+`library.py` (Loader der Owner-Bibliothek Notbeleuchtungssymbole_neu+.dxf,
+Layer-Sync, Block-Import) + `inserter.py` (Platzierung → INSERT).
 
 WICHTIG: Dieses `__init__` bleibt ezdxf-frei — platzierung/ importiert nur die
 Mapping-Funktionen hier und lädt damit nie transitiv ezdxf/die CAD-Library.
