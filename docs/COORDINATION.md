@@ -499,3 +499,13 @@ Naht-Invariante und steckt auch in `tests/fakes.py` und
   `selman/raumerkennung-dxf` (Git-Tangle) — Integration/Entwirrung offen.
 - <S0> F2 umgelenkt → Raumerkennung. Branch `selman/raumerkennung-dxf`, Scaffold + Test grün (69 passed).
 - <setup> F1 legt Worktree + dieses Board an. F2 startet mit (b) LDT.
+
+
+## 2026-09-18 â€” Leonis: Symbol-/Vorlagen-Migration (Phase A) + Notbeleuchtungs-Regelbasis (Phase B)
+
+- **Neue Symbolquelle (BINDEND): `CAD_Symbole/Notbeleuchtungssymbole_neu+.dxf`** â€” alte Bibliothek entfernt (Git-Historie = Backup), kein Fallback. Registry = `symbols/schrack_symbol_mapping.yaml` (RIVO-BlÃ¶cke + scale_abs, Owner-kalibriert: RZ ~636 mm, AP ~539, Aufheller/Spot ~97, SV-Anlage ~430) + `orientation._BLOCK_BASE_DEG` (down 270 / left 180 / right 0, gemessen). Guard-Test `tests/render/test_migration_guard.py` verbietet Alt-Referenzen in src/tests/scripts.
+- **Ein Notbeleuchtungs-Layer**: alles auf `din_SIBEL_10_emergency_lighting` (Vorlagen-Layer); gelber SL-Zwilling + `rz_sl_farbtrennung` GESTRICHEN. Library-Farb-Umschreibung entfernt (Owner-Aufheller bleibt blau). Neue Owner-Planvorlage (Paperspace-Layout1, RIVO-Legende) versioniert.
+- **FÃ¼r Selman/Enis**: kein Contract-Touch; Render-Ausgaben zeigen jetzt RIVO-Schilder. Wer eigene Werkzeuge auf die alten Blocknamen/den gelben Layer stÃ¼tzt: Migration `docs/SYMBOL_MIGRATION_2026-09-18.md`.
+- **Phase B**: belegte Regelbasis NB-R00..R12 in `knowledge/notbeleuchtung/` (regeln.md/yaml, beispiele.json, 38 Side-by-Sides, offene_fragen.md mit 26 Owner-Punkten inkl. 4 PDF-Textfehlern). Kein Pipeline-Code geÃ¤ndert; Integrations-VorschlÃ¤ge in regeln.md.
+- Suite nach allem: 1389 grÃ¼n (voll), ruff clean. Branch `leonis/demo-l-gebaeude` @ b04c80e gepusht.
+
