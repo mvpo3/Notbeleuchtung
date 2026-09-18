@@ -125,3 +125,30 @@ def test_kellergang_tuerbarrieren_verdichten_die_kette():
     # Verlaufs-RZ liegen in Gangmitte (quer zentriert):
     verlauf = [p for p in mit if 2000.0 < p.xy_mm[0] < 20000.0]
     assert verlauf and all(abs(p.xy_mm[1] - 1200.0) < 600.0 for p in verlauf)
+
+
+def test_zacken_gang_rz_knapp_ausserhalb_wird_ausgeduennt():
+    """D6 (Fischamend/S3-Befund raum_13): ein FLUCHTWEG-RZ, das wegen eines
+    Zacken-Polygons knapp AUSSERHALB der Gang-Kontur liegt (Kerbe, 200 mm),
+    zaehlt jetzt zum Gang und faellt, wenn die Sichtkette ohne es haelt.
+    Ein Nicht-Fluchtweg-RZ an derselben Stelle bleibt fremde Lane."""
+    kerbe = [(0.0, 0.0), (24000.0, 0.0), (24000.0, 3000.0), (12200.0, 3000.0),
+             (12200.0, 2000.0), (11800.0, 2000.0), (11800.0, 3000.0), (0.0, 3000.0)]
+    raum = RaumModell(
+        floor="EG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(24000.0, 3000.0)),
+        raeume=[Raum(id="gang", raum_typ="GANG", polygon_mm=kerbe,
+                     ist_fluchtweg=True, ist_communal=True)],
+        tueren=[Tuer(id="t1", xy_mm=(1000.0, 0.0), von_raum="w1", nach_raum="gang"),
+                Tuer(id="t2", xy_mm=(12000.0, 0.0), von_raum="w2", nach_raum="gang")],
+        ausgaenge=[Ausgang(id="E", xy_mm=(23800.0, 1500.0), typ="final_exit")],
+        zirkulation={"nodes": [], "edges": [], "segmente": []},
+    )
+    exit_rz = _rz((23500.0, 1500.0), quelle="ÖNORM EN 1838:2013 §4.2.1")
+    kerben_rz = _rz((12000.0, 2500.0), quelle="ÖNORM EN 1838:2013 §4.2.1")
+    out = kette_ausduennen([kerben_rz, exit_rz], raum, FakeNormProvider())
+    assert exit_rz in out
+    assert kerben_rz not in out
+    # Gegenprobe: gleiche Stelle, aber KEINE Fluchtweg-Quelle -> bleibt.
+    fremd_rz = _rz((12000.0, 2500.0), quelle="ÖNORM EN 1838:2013 §4.1.2 h")
+    out2 = kette_ausduennen([fremd_rz, exit_rz], raum, FakeNormProvider())
+    assert fremd_rz in out2
