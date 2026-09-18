@@ -28,14 +28,17 @@ from notbeleuchtung.platzierung.geometry import point_in_polygon
 _GROSS = [(0.0, 0.0), (20000.0, 0.0), (20000.0, 20000.0), (0.0, 20000.0)]
 
 
-def _raum(poly=None) -> RaumModell:
+def _raum(poly=None, typ="ZIMMER") -> RaumModell:
+    # D1 (2026-09-18): Default ZIMMER, nicht GANG — Korridor-RZ bekommen keinen
+    # B1-Aufheller mehr (Gang-Deckung = deckung/Drossel-Lane), die B1-Grundregel
+    # wird deshalb an einem Nicht-Korridor-Raum getestet.
     poly = poly or _GROSS
     xs = [p[0] for p in poly]
     ys = [p[1] for p in poly]
     return RaumModell(
         floor="T",
         bounds_mm=BBox(min_xy=(min(xs), min(ys)), max_xy=(max(xs), max(ys))),
-        raeume=[Raum(id="r1", raum_typ="GANG", polygon_mm=poly, ist_fluchtweg=True)],
+        raeume=[Raum(id="r1", raum_typ=typ, polygon_mm=poly, ist_fluchtweg=True)],
         ausgaenge=[Ausgang(id="E", xy_mm=(max(xs), (min(ys) + max(ys)) / 2), typ="final_exit")],
     )
 
@@ -167,6 +170,27 @@ def test_aufheller_ohne_photometrie_bleibt_bedingungslos():
     # Ohne i_cd_fn (keine LDT) kein Gate — auch mit SL am Punkt wird gesetzt.
     out = aufheller_je_rz([_rz(), _sl((9500.0, 10000.0))], _raum(), FakeNormProvider())
     assert len(out) == 1
+
+
+# ── D1 (Fischamend 2026-09-18): Aufheller-Inflations-Bremsen ─────────────────
+def test_korridor_rz_bekommt_keinen_b1_aufheller():
+    """D1 (1): RZ im KORRIDOR-Polygon → kein B1-Aufheller. Die Gang-Lux-Deckung
+    besitzt deckung.verdichte_fluchtweg (Lux-Reihe/S4-Drossel: 1 Aufheller je
+    Laengsluecke) — je Gang-RZ ein weiterer Aufheller war die Fischamend-
+    Inflation (8,3-m²-Gang mit 2 RZ + 2 Aufhellern, Quote 27–54 %/Geschoss)."""
+    assert aufheller_je_rz([_rz()], _raum(typ="GANG")) == []
+    assert aufheller_je_rz([_rz()], _raum(typ="FLUR")) == []
+
+
+def test_aufheller_zaehlt_als_quelle_fuer_folgende_rz():
+    """D1 (2): der erste gesetzte Aufheller ist Lichtquelle fuer die folgenden
+    RZ-Kandidaten — ein RZ-Cluster bekommt nicht mehr je Zeichen einen eigenen
+    Aufheller (1,5 m Abstand, starke Photometrie: Punkt 2 ist gedeckt)."""
+    rz1 = _rz(xy=(10000.0, 10000.0))
+    rz2 = _rz(xy=(10000.0, 11500.0))
+    out = aufheller_je_rz([rz1, rz2], _raum(), FakeNormProvider(), i_cd_fn=_strong)
+    assert len(out) == 1
+    assert out[0].xy_mm == (9500.0, 10000.0)
 
 
 # ── Tür-Leuchte TECHNIK/MUELLRAUM (Owner-Regel 2026-09-07) ───────────────────

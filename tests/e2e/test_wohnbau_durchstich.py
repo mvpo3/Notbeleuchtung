@@ -39,7 +39,11 @@ RZ_BAND = (3, 9)   # Punkt 2: EG trägt 8×unten + 1×links (s.u.)
 # Punkt 2 (Owner 2026-09-12, Kellerabteil-Regel „gilt überall"): der EG-Gang hat
 # 3 Abteil-Türen (TECHNIK/MUELLRAUM/KINDERWAGENRAUM) → 2 Verlaufs-RZ in den
 # Tür-Lücken + 1 Folge-Aufheller. Bänder begründet nachgezogen (eg SL 8→9).
-SL_BAND = {"eg": (3, 9), "1og": (5, 10), "dg": (5, 10)}
+# D1 (Fischamend 2026-09-18): Korridor-RZ bekommen keinen B1-Aufheller mehr
+# (Gang-Deckung = deckung/Drossel-Lane) → eg SL 3→2, Richtung Owner-Soll „EG 1"
+# (S4-Rest-Concern). Untergrenze auf 1: weitere begründete Reduktion erlaubt,
+# 0 SL am EG bleibt der Regressions-Fang.
+SL_BAND = {"eg": (1, 9), "1og": (5, 10), "dg": (5, 10)}
 
 
 @pytest.fixture(autouse=True)

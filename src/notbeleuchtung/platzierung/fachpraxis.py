@@ -198,6 +198,16 @@ def aufheller_je_rz(
     deckt das vorhandene Licht ihn ab, entfällt der Aufheller (keine Überproduktion).
     Ohne `i_cd_fn` (keine LDT) bleibt es beim bedingungslosen Setzen — die konstante
     Lichtstärke-Annahme überschätzt die Deckung, ein stilles Weglassen wäre unsicher.
+
+    **D1 (Fischamend 2026-09-18, R-J):** zwei Inflations-Bremsen. (1) RZ in einem
+    KORRIDOR-Polygon bekommen KEINE B1-Leuchte — die Gang-Lux-Deckung besitzt
+    `deckung.verdichte_fluchtweg` (Lux-Reihe bzw. S4-Drossel: 1 Aufheller je
+    Längslücke), ein zusätzlicher Aufheller hinter jedem Gang-RZ konterkariert
+    genau dieses Owner-Muster (Ground truth EG: 1 Gang-Aufheller, nicht je RZ
+    einer; Befund: 8,3-m²-Gang mit 2 RZ + 2 Aufhellern, Quote 27–54 %/Geschoss).
+    (2) Gesetzte Aufheller zählen sofort als Lichtquelle für die folgenden RZ
+    (inkrementell) — sonst bekommt ein RZ-Cluster je Zeichen einen eigenen
+    Aufheller, obwohl der erste den Bereich schon deckt.
     """
     regeln = regeln or FachpraxisRegeln()
     quellen = [
@@ -205,9 +215,16 @@ def aufheller_je_rz(
         for q in platzierungen
         if q.kind in ("sicherheitsleuchte", "antipanik")
     ]
+    korridore = [
+        r for r in raum.raeume
+        if (r.raum_typ or "").upper() in _KORRIDOR_TYPEN and len(r.polygon_mm) >= 3
+    ]
     out: list[Platzierung] = []
     for p in platzierungen:
         if p.kind != "rz":
+            continue
+        # D1 (1): Korridor-RZ → Gang-Deckung ist deckung/Drossel-Sache, kein B1.
+        if any(point_in_polygon(p.xy_mm, k.polygon_mm) for k in korridore):
             continue
         # Owner-Entscheid 2026-09-09: das Tür-RZ der TECHNIK/MUELL/KINDERWAGEN-Regel
         # (`tuerleuchte_pflichtraeume`) bekommt KEINEN Aufheller — es sitzt direkt an der
@@ -250,6 +267,9 @@ def aufheller_je_rz(
                 norm_quelle=QUELLE_AUFHELLER,
             )
         )
+        # D1 (2): der frische Aufheller ist ab jetzt Lichtquelle fuer die
+        # folgenden RZ-Kandidaten (inkrementell, Listen-Reihenfolge).
+        quellen.append((xy[0], xy[1], 0.0))
     return out
 
 
