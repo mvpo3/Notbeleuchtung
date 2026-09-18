@@ -1,7 +1,7 @@
 {
  "meta": {
-  "datum": "2026-09-18T13:47:09+02:00",
-  "commit_head": "f52a721e62d8d716a12ad5412fa41e3e4c662c1f",
+  "datum": "2026-09-18T16:55:12+02:00",
+  "commit_head": "366e2794bc7d5a1c9b0f323552757cc2f5350f0c",
   "arbeitsbaum_src_scripts_sauber": true,
   "raumerkennung_tree": "431cf980b6df0b1101318ffbeb334a0ffe56cf72",
   "basis_commit": "f15d03fe1a082c78b180e940b7dcd666fccaf37d",
@@ -23,7 +23,7 @@
    "DG1": "d7683c48f2994ea7dec94220fcc9149fba282c56db4d4abe7835afd85e22a9b9",
    "DG2": "b38a0dc930806f654dadc08d35ad7c865da3919659e98d3fc6fa8940779cb6e2"
   },
-  "laufzeit_s": 88.8
+  "laufzeit_s": 77.3
  },
  "m17": [
   {
@@ -367,6 +367,17 @@
    "top_2",
    "top_3"
   ]
+ },
+ "og3": {
+  "segmente_graph": 5,
+  "segmente_gesamt": 5,
+  "anker_gesamt": 16,
+  "anker_in_wohnung_privat": 0,
+  "wohnungen": 2,
+  "einraum_wohnungen": 0,
+  "tueren_gesamt": 23,
+  "durchgaenge_ohne_tuerblatt": 20,
+  "raeume_wohnung_privat_gang": 0
  },
  "m1_m4": {
   "M1": {
