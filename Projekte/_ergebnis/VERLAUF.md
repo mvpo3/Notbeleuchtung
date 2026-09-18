@@ -215,3 +215,7 @@
 - Symbolquelle jetzt CAD_Symbole/Notbeleuchtungssymbole_neu+.dxf (alte Bibliothek per git rm entfernt, kein Fallback); Registry = schrack_symbol_mapping.yaml (Blockname + scale_abs) + orientation._BLOCK_BASE_DEG (RIVO-down 270 / -left 180 / _right 0).
 - Neue Planvorlage (Paperspace-Layout1, RIVO-Legende) versioniert; ALLE Symbole auf dem einen Vorlagen-Layer din_SIBEL_10_emergency_lighting (gelber SL-Zwilling + rz_sl_farbtrennung gestrichen); Farb-Umschreibung Blau->BYLAYER entfernt (Owner-Aufheller bleibt blau).
 - Verifikation Pruefstrecke Mollgasse_EG: notbeleuchtung_phaseA.dxf|_plan.pdf — 53 Symbol-INSERTs ausschliesslich neue Bloecke, 0 Alt-Bloecke, Blatt+Legende ok. Volle Suite 1389 gruen. Details: docs/SYMBOL_MIGRATION_2026-09-18.md, offene Punkte: knowledge/notbeleuchtung/offene_fragen.md.
+
+## Phase B — Wissensaufbau PDF+DXF Mollgasse (2026-09-18)
+- PDF "Notbeleuchtungen zeichnen" (41 S.) + 6 Erklaerungs-DXFs (EG-DG) parallel abgeglichen: 35 Beispiele (18 bestaetigt, 13 praezisiert, 4 Widersprueche = PDF-Label-/Textfehler, geometrisch aufgeklaert). Abdeckung 75 NB-Leuchten: 49 zugeordnet, 14 Legende, 8 Kopier-Reste, 4 echt offen.
+- Ausgaben: knowledge/notbeleuchtung/ (symbol_konvention.md, beispiele.json, regeln.md + regeln.yaml mit NB-R00-R12, abgleich/<G>/ Side-by-Sides, offene_fragen.md inkl. Abdeckungstabelle). Kein Pipeline-Code geaendert (Phase-B-Grenze); Integrations-Vorschlaege in regeln.md.

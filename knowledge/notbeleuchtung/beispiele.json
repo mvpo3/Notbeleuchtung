@@ -1,0 +1,2086 @@
+[
+ {
+  "id": "EG-01",
+  "pdf_seite": 1,
+  "raum": "Haupteingang EG / VORPLATZ (Mollgasse-Seite)",
+  "status": "praezisiert",
+  "befund": "PDF: RZ 'Pfeil nach unten' mittig zur Haupteingangstuer, Pfeil in den Raum. DXF: 20240 RIVO-SIBEL-ARR-down @ (11513,66599), rot 90 -> Welt-Pfeil 0 Grad = Ost = ins Rauminnere (Ausgang liegt westlich, gruene Linie 2031A (11402,66569)->(6480,66571)). Tuerachse 1FD36 @ (10674,66573): Querabweichung 26 mm (mittig), 840 mm raumseitig vor der Tuer. 'Pfeil nach unten' = Symboltyp, NICHT Weltrichtung.",
+  "leuchten": [
+   {
+    "handle": "20240",
+    "block": "RIVO-SIBEL-ARR-down",
+    "label": "(D)",
+    "x": 11513.3,
+    "y": 66599.2,
+    "rotation": 89.99,
+    "symboltyp": "RZ Pfeil-unten-Typ",
+    "pfeil_welt": "rechts (0 Grad, in den Raum)",
+    "bezug_tuer": "Tuerachse 1FD36 (10674,66573): dy=26mm mittig, 840mm raumseitig"
+   }
+  ],
+  "geschoss": "EG"
+ },
+ {
+  "id": "EG-02",
+  "pdf_seite": 2,
+  "raum": "MUELLRAUM 27.61 m2",
+  "status": "bestaetigt",
+  "befund": "Tuer-RZ 20286 ARR-down @ (10284,64443), rot 0 -> Welt-Pfeil 270 = Sued = in den Muellraum (Raum suedlich). Tuerachse 1FD33 (10288,65356): dx=4 mm (exakt in der Tuerachse), 913 mm raumseitig. Rechteckiger Raum, keine Antipanik - konsistent mit PDF-Regel ('L-foermig -> Antipanik noetig').",
+  "leuchten": [
+   {
+    "handle": "20286",
+    "block": "RIVO-SIBEL-ARR-down",
+    "x": 10283.5,
+    "y": 64442.5,
+    "rotation": 359.99,
+    "pfeil_welt": "unten (270 Grad, in den Raum)",
+    "bezug_tuer": "Tuerachse 1FD33 (10288,65356): dx=4mm mittig, 913mm raumseitig"
+   }
+  ],
+  "geschoss": "EG"
+ },
+ {
+  "id": "EG-03",
+  "pdf_seite": 3,
+  "raum": "FAHRRADRAUM / KIWA 50.05 m2",
+  "status": "bestaetigt",
+  "befund": "Raumstempel 1FA86 @ (14798,72624) im EG-Modell vorhanden. Tuer-RZ 202A9 ARR-down @ (15948,70780), rot 180 -> Welt-Pfeil 90 = Nord = in den Raum. Tuer 200CC TUER-BLOCKZARGE-100_STUMPF @ (15957,70045): dx=9 mm (mittig), 735 mm raumseitig. Dieselbe Leuchte wird auch in EG-04/EG-14 (Innenhof) erklaert.",
+  "leuchten": [
+   {
+    "handle": "202A9",
+    "block": "RIVO-SIBEL-ARR-down",
+    "x": 15948.2,
+    "y": 70780.2,
+    "rotation": 179.99,
+    "pfeil_welt": "oben (90 Grad, in den Raum)",
+    "bezug_tuer": "Tuer 200CC (15957,70045): dx=9mm mittig, 735mm raumseitig"
+   }
+  ],
+  "geschoss": "EG"
+ },
+ {
+  "id": "EG-04",
+  "pdf_seite": 4,
+  "raum": "Innenhof zwischen zwei Gebaeuden (F15-Tuer, GEHWEG/TERRASSE TOP 2)",
+  "status": "praezisiert",
+  "befund": "Gleiche Leuchte wie EG-03: 202A9, Welt-Pfeil 90 = Nord = 'in den Innenhof'. Person 20C29 @ (15834,71500) Blick 270 (Sued, zur Tuer), Person 20C28 @ (12137,72095) Blick 0. Gruene Linie 20364 (15879,70682)->(15878,68327) fuehrt durch die Tuer suedwaerts ins Gebaeude. PDF erklaert dieselbe Platzierung aus zwei Perspektiven (Fahrradraum innen vs. Innenhof aussen).",
+  "leuchten": [
+   {
+    "handle": "202A9",
+    "block": "RIVO-SIBEL-ARR-down",
+    "x": 15948.2,
+    "y": 70780.2,
+    "rotation": 179.99,
+    "pfeil_welt": "oben (90 Grad)"
+   }
+  ],
+  "personen": [
+   {
+    "herkunft": "Innenhof",
+    "x": 15833.5,
+    "y": 71499.9,
+    "blickrichtung_grad": 270
+   },
+   {
+    "herkunft": "Innenhof",
+    "x": 12136.6,
+    "y": 72094.9,
+    "blickrichtung_grad": 0
+   }
+  ],
+  "geschoss": "EG"
+ },
+ {
+  "id": "EG-05",
+  "pdf_seite": 5,
+  "raum": "Stiegenhaus EG links (STGH 34.25 m2) + Haupteingang",
+  "status": "praezisiert",
+  "befund": "Kernbefund: PDF-'Pfeil nach links' ist typ-/personenbezogen, nicht Weltrichtung. (A)=202EF ARR-left rot 90 -> Welt-Pfeil 270=Sued, haengt vertikal an der Westwand; die von Osten (Stiege) nach Westen ankommenden UG-Personen sehen die Vorderseite frontal, Pfeil zeigt aus ihrer Sicht links=Sued Richtung (B) (1975 mm). (B)=20263 ARR-left rot 0 -> Welt 180=West Richtung (D) (4350 mm). (C)=20312 ARR-left rot 359.7 -> Welt 179.7=West, fuer OG-Ankoemmlinge, 6486 mm vor (B). Stiegenhauspfeil rot 20684/20685: Richtung 180 (West) = 'links' bestaetigt; OG-Gegenrichtung rot 20DE8/20DE9 Richtung 0 (Ost). UG-Menschen rot 0/xscale+ Blick 180 (in Pfeilrichtung), 1OG-Menschen rot 0/xscale- Blick 0 (entgegen).",
+  "leuchten": [
+   {
+    "handle": "202EF",
+    "block": "RIVO-SIBEL-ARR-left",
+    "label": "(A)",
+    "x": 15867.9,
+    "y": 68105,
+    "rotation": 89.99,
+    "pfeil_welt": "unten (270 Grad, Personensicht: links)",
+    "bezug_stiege": "am EG-Austritt der Stiege (Stiege y=68300, W-E), vor den UG-Ankoemmlingen"
+   },
+   {
+    "handle": "20263",
+    "block": "RIVO-SIBEL-ARR-left",
+    "label": "(B)",
+    "x": 15838.3,
+    "y": 66130.2,
+    "rotation": 359.99,
+    "pfeil_welt": "links (180 Grad)"
+   },
+   {
+    "handle": "20312",
+    "block": "RIVO-SIBEL-ARR-left",
+    "label": "(C)",
+    "x": 22317.9,
+    "y": 66417.7,
+    "rotation": 359.71,
+    "pfeil_welt": "links (179.7 Grad)",
+    "bezug_stiege": "am Gang suedoestlich des Stiegenaustritts, fuer OG-Ankoemmlinge"
+   },
+   {
+    "handle": "20240",
+    "block": "RIVO-SIBEL-ARR-down",
+    "label": "(D)",
+    "x": 11513.3,
+    "y": 66599.2,
+    "rotation": 89.99,
+    "pfeil_welt": "rechts (0 Grad)"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(UG)",
+    "x": 20651.6,
+    "y": 68444.4,
+    "blickrichtung_grad": 180,
+    "herkunft": "UG, geht in Stiegenpfeilrichtung hinauf"
+   },
+   {
+    "label": "(1OG)",
+    "x": 17473.4,
+    "y": 67953.1,
+    "blickrichtung_grad": 0,
+    "herkunft": "1OG, geht entgegen Stiegenpfeil hinunter"
+   }
+  ],
+  "stiegenhauspfeil": {
+   "quelle": "rot nachgezeichnet (20684 Linie + 20685 Spitze)",
+   "richtung_grad": 180
+  },
+  "geschoss": "EG"
+ },
+ {
+  "id": "EG-06",
+  "pdf_seite": 7,
+  "raum": "Stiegenhaus EG rechts (PODEST 11.02 m2 / STGH 53.20 m2)",
+  "status": "bestaetigt",
+  "befund": "Stiegenhauspfeil rot 20D09 (49834,40501)->(54314,40501), Spitze Ost -> 0 Grad = 'rechts' bestaetigt. (E)=206C0 RZ-ARR_right rot 0 @ Podest-Westende -> Welt 0=Ost; (F)=206C3 RZ-ARR_right rot 0, 7749 mm oestlich. UG-Personen (207C6 u.a.) Blick 0 = in Pfeilrichtung hinauf; 1OG-Personen (20FBE/20FE1 @ y ca. 40080) Blick 180 = entgegen; rote Gegenrichtungs-Linie 20F99/20F9B Spitze West.",
+  "leuchten": [
+   {
+    "handle": "206C0",
+    "block": "RIVO-RZ-ARR_right",
+    "label": "(E)",
+    "x": 48187.8,
+    "y": 41757.1,
+    "rotation": 359.99,
+    "pfeil_welt": "rechts (0 Grad)",
+    "bezug_stiege": "am Podest-Westende vor der Stiege"
+   },
+   {
+    "handle": "206C3",
+    "block": "RIVO-RZ-ARR_right",
+    "label": "(F)",
+    "x": 55936.4,
+    "y": 41697.2,
+    "rotation": 359.99,
+    "pfeil_welt": "rechts (0 Grad)"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(UG)",
+    "x": 50521.1,
+    "y": 41753,
+    "blickrichtung_grad": 0,
+    "herkunft": "UG"
+   },
+   {
+    "label": "(1OG)",
+    "x": 50483.4,
+    "y": 40094.8,
+    "blickrichtung_grad": 180,
+    "herkunft": "1OG"
+   }
+  ],
+  "stiegenhauspfeil": {
+   "quelle": "rot nachgezeichnet (20D09)",
+   "richtung_grad": 0
+  },
+  "geschoss": "EG"
+ },
+ {
+  "id": "EG-07",
+  "pdf_seite": 8,
+  "raum": "Verlauf (F)->(H), STGH 53.20 m2 -> HAUPTAUSGANG",
+  "status": "praezisiert",
+  "befund": "(H)=2070A ARR-down rot 270 @ (59671,45739) -> Welt-Pfeil 180 = West = ins Rauminnere; Hauptausgangstuer oestlich (Tueroeffner E901 @ (60036,45651), 375 mm entfernt; MTEXT 209B8 HAUPTAUSGANG @ 62720/45929). (F)->(H) 5503 mm Luftlinie ueber gruene Linien 20759+20758. UG- und 1OG-Personenpaare nebeneinander (2111F/21142, 21166/21167), Blick 90 dann 0 Richtung Ausgang - 'ab hier dieselbe Richtung' bestaetigt.",
+  "leuchten": [
+   {
+    "handle": "2070A",
+    "block": "RIVO-SIBEL-ARR-down",
+    "label": "(H)",
+    "x": 59670.8,
+    "y": 45738.8,
+    "rotation": 269.99,
+    "pfeil_welt": "links (180 Grad, in den Raum)",
+    "bezug_tuer": "Hauptausgangstuer: Tueroeffner E901 (60036,45651), 375mm"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(UG)+(1OG)",
+    "x": 58132.6,
+    "y": 42997.6,
+    "blickrichtung_grad": 90,
+    "herkunft": "gemeinsam ab (F)"
+   },
+   {
+    "label": "(UG)",
+    "x": 61033.3,
+    "y": 45630.6,
+    "blickrichtung_grad": 0,
+    "herkunft": "vor dem Hauptausgang"
+   }
+  ],
+  "geschoss": "EG"
+ },
+ {
+  "id": "EG-08",
+  "pdf_seite": 9,
+  "raum": "KIWA 7.23 m2 am STGH 53.20 m2",
+  "status": "bestaetigt",
+  "befund": "KIWA-Stempel 1F5FD @ (55054,44051), Tuer 1FBF0 TUER-90 @ (56369,44280). (G)=206E7 RZ-ARR_right rot 0 -> Welt 0=Ost, 465 mm westlich/1413 mm noerdlich der KIWA-Tuerachse (1487 mm); (H) 3610 mm nordoestlich - beide vom Tuerpunkt frei sichtbar entlang des Gangs. (KIWA)-Personen 20852 (56344,44588) und 2080C (57895,45672) Blick 0.",
+  "leuchten": [
+   {
+    "handle": "206E7",
+    "block": "RIVO-RZ-ARR_right",
+    "label": "(G)",
+    "x": 55904.1,
+    "y": 45692.9,
+    "rotation": 359.99,
+    "pfeil_welt": "rechts (0 Grad)",
+    "bezug_tuer": "KIWA-Tuer 1FBF0 (56369,44280): 1487mm"
+   },
+   {
+    "handle": "2070A",
+    "block": "RIVO-SIBEL-ARR-down",
+    "label": "(H)",
+    "x": 59670.8,
+    "y": 45738.8,
+    "rotation": 269.99,
+    "pfeil_welt": "links (180 Grad)"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(KIWA)",
+    "x": 56344.4,
+    "y": 44587.7,
+    "blickrichtung_grad": 0
+   },
+   {
+    "label": "(KIWA)",
+    "x": 57894.5,
+    "y": 45672.2,
+    "blickrichtung_grad": 0
+   }
+  ],
+  "geschoss": "EG"
+ },
+ {
+  "id": "EG-09",
+  "pdf_seite": 10,
+  "raum": "KIWA/STGH rechts - 'Notleuchte (D) mit Pfeil nach rechts'",
+  "status": "widerspruch",
+  "befund": "PDF S.10 nennt (D) (Pfeil rechts) und (E) an der Hauptausgangstuer; der Screenshot zeigt einen aelteren Label-Stand ((D)/(E)/(C)). Im aktuellen DXF heissen dieselben Leuchten (G) 20D5C und (H) 20DA2; (C)/(D)/(E)-Texte existieren im rechten Stiegenhaus nicht. Geometrisch identisch mit EG-08: (G)=206E7 Welt-Pfeil Ost bestaetigt. Widerspruch betrifft NUR die Beschriftung (Label-Drift PDF-Screenshot vs. DXF).",
+  "leuchten": [
+   {
+    "handle": "206E7",
+    "block": "RIVO-RZ-ARR_right",
+    "label": "(G) im DXF, '(D)' im PDF",
+    "x": 55904.1,
+    "y": 45692.9,
+    "rotation": 359.99,
+    "pfeil_welt": "rechts (0 Grad)"
+   },
+   {
+    "handle": "2070A",
+    "block": "RIVO-SIBEL-ARR-down",
+    "label": "(H) im DXF, '(E)' im PDF",
+    "x": 59670.8,
+    "y": 45738.8,
+    "rotation": 269.99,
+    "pfeil_welt": "links (180 Grad)"
+   }
+  ],
+  "geschoss": "EG"
+ },
+ {
+  "id": "EG-10",
+  "pdf_seite": 10,
+  "raum": "U-foermiger FAHRRADRAUM 73.03 m2",
+  "status": "bestaetigt",
+  "befund": "(B)=2070C ARR-down rot 270 @ (59722,34557) -> Welt 180=West, am PODEST/Nordausgang; Fluchtweg oestlich hinaus (20995). Antipanik (A)=20752 @ (53862,30113) im Sued-Arm des U. Mensch (1)=21261 @ (57073,30067), Blick 180 (Richtung (A)/Tuer). Mensch(1)->(B) 5213 mm Luftlinie, Sichtstrahl quert den U-Innensteg (Wand zwischen Sued-Arm y ca. 30070 und Nord-Arm y ca. 34560) -> Sicht blockiert, Antipanik-Begruendung geometrisch belegt. (A)->Mensch(1) 3211 mm; (A)->(B) 7354 mm. U-Verlauf gruen 2075A.",
+  "leuchten": [
+   {
+    "handle": "2070C",
+    "block": "RIVO-SIBEL-ARR-down",
+    "label": "(B)",
+    "x": 59721.7,
+    "y": 34557,
+    "rotation": 269.99,
+    "pfeil_welt": "links (180 Grad)"
+   },
+   {
+    "handle": "20752",
+    "block": "Antipanikleuchte-RIVO",
+    "label": "(A)",
+    "x": 53862.1,
+    "y": 30112.6,
+    "rotation": 359.99,
+    "symboltyp": "Antipanik"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(1)",
+    "x": 57072.6,
+    "y": 30067.4,
+    "blickrichtung_grad": 180,
+    "herkunft": "U-Sued-Arm ohne Sicht auf (B)"
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "Mensch (1) 21261",
+    "nach": "(B) 2070C",
+    "laenge_mm": 5213,
+    "schneidet_wand": true,
+    "winkel_zur_vorderseite_grad": null
+   }
+  ],
+  "geschoss": "EG"
+ },
+ {
+  "id": "EG-11",
+  "pdf_seite": 11,
+  "raum": "GESCHAEFTSLOKAL (Nordost-Trakt)",
+  "status": "bestaetigt",
+  "befund": "Tuer-Leuchte 20948 ARR-down rot 270 @ (60934,51510) -> Welt 180=West=in den Raum; Fluchtweg oestlich hinaus (20990). Einzige Erklaerungs-Sichtlinie der EG-DXF: 212EE (ACI 4) von (52194,54687) zur Leuchte (60763,51500): Laenge 9143 mm, Richtung 339.6 Grad; Schild vertikal (Laengsachse N-S), Front-Normale West -> 20.4 Grad zur Vorderseite = nahezu frontal, keine Wand im Strahl. Tuerkiser Merktext 21311 ('Antipanikleuchte nicht unbedingt notwendig...') @ (52794,54428). Person 212ED @ (52112,54463) Blick 0.",
+  "leuchten": [
+   {
+    "handle": "20948",
+    "block": "RIVO-SIBEL-ARR-down",
+    "x": 60933.7,
+    "y": 51509.5,
+    "rotation": 269.99,
+    "pfeil_welt": "links (180 Grad, in den Raum)"
+   }
+  ],
+  "personen": [
+   {
+    "x": 52111.9,
+    "y": 54463.1,
+    "blickrichtung_grad": 0,
+    "herkunft": "anderes Raumende Geschaeftslokal"
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "Person 212ED",
+    "nach": "Leuchte 20948",
+    "laenge_mm": 9143,
+    "winkel_zur_vorderseite_grad": 20.4,
+    "schneidet_wand": false
+   }
+  ],
+  "geschoss": "EG"
+ },
+ {
+  "id": "EG-12",
+  "pdf_seite": 11,
+  "raum": "MUELL 34.47 m2 (zweiter Muellraum)",
+  "status": "bestaetigt",
+  "befund": "Raumstempel 1F17F MUELL 34.47m2 @ (56054,49191). (A)=21312 ARR-down rot 270 @ (59789,48584) -> Welt 180=West=in den Muellraum (Tuer an der Ostwand). Tuerachse 1FD00 (60717,48561): dy=22 mm (mittig), 929 mm raumseitig. Rechteckig, keine Sichtwand, keine Antipanik - bestaetigt. Personen 21336 (53935,48615) und 208DE (58260,48614) Blick 0 = frontal auf die West-Vorderseite. 'Pfeil nach unten' im PDF = wieder Typbezeichnung, Weltrichtung West.",
+  "leuchten": [
+   {
+    "handle": "21312",
+    "block": "RIVO-SIBEL-ARR-down",
+    "label": "(A)",
+    "x": 59788.5,
+    "y": 48583.9,
+    "rotation": 269.99,
+    "pfeil_welt": "links (180 Grad, in den Raum)",
+    "bezug_tuer": "Tuerachse 1FD00 (60717,48561): dy=22mm mittig, 929mm raumseitig"
+   }
+  ],
+  "personen": [
+   {
+    "x": 53934.7,
+    "y": 48614.6,
+    "blickrichtung_grad": 0,
+    "herkunft": "Muellraum West"
+   },
+   {
+    "x": 58259.8,
+    "y": 48613.9,
+    "blickrichtung_grad": 0,
+    "herkunft": "Muellraum"
+   }
+  ],
+  "geschoss": "EG"
+ },
+ {
+  "id": "EG-13",
+  "pdf_seite": 12,
+  "raum": "Innenhof mit nur einem Gehweg (F11-Tuer, GEHWEG/STAUDENBEET)",
+  "status": "bestaetigt",
+  "befund": "Leuchte 21359 ARR-down rot 180 @ (47774,47342) -> Welt-Pfeil 90=Nord=in den Innenhof (Gebaeude suedlich, Hof noerdlich). Tuerachse 1FD12 (48167,47884): 670 mm. Gruener Weg 20550 von Norden zur Tuer (48066,47306), danach 20755 (47774,47134)->(47773,41755) suedwaerts ins Stiegenhaus zu (E). Personen folgen dem Gehweg zur Tuer (20573/205C4 Blick 270, 205C5 Blick 0, 205C6 Blick 270).",
+  "leuchten": [
+   {
+    "handle": "21359",
+    "block": "RIVO-SIBEL-ARR-down",
+    "x": 47774.1,
+    "y": 47341.5,
+    "rotation": 179.99,
+    "pfeil_welt": "oben (90 Grad, in den Hof)",
+    "bezug_tuer": "Tuerachse 1FD12 (48167,47884): 670mm"
+   }
+  ],
+  "personen": [
+   {
+    "x": 43583.2,
+    "y": 54769.9,
+    "blickrichtung_grad": 270,
+    "herkunft": "Gehweg Nord"
+   },
+   {
+    "x": 47991,
+    "y": 48880.2,
+    "blickrichtung_grad": 270,
+    "herkunft": "vor der Tuer"
+   }
+  ],
+  "geschoss": "EG"
+ },
+ {
+  "id": "EG-14",
+  "pdf_seite": 13,
+  "raum": "Innenhof (wieder, 202A9) + Gang zum STGH links mit (C)",
+  "status": "bestaetigt",
+  "befund": "Bild 1 = derselbe Tuerpunkt wie EG-03/04 (202A9, Welt-Pfeil Nord; TERRASSE/EIGENGARTEN TOP 2/3, Gehweg-Fluchtpfeile Richtung West zur Tuer). Bild 2 = vertikaler Gang x ca. 22400: gruene Linie 2031E (22403,72453)->(22418,66517) suedwaerts; Person 2137D @ (22482,70452) Blick 270; am Gangende (C)=20312 Welt-Pfeil 179.7=West -> Linksabbieg bestaetigt. Die tuerkise horizontale Linie beim STGH ist die S5-Schnittfuehrung des Architekturplans, KEINE Sichtlinie.",
+  "leuchten": [
+   {
+    "handle": "202A9",
+    "block": "RIVO-SIBEL-ARR-down",
+    "x": 15948.2,
+    "y": 70780.2,
+    "rotation": 179.99,
+    "pfeil_welt": "oben (90 Grad)"
+   },
+   {
+    "handle": "20312",
+    "block": "RIVO-SIBEL-ARR-left",
+    "label": "(C)",
+    "x": 22317.9,
+    "y": 66417.7,
+    "rotation": 359.71,
+    "pfeil_welt": "links (179.7 Grad)"
+   }
+  ],
+  "personen": [
+   {
+    "x": 22481.6,
+    "y": 70452.2,
+    "blickrichtung_grad": 270,
+    "herkunft": "vom Gehweg kommend, im Gang suedwaerts"
+   }
+  ],
+  "geschoss": "EG"
+ },
+ {
+  "id": "1OG-01",
+  "pdf_seite": 14,
+  "raum": "Gang 15.74m2 mit Top 9/8/7 (Bereich A1, Stiegenkern West)",
+  "status": "bestaetigt",
+  "befund": "(D) haengt mittig zur Tuer Gang/STGH: Tueroeffnung x=-347218..-346258 (Breite 960mm, Mitte x=-346738), (D)-Zentrum (-346703,34488) = 35mm Abweichung von der Tuermitte, 258mm gangseitig der Wandachse (y=34230). Tuerblatt h=93D42 + Schwenk-ARC h=93DAC (r=900, 180-270 Grad) oeffnen nach Sueden ins STGH; Welt-Pfeil von (D) = 90.1 Grad (oben, in den Gang) = exakt 180 Grad entgegen der Oeffnungsrichtung. Antipanik (E)/(F) mittig im Gang (55mm neben gruener Fluchtweglinie y=34970), Abstaende (D)-(E)=3136mm, (E)-(F)=6297mm. Drei Sichtlinien Top7/8/9 -> (D), L=3646/10897/12028mm, 0 Wandschnitte (gegen 1184 Wandsegmente geprueft); sie enden an der (D)-Ostkante (x=-346388) und verlaufen 0.1-3.6 Grad zur (D)-Laengsachse = Seitenansicht (nicht frontal, PDF behauptet nur Sichtverbindung).",
+  "leuchten": [
+   {
+    "label": "(D)",
+    "handle": "95042",
+    "block": "RIVO-SIBEL-ARR-down",
+    "symboltyp": "RZ Pfeil unten",
+    "x": -346703,
+    "y": 34488,
+    "rotation": 180.1,
+    "pfeil_welt": "oben (90.1 Grad, in den Gang)",
+    "bezug_tuer": "35mm neben Tuermitte (Breite 960mm), Pfeil 180 Grad gegen Oeffnungsrichtung (Tuer oeffnet nach Sueden ins STGH)"
+   },
+   {
+    "label": "(E)",
+    "handle": "95066",
+    "block": "Antipanikleuchte-RIVO",
+    "symboltyp": "Antipanik",
+    "x": -343613,
+    "y": 35026,
+    "rotation": 90,
+    "pfeil_welt": "-"
+   },
+   {
+    "label": "(F)",
+    "handle": "95067",
+    "block": "Antipanikleuchte-RIVO",
+    "symboltyp": "Antipanik",
+    "x": -337316,
+    "y": 35025,
+    "rotation": 90,
+    "pfeil_welt": "-"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(1OG) Top 7",
+    "herkunft": "Top 7",
+    "x": -342639,
+    "y": 34154,
+    "blickrichtung_grad": 179.5
+   },
+   {
+    "label": "(1OG) Top 8",
+    "herkunft": "Top 8",
+    "x": -335389,
+    "y": 34152,
+    "blickrichtung_grad": 168.7
+   },
+   {
+    "label": "(1OG) Top 9",
+    "herkunft": "Top 9",
+    "x": -334350,
+    "y": 35065,
+    "blickrichtung_grad": 168.7
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "Top 7 (h=955EE)",
+    "nach": "(D) h=95042",
+    "laenge_mm": 3646,
+    "winkel_zur_vorderseite_grad": 89.9,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Top 8 (h=95613)",
+    "nach": "(D) h=95042",
+    "laenge_mm": 10897,
+    "winkel_zur_vorderseite_grad": 89.6,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Top 9 (h=955A8)",
+    "nach": "(D) h=95042",
+    "laenge_mm": 12028,
+    "winkel_zur_vorderseite_grad": 86.4,
+    "schneidet_wand": false
+   }
+  ],
+  "stiegenhauspfeil": null,
+  "geschoss": "1OG"
+ },
+ {
+  "id": "1OG-02",
+  "pdf_seite": 15,
+  "raum": "Stiegenhaus 1.STOCK STGH 17.24m2 + Top 4+5/6 (Bereich A1); inkl. Seite 16 Alternative (C)",
+  "status": "praezisiert",
+  "befund": "Roter Stiegenhauspfeil h=95137 (ACI 1): Spitze (-352066,31512), Richtung 180 Grad (links); Stiegen-Personen (1OG) h=9553A Blick 11.6 Grad und (2OG) h=950C0 Blick 5.2 Grad = 168-175 Grad ENTGEGEN dem Pfeil (OG-Regel geometrisch belegt). (A) ARR_right 810mm vor der Stiegen-Westkante (x=-352348), mittig zur Stiegenbreite (20mm), Welt-Pfeil 0 Grad in die Stiege; von Top4+5 (1945mm, ~20 Grad von frontal) und Top 6 (~8 Grad von frontal) direkt sichtbar. (B) ARR-down mittig im oberen STGH-Steg (40mm neben gruener Linie y=33055), Welt-Pfeil 359.8 Grad vs. Laufrichtung 180 Grad = 179.8 Grad entgegen (PDF-Regel exakt). (C) ARR-left: DIE Praezisierung - PDF nennt zwei Varianten ('vor der Stiege an der Wand' Seite 16 oben vs. 'mittig, immernoch vor den Stiegen' Seite 16 unten); die DXF hat NUR EINE Instanz, die beides gleichzeitig erfuellt: 957mm vor (oestlich) der Stiegen-Ostkante, 40mm neben der Stiegen-Mittellinie, 334mm Symbolkante->Ostwand (h=93BE5, x=-346083). Welt-Pfeil (C)=89.5 Grad (oben) in den Umlauf. 2OG-Ankunft: Person h=950E5 (Blick oben) direkt unter (C). Keine Sichtlinien in diesem Bereich (PDF behauptet auch keine).",
+  "leuchten": [
+   {
+    "label": "(A)",
+    "handle": "94FE7",
+    "block": "RIVO-RZ-ARR_right",
+    "symboltyp": "RZ Pfeil rechts",
+    "x": -353158,
+    "y": 31486,
+    "rotation": 0,
+    "pfeil_welt": "rechts (0 Grad, in die Stiege)",
+    "bezug_stiege": "810mm vor Stiegen-Westkante, 20mm neben Stiegen-Mittellinie"
+   },
+   {
+    "label": "(B)",
+    "handle": "94FE8",
+    "block": "RIVO-SIBEL-ARR-down",
+    "symboltyp": "RZ Pfeil unten",
+    "x": -348525,
+    "y": 33015,
+    "rotation": 89.83,
+    "pfeil_welt": "rechts (359.8 Grad, 179.8 Grad entgegen Laufrichtung)",
+    "bezug_stiege": "902mm noerdlich der Stiegen-Nordkante, mittig im Steg"
+   },
+   {
+    "label": "(C)",
+    "handle": "95019",
+    "block": "RIVO-SIBEL-ARR-left",
+    "symboltyp": "RZ Pfeil links",
+    "x": -346579,
+    "y": 31546,
+    "rotation": 269.55,
+    "pfeil_welt": "oben (89.5 Grad)",
+    "bezug_stiege": "957mm vor Stiegen-Ostkante, 40mm neben Stiegen-Mittellinie, 334mm vor Ostwand"
+   },
+   {
+    "label": "(D)",
+    "handle": "95042",
+    "block": "RIVO-SIBEL-ARR-down",
+    "symboltyp": "RZ Pfeil unten",
+    "x": -346703,
+    "y": 34488,
+    "rotation": 180.1,
+    "pfeil_welt": "oben (90.1 Grad)",
+    "bezug_tuer": "Tuer Gang/STGH, siehe 1OG-01"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(1OG) Top 4+5",
+    "herkunft": "Top 4+5",
+    "x": -352491,
+    "y": 29660,
+    "blickrichtung_grad": 101.6
+   },
+   {
+    "label": "(1OG) Stiege",
+    "herkunft": "1OG, steigt ab",
+    "x": -351515,
+    "y": 31354,
+    "blickrichtung_grad": 11.6
+   },
+   {
+    "label": "(2OG) Stiege",
+    "herkunft": "2OG, steigt ab",
+    "x": -350404,
+    "y": 31315,
+    "blickrichtung_grad": 5.2
+   },
+   {
+    "label": "(2OG) bei (C)",
+    "herkunft": "2OG-Ankunft Ost",
+    "x": -346544,
+    "y": 32333,
+    "blickrichtung_grad": 78.7
+   },
+   {
+    "label": "(2OG)/(1OG) Steg",
+    "herkunft": "oberer STGH-Steg",
+    "x": -350368,
+    "y": 32920,
+    "blickrichtung_grad": 168.5
+   }
+  ],
+  "sichtlinien": [],
+  "stiegenhauspfeil": {
+   "quelle": "rot nachgezeichnet (LWPOLYLINE h=95137, ACI 1, Dreiecksspitze am Zielende; MTEXT 'Stiegenhauspfeilrichtung' h=9515A ACI 1)",
+   "richtung_grad": 180
+  },
+  "geschoss": "1OG"
+ },
+ {
+  "id": "1OG-03",
+  "pdf_seite": 17,
+  "raum": "N-S-Gang Sued mit Top 6/7/8 (Bereich A2, Stiegenkern Ost)",
+  "status": "bestaetigt",
+  "befund": "(D) ARR-left h=952E9 sitzt am KNICK des Fluchtwegs (N-S-Gang trifft O-W-Stiegenzuweg), 20-43mm neben der Gangmittellinie, Welt-Pfeil 179.5 Grad (links/West) = zur Stiege (STIEGE h=94204, Ostkante x=-314412). Beide Gang-Aeste konvergieren auf (D): Suedast Fluchtwegpfeile visuell oben (91 Grad), Nordast visuell unten (270 Grad). Drei Sichtlinien: Top 8 L=2572mm (10.5 Grad von frontal), Top 6 L=1495mm (~30 Grad), Top 7 L=4578mm (~4 Grad) - alle auf die Sued-Breitseite (Vorderseite) von (D), 0 Wandschnitte. PDF-Aussage 'auf den ersten Blick (D) mit Pfeil nach links' vollstaendig belegt.",
+  "leuchten": [
+   {
+    "label": "(D)",
+    "handle": "952E9",
+    "block": "RIVO-SIBEL-ARR-left",
+    "symboltyp": "RZ Pfeil links",
+    "x": -312728,
+    "y": 3649,
+    "rotation": 359.55,
+    "pfeil_welt": "links (179.5 Grad, zur Stiege)",
+    "bezug_stiege": "am Knick, 1684mm oestlich der Stiegen-Ostkante"
+   }
+  ],
+  "personen": [
+   {
+    "label": "Top 8",
+    "herkunft": "Top 8",
+    "x": -313464,
+    "y": 928,
+    "blickrichtung_grad": 78.4
+   },
+   {
+    "label": "Top 7",
+    "herkunft": "Top 7",
+    "x": -312744,
+    "y": -1093,
+    "blickrichtung_grad": 101.6
+   },
+   {
+    "label": "Top 6",
+    "herkunft": "Top 6",
+    "x": -311793,
+    "y": 2454,
+    "blickrichtung_grad": 191.6
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "Top 8 (h=9561B)",
+    "nach": "(D) h=952E9",
+    "laenge_mm": 2572,
+    "winkel_zur_vorderseite_grad": 10.5,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Top 6 (h=95314)",
+    "nach": "(D) h=952E9",
+    "laenge_mm": 1495,
+    "winkel_zur_vorderseite_grad": 29.8,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Top 7 (h=95337)",
+    "nach": "(D) h=952E9",
+    "laenge_mm": 4578,
+    "winkel_zur_vorderseite_grad": 3.8,
+    "schneidet_wand": false
+   }
+  ],
+  "stiegenhauspfeil": null,
+  "geschoss": "1OG"
+ },
+ {
+  "id": "1OG-04",
+  "pdf_seite": 18,
+  "raum": "N-S-Gang Nord mit Top 4/5 (Bereich A2)",
+  "status": "praezisiert",
+  "befund": "(C) ARR-down h=952E8: Welt-Pfeil 89.8 Grad (oben) vs. Fluchtweg-Laufrichtung 270 Grad (Sueden) = 179.8 Grad entgegen (PDF-Rotationsregel exakt). Mittig im Gang: Gangbreite 1442mm (Westwand x=-313509, Ostwand x=-312067), (C) 95mm neben der geometrischen Gangmitte, 6mm neben der gruenen Fluchtweglinie. PDF sagt 'eine tuerkise Linie', DXF hat ZWEI (je Wohnungstuer eine): Top 4 L=2070mm (19 Grad von frontal), Top 5 L=2987mm (5 Grad von frontal), 0 Wandschnitte. '(D) ist weiter entfernt' plausibilisiert: (C)->(D)=4071mm, Top-5-Tuer->(D)=6378mm.",
+  "leuchten": [
+   {
+    "label": "(C)",
+    "handle": "952E8",
+    "block": "RIVO-SIBEL-ARR-down",
+    "symboltyp": "RZ Pfeil unten",
+    "x": -312693,
+    "y": 7719,
+    "rotation": 179.83,
+    "pfeil_welt": "oben (89.8 Grad, 179.8 Grad entgegen Laufrichtung)"
+   },
+   {
+    "label": "(D) (Bezug)",
+    "handle": "952E9",
+    "block": "RIVO-SIBEL-ARR-left",
+    "symboltyp": "RZ Pfeil links",
+    "x": -312728,
+    "y": 3649,
+    "rotation": 359.55,
+    "pfeil_welt": "links (179.5 Grad)"
+   }
+  ],
+  "personen": [
+   {
+    "label": "Top 4",
+    "herkunft": "Top 4",
+    "x": -313744,
+    "y": 9884,
+    "blickrichtung_grad": 281.6
+   },
+   {
+    "label": "Top 5",
+    "herkunft": "Top 5",
+    "x": -312751,
+    "y": 10918,
+    "blickrichtung_grad": 258.4
+   },
+   {
+    "label": "(1OG)/(2OG) Gang",
+    "herkunft": "Gang Richtung (D)",
+    "x": -312752,
+    "y": 5972,
+    "blickrichtung_grad": 258.4
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "Top 4 (h=953C4)",
+    "nach": "(C) h=952E8",
+    "laenge_mm": 2070,
+    "winkel_zur_vorderseite_grad": 19,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Top 5 (h=953A1)",
+    "nach": "(C) h=952E8",
+    "laenge_mm": 2987,
+    "winkel_zur_vorderseite_grad": 5,
+    "schneidet_wand": false
+   }
+  ],
+  "stiegenhauspfeil": null,
+  "geschoss": "1OG"
+ },
+ {
+  "id": "1OG-05",
+  "pdf_seite": 19,
+  "raum": "Stiegenhaus 1.STOCK STGH 29.74m2 + Top 2+3 (Bereich A2), Gaenge ohne Tuer-Abtrennung",
+  "status": "widerspruch",
+  "befund": "TEIL-WIDERSPRUCH: PDF-Text sagt 'vom 2OG- und vom 1OG-Menschen bei Top 2+3 jeweils eine tuerkise Linie zur Notleuchte (A)' - in der DXF endet die Linie der Top-2+3-Person (h=95621, L=2754mm) bei (-318678,4994) = an (B) h=956B0 (197mm vom (B)-Zentrum), NICHT an (A) (1946mm entfernt); das PDF-BILD zeigt dieselbe Linie ebenfalls zu (B). Nur die 2OG-Linie (h=957AC, L=1887mm, 0.5 Grad von frontal) fuehrt zu (A). Rest bestaetigt: keine Tuer zwischen Gang und STGH (keine TUER-Inserts an den Muendungen); (A) 931mm vor der Stiegen-Westkante, Welt-Pfeil 90 Grad (oben) = Richtung des gruenen Weiterwegs (erst Nord, dann Ost); (B) mittig (0-40mm neben gruener Linie), Welt-Pfeil 179.8 Grad entgegen dem Ost-Personenzug (11.6/1.2 Grad); Kette (A)->(B)->(D) mit (D)-Pfeil links/West in die Stiege. Stiegenhauspfeil rot h=954A7: Spitze (-314693,3602), Richtung 0.2 Grad (rechts); Stiegen-Personen h=95861 (Label '(2OG/ist im 1OG geht Richtung EG)' h=95862) und h=9537D Blick 168.4 Grad = 168 Grad entgegen.",
+  "leuchten": [
+   {
+    "label": "(A)",
+    "handle": "9568B",
+    "block": "RIVO-RZ-ARR_right",
+    "symboltyp": "RZ Pfeil rechts",
+    "x": -320154,
+    "y": 3638,
+    "rotation": 89.99,
+    "pfeil_welt": "oben (90 Grad, in den Umlauf)",
+    "bezug_stiege": "931mm vor Stiegen-Westkante (x=-319223)"
+   },
+   {
+    "label": "(B)",
+    "handle": "956B0",
+    "block": "RIVO-SIBEL-ARR-down",
+    "symboltyp": "RZ Pfeil unten",
+    "x": -318519,
+    "y": 5111,
+    "rotation": 269.83,
+    "pfeil_welt": "links (179.8 Grad, 178.6 Grad entgegen Laufrichtung)"
+   },
+   {
+    "label": "(D)",
+    "handle": "952E9",
+    "block": "RIVO-SIBEL-ARR-left",
+    "symboltyp": "RZ Pfeil links",
+    "x": -312728,
+    "y": 3649,
+    "rotation": 359.55,
+    "pfeil_welt": "links (179.5 Grad, in die Stiege)"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(1OG) Top 2+3",
+    "herkunft": "Top 2+3",
+    "x": -321240,
+    "y": 3623,
+    "blickrichtung_grad": 11.6
+   },
+   {
+    "label": "(2OG)",
+    "herkunft": "2OG-Ankunft",
+    "x": -318059,
+    "y": 3496,
+    "blickrichtung_grad": 168.4
+   },
+   {
+    "label": "(2OG)+(1OG) Nordgang (4 Personen paarweise)",
+    "herkunft": "gemeinsamer Zug nach Ost",
+    "x": -317037,
+    "y": 5030,
+    "blickrichtung_grad": 11.6
+   },
+   {
+    "label": "(2OG/ist im 1OG geht Richtung EG)",
+    "herkunft": "Stiege",
+    "x": -315269,
+    "y": 3555,
+    "blickrichtung_grad": 168.4
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "(2OG) h=957AA",
+    "nach": "(A) h=9568B",
+    "laenge_mm": 1887,
+    "winkel_zur_vorderseite_grad": 0.5,
+    "schneidet_wand": false
+   },
+   {
+    "von": "(1OG) Top 2+3 h=95452",
+    "nach": "(B) h=956B0 (PDF-Text sagt (A)!)",
+    "laenge_mm": 2754,
+    "winkel_zur_vorderseite_grad": 24.1,
+    "schneidet_wand": false
+   }
+  ],
+  "stiegenhauspfeil": {
+   "quelle": "rot nachgezeichnet (LWPOLYLINE h=954A7 ACI 1; graue Original-Stiegengrafik Layer 06-SYM daneben, Spitzenrichtung des Originals nicht eindeutig isolierbar)",
+   "richtung_grad": 0.2
+  },
+  "geschoss": "1OG"
+ },
+ {
+  "id": "2OG-01",
+  "pdf_seite": 20,
+  "raum": "Gang mit Abtrennung zum Stiegenhaus (Stiege 1, Top 15/14/13)",
+  "status": "praezisiert",
+  "befund": "PDF: jede Person sieht beim Verlassen direkt (D) Pfeil-unten an der STGH-Tuer; zwei Antipanikleuchten. DXF: (D)=H852B6 (-129816.6,4317.9) rot 180.1, Welt-Pfeil 90.1 Grad (Nord) = entgegen der Abzweigrichtung Sued (270 Grad); dx=2.6mm zur Tuerachsen-x des Tuer-Masstexts 05-TXT H83FD3 (mittig zur Tuer). Antipanik (E) H852B7 / (F) H852B8 rot 90, 55mm neben der Gang-Fluchtlinie, Teilung D-3090mm-E-6297mm-F-2579mm-Gangende. 3 Sichtlinien (Top13/14/15) 3646/10897/12028mm enden an der OST-SCHMALKANTE von (D): 86.5-90 Grad zur Vorderseiten-Normalen = reine Seitenansicht, nicht frontal — 'sieht direkt' = nur freie Sichtverbindung. Alternativen (2 Aufheller etc.) nur Text, nicht gezeichnet.",
+  "leuchten": [
+   {
+    "label": "(D)",
+    "handle": "852B6",
+    "block": "RIVO-SIBEL-ARR-down",
+    "x": -129816.6,
+    "y": 4317.9,
+    "rotation": 180.1,
+    "symboltyp": "RZ Pfeil unten (geradeaus)",
+    "pfeil_welt": "oben (90.1 Grad)",
+    "bezug_tuer": "dx 2.6mm zur STGH-Tuerachse (Masstext 05-TXT H83FD3, 90/200)",
+    "bezug_stiege": "am Abzweig Gang->STGH, 482mm suedlich der Gangachse"
+   },
+   {
+    "label": "(E)",
+    "handle": "852B7",
+    "block": "Antipanikleuchte-RIVO",
+    "x": -126726.5,
+    "y": 4855.4,
+    "rotation": 90,
+    "symboltyp": "Antipanik",
+    "pfeil_welt": "-",
+    "bezug_tuer": "3090mm oestlich von (D)"
+   },
+   {
+    "label": "(F)",
+    "handle": "852B8",
+    "block": "Antipanikleuchte-RIVO",
+    "x": -120429.3,
+    "y": 4854.4,
+    "rotation": 90,
+    "symboltyp": "Antipanik",
+    "pfeil_welt": "-",
+    "bezug_tuer": "6297mm oestlich von (E), 2579mm vor Top-15-Tuer"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(2OG)",
+    "x": -123251.3,
+    "y": 4898.4,
+    "blickrichtung_grad": 348.7,
+    "herkunft": "Gang H852C8 (blickt Ost, ENTGEGEN Fluchtrichtung West)"
+   },
+   {
+    "label": "(2OG)",
+    "x": -119140.6,
+    "y": 4897.8,
+    "blickrichtung_grad": 348.7,
+    "herkunft": "Gang H852C7"
+   },
+   {
+    "label": "-",
+    "x": -125752.6,
+    "y": 3983.2,
+    "blickrichtung_grad": 179.5,
+    "herkunft": "Top-13-Tuer H8531C"
+   },
+   {
+    "label": "-",
+    "x": -118502.6,
+    "y": 3982,
+    "blickrichtung_grad": 179.5,
+    "herkunft": "Top-14-Tuer H8531F"
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "Top-13-Person",
+    "nach": "(D) 852B6",
+    "laenge_mm": 3646,
+    "winkel_zur_vorderseite_grad": 90,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Top-14-Person",
+    "nach": "(D) 852B6",
+    "laenge_mm": 10897,
+    "winkel_zur_vorderseite_grad": 89.5,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Top-15-Person",
+    "nach": "(D) 852B6",
+    "laenge_mm": 12028,
+    "winkel_zur_vorderseite_grad": 86.5,
+    "schneidet_wand": false
+   }
+  ],
+  "stiegenhauspfeil": null,
+  "geschoss": "2OG"
+ },
+ {
+  "id": "2OG-02",
+  "pdf_seite": 21,
+  "raum": "Stiegenhaus 2. OG Stiege 1 (Top 11+12, Top 10)",
+  "status": "bestaetigt",
+  "befund": "PDF: Bewohner sehen sofort (A) Pfeil rechts; Gang-Leute via (D) sehen (B) unten dann (A); 3OG-Leute sehen (C) links, dann (B), (A); Flucht entgegen rotem Stiegenhauspfeil. DXF: (A)=H852AF rot 360 -> Welt-Pfeil 0 Grad (Ost=rechts), 801mm vor Stiegen-Westkante, 33mm auf Stiegenachse; (B)=H852B0 rot 89.8 -> Welt 359.8 (Ost) ENTGEGEN Fluss obere Zeile (180); (C)=H85344 rot 269.5 -> Welt 89.6 (Nord) = Abbiegerichtung links aus Ost-Laufrichtung. Sichtlinien Top11+12->A 1838mm (23.5 Grad), Top10->A 1681mm (13.7 Grad), 3OG->C 3937mm (0.75 Grad frontal). Roter Pfeil H852D7 Spitze West (180 Grad), gruene Stiegenzeilen-Pfeile H852C4/C5 0 Grad -> Delta 180 = Flucht entgegen dem Stiegenhauspfeil, mit Vektoren belegt.",
+  "leuchten": [
+   {
+    "label": "(A)",
+    "handle": "852AF",
+    "block": "RIVO-RZ-ARR_right",
+    "x": -136271.7,
+    "y": 1315.4,
+    "rotation": 360,
+    "symboltyp": "RZ Pfeil rechts",
+    "pfeil_welt": "rechts (0 Grad)",
+    "bezug_stiege": "801mm vor Stiegen-Westkante, 33mm auf Stiegenachse"
+   },
+   {
+    "label": "(B)",
+    "handle": "852B0",
+    "block": "RIVO-SIBEL-ARR-down",
+    "x": -131638.8,
+    "y": 2845,
+    "rotation": 89.8,
+    "symboltyp": "RZ Pfeil unten",
+    "pfeil_welt": "rechts (359.8 Grad), entgegen Fluss West",
+    "bezug_stiege": "obere STGH-Zeile, 39mm neben Fluchtlinie"
+   },
+   {
+    "label": "(C)",
+    "handle": "85344",
+    "block": "RIVO-SIBEL-ARR-left",
+    "x": -129364,
+    "y": 1325,
+    "rotation": 269.5,
+    "symboltyp": "RZ Pfeil links",
+    "pfeil_welt": "oben (89.6 Grad) = Abbiegerichtung",
+    "bezug_stiege": "1293mm oestlich der Stiegen-Ostkante, 23mm auf Stiegenachse"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(2OG)",
+    "x": -136275,
+    "y": 607.9,
+    "blickrichtung_grad": 101.6,
+    "herkunft": "Top 11+12 H85311"
+   },
+   {
+    "label": "(2OG)",
+    "x": -135606.2,
+    "y": -510.3,
+    "blickrichtung_grad": 101.6,
+    "herkunft": "Top 10 H852B4"
+   },
+   {
+    "label": "(3OG)",
+    "x": -133482,
+    "y": 2750,
+    "blickrichtung_grad": 168.5,
+    "herkunft": "obere Zeile H852E1"
+   },
+   {
+    "label": "(3OG)",
+    "x": -133517.6,
+    "y": 1144.7,
+    "blickrichtung_grad": 5.2,
+    "herkunft": "Stiegenzeile H852C6, blickt Ost zu (C)"
+   },
+   {
+    "label": "(3OG)",
+    "x": -129657.8,
+    "y": 2162.8,
+    "blickrichtung_grad": 78.7,
+    "herkunft": "Abzweig bei (C) H852C9, blickt Nord"
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "Top-11+12-Person",
+    "nach": "(A) 852AF",
+    "laenge_mm": 1838,
+    "winkel_zur_vorderseite_grad": 23.5,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Top-10-Person",
+    "nach": "(A) 852AF",
+    "laenge_mm": 1681,
+    "winkel_zur_vorderseite_grad": 13.7,
+    "schneidet_wand": false
+   },
+   {
+    "von": "3OG-Person H852C6",
+    "nach": "(C) 85344",
+    "laenge_mm": 3937,
+    "winkel_zur_vorderseite_grad": 0.75,
+    "schneidet_wand": false
+   }
+  ],
+  "stiegenhauspfeil": {
+   "quelle": "rot nachgezeichnet (H852D7, ACI 1; graues Original = Lauflinie im STIEGE-Block)",
+   "richtung_grad": 180
+  },
+  "geschoss": "2OG"
+ },
+ {
+  "id": "2OG-03",
+  "pdf_seite": 23,
+  "raum": "Gang Stiege 2 Suedteil (Top 13/14/15)",
+  "status": "widerspruch",
+  "befund": "PDF-Text S.23: '(D) mit Pfeil nach RECHTS, mittig vom Gang und mittig von der Stiege'. DXF: (D)=H852E4 ist RIVO-SIBEL-ARR-LEFT, rot 359.55 -> Welt-Pfeil 179.55 Grad (West = LINKS); PDF-Bild S.23 und PDF-Text S.25 zeigen/sagen ebenfalls links -> der S.23-Text widerspricht Block, Bild und S.25. Positionsaussage bestaetigt: 60mm zur Gangmitte (Tuerachsen Top13 x=-95233 / Top15 x=-96483 -> Mitte -95858), 42mm zur Stiegenachse (y=-26630). Gang-Fluchtpfeile H85305/06/07 Welt 91.2 Grad (Nord, zur Leuchte hin). 3 Sichtlinien enden an der Sued-Vorderseite: Top13 1495mm/30.2 Grad, Top15 2572mm/10.1 Grad, Top14 4578mm/3.4 Grad (frontal).",
+  "leuchten": [
+   {
+    "label": "(D)",
+    "handle": "852E4",
+    "block": "RIVO-SIBEL-ARR-left",
+    "x": -95917.8,
+    "y": -26588.3,
+    "rotation": 359.55,
+    "symboltyp": "RZ Pfeil links",
+    "pfeil_welt": "links (179.55 Grad)",
+    "bezug_stiege": "42mm von Stiegenachse (STIEGE H844B6)",
+    "bezug_tuer": "60mm von Gangmitte aus Tuerachsen Top13/Top15"
+   }
+  ],
+  "personen": [
+   {
+    "label": "-",
+    "x": -94982.3,
+    "y": -27783.4,
+    "blickrichtung_grad": 191.6,
+    "herkunft": "Top-13-Tuer H852ED"
+   },
+   {
+    "label": "-",
+    "x": -96653.2,
+    "y": -29309.7,
+    "blickrichtung_grad": 78.4,
+    "herkunft": "Top-15-Tuer H85323"
+   },
+   {
+    "label": "-",
+    "x": -95933.9,
+    "y": -31329.7,
+    "blickrichtung_grad": 101.6,
+    "herkunft": "Top-14-Tuer H852EE"
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "Top-13-Person",
+    "nach": "(D) 852E4",
+    "laenge_mm": 1495,
+    "winkel_zur_vorderseite_grad": 30.2,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Top-15-Person",
+    "nach": "(D) 852E4",
+    "laenge_mm": 2572,
+    "winkel_zur_vorderseite_grad": 10.1,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Top-14-Person",
+    "nach": "(D) 852E4",
+    "laenge_mm": 4578,
+    "winkel_zur_vorderseite_grad": 3.4,
+    "schneidet_wand": false
+   }
+  ],
+  "stiegenhauspfeil": null,
+  "geschoss": "2OG"
+ },
+ {
+  "id": "2OG-04",
+  "pdf_seite": 24,
+  "raum": "Gang Stiege 2 Nordteil (Top 11/12)",
+  "status": "bestaetigt",
+  "befund": "PDF: '(C) Pfeil nach unten, so rotiert dass sie in die entgegengesetzte Richtung des Fluchtweges zeigt'. DXF: (C)=H852E3 rot 179.83 -> Welt-Pfeil 89.8 Grad (Nord); Gang-Fluchtpfeile H852F3/F5/F9/FA/85302 Welt 270 Grad (Sued) -> Delta 180.2 Grad = exakt entgegengesetzt, bestaetigt. Position 8mm neben der Fluchtlinie (x -95875), 25mm von der Gangmitte. Sichtlinien enden an der Nord-Vorderseite: Top11 2070mm/19.2 Grad, Top12 2987mm/5.0 Grad (frontal).",
+  "leuchten": [
+   {
+    "label": "(C)",
+    "handle": "852E3",
+    "block": "RIVO-SIBEL-ARR-down",
+    "x": -95883,
+    "y": -22517.9,
+    "rotation": 179.83,
+    "symboltyp": "RZ Pfeil unten",
+    "pfeil_welt": "oben (89.8 Grad), entgegen Fluss Sued (270)",
+    "bezug_tuer": "25mm von Gangmitte"
+   }
+  ],
+  "personen": [
+   {
+    "label": "-",
+    "x": -96932.9,
+    "y": -20353.7,
+    "blickrichtung_grad": 281.6,
+    "herkunft": "Top-11-Tuer H852F2"
+   },
+   {
+    "label": "(2OG)",
+    "x": -95941.9,
+    "y": -24265.6,
+    "blickrichtung_grad": 258.4,
+    "herkunft": "Gang suedwaerts H852F7"
+   },
+   {
+    "label": "(2OG)",
+    "x": -95674.2,
+    "y": -21577.7,
+    "blickrichtung_grad": 258.4,
+    "herkunft": "Gang suedwaerts H852F6"
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "Top-11-Person",
+    "nach": "(C) 852E3",
+    "laenge_mm": 2070,
+    "winkel_zur_vorderseite_grad": 19.2,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Top-12-Person",
+    "nach": "(C) 852E3",
+    "laenge_mm": 2987,
+    "winkel_zur_vorderseite_grad": 5,
+    "schneidet_wand": false
+   }
+  ],
+  "stiegenhauspfeil": null,
+  "geschoss": "2OG"
+ },
+ {
+  "id": "2OG-05",
+  "pdf_seite": 25,
+  "raum": "Stiegenhaus 2. OG Stiege 2 (Top 9, Top 10)",
+  "status": "praezisiert",
+  "befund": "PDF: (A) Pfeil rechts 'mittig im Gang und vor der Stiege'; Top 9 sieht A UND B; Top 10 sieht B; nach B sehen alle (D) Pfeil links -> Stiege 1.OG; Flucht entgegen rotem Stiegenhauspfeil. DXF: (A)=H8532D Block ARR_right, rot 90 -> Welt-Pfeil 90 Grad (Nord) — 'rechts' ist der Piktogramm-Typ, in Weltkoordinaten 90 Grad gedreht (= Weiterlaufrichtung zur oberen Gangzeile). 940mm vor Stiegen-Westkante, 31mm auf Stiegenachse, exakt auf Top-9-Tuerachse (dy 1.6mm). (B)=H85330 Welt 179.8 (West) entgegen Fluss Ost (1.2). (D)=H852E4 Welt 179.55 (West=links, auf die Stiege zu). Sichtlinien: Top9->A 882mm/0.4 Grad frontal + Top9->B 2754mm/24.3 Grad (Top 9 sieht A UND B = 2 Linien vom selben Punkt, bestaetigt); Top10->B 2899mm/26.5; 3OG->A 1887mm/0.5 frontal ('unmittelbar beim Erreichen' bestaetigt). Roter Pfeil H85309 Spitze Ost (0 Grad), Stiegenzeilen-Flucht 180/181.2 Grad West -> entgegen, spiegelbildlich zu Stiege 1.",
+  "leuchten": [
+   {
+    "label": "(A)",
+    "handle": "8532D",
+    "block": "RIVO-RZ-ARR_right",
+    "x": -103343.5,
+    "y": -26599,
+    "rotation": 90,
+    "symboltyp": "RZ Pfeil rechts",
+    "pfeil_welt": "oben (90 Grad)",
+    "bezug_stiege": "940mm vor Stiegen-Westkante, 31mm auf Stiegenachse",
+    "bezug_tuer": "auf Top-9-Tuerachse (dy 1.6mm)"
+   },
+   {
+    "label": "(B)",
+    "handle": "85330",
+    "block": "RIVO-SIBEL-ARR-down",
+    "x": -101727.4,
+    "y": -25172.8,
+    "rotation": 269.8,
+    "symboltyp": "RZ Pfeil unten",
+    "pfeil_welt": "links (179.8 Grad), entgegen Fluss Ost",
+    "bezug_stiege": "obere Gangzeile noerdlich der Stiege"
+   },
+   {
+    "label": "(D)",
+    "handle": "852E4",
+    "block": "RIVO-SIBEL-ARR-left",
+    "x": -95917.8,
+    "y": -26588.3,
+    "rotation": 359.55,
+    "symboltyp": "RZ Pfeil links",
+    "pfeil_welt": "links (179.55 Grad) = auf die Stiege zu",
+    "bezug_stiege": "an der Kreuzung am Stiegen-Ostende"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(2OG)",
+    "x": -104429.8,
+    "y": -26614,
+    "blickrichtung_grad": 11.6,
+    "herkunft": "Top 9 H852F8"
+   },
+   {
+    "label": "(2OG)",
+    "x": -104502.4,
+    "y": -24141.5,
+    "blickrichtung_grad": 11.6,
+    "herkunft": "Top 10 H853BC"
+   },
+   {
+    "label": "(3OG)",
+    "x": -101248.2,
+    "y": -26741.5,
+    "blickrichtung_grad": 168.4,
+    "herkunft": "Stiegenzeile H85339, sieht (A) frontal"
+   },
+   {
+    "label": "(3OG/ist im 2OG geht Richtung 1OG)",
+    "x": -98458.5,
+    "y": -26681.8,
+    "blickrichtung_grad": 168.4,
+    "herkunft": "Stiegenzeile H85342 (MTEXT H85343)"
+   },
+   {
+    "label": "(2OG)",
+    "x": -97219.5,
+    "y": -26630,
+    "blickrichtung_grad": 168.4,
+    "herkunft": "Stiegenzeile H852EF"
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "Top-9-Person",
+    "nach": "(A) 8532D",
+    "laenge_mm": 882,
+    "winkel_zur_vorderseite_grad": 0.4,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Top-9-Person",
+    "nach": "(B) 85330",
+    "laenge_mm": 2754,
+    "winkel_zur_vorderseite_grad": 24.3,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Top-10-Person",
+    "nach": "(B) 85330",
+    "laenge_mm": 2899,
+    "winkel_zur_vorderseite_grad": 26.5,
+    "schneidet_wand": false
+   },
+   {
+    "von": "3OG-Person H85339",
+    "nach": "(A) 8532D",
+    "laenge_mm": 1887,
+    "winkel_zur_vorderseite_grad": 0.5,
+    "schneidet_wand": false
+   }
+  ],
+  "stiegenhauspfeil": {
+   "quelle": "rot nachgezeichnet (H85309, ACI 1; graues Original = Lauflinie im STIEGE-Block H844B6)",
+   "richtung_grad": 0
+  },
+  "geschoss": "2OG"
+ },
+ {
+  "id": "3OG-01",
+  "pdf_seite": 27,
+  "raum": "Stiegenhaus 1 im 3. OG (STGH 11,14 m2, '3. STOCK', AUFZUG 8 PERS., Wohnung Top 16+17, Stiege '9 HÖHEN 16,9/28,0')",
+  "status": "bestaetigt+praezisiert",
+  "befund": "Alle PDF-Aussagen (S. 27-28) geometrisch belegt. (A)=RIVO-RZ-ARR_right h=78D92, Zentrum (-1784516,16068), rot 359,9 -> Welt-Pfeil 359,9 Grad = rechts (PDF: 'Pfeil nach rechts' OK). (B)=RIVO-SIBEL-ARR-left h=78DB5, Zentrum (-1781086,17879), rot 359,4 -> Welt-Pfeil 179,4 Grad = links (PDF OK). Sichtlinie h=78FE8 Tuer Top16+17 -> (A): 1950 mm, Richtung 68,0 Grad, Start 136 mm neben Tuermitte (00-top h=78789 bei -1785157,14097), Ende 165 mm vor (A); nur 22 Grad von frontal (Schild-Laengsachse horizontal), kreuzt keine Wand (Schnitte nur 02-AXO/02-HID, keine 02-TWA/02-ZWA). (A) NICHT tuermittig, sondern 2073 mm von der Tuer am Knick des gruenen Fluchtwegs (h=78E2E: 592 mm Ost + 1815 mm Nord) = 'bei Richtungswechsel auf den ersten Blick'. (A) liegt ~130 mm neben der Achse des Abwaerts-Laufs (rote Nachzeichnung h=78F0E, Pfeilspitze West 180,3 Grad) und zeigt mit 359,9 Grad exakt die Abstiegs-Gehrichtung = entgegen Stiegenhauspfeil (Delta 180,4 Grad). (B) sitzt 454 mm noerdlich der oberen Laufachse, 109 mm oestlich der roten Pfeilspitze h=78F9F (Richtung 359,5 Grad); (B)-Pfeil 179,4 = entgegengesetzt (Delta 179,9 Grad) und = Gehrichtung der absteigenden 4OG-Menschen. Praezisierung: es gibt ZWEI rot nachgezeichnete Stiegenhauspfeile (oben 359,5 / unten 180,3 Grad), je Lauf einer, beide jeweils entgegen der lokalen gruenen Fluchtrichtung (Fluchtpfeile 4444444 h=78E58/78E59 West bzw. 78EA0/78EA1/78EA2 Ost).",
+  "leuchten": [
+   {
+    "label": "(A)",
+    "handle": "78D92",
+    "block": "RIVO-RZ-ARR_right",
+    "symboltyp": "RZ Pfeil rechts",
+    "x": -1784516,
+    "y": 16068,
+    "rotation": 359.9,
+    "pfeil_welt": "rechts (359,9 Grad)",
+    "bezug_tuer": "2073 mm von Tuermitte Top16+17 (00-top h=78789), am Fluchtweg-Knick, nicht tuermittig",
+    "bezug_stiege": "~130 mm neben Achse des Abwaertslaufs, 1169 mm vor Laufbeginn; Pfeil = Abstiegsrichtung, entgegen rotem Pfeil h=78F0E (Delta 180,4 Grad)"
+   },
+   {
+    "label": "(B)",
+    "handle": "78DB5",
+    "block": "RIVO-SIBEL-ARR-left",
+    "symboltyp": "RZ Pfeil links",
+    "x": -1781086,
+    "y": 17879,
+    "rotation": 359.4,
+    "pfeil_welt": "links (179,4 Grad)",
+    "bezug_stiege": "am Antritt des oberen Laufs: 454 mm noerdlich der Laufachse, 109 mm oestlich der roten Pfeilspitze h=78F9F; Pfeil entgegen Stiegenhauspfeil (Delta 179,9 Grad)"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(3OG)",
+    "herkunft": "Top 16+17 Tuer",
+    "x": -1785561,
+    "y": 14069,
+    "blickrichtung_grad": 78.3
+   },
+   {
+    "label": "(3OG)",
+    "herkunft": "Weg Tuer->A",
+    "x": -1784495,
+    "y": 14699,
+    "blickrichtung_grad": 78.3
+   },
+   {
+    "label": "(3OG)",
+    "herkunft": "Gangband ab (A)",
+    "x": -1781854,
+    "y": 15957,
+    "blickrichtung_grad": 11.5
+   },
+   {
+    "label": "(4OG)",
+    "herkunft": "4. OG absteigend",
+    "x": -1782722,
+    "y": 15958,
+    "blickrichtung_grad": 11.5
+   },
+   {
+    "label": "(4OG)",
+    "herkunft": "4. OG, Knick zu (A)",
+    "x": -1784416,
+    "y": 17400,
+    "blickrichtung_grad": 252.2
+   },
+   {
+    "label": "(4OG)",
+    "herkunft": "oberer Lauf",
+    "x": -1782218,
+    "y": 17382,
+    "blickrichtung_grad": 162.4
+   },
+   {
+    "label": "(4OG)",
+    "herkunft": "oberer Lauf bei (B)",
+    "x": -1780652,
+    "y": 17410,
+    "blickrichtung_grad": 162.4
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "Tuer Top 16+17 (h=78FE8)",
+    "nach": "(A) 78D92",
+    "laenge_mm": 1950,
+    "winkel_zur_vorderseite_grad": 22,
+    "schneidet_wand": false
+   }
+  ],
+  "stiegenhauspfeil": {
+   "quelle": "rot nachgezeichnet (h=78F9F oben, h=78F0E unten; MTEXT 'Stiegenhauspfeilrichtung' h=78FC2/78F31)",
+   "richtung_grad": 359.5
+  },
+  "geschoss": "3OG"
+ },
+ {
+  "id": "3OG-02",
+  "pdf_seite": 29,
+  "raum": "Gang im 3. OG ohne Tuer-Abtrennung zum Stiegenhaus 2 (STGH 24,09 m2, Wohnungstueren Top 18+19, 20, 21, 22; Stiege '17 HÖHEN 16,9/28,0' als EIN gerader Lauf)",
+  "status": "bestaetigt+praezisiert",
+  "befund": "Alle PDF-Aussagen (S. 29-30) geometrisch belegt. (B)=RIVO-SIBEL-ARR-left h=78DDA, Zentrum (-1743996,-11979), rot 359,4 -> Welt-Pfeil 179,4 Grad = links (PDF OK). 'Mittig im Gang': lichte Gangbreite 1250 mm (Innenkanten x=-1744643/-1743393, Layer 02-TWA), Mittellinie x=-1744018, (B) bei x=-1743996 = nur 22 mm daneben. 'Vor der Stiege': (B) y=-11979 liegt 43 mm neben der Stiegenlauf-Achse (rote Nachzeichnung h=792B8, y=-12022), 2037 mm oestlich der roten Pfeilspitze; Lauflaenge 4480 mm = exakt 16 Auftritte x 280 mm. (B)-Pfeil 179,4 Grad zeigt exakt in den Lauf, roter Stiegenhauspfeil 0,0 Grad (Ost) -> entgegengesetzt (Delta 179,4 Grad); gruene Fluchtpfeile auf dem Lauf (79271/79294/792B7) 179,9 Grad = entgegen rot. PDF-Begruendung 'in Gangmitte wuerde der Pfeil zur Wand zeigen' stimmt: auf Ganghoehe y~-13500 liegt westlich direkt die Wand x=-1744643, die Stiege beginnt erst bei y~-12022. Alle 4 Wohnungstueren haben tuerkise Sichtlinien mit direkter Sicht auf die (B)-Vorderseite (3,9-27,9 Grad von frontal), keine kreuzt eine Wand; bei jeder Tuer ein (3OG)-Menschensymbol.",
+  "leuchten": [
+   {
+    "label": "(B)",
+    "handle": "78DDA",
+    "block": "RIVO-SIBEL-ARR-left",
+    "symboltyp": "RZ Pfeil links",
+    "x": -1743996,
+    "y": -11979,
+    "rotation": 359.4,
+    "pfeil_welt": "links (179,4 Grad)",
+    "bezug_tuer": "keine Einzeltuer: bedient 4 Wohnungstueren (naechste Top 18+19 in 2137 mm)",
+    "bezug_stiege": "vor der Stiege am T-Stoss: 43 mm neben der Laufachse, 22 mm neben der Gangmitte (1250 mm Gang); Pfeil in den Lauf, entgegen rotem Pfeil h=792B8 (Delta 179,4 Grad)"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(3OG)",
+    "herkunft": "Top 18+19",
+    "x": -1743958,
+    "y": -9634,
+    "blickrichtung_grad": 281.7
+   },
+   {
+    "label": "(3OG)",
+    "herkunft": "Top 20",
+    "x": -1743176,
+    "y": -13177,
+    "blickrichtung_grad": 101.9
+   },
+   {
+    "label": "(3OG)",
+    "herkunft": "Top 21",
+    "x": -1743998,
+    "y": -16434,
+    "blickrichtung_grad": 101.9
+   },
+   {
+    "label": "(3OG)",
+    "herkunft": "Top 22",
+    "x": -1744725,
+    "y": -14758,
+    "blickrichtung_grad": 78.3
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "Top 18+19 (h=79327)",
+    "nach": "(B) 78DDA",
+    "laenge_mm": 2175,
+    "winkel_zur_vorderseite_grad": 9.3,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Top 20 (h=79396)",
+    "nach": "(B) 78DDA",
+    "laenge_mm": 1140,
+    "winkel_zur_vorderseite_grad": 27.9,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Top 21 (h=793BC)",
+    "nach": "(B) 78DDA",
+    "laenge_mm": 4275,
+    "winkel_zur_vorderseite_grad": 3.9,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Top 22 (h=79370)",
+    "nach": "(B) 78DDA",
+    "laenge_mm": 2644,
+    "winkel_zur_vorderseite_grad": 9.9,
+    "schneidet_wand": false
+   }
+  ],
+  "stiegenhauspfeil": {
+   "quelle": "rot nachgezeichnet (h=792B8, MTEXT h=792DB)",
+   "richtung_grad": 0
+  },
+  "geschoss": "3OG"
+ },
+ {
+  "id": "4OG-01",
+  "pdf_seite": 31,
+  "raum": "Gang bei Top 18/19 (West-Stiegenhaus)",
+  "status": "praezisiert",
+  "befund": "PDF: Bewohner Top 18/19 sehen (A) 'mit Pfeil nach links' frontal. DXF: (A)=RIVO-SIBEL-ARR-left h=41249, Zentrum (-75883,30933), rot=269.42, Portrait 325x641mm -> Welt-Pfeil 89.42 Grad (Nord, Richtung (B)); 'links'=Produkttyp. Westkante 15mm an Wandkante x=-76030, Front nach West zu den Tueren. Sichtlinien 2419mm/0.8 Grad und 2014mm/36.7 Grad zur Vorderseiten-Normalen = frontal.",
+  "leuchten": [
+   {
+    "label": "(A)",
+    "handle": "41249",
+    "block": "RIVO-SIBEL-ARR-left",
+    "symboltyp": "RZ Pfeil links (Produkttyp)",
+    "x": -75883,
+    "y": 30933,
+    "rotation": 269.42,
+    "pfeil_welt": "oben (89.42 Grad)",
+    "bezug_tuer": "Front zu den Wohnungstueren Top 18/19 im Westen",
+    "bezug_stiege": "Weltpfeil Nord = Richtung (B)/Stiege"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(4OG) Top 19",
+    "x": -78493,
+    "y": 30635,
+    "blickrichtung_grad": 11.86,
+    "herkunft": "Top 19"
+   },
+   {
+    "label": "(4OG) Top 18",
+    "x": -77375,
+    "y": 29704,
+    "blickrichtung_grad": 101.86,
+    "herkunft": "Top 18"
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "Person Top 19 h=41277",
+    "nach": "(A) Westkante",
+    "laenge_mm": 2419,
+    "winkel_zur_vorderseite_grad": 0.8,
+    "schneidet_wand": null
+   },
+   {
+    "von": "Person Top 18 h=41222",
+    "nach": "(A) Westkante",
+    "laenge_mm": 2014,
+    "winkel_zur_vorderseite_grad": 36.7,
+    "schneidet_wand": null
+   }
+  ],
+  "stiegenhauspfeil": null,
+  "geschoss": "4OG"
+ },
+ {
+  "id": "4OG-02",
+  "pdf_seite": 32,
+  "raum": "West-Stiegenhaus (STGH 9.33m2 / GANG 6.03m2)",
+  "status": "praezisiert",
+  "befund": "(A)->(B): (B)=RZ-ARR_right h=4121F (-75940,32585) rot=359.87 -> Welt-Pfeil 359.87 (Ost/rechts) auf den 8-HOEHEN-Abwaertslauf ~300mm oestlich; 'mittig im Gang' belegt: Gangbreite 1727mm (Kanten -76792/-75065), Abweichung von Achse 12mm. (A)->(B) Abstand 1653mm im selben Gang. (C)=ARR-left h=41220 (-72424,34451) Welt-Pfeil 179.42 (West) = entgegengesetzt zum oberen Stiegenhauspfeil (0 Grad Ost); an der Wand: 101mm von Kante y=34552. DG-Personen laufen je Delta~180 Grad entgegen der roten Aufwaertspfeil-Kette.",
+  "leuchten": [
+   {
+    "label": "(B)",
+    "handle": "4121F",
+    "block": "RIVO-RZ-ARR_right",
+    "symboltyp": "RZ Pfeil rechts",
+    "x": -75940,
+    "y": 32585,
+    "rotation": 359.87,
+    "pfeil_welt": "rechts (359.87 Grad)",
+    "bezug_stiege": "zeigt auf Abwaertslauf (8 HOEHEN) ~300mm oestlich"
+   },
+   {
+    "label": "(C)",
+    "handle": "41220",
+    "block": "RIVO-SIBEL-ARR-left",
+    "symboltyp": "RZ Pfeil links",
+    "x": -72424,
+    "y": 34451,
+    "rotation": 359.42,
+    "pfeil_welt": "links (179.42 Grad)",
+    "bezug_stiege": "am DG-Ankunftspodest, Pfeil = Abstiegsrichtung, an Wand y=34552"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(DG) oberer Lauf",
+    "x": -73884,
+    "y": 33994,
+    "blickrichtung_grad": 167.9,
+    "herkunft": "DG"
+   },
+   {
+    "label": "(DG) Podest",
+    "x": -75952,
+    "y": 33725,
+    "blickrichtung_grad": 257.5,
+    "herkunft": "DG"
+   },
+   {
+    "label": "(4OG)",
+    "x": -75181,
+    "y": 32574,
+    "blickrichtung_grad": 11.9,
+    "herkunft": "4OG"
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "DG-Person h=41329",
+    "nach": "(B) Nordkante",
+    "laenge_mm": 1006,
+    "winkel_zur_vorderseite_grad": 17.8,
+    "schneidet_wand": null
+   }
+  ],
+  "stiegenhauspfeil": {
+   "richtung_grad": 0,
+   "quelle": "rot nachgezeichnet (h=412FC/412FD Apex Ost, oberer Lauf; h=412FE Apex West unterer Lauf; Labels 'Stiegenhauspfeilrichtung' h=4168B/416AE; Original grau daneben)"
+  },
+  "geschoss": "4OG"
+ },
+ {
+  "id": "4OG-03",
+  "pdf_seite": 33,
+  "raum": "Gang bei Top 23/24 (Ost)",
+  "status": "bestaetigt",
+  "befund": "(A)=SIBEL-ARR-down h=413A0 (-35385,8592) rot=179.71, Landscape 631x318 -> Welt-Pfeil 89.71 (Nord) EXAKT entgegen Fluchtfluss 269.87 (Sued, Pfeile 41541-43), Delta 179.8 Grad. Gangbreite 1520mm (Kanten -35995/-34475), 150mm neben Achse. Sichtlinien von Top23 1958mm/15.2 Grad und Top24 2789mm/6.5 Grad zur Normalen = frontal; links/rechts-Variante waere Portrait -> Seitenansicht (konzeptionell belegt).",
+  "leuchten": [
+   {
+    "label": "(A)",
+    "handle": "413A0",
+    "block": "RIVO-SIBEL-ARR-down",
+    "symboltyp": "RZ Pfeil unten",
+    "x": -35385,
+    "y": 8592,
+    "rotation": 179.71,
+    "pfeil_welt": "oben (89.71 Grad), entgegen Fluchtrichtung Sued"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(4OG) Top 23",
+    "x": -36186,
+    "y": 10555,
+    "blickrichtung_grad": 304.1,
+    "herkunft": "Top 23"
+   },
+   {
+    "label": "(4OG) Top 24",
+    "x": -35359,
+    "y": 11437,
+    "blickrichtung_grad": 304.1,
+    "herkunft": "Top 24"
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "Person Top 23 h=41433",
+    "nach": "(A) Nordkante y=8749",
+    "laenge_mm": 1958,
+    "winkel_zur_vorderseite_grad": 15.2,
+    "schneidet_wand": null
+   },
+   {
+    "von": "Person Top 24 h=41458",
+    "nach": "(A) Nordkante y=8749",
+    "laenge_mm": 2789,
+    "winkel_zur_vorderseite_grad": 6.5,
+    "schneidet_wand": null
+   }
+  ],
+  "stiegenhauspfeil": null,
+  "geschoss": "4OG"
+ },
+ {
+  "id": "4OG-04",
+  "pdf_seite": 34,
+  "raum": "Gang bei Top 25/26 (Ost)",
+  "status": "bestaetigt",
+  "befund": "(B)=SIBEL-ARR-left h=41593 (-35752,4564) rot=359.42 -> Welt-Pfeil 179.42 (West/links); Stiege liegt West: 17-HOEHEN-Laufkante 1633mm westlich, gruene Fortsetzung h=41461 exakt in Pfeilrichtung. Beide PDF-Bedingungen belegt: Vorderseite (Sichtlinien von Sueden 1551mm/9.6 Grad und 1225mm/45.5 Grad zur Normalen) + Pfeil zur Stiege.",
+  "leuchten": [
+   {
+    "label": "(B)",
+    "handle": "41593",
+    "block": "RIVO-SIBEL-ARR-left",
+    "symboltyp": "RZ Pfeil links",
+    "x": -35752,
+    "y": 4564,
+    "rotation": 359.42,
+    "pfeil_welt": "links (179.42 Grad)",
+    "bezug_stiege": "17-HOEHEN-Lauf Ostkante x=-37385, 1633mm westlich"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(4OG) Top 26",
+    "x": -35696,
+    "y": 2846,
+    "blickrichtung_grad": 101.9,
+    "herkunft": "Top 26"
+   },
+   {
+    "label": "(4OG) Top 25",
+    "x": -34563,
+    "y": 3515,
+    "blickrichtung_grad": 101.9,
+    "herkunft": "Top 25"
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "Person Top 26 h=4140D",
+    "nach": "(B) Suedkante y=4405",
+    "laenge_mm": 1551,
+    "winkel_zur_vorderseite_grad": 9.6,
+    "schneidet_wand": null
+   },
+   {
+    "von": "Person Top 25 h=4137B",
+    "nach": "(B) Suedkante y=4405",
+    "laenge_mm": 1225,
+    "winkel_zur_vorderseite_grad": 45.5,
+    "schneidet_wand": null
+   }
+  ],
+  "stiegenhauspfeil": null,
+  "geschoss": "4OG"
+ },
+ {
+  "id": "4OG-05",
+  "pdf_seite": 35,
+  "raum": "Gang Top 25/26 — Vergleich 'Pfeil unten statt links' (hypothetisch)",
+  "status": "bestaetigt",
+  "befund": "Kein DXF-Bestand der Vergleichsvariante am Ort (nur reale ARR-left h=41593); PDF-Bild ist AutoCAD-Momentaufnahme (Prompt 'Basispunkt angeben' sichtbar). Geometrisch nachvollzogen: ARR-down mit Welt-Pfeil West waere Portrait (318x631) -> Sichtlinien 9.6/45.5 Grad zur LAENGSACHSE = Seitenansicht. Kurios: exakt diese Variante existiert als freie Kopie h=41221 ausserhalb des Grundrisses (siehe unerklaert).",
+  "leuchten": [],
+  "personen": [],
+  "sichtlinien": [],
+  "stiegenhauspfeil": null,
+  "geschoss": "4OG"
+ },
+ {
+  "id": "4OG-06",
+  "pdf_seite": 37,
+  "raum": "Ost-Stiegenhaus — Blickrichtung/'falsch'-Beispiel bei (C)",
+  "status": "praezisiert",
+  "befund": "Rote Box, 'falsch' und 'schaut seitlich auf Notleuchte' existieren NICHT im DXF (nur PDF-Screenshot). Reale (C)=RZ-ARR_right h=415B6 (-42975,4646) rot=89.87, Portrait 320x637 -> Welt-Pfeil 89.87 (Nord). Sichtlinie h=41645 3342mm, 0.8 Grad zur Normalen = frontal; gegen die falsche Landscape-Variante waere dieselbe Linie ~89 Grad = Seitenansicht. S.37-Regel (Fluchtweg aus Personensicht rechts -> Pfeil rechts) ist im DXF exakt umgesetzt: Person Blick 176.98 West, Fortsetzung Nord=rechts, Produkttyp ARR_right.",
+  "leuchten": [
+   {
+    "label": "(C)",
+    "handle": "415B6",
+    "block": "RIVO-RZ-ARR_right",
+    "symboltyp": "RZ Pfeil rechts",
+    "x": -42975,
+    "y": 4646,
+    "rotation": 89.87,
+    "pfeil_welt": "oben (89.87 Grad)",
+    "bezug_stiege": "1110mm westlich des Stiegenlauf-Endes x=-41865, an Wand (Kanten -43190/-42795)"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(DG) auf Stiege",
+    "x": -39387,
+    "y": 4581,
+    "blickrichtung_grad": 177,
+    "herkunft": "DG"
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "DG-Person h=414D4",
+    "nach": "(C) Ostkante",
+    "laenge_mm": 3342,
+    "winkel_zur_vorderseite_grad": 0.8,
+    "schneidet_wand": null
+   }
+  ],
+  "stiegenhauspfeil": null,
+  "geschoss": "4OG"
+ },
+ {
+  "id": "4OG-07",
+  "pdf_seite": 38,
+  "raum": "Ost-Stiegenhaus (4. STOCK STGH 24.75m2) — Kette (C)->(D)->(B)",
+  "status": "widerspruch",
+  "befund": "PDF sagt '(C) mit Pfeil nach links' — DXF zeigt (C)=RIVO-RZ-ARR_right (Pfeil RECHTS als Produkttyp), rot=89.87, Welt-Pfeil 89.87 Nord; aus Sicht der von Osten kommenden Person liegt der Fluchtweg rechts, und die PDF-eigene S.37-Regel fordert hier 'rechts' -> vermutlich Schreibfehler im PDF. Rest bestaetigt: (D)=ARR-down h=413E8 (-39711,6006) Welt-Pfeil 179.71 West entgegen Gangfluss 359.87 Ost (Delta 180), mittig im Gang (58mm neben Achse, Breite 1270mm), Portrait->frontal; (B)=ARR-left Welt-Pfeil 179.42 West = naechste Richtungsaenderung; Stiegenhauspfeil h=41462 Apex 0 Grad Ost, DG-Personen Blick 176.98 West (Delta 177).",
+  "leuchten": [
+   {
+    "label": "(C)",
+    "handle": "415B6",
+    "block": "RIVO-RZ-ARR_right",
+    "symboltyp": "RZ Pfeil rechts (PDF sagt links!)",
+    "x": -42975,
+    "y": 4646,
+    "rotation": 89.87,
+    "pfeil_welt": "oben (89.87 Grad)"
+   },
+   {
+    "label": "(D)",
+    "handle": "413E8",
+    "block": "RIVO-SIBEL-ARR-down",
+    "symboltyp": "RZ Pfeil unten",
+    "x": -39711,
+    "y": 6006,
+    "rotation": 269.71,
+    "pfeil_welt": "links (179.71 Grad), entgegen Fluchtrichtung Ost"
+   },
+   {
+    "label": "(B)",
+    "handle": "41593",
+    "block": "RIVO-SIBEL-ARR-left",
+    "symboltyp": "RZ Pfeil links",
+    "x": -35752,
+    "y": 4564,
+    "rotation": 359.42,
+    "pfeil_welt": "links (179.42 Grad)"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(DG)",
+    "x": -36506,
+    "y": 4574,
+    "blickrichtung_grad": 177,
+    "herkunft": "DG"
+   },
+   {
+    "label": "(4OG)",
+    "x": -37946,
+    "y": 4577,
+    "blickrichtung_grad": 177,
+    "herkunft": "4OG"
+   },
+   {
+    "label": "(DG)",
+    "x": -39387,
+    "y": 4581,
+    "blickrichtung_grad": 177,
+    "herkunft": "DG"
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "DG-Person h=414D4",
+    "nach": "(C)",
+    "laenge_mm": 3342,
+    "winkel_zur_vorderseite_grad": 0.8,
+    "schneidet_wand": null
+   }
+  ],
+  "stiegenhauspfeil": {
+   "richtung_grad": 0,
+   "quelle": "rot nachgezeichnet (h=41462, Apex Ost bei x=-37385; Label h=416D1; Original grau = 17-HOEHEN-Lauf)"
+  },
+  "geschoss": "4OG"
+ },
+ {
+  "id": "DG-01",
+  "pdf_seite": 39,
+  "raum": "DG STGH 4.86m2 + PODEST 3.94m2 (Stiegenhaus bei Wohnung Top 20, kein Gang)",
+  "status": "praezisiert",
+  "befund": "Alle PDF-Aussagen geometrisch bestaetigt und quantifiziert (DXF in mm, INSUNITS=4): (A) RIVO-RZ-ARR_right 206DC bei (667,26391), rot 359.87 -> Welt-Pfeil 0 Grad (rechts/Ost). 'Vor der Stiege': 1122 mm vor der ersten Setzstufe des Sued-Laufs (x=1789), quer zur Laufachse (grauer Stiegenpfeil y=26414) nur 23 mm versetzt = achsmittig; Pfeil 0 Grad = exakt Abstiegsrichtung. 'Direkt von vorne': Person 206D8 (634,25541) -> A: 851 mm, Sicht-Azimut 87.8 Grad, nur 2.2 Grad von der Senkrechten zur Schild-Laengsachse (landscape 637x320) = frontal. Tuerkise Sichtlinie 207CA vorhanden (650 mm, skizziert). (B) RIVO-SIBEL-ARR-left 20705 bei (4697,28335), Welt-Pfeil 179.42 Grad (links/West); 'an der Wand': B-Nordkante y=28497 liegt auf der Stiegenhaus-Nordwand (y 28493-28514), 561 mm zur Ostwand. Praezisierung: Podest-Person 207CB (4128,27813) sieht B unter 42.5 Grad Azimut = 47.5 Grad von der Frontalen (halb-schraeg, kein Frontalblick). Gruene Route: Podest -> West (Pfeile 179.87 Grad) -> Sued-Knick 2075B (805,27435, 269.87 Grad) -> (A) -> Ost in den Sued-Lauf (Pfeile 359.87 Grad). Bewegung je Lauf exakt entgegen dem Stiegenhauspfeil (Sued-Lauf 180 vs 359.87; Nord-Lauf 0 vs 179.87).",
+  "leuchten": [
+   {
+    "label": "(A)",
+    "handle": "206DC",
+    "block": "RIVO-RZ-ARR_right",
+    "symboltyp": "RZ Pfeil rechts",
+    "x": 667,
+    "y": 26391,
+    "rotation": 359.87,
+    "pfeil_welt": "rechts/Ost (0 Grad)",
+    "bezug_stiege": "1122 mm vor erster Setzstufe Sued-Lauf, achsmittig (23 mm), Pfeil = Laufrichtung",
+    "bezug_tuer": "1797 mm von Top-20-Tuer 1FC7A (1762,24966) entfernt - bewusst nicht an der Tuer, sondern vor der Stiege"
+   },
+   {
+    "label": "(B)",
+    "handle": "20705",
+    "block": "RIVO-SIBEL-ARR-left",
+    "symboltyp": "RZ Pfeil links",
+    "x": 4697,
+    "y": 28335,
+    "rotation": 359.42,
+    "pfeil_welt": "links/West (179.42 Grad)",
+    "bezug_stiege": "am Podest ueber dem Nord-Lauf, Pfeil = Weiterweg des Herabkommenden",
+    "bezug_tuer": "wandbuendig Nordwand (y=28497), 561 mm zur Ostwand"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(DG) aus Top 20",
+    "herkunft": "Wohnung Top 20",
+    "x": 634,
+    "y": 25541,
+    "blickrichtung_grad": 92.75
+   },
+   {
+    "label": "(DG) auf Stiege",
+    "herkunft": "DG, Abstieg Sued-Lauf",
+    "x": 2336,
+    "y": 26342,
+    "blickrichtung_grad": 2.75
+   },
+   {
+    "label": "(DG/Podest)",
+    "herkunft": "Podestbereich",
+    "x": 4128,
+    "y": 27813,
+    "blickrichtung_grad": 176.98
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "Person 206D8 (Top 20)",
+    "nach": "(A) 206DC",
+    "laenge_mm": 851,
+    "winkel_zur_vorderseite_grad": 2.2,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Person 207CB (Podest)",
+    "nach": "(B) 20705",
+    "laenge_mm": 772,
+    "winkel_zur_vorderseite_grad": 47.5,
+    "schneidet_wand": false
+   }
+  ],
+  "stiegenhauspfeil": {
+   "quelle": "rot nachgezeichnet (20782 Sued-Lauf Spitze West 180 Grad, 20783 Nord-Lauf Spitze Ost 0 Grad); graue Originale 1FDC9/1FDCC deckungsgleich vorhanden",
+   "richtung_grad": 180
+  },
+  "geschoss": "DG"
+ },
+ {
+  "id": "DG-02",
+  "pdf_seite": 40,
+  "raum": "DACHGESCHOSS STGH 11.11m2 mit Top 27, Top 28 und begehbarem Flachdach (Kies 3.92m2)",
+  "status": "praezisiert",
+  "befund": "Alle PDF-Aussagen bestaetigt, Lichtkuppel-Versatz quantifiziert: (B) RIVO-SIBEL-ARR-down 20864 bei (36956,-59), rot 269.71 -> Welt-Pfeil 179.71 Grad (West) = exakt ENTGEGEN der Ost-Bewegung (gruene Pfeile 359.87 Grad, Delta 179.8) -> 'Pfeil nach unten = geradeaus'; Schild portrait (318x631, Laengsachse N-S, quer zum O-W-Gang): Flachdach-Person 20904 (35562,-41) sieht B frontal (1394 mm, 0.7 Grad Abweichung). (A) RIVO-SIBEL-ARR-left 2083F bei (40303,-1717), Welt-Pfeil 179.42 Grad (links/West) zeigt auf die Stiege (Ostkante Stufenfeld x=39435, A 868 mm davor). Lichtkuppel blau 20906/20908 Box (39624..40930, -1425..-125), 1306x1300 mm: A-Zentrum 142 mm suedlich der Stiegenachse (roter Pfeil y=-1575) und 292 mm suedlich der Kuppelkante, Richtung Top 28 (Label 458 mm suedlich); Gegenprobe: auf der Achse haette die Symboloberkante (y=-1413) die Kuppel um ~12 mm ueberlappt -> Versatz geometrisch erzwungen; Rotation blieb unveraendert (359.42 wie alle ARR-left). Abstieg entgegen Stiegenhauspfeil belegt: roter Pfeil 20812 Spitze (39123,-1575) 0 Grad Ost (grau 1FAA5 deckungsgleich), Stiegen-Personen 20900/208FE Blick 176.85, gruene Pfeile 179.87 West (Delta ~180).",
+  "leuchten": [
+   {
+    "label": "(B)",
+    "handle": "20864",
+    "block": "RIVO-SIBEL-ARR-down",
+    "symboltyp": "RZ Pfeil unten",
+    "x": 36956,
+    "y": -59,
+    "rotation": 269.71,
+    "pfeil_welt": "West (179.71 Grad) = entgegen Fluchtrichtung Ost",
+    "bezug_stiege": "im Gangbereich des STGH, ~2.9 m oestlich des Flachdach-Ausstiegs",
+    "bezug_tuer": "nicht tuergebunden"
+   },
+   {
+    "label": "(A)",
+    "handle": "2083F",
+    "block": "RIVO-SIBEL-ARR-left",
+    "symboltyp": "RZ Pfeil links",
+    "x": 40303,
+    "y": -1717,
+    "rotation": 359.42,
+    "pfeil_welt": "links/West (179.42 Grad), zeigt auf die Stiege",
+    "bezug_stiege": "868 mm vor Stiegen-Ostkante; 142 mm aus der Stiegenachse nach Sued versetzt (Lichtkuppel), 292 mm Abstand zur Kuppel-Suedkante",
+    "bezug_tuer": "458 mm noerdlich des Top-28-Labels (Versatz 'Richtung Top 28')"
+   }
+  ],
+  "personen": [
+   {
+    "label": "(DG) Flachdach-Route",
+    "herkunft": "Flachdach",
+    "x": 35562,
+    "y": -41,
+    "blickrichtung_grad": 2.89
+   },
+   {
+    "label": "(DG) Flachdach-Route",
+    "herkunft": "Flachdach",
+    "x": 38655,
+    "y": -49,
+    "blickrichtung_grad": 2.89
+   },
+   {
+    "label": "(DG) Top 27",
+    "herkunft": "Top 27",
+    "x": 39031,
+    "y": 840,
+    "blickrichtung_grad": 272.75
+   },
+   {
+    "label": "(DG) Top 28",
+    "herkunft": "Top 28",
+    "x": 40577,
+    "y": -2544,
+    "blickrichtung_grad": 92.75
+   },
+   {
+    "label": "(DG) Stiege",
+    "herkunft": "Abstieg Richtung 4OG",
+    "x": 36363,
+    "y": -1703,
+    "blickrichtung_grad": 176.85
+   },
+   {
+    "label": "(DG) Stiege",
+    "herkunft": "Abstieg Richtung 4OG",
+    "x": 39387,
+    "y": -1746,
+    "blickrichtung_grad": 176.85
+   }
+  ],
+  "sichtlinien": [
+   {
+    "von": "Person 20904 (Flachdach)",
+    "nach": "(B) 20864",
+    "laenge_mm": 1394,
+    "winkel_zur_vorderseite_grad": 0.7,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Person 2083C (Top 28), cyan 208B4",
+    "nach": "(A) 2083F",
+    "laenge_mm": 837,
+    "winkel_zur_vorderseite_grad": 0.3,
+    "schneidet_wand": false
+   },
+   {
+    "von": "Person 208D8 (Top 27), cyan 208DA",
+    "nach": "(A)-Bereich (endet 418 mm noerdlich A, in der Kuppel-Box)",
+    "laenge_mm": 2282,
+    "winkel_zur_vorderseite_grad": 26.1,
+    "schneidet_wand": null
+   }
+  ],
+  "stiegenhauspfeil": {
+   "quelle": "rot nachgezeichnet (20812), graues Original 1FAA5 deckungsgleich",
+   "richtung_grad": 0
+  },
+  "geschoss": "DG"
+ }
+]
