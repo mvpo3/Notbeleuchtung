@@ -48,7 +48,12 @@ alt/neu, Vorlage, Erklärungs-DXFs) + Messskripte (Session-Scratchpad).
 
 ## Phase B (PDF↔DXF-Abgleich, 2026-09-18)
 
-### Widersprüche PDF-Text vs. DXF (alle geometrisch aufgeklärt, Owner-Bestätigung erbeten)
+### Widersprüche PDF-Text vs. DXF (alle geometrisch aufgeklärt)
+**Update 2026-09-18 (Owner-Korrektur der PDF):** #13 (2OG S.23 → „links") und
+#14 (4OG S.38 → „rechts") sind KORRIGIERT ✓. #11 (EG S.10) und #12 (1OG S.19)
+stehen noch — DXF-Gegenprobe: rechtes EG-STGH trägt (G) `20D5C` / (H) `20DA2`,
+und S.10 nennt jetzt sogar „(E)" für die Hauptausgangs-Leuchte; die
+Top-2+3-Sichtlinie `95621` endet unverändert an (B).
 11. **EG S.10:** PDF nennt (D)/(E) im rechten Stiegenhaus — der Screenshot zeigt
     einen ÄLTEREN Label-Stand; im aktuellen DXF heißen dieselben Leuchten (G)
     `206E7` / (H) `2070A`. Geometrie identisch mit EG-08 (bestätigt). PDF-Text
