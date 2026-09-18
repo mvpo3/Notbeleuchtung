@@ -18,19 +18,16 @@ from notbeleuchtung.raumerkennung.raumlayer import (
     varianten_versatz,
 )
 from notbeleuchtung.raumerkennung.stempel_anker import Stempel, finde_stempel, ordne_zu
-
-REPO_ROOT = Path(__file__).resolve().parents[2]
-BARAWITZKA = REPO_ROOT / "Projekte" / "_eingang" / "Barawitzka_EG.dxf"
-RENNWEG = REPO_ROOT / "Projekte" / "_eingang" / "Rennweg_OG3.dxf"
+from plaene import BARAWITZKA_EG as BARAWITZKA
+from plaene import RENNWEG_OG3 as RENNWEG
+from plaene import plan as pruefe_plan
 
 _SUFFIX = "810 Raum"
 
 
 @pytest.fixture(scope="module")
 def barawitzka():
-    if not BARAWITZKA.exists():
-        pytest.skip(f"Barawitzka-DXF fehlt: {BARAWITZKA}")
-    plan = lade_dxf(BARAWITZKA)
+    plan = lade_dxf(pruefe_plan(BARAWITZKA))
     return plan, finde_stempel(plan)
 
 
@@ -102,6 +99,4 @@ def test_hatch_ohne_stempel_kein_raum(tmp_path):
 
 
 def test_rennweg_raeume_aus_layer_regression():
-    if not RENNWEG.exists():
-        pytest.skip(f"Rennweg-DXF fehlt: {RENNWEG}")
-    assert len(raeume_aus_layer(lade_dxf(RENNWEG))) == 10
+    assert len(raeume_aus_layer(lade_dxf(pruefe_plan(RENNWEG)))) == 10

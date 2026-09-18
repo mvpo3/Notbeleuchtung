@@ -1,4 +1,4 @@
-"""Ein vollständiger Gate-Messlauf: Herkunft, die 18 Erwartungen, OG1, M1-M4.
+"""Ein vollständiger Gate-Messlauf: Herkunft, die 18 Erwartungen, OG1, OG3, M1-M4.
 
 ``messung(repo)`` liefert das Vergleichsobjekt des Türstapel-Gates. Es enthält
 NUR Zahlen, IDs, Typen und Namen — keine absoluten Pfade, keine Koordinaten und
@@ -26,14 +26,19 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parents[2]
 # Die venv trägt ein editable install auf einen ANDEREN Checkout — src/ dieses
 # Worktrees muss vorne stehen, sonst misst man fremden Code (unten geprüft).
-for _pfad in (WURZEL / "src", Path(__file__).resolve().parent):
+# ``tests`` kommt dazu, weil ``plaene`` dort liegt (unter pytest erledigt das
+# ``pythonpath``, beim CLI-Aufruf nicht).
+for _pfad in (WURZEL / "src", WURZEL / "tests", Path(__file__).resolve().parent):
     if str(_pfad) not in sys.path:
         sys.path.insert(0, str(_pfad))
 
 import gate_m1_m4
 import gate_m17
 import gate_og1
+import gate_og3
 from gate_lauf import erkenne, sha256_datei
+
+from plaene import RENNWEG_OG3
 
 BASIS_COMMIT = "f15d03fe1a082c78b180e940b7dcd666fccaf37d"
 RAUMERKENNUNG = "src/notbeleuchtung/raumerkennung"
@@ -80,7 +85,7 @@ def _meta(repo: Path, referenz: Path, laufzeit_s: float) -> dict:
 
 
 def messung(repo: Path) -> dict:
-    """Alle Messfälle des Gates in einem Durchgang: meta, m17, og1, m1_m4."""
+    """Alle Messfälle des Gates in einem Durchgang: meta, m17, og1, og3, m1_m4."""
     repo = Path(repo)
     referenz = gate_m17.referenz_pfad()
     if referenz is None:
@@ -94,16 +99,21 @@ def messung(repo: Path) -> dict:
     m17 = gate_m17.messe(ref, lauf.modell.raeume, lauf.modell.tueren,
                          lauf.kaskade.wandkoerper, lauf.plan.factor)
     og1 = gate_og1.kennzahlen(lauf.modell)
+    # Rennweg OG3 mit floor "OG3" — derselbe Plan, den ``meta.dxf["OG3"]``
+    # fingerprintet, und dasselbe ``floor`` wie tests/naht/test_soll_rennweg.py.
+    og3 = gate_og3.kennzahlen_og3(erkenne(RENNWEG_OG3, "OG3").modell)
     # Nur die Kopfzahlen übernehmen: das rohe Ergebnis führt absolute Pfade und Laufzeiten.
     roh = gate_m1_m4.messe(repo, gate_m1_m4.erzeuge_caches(repo))
     m1_m4 = {k: roh[k] for k in ("M1", "M2", "M3", "M4")}
 
     laufzeit = round(time.monotonic() - t0, 1)
-    return {"meta": _meta(repo, referenz, laufzeit), "m17": m17, "og1": og1, "m1_m4": m1_m4}
+    return {"meta": _meta(repo, referenz, laufzeit), "m17": m17,
+            "og1": og1, "og3": og3, "m1_m4": m1_m4}
 
 
 def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description="Vollständiger Gate-Messlauf (M17, OG1, M1-M4).")
+    ap = argparse.ArgumentParser(
+        description="Vollständiger Gate-Messlauf (M17, OG1, OG3, M1-M4).")
     ap.add_argument("--repo", default=str(WURZEL))
     ap.add_argument("--out", required=True, help="Zieldatei für die Messung (JSON)")
     a = ap.parse_args(argv)
@@ -118,6 +128,9 @@ def main(argv: list[str] | None = None) -> int:
           f"{ergebnis['og1']['tueren_gesamt']} Türen, "
           f"a==b {ergebnis['og1']['tueren_raum_a_gleich_b']}, "
           f"Einraum-Wohnungen {ergebnis['og1']['einraum_wohnungen']}")
+    print(f"OG3: {ergebnis['og3']['segmente_graph']} GRAPH-Segmente, "
+          f"{ergebnis['og3']['anker_gesamt']} Anker, davon "
+          f"{ergebnis['og3']['anker_in_wohnung_privat']} in WOHNUNG_PRIVAT")
     print(f"geschrieben: {ziel.name} ({ergebnis['meta']['laufzeit_s']} s)")
     return 0
 

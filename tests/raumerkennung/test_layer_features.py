@@ -1,9 +1,8 @@
 """layer_features — Golden-Vektoren auf SYNTHETISCHEN DXF + Namens-Blindheit.
 
-Warum synthetisch: alle fünf Prüfpläne sind untracked (`.gitignore: *.dxf`) — ein
-Golden auf `Projekte/_eingang` läuft in CI nie, sondern skippt still. Echtplan-
-Zahlen gehören darum in `scripts/analyse/layer_merkmale.py` und in den Bericht,
-nicht in einen CI-Test.
+Warum synthetisch: ein Golden muss deterministisch und klein sein. Die echten
+Prüfpläne sind zwar versioniert (`tests/plaene.py`), ihre Zahlen gehören aber in
+`scripts/analyse/layer_merkmale.py` und in den Bericht, nicht in einen CI-Test.
 
 Die Werte unten sind gepinnte Referenz: jede Toleranz-/Formeländerung verschiebt
 sie lautlos, deshalb sind sie exakt und `FEATURE_LAYOUT_VERSION` steht mit drin.

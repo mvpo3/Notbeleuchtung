@@ -1,7 +1,7 @@
 """Tests für wandkoerper (Erscheinungsbild-Erkennung) + tueren.tuer_oeffnungen.
 
-Die echten Pläne liegen in `Projekte/_eingang/` und sind ggf. untracked —
-Tests skippen, wenn die Datei fehlt (gleiches Gate-Muster wie conftest).
+Die Familien-Pläne sind versioniert (`tests/plaene.py`) — fehlt einer, ist das
+ein Fehler. Nur der Fischamender-Plan BT1 EG behält sein Skip-Gate.
 """
 from __future__ import annotations
 
@@ -19,31 +19,29 @@ from notbeleuchtung.raumerkennung.wandkoerper import (
     finde_wandkoerper,
     wand_union,
 )
+from plaene import BARAWITZKA_EG, MOLLGASSE_EG, RENNWEG_OG3
+from plaene import plan as pruefe_plan
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-EINGANG = REPO_ROOT / "Projekte" / "_eingang"
 
 
-def _plan(name: str):
-    p = EINGANG / name
-    if not p.exists():
-        pytest.skip(f"Plan fehlt: {p}")
-    return lade_dxf(p)
+def _plan(pfad: Path):
+    return lade_dxf(pruefe_plan(pfad))
 
 
 @pytest.fixture(scope="module")
 def rennweg():
-    return _plan("Rennweg_OG3.dxf")
+    return _plan(RENNWEG_OG3)
 
 
 @pytest.fixture(scope="module")
 def mollgasse():
-    return _plan("Mollgasse_EG.dxf")
+    return _plan(MOLLGASSE_EG)
 
 
 @pytest.fixture(scope="module")
 def barawitzka():
-    return _plan("Barawitzka_EG.dxf")
+    return _plan(BARAWITZKA_EG)
 
 
 # ── Rennweg (ArchiCAD, Wände als HATCHes in Wall_N-Blöcken, mm) ─────────────

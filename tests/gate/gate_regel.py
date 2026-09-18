@@ -37,6 +37,15 @@ Die Bedingungen (Owner-Vorgabe, § 3 des Gate-Auftrags; (0) ist die Vorbedingung
       (nachher ≤ vorher + 0,001), Ganzzahlen exakt.
   (4) OG1: Türen mit raum_a == raum_b sind null.
   (5) OG1: die Einraum-Wohnungen sinken (echt kleiner, nicht nur gleich).
+  (6) Rennweg OG3: ``segmente_graph`` ≥ 1 UND ``anker_in_wohnung_privat`` == 0.
+      Das ist wörtlich die Aussage der beiden Tests ``test_soll_segmente_aus_graph``
+      und ``test_keine_anker_in_wohnung_privat`` (tests/naht/test_soll_rennweg.py),
+      die auf dem Türstapel-Branch als strict-xfail geführt werden (Grund: „S4a
+      allein, Türstapel unvollständig, muss vor Merge XPASS sein"). Vor dem Merge
+      müssen sie XPASS sein — (6) prüft genau das an den Zahlen, damit das Gate
+      nicht davon abhängt, ob jemand den Marker rechtzeitig entfernt. Gemessen
+      wird nur der NACHHER-Stand: die Aussage ist absolut, kein Vergleich. Fehlt
+      der Abschnitt ``og3``, ist das ein Verstoß und kein stilles Bestehen.
 """
 from __future__ import annotations
 
@@ -151,9 +160,27 @@ def _pruefe_og1(vorher: dict, nachher: dict) -> list[str]:
     return verstoesse
 
 
+def _pruefe_og3(nachher: dict) -> list[str]:
+    """(6) Rennweg OG3: Wege aus dem Graphen, keine Anker in Privatwohnungen."""
+    og3 = nachher.get("og3")
+    if not og3:
+        return ["(6) Rennweg OG3 nicht gemessen — Abschnitt »og3« fehlt"]
+    verstoesse = []
+    graph = og3.get("segmente_graph")
+    if not _ist_zahl(graph) or graph < 1:
+        verstoesse.append(
+            f"(6) Rennweg OG3 ohne GRAPH-Segment: segmente_graph={graph!r}, erwartet: >= 1")
+    anker = og3.get("anker_in_wohnung_privat")
+    if not _ist_zahl(anker) or anker != 0:
+        verstoesse.append(
+            f"(6) Anker in WOHNUNG_PRIVAT (Rennweg OG3): {anker!r}, erwartet: 0")
+    return verstoesse
+
+
 def pruefe_gate(vorher: dict, nachher: dict) -> list[str]:
     """Verstöße gegen die Gate-Regel im Klartext; leere Liste = Gate erfüllt."""
     return (_pruefe_vergleichbarkeit(vorher, nachher)
             + _pruefe_m17(vorher, nachher)
             + _pruefe_m1_m4(vorher, nachher)
-            + _pruefe_og1(vorher, nachher))
+            + _pruefe_og1(vorher, nachher)
+            + _pruefe_og3(nachher))

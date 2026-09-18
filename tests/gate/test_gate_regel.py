@@ -2,8 +2,9 @@
 
 Geprüft wird die REGEL, nicht die Erkennung: je Bedingung ein Verstoß-Fall, der
 erfüllte Stapel als leere Liste, und die heutige Lage (Nullmessung gegen sich
-selbst) als fester Erwartungswert. Die eingecheckte Nullmessung läuft als
-letzter Fall mit — sie braucht weder Plan noch Referenzpaket.
+selbst) als fester Erwartungswert — drei Verstöße, denn (6) ist auf f15d03f
+bereits erfüllt. Die eingecheckte Nullmessung läuft als letzter Fall mit — sie
+braucht weder Plan noch Referenzpaket.
 
 Die synthetischen Messungen führen bewusst KEIN ``meta``; Bedingung (0) wird
 dann übersprungen. Ihre eigenen Fälle bauen ``meta`` gezielt auf.
@@ -24,8 +25,12 @@ IDS = [f"M17-0{fall}-{check}" for fall in range(1, 7) for check in "abc"]
 NULL_STATUS = {"M17-02-b": "NICHT_BESTANDEN", "M17-04-c": "NICHT_BESTANDEN"}
 
 
-def _messung(status: dict[str, str], einraum: int = 2, a_gleich_b: int = 0) -> dict:
-    """Messung im Format von ``gate_messung.messung``; alle Kennzahlen auf 3."""
+def _messung(status: dict[str, str], einraum: int = 2, a_gleich_b: int = 0,
+             graph: int = 5, anker_privat: int = 0) -> dict:
+    """Messung im Format von ``gate_messung.messung``; alle Kennzahlen auf 3.
+
+    ``graph``/``anker_privat`` sind die Werte für Bedingung (6); die Vorgaben
+    entsprechen der Lage der Nullmessung, dort ist (6) erfüllt."""
     m1_m4: dict[str, dict[str, dict[str, float]]] = {}
     for kennzahl in GATE_KENNZAHLEN:
         skript, kopf = kennzahl.split(".")
@@ -35,6 +40,7 @@ def _messung(status: dict[str, str], einraum: int = 2, a_gleich_b: int = 0) -> d
         "meta": {},
         "m17": [{"id": eid, "status": status.get(eid, "BESTANDEN")} for eid in IDS],
         "og1": {"tueren_raum_a_gleich_b": a_gleich_b, "einraum_wohnungen": einraum},
+        "og3": {"segmente_graph": graph, "anker_in_wohnung_privat": anker_privat},
         "m1_m4": m1_m4,
     }
 
@@ -59,6 +65,32 @@ def _mit_meta(messung: dict, **abweichung) -> dict:
     }
     messung["meta"].update(abweichung)
     return messung
+
+
+# ----------------------------------------------- (6) Rennweg OG3
+
+def test_og3_ohne_graph_segment_ist_verstoss_sechs():
+    nachher = _messung({}, einraum=1, graph=0)
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        "(6) Rennweg OG3 ohne GRAPH-Segment: segmente_graph=0, erwartet: >= 1"]
+
+
+def test_og3_anker_in_wohnung_privat_ist_verstoss_sechs():
+    nachher = _messung({}, einraum=1, anker_privat=1)
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        "(6) Anker in WOHNUNG_PRIVAT (Rennweg OG3): 1, erwartet: 0"]
+
+
+def test_fehlender_og3_abschnitt_ist_verstoss_sechs():
+    nachher = _erfuellt()
+    del nachher["og3"]
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        "(6) Rennweg OG3 nicht gemessen — Abschnitt »og3« fehlt"]
+
+
+def test_og3_erfuellt_meldet_nichts():
+    """(6) ist heute schon erfüllt — GRAPH-Segmente da, kein Anker im Privaten."""
+    assert pruefe_gate(_nullmessung(), _erfuellt()) == []
 
 
 def test_nullmessung_gegen_sich_selbst_meldet_genau_drei_verstoesse():

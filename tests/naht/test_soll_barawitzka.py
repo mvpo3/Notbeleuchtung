@@ -12,17 +12,15 @@ Layer nicht Kataster/Grenze/verm enthält) und greift auf anderen Plänen.
 Brandschutz real: Layer »0._EG PP_2_970 Brandschutz« + 6 Texte
 »Glaswand EI30 + A2« → Kandidaten für brandschutztuer.
 """
-from pathlib import Path
-
 import pytest
 
-PLAN = Path("Projekte/_eingang/Barawitzka_EG.dxf")
+from plaene import BARAWITZKA_EG as PLAN
+from plaene import plan
 
 
 @pytest.fixture(scope="module")
 def provider():
-    if not PLAN.exists():                        # pragma: no cover — CAD-Asset fehlt
-        pytest.skip(f"Architekturplan nicht vorhanden: {PLAN}")
+    plan(PLAN)
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
 
     return ArchitekturRaumProvider()

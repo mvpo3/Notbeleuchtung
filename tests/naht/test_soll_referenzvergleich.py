@@ -15,8 +15,10 @@ from pathlib import Path
 
 import pytest
 
+from plaene import BARAWITZKA_EG as PLAN
+from plaene import plan
+
 REPO = Path(__file__).resolve().parents[2]
-PLAN = REPO / "Projekte" / "_eingang" / "Barawitzka_EG.dxf"
 REFERENZ = (REPO / "DIN-Notbeleuchtungspläne(Beispiele)"
             / "din_support_ReMi_Barawitzkagasse_28.04.2026.dxf")
 
@@ -32,9 +34,9 @@ def _lade_plan_pruefen():
 
 @pytest.fixture(scope="module")
 def quote():
-    for p in (PLAN, REFERENZ):
-        if not p.exists():                       # pragma: no cover — CAD-Asset fehlt
-            pytest.skip(f"Asset nicht vorhanden: {p}")
+    plan(PLAN)
+    if not REFERENZ.exists():                    # pragma: no cover — CAD-Asset fehlt
+        pytest.skip(f"Asset nicht vorhanden: {REFERENZ}")
     from notbeleuchtung.hauptengine.registry import build_default_bundle
 
     pp = _lade_plan_pruefen()
