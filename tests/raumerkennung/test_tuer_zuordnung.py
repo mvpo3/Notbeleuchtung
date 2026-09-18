@@ -47,11 +47,14 @@ def test_aussentuer_und_kein_raum():
 def test_durchgang_ohne_tuerblatt():
     # Zwei Räume, Wand bei x=5000..5200 mit 1.2-m-Lücke (y 1400..2600) und
     # KEINER bekannten Tür → Durchgang > 800 mm mit ohne_tuerblatt=True.
+    # Slice S5b: die Breite ist das Maß der LÜCKE (1200 mm ± 100), nicht mehr
+    # die Rechtecklänge des Streifens (die lief mit 4458 mm die ganze Wand ab).
     raeume = [_raum("a", 0, 0, 5000, 4000), _raum("b", 5200, 0, 10000, 4000)]
     wand = box(5000, 0, 5200, 1400).union(box(5000, 2600, 5200, 4000))
     (d,) = durchgaenge_ohne_tuerblatt(raeume, [], wand)
     assert d.ohne_tuerblatt and d.breite_mm > 800
     assert {d.von_raum, d.nach_raum} == {"a", "b"}
+    assert abs(d.breite_mm - 1200.0) <= 100.0, d.breite_mm
 
 
 @pytest.mark.parametrize(("typ_a", "typ_b", "anzahl"), [
@@ -221,5 +224,60 @@ def test_sehnen_zone_verschluckt_oeffnung_hinter_pfeiler_nicht():
     t, o = _blocktuer((5000.0, 1000.0))     # Sehne/Zone y 580…1420
     t.von_raum, t.nach_raum = "a", "b"
     (d,) = durchgaenge_ohne_tuerblatt(raeume, [t], wand, [o])
-    assert d.breite_mm == 2000, (d.xy_mm, d.breite_mm)
+    assert abs(d.breite_mm - 2000.0) <= 5.0, (d.xy_mm, d.breite_mm)
     assert d.xy_mm[1] > 1600, "die Türlücke selbst ist kein Durchgang"
+
+
+# ── S5b: Querungskriterium (Diagnose U13) ────────────────────────────────────
+
+def test_kein_durchgang_an_wand_ohne_luecke():
+    """100-mm-Wand OHNE Lücke → kein Durchgang.
+
+    Die Wand reicht über beide Räume hinaus (so liegt sie im Plan). Die
+    Kontaktzone ragt trotzdem 150 mm in jeden Raum; übrig bleiben zwei
+    Streifen, die je nur EINEN Raum berühren und zur Gegenseite die volle
+    Wanddicke entfernt bleiben. Bis S5b wurde daraus ein Durchgang mit der
+    WANDLÄNGE als Breite (Diagnose U13: t = 100/200/240 mm → 4490/4458/4438 mm).
+    """
+    raeume = [_raum("a", 0, 0, 5000, 4000), _raum("b", 5100, 0, 10000, 4000)]
+    wand = box(5000, -500, 5100, 4500)
+    assert durchgaenge_ohne_tuerblatt(raeume, [], wand) == []
+
+
+def test_durchgang_breite_entlang_der_grenze():
+    """900-mm-Lücke in derselben 100-mm-Wand → genau EIN Durchgang ≈ 900 mm.
+
+    Gemessen wird die gemeinsame Grenze (Raumrand im Streifen, ohne
+    Wandkörper), nicht das umschließende Rechteck: dessen Langseite ist auch
+    hier die ganze Wand (4490 mm). Die Räume sind rundum von Wandkörpern
+    begrenzt (Querwände oben/unten) — sonst ragt die Kontaktzone über die
+    Raumecken hinaus und die Stirnkanten zählten mit.
+    """
+    raeume = [_raum("a", 0, 0, 5000, 4000), _raum("b", 5100, 0, 10000, 4000)]
+    wand = (box(5000, -500, 5100, 1550).union(box(5000, 2450, 5100, 4500))
+            .union(box(4800, -100, 5300, 0)).union(box(4800, 4000, 5300, 4100)))
+    (d,) = durchgaenge_ohne_tuerblatt(raeume, [], wand)
+    assert {d.von_raum, d.nach_raum} == {"a", "b"}
+    assert abs(d.breite_mm - 900.0) <= 100.0, d.breite_mm
+
+
+def test_splitter_quert_nicht():
+    """Ein 2 mm dünner freier Streifen quert nicht (Fläche < Breite · 50 mm).
+
+    Muster aus der Diagnose U13: EG KÜCHE | MÜLLRAUM 3396 × 2 mm und DG2
+    ``raum_7`` | ``rest_4`` 1420 × 2 mm — im Plan steht dort eine Wand, als
+    Wandkörper fehlt sie, und die Kontaktzone bleibt ein 2-mm-Band zwischen
+    zwei 498 mm entfernten Räumen. Gemessen: Kontakt erfüllt, Breite 4002 mm,
+    Fläche 8041 mm² < 4002 · 50 mm — also Splitter, nicht 800-mm-Regel.
+    """
+    raeume = [_raum("a", 0, 0, 5000, 4000), _raum("b", 5498, 0, 10000, 4000)]
+    wand = box(0, -600, 10000, -100)          # Wandkörper nur außen herum
+    assert durchgaenge_ohne_tuerblatt(raeume, [], wand) == []
+
+
+def test_ueberlappende_raeume_queren_nicht():
+    """Überlappende Raumpolygone sind keine Öffnung (Diagnose U13: DG2
+    ``raum_7`` | ``stiegenhaus_2`` überlappen 2,36 m² → „Öffnung" 5,43 m²)."""
+    raeume = [_raum("a", 0, 0, 5000, 4000), _raum("b", 4800, 0, 10000, 4000)]
+    wand = box(5000, -500, 5100, 4500)
+    assert durchgaenge_ohne_tuerblatt(raeume, [], wand) == []
