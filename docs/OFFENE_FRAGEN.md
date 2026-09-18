@@ -1504,3 +1504,26 @@ nicht das, was sich geändert hat.
   und entkräftet die Lesart, ein `pip install` liefere die guten Zahlen nach.
 - **Nicht gebaut**, wie beauftragt: Schritt 5 (GBM), Contract-Felder
   `rolle`/`confidence`, jede Integration in `provider`/`kaskade`/`plan_pruefen`.
+
+## M17-04-c — zählt ein „Durchgang ohne Türblatt" als Türverbindung? (2026-09-18, Selman → @EnisAMG)
+
+Aus dem Merge-Gate des Türstapels (`docs/GATE_TUERSTAPEL.md`, Nullmessung auf `f15d03f`).
+Beispiel 17, Erwartung **M17-04-c**: „WC und Vorraum bleiben getrennte Räume mit genau
+einer zugeordneten Türverbindung an O."
+
+Gemessen (OG1, DXF `c64e73e3…245e`, Code-Stand `f15d03f`): WC = `raum_13` (3,50 m²),
+Vorraum = `raum_12` (10,94 m²) — getrennte Räume, das stimmt. Die **einzige** Verbindung
+zwischen beiden im Ausschnitt des Falls ist `durchgang_21`: ein synthetischer Durchgang
+**ohne Türblatt** (`ohne_tuerblatt = True`), 2506 mm breit, `tuer_detail` wohnungseingang,
+Mitte 534 mm von der Sonde O. Der Plan zeigt dort eine Tür mit Türblatt/Schwenkbogen
+(Türöffnung laut Referenz rund 880 mm breit); auf OG1 wird heute **kein einziger
+ArchiCAD-Türblock** als Tür erkannt (Ursache U12 der Diagnose, Slice S4a).
+
+**Frage:** Gilt die Erwartung als erfüllt, wenn die Software die Verbindung als „Durchgang
+ohne Türblatt" ausgibt (Lesart A: eine Verbindung ist eine Verbindung), oder erst, wenn
+sie eine Tür mit Türblatt ist (Lesart B: „Türverbindung" = erkannte Tür)?
+
+Bis zur Antwort steht M17-04-c im Gate als **NICHT_MESSBAR** (nie PASS bei Mehrdeutigkeit);
+die Gate-Regel wertet den späteren Übergang NICHT_MESSBAR → NICHT_BESTANDEN nicht als
+Verstoß. Nach Lesart B wäre der Fall heute NICHT_BESTANDEN und würde erst mit S4a (Türblöcke)
+bestehen können.
