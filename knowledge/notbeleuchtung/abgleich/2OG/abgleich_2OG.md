@@ -22,7 +22,7 @@ Welt-Pfeilrichtung = Basis-Orientierung des Blocks + INSERT-Rotation
 - (D) = `RIVO-SIBEL-ARR-down` **H=852B6**, Zentrum (−129 816.6, 4 317.9), rot 180.1°, xs 35.637 → **Welt-Pfeil 90.1° (Nord)**. Liegt 482 mm südlich der Gang-Fluchtlinie (y≈4 800) am Abzweig zum STGH; **dx = 2.6 mm** zur Türachsen-x des Tür-Maßtexts `05-TXT` H=83FD3 (−129 814, 4 026, „90/200") → mittig zur STGH-Tür. Welt-Pfeil (90.1°) zeigt **entgegen** der Abzweigrichtung nach Süden (270°, Pfeile H=852D1/852D2).
 - (E) = `Antipanikleuchte-RIVO` **H=852B7** (−126 726.5, 4 855.4), rot 90; (F) = **H=852B8** (−120 429.3, 4 854.4), rot 90 → beide 55 mm neben der Gang-Fluchtlinie, Teilung D→E 3 090 mm, E→F 6 297 mm, F→Top-15-Tür 2 579 mm. **Genau 2 Antipanikleuchten ✓**, keine Aufheller/zusätzliche RZ im DXF (nur als Text-Alternative).
 - Sichtlinien (cyan, ACI 4): H=85320 Top-13-Person→D, L=3 646 mm; H=85321 Top-14-Person→D, L=10 897 mm; H=85322 Top-15-Person→D, L=12 028 mm. **Alle drei enden an der Ost-Schmalkante von (D)** — Winkel zur Vorderseiten-Normalen 86.5°–90.0° = **reine Seitenansicht** (Sichtlinie parallel zur Schild-Längsachse), keine Frontalsicht.
-- Personen: H=852C7/852C8/8531B (Gang, „(2OG)"), H=8531C/8531F (an Top-13/14-Türen). Das Gang-Trio blickt 348.7° (Ost) — **entgegen** der Fluchtrichtung West (Pfeile H=852CA…852D0, Welt 180°).
+- Personen: H=852C7/852C8/8531B (Gang, „(2OG)"), H=8531C/8531F (an Top-13/14-Türen). Das Gang-Trio: rot 348.7°, xs 4.007>0 → per Regel #8 **Blick 168.7° ≈ West = Fluchtrichtung ✓** (KORREKTUR 2026-09-18: die frühere „blickt Ost"-Lesart hatte die 180°-Umkehr aus Regel #8 nicht angewandt; Owner-Hinweis + Nahaufnahme-Render bestätigen West).
 
 **Status: praezisiert** — Kernaussagen bestätigt (3 Sichtverbindungen, D an/mittig zur STGH-Tür, 2 Antipanik); präzisiert: „sieht direkt" ist hier nur Sichtverbindung, geometrisch Seitenansicht (86.5–90° zur Frontalen).
 
@@ -117,7 +117,7 @@ Bild: `2OG-05.png`
 5. **Sichtlinien enden an der Schild-VORDERSEITE; 9 von 12 nahezu frontal** (0.4°–30.2° zur Flächennormalen); Längen 882–12 028 mm. Ausnahme: die 3 Gang-Sichtlinien auf St.1-(D) treffen mit 86.5°–90° die Schmalkante (Seitenansicht über 3.6–12.0 m) — „sieht direkt" heißt dort nur freie Sichtverbindung. [alle]
 6. **Tür-RZ mittig zur Tür:** St.1-(D) dx=2.6 mm zur Türachsen-x des Tür-Maßtexts; St.2-(A) Δy=1.6 mm zur Top-9-Türachse; St.2-(D) 60 mm zur Gangmitte / 42 mm zur Stiegenachse. [2OG-01, 2OG-03, 2OG-05]
 7. **Antipanik als Gang-Grundbeleuchtung:** genau 2 Stück auf der Gangmittellinie (55 mm neben der Fluchtlinie), Teilung 3.1 m / 6.3 m / 2.6 m zwischen Tür-RZ und Gangende; Alternativen (2 Aufheller, mittige RZ-unten, RZ+Aufheller) nur im Text, nicht gezeichnet. [2OG-01]
-8. **Personen-Symbol `750298750` Blickrichtung:** xs>0 → Blick=(180°+rot); xs<0 (gespiegelt) → Blick=rot. Verifiziert per Render (H=852EF 168.4° West, H=852E1 168.5° West, H=8533C 11.6° Ost). Ausnahme/Inkonsistenz: Gang-Trio St.1 H=852C7/852C8/8531B blickt 348.7° (Ost) entgegen der Fluchtrichtung West. [2OG-01]
+8. **Personen-Symbol `750298750` Blickrichtung:** xs>0 → Blick=(180°+rot); xs<0 (gespiegelt) → Blick=rot. Verifiziert per Render (H=852EF 168.4° West, H=852E1 168.5° West, H=8533C 11.6° Ost). Gang-Trio St.1 H=852C7/852C8/8531B: rot 348.7° ⇒ Blick 168.7° West = Fluchtrichtung ✓ — die Regel gilt AUSNAHMSLOS (KORREKTUR 2026-09-18: frühere „Ost"-Lesart hatte die Regel hier nicht angewandt). [2OG-01]
 9. **Etappen-Dokumentation:** 32 Personensymbole mit Herkunftslabels (2OG)/(3OG)/„3OG/ist im 2OG geht Richtung 1OG" markieren jede Richtungsänderung des Fluchtwegs; die Fluchtwegpfeile (`4444444`, 38 Stück) bilden lückenlose Ketten Tür→RZ→Stiege. [alle]
 
 ## Offene Fragen
@@ -126,6 +126,6 @@ Bild: `2OG-05.png`
 - Unerklärte Leuchte H=8532F bei (−72 431, 61 139): kein Label, keine Sichtlinien/Personen — Rest/Kopie außerhalb der PDF-Beispiele? (In S. 20–26 nicht referenziert.)
 - S.-23-Text „Pfeil nach rechts" vs. Bild+DXF links: vermutlich Textfehler des Autors — für die Regelbasis DXF + S. 25 maßgeblich?
 - Blaue schraffierte Markierung „ÜBERGABESTATION" (St.2) ist keine Lichtkuppel gemäß Registry — Haustechnik ohne Notbeleuchtungs-Bezug?
-- Blicken die St.1-Gang-Läufer absichtlich gegen die Fluchtrichtung (aus den Türen tretend) oder Kopierfehler?
+- ~~Blicken die St.1-Gang-Läufer gegen die Fluchtrichtung?~~ GEKLÄRT 2026-09-18: Nein — Analysefehler (Regel #8 nicht angewandt), Blick 168.7° West = Fluchtrichtung, kein DXF-Fehler.
 
 Side-by-Side-Bilder: `2OG-01.png` … `2OG-05.png` (links PDF-Seite, rechts DXF-Render).

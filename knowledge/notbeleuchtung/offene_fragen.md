@@ -91,8 +91,11 @@ Top-2+3-Sichtlinie `95621` endet unverändert an (B).
 21. **Frontalitäts-Ausnahme Tür-RZ:** Tür-RZ am Gangende werden von den
     Wohnungstüren unter 86–90° (Seitenansicht) gesehen (1OG (D), 2OG St.1 (D))
     — gilt die Vorderseiten-Regel (S.31 ff.) für Tür-RZ bewusst nicht/schwächer?
-22. **2OG St.1-Gang-Läufer** (`852C7/852C8/8531B`) blicken 348,7° Ost ENTGEGEN
-    der Fluchtrichtung West — Absicht oder Kopierfehler?
+22. ~~2OG St.1-Gang-Läufer blicken Ost~~ **GEKLÄRT 2026-09-18 (Owner + Render-
+    Nachprüfung):** Analysefehler unsererseits — Regel #8 (xs>0 → Blick =
+    180°+rot) war beim Trio `852C7/852C8/8531B` nicht angewandt. rot 348,7°
+    ⇒ Blick 168,7° ≈ **West = Fluchtrichtung, korrekt.** Nahaufnahme bestätigt
+    (Läufer läuft nach West). Kein DXF-Fehler, kein Owner-TODO.
 23. **EG „FREIHEIT/KEINE FREIHEIT"-Texte + rote Sperr-Rechtecke + Fluchtweg-
     Teilungs-Text** (Mollgasse vs. Anastasius-Grüngasse) sind im PDF nicht
     erläutert — späteres Kapitel?

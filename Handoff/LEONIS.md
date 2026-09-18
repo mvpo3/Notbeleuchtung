@@ -34,7 +34,7 @@ kein Contract-Touch.** Sync davor: main `2f610cc` (Selman #158 geschoss.py etc. 
 4. **OWNER-TODO PDF/DXF — BEIM NÄCHSTEN SESSIONSTART ERINNERN + danach re-checken:**
    - [ ] PDF S.10: Labels „(D)"/„(E)" → **(G)/(H)** (rechtes EG-STGH; DXF trägt (G) `20D5C` / (H) `20DA2`) + Screenshot erneuern (zeigt alten Label-Stand).
    - [ ] PDF S.19: „türkise Linie zur Notleuchte (A)" → die Top-2+3-Linie führt zu **(B)** (DXF `95621`, Endpunkt 197 mm vor (B)).
-   - [ ] 2OG-DXF S.20-Beispiel: Läufer-Trio `852C7`/`852C8`/`8531B` blickt Ost statt West → Rotation fixen.
+   - [x] ~~2OG-Läufer-Trio blickt Ost~~ ERLEDIGT 2026-09-18: KEIN DXF-Fehler — unser Abgleich hatte Regel #8 (xs>0 → Blick=180°+rot) nicht angewandt; Blick 168,7° = West = Fluchtrichtung ✓ (Owner-Hinweis, Doku korrigiert).
    - [ ] Arbeits-/Kopier-Reste außerhalb der Grundrisse löschen: EG `2137C` (Duplikat), 1OG `9568D`, 3OG-Fragment A1 (`78D6A/78D6C/78D6D`), 4OG `41221`, DG `206D6`/`206DB`.
    - [ ] **UG-Kapitel + 1.UG/2.UG-Erklärungs-DXFs liefern** (inkl. Kellerabteil-Gang) → dann Abgleich-Strecke erneut fahren, Regelbasis erweitern.
    - [ ] Owner-Antworten offene_fragen.md: Tür-RZ-Versatz (Engine 150 vs. gemessen 735–930 mm), RZ-Zweitgröße 446 mm (wann?), AP-Skalen 296/539/630, unerklärte Leuchten (`202CC`+`2137C`, `2072F`, `8532F`, `78DFD`-Szene), FREIHEIT/KEINE-FREIHEIT-Bedeutung, down-RZ-Rotationsregel (Welt-Pfeil entgegen Laufrichtung) als expliziten Satz in die PDF.
