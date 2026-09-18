@@ -2,9 +2,8 @@
 
 Geprüft wird die REGEL, nicht die Erkennung: je Bedingung ein Verstoß-Fall, der
 erfüllte Stapel als leere Liste, und die heutige Lage (Nullmessung gegen sich
-selbst) als fester Erwartungswert — drei Verstöße, denn (6) ist auf f15d03f
-bereits erfüllt. Die eingecheckte Nullmessung läuft als letzter Fall mit — sie
-braucht weder Plan noch Referenzpaket.
+selbst) als fester Erwartungswert. Die eingecheckte Nullmessung läuft als
+letzter Fall mit — sie braucht weder Plan noch Referenzpaket.
 
 Die synthetischen Messungen führen bewusst KEIN ``meta``; Bedingung (0) wird
 dann übersprungen. Ihre eigenen Fälle bauen ``meta`` gezielt auf.
@@ -25,12 +24,38 @@ IDS = [f"M17-0{fall}-{check}" for fall in range(1, 7) for check in "abc"]
 NULL_STATUS = {"M17-02-b": "NICHT_BESTANDEN", "M17-04-c": "NICHT_BESTANDEN"}
 
 
+def _referenz(verneint: dict | None = None, gefordert: dict | None = None) -> dict:
+    """Referenz-Abschnitt im Format von ``gate_referenz.verbindungen``.
+
+    Ein verneinter Fall (0 Verbindungen) und ein geforderter (1 Verbindung) —
+    so, wie (7) und (8) sie verlangen. Die Argumente überschreiben einzelne
+    Felder des jeweiligen Eintrags."""
+    eintrag_verneint = {
+        "referenz": "M17-02 / Bsp. 07, 08, 14",
+        "raum_a": {"raum_typ": "BAD", "flaeche_m2": 11.76, "id": "raum_7"},
+        "raum_b": {"raum_typ": "BAD", "flaeche_m2": 4.66, "id": "raum_6"},
+        "anzahl": 0, "ids": [], "quellen": {}, "ohne_tuerblatt": 0,
+        "grund": "", "zusatz": False,
+    }
+    eintrag_gefordert = {
+        "referenz": "O03 (Bsp. 06, 09, 14)",
+        "raum_a": {"raum_typ": "GANG", "flaeche_m2": 6.48, "id": "raum_8"},
+        "raum_b": {"raum_typ": "", "flaeche_m2": 73.06, "id": "raum_10"},
+        "anzahl": 1, "ids": ["durchgang_17"], "quellen": {"durchgang": 1},
+        "ohne_tuerblatt": 1, "grund": "", "hinweis": "",
+    }
+    eintrag_verneint.update(verneint or {})
+    eintrag_gefordert.update(gefordert or {})
+    return {"verneint": [eintrag_verneint], "gefordert": [eintrag_gefordert]}
+
+
 def _messung(status: dict[str, str], einraum: int = 2, a_gleich_b: int = 0,
-             graph: int = 5, anker_privat: int = 0) -> dict:
+             graph: int = 5, anker_privat: int = 0, referenz: dict | None = None) -> dict:
     """Messung im Format von ``gate_messung.messung``; alle Kennzahlen auf 3.
 
     ``graph``/``anker_privat`` sind die Werte für Bedingung (6); die Vorgaben
-    entsprechen der Lage der Nullmessung, dort ist (6) erfüllt."""
+    entsprechen der Lage der Nullmessung, dort ist (6) erfüllt. ``referenz``
+    ist der Abschnitt für (7)/(8); die Vorgabe erfüllt beide Bedingungen."""
     m1_m4: dict[str, dict[str, dict[str, float]]] = {}
     for kennzahl in GATE_KENNZAHLEN:
         skript, kopf = kennzahl.split(".")
@@ -41,6 +66,7 @@ def _messung(status: dict[str, str], einraum: int = 2, a_gleich_b: int = 0,
         "m17": [{"id": eid, "status": status.get(eid, "BESTANDEN")} for eid in IDS],
         "og1": {"tueren_raum_a_gleich_b": a_gleich_b, "einraum_wohnungen": einraum},
         "og3": {"segmente_graph": graph, "anker_in_wohnung_privat": anker_privat},
+        "referenz": referenz if referenz is not None else _referenz(),
         "m1_m4": m1_m4,
     }
 
@@ -193,6 +219,73 @@ def test_fehlende_id_aendert_nenner_und_ist_verstoss():
     assert "(1) M17-05-b fällt von BESTANDEN auf nicht gemessen" in verstoesse
 
 
+# -------------------------------- (7)/(8) Referenz-Verbindungen im OG1
+
+def test_referenz_erfuellt_meldet_nichts():
+    """Keine verneinte Verbindung, geforderter Übergang da — (7) und (8) schweigen."""
+    assert pruefe_gate(_nullmessung(), _erfuellt()) == []
+
+
+def test_verneinte_verbindung_besteht_ist_verstoss_sieben():
+    nachher = _messung({}, einraum=1, referenz=_referenz(verneint={
+        "anzahl": 3, "ids": ["durchgang_11", "durchgang_12", "durchgang_13"],
+        "quellen": {"durchgang": 3}, "ohne_tuerblatt": 3}))
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        ("(7) verneinte Verbindung besteht (M17-02 / Bsp. 07, 08, 14): "
+         "BAD 11.76 m² ↔ BAD 4.66 m² — 3 Tür(en) "
+         "['durchgang_11', 'durchgang_12', 'durchgang_13']")]
+
+
+def test_verneinte_zusatz_verbindung_zaehlt_ebenfalls():
+    """Die Nachbarschaften aus Bsp. 14 (``zusatz``) sind keine Ausnahme von (7)."""
+    nachher = _messung({}, einraum=1, referenz=_referenz(verneint={
+        "referenz": "Bsp. 14", "zusatz": True,
+        "raum_a": {"raum_typ": "GANG", "flaeche_m2": 6.48, "id": "raum_8"},
+        "raum_b": {"raum_typ": "STIEGENHAUS", "flaeche_m2": 11.21, "id": "raum_14"},
+        "anzahl": 1, "ids": ["durchgang_99"]}))
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        ("(7) verneinte Verbindung besteht (Bsp. 14): "
+         "GANG 6.48 m² ↔ STIEGENHAUS 11.21 m² — 1 Tür(en) ['durchgang_99']")]
+
+
+def test_nicht_aufloesbarer_raum_ist_verstoss_sieben():
+    """``anzahl`` None heißt: nicht gemessen — und damit Verstoß, kein Freispruch."""
+    nachher = _messung({}, einraum=1, referenz=_referenz(verneint={
+        "raum_b": {"raum_typ": "BAD", "flaeche_m2": 4.66, "id": None},
+        "anzahl": None, "grund": "kein Raum BAD 4.66 m² (±0.05 m²) im Modell"}))
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        ("(7) verneinte Verbindung nicht messbar (M17-02 / Bsp. 07, 08, 14): "
+         "BAD 11.76 m² ↔ BAD 4.66 m² — kein Raum BAD 4.66 m² (±0.05 m²) im Modell")]
+
+
+def test_geforderter_uebergang_fehlt_ist_verstoss_acht():
+    nachher = _messung({}, einraum=1,
+                       referenz=_referenz(gefordert={"anzahl": 0, "ids": [], "quellen": {},
+                                                     "ohne_tuerblatt": 0}))
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        ("(8) geforderter Übergang fehlt (O03 (Bsp. 06, 09, 14)): "
+         "GANG 6.48 m² ↔ (ohne Typ) 73.06 m²")]
+
+
+def test_geforderter_uebergang_nicht_messbar_ist_verstoss_acht():
+    nachher = _messung({}, einraum=1, referenz=_referenz(gefordert={
+        "raum_a": {"raum_typ": "GANG", "flaeche_m2": 6.48, "id": None},
+        "anzahl": None, "ids": [], "quellen": {}, "ohne_tuerblatt": 0,
+        "grund": "2 Räume passen auf GANG 6.48 m²: ['raum_8', 'raum_9']"}))
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        ("(8) geforderter Übergang nicht messbar (O03 (Bsp. 06, 09, 14)): "
+         "GANG 6.48 m² ↔ (ohne Typ) 73.06 m² — "
+         "2 Räume passen auf GANG 6.48 m²: ['raum_8', 'raum_9']")]
+
+
+def test_fehlender_referenz_abschnitt_ist_verstoss_sieben_und_acht():
+    nachher = _erfuellt()
+    del nachher["referenz"]
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        "(7) verneinte Verbindungen nicht gemessen — Abschnitt »referenz.verneint« fehlt",
+        "(8) geforderte Übergänge nicht gemessen — Abschnitt »referenz.gefordert« fehlt"]
+
+
 # ----------------------------------------------- (0) Vergleichbarkeit
 
 def test_abweichende_dxf_ist_verstoss_null():
@@ -280,11 +373,29 @@ def test_negative_kennzahl_ist_verstoss():
 
 
 def test_echte_nullmessung_gegen_sich_selbst():
-    """Die eingecheckte Nullmessung ist der Vorher-Stand — heute fehlen (2) und (5)."""
+    """Die eingecheckte Nullmessung ist der Vorher-Stand — heute fehlen (2), (5) und (7).
+
+    Die sechs (7)-Verstöße sind die acht Türverbindungen, die die Referenz
+    verneint (dreimal zwischen den Bädern, fünfmal einzeln); (8) ist heute
+    erfüllt, alle vier geforderten Übergänge stehen. Diese Erwartung ist die
+    LAGE, nicht die Regel — dreht S5b die Fälle, schrumpft die Liste hier."""
     null = json.loads(NULLMESSUNG.read_text(encoding="utf-8"))
     verstoesse = pruefe_gate(null, deepcopy(null))
     assert verstoesse == [
         "(2) M17-02-b ist NICHT_BESTANDEN, erwartet: BESTANDEN",
         "(2) M17-04-c ist NICHT_BESTANDEN, erwartet: BESTANDEN",
         "(5) Einraum-Wohnungen sinken nicht: 2 → 2",
+        ("(7) verneinte Verbindung besteht (M17-02 / Bsp. 07, 08, 14): "
+         "BAD 11.76 m² ↔ BAD 4.66 m² — 3 Tür(en) "
+         "['durchgang_11', 'durchgang_12', 'durchgang_13']"),
+        ("(7) verneinte Verbindung besteht (Bsp. 06, 14): "
+         "ZIMMER 17.04 m² ↔ GANG 6.48 m² — 1 Tür(en) ['durchgang_16']"),
+        ("(7) verneinte Verbindung besteht (Bsp. 08, 09, 14): "
+         "VORRAUM 3.4 m² ↔ BAD 4.66 m² — 1 Tür(en) ['durchgang_9']"),
+        ("(7) verneinte Verbindung besteht (Bsp. 08, 14): "
+         "ZIMMER 10.59 m² ↔ BAD 4.66 m² — 1 Tür(en) ['durchgang_3']"),
+        ("(7) verneinte Verbindung besteht (Bsp. 09, 14): "
+         "ZIMMER 16.86 m² ↔ VORRAUM 3.4 m² — 1 Tür(en) ['durchgang_6']"),
+        ("(7) verneinte Verbindung besteht (Bsp. 07, 14): "
+         "BAD 11.76 m² ↔ ZIMMER 17.04 m² — 1 Tür(en) ['durchgang_15']"),
     ]

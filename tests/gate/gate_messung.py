@@ -1,4 +1,4 @@
-"""Ein vollständiger Gate-Messlauf: Herkunft, die 18 Erwartungen, OG1, OG3, M1-M4.
+"""Ein vollständiger Gate-Messlauf: Herkunft, 18 Erwartungen, Referenz, OG1, OG3, M1-M4.
 
 ``messung(repo)`` liefert das Vergleichsobjekt des Türstapel-Gates. Es enthält
 NUR Zahlen, IDs, Typen und Namen — keine absoluten Pfade, keine Koordinaten und
@@ -36,6 +36,7 @@ import gate_m1_m4
 import gate_m17
 import gate_og1
 import gate_og3
+import gate_referenz
 from gate_lauf import erkenne, sha256_datei
 
 from plaene import RENNWEG_OG3
@@ -85,7 +86,7 @@ def _meta(repo: Path, referenz: Path, laufzeit_s: float) -> dict:
 
 
 def messung(repo: Path) -> dict:
-    """Alle Messfälle des Gates in einem Durchgang: meta, m17, og1, og3, m1_m4."""
+    """Alle Messfälle des Gates in einem Durchgang: meta, m17, referenz, og1, og3, m1_m4."""
     repo = Path(repo)
     referenz = gate_m17.referenz_pfad()
     if referenz is None:
@@ -98,6 +99,7 @@ def messung(repo: Path) -> dict:
     ref = gate_m17.lade_referenz(referenz)
     m17 = gate_m17.messe(ref, lauf.modell.raeume, lauf.modell.tueren,
                          lauf.kaskade.wandkoerper, lauf.plan.factor)
+    referenz_verbindungen = gate_referenz.verbindungen(lauf.modell)
     og1 = gate_og1.kennzahlen(lauf.modell)
     # Rennweg OG3 mit floor "OG3" — derselbe Plan, den ``meta.dxf["OG3"]``
     # fingerprintet, und dasselbe ``floor`` wie tests/naht/test_soll_rennweg.py.
@@ -108,7 +110,7 @@ def messung(repo: Path) -> dict:
 
     laufzeit = round(time.monotonic() - t0, 1)
     return {"meta": _meta(repo, referenz, laufzeit), "m17": m17,
-            "og1": og1, "og3": og3, "m1_m4": m1_m4}
+            "referenz": referenz_verbindungen, "og1": og1, "og3": og3, "m1_m4": m1_m4}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -124,6 +126,11 @@ def main(argv: list[str] | None = None) -> int:
                     encoding="utf-8")
     for e in ergebnis["m17"]:
         print(f"{e['id']:10s} {e['status']}")
+    bestehend = [e for e in ergebnis["referenz"]["verneint"] if e["anzahl"] != 0]
+    fehlend = [e for e in ergebnis["referenz"]["gefordert"]
+               if e["anzahl"] is None or e["anzahl"] < 1]
+    print(f"Referenz: {len(bestehend)} verneinte Verbindungen bestehen, "
+          f"{len(fehlend)} geforderte Übergänge fehlen")
     print(f"OG1: {ergebnis['og1']['raeume_gesamt']} Räume, "
           f"{ergebnis['og1']['tueren_gesamt']} Türen, "
           f"a==b {ergebnis['og1']['tueren_raum_a_gleich_b']}, "
