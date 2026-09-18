@@ -26,9 +26,10 @@ alt/neu, Vorlage, Erklärungs-DXFs) + Messskripte (Session-Scratchpad).
    `750298750` (grün gefülltes RZ-Männchen, 155×; Beispiel-Handles EG 20332/20359)
    — existieren NICHT in Notbeleuchtungssymbole_neu+.dxf. In die Bibliothek
    aufnehmen (die Engine zeichnet Fluchtwege bisher als Linien+Chevrons)?
-5. **Antipanik-Skala uneinheitlich:** Erklärungspläne inserieren
-   Antipanikleuchte-RIVO mit 25,25 (296 mm, 3×), 45,96 (539 mm, 4×) und 53,7
-   (630 mm, 1×). Registry nutzt die häufigste (46,0 → 539 mm). Owner-Sollgröße?
+5. ~~Antipanik-Skala uneinheitlich~~ **BEANTWORTET 2026-09-18 (Owner:
+   „vergrößern, gut erkennbar, passend zum Plan"):** Soll = Papier-Größe der
+   Owner-Legende in der neuen Vorlage × Maßstab 50 → AP 586 mm (RZ 883,
+   Aufheller/Spot 192, Anlage 852). Umgesetzt `95c6b82`.
 6. **RZ-Zweitgröße 446 mm:** neben der dominanten ~636-mm-Größe kommen RZ mit
    Skala 25,246 (446 mm) vor (6× down, 6× left, 4× right). Kontext-Regel
    (kleine Räume → kleineres Schild)? Engine nutzt bisher EINE Größe.
