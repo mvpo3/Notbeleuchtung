@@ -45,6 +45,10 @@ from notbeleuchtung.raumerkennung.aussenbereich import ueberdachungen
 from notbeleuchtung.raumerkennung.bereinigung import ueberlappung
 from notbeleuchtung.raumerkennung.dxf_load import WALL_PATTERN, DxfPlan, lade_dxf
 from notbeleuchtung.raumerkennung.fluchtweg import _KEIN_FLW_LAYER
+from notbeleuchtung.raumerkennung.geschoss import (
+    geschoss_aus,  # noqa: F401 — uebersicht_karte nutzt pp.geschoss_aus
+    geschoss_befund,
+)
 from notbeleuchtung.raumerkennung.kaskade import iou, raeume_aus_kaskade
 from notbeleuchtung.raumerkennung.material_matching import (
     _LAYER_HINWEISE,
@@ -58,10 +62,7 @@ from notbeleuchtung.raumerkennung.stempel_anker import (
     restflaechen,
     zentrum,
 )
-from notbeleuchtung.raumerkennung.tuer_typisierung import (
-    _BRANDSCHUTZ_RE,
-    geschoss_aus,
-)
+from notbeleuchtung.raumerkennung.tuer_typisierung import _BRANDSCHUTZ_RE
 
 EINGANG = REPO / "Projekte" / "_eingang"
 # Ausgabeordner überschreibbar (Sammelläufe über alle Repo-Grundrisse
@@ -1119,6 +1120,23 @@ def _restweg_im_eg(dxf: Path, geschoss: str) -> str | None:
             "(Stiegenhaustür → nächster final_exit)")
 
 
+def _geschoss_md(befund, ausg_warnungen) -> list[str]:
+    """Markdown: WELCHE Stufe das Geschoss entschieden hat, mit Beleg.
+
+    Die Quelle steht im Bericht, damit später je Quelle gemessen werden kann,
+    wer wie oft entscheidet — und damit ein fail-closed-Plan (UNBEKANNT, kein
+    final_exit) im Bericht sichtbar ist, ohne den Contract anzufassen.
+    """
+    l = ["", "## Geschoss", "",
+         (f"- Geschoss: **{befund.geschoss or 'UNBEKANNT'}** "
+          f"(Quelle `{befund.quelle}`)"),
+         f"- Beleg: {befund.beleg}"]
+    for w in ausg_warnungen:
+        l.append(f"- ⚠ {w.grund}")
+        l += [f"  - {r}" for r in w.gescheiterte_regeln]
+    return l
+
+
 def _kreuzcheck_md(modell, kc, flw_warnungen: list[str],
                    restweg: str | None) -> list[str]:
     """Markdown-Block: Kreuzcheck + Fluchtweg-Warnungen + untypisierte Türen."""
@@ -1197,12 +1215,18 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     """RaumModell + Platzierung (Pipeline-Smoke, Default-Bundle) → 05/06-PNGs
     + bericht-Block + VERLAUF-Kennzahlen."""
     from notbeleuchtung.hauptengine.registry import build_default_bundle
-    geschoss = geschoss_aus(None, str(dxf)) or "EG"
+    # Kein Standardwert EG mehr (Owner-Entscheidung 2026-09-13): der Befund
+    # entscheidet mehrstufig und darf UNBEKANNT bleiben. Der schon geladene
+    # `plan` speist die Schriftfeld-/Plantext-/Höhenkoten-Stufen, ohne die DXF
+    # ein zweites Mal zu lesen.
+    befund = geschoss_befund(None, str(dxf), plan)
+    geschoss = befund.geschoss
     bundle = build_default_bundle()
     modell = bundle.raum.parse(str(dxf), geschoss)
     platz = bundle.platzierer.place(modell, bundle.norm, None)
     kc = getattr(bundle.raum, "letzter_kreuzcheck", None)
     flw_warnungen = list(getattr(bundle.raum, "fluchtweg_warnungen", []))
+    ausg_warnungen = list(getattr(bundle.raum, "ausgangs_warnungen", []))
 
     wpolys = _wohnungs_umrisse(modell)
     _bild_fluchtweg(plan, zoom, modell, wpolys, ziel / "05_fluchtweg.png", rot,
@@ -1233,6 +1257,7 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
              if ab is not None and ab.komponenten else [])
     bundle.raum.letzte_ueberdachungen = ueber
     md = md + _aussen_md(ab, ueber, modell.ausgaenge)
+    md = md + _geschoss_md(befund, ausg_warnungen)
     md = md + _kreuzcheck_md(modell, kc, flw_warnungen,
                              _restweg_im_eg(dxf, geschoss))
     refz = _referenzvergleich(dxf.stem, plan, zoom, modell, platz, ziel, rot)

@@ -495,7 +495,10 @@ def karte_bauen(dxf: Path, floor: str | None, out: Path,
     ziel = out / name
     ziel.mkdir(parents=True, exist_ok=True)
 
-    geschoss = floor or pp.geschoss_aus(None, str(dxf)) or "EG"
+    # Kein Standardwert EG (Owner-Entscheidung 2026-09-13): unbekannt bleibt
+    # unbekannt. Bleibt es leer, entscheidet der Provider selbst mehrstufig
+    # (Dateiname → Schriftfeld/Plantext → Höhenkote) und meldet fail closed.
+    geschoss = floor or pp.geschoss_aus(None, str(dxf))
     provider = ArchitekturRaumProvider()
     modell = provider.parse(str(dxf), geschoss)
     ab = getattr(provider, "letzte_aussenbereiche", None)

@@ -1,0 +1,67 @@
+{
+  "plan": "Barawitzka_EG",
+  "dxf": "Projekte/_eingang/Barawitzka_EG.dxf",
+  "sha256": "76ed8b4552c6654543fd9a9b0b4de3d5d85e7bc37a0209bec1dcf6d491446d43",
+  "bytes": 12900878,
+  "bild_px": [
+    2470,
+    3149
+  ],
+  "laufzeit_s": 49.0,
+  "geschoss": "EG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname 'Barawitzka_EG' → 'EG'",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 49,
+  "raeume_unbekannt": 6,
+  "raum_typen": {
+    "TERRASSE": 6,
+    "BAD": 4,
+    "BALKON": 2,
+    "KÜCHE": 4,
+    "ZIMMER": 6,
+    "VORRAUM": 5,
+    "WC": 4,
+    "ABSTELLRAUM": 3,
+    "KINDERWAGENRAUM": 1,
+    "WASCHKÜCHE": 1,
+    "STIEGENHAUS": 2,
+    "SCHACHT": 2,
+    "LIFT": 3
+  },
+  "kategorien": {
+    "unbekannt": 6,
+    "freiflaeche": 8,
+    "nass": 8,
+    "kueche": 4,
+    "wohnen": 6,
+    "stiege": 7,
+    "neben": 5,
+    "schacht": 5
+  },
+  "tueren_gesamt": 104,
+  "tueren_typisiert": 54,
+  "tuer_typen": {
+    "UNBEKANNT": 50,
+    "zimmertuer": 33,
+    "balkontuer": 10,
+    "hauseingang": 1,
+    "wohnungseingang": 9,
+    "brandschutztuer": 1
+  },
+  "tueren_notausgang": 10,
+  "ausgaenge": {
+    "final_exit": 1
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 12,
+  "segmente_je_quelle": {
+    "GRAPH": 11,
+    "FALLBACK": 1
+  },
+  "segmente_richtung_unbekannt": 1,
+  "wohnungen": 6,
+  "innenhoefe_geschlossen": 2,
+  "stiegenhaeuser": 2,
+  "contract_version": "1.5.0"
+}

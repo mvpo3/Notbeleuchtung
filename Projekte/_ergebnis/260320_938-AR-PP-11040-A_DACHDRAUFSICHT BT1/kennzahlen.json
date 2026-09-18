@@ -1,0 +1,42 @@
+{
+  "plan": "260320_938-AR-PP-11040-A_DACHDRAUFSICHT BT1",
+  "dxf": "Projekte/BVH Fischamenderstraße/BT1/260320_938-AR-PP-11040-A_DACHDRAUFSICHT BT1.dxf",
+  "sha256": "d3af7a8950f484c002885f2b3cf46fa3cb3881603aa410b86d00b7cadecf01cb",
+  "bytes": 1894886,
+  "bild_px": [
+    2470,
+    1080
+  ],
+  "laufzeit_s": 13.8,
+  "geschoss": "",
+  "geschoss_quelle": "unbekannt",
+  "geschoss_beleg": "Geschoss unbekannt, Endausgang nicht bestimmbar",
+  "ausgangs_warnungen": [
+    "AusgangsWarnung(geschoss='', grund='Geschoss unbekannt, Endausgang nicht bestimmbar', gescheiterte_regeln=['final_exit: Geschoss weder aus floor/Dateiname noch aus Schriftfeld/Plantext/Höhenkote belegt (kein Standardwert EG)'])",
+    "AusgangsWarnung(geschoss='', grund='kein Geschossausgang ableitbar', gescheiterte_regeln=['final_exit: keine hauseingang-/Notausgangstür ins Freie (EG)', 'stair_exit: keine stiegenhaustuer/wohnungseingang am STIEGENHAUS'])"
+  ],
+  "raeume_gesamt": 3,
+  "raeume_unbekannt": 2,
+  "raum_typen": {
+    "LIFT": 1
+  },
+  "kategorien": {
+    "unbekannt": 2,
+    "schacht": 1
+  },
+  "tueren_gesamt": 3,
+  "tueren_typisiert": 0,
+  "tuer_typen": {
+    "UNBEKANNT": 3
+  },
+  "tueren_notausgang": 0,
+  "ausgaenge": {},
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 0,
+  "segmente_je_quelle": {},
+  "segmente_richtung_unbekannt": 0,
+  "wohnungen": 0,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 0,
+  "contract_version": "1.5.0"
+}
