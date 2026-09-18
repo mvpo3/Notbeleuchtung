@@ -4,23 +4,22 @@ Wohnungen, Ausgänge, Fluchtwege) größtenteils SCHARF (2026-09-06: Ist =
 3 GRAPH-Segmente, 2 Wohnungen).
 
 Seit Fachteil 2 auch die Lift-Erkennung scharf (textbasierter Pfad) sowie
-Anker-/Stiegenhaus-Zusicherungen. Skip-Gate, wenn das CAD-Asset fehlt
-(CI ohne Projekte/).
+Anker-/Stiegenhaus-Zusicherungen. Gemessen wird auf den versionierten Plänen
+unter ``Projekte/Rennweg/`` (siehe ``tests/plaene.py``).
 
 Plan-Befunde (2026-09): 11 Zargentüren in Wall-Blöcken (T1..T11), zwei Stiegen
 (Stair_1 mit Laufnummern 1-20, Stair_2 mit 1-6), keine FLW-Linien.
 """
-from pathlib import Path
-
 import pytest
 
-PLAN = Path("Projekte/_eingang/Rennweg_OG3.dxf")
+from plaene import RENNWEG_EG as PLAN_EG
+from plaene import RENNWEG_OG3 as PLAN
+from plaene import plan
 
 
 @pytest.fixture(scope="module")
 def rm():
-    if not PLAN.exists():                        # pragma: no cover — CAD-Asset fehlt
-        pytest.skip(f"Architekturplan nicht vorhanden: {PLAN}")
+    plan(PLAN)
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
 
     return ArchitekturRaumProvider().parse(str(PLAN), "OG3")
@@ -62,8 +61,7 @@ def test_soll_wohnungs_gruppe(rm):
 
 def test_soll_keine_leuchten_in_wohnung_privat():
     """Pipeline-Smoke: kein Notlicht-Symbol in WOHNUNG_PRIVAT-Räumen."""
-    if not PLAN.exists():                        # pragma: no cover — CAD-Asset fehlt
-        pytest.skip(f"Architekturplan nicht vorhanden: {PLAN}")
+    plan(PLAN)
     from shapely.geometry import Point, Polygon
 
     from notbeleuchtung.hauptengine.pipeline import run
@@ -94,13 +92,9 @@ def test_stiegenhaus_modell_mit_laufrichtung(rm):
     assert m.verbotszonen_mm
 
 
-PLAN_EG = Path("Projekte/_eingang/Rennweg_EG.dxf")
-
-
 @pytest.fixture(scope="module")
 def rm_eg():
-    if not PLAN_EG.exists():                     # pragma: no cover — CAD-Asset fehlt
-        pytest.skip(f"Architekturplan nicht vorhanden: {PLAN_EG}")
+    plan(PLAN_EG)
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
 
     return ArchitekturRaumProvider().parse(str(PLAN_EG), "EG")
