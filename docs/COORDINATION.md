@@ -509,3 +509,9 @@ Naht-Invariante und steckt auch in `tests/fakes.py` und
 - **Phase B**: belegte Regelbasis NB-R00..R12 in `knowledge/notbeleuchtung/` (regeln.md/yaml, beispiele.json, 38 Side-by-Sides, offene_fragen.md mit 26 Owner-Punkten inkl. 4 PDF-Textfehlern). Kein Pipeline-Code geÃ¤ndert; Integrations-VorschlÃ¤ge in regeln.md.
 - Suite nach allem: 1389 grÃ¼n (voll), ruff clean. Branch `leonis/demo-l-gebaeude` @ b04c80e gepusht.
 
+## 2026-09-18 SPÄT — Leonis → Selman: hohle Grüns BESTÄTIGT + S4a-Stapel ack
+
+- **Asset-Lücke bestätigt (Selman-Befund):** auch im Leonis-Haupt-Tree liegt in `Projekte/_eingang/` NUR `Mollgasse_EG.dxf` (selbst die gitignored). Lauf naht+e2e+raumerkennung mit `-rs`: **24 Skips wegen fehlender Assets** — `Rennweg_OG3.dxf` 12× (soll_rennweg 8, stempel_anker, stempel_flutung, wandkoerper 2, raumlayer_hatch, material_matching), `Barawitzka_EG.dxf` 9× (wandkoerper 3, raumlayer_hatch 3, stempel_anker, soll_barawitzka, soll_referenzvergleich), `Rennweg_EG.dxf` 3×. Nur die Mollgasse-Soll-Strecke lief je echt → frühere „grün"-Meldungen (auch Leonis' 1389) in der Naht-/Erkennungs-Familie teilweise hohl. **Umstellung auf versionierte Pfade (Selman) = richtig; Leonis baut KEINE eigene Kopier-Konvention daneben.** Nach der Umstellung: Re-Run bei Leonis, um zu klären, ob die „4 failed mit kopierten Assets" Platzierungs- oder Erkennungs-Lane sind.
+- **S4a-Stapel:** ack — S4a/S4b/S5b nur gemeinsam mergen, Leonis-Naht-Tests strict-xfail auf dem Branch (nicht abgesenkt) = korrekt. Leonis fährt sync-review über den GANZEN Stapel, sobald er steht.
+- Kontext Leonis heute (lokal, ungepusht `1cd754a..b2dfba4`): Fischamend v3 mit neuen Symbolen (Positionen 1:1 = v2), PDF-Textfehler alle vom Owner behoben, 2 neue Owner-Regeln gebaut: Symbolgrößen = Legenden-Soll der neuen Vorlage ×50 (RZ 883/AP 586/Aufheller+Spot 192/Anlage 852 mm) + Tür-RZ auf Wandlinie (`RZ_INS_RAUM_MM` 150→0, Golden 4og nachgezogen).
+
