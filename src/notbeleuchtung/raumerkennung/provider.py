@@ -16,24 +16,20 @@ from shapely.ops import unary_union
 from notbeleuchtung.hauptengine.contracts import RaumModell
 from notbeleuchtung.hauptengine.contracts.raum_modell import Tuer
 
-from .ausgaenge import leite_ausgaenge
+from .ausgaenge import leite_ausgaenge, ohne_unzulaessige_final_exits
 from .aussenbereich import erkenne_aussenbereiche
 from .dxf_load import bounds_mm, lade_dxf
 from .fluchtweg import explizite_linien, fluchtwege, linien_segmente
 from .footprint import hauptausgaenge
 from .gang_anker import anker_fuer_gang
 from .geometrie_typ import typisiere_geometrisch
+from .geschoss import geschoss_befund
 from .kaskade import KaskadeErgebnis, raeume_aus_kaskade
 from .kreuzcheck import kreuzcheck
 from .lift_erkennung import finde_lifte
 from .raumtyp import beschrifte_raeume
 from .stiegenhaus import baue_stiegenhaus_modell
-from .tuer_typisierung import (
-    brandschutz_hinweise_aus_dxf,
-    geschoss_aus,
-    ist_obergeschoss,
-    typisiere_tueren,
-)
+from .tuer_typisierung import brandschutz_hinweise_aus_dxf, typisiere_tueren
 from .tuer_zuordnung import (
     AUSSEN,
     aussen_durchgaenge,
@@ -104,7 +100,14 @@ class ArchitekturRaumProvider:
 
         # ── Fachteil 1: Zuordnung → Typisierung → Wohnungen → Ausgänge →
         # Fluchtwege — rein ERGÄNZEND zu hauptausgaenge/zirkulation.
-        geschoss = geschoss_aus(floor, dxf_path)
+        # Geschoss mehrstufig (Owner-Entscheidung 2026-09-13): floor →
+        # Dateiname → Schriftfeld/Plantext → Höhenkote → UNBEKANNT. Der Befund
+        # trägt die entscheidende QUELLE mit und liegt — wie
+        # letzte_aussenbereiche — als Attribut für Prüfstrecke/bericht.md
+        # bereit; der Contract führt ihn nicht. Der bereits geöffnete `plan`
+        # speist die drei Plan-Stufen, es wird keine DXF zweimal gelesen.
+        self.geschoss_befund = geschoss_befund(floor, dxf_path, plan)
+        geschoss = self.geschoss_befund.geschoss
         # Außen-Analyse je Gebäude-Komponente (Barawitzka: 2 Trakte) + Hof-
         # Erkennung (Mollgasse: Hof mit Weg ins Freie = AUSSEN → Hoftüren
         # werden Endausgänge). Fallback = alte Ein-Konturen-Heuristik.
@@ -144,7 +147,10 @@ class ArchitekturRaumProvider:
                          unary_union(aussen.geschlossen)
                          if aussen is not None and aussen.geschlossen else None)
         bilde_wohnungen(raeume, tueren)
-        neue, _warnungen = leite_ausgaenge(tueren, raeume, geschoss, flw_enden)
+        # Ausgangs-Warnungen (u.a. „Geschoss unbekannt, Endausgang nicht
+        # bestimmbar") als Prüfstrecken-Output — kein Contract-Feld.
+        neue, self.ausgangs_warnungen = leite_ausgaenge(
+            tueren, raeume, geschoss, flw_enden)
         vorhandene = list(ausgaenge)
         for a in neue:
             if not any(a.typ == v.typ
@@ -153,9 +159,11 @@ class ArchitekturRaumProvider:
                        for v in vorhandene):
                 vorhandene.append(a)
         # Obergeschosse haben keine Ausgänge ins Freie (Fenster-/Balkontüren
-        # der Fassade sind keine hauseingang-Endausgänge).
-        ausgaenge = [a for a in vorhandene
-                     if not (a.typ == "final_exit" and ist_obergeschoss(geschoss))]
+        # der Fassade sind keine hauseingang-Endausgänge); bei UNBEKANNTem
+        # Geschoss entsteht fail closed ebenfalls keiner. Der Filter sitzt
+        # hinter dem Zusammenlegen, also greift er auch für die
+        # footprint-Ausgänge (Z.102), die ohne Geschossbezug entstehen.
+        ausgaenge = ohne_unzulaessige_final_exits(vorhandene, geschoss)
         zirkulation.segmente += linien_segmente(
             explizite_linien(plan), len(zirkulation.segmente))
         # Geschoss-Zielregel (EG/UG → final_exit, OG → stair_exit); Warnungen
@@ -188,7 +196,14 @@ class ArchitekturRaumProvider:
             anker = [a for a in anker
                      if not any(s.contains(Point(a.xy_mm)) for s in schaechte)]
         modell = RaumModell(
-            floor=floor,
+            # Der Contract führt nur `floor` (eingefroren — kein neues Feld).
+            # Gab der Aufrufer nichts vor, trägt hier das ENTSCHIEDENE Geschoss
+            # ein: vorher stand im Modell "", während die Ausgangslogik mit
+            # einem belegten Geschoss lief, und die 12 floor-Leser
+            # (dxf_renderer, validierung, oib_gate, …) sahen den Leerstring.
+            # Ein vom Aufrufer gesetztes `floor` bleibt unangetastet — an ihm
+            # hängen die OIB-Raumreferenzen.
+            floor=floor or geschoss,
             bounds_mm=bounds,
             raeume=raeume,
             tueren=tueren,

@@ -1,0 +1,72 @@
+{
+  "plan": "Elektromontageplan_ERDGESCHOSS BT2",
+  "dxf": "Projekte/BVH Fischamenderstraße/fertige Elektromontagepläne/BT2/Elektromontageplan_ERDGESCHOSS BT2.dxf",
+  "sha256": "c9c9f3b34c27f3fe3301e805890358181998621ec13e61c28947242377a2e75e",
+  "bytes": 21078982,
+  "bild_px": [
+    2470,
+    2024
+  ],
+  "laufzeit_s": 37.0,
+  "geschoss": "EG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname 'Elektromontageplan_ERDGESCHOSS BT2' → 'ERDGESCHOSS'",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 50,
+  "raeume_unbekannt": 6,
+  "raum_typen": {
+    "KÜCHE": 7,
+    "GANG": 4,
+    "TERRASSE": 4,
+    "BALKON": 2,
+    "ABSTELLRAUM": 2,
+    "WC": 5,
+    "VORRAUM": 4,
+    "ZIMMER": 6,
+    "BAD": 4,
+    "GARAGE": 1,
+    "KINDERWAGENRAUM": 1,
+    "MUELLRAUM": 1,
+    "STIEGENHAUS": 1,
+    "SCHACHT": 1,
+    "LIFT": 1
+  },
+  "kategorien": {
+    "kueche": 7,
+    "unbekannt": 6,
+    "gang_allg": 2,
+    "freiflaeche": 6,
+    "neben": 5,
+    "nass": 9,
+    "stiege": 5,
+    "wohnen": 6,
+    "gang_priv": 2,
+    "schacht": 2
+  },
+  "tueren_gesamt": 148,
+  "tueren_typisiert": 116,
+  "tuer_typen": {
+    "UNBEKANNT": 32,
+    "wohnungseingang": 41,
+    "zimmertuer": 47,
+    "stiegenhaustuer": 4,
+    "balkontuer": 17,
+    "hauseingang": 7
+  },
+  "tueren_notausgang": 10,
+  "ausgaenge": {
+    "stair_exit": 2,
+    "final_exit": 6
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 52,
+  "segmente_je_quelle": {
+    "GRAPH": 51,
+    "FALLBACK": 1
+  },
+  "segmente_richtung_unbekannt": 1,
+  "wohnungen": 2,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 1,
+  "contract_version": "1.5.0"
+}

@@ -1,0 +1,63 @@
+{
+  "plan": "415_260415_PP_VA_1_5 2 St",
+  "dxf": "Projekte/Barawitzkagasse/415_260415_PP_VA_1_5 2 St.dxf",
+  "sha256": "d3bb4b9ae187ba425f77bb9355943321d65c6bdee279634e89c5a82eb50c907d",
+  "bytes": 11032877,
+  "bild_px": [
+    2470,
+    2798
+  ],
+  "laufzeit_s": 109.4,
+  "geschoss": "OG",
+  "geschoss_quelle": "hoehenkote",
+  "geschoss_beleg": "Median +5.76 m aus 10 FOK/ROK-Koten → OG (Schwellen +3 m / -1 m = Owner-Setzung)",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 53,
+  "raeume_unbekannt": 11,
+  "raum_typen": {
+    "BAD": 4,
+    "KÜCHE": 5,
+    "STIEGENHAUS": 4,
+    "ABSTELLRAUM": 3,
+    "VORRAUM": 4,
+    "BALKON": 2,
+    "WC": 4,
+    "ZIMMER": 8,
+    "TERRASSE": 1,
+    "SCHACHT": 3,
+    "LIFT": 4
+  },
+  "kategorien": {
+    "nass": 8,
+    "kueche": 5,
+    "unbekannt": 11,
+    "stiege": 8,
+    "neben": 3,
+    "freiflaeche": 3,
+    "wohnen": 8,
+    "schacht": 7
+  },
+  "tueren_gesamt": 108,
+  "tueren_typisiert": 40,
+  "tuer_typen": {
+    "zimmertuer": 32,
+    "UNBEKANNT": 68,
+    "wohnungseingang": 3,
+    "balkontuer": 4,
+    "stiegenhaustuer": 1
+  },
+  "tueren_notausgang": 2,
+  "ausgaenge": {
+    "stair_exit": 1
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 4,
+  "segmente_je_quelle": {
+    "FALLBACK": 4
+  },
+  "segmente_richtung_unbekannt": 4,
+  "wohnungen": 11,
+  "innenhoefe_geschlossen": 7,
+  "stiegenhaeuser": 4,
+  "contract_version": "1.5.0"
+}

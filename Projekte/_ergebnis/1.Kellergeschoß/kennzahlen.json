@@ -1,0 +1,50 @@
+{
+  "plan": "1.Kellergeschoß",
+  "dxf": "Projekte/Mollgasse/1.Kellergeschoß.dxf",
+  "sha256": "801642aa8b0eecc9847a8d6e9db2cf45590121731b186330e48fad7b1c107dfb",
+  "bytes": 4149470,
+  "bild_px": [
+    2870,
+    2207
+  ],
+  "laufzeit_s": 39.7,
+  "geschoss": "1KG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname '1.Kellergeschoß' → '1.Kellergeschoß'",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 31,
+  "raeume_unbekannt": 24,
+  "raum_typen": {
+    "GANG": 2,
+    "STIEGENHAUS": 2,
+    "GARAGE": 1,
+    "LIFT": 2
+  },
+  "kategorien": {
+    "gang_allg": 2,
+    "unbekannt": 24,
+    "stiege": 2,
+    "neben": 1,
+    "schacht": 2
+  },
+  "tueren_gesamt": 76,
+  "tueren_typisiert": 3,
+  "tuer_typen": {
+    "UNBEKANNT": 73,
+    "garagentor": 3
+  },
+  "tueren_notausgang": 2,
+  "ausgaenge": {
+    "final_exit": 2
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 4,
+  "segmente_je_quelle": {
+    "FALLBACK": 4
+  },
+  "segmente_richtung_unbekannt": 4,
+  "wohnungen": 0,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 2,
+  "contract_version": "1.5.0"
+}

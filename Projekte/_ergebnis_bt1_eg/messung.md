@@ -26,8 +26,12 @@ Deshalb NICHT `scripts/plan_pruefen.py`, sondern der Provider direkt.
 | Tueren | 225 |
 | davon typisiert | 192 |
 | Fluchtweg-Segmente | 87 |
-| Wandkoerper | 0 |
+| Wandkoerper | **241** (Korrektur 2026-09-13; hier stand 0) |
 
 Ausgaenge: `{"stair_exit": 1, "final_exit": 3}`
 
 Raumtypen: `{"ZIMMER": 14, "GANG": 8, "(ohne)": 5, "TERRASSE": 5, "BALKON": 2, "BAD": 6, "WC": 6, "KÜCHE": 12, "VORRAUM": 6, "ABSTELLRAUM": 4, "GARAGE": 1, "STIEGENHAUS": 1, "KINDERWAGENRAUM": 1, "LIFT": 1}`
+
+> **Korrektur 2026-09-13:** die Zeile „Wandkoerper 0" war ein Messfehler — `len(getattr(modell, "wandkoerper", []))` auf einem RaumModell, das dieses Feld nicht fuehrt. Ist-Wert 241 (195 msp / 46 block, 210 auf A_Waende), selbst gemessen auf 3d91a2c.
+>
+> **Zweite Korrektur:** dieser Plan ist NICHT der aus Enis' Diagnose. Seine IDs (tuer_111, tuer_121, exit_tuer_121) und die drei Selbstverbindungen stehen im Architekturplan-Ergebnis `Projekte/_ergebnis_alle/260320_938-AR-PP-11000-A_ERDGESCHOSS BT1/`.

@@ -1,0 +1,65 @@
+{
+  "plan": "Elektromontageplan_2.OBERGESCHOSS BT2",
+  "dxf": "Projekte/BVH Fischamenderstraße/fertige Elektromontagepläne/BT2/Elektromontageplan_2.OBERGESCHOSS BT2.dxf",
+  "sha256": "525e1344740f48aaa52da8a738ef5d2f75e9e5d4333bc23b9eef84e54aa1a95b",
+  "bytes": 25199447,
+  "bild_px": [
+    2470,
+    3046
+  ],
+  "laufzeit_s": 41.1,
+  "geschoss": "2OG",
+  "geschoss_quelle": "dateiname",
+  "geschoss_beleg": "Dateiname 'Elektromontageplan_2.OBERGESCHOSS BT2' → '2.OBERGESCHOSS'",
+  "ausgangs_warnungen": [],
+  "raeume_gesamt": 63,
+  "raeume_unbekannt": 3,
+  "raum_typen": {
+    "KÜCHE": 10,
+    "BALKON": 6,
+    "ZIMMER": 11,
+    "VORRAUM": 8,
+    "WC": 6,
+    "BAD": 9,
+    "GANG": 4,
+    "ABSTELLRAUM": 3,
+    "STIEGENHAUS": 1,
+    "LIFT": 2
+  },
+  "kategorien": {
+    "kueche": 10,
+    "freiflaeche": 6,
+    "wohnen": 11,
+    "stiege": 9,
+    "nass": 15,
+    "gang_allg": 2,
+    "gang_priv": 2,
+    "neben": 3,
+    "unbekannt": 3,
+    "schacht": 2
+  },
+  "tueren_gesamt": 184,
+  "tueren_typisiert": 163,
+  "tuer_typen": {
+    "UNBEKANNT": 21,
+    "wohnungseingang": 70,
+    "zimmertuer": 71,
+    "stiegenhaustuer": 2,
+    "balkontuer": 20
+  },
+  "tueren_notausgang": 0,
+  "ausgaenge": {
+    "stair_exit": 1
+  },
+  "ausgaenge_unbelastbar": [],
+  "segmente_gesamt": 72,
+  "segmente_je_quelle": {
+    "GRAPH": 70,
+    "FALLBACK": 2
+  },
+  "segmente_richtung_unbekannt": 2,
+  "wohnungen": 6,
+  "innenhoefe_geschlossen": 0,
+  "stiegenhaeuser": 1,
+  "contract_version": "1.5.0"
+}
