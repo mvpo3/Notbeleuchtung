@@ -1,0 +1,169 @@
+# Notbeleuchtungs-Regelbasis (maschinenlesbar) — Quelle: regeln.md (2026-09-18)
+# symboltyp = Registry-catalog_key (schrack_symbol_mapping.yaml). Winkel in Grad
+# (Welt, CCW, 0=+x), Laengen in mm. belege = Beispiel-IDs aus beispiele.json.
+# konfidenz: hoch|mittel|niedrig. Meta: Welt-Pfeil = Blockbasis + Rotation,
+# Toleranz +-1.5; Positionen ueber Bbox-Zentren messen.
+
+- id: NB-R01
+  thema: tuer_rz
+  bedingung: "Raum bindet ueber eine Tuer an den Fluchtweg an und erhaelt ein Tuer-RZ"
+  aktion:
+    symboltyp: notlicht_ks_stiege_unten
+    position: "in der Tuerachse, raumseitig hinter der Schwelle"
+    rotation: "Welt-Pfeil in den Raum = entgegen Fluchtrichtung durch die Tuer = entgegen Tuer-Oeffnungsrichtung"
+  parameter:
+    quer_zur_tuerachse_mm: {gemessen: [3, 35], toleranz: 50}
+    raumseitiger_versatz_mm: {gemessen: [735, 930], hinweis: "Gang-Trenntuer 1OG: 258 gangseitig der Wandachse"}
+  begruendung: "PDF S.1-4, 12, 14, 20 — Tuer muss bei Netzausfall auffindbar bleiben, Pfeil zeigt in den Raum"
+  belege: [EG-01, EG-02, EG-03, EG-04, EG-11, EG-12, EG-13, 1OG-01, 2OG-01, 2OG-03]
+  konfidenz: hoch
+
+- id: NB-R02
+  thema: allgemeinbereiche
+  bedingung: "Raum ist Allgemeinbereich (fuer alle Bewohner zugaenglich; meist EG/UG): MUELLRAUM, FAHRRADRAUM(ABSTELLRAUM communal), KINDERWAGENRAUM, KELLERABTEIL, TECHNIK, SPIELRAUM, GESCHAEFTSLOKAL, Innenhof-Anbindung"
+  aktion:
+    symboltyp: notlicht_ks_stiege_unten
+    position: "bei der Tuer nach NB-R01; EIN RZ genuegt bei freier Sicht aus dem ganzen Raum"
+    rotation: "nach NB-R01"
+  parameter:
+    sichtlinie_max_gemessen_mm: 9143
+  begruendung: "PDF S.2-4, 11-13 — Allgemeinbereichs-Regel"
+  belege: [EG-02, EG-03, EG-04, EG-08, EG-11, EG-12, EG-13]
+  konfidenz: hoch
+
+- id: NB-R03
+  thema: haupteingang
+  bedingung: "Haupteingangs-/Hauptausgangstuer des Gebaeudes"
+  aktion:
+    symboltyp: notlicht_ks_stiege_unten
+    position: "ueber/vor der Tuer, mittig zur Tuerachse, raumseitig"
+    rotation: "Welt-Pfeil ins Rauminnere"
+  parameter:
+    quer_mm: 26
+    raumseitig_mm: {gemessen: [375, 840]}
+  begruendung: "PDF S.1, 6, 8, 10 — Ziel der Sichtkette beider Personenstroeme"
+  belege: [EG-01, EG-07]
+  konfidenz: hoch
+
+- id: NB-R04
+  thema: stiegenhauspfeil
+  bedingung: "Stiegenhaus mit Architekten-Stiegenpfeil (Aufwaertsrichtung JE LAUF)"
+  aktion:
+    symboltyp: "-"
+    position: "RZ so, dass Ankommende es beim Erreichen des Geschosses (Blick links/rechts) sofort sehen; je Personenstrom ggf. eigenes RZ"
+    rotation: "UG-Stroeme laufen IN Pfeilrichtung hinauf, OG/DG-Stroeme ENTGEGEN hinunter"
+  parameter:
+    delta_bewegung_vs_pfeil_grad: {gemessen: [168, 180]}
+  begruendung: "PDF S.5-8, 15, 19, 25-28, 41"
+  belege: [EG-05, EG-06, 1OG-02, 1OG-05, 2OG-02, 2OG-05, 3OG-01, 3OG-02, 4OG-02, 4OG-07, DG-01, DG-02]
+  konfidenz: hoch
+
+- id: NB-R05
+  thema: vor_der_stiege
+  bedingung: "Richtungs-RZ fuehrt auf eine Stiege bzw. empfaengt Stiegen-Ankoemmlinge"
+  aktion:
+    symboltyp: "notlicht_ks_stiege_links|_rechts (nach NB-R07)"
+    position: "800-1122 mm vor der Antritts-/Austrittskante, auf der Laufachse; Wandmontage als Sichtbarkeits-Alternative"
+    rotation: "Welt-Pfeil exakt in Abstiegs-/Weiterrichtung des Laufs, NIE auf eine Wand"
+  parameter:
+    abstand_vor_kante_mm: {gemessen: [801, 1122]}
+    quer_zur_laufachse_mm: {gemessen: [20, 130]}
+    pfeil_vs_laufrichtung_grad: {toleranz: 1.0}
+  begruendung: "PDF S.16, 25, 30 ('vor der Stiege, sonst zeigt der Pfeil zur Wand'), 39-40"
+  belege: [1OG-02, 1OG-05, 2OG-02, 2OG-05, 3OG-01, 3OG-02, 4OG-04, DG-01, DG-02]
+  konfidenz: hoch
+
+- id: NB-R06
+  thema: pfeil_unten_geradeaus
+  bedingung: "RZ im geraden Gangverlauf bedeutet 'geradeaus weiter'"
+  aktion:
+    symboltyp: notlicht_ks_stiege_unten
+    position: "mittig im Gang (Gangachse)"
+    rotation: "Welt-Pfeil ENTGEGEN der Fluchtrichtung (Vorderseite frontal zum ankommenden Strom)"
+  parameter:
+    neben_gangachse_mm: {gemessen: [6, 95]}
+    delta_pfeil_vs_fluss_grad: {gemessen: [178.6, 180.0]}
+  begruendung: "PDF S.18, 33-34"
+  belege: [1OG-02, 1OG-04, 1OG-05, 2OG-01, 2OG-02, 2OG-05, 4OG-03, 4OG-07, DG-02]
+  konfidenz: hoch
+
+- id: NB-R07
+  thema: frontalsicht_auswahl
+  bedingung: "Auswahl links/rechts/unten fuer ein Richtungs-RZ"
+  aktion:
+    symboltyp: "notlicht_ks_stiege_links|_rechts|_unten"
+    position: "Symbol-Laengsachse quer zum Betrachter-Korridor"
+    rotation: "Pfeil = Fluchtrichtung AUS SICHT der Person; Person muss die Vorderseite sehen"
+  parameter:
+    erstleuchte_sichtwinkel_zur_normalen_grad: {gemessen: [0.3, 45.5], falschvariante: 89}
+    folgeleuchte: "nur Sichtbarkeit noetig (bis ~47.5 Grad, Seitenansicht toleriert 86-90 Grad bei Tuer-RZ am Gangende)"
+  begruendung: "PDF S.31-37 (Vergleichsbeispiele 'Pfeil unten statt links' = Seitenansicht = falsch)"
+  belege: [4OG-01, 4OG-02, 4OG-03, 4OG-04, 4OG-05, 4OG-06, 4OG-07, DG-01, DG-02]
+  konfidenz: hoch
+
+- id: NB-R08
+  thema: erster_blick
+  bedingung: "Verlassen jeder Wohnung / jedes Raums"
+  aktion:
+    symboltyp: "-"
+    position: "eine relevante Leuchte muss direkt sichtbar sein; bei zu grosser Entfernung ZUSATZ-Leuchte dazwischen; ein RZ darf mehrere Tueren bedienen"
+    rotation: "-"
+  parameter:
+    sichtlinien: "eine je Wohnungstuer, Start <=136 mm neben der Tuer, Laenge 882-12028 mm, 0 Wandschnitte"
+    mehrfachbedienung: "bis 4 Wohnungstueren je RZ (1140-4275 mm)"
+  begruendung: "PDF S.14, 17-18 (Zusatz-RZ wegen Distanz), 22, 27, 29-30, 39"
+  belege: [1OG-01, 1OG-03, 1OG-04, 2OG-01, 2OG-04, 3OG-02, EG-08]
+  konfidenz: hoch
+
+- id: NB-R09
+  thema: gang_mit_ohne_stgh_tuer
+  bedingung: "Gang muendet ins Stiegenhaus"
+  aktion:
+    symboltyp: "siehe Faelle"
+    position: "MIT Trenntuer: Tuer-RZ an der Trenntuer (NB-R01) + 2 antipanik_leuchte auf der Gangmittellinie. OHNE Trenntuer: KEIN Tuer-RZ an der Muendung; Richtungs-RZ am Knick bzw. vor der Stiege (NB-R05)"
+    rotation: "nach NB-R01/NB-R06/NB-R07"
+  parameter:
+    ap_teilung_12m_gang_mm: [3090, 6297, 2579]
+    ap_neben_fluchtlinie_mm: 55
+    alternativen_nur_text: "2 Aufheller | mittiges down-RZ | down-RZ + Aufheller (Wahl nach Situation, Lux-Nachweis entscheidet)"
+  begruendung: "PDF S.14, 19, 20-21, 29"
+  belege: [1OG-01, 1OG-05, 2OG-01, 3OG-02]
+  konfidenz: "hoch (gezeichnete Loesung); mittel (Text-Alternativen)"
+
+- id: NB-R10
+  thema: antipanik_sichtblockade
+  bedingung: "Sicht der Person auf die Notleuchte ist blockiert (L-/U-Raumform, Wand dazwischen) ODER Lux-Nachweis im Gang scheitert"
+  aktion:
+    symboltyp: antipanik_leuchte
+    position: "im abgeschatteten Bereich (gemessen 3211 mm vor der Person); rechteckige Raeume ohne Blockade: KEINE"
+    rotation: "-"
+  parameter:
+    lux_nachweis: "separater Nachweis (Lichtberechnung) — hier nur Flag lux_nachweis_erforderlich"
+  begruendung: "PDF S.2 (L-Form Muellraum), 10-12"
+  belege: [EG-10, EG-02, EG-12, 1OG-01, 2OG-01]
+  konfidenz: hoch
+
+- id: NB-R11
+  thema: hindernis_versatz
+  bedingung: "Sollposition kollidiert mit Hindernis (z.B. Lichtkuppel, blau markiert)"
+  aktion:
+    symboltyp: "-"
+    position: "quer versetzen bis frei (gemessen 142 mm Versatz, 292 mm Zentrum->Kuppelkante)"
+    rotation: "UNVERAENDERT beibehalten"
+  begruendung: "PDF S.40"
+  belege: [DG-02]
+  konfidenz: mittel
+
+- id: NB-R12
+  thema: sichtkette_abstaende
+  bedingung: "Folge von RZ entlang des Fluchtwegs"
+  aktion:
+    symboltyp: "-"
+    position: "lueckenlose Kette bis zum Ausgang; Wand-RZ mit Kante an Wandkante (15-101 mm)"
+    rotation: "-"
+  parameter:
+    folgeabstaende_mm: {gemessen: [1975, 7749]}
+    sichtlinien_ende: "an der Symbol-KANTE, nicht am Zentrum"
+  begruendung: "PDF S.5-9 (EG-Ketten)"
+  belege: [EG-05, EG-06, EG-07, EG-08, 4OG-02, DG-01]
+  konfidenz: mittel-hoch

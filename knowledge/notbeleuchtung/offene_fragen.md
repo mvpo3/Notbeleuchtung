@@ -46,6 +46,66 @@ alt/neu, Vorlage, Erklärungs-DXFs) + Messskripte (Session-Scratchpad).
 10. **„Generelunternehmer"** (Tippfehler) im Vorlagen-Schriftfeld — Owner-Original,
     nur zur Kenntnis.
 
-## Phase B (wird während des Abgleichs ergänzt)
+## Phase B (PDF↔DXF-Abgleich, 2026-09-18)
 
-_(noch leer — Einträge folgen mit dem PDF↔DXF-Abgleich)_
+### Widersprüche PDF-Text vs. DXF (alle geometrisch aufgeklärt, Owner-Bestätigung erbeten)
+11. **EG S.10:** PDF nennt (D)/(E) im rechten Stiegenhaus — der Screenshot zeigt
+    einen ÄLTEREN Label-Stand; im aktuellen DXF heißen dieselben Leuchten (G)
+    `206E7` / (H) `2070A`. Geometrie identisch mit EG-08 (bestätigt). PDF-Text
+    aktualisieren?
+12. **1OG S.19:** „türkise Linie zur Notleuchte (A)" — DXF (und PDF-Bild!)
+    führen die Top-2+3-Linie zu **(B)** (`956B0`, Endpunkt 197 mm vor (B),
+    1946 mm von (A)). Textfehler?
+13. **2OG S.23:** „(D) mit Pfeil nach RECHTS" — DXF `852E4` ist ARR-**left**
+    (Welt 179,55° West); PDF-Bild S.23 UND PDF-Text S.25 sagen ebenfalls links.
+    Schreibfehler; Regelbasis folgt DXF+S.25.
+14. **4OG S.38:** „(C) mit Pfeil nach links" — DXF: (C) = RIVO-RZ-ARR_**right**
+    rot 89,9 (Welt Nord); die PDF-eigene S.37-Regel fordert hier „rechts".
+    Schreibfehler?
+
+### Unerklärte Leuchten (nicht Legende, echte Klärung nötig)
+15. **EG `202CC` + `2137C`:** DOPPELTES down-RZ am Süd-Ausgang des linken
+    Stiegenhauses (70 mm Versatz, Skalen 25,2 vs. 41,2) — Versehen oder Absicht?
+    Das zugehörige Tür-Beispiel fehlt im PDF.
+16. **EG `2072F`:** Antipanikleuchte zwischen Fahrradraum und rechtem STGH —
+    im PDF-EG-Kapitel nicht erklärt.
+17. **2OG `8532F`:** unbeschriftetes down-RZ (−72431, 61139), Welt-Pfeil Ost —
+    kein Label, keine Sichtlinien; Rest/Kopie?
+18. **3OG `78DFD` (A, West-STGH-2):** Pfeil Welt 179,7° (West), aber die grünen
+    Fluchtpfeile derselben Route zeigen Ost — falsch rotiert oder andere
+    Personengruppe? (Plus Kopier-Fragmente A1 `78D6A/78D6C/78D6D` ohne
+    Plan-Geometrie.)
+19. **1OG `9568D`, 4OG `41221`, DG `206D6`/`206DB`:** isolierte Streuner-/
+    Arbeitskopien außerhalb des Grundrisses (4OG-Exemplar = die
+    „falsch"-Vergleichsvariante S.35/36) — im PDF nicht erklärt, als
+    Kopier-Reste eingestuft.
+
+### Konventions-/Datenfragen
+20. **UG-Erklärungs-DXF fehlt** (PDF kündigt „1.UG, 2UG, EG-DG" an; Ordner hat
+    nur EG–DG). 1.UG/2.UG-Wissen fehlt der Regelbasis komplett.
+21. **Frontalitäts-Ausnahme Tür-RZ:** Tür-RZ am Gangende werden von den
+    Wohnungstüren unter 86–90° (Seitenansicht) gesehen (1OG (D), 2OG St.1 (D))
+    — gilt die Vorderseiten-Regel (S.31 ff.) für Tür-RZ bewusst nicht/schwächer?
+22. **2OG St.1-Gang-Läufer** (`852C7/852C8/8531B`) blicken 348,7° Ost ENTGEGEN
+    der Fluchtrichtung West — Absicht oder Kopierfehler?
+23. **EG „FREIHEIT/KEINE FREIHEIT"-Texte + rote Sperr-Rechtecke + Fluchtweg-
+    Teilungs-Text** (Mollgasse vs. Anastasius-Grüngasse) sind im PDF nicht
+    erläutert — späteres Kapitel?
+24. **DG Sichtlinie `208DA`** (Top 27) endet in der Lichtkuppel-Box — Blick auf
+    die unversetzte A-Ursprungsposition? Nicht belegbar.
+25. **DG Podest-Höhenlage** (FOK PODEST +12,09 vs. STGH +13,45) mit dem grünen
+    Fluss nicht auflösbar — woher kommt die Podest-Person?
+26. **Blaue „ÜBERGABESTATION"-Schraffur (2OG)** ist keine Lichtkuppel —
+    Haustechnik ohne Notbeleuchtungs-Bezug? (Blau = Hindernis-Konvention wäre
+    sonst mehrdeutig.)
+
+### Abdeckung (gelabelte + ungelabelte NB-Leuchten je Erklärungs-DXF)
+| Geschoss | gesamt | zugeordnet | unerklärt | davon Legende | davon Streuner/Kopie | echt offen |
+|---|---|---|---|---|---|---|
+| EG | 26 | 15 | 11 | 8 | 1 (`2137C` Duplikat) | 2 (`202CC`+`2072F`) |
+| 1OG | 17 | 10 | 7 | 6 | 1 (`9568D`) | 0 |
+| 2OG | 11 | 10 | 1 | 0 | 0 | 1 (`8532F`) |
+| 3OG | 7 | 3 | 4 | 0 | 3 (Fragment A1) | 1 (`78DFD`-Szene) |
+| 4OG | 8 | 7 | 1 | 0 | 1 (`41221`) | 0 |
+| DG | 6 | 4 | 2 | 0 | 2 (`206D6`/`206DB`) | 0 |
+| **Σ** | **75** | **49** | **26** | **14** | **8** | **4** |
