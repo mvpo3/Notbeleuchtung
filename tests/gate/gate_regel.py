@@ -22,12 +22,14 @@ Die Bedingungen (Owner-Vorgabe, § 3 des Gate-Auftrags; (0) ist die Vorbedingung
       messen lässt, den Beleg verliert statt ihn zu erbringen. Der umgekehrte
       Weg NICHT_MESSBAR → NICHT_BESTANDEN ist dagegen KEIN Verstoß: die
       Owner-Regel zählt nur Verluste von BESTANDEN, und ein Fall, der vorher
-      keinen Beleg trug, verliert auch keinen. Das ist bewusst so belassen —
-      betroffen ist heute M17-04-c. Zusätzlich muss der Nenner 18 bleiben und
-      die IDs müssen dieselben sein (Reihenfolge der Referenz) — sonst ist der
-      Vergleich selbst wertlos.
-  (2) M17-02-b ist BESTANDEN und M17-02-a bleibt BESTANDEN: die drei Durchgänge
-      zwischen den Bädern verschwinden UND die Wand bleibt erkannt.
+      keinen Beleg trug, verliert auch keinen. Das ist bewusst so belassen;
+      heute trägt kein Fall der Nullmessung NICHT_MESSBAR. Zusätzlich muss der
+      Nenner 18 bleiben und die IDs müssen dieselben sein (Reihenfolge der
+      Referenz) — sonst ist der Vergleich selbst wertlos.
+  (2) M17-02-b UND M17-04-c sind BESTANDEN, und M17-02-a bleibt BESTANDEN: die
+      drei Durchgänge zwischen den Bädern verschwinden, an der Sonde O steht
+      genau eine Türverbindung MIT Türblatt (Lesart B, Entscheidung Enis
+      2026-09-18) UND die Wand bleibt erkannt. Beide roten Fälle müssen drehen.
   (3) keine Gate-Kennzahl aus M1-M4 steigt — je Plan (alle 7) und je Kennzahl
       (``gate_m1_m4.GATE_KENNZAHLEN``) muss nachher ≤ vorher gelten. Jede
       Kennzahl muss in BEIDEN Ständen stehen und eine Zahl ≥ 0 sein (int/float,
@@ -96,7 +98,7 @@ def _pruefe_m17(vorher: dict, nachher: dict) -> list[str]:
         if vor[eid] == "BESTANDEN" and nach.get(eid) != "BESTANDEN":
             verstoesse.append(
                 f"(1) {eid} fällt von BESTANDEN auf {nach.get(eid) or 'nicht gemessen'}")
-    for eid in ("M17-02-a", "M17-02-b"):
+    for eid in ("M17-02-a", "M17-02-b", "M17-04-c"):
         if nach.get(eid) != "BESTANDEN":
             verstoesse.append(f"(2) {eid} ist {nach.get(eid) or 'nicht gemessen'}, "
                               "erwartet: BESTANDEN")

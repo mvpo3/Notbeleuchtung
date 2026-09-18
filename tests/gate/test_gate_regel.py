@@ -19,8 +19,9 @@ from gate_regel import NENNER, pruefe_gate
 
 NULLMESSUNG = Path(__file__).resolve().parent / "nullmessung_f15d03f.json"
 IDS = [f"M17-0{fall}-{check}" for fall in range(1, 7) for check in "abc"]
-# Lage der Nullmessung: alles BESTANDEN außer den beiden bekannten Fällen.
-NULL_STATUS = {"M17-02-b": "NICHT_BESTANDEN", "M17-04-c": "NICHT_MESSBAR"}
+# Lage der Nullmessung: alles BESTANDEN außer den beiden bekannten roten Fällen
+# (M17-04-c seit Lesart B, Enis 2026-09-18: NICHT_BESTANDEN statt NICHT_MESSBAR).
+NULL_STATUS = {"M17-02-b": "NICHT_BESTANDEN", "M17-04-c": "NICHT_BESTANDEN"}
 
 
 def _messung(status: dict[str, str], einraum: int = 2, a_gleich_b: int = 0) -> dict:
@@ -43,8 +44,8 @@ def _nullmessung() -> dict:
 
 
 def _erfuellt() -> dict:
-    """Nachher-Stand, der das Gate vollständig erfüllt."""
-    return _messung({"M17-04-c": "NICHT_MESSBAR"}, einraum=1)
+    """Nachher-Stand, der das Gate vollständig erfüllt — beide roten Fälle gedreht."""
+    return _messung({}, einraum=1)
 
 
 def _mit_meta(messung: dict, **abweichung) -> dict:
@@ -60,11 +61,12 @@ def _mit_meta(messung: dict, **abweichung) -> dict:
     return messung
 
 
-def test_nullmessung_gegen_sich_selbst_meldet_genau_zwei_verstoesse():
+def test_nullmessung_gegen_sich_selbst_meldet_genau_drei_verstoesse():
     verstoesse = pruefe_gate(_nullmessung(), _nullmessung())
-    assert len(verstoesse) == 2, verstoesse
+    assert len(verstoesse) == 3, verstoesse
     assert verstoesse[0].startswith("(2) M17-02-b ist NICHT_BESTANDEN")
-    assert verstoesse[1] == "(5) Einraum-Wohnungen sinken nicht: 2 → 2"
+    assert verstoesse[1].startswith("(2) M17-04-c ist NICHT_BESTANDEN")
+    assert verstoesse[2] == "(5) Einraum-Wohnungen sinken nicht: 2 → 2"
 
 
 def test_erfuellter_stapel_meldet_nichts():
@@ -90,9 +92,17 @@ def test_bestanden_faellt_auf_nicht_messbar():
 
 
 def test_nicht_messbar_wird_nicht_bestanden_ist_kein_verstoss():
-    """Owner-Regel zählt nur Verluste von BESTANDEN — M17-04-c trug nie einen Beleg."""
+    """Owner-Regel zählt nur Verluste von BESTANDEN — wer keinen Beleg trug, verliert keinen."""
+    vorher = _messung({**NULL_STATUS, "M17-05-a": "NICHT_MESSBAR"})
+    nachher = _messung({"M17-05-a": "NICHT_BESTANDEN"}, einraum=1)
+    assert pruefe_gate(vorher, nachher) == []
+
+
+def test_nur_02b_dreht_verletzt_bedingung_zwei_weiterhin():
+    """Lesart B: BEIDE roten Fälle müssen drehen, 02-b allein reicht nicht."""
     nachher = _messung({"M17-04-c": "NICHT_BESTANDEN"}, einraum=1)
-    assert pruefe_gate(_nullmessung(), nachher) == []
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        "(2) M17-04-c ist NICHT_BESTANDEN, erwartet: BESTANDEN"]
 
 
 def test_wand_nicht_mehr_erkannt_ist_verstoss_gegen_zwei_und_eins():
@@ -131,13 +141,13 @@ def test_flaeche_steigt_ueber_die_toleranz_ist_verstoss():
 
 
 def test_tueren_raum_a_gleich_b_groesser_null():
-    nachher = _messung({"M17-04-c": "NICHT_MESSBAR"}, einraum=1, a_gleich_b=2)
+    nachher = _messung({}, einraum=1, a_gleich_b=2)
     assert pruefe_gate(_nullmessung(), nachher) == [
         "(4) Türen mit raum_a == raum_b: 2, erwartet: 0"]
 
 
 def test_einraum_wohnungen_gleich_ist_verstoss():
-    nachher = _messung({"M17-04-c": "NICHT_MESSBAR"}, einraum=2)
+    nachher = _messung({}, einraum=2)
     assert pruefe_gate(_nullmessung(), nachher) == [
         "(5) Einraum-Wohnungen sinken nicht: 2 → 2"]
 
@@ -243,5 +253,6 @@ def test_echte_nullmessung_gegen_sich_selbst():
     verstoesse = pruefe_gate(null, deepcopy(null))
     assert verstoesse == [
         "(2) M17-02-b ist NICHT_BESTANDEN, erwartet: BESTANDEN",
+        "(2) M17-04-c ist NICHT_BESTANDEN, erwartet: BESTANDEN",
         "(5) Einraum-Wohnungen sinken nicht: 2 → 2",
     ]

@@ -1,6 +1,6 @@
 # Merge-Gate des Türstapels S4a → S4b → S5b → S5c
 
-Stand: 2026-09-18 · Owner: Selman (`src/notbeleuchtung/raumerkennung/`) · Branch
+Stand: 2026-09-18 (Nachtrag Lesart B zu M17-04-c am selben Tag) · Owner: Selman (`src/notbeleuchtung/raumerkennung/`) · Branch
 `selman/uebernahme-enis-m17` · Nullmessung auf Code-Stand `f15d03f` (Tranche 1)
 
 Die Diagnose (`docs/DIAGNOSE_RENNWEG_RAUMERKENNUNG.md` @ `34b5dd0`, § 5.1/§ 5.3) bindet die
@@ -41,7 +41,7 @@ Messsemantik je Prüfart (Entscheid des Owners, im Modul-Docstring festgehalten)
 | `direct_portal_in_probe_segment` | Räume an A/B; Portale = Türen im Ausschnitt (clip) mit Abstand ≤ `PORTAL_WAND_MM` = 250 mm zum Quellpolygon der markierten Wand — **unabhängig von `von_raum`/`nach_raum`** | A und B in verschiedenen Räumen und kein Portal |
 | `wall_contact_preserved` | siehe § 4 | Kontakt (≤ 1 mm) **und** kein Flutungsleck |
 | `physical_wall_intersects_route` | Schnittlänge Route ∩ Wandkörper > 1 mm | Messwert = expected |
-| `distinct_rooms_connected_by_door` | Räume an A/B; Verbindungen = Türen zwischen beiden Räumen im clip, deren Abstand zur Sonde O ≤ halbe Türbreite ist | A/B verschieden und genau **eine** Verbindung **mit** Türblatt; genau eine **ohne** Türblatt → `NICHT_MESSBAR` (Frage an Enis, § 2) |
+| `distinct_rooms_connected_by_door` | Räume an A/B; Verbindungen = Türen zwischen beiden Räumen im clip, deren Abstand zur Sonde O ≤ halbe Türbreite ist; **Türverbindung = Verbindung mit Türblatt** | A/B verschieden und genau **eine** Türverbindung. Durchgänge ohne Türblatt zählen nicht (Lesart B, Entscheid Enis 2026-09-18, § 2a); sie bleiben als Dubletten-Kandidaten in den Messwerten |
 
 Unauflösbares wird nie PASS: Sonde in mehreren Raumpolygonen → `NICHT_MESSBAR`; Sonde in
 keinem Raum, wo einer erwartet ist → `NICHT_BESTANDEN`. „Physische Wand" ist immer der
@@ -121,7 +121,7 @@ zweiter Lauf bis auf Datum/Laufzeit identisch (deterministisch) · Laufzeit 46 s
 | M17-03-c | BESTANDEN | Route unter dem Unterzug (847 mm) schneidet keinen Wandkörper |
 | M17-04-a | BESTANDEN | W in Wandkörper 82 |
 | M17-04-b | BESTANDEN | O (Türöffnung) in keinem Wandkörper |
-| **M17-04-c** | **NICHT_MESSBAR** | einzige Verbindung WC ↔ Vorraum ist `durchgang_21`: Durchgang **ohne Türblatt**, 2506 mm breit, `tuer_detail` wohnungseingang, 534 mm von O — die Referenz erwartet eine „Türverbindung"; Frage an Enis in `docs/OFFENE_FRAGEN.md` |
+| **M17-04-c** | **NICHT_BESTANDEN** | keine Türverbindung WC ↔ Vorraum: die einzige Verbindung `durchgang_21` ist ein synthetischer Durchgang **ohne Türblatt** (2506 mm, `tuer_detail` wohnungseingang, 534 mm von O) und zählt nach **Lesart B** nicht. Entscheid Enis (2026-09-18, über Selman): gemeint ist die tatsächliche Türöffnung an O zwischen WC und privatem Vorraum, basierend auf dem ArchiCAD-Türblock `Zargentür_1_Fl 10[9]`; dieser Block wird heute nicht als Tür erkannt (U12 → S4a) |
 | M17-05-a | BESTANDEN | W in Wandkörper 78 |
 | M17-05-b | BESTANDEN | F (Möbel) in keinem Wandkörper |
 | M17-05-c | BESTANDEN | F und R in `raum_1` |
@@ -129,14 +129,15 @@ zweiter Lauf bis auf Datum/Laufzeit identisch (deterministisch) · Laufzeit 46 s
 | M17-06-b | BESTANDEN | I genau in `raum_1` (ZIMMER, 16,11 m²) |
 | M17-06-c | BESTANDEN | X liegt nicht im Zielraum `raum_1` (in keinem Raum) |
 
-**Bilanz: 16 BESTANDEN · 1 NICHT_BESTANDEN · 1 NICHT_MESSBAR.** Die Erwartung aus Enis'
+**Bilanz: 16 BESTANDEN · 2 NICHT_BESTANDEN · 0 NICHT_MESSBAR.** Die Erwartung aus Enis'
 Fassung 2 (01-a/b/c und 02-a bestanden, 02-b mit drei Portalen nicht) ist getroffen; die
-12 Erwartungen M17-03 bis M17-06 sind hier zum ersten Mal gemessen — 11 bestanden, eine
-nicht messbar.
+12 Erwartungen M17-03 bis M17-06 sind hier zum ersten Mal gemessen — 11 bestanden, M17-04-c
+nicht (zuerst als NICHT_MESSBAR geführt, mit Enis' Entscheid vom 2026-09-18 zu Lesart B
+auf NICHT_BESTANDEN gestellt; die Referenz selbst ist unverändert).
 
 Gegenüber Enis' Fassung 2 ändert sich damit: M17-02-c von OFFEN auf BESTANDEN (durch die
-Toleranzentscheidung § 4), die Gesamtbilanz des Pakets von 4 / 1 / 13 auf 16 / 1 / 1
-(davon 1 nicht messbar wegen mehrdeutiger Referenz). Die Referenzlabels bleiben
+Toleranzentscheidung § 4), M17-04-c von OFFEN auf NICHT_BESTANDEN (Lesart B), die
+Gesamtbilanz des Pakets von 4 / 1 / 13 auf 16 / 2 / 0. Die Referenzlabels bleiben
 `assistant_plan_interpretation_pending_owner_review`, `training_eligible = false`.
 
 ### 2b. M1 bis M4 (Kopfzahlen je Plan)
@@ -173,7 +174,7 @@ Der Stapel **S4a → S4b → S5b → S5c wird nur gemeinsam gemergt**, und nur w
 |---|---|---|
 | (0) | Vergleichbarkeit | gleiche DXF (alle 7 SHA-256), gleiche Referenz-JSON, gleiche Toleranzen; Arbeitsbaum `src/`+`scripts/` sauber |
 | (1) | keine der 18 Erwartungen fällt von BESTANDEN auf NICHT_BESTANDEN | Nenner 18, IDs und Reihenfolge wie die Referenz; ein Abrutschen von BESTANDEN auf NICHT_MESSBAR zählt ebenfalls als Verstoß (sichere Seite). NICHT_MESSBAR → NICHT_BESTANDEN ist kein Verstoß (heute M17-04-c, sobald Enis' Antwort vorliegt) |
-| (2) | M17-02-b dreht auf BESTANDEN | die drei Durchgänge an der Wand verschwinden **und** M17-02-a bleibt BESTANDEN (die Wand bleibt erkannt) |
+| (2) | **beide roten Fälle drehen**: M17-02-b **und** M17-04-c auf BESTANDEN | die drei Durchgänge an der Bad-Wand verschwinden, die WC-Tür an O wird als Tür mit Türblatt erkannt, **und** M17-02-a bleibt BESTANDEN (die Wand bleibt erkannt) |
 | (3) | M1 bis M4 steigen nirgends | je Plan und je Gate-Kennzahl (§ 1b) nachher ≤ vorher; Ganzzahlen exakt, `M3.rote_flaeche_m2` mit 0,001 m² Toleranz; fehlende oder ungültige Werte (NaN, bool, negativ) sind Verstöße |
 | (4) | Türen mit `von_raum == nach_raum` null | OG1 |
 | (5) | Einraum-Wohnungen auf OG1 sinken | nachher < 2 |
@@ -182,8 +183,9 @@ Zwischenstände der einzelnen Slices werden gemessen und berichtet (`python
 tests/gate/gate_messung.py --out <datei.json>`, dann `pruefe_gate`), aber **nicht
 gemergt** — auch nicht bei Verbesserung.
 
-Heute liefert `pruefe_gate(nullmessung, nullmessung)` genau zwei Verstöße:
-`(2) M17-02-b ist NICHT_BESTANDEN` und `(5) Einraum-Wohnungen sinken nicht: 2 → 2`.
+Heute liefert `pruefe_gate(nullmessung, nullmessung)` genau drei Verstöße:
+`(2) M17-02-b ist NICHT_BESTANDEN`, `(2) M17-04-c ist NICHT_BESTANDEN` und
+`(5) Einraum-Wohnungen sinken nicht: 2 → 2`.
 
 **Test:** `tests/gate/test_gate_tuerstapel.py::test_gate_tuerstapel_erfuellt` ist
 `xfail(strict=True, raises=AssertionError)`. Er bleibt rot-per-Design (XFAIL), bis der

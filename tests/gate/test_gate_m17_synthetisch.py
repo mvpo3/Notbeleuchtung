@@ -2,10 +2,11 @@
 
 Die echte Messung läuft gegen den Rennweg-Plan und das Übergabepaket (beides
 außerhalb dieser Tests). Hier steht nur die SEMANTIK auf dem Prüfstand: je
-Prüfart mindestens ein BESTANDEN- und ein NICHT_BESTANDEN-Pfad, die
-Mehrdeutigkeits-Fälle (Sonde in zwei Räumen, Durchgang ohne Türblatt) und der
-feste Nenner. Alle Koordinaten sind frei erfunden: zwei Rechteckräume mit einer
-100 mm starken Wand dazwischen, die am T-Knoten aus zwei Körpern besteht.
+Prüfart mindestens ein BESTANDEN- und ein NICHT_BESTANDEN-Pfad, der
+Mehrdeutigkeits-Fall (Sonde in zwei Räumen), die Lesart B für Durchgänge ohne
+Türblatt (Enis, 2026-09-18) und der feste Nenner. Alle Koordinaten sind frei
+erfunden: zwei Rechteckräume mit einer 100 mm starken Wand dazwischen, die am
+T-Knoten aus zwei Körpern besteht.
 """
 from __future__ import annotations
 
@@ -199,15 +200,25 @@ def test_verbindung_ausserhalb_der_halben_breite_von_o_zaehlt_nicht():
     assert e["messwerte"]["verbindungen"] == []
 
 
-def test_verbindung_ohne_tuerblatt_ist_nicht_messbar():
+def test_verbindung_ohne_tuerblatt_ist_nicht_bestanden():
+    """Lesart B (Enis, 2026-09-18): ein Durchgang ohne Türblatt ist keine Türverbindung."""
     e = _miss(_ref("distinct_rooms_connected_by_door", True, ["A", "B", "J"]),
               tueren=[_tuer(ohne_tuerblatt=True)])
-    assert e["status"] == "NICHT_MESSBAR"
-    assert "Türblatt" in e["grund"]
-    # Der Grund muss die gemessenen Fakten tragen, nicht nur die Frage.
-    for teil in ("tuer_1", "900.0 mm", "0 mm von J", "docs/OFFENE_FRAGEN.md"):
+    assert e["status"] == "NICHT_BESTANDEN"
+    # Der Grund muss die gemessenen Fakten tragen, nicht nur die Lesart.
+    for teil in ("Lesart B", "tuer_1", "900.0 mm", "0 mm von J"):
         assert teil in e["grund"], e["grund"]
-    assert e["messwerte"]["verbindungen"][0]["abstand_zu_O_mm"] == 0
+    assert e["messwerte"]["tuerverbindungen"] == []
+    assert e["messwerte"]["ohne_tuerblatt"][0]["abstand_zu_O_mm"] == 0
+
+
+def test_tuer_mit_tuerblatt_plus_durchgang_an_derselben_stelle_bleibt_bestanden():
+    """Die Dublette ohne Türblatt bleibt Messwert (S4b), entscheidet aber nicht."""
+    e = _miss(_ref("distinct_rooms_connected_by_door", True, ["A", "B", "J"]),
+              tueren=[_tuer(), _tuer(id="durchgang_1", ohne_tuerblatt=True)])
+    assert e["status"] == "BESTANDEN", e["grund"]
+    assert e["messwerte"]["tuerverbindungen"] == ["tuer_1"]
+    assert [v["id"] for v in e["messwerte"]["ohne_tuerblatt"]] == ["durchgang_1"]
 
 
 # ------------------------------------- physical_wall_intersects_route
