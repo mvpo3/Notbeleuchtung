@@ -1,6 +1,8 @@
 """S4 — tueren: TÜR-Blöcke → Tuer."""
 from __future__ import annotations
 
+import math
+
 import ezdxf
 
 from notbeleuchtung.raumerkennung.dxf_load import lade_dxf
@@ -139,3 +141,76 @@ def test_keine_messung_ist_none_mit_quelle_und_grund(tmp_path):
     assert ohne[0].breite_quelle == "UNBEKANNT"
     assert ohne[0].breite_grund                      # Grund ist Pflicht
     assert ohne[0].lichte_mm is None                 # nie abgeleitet
+
+
+# ── S4a: ArchiCAD-Weltkoordinaten-Türblöcke (Diagnose U12) ──────────────────
+
+def _archicad_weltkoordinaten_dxf(pfad):
+    """Rennweg-Muster: Türblock VERSCHACHTELT im Wand-Block, Blockinhalte in
+    WELT-Koordinaten, ``base_point`` ≈ INSERT-Punkt (Translation 0) — der
+    INSERT-Punkt liegt dadurch weit außerhalb des Planbereichs, die Tür-
+    Geometrie aber mittendrin.
+
+    Am echten Plan gemessen (OG1, 7 Zargentüren): der Schwenkbogen sitzt am
+    Scharnier; die ÖFFNUNG ist als geschlossenes Türblatt-Rechteck LÄNGS der
+    Wand gezeichnet (zwei blattlange Linien), die offene Blattstellung als
+    EINE Linie quer dazu. Die Wandseite ist also der ARC-Endpunkt mit den
+    MEISTEN blattlangen Segmenten am Scharnier.
+    """
+    doc = ezdxf.new(setup=True)
+    doc.header["$INSUNITS"] = 4  # mm
+    msp = doc.modelspace()
+    W = "02-TWA-G00-LEG-M0"
+    if W not in doc.layers:
+        doc.layers.add(W)
+    # 12 Wandlinien im Modelspace: ≥ 10 → kein Wrapper-Mode; 20 m Spanne → Faktor 1.0
+    ecken = [(0, 0), (20000, 0), (20000, 12000), (0, 12000)]
+    for i in range(4):
+        a, b = ecken[i], ecken[(i + 1) % 4]
+        for j in range(3):
+            p0 = (a[0] + (b[0] - a[0]) * j / 3, a[1] + (b[1] - a[1]) * j / 3)
+            p1 = (a[0] + (b[0] - a[0]) * (j + 1) / 3, a[1] + (b[1] - a[1]) * (j + 1) / 3)
+            msp.add_line(p0, p1, dxfattribs={"layer": W})
+    anker = (900000.0, 900000.0)
+    tuer = doc.blocks.new("Zargentür_1_Fl 10[1]", base_point=anker)
+    tuer.add_arc((5000, 3000), 840, 0, 90)          # Schwenkbogen, Sweep 90°
+    tuer.add_line((5000, 3000), (5840, 3000))       # Blatt geschlossen → Wandseite
+    tuer.add_line((5000, 2960), (5840, 2960))       # Blattrücken (40 mm Blattdicke)
+    tuer.add_line((5000, 3000), (5000, 3840))       # Blatt offen → Blattspitze
+    wand = doc.blocks.new("Wall_1", base_point=anker)
+    wand.add_line((0, 2900), (10000, 2900), dxfattribs={"layer": W})
+    wand.add_line((0, 3100), (10000, 3100), dxfattribs={"layer": W})
+    wand.add_blockref("Zargentür_1_Fl 10[1]", anker)
+    msp.add_blockref("Wall_1", anker)
+    doc.saveas(str(pfad))
+    return pfad
+
+
+def test_weltkoordinaten_tuerblock_liegt_an_der_geometrie(tmp_path):
+    """Der Türblock wird an seiner GEOMETRIE verortet, nicht am INSERT-Punkt.
+
+    Ohne ``planbereich`` bleibt alles wie bisher (Familien mit INSERT an der
+    Tür dürfen sich nicht ändern) — die Geometrie-Lage greift nur, wenn der
+    INSERT-Punkt außerhalb des Planbereichs liegt.
+    """
+    from notbeleuchtung.hauptengine.contracts.raum_modell import BBox
+    from notbeleuchtung.raumerkennung.tueren import im_planbereich, tuer_oeffnungen
+
+    plan = lade_dxf(_archicad_weltkoordinaten_dxf(tmp_path / "welt.dxf"))
+    assert plan.factor == 1.0
+    bereich = BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 8000.0))
+
+    oeff = [o for o in tuer_oeffnungen(plan, bereich) if o.quelle == "block"]
+    assert len(oeff) == 1, oeff
+    o = oeff[0]
+    assert math.dist(o.xy_mm, (5420.0, 3000.0)) <= 5.0, o.xy_mm
+    rest = o.winkel_grad % 180.0
+    assert min(rest, 180.0 - rest) <= 2.0, o.winkel_grad
+    assert o.breite_mm == 840.0
+    assert o.breite_quelle == "GEOMETRIE_SCHWENKRADIUS"
+    assert o.wand_block == "Wall_1"
+    assert im_planbereich([o], bereich) == [o]
+
+    # Gegenprobe: ohne planbereich unverändert der INSERT-Punkt
+    ohne = [x for x in tuer_oeffnungen(plan) if x.quelle == "block"]
+    assert [x.xy_mm for x in ohne] == [(900000.0, 900000.0)]
