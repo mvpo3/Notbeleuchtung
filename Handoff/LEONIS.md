@@ -4,6 +4,53 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-09-18) — D1–D6-Bau: D2/D1/D6 GEBAUT, D5-Verdacht widerlegt, v2-Render geliefert. HIER WEITER.
+
+**Branch `leonis/demo-l-gebaeude`, 3 neue Commits (UNGEPUSHT, Owner-GO ausstehend):
+`0936461` D2 · `48cf6e2` D1 · `92b8018` D6.** Volle relevante Suite
+(platzierung+e2e+contract+naht) 412 grün, ruff clean. Kein Contract-Touch.
+
+**Schritt-0-Verifikation (Handoff-Auflage, Befunde korrigieren die Diagnose):**
+1. **D2-Root-Cause NEU:** LIFT wird von der Erkennung inzwischen GETYPT (alle 9
+   Geschosse) — der Täter war die **STIEGENHAUS-Zentrum-SL (§4.1)**: der Liftschacht
+   liegt im Kern des STGH-Polygons, `find_center_visual` fällt hinein (BT2-EG
+   `lift_1`, 1,9 m²). Fix `fachpraxis.entferne_schacht_leuchten` (Muster
+   verbotszonen_nachpass): Punkt im LIFT-/SCHACHT-Polygon → relocate in den engsten
+   Wirts-Raum, ohne Wirt entfällt er; in `place()` nach verbotszonen_nachpass.
+2. **D5-Verdacht WIDERLEGT:** `anker_strategy._tuer_durchgangsrichtung` feuert auf
+   allen 9 Fischamend-Geschossen **0×** (instrumentiert), und alle Exit-Nodes liegen
+   **d=0 auf ihrer Tür**. Kein Blind-Bau. Rest-Hypothese: Tür-Insert=Angelpunkt statt
+   Öffnungsmitte (Selman-Naht) — am v2-Output visuell prüfen (Owner-Runde).
+3. **D1 belegt + gebaut:** 27–54 % aller Symbole waren Aufheller (Beleg BT1-EG
+   raum_51: 8,3-m²-Gang, 2 RZ + 2 Aufheller). Zwei Bremsen in `aufheller_je_rz`:
+   (a) Korridor-RZ bekommen KEINE B1-Leuchte (Gang-Deckung = deckung/S4-Drossel-
+   Lane), (b) gesetzte Aufheller zählen inkrementell als Quelle. Band nachgezogen:
+   wohnbau-EG SL (3,9)→(1,9), SL=2 → Richtung Owner-Soll 1.
+4. **D6 gebaut:** `sichtkette` Kontur-Puffer 500 mm NUR für die Zugehörigkeit —
+   Fluchtweg-RZ (kanonische Quelle via `norm.fuer_fluchtweg_abschnitt`, kein
+   Hardcode) knapp außerhalb der Zacken-Kontur (raum_13-Klasse) werden jetzt
+   ausgedünnt; Sichtstrahlen bleiben strikt.
+5. **D4-Annahme ÜBERHOLT:** Selmans Sync liefert jetzt **Treppenläufe auf allen 9
+   Geschossen** (2–5 je STGH) → `stgh_strategy`/R8 arbeiten mit echter Laufrichtung.
+   Kein Engine-Bau nötig; visuelle Abnahme in der Owner-Runde.
+
+**v2-Render geliefert** (`Projekte/BVH Fischamenderstraße/notbeleuchtung_out/v2/`,
+alle 9 Geschosse A0 1:50 Plan+Lux, %%EOF ok, an Owner gesendet): Platzierungen
+BT1 EG 33→30 · 1OG 25→18 · 2OG 24→18 · DG 16→12 · UG 47→47 (dort war nur 1
+B1-Aufheller; Rest = Türleuchten-Zusatz/Redundanz) · BT2 EG 22→21 · 1OG 24→17 ·
+2OG 20→14 · DG 21→16. **0 Symbole in LIFT/SCHACHT** (D2-Wirkung). Runner-Muster
+Batch-fähig via argv — **FALLE: Background-Prozesse werden in dieser Umgebung
+gekillt**, lange Läufe im Vordergrund in ≤10-min-Batches oder Owner-Terminal `!`.
+
+**OFFEN / RESUME:**
+1. **Push der 3 Commits** (Owner-GO).
+2. **D3 (Rotation-Vorzeichen) + D5-Rest + D4-Abnahme = Owner-Feedback-Runde** auf
+   den v2-PDFs (AutoCAD-Diff wie gehabt); erst dann bauen.
+3. Selman-Prompt Wohnung-Fluchtweg weitergeben (Owner) · S4-Rest-Concerns ·
+   CLAUDE.md-Drift (Enis) — unverändert vom 13.09.
+
+---
+
 ## STAND (2026-09-13 SEHR SPÄT) — S4-Drossel + Sync + Fischamend-Test + D1–D6-Diagnose. HIER WEITER.
 
 **Branch `leonis/demo-l-gebaeude`, HEAD `3c640cb`, alles GEPUSHT. Sync mit origin/main
