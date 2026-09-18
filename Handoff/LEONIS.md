@@ -6,8 +6,8 @@
 
 ## STAND (2026-09-18) — D1–D6-Bau: D2/D1/D6 GEBAUT, D5-Verdacht widerlegt, v2-Render geliefert. HIER WEITER.
 
-**Branch `leonis/demo-l-gebaeude`, 3 neue Commits (UNGEPUSHT, Owner-GO ausstehend):
-`0936461` D2 · `48cf6e2` D1 · `92b8018` D6.** Volle relevante Suite
+**Branch `leonis/demo-l-gebaeude`, GEPUSHT `78020cd..d22a38e` (Owner-GO in-Session):
+`0936461` D2 · `48cf6e2` D1 · `92b8018` D6 · `d22a38e` Handoff.** Volle relevante Suite
 (platzierung+e2e+contract+naht) 412 grün, ruff clean. Kein Contract-Touch.
 
 **Schritt-0-Verifikation (Handoff-Auflage, Befunde korrigieren die Diagnose):**
@@ -43,10 +43,9 @@ Batch-fähig via argv — **FALLE: Background-Prozesse werden in dieser Umgebung
 gekillt**, lange Läufe im Vordergrund in ≤10-min-Batches oder Owner-Terminal `!`.
 
 **OFFEN / RESUME:**
-1. **Push der 3 Commits** (Owner-GO).
-2. **D3 (Rotation-Vorzeichen) + D5-Rest + D4-Abnahme = Owner-Feedback-Runde** auf
+1. **D3 (Rotation-Vorzeichen) + D5-Rest + D4-Abnahme = Owner-Feedback-Runde** auf
    den v2-PDFs (AutoCAD-Diff wie gehabt); erst dann bauen.
-3. Selman-Prompt Wohnung-Fluchtweg weitergeben (Owner) · S4-Rest-Concerns ·
+2. Selman-Prompt Wohnung-Fluchtweg weitergeben (Owner) · S4-Rest-Concerns ·
    CLAUDE.md-Drift (Enis) — unverändert vom 13.09.
 
 ---
