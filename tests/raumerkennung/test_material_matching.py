@@ -1,8 +1,6 @@
 """material_matching — Signatur + Kontext → Material (Erscheinungsbild ist Wahrheit)."""
 from __future__ import annotations
 
-from pathlib import Path
-
 import pytest
 
 from notbeleuchtung.raumerkennung.material_matching import (
@@ -14,9 +12,8 @@ from notbeleuchtung.raumerkennung.material_matching import (
     signatur_aus_hatch,
     struktur_klasse,
 )
-
-REPO_ROOT = Path(__file__).resolve().parents[2]
-RENNWEG_DXF = REPO_ROOT / "Projekte" / "_eingang" / "Rennweg_OG3.dxf"
+from plaene import RENNWEG_OG3 as RENNWEG_DXF
+from plaene import plan
 
 FP_825 = HatchSignatur(
     "FP_825", (134, 206, 152), 256, None,
@@ -125,8 +122,7 @@ def test_matchsammlung_sammelt_unbekannte():
 
 def test_rennweg_wall_bloecke_echt():
     """Echte Rennweg-Block-Hatches: die drei Wandmuster landen richtig."""
-    if not RENNWEG_DXF.exists():
-        pytest.skip(f"Rennweg-DXF fehlt: {RENNWEG_DXF}")
+    plan(RENNWEG_DXF)
     import ezdxf
 
     doc = ezdxf.readfile(str(RENNWEG_DXF))
