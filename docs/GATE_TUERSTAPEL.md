@@ -1,7 +1,17 @@
-# Merge-Gate des Türstapels S4a → S4b → S5b → S5c
+# Merge-Gate des Türstapels S4a → S4b → S5b → S7a → S3b → S5c
 
-Stand: 2026-09-18 (Nachtrag Lesart B zu M17-04-c am selben Tag) · Owner: Selman (`src/notbeleuchtung/raumerkennung/`) · Branch
-`selman/uebernahme-enis-m17` · Nullmessung auf Code-Stand `f15d03f` (Tranche 1)
+Stand: 2026-09-19 (Nachträge: Lesart B zu M17-04-c 2026-09-18; Stapel-Erweiterung, Bedingungen
+(7)/(8) und Diagnose S7a/S3b 2026-09-19) · Owner: Selman (`src/notbeleuchtung/raumerkennung/`) ·
+Branch `selman/uebernahme-enis-m17` · Nullmessung auf Code-Stand `f15d03f` (Tranche 1)
+
+**Stapel seit 2026-09-18 (Owner-Entscheid nach S4b): S4a → S4b → S5b → S7a → S3b → S5c.**
+S7a (Vorraum-Regel, U14/F11) und S3b (Restflächen vor Blocktüren, Owner-Definition) gehören
+zum Stapel, weil die Bedingungen (5) und (6) sonst nicht erreichbar sind: **(5) und (6) sind
+keine Türprobleme, aber Regressionen gegenüber `main`, die der Stapel selbst ausgelöst hat**
+(S4b macht T01 korrekt und kippt damit Vorraum 10,94 über `_verfeinere_gang_privat` in die
+Erschließung → Einraum 2 → 2; S4a macht auf OG3 die Blocktüren zu Türen ohne Raumseite →
+GRAPH 0). Das Gate bleibt unverändert, (5) und (6) bleiben Merge-Pflicht; § 6 und § 7
+enthalten die Diagnose der beiden neuen Scheiben (kein Code).
 
 Die Diagnose (`docs/DIAGNOSE_RENNWEG_RAUMERKENNUNG.md` @ `34b5dd0`, § 5.1/§ 5.3) bindet die
 vier Tür-Slices an **ein gemeinsames Merge-Gate**, nennt dafür aber weder Messplan noch
@@ -97,6 +107,32 @@ Wohnungen, Einraum-Wohnungen, Türen gesamt, Durchgänge ohne Türblatt, GANG-R�
 die Wohnung und lässt die Zirkulation von GRAPH auf FALLBACK kippen — genau das muss der
 fertige Stapel wieder heilen.
 
+### 1e. Referenz-Verbindungen OG1 (`tests/gate/gate_referenz.py`, seit 2026-09-19)
+
+Owner-Entscheid nach S4b: die von den Fachreferenzen **verneinten** Verbindungen dürfen nach
+dem Stapel nicht mehr existieren — als Messfall mit Referenznummer je Verbindung. Räume werden
+über `raum_typ` + Fläche (± 0,05 m²) identifiziert, nicht über IDs; passt kein oder mehr als
+ein Raum, ist der Fall nicht messbar (`anzahl` None mit Grund). Gezählt werden Türen jeder
+Quelle, die beide Räume verbinden.
+
+| Art | Referenz | Verbindung |
+|---|---|---|
+| verneint | M17-02 / Bsp. 07, 08, 14 | BAD 11,76 ↔ BAD 4,66 |
+| verneint | Bsp. 06, 14 | ZIMMER 17,04 ↔ GANG 6,48 |
+| verneint | Bsp. 08, 09, 14 | VORRAUM 3,40 (Garderobe) ↔ BAD 4,66 |
+| verneint | Bsp. 08, 14 | ZIMMER 10,59 ↔ BAD 4,66 |
+| verneint | Bsp. 09, 14 | ZIMMER 16,86 ↔ VORRAUM 3,40 |
+| verneint | Bsp. 07, 14 | BAD 11,76 ↔ ZIMMER 17,04 |
+| verneint (Zusatz, heute 0) | Bsp. 14 | ZIMMER 16,86 ↔ BALKON 7,51 · ZIMMER 16,11 ↔ BALKON 7,51 · WC 3,50 ↔ STIEGENHAUS 11,21 · GANG 6,48 ↔ STIEGENHAUS 11,21 · GANG 6,48 ↔ BAD 4,66 |
+| gefordert | O03 (Bsp. 06, 09, 14) | GANG 6,48 ↔ Wohnküche 73,06 (ohne Raumtyp) |
+| gefordert | O04 (Bsp. 06, 09, 14) | GANG 6,48 ↔ ZIMMER 10,59 |
+| gefordert | O05 (Bsp. 06, 09, 14) | VORRAUM 2,59 ↔ VORRAUM 3,40 |
+| gefordert | O01/O02 (Bsp. 06, 09, 14) | VORRAUM 10,94 ↔ Wohnküche 73,06 — Ersatzfall, solange Bereich E kein eigener Raum ist |
+
+Die „gefordert"-Zeilen sind eine **Ergänzung des Planers** (Bedingung (8)): S5b soll die
+verneinten Verbindungen schließen, ohne die geforderten offenen Übergänge mitzunehmen. Die
+fünf Zusatz-Paare stehen als Schutz gegen einen Rückschritt.
+
 ### Eingabe und Rechenstand
 
 Alle Messungen gegen die getrackten DXF unter `Projekte/Rennweg/` (die Familien-Soll-Tests
@@ -182,11 +218,22 @@ Einraum 0 · Türen 23 · Durchgänge ohne Türblatt 20 · GANG in WOHNUNG_PRIVA
 Bedingung (6) ist auf f15d03f erfüllt; nach S4a allein steht sie auf GRAPH 0 / Anker 8
 (siehe Board 2026-09-18).
 
+### 2e. Referenz-Verbindungen (Nullmessung nachgemessen am 2026-09-19, Code tree-gleich f15d03f)
+
+Sechs der elf verneinten Verbindungen bestehen, zusammen **8** Türen, alle Durchgänge ohne
+Türblatt: BAD 11,76 ↔ BAD 4,66 **3** (`durchgang_11/12/13`, M17-02-b) · ZIMMER 17,04 ↔ GANG
+6,48 1 · VORRAUM 3,40 ↔ BAD 4,66 1 · ZIMMER 10,59 ↔ BAD 4,66 1 · ZIMMER 16,86 ↔ VORRAUM 3,40 1 ·
+BAD 11,76 ↔ ZIMMER 17,04 1. Die fünf Zusatz-Paare stehen auf 0. Alle vier geforderten
+Übergänge bestehen (je 1 Durchgang ohne Türblatt). Die Nullmessung wurde dafür neu
+geschrieben (`commit_head` `a788e47`, `basis_tree_gleich = true`); gegenüber der Datei vom
+2026-09-18 unterscheidet sie sich nur um `meta.datum`, `meta.laufzeit_s`, `meta.commit_head`
+und den neuen Abschnitt `referenz` — keine M17-, M1–M4-, OG1- oder OG3-Zahl hat sich bewegt.
+
 ---
 
 ## 3. Gate-Regel
 
-Der Stapel **S4a → S4b → S5b → S5c wird nur gemeinsam gemergt**, und nur wenn
+Der Stapel **S4a → S4b → S5b → S7a → S3b → S5c wird nur gemeinsam gemergt**, und nur wenn
 `pruefe_gate(nullmessung, messung)` **keinen** Verstoß liefert:
 
 | Nr. | Bedingung | Umsetzung |
@@ -198,14 +245,19 @@ Der Stapel **S4a → S4b → S5b → S5c wird nur gemeinsam gemergt**, und nur w
 | (4) | Türen mit `von_raum == nach_raum` null | OG1 |
 | (5) | Einraum-Wohnungen auf OG1 sinken | nachher < 2 |
 | (6) | Rennweg OG3: Fluchtweg-Ableitung intakt | `segmente_graph ≥ 1` **und** `anker_in_wohnung_privat == 0` (Owner-Entscheid 2026-09-18 nach S4a) — wörtlich die Aussage der beiden Tests `test_soll_segmente_aus_graph` und `test_keine_anker_in_wohnung_privat` in `tests/naht/test_soll_rennweg.py`, die auf dem Stapel-Branch als strict-xfail geführt werden („S4a allein, Türstapel unvollständig, muss vor Merge XPASS sein"); das Gate prüft die Zahlen selbst (`tests/gate/gate_og3.py`), damit es nicht am Marker hängt |
+| (7) | OG1: keine von der Referenz **verneinte** Verbindung besteht | `anzahl == 0` für jeden Eintrag aus `gate_referenz.VERNEINT` (§ 1e), Zusatz-Paare eingeschlossen; nicht auflösbarer Raum (`anzahl` None) oder fehlender Abschnitt = Verstoß (Owner-Entscheid 2026-09-18 nach S4b) |
+| (8) | OG1: jeder von der Referenz **geforderte** offene Übergang besteht | `anzahl ≥ 1` für O03, O04, O05 und den Ersatzfall O01/O02 (§ 1e); Ergänzung des Planers, damit S5b keine geforderten Übergänge löscht; None = Verstoß |
 
 Zwischenstände der einzelnen Slices werden gemessen und berichtet (`python
 tests/gate/gate_messung.py --out <datei.json>`, dann `pruefe_gate`), aber **nicht
-gemergt** — auch nicht bei Verbesserung.
+gemergt** — auch nicht bei Verbesserung. (5) und (6) bleiben Merge-Pflicht, obwohl der
+Türstapel im engen Sinn sie nicht heilen kann — dafür stehen S7a und S3b im Stapel.
 
-Heute liefert `pruefe_gate(nullmessung, nullmessung)` genau drei Verstöße:
-`(2) M17-02-b ist NICHT_BESTANDEN`, `(2) M17-04-c ist NICHT_BESTANDEN` und
-`(5) Einraum-Wohnungen sinken nicht: 2 → 2`.
+Heute liefert `pruefe_gate(nullmessung, nullmessung)` genau neun Verstöße:
+`(2) M17-02-b ist NICHT_BESTANDEN`, `(2) M17-04-c ist NICHT_BESTANDEN`,
+`(5) Einraum-Wohnungen sinken nicht: 2 → 2` und sechs Verstöße gegen (7) — die sechs
+bestehenden verneinten Verbindungen aus § 2e (zusammen 8 Durchgänge). (8) ist auf f15d03f
+erfüllt.
 
 **Test:** `tests/gate/test_gate_tuerstapel.py::test_gate_tuerstapel_erfuellt` ist
 `xfail(strict=True, raises=AssertionError)`. Er bleibt rot-per-Design (XFAIL), bis der
@@ -261,17 +313,257 @@ der Toleranz). Vier freie Teile im Ausschnitt, keiner verbindet beide Bäder →
   ersetzt.
 - Die Referenz ist Fachreferenz, kein freigegebener Prüfkorpus; nichts davon liegt im
   Repository (nur Hashes, IDs, Prüfarten und Handles der ohnehin getrackten DXF).
+- Auf diesem Branch ist weiterhin kein Slice gebaut. S4a, S4b und S5b liegen auf ihren
+  eigenen Branches (`selman/fix-s4a-tuerbloecke`, `selman/fix-s4b-seitenprobe`,
+  `selman/fix-s5b-querung`), jeweils gemessen, keiner gemergt.
 
 ---
 
-## 6. Offene Punkte aus S5b (Stand 2026-09-19, Branch `selman/fix-s5b-querung`)
+## 6. Diagnose S7a — Vorraum mit Stiegenhaustür wird Erschließung (U14/F11, kein Code)
+
+Gemessen am 2026-09-19 auf Code-Stand `1e5e5ac` (S4a+S4b, also **vor** S5b) über alle
+10 Prüfpläne (7 Rennweg-Geschosse, Barawitzka EG, Mollgasse EG, Muthgasse E2), je Plan ein
+In-Memory-Lauf (`ArchitekturRaumProvider.parse` plus Abgriff des Zustands vor
+`bilde_wohnungen`; kein Output erzeugt — die Regel „kein Pipeline-Rerun in Diagnosen" ist
+damit gewahrt). Die F11-Regel wurde in einem Scratch-Skript nachgebildet und
+`bilde_wohnungen` mit ausgetauschter Verfeinerung gefahren; die Originalfunktion
+reproduziert auf dem abgegriffenen Zustand die Klassen des Endmodells auf allen 10 Plänen.
+
+### 6a. Die Stelle
+
+`wohnungen.py:32-55`, `_verfeinere_gang_privat`, entscheidend Z. 48-52:
+
+```python
+fremd = andere in by_id and (
+    by_id[andere].raum_typ == "STIEGENHAUS"
+    or _klasse(by_id[andere]) not in ("WOHNUNG_PRIVAT", None))
+if andere == AUSSEN or fremd:
+    privat_ok = False
+```
+
+Jeder GANG/VORRAUM mit **einer einzigen** Tür zu STIEGENHAUS, AUSSEN oder einer
+Nicht-Privat-Klasse wird `ALLGEMEIN_ERSCHLIESSUNG` (Z. 53-55); Türblatt, Breite, Richtung
+und Zahl der erschlossenen Wohnungen spielen keine Rolle. Folgen in Laufreihenfolge:
+`provider.py:167` typisiert die Türen **vor** `bilde_wohnungen` (`:172`) mit den statischen
+Klassen (VR↔STIEGENHAUS → `wohnungseingang`, `tuer_typisierung.py:190-191`);
+`wohnungen.py:61-64` setzt Defaults und verfeinert **einmal in Raumreihenfolge** über einen
+Mischzustand (statische Defaults, progressiv überschrieben — weder rein statisch noch
+Fixpunkt); `:66` bildet die Privat-Menge danach; `:71-80` stuft `wohnungseingang` zwischen
+zwei Privaten zu `zimmertuer` und `zimmertuer` mit genau einer privaten Seite zu
+`wohnungseingang` — **nicht** zurückgestuft wird ein `wohnungseingang` zwischen zwei
+allgemeinen Räumen (OG1 `tuer_3` trägt ihn heute, beide Seiten allgemein → S7c); `:82-93`
+verbindet nur privat↔privat, ein allgemein gewordener Vorraum **trennt** die Gruppen;
+`:95-112` macht jede Gruppe zu `top_n` ohne Mindestkriterium (U16). Konsumenten der Rollen:
+`ausgaenge.py:74-76` (`stiegenhaustuer`/`brandschutztuer` → `stair_exit`),
+`fluchtweg.py:288-289` (`wohnungseingang` = Fluchtweg-Start).
+
+### 6b. Die Regel (Owner/F11), wie sie nachgebildet wurde
+
+Vorraum mit Stiegenhaustür ist PRIVAT, die Stiegenhaustür sein Wohnungseingang; ALLGEMEIN
+nur, wenn er vom Stiegenhaus **ohne Wohnungseingang erreichbar** ist (offener Übergang) UND
+mindestens **zwei Wohnungen oder ein Ausgang** darüber erschlossen werden. Nachgebildet mit
+diesen Festlegungen (jede davon ist eine offene Entscheidung, § 6e):
+
+- „offener Übergang": Lesart (a) **direkt** = eigene Tür zum STIEGENHAUS mit
+  `ohne_tuerblatt`; Lesart (b) **Kette** = vom STIEGENHAUS nur über `ohne_tuerblatt`-Türen
+  erreichbar. Bei 8 von 9 Kandidaten fallen sie zusammen; Barawitzka `raum_19` VR 3,42
+  (Stiegenhaustür `tuer_28` = Bogen **mit** Blatt 960 mm) ist nur unter (b) allgemein
+  (Kette STIEGENHAUS → ABSTELLRAUM 1,42 → VORRAUM 5,11 → VORRAUM 3,42, alle ohne Blatt).
+- „Wohnungen": getrennte private Komponenten, die über Türen am Raum hängen, **jede
+  Komponente zählt, auch ein einzelnes WC/AR** (Modellierungsannahme; OG1 AR 4,52 + WC 3,50
+  → 2 Gruppen für Vorraum 10,94).
+- „Ausgang": eigene Tür nach `AUSSEN` (eine TERRASSE-Raumtür zählt nicht).
+- Geltungsbereich: **V1 (wörtlich)** ersetzt die heutige Regel für alle GANG/VORRAUM;
+  **V2 (eng)** nur für GANG/VORRAUM mit Stiegenhaustür.
+- Zählbasis der Gruppen: „heutig" (Klassen des Endmodells), „statisch"
+  (`nutzungsklasse_fuer`) und „Fixpunkt" (Regel iterativ auf ihr Ergebnis; konvergiert auf
+  allen 10 Plänen in ≤ 4 Iterationen). Die Tabellen unten stehen auf „heutig".
+
+### 6c. Blast Radius (Zählbasis „heutig")
+
+| Plan | Whg heute | Einraum heute | Whg V1 | Einraum V1 | Whg V2 | Einraum V2 | Kipp A→P V1 | Kipp A→P V2 |
+|---|---|---|---|---|---|---|---|---|
+| Rennweg UG | 4 | 4 | 2 | 1 | 4 | 3 | 3 | 1 |
+| Rennweg EG | 2 | 1 | 2 | 1 | 2 | 1 | 1 | 1 |
+| Rennweg OG1 | 3 | 2 | 2 | 0 | 2 | 0 | 1 | 1 |
+| Rennweg OG2 | 1 | 0 | 1 | 0 | 1 | 0 | 0 | 0 |
+| Rennweg OG3 | 1 | 0 | 1 | 0 | 1 | 0 | 0 | 0 |
+| Rennweg DG1 | 1 | 0 | 3 | 0 | 1 | 0 | 1 | 1 |
+| Rennweg DG2 | 1 | 0 | 1 | 0 | 1 | 0 | 2 | 2 |
+| Barawitzka EG | 6 | 4 | 8 | 6 | 6 | 4 | 0 | 0 |
+| Mollgasse EG | 9 | 2 | 12 | 5 | 10 | 3 | 7 | 1 |
+| Muthgasse E2 | 7 | 3 | 7 | 3 | 7 | 3 | 2 | 0 |
+
+„Kipp A→P" = heute ALLGEMEIN_ERSCHLIESSUNG, nach Regel privat (das Risiko). **V1 kippt 17
+Räume A→P** (18 auf Basis „statisch", 16 im Fixpunkt) und 4 P→A, darunter Mollgasse
+`raum_34` GANG 6,92 **mit Hauseingang** (`tuer_16` → AUSSEN) und Rennweg UG GANG 8,30 —
+V1 ist gefährlich. **V2 kippt 7** (6 im Fixpunkt), 0 P→A.
+
+Nur **neun** GANG/VORRAUM mit Stiegenhaustür gibt es über alle 10 Pläne. Die 7 Kipp-Fälle
+unter V2: Rennweg UG `raum_12` GANG 5,35 (`tuer_7` 940 mm **mit Blatt**, heute
+`stiegenhaustuer`); Rennweg EG `raum_6` VR 21,03 (`durchgang_14` 2600 mm offen + Garage);
+Rennweg OG1 `raum_12` VR 10,94 (`tuer_3` 940 mm **mit Blatt**, T01); Rennweg DG1 `raum_8`
+VR 8,94 (3 Durchgänge zu `rest_2`/`rest_3` STIEGENHAUS, alle ohne Blatt); Rennweg DG2
+`raum_6` VR/Büro 15,96 (2 Durchgänge zu `rest_1`/`rest_3`, dazu TERRASSE-Tür) und `raum_7`
+VR 15,20 (**5** Durchgänge zu `rest_1/3/4`, ohne Blatt — **hängt an der Zählbasis**: 1/2/2
+Gruppen für heutig/statisch/Fixpunkt); Mollgasse `raum_7` VR 8,17 (`durchgang_10` zum
+STIEGENHAUS, **7690 mm** breit). Allgemein bleiben Rennweg EG `raum_16` GANG 7,36 (offener
+Übergang + Hauseingang, stabil) und Barawitzka `raum_19` (nicht stabil, s. o.).
+
+**Türblätter:** von den 14 Stiegenhaustüren der 7 Kipp-Räume sind **12 ohne Türblatt**
+(Durchgänge 1114–7690 mm), nur UG `tuer_7` und OG1 `tuer_3` haben eines. S7a steht damit
+überwiegend auf Öffnungen, die S5b/S5c entscheiden (F10); auf DG1/DG2 führen sie zusätzlich
+zu REST-Komponenten (S3b). 14 Türen würden Wohnungseingang: UG `tuer_7`, EG `durchgang_14`,
+OG1 `tuer_3`, DG1 `durchgang_9/10/11`, DG2 `durchgang_10/11` und `durchgang_12–16`,
+Mollgasse `durchgang_10`. Rollenwechsel unter V2: 12 × `wohnungseingang → zimmertuer`
+(UG `tuer_3`; EG `durchgang_2/5/7/8`; OG1 `tuer_10/11`; DG1 `durchgang_3`; DG2
+`tuer_1/2/3`, `durchgang_3`), kein Wechsel von/nach `stiegenhaustuer`.
+
+Die drei genannten Geschosse konkret: **OG1** — Vorraum 10,94 → privat (stabil über alle
+Zählbasen), `top_2` = AR 4,52 + VR 10,94 + WC 3,50 mit Eingang `tuer_3`, **Wohnungen 3 → 2,
+Einraum 2 → 0** (Bedingung (5) erreichbar), aber die neue `top_2` hat keinen Aufenthaltsraum
+(F12/S7b). **OG3** — die Regel ändert nichts (einziger Kandidat GANG 9,38 ohne
+Stiegenhaus-Tür; das Stiegenhaus ist `rest_3`/`rest_4`, keine Tür erreicht es → S3b).
+**DG2** — Basis „heutig": `raum_6` und `raum_7` privat, `top_1` wächst von 4 auf 6 Räume,
+1 Wohnung / 0 Einraum, 4 Rollen kippen; Basis „statisch"/Fixpunkt: nur `raum_6` kippt →
+2 Wohnungen / 1 Einraum.
+
+### 6d. Risiken (gemessen)
+
+1. **„Verlorenes Notlicht" tritt auf den 10 Plänen nicht ein.** Der einzige Klassenfilter
+   der Platzierung (`flaechen_strategy.py:162-167`) verlangt `WOHNUNG_PRIVAT` **und** `not
+   ist_fluchtweg` **und** `not ist_communal`; GANG/VORRAUM tragen beide Flags statisch
+   (`raumtyp.py:29-30`), alle 7 Kipp-Räume haben `ist_fluchtweg = ist_communal = True`.
+   Der Satz der Diagnose (U14) gilt nur, wenn zusätzlich diese Flags fallen.
+2. **Ein `stair_exit` steht auf dem Spiel.** Unter V2 ändert sich keine Rolle von/nach
+   `stiegenhaustuer`. Der zweite Halbsatz der Regel („die Stiegenhaustür ist sein
+   Wohnungseingang") ist aber im Code nicht vorhanden: `wohnungen.py:75-80` stuft nur
+   `zimmertuer` hoch. Rennweg UG `tuer_7` bliebe `stiegenhaustuer`, die neue `top_1` (GANG
+   5,35 + WC 6,17) hätte keinen Eingang; wird der Halbsatz gebaut, wird `tuer_7`
+   `wohnungseingang` und der `stair_exit` dort entfällt — der sicherheitsrelevante Punkt
+   von S7a liegt in der Rollen-, nicht in der Klassenregel.
+3. **Fluchtweg-Starts wandern**: 12 Türen verlieren `wohnungseingang`; ob Segmente dadurch
+   ein Ziel verlieren, ist nicht gemessen.
+
+### 6e. Offene Entscheidungen (nicht entschieden)
+
+(a) Geltungsbereich V1 oder V2 (17 zu 7 Kipp-Fälle). (b) Was ist eine „Stiegenhaustür"
+— 12 von 14 sind Durchgänge ohne Blatt (bis 7,69 m), teils zu REST-Komponenten; Barawitzka
+`raum_19` hängt an Lesart direkt/Kette. (c) Rollenregel: Stiegenhaustür des privat
+gewordenen Vorraums → `wohnungseingang` (Owner-Wortlaut, kostet den `stair_exit` an UG
+`tuer_7`) oder `stiegenhaustuer` (Wohnung ohne Eingang) → S7c. (d) Wohnungen ohne
+Aufenthaltsraum (OG1 `top_2`, UG `top_1`, Mollgasse `top_10` neu) → F12/S7b; zählen sie in
+„mindestens zwei Wohnungen"? (e) Mehrere Stiegenhaustüren (DG2 `raum_7` 5, DG1 `raum_8` 3):
+welche ist „der" Eingang? (f) DG2 `raum_6` mit TERRASSE-Tür: zählt sie als Ausgang? (g)
+Zählbasis heutig/statisch/Fixpunkt — die Regel ist zirkulär; der Fixpunkt löst es technisch,
+ist aber eine Festlegung; der heutige Code macht keines von dreien (Reihenfolgeabhängigkeit).
+
+---
+
+## 7. Diagnose S3b — Restflächen enden vor den Blocktüren (Owner-Definition, kein Code)
+
+**Namenskollision:** Das „S3b" der Diagnose (`34b5dd0`, türloser Kleinrest vor
+Treppenmarker, U2/Liftringe) ist etwas anderes; für diesen Punkt sollte der Owner ein
+eigenes Kürzel vergeben. Gemessen am 2026-09-19 auf `1e5e5ac` über alle 10 Prüfpläne
+(In-Memory, kein Output; dazu ein Stufenlauf OG3 `lade_dxf → raeume_aus_kaskade →
+typisiere_geometrisch → finde_lifte → parse`).
+
+### 7a. Codestellen
+
+- **Versiegelung in der Restflächen-Stufe:** `rest_komponenten.py:176-184` (aus
+  `kaskade.py:178`): je Türöffnung eine Scheibe mit Radius
+  `max(1, round(max(600, breite_mm)/50)) · 50 mm` — **850 mm** für 840-mm-, **950 mm** für
+  940-mm-Türen, 600 mm ohne Breite. Weitere Schrumpfquellen: `:160` Außenkontur 1000 mm,
+  `:185-190` belegte Raumpolygone + 100 mm, `:199/202` alles < 1 m² entfällt.
+- **Erosion/Rückdehnung:** Raster 50 mm (`rest_komponenten.py:148`,
+  `stempel_flutung.py:232`). Die **Flutungsstufe** versiegelt in Stufen 600/900/1200/1500 mm
+  (`stempel_flutung.py:124-136`) und **dehnt zurück** (`:174-193`, geodätischer Watershed +
+  Lochfüllung). **Genau diese Rückdehnung fehlt in `rest_komponenten.komponenten_ohne_stempel`**
+  — die erodierte Maske wird direkt gelabelt (`:195`) und vektorisiert.
+- **Vektorisierung:** `stempel_flutung._vektorisiere` (`:202-219`), größte Kontur,
+  `simplify(25 mm)`, `snap(…, wand_union.boundary, 50 mm)` — der Snap schließt 850–950 mm
+  nicht. Kein nachträglicher Puffer.
+- **Sichtbar** in `tuer_zuordnung.ordne_tueren` (Probe 100/200/300/500 mm, `_seite`
+  Z. 105-134): Raum 850 mm entfernt → `KEIN_RAUM` → `seite_fehlt` (`provider.py:154-157`).
+
+### 7b. Messung: Abstand Probepunkt (Sehnenmitte ± 100 mm) → nächstes Raumpolygon, Blocktüren
+
+| Plan | Blocktüren | Seiten | min | median | max | Seiten > 250 mm | beide ≤ 250 | davon 2 versch. Räume | seite_fehlt |
+|---|---|---|---|---|---|---|---|---|---|
+| Rennweg UG | 15 | 30 | 0 | 20,0 | 318,8 | 1 | 14 | 13 | 0 |
+| Rennweg EG | 6 | 12 | 0 | 0 | 124,3 | 0 | 6 | 3 | 2 |
+| Rennweg OG1 | 9 | 18 | 0 | 0 | 80,0 | 0 | 9 | 8 | 0 |
+| Rennweg OG2 | 9 | 18 | 0 | 0 | 80,0 | 0 | 9 | 8 | 1 |
+| Rennweg OG3 | 11 | 22 | 0 | 20,5 | 866,6 | 3 | 8 | 4 | 7 |
+| Rennweg DG1 | 5 | 10 | 0 | 0 | 20,0 | 0 | 5 | 5 | 0 |
+| Rennweg DG2 | 4 | 8 | 0 | 10,0 | 20,8 | 0 | 4 | 4 | 0 |
+| Barawitzka EG | 0 | — | — | — | — | — | — | — | — |
+| Mollgasse EG | 43 | 86 | 0 | 0 | 107,7 | 0 | 43 | 35 | 8 |
+| Muthgasse E2 | 15 | 30 | 0 | 0 | 879,3 | 2 | 13 | 10 | 2 |
+| **Summe** | **117** | | | | | | **111 (95 %)** | **90 (77 %)** | |
+
+Barawitzka EG hat keine Blocktür (alle 99 Türen aus Bögen, Durchgängen, Texten) — ein Gate
+über Blocktüren ist dort leer. **Offen:** meint „beidseits ein Raum ≤ 250 mm" zwei
+**verschiedene** Räume (90/117) oder genügt derselbe (111/117; bei 21 Türen ragt ein
+gestempeltes Polygon durch die Öffnung, `_seite` schließt den eigenen Raum bewusst aus)?
+
+Die 6 Blocktüren mit einer Seite > 250 mm: OG3 `tuer_6` (867/814 mm zu `rest_3`/`rest_4`),
+`tuer_12` (854/813 mm zu `rest_4`/`rest_3`), `tuer_9` (656/660 mm zu WC `raum_8`; gemeinte
+Nachbarn `rest_5`/`rest_6` bei 811/839 mm); Muthgasse `tuer_20` (850/879 mm, Breite None)
+und `tuer_21` (325 mm, Breite None); Rennweg UG `tuer_7` (319 mm zu GANG 5,35). OG3
+`seite_fehlt`: 13 Seiten = 7 Blocktüren (`tuer_4/5/6/8/9/10/12`, 10 Seiten) + 2 Bogentüren
+(`tuer_2/3`, 3 Seiten); die nächste REST-Komponente beginnt je 810–968 mm entfernt
+(`rest_3` STIEGENHAUS: 905/917/926/938 mm zu `tuer_12/4/5/6`; `rest_4`: 906/946/968 mm;
+`rest_5` SCHACHT: 811/823/831 mm; `rest_6`: 826/839/945 mm). `rest_3` misst nach
+`raeume_aus_kaskade` 4,68 m² und im Endmodell 2,94 m² — die Differenz ist die
+LIFT_SCHACHT-Stanzung in `finde_lifte` (`lift_erkennung.py:195-212`, `lift_1` 1,73 m²),
+die Türabstände sind auf allen Stufen bitgleich.
+
+**Abstand der REST-Konturen zur Wand, getrennt nach „≤ 1,5 m von einer Blocktür" / „sonst"**
+(OG3): `rest_4` an Türen median 33 / max 618 mm, sonst median 6,6 / max 38,7 mm; `rest_3`
+an Türen median 300 / max 906 mm, sonst median 35 / max 300 mm; `rest_6` an Türen median
+82 / max 831 mm, sonst median 16 / max 49 mm; `rest_1`/`rest_2` (keine Blocktür in
+Siegelreichweite) überall 0 mm. **Die Lücke sitzt nur an den Türen.**
+
+### 7c. Hypothesenprüfung
+
+Vorhersage: der Rand einer REST-Komponente liegt genau `r = max(1, round(max(600,
+Breite)/50)) · 50 mm` vom Türmittelpunkt, weil der Kreisstempel nie zurückgedehnt wird.
+Über **79 Paare** REST-Raum × Blocktür ≤ 3 m aus 9 Plänen unterschreitet **kein einziges**
+den Siegelradius um mehr als 44,7 mm (< 1 Rasterzelle; dazu `simplify(25)` und Snap 50 mm);
+die 18 Paare, bei denen die Tür wirklich an der Komponente liegt, streuen um −9,9 mm
+(−44,7 … +95,3 mm) um den vorhergesagten Radius; Probepunkt 950 − 100 = 850 mm erwartet,
+gemessen 814/814/854/867 mm an `tuer_6`/`tuer_12`. **Die Owner-Hypothese ist gestützt.**
+Ausgeschlossen: „Wandkörper-Union deckt die Fläche" (abseits der Türen 0–39 mm an der
+Wand); `bereinigung` Regel 2 (greift auf OG3 nicht, Liste leer); Lift-Stanzung (0,0 mm
+Änderung der Türabstände). „Zonenlayer fehlt" erklärt, **warum** die Flächen REST sind,
+nicht die Lücke — geflutete Räume desselben Plans liegen 0–80 mm an den Türen, weil die
+Flutung zurückdehnt. **Nicht erklärt** (eigene Ursachen): Muthgasse `tuer_20`/`tuer_21`
+(0 REST-Räume, Breite None, Flanke→Raum 626/886 mm quer zur Vorhersage) und Rennweg UG
+`tuer_7` (319 mm, knapp über der Schwelle).
+
+### 7d. Risiken und offene Entscheidungen
+
+- Ursache sitzt in `rest_komponenten.komponenten_ohne_stempel`, nicht in der Türlogik. Eine
+  Rückdehnung analog `stempel_flutung.py:174-193` vergrößert alle REST-Polygone — berührt
+  `bereinigung` Regel 1/2, die LIFT_SCHACHT-Stanzung, `_MIN_M2`, die `rest_N`-Nummerierung
+  und die SCHACHT-/GANG-Typregeln (`rest_komponenten._typisiere`, `tuer_n` im 600-mm-Rand);
+  OG3 `rest_1`/`rest_2` (1,16/1,15 m²) stehen 0,15 m² über der Entfallschwelle.
+- Der Siegelradius hängt an `max(600, Türbreite)`; bei ArchiCAD-Blöcken ist die Breite der
+  Blattradius 840/940 mm (F18) — eine Antwort auf F18 verschiebt die Lücke direkt.
+- Zählweise des Ziels „beidseits ein Raum innerhalb 250 mm" (77 % oder 95 % heute) ist offen;
+  Barawitzka liefert keinen Messwert.
+
+---
+
+## 8. Offene Punkte aus S5b (Stand 2026-09-19, Branch `selman/fix-s5b-querung`)
 
 S5b (Diagnose U13) gibt `durchgaenge_ohne_tuerblatt` ein Querungsprädikat: ein freier
 Streifen ist nur dann ein Durchgang, wenn er **beide** Raumseiten erreicht; die Breite wird
 entlang der gemeinsamen Grenze gemessen statt als Rechtecklänge des Streifens. Zwei Punkte
 gehören damit vor den Merge auf den Tisch.
 
-### 6a. Kontaktgrenze — Abweichung vom wörtlichen 1-mm-Kriterium
+### 8a. Kontaktgrenze — Abweichung vom wörtlichen 1-mm-Kriterium
 
 Das Owner-Kriterium lautet wörtlich „Kontakt beider Räume innerhalb 1 mm". Gebaut ist
 `tuer_zuordnung._kontakt_grenze(abstand) = max(0, abstand − 250) + 1,0`.
@@ -300,7 +592,7 @@ Die Stelle bleibt trotzdem verbunden: seit S4a steht dort die Blocktür `tuer_3`
 STIEGENHAUS 11,21 ↔ VORRAUM 10,94), und ein Durchgang daneben wäre seit S4b Dublette. Genau
 dafür wird der Stapel nur gemeinsam gemessen und gemergt.
 
-### 6b. Bekannter Stapelrest — drei rote Familien-Soll-Tests
+### 8b. Bekannter Stapelrest — drei rote Familien-Soll-Tests
 
 Mit S5b fallen Durchgänge weg, die heute die **einzige** Modellvertretung einer echten Tür
 sind. Drei Tests in `tests/naht` sind dadurch rot (vorbestehend rot bleiben
