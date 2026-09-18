@@ -319,6 +319,9 @@ class NotlichtPlatzierer:
         # montierbaren Punkt holen (Selman-BEFUND) — vor dem abstand_nachpass, damit
         # dieser eventuelle Verschiebungs-Kollisionen entzerrt.
         platzierungen = verbotszonen_nachpass.entferne_aus_verbotszonen(platzierungen, raum)
+        # D2 (Fischamend): LIFT/SCHACHT sind kein Montageort — die Stiegenhaus-
+        # Zentrum-SL fällt sonst in den innenliegenden Liftschacht (BT2 EG lift_1).
+        platzierungen = fachpraxis.entferne_schacht_leuchten(platzierungen, raum)
         # Owner-Korrektur 2026-09-10: RZ/Aufheller im Gang auf die Korridor-Mittelachse
         # snappen (Querachse zentrieren, Längsachse erhalten). VOR dem Entzerren, damit ein
         # Aufheller, der dabei auf sein RZ fällt, vom abstand_nachpass aufgelöst wird.

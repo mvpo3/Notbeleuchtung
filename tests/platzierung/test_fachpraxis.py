@@ -19,6 +19,7 @@ from notbeleuchtung.platzierung.fachpraxis import (
     FachpraxisRegeln,
     aufheller_je_rz,
     aussen_tuer_rz,
+    entferne_schacht_leuchten,
     pfeil_durch_hauseingang,
     tuerleuchte_pflichtraeume,
 )
@@ -514,3 +515,55 @@ def test_stiegenhaus_rz_wandert_ins_stiegenhaus():
     # RZ fern vom stair_exit bleibt unangetastet:
     fern = rz.model_copy(update={"xy_mm": (9000.0, 7000.0)})
     assert stiegenhaus_rz_nachpass([fern], rm)[0].xy_mm == (9000.0, 7000.0)
+
+
+# ── D2-Guard: keine Leuchte im LIFT-/SCHACHT-Polygon (Fischamend 2026-09-18) ──
+
+
+def _stgh_mit_lift() -> RaumModell:
+    stgh = [(0.0, 0.0), (6000.0, 0.0), (6000.0, 6000.0), (0.0, 6000.0)]
+    lift = [(2000.0, 2000.0), (4000.0, 2000.0), (4000.0, 4000.0), (2000.0, 4000.0)]
+    return RaumModell(
+        floor="T", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(6000.0, 6000.0)),
+        raeume=[
+            Raum(id="stgh", raum_typ="STIEGENHAUS", polygon_mm=stgh,
+                 flaeche_m2=36.0, ist_fluchtweg=True, ist_communal=True),
+            Raum(id="lift", raum_typ="LIFT", polygon_mm=lift, flaeche_m2=4.0),
+        ],
+    )
+
+
+def _sl(xy):
+    return Platzierung(
+        xy_mm=xy, catalog_key=AUFHELLER_KEY, rotation_deg=0.0,
+        height_mm=2400.0, kind="sicherheitsleuchte", richtung="gerade",
+        circuit_hint="AGV-A-F13", covers_segment=[], norm_quelle="EN 1838",
+    )
+
+
+def test_schacht_leuchte_wird_in_den_wirtsraum_verschoben():
+    """BT2-EG-Befund: die Stiegenhaus-Zentrum-SL faellt in den innenliegenden
+    Liftschacht (find_center_visual des STGH-Polygons = Lift-Rechteck). Der Guard
+    schiebt sie an den naechsten montierbaren Punkt des Stiegenhauses: Lift-Bbox-
+    Rand 4000 plus clearance 150 = x 4150 (Gleichstand der Distanz, Tie-Break =
+    groesster Abstand zur bestehenden Leuchte bei (1000,1000)), y unveraendert."""
+    drin = _sl((3000.0, 3000.0))
+    aussen = _sl((1000.0, 1000.0))
+    out = entferne_schacht_leuchten([drin, aussen], _stgh_mit_lift())
+    assert len(out) == 2
+    assert out[0].xy_mm == (4150.0, 3000.0)
+    assert out[1].xy_mm == (1000.0, 1000.0)
+
+
+def test_leuchte_nur_im_schacht_ohne_wirt_entfaellt():
+    lift = [(2000.0, 2000.0), (4000.0, 2000.0), (4000.0, 4000.0), (2000.0, 4000.0)]
+    rm = RaumModell(
+        floor="T", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(6000.0, 6000.0)),
+        raeume=[Raum(id="lift", raum_typ="LIFT", polygon_mm=lift, flaeche_m2=4.0)],
+    )
+    assert entferne_schacht_leuchten([_sl((3000.0, 3000.0))], rm) == []
+
+
+def test_ohne_schacht_raeume_noop():
+    platzierungen = [_sl((3000.0, 3000.0))]
+    assert entferne_schacht_leuchten(platzierungen, _raum()) is platzierungen
