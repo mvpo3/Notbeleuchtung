@@ -4,7 +4,58 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-18 SPÄT) — Sync + Symbol-/Vorlagen-Migration (Phase A) + Regelbasis (Phase B). HIER WEITER.
+## STAND (2026-09-18 NACHT) — v3, PDF-Fehler zu, Owner-Regeln Skalen+Wandlinie GEPUSHT. HIER WEITER.
+
+**Branch `leonis/demo-l-gebaeude` @ `719d6d8`, GEPUSHT (Owner-GO). Targeted Suite
+(platzierung+render+e2e+contract+naht) 515 grün, ruff (getrackt) clean, kein
+Contract-Touch.** 8 Commits `1cd754a..719d6d8`.
+
+1. **Fischamend v3 geliefert** (`notbeleuchtung_out/v3/`, 9 Geschosse A0 1:50):
+   Runner versioniert `scripts/demo/run_fischamend.py` (argv je Geschoss).
+   Verify: Positionen 1:1 = v2 (Roh-Diff war NUR der gestrichene Gelb-Layer),
+   nur Registry-Blöcke, 27× %%EOF ok, Stückzahlen exakt v2-Band. **ACHTUNG: v3
+   trägt noch die ALTEN Größen (636er) — nach Skalen-Abnahme als v4 re-rendern.**
+2. **Owner-PDF 20:09-Fassung: ALLE 4 Textfehler + S.10-Screenshot behoben** ✓
+   (`43d388e`). **Läufer-Trio war UNSER Abgleich-Fehler** (`51e048d`): Regel #8
+   (xs>0 → Blick=180°+rot) nicht angewandt — Blick 168,7° West = korrekt.
+   **LEKTION: Personen-Blickrichtung NIE aus roher rot ablesen.**
+3. **Owner-Regeln gebaut (aus Owner-Ansagen in-Session):**
+   - `95c6b82` **Symbolgrößen = Legenden-Soll der neuen Vorlage × Maßstab 50**
+     (Legenden-INSERTs sind Papier-mm): RZ 883 / AP 586 / Aufheller+Spot 192 /
+     Anlage 852 mm (Aufheller war 2 Papier-mm = unlesbar). Prinzip im YAML-Kopf.
+   - `e5ac91b` **Tür-RZ auf Wandlinie**: `RZ_INS_RAUM_MM` 150→0 (Owner: „in einer
+     Linie mit der Tür-Wand, KEIN fixer Sollwert"; ersetzt R-C-150). Golden 4og +
+     2 Tests begründet nachgezogen (Mollgasse EG: down−1/Aufheller+1, n=53 stabil).
+   - Vorlage-Fixierung `Notbeleuchtungspläne-Vorlage.dxf` war SCHON da
+     (`dxf_renderer.py:931`), Owner-Datei = committete Fassung.
+   - **Probe-PDF Mollgasse EG an Owner** (`Projekte/_ergebnis/Mollgasse_EG/
+     notbeleuchtung_owner_kalibrierung.pdf`) — **Abnahme vertagt („später")**.
+4. **Selman-Nachricht beantwortet** (`719d6d8` Board): (a) S4a-Stapel ack —
+   S4a/S4b/S5b nur GEMEINSAM mergen, meine Naht-Tests strict-xfail; sync-review
+   über ganzen Stapel wenn fertig. (b) **Hohle Grüns AUCH BEI MIR bestätigt:**
+   `Projekte/_eingang/` hat nur Mollgasse_EG.dxf (gitignored); 24 Asset-Skips
+   (Rennweg_OG3 12× / Barawitzka_EG 9× / Rennweg_EG 3×) — Soll-Tests Barawitzka/
+   Rennweg/Muthgasse/Baufeld liefen NIE echt. Selman stellt auf versionierte
+   Pfade um (seine Lane, NICHTS daneben bauen) → danach Re-Run: sind seine
+   „4 failed" Platzierung oder Erkennung?
+
+**OFFEN / RESUME:**
+1. **Skalen-Abnahme beim Owner einholen** (Mollgasse-Probe) → dann **Fischamend
+   v4** mit neuen Größen (`run_fischamend.py`, Batches ≤10 min Vordergrund).
+2. **UG-Kapitel + 1.UG/2.UG-DXFs** kommen vom Owner (er arbeitet dran) → Abgleich-
+   Strecke fahren, Regelbasis erweitern. Rest-Owner-TODOs: Kopier-Reste in DXFs
+   (alle noch da), offene_fragen-Rest (RZ-Zweitgröße 446, 4 unerklärte Leuchten,
+   FREIHEIT-Bedeutung, down-RZ-Regel als PDF-Satz).
+3. D3/D5/D4 = Owner-Diff-Runde auf v3/v4-PDFs · Regel-Integrations-Slices nach
+   Owner-GO (NB-R05/R06/R07 ↔ D3) · Selman-Prompt-Weitergabe offen.
+4. Nach Selmans Pfad-Umstellung: Soll-Tests re-runnen (Lücke aus Punkt 4b).
+5. **Working-Tree-Anomalie bleibt:** viele unversionierte Löschungen getrackter
+   CAD-Rohdateien (Barawitzkagasse etc.) + modifizierte din_support-DWG —
+   Owner-Klärung offen, NICHT committen/restoren ohne Ansage.
+
+---
+
+## STAND (2026-09-18 SPÄT) — Sync + Symbol-/Vorlagen-Migration (Phase A) + Regelbasis (Phase B).
 
 **Branch `leonis/demo-l-gebaeude` @ `b04c80e`+Board, GEPUSHT. Volle Suite 1389 grün, ruff clean,
 kein Contract-Touch.** Sync davor: main `2f610cc` (Selman #158 geschoss.py etc. + mein #157) gemergt.
