@@ -87,9 +87,21 @@ Räume gesamt, UNBEKANNT, Türen gesamt, Türen mit `von_raum == nach_raum` (bei
 gesetzt), Durchgänge ohne Türblatt, Wohnungen, Einraum-Wohnungen — aus dem RaumModell
 des OG1-Laufs.
 
+### 1d. OG3-Kennzahlen (`tests/gate/gate_og3.py`, seit S4a)
+
+Rennweg OG3 (`Projekte/Rennweg/OG3 - …dxf`, floor `OG3` wie in `tests/naht/test_soll_rennweg.py`):
+Segmente mit `quelle == GRAPH`, Segmente gesamt, Anker gesamt, Anker in Räumen mit
+`nutzungsklasse WOHNUNG_PRIVAT` (Definition wie `test_keine_anker_in_wohnung_privat`),
+Wohnungen, Einraum-Wohnungen, Türen gesamt, Durchgänge ohne Türblatt, GANG-Räume in
+`WOHNUNG_PRIVAT`. Grund: S4a allein verschmilzt auf OG3 zwei Wohnungen, zieht den Gang in
+die Wohnung und lässt die Zirkulation von GRAPH auf FALLBACK kippen — genau das muss der
+fertige Stapel wieder heilen.
+
 ### Eingabe und Rechenstand
 
-Alle Messungen gegen die getrackten DXF unter `Projekte/Rennweg/`; die Messung schreibt
+Alle Messungen gegen die getrackten DXF unter `Projekte/Rennweg/` (die Familien-Soll-Tests
+lesen seit 2026-09-18 ebenfalls die versionierten Pläne, `tests/plaene.py` — vorher lasen sie
+den untracked Ordner `Projekte/_eingang` und skippten in jedem frischen Checkout); die Messung schreibt
 je Plan den SHA-256 in `meta.dxf` (OG1 =
 `c64e73e30a482d3fe7c38004b726151eb5325e4beb453def4d92dba5afaa245e`, identisch mit der
 Referenz-DXF des Pakets). `meta` trägt außerdem `commit_head`, den Tree-Hash von
@@ -163,6 +175,13 @@ Räume 18 · UNBEKANNT 1 · Türen 28 · Türen mit `von_raum == nach_raum` **0*
 ohne Türblatt 26 · Wohnungen 3 · Einraum-Wohnungen **2** (`top_2` = Abstellraum 4,52 m²,
 `top_3` = WC 3,50 m²).
 
+### 2d. OG3 (Nullmessung nachgemessen am 2026-09-18, Code weiterhin tree-gleich f15d03f)
+
+Segmente GRAPH **5** (von 5) · Anker 16, davon **0** in WOHNUNG_PRIVAT · Wohnungen 2 ·
+Einraum 0 · Türen 23 · Durchgänge ohne Türblatt 20 · GANG in WOHNUNG_PRIVAT 0.
+Bedingung (6) ist auf f15d03f erfüllt; nach S4a allein steht sie auf GRAPH 0 / Anker 8
+(siehe Board 2026-09-18).
+
 ---
 
 ## 3. Gate-Regel
@@ -178,6 +197,7 @@ Der Stapel **S4a → S4b → S5b → S5c wird nur gemeinsam gemergt**, und nur w
 | (3) | M1 bis M4 steigen nirgends | je Plan und je Gate-Kennzahl (§ 1b) nachher ≤ vorher; Ganzzahlen exakt, `M3.rote_flaeche_m2` mit 0,001 m² Toleranz; fehlende oder ungültige Werte (NaN, bool, negativ) sind Verstöße |
 | (4) | Türen mit `von_raum == nach_raum` null | OG1 |
 | (5) | Einraum-Wohnungen auf OG1 sinken | nachher < 2 |
+| (6) | Rennweg OG3: Fluchtweg-Ableitung intakt | `segmente_graph ≥ 1` **und** `anker_in_wohnung_privat == 0` (Owner-Entscheid 2026-09-18 nach S4a) — wörtlich die Aussage der beiden Tests `test_soll_segmente_aus_graph` und `test_keine_anker_in_wohnung_privat` in `tests/naht/test_soll_rennweg.py`, die auf dem Stapel-Branch als strict-xfail geführt werden („S4a allein, Türstapel unvollständig, muss vor Merge XPASS sein"); das Gate prüft die Zahlen selbst (`tests/gate/gate_og3.py`), damit es nicht am Marker hängt |
 
 Zwischenstände der einzelnen Slices werden gemessen und berichtet (`python
 tests/gate/gate_messung.py --out <datei.json>`, dann `pruefe_gate`), aber **nicht

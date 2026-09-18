@@ -1534,3 +1534,25 @@ regressieren (`docs/GATE_TUERSTAPEL.md`). Die Referenz selbst bleibt unveränder
 **Weiter offen (bewusst nicht pauschal entschieden):** ob ein Durchgang ohne Türblatt
 *anderswo* — außerhalb dieses Falls — als Türverbindung gelten kann. Das wird je Fall
 entschieden, nicht per Regel.
+
+## S4d — Balkontür T08 / „Rectangular Door Opening" (vorgemerkt, 2026-09-18)
+
+OG1 trägt drei ArchiCAD-Blöcke `Rectangular Door Opening 27[6]`, `…27[11]` und
+`…27[12]` (in den Wandblöcken `Wall_13`, `Wall_23`, `Wall_63`). Sie liegen
+**außerhalb des Tür-Vokabulars**: `_ist_tuer_block`
+(`src/notbeleuchtung/raumerkennung/tueren.py`) sucht deutsche Wortstämme
+(`TÜR`/`ÖFFNUNG`/`BST`/`F+H`, außen `AUSSEN`/`EINGANG`/`WET`/`SCHIEBET`/`FENSTERT`)
+— die englischen `DOOR`/`OPENING` kennt es nicht, die drei Blöcke werden also
+weder als Tür erkannt noch als verworfener Kandidat gezählt. Aufgefallen ist das
+erst **nach** der Messung (Diagnose Türstapel; die Muthgasse-Erwartung dazu läuft
+als strict-xfail).
+
+Einer der drei ist der plausible Kandidat für die **Balkontür T08** (Beispiel 14:
+mittleres Zimmer 10,59 m² ↔ Balkon 7,51 m²). Die beiden anderen liegen an
+**offenen Übergängen** (Sonden O02 und O04) und wären dort gerade *keine* Tür.
+Welcher Block welcher Fall ist, ist damit nicht am Namen entscheidbar — es
+braucht die Geometrie.
+
+**Entscheid Owner:** eigener Slice **S4d**, **nach S5c**. Das Tür-Vokabular wird
+**jetzt nicht** angefasst — eine Vokabel-Erweiterung mitten im Türstapel würde die
+Nullmessung und alle laufenden Gate-Zahlen verschieben, bevor der Stapel steht.
