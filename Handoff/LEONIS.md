@@ -32,8 +32,8 @@ kein Contract-Touch.** Sync davor: main `2f610cc` (Selman #158 geschoss.py etc. 
    fixt den Rest selbst.
 
 4. **OWNER-TODO PDF/DXF — BEIM NÄCHSTEN SESSIONSTART ERINNERN + danach re-checken:**
-   - [ ] PDF S.10: Labels „(D)"/„(E)" → **(G)/(H)** (rechtes EG-STGH; DXF trägt (G) `20D5C` / (H) `20DA2`) + Screenshot erneuern (zeigt alten Label-Stand).
-   - [ ] PDF S.19: „türkise Linie zur Notleuchte (A)" → die Top-2+3-Linie führt zu **(B)** (DXF `95621`, Endpunkt 197 mm vor (B)).
+   - [x] ~~PDF S.10 (D)/(E)→(G)/(H)~~ ERLEDIGT (PDF-Fassung 2026-09-18 20:09: Text (G)/(H) ✓ + Screenshot erneuert ✓).
+   - [x] ~~PDF S.19 Linie→(B)~~ ERLEDIGT (PDF 20:09: „zur Notleuchte (B)" ✓). **Damit alle 4 PDF-Textfehler + Screenshot behoben.**
    - [x] ~~2OG-Läufer-Trio blickt Ost~~ ERLEDIGT 2026-09-18: KEIN DXF-Fehler — unser Abgleich hatte Regel #8 (xs>0 → Blick=180°+rot) nicht angewandt; Blick 168,7° = West = Fluchtrichtung ✓ (Owner-Hinweis, Doku korrigiert).
    - [ ] Arbeits-/Kopier-Reste außerhalb der Grundrisse löschen: EG `2137C` (Duplikat), 1OG `9568D`, 3OG-Fragment A1 (`78D6A/78D6C/78D6D`), 4OG `41221`, DG `206D6`/`206DB`.
    - [ ] **UG-Kapitel + 1.UG/2.UG-Erklärungs-DXFs liefern** (inkl. Kellerabteil-Gang) → dann Abgleich-Strecke erneut fahren, Regelbasis erweitern.
