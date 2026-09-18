@@ -41,8 +41,18 @@ kein Contract-Touch.** Sync davor: main `2f610cc` (Selman #158 geschoss.py etc. 
 
 5. **OFFEN / RESUME (Engine):** (a) Regel-Integration als eigene Slices NACH
    Owner-GO (Kandidaten in regeln.md „Integration"; NB-R05/R06/R07 berühren die
-   D3-Runde). (b) D3/D5-Rest aus der Fischamend-Runde (unten) — v2 ggf. mit neuen
-   Symbolen re-rendern, bevor der Owner difft. (c) Selman-Prompt-Weitergabe offen.
+   D3-Runde). (b) ~~v2 re-rendern~~ **ERLEDIGT 2026-09-18 nachm.: v3 mit neuen
+   Symbolen gerendert + an Owner geliefert** (`notbeleuchtung_out/v3/`, Runner
+   jetzt versioniert `scripts/demo/run_fischamend.py` `1cd754a`; Verify:
+   Positionen 1:1 = v2 — der Roh-Diff war NUR der gestrichene Gelb-Zwilling-
+   Layer, SL/AP liegen jetzt auf dem EINEN din_SIBEL-Layer —, nur Registry-
+   Blöcke, 0 Alt-Blöcke, alle 27 PDFs %%EOF ok, Stückzahlen exakt v2-Band
+   30/18/18/12/47 · 21/17/14/16) → D3/D5-Rest = Owner-Diff-Runde auf v3.
+   (c) Selman-Prompt-Weitergabe offen. (d) **Working-Tree-Anomalie:** viele
+   unversionierte LÖSCHUNGEN getrackter CAD-Rohdateien (Barawitzkagasse komplett,
+   Dachdraufsichten, …) + modifizierte din_support-DWG — vermutlich Owner-
+   Aufräumen nach ZIP-Migration `3c640cb`, unbestätigt. NICHT committen und
+   NICHT restoren ohne Owner-Ansage.
 
 ---
 
