@@ -42,7 +42,13 @@ from .bausteine import ist_echte_tuer as _ist_echte_tuer
 from .bausteine import rotation_piktogramm_in_raum as _rotation_piktogramm_in_raum
 from .bausteine import rotation_zur_tuer as _rotation_zur_tuer
 from .bausteine import select_key as _select_key
-from .geometry import _bbox, _bbox_area, find_center_visual, point_in_polygon
+from .geometry import (
+    _bbox,
+    _bbox_area,
+    _relocate_outside_exclusions,
+    find_center_visual,
+    point_in_polygon,
+)
 from .lux import lux_punkte, wartungsfaktor_aus_norm
 
 AUFHELLER_KEY = "sicherheitsleuchte_aufheller"
@@ -611,4 +617,54 @@ def stiegenhaus_rz_nachpass(
             "xy_mm": ziel,
             "rotation_deg": _rotation_zur_tuer(dx, dy),
         }))
+    return out
+
+
+#: D2 (BVH Fischamend 2026-09-13): Aufzugs-/Schacht-Polygone sind kein Montageort —
+#: die Kabinen-Notbeleuchtung regelt die Aufzugsnorm (EN 81-20), nicht dieser Plan.
+#: Real landete dort die STIEGENHAUS-Zentrum-SL (§4.1): der Liftschacht liegt im
+#: Kern des Stiegenhaus-Polygons, `find_center_visual` fällt hinein (BT2 EG lift_1).
+_SCHACHT_TYPEN = {"LIFT", "SCHACHT"}
+
+
+def entferne_schacht_leuchten(
+    platzierungen: list[Platzierung], raum: RaumModell
+) -> list[Platzierung]:
+    """D2-Guard: keine Platzierung im LIFT-/SCHACHT-Polygon.
+
+    Liegt der Punkt zugleich in einem umgebenden Wirts-Raum (Lift im Stiegenhaus-
+    Kern), wird er mit `_relocate_outside_exclusions` an den nächsten montierbaren
+    Punkt DIESES Raums geschoben — die Leuchte gehört dem Wirts-Raum, sie darf
+    nicht still verschwinden. Bei mehreren Wirten zählt der engste (kleinste
+    Fläche). Liegt der Punkt NUR im Schacht, fällt die Platzierung (dort ist
+    nichts montierbar). No-op ohne LIFT-/SCHACHT-Räume.
+    """
+    schaechte = [
+        r for r in raum.raeume
+        if (r.raum_typ or "").upper() in _SCHACHT_TYPEN and len(r.polygon_mm) >= 3
+    ]
+    if not schaechte:
+        return platzierungen
+    wirte = [
+        r for r in raum.raeume
+        if (r.raum_typ or "").upper() not in _SCHACHT_TYPEN and len(r.polygon_mm) >= 3
+    ]
+    out: list[Platzierung] = []
+    for p in platzierungen:
+        treffer = [s for s in schaechte if point_in_polygon(p.xy_mm, s.polygon_mm)]
+        if not treffer:
+            out.append(p)
+            continue
+        wirt = min(
+            (r for r in wirte if point_in_polygon(p.xy_mm, r.polygon_mm)),
+            key=lambda r: r.flaeche_m2 or _bbox_area(_bbox(r.polygon_mm)),
+            default=None,
+        )
+        if wirt is None:
+            continue                                   # nur im Schacht → entfällt
+        andere = [q.xy_mm for q in platzierungen if q is not p]
+        neu_xy = _relocate_outside_exclusions(
+            p.xy_mm, wirt.polygon_mm, [s.polygon_mm for s in treffer], existing=andere
+        )
+        out.append(p if neu_xy == p.xy_mm else p.model_copy(update={"xy_mm": neu_xy}))
     return out
