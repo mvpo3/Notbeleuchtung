@@ -53,8 +53,11 @@ pythonpath = ["src", "tests"]
 testpaths = ["tests"]
 # Sicht-/Golden-Regressions-Tests sind langsam (Raster-Render) → default deselektiert;
 # gezielt via `pytest -m visual` (überschreibt das addopts-Filter).
-addopts = "-m 'not visual'"
-markers = ["visual: langsame Sicht-/Golden-Regressions-Tests (default deselektiert)"]
+addopts = "-m 'not visual and not gate'"
+markers = [
+    "visual: langsame Sicht-/Golden-Regressions-Tests (default deselektiert)",
+    "gate: Türstapel-Merge-Gate (Rennweg-Caches + Referenzpaket, langsam; default deselektiert, gezielt: pytest -m gate)",
+]
 
 [tool.ruff]
 src = ["src", "tests", "scripts"]

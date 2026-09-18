@@ -17,6 +17,8 @@ out/
 output/
 # Visual-DoD-Diff-Overlays bei Golden-Mismatch (Baseline liegt in tests/fixtures/golden/)
 tests/failures/
+# Gate-/Diagnose-Arbeitsstand (Caches, Eingang, Messungen) — jederzeit neu rechenbar
+_arbeit/
 
 # Norm-PDFs für alle Owner (Repo ist privat — nicht public stellen!)
 !knowledge/**

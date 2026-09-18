@@ -1,0 +1,510 @@
+{
+ "meta": {
+  "datum": "2026-09-18T01:53:27+02:00",
+  "commit_head": "1827488ba569197b11c28b89dd9a1dc621825278",
+  "arbeitsbaum_src_scripts_sauber": true,
+  "raumerkennung_tree": "431cf980b6df0b1101318ffbeb334a0ffe56cf72",
+  "basis_commit": "f15d03fe1a082c78b180e940b7dcd666fccaf37d",
+  "basis_tree_gleich": true,
+  "contract_version": "1.5.0",
+  "code_pfad": "src/notbeleuchtung/__init__.py",
+  "referenz_sha256": "9b38b258c172507922fec2350efbf03d4386771ee0e58cacf2f38e9bab743d4a",
+  "toleranzen": {
+   "kontakt_mm": 1.0,
+   "ueberlappung_mm2": 1.0,
+   "portal_wand_mm": 250.0
+  },
+  "dxf": {
+   "UG": "f8888a5691760ba2ff5743e0e19449bfa44ca37fb52eebd03c46f8aac802f1ef",
+   "EG": "7044ff3bed0a7d80b77eab79fcc6140f40679eadd7e6f0ab873ec3070663bc8f",
+   "OG1": "c64e73e30a482d3fe7c38004b726151eb5325e4beb453def4d92dba5afaa245e",
+   "OG2": "58cddfaa2abdf52adcf84db488db5425b8e563b58e9a68fd241406d2b087ab64",
+   "OG3": "edada9ddb77dbc9c629d335f4cae5527671090928ce930e8f8efe0d8e840d430",
+   "DG1": "d7683c48f2994ea7dec94220fcc9149fba282c56db4d4abe7835afd85e22a9b9",
+   "DG2": "b38a0dc930806f654dadc08d35ad7c865da3919659e98d3fc6fa8940779cb6e2"
+  },
+  "laufzeit_s": 46.0
+ },
+ "m17": [
+  {
+   "id": "M17-01-a",
+   "fall": "M17-01",
+   "kind": "physical_wall_covers_probe",
+   "expected": true,
+   "status": "BESTANDEN",
+   "grund": "Wandkörper deckt die Sonde, kein Raumpolygon",
+   "messwerte": {
+    "sonde": "W",
+    "koerper": [
+     73
+    ],
+    "raeume": [],
+    "in_wand_union_technisch": true
+   }
+  },
+  {
+   "id": "M17-01-b",
+   "fall": "M17-01",
+   "kind": "same_room",
+   "expected": true,
+   "status": "BESTANDEN",
+   "grund": "A und B liegen beide in raum_7",
+   "messwerte": {
+    "raum_a": "raum_7",
+    "raum_b": "raum_7",
+    "route_schnitt": []
+   }
+  },
+  {
+   "id": "M17-01-c",
+   "fall": "M17-01",
+   "kind": "physical_wall_covers_probe",
+   "expected": false,
+   "status": "BESTANDEN",
+   "grund": "kein Wandkörper an der Sonde",
+   "messwerte": {
+    "sonde": "C",
+    "koerper": [],
+    "raeume": [
+     "raum_7"
+    ],
+    "in_wand_union_technisch": false
+   }
+  },
+  {
+   "id": "M17-02-a",
+   "fall": "M17-02",
+   "kind": "physical_wall_covers_probe",
+   "expected": true,
+   "status": "BESTANDEN",
+   "grund": "Wandkörper deckt die Sonde, kein Raumpolygon",
+   "messwerte": {
+    "sonde": "W",
+    "koerper": [
+     72
+    ],
+    "raeume": [],
+    "in_wand_union_technisch": true
+   }
+  },
+  {
+   "id": "M17-02-b",
+   "fall": "M17-02",
+   "kind": "direct_portal_in_probe_segment",
+   "expected": false,
+   "status": "NICHT_BESTANDEN",
+   "grund": "3 Öffnung(en) an der markierten Wand im markierten Stück (≤ 250 mm), obwohl A in raum_6 und B in raum_7 liegt",
+   "messwerte": {
+    "raum_a": "raum_6",
+    "raum_b": "raum_7",
+    "direkte_tueren_gesamt": 3,
+    "portale": [
+     {
+      "id": "durchgang_11",
+      "breite_mm": 1380.0,
+      "ohne_tuerblatt": true,
+      "quelle": "durchgang",
+      "tuer_detail": "zimmertuer",
+      "von_raum": "raum_6",
+      "nach_raum": "raum_7",
+      "abstand_wand_mm": 75.1
+     },
+     {
+      "id": "durchgang_12",
+      "breite_mm": 1612.0,
+      "ohne_tuerblatt": true,
+      "quelle": "durchgang",
+      "tuer_detail": "zimmertuer",
+      "von_raum": "raum_6",
+      "nach_raum": "raum_7",
+      "abstand_wand_mm": 75.0
+     },
+     {
+      "id": "durchgang_13",
+      "breite_mm": 3069.0,
+      "ohne_tuerblatt": true,
+      "quelle": "durchgang",
+      "tuer_detail": "zimmertuer",
+      "von_raum": "raum_6",
+      "nach_raum": "raum_7",
+      "abstand_wand_mm": 74.3
+     }
+    ]
+   }
+  },
+  {
+   "id": "M17-02-c",
+   "fall": "M17-02",
+   "kind": "wall_contact_preserved",
+   "expected": true,
+   "status": "BESTANDEN",
+   "grund": "Körper berühren sich bei J (Abstand 3.14e-08 mm ≤ Toleranz 1 mm, Quellpräzision im Speicher) und im markierten Stück gibt es keine freie Verbindung zwischen raum_6 und raum_7",
+   "messwerte": {
+    "koerper_27C6": 72,
+    "deckung_27C6": 1.0,
+    "koerper_27CF": 73,
+    "deckung_27CF": 1.0,
+    "abstand_mm": 3.14e-08,
+    "j_abstand_1_mm": 0.0,
+    "j_abstand_2_mm": 5.91e-08,
+    "ueberlappung_mm2": 0.0,
+    "intersects": false,
+    "touches": false,
+    "raum_a": "raum_6",
+    "raum_b": "raum_7",
+    "freie_teile": 4,
+    "leck": false
+   }
+  },
+  {
+   "id": "M17-03-a",
+   "fall": "M17-03",
+   "kind": "physical_wall_covers_probe",
+   "expected": false,
+   "status": "BESTANDEN",
+   "grund": "kein Wandkörper an der Sonde",
+   "messwerte": {
+    "sonde": "P",
+    "koerper": [],
+    "raeume": [
+     "raum_12"
+    ],
+    "in_wand_union_technisch": false
+   }
+  },
+  {
+   "id": "M17-03-b",
+   "fall": "M17-03",
+   "kind": "physical_wall_covers_probe",
+   "expected": true,
+   "status": "BESTANDEN",
+   "grund": "Wandkörper deckt die Sonde, kein Raumpolygon",
+   "messwerte": {
+    "sonde": "W",
+    "koerper": [
+     132
+    ],
+    "raeume": [],
+    "in_wand_union_technisch": true
+   }
+  },
+  {
+   "id": "M17-03-c",
+   "fall": "M17-03",
+   "kind": "physical_wall_intersects_route",
+   "expected": false,
+   "status": "BESTANDEN",
+   "grund": "Route schneidet keinen Wandkörper (> 1 mm)",
+   "messwerte": {
+    "schnitte": [],
+    "route_laenge_mm": 846.8
+   }
+  },
+  {
+   "id": "M17-04-a",
+   "fall": "M17-04",
+   "kind": "physical_wall_covers_probe",
+   "expected": true,
+   "status": "BESTANDEN",
+   "grund": "Wandkörper deckt die Sonde, kein Raumpolygon",
+   "messwerte": {
+    "sonde": "W",
+    "koerper": [
+     82
+    ],
+    "raeume": [],
+    "in_wand_union_technisch": true
+   }
+  },
+  {
+   "id": "M17-04-b",
+   "fall": "M17-04",
+   "kind": "physical_wall_covers_probe",
+   "expected": false,
+   "status": "BESTANDEN",
+   "grund": "kein Wandkörper an der Sonde",
+   "messwerte": {
+    "sonde": "O",
+    "koerper": [],
+    "raeume": [],
+    "in_wand_union_technisch": false
+   }
+  },
+  {
+   "id": "M17-04-c",
+   "fall": "M17-04",
+   "kind": "distinct_rooms_connected_by_door",
+   "expected": true,
+   "status": "NICHT_MESSBAR",
+   "grund": "Referenz mehrdeutig (Frage an Enis in docs/OFFENE_FRAGEN.md): einzige Verbindung durchgang_21 ist ein Durchgang ohne Türblatt (2506.0 mm, tuer_detail wohnungseingang, 534 mm von O); zählt das als 'Türverbindung'?",
+   "messwerte": {
+    "raum_a": "raum_13",
+    "raum_b": "raum_12",
+    "sonde": "O",
+    "verbindungen": [
+     {
+      "id": "durchgang_21",
+      "breite_mm": 2506.0,
+      "ohne_tuerblatt": true,
+      "quelle": "durchgang",
+      "tuer_detail": "wohnungseingang",
+      "abstand_zu_O_mm": 534
+     }
+    ]
+   }
+  },
+  {
+   "id": "M17-05-a",
+   "fall": "M17-05",
+   "kind": "physical_wall_covers_probe",
+   "expected": true,
+   "status": "BESTANDEN",
+   "grund": "Wandkörper deckt die Sonde, kein Raumpolygon",
+   "messwerte": {
+    "sonde": "W",
+    "koerper": [
+     78
+    ],
+    "raeume": [],
+    "in_wand_union_technisch": true
+   }
+  },
+  {
+   "id": "M17-05-b",
+   "fall": "M17-05",
+   "kind": "physical_wall_covers_probe",
+   "expected": false,
+   "status": "BESTANDEN",
+   "grund": "kein Wandkörper an der Sonde",
+   "messwerte": {
+    "sonde": "F",
+    "koerper": [],
+    "raeume": [
+     "raum_1"
+    ],
+    "in_wand_union_technisch": false
+   }
+  },
+  {
+   "id": "M17-05-c",
+   "fall": "M17-05",
+   "kind": "same_room",
+   "expected": true,
+   "status": "BESTANDEN",
+   "grund": "F und R liegen beide in raum_1",
+   "messwerte": {
+    "raum_a": "raum_1",
+    "raum_b": "raum_1"
+   }
+  },
+  {
+   "id": "M17-06-a",
+   "fall": "M17-06",
+   "kind": "physical_wall_covers_probe",
+   "expected": true,
+   "status": "BESTANDEN",
+   "grund": "Wandkörper deckt die Sonde, kein Raumpolygon",
+   "messwerte": {
+    "sonde": "W",
+    "koerper": [
+     94
+    ],
+    "raeume": [],
+    "in_wand_union_technisch": true
+   }
+  },
+  {
+   "id": "M17-06-b",
+   "fall": "M17-06",
+   "kind": "room_covers_probe",
+   "expected": true,
+   "status": "BESTANDEN",
+   "grund": "Sonde I liegt genau in raum_1",
+   "messwerte": {
+    "sonde": "I",
+    "raeume": [
+     "raum_1"
+    ],
+    "raum_typ": "ZIMMER",
+    "flaeche_m2": 16.11
+   }
+  },
+  {
+   "id": "M17-06-c",
+   "fall": "M17-06",
+   "kind": "room_covers_probe",
+   "expected": false,
+   "status": "BESTANDEN",
+   "grund": "Zielraum raum_1 deckt Sonde X nicht (dort: kein Raum)",
+   "messwerte": {
+    "sonde": "X",
+    "raeume": [],
+    "zielraum": "raum_1"
+   }
+  }
+ ],
+ "og1": {
+  "raeume_gesamt": 18,
+  "unbekannt": 1,
+  "tueren_gesamt": 28,
+  "tueren_raum_a_gleich_b": 0,
+  "tueren_raum_a_gleich_b_liste": [],
+  "durchgaenge_ohne_tuerblatt": 26,
+  "wohnungen": 3,
+  "einraum_wohnungen": 2,
+  "einraum_wohnungen_liste": [
+   "top_2",
+   "top_3"
+  ]
+ },
+ "m1_m4": {
+  "M1": {
+   "DG1": {
+    "hauptwert": 0,
+    "klein_ohne_stempel": 1
+   },
+   "DG2": {
+    "hauptwert": 0,
+    "klein_ohne_stempel": 1
+   },
+   "EG": {
+    "hauptwert": 0,
+    "klein_ohne_stempel": 1
+   },
+   "OG1": {
+    "hauptwert": 0,
+    "klein_ohne_stempel": 1
+   },
+   "OG2": {
+    "hauptwert": 0,
+    "klein_ohne_stempel": 0
+   },
+   "OG3": {
+    "hauptwert": 0,
+    "klein_ohne_stempel": 0
+   },
+   "UG": {
+    "hauptwert": 0,
+    "klein_ohne_stempel": 1
+   }
+  },
+  "M2": {
+   "DG1": {
+    "wert": 0,
+    "inkl_freiflaechen": 0,
+    "offen_m2": 2.77
+   },
+   "DG2": {
+    "wert": 2,
+    "inkl_freiflaechen": 3,
+    "offen_m2": 40.57
+   },
+   "EG": {
+    "wert": 0,
+    "inkl_freiflaechen": 0,
+    "offen_m2": 0.0
+   },
+   "OG1": {
+    "wert": 0,
+    "inkl_freiflaechen": 1,
+    "offen_m2": 25.19
+   },
+   "OG2": {
+    "wert": 0,
+    "inkl_freiflaechen": 2,
+    "offen_m2": 30.08
+   },
+   "OG3": {
+    "wert": 0,
+    "inkl_freiflaechen": 0,
+    "offen_m2": 1.99
+   },
+   "UG": {
+    "wert": 0,
+    "inkl_freiflaechen": 0,
+    "offen_m2": 23.19
+   }
+  },
+  "M3": {
+   "DG1": {
+    "hauptwert": 7,
+    "rote_flaeche_m2": 1.415
+   },
+   "DG2": {
+    "hauptwert": 4,
+    "rote_flaeche_m2": 1.26
+   },
+   "EG": {
+    "hauptwert": 3,
+    "rote_flaeche_m2": 1.807
+   },
+   "OG1": {
+    "hauptwert": 6,
+    "rote_flaeche_m2": 1.544
+   },
+   "OG2": {
+    "hauptwert": 5,
+    "rote_flaeche_m2": 1.574
+   },
+   "OG3": {
+    "hauptwert": 3,
+    "rote_flaeche_m2": 1.442
+   },
+   "UG": {
+    "hauptwert": 4,
+    "rote_flaeche_m2": 1.204
+   }
+  },
+  "M4": {
+   "DG1": {
+    "wohnungen": 1,
+    "einraum": 0,
+    "datenbefund": 0,
+    "darstellungsbefund": 0,
+    "privatraum_ohne_wohnung": 2
+   },
+   "DG2": {
+    "wohnungen": 1,
+    "einraum": 0,
+    "datenbefund": 0,
+    "darstellungsbefund": 0,
+    "privatraum_ohne_wohnung": 2
+   },
+   "EG": {
+    "wohnungen": 2,
+    "einraum": 1,
+    "datenbefund": 0,
+    "darstellungsbefund": 0,
+    "privatraum_ohne_wohnung": 1
+   },
+   "OG1": {
+    "wohnungen": 3,
+    "einraum": 2,
+    "datenbefund": 0,
+    "darstellungsbefund": 0,
+    "privatraum_ohne_wohnung": 2
+   },
+   "OG2": {
+    "wohnungen": 2,
+    "einraum": 1,
+    "datenbefund": 0,
+    "darstellungsbefund": 0,
+    "privatraum_ohne_wohnung": 3
+   },
+   "OG3": {
+    "wohnungen": 2,
+    "einraum": 0,
+    "datenbefund": 0,
+    "darstellungsbefund": 0,
+    "privatraum_ohne_wohnung": 0
+   },
+   "UG": {
+    "wohnungen": 4,
+    "einraum": 4,
+    "datenbefund": 0,
+    "darstellungsbefund": 0,
+    "privatraum_ohne_wohnung": 1
+   }
+  }
+ }
+}
