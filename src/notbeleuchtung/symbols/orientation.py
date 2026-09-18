@@ -19,13 +19,17 @@ from notbeleuchtung.symbols import load_symbol_mapping
 # Ziel-Richtung → Winkel im Weltkoordinatensystem (rechts = +x = 0°, CCW).
 ZIEL_DEG: dict[str, float] = {"rechts": 0.0, "oben": 90.0, "links": 180.0, "unten": 270.0}
 
-# Basisorientierung je Library-Block bei rotation=0 (normalisierte, lowercase
-# Blocknamen — `block_names()` der Library normalisiert ebenso). Gemessen, nicht
-# geraten: reports/blocks/ (2026-09-07).
+# Basisorientierung je Library-Block bei rotation=0 (lowercase-Lookup).
+# Migration Phase A (2026-09-18): neue RIVO-Blöcke aus
+# Notbeleuchtungssymbole_neu+.dxf. Gemessen, nicht geraten — Pfeil-Geometrie
+# (Schaft→Spitze) je Blockdefinition analysiert + im Render verifiziert
+# (Workflow-Analyse A1): down = (0,−1) = 270°, left = (−1,0) = 180°,
+# right = (+1,0) = 0° (Achtung: der right-Pfeil-HATCH liegt in gespiegeltem
+# OCS mit Extrusion (0,0,−1) — Welt-Richtung ist trotzdem +x).
 _BLOCK_BASE_DEG: dict[str, float] = {
-    "notbeleuchtung- richtungspfeil nach unten": 270.0,
-    "notbeleuchtung-richtungspfeil nach links": 180.0,
-    "notbeleuchtung-richtungspfeil nach rechts": 0.0,
+    "rivo-sibel-arr-down": 270.0,
+    "rivo-sibel-arr-left": 180.0,
+    "rivo-rz-arr_right": 0.0,
 }
 
 

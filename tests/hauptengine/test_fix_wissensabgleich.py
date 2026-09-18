@@ -215,10 +215,11 @@ def test_wf_innen_aussen():
 
 
 def test_layer_gruen_gelb(tmp_path):
-    """F14 / W06 [AT-Referenzpraxis] (din-Referenzplan V25): Layer-Trennung grün=RZ /
-    gelb=SL. Nagelt den **Default** fest (`rz_sl_farbtrennung=True` ohne Argument) und
-    deckt die Antipanik-Rolle mit ab (gehört wie die Sicherheitsleuchte auf Gelb) — damit
-    der Default nicht still auf „alles grün" zurückkippt."""
+    """F14-Nachfolger (Migration Phase A, Owner 2026-09-18): ALLE Notbeleuchtungs-
+    Symbole liegen auf dem EINEN Notbeleuchtungs-Layer der Planvorlage — der
+    frühere gelbe SL-Zwilling (din-V25-Konvention) ist gestrichen, die neuen
+    Blöcke tragen ihre Farben selbst. Nagelt fest, dass kein Symbol auf einem
+    anderen Layer landet."""
     import ezdxf
 
     from notbeleuchtung.hauptengine.contracts import (
@@ -245,17 +246,11 @@ def test_layer_gruen_gelb(tmp_path):
                      polygon_mm=[(0.0, 0.0), (3000.0, 0.0), (3000.0, 3000.0), (0.0, 3000.0)],
                      ist_fluchtweg=True)])
 
-    # DEFAULT-Aufruf (kein rz_sl_farbtrennung-Argument) → Trennung aktiv.
     render_dxf(erg, raum, tmp_path / "default.dxf")
     doc = ezdxf.readfile(str(tmp_path / "default.dxf"))
-    layer_je_kind: dict[str, set[str]] = {}
-    for e in doc.modelspace().query("INSERT"):
-        if not e.has_xdata("NOTBELEUCHTUNG"):
-            continue
-        # RZ-Block grün, SL/Antipanik-Block gelb — Zuordnung über den Layer je Block.
-        layer_je_kind.setdefault(e.dxf.layer, set()).add(e.dxf.name)
-    assert library.SAFETY_LAYER in layer_je_kind       # RZ grün
-    assert library.SAFETY_LAYER_SL in layer_je_kind     # SL + Antipanik gelb
+    layer = {e.dxf.layer for e in doc.modelspace().query("INSERT")
+             if e.has_xdata("NOTBELEUCHTUNG")}
+    assert layer == {library.SAFETY_LAYER}   # RZ + SL + Antipanik: EIN Vorlagen-Layer
 
 
 def test_stiege_hoehe_warnung():

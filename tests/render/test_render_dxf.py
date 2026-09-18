@@ -328,28 +328,19 @@ def _erg_rz_und_sl():
     return PlatzierungsErgebnis(floor="T", platzierungen=[rz, sl]), raum
 
 
-def test_rz_sl_farbtrennung_gruen_gelb(tmp_path):
-    """din-Konvention (Referenzplan V25): RZ grün, Sicherheits-/Antipanikleuchte gelb.
-    Aus → alles grün (Owner-Fixierung #102). Der gelbe Layer trägt eine Gelb-Farbe."""
-    mapping = library.load_mapping()
-    rz_block = mapping["notlicht_ks_stiege_rechts"]["block_name"]
-    sl_block = mapping["sicherheitsleuchte_aufheller"]["block_name"]
+def test_alle_symbole_auf_vorlagen_layer(tmp_path):
+    """Migration Phase A (Owner 2026-09-18): ALLE Notbeleuchtungs-Symbole liegen
+    auf dem EINEN Notbeleuchtungs-Layer der Planvorlage — der frühere gelbe
+    SL-Zwilling war ein erfundener Layer; die neuen Blöcke tragen ihre Farben
+    selbst (blauer Aufheller, grünes Schild)."""
     erg, raum = _erg_rz_und_sl()
-
-    render_dxf(erg, raum, tmp_path / "an.dxf", rz_sl_farbtrennung=True)
-    doc = ezdxf.readfile(str(tmp_path / "an.dxf"))
-    lay = {e.dxf.name: e.dxf.layer for e in doc.modelspace().query("INSERT")
+    render_dxf(erg, raum, tmp_path / "a.dxf")
+    doc = ezdxf.readfile(str(tmp_path / "a.dxf"))
+    lay = {e.dxf.layer for e in doc.modelspace().query("INSERT")
            if e.has_xdata("NOTBELEUCHTUNG")}
-    assert lay[rz_block] == library.SAFETY_LAYER
-    assert lay[sl_block] == library.SAFETY_LAYER_SL
-    gelb = doc.layers.get(library.SAFETY_LAYER_SL)
-    assert gelb.dxf.hasattr("true_color")
-
-    render_dxf(erg, raum, tmp_path / "aus.dxf", rz_sl_farbtrennung=False)
-    doc2 = ezdxf.readfile(str(tmp_path / "aus.dxf"))
-    lay2 = {e.dxf.layer for e in doc2.modelspace().query("INSERT")
-            if e.has_xdata("NOTBELEUCHTUNG")}
-    assert lay2 == {library.SAFETY_LAYER}
+    assert lay == {library.SAFETY_LAYER}
+    gruen = doc.layers.get(library.SAFETY_LAYER)
+    assert gruen.dxf.hasattr("true_color")
 
 
 def test_fluchtweg_pfeile_zeigen_zum_ziel():
@@ -466,8 +457,9 @@ def test_anlagen_symbol_nur_bei_lb_system_typ(ohne_blatt):
         ohne = render_dxf(plz, raum, Path(tmp) / "b.dxf", None)
     assert mit["anlage_drawn"] is True and ohne["anlage_drawn"] is False
     # Die ANLAGE steht im Technikraum (−50000..−45000) — Blatt-Legende liegt außerhalb.
+    anlagen_block = library.load_mapping()["gruppenbatterie_anlage"]["block_name"]
     syms = [e for e in doc.modelspace().query("INSERT")
-            if e.dxf.name == "gruppenbatterie" and -51000 < e.dxf.insert.x < -44000]
+            if e.dxf.name == anlagen_block and -51000 < e.dxf.insert.x < -44000]
     assert len(syms) == 1
     texte = " ".join(m.text for m in doc.modelspace().query("MTEXT"))
     assert "SV-Anlage 1" in texte and "UG Zählerraum" in texte

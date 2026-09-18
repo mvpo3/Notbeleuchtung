@@ -35,7 +35,7 @@ N = [
     ("pipe",     "pipeline.run()\nOrchestrierung",                               "haupt",  (6.3, 4.15)),
     ("contracts","contracts/  (3-Owner-Naht)\nRaumModell · NormRegelwerk\nLBVorgabe · PlatzierungsErgebnis", "haupt", (9.6, 5.1)),
     ("valid",    "validierung.py — pruefe()\nNorm-/LB-/Plausi-Regeln\nRedundanz · Umschaltzeit · 8b/8c/10b", "haupt", (13.2, 5.35)),
-    ("symbols",  "symbols/ library + inserter\nNotbeleuchtungssymbole.dxf",      "haupt",  (13.2, 3.0)),
+    ("symbols",  "symbols/ library + inserter\nNotbeleuchtungssymbole_neu+.dxf", "haupt",  (13.2, 3.0)),
     ("render",   "render/dxf_renderer.py\nDIN_SIBEL · NODEID + Stromkreisnr.\nBelegungsliste · Stückliste · Prüfbericht", "haupt", (16.2, 4.3)),
     ("pdf",      "render/pdf_export.py",                                         "haupt",  (16.2, 2.9)),
     ("place",    "NotlichtPlatzierer.place()",                                   "leonis", (9.6, 1.75)),

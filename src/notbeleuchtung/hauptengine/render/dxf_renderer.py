@@ -795,21 +795,20 @@ def _draw_anlage(msp, raum: RaumModell, lb: LBVorgabe | None) -> bool:
     nx_, ny_ = -wy, wx
     if (zx - mx) * nx_ + (zy - my) * ny_ < 0:      # Normale zeigt in den Raum
         nx_, ny_ = -nx_, -ny_
-    tiefe = 4.46 / 2.0 * inserter.DE_GLOBAL_SCALE  # halbe Block-Tiefe (825/2 mm)
-    cx, cy = mx + nx_ * (tiefe + 60.0), my + ny_ * (tiefe + 60.0)
-    rotation = math.degrees(math.atan2(wy, wx)) % 180.0
     eintrag = library.load_mapping().get("gruppenbatterie_anlage")
     if eintrag is None:
         return False
+    # Migration Phase A: Skala + Block-Tiefe aus der Registry (Gruppenbatterie-
+    # Verteiler, nativ 17,04×9,27 units, scale_abs aus den Owner-Erklärungsplänen)
+    # statt hartkodierter Maße des alten Blocks. Der neue Block füllt ByLayer —
+    # kein Farb-Umschreiben mehr (Erscheinungsbild ist Wahrheit).
+    anlagen_scale = float(eintrag.get("scale_abs", inserter.DE_GLOBAL_SCALE))
+    tiefe = 9.267 / 2.0 * anlagen_scale  # halbe Block-Tiefe in mm
+    cx, cy = mx + nx_ * (tiefe + 60.0), my + ny_ * (tiefe + 60.0)
+    rotation = math.degrees(math.atan2(wy, wx)) % 180.0
     library.import_block(msp.doc, eintrag["block_name"])
-    # Owner-Korrektur Farbe: die grüne Schraffur-Hälfte des Blocks geht beim
-    # Skalieren optisch verloren → auf SOLID + BYLAYER stellen, Insert auf das
-    # Notlicht-Layer (erbt das Schrack-Grün) — passt zu unseren Symbolen.
-    for e in msp.doc.blocks[eintrag["block_name"]]:
-        if e.dxftype() == "HATCH" and e.dxf.color == 3:
-            e.set_solid_fill(color=256)
     msp.add_blockref(eintrag["block_name"], (cx, cy), dxfattribs={
-        "xscale": inserter.DE_GLOBAL_SCALE, "yscale": inserter.DE_GLOBAL_SCALE,
+        "xscale": anlagen_scale, "yscale": anlagen_scale,
         "rotation": rotation,
         "layer": LAYER_NOTBELEUCHTUNG,
     })
@@ -1185,17 +1184,19 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None,
     # „gruppenbatterie" (Substring), „spot" vor „aufheller" (Zeilentext
     # „Spot-Aufheller" enthält beides).
     from ezdxf import bbox as _ezbbox
+    # Migration Phase A (2026-09-18): Blöcke der neuen Owner-Bibliothek — die
+    # Zeilen entsprechen der Legende der neuen Planvorlage. „beidseitig" ist wie
+    # in der Owner-Vorlage aus 2× left komponiert (eine Instanz gespiegelt).
     _LEGENDE_BLOCKS = {
-        "pfeil nach unten": ["notbeleuchtung- richtungspfeil nach unten"],
-        "pfeil nach links": ["notbeleuchtung-richtungspfeil nach links"],
-        "pfeil nach rechts": ["notbeleuchtung-richtungspfeil nach rechts"],
-        "spot": ["spot notbeleuchtung"],
-        "aufheller": ["aufheller notbeleuchtung"],
-        "antipanikleuchte": ["notbeleuchtung- antipanikleuchte"],
-        "beidseitig": ["notbeleuchtung-richtungspfeil nach links",
-                        "notbeleuchtung-richtungspfeil nach rechts"],
-        "gruppenbatterie-verteiler": ["gruppenbatterie-verteiler"],
-        "gruppenbatterie": ["gruppenbatterie"],
+        "pfeil nach unten": ["RIVO-SIBEL-ARR-down"],
+        "pfeil nach links": ["RIVO-SIBEL-ARR-left"],
+        "pfeil nach rechts": ["RIVO-RZ-ARR_right"],
+        "spot": ["Spot Notbeleuchtung"],
+        "aufheller": ["Aufheller Notbeleuchtung"],
+        "antipanikleuchte": ["Antipanikleuchte-RIVO"],
+        "beidseitig": ["RIVO-SIBEL-ARR-left", "RIVO-RZ-ARR_right"],
+        "gruppenbatterie-verteiler": ["Gruppenbatterie-Verteiler"],
+        "gruppenbatterie": ["Gruppenbatterie-Verteiler"],
     }
     for text, (tx, ty) in legenden_texte.items():
         low = text.lower()
@@ -1335,7 +1336,6 @@ def render_dxf(
     unterlage_dxf: str | None = None,
     template_path: Path | str | None = None,
     pdf_quelle_path: Path | str | None = None,
-    rz_sl_farbtrennung: bool = True,
 ) -> dict:
     """Notbeleuchtungs-DXF schreiben; Summary-Superset des Pipeline-Stubs.
 
@@ -1386,20 +1386,15 @@ def render_dxf(
         n_raeume_drawn = _draw_raeume(msp, raum)
         n_tueren_drawn = _draw_tueren(msp, raum)
     n_segmente = _draw_segmente(msp, raum)
-    # din-Farbtrennung: Rettungszeichen grün (SAFETY_LAYER), reine Sicherheits-/Antipanik-
-    # leuchten auf den gelben Zwilling (Aus → alles grün, Owner #102). Symbole + Stromkreis-
-    # Labels werden VOR dem Blatt gezeichnet, damit der Blatt-Fit (`_baue_blatt_layout`) ihre
-    # echten, asymmetrischen Block-Extents fasst — sonst ragt ein Randsymbol (Ausgang) aus
-    # dem Planfenster (Owner-Anforderung 2026-09-10).
-    _SL_KINDS = ("sicherheitsleuchte", "antipanik")
+    # Migration Phase A (Owner 2026-09-18): ALLE Notbeleuchtungs-Symbole liegen auf
+    # dem EINEN Notbeleuchtungs-Layer der Planvorlage (din_SIBEL_10_emergency_lighting)
+    # — der frühere gelbe SL-Zwilling war ein erfundener Layer; die neuen Blöcke
+    # tragen ihre Farben selbst. Symbole + Stromkreis-Labels werden VOR dem Blatt
+    # gezeichnet, damit der Blatt-Fit (`_baue_blatt_layout`) ihre echten,
+    # asymmetrischen Block-Extents fasst (Owner-Anforderung 2026-09-10).
     by_kind: dict[str, int] = {}
     for p in platzierung.platzierungen:
-        lyr = (
-            library.SAFETY_LAYER_SL
-            if rz_sl_farbtrennung and p.kind in _SL_KINDS
-            else library.SAFETY_LAYER
-        )
-        inserter.insert_platzierung(doc, p, layer=lyr)
+        inserter.insert_platzierung(doc, p, layer=library.SAFETY_LAYER)
         by_kind[p.kind] = by_kind.get(p.kind, 0) + 1
     nodeids_drawn, stromkreisnummern_drawn = _draw_nodeid_labels(msp, platzierung)
     # Template-Modus: KEIN Modelspace-Blatt (#115-Pfad) — Layout1 IST das Blatt.
@@ -1461,7 +1456,7 @@ def render_dxf(
         render_dxf(
             platzierung, raum, pdf_quelle_path, lb, pruefung=pruefung,
             plankopf=plankopf, photometrie=photometrie, unterlage_dxf=unterlage_dxf,
-            template_path=None, rz_sl_farbtrennung=rz_sl_farbtrennung,
+            template_path=None,
         )
         pdf_quelle = str(pdf_quelle_path)
 
@@ -1492,9 +1487,10 @@ def render_dxf(
         "vorlage_legende_gefuellt": vorlage_legende_gefuellt,
         "blatt_layout_drawn": blatt_drawn,
         "blatt_bbox": list(blatt_bbox) if blatt_bbox else None,
+        # Migration Phase A: ein einziger Notbeleuchtungs-Layer (Vorlagen-Layer);
+        # layer_sl bleibt als Summary-Key erhalten und zeigt auf denselben Layer.
         "layer": LAYER_NOTBELEUCHTUNG,
-        "layer_sl": library.SAFETY_LAYER_SL if rz_sl_farbtrennung else LAYER_NOTBELEUCHTUNG,
-        "rz_sl_farbtrennung": rz_sl_farbtrennung,
+        "layer_sl": LAYER_NOTBELEUCHTUNG,
         # Slice 3.4 (Template-Modus): dict-Erweiterung, kein Contract.
         **(layout_summary or {}),
     }

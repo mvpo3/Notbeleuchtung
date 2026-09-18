@@ -1,103 +1,107 @@
-# Symbol-Mapping — catalog_key → Block in CAD_Symbole/Notbeleuchtungssymbole.dxf
+# Symbol-Registry — catalog_key → Block in CAD_Symbole/Notbeleuchtungssymbole_neu+.dxf
 #
-# Owner-Entscheidung 2026-09-05: kanonische Library = der kuratierte Notbeleuchtungs-
-# Extrakt (5 Blöcke + Legende) — NUR diese Symbole. E-Symbole.dxf = Herkunfts-Referenz.
+# Migration Phase A (Owner 2026-09-18): die neue Owner-Bibliothek ist die EINZIGE
+# Symbolquelle. Diese Datei ist die zentrale Registry (Typ → Blockname → Skala);
+# die lokalen Pfeilvektoren/Basisorientierungen je Block liegen im Schwester-Modul
+# symbols/orientation.py (_BLOCK_BASE_DEG, gemessen) — zusammen bilden beide die
+# EINE Symbolzuordnung. Dokumentation: docs/SYMBOL_MIGRATION_2026-09-18.md.
 #
-# Kuratierte Notbeleuchtungs-Teilmenge (portiert aus elektro-planer
-# backend/symbols/schrack_symbol_mapping.yaml, siehe docs/PORT_LOG.md). NUR die
-# Notbeleuchtungs-Keys, die die Engine vergibt — nicht der volle 109-Block-Katalog.
-#
-# Kurations-Regel: nur Blocks mit „in-band"-Extents (max. Kantenlänge < 50 units)
-# aufnehmen — die Lib enthält korrupte/inkonsistent skalierte Blocks. Bekannt:
-#   • „richtungspfeil nach rechts" war korrupt (Extents 2606×2300); als sauberer
-#     X-Spiegel von „nach links" neu aufgebaut (3.13×1.57), jetzt direkt nutzbar.
-#   • „…SV_RETTUNGSZEICHEN" ist ein Legenden-Block (861×4945, 30 ATTDEF), KEIN
-#     platzierbares Punktsymbol.
-# Der Guard-Test tests/render/test_symbols_library.py erzwingt die In-Band-Regel.
+# Skalen-Kalibrierung: `scale_abs` je Block aus den Owner-Erklärungsplänen
+# (knowledge/Pläne zeichnen Wissen/Mollgasse-Notbeleuchtungserklärung/) gemessen —
+# dominante INSERT-Skala × native Blockbreite = Owner-Zielgröße in mm:
+#   RZ-Schilder ≈ 636 mm breit (down/left nativ 17,665 → ×36; right nativ 463,626 → ×1,372)
+#   Antipanik   ≈ 539 mm breit (nativ 11,726 → ×46)
+#   Aufheller   ≈  97 mm Ø     (nativ 1,849 → ×52,5)
+#   Spot        ≈  97 mm Ø     (nativ 1,780 → ×54,4)
+#   SV-Anlage   ≈ 430 mm breit (nativ 17,038 → ×25,25)
 #
 # Pflichtfelder je Eintrag: block_name, label, category
-# Optional: mirror_x (Horizontal-Spiegelung des Blocks), scale, notes
+# Optional: mirror_x (Horizontal-Spiegelung des Blocks), scale, scale_abs, notes
 #
 # Naht-Invariante (tests/contract): jede Platzierung.catalog_key muss ein Key
 # hier sein (Leonis ↔ Hauptengine/Render).
 
 # ── Notlicht / Rettungszeichen ────────────────────────────────
-# Richtungspfeil-Block. 'nach unten' (3.13 units, in-band) ist kanonisch; die
-# anderen Pfeil-Blöcke der Lib sind intern inkonsistent skaliert. Richtungswahl
-# = Rotation/mirror_x setzt der Platzierer je Fluchtweg-Geometrie.
+# RIVO-RZ-Schild „Pfeil nach unten" (grünes Schild, schwarzes Piktogramm,
+# Tür links / Pfeil mitte / Läufer rechts). Richtungswahl = Rotation setzt der
+# Platzierer je Fluchtweg-Geometrie (orientation.transformation).
 notlicht_ks_stiege:
-  block_name: "notbeleuchtung- richtungspfeil nach unten"
+  block_name: "RIVO-SIBEL-ARR-down"
   label: "Notlicht KS (Stiege/Gänge)"
   category: notlicht
+  scale_abs: 36.0
 
 # Down-Rettungszeichen (Pfeil „nach unten" = Ausgang erreicht / Treppe abwärts).
-# Eigener Notbeleuchtungs-Key (im elektro-planer-Mapping nicht vorhanden — dort
-# über GT-Subtype 'RZ UNTEN' auf notlicht_ks_stiege gemappt); hier explizit, weil
-# der generative Platzierer die Variante am Ausgangs-Segment selbst wählt.
 notlicht_ks_stiege_unten:
-  block_name: "notbeleuchtung- richtungspfeil nach unten"
+  block_name: "RIVO-SIBEL-ARR-down"
   label: "Notlicht KS Rettungszeichen unten (Ausgang)"
   category: notlicht
+  scale_abs: 36.0
 
-# Richtungs-Varianten — je ein eigener, sauberer Pfeil-Block (3.13×1.57 units).
-# 'nach rechts' als X-Spiegel von 'nach links' neu aufgebaut (war korrupt).
+# Richtungs-Varianten — eigene Blöcke der Owner-Bibliothek. `left` klein-nativ
+# (17,7 units), `right` groß-nativ (463,6 units) — scale_abs gleicht auf
+# dieselbe Weltbreite (~636 mm) ab, wie in den Owner-Erklärungsplänen.
 notlicht_ks_stiege_links:
-  block_name: "notbeleuchtung-richtungspfeil nach links"
+  block_name: "RIVO-SIBEL-ARR-left"
   label: "Notlicht KS Rettungszeichen links"
   category: notlicht
+  scale_abs: 36.0
 
 notlicht_ks_stiege_rechts:
-  block_name: "notbeleuchtung-richtungspfeil nach rechts"
+  block_name: "RIVO-RZ-ARR_right"
   label: "Notlicht KS Rettungszeichen rechts"
   category: notlicht
+  scale_abs: 1.372
 
 # Notlicht Garage/Nebenräume (Antipanik-nahe Sonderfälle).
 notlicht_kw_garage:
-  block_name: "notbeleuchtung- richtungspfeil nach unten"
+  block_name: "RIVO-SIBEL-ARR-down"
   label: "Notlicht KW (Garage/Nebenräume)"
   category: notlicht
+  scale_abs: 36.0
 
 # ── Sicherheitsleuchte ────────────────────────────────
-# Aufheller-Sicherheitsleuchte — KLEINE Variante (Owner-Feedback 2026-09-05: Aufheller
-# sind in der Praxis klein). Verschachtelter Block (alter 4.7er-Kreis @ Scale 0.394),
-# Extents 1.85×1.85 units = in-band.
+# Aufheller — voll blau gefüllter Kreis mit grünem Rand (Owner-Farbe bleibt:
+# die Library-Farben werden seit der Migration NICHT mehr umgeschrieben).
 sicherheitsleuchte_aufheller:
-  block_name: "aufheller notbeleuchtung"
+  block_name: "Aufheller Notbeleuchtung"
   label: "Sicherheitsleuchte (Aufheller)"
   category: sicherheitsleuchte
+  scale_abs: 52.5
 
-# Spot-Darstellung (din-Profi-Vorbild STANDARD_SPOT/Standardblock_Spot — 40× im
-# Referenzplan die HÄUFIGSTE SL-Darstellung; Produkte STRING 2 eco/power spot):
-# Kreis Ø330 mit Diagonal-X + zwei gefüllten Sektoren, din-geometrietreu in
-# Library-Skala nachgebaut (2026-09-06, 1.78 units = in-band). Rolle bleibt SL —
-# den Key vergibt erst die künftige Produktwahl-Logik (LB → Produkt → Symbol);
-# Render/Stückliste können ihn ab sofort.
+# Spot-Darstellung (din-Profi-Vorbild STANDARD_SPOT): Kreis mit Diagonal-X +
+# zwei gefüllten Sektoren. Rolle bleibt SL — den Key vergibt erst die künftige
+# Produktwahl-Logik (LB → Produkt → Symbol).
 sicherheitsleuchte_spot:
-  block_name: "spot notbeleuchtung"
+  block_name: "Spot Notbeleuchtung"
   label: "Sicherheitsleuchte (Spot)"
   category: sicherheitsleuchte
+  scale_abs: 54.4
 
 # ── Antipanik ─────────────────────────────────────────
-# Zweckgebautes Antipanik-Piktogramm (44 LWPOLYLINE), Extents 5.64×1.59 units = in-band.
+# RIVO-Antipanik: grün umrandeter, gefüllter Balken (Füllung ByLayer).
 antipanik_leuchte:
-  block_name: "notbeleuchtung- antipanikleuchte"
+  block_name: "Antipanikleuchte-RIVO"
   label: "Antipanik-Leuchte"
   category: antipanik
+  scale_abs: 46.0
 
 # ── Anlage / Versorgung ───────────────────────────────
-# Gruppenbatterie-Anlage (din SU-Klasse, Profi-Plan STANDARD_SYSTEM). Halb grün
-# schraffiertes Rechteck, 8.19x4.46 units = in-band. Wird NICHT als Leuchten-
-# Platzierung gesetzt (kind-Literal bleibt unberührt) — der Render zeichnet sie,
-# wenn die LB einen system_typ deklariert (LB-explizit).
+# SV-Anlage: Gruppenbatterie-Verteiler-Block der Owner-Bibliothek (Rechteck mit
+# Diagonale, beide Hälften gefüllt) — der Block der neuen Vorlagen-Legende.
+# Wird NICHT als Leuchten-Platzierung gesetzt; der Render zeichnet ihn, wenn
+# die LB einen system_typ deklariert (LB-explizit).
 gruppenbatterie_anlage:
-  block_name: "gruppenbatterie"
-  label: "SV-Anlage (Gruppenbatterie)"
+  block_name: "Gruppenbatterie-Verteiler"
+  label: "SV-Anlage (Gruppenbatterie-Verteiler)"
   category: anlage
+  scale_abs: 25.25
 
 # Plan-Vorlage (Owner 2026-09-05): kompletter Legenden-Rahmen (Beleuchtung /
 # Notbeleuchtung / Erdung / Verteiler / BMA / Kommunikation / Abkürzungen).
-# Kein Punktsymbol — wird vom Render als Ganzes rechts an den Plan gesetzt.
+# Kein Punktsymbol — wird vom Render als Ganzes rechts an den Plan gesetzt
+# (Fallback-Modus ohne Blatt; das Blatt selbst kommt aus der Planvorlage).
 vorlage_legende:
-  block_name: "vorlage_legende"
+  block_name: "Vorlage_Legende"
   label: "Plan-Vorlage (Legenden-Rahmen)"
   category: vorlage

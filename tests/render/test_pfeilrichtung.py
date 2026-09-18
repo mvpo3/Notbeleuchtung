@@ -7,7 +7,6 @@ Befund 3: „oben" im Fallback rendete als „rechts" (Achsen-Frame 90° statt
 unten-Basis-Frame 180°).
 """
 import json
-import math
 from pathlib import Path
 
 import ezdxf
@@ -69,44 +68,32 @@ def test_fallback_spiegelt_nie():
         assert mirror_x is False
 
 
-def _block_punkte(doc, name: str) -> list[tuple[float, float]]:
-    pts: list[tuple[float, float]] = []
-    for e in doc.blocks[name]:
-        if e.dxftype() == "LWPOLYLINE":
-            pts += [(p[0], p[1]) for p in e.get_points("xy")]
-        elif e.dxftype() == "LINE":
-            pts += [(e.dxf.start.x, e.dxf.start.y), (e.dxf.end.x, e.dxf.end.y)]
-    return pts
-
-
-def test_links_block_ist_x_spiegel_des_rechts_blocks():
-    """Library-Zusicherung (PORT_LOG): 'nach rechts' = echter X-Spiegel von 'nach links'."""
+def test_links_und_rechts_gleiche_weltgroesse():
+    """Migration Phase A: 'left' ist klein-nativ (17,7 units), 'right' groß-nativ
+    (463,6 units) — die Registry-scale_abs gleicht beide auf dieselbe Weltbreite
+    (~636 mm, Owner-Erklärungspläne) ab. Ein Kalibrier-Fehler fiele hier auf."""
+    import ezdxf.bbox as ezbbox
     doc = ezdxf.new("R2018")
-    links = load_symbol_mapping()["notlicht_ks_stiege_links"]["block_name"]
-    rechts = load_symbol_mapping()["notlicht_ks_stiege_rechts"]["block_name"]
-    library.import_block(doc, links)
-    library.import_block(doc, rechts)
-    p_links = _block_punkte(doc, links)
-    p_rechts = [(-x, y) for x, y in _block_punkte(doc, rechts)]
-    assert p_links and p_rechts
-    # Symmetrischer Nächster-Punkt-Abstand (Blöcke sind origin-zentriert normalisiert).
-    def max_min_abstand(a, b):
-        return max(min(math.hypot(ax - bx, ay - by) for bx, by in b) for ax, ay in a)
-    tol = 0.05  # Library-units (Blockgröße 3.13)
-    assert max_min_abstand(p_links, p_rechts) < tol
-    assert max_min_abstand(p_rechts, p_links) < tol
+    mapping = library.load_mapping()
+    welt = {}
+    for key in ("notlicht_ks_stiege_links", "notlicht_ks_stiege_rechts"):
+        entry = mapping[key]
+        library.import_block(doc, entry["block_name"])
+        ext = ezbbox.extents(doc.blocks[entry["block_name"]], fast=False)
+        welt[key] = ext.size.x * float(entry["scale_abs"])
+    l, r = welt["notlicht_ks_stiege_links"], welt["notlicht_ks_stiege_rechts"]
+    assert abs(l - r) / max(l, r) < 0.02, welt
 
 
-def test_mapping_nutzt_nur_eine_unten_schreibweise():
-    """Duplikat-Guard (Befund 2, historisch): eine kanonische 'nach unten'-Schreibweise."""
+def test_mapping_nutzt_nur_eine_down_schreibweise():
+    """Duplikat-Guard: die Library führt 'RIVO-SIBEL-ARR-down' (Bindestrich,
+    klein-nativ) UND 'RIVO-SIBEL-ARR_down' (Unterstrich, groß-nativ) — die
+    Registry darf nur EINE kanonische Schreibweise nutzen."""
     unten_bloecke = {
         e["block_name"] for e in load_symbol_mapping().values()
-        if "nach unten" in e["block_name"]
+        if e["block_name"].lower().replace("_", "-").endswith("-down")
     }
-    assert unten_bloecke == {"notbeleuchtung- richtungspfeil nach unten"}
-    lib_namen = [n for n in library.load_library().blocks.block_names()
-                 if n.strip().lower().endswith("richtungspfeil nach unten")]
-    assert len(lib_namen) == 1, f"Duplikat-Blöcke in der Library: {lib_namen}"
+    assert unten_bloecke == {"RIVO-SIBEL-ARR-down"}
 
 
 def _vertikaler_gang(ausgang_y: float) -> RaumModell:
