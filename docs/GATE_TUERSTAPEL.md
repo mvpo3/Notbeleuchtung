@@ -261,3 +261,66 @@ der Toleranz). Vier freie Teile im Ausschnitt, keiner verbindet beide Bäder →
   ersetzt.
 - Die Referenz ist Fachreferenz, kein freigegebener Prüfkorpus; nichts davon liegt im
   Repository (nur Hashes, IDs, Prüfarten und Handles der ohnehin getrackten DXF).
+
+---
+
+## 6. Offene Punkte aus S5b (Stand 2026-09-19, Branch `selman/fix-s5b-querung`)
+
+S5b (Diagnose U13) gibt `durchgaenge_ohne_tuerblatt` ein Querungsprädikat: ein freier
+Streifen ist nur dann ein Durchgang, wenn er **beide** Raumseiten erreicht; die Breite wird
+entlang der gemeinsamen Grenze gemessen statt als Rechtecklänge des Streifens. Zwei Punkte
+gehören damit vor den Merge auf den Tisch.
+
+### 6a. Kontaktgrenze — Abweichung vom wörtlichen 1-mm-Kriterium
+
+Das Owner-Kriterium lautet wörtlich „Kontakt beider Räume innerhalb 1 mm". Gebaut ist
+`tuer_zuordnung._kontakt_grenze(abstand) = max(0, abstand − 250) + 1,0`.
+
+Grund: die Kontaktzone ist `pa.buffer(250) ∩ pb.buffer(250)`. Bei Raumabstand *d* > 250 mm
+liegt sie als Band **in der Wandmitte** und hat zu beiden Räumen den Abstand *d* − 250.
+Gemessen auf der Quellpräzision: `zone.distance(pa) = zone.distance(pb)` = 0 mm bei
+*d* = 100, 50 mm bei *d* = 300, 200 mm bei *d* = 450. Ein fester 1-mm-Wert ist damit ab
+*d* > 251 mm nie erfüllbar und löscht jede Öffnung in einer dickeren Wand — am Rennweg OG1
+die geforderten Übergänge O01/O02 (VORRAUM 10,94 ↔ Wohnküche 73,06 m², *d* = 450 mm) und
+T08 (ZIMMER 10,59 ↔ BALKON 7,51 m², *d* = 400 mm) sowie drei Unit-Tests an einer
+400-mm-Wand.
+
+Bis *d* = 250 mm gilt das Kriterium also wörtlich (1 mm), darüber lautet es „der Streifen
+durchspannt das Band ganz" — dieselbe Aussage „die Querung führt nicht durch Wandkörper".
+Die Zone bleibt unverändert bei `buffer(250)`; die Schlitz-/Asymmetrie-Varianten der
+Diagnose sind **nicht** gebaut. **Offen (Owner):** so übernehmen — oder das wörtliche
+1-mm-Prädikat über eine abstandsabhängige Zone (`pa.buffer(d + eps) ∩ pb.buffer(d + eps)`,
+Schlitz-Variante) erzwingen; dann sind O01/O02, T08 und die drei 400-mm-Unit-Tests neu zu
+prüfen.
+
+Den Nebeneffekt, den die Diagnose (`34b5dd0`, Cluster K5, Liste „Nicht übernehmen") dem
+absoluten Filter vorhält — er löscht den echten Wohnungseingang OG1 `durchgang_22`, dessen
+freier Teil je 100 mm von beiden Räumen liegt —, hat das Prädikat bei *d* ≤ 250 mm ebenso.
+Die Stelle bleibt trotzdem verbunden: seit S4a steht dort die Blocktür `tuer_3` (940 mm,
+STIEGENHAUS 11,21 ↔ VORRAUM 10,94), und ein Durchgang daneben wäre seit S4b Dublette. Genau
+dafür wird der Stapel nur gemeinsam gemessen und gemergt.
+
+### 6b. Bekannter Stapelrest — drei rote Familien-Soll-Tests
+
+Mit S5b fallen Durchgänge weg, die heute die **einzige** Modellvertretung einer echten Tür
+sind. Drei Tests in `tests/naht` sind dadurch rot (vorbestehend rot bleiben
+`test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell` und
+`test_soll_rennweg.py::test_soll_keine_leuchten_in_wohnung_privat`):
+
+| Test | Ist nach S5b | Ursache |
+|---|---|---|
+| `test_soll_barawitzka.py::test_soll_brandschutztuer` | 0 statt ≥ 1 | der EI30-Text hing an einem Durchgang; diese Tür hat keinen erkannten Block (U12/S4a-Rest) |
+| `test_soll_rennweg.py::test_soll_stair_exit_statt_final_exit` (OG3) | 0 stair_exit | OG3-Restflächen enden 860–1000 mm vor den Blocktüren → S3b |
+| `test_soll_rennweg.py::test_soll_tueren_mit_detail` (OG3) | 7 statt ≥ 11 | dieselbe Ursache; die Diagnose nennt „≥ 11 heute nur über Durchgänge grün" |
+
+Gleiche Ursache ohne eigenen Test: Räume, die auf **0 Verbindungen** fallen (gemessen über
+die 10 Prüfpläne) — Rennweg OG3 `rest_3` STIEGENHAUS 2,94 m² und `rest_6` 5,46 m²;
+Barawitzka EG sechs Räume (u. a. BAD 4,51 m², ABSTELLRAUM 1,98 m²); Mollgasse EG GANG
+19,46 m² und BAD 4,37 m²; Muthgasse E2 ZIMMER 1,17 m² und KÜCHE 2,55 m². Die übrigen sechs
+Rennweg-Geschosse verlieren keinen Raum ganz.
+
+**Offen (Planer/Owner) vor dem Merge:** entweder strict-xfail mit Stapelbegründung wie bei
+`test_soll_segmente_aus_graph`/`test_keine_anker_in_wohnung_privat` (Bedingung (6)) — dann
+müssen sie nach S7a/S3b auf XPASS drehen — oder bewusst rot als bekannter Stapelrest.
+Guard-Bänder werden in keinem Fall abgesenkt; der Branch `selman/fix-s5b-querung` setzt
+keine neuen Marker.
