@@ -26,12 +26,23 @@ kein Contract-Touch.** Sync davor: main `2f610cc` (Selman #158 geschoss.py etc. 
    regeln.md+regeln.yaml (NB-R00–R12, mm-genau belegt), beispiele.json,
    symbol_konvention.md, abgleich/<G>/ (38 Side-by-Sides), offene_fragen.md (26 Punkte).
    KEIN Pipeline-Code (Phase-B-Grenze); Integrations-Vorschläge in regeln.md.
-3. **OFFEN / RESUME:** (a) Owner-Antworten offene_fragen.md (bes. 4 PDF-Textfehler,
-   Tür-RZ-Versatz 150 vs. 735–930 mm, UG-DXF fehlt, NB-R06-Rotationskonvention vs.
-   heutige Engine). (b) Regel-Integration als eigene Slices NACH Owner-GO (Kandidaten
-   in regeln.md „Integration"; NB-R05/R06/R07 berühren D3-Runde). (c) D3/D5-Rest aus
-   der Fischamend-Runde (unten) besteht weiter — jetzt auf v2-PDFs MIT neuen Symbolen
-   neu rendern, bevor der Owner difft? (d) Selman-Prompt-Weitergabe unverändert offen.
+3. **PDF-Korrektur-Runde (2026-09-18 Abend):** Owner hat 2 von 4 Textfehlern gefixt
+   (2OG S.23 „links" ✓, 4OG S.38 „rechts" ✓ — DXF-gegengeprüft `890f1d5`). PDF-Feedback
+   gegeben (Darstellung Menschen/Pfeile/Sichtlinien = sehr gut, beibehalten); Owner
+   fixt den Rest selbst.
+
+4. **OWNER-TODO PDF/DXF — BEIM NÄCHSTEN SESSIONSTART ERINNERN + danach re-checken:**
+   - [ ] PDF S.10: Labels „(D)"/„(E)" → **(G)/(H)** (rechtes EG-STGH; DXF trägt (G) `20D5C` / (H) `20DA2`) + Screenshot erneuern (zeigt alten Label-Stand).
+   - [ ] PDF S.19: „türkise Linie zur Notleuchte (A)" → die Top-2+3-Linie führt zu **(B)** (DXF `95621`, Endpunkt 197 mm vor (B)).
+   - [ ] 2OG-DXF S.20-Beispiel: Läufer-Trio `852C7`/`852C8`/`8531B` blickt Ost statt West → Rotation fixen.
+   - [ ] Arbeits-/Kopier-Reste außerhalb der Grundrisse löschen: EG `2137C` (Duplikat), 1OG `9568D`, 3OG-Fragment A1 (`78D6A/78D6C/78D6D`), 4OG `41221`, DG `206D6`/`206DB`.
+   - [ ] **UG-Kapitel + 1.UG/2.UG-Erklärungs-DXFs liefern** (inkl. Kellerabteil-Gang) → dann Abgleich-Strecke erneut fahren, Regelbasis erweitern.
+   - [ ] Owner-Antworten offene_fragen.md: Tür-RZ-Versatz (Engine 150 vs. gemessen 735–930 mm), RZ-Zweitgröße 446 mm (wann?), AP-Skalen 296/539/630, unerklärte Leuchten (`202CC`+`2137C`, `2072F`, `8532F`, `78DFD`-Szene), FREIHEIT/KEINE-FREIHEIT-Bedeutung, down-RZ-Rotationsregel (Welt-Pfeil entgegen Laufrichtung) als expliziten Satz in die PDF.
+
+5. **OFFEN / RESUME (Engine):** (a) Regel-Integration als eigene Slices NACH
+   Owner-GO (Kandidaten in regeln.md „Integration"; NB-R05/R06/R07 berühren die
+   D3-Runde). (b) D3/D5-Rest aus der Fischamend-Runde (unten) — v2 ggf. mit neuen
+   Symbolen re-rendern, bevor der Owner difft. (c) Selman-Prompt-Weitergabe offen.
 
 ---
 
