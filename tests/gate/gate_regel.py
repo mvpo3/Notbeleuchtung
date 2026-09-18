@@ -1,4 +1,8 @@
-"""Die Gate-Regel des Türstapels S4a → S4b → S5b → S5c als eine Funktion.
+"""Die Gate-Regel des Türstapels S4a → S4b → S5b → S7a → S3b → S5c als eine Funktion.
+
+Der Stapel lautet seit dem Owner-Entscheid vom 2026-09-18 S4a → S4b → S5b →
+S7a → S3b → S5c und wird nur GEMEINSAM gemergt: jede Scheibe allein verschiebt
+Zahlen, die eine spätere wieder einfängt. (5) und (6) bleiben Merge-Pflicht.
 
 ``pruefe_gate(vorher, nachher)`` vergleicht zwei Messungen im Format von
 ``gate_messung.messung`` und gibt die Verstöße im Klartext zurück — leere Liste
@@ -46,6 +50,17 @@ Die Bedingungen (Owner-Vorgabe, § 3 des Gate-Auftrags; (0) ist die Vorbedingung
       nicht davon abhängt, ob jemand den Marker rechtzeitig entfernt. Gemessen
       wird nur der NACHHER-Stand: die Aussage ist absolut, kein Vergleich. Fehlt
       der Abschnitt ``og3``, ist das ein Verstoß und kein stilles Bestehen.
+  (7) OG1: keine der von der Referenz VERNEINTEN Verbindungen besteht —
+      ``anzahl == 0`` für jeden Eintrag aus ``gate_referenz.VERNEINT``, die mit
+      ``zusatz`` markierten Nachbarschaften eingeschlossen (sie sind heute
+      schon 0 und stehen als Schutz gegen einen Rückschritt). Ein nicht
+      auflösbarer Raum (``anzahl`` None) ist ein Verstoß, kein Freispruch.
+  (8) OG1: jeder von der Referenz GEFORDERTE offene Übergang besteht —
+      ``anzahl >= 1`` für jeden Eintrag aus ``gate_referenz.GEFORDERT``. Das ist
+      eine Ergänzung des Planers zu (7): S5b soll die verneinten Verbindungen
+      schließen, ohne die geforderten Übergänge mitzunehmen. Auch hier ist
+      ``anzahl`` None ein Verstoß.
+      (7) und (8) messen nur den NACHHER-Stand — beide Aussagen sind absolut.
 """
 from __future__ import annotations
 
@@ -177,10 +192,55 @@ def _pruefe_og3(nachher: dict) -> list[str]:
     return verstoesse
 
 
+def _paar(eintrag: dict) -> str:
+    """»BAD 11.76 m² ↔ BAD 4.66 m²« — Typ und Fläche, wie die Referenz sie nennt."""
+    def raum(seite: str) -> str:
+        r = eintrag.get(seite) or {}
+        return f"{r.get('raum_typ') or '(ohne Typ)'} {r.get('flaeche_m2')} m²"
+    return f"{raum('raum_a')} ↔ {raum('raum_b')}"
+
+
+def _pruefe_referenz(nachher: dict) -> list[str]:
+    """(7) verneinte Verbindungen sind 0, (8) geforderte Übergänge sind ≥ 1."""
+    referenz = nachher.get("referenz") or {}
+    verstoesse = []
+    verneint = referenz.get("verneint")
+    if not verneint:
+        verstoesse.append(
+            "(7) verneinte Verbindungen nicht gemessen — Abschnitt »referenz.verneint« fehlt")
+    else:
+        for e in verneint:
+            anzahl = e.get("anzahl")
+            if anzahl is None:
+                verstoesse.append(
+                    f"(7) verneinte Verbindung nicht messbar ({e.get('referenz')}): "
+                    f"{_paar(e)} — {e.get('grund') or 'ohne Grund'}")
+            elif anzahl != 0:
+                verstoesse.append(
+                    f"(7) verneinte Verbindung besteht ({e.get('referenz')}): "
+                    f"{_paar(e)} — {anzahl} Tür(en) {e.get('ids')}")
+    gefordert = referenz.get("gefordert")
+    if not gefordert:
+        verstoesse.append(
+            "(8) geforderte Übergänge nicht gemessen — Abschnitt »referenz.gefordert« fehlt")
+    else:
+        for e in gefordert:
+            anzahl = e.get("anzahl")
+            if anzahl is None:
+                verstoesse.append(
+                    f"(8) geforderter Übergang nicht messbar ({e.get('referenz')}): "
+                    f"{_paar(e)} — {e.get('grund') or 'ohne Grund'}")
+            elif anzahl < 1:
+                verstoesse.append(
+                    f"(8) geforderter Übergang fehlt ({e.get('referenz')}): {_paar(e)}")
+    return verstoesse
+
+
 def pruefe_gate(vorher: dict, nachher: dict) -> list[str]:
     """Verstöße gegen die Gate-Regel im Klartext; leere Liste = Gate erfüllt."""
     return (_pruefe_vergleichbarkeit(vorher, nachher)
             + _pruefe_m17(vorher, nachher)
             + _pruefe_m1_m4(vorher, nachher)
             + _pruefe_og1(vorher, nachher)
-            + _pruefe_og3(nachher))
+            + _pruefe_og3(nachher)
+            + _pruefe_referenz(nachher))
