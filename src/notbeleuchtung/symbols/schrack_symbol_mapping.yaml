@@ -6,14 +6,18 @@
 # symbols/orientation.py (_BLOCK_BASE_DEG, gemessen) — zusammen bilden beide die
 # EINE Symbolzuordnung. Dokumentation: docs/SYMBOL_MIGRATION_2026-09-18.md.
 #
-# Skalen-Kalibrierung: `scale_abs` je Block aus den Owner-Erklärungsplänen
-# (knowledge/Pläne zeichnen Wissen/Mollgasse-Notbeleuchtungserklärung/) gemessen —
-# dominante INSERT-Skala × native Blockbreite = Owner-Zielgröße in mm:
-#   RZ-Schilder ≈ 636 mm breit (down/left nativ 17,665 → ×36; right nativ 463,626 → ×1,372)
-#   Antipanik   ≈ 539 mm breit (nativ 11,726 → ×46)
-#   Aufheller   ≈  97 mm Ø     (nativ 1,849 → ×52,5)
-#   Spot        ≈  97 mm Ø     (nativ 1,780 → ×54,4)
-#   SV-Anlage   ≈ 430 mm breit (nativ 17,038 → ×25,25)
+# Skalen-Kalibrierung (Owner 2026-09-18 „vergrößern, gut erkennbar, passend zum
+# Plan"): Soll = Papier-Größe der Owner-Legende in der neuen Planvorlage
+# (Vorlagen-Legende/Notbeleuchtungspläne-Vorlage.dxf, Layout1) × Liefermaßstab 50.
+# Die Legenden-INSERTs sind in Papier-mm gezeichnet — gemessen:
+#   RZ-Schild  17,7 Papier-mm → 883 mm Welt (down/left nativ 17,665 → ×50;
+#              right nativ 463,626 → ×1,905)
+#   Antipanik  11,7 Papier-mm → 586 mm Welt (nativ 11,726 → ×50)
+#   Aufheller   3,8 Papier-mm → 192 mm Welt (nativ 1,849; Legende xs 2,079 → ×104)
+#   Spot        3,8 Papier-mm → 192 mm Welt (nativ 1,780; Legende xs 2,155 → ×107,8)
+#   SV-Anlage  17,0 Papier-mm → 852 mm Welt (nativ 17,038 → ×50)
+# (Vorher: Welt-Skalen der Erklärungs-DXFs, RZ 636/AP 539/Aufheller+Spot 97/
+# Anlage 430 — auf A0 1:50 waren Aufheller/Spot mit 2 Papier-mm unlesbar.)
 #
 # Pflichtfelder je Eintrag: block_name, label, category
 # Optional: mirror_x (Horizontal-Spiegelung des Blocks), scale, scale_abs, notes
@@ -29,36 +33,36 @@ notlicht_ks_stiege:
   block_name: "RIVO-SIBEL-ARR-down"
   label: "Notlicht KS (Stiege/Gänge)"
   category: notlicht
-  scale_abs: 36.0
+  scale_abs: 50.0
 
 # Down-Rettungszeichen (Pfeil „nach unten" = Ausgang erreicht / Treppe abwärts).
 notlicht_ks_stiege_unten:
   block_name: "RIVO-SIBEL-ARR-down"
   label: "Notlicht KS Rettungszeichen unten (Ausgang)"
   category: notlicht
-  scale_abs: 36.0
+  scale_abs: 50.0
 
 # Richtungs-Varianten — eigene Blöcke der Owner-Bibliothek. `left` klein-nativ
 # (17,7 units), `right` groß-nativ (463,6 units) — scale_abs gleicht auf
-# dieselbe Weltbreite (~636 mm) ab, wie in den Owner-Erklärungsplänen.
+# dieselbe Weltbreite (~883 mm = Legenden-Soll) ab.
 notlicht_ks_stiege_links:
   block_name: "RIVO-SIBEL-ARR-left"
   label: "Notlicht KS Rettungszeichen links"
   category: notlicht
-  scale_abs: 36.0
+  scale_abs: 50.0
 
 notlicht_ks_stiege_rechts:
   block_name: "RIVO-RZ-ARR_right"
   label: "Notlicht KS Rettungszeichen rechts"
   category: notlicht
-  scale_abs: 1.372
+  scale_abs: 1.905
 
 # Notlicht Garage/Nebenräume (Antipanik-nahe Sonderfälle).
 notlicht_kw_garage:
   block_name: "RIVO-SIBEL-ARR-down"
   label: "Notlicht KW (Garage/Nebenräume)"
   category: notlicht
-  scale_abs: 36.0
+  scale_abs: 50.0
 
 # ── Sicherheitsleuchte ────────────────────────────────
 # Aufheller — voll blau gefüllter Kreis mit grünem Rand (Owner-Farbe bleibt:
@@ -67,7 +71,7 @@ sicherheitsleuchte_aufheller:
   block_name: "Aufheller Notbeleuchtung"
   label: "Sicherheitsleuchte (Aufheller)"
   category: sicherheitsleuchte
-  scale_abs: 52.5
+  scale_abs: 104.0
 
 # Spot-Darstellung (din-Profi-Vorbild STANDARD_SPOT): Kreis mit Diagonal-X +
 # zwei gefüllten Sektoren. Rolle bleibt SL — den Key vergibt erst die künftige
@@ -76,7 +80,7 @@ sicherheitsleuchte_spot:
   block_name: "Spot Notbeleuchtung"
   label: "Sicherheitsleuchte (Spot)"
   category: sicherheitsleuchte
-  scale_abs: 54.4
+  scale_abs: 107.8
 
 # ── Antipanik ─────────────────────────────────────────
 # RIVO-Antipanik: grün umrandeter, gefüllter Balken (Füllung ByLayer).
@@ -84,7 +88,7 @@ antipanik_leuchte:
   block_name: "Antipanikleuchte-RIVO"
   label: "Antipanik-Leuchte"
   category: antipanik
-  scale_abs: 46.0
+  scale_abs: 50.0
 
 # ── Anlage / Versorgung ───────────────────────────────
 # SV-Anlage: Gruppenbatterie-Verteiler-Block der Owner-Bibliothek (Rechteck mit
@@ -95,7 +99,7 @@ gruppenbatterie_anlage:
   block_name: "Gruppenbatterie-Verteiler"
   label: "SV-Anlage (Gruppenbatterie-Verteiler)"
   category: anlage
-  scale_abs: 25.25
+  scale_abs: 50.0
 
 # Plan-Vorlage (Owner 2026-09-05): kompletter Legenden-Rahmen (Beleuchtung /
 # Notbeleuchtung / Erdung / Verteiler / BMA / Kommunikation / Abkürzungen).
