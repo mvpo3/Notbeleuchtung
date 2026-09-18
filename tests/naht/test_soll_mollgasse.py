@@ -1,23 +1,21 @@
 """Soll-Tests Mollgasse EG — teilweise schon erreicht, dann scharf.
 
-Ist-Prüfung 2026-09-07 (``ArchitekturRaumProvider().parse('Projekte/_eingang/
-Mollgasse_EG.dxf', 'EG')``): **2 STIEGENHAUS-Räume** + **2 LIFT-Räume**
+Ist-Prüfung 2026-09-07 (``ArchitekturRaumProvider().parse(<Projekte/Mollgasse/
+Erdgeschoß.dxf>, 'EG')``): **2 STIEGENHAUS-Räume** + **2 LIFT-Räume**
 (Fachteil 2: lift_erkennung, Blockname LIFT) → beide Soll-Tests scharf.
 Neu (Fachteil 2): Stiegenhaus-Modelle + Anker; kein Anker und keine Leuchte
 in Liftpolygonen (beide scharf — das Liftschacht-Ausstanzen nimmt der
 Platzierung die Fläche).
 """
-from pathlib import Path
-
 import pytest
 
-PLAN = Path("Projekte/_eingang/Mollgasse_EG.dxf")
+from plaene import MOLLGASSE_EG as PLAN
+from plaene import plan
 
 
 @pytest.fixture(scope="module")
 def provider():
-    if not PLAN.exists():                        # pragma: no cover — CAD-Asset fehlt
-        pytest.skip(f"Architekturplan nicht vorhanden: {PLAN}")
+    plan(PLAN)
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
 
     return ArchitekturRaumProvider()
