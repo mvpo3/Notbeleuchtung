@@ -4,6 +4,37 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-09-18 SPÄT) — Sync + Symbol-/Vorlagen-Migration (Phase A) + Regelbasis (Phase B). HIER WEITER.
+
+**Branch `leonis/demo-l-gebaeude` @ `b04c80e`+Board, GEPUSHT. Volle Suite 1389 grün, ruff clean,
+kein Contract-Touch.** Sync davor: main `2f610cc` (Selman #158 geschoss.py etc. + mein #157) gemergt.
+
+1. **Phase A `c77d5dc` — neue Symbole + neue Vorlage sind die EINZIGEN Quellen:**
+   `Notbeleuchtungssymbole_neu+.dxf` (alte git rm, .gitignore-Whitelist), Registry =
+   Mapping (RIVO-Blöcke + scale_abs aus Owner-Erklärungsplänen: RZ 636/AP 539/
+   Aufheller+Spot 97/Anlage 430 mm) + orientation (down 270/left 180/right 0 gemessen).
+   library: Farb-Umschreibung RAUS (Aufheller bleibt blau), Normalisierung NUR Top-Block
+   (Rekursion zerriss RIVO-Nesting), Mapping case-insensitiv. EIN Layer
+   din_SIBEL_10_emergency_lighting (SL-Gelb-Zwilling + rz_sl_farbtrennung gestrichen).
+   Renderer: _LEGENDE_BLOCKS neu, Anlagen-Maße aus Registry. Guard-Test
+   test_migration_guard.py. Golden neu. Prüfstrecke Mollgasse EG: 53 INSERTs nur neue
+   Blöcke, 0 alte, Blatt+Legende ok (Projekte/_ergebnis/Mollgasse_EG/notbeleuchtung_phaseA*).
+   Doku: docs/SYMBOL_MIGRATION_2026-09-18.md.
+2. **Phase B `b04c80e` — Regelbasis aus PDF (41 S.) + 6 Erklärungs-DXFs:** 35 Beispiele
+   (18 bestätigt/13 präzisiert/4 Widersprüche=PDF-Textfehler), Abdeckung 75 Leuchten
+   (49 zugeordnet/14 Legende/8 Kopier-Reste/4 offen). knowledge/notbeleuchtung/:
+   regeln.md+regeln.yaml (NB-R00–R12, mm-genau belegt), beispiele.json,
+   symbol_konvention.md, abgleich/<G>/ (38 Side-by-Sides), offene_fragen.md (26 Punkte).
+   KEIN Pipeline-Code (Phase-B-Grenze); Integrations-Vorschläge in regeln.md.
+3. **OFFEN / RESUME:** (a) Owner-Antworten offene_fragen.md (bes. 4 PDF-Textfehler,
+   Tür-RZ-Versatz 150 vs. 735–930 mm, UG-DXF fehlt, NB-R06-Rotationskonvention vs.
+   heutige Engine). (b) Regel-Integration als eigene Slices NACH Owner-GO (Kandidaten
+   in regeln.md „Integration"; NB-R05/R06/R07 berühren D3-Runde). (c) D3/D5-Rest aus
+   der Fischamend-Runde (unten) besteht weiter — jetzt auf v2-PDFs MIT neuen Symbolen
+   neu rendern, bevor der Owner difft? (d) Selman-Prompt-Weitergabe unverändert offen.
+
+---
+
 ## STAND (2026-09-18) — D1–D6-Bau: D2/D1/D6 GEBAUT, D5-Verdacht widerlegt, v2-Render geliefert. HIER WEITER.
 
 **Branch `leonis/demo-l-gebaeude`, GEPUSHT `78020cd..d22a38e` (Owner-GO in-Session):
