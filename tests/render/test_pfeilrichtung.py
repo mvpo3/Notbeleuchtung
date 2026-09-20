@@ -106,18 +106,19 @@ def _vertikaler_gang(ausgang_y: float) -> RaumModell:
     )
 
 
-def test_gang_fallback_vertikal_zeigt_effektiv_zum_ausgang():
-    """End-to-End durch die Strategie: vertikaler Gang, nur Fallback-Key im Fake —
-    JEDES RZ zeigt effektiv (Basis+Rotation) in seine deklarierte Richtung."""
-    for ausgang_y in (30000.0, 0.0):
+def test_gang_fallback_vertikal_down_typ_entgegen_flucht():
+    """NB-R06 (End-to-End): im geraden vertikalen Gang sind die „geradeaus"-RZ
+    down-Typ, deren Welt-Pfeil ENTGEGEN der Fluchtrichtung zeigt (Front schaut die
+    ankommende Person an). Exit oben (Flucht Nord) → Pfeil effektiv Süd; Exit unten
+    (Flucht Süd) → Pfeil effektiv Nord."""
+    for ausgang_y, soll_az in ((30000.0, 270.0), (0.0, 90.0)):
         out = plan_rettungszeichen_gang(_vertikaler_gang(ausgang_y), FakeNormProvider())
         assert out
+        assert all(p.richtung == "unten" for p in out)
         for p in out:
-            if p.richtung not in ZIEL_DEG:
-                continue
             eff = _effektive_richtung_deg(p.catalog_key, p.rotation_deg, p.mirror_x)
-            assert _winkel_diff(eff, ZIEL_DEG[p.richtung]) <= 5.0, (
-                f"ausgang_y={ausgang_y}: {p.richtung} -> {eff}°"
+            assert _winkel_diff(eff, soll_az) <= 5.0, (
+                f"ausgang_y={ausgang_y}: Welt-Pfeil {eff}° (soll {soll_az}°)"
             )
 
 
