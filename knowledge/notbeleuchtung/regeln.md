@@ -219,17 +219,91 @@ wörtlich als Anforderung): alle Stockwerke mit der Lichtberechnung prüfen —
 die fachliche Platzierung ist die Basis, die Lux-Prüfung die Kontrollschicht
 (→ Ground-Truth-Harness G3, keine Regel dieser Basis).
 
+---
+
+# Erweiterung 2026-09-20 (2) — Schul-Typologie + Flucht-/Rettungsplan-Lehren (TOMA 44)
+
+**Andere Dokumentklasse als NB-R00–R21.** Quelle = `TOMA_Flucht- und
+Rettungspläne.pdf` (bestehender Flucht-/Rettungsplan einer Volksschule, 10 S.)
++ 3 Architektur-Ausführungs-DXFs (SG/EG/OG). Vollabgleich:
+`abgleich/TOMA44/` (referenz_{SG,EG,OG,DG}.md, inventar_*.json,
+vergleich_*.png, engine_anforderungen.md). Diese Lehren betreffen Fluchtweg-
+STRUKTUR / Gebäude-TYPOLOGIE / QUELLEN-Disziplin (v.a. Selman-Naht +
+Quellen-Hierarchie) — sie sind KEINE Platzierungs-/Rotationsregeln und
+übersteuern NB-R00–R21 NICHT. Symbol-/Rotations-Konventionen der
+Mollgasse-Erklärung wurden NICHT auf diesen Flucht-/Rettungsplan übertragen.
+
+## NB-R22 — Flucht-/Rettungsplan ≠ Notbeleuchtungsplan (Quellen-Disziplin, bindend)
+Ein grüner Flucht-/Rettungsplan belegt Fluchtweg-Richtung, benutzte Türen,
+Fluchtstiegenhäuser, Ausgänge und Orientierungspunkte — **NICHT** Montage-
+position einer Notleuchte, Wand-/Deckenmontage, Frontseite, ein-/beidseitig,
+Leuchtentyp, Lichtverteilung, Montagehöhe, Luxwert oder Leuchten-Anzahl. Ein
+Richtungssymbol im Fluchtplan darf NIE als mm-genaue Leuchtenposition
+übernommen werden; ein Raum OHNE grüne Markierung heißt nicht „keine
+Notbeleuchtung nötig". Auch: eine Standort-Marke ist der Aushang-Bezugspunkt,
+keine Leuchte. Blatt-Richtung ≠ CAD-Richtung ≠ Personen-Bewegungsrichtung
+(gedrehte Aushang-Blätter; mehrere Blätter desselben Geschosses = EINE
+Referenz). [TOMA S.1–10; Klassifikation: Quellen-/Prozessregel]
+
+## NB-R23 — Schul-Bildungscluster: offener Bewegungsbereich = Fluchtweg (Referenzpraxis)
+In Schulen der Cluster-/offene-Lernlandschaft-Typologie trägt ein OFFENER
+„Kommunikations- und Bewegungsbereich" den Fluchtweg, auf den die
+Unterrichtsräume direkt öffnen — OHNE „Gang"-Label. Fluchtweg-Erkennung darf
+nicht am Raumtext „Gang" hängen (generalisiert NB-R20 von der Durchgangs-
+auf die Cluster-Ebene). [TOMA OG-04 (Unterrichtsraum 1–4 → Kommunikations-/
+Bewegungsbereich → TH 2); Klassifikation: Referenzpraxis, Schule]
+
+## NB-R24 — Mehrere Fluchtstiegenhäuser, gerichtete Zuordnung (Referenzpraxis)
+Bei mehreren Fluchtstiegenhäusern (TOMA: TH 2/3/4) werden Cluster/
+Gebäudeteile GEZIELT verschiedenen THs zugeordnet — NICHT alle Personen zum
+nächstgelegenen TH oder zu einem einzigen Hauptausgang. Wo mehrere Richtungen
+dargestellt sind, bleiben sie erhalten. Deckt sich mit der Mollgasse-
+Gebäudehälften-Regel (NB-R18): unklare Zuordnung nicht raten. Engine: THs als
+getrennte Ziele + cluster-/gebäudeteil-basierte Zuordnung statt Global-
+Nearest. [TOMA SG/EG/OG; Klassifikation: Referenzpraxis]
+
+## NB-R25 — Egress je Ebene; Sockelgeschoss ≠ Keller (Referenzpraxis)
+Ein Sockel-/Untergeschoss kann direkte Außenausgänge auf EIGENER Ebene haben;
+Flucht muss nicht zwingend über das Erdgeschoss laufen. Ziel-Typen strikt
+trennen und NIE gleichsetzen: Übergang ins Fluchtstiegenhaus / Ausgang ins
+Freie / Balkon-Terrasse-Loggia / vorläufige Evakuierungsstelle / Sammelstelle.
+(Ergänzt NB-R13 „UG flüchtet hinauf" um „UG kann auch direkt ins Freie".)
+[TOMA SG: viele EN-Türen ins Freie auf Sockel-Ebene; Klassifikation:
+Referenzpraxis]
+
+## NB-R26 — Ausführungsplan-Annotationen als Erkennungs-Anker (Datenquelle)
+Architektur-Ausführungspläne dieser Klasse tragen die Fluchtdaten als
+Text-Annotation GEOMETRISCH — wertvollere Ausgangs-/Brandabschnitt-Anker als
+reine Raumpolygone: **EN 1125** (Panikstange) / **EN 179** (Notausgangs-
+beschlag) = echte Ausgangstüren · **FLn** = Fluchtweg-Fläche mit Soll-m²
+(TOMA EG FL1–4 72/72/33/39 m², OG FL1 48) · **EI 30/90/230-C** +
+„brandlastfreie Zone" + **BA** = Brandabschnitte · **RWA** = Rauch-Wärme-
+Abzug · **BMZ** = Brandmeldezentrale. Diese Layer/Texte sind Erkennungs-
+Eingänge (Selman-Naht). ⚠️ Daten-Fallen: INSUNITS kann LÜGEN (TOMA INSUNITS=6
+Meter, real mm — Einheit über Türbreiten/Wandstärken verifizieren); DXF kann
+einen Riesen-Koordinaten-Offset tragen (TOMA SG ~−1,7e9 → Healthcheck/Nullung
+vor jedem Engine-Lauf). [TOMA SG/EG/OG; Klassifikation: Referenz/Datenquelle]
+
+## NB-R27 — Aufzug ist keine vertikale Fluchtverbindung (Referenzpraxis, bestätigt Engine-Standard)
+Standard-Aushang „Aufzug nicht benutzen" → ein Aufzug wird NIE als vertikale
+Flucht-Kante ins Wegenetz übernommen; der Aufzugsvorbereich ist getrennt zu
+behandeln (kann Teil des Gangs sein). Deckt sich mit dem bestehenden
+LIFT-Guard (`fachpraxis.entferne_schacht_leuchten`). [TOMA S.1–10 Brandfall-
+Hinweis; Klassifikation: Referenzpraxis]
+
 ## Integration (Vorschlag — NICHT umgesetzt, Phase-B-Grenze)
 - NB-R01/R03 decken sich weitgehend mit R-B/R-C/`rotation_piktogramm_in_raum` +
   `_RZ_INS_RAUM_MM=150` — ABER die Owner-Messwerte sagen 735–930 mm raumseitig:
   Kalibrierfrage an den Owner (150 vs. ~800 mm), dann `bausteine.RZ_INS_RAUM_MM`.
 - NB-R05 (800–1120 mm vor der Stiege, Pfeil=Laufrichtung) gehört in
   `stgh_strategy`/R8 (heute Zentrum-Approximation bzw. `fluchtvektor`).
-- NB-R06 (Welt-Pfeil entgegen Fluchtrichtung bei down-RZ) widerspricht ggf.
-  dem heutigen „Pfeil in Fluchtrichtung"-Verständnis einzelner Sites — vor
-  Umsetzung Owner-Review der betroffenen Call-Sites (D3-Runde).
-- NB-R07 (Frontalsicht) wäre ein neues Auswahl-Kriterium in
-  `bausteine.key_und_rotation` (Blick-Korridor der ankommenden Person).
+- NB-R06 **UMGESETZT 2026-09-20** (`710b859`, Owner-GO „alle PDF-Regeln"):
+  gerade Gang-Zwischen-RZ = down-Typ, Welt-Pfeil ENTGEGEN der Flucht (Front zur
+  ankommenden Person) via `gang_strategy` + `rotation_piktogramm_in_raum`; alter
+  „Pfeil-zum-Ausgang"-Test/Gang-Fallback-Test begründet nachgezogen.
+- NB-R07 **UMGESETZT 2026-09-20** (`710b859`): Abzweige (`_ist_abzweig` >45°)
+  behalten den Richtungspfeil (links/rechts zeigt den Weg), gerade Fortsetzung
+  fällt auf NB-R06 (down-Typ, Front zur Person).
 - NB-R08 entspricht `sichtkette`/`_sichtlinien_garantie` — Parameter (eine
   Sichtlinie je Wohnungstür, Zusatz-RZ bei Distanz) präzisieren.
 - NB-R09-Alternativen als LB-/Owner-Parameter (`gang_grundbeleuchtung`:
@@ -241,9 +315,10 @@ die fachliche Platzierung ist die Basis, die Lux-Prüfung die Kontrollschicht
 - **NB-R15** → Kabeltrassen-Extraktion aus dem Quell-DXF (Muster
   `bestand_leuchten.py`) + Versatz-Nachpass (Muster `abstand_nachpass`);
   450 mm als benannte FACHPRAXIS-Konstante mit Quelle-Tag, kein Norm-Claim.
-- **NB-R16** → Beidseitig-Entscheidung im Platzierer (zwei Gegenströme auf
-  einen Knoten → `richtung="gerade"`/bothsided); nur Pflicht-Fälle,
-  Alternativen NICHT automatisieren.
+- NB-R16 **UMGESETZT 2026-09-20** (`f6c69d0`): Wasserscheiden-Erkennung im
+  aktiven Anker-Pfad (`_wasserscheide_achse` + `graph.distanz_je_ausgang`) —
+  Kreuzung gleich weit zu zwei Ausgängen in Gegenrichtung → `richtung="gerade"`
+  → Bothsided-Block; konservativ (nur Pflicht, keine Alternativen).
 - **NB-R17** → hängt an Selmans Garage-Erkennung (Stellplatz-Stempel /
   freie Flächen) — bis dahin Gap.
 - **NB-R18** → Gebäudehälften über Zirkulations-Graph-Komponenten
@@ -253,3 +328,23 @@ die fachliche Platzierung ist die Basis, die Lux-Prüfung die Kontrollschicht
   einzelne KELLERABTEIL/kleine Medienräume nein bei sofortiger Gang-Sicht).
 - **NB-R20** → `sichtkette`/`_tuer_luecken_rz` (türlos = keine Zwischen-RZ)
   + Durchgangs-Knoten mittig (anker/gang).
+- NB-R14 **UMGESETZT 2026-09-20** (`09db956`): `Platzierung.montage_art`
+  (bestehendes Feld, war unbenutzt — KEIN Contract-Change) befüllt: Stiegen-/
+  Tür-/Ausgangs-/Außen-RZ = `WA` (Wand), Gang-/Aufheller-/Antipanik-/Flächen-
+  Leuchten = `DA` (Decke); Decke-Default-Nachpass im `platzierer` fängt den Rest.
+  Die POSITION (Gang-Mitte vs. Stiegen-Wand) war geometrisch schon realisiert.
+- **NB-R22** = Quellen-Disziplin (kein Code): Flucht-/Rettungsplan nie als
+  Leuchten-Ground-Truth behandeln (nur Fluchtweg-Struktur). Neue Klasse
+  „Schule" ist noch NIE durch die Engine gelaufen → Healthcheck vor Render.
+- **NB-R23** → Selman: offene Cluster-/Bewegungsbereiche als Fluchtweg
+  erkennen (nicht am „Gang"-Text hängen); Leonis konsumiert wie GANG.
+- **NB-R24** → Mehr-TH-Zuordnung gerichtet (Cluster→TH statt Nearest) —
+  hängt an Selmans Cluster-/Gebäudeteil-Zuordnung; = TOMA-Variante der
+  NB-R18-Gebäudehälften.
+- **NB-R25** → Ausgangs-/Ziel-Typen im Contract sauber unterscheiden
+  (final_exit/stair_exit/Balkon/Evakuierungsstelle/Sammelstelle); Egress je
+  Ebene zulassen (nicht zwingend über EG).
+- **NB-R26** → Selman-Erkennungs-Eingänge: EN-1125/179-Türen, FLn-Flächen,
+  EI-Brandabschnitte, RWA/BMZ aus den Ausführungs-Layern; Einheiten-Verify
+  (INSUNITS lügt) + Offset-Healing als Healthcheck-Vorstufe.
+- **NB-R27** = bereits erfüllt (LIFT-Guard) — als Referenz bestätigt.
