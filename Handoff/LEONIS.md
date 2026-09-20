@@ -4,7 +4,63 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-20) — RIVOPLAN-MASTER-MIGRATION + MOLLGASSE-GROUND-TRUTH-AUFTRAG. HIER WEITER.
+## STAND (2026-09-20 NACHT, Session-Ende) — PDF-Regeln in Engine + Farb-/Größen-Fixes + TOMA-Referenz. HIER WEITER.
+
+**Branch `leonis/demo-l-gebaeude` @ `910ded7`, ALLES GEPUSHT (= origin, 0 offen). Volle
+Suite 1417 grün, ruff clean, kein Contract-Touch.** Diese Nacht-Session baut auf dem
+Rivoplan-/GT-Stand (unten) auf. Vollbericht bleibt `docs/MOLLGASSE_RIVOPLAN_GT_BERICHT_2026-09-20.md`.
+
+**Heute zusätzlich gemacht (chronologisch, alle gepusht):**
+1. **PDF-Regeln in die Engine** (Owner-GO „alles einbauen, allgemein gültige Regeln"):
+   - `f6c69d0` **NB-R16** beidseitig: Wasserscheide im aktiven Anker-Pfad
+     (`_wasserscheide_achse` + `graph.distanz_je_ausgang`) → Kreuzung gleich weit zu
+     2 Ausgängen in Gegenrichtung → `richtung="gerade"` → Bothsided-Block. Konservativ.
+   - `710b859` **NB-R06/R07**: gerade Gang-Zwischen-RZ = down-Typ, Welt-Pfeil ENTGEGEN
+     Flucht (Front zur ankommenden Person); Abzweige (`_ist_abzweig`>45°) behalten
+     Richtungspfeil. **Owner hat NB-R06 per Frage bestätigt** (Δ178,6–180° belegt).
+     Alter „Pfeil-zum-Ausgang"-Test + Gang-Fallback-Test begründet nachgezogen.
+   - `09db956` **NB-R14** Wand/Decke: `montage_art` (Feld war unbenutzt, KEIN Contract-
+     Change) — Stiege/Tür/Ausgang/Außen=WA, Gang/Aufheller/Antipanik=DA; Decke-Default-
+     Nachpass im platzierer. `e251fc8` Regelbasis-Status auf UMGESETZT.
+2. **Farb-Fixes (Owner-Befund: Symbol-Farben im PDF inkonsistent):**
+   - `f5686b0` `RIVO_NL_ARR_right` Tür+Balken BYLAYER→ACI 7 (war grün-auf-grün).
+   - `1c9ce71` Antipanik+Verteiler BYLAYER-Füllung→feste true_color 0x1EB350 (wurden auf
+     schwarz/weiß-Layern schwarz). `3eb3c6e` dieselben Fixes in der VORLAGE + right-Block.
+   - `910ded7` beidseitig-RZ in der Blatt-Legende volle Größe (Bothsided = 2 gestapelte
+     Schilder → doppelte Zielhöhe, sonst halb so groß). Je Schild jetzt = Einzel-RZ.
+   - **Grundprinzip gelernt:** BYLAYER-Symbol-Entities nehmen die LAYER-Farbe → auf
+     grünem Notlicht-Layer grün, auf Layer 0 schwarz. Symbol-Farben IMMER fest setzen.
+3. **TOMA 44 (Schul-Flucht-/Rettungsplan) — reiner REFERENZ-Auftrag, KEINE Commits/Engine:**
+   Artefakte `knowledge/notbeleuchtung/abgleich/TOMA44/` (quellen.md+SHA256, referenz_
+   {SG,EG,OG,DG}.md, inventar_*.json, vergleich_*.png, engine_anforderungen.md, S01-10.png).
+   Lehre in Regelbasis: **NB-R22–R27** (regeln.md/yaml, jetzt 27 Regeln) — eigene
+   Dokumentklasse (Flucht-/Rettungsplan ≠ Platzierungslehrplan). Befund: TOMA-DXFs =
+   Ausführungspläne (73-83MB), Fluchtdaten als Textannotation (EN1125/EN179/FLn/EI/RWA/BMZ);
+   INSUNITS lügt (6/mm); SG-Offset ~-1.7e9 → Healthcheck. Kein DG-DXF, kein Engine-Lauf.
+   **Diese TOMA-Artefakte sind UNTRACKED (nicht committet) — Owner-Auftrag „keine Commits".**
+4. **Selman-Pakete `6bdb402`** (docs/COORDINATION.md): S-W (Wohnung≠Fluchtweg, Zirkulation
+   an Wohnungstür stoppen) + S-KG (Kellerabteile/Garage/Gebäudehälften). Owner leitet weiter.
+
+**RESUME morgen (Prio):**
+1. **Selman-Pakete S-W/S-KG weitergeben** — größter Hebel für die GT-Quote (33/97), macht
+   die restlichen PDF-Regeln wirksam. Prompt-Text steht im Chat + COORDINATION.
+2. Restliche PDF-Regeln, die an Selman hängen: NB-R15 Kabeltrasse (keine Input-Daten),
+   NB-R17 Garage, NB-R18/R24 Gebäudehälften/Mehr-TH, NB-R23 Cluster-Fluchtweg.
+3. **Owner macht die Vorlage neu** — wenn die neue `Rivoplan_Notbeleuchtungs_Vorlage.dxf`
+   kommt: prüfen (Layout1/Viewport/Plankopf/Legende), verdrahten, Kontroll-Render.
+4. Owner-offene Fragen: PDF-Textfehler S.57 B↔C, KT-Label-Konvention, Skalen-Abnahme,
+   Tür-RZ Wandlinie vs. 711–930 mm (offene_fragen.md 27–34).
+5. TOMA: DG-DXF nachfordern, Schul-Vokabular (Selman), dann Engine-Lauf auf TOMA.
+6. Nach Selman-Erkennungs-Fix: GT-Re-Run (`mollgasse_gt_vergleich.py`) → Quote messen.
+
+**Fallen (neu heute):** Symbol-BYLAYER→Layer-Farbe (s.o.) · Master-DXFs (Symbole/Vorlage)
+werden von AutoCAD gelockt → vor Schreibzugriff schließen lassen · Owner bestätigt visuelle
+Regeln (NB-R06) am besten per gerendertem Vorher/Nachher · Foreground-Agenten sterben am
+Fable-Limit ohne Output → wichtige Analysen selbst zu Ende führen.
+
+---
+
+## STAND (2026-09-20) — RIVOPLAN-MASTER-MIGRATION + MOLLGASSE-GROUND-TRUTH-AUFTRAG (Basis).
 
 **Branch `leonis/demo-l-gebaeude` @ `d74f0e8`, 7 Commits UNGEPUSHT (`456057e..d74f0e8`,
 Owner-Auftrag „kein Push ohne GO"). Voller pytest 1411 grün/51 skip/5 xfail, ruff clean,
