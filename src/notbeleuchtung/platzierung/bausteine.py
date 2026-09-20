@@ -195,3 +195,18 @@ def referenz_anforderung(norm: NormProvider, klassifikation: str):
         if anf.klassifikation == klassifikation and anf.symbol_katalog_keys:
             return anf
     return None
+
+
+# Untergeschoss-Label-Familien (NB-R13, PDF S.43/54-55): Personen fluechten
+# in UG-Geschossen HINAUF — die Stiegen-Fluchtrichtung kehrt sich gegenueber
+# den Obergeschossen um. Erkannt wird das am Geschoss-Label (KG/UG/Keller);
+# kein Projekt-Hardcode, nur das uebliche Label-Vokabular.
+_UG_MARKER = ("KG", "UG", "KELLER", "UNTERGESCH")
+
+
+def ist_untergeschoss(floor: str | None) -> bool:
+    """True fuer Untergeschoss-Labels ("1KG", "2.UG", "Kellergeschoss", ...)."""
+    if not floor:
+        return False
+    norm = floor.strip().upper()
+    return any(m in norm for m in _UG_MARKER)

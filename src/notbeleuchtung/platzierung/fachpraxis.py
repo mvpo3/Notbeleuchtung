@@ -613,11 +613,13 @@ def stiegenhaus_rz_nachpass(
             continue
         dx, dy = cx - ex.xy_mm[0], cy - ex.xy_mm[1]
         # Punkt 4: liefert die Erkennung Treppenläufe, ersetzt die ECHTE
-        # Flucht-Gehrichtung (R-H) die Zentrum-Näherung.
+        # Flucht-Gehrichtung (R-H) die Zentrum-Näherung. NB-R13: im
+        # Untergeschoss kehrt sich die Lauf-Interpretation um (Flucht HINAUF).
+        from .bausteine import ist_untergeschoss as _ist_ug
         from .stgh_strategy import fluchtvektor as _fluchtvektor
         sh = next((s_ for s_ in raum.stiegenhaeuser if s_.raum_id == stgh.id), None)
         if sh is not None:
-            fv = _fluchtvektor(sh)
+            fv = _fluchtvektor(sh, hinauf=_ist_ug(raum.floor))
             if fv is not None:
                 dx, dy = fv[0] * 1000.0, fv[1] * 1000.0   # Einheitsvektor → mm-Skala
         if math.hypot(dx, dy) < 50.0:

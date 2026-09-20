@@ -19,9 +19,9 @@ def _rect(x0, y0, x1, y1):
     return [(x0, y0), (x1, y0), (x1, y1), (x0, y1)]
 
 
-def _modell(laeufe, podeste=(), ausgaenge=(), stgh_poly=None) -> RaumModell:
+def _modell(laeufe, podeste=(), ausgaenge=(), stgh_poly=None, floor="1OG") -> RaumModell:
     return RaumModell(
-        floor="1OG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 10000.0)),
+        floor=floor, bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 10000.0)),
         raeume=[Raum(id="stgh", raum_typ="STIEGENHAUS", ist_communal=True,
                      polygon_mm=stgh_poly or _rect(0.0, 0.0, 4000.0, 6000.0))],
         tueren=[], ausgaenge=list(ausgaenge),
@@ -49,6 +49,29 @@ def test_auf_lauf_flucht_ist_gegenrichtung():
     assert fluchtvektor(StiegenhausModell(raum_id="s", laeufe=[lauf])) == (-1.0, 0.0)
     out = plan_stiegenhaus_rz(_modell([lauf]), FakeNormProvider())
     assert len(out) == 1 and out[0].richtung == "links"    # Flucht −x
+
+
+def test_ug_flucht_ist_hinauf():
+    # NB-R13 (PDF S.43/54-56): im Untergeschoss fluechten Personen HINAUF —
+    # der "auf"-Lauf IST die Fluchtrichtung (OG: Gegenrichtung, s.o.).
+    lauf = Treppenlauf(antritt_mm=(1000.0, 1000.0), austritt_mm=(3000.0, 1000.0),
+                       richtung="auf")                     # Gehen +x = aufwaerts
+    sh = StiegenhausModell(raum_id="s", laeufe=[lauf])
+    assert fluchtvektor(sh, hinauf=True) == (1.0, 0.0)     # UG: Flucht = +x
+    assert fluchtvektor(sh, hinauf=False) == (-1.0, 0.0)   # OG: unveraendert
+    out = plan_stiegenhaus_rz(_modell([lauf], floor="1KG"), FakeNormProvider())
+    assert len(out) == 1 and out[0].richtung == "rechts"   # Flucht +x
+    # Derselbe Lauf im OG bleibt "links" (Regression NB-R04-Seite).
+    out_og = plan_stiegenhaus_rz(_modell([lauf], floor="1OG"), FakeNormProvider())
+    assert len(out_og) == 1 and out_og[0].richtung == "links"
+
+
+def test_ist_untergeschoss_label_familien():
+    from notbeleuchtung.platzierung.bausteine import ist_untergeschoss
+    assert ist_untergeschoss("1KG") and ist_untergeschoss("2.UG")
+    assert ist_untergeschoss("Kellergeschoss") and ist_untergeschoss("UG")
+    assert not ist_untergeschoss("EG") and not ist_untergeschoss("4OG")
+    assert not ist_untergeschoss("DG") and not ist_untergeschoss(None)
 
 
 def test_ohne_laeufe_oder_unbekannt_no_op():

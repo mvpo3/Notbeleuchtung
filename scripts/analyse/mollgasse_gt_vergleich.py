@@ -248,10 +248,10 @@ def lauf(geschoss: str) -> None:
         f"# Mollgasse {geschoss} — Engine vs. Experten-Ground-Truth",
         "",
         f"- Engine: {ergebnis['engine_n']} Platzierungen {ergebnis['engine_by_kind']}",
-        f"- Ground Truth: {ergebnis['gt_n']} Einheiten {ergebnis['gt_by_klasse']}"
-        f" (beidseitig: {ergebnis['beidseitig_gt_gesamt']})",
-        f"- gepaart: {ergebnis['gepaart']} (Median {ergebnis['distanz_median_mm']} mm,"
-        f" Max {ergebnis['distanz_max_mm']} mm; Paarungs-Radius {int(_PAIR_RADIUS_MM)} mm)",
+        (f"- Ground Truth: {ergebnis['gt_n']} Einheiten {ergebnis['gt_by_klasse']}"
+         f" (beidseitig: {ergebnis['beidseitig_gt_gesamt']})"),
+        (f"- gepaart: {ergebnis['gepaart']} (Median {ergebnis['distanz_median_mm']} mm,"
+         f" Max {ergebnis['distanz_max_mm']} mm; Paarungs-Radius {int(_PAIR_RADIUS_MM)} mm)"),
         f"- fehlt (GT ohne Engine): {ergebnis['fehlt_n']}",
         f"- ueberfluessig (Engine ohne GT): {ergebnis['ueberfluessig_n']}",
         f"- beidseitig getroffen: {ergebnis['beidseitig_treffer']}/{ergebnis['beidseitig_gt_gesamt']}",
