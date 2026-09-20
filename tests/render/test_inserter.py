@@ -83,9 +83,10 @@ def test_unbekannter_catalog_key_raises():
         inserter.insert_platzierung(doc, p)
 
 
-def test_gerade_zeichnet_beidseitigen_doppelpfeil():
-    # richtung="gerade" (beidseitiger RZ, Wasserscheide) → zwei horizontale Pfeile
-    # (links + rechts) am selben Punkt, gemeinsam rotiert. Zurück kommt der linke.
+def test_gerade_zeichnet_echten_beidseitig_block():
+    # richtung="gerade" (beidseitiger RZ, Wasserscheide) → EIN echter
+    # Rivoplan-Beidseitig-Block am Punkt, rotiert um die Fluchtweg-Achse
+    # (Rivoplan-Master 2026-09-20; ersetzt die links+rechts-Komposition).
     doc = ezdxf.new("R2018")
     mapping = library.load_mapping()
     p = Platzierung(
@@ -95,23 +96,17 @@ def test_gerade_zeichnet_beidseitigen_doppelpfeil():
     primary = inserter.insert_platzierung(doc, p)
 
     inserts = doc.modelspace().query("INSERT")
-    assert len(inserts) == 2
-    namen = {ins.dxf.name for ins in inserts}
-    assert namen == {
-        mapping["notlicht_ks_stiege_links"]["block_name"],
-        mapping["notlicht_ks_stiege_rechts"]["block_name"],
-    }
-    # beide teilen Punkt + Rotation (Fluchtweg-Achse)
-    for ins in inserts:
-        assert ins.dxf.insert.x == pytest.approx(1000.0)
-        assert ins.dxf.insert.y == pytest.approx(2000.0)
-        assert ins.dxf.rotation == pytest.approx(90.0)
-        assert ins.dxf.layer == library.SAFETY_LAYER
-    # primärer (zurückgegebener) Insert = linker Pfeil
-    assert primary.dxf.name == mapping["notlicht_ks_stiege_links"]["block_name"]
+    assert len(inserts) == 1
+    assert primary.dxf.name == mapping["notlicht_ks_beidseitig"]["block_name"]
+    assert primary.dxf.insert.x == pytest.approx(1000.0)
+    assert primary.dxf.insert.y == pytest.approx(2000.0)
+    assert primary.dxf.rotation == pytest.approx(90.0)
+    assert primary.dxf.layer == library.SAFETY_LAYER
+    assert primary.dxf.yscale == pytest.approx(
+        float(mapping["notlicht_ks_beidseitig"]["scale_abs"]))
 
 
-def test_gerade_xdata_nur_auf_primaerem_pfeil():
+def test_gerade_xdata_am_beidseitig_block():
     doc = ezdxf.new("R2018")
     p = Platzierung(
         xy_mm=(0.0, 0.0), catalog_key="notlicht_ks_stiege", kind="rz",
@@ -133,10 +128,10 @@ def test_gerade_xdata_nur_auf_primaerem_pfeil():
     "catalog_key,kind",
     [("sicherheitsleuchte_aufheller", "sicherheitsleuchte"), ("antipanik_leuchte", "antipanik")],
 )
-def test_gerade_nur_bei_rz_doppelpfeil(catalog_key, kind):
+def test_gerade_nur_bei_rz_beidseitig(catalog_key, kind):
     # Sicherheitsleuchte + Antipanik tragen ebenfalls richtung="gerade" (= keine
     # Richtung), sind aber KEINE Pfeil-Zeichen → EIN eigenes Katalog-Symbol, nicht
-    # zwei RZ-Richtungspfeile (Regression: Doppelpfeil-Gate darf nur für kind=="rz").
+    # der RZ-Beidseitig-Block (Regression: Beidseitig-Gate darf nur für kind=="rz").
     doc = ezdxf.new("R2018")
     mapping = library.load_mapping()
     p = Platzierung(xy_mm=(0.0, 0.0), catalog_key=catalog_key, kind=kind, richtung="gerade")

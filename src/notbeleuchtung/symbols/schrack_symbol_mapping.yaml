@@ -58,6 +58,17 @@ notlicht_ks_stiege_rechts:
   category: notlicht
   scale_abs: 50.0
 
+# Beidseitiges RZ (Wasserscheide / zwei Personenströme auf einer Achse) —
+# ECHTER Rivoplan-Block (zwei gegenläufige Schilder übereinander), ersetzt die
+# frühere 2-Block-Komposition links+rechts. rotation = Fluchtweg-Achse; bei
+# rotation=0 zeigen die Pfeile entlang ±x. Render-seitig konsumiert
+# (inserter richtung="gerade"), Platzierer emittieren weiterhin ihren RZ-Key.
+notlicht_ks_beidseitig:
+  block_name: "RIVO_NL_ARR_bothsided"
+  label: "Notlicht KS Rettungszeichen beidseitig (Wasserscheide)"
+  category: notlicht
+  scale_abs: 50.0
+
 # Notlicht Garage/Nebenräume (Antipanik-nahe Sonderfälle).
 notlicht_kw_garage:
   block_name: "RIVO_NL_ARR_down"

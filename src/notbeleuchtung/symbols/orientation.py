@@ -45,7 +45,7 @@ def transformation(catalog_key: str, richtung: str) -> tuple[float, bool]:
 
     Kennt der Key keinen Richtungs-Block (Kreis-Symbole, `gerade`/unbekannte
     Richtung), kommt (0, False) — das Symbol ist rotationsneutral bzw. der
-    Doppelpfeil-Pfad des Inserters übernimmt. Spiegelung ist nie nötig: die
+    Beidseitig-Pfad des Inserters übernimmt. Spiegelung ist nie nötig: die
     Library führt alle drei Basen (links/rechts/unten) als eigene Blöcke.
     """
     ziel = ZIEL_DEG.get(richtung)
