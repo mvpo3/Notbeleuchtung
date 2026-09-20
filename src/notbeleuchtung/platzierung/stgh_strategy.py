@@ -28,6 +28,7 @@ from notbeleuchtung.hauptengine.contracts import (
 )
 
 from .bausteine import AGV_SV_F as _AGV_SV_F
+from .bausteine import MONTAGE_WAND as _MONTAGE_WAND
 from .bausteine import building_assigner as _building_assigner
 from .bausteine import ist_untergeschoss as _ist_untergeschoss
 from .bausteine import key_und_rotation as _key_und_rotation
@@ -120,5 +121,6 @@ def plan_stiegenhaus_rz(raum: RaumModell, norm: NormProvider) -> list[Platzierun
             height_mm=float(anf.montagehoehe_mm), kind="rz", richtung=richtung,
             circuit_hint=f"AGV-{assign_building(pos[0])}-F{_AGV_SV_F}",
             covers_segment=[], norm_quelle=anf.quelle,
+            montage_art=_MONTAGE_WAND,             # NB-R14: Stiegen-RZ an die Wand
         ))
     return out

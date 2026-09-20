@@ -37,6 +37,8 @@ from notbeleuchtung.hauptengine.contracts import (
 from .bausteine import (
     AGV_SV_F as _AGV_SV_F,
 )
+from .bausteine import MONTAGE_DECKE as _MONTAGE_DECKE
+from .bausteine import MONTAGE_WAND as _MONTAGE_WAND
 from .bausteine import RZ_INS_RAUM_MM as _RZ_INS_RAUM_MM
 from .bausteine import (
     building_assigner as _building_assigner,
@@ -115,6 +117,7 @@ def plan_rettungszeichen(raum: RaumModell, norm: NormProvider) -> list[Platzieru
             catalog_key, _ = _select_key(anf.symbol_katalog_keys, "unten")
             rotation = _rotation_piktogramm_in_raum(dx, dy)
             mirror_x = False
+            montage = _MONTAGE_WAND               # NB-R14: RZ an der Tür = Wand
             # R-C: Tür-RZ raumseitig — entgegen der Fluchtachse versetzen.
             _n = math.hypot(dx, dy)
             if _n > 0.0:
@@ -125,12 +128,14 @@ def plan_rettungszeichen(raum: RaumModell, norm: NormProvider) -> list[Platzieru
                 naechster[0] - ex, naechster[1] - ey
             )
             catalog_key, rotation, mirror_x = _key_und_rotation(anf.symbol_katalog_keys, richtung)
+            montage = _MONTAGE_DECKE               # NB-R14: Richtungs-RZ im Gang = Decke
         else:
             # Auf dem Ausgang selbst (oder keine Ausgänge): Laufrichtung des Segments
             # (durch die Öffnung hinaus) — historisches 4OG-Verhalten.
             px, py = seg.polyline_mm[-2] if len(seg.polyline_mm) >= 2 else (ex, ey)
             richtung, _ = _richtung_und_rotation(ex - px, ey - py)
             catalog_key, rotation, mirror_x = _key_und_rotation(anf.symbol_katalog_keys, richtung)
+            montage = _MONTAGE_WAND               # NB-R14: RZ am Ausgang = Wand
         building = assign_building(ex)
         out.append(
             Platzierung(
@@ -144,6 +149,7 @@ def plan_rettungszeichen(raum: RaumModell, norm: NormProvider) -> list[Platzieru
                 circuit_hint=f"AGV-{building}-F{_AGV_SV_F}",
                 covers_segment=[seg.segment_id],
                 norm_quelle=anf.quelle,
+                montage_art=montage,
             )
         )
     return out

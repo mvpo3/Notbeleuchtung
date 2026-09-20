@@ -24,6 +24,8 @@ from .bausteine import (
     AGV_SV_F as _AGV_SV_F,
 )
 from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
+from .bausteine import MONTAGE_DECKE as _MONTAGE_DECKE
+from .bausteine import MONTAGE_WAND as _MONTAGE_WAND
 from .bausteine import (
     building_assigner as _building_assigner,
 )
@@ -162,6 +164,7 @@ def plan_rettungszeichen_gang(raum: RaumModell, norm: NormProvider) -> list[Plat
             # Ziel-Ende zeigt mit dem UNTEN-Block physisch ZUR Ziel-Tür. rotation =
             # Winkel(RZ→Tür)+90° — identisch zum orientation-Rahmen (unten-Block-Basis
             # 270° → ziel−basis = A−270 ≡ A+90), auf 90° gerastert (wie im Anker-Pfad).
+            montage = _MONTAGE_DECKE          # NB-R14: Gang-Leuchten an die Decke
             if ziel_xy is not None and i == len(pts) - 1:
                 dx, dy = ziel_xy[0] - px, ziel_xy[1] - py
                 if math.hypot(dx, dy) > 50.0:
@@ -170,6 +173,7 @@ def plan_rettungszeichen_gang(raum: RaumModell, norm: NormProvider) -> list[Plat
                     rotation = _rotation_piktogramm_in_raum(dx, dy)
                     mirror_x = False
                     richtung = "unten"
+                    montage = _MONTAGE_WAND    # NB-R14: RZ an der Ziel-Tür = Wand
             out.append(
                 Platzierung(
                     xy_mm=(px, py),
@@ -182,6 +186,7 @@ def plan_rettungszeichen_gang(raum: RaumModell, norm: NormProvider) -> list[Plat
                     circuit_hint=f"AGV-{building}-F{_AGV_SV_F}",
                     covers_segment=[],
                     norm_quelle=anf.quelle,
+                    montage_art=montage,
                 )
             )
     return out

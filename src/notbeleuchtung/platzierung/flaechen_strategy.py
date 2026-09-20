@@ -32,6 +32,7 @@ _ANTIPANIK_MAX_LEUCHTEN = 25
 _ANTIPANIK_MAX_RUNDEN = 6
 
 # WC/Sanitär-Raumtypen für den flächenbasierten Antipanik-Trigger (EN 1838 §4.3).
+from .bausteine import MONTAGE_DECKE as _MONTAGE_DECKE
 from .bausteine import WC_TYPEN as _WC_TYPEN
 
 
@@ -203,6 +204,7 @@ def _plan_raumleuchten(
                     circuit_hint=f"AGV-{building}-F{_AGV_SV_F}",
                     covers_segment=[],
                     norm_quelle=quelle,
+                    montage_art=_MONTAGE_DECKE,   # NB-R14: Aufheller/Antipanik an die Decke
                 )
             )
     return out

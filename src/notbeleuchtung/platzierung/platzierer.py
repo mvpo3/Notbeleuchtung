@@ -47,6 +47,7 @@ from . import (
 from .anker_strategy import plan_rettungszeichen_anker
 from .aussen_strategy import plan_aussenleuchten
 from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
+from .bausteine import MONTAGE_DECKE
 from .communal_stgh_strategy import plan_rettungszeichen
 from .deckung import garantiere_redundanz, verdichte_fluchtweg
 from .flaechen_strategy import plan_antipanik, plan_sicherheitsleuchten
@@ -354,4 +355,11 @@ class NotlichtPlatzierer:
         # Stromkreise final vergeben: Dauer-/Bereitschaftslicht trennen + je Kreis deckeln
         # (statt alles grob auf AGV-{Gebäude}-F13 zu mischen). Läuft zuletzt, nach lb_override.
         platzierungen = circuit_zuordnung.zuordnen(platzierungen)
+        # NB-R14 (PDF S.56): Montage-Art vervollständigen. Wand-Fälle (Stiege/Tür/
+        # Ausgang/Außenleuchte) setzen die Strategien explizit; alles Übrige (Gang-,
+        # Aufheller-, Antipanik-, Flächen-Leuchten) ist „grundsätzlich an der Decke".
+        platzierungen = [
+            p if p.montage_art else p.model_copy(update={"montage_art": MONTAGE_DECKE})
+            for p in platzierungen
+        ]
         return PlatzierungsErgebnis(floor=raum.floor, platzierungen=platzierungen)

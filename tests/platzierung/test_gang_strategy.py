@@ -95,3 +95,16 @@ def test_dispatcher_bevorzugt_segmente_wenn_vorhanden():
     rz = [p for p in erg.platzierungen if p.kind == "rz"]
     assert len(rz) == 5
     assert all(p.covers_segment for p in rz)  # Segment-RZ decken je 1 Segment
+
+
+def test_nb_r14_montage_art_wand_decke():
+    # NB-R14: jede Platzierung trägt montage_art; Stiegen-/Tür-/Ausgangs-RZ = Wand (WA),
+    # Gang-/Aufheller-/Antipanik-Leuchten = Decke (DA). Keine bleibt ohne Montage-Art.
+    data = json.loads((FIXTURES / "raum_modell_4og.json").read_text(encoding="utf-8"))
+    erg = NotlichtPlatzierer().place(RaumModell.model_validate(data), FakeNormProvider())
+    assert all(p.montage_art in ("WA", "DA") for p in erg.platzierungen)
+    # 4OG-Golden: 3 Tür-/Ausgangs-RZ an der Wand, Gang-RZ + Aufheller an der Decke.
+    wand = [p for p in erg.platzierungen if p.montage_art == "WA"]
+    assert wand and all(p.kind == "rz" for p in wand)
+    aufheller = [p for p in erg.platzierungen if p.kind == "sicherheitsleuchte"]
+    assert aufheller and all(p.montage_art == "DA" for p in aufheller)

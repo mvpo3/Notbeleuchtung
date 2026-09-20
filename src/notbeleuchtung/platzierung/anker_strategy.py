@@ -31,6 +31,8 @@ from notbeleuchtung.hauptengine.contracts import (
 from .bausteine import (
     AGV_SV_F as _AGV_SV_F,
 )
+from .bausteine import MONTAGE_DECKE as _MONTAGE_DECKE
+from .bausteine import MONTAGE_WAND as _MONTAGE_WAND
 from .bausteine import RZ_INS_RAUM_MM as _RZ_INS_RAUM_MM
 from .bausteine import (
     building_assigner as _building_assigner,
@@ -203,7 +205,8 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
                     mirror_x=False, height_mm=float(anf_w.montagehoehe_mm), kind="rz",
                     richtung="gerade",
                     circuit_hint=f"AGV-{assign_building(nx_)}-F{_AGV_SV_F}",
-                    covers_segment=[], norm_quelle=anf_w.quelle))
+                    covers_segment=[], norm_quelle=anf_w.quelle,
+                    montage_art=_MONTAGE_DECKE))       # NB-R14: Wasserscheide im Gang = Decke
                 continue
         # Am Ausgang: Pfeil „unten" (Ausgang erreicht). An Kreuzungen: Richtung zum
         # nächsten Ausgang = Nachbar mit kleinster Dijkstra-Distanz (Gefälle-Richtung).
@@ -306,6 +309,8 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
                 circuit_hint=f"AGV-{assign_building(nx_)}-F{_AGV_SV_F}",
                 covers_segment=[],
                 norm_quelle=anf.quelle,
+                # NB-R14: RZ am Ausgang/an der Tür = Wand, Kreuzung im Gang = Decke.
+                montage_art=_MONTAGE_WAND if nid in exits else _MONTAGE_DECKE,
             )
         )
     return out

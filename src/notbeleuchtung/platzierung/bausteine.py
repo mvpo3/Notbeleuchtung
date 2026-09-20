@@ -20,6 +20,13 @@ from notbeleuchtung.symbols.orientation import transformation as _transformation
 #: Stromkreis-Feeder der Sicherheitsversorgung (AGV-<Gebäude>-F<n>).
 AGV_SV_F = 13
 
+#: Montage-Art (`Platzierung.montage_art`, MountingMethod). NB-R14 (PDF S.56):
+#: „Notleuchten an Wänden hauptsächlich im Bereich von Stiegen; in normalen
+#: Gangbereichen grundsätzlich an der Decke." → Stiegen-/Tür-/Ausgangs-RZ = Wand,
+#: Gang-/Flächen-Leuchten (Aufheller/Antipanik) = Decke.
+MONTAGE_WAND = "WA"     # Wandaufbau
+MONTAGE_DECKE = "DA"    # Deckenaufbau
+
 # Zwei Bauteile annehmen, wenn die RZ-x-Spanne diese Lücke überschreitet.
 BUILDING_SPREAD_MM = 20000.0
 
