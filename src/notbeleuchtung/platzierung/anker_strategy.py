@@ -43,7 +43,58 @@ from .bausteine import (
 )
 from .bausteine import rotation_piktogramm_in_raum as _rotation_piktogramm_in_raum
 from .deckungs_zuordnung import HINTERLEUCHTET_DEFAULT
-from .graph import build_circulation_graph, distanz_zu_ausgang, kreuzungs_anker
+from .graph import (
+    build_circulation_graph,
+    distanz_je_ausgang,
+    distanz_zu_ausgang,
+    kreuzungs_anker,
+)
+
+# NB-R16 (PDF „Notbeleuchtungen zeichnen" S.65–83): beidseitiges RZ an der
+# Wasserscheide — ein Kreuzungs-Anker, der zu ZWEI verschiedenen Ausgängen etwa
+# gleich weit ist UND deren Wege in Gegenrichtung abgehen (zwei Personenströme
+# brauchen beide eine Frontseite). Konservativ: nur PFLICHT-Wasserscheiden,
+# keine Alternativen (Owner: ALTERNATIV nicht automatisieren).
+_WASSERSCHEIDE_TOL = 0.15          # rel. Distanz-Balance (wie Sichtlinien-Prototyp)
+_WASSERSCHEIDE_COS = -0.5          # Gegenrichtung: Winkel zwischen den Zweigen > 120°
+
+
+def _wasserscheide_achse(
+    nid: str,
+    G,
+    pos: dict[str, tuple[float, float]],
+    dist_je_exit: dict[str, dict[str, float]],
+) -> float | None:
+    """Achsenwinkel (deg, 0..180) für ein beidseitiges RZ, wenn `nid` eine
+    Wasserscheide zwischen zwei Ausgängen ist — sonst None (kein Automatismus).
+
+    Bedingungen (alle): (a) mind. zwei Ausgänge von `nid` erreichbar, (b) die zwei
+    nächsten sind unterschiedlich weit nur innerhalb `_WASSERSCHEIDE_TOL`, (c) die
+    Graph-Nachbarn Richtung dieser beiden Ausgänge liegen in Gegenrichtung
+    (cos < `_WASSERSCHEIDE_COS`)."""
+    reach = {e: d[nid] for e, d in dist_je_exit.items() if nid in d}
+    if len(reach) < 2:
+        return None
+    (e_a, d_a), (e_b, d_b) = sorted(reach.items(), key=lambda kv: kv[1])[:2]
+    if max(d_a, d_b) <= 1.0 or abs(d_a - d_b) > _WASSERSCHEIDE_TOL * max(d_a, d_b):
+        return None
+    nbrs = [m for m in G.neighbors(nid) if m in pos]
+
+    def nb_richtung(e: str):
+        cand = [m for m in nbrs if m in dist_je_exit[e]]
+        return min(cand, key=lambda m: dist_je_exit[e][m], default=None)
+
+    m_a, m_b = nb_richtung(e_a), nb_richtung(e_b)
+    if m_a is None or m_b is None or m_a == m_b:
+        return None
+    ax, ay = pos[m_a][0] - pos[nid][0], pos[m_a][1] - pos[nid][1]
+    bx, by = pos[m_b][0] - pos[nid][0], pos[m_b][1] - pos[nid][1]
+    la, lb = math.hypot(ax, ay), math.hypot(bx, by)
+    if la < 1.0 or lb < 1.0:
+        return None
+    if (ax * bx + ay * by) / (la * lb) > _WASSERSCHEIDE_COS:
+        return None                                   # nicht hinreichend gegenläufig
+    return math.degrees(math.atan2(ay, ax)) % 180.0   # Korridor-Achse (symmetrisch)
 
 
 def _node_positions(raum: RaumModell) -> dict[str, tuple[float, float]]:
@@ -127,12 +178,33 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
     anker = _dedupe_anker(set(kreuzungs_anker(G)) | exits, pos, exits, G)
     assign_building = _building_assigner([pos[n][0] for n in anker if n in pos])
     exit_pos = [pos[e] for e in exits if e in pos]
+    dist_je_exit = distanz_je_ausgang(raum, G)       # NB-R16: Wasserscheiden-Test
 
     out: list[Platzierung] = []
     for nid in anker:
         if nid not in pos:
             continue
         nx_, ny = pos[nid]
+        # NB-R16: Kreuzung als Wasserscheide zwischen zwei Ausgängen (Gegenströme)
+        # → beidseitiges RZ (`richtung="gerade"` → Render setzt den Bothsided-Block),
+        # Achse entlang des Korridors. Nur an ECHTEN Kreuzungen (kein Ausgang),
+        # konservativ (Owner: Alternativen nicht automatisieren).
+        if nid not in exits:
+            achse = _wasserscheide_achse(nid, G, pos, dist_je_exit)
+            if achse is not None:
+                anf_w = norm.fuer_fluchtweg_abschnitt(FluchtwegSegment(
+                    segment_id=f"anker_{nid}", polyline_mm=[(nx_, ny)],
+                    reason="direction_change"))
+                key_w = next((k for k in anf_w.symbol_katalog_keys
+                              if k.endswith("_unten")),
+                             (anf_w.symbol_katalog_keys or ["notlicht_ks_stiege_unten"])[0])
+                out.append(Platzierung(
+                    xy_mm=(nx_, ny), catalog_key=key_w, rotation_deg=achse,
+                    mirror_x=False, height_mm=float(anf_w.montagehoehe_mm), kind="rz",
+                    richtung="gerade",
+                    circuit_hint=f"AGV-{assign_building(nx_)}-F{_AGV_SV_F}",
+                    covers_segment=[], norm_quelle=anf_w.quelle))
+                continue
         # Am Ausgang: Pfeil „unten" (Ausgang erreicht). An Kreuzungen: Richtung zum
         # nächsten Ausgang = Nachbar mit kleinster Dijkstra-Distanz (Gefälle-Richtung).
         nbrs = [m for m in G.neighbors(nid) if m in pos and m in dist] if nid in G else []
