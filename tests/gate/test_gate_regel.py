@@ -49,13 +49,33 @@ def _referenz(verneint: dict | None = None, gefordert: dict | None = None) -> di
     return {"verneint": [eintrag_verneint], "gefordert": [eintrag_gefordert]}
 
 
+def _barawitzka(**abweichung) -> dict:
+    """Barawitzka-Abschnitt im Format von ``gate_barawitzka.verbindung_abstellraum``.
+
+    Die Vorgabe ist der ZIELZUSTAND (eine Verbindung), nicht die heutige Lage:
+    heute ist (10) verletzt (``anzahl`` 0) und dreht erst mit dem S4a-Rest
+    (Doppelflügel-Paarung)."""
+    eintrag = {
+        "raum": {"raum_typ": "ABSTELLRAUM", "flaeche_m2": 1.98, "id": "raum_28"},
+        "bezeichnung": "ABSTELLRAUM 1.98 m²",
+        "anzahl": 1, "ids": ["tuer_38"], "grund": "",
+        "naechste_tuer": {"id": "tuer_38", "quelle": "doppelfluegel", "breite_mm": 1660.0,
+                          "tuer_detail": None, "abstand_mm": 0.0},
+        "doppelfluegel_nah": [],
+    }
+    eintrag.update(abweichung)
+    return eintrag
+
+
 def _messung(status: dict[str, str], einraum: int = 2, a_gleich_b: int = 0,
-             graph: int = 5, anker_privat: int = 0, referenz: dict | None = None) -> dict:
+             graph: int = 5, anker_privat: int = 0, referenz: dict | None = None,
+             barawitzka: dict | None = None) -> dict:
     """Messung im Format von ``gate_messung.messung``; alle Kennzahlen auf 3.
 
     ``graph``/``anker_privat`` sind die Werte für Bedingung (6); die Vorgaben
     entsprechen der Lage der Nullmessung, dort ist (6) erfüllt. ``referenz``
-    ist der Abschnitt für (7)/(8); die Vorgabe erfüllt beide Bedingungen."""
+    ist der Abschnitt für (7)/(8), ``barawitzka`` der für (10); beide Vorgaben
+    erfüllen ihre Bedingung."""
     m1_m4: dict[str, dict[str, dict[str, float]]] = {}
     for kennzahl in GATE_KENNZAHLEN:
         skript, kopf = kennzahl.split(".")
@@ -67,6 +87,7 @@ def _messung(status: dict[str, str], einraum: int = 2, a_gleich_b: int = 0,
         "og1": {"tueren_raum_a_gleich_b": a_gleich_b, "einraum_wohnungen": einraum},
         "og3": {"segmente_graph": graph, "anker_in_wohnung_privat": anker_privat},
         "referenz": referenz if referenz is not None else _referenz(),
+        "barawitzka": barawitzka if barawitzka is not None else _barawitzka(),
         "m1_m4": m1_m4,
     }
 
@@ -286,6 +307,42 @@ def test_fehlender_referenz_abschnitt_ist_verstoss_sieben_und_acht():
         "(8) geforderte Übergänge nicht gemessen — Abschnitt »referenz.gefordert« fehlt"]
 
 
+# --------------------------------------- (10) Barawitzka EG ABSTELLRAUM 1,98 m²
+
+def test_barawitzka_ohne_verbindung_ist_verstoss_zehn():
+    """Das ist die HEUTIGE Lage: S5b nimmt dem Raum den letzten Durchgang, seine
+    echte Tür steckt als Fehlpaarung im Doppelflügel 1660 mm. Die Bedingung dreht
+    erst mit dem S4a-Rest — kein Slice dieses Branches heilt sie."""
+    nachher = _messung({}, einraum=1, barawitzka=_barawitzka(anzahl=0, ids=[]))
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        "(10) Barawitzka EG ABSTELLRAUM 1.98 m² ohne Verbindung: 0 Tür(en)"]
+
+
+def test_barawitzka_nicht_messbar_ist_verstoss_zehn():
+    """``anzahl`` None heißt: nicht gemessen — und damit Verstoß, kein Freispruch."""
+    nachher = _messung({}, einraum=1, barawitzka=_barawitzka(
+        anzahl=None, ids=[], naechste_tuer=None,
+        grund="kein Raum ABSTELLRAUM 1.98 m² (±0.05 m²) im Modell"))
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        ("(10) Barawitzka EG ABSTELLRAUM 1.98 m² nicht messbar — "
+         "kein Raum ABSTELLRAUM 1.98 m² (±0.05 m²) im Modell")]
+
+
+def test_fehlender_barawitzka_abschnitt_im_nachher_ist_verstoss_zehn():
+    nachher = _erfuellt()
+    del nachher["barawitzka"]
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        "(10) Barawitzka EG nicht gemessen — Abschnitt »barawitzka« fehlt"]
+
+
+def test_fehlender_barawitzka_abschnitt_im_vorher_ist_kein_absturz():
+    """(10) misst nur den Nachher-Stand: eine Vorher-Messung ohne den Abschnitt
+    (die eingecheckte Nullmessung) bleibt prüfbar — fail closed nur nach hinten."""
+    vorher = _nullmessung()
+    del vorher["barawitzka"]
+    assert pruefe_gate(vorher, _erfuellt()) == []
+
+
 # ----------------------------------------------- (0) Vergleichbarkeit
 
 def test_abweichende_dxf_ist_verstoss_null():
@@ -373,12 +430,16 @@ def test_negative_kennzahl_ist_verstoss():
 
 
 def test_echte_nullmessung_gegen_sich_selbst():
-    """Die eingecheckte Nullmessung ist der Vorher-Stand — heute fehlen (2), (5) und (7).
+    """Die eingecheckte Nullmessung ist der Vorher-Stand — heute fehlen (2), (5), (7), (10).
 
     Die sechs (7)-Verstöße sind die acht Türverbindungen, die die Referenz
     verneint (dreimal zwischen den Bädern, fünfmal einzeln); (8) ist heute
-    erfüllt, alle vier geforderten Übergänge stehen. Diese Erwartung ist die
-    LAGE, nicht die Regel — dreht S5b die Fälle, schrumpft die Liste hier."""
+    erfüllt, alle vier geforderten Übergänge stehen. Der (10)-Verstoß ist die
+    Nullmessung selbst: sie stammt von VOR dem Messfall und führt den Abschnitt
+    ``barawitzka`` nicht — als Nachher-Stand gelesen ist das ein Verstoß (fail
+    closed), als Vorher-Stand kein Absturz. Neun Verstöße waren es, bevor (10)
+    dazukam. Diese Erwartung ist die LAGE, nicht die Regel — dreht S5b die Fälle,
+    schrumpft die Liste hier."""
     null = json.loads(NULLMESSUNG.read_text(encoding="utf-8"))
     verstoesse = pruefe_gate(null, deepcopy(null))
     assert verstoesse == [
@@ -398,4 +459,5 @@ def test_echte_nullmessung_gegen_sich_selbst():
          "ZIMMER 16.86 m² ↔ VORRAUM 3.4 m² — 1 Tür(en) ['durchgang_6']"),
         ("(7) verneinte Verbindung besteht (Bsp. 07, 14): "
          "BAD 11.76 m² ↔ ZIMMER 17.04 m² — 1 Tür(en) ['durchgang_15']"),
+        "(10) Barawitzka EG nicht gemessen — Abschnitt »barawitzka« fehlt",
     ]
