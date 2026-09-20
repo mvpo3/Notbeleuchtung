@@ -1,4 +1,5 @@
-"""Ein vollständiger Gate-Messlauf: Herkunft, 18 Erwartungen, Referenz, OG1, OG3, M1-M4.
+"""Ein vollständiger Gate-Messlauf: Herkunft, 18 Erwartungen, Referenz, OG1, OG3,
+Barawitzka, M1-M4.
 
 ``messung(repo)`` liefert das Vergleichsobjekt des Türstapel-Gates. Es enthält
 NUR Zahlen, IDs, Typen und Namen — keine absoluten Pfade, keine Koordinaten und
@@ -32,6 +33,7 @@ for _pfad in (WURZEL / "src", WURZEL / "tests", Path(__file__).resolve().parent)
     if str(_pfad) not in sys.path:
         sys.path.insert(0, str(_pfad))
 
+import gate_barawitzka
 import gate_m1_m4
 import gate_m17
 import gate_og1
@@ -39,7 +41,7 @@ import gate_og3
 import gate_referenz
 from gate_lauf import erkenne, sha256_datei
 
-from plaene import RENNWEG_OG3
+from plaene import BARAWITZKA_EG, RENNWEG_OG3
 
 BASIS_COMMIT = "f15d03fe1a082c78b180e940b7dcd666fccaf37d"
 RAUMERKENNUNG = "src/notbeleuchtung/raumerkennung"
@@ -86,7 +88,7 @@ def _meta(repo: Path, referenz: Path, laufzeit_s: float) -> dict:
 
 
 def messung(repo: Path) -> dict:
-    """Alle Messfälle des Gates in einem Durchgang: meta, m17, referenz, og1, og3, m1_m4."""
+    """Alle Messfälle des Gates: meta, m17, referenz, og1, og3, barawitzka, m1_m4."""
     repo = Path(repo)
     referenz = gate_m17.referenz_pfad()
     if referenz is None:
@@ -104,13 +106,17 @@ def messung(repo: Path) -> dict:
     # Rennweg OG3 mit floor "OG3" — derselbe Plan, den ``meta.dxf["OG3"]``
     # fingerprintet, und dasselbe ``floor`` wie tests/naht/test_soll_rennweg.py.
     og3 = gate_og3.kennzahlen_og3(erkenne(RENNWEG_OG3, "OG3").modell)
+    # Einziger Messfall außerhalb der Rennweg-Familie (Bedingung (10), § 8e):
+    # der ABSTELLRAUM 1,98 m² des Barawitzka-EG. Kostet einen zusätzlichen Parse.
+    barawitzka = gate_barawitzka.verbindung_abstellraum(erkenne(BARAWITZKA_EG, "EG").modell)
     # Nur die Kopfzahlen übernehmen: das rohe Ergebnis führt absolute Pfade und Laufzeiten.
     roh = gate_m1_m4.messe(repo, gate_m1_m4.erzeuge_caches(repo))
     m1_m4 = {k: roh[k] for k in ("M1", "M2", "M3", "M4")}
 
     laufzeit = round(time.monotonic() - t0, 1)
     return {"meta": _meta(repo, referenz, laufzeit), "m17": m17,
-            "referenz": referenz_verbindungen, "og1": og1, "og3": og3, "m1_m4": m1_m4}
+            "referenz": referenz_verbindungen, "og1": og1, "og3": og3,
+            "barawitzka": barawitzka, "m1_m4": m1_m4}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -138,6 +144,9 @@ def main(argv: list[str] | None = None) -> int:
     print(f"OG3: {ergebnis['og3']['segmente_graph']} GRAPH-Segmente, "
           f"{ergebnis['og3']['anker_gesamt']} Anker, davon "
           f"{ergebnis['og3']['anker_in_wohnung_privat']} in WOHNUNG_PRIVAT")
+    bara = ergebnis["barawitzka"]
+    print(f"Barawitzka EG: {bara['bezeichnung']} hat {bara['anzahl']} Verbindung(en)"
+          + (f" — {bara['grund']}" if bara["grund"] else ""))
     print(f"geschrieben: {ziel.name} ({ergebnis['meta']['laufzeit_s']} s)")
     return 0
 

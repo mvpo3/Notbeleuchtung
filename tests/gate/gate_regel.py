@@ -61,6 +61,20 @@ Die Bedingungen (Owner-Vorgabe, § 3 des Gate-Auftrags; (0) ist die Vorbedingung
       schließen, ohne die geforderten Übergänge mitzunehmen. Auch hier ist
       ``anzahl`` None ein Verstoß.
       (7) und (8) messen nur den NACHHER-Stand — beide Aussagen sind absolut.
+  (9) Mollgasse 1OG (Owner-Ansage 2026-09-20, § 3 des Gate-Auftrags): NICHT hier
+      verdrahtet — Skript und Fixtures liegen noch in keinem Baum. Die Nummer
+      bleibt belegt, damit keine bestehende ihre Bedeutung wechselt.
+  (10) Barawitzka EG: der ABSTELLRAUM 1,98 m² hat mindestens eine Verbindung —
+      ``barawitzka.anzahl >= 1`` (``tests/gate/gate_barawitzka.py``). Er ist der
+      einzige der acht Räume, die S5b auf 0 Verbindungen fallen lässt, dessen
+      echte Tür KEINEN Ersatz im Modell hat (§ 8e); sie steckt als Fehlpaarung
+      in einem „doppelfluegel" 1660 mm. **Heute ist (10) verletzt** (anzahl 0)
+      und dreht erst mit dem S4a-Rest (Doppelflügel-Paarung) — kein Slice dieses
+      Branches heilt sie. ``anzahl`` None (Raum nicht eindeutig) und ein
+      fehlender Abschnitt sind Verstöße. Gemessen wird wie bei (6)-(8) NUR der
+      NACHHER-Stand: die Aussage ist absolut. Damit ist eine Vorher-Messung ohne
+      den Abschnitt (die eingecheckte Nullmessung) kein Absturz — als
+      Nachher-Stand gelesen ist sie ein Verstoß (fail closed).
 """
 from __future__ import annotations
 
@@ -236,6 +250,21 @@ def _pruefe_referenz(nachher: dict) -> list[str]:
     return verstoesse
 
 
+def _pruefe_barawitzka(nachher: dict) -> list[str]:
+    """(10) Barawitzka EG: der ABSTELLRAUM 1,98 m² hat mindestens eine Verbindung."""
+    eintrag = nachher.get("barawitzka")
+    if not eintrag:
+        return ["(10) Barawitzka EG nicht gemessen — Abschnitt »barawitzka« fehlt"]
+    name = eintrag.get("bezeichnung") or "ABSTELLRAUM 1.98 m²"
+    anzahl = eintrag.get("anzahl")
+    if anzahl is None:
+        return [(f"(10) Barawitzka EG {name} nicht messbar — "
+                 f"{eintrag.get('grund') or 'ohne Grund'}")]
+    if anzahl < 1:
+        return [f"(10) Barawitzka EG {name} ohne Verbindung: {anzahl} Tür(en)"]
+    return []
+
+
 def pruefe_gate(vorher: dict, nachher: dict) -> list[str]:
     """Verstöße gegen die Gate-Regel im Klartext; leere Liste = Gate erfüllt."""
     return (_pruefe_vergleichbarkeit(vorher, nachher)
@@ -243,4 +272,5 @@ def pruefe_gate(vorher: dict, nachher: dict) -> list[str]:
             + _pruefe_m1_m4(vorher, nachher)
             + _pruefe_og1(vorher, nachher)
             + _pruefe_og3(nachher)
-            + _pruefe_referenz(nachher))
+            + _pruefe_referenz(nachher)
+            + _pruefe_barawitzka(nachher))
