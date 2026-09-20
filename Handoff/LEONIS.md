@@ -4,7 +4,55 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-18 NACHT) — v3, PDF-Fehler zu, Owner-Regeln Skalen+Wandlinie GEPUSHT. HIER WEITER.
+## STAND (2026-09-20) — RIVOPLAN-MASTER-MIGRATION + MOLLGASSE-GROUND-TRUTH-AUFTRAG. HIER WEITER.
+
+**Branch `leonis/demo-l-gebaeude` @ `d74f0e8`, 7 Commits UNGEPUSHT (`456057e..d74f0e8`,
+Owner-Auftrag „kein Push ohne GO"). Voller pytest 1411 grün/51 skip/5 xfail, ruff clean,
+kein Contract-Touch.** Vollbericht (Owner-Schema A–L):
+`docs/MOLLGASSE_RIVOPLAN_GT_BERICHT_2026-09-20.md` — DER Einstieg für die nächste Session.
+
+1. **Migration Rivoplan-Master (M1–M3):** `Rivoplan_Notbeleuchtungs_Symbole.dxf` =
+   einzige Symbolquelle (`RIVO_NL_ARR_*`, right klein-nativ ×50, Basen neu gemessen,
+   **echter Beidseitig-Block** via `notlicht_ks_beidseitig`/richtung=gerade statt
+   Doppel-Block) + `Rivoplan_Notbeleuchtungs_Vorlage.dxf` = einzige Blatt-Vorlage
+   (**Blatt-Anker werden GEMESSEN** — `_vorlage_anker` — statt hartkodiert;
+   `Vorlage_Legende`-Fallback-Rahmen gestrichen → Stücklisten-Box). Alte Lib+Vorlage
+   git-rm'd, physisch noch Windows-gelockt (AutoCAD?) → lokal löschen wenn frei.
+2. **Regelbasis-UG (W):** PDF jetzt 95 S.; 1KG/2KG abgeglichen (33 Beispiele, 28/4/1 —
+   der 1 Widerspruch = **PDF-Textfehler S.57 B↔C, an Owner melden**), **NB-R13–R21**
+   in regeln.md/yaml (Kabeltrasse 450 = FACHPRAXIS, beidseitig Pflicht-vs-Alternative,
+   Garage Motorrad-durchquerbar, Gebäudehälften-Prozessregel „nie raten"),
+   offene Fragen 27–34, beispiele.json 68.
+3. **Ground-Truth-Harness (G):** `mollgasse_gt_extract.py` → 8 GT-Fixtures
+   (`tests/fixtures/mollgasse_gt/`) + `mollgasse_gt_vergleich.py` (leerer Input →
+   pipeline vs. GT; Frame-Transform über Architektur-INSERT-Median). **Ergebnis:
+   gepaart 33/97, fehlt 64, überflüssig 115 (EG 48 = Aufheller-Lane), beidseitig 0/8**
+   → `Projekte/_ergebnis/Mollgasse_GT/`. Lux auf GT nur wo GT SL/AP trägt
+   (EG/1OG/2OG/2KG); 3OG/4OG/DG/1KG = nur RZ → ehrlich „nicht prüfbar".
+4. **E-Slices:** GEBAUT **E4/NB-R13** (`fluchtvektor(hinauf)` — UG flüchtet HINAUF,
+   `bausteine.ist_untergeschoss`, stgh+R8 floor-aware). Gaps mit Begründung (Bericht §K):
+   KG-Erkennung = größter Hebel (0 Kellerabteile, 4–5 Zirk-Segmente, Garage leer —
+   Selman!), beidseitig-Spots = Komplett-Misses mangels Zirkulation, KT-Daten fehlen
+   im leeren Input, Gebäudehälften/Stellplätze = Naht/3-Owner, D3-Front-Runde offen.
+5. **Endstrecke (V):** `scripts/demo/run_mollgasse.py` — 8 Geschosse leerer Input →
+   Rivoplan-DXF+PDF (`Projekte/_ergebnis/Mollgasse_GT/rivoplan_out/`, alle %%EOF;
+   Mollgasse-Extents → G6-Fallback Modelspace-Blatt wie gehabt). GT-Regression
+   `tests/naht/test_mollgasse_gt.py` (Kennzahlen exakt eingefroren).
+6. **Wichtige Befunde:** leere Mollgasse-Pläne sind in METERN (INSUNITS lügt mm) —
+   Selman skaliert korrekt ×1000 · Erklärungs-DXFs = Alt-Blocknamen = GT-BESTAND
+   (Guard-Ausnahme, kein Production-Pfad) · EG-Erklärung vom Owner 20.09. bereinigt
+   (18 Leuchten).
+
+**OFFEN / RESUME:** (a) **Push-GO für die 7 Commits einholen**; (b) Owner: PDF-Textfehler
+S.57, KT-Label-Konvention, FREIHEIT-Wortbedeutung, Tür-RZ Wandlinie vs. 711–930 mm,
+Skalen-Abnahme formal; (c) Selman-Prompt KG-Erkennung (Kellerabteile + Garage-Zirkulation
++ Gebäudehälften — Bericht §K.1 als Grundlage); (d) danach E1 beidseitig + GT-Re-Run;
+(e) Fischamend v4 nach Skalen-Abnahme (jetzt mit Rivoplan-Master rendern!);
+(f) Working-Tree-Anomalie (94 Löschungen) weiter unangetastet — Owner-Klärung.
+
+---
+
+## STAND (2026-09-18 NACHT) — v3, PDF-Fehler zu, Owner-Regeln Skalen+Wandlinie GEPUSHT. [erledigt, s. 2026-09-20]
 
 **Branch `leonis/demo-l-gebaeude` @ `719d6d8`, GEPUSHT (Owner-GO). Targeted Suite
 (platzierung+render+e2e+contract+naht) 515 grün, ruff (getrackt) clean, kein
