@@ -1,8 +1,15 @@
-# Merge-Gate des Türstapels S4a → S4b → S5b → S7a → S3b → S5c
+# Merge-Gate des Türstapels S4a → S4b → S5b → S7a+S7b → S3b → S5c
 
-Stand: 2026-09-19 (Nachträge: Lesart B zu M17-04-c 2026-09-18; Stapel-Erweiterung, Bedingungen
-(7)/(8) und Diagnose S7a/S3b 2026-09-19) · Owner: Selman (`src/notbeleuchtung/raumerkennung/`) ·
+Stand: 2026-09-20 (Nachträge: Lesart B zu M17-04-c 2026-09-18; Stapel-Erweiterung, Bedingungen
+(7)/(8) und Diagnose S7a/S3b 2026-09-19; Reihenfolge, S7a+S7b, Bedingung (9) und Folgeauftrag
+S-KG 2026-09-20) · Owner: Selman (`src/notbeleuchtung/raumerkennung/`) ·
 Branch `selman/uebernahme-enis-m17` · Nullmessung auf Code-Stand `f15d03f` (Tranche 1)
+
+**Reihenfolge seit 2026-09-20 (Owner-Ansage, verbindlich, nichts parallel):** S5b →
+S7a+S7b (= Leonis' Paket S-W „Wohnung ≠ Fluchtweg", § 6f) → S3b → S5c → Gate → Merge des
+Stapels → danach S-KG (Kellergeschosse und Garage) als eigenes Paket (§ 5a). Regeln
+unverändert: nur `raumerkennung/`, kein Owner-Package importieren, Contract nur über das
+Board, ein Slice ein Commit, kein Merge vor dem Gate.
 
 **Stapel seit 2026-09-18 (Owner-Entscheid nach S4b): S4a → S4b → S5b → S7a → S3b → S5c.**
 S7a (Vorraum-Regel, U14/F11) und S3b (Restflächen vor Blocktüren, Owner-Definition) gehören
@@ -233,7 +240,7 @@ und den neuen Abschnitt `referenz` — keine M17-, M1–M4-, OG1- oder OG3-Zahl 
 
 ## 3. Gate-Regel
 
-Der Stapel **S4a → S4b → S5b → S7a → S3b → S5c wird nur gemeinsam gemergt**, und nur wenn
+Der Stapel **S4a → S4b → S5b → S7a+S7b → S3b → S5c wird nur gemeinsam gemergt**, und nur wenn
 `pruefe_gate(nullmessung, messung)` **keinen** Verstoß liefert:
 
 | Nr. | Bedingung | Umsetzung |
@@ -247,6 +254,12 @@ Der Stapel **S4a → S4b → S5b → S7a → S3b → S5c wird nur gemeinsam geme
 | (6) | Rennweg OG3: Fluchtweg-Ableitung intakt | `segmente_graph ≥ 1` **und** `anker_in_wohnung_privat == 0` (Owner-Entscheid 2026-09-18 nach S4a) — wörtlich die Aussage der beiden Tests `test_soll_segmente_aus_graph` und `test_keine_anker_in_wohnung_privat` in `tests/naht/test_soll_rennweg.py`, die auf dem Stapel-Branch als strict-xfail geführt werden („S4a allein, Türstapel unvollständig, muss vor Merge XPASS sein"); das Gate prüft die Zahlen selbst (`tests/gate/gate_og3.py`), damit es nicht am Marker hängt |
 | (7) | OG1: keine von der Referenz **verneinte** Verbindung besteht | `anzahl == 0` für jeden Eintrag aus `gate_referenz.VERNEINT` (§ 1e), Zusatz-Paare eingeschlossen; nicht auflösbarer Raum (`anzahl` None) oder fehlender Abschnitt = Verstoß (Owner-Entscheid 2026-09-18 nach S4b) |
 | (8) | OG1: jeder von der Referenz **geforderte** offene Übergang besteht | `anzahl ≥ 1` für O03, O04, O05 und den Ersatzfall O01/O02 (§ 1e); Ergänzung des Planers, damit S5b keine geforderten Übergänge löscht; None = Verstoß |
+| (9) | Mollgasse 1OG: keine Zirkulation in der Wohnung | `python scripts/analyse/mollgasse_gt_vergleich.py 1OG` gegen `tests/fixtures/mollgasse_gt/`: Zirkulationspunkte in ZIMMER, BAD, WC und privatem VORRAUM = 0 (Owner-Ansage 2026-09-20, Abnahme von S7a+S7b, § 6f). Vorher-Wert laut Leonis: VORRAUM 69, ZIMMER 3, dazu WC/BAD/AR — **nicht selbst gemessen**. **Noch nicht in `gate_regel.py` verdrahtet:** Skript, Fixtures und Leonis' Bericht liegen am 2026-09-20 weder auf `origin/main` noch auf einem anderen Remote-Branch; bis sie im Baum sind, ist (9) Doku-Pflicht, keine geprüfte Regel |
+
+Zur Nummer: die Owner-Ansage vom 2026-09-20 nennt die Mollgasse-Abnahme „Bedingung (7)".
+(7) und (8) sind seit `dd3cfdc` mit den Referenz-Verbindungen belegt; die Mollgasse-Abnahme
+läuft deshalb als **(9)**, damit keine bestehende Nummer ihre Bedeutung wechselt. (5) bleibt
+daneben Abnahme von S7a+S7b (Einraum-Wohnungen auf OG1 sinken).
 
 Zwischenstände der einzelnen Slices werden gemessen und berichtet (`python
 tests/gate/gate_messung.py --out <datei.json>`, dann `pruefe_gate`), aber **nicht
@@ -316,6 +329,32 @@ der Toleranz). Vier freie Teile im Ausschnitt, keiner verbindet beide Bäder →
 - Auf diesem Branch ist weiterhin kein Slice gebaut. S4a, S4b und S5b liegen auf ihren
   eigenen Branches (`selman/fix-s4a-tuerbloecke`, `selman/fix-s4b-seitenprobe`,
   `selman/fix-s5b-querung`), jeweils gemessen, keiner gemergt.
+
+---
+
+## 5a. Folgeauftrag nach dem Stapel-Merge: S-KG — Kellergeschosse und Garage (vorgemerkt, kein Code)
+
+Owner-Ansage 2026-09-20, aus Leonis' Paket. **Nicht Teil des Stapels, nicht Teil dieses
+Gates**; S-KG beginnt erst, wenn der Stapel gemergt ist. Spiegel in `docs/OFFENE_FRAGEN.md`.
+
+1. **Einlagerungsräume:** Stempel „ER" plus Nummer, Raumtyp KELLERABTEIL. Befund 2026-09-20:
+   KELLERABTEIL steht **nicht** im Kanon — `docs/VOKABULAR.md` kennt den Typ nicht,
+   `raumtyp.py` bildet den Text „kellerabteil" auf den Kanon-Typ `KELLER` ab. Also Vorschlag
+   über das Board, nicht still einführen. Das vom Owner genannte Muster
+   (`knowledge/Pläne zeichnen Wissen/Mollgasse-Notbeleuchtungserklärung/`) liegt am
+   2026-09-20 nicht im Baum.
+2. **Garage-Zirkulation:** Fahrgassen und Gehbereiche begehbar, Motorrad-Stellflächen
+   durchquerbar; Doppelparker, PKW-Stellplätze und Gruben nicht (NB-R17 in
+   `knowledge/notbeleuchtung/regeln.md`, Stempel stehen im Plan). NB-R17 ist am 2026-09-20
+   in `knowledge/` dieses Baums nicht auffindbar — kommt mit Leonis' Paket.
+3. **Gebäudehälften Mollgasse / Anastasius-Grün-Gasse:** Zirkulation je Hälfte
+   zusammenhängend, Trennung ist die Gebäudewand, EG als Referenz. Abbildung über
+   Graph-Komponenten, kein neues Contract-Feld.
+4. **Treppenläufe im KG** bleiben wie verifiziert (1KG 2×4, 2KG 4/0/3).
+
+Abnahme: `mollgasse_gt_vergleich.py 1KG` und `2KG` — KELLERABTEIL > 0, Segmente zweistellig,
+„fehlt" im 2KG deutlich unter 20 (laut Owner heute 20 von 29 Experten-Leuchten unerreichbar;
+nicht selbst gemessen, Skript nicht im Baum).
 
 ---
 
@@ -457,6 +496,39 @@ Aufenthaltsraum (OG1 `top_2`, UG `top_1`, Mollgasse `top_10` neu) → F12/S7b; z
 welche ist „der" Eingang? (f) DG2 `raum_6` mit TERRASSE-Tür: zählt sie als Ausgang? (g)
 Zählbasis heutig/statisch/Fixpunkt — die Regel ist zirkulär; der Fixpunkt löst es technisch,
 ist aber eine Festlegung; der heutige Code macht keines von dreien (Reihenfolgeabhängigkeit).
+
+### 6f. Erweiterung zu S7a+S7b — „Wohnung ≠ Fluchtweg" (Owner-Ansage 2026-09-20, Leonis' Paket S-W)
+
+Gleiche Wurzel wie S7a (F11): Vorraum mit Stiegenhaustür ist privat, die Stiegenhaustür ist
+sein Wohnungseingang. Der Owner bekräftigt damit den Wortlaut aus § 6b; die in § 6e offenen
+Festlegungen bleiben vor dem Bau zu treffen. Dazu aus Leonis' Paket, als ein Slice-Paar:
+
+1. Wohnungen als Einheiten trennen — die Umrisse existieren bereits.
+2. Zirkulation an der Wohnungseingangstür stoppen: kein Fluchtweg-Segment hinter die
+   Wohnungstür.
+3. `ist_fluchtweg` und `ist_communal` differenzieren: wohnungsinterne GANG und VORRAUM
+   bekommen beides `False`. Das sind bestehende Felder, keine Contract-Änderung. Fehlt doch
+   ein Feld: erst ins Board, nicht bauen.
+4. Fluchtweg-Segmente nur auf communal-Gängen und Stiegenhäusern.
+
+**Folge für § 6d Punkt 1:** Dort tritt „verlorenes Notlicht" nur deshalb nicht ein, weil
+GANG/VORRAUM beide Flags heute statisch tragen (`raumtyp.py`) und der Klassenfilter der
+Platzierung zusätzlich `not ist_fluchtweg` und `not ist_communal` verlangt. Mit Punkt 3
+fällt dieser Schutz für wohnungsinterne Gänge und Vorräume **gewollt** weg — die sieben
+Kipp-Räume aus § 6c fallen dann unter den Klassenfilter. Das ist der Zweck des Pakets,
+macht aber die Klassenregel sicherheitsrelevant: vor dem Bau je Kipp-Raum gegen den Plan
+prüfen, dass er wirklich wohnungsintern ist (12 der 14 Stiegenhaustüren sind Durchgänge
+ohne Türblatt, § 6c).
+
+**Testdaten zusätzlich zu Rennweg:** `Projekte_Leere Architektpläne (Input)/Mollgasse/`,
+8 Geschosse (im Repo als `Mollgasse.zip` getrackt), in Metern gezeichnet bei INSUNITS mm.
+Laut Leonis greift die ×1000-Kalibrierung dort bereits korrekt — **im Slice zu prüfen**,
+hier nicht gemessen.
+
+**Abnahme:** Gate-Bedingung (9) (§ 3) und weiterhin (5). Leonis' Unterlagen (Board-Eintrag
+2026-09-20, `MOLLGASSE_RIVOPLAN_GT_BERICHT` § K, `scripts/analyse/mollgasse_gt_vergleich.py`,
+`tests/fixtures/mollgasse_gt/`) liegen am 2026-09-20 auf keinem Remote-Branch; der Wortlaut
+oben stammt aus der Owner-Ansage.
 
 ---
 

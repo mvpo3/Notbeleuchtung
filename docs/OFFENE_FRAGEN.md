@@ -1556,3 +1556,23 @@ braucht die Geometrie.
 **Entscheid Owner:** eigener Slice **S4d**, **nach S5c**. Das Tür-Vokabular wird
 **jetzt nicht** angefasst — eine Vokabel-Erweiterung mitten im Türstapel würde die
 Nullmessung und alle laufenden Gate-Zahlen verschieben, bevor der Stapel steht.
+
+## S-KG — Kellergeschosse und Garage (vorgemerkt, 2026-09-20, nach dem Stapel-Merge)
+
+Owner-Ansage 2026-09-20 aus Leonis' Paket; Reihenfolge und Wortlaut in
+`docs/GATE_TUERSTAPEL.md` § 5a. **Kein Code vor dem Merge des Türstapels.** Offen sind:
+
+- **@mvpo3 — Unterlagen fehlen im Repo.** Board-Eintrag 2026-09-20,
+  `MOLLGASSE_RIVOPLAN_GT_BERICHT` § K, `scripts/analyse/mollgasse_gt_vergleich.py`,
+  `tests/fixtures/mollgasse_gt/`, NB-R17 in `knowledge/notbeleuchtung/regeln.md` und
+  das ER-Stempel-Muster unter `knowledge/Pläne zeichnen Wissen/` liegen am 2026-09-20 auf
+  keinem Remote-Branch. Ohne sie ist weder die Abnahme von S-KG noch Gate-Bedingung (9)
+  (S7a+S7b, Mollgasse 1OG) messbar. Bitte Branch oder PR nennen.
+- **Raumtyp KELLERABTEIL ist nicht im Kanon.** `docs/VOKABULAR.md` kennt ihn nicht;
+  `raumtyp.py` bildet den Text „kellerabteil" heute auf `KELLER` ab. Für die Abnahme
+  „KELLERABTEIL > 0" braucht es entweder einen neuen Kanon-Typ (Vorschlag über das Board,
+  betrifft Leonis' Platzierung und Enis' Regel-Deckung) oder die Abnahme zählt `KELLER`
+  mit ER-Stempel. Nicht entschieden.
+- **Gebäudehälften über Graph-Komponenten:** kein neues Contract-Feld vorgesehen. Ob die
+  Komponenten-Zuordnung für Leonis ohne Feld konsumierbar ist, ist mit ihm zu klären, bevor
+  gebaut wird.
