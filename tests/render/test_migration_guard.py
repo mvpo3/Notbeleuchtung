@@ -39,12 +39,25 @@ _VERBOTEN = (
 _SCAN_ORDNER = ("src", "tests", "scripts")
 _SCAN_ENDUNGEN = {".py", ".yaml", ".yml", ".json", ".toml"}
 
+# Ground-Truth-BESTAND ist vom Guard ausgenommen: die Mollgasse-Erklärungs-DXFs
+# des Owners tragen die VOR-Rivoplan-Blocknamen — Extraktor/Fixtures/Vergleich
+# LESEN diesen Bestand (Eval-Daten), sie sind kein Production-Render-Pfad.
+_AUSNAHMEN = (
+    "tests/fixtures/mollgasse_gt",
+    "scripts/analyse/mollgasse_gt_extract.py",
+    "scripts/analyse/mollgasse_gt_vergleich.py",
+    "tests/naht/test_mollgasse_gt.py",
+)
+
 
 def test_keine_alt_referenzen_im_code():
     funde: list[str] = []
     for ordner in _SCAN_ORDNER:
         for datei in (_REPO / ordner).rglob("*"):
             if datei.suffix.lower() not in _SCAN_ENDUNGEN or datei.resolve() == _SELBST:
+                continue
+            rel = datei.relative_to(_REPO).as_posix()
+            if any(rel.startswith(a) for a in _AUSNAHMEN):
                 continue
             try:
                 text = datei.read_text(encoding="utf-8", errors="ignore").lower()
