@@ -1196,7 +1196,12 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None,
                 continue
             bb = _ezbbox.extents(msp.doc.blocks[bname], fast=True)
             hoehe_lokal = 5.5 if len(bloecke) == 1 else 3.0
-            sc = hoehe_lokal * S / max(bb.size.y, 1e-6)
+            # Der beidseitig-Block sind ZWEI übereinander gestapelte Schilder
+            # (doppelte native Höhe) — je Schild soll so groß sein wie ein
+            # Einzel-RZ, darum die doppelte Zielhöhe (sonst wird er auf die Höhe
+            # EINES Schilds gestaucht = halb so groß).
+            ziel_h = hoehe_lokal * (2.0 if bname == "RIVO_NL_ARR_bothsided" else 1.0)
+            sc = ziel_h * S / max(bb.size.y, 1e-6)
             off_y = 0.0 if len(bloecke) == 1 else (1.7 - 3.4 * i)
             wx = (anker["spalte_x0"] + 13.4) * S + dx
             wy = (ty + 2.6 + off_y) * S + dy
