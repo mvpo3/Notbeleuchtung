@@ -628,12 +628,14 @@ Flutung zurückdehnt. **Nicht erklärt** (eigene Ursachen): Muthgasse `tuer_20`/
 
 ---
 
-## 8. Offene Punkte aus S5b (Stand 2026-09-19, Branch `selman/fix-s5b-querung`)
+## 8. S5b — Messung, Korrektur, Blast Radius und offene Punkte (Stand 2026-09-20, Branch `selman/fix-s5b-querung`, Code `94b7480`)
 
 S5b (Diagnose U13) gibt `durchgaenge_ohne_tuerblatt` ein Querungsprädikat: ein freier
 Streifen ist nur dann ein Durchgang, wenn er **beide** Raumseiten erreicht; die Breite wird
-entlang der gemeinsamen Grenze gemessen statt als Rechtecklänge des Streifens. Zwei Punkte
-gehören damit vor den Merge auf den Tisch.
+entlang der gemeinsamen Grenze gemessen statt als Rechtecklänge des Streifens. § 8a und § 8b
+sind die zwei Punkte, die vor den Merge auf den Tisch gehören; § 8c bis § 8f tragen die
+Korrektur vom 2026-09-20, die Gate-Messung, den Blast Radius über alle Familien und die
+dabei gefundenen offenen Befunde nach.
 
 ### 8a. Kontaktgrenze — Abweichung vom wörtlichen 1-mm-Kriterium
 
@@ -673,18 +675,175 @@ sind. Drei Tests in `tests/naht` sind dadurch rot (vorbestehend rot bleiben
 
 | Test | Ist nach S5b | Ursache |
 |---|---|---|
-| `test_soll_barawitzka.py::test_soll_brandschutztuer` | 0 statt ≥ 1 | der EI30-Text hing an einem Durchgang; diese Tür hat keinen erkannten Block (U12/S4a-Rest) |
+| `test_soll_barawitzka.py::test_soll_brandschutztuer` | 0 statt ≥ 1 | die `brandschutztuer` hing an `durchgang_8` (`rest_2` ↔ (leer) 31,25). Nachgemessen 2026-09-20: die Türen dort **sind** erkannt (Bogentüren `tuer_26` 900 und `tuer_12` 1003), ihnen fehlt die Raumseite — das REST-Polygon endet 858 / 981 mm vor ihnen → S3b an Bogentüren, nicht „kein erkannter Block" |
 | `test_soll_rennweg.py::test_soll_stair_exit_statt_final_exit` (OG3) | 0 stair_exit | OG3-Restflächen enden 860–1000 mm vor den Blocktüren → S3b |
 | `test_soll_rennweg.py::test_soll_tueren_mit_detail` (OG3) | 7 statt ≥ 11 | dieselbe Ursache; die Diagnose nennt „≥ 11 heute nur über Durchgänge grün" |
 
-Gleiche Ursache ohne eigenen Test: Räume, die auf **0 Verbindungen** fallen (gemessen über
-die 10 Prüfpläne) — Rennweg OG3 `rest_3` STIEGENHAUS 2,94 m² und `rest_6` 5,46 m²;
-Barawitzka EG sechs Räume (u. a. BAD 4,51 m², ABSTELLRAUM 1,98 m²); Mollgasse EG GANG
-19,46 m² und BAD 4,37 m²; Muthgasse E2 ZIMMER 1,17 m² und KÜCHE 2,55 m². Die übrigen sechs
-Rennweg-Geschosse verlieren keinen Raum ganz.
+Gleiche Ursache ohne eigenen Test: Räume, die auf **0 Verbindungen** fallen — Liste je Raum
+mit Befund und heilendem Slice in § 8e (Stand nach der Korrektur: acht Räume; die übrigen
+sechs Rennweg-Geschosse verlieren keinen Raum ganz). Volle Suite auf `94b7480`: 5 failed
+(diese drei und die zwei vorbestehenden), 1544 passed, 16 xfailed, kein XPASS.
 
 **Offen (Planer/Owner) vor dem Merge:** entweder strict-xfail mit Stapelbegründung wie bei
 `test_soll_segmente_aus_graph`/`test_keine_anker_in_wohnung_privat` (Bedingung (6)) — dann
 müssen sie nach S7a/S3b auf XPASS drehen — oder bewusst rot als bekannter Stapelrest.
 Guard-Bänder werden in keinem Fall abgesenkt; der Branch `selman/fix-s5b-querung` setzt
 keine neuen Marker.
+
+### 8c. Korrektur nach dem Blast Radius (2026-09-20, Test `ddf90e1`, Fix `94b7480`)
+
+Der erste Blast Radius über alle Familien zeigte zwei Fehler in S5bs **eigenem** neuen Code,
+dazu eine Kantenlage am geforderten Übergang O01/O02. Drei Hebel, sonst nur Kommentare
+(AST-Vergleich gegen `67527da`):
+
+| Hebel | Änderung | Anlass (gemessen) | Wirkung über 11 Pläne |
+|---|---|---|---|
+| K1 | Überlappung `> 0` → `> 1,0 mm²` | `> 0` entschied nach Gleitkomma-Rauschen. Auf vier Plänen (OG3, Barawitzka, Mollgasse, Muthgasse) verloren 23 Raumpaare ihren Durchgang; 22 davon mit < 0,2 mm² Überlappung (21 < 0,06 mm², größter 0,197 mm²), 16 davon laut senkrechter Wandsonde Wandlücken ≥ 700 mm. Der 23. ist eine echte Überlappung von 2,55 m² (Muthgasse KÜCHE in KÜCHE) und bleibt verworfen | +17 Durchgänge (Barawitzka 2, Mollgasse 5, Muthgasse 9, DD 1), alle mit Raumabstand 0 |
+| K2 | Breitenschwelle 800 → 800 − 3 · 1 mm; der Wandabzug bleibt gepuffert | der 1-mm-Wandpuffer kostet jede an Wandflanken endende Öffnung 2 mm: Barawitzka KÜCHE 20,47 ↔ VORRAUM 3,87, echte 800-mm-Lücke ohne Türbogen, gemessen 798 mm | +1 Durchgang (genau dieser). Ein Kandidat am OG1 (VORRAUM 2,59 ↔ BAD 4,66, 798,06 mm — die Türlücke der Blocktür `tuer_8` ohne Breite) hängt jetzt allein an Regel (a), 284 mm Schwerpunktabstand |
+| K3 | `_SPLITTER_MM` 50 → 25 | O01/O02 liegt an einer 450-mm-Wand; die Kontaktzone ist dort ein 50,0-mm-Band = alte Splitter-Schwelle, Reserve 97 mm² = 0,16 % (mit 25: 100,3 %). Am EG hängen drei weitere Durchgänge an derselben Kante (effektive Dicke 51,3 / 51,7 / 59,5 mm) | keine — K3 dreht auf 11 Plänen keine Entscheidung. Preis: die Regel wirkt als Abstandsdeckel d ≤ 500 − Splitter, er wandert von 450 auf 475 mm; fehlt in diesem Fenster der Wandkörper, entsteht ein raumlanger Durchgang (als Decke getestet) |
+
+**Verworfene Bauart von K2:** den Wandverbund ungepuffert abziehen. Am Rennweg blähte das 59
+von 120 Breiten um mehr als 100 mm auf (OG1 O05 948 → 1774 mm, OG2 GANG 6,06 ↔ VORRAUM 4,92
+1548 → 4055 mm), erzeugte am UG zwei Durchgänge durch lückenlose 100-mm-Wände (1810 und
+1552 mm) und kippte O01/O02 über die Splitter-Kante.
+
+**Wirkung am Rennweg:** auf den 7 Prüfgeschossen ist das Modell nach der Korrektur **strikt
+identisch** mit `67527da` (Türen samt id/xy/Detail, Räume, Wohnungen, Ausgänge). Die ganze
+Wirkung liegt in den drei anderen Familien und auf der DD.
+
+**Einordnung der 18 Rückkehrer** (unabhängiger Prüfer; eigene Parses für Barawitzka,
+Mollgasse und DD, Muthgasse nur aus den Messdaten): `67527da` → `94b7480` ist rein additiv,
+kein Durchgang entfällt, keine Dublette im strengen Sinn (bekannte Tür am selben Raumpaar).
+Von den 9 prüfbaren sind **3 echt** — die K2-Öffnung, Barawitzka TERRASSE 5,98 ↔ BALKON 7,29
+und Mollgasse GANG 19,46 ↔ GANG 77,07 (beides Außenflächen) — und **6 Altartefakte der
+vorgelagerten Raumerkennung**, die es schon vor S5b gab: Mollgasse „ABSTELLRAUM 24,57" ist
+eine HLS-Schraffur und zugleich Wandkörper (3 Durchgänge); Rennweg DD, Mollgasse VORRAUM 8,17
+↔ „STIEGENHAUS" (Außenanlage) und Barawitzka Treppenlauf 5,72 zählen den Umfang des kleineren
+Polygons als Breite (9472 / 14200 / 6943 mm). Muthgasse (9): 1 Artefakt (Nebenzeichnung rund
+347 m außerhalb des Grundrisses), 1 Verdacht (ZIMMER 14,02 ↔ KÜCHE 24,62: gezählt 2325 mm,
+Sonde 202 mm), 7 nicht entscheidbar. K1 stellt also den Stand vor S5b wieder her und belegt
+**keine** neue echte Innenöffnung; es bleibt, weil ein Kriterium nicht an 1e-18 mm² hängen darf.
+
+### 8d. Gate-Messung auf `94b7480` (sauberer Arbeitsbaum)
+
+`python tests/gate/gate_messung.py`, `arbeitsbaum_src_scripts_sauber = true`.
+`pruefe_gate(nullmessung, messung)` liefert **5 Verstöße**: (3) M4.einraum OG1 2 → 3,
+(3) M4.einraum DG2 0 → 1, (5) Einraum 2 → 3, (6) `segmente_graph` 0, (6) Anker in
+WOHNUNG_PRIVAT 3. **Erfüllt:** (0); (1); (2) — beide roten Fälle gedreht, **18 von 18
+BESTANDEN**, M17-02-a bleibt BESTANDEN; (4); (7) alle elf verneinten Verbindungen 0;
+(8) alle vier geforderten Übergänge ≥ 1. `pytest -m gate tests/gate`: 3 passed, 1 xfailed
+(per Design).
+
+| Nullmessung → S4b → S5b | OG1 | OG3 |
+|---|---|---|
+| Türen gesamt | 28 → 28 → 20 | 23 → 27 → 17 |
+| Durchgänge ohne Türblatt | 26 → 17 → 9 | 20 → 13 → 3 |
+| Wohnungen | 3 → 3 → 4 | 2 → 1 → 3 |
+| Einraum-Wohnungen | 2 → 2 → 3 | 0 → 0 → 0 |
+| GRAPH-Segmente | — | 5 → 0 → 0 |
+| Anker in WOHNUNG_PRIVAT | — | 0 → 3 → 3 |
+| Türen mit `von_raum == nach_raum` | 0 → 0 → 0 | — |
+
+M1 bis M3 unverändert auf allen 7 Plänen. M4 gegen die Nullmessung: OG1 Wohnungen 3 → 4 /
+Einraum 2 → 3; DG2 1 → 2 / 0 → 1; OG2 Einraum 1 → 0 und `privatraum_ohne_wohnung` 3 → 1;
+OG3 Wohnungen 2 → 3.
+
+**(3) ist neu mit S5b** und kein Türproblem im engen Sinn. OG1 `top_4` = ZIMMER 17,04: es
+hing vor S5b nur über zwei von der Referenz **verneinte** Durchgänge (zu BAD 11,76 und GANG
+6,48) an der Wohnung; seine echte Tür T04 (`tuer_5`, Block 840) führt in die Wohnküche
+73,06, die **keinen Raumtyp** und damit keine Klasse trägt — dort endet die Wohnungsbildung.
+DG2 ZIMMER 19,60: vorher über einen 3437-mm-Durchgang an VORRAUM 10,84, jetzt nur noch
+`tuer_1` zum VORRAUM 15,20, der ALLGEMEIN_ERSCHLIESSUNG ist (S7a-Kandidat `raum_7`, § 6c,
+abhängig von der Zählbasis). § 6c ist vor S5b gemessen; ob S7a auf dem S5b-Stand (3) und (5)
+heilt, ist nicht nachgemessen. Die untypisierte Wohnküche heilt kein Slice des Stapels.
+
+Referenzabgleich OG1: T01–T07, T09 und T10 je genau eine Blocktür; T08 weiter als Durchgang
+2518 mm (Balkontür → S4d); O01/O02 1198 mm, O03 1450 mm, O04 1198 mm, O05 948 mm.
+
+### 8e. Blast Radius über alle Familien (V = `1e5e5ac` vor S5b · A = `67527da` · C = Korrektur)
+
+Je Plan und Stand ein voller In-Memory-Parse (33 Läufe, Modulkopie per `git show`), kein
+Output; von drei unabhängigen Prüfern nachgerechnet (0 Abweichungen in den Tabellen). C ist
+auf dem Arbeitsbaum vor dem Commit gemessen, Produktionscode AST-gleich mit `94b7480`.
+Durchgang = `quelle` beginnt mit `durchgang` (die frühere Zählung mit exaktem Vergleich
+unterschlug auf Muthgasse die Durchgänge mit Text-Suffix: 119 → 48 statt 146 → 61).
+
+| Plan | Durchgänge V/A/C | Türen V/A/C | Wohnungen V/A/C | Einraum V/A/C | Räume mit 0 Verbindungen V/A/C |
+|---|---|---|---|---|---|
+| Rennweg UG | 15/4/4 | 33/22/22 | 4/4/4 | 4/4/4 | 4/4/4 |
+| Rennweg EG | 22/20/20 | 42/40/40 | 2/2/2 | 1/1/1 | 2/2/2 |
+| Rennweg OG1 | 17/9/9 | 28/20/20 | 3/4/4 | 2/3/3 | 1/1/1 |
+| Rennweg OG2 | 21/10/10 | 33/22/22 | 1/2/2 | 0/0/0 | 2/2/2 |
+| Rennweg OG3 | 12/2/2 | 27/17/17 | 1/3/3 | 0/0/0 | 5/7/7 |
+| Rennweg DG1 | 12/9/9 | 19/16/16 | 1/1/1 | 0/0/0 | 2/2/2 |
+| Rennweg DG2 | 16/6/6 | 21/11/11 | 1/2/2 | 0/1/1 | 3/3/3 |
+| Barawitzka EG | 61/24/27 | 99/62/65 | 6/14/13 | 4/9/8 | 7/13/11 |
+| Mollgasse EG | 70/26/31 | 147/106/111 | 9/23/21 | 2/18/15 | 2/4/3 |
+| Muthgasse E2 | 146/61/70 | 264/181/190 | 7/34/28 | 3/21/15 | 6/8/7 |
+| **Summe 10 Prüfpläne** | **392/171/188** | **713/497/514** | **35/89/80** | **16/57/47** | **34/46/42** |
+| Rennweg DD (getrennt) | 2/1/2 | 3/2/3 | 0/0/0 | 0/0/0 | 0/0/0 |
+
+Es entfallen also **204 Durchgänge** (392 → 188). `final_exit` 14 → 16 → 16, `stair_exit`
+17 → 14 → 14 (OG3 1 → 0, Muthgasse 4 → 2), Außenöffnungen 11 → 16 → 16 (Mollgasse 7 → 10,
+Muthgasse 0 → 2: weniger Innen-Durchgänge bedienen die 600-mm-Regel, S5c unberührt).
+Nutzungsklassen-Wechsel V → A: Mollgasse `raum_7` und `raum_55`, Muthgasse `raum_68`; A → C:
+Mollgasse `raum_7` VORRAUM 8,17 zurück auf ALLGEMEIN_ERSCHLIESSUNG (K1-Durchgang zur
+Außenanlage, 14,2 m „breit").
+
+**Wird ein Raum unerreichbar?** Acht Räume hatten vor S5b mindestens eine Verbindung und
+haben danach keine mehr. Alle 16 verlorenen Verbindungen waren synthetische Durchgänge:
+
+| Plan | Raum | Verlauf V/A/C | Befund | Klasse | heilt |
+|---|---|---|---|---|---|
+| Rennweg OG3 | `rest_3` STIEGENHAUS 2,94 | 1/0/0 | 4 Blocktüren liegen 905–938 mm vor dem Polygon, alle mit `KEIN_RAUM`-Seite | Durchgang war Artefakt, echte Tür ohne Raumseite | S3b |
+| Rennweg OG3 | `rest_6` (leer) 5,46 | 4/0/0 | Wohnungsflur als Restfläche, endet vor `tuer_8/9/10` | wie oben | S3b |
+| Barawitzka EG | `raum_22` BAD 4,51 | 2/0/0 | Bogentür `tuer_19` (830) 125 mm am Bad, zugeordnet VORRAUM / `KEIN_RAUM` | wie oben | Seitenzuordnung am gestempelten Raum (S4b-Rest, kein benannter Slice) |
+| Barawitzka EG | `raum_28` ABSTELLRAUM 1,98 | 2/0/0 | die 830er Bogenöffnung hat **keine eigene Tür**: sie steckt in `tuer_38` „doppelfluegel" 1660 (Fehlpaarung zweier Einzeltüren) | **echte Tür ohne Ersatz** | S4a-Rest (Doppelflügel-Paarung) |
+| Barawitzka EG | `raum_36` (leer) 29,87 | 2/0/0 | Wandkörper lokal mit Lücken (Sonde 853 / 2658 mm), kein Türbogen ≤ 2,9 m; scheitert an der Kontaktgrenze mit globalem Abstand (§ 8f) | unklar | — |
+| Barawitzka EG | `rest_2` (leer) 3,40 | 2/0/0 | Bogentüren `tuer_26` (900) und `tuer_12` (1003) 858 / 981 mm vor dem Polygon, `KEIN_RAUM`-Seite; hier hing die `brandschutztuer` | Durchgang war Artefakt, echte Tür ohne Raumseite | S3b (an Bogentüren) |
+| Mollgasse EG | `raum_21` BAD 4,37 | 2/0/0 | Blocktür `tuer_43` (800) 24 mm am Bad, zugeordnet GANG / `KEIN_RAUM` | wie oben | Seitenzuordnung (S4b-Rest) |
+| Muthgasse E2 | `raum_91` KÜCHE 2,55 | 1/0/0 | liegt zu 99,97 % in `raum_29` (verschachteltes Polygon) | Durchgang war Artefakt | Raumerkennung, kein Slice |
+
+S5c heilt keinen der acht. Die Korrektur bindet vier Räume wieder an (Barawitzka `raum_1`
+Treppenlauf und `raum_2` TERRASSE, Mollgasse `raum_4` GANG 19,46, Muthgasse `raum_81`) —
+keiner davon ist ein Innenraum mit belegter Wandöffnung (§ 8c).
+
+**Die Zählung „0 Verbindungen" unterschätzt den Effekt**, weil sie Türen mit `KEIN_RAUM`-
+oder AUSSEN-Gegenseite mitzählt. Begehbare Räume ohne Tür zu einem anderen Raum: 12 → 38 →
+34; zu den acht kommen 14 weitere, u. a. OG3 `rest_4` STIEGENHAUS 9,78, DG2 TERRASSE 9,93,
+Mollgasse MUELLRAUM 35,08 und acht Muthgasse-Räume (darunter SCHLEUSE 13,04), deren
+Text-/Blocktüren eine `KEIN_RAUM`-Seite haben. Zusammenhangskomponenten über die 10 Prüfpläne:
+**30 → 72 → 61** (Barawitzka 3/13/10, Mollgasse 4/12/9, Muthgasse 8/27/22, OG3 3/7/7, DG2
+1/2/2). Vorbehalt: die Konnektivität vor S5b war zum Teil falsch (Durchgänge durch
+geschlossene Wände); V ist Vergleichsstand, nicht Wahrheit. Der Kern: die synthetischen
+Durchgänge waren in diesen Familien die Stellvertreter echter Türen, deren Raumseite fehlt
+(`seite_fehlt`: Barawitzka 30, Mollgasse 21, Muthgasse 79). Das Gate misst nur Rennweg —
+**diese Fragmentierung sieht es nicht.**
+
+### 8f. Offene Befunde aus Messung und Review (nicht gebaut)
+
+1. **Kontaktgrenze rechnet mit dem globalen Paarabstand.** Rennweg DG2 TERRASSE 9,93 ↔
+   VORRAUM 15,96: Wandkörper-Lücke 1371 mm (Sonde, am Rennweg kalibriert), globaler
+   Raumabstand 400,000 mm, lokal 401,567 mm — der freie Teil liegt 150,959 mm von beiden
+   Räumen bei Grenze 151,000 mm, `_grenz_breite` misst 45,7 mm → verworfen. Gleiches Muster
+   Barawitzka STIEGENHAUS 30,02 ↔ (leer) 29,87 (global 0, lokal 270 mm). Betrifft § 8a;
+   ein lokaler Abstand je freiem Teil wäre die Korrektur, mit eigenem Blast Radius.
+   Ob am DG2 Fenstertür oder Festverglasung steht, ist nicht gemessen.
+2. **Breitenmaß bei Raumabstand 0:** `_grenz_breite` zählt den Umfang eines kleinen Polygons
+   in der Kerbe eines großen als Öffnungsbreite (DD 9472 mm bei 2920 mm gemeinsamer Kante).
+3. **Phantom Rennweg OG3 ZIMMER 45,36 ↔ WC 1,51, 1794 mm:** 1667 der gezählten mm liegen
+   1–3 mm neben dem Wandkörper (fester 1-mm-Wandpuffer; mit 2 mm blieben 278 mm). Schon in
+   `67527da`, kein Rückschritt. Mit `min` statt `max` beider Raumseiten entfielen am Rennweg
+   genau drei Durchgänge (dieser, DG2 STIEGENHAUS 0,87 ↔ VORRAUM 15,96, OG2 BAD 4,58 ↔
+   WC 1,55) — eigener Slice, vorher Blast Radius.
+4. **Regel (a) misst gegen den Schwerpunkt des freien Teils:** eine 800- oder 900-mm-Türlücke
+   am Wandende bleibt bei Türen ohne Sehnenzone als Dublette stehen (30 von 84 Rennweg-Türen
+   haben keine Sehnenzone). Als Decke getestet, an den 11 Plänen ohne Treffer.
+5. **Überlappungstoleranz ist eine Fläche** und skaliert mit der Kantenlänge (4 m Kante:
+   0,25 µm Überstand = 1 mm²). Gegen die Messwerte (≤ 0,197 mm² gegen 2,55 m²) reicht sie.
+6. **Muthgasse-Türnummern:** von 20 Texten, die vor S5b an einem Durchgang hingen, hängen 9
+   nur noch an Türen mit `KEIN_RAUM`-Seite und 3 an keiner Tür mehr (E2-VF-15b, T-E2-8-05-1,
+   T-E2-9-07-2).
+7. **Grenzen der Wandsonde:** an Barawitzka laufen Wandkörper durch die Türöffnungen (an 15
+   erkannten Türen findet die Sonde nur bei 4 eine Lücke) — „Sonde 0" ist dort kein Beleg
+   für „keine Öffnung".
