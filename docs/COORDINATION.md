@@ -515,3 +515,70 @@ Naht-Invariante und steckt auch in `tests/fakes.py` und
 - **S4a-Stapel:** ack — S4a/S4b/S5b nur gemeinsam mergen, Leonis-Naht-Tests strict-xfail auf dem Branch (nicht abgesenkt) = korrekt. Leonis fährt sync-review über den GANZEN Stapel, sobald er steht.
 - Kontext Leonis heute (lokal, ungepusht `1cd754a..b2dfba4`): Fischamend v3 mit neuen Symbolen (Positionen 1:1 = v2), PDF-Textfehler alle vom Owner behoben, 2 neue Owner-Regeln gebaut: Symbolgrößen = Legenden-Soll der neuen Vorlage ×50 (RZ 883/AP 586/Aufheller+Spot 192/Anlage 852 mm) + Tür-RZ auf Wandlinie (`RZ_INS_RAUM_MM` 150→0, Golden 4og nachgezogen).
 
+
+## 2026-09-20 — Leonis → Selman: ZWEI Erkennungs-Pakete (Owner leitet weiter) — Wohnung-Fluchtweg + KG/Garage
+
+Kontext: Owner-Auftrag Mollgasse-Ground-Truth (Bericht:
+`docs/MOLLGASSE_RIVOPLAN_GT_BERICHT_2026-09-20.md`). Engine-Lauf auf den LEEREN
+Mollgasse-Plänen vs. Experten-Erklärungs-DXFs: 33/97 getroffen — die zwei
+dominanten Ursachen liegen in der Erkennung. Prompt-Text für Selman siehe unten
+(selbsterklärend, Owner gibt ihn weiter). Assets: leere Pläne
+`Projekte_Leere Architektpläne (Input)/Mollgasse/` (8 Geschosse; ACHTUNG: in
+METERN gezeichnet, INSUNITS behauptet mm — deine ×1000-Skalierung greift
+korrekt), GT-Messdaten `tests/fixtures/mollgasse_gt/<G>.json`, Vergleichs-Runner
+`scripts/analyse/mollgasse_gt_vergleich.py` (misst deinen Fortschritt je
+Geschoss reproduzierbar).
+
+### Paket S-W — Wohnung ≠ Fluchtweg (Wurzel „Notbeleuchtung in der Wohnung", seit 13.09. offen)
+
+Befund (Mollgasse 1OG, leerer Plan, live gemessen 2026-09-20):
+- Fluchtweg-ZIRKULATION läuft IN die Wohnungen: Segment-Stützpunkte in
+  VORRAUM (69 Punkte, communal=True!), ZIMMER (3), WC, BAD, ABSTELLRAUM.
+- 5 GANG-Räume, ALLE `ist_communal=True, ist_fluchtweg=True` — auch
+  wohnungsinterne Gänge/Vorräume. Die Platzierung filtert über genau diese
+  Flags (WOHNUNG_PRIVAT-Skip, R7-Vorraum-Filter) und darf nicht raten →
+  Symbole landen im Wohnungs-Gang.
+
+Soll (wie im Prompt vom 13.09., unverändert gültig):
+1. Wohnungen als Einheiten trennen (Wohnungs-Umrisse hast du bereits).
+2. Zirkulation an der WOHNUNGSEINGANGSTÜR stoppen — kein Segment hinter
+   die Wohnungstür.
+3. `ist_fluchtweg`/`ist_communal` differenzieren: wohnungsinterne
+   GANG/VORRAUM → communal=False, fluchtweg=False (oder eigener Raumtyp
+   WOHNUNG_PRIVAT-Zuordnung).
+4. Fluchtweg-Segmente sauber auf die communal-Gänge/STGH beschränken.
+
+Abnahme (messbar): `mollgasse_gt_vergleich.py 1OG` — Zirkulations-Punkte in
+ZIMMER/BAD/WC/privatem VORRAUM = 0; Platzierungs-Lauf setzt keine Symbole
+mehr in Wohnungs-Gängen (Owner-Sichtprüfung am PDF).
+
+### Paket S-KG — Kellergeschosse + Garage (neu, aus dem UG-Kapitel der Owner-PDF)
+
+Befund (leere Pläne 1KG/2KG, live gemessen):
+- 1KG: 31 Räume, **0 KELLERABTEILE** (real: ~50 Einlagerungsräume „ER"),
+  nur 4 Zirkulations-Segmente. 2KG: 30 Räume, 1 GARAGE (ein Riesen-Polygon),
+  5 Segmente, keine Fahr-/Gehwege.
+- Folge: von 29 Experten-Leuchten im 2KG verfehlt die Engine 20 komplett
+  (keine Räume/Wege an den Spots); alle 8 beidseitigen Experten-RZ
+  unerreichbar (die Wasserscheiden-Knoten existieren im Graph nicht).
+
+Soll:
+1. **Einlagerungsräume/Kellerabteile erkennen** (Stempel „ER"+Nummer;
+   1KG/2KG-Erklärungs-DXFs zeigen das Muster) → Raumtyp KELLERABTEIL.
+2. **Garage-Zirkulation**: begehbare Wege durch die Garage (Fahrgassen +
+   Gehbereiche). Referenz-Fachpraxis aus der Owner-PDF (NB-R17,
+   `knowledge/notbeleuchtung/regeln.md`): Motorrad-Stellflächen sind
+   durchquerbar, Doppelparker-/PKW-Flächen + Gruben NICHT — die Stempel
+   (MOTORRAD/DOPPELPARKER/Pflichtstellplatz) stehen in den Plänen.
+3. **Gebäudehälften** (Mollgasse/Anastasius-Grün-Gasse): die Zirkulation
+   sollte je Gebäudehälfte zusammenhängen (Trennung entlang der
+   Gebäudewand; EG ist die Referenz). KEIN neues Contract-Feld nötig,
+   solange die Graph-Komponenten die Trennung abbilden — falls du eines
+   brauchst: erst hier eintragen (3-Owner).
+4. STGH-Treppenläufe im KG lieferst du schon (1KG 2×4, 2KG 4/0/3 — ✓);
+   Leonis-seitig ist NB-R13 (UG flüchtet HINAUF) bereits gebaut.
+
+Abnahme (messbar): `mollgasse_gt_vergleich.py 1KG 2KG` — Ziel-Richtung:
+KELLERABTEIL > 0, Zirkulations-Segmente zweistellig, „fehlt" im 2KG deutlich
+unter 20. Wissens-Grundlage für dich: `knowledge/notbeleuchtung/abgleich/
+{1KG,2KG}/abgleich_*.md` (mm-genau belegte Beispiele) + Bericht §K.
