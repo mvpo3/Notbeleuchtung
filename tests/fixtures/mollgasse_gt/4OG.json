@@ -1,0 +1,502 @@
+{
+ "geschoss": "4OG",
+ "quelle": "knowledge\\Pläne zeichnen Wissen\\Mollgasse-Notbeleuchtungserklärung\\WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+ "n_leuchten": 7,
+ "n_beidseitig_gruppen": 0,
+ "leuchten": [
+  {
+   "handle": "4121F",
+   "block": "RIVO-RZ-ARR_right",
+   "typ": "rz",
+   "richtung_block": "right",
+   "xy_mm": [
+    -75939.6,
+    32585.3
+   ],
+   "insert_xy_mm": [
+    -657920.4,
+    -102566.0
+   ],
+   "rot_deg": 359.87,
+   "xscale": 1.3724,
+   "welt_pfeil_deg": 359.87,
+   "layer": "0"
+  },
+  {
+   "handle": "41220",
+   "block": "RIVO-SIBEL-ARR-left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    -72423.9,
+    34450.6
+   ],
+   "insert_xy_mm": [
+    -205438.3,
+    -34681.4
+   ],
+   "rot_deg": 359.42,
+   "xscale": 36.0983,
+   "welt_pfeil_deg": 179.42,
+   "layer": "0"
+  },
+  {
+   "handle": "41249",
+   "block": "RIVO-SIBEL-ARR-left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    -75883.5,
+    30932.7
+   ],
+   "insert_xy_mm": [
+    -145015.5,
+    163947.2
+   ],
+   "rot_deg": 269.42,
+   "xscale": 36.0983,
+   "welt_pfeil_deg": 89.42,
+   "layer": "0"
+  },
+  {
+   "handle": "413A0",
+   "block": "RIVO-SIBEL-ARR-down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    -35385.0,
+    8592.0
+   ],
+   "insert_xy_mm": [
+    96667.0,
+    77484.7
+   ],
+   "rot_deg": 179.71,
+   "xscale": 35.6373,
+   "welt_pfeil_deg": 89.71,
+   "layer": "0"
+  },
+  {
+   "handle": "413E8",
+   "block": "RIVO-SIBEL-ARR-down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    -39711.1,
+    6006.3
+   ],
+   "insert_xy_mm": [
+    -108603.7,
+    138058.2
+   ],
+   "rot_deg": 269.71,
+   "xscale": 35.6373,
+   "welt_pfeil_deg": 179.71,
+   "layer": "0"
+  },
+  {
+   "handle": "41593",
+   "block": "RIVO-SIBEL-ARR-left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    -35752.2,
+    4564.3
+   ],
+   "insert_xy_mm": [
+    -168766.7,
+    -64567.6
+   ],
+   "rot_deg": 359.42,
+   "xscale": 36.0983,
+   "welt_pfeil_deg": 179.42,
+   "layer": "0"
+  },
+  {
+   "handle": "415B6",
+   "block": "RIVO-RZ-ARR_right",
+   "typ": "rz",
+   "richtung_block": "right",
+   "xy_mm": [
+    -42975.5,
+    4646.0
+   ],
+   "insert_xy_mm": [
+    92175.8,
+    -577334.8
+   ],
+   "rot_deg": 89.87,
+   "xscale": 1.3724,
+   "welt_pfeil_deg": 89.87,
+   "layer": "0"
+  }
+ ],
+ "personen": [
+  {
+   "handle": "41222",
+   "xy_mm": [
+    -77371.8,
+    29702.3
+   ],
+   "rot_deg": 101.86,
+   "xscale": -4.0068,
+   "blick_deg": 101.86
+  },
+  {
+   "handle": "41277",
+   "xy_mm": [
+    -78494.2,
+    30631.7
+   ],
+   "rot_deg": 11.86,
+   "xscale": -4.0068,
+   "blick_deg": 11.86
+  },
+  {
+   "handle": "412FF",
+   "xy_mm": [
+    -75938.0,
+    31794.8
+   ],
+   "rot_deg": 101.86,
+   "xscale": -4.0068,
+   "blick_deg": 101.86
+  },
+  {
+   "handle": "41301",
+   "xy_mm": [
+    -73667.5,
+    32586.4
+   ],
+   "rot_deg": 11.86,
+   "xscale": -4.0068,
+   "blick_deg": 11.86
+  },
+  {
+   "handle": "41303",
+   "xy_mm": [
+    -73882.5,
+    33992.0
+   ],
+   "rot_deg": 347.88,
+   "xscale": 4.0068,
+   "blick_deg": 167.88
+  },
+  {
+   "handle": "41329",
+   "xy_mm": [
+    -75948.9,
+    33726.2
+   ],
+   "rot_deg": 77.54,
+   "xscale": 4.0068,
+   "blick_deg": 257.54
+  },
+  {
+   "handle": "4132D",
+   "xy_mm": [
+    -75182.5,
+    32570.7
+   ],
+   "rot_deg": 11.86,
+   "xscale": -4.0068,
+   "blick_deg": 11.86
+  },
+  {
+   "handle": "4137B",
+   "xy_mm": [
+    -34559.4,
+    3513.8
+   ],
+   "rot_deg": 101.86,
+   "xscale": -4.0068,
+   "blick_deg": 101.86
+  },
+  {
+   "handle": "4140D",
+   "xy_mm": [
+    -35692.6,
+    2844.0
+   ],
+   "rot_deg": 101.86,
+   "xscale": -4.0068,
+   "blick_deg": 101.86
+  },
+  {
+   "handle": "41433",
+   "xy_mm": [
+    -36191.2,
+    10554.5
+   ],
+   "rot_deg": 304.09,
+   "xscale": -4.0068,
+   "blick_deg": 304.09
+  },
+  {
+   "handle": "41458",
+   "xy_mm": [
+    -35363.3,
+    11436.7
+   ],
+   "rot_deg": 304.09,
+   "xscale": -4.0068,
+   "blick_deg": 304.09
+  },
+  {
+   "handle": "41486",
+   "xy_mm": [
+    -35418.2,
+    7187.5
+   ],
+   "rot_deg": 304.09,
+   "xscale": -4.0068,
+   "blick_deg": 304.09
+  },
+  {
+   "handle": "41488",
+   "xy_mm": [
+    -41537.1,
+    5847.6
+   ],
+   "rot_deg": 2.75,
+   "xscale": -4.0068,
+   "blick_deg": 2.75
+  },
+  {
+   "handle": "414AD",
+   "xy_mm": [
+    -38374.9,
+    5961.1
+   ],
+   "rot_deg": 2.75,
+   "xscale": -4.0068,
+   "blick_deg": 2.75
+  },
+  {
+   "handle": "414D2",
+   "xy_mm": [
+    -36505.5,
+    4573.1
+   ],
+   "rot_deg": 356.98,
+   "xscale": 4.0068,
+   "blick_deg": 176.98
+  },
+  {
+   "handle": "414D4",
+   "xy_mm": [
+    -39385.9,
+    4579.7
+   ],
+   "rot_deg": 356.98,
+   "xscale": 4.0068,
+   "blick_deg": 176.98
+  },
+  {
+   "handle": "414D7",
+   "xy_mm": [
+    -37945.0,
+    4576.4
+   ],
+   "rot_deg": 356.98,
+   "xscale": 4.0068,
+   "blick_deg": 176.98
+  }
+ ],
+ "labels": [
+  {
+   "text": "(4OG)",
+   "xy_mm": [
+    -77591.1,
+    30138.3
+   ],
+   "handle": "41223"
+  },
+  {
+   "text": "(C)",
+   "xy_mm": [
+    -72061.4,
+    34594.2
+   ],
+   "handle": "41225"
+  },
+  {
+   "text": "(A)",
+   "xy_mm": [
+    -75667.3,
+    31271.9
+   ],
+   "handle": "4124A"
+  },
+  {
+   "text": "(4OG)",
+   "xy_mm": [
+    -78357.0,
+    31101.5
+   ],
+   "handle": "41278"
+  },
+  {
+   "text": "(B)",
+   "xy_mm": [
+    -76184.4,
+    32936.4
+   ],
+   "handle": "412DA"
+  },
+  {
+   "text": "(4OG)",
+   "xy_mm": [
+    -76615.9,
+    31718.1
+   ],
+   "handle": "41300"
+  },
+  {
+   "text": "(4OG)",
+   "xy_mm": [
+    -73521.6,
+    32981.0
+   ],
+   "handle": "41302"
+  },
+  {
+   "text": "(DG)",
+   "xy_mm": [
+    -73802.6,
+    34386.4
+   ],
+   "handle": "41304"
+  },
+  {
+   "text": "(DG)",
+   "xy_mm": [
+    -76520.8,
+    33616.4
+   ],
+   "handle": "4132A"
+  },
+  {
+   "text": "(DG)",
+   "xy_mm": [
+    -75054.4,
+    32983.8
+   ],
+   "handle": "4132C"
+  },
+  {
+   "text": "(4OG)",
+   "xy_mm": [
+    -35237.3,
+    3437.1
+   ],
+   "handle": "4137C"
+  },
+  {
+   "text": "(A)",
+   "xy_mm": [
+    -35051.8,
+    8667.5
+   ],
+   "handle": "413A1"
+  },
+  {
+   "text": "(C)",
+   "xy_mm": [
+    -43148.5,
+    5190.1
+   ],
+   "handle": "413E9"
+  },
+  {
+   "text": "(4OG)",
+   "xy_mm": [
+    -36370.6,
+    2767.2
+   ],
+   "handle": "4140E"
+  },
+  {
+   "text": "(4OG)",
+   "xy_mm": [
+    -35973.7,
+    10871.8
+   ],
+   "handle": "41434"
+  },
+  {
+   "text": "(4OG)",
+   "xy_mm": [
+    -35145.8,
+    11753.9
+   ],
+   "handle": "41459"
+  },
+  {
+   "text": "(4OG)",
+   "xy_mm": [
+    -35200.7,
+    7504.8
+   ],
+   "handle": "41487"
+  },
+  {
+   "text": "(DG)",
+   "xy_mm": [
+    -41318.4,
+    6202.6
+   ],
+   "handle": "41489"
+  },
+  {
+   "text": "(DG)",
+   "xy_mm": [
+    -38156.2,
+    6316.1
+   ],
+   "handle": "414AE"
+  },
+  {
+   "text": "(DG)",
+   "xy_mm": [
+    -37104.5,
+    4927.7
+   ],
+   "handle": "414D3"
+  },
+  {
+   "text": "(DG)",
+   "xy_mm": [
+    -39985.0,
+    4934.3
+   ],
+   "handle": "414D5"
+  },
+  {
+   "text": "(4OG)",
+   "xy_mm": [
+    -38594.4,
+    4931.1
+   ],
+   "handle": "414D8"
+  },
+  {
+   "text": "(B)",
+   "xy_mm": [
+    -35322.6,
+    4628.8
+   ],
+   "handle": "4156F"
+  },
+  {
+   "text": "(D)",
+   "xy_mm": [
+    -39847.0,
+    5661.5
+   ],
+   "handle": "415D9"
+  }
+ ],
+ "n_fluchtweg_polylines": 1,
+ "n_sichtlinien": 6
+}

@@ -2082,5 +2082,335 @@
    "richtung_grad": 0
   },
   "geschoss": "DG"
+ },
+ {
+  "id": "1KG-01",
+  "pdf_seite": 41,
+  "pdf_seiten": "41–42",
+  "raum": "Stiegenhaus „random Raum\": Notleuchte (A) an der Wand",
+  "status": "bestaetigt",
+  "befund": "PDF: Beginn beim „random Raum\" (Autor-Name, keine anderen nutzbaren Räume in dem Bereich). Der Mensch (1KG) sieht beim Verlassen/Fluchtweg-Beginn **zuerst** die Notleuchte (A) „mit Pfeil nach rechts\". (A) **ist an der Wand platziert**; sie „**könnte alternativ** … mittig angeordnet werden\" (→ 1KG-02). Blickwinkel als türkise Linie dargestellt. | DXF: (A) = `1BCBB` RZ-ARR_right @ (143046, −11912), rot 359.45° → **Welt-Pfeil ~0° = Ost**, an der Nordwand des oberen Stiegenlaufs. Person random Raum `1BE0B` @ (142615, −15156), Blick 11.3° (≈ Ost, Bau-Achse ~11° gedreht). Sichtlinie `1BE0D` (142651, −14886)→(143042, −12030): **2883 mm**, endet 118 mm an (A). Der Fluchtweg (grüne ACI-100-Polyline `1BCFA`, 12752 mm) startet bei (A) (143113, −12413), läuft Ost → Süd → West (U um die Stiege). Pfeil Ost = Laufrichtung des oberen Laufs ✓. Status: **bestätigt** (+ Maße). „Pfeil nach rechts\" = Blocktyp + Personensicht (Welt-Ost).",
+  "quelle_abgleich": "abgleich/1KG/abgleich_1KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/1KG.json"
+ },
+ {
+  "id": "1KG-02",
+  "pdf_seite": 42,
+  "pdf_seiten": "42",
+  "raum": "Alternative Position für (A): Schnitt Stiegenmitte × Gangmitte",
+  "status": "bestaetigt",
+  "befund": "PDF: Alternative Position = **gelber Kreis**; gelbe Linien zeigen die Konstruktion: „eine Linie durch die **Mitte der Stiege**\" + „eine Linie durch die **Mitte des Ganges**\" → Schnittpunkt. Wichtig: Pfeil muss Richtung Stiege/weiterer Fluchtweg zeigen. Modalität: **ALTERNATIV** („könnte … angeordnet werden\") — hier gelb, nicht orange. | DXF: Gelbe Gangmitte-Linie `1CA67` (145043, −12535)→(142250, −12494) horizontal; gelbe Stiegenmitte-Konstruktion `1CA6E` mit Vertikalsegment (142845, −14582)→(142977, −12501); **Kreis `1CA6F` @ (142977, −12504), r=130** exakt am Schnittpunkt; MTEXT `1CA92` „(alternativ Position für Notleuchte (A))\". Abstand Alternativ-Punkt → tatsächliches (A): Δx −70 / Δy −592 → **596 mm** (von der Wand in die Gangmitte). Status: **bestätigt** — die Konstruktion ist geometrisch exakt so gezeichnet wie beschrieben.",
+  "quelle_abgleich": "abgleich/1KG/abgleich_1KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/1KG.json"
+ },
+ {
+  "id": "1KG-03",
+  "pdf_seite": 41,
+  "pdf_seiten": "41 oben, 42–43",
+  "raum": "Flucht 2KG→1KG hinauf: UG-Regel, Frontal-Balken, Blocktyp-Wahl",
+  "status": "bestaetigt",
+  "befund": "PDF: OG-Menschen flüchten **entgegen**, UG-Menschen **immer in derselben Richtung wie die Stiegenhauspfeilrichtung** (rot nachgezeichnet). Der 2KG-Ankömmling sieht sofort (A). „Besonders wichtig\": der **lange weiße Balken im unteren Bereich muss zur flüchtenden Person zeigen** — möglichst **frontal, nicht seitlich**. Pfeil-unten wäre hier falsch (nur bei Türen oder langen geraden Gängen), Pfeil-links ebenfalls (Balken würde zur Wand zeigen). **Regel: verläuft der weitere Fluchtweg aus Sicht der Person nach rechts → Pfeil-rechts-Leuchte** — „Diese Logik gilt entsprechend auch für andere Notleuchten  | DXF: Rote Stiegenhauspfeile: `1BD32` unterer Zug bei y≈−12.55k, Linie ab (145730, −12546), Dreieckspitze (148250, −12583) → **Ost**; `1BD31` Zug y≈−13.9k, Spitze (144030, −13896) → **West** (+ MTEXTe `1C836`/`1C813`). Personen-Paare belegen die UG-Regel: obere Reihe `1BCF8`/`1BD08`/`1C92E` Blick 11.3° (≈ Pfeilrichtung Ost, Labels (1KG)/(2KG)), untere Reihe `1BD7C`/`1BDC3` Blick 167.3° (≈ Pfeilrichtung West, Labels „geht hinauf in den EG\"). 2KG-Ankömmling `1C909` @ (143771, −13897): Sichtlinie `1C9BC` → (A), **1735 mm**. (A) ist RZ-ARR_right mit rot ≈ 0 — der weiße Balken (Unterkante) zeigt nach Süd",
+  "quelle_abgleich": "abgleich/1KG/abgleich_1KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/1KG.json"
+ },
+ {
+  "id": "1KG-04",
+  "pdf_seite": 43,
+  "pdf_seiten": "43",
+  "raum": "Notleuchte (B) + falsche Position",
+  "status": "bestaetigt",
+  "befund": "PDF: Beide Menschen folgen (A) nach rechts und sehen dann **(B) mit Pfeil nach rechts**, frontal ausgerichtet. Gelber Kreis = **alternative Position, die „falsch beziehungsweise ungeeignet\" wäre**: Menschen sähen die Leuchte **seitlich statt frontal**, und der Pfeil „würde in Richtung der Wand zeigen\". Modalität: die gezeigte Position ist „**sinnvoller**\". | DXF: (B) = `1BCBE` RZ-ARR_right @ (149859, −12602), rot 269.45° → **Welt-Pfeil ~270° = Süd** (am Ost-Ende des oberen Laufs; aus Sicht der Ost-Läufer „rechts\" = Süd, Richtung Abwärtszug). Abstand (A)→(B) **6847 mm**. Sichtlinie `1BE9A` (146775, −12128)→(149775, −12489): **3021 mm**, frontal auf die Westseite des vertikal hängenden Schilds. **Falsche Position:** gelber Kreis `1CAC1` @ (149407, −11921) (MTEXT `1CAC2`), **817 mm** nordwestlich an der Nordwand — dort zeigte der Süd-Pfeil zur Wand und die Ost-Läufer sähen nur die Schmalseite ✓. Status: **bestätigt** (+ Maße; „Pfeil nach rechts\" wieder Bl",
+  "quelle_abgleich": "abgleich/1KG/abgleich_1KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/1KG.json"
+ },
+ {
+  "id": "1KG-05",
+  "pdf_seite": 43,
+  "pdf_seiten": "43–44",
+  "raum": "Notleuchte (C) + zwei Alternativen (Wand / Decke)",
+  "status": "bestaetigt",
+  "befund": "PDF: Nach (B) sehen beide **(C) mit Pfeil nach rechts**, „in der dargestellten Variante **an der Wand**\". Zwei **alternative** Positionen: 1. an der Wand (gelber Kreis), 2. **an der Decke, mittig über beziehungsweise bei der Stiege**. Bei allen gilt: weißer Balken Richtung Menschen (frontal). | DXF: (C) = `1BE99` RZ-ARR_right @ (148370, −14394), rot 179.45° → **Welt-Pfeil ~180° = West** = Laufrichtung des unteren Stiegenzuges (aus Sicht der von (B) nach Süd Kommenden wieder „rechts\"). (B)→(C) **2330 mm**. Sichtlinie `1BE9B` (149501, −13365)→(148371, −14235): **1425 mm**. Alternativen: Kreis `1CA9B` @ (149503, −14514) = Wand-Alternative, **1139 mm** östlich von (C); Kreis `1CAC3` @ (149517, −14025) = Decken-Alternative bei der Stiegenmitte, **1205 mm** von (C); je ein MTEXT `1CA9C`/`1CAC4` „(alternativ Position für Notleuchte (C))\". Zusätzlich läuft eine türkise Linie `1CA9D` (1149 mm) vom",
+  "quelle_abgleich": "abgleich/1KG/abgleich_1KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/1KG.json"
+ },
+ {
+  "id": "1KG-06",
+  "pdf_seite": 45,
+  "pdf_seiten": "45–46",
+  "raum": "Andere Stiege: Einlagerungsräume (ER) + türkise Blickwinkel auf (A)",
+  "status": "bestaetigt",
+  "befund": "PDF: Andere Stiege des Projekts; Räume „ER\" = **Einlagerungsraum = Kellerabteil**. Kernpunkt **Sichtbarkeit**: „Jede Person, die aus einem dieser ER-Räume flüchtet, sieht **bereits beim Verlassen des Raumes auf den ersten Blick** die Notleuchte (A).\" Türkise Linien = Blickwinkel. Pfeil-rechts, weil die (1KG)-Menschen nach rechts weitergehen **müssen**; Balken frontal. | DXF: (A) = `1BEE4` RZ-ARR_right @ (169927, −36445), rot 359.45° → **Welt-Pfeil ~0° = Ost** (am Nordende des ER-Ganges ER 27–32, an der Wand zur Weiterführung Ost). **5 Sichtstrahlen für 5 Personen**: Einzellinien `1CAC6` (3066 mm, ab ER-28-Tür), `1CAC7` (4578 mm), `1CAC8` (4812 mm) + V-Polyline `1CAC5` mit Scheitel an (A) (Strahlen ~2300/1500 mm ab ER-31/27-Türen); alle enden ≤ 131 mm an der Leuchte. Fluchtweg: `1BEE6` Gang nordwärts (169651, −41133)→(169695, −36584) mit Stich-Ästen `1BEE7`–`1BEEA` von den ER-Türen, danach `1BFA0` (170188, −36448)→(175849, −36421) **5661 mm nach Ost** — exakt die P",
+  "quelle_abgleich": "abgleich/1KG/abgleich_1KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/1KG.json"
+ },
+ {
+  "id": "1KG-07",
+  "pdf_seite": 47,
+  "pdf_seiten": "47, 49–50",
+  "raum": "ER-Gang: Notleuchte (E), Zusatzleuchte, Antipanik/Aufheller-Lehre",
+  "status": "bestaetigt",
+  "befund": "PDF: Nächste ER (36–39): **(E) mit Pfeil nach unten**, „so rotiert, dass der **Pfeil entgegen der Richtung des Fluchtwegs** zeigt\", Balken frontal zu den Menschen; alle sehen (E) auf den ersten Blick (türkise Blickwinkel); Pfeil-unten = „**geradeaus weiter folgen**\"; grüne Fluchtweglinie. S. 49: dieser Gang ist **länger** als der (A)-Bereich → „**sinnvoll**, zwischen den Bereichen eine zusätzliche Notleuchte zu platzieren\" (Orientierung + Beitrag zur **Beleuchtungsstärke in Lux**). Ob Antipanik/Aufheller/weitere NL nötig sind, „hängt grundsätzlich von der **Lichtberechnung** ab\". **Antipanikleuchte | DXF: (E) = `1BF97` ARR-down @ (179183, −31326), rot 179.29° → **Welt-Pfeil ~90° = Nord**; Fluchtweg läuft **Süd** (`1BF98` von Nord kommend zu (E), `1BF9D` (179181, −31483)→(179133, −36296) weiter 4813 mm süd zur GANG-Kreuzung) → Pfeil exakt **entgegen der Fluchtrichtung** ✓; Schild horizontal, Front nach Süd zu den Ankommenden. **5 Sichtstrahlen** auf (E): `1CACA` 3371, `1CACB` 2305, `1CACC` 3785 mm + V-Linie `1CAC9` (Strahlen 1276/855 mm); ER-Tür-Äste `1BF99`–`1BF9C`. Die Zusatz-Rolle belegt die Kette: (A2)-Bereich und (C2)-Kreuzung liegen **5909 bzw. 5139 mm** entfernt — (E) sitzt dazwischen im",
+  "quelle_abgleich": "abgleich/1KG/abgleich_1KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/1KG.json"
+ },
+ {
+  "id": "1KG-08",
+  "pdf_seite": 48,
+  "pdf_seiten": "48–49",
+  "raum": "ER: Notleuchte (C) — „nach links\" = Plan-links",
+  "status": "praezisiert",
+  "befund": "PDF: ER 33/34/40/41: beim Verlassen sehen die Menschen **(C)**, rotiert mit Balken frontal zu den (1KG)-Menschen. „Der Pfeil zeigt den Menschen, dass sie **nach links weiterflüchten müssen**.\" Wer von (E) geradeaus kommt, sieht nach dem Passieren (C) als nächste Orientierung. | DXF: (C) = `1CB3E` RZ-ARR_right @ (179073, −36464), rot 179.45° → **Welt-Pfeil ~180° = West**. Fluchtweg an der Kreuzung: `1BF9F` (178757, −36449)→(175849, −36421)→südlicher Stich — Fortsetzung **West** = Pfeilrichtung ✓. **4 Sichtstrahlen als 2 V-Polylines** mit Scheitel ≈ (179133, −36296) (≤ 180 mm an (C)): `1CACD` Strahlen 1707/1991 mm (ER 33/41), `1CACE` Strahlen 3875/3567 mm (ER 34/40). (E)→(C) **5139 mm**, (C)→(D) **1047 mm**, (C)→(B2) **3268 mm**. **Frame-Befund:** „nach links\" ist hier **Plan-/Bild-links** (Welt-West), nicht Personensicht — die von Nord kommenden Läufer biegen körperbezogen",
+  "quelle_abgleich": "abgleich/1KG/abgleich_1KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/1KG.json"
+ },
+ {
+  "id": "1KG-09",
+  "pdf_seite": 51,
+  "pdf_seiten": "51",
+  "raum": "Niederspannungsraum / E-Raum / Technikraum: Tür-Leuchte (D) + Stromversorgung",
+  "status": "bestaetigt",
+  "befund": "PDF: Niederspannungsraum (= E-Raum/Technikraum) enthält „**meistens** die Stromversorgung für das Projekt\"; auch bei **zwei Gebäuden** ist „meistens **eine** Stromversorgung für alle Notleuchten ausreichend\". Blau dargestellte **Elektroverteiler** für Untergeschoße + Allgemeinbereiche. Der Mensch (1KG) sieht **(D) mit Pfeil nach unten bei der Tür** → weiß, dass er durch diese Tür muss. Ausrichtungsregel (Balken frontal) + **Tür-Regel: Pfeil-unten-Leuchte wird bei einer Tür so rotiert, dass der Pfeil in die entgegengesetzte Richtung zur Öffnungsrichtung beziehungsweise zum Türflügel zeigt.** | DXF: (D) = `1BFC3` ARR-down @ (180118, −36404), rot 89.29° → **Welt-Pfeil ~0° = Ost = in den Raum** (Flucht führt West durch die Tür in den Gang). Türblock `1B154` TÜR-BLOCKZARGE-90 bbox-Zentrum (179407, −36429): **Δy = 25 mm zur Türachse (mittig), 711 mm raumseitig** vor der Tür. Sichtlinie `1CACF` von der Person `1C254`-Nähe (181138, −36638) zu (D): **893 mm**. **Stromversorgung:** Gruppenbatterie-Verteiler `1CB68` @ (182187, −38513) im NIEDERSP.R. (11.03 m²), daneben grüner Merktext `1CD1B` „**Notbeleuchtungs, Stromversorgung aller Notleuchten im Gebäude**\" @ (183163, −38049); die blau/rot gekre",
+  "quelle_abgleich": "abgleich/1KG/abgleich_1KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/1KG.json"
+ },
+ {
+  "id": "1KG-10",
+  "pdf_seite": 52,
+  "pdf_seiten": "52 oben",
+  "raum": "Nächste Tür: Notleuchte (B)",
+  "status": "bestaetigt",
+  "befund": "PDF: Nach dem Verlassen des Niederspannungsraums sieht der Mensch „die nächste **Notleuchte (B) mit Pfeil nach unten**, die ebenfalls bei einer Tür platziert wurde\" → auch diese Tür benutzen. | DXF: (B) = `1CD8C` ARR-down @ (175824, −36815), rot 179.51° → **Welt-Pfeil ~90° = Nord**; Türblock `1B153` @ (175821, −37594): **Δx = 3 mm (exakt in der Türachse), 779 mm zugangsseitig (nördlich) vor der Tür**; die Flucht läuft Süd durch die Tür (`1C088` (175803, −37052)→(175753, −42218) Richtung Stiegenhaus) → Pfeil wieder **entgegen** der Durchgangsrichtung ✓. 2 Sichtstrahlen: `1CAD0` (2017 mm, von West/ER-GESAMT) und `1CAD1` (1749 mm, von Ost aus Richtung (C2)) — die Leuchte wird von beiden Anmarschrichtungen des Ganges gesehen. (D)→(B2) **4314 mm**, (A2)→(B2) **5909 mm**. Status: **bestätigt**",
+  "quelle_abgleich": "abgleich/1KG/abgleich_1KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/1KG.json"
+ },
+ {
+  "id": "1KG-11",
+  "pdf_seite": 52,
+  "pdf_seiten": "52",
+  "raum": "Letzte ER: beidseitige Notleuchte (I)",
+  "status": "bestaetigt",
+  "befund": "PDF: Bei den letzten ER wird **(I) als beidseitige Notleuchte** verwendet, weil der Mensch aus **ER 48** die Leuchte sonst „von seiner Position aus **nicht richtig sehen würde**\"; ER 47–43 sehen die andere Seite. Vorgehen: „**Am einfachsten** … zunächst eine Notleuchte mit Pfeil nach rechts\", Balken frontal zu ER 47–43, „**anschließend wird die Leuchte gespiegelt**, sodass daraus die beidseitige Notleuchte (I) entsteht.\" | DXF: (I) = ko-lokalisiertes Paar (`beidseitig_gruppe: 1`): `1C00E` ARR-left rot 269.45°, xscale **+44.7** @ (181067, −47227) + `1C00F` ARR-left rot 89.45°, xscale **−44.7** (gespiegelt!) @ (181462, −47231) — Versatz **395 mm in x, 4 mm in y** = zwei Rücken-an-Rücken-Gesichter quer zum O-W-Gang; **beide Welt-Pfeile ~90° = Nord** = Fluchtrichtung durch den Nordkorridor zu (H) (`1C016` (181247, −47073)→(181294, −42150)). Sichtstrahlen: Westseite `1CD1C` **1689 mm** von der ER-48-Person `1C6E3` (Blick 11.3° Ost); Ostseite `1CD1D`/`1CD1E`/`1CD1F` **2430/3527/5161 mm** von den ER-47/46/45/44-Läufern (Bli",
+  "quelle_abgleich": "abgleich/1KG/abgleich_1KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/1KG.json"
+ },
+ {
+  "id": "1KG-12",
+  "pdf_seite": 53,
+  "pdf_seiten": "53",
+  "raum": "Tür-Leuchte (H) am Wasserzählerraum + „keine eigene Leuchte je ER-Tür\"",
+  "status": "bestaetigt",
+  "befund": "PDF: **(H) mit Pfeil nach unten bei der Tür**; wer den **Wasserzählerraum** verlässt oder in **ER 42** ist, sieht (H) und weiß, welche Tür zum Fluchtweg gehört. **Keine eigene Notleuchte bei jeder kleinen ER-Tür:** kleine Räume entlang eines UG-Ganges **benötigen keine zusätzliche eigene Pfeil-unten-Leuchte** an jeder Tür — Orientierung über die im Gang bzw. bei den relevanten Türen platzierten Notleuchten. | DXF: (H) = `1BFEA` ARR-down @ (181352, −42035), rot 359.29° → **Welt-Pfeil ~270° = Süd**; Türblock `1B156` @ (181326, −41267): **Δx = 26 mm (mittig), 768 mm zugangsseitig (südlich)** vor der Tür; Flucht Nord durch die Tür (`1C084` (181327, −41815)→(181336, −40874)→West zu (G)) → Pfeil entgegen ✓, Schild-Front nach Süd zu den Ankommenden. Sichtstrahlen: `1CD20` **1769 mm** (Wasserzähler-Person `1C6DF`), `1CD21` **3476 mm** (ER-42-Person `1C6E1`). Negativ-Beleg im Bestand: ER 42–48 und der Wasserzählerraum haben **keine** eigene Türleuchte — die 14 Leuchten des Geschosses sitzen ausschließlich an Flu",
+  "quelle_abgleich": "abgleich/1KG/abgleich_1KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/1KG.json"
+ },
+ {
+  "id": "1KG-13",
+  "pdf_seite": 54,
+  "pdf_seiten": "54–56",
+  "raum": "Stiegenhaus: Flucht vom 2. KG herauf, Notleuchte (F)",
+  "status": "bestaetigt",
+  "befund": "PDF: Stiegenhaus 1KG; Menschen „(2KG) geht hinauf Richtung 1KG\" bewegen sich **in Richtung des Stiegenhauspfeils** (rot nachgezeichnet); OG umgekehrt (allgemeine Regel wiederholt). Beim Erreichen des 1KG sehen sie **(F)**: „Hier wurde eine **Notleuchte (F) mit Pfeil nach links** verwendet und **so rotiert, dass der Pfeil im Plan nach rechts zeigt**\", Balken frontal → sie gehen Richtung Stiege/weiterer Fluchtweg. S. 56: (F) ist „so ausgerichtet, dass ihr **Pfeil in Richtung der Stiege zeigt**\" → weiter über die Stiege Richtung EG; ab hier folgen 1KG- und 2KG-Menschen demselben Weg. | DXF: (F) = `1CAF5` **ARR-left** (Basis 180°) rot 179.45°, xscale **+41.8** (ungespiegelt) → **Welt-Pfeil ~0° = Ost = „im Plan nach rechts\"** — die PDF-Formulierung beschreibt exakt Blocktyp + Rotation ✓✓. Position (175602, −42605) an der Südwand vor der Stiege; der rote Stiegenhauspfeil `1CD45` läuft (176397, −42280)→Spitze (180301, −42318) = **Ost** (MTEXT `1CD68`), der zweite `1C7F0` (174430, −37323)→Spitze (174393, −41228) = **Süd** (MTEXT `1CD44`) — die 2KG-Läufer `1C7EA`/`1C7EC`/`1C7EE` (Blick 14.9° ≈ Ost) laufen exakt in Pfeilrichtung des unteren Zuges ✓ UG-Regel. 3 Sichtstrahlen auf (F): `1C",
+  "quelle_abgleich": "abgleich/1KG/abgleich_1KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/1KG.json"
+ },
+ {
+  "id": "1KG-14",
+  "pdf_seite": 55,
+  "pdf_seiten": "55–56",
+  "raum": "Notleuchte (G): Decke im Gang, Wand nur bei Stiegen; Alternative neben Aufzug",
+  "status": "praezisiert",
+  "befund": "PDF: Wer über (H) durch die Tür kommt, sieht **(G) mit Pfeil nach unten** → „**geradeaus weiter folgen**\". Grund: ohne (G) hätten die Menschen nach der Tür **keine weitere sichtbare Notleuchte**. **Alternativ könnte man** an der **Wand rechts neben dem Aufzug** eine Pfeil-links-Leuchte platzieren — „**wäre hier jedoch ungünstiger**\". S. 56, Platzierungslogik: „**Notleuchten an Wänden hauptsächlich im Bereich von Stiegen**. In normalen Gangbereichen werden die Notleuchten dagegen **grundsätzlich an der Decke** platziert.\" Deshalb die an der **Decke** platzierte (G). Danach sieht der Mensch (F). | DXF: (G) = `1CD69` ARR-down @ (178727, −40782), rot 88.94° → **Welt-Pfeil ~0° = Ost**; Flucht läuft **West** (`1C084`/`1C085` (181336, −40874)→(178943, −40852)→(175767, −40805)) → Pfeil entgegen, Schild vertikal mit Front nach Ost zu den aus der (H)-Tür Kommenden ✓. Lage: **Gangmitte** (nicht an einer Wandlinie) nordöstlich des AUFZUG-Schachts → „Decke\" ist im 2D-DXF nur über diese Mittellage ablesbar — Wand- vs. Deckenmontage ist **keine explizite DXF-Eigenschaft**. (H)→(G) **2909 mm**, (G)→(F) **3617 mm**. (G) ist die einzige Erklär-Leuchte **ohne** türkisen Sichtstrahl (sie wird erst nach Tür-Du",
+  "quelle_abgleich": "abgleich/1KG/abgleich_1KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/1KG.json"
+ },
+ {
+  "id": "2KG-01",
+  "pdf_seite": 57,
+  "pdf_seiten": "57–58, 61",
+  "raum": "Einlagerungsräume + gespiegelter L-förmiger Gang, Antipanik (B)",
+  "status": "widerspruch",
+  "befund": "PDF: Mehrere ER + zusammenhängender, **gespiegelt L-förmiger** Gang, nicht durch Tür getrennt → **keine zusätzlichen Richtungsleuchten** im Gangverlauf („benötigen wir innerhalb dieses Gangverlaufs nicht an jeder Stelle zusätzliche Notleuchten zur Richtungsangabe\"). Die L-Form schattet einen Gangteil ab → **Antipanikleuchte (B) mittig** in diesem Gangbereich; **gelbe diagonale Linie** visualisiert die Mitte. „Die Antipanikleuchte wurde außerdem **vertikal ausgerichtet**.\" Aufgabe: kein Pfeil, sondern Dunkelstellen verhindern. S. 61 Vergleichsregel (hypothetisch): **wäre** dort eine Wand mit Tür, mü | DXF: (B) = `1C707` Antipanikleuchte @ (−5243, 1380), rot 178,74°, **Bbox 746×225 mm = LIEGEND/horizontal**. Gelbe Diagonale `1D03D` (−7563, 2165)→(−2856, 591), Länge 4963 mm; (B)-Zentrum liegt **9 mm** neben der Linie (auf halber Strecke, t≈0,49 → „mittig\" bestätigt). ER-Stempel `1B3ED` ER 04 / `1B216` ER 05 (Nordzeile) vs. `1B3D1`/`1B21C`/`1B3CB` ER 01–03 (Südzeile); der L-Gang verbindet beide Zeilen. Keine weitere Richtungsleuchte zwischen (B) und (A) ✓. Personen-Schwarm „(2KG)\" (u. a. `1C63F`, `1CA3A`, `1CA3C` Blick 12,3° O) aus den ER.",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-02",
+  "pdf_seite": 59,
+  "pdf_seiten": "59–60",
+  "raum": "Weitere ER + Antipanikleuchte (C)",
+  "status": "bestaetigt",
+  "befund": "PDF: Bei den nächsten ER wurde Antipanik (C) platziert. Modalität wörtlich: „Grundsätzlich **müssen** wir an dieser Stelle **nicht zwingend** eine zusätzliche Antipanikleuchte platzieren. Um jedoch die benötigte **Beleuchtungsstärke in Lux** besser zu erreichen und … möglichst keine Stelle … vollständig dunkel bleibt, ist es **sinnvoll**…\" → SINNVOLL, kein MUSS. Position über **gelbe Diagonale** „von der Kante der Mauer bis zur Ecke des Ganges bei ER 12\". | DXF: (C) = `1C706` @ (−3402, 11592), rot 268,74° → **stehend** (225×746). Gelbe Diagonale `1D045` (−2775, 9530)→(−4005, 13613), Länge 4264 mm; (C)-Zentrum **20 mm** neben der Linie bei t≈0,51 → mittige Diagonal-Konstruktion bestätigt. ER-12-Stempel `1B162` @ (−5247, 13315) = Nordwest-Ecke des Bereichs, passt zum Diagonalen-Endpunkt. Status: **bestätigt** (+ Maße; Modalität SINNVOLL sauber vom MUSS getrennt).",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-03",
+  "pdf_seite": 60,
+  "pdf_seiten": "60–61",
+  "raum": "Ausgang des ER-Gangs, Notleuchte (A) Mollgasse",
+  "status": "bestaetigt",
+  "befund": "PDF: Am Ausgang des Gangbereichs die Notleuchte (A) „mit Pfeil nach unten\", so gedreht, dass „der **lange weiße Balken im unteren Bereich** der Notleuchte **in Richtung der Menschen** zeigt\" → frontale Erkennbarkeit. | DXF: (A) = `1C695` ARR-down @ (−2937, 6579), rot 269,58° → **Welt-Pfeil 179,58° W**; Symbol stehend (Bbox 292×577), Frontseite nach Osten zum Gang = Richtung der von Norden/Osten ankommenden ER-Personen. 2 Sichtlinien (1155/2272 mm) enden an (A). Danach Tür → (D): Abstand (A)→(D) 3209 mm (2KG-09). Status: **bestätigt** — „Pfeil nach unten\" = Blocktyp, Weltrichtung West; Balken-Frontal-Logik konsistent mit Personen-Blickrichtungen (`1CA40` u. a. Blick 12,3°).",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-04",
+  "pdf_seite": 62,
+  "pdf_seiten": "62",
+  "raum": "Letzte ER der Mollgasse, nur eine Notleuchte (L)",
+  "status": "bestaetigt",
+  "befund": "PDF: Kurzer Gang; **nur eine** Tür-Notleuchte (L). Alle „2KG\"-Menschen haben beim Verlassen der ER **direkten Blick** auf (L) → „benötigen wir … **keine weitere zusätzliche Notleuchte** zur Orientierung.\" | DXF: (L) = `1C697` ARR-down @ (1932, 10499), rot 179,58° → Welt-Pfeil 89,58° N (in den Raum/zur Tür, entgegen der Fluchtrichtung Süd). GANG-Stempel `1B299` @ (4356, 11066); ER 15/16/17-Stempel flankieren. Sichtlinie 1397 mm an (L); keine weitere Leuchte im Gang ✓. Von (L) weiter: (L)→(O) nur 1707 mm (Anschluss an die STGH-Kette, 2KG-10). Status: **bestätigt**.",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-05",
+  "pdf_seite": 63,
+  "pdf_seiten": "63–64",
+  "raum": "Parkplatzbereich Mollgasse, Notleuchte (I) + KABELTRASSEN-REGEL",
+  "status": "praezisiert",
+  "befund": "PDF: (I) mit Pfeil nach unten; Parker sehen (I) direkt (türkise Blickwinkel-Linien); weißer Balken Richtung Menschen; „Der **Pfeil** der Notleuchte (I) zeigt **entgegen der tatsächlichen Richtung des Fluchtwegs**.\" Dann die Kabeltrassen-Regel, wörtlich (S. 63–64): > „Wichtig ist in diesem Beispiel zusätzlich, dass sich im Parkplatzbereich **Kabeltrassen** befinden. Diese sind im Plan als **blaue Balken** dargestellt und beispielsweise mit **KT300, KT400 oder KT500** beschriftet. … **Eine Notleuchte darf niemals direkt innerhalb beziehungsweise auf dem Bereich einer Kabeltrasse platziert werden.** D | DXF: (I) = `1C7CB` ARR-down @ (19467, 7618), rot 179,58° → Welt-Pfeil 89,58° N = entgegen der Fluchtrichtung Süd ✓ (Fluchtweg führt südwärts zu (J), Abstand (I)→(J) 5012 mm). Bild S. 63 zeigt 4 türkise Sichtlinien von den Parker-Personen zu (I). **Kabeltrassen-Befund:** Die 2KG-Trassen-Beschriftung lautet 7× „**KT UK=+2,11 FBOK**\" (`10100`, `1012B`, `1012D`, `1012F`, `10131`, `10133`, `10135`) — die im PDF genannten KT300/KT400/KT500-Labels stehen so NICHT in dieser DXF (generische Beispiel-Nennung). Die Trassen-Grafik verteilt sich im Originalplan auf eine geroutete Trassen-Polyline `1B502` (Layer",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-06",
+  "pdf_seite": 65,
+  "pdf_seiten": "65–67",
+  "raum": "Beidseitige Notleuchte (J): Motorrad-Parkplätze + Pflichtstellplatz 22",
+  "status": "bestaetigt",
+  "befund": "PDF: (J) = **beidseitige** Notleuchte, „Pfeile … **nach links** … in Richtung der **Motorrad-Parkplätze**\". Zwei Ankunftsströme: (a) Menschen direkt von den Doppelparkern (sehen (J) auf den ersten Blick), (b) Menschen, die vorher (I) gefolgt sind. WARUM beidseitig (S. 66): „weil Menschen aus **beiden Richtungen** auf diese Notleuchte zuflüchten können. Der Vorteil … ist, dass die Menschen die Notleuchte **von beiden Seiten frontal** sehen können. Auf **beiden Seiten** ist der **lange weiße Balken** … so ausgerichtet, dass er in Richtung der jeweiligen Personen zeigt.\" Zusätzlich Kabeltrassen-Beacht | DXF: (J) = Gruppe 2: `1C7CC` (rot 180,36°, xscale −29,87) + `1C7CE` (rot 0,36°, xscale +29,87), Zentren (19552, 2607)/(19554, 2343), Paarabstand 264 mm, **beide Welt-Pfeil 180,4° W** = Richtung Motorrad-Stellplätze (MOTORRAD-Stempel `1B5A7` @ 11610/2725 und `1B5AD` @ 14056/2731, westlich) ✓. Sichtlinie 4423 mm an beide Blockhälften (= Blick vom Pflichtstellplatz 22, Stempel `1B589` @ 24787/688 östlich). Kette: (I)→(J) 5012 mm. Das Paar steht neben/über der Rigole (siehe 2KG-05); das Decken-KT-Band verläuft südlich (Kantenlinien `1B528`/`1B1B4`). Status: **bestätigt** — PFLICHT-beidseitig-Fall (zwei",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-07",
+  "pdf_seite": 67,
+  "pdf_seiten": "67–68",
+  "raum": "Doppelparker: Antipanik (K) + beidseitige Notleuchte (H)",
+  "status": "bestaetigt",
+  "befund": "PDF: Zwei mögliche Fluchtwege (über Motorrad-Parkplätze ODER über den Bereich der Antipanik (K)). (K)-Position per **gelben Linien** bestimmt: „**in einer Linie mit der Notleuchte (H)** … und **mittig zur Wand** beziehungsweise zum dargestellten Bereich\". Zweck: Lux + keine Dunkelbereiche. (H) = beidseitig, „**mittig im Bereich der Doppelparker**\", Pfeile auf den nächsten Ausgang/weiteren Fluchtweg; Menschen von (J) laufen an (K) vorbei und sehen dann (H); von der anderen Seite (Doppelparker links) sehen Menschen (H) auf den ersten Blick. | DXF: (K) = `1C7FB` Antipanik @ (13351, −277), liegend, rot 0. Gelbe Linien: `1D099` (13350, −266)→(4990, −318) = die „in-einer-Linie\"-Konstruktion zu (H): (K) sitzt exakt am Linienstart, (H)-Paar @ (~4716, −301) liegt **17–24 mm** neben der Verlängerung → „in einer Linie\" mm-genau bestätigt. `1D097` (10503, 1601)→…→(13359, −2928) (4 Vertices, 13056 mm) = Mittigkeit-zur-Wand-Konstruktion. (H) = Gruppe 5: `1D06D`/`1D06F` (rot 90,36°/270,36°, xscale ∓), Zentren (4848, −300)/(4584, −302), **Welt-Pfeil 90,4° N** = zum Ausgang/zur Tür bei (G) (Δ zu (G): 132 mm Ost, 3399 mm Nord → praktisch exakt Nord) ✓.",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-08",
+  "pdf_seite": 69,
+  "pdf_seiten": "69–70",
+  "raum": "Fluchtweg DURCH die Motorrad-Parkplätze: (H)→(G)→(F), Doppelparkergrube",
+  "status": "bestaetigt",
+  "befund": "PDF: Menschen von den Doppelparkern **durchqueren** die Motorrad-Parkplätze („Dieser Bereich ist offen und kann … einfach durchquert werden\"), sehen dann (G) an der Tür. Kernunterscheidung (S. 66/69): „Bei **Doppelparkern und großen PKW-Parkbereichen** in Untergeschoßen ergibt sich **nur sehr selten** ein geeigneter Bereich, durch den ein Fluchtweg sinnvoll weitergeführt werden kann. Bei **Motorrad-Parkplätzen** ist das anders … ausreichend freier Platz\". (G) an der Tür, Balken frontal, Pfeil entgegen Fluchtweg. Abfolge (H)→(G)→Tür; von (H) aus ist (G) bereits sichtbar. Nach der Tür: **Schleuse** m | DXF:",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-09",
+  "pdf_seite": 71,
+  "pdf_seiten": "71–74",
+  "raum": "Schleuse, Niederspannungsraum, AR: Notleuchten (D), (E) + Anlagensymbol",
+  "status": "bestaetigt",
+  "befund": "PDF: Vier Personengruppen (Garage, Niederspannungsraum, ER, AR) → alle zum Stiegenhaus Richtung 1KG. (D) mit Pfeil nach unten am **offenen Durchgang zum Stiegenhaus (keine Tür!)**, **mittig im Durchgang** (gelbe Linien). WARUM Typ „unten\" statt links/rechts/beidseitig (S. 73): rechts/links → manche sähen sie „**nur seitlich und nicht frontal**\"; beidseitig „wäre jedoch ebenfalls ungünstiger\" (der NS-Raum-Mensch sähe sie nicht so unmittelbar frontal) → ALTERNATIVE ERWOGEN UND VERWORFEN. **Niederspannungsraum**: Stromversorgung des Gebäudes + der Notbeleuchtung; „die Stromversorgung der Notbeleuchtun | DXF: (D) = `1C64B` @ (234, 7071), Welt-Pfeil 269,6° S. Gelbe Linie `1D110` (−387, 7208)→(863, 7202) = Durchgangsbreite 1250 mm; (D)-x = 234 vs. Linienmitte 238 → **mittig auf 4 mm** ✓. Kein Türsymbol im Durchgang (STGH-GANG-Stempel `1B1AE` @ 1259/6512) ✓ „keine Tür\". Sichtbarkeit aus allen 4 Richtungen: (A)→(D) 3209 mm, (E)→(D) 2072 mm, (F)→(D) 4793 mm, AR-Stempel `1B1CA` @ (−214, 4428). (E) = `1C644` @ (889, 5105), Welt S, an der NIEDERSP.-Tür (`1B190` @ 2640/4484). **Anlagensymbol** `1D10E` Gruppenbatterie-Verteiler @ (−280, 3467), stehend (rot 88,7°) an der Westwand des NS-Raums, mit grünem Merk",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-10",
+  "pdf_seite": 74,
+  "pdf_seiten": "74–76",
+  "raum": "Kette (D)→(O)→(M)→(N)→Stiege→1KG",
+  "status": "bestaetigt",
+  "befund": "PDF: Nach (D) sehen die Menschen (O) = **beidseitig**, Pfeile Richtung **Stiege**; beidseitig, weil Menschen sich „von **unterschiedlichen Seiten** nähern\" — zusätzlich kommen die ER-Menschen von (L). Generalisierte Logik wörtlich (S. 75): „**Wenn Menschen aus zwei unterschiedlichen Richtungen auf eine gemeinsame Notleuchte zulaufen, kann eine beidseitige Notleuchte sinnvoll sein**, damit beide Personengruppen die Notleuchte frontal sehen können.\" Danach (M) „mit Pfeil nach rechts\", **mittig an der Wand**, türkise Blickwinkel-Linie; dann (N) „mit Pfeil nach rechts\"; ab (N) zur Stiege → 1KG. Persone | DXF: (O) = Gruppe 1 `1C66E`/`1C66F` @ (777, 9242)/(783, 9506), Welt-Pfeil 358,7° **O** = zur Stiege (Stiegenhauspfeil-Zone x 1419–5871). Zulauf-Distanzen: (D)→(O) 2238 mm, (L)→(O) 1707 mm ✓ zwei Ströme. (M) = `1C698` **ARR-left xscale −29,87 = „Pfeil nach rechts\"-Typ** (PDF-Sprache = Blocktyp!), rot 268,74° → Welt-Pfeil 268,7° S; steht an der Wand beim PODEST (`1B293` @ 6370/8057); Sichtlinie 1821 mm. (N) = `1C7FC`, ebenfalls gespiegelter left = rechts-Typ, Welt-Pfeil 178,7° W Richtung Stiege; (M)→(N) 1533 mm. **Stiegenhauspfeil rot nachgezeichnet** `1CEFD` (5871, 7984)→Spitze (1419, 8020) = **Pfei",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-11",
+  "pdf_seite": 76,
+  "pdf_seiten": "76–78",
+  "raum": "ZWEI GEBÄUDEHÄLFTEN: Mollgasse / Anastasius-Grün-Gasse, rote Trennlinie + EG-Referenz",
+  "status": "bestaetigt",
+  "befund": "PDF: „Das Projekt besteht aus **zwei Gebäuden**, die sich einen gemeinsamen Bereich im Untergeschoß beziehungsweise in der Garage teilen.\" Rote Linie = Abgrenzung. Konstruktion wörtlich (S. 77): „Als Trennlinie verwenden wir die **Gebäudewand der Mollgasse**. Auf dieser Wand habe ich im Bild die rote Linie eingezeichnet und diese Linie **über das Projekt weitergeführt**.\" Erkennung der Zuordnung: „am einfachsten, **nicht nur das Untergeschoß selbst zu betrachten**, sondern zusätzlich den **Grundriss des Erdgeschoßes (EG)** heranzuziehen\" (S. 77-Bild = EG-DXF-Tab mit grünen FREIHEIT- / rotem KEINE-F | DXF: Rote Trennlinie = `1C7F4` (ACI 1), (−22184, −3052)→(94106, −2648), **Länge 116,3 m** — quer über das gesamte Blatt, quasi-horizontal (Steigung 0,2°), auf der Mollgasse-Südwand. Roter Merktext `1C7F5` @ (79085, 603), wörtlich: „**Hier teilt sich der Fluchtweg weil wir zwei Gebäude habe / die einen Fluchtweg bieten, und deshalb teilen wir das in der mitte / Eine Gebäude Hälfte (Mollgasse in dem Fall) und andere Gebäudehälfte (Anastasius-Grüngasse)**\". Alle Mollgasse-Leuchten liegen nördlich (y > −2900), alle Anastasius-Leuchten südlich; jede Hälfte hat ihr eigenes Label-Alphabet (siehe Tabelle).",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-12",
+  "pdf_seite": 79,
+  "pdf_seiten": "79–81",
+  "raum": "Anastasius: Notleuchte (A), Kabeltrasse, Richtungswechsel + orange Alternative",
+  "status": "praezisiert",
+  "befund": "PDF: (A) mit Pfeil nach unten, „Pfeil **entgegen der tatsächlichen Richtung** des Fluchtwegs\". Kabeltrasse: (A) „mit entsprechendem Abstand **neben der Kabeltrasse**\"; NEU: „Zusätzlich muss darauf geachtet werden, dass die Notleuchte (A) **auf der Seite der Anastasius-Grün-Gasse bleibt** und durch die Verschiebung wegen der Kabeltrasse **nicht der anderen Gebäudehälfte zugeordnet wird**.\" Richtungswechsel: der Mensch von (A) geht geradeaus, dann setzt sich der Fluchtweg „**nach rechts** in Richtung der Notleuchte (C)\" fort; ohne Zusatzleuchte würde er (C) beim Links-Rechts-Schauen ohnehin erkennen. | DXF: (A) = `1C7D0` ARR-down @ (21275, −3408), rot 179,58° → Welt-Pfeil 89,6° N (Flucht führt südwärts die RAMPE hinab, Stempel `1B121` @ 21181/−4317) ✓. KT-Text `1012B` „KT UK=+2,11 FBOK\" @ (21284, −2631) direkt nördlich. **Gebäudehälften-Beleg:** (A)-Zentrum liegt **507 mm südlich** der roten Trennlinie (Trennlinien-y bei x=21275: −2901) → knapp, aber eindeutig auf der Anastasius-Seite ✓. **Orange Alternative** = Gruppe 6: `1D326`/`1D327` @ (21346, −6360)/(21347, −6096), Welt-Pfeil 359,8° **O** = Richtung (C); eingerahmt vom **orangen Rechteck `1D34D`** (777×672 mm, ACI 30) + orangem Text `1D370`",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-13",
+  "pdf_seite": 82,
+  "pdf_seiten": "82–83",
+  "raum": "Antipanik (B) Anastasius + beidseitige Alternative NUR OPTIONAL",
+  "status": "bestaetigt",
+  "befund": "PDF: Erneut der Bereich der (jetzt Anastasius-) Antipanik (B); dieselbe orange beidseitige Notleuchte wird hier aus der Gegenrichtung erklärt. Modalität wörtlich: „Diese zusätzliche beidseitige Notleuchte ist hier jedoch **kein Muss**. Der Grund … ist, dass die Menschen, die aus dem Bereich der Antipanikleuchte (B) kommen, von dort aus **nur in eine mögliche Richtung weiterflüchten können**. … Die beidseitige Notleuchte ist in diesem Beispiel **lediglich dargestellt, um zu zeigen, warum und an welcher Position man sie zusätzlich platzieren könnte**, wenn man die Orientierung … noch eindeutiger mach | DXF: (B) = `1C9BD` Antipanik @ (21261, −13829), liegend (742×209), am Fuß der Garagenrampe (`1B155` RAMPE @ 21180/−14602, `1B329` GARAGENRAMPE @ 21120/−17296). Distanz (B)→orange Alternative = **7470 mm** die Rampe hinauf; es ist **dasselbe** orange Paar `1D326`/`1D327` wie in 2KG-12 (nur EIN oranges Rechteck `1D34D` in der ganzen DXF) — die S.80- und S.82/83-Erklärungen beschreiben dieselbe Position aus zwei Personenströmen. **Modalitäts-Kontrast sauber halten:** S. 80 = „nicht zwingend, ich würde sie trotzdem platzieren\" (EMPFEHLUNG), S. 82/83 = „kein Muss … lediglich dargestellt\" (reine ALTERNAT",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-14",
+  "pdf_seite": 83,
+  "pdf_seiten": "83–84",
+  "raum": "Anforderung Lichtberechnung + Hauptengine",
+  "status": "bestaetigt",
+  "befund": "PDF:  | DXF: Kein Geometrie-Gegenstück (reine Prozess-/Engine-Anforderung). Status: **bestätigt** (wörtlich protokolliert; maps auf Task G3 „Lux auf Experten-Placement\" + `render/lux_nachweis_bericht`).",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-15",
+  "pdf_seite": 84,
+  "pdf_seiten": "84–86",
+  "raum": "Anastasius-Kette (C)→(D)→(E)→(H) + Technikraum (I), Kabeltrassen-Wiederholung",
+  "status": "bestaetigt",
+  "befund": "PDF: Nach (C) geradeaus → (D) = **beidseitig**, Pfeile Richtung (E); die Doppelparker-Flüchtenden sehen (D) auf den ersten Blick (türkise Blickwinkel-Linien). Kabeltrasse: „darf die Notleuchte **nicht auf beziehungsweise innerhalb einer Kabeltrasse** platziert werden. Die Position der Notleuchte (D) muss deshalb so gewählt werden, dass sie **nicht mit einer Kabeltrasse kollidiert**, die Menschen sie weiterhin **frontal** erkennen … und ihre Pfeile weiterhin **korrekt** den nächsten Abschnitt … anzeigen.\" Kette (C)→(D)→(E); (E) mit Pfeil nach unten **bei der Tür**; danach Schleuse mit (H) (Pfeil nac | DXF: (C) = `1C83E` @ (29847, −6227), Welt-Pfeil 179,6° W; Sichtlinie 7250 mm (längste des Geschosses — Doppelparker-Blick). (D) = Gruppe 3 `1C885`/`1C886` @ (38106, −11064)/(38106, −11327), **Welt-Pfeil 179,8° W = exakt Richtung (E)** (`1C861` @ 34416/−11150, 3691 mm westlich) ✓; **5 Sichtlinien** (1445–5939 mm) enden am (D)-Paar = die türkisen Blickwinkel der Doppelparker-Personen (`1CC9C`/`1CC9E`/`1CCA0`, Blick 181,7°) ✓. Kabeltrassen-Kontext: KT-Text `1012F` @ (37421, −8011) mit vertikalem Rigol-/Bandzug `1B2A1`/`1B8F8` x≈37960–38260 nördlich; das (D)-Paar steht südlich davon frei. (E) Welt-Pfei",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-16",
+  "pdf_seite": 86,
+  "pdf_seiten": "86–87",
+  "raum": "Nächste Doppelparker, Notleuchte (G) Anastasius",
+  "status": "bestaetigt",
+  "befund": "PDF: (G) mit Pfeil nach unten bei den nächsten Doppelparkern; Rotationsregel: Pfeil entgegen dem tatsächlichen Fluchtweg, weißer Balken Richtung Menschen (frontal); wer (G) sieht, folgt dem Fluchtweg geradeaus weiter. | DXF: (G) = `1C97D` ARR-down @ (39083, −23326), rot 359,58° → Welt-Pfeil 269,6° S = entgegen der Fluchtrichtung N ✓. **3 Sichtlinien** (1428 / 5118 / 5762 mm) von den Doppelparker-Personen (`1CCA4`/`1CCA6`/`1CCA8`, Blick 166,6°; Stempel `1B31D`/`1B323` PFLICHTSTELLPLATZ 13–20 @ y≈−30463). Kette: (G)→(F) 5480 mm. Status: **bestätigt**.",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-17",
+  "pdf_seite": 87,
+  "pdf_seiten": "87–89",
+  "raum": "Pflichtstellplatz + Doppelparker → (F), dann (F)→(D)→(E)→(H)",
+  "status": "bestaetigt",
+  "befund": "PDF: Zwei Gruppen (vom Pflichtstellplatz links, von den Doppelparkern über (G)) sehen als Nächstes (F) mit Pfeil nach unten → geradeaus. Wieder Kabeltrassen-Regel („nicht auf beziehungsweise innerhalb… so positioniert …, dass die Kabeltrasse nicht beeinträchtigt wird und die Menschen die Notleuchte weiterhin gut erkennen\"). Ab (F): „Genau aus diesem Grund wurde die Notleuchte (D) **beidseitig** ausgeführt: **Nicht nur** die Menschen, die von der Notleuchte (F) kommen … **Auch von der anderen Seite** kommen Menschen auf die Notleuchte (D) zu.\" Abfolge wörtlich: **(F) → (D) → (E) → Tür → Schleuse → ( | DXF: (F) = `1C9A0` ARR-down @ (38114, −17933), rot 359,58° → Welt-Pfeil 269,6° S = entgegen Flucht N ✓; 2 Sichtlinien (3564/4537 mm); KT-Text `10133` @ (38037, −16927) direkt nördlich — (F) steht seitlich der Trassenachse. Kette gemessen: (F)→(D) 6869 mm, (D)→(E) 3691, (E)→(H) 1550. Das (D)-Paar bedient damit **zwei Zuläufe** ((C)-Strom von W: 9572 mm Sichtkette; (F)-Strom von S) → PFLICHT-beidseitig ✓. Status: **bestätigt**.",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-18",
+  "pdf_seite": 90,
+  "pdf_seiten": "90–91",
+  "raum": "Einlagerungsräume (ER) Anastasius + Notleuchte (L), türkise Blickwinkel",
+  "status": "bestaetigt",
+  "befund": "PDF: „In diesem Bereich wurde **nur eine Notleuchte (L)** mit Pfeil nach unten platziert. Der Grund … ist, dass die Menschen, die aus den einzelnen ER-Räumen flüchten, die Notleuchte (L) **bereits beim Verlassen ihrer Räume** erkennen können.\" Türkise Linien = Blickwinkel/direkte Sichtverbindungen; via (L) erkennen sie die **Tür** als weiteren Fluchtweg → „**keine weitere zusätzliche Richtungsleuchte** benötigt\". | DXF: (L) = `1C8EF` ARR-down @ (28234, −14222), rot 270,09° → Welt-Pfeil 180,1° W = ins ER-GANG-Innere, an der Tür Richtung STGH-Bereich. Sichtlinien am Symbol: 3 erfasst (1848 / 3089 / 4801 mm) — das S.90-Bild zeigt 6 konvergierende Linien aus den ER 24–26/ASR (Stempel `1B42E` ER 26 @ 25406/−15656, `1B442` ER 25, `1B434` ER 22, GANG `1B474` @ 27520/−18496); die übrigen enden am Fangpunkt neben dem Symbol (>0,7 m, Zeichenpraxis). Personen `1CD0C`/`1CD31`/`1CD56` (Blick 3,5° O) + `1CD7F`/`1CD84`/`1CD86` (Blick 108,6°) ✓. Kette: (L)→(K) 3784 mm. Status: **bestätigt**.",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
+ },
+ {
+  "id": "2KG-19",
+  "pdf_seite": 92,
+  "pdf_seiten": "92–94",
+  "raum": "Abschluss: Stiegenhaus, Medienraum, Aufzug — (K), (M), (N), Übergang 1KG",
+  "status": "bestaetigt",
+  "befund": "PDF: ER-Menschen von (L) sehen (K) = **beidseitig**, Pfeile Richtung **Stiege**; auch die Garage-Menschen über die Schleuse bei (H) sehen (K) frontal → „beidseitige Ausführung … sinnvoll, weil Menschen aus unterschiedlichen Richtungen … zukommen.\" Position (K) wörtlich: „**mittig im Gang und gleichzeitig mittig zur Stiege** platziert. Die **gelben Linien** … zeigen, wie diese Position bestimmt wurde.\" UG-Regel wörtlich: „**Menschen, die aus einem Untergeschoß nach oben flüchten, bewegen sich über die Stiege in Richtung des Stiegenhauspfeils.**\" **Medienraum:** „Grundsätzlich könnte auch bei der Tür | DXF: (K) = Gruppe 4 `1C936`/`1C937` @ (32018, −14236)/(32336, −14236) (einziges Paar mit 318 mm Abstand, horizontal nebeneinander), **Welt-Pfeil 269,8° S = Richtung Stiege** (STGH `1B19E` @ 33005/−15300; roter Stiegenhauspfeil `1CF44` (32022, −15123)→Spitze (32014, −19077) = Süd) ✓. **Gelbe Linien** `1D813` (28581, −14195)→(31875, −14240), 3295 mm = Gang-Flucht von (L) zu (K) („mittig im Gang\") + `1D816` (32111, −15030)→(32112, −14530), 501 mm = Lot zur Stiege („mittig zur Stiege\"); 4 Sichtlinien (956–1579 mm) am Paar. UG-Regel-Beleg: Personen `1CDD0` @ (32117, −15568) und `1CED6` @ (31967, −17868)",
+  "quelle_abgleich": "abgleich/2KG/abgleich_2KG.md",
+  "gt_daten": "tests/fixtures/mollgasse_gt/2KG.json"
  }
 ]

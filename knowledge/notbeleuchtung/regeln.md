@@ -120,6 +120,105 @@ Ausgang); gemessene Folgeabstände 1975–7749 mm (EG-Kette (A)→(B)→(D),
 (E)→(F)→(H), (G)→(H)). Sichtlinien enden an der Symbol-KANTE. Wand-RZ:
 Kante an Wandkante (15–101 mm). [EG-05…08, 4OG-R7/R10, DG-R6]
 
+---
+
+# Erweiterung 2026-09-20 — UG-Kapitel (PDF jetzt 95 S., 1KG S.41–56 / 2KG S.57–94)
+
+Quellen: `abgleich/1KG/abgleich_1KG.md` (14 Beispiele, 12 bestätigt/2
+präzisiert) + `abgleich/2KG/abgleich_2KG.md` (19 Beispiele, 16/2/1 —
+der eine Widerspruch ist ein PDF-TEXTfehler B↔C auf S.57, an Owner gemeldet).
+GT-Messdaten: `tests/fixtures/mollgasse_gt/<G>.json`
+(`scripts/analyse/mollgasse_gt_extract.py`).
+
+## NB-R13 — UG-Stiegenrichtung (hoch)
+**Untergeschoße:** Menschen flüchten HINAUF **in Richtung des
+Stiegenhauspfeils** (der Pfeil zeigt die Aufwärtsrichtung je Lauf, NB-R04);
+Obergeschoße ENTGEGEN. Die Leuchte vor/an der Stiege wird so gewählt und
+rotiert, dass ihr Welt-Pfeil der Hinauf-Bewegung entspricht und die Frontseite
+zum ankommenden UG-Strom zeigt. [1KG-03 (rote Pfeile `1BD31`/`1BD32`),
+1KG-06, 2KG-18/19 (`1CEFD` Blick 169,9°, `1CF44` „geht hinauf richtung 1KG");
+PDF S.43, 54–55]
+
+## NB-R14 — Montageort Wand vs. Decke (hoch, Fachpraxis)
+„Nach der hier verwendeten Platzierungslogik werden Notleuchten an Wänden
+hauptsächlich bei Stiegen platziert" (S.56) — **Stiegen-Leuchten = Wand,
+Gang-Leuchten = Decke (mittig)**. Alle 14 1KG-Platzierungen konsistent.
+Aufzugs-/Sonderfälle nur als Text-Alternative. [1KG-14; PDF S.56]
+
+## NB-R15 — Kabeltrassen-Hindernis (hoch, FACHPRAXIS — kein Normzitat)
+Kabeltrassen (blaue Balken, Beschriftung KT300/KT400/KT500): eine Notleuchte
+darf **niemals auf/innerhalb** einer Kabeltrasse platziert werden; sie wird
+**seitlich versetzt, möglichst ≥ 450 mm** Abstand („Als Platzierungsregel
+verwenden wir hier möglichst einen Abstand von mindestens 450 mm zur
+Kabeltrasse", S.63–64 — ausdrückliches Fachpraxis-SOLL). Nach dem Versatz
+müssen erhalten bleiben: Fluchtwegbezug (Position zuerst fachlich bestimmen),
+Sichtbarkeit, Pfeilrichtung, Frontseite, Gebäudehälfte (2KG (A)-Ana `1C7D0`
+bleibt trotz 507-mm-Versatz auf der Anastasius-Seite). ⚠️ Befund: die
+2KG-DXF-Trassen heißen „KT UK=+2,11 FBOK"; die vertikalen Schraffur-Leitern
+sind **Rigole (Bodenrinnen)**, KEINE Kabeltrassen — Leuchten dürfen darauf
+stehen. [2KG-05, 2KG-12; PDF S.63–64, 79, 81, 85]
+
+## NB-R16 — Beidseitige Rettungszeichen (hoch)
+**Pflicht-beidseitig**, wenn ZWEI Personenströme aus Gegenrichtungen denselben
+Knoten nutzen und beide eine Frontseite (weißer Balken) sehen müssen: 2KG (O)/
+(J)/(D)-Ana/(K)-Ana/(H)-Moll (Gruppen 1–5), 1KG (I) (Paar xscale ±44,7,
+Versatz 395 mm), EG-Paar. **Nur-Alternative** (KEIN Muss): beidseitig am
+Richtungswechsel, wenn ein einseitiges RZ fachlich genügt — orange
+dargestellt, „muss nicht sein, aber es schadet nicht" (2KG Gruppe 6
+`1D326`/`1D327`, S.79–83). Ground-Truth-Konstruktion = zwei gespiegelte
+Einzel-Blöcke (Abstand 264–318 mm); die Engine setzt seit 2026-09-20 den
+echten Rivoplan-Block `RIVO_NL_ARR_bothsided` (`notlicht_ks_beidseitig`).
+ALTERNATIV wird NICHT automatisiert. [1KG-11, 2KG-06/07/10/13/16; PDF S.65–83]
+
+## NB-R17 — Garage: durchquerbare Flächen (hoch, Fachpraxis)
+**Motorrad-Parkplatzbereiche sind als Fluchtweg durchquerbar** (Personenreihe
+`1CBF6`–`1CBFC` läuft durch die MOTORRAD-Stempel), **Doppelparker-/
+PKW-Stellflächen nicht** (0 Fluchtwege durch DOPPELPARKER-Zonen; auch
+Doppelparkergruben). Die Durchquerbarkeit folgt aus der realen freien
+Geometrie, nicht aus dem Raumlabel. [2KG-06/08; PDF S.65–70]
+
+## NB-R18 — Zwei Gebäudehälften (hoch, projektspezifisches MUSTER + Prozessregel)
+Bei zwei zusammengebauten Gebäuden (Mollgasse/Anastasius-Grün-Gasse) teilt
+sich der Fluchtweg: Trennung entlang der **weitergeführten Gebäudewand**
+(rote Linie `1C7F4`, 116 m), Zuordnung wird am **EG-Grundriss** verifiziert;
+jede Hälfte plant ihre Fluchtwege/Ausgänge/Stiegen separat (eigenes
+Label-Alphabet A–O / A–N). **Prozessregel (bindend, S.78): unklare Zuordnung
+NIEMALS raten → offene Frage.** [2KG-11/12/13/16/17; PDF S.76–83]
+
+## NB-R19 — UG-Nebenräume: Türleuchte nach Nutzung (hoch)
+Einzelne kleine Einlagerungsräume/Kellerabteile und kleine Medienräume
+bekommen **keine eigene Türleuchte**, wenn nach dem Türdurchtritt sofort ein
+Gang-RZ sichtbar ist (Negativ-Beleg im Bestand, 1KG S.53; 2KG Medienraum
+S.93). **Technik-/Niederspannungs-/E-Räume bekommen die Tür-Leuchte** (1KG-09
+(D): mittig 25 mm, 711 mm raumseitig + Merktext „Stromversorgung aller
+Notleuchten"; 2KG S.73). Tür-RZ-Metrik im UG wie NB-R01 (mittig 3–26 mm,
+711–779 mm zugangsseitig). [1KG-09/10/12, 2KG-09/15; PDF S.51–53, 71–73, 93]
+
+## NB-R20 — Türlose Gänge und Durchgänge (hoch)
+Ein **türloser zusammenhängender Gang** braucht keine Zwischen-RZ, solange die
+Sichtkette steht (2KG S.58/61); ein **kurzer Gang mit Direktsicht aller
+Türen** bekommt genau EIN Tür-RZ (2KG S.62, 90–91). Ein **offener türloser
+Durchgang als Fluchtweg-Knoten** bekommt ein down-Typ-RZ **mittig im
+Durchgang** (`1C64B`: 4 mm Mittigkeit in 1250-mm-Durchgang; rechts/links/
+beidseitig wurden im PDF explizit durchgespielt und VERWORFEN — S.73–74 =
+dokumentierte Negativ-Beispiele). [2KG-04/09/15/18; PDF S.58–62, 73–74, 90–91]
+
+## NB-R21 — SV-Anlage (mittel)
+EIN Notbeleuchtungs-Stromversorgungssystem je Projekt, „meistens" auch bei
+zwei Gebäudehälften (Verteiler im Niederspannungsraum, 1KG `1CB68`); der
+Verteiler wird **nicht an die E-Verteiler-Wand** gesetzt (2KG `1D10E`/`1D10F`,
+S.72). [1KG-09, 2KG-09; PDF S.51, 71–72]
+
+**Ergänzungen zu bestehenden Regeln:** NB-R10 (Antipanik) — UG-Belege dazu:
+abgeschatteter L-Schenkel → AP mittig über gelbe Diagonalen-Konstruktion
+(2KG-02 `1D03D` trifft `1C707` auf 9 mm); AP als Lux-Stütze ist „sinnvoll",
+kein Muss (2KG-03); Faustregel „Antipanik meist UG, Aufheller eher EG–OG"
+(1KG-07, Fachpraxis). NB-R12 (Sichtkette) — UG-Distanzen: Folge 1550–9572 mm,
+längste Einzelsichtlinie 7250 mm (2KG (C)). **Lichtberechnung** (S.83–84,
+wörtlich als Anforderung): alle Stockwerke mit der Lichtberechnung prüfen —
+die fachliche Platzierung ist die Basis, die Lux-Prüfung die Kontrollschicht
+(→ Ground-Truth-Harness G3, keine Regel dieser Basis).
+
 ## Integration (Vorschlag — NICHT umgesetzt, Phase-B-Grenze)
 - NB-R01/R03 decken sich weitgehend mit R-B/R-C/`rotation_piktogramm_in_raum` +
   `_RZ_INS_RAUM_MM=150` — ABER die Owner-Messwerte sagen 735–930 mm raumseitig:
@@ -137,3 +236,20 @@ Kante an Wandkante (15–101 mm). [EG-05…08, 4OG-R7/R10, DG-R6]
   antipanik|aufheller|rz_unten|rz_plus_aufheller).
 - NB-R11 als Erweiterung von `verbotszonen_nachpass` (Hindernis-Polygone,
   Versatz statt Entfall — Selman-Naht: Lichtkuppel-Erkennung).
+- **NB-R13** → `stgh_strategy` (UG-Zweig: `Treppenlauf.richtung` „auf" =
+  Fluchtrichtung im UG; heute nur OG-Semantik kalibriert).
+- **NB-R15** → Kabeltrassen-Extraktion aus dem Quell-DXF (Muster
+  `bestand_leuchten.py`) + Versatz-Nachpass (Muster `abstand_nachpass`);
+  450 mm als benannte FACHPRAXIS-Konstante mit Quelle-Tag, kein Norm-Claim.
+- **NB-R16** → Beidseitig-Entscheidung im Platzierer (zwei Gegenströme auf
+  einen Knoten → `richtung="gerade"`/bothsided); nur Pflicht-Fälle,
+  Alternativen NICHT automatisieren.
+- **NB-R17** → hängt an Selmans Garage-Erkennung (Stellplatz-Stempel /
+  freie Flächen) — bis dahin Gap.
+- **NB-R18** → Gebäudehälften über Zirkulations-Graph-Komponenten
+  (disconnected-graph-Anker existiert); wenn das RaumModell die Trennung
+  nicht hergibt: Gap dokumentieren, NICHT raten (Prozessregel S.78).
+- **NB-R19** → `tuerleuchte_pflichtraeume`/`fachpraxis` (TECHNIK ja,
+  einzelne KELLERABTEIL/kleine Medienräume nein bei sofortiger Gang-Sicht).
+- **NB-R20** → `sichtkette`/`_tuer_luecken_rz` (türlos = keine Zwischen-RZ)
+  + Durchgangs-Knoten mittig (anker/gang).

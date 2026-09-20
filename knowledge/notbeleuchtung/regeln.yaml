@@ -167,3 +167,117 @@
   begruendung: "PDF S.5-9 (EG-Ketten)"
   belege: [EG-05, EG-06, EG-07, EG-08, 4OG-02, DG-01]
   konfidenz: mittel-hoch
+
+# ── Erweiterung 2026-09-20: UG-Kapitel (1KG S.41-56 / 2KG S.57-94) ──────────
+# Quellen: abgleich/1KG/abgleich_1KG.md + abgleich/2KG/abgleich_2KG.md,
+# GT-Messdaten tests/fixtures/mollgasse_gt/<G>.json.
+
+- id: NB-R13
+  thema: ug_stiegenrichtung
+  bedingung: "Untergeschoss: Personen fluechten HINAUF ueber die Stiege"
+  aktion:
+    symboltyp: "-"
+    position: "Leuchte vor/an der Stiege (NB-R05)"
+    rotation: "Welt-Pfeil = Aufwaertsrichtung des Laufs = IN Stiegenhauspfeilrichtung (OG: entgegen, NB-R04); Frontseite zum ankommenden UG-Strom"
+  begruendung: "PDF S.43, 54-55 — UG-Gegenstueck zu NB-R04"
+  belege: [1KG-03, 1KG-06, 2KG-18, 2KG-19]
+  konfidenz: hoch
+
+- id: NB-R14
+  thema: montageort_wand_decke
+  klassifikation: fachpraxis
+  bedingung: "Wahl Wand- vs. Deckenmontage"
+  aktion:
+    symboltyp: "-"
+    position: "Stiegen-Leuchten = Wand; Gang-Leuchten = Decke, mittig"
+    rotation: "-"
+  begruendung: "PDF S.56 woertlich: Notleuchten an Waenden hauptsaechlich bei Stiegen; alle 14 1KG-Platzierungen konsistent"
+  belege: [1KG-14]
+  konfidenz: hoch
+
+- id: NB-R15
+  thema: kabeltrasse_hindernis
+  klassifikation: fachpraxis    # ausdruecklich KEIN Normzitat
+  bedingung: "Sollposition liegt auf/nahe einer Kabeltrasse (blaue Balken, KT300/KT400/KT500)"
+  aktion:
+    symboltyp: "-"
+    position: "NIE auf der Trasse; seitlich versetzen, moeglichst >= 450 mm Abstand"
+    rotation: "nach Versatz erhalten: Sichtbarkeit, Pfeilrichtung, Frontseite, Fluchtwegbezug, Gebaeudehaelfte"
+  parameter:
+    abstand_mm: {soll_min: 450, modalitaet: "moeglichst (Fachpraxis-SOLL)"}
+    versatz_gemessen_mm: [507]
+  begruendung: "PDF S.63-64 woertlich; 2KG (A)-Ana 1C7D0 bleibt trotz Versatz auf der Anastasius-Seite. ACHTUNG: Rigole (Bodenrinnen-Schraffuren) sind KEINE Kabeltrassen"
+  belege: [2KG-05, 2KG-12]
+  konfidenz: hoch
+
+- id: NB-R16
+  thema: beidseitig
+  bedingung: "ZWEI Personenstroeme aus Gegenrichtungen nutzen denselben Fluchtweg-Knoten und brauchen beide die Frontseite"
+  aktion:
+    symboltyp: notlicht_ks_beidseitig
+    position: "am gemeinsamen Knoten (GT: 2 gespiegelte Einzel-Bloecke, Abstand 264-318 mm; Engine: RIVO_NL_ARR_bothsided)"
+    rotation: "Achse = Fluchtweg-Achse beider Stroeme"
+  parameter:
+    alternative: "beidseitig am Richtungswechsel OHNE Gegenstrom = NUR-ALTERNATIVE (orange, 'muss nicht sein') — NICHT automatisieren"
+  begruendung: "PDF S.65-83; Pflicht-Paare 2KG Gr.1-5 + 1KG (I) + EG-Paar; Gr.6 = einzige Alternative"
+  belege: [1KG-11, 2KG-06, 2KG-07, 2KG-10, 2KG-13, 2KG-16]
+  konfidenz: hoch
+
+- id: NB-R17
+  thema: garage_durchquerbarkeit
+  klassifikation: fachpraxis
+  bedingung: "Fluchtwegfuehrung durch Garagenbereiche"
+  aktion:
+    symboltyp: "-"
+    position: "Motorrad-Stellflaechen sind durchquerbar; Doppelparker-/PKW-Flaechen und Gruben NICHT"
+    rotation: "-"
+  begruendung: "PDF S.65-70; Personenreihe 1CBF6-1CBFC durch MOTORRAD-Stempel, 0 Fluchtwege durch DOPPELPARKER-Zonen. Durchquerbarkeit folgt aus freier Geometrie, nicht aus dem Raumlabel"
+  belege: [2KG-06, 2KG-08]
+  konfidenz: hoch
+
+- id: NB-R18
+  thema: gebaeudehaelften
+  klassifikation: projektspezifisches_muster
+  bedingung: "Projekt besteht aus zwei zusammengebauten Gebaeuden"
+  aktion:
+    symboltyp: "-"
+    position: "Trennung entlang der weitergefuehrten Gebaeudewand; Zuordnung am EG-Grundriss verifizieren; je Haelfte eigene Fluchtwege/Ausgaenge/Label-Alphabete"
+    rotation: "-"
+  parameter:
+    prozessregel: "unklare Zuordnung NIEMALS raten -> offene Frage (PDF S.78, bindend)"
+  begruendung: "PDF S.76-83; rote Trennlinie 1C7F4 (116 m) auf der Mollgasse-Gebaeudewand"
+  belege: [2KG-11, 2KG-12, 2KG-13, 2KG-16, 2KG-17]
+  konfidenz: hoch
+
+- id: NB-R19
+  thema: ug_nebenraum_tuerleuchte
+  bedingung: "UG-Nebenraum bindet an den Gang an"
+  aktion:
+    symboltyp: notlicht_ks_stiege_unten
+    position: "TECHNIK/NIEDERSPANNUNG/E-Raum: Tuer-Leuchte nach NB-R01 (mittig 3-26 mm, 711-779 mm zugangsseitig). Einzelne kleine ER/KELLERABTEIL/Medienraum: KEINE eigene Tuerleuchte, wenn nach Tuerdurchtritt sofort ein Gang-RZ sichtbar ist"
+    rotation: "nach NB-R01"
+  begruendung: "PDF S.51-53, 71-73, 93; 1KG-09 (D) + Merktext 'Stromversorgung aller Notleuchten'"
+  belege: [1KG-09, 1KG-10, 1KG-12, 2KG-09, 2KG-15]
+  konfidenz: hoch
+
+- id: NB-R20
+  thema: tuerlose_gaenge_durchgaenge
+  bedingung: "tuerloser Gang / offener Durchgang im Fluchtweg"
+  aktion:
+    symboltyp: notlicht_ks_stiege_unten
+    position: "tuerloser zusammenhaengender Gang: KEINE Zwischen-RZ solange Sichtkette steht; kurzer Gang mit Direktsicht aller Tueren: genau EIN Tuer-RZ; offener Durchgang als Knoten: down-Typ MITTIG im Durchgang (gemessen 4 mm Mittigkeit bei 1250 mm)"
+    rotation: "down-Typ frontal zum ankommenden Strom (rechts/links/beidseitig am Durchgang im PDF explizit VERWORFEN)"
+  begruendung: "PDF S.58-62, 73-74, 90-91 — S.73-74 sind dokumentierte Negativ-Beispiele"
+  belege: [2KG-04, 2KG-09, 2KG-15, 2KG-18]
+  konfidenz: hoch
+
+- id: NB-R21
+  thema: sv_anlage
+  bedingung: "Projekt braucht Notbeleuchtungs-Stromversorgung"
+  aktion:
+    symboltyp: gruppenbatterie_anlage
+    position: "EIN System je Projekt ('meistens' auch bei zwei Gebaeudehaelften), Verteiler im Niederspannungsraum, NICHT an der E-Verteiler-Wand"
+    rotation: "-"
+  begruendung: "PDF S.51, 71-72; 1KG 1CB68, 2KG 1D10E/1D10F"
+  belege: [1KG-09, 2KG-09]
+  konfidenz: mittel

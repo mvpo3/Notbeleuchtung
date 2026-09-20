@@ -1,0 +1,786 @@
+{
+ "geschoss": "1OG",
+ "quelle": "knowledge\\Pläne zeichnen Wissen\\Mollgasse-Notbeleuchtungserklärung\\WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+ "n_leuchten": 11,
+ "n_beidseitig_gruppen": 0,
+ "leuchten": [
+  {
+   "handle": "94FE7",
+   "block": "RIVO-RZ-ARR_right",
+   "typ": "rz",
+   "richtung_block": "right",
+   "xy_mm": [
+    -353158.0,
+    31485.8
+   ],
+   "insert_xy_mm": [
+    -934849.3,
+    -104906.0
+   ],
+   "rot_deg": 359.99,
+   "xscale": 1.3724,
+   "welt_pfeil_deg": 359.99,
+   "layer": "0"
+  },
+  {
+   "handle": "94FE8",
+   "block": "RIVO-SIBEL-ARR-down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    -348525.1,
+    33015.4
+   ],
+   "insert_xy_mm": [
+    -279351.0,
+    -98889.4
+   ],
+   "rot_deg": 89.83,
+   "xscale": 35.6373,
+   "welt_pfeil_deg": 359.83,
+   "layer": "0"
+  },
+  {
+   "handle": "95019",
+   "block": "RIVO-SIBEL-ARR-left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    -346578.5,
+    31545.6
+   ],
+   "insert_xy_mm": [
+    -415994.0,
+    164412.3
+   ],
+   "rot_deg": 269.55,
+   "xscale": 36.0983,
+   "welt_pfeil_deg": 89.55,
+   "layer": "0"
+  },
+  {
+   "handle": "95042",
+   "block": "RIVO-SIBEL-ARR-down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    -346702.9,
+    34488.3
+   ],
+   "insert_xy_mm": [
+    -215129.7,
+    104291.0
+   ],
+   "rot_deg": 180.1,
+   "xscale": 35.6373,
+   "welt_pfeil_deg": 90.1,
+   "layer": "0"
+  },
+  {
+   "handle": "95066",
+   "block": "Antipanikleuchte-RIVO",
+   "typ": "antipanik",
+   "richtung_block": null,
+   "xy_mm": [
+    -343612.7,
+    35025.7
+   ],
+   "insert_xy_mm": [
+    -255155.3,
+    -136224.2
+   ],
+   "rot_deg": 90.0,
+   "xscale": 45.9634,
+   "welt_pfeil_deg": null,
+   "layer": "0"
+  },
+  {
+   "handle": "95067",
+   "block": "Antipanikleuchte-RIVO",
+   "typ": "antipanik",
+   "richtung_block": null,
+   "xy_mm": [
+    -337315.6,
+    35024.8
+   ],
+   "insert_xy_mm": [
+    -248858.2,
+    -136225.2
+   ],
+   "rot_deg": 90.0,
+   "xscale": 45.9634,
+   "welt_pfeil_deg": null,
+   "layer": "0"
+  },
+  {
+   "handle": "952E8",
+   "block": "RIVO-SIBEL-ARR-down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    -312693.4,
+    7719.4
+   ],
+   "insert_xy_mm": [
+    -180788.6,
+    76893.4
+   ],
+   "rot_deg": 179.83,
+   "xscale": 35.6373,
+   "welt_pfeil_deg": 89.83,
+   "layer": "0"
+  },
+  {
+   "handle": "952E9",
+   "block": "RIVO-SIBEL-ARR-left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    -312728.2,
+    3649.0
+   ],
+   "insert_xy_mm": [
+    -445594.9,
+    -65766.4
+   ],
+   "rot_deg": 359.55,
+   "xscale": 36.0983,
+   "welt_pfeil_deg": 179.55,
+   "layer": "0"
+  },
+  {
+   "handle": "9568B",
+   "block": "RIVO-RZ-ARR_right",
+   "typ": "rz",
+   "richtung_block": "right",
+   "xy_mm": [
+    -320153.8,
+    3638.3
+   ],
+   "insert_xy_mm": [
+    -183762.0,
+    -578052.9
+   ],
+   "rot_deg": 89.99,
+   "xscale": 1.3724,
+   "welt_pfeil_deg": 89.99,
+   "layer": "0"
+  },
+  {
+   "handle": "9568D",
+   "block": "RIVO-SIBEL-ARR-down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    -378642.7,
+    60793.9
+   ],
+   "insert_xy_mm": [
+    -309468.6,
+    -71110.9
+   ],
+   "rot_deg": 89.83,
+   "xscale": 35.6373,
+   "welt_pfeil_deg": 359.83,
+   "layer": "0"
+  },
+  {
+   "handle": "956B0",
+   "block": "RIVO-SIBEL-ARR-down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    -318519.4,
+    5111.1
+   ],
+   "insert_xy_mm": [
+    -387693.4,
+    137015.8
+   ],
+   "rot_deg": 269.83,
+   "xscale": 35.6373,
+   "welt_pfeil_deg": 179.83,
+   "layer": "0"
+  }
+ ],
+ "personen": [
+  {
+   "handle": "94FF6",
+   "xy_mm": [
+    -352489.3,
+    29659.0
+   ],
+   "rot_deg": 101.59,
+   "xscale": -4.0068,
+   "blick_deg": 101.59
+  },
+  {
+   "handle": "950C0",
+   "xy_mm": [
+    -350404.9,
+    31313.5
+   ],
+   "rot_deg": 5.15,
+   "xscale": -4.0068,
+   "blick_deg": 5.15
+  },
+  {
+   "handle": "950E3",
+   "xy_mm": [
+    -336025.3,
+    35065.1
+   ],
+   "rot_deg": 348.67,
+   "xscale": 4.0068,
+   "blick_deg": 168.67
+  },
+  {
+   "handle": "950E4",
+   "xy_mm": [
+    -340136.0,
+    35065.7
+   ],
+   "rot_deg": 348.67,
+   "xscale": 4.0068,
+   "blick_deg": 168.67
+  },
+  {
+   "handle": "950E5",
+   "xy_mm": [
+    -346546.2,
+    32331.5
+   ],
+   "rot_deg": 258.67,
+   "xscale": 4.0068,
+   "blick_deg": 78.67
+  },
+  {
+   "handle": "952C1",
+   "xy_mm": [
+    -350367.2,
+    32917.3
+   ],
+   "rot_deg": 348.51,
+   "xscale": 4.0068,
+   "blick_deg": 168.51
+  },
+  {
+   "handle": "95314",
+   "xy_mm": [
+    -311791.1,
+    2457.1
+   ],
+   "rot_deg": 191.59,
+   "xscale": -4.0068,
+   "blick_deg": 191.59
+  },
+  {
+   "handle": "95337",
+   "xy_mm": [
+    -312741.1,
+    -1094.1
+   ],
+   "rot_deg": 101.59,
+   "xscale": -4.0068,
+   "blick_deg": 101.59
+  },
+  {
+   "handle": "9537D",
+   "xy_mm": [
+    -314028.3,
+    3604.2
+   ],
+   "rot_deg": 348.4,
+   "xscale": 4.0068,
+   "blick_deg": 168.4
+  },
+  {
+   "handle": "953A1",
+   "xy_mm": [
+    -312748.3,
+    10919.3
+   ],
+   "rot_deg": 78.4,
+   "xscale": 4.0068,
+   "blick_deg": 258.4
+  },
+  {
+   "handle": "953C4",
+   "xy_mm": [
+    -313746.5,
+    9885.2
+   ],
+   "rot_deg": 281.59,
+   "xscale": -4.0068,
+   "blick_deg": 281.59
+  },
+  {
+   "handle": "9542E",
+   "xy_mm": [
+    -312481.4,
+    8661.3
+   ],
+   "rot_deg": 78.4,
+   "xscale": 4.0068,
+   "blick_deg": 258.4
+  },
+  {
+   "handle": "9542F",
+   "xy_mm": [
+    -312749.1,
+    5973.3
+   ],
+   "rot_deg": 78.4,
+   "xscale": 4.0068,
+   "blick_deg": 258.4
+  },
+  {
+   "handle": "95452",
+   "xy_mm": [
+    -321241.8,
+    3621.2
+   ],
+   "rot_deg": 11.59,
+   "xscale": -4.0068,
+   "blick_deg": 11.59
+  },
+  {
+   "handle": "954EF",
+   "xy_mm": [
+    -353246.2,
+    34059.5
+   ],
+   "rot_deg": 296.46,
+   "xscale": -4.0068,
+   "blick_deg": 296.46
+  },
+  {
+   "handle": "95513",
+   "xy_mm": [
+    -353246.4,
+    32756.1
+   ],
+   "rot_deg": 296.46,
+   "xscale": -4.0068,
+   "blick_deg": 296.46
+  },
+  {
+   "handle": "95538",
+   "xy_mm": [
+    -353158.1,
+    30776.6
+   ],
+   "rot_deg": 101.59,
+   "xscale": -4.0068,
+   "blick_deg": 101.59
+  },
+  {
+   "handle": "9553A",
+   "xy_mm": [
+    -351516.3,
+    31351.3
+   ],
+   "rot_deg": 11.59,
+   "xscale": -4.0068,
+   "blick_deg": 11.59
+  },
+  {
+   "handle": "9553C",
+   "xy_mm": [
+    -346608.2,
+    33363.3
+   ],
+   "rot_deg": 78.51,
+   "xscale": 4.0068,
+   "blick_deg": 258.51
+  },
+  {
+   "handle": "9553E",
+   "xy_mm": [
+    -349209.7,
+    32917.3
+   ],
+   "rot_deg": 348.51,
+   "xscale": 4.0068,
+   "blick_deg": 168.51
+  },
+  {
+   "handle": "955A8",
+   "xy_mm": [
+    -334348.5,
+    35062.3
+   ],
+   "rot_deg": 348.67,
+   "xscale": 4.0068,
+   "blick_deg": 168.67
+  },
+  {
+   "handle": "955EE",
+   "xy_mm": [
+    -342638.0,
+    34151.9
+   ],
+   "rot_deg": 359.47,
+   "xscale": 4.0068,
+   "blick_deg": 179.47
+  },
+  {
+   "handle": "95613",
+   "xy_mm": [
+    -335388.0,
+    34150.8
+   ],
+   "rot_deg": 359.47,
+   "xscale": 4.0068,
+   "blick_deg": 179.47
+  },
+  {
+   "handle": "9561B",
+   "xy_mm": [
+    -313465.7,
+    926.0
+   ],
+   "rot_deg": 258.4,
+   "xscale": 4.0068,
+   "blick_deg": 78.4
+  },
+  {
+   "handle": "956F7",
+   "xy_mm": [
+    -319086.2,
+    5008.9
+   ],
+   "rot_deg": 11.59,
+   "xscale": -4.0068,
+   "blick_deg": 11.59
+  },
+  {
+   "handle": "9571C",
+   "xy_mm": [
+    -315477.5,
+    5078.5
+   ],
+   "rot_deg": 11.59,
+   "xscale": -4.0068,
+   "blick_deg": 11.59
+  },
+  {
+   "handle": "957AA",
+   "xy_mm": [
+    -318057.0,
+    3492.7
+   ],
+   "rot_deg": 348.4,
+   "xscale": 4.0068,
+   "blick_deg": 168.4
+  },
+  {
+   "handle": "957D0",
+   "xy_mm": [
+    -319853.4,
+    5029.7
+   ],
+   "rot_deg": 11.59,
+   "xscale": -4.0068,
+   "blick_deg": 11.59
+  },
+  {
+   "handle": "957F5",
+   "xy_mm": [
+    -317039.1,
+    5027.6
+   ],
+   "rot_deg": 11.59,
+   "xscale": -4.0068,
+   "blick_deg": 11.59
+  },
+  {
+   "handle": "9583C",
+   "xy_mm": [
+    -312811.9,
+    4719.3
+   ],
+   "rot_deg": 78.4,
+   "xscale": 4.0068,
+   "blick_deg": 258.4
+  },
+  {
+   "handle": "95861",
+   "xy_mm": [
+    -315267.3,
+    3552.3
+   ],
+   "rot_deg": 348.4,
+   "xscale": 4.0068,
+   "blick_deg": 168.4
+  }
+ ],
+ "labels": [
+  {
+   "text": "(A)",
+   "xy_mm": [
+    -353755.3,
+    31578.8
+   ],
+   "handle": "9508A"
+  },
+  {
+   "text": "(B)",
+   "xy_mm": [
+    -348309.9,
+    32856.7
+   ],
+   "handle": "95185"
+  },
+  {
+   "text": "(C)",
+   "xy_mm": [
+    -347000.0,
+    31412.4
+   ],
+   "handle": "951A8"
+  },
+  {
+   "text": "(D)",
+   "xy_mm": [
+    -347056.2,
+    34830.7
+   ],
+   "handle": "951CB"
+  },
+  {
+   "text": "(E)",
+   "xy_mm": [
+    -343723.9,
+    34717.1
+   ],
+   "handle": "951EE"
+  },
+  {
+   "text": "(F)",
+   "xy_mm": [
+    -337417.3,
+    34721.2
+   ],
+   "handle": "95211"
+  },
+  {
+   "text": "(1OG)",
+   "xy_mm": [
+    -352927.4,
+    29956.4
+   ],
+   "handle": "95234"
+  },
+  {
+   "text": "(2OG)",
+   "xy_mm": [
+    -350434.3,
+    31841.2
+   ],
+   "handle": "95257"
+  },
+  {
+   "text": "(2OG)",
+   "xy_mm": [
+    -346422.4,
+    32593.9
+   ],
+   "handle": "9529D"
+  },
+  {
+   "text": "(2OG)",
+   "xy_mm": [
+    -350791.5,
+    33407.0
+   ],
+   "handle": "952C2"
+  },
+  {
+   "text": "(1OG)",
+   "xy_mm": [
+    -352852.2,
+    34160.2
+   ],
+   "handle": "95512"
+  },
+  {
+   "text": "(1OG)",
+   "xy_mm": [
+    -352852.4,
+    32856.8
+   ],
+   "handle": "95514"
+  },
+  {
+   "text": "(1OG)",
+   "xy_mm": [
+    -353849.4,
+    30737.3
+   ],
+   "handle": "95539"
+  },
+  {
+   "text": "(1OG)",
+   "xy_mm": [
+    -351654.0,
+    31846.3
+   ],
+   "handle": "9553B"
+  },
+  {
+   "text": "(1OG)",
+   "xy_mm": [
+    -347413.6,
+    33397.0
+   ],
+   "handle": "9553D"
+  },
+  {
+   "text": "(1OG)",
+   "xy_mm": [
+    -349634.0,
+    33407.0
+   ],
+   "handle": "9553F"
+  },
+  {
+   "text": "(1OG)",
+   "xy_mm": [
+    -340632.9,
+    35574.5
+   ],
+   "handle": "95562"
+  },
+  {
+   "text": "(1OG)",
+   "xy_mm": [
+    -336288.5,
+    35550.8
+   ],
+   "handle": "95585"
+  },
+  {
+   "text": "(B)",
+   "xy_mm": [
+    -318670.6,
+    5615.6
+   ],
+   "handle": "95644"
+  },
+  {
+   "text": "(C)",
+   "xy_mm": [
+    -312979.7,
+    7517.1
+   ],
+   "handle": "95667"
+  },
+  {
+   "text": "(D)",
+   "xy_mm": [
+    -312982.3,
+    3985.1
+   ],
+   "handle": "9568A"
+  },
+  {
+   "text": "(A)",
+   "xy_mm": [
+    -320276.6,
+    3300.1
+   ],
+   "handle": "9568C"
+  },
+  {
+   "text": "(1OG)",
+   "xy_mm": [
+    -321407.6,
+    4121.0
+   ],
+   "handle": "956D3"
+  },
+  {
+   "text": "(1OG)",
+   "xy_mm": [
+    -319252.0,
+    5508.7
+   ],
+   "handle": "956F8"
+  },
+  {
+   "text": "(1OG)",
+   "xy_mm": [
+    -315643.2,
+    5578.3
+   ],
+   "handle": "9571D"
+  },
+  {
+   "text": "(1OG)",
+   "xy_mm": [
+    -313274.9,
+    5848.2
+   ],
+   "handle": "95740"
+  },
+  {
+   "text": "(1OG)",
+   "xy_mm": [
+    -312601.3,
+    8389.9
+   ],
+   "handle": "95763"
+  },
+  {
+   "text": "(1OG)",
+   "xy_mm": [
+    -314219.3,
+    4112.5
+   ],
+   "handle": "95786"
+  },
+  {
+   "text": "(2OG)",
+   "xy_mm": [
+    -318248.0,
+    4000.9
+   ],
+   "handle": "957AB"
+  },
+  {
+   "text": "(2OG)",
+   "xy_mm": [
+    -320019.1,
+    5529.5
+   ],
+   "handle": "957D1"
+  },
+  {
+   "text": "(2OG)",
+   "xy_mm": [
+    -317204.9,
+    5527.4
+   ],
+   "handle": "957F6"
+  },
+  {
+   "text": "(2OG)",
+   "xy_mm": [
+    -313337.7,
+    4594.2
+   ],
+   "handle": "9583D"
+  },
+  {
+   "text": "(2OG/ist im 1OG^Jgeht Richtung EG)",
+   "xy_mm": [
+    -316073.9,
+    4266.1
+   ],
+   "handle": "95862"
+  }
+ ],
+ "n_fluchtweg_polylines": 20,
+ "n_sichtlinien": 10
+}

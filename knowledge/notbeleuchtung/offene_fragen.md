@@ -91,9 +91,13 @@ S.10-Render.
     180°+rot) war beim Trio `852C7/852C8/8531B` nicht angewandt. rot 348,7°
     ⇒ Blick 168,7° ≈ **West = Fluchtrichtung, korrekt.** Nahaufnahme bestätigt
     (Läufer läuft nach West). Kein DXF-Fehler, kein Owner-TODO.
-23. **EG „FREIHEIT/KEINE FREIHEIT"-Texte + rote Sperr-Rechtecke + Fluchtweg-
-    Teilungs-Text** (Mollgasse vs. Anastasius-Grüngasse) sind im PDF nicht
-    erläutert — späteres Kapitel?
+23. ~~EG „FREIHEIT/KEINE FREIHEIT" + Fluchtweg-Teilungs-Text~~ **TEILGEKLÄRT
+    2026-09-20 (2KG-Kapitel):** Die Gebäudetrennung Mollgasse/Anastasius-
+    Grün-Gasse ist jetzt erklärt (PDF S.76–83, NB-R18; EG-Grundriss = die
+    Verifikations-Referenz, S.77-Bild zeigt die EG-DXF mit den FREIHEIT-
+    Rahmen). OFFEN bleibt nur die exakte Bedeutung der Wörter
+    „FREIHEIT/KEINE FREIHEIT" selbst (vermutlich: Fluchtweg ins Freie
+    möglich/nicht möglich — Owner bestätigen lassen).
 24. **DG Sichtlinie `208DA`** (Top 27) endet in der Lichtkuppel-Box — Blick auf
     die unversetzte A-Ursprungsposition? Nicht belegbar.
 25. **DG Podest-Höhenlage** (FOK PODEST +12,09 vs. STGH +13,45) mit dem grünen
@@ -112,3 +116,38 @@ S.10-Render.
 | 4OG | 8 | 7 | 1 | 0 | 1 (`41221`) | 0 |
 | DG | 6 | 4 | 2 | 0 | 2 (`206D6`/`206DB`) | 0 |
 | **Σ** | **75** | **49** | **26** | **14** | **8** | **4** |
+
+Stand 2026-09-20: die EG-DXF wurde vom Owner AKTUALISIERT (Aufheller/Spot/
+Verteiler-Streuner entfernt, left 5→3, right 4→3, AP 3→2 → 18 NB-Leuchten) —
+Teile der Kopier-Reste-Zeile oben sind damit erledigt; Restprüfung beim
+nächsten EG-Re-Abgleich. 1KG (14 Leuchten) und 2KG (36) sind VOLLSTÄNDIG
+zugeordnet (`abgleich/1KG`, `abgleich/2KG`) — 1KG ohne Kopier-Reste,
+2KG mit 1 Doppel-Label (s. Punkt 31).
+
+## Neue Punkte aus dem UG-Abgleich (2026-09-20)
+
+27. **PDF-TEXTFEHLER S.57 (2KG-01):** Text sagt „(B) vertikal ausgerichtet",
+    DXF+Bild zeigen `1C707` LIEGEND (746×225); vertikal ist (C) `1C706`
+    (225×746) → vermutlich B↔C im Text vertauscht. **An Owner melden**
+    (gleiche Klasse wie die 4 behobenen Textfehler vom 18.09.).
+28. **Kabeltrassen-Beschriftung:** PDF nennt KT300/KT400/KT500 (S.63–64), die
+    2KG-DXF-Trassen heißen aber „KT UK=+2,11 FBOK" (Handles 10100–10135) —
+    Layer-/Label-Konvention für die automatische KT-Extraktion beim Owner
+    bestätigen. Die vertikalen Schraffur-Leitern sind **Rigole**, keine KT
+    ((I)/(J) stehen zulässig darauf); 450-mm-Nachmessung an der Decken-KT im
+    2KG nicht eindeutig möglich.
+29. **S.80 „nach rechts zur (C)":** geometrisch liegt (C) für den (A)-Strom
+    LINKS — Plan-Leserichtung statt Personensicht? (Gleiche Klasse wie
+    1KG-08 „links = Plan-links".) Klein, aber fürs Richtungs-Vokabular
+    relevant: nur Welt-Pfeile messen, nie Prosa-Richtungen übernehmen.
+30. **Beidseitig-Paarabstand:** Gruppe 4 hat 318 mm Versatz vs. 264 mm sonst —
+    Soll-Wert für den `RIVO_NL_ARR_bothsided`-Vergleich im GT-Matching
+    (Toleranz statt Exaktwert).
+31. **2KG Doppel-Label (A) `1D157`** ohne zugehörige Leuchte (vermutlich
+    Beschriftungs-Rest).
+32. **1KG blaue Erklär-Linien `1C010`/`1C011`** am (I)-Gang im PDF nicht
+    erläutert.
+33. **1KG-Antipanik-Verzicht:** das 1KG hat 0 Antipanikleuchten — fachlich
+    plausibel (kleine Gänge), aber ohne Lux-Beleg → Ground-Truth-Harness G3
+    (Lux auf Experten-Placement) soll das bestätigen.
+34. **1KG-05 (G)-Alternative** (Aufzugs-Nähe) nur als Text, ohne DXF-Marker.
