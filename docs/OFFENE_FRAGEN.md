@@ -1576,3 +1576,58 @@ Owner-Ansage 2026-09-20 aus Leonis' Paket; Reihenfolge und Wortlaut in
 - **Gebäudehälften über Graph-Komponenten:** kein neues Contract-Feld vorgesehen. Ob die
   Komponenten-Zuordnung für Leonis ohne Feld konsumierbar ist, ist mit ihm zu klären, bevor
   gebaut wird.
+
+## S-MST — Maßstab-Kontrolle vor der Platzierung (vorgemerkt, 2026-09-20, nach dem Stapel-Merge)
+
+Owner-Ansage 2026-09-20: „Die Architektpläne — wenn man die Türen misst und die Tür ist 90/210,
+dann kommt beim Messen meistens 0.900 mm. Der Plan muss dann so skaliert werden, dass beim
+Messen zwischen den Türkanten 900 mm herauskommt. Der Architekt liefert die Pläne so, wir
+müssen das eigenständig machen. Die Software soll das kontrollieren, bevor sie Pläne generiert
+— kommt der Plan vom Kunden schon im richtigen Maßstab, passt das; wenn nicht, muss die
+Software ihn richtig skalieren, bevor die Platzierung erfolgt."
+
+**Ist-Stand (nachgelesen 2026-09-20, `dxf_load.py`): die Kalibrierung existiert bereits, die
+Kontrolle fehlt.**
+
+- `_calibrate_factor` (`dxf_load.py:163`) leitet den mm-Faktor aus der **Geometrie** ab, nicht
+  aus `$INSUNITS` — der Docstring dort sagt selbst: „das lügt oft: leere Pläne in Metern,
+  fertige in mm — beide mit gleichem Code". Die Geschoss-Ausdehnung (`_SPAN_MIN_MM` 15 m bis
+  `_SPAN_MAX_MM` 500 m) gibt die Kandidaten-Dekaden 1/10/100/1000/10000 vor.
+- `_door_arc_factor` (`:122`) ist genau die Türprobe des Owners: die Schwenkbogen-Radien der
+  Türblöcke müssen nach Skalierung zwischen `_DOOR_MIN_MM` 600 und `_DOOR_MAX_MM` 1300 liegen,
+  mindestens **drei** Türen müssen zustimmen.
+
+Vier Lücken, alle ohne Messung sichtbar im Code:
+
+1. **Die Türprobe läuft nur als Tiebreak.** Bleibt nach der Spannen-Regel genau ein Kandidat,
+   wird keine einzige Tür befragt (`:175-176`). Ein Plan mit untypischer Ausdehnung wird still
+   falsch skaliert, obwohl die Türen es widerlegen würden.
+2. **Stiller Rückfall auf `$INSUNITS`** (`:180-181`), wenn kein Kandidat in die Spanne passt —
+   also genau dort, wo die Geometrie nichts hergibt, entscheidet der Header, dem der Code
+   selbst nicht traut.
+3. **Der Faktor wird nirgends ausgewiesen.** Kein Contract-Feld, keine Provider-Warnung, kein
+   Eintrag im Prüfbericht; nur Analyse-Skripte lesen `plan.factor`. Nach einem Lauf ist nicht
+   nachvollziehbar, mit welchem Maßstab gerechnet wurde.
+4. **Kein Test gegen echte Pläne.** Die Kalibrierung wird nur über synthetische Fixtures
+   berührt; es gibt keinen Messfall „Plan X hat Faktor Y, belegt durch N Türen".
+
+**Zuschnitt (Vorschlag, nicht gebaut):**
+
+1. Türbreite wird **immer** gemessen, nicht nur bei Mehrdeutigkeit: gegen die Nennmaße
+   (700/800/900/1000/1100 mm), mit der Zahl der zustimmenden Türen als Beleg. Widerspricht die
+   Türprobe der Spannen-Regel, gewinnt die Tür — sie ist das schärfere Maß.
+2. Faktor, Beleg und Konfidenz werden ausgewiesen: Provider-Warnung wie `seite_fehlt` plus
+   Eintrag im Prüfbericht. **Kein Contract-Feld** — ein Feld auf `RaumModell` wäre eine
+   Contract-Änderung und bräuchte alle drei Owner.
+3. **Hard Stop vor der Platzierung**, wenn kein Faktor belegbar ist, statt stillem
+   Weiterrechnen. **Offen (Owner):** Stop oder nur Warnung? Ein Stop blockiert Pläne, die heute
+   durchlaufen — die Entscheidung gehört dem Owner, nicht dem Slice.
+4. Gate-Messfall je Prüfplan: erkannter Faktor und Zahl der zustimmenden Türen.
+
+**Warum nicht jetzt:** `dxf_load` sitzt ganz vorne in der Kaskade; jede Änderung dort verschiebt
+sämtliche Gate-Zahlen und die Nullmessung. Gleiche Begründung wie bei S4d. Reihenfolge deshalb
+nach dem Merge des Türstapels.
+
+**Direkt betroffen:** die Mollgasse-Pläne sind in Metern gezeichnet und tragen `$INSUNITS` mm —
+und Mollgasse 1OG ist die Abnahme von S7a+S7b (Bedingung (9)). Greift die Kalibrierung dort
+nicht, ist die Abnahme wertlos. Messung dazu liegt beim S7-Blast.
