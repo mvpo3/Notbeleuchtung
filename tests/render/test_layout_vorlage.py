@@ -1,8 +1,9 @@
 """Layout-Vorlage (Slice 3.4) — Plan im Layout1-Viewport, exakt 1:50.
 
-Hermetisch gegen die ECHTE Repo-Vorlage `Vorlagen-Legende/Notbeleuchtungspläne-
-Vorlage.dxf` (Owner-Asset, versioniert). Befund aus dem Inventar: der Vorlagen-
-Plankopf besteht aus reinen TEXT-Entities — es existieren KEINE ATTRIB-Tags,
+Hermetisch gegen die ECHTE Repo-Mastervorlage `Vorlagen-Legende/
+Rivoplan_Notbeleuchtungs_Vorlage.dxf` (Owner-Asset, versioniert; Rivoplan-
+Master-Migration 2026-09-20). Befund aus dem Inventar: der Vorlagen-Plankopf
+besteht aus reinen TEXT-Entities — es existieren KEINE ATTRIB-Tags,
 also wird nichts befüllt und `plankopf_tags` ist leer (der Prompt-Test
 „MASSSTAB-Attribut enthält 1:50" ist an dieser Vorlage nicht erfüllbar;
 dokumentierte Abweichung, kein stiller Skip).
@@ -24,7 +25,7 @@ from notbeleuchtung.hauptengine.render.dxf_renderer import (
 from notbeleuchtung.symbols import load_symbol_mapping
 
 FIXTURES = Path(__file__).parents[1] / "fixtures"
-VORLAGE = Path(__file__).parents[2] / "Vorlagen-Legende" / "Notbeleuchtungspläne-Vorlage.dxf"
+VORLAGE = Path(__file__).parents[2] / "Vorlagen-Legende" / "Rivoplan_Notbeleuchtungs_Vorlage.dxf"
 
 
 def _lade_4og():
@@ -67,10 +68,10 @@ def test_nb_inserts_nur_im_modelspace(tmp_path):
     msp_nb = [e for e in doc.modelspace().query("INSERT")
               if e.dxf.name.strip().lower() in nb_bloecke]
     assert msp_nb, "Platzierungs-INSERTs fehlen im Modelspace"
-    # Layout1 behält exakt die 9 Owner-INSERTs der Vorlagen-Legende — der Render
-    # fügt dem Paperspace KEINE Symbole hinzu.
+    # Layout1 behält exakt die 8 Owner-INSERTs der Rivoplan-Mastervorlage —
+    # der Render fügt dem Paperspace KEINE Symbole hinzu.
     layout_inserts = list(doc.layouts.get("Layout1").query("INSERT"))
-    assert len(layout_inserts) == 9
+    assert len(layout_inserts) == 8
 
 
 def test_vorlage_hat_keine_attribs_tags_leer(tmp_path):

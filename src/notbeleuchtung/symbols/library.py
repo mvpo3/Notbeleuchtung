@@ -33,10 +33,10 @@ from notbeleuchtung.symbols import load_symbol_mapping
 
 log = logging.getLogger(__name__)
 
-# Notbeleuchtungs-Ausgabe-Layer = der Layer der Owner-Planvorlage
-# (Vorlagen-Legende/Notbeleuchtungspläne-Vorlage.dxf führt genau diesen einen
-# Notbeleuchtungs-Layer; „Symbole landen auf den Layern der Vorlage", Owner
-# 2026-09-18). Die neuen RIVO-Blöcke tragen ihre Farben EXPLIZIT in der
+# Notbeleuchtungs-Ausgabe-Layer = der Layer der Rivoplan-Planvorlage
+# (Vorlagen-Legende/Rivoplan_Notbeleuchtungs_Vorlage.dxf führt genau diesen
+# einen Notbeleuchtungs-Layer; „Symbole landen auf den Layern der Vorlage",
+# Owner 2026-09-18). Die RIVO-Blöcke tragen ihre Farben EXPLIZIT in der
 # Block-Geometrie (grünes Schild + schwarzes Piktogramm, blauer Aufheller) —
 # die Layer-Farbe ist Anzeige-Beiwerk, kein Farbgeber mehr.
 _SAFETY_GREEN_RGB = (30, 179, 80)   # true_color des Vorlagen-Layers (0x1EB350)
