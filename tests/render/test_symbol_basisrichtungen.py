@@ -9,8 +9,9 @@ Pfeilrichtung neu aus der importierten Library-Geometrie:
   Schwerpunkt. Der Schwerpunkt liegt kopflastig, der Vektor zeigt also in die
   Pfeilrichtung (Betrag ~0.086 Library-Units, Winkelabweichung gemessen ≤2°).
 
-OCS-Falle (bewusst über ezdxf.path.from_hatch gelöst): der Block
-'RIVO-RZ-ARR_right' (wie sein historischer Vorgänger) kann eine HATCH mit extrusion=(0,0,-1) tragen. Wer die
+OCS-Falle (bewusst über ezdxf.path.from_hatch gelöst): right-Blöcke können
+historisch eine HATCH mit extrusion=(0,0,-1) tragen (der Rivoplan-right von
+2026-09-20 liegt in normalem OCS, der Test bleibt trotzdem OCS-fest). Wer die
 Stützpunkte roh liest, misst den Pfeil spiegelverkehrt (Azimut 178° statt 358°)
 und „belegt" damit einen Fehler, den es nicht gibt.
 

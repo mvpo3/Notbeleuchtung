@@ -1,14 +1,13 @@
-"""Real-Asset-Naht: symbols/library.py gegen CAD_Symbole/Notbeleuchtungssymbole_neu+.dxf.
+"""Real-Asset-Naht: symbols/library.py gegen CAD_Symbole/Rivoplan_Notbeleuchtungs_Symbole.dxf.
 
-Migration Phase A (2026-09-18): die neue Owner-Bibliothek ist die einzige
-Symbolquelle. Sichert die Kette Registry-YAML → Library-Block ab, BEVOR der
-Renderer sie konsumiert: jeder block_name muss in der Library existieren
-(case-insensitiv — DXF-Blocknamen sind case-insensitiv), Layer-Sync liefert das
-Vorlagen-Layer-Grün, Block-Import ist idempotent + origin-normalisiert, und die
-effektive WELTGRÖSSE jedes Symbols (native Extents × scale_abs) liegt im
-plausiblen Band (der alte native-units-Guard passt nicht mehr: die neue Lib
-führt gewollt groß-native Blöcke wie RIVO-RZ-ARR_right mit 463 units, die
-scale_abs auf ~636 mm Welt bringt).
+Migration Rivoplan-Master (2026-09-20): die Rivoplan-Bibliothek ist die einzige
+produktive Symbolquelle. Sichert die Kette Registry-YAML → Library-Block ab,
+BEVOR der Renderer sie konsumiert: jeder block_name muss in der Library
+existieren (case-insensitiv — DXF-Blocknamen sind case-insensitiv), Layer-Sync
+liefert das Vorlagen-Layer-Grün, Block-Import ist idempotent +
+origin-normalisiert, und die effektive WELTGRÖSSE jedes Symbols (native
+Extents × scale_abs) liegt im plausiblen Band (Legenden-Soll × Maßstab 50:
+RZ 883 / Antipanik 586 / Aufheller+Spot 192 / SV-Anlage 852 mm).
 """
 from __future__ import annotations
 
@@ -30,8 +29,11 @@ def _fresh_cache():
 def test_library_resolves_and_loads():
     doc = library.load_library()
     assert len(list(doc.blocks.block_names())) > 0
-    # Die aufgelöste Datei ist die neue Owner-Bibliothek.
-    assert "rivo-sibel-arr-down" in {n.lower() for n in doc.blocks.block_names()}
+    # Die aufgelöste Datei ist die Rivoplan-Bibliothek (inkl. echtem
+    # Beidseitig-Block, den keine Vorgänger-Bibliothek führte).
+    namen = {n.lower() for n in doc.blocks.block_names()}
+    assert "rivo_nl_arr_down" in namen
+    assert "rivo_nl_arr_bothsided" in namen
 
 
 def test_every_mapping_block_exists_in_library():
@@ -58,7 +60,7 @@ def test_sync_layers_adds_safety_layer_green():
 
 def test_import_block_idempotent_and_origin_normalized():
     doc = ezdxf.new("R2018")
-    block_name = "RIVO-SIBEL-ARR-down"
+    block_name = "RIVO_NL_ARR_down"
     library.import_block(doc, block_name)
     library.import_block(doc, block_name)  # zweiter Aufruf = No-op
     extents = ezbbox.extents(doc.blocks[block_name], fast=True)
@@ -73,8 +75,8 @@ def test_import_unknown_block_raises():
         library.import_block(doc, "gibt-es-nicht")
 
 
-# Weltgrößen-Band in mm: kleinstes Symbol = Aufheller/Spot (~97 mm), größtes =
-# RZ-Schild (~636 mm) — gemessen an den Owner-Erklärungsplänen (Mollgasse).
+# Weltgrößen-Band in mm: kleinstes Symbol = Aufheller/Spot (192 mm), größtes =
+# RZ-Schild (883 mm) — Legenden-Soll der Rivoplan-Vorlage × Maßstab 50.
 _WELT_MIN_MM = 50.0
 _WELT_MAX_MM = 1500.0
 

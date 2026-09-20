@@ -69,15 +69,16 @@ def test_ohne_lb_keine_legende(rendered):
 
 
 def test_stueckliste_zaehlt_symbol_arten(rendered):
-    # Owner-Vorlage aktiv: die Symbol-Legende wird in `Vorlage_Legende` GEFÜLLT
-    # (Sektion „Legende Notbeleuchtung"), die separate Stücklisten-Box entfällt.
+    # Migration Rivoplan-Master (2026-09-20): der Legenden-Rahmen-Block der
+    # Vorgänger-Bibliothek ist gestrichen — im Fallback-Modus trägt die
+    # Stücklisten-Box die Symbol-Zählung (Blatt-Modus: Legende im Blatt).
     _, summary, doc = rendered
-    assert summary["vorlage_drawn"] is True
-    assert summary["vorlage_legende_gefuellt"] is True
-    assert summary["stueckliste_drawn"] is False
+    assert summary["vorlage_drawn"] is False
+    assert summary["vorlage_legende_gefuellt"] is False
+    assert summary["stueckliste_drawn"] is True
     texte = " ".join(m.text for m in
                      doc.modelspace().query("MTEXT[layer=='din_SIBEL_70_legend_green']"))
-    assert "5x Typ RZ" in texte and "Rettungszeichen" in texte
+    assert "STÜCKLISTE" in texte and "Rettungszeichen: 5" in texte
 
 
 def test_stromkreis_belegung_je_kreis(rendered):
@@ -413,15 +414,15 @@ def test_stueckliste_mit_symbol_spalte(ohne_blatt):
         out = Path(tmp) / "legende.dxf"
         summary = render_dxf(plz, raum, out)
         doc = ezdxf.readfile(str(out))
-    # Symbol-Legende lebt jetzt IN der Owner-Vorlage (Stücklisten-Box entfällt).
-    assert summary["vorlage_legende_gefuellt"] is True
-    assert summary["stueckliste_drawn"] is False
+    # Migration Rivoplan-Master: die Stücklisten-Box trägt die Symbol-Spalte
+    # (der Legenden-Rahmen-Block der Vorgänger-Bibliothek ist gestrichen).
+    assert summary["vorlage_legende_gefuellt"] is False
+    assert summary["stueckliste_drawn"] is True
     max_x = raum.bounds_mm.max_xy[0]
     legenden_syms = [e for e in doc.modelspace().query("INSERT")
                      if e.dxf.insert.x > max_x + 1500
-                     and e.dxf.name != "vorlage_legende"
                      and not e.has_xdata("NOTBELEUCHTUNG")]
-    assert len(legenden_syms) >= 2   # Vorlagen- + Blatt-Legende bestücken beide
+    assert len(legenden_syms) >= 2   # je Typ-Zeile ein Katalog-Symbol
     texte = " ".join(m.text for m in doc.modelspace().query("MTEXT"))
     assert "Typ A" in texte and "Typ D" in texte and "Concept 2 AP3" in texte
 
@@ -480,7 +481,8 @@ def test_blatt_modus_ersetzt_alle_boxen(contracts, tmp_path):
     msp = doc.modelspace()
     assert not msp.query("LWPOLYLINE[layer=='din_SIBEL_99_inspection']")
     assert not msp.query("LWPOLYLINE[layer=='din_SIBEL_11_system']")
-    assert not [e for e in msp.query("INSERT") if e.dxf.name == "vorlage_legende"]
+    # Kein separater Legenden-Rahmen-Block neben dem Blatt (Rivoplan-Master).
+    assert not [e for e in msp.query("INSERT") if "legende" in e.dxf.name.lower()]
     # Blatt-Rahmen + gefüllte Blatt-Legende existieren
     assert msp.query("LWPOLYLINE[layer=='din_SIBEL_99_titleblock']")
     blatt_syms = [e for e in msp.query("INSERT") if not e.has_xdata("NOTBELEUCHTUNG")]

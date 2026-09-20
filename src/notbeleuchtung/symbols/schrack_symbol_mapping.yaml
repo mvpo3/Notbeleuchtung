@@ -1,23 +1,25 @@
-# Symbol-Registry — catalog_key → Block in CAD_Symbole/Notbeleuchtungssymbole_neu+.dxf
+# Symbol-Registry — catalog_key → Block in CAD_Symbole/Rivoplan_Notbeleuchtungs_Symbole.dxf
 #
-# Migration Phase A (Owner 2026-09-18): die neue Owner-Bibliothek ist die EINZIGE
-# Symbolquelle. Diese Datei ist die zentrale Registry (Typ → Blockname → Skala);
-# die lokalen Pfeilvektoren/Basisorientierungen je Block liegen im Schwester-Modul
-# symbols/orientation.py (_BLOCK_BASE_DEG, gemessen) — zusammen bilden beide die
-# EINE Symbolzuordnung. Dokumentation: docs/SYMBOL_MIGRATION_2026-09-18.md.
+# Migration Rivoplan-Master (Owner 2026-09-20, nach Phase A 2026-09-18): die
+# Rivoplan-Bibliothek ist die EINZIGE produktive Symbolquelle. Diese Datei ist
+# die zentrale Registry (Typ → Blockname → Skala); die lokalen Pfeilvektoren/
+# Basisorientierungen je Block liegen im Schwester-Modul symbols/orientation.py
+# (_BLOCK_BASE_DEG, gemessen) — zusammen bilden beide die EINE Symbolzuordnung.
+# Dokumentation: docs/SYMBOL_MIGRATION_2026-09-18.md.
 #
 # Skalen-Kalibrierung (Owner 2026-09-18 „vergrößern, gut erkennbar, passend zum
-# Plan"): Soll = Papier-Größe der Owner-Legende in der neuen Planvorlage
-# (Vorlagen-Legende/Notbeleuchtungspläne-Vorlage.dxf, Layout1) × Liefermaßstab 50.
-# Die Legenden-INSERTs sind in Papier-mm gezeichnet — gemessen:
-#   RZ-Schild  17,7 Papier-mm → 883 mm Welt (down/left nativ 17,665 → ×50;
-#              right nativ 463,626 → ×1,905)
+# Plan"): Soll = Papier-Größe der Owner-Legende in der Rivoplan-Planvorlage
+# (Vorlagen-Legende/Rivoplan_Notbeleuchtungs_Vorlage.dxf, Layout1) × Maßstab 50.
+# Die Legenden-INSERTs sind in Papier-mm gezeichnet — gemessen 2026-09-20
+# (Werte identisch zur Vorgänger-Vorlage):
+#   RZ-Schild  17,7 Papier-mm → 883 mm Welt (down/left/right nativ 17,665 → ×50;
+#              der frühere groß-native right-Block 463,6 → ×1,905 ist Geschichte,
+#              der Rivoplan-right ist klein-nativ wie down/left)
+#   beidseitig 17,7 Papier-mm breit → 883 mm Welt (nativ 17,665 × 17,665 → ×50)
 #   Antipanik  11,7 Papier-mm → 586 mm Welt (nativ 11,726 → ×50)
 #   Aufheller   3,8 Papier-mm → 192 mm Welt (nativ 1,849; Legende xs 2,079 → ×104)
 #   Spot        3,8 Papier-mm → 192 mm Welt (nativ 1,780; Legende xs 2,155 → ×107,8)
 #   SV-Anlage  17,0 Papier-mm → 852 mm Welt (nativ 17,038 → ×50)
-# (Vorher: Welt-Skalen der Erklärungs-DXFs, RZ 636/AP 539/Aufheller+Spot 97/
-# Anlage 430 — auf A0 1:50 waren Aufheller/Spot mit 2 Papier-mm unlesbar.)
 #
 # Pflichtfelder je Eintrag: block_name, label, category
 # Optional: mirror_x (Horizontal-Spiegelung des Blocks), scale, scale_abs, notes
@@ -30,36 +32,35 @@
 # Tür links / Pfeil mitte / Läufer rechts). Richtungswahl = Rotation setzt der
 # Platzierer je Fluchtweg-Geometrie (orientation.transformation).
 notlicht_ks_stiege:
-  block_name: "RIVO-SIBEL-ARR-down"
+  block_name: "RIVO_NL_ARR_down"
   label: "Notlicht KS (Stiege/Gänge)"
   category: notlicht
   scale_abs: 50.0
 
 # Down-Rettungszeichen (Pfeil „nach unten" = Ausgang erreicht / Treppe abwärts).
 notlicht_ks_stiege_unten:
-  block_name: "RIVO-SIBEL-ARR-down"
+  block_name: "RIVO_NL_ARR_down"
   label: "Notlicht KS Rettungszeichen unten (Ausgang)"
   category: notlicht
   scale_abs: 50.0
 
-# Richtungs-Varianten — eigene Blöcke der Owner-Bibliothek. `left` klein-nativ
-# (17,7 units), `right` groß-nativ (463,6 units) — scale_abs gleicht auf
-# dieselbe Weltbreite (~883 mm = Legenden-Soll) ab.
+# Richtungs-Varianten — eigene Blöcke der Rivoplan-Bibliothek, alle drei
+# klein-nativ (17,665 units) → dieselbe Weltbreite ~883 mm = Legenden-Soll.
 notlicht_ks_stiege_links:
-  block_name: "RIVO-SIBEL-ARR-left"
+  block_name: "RIVO_NL_ARR_left"
   label: "Notlicht KS Rettungszeichen links"
   category: notlicht
   scale_abs: 50.0
 
 notlicht_ks_stiege_rechts:
-  block_name: "RIVO-RZ-ARR_right"
+  block_name: "RIVO_NL_ARR_right"
   label: "Notlicht KS Rettungszeichen rechts"
   category: notlicht
-  scale_abs: 1.905
+  scale_abs: 50.0
 
 # Notlicht Garage/Nebenräume (Antipanik-nahe Sonderfälle).
 notlicht_kw_garage:
-  block_name: "RIVO-SIBEL-ARR-down"
+  block_name: "RIVO_NL_ARR_down"
   label: "Notlicht KW (Garage/Nebenräume)"
   category: notlicht
   scale_abs: 50.0
@@ -91,8 +92,8 @@ antipanik_leuchte:
   scale_abs: 50.0
 
 # ── Anlage / Versorgung ───────────────────────────────
-# SV-Anlage: Gruppenbatterie-Verteiler-Block der Owner-Bibliothek (Rechteck mit
-# Diagonale, beide Hälften gefüllt) — der Block der neuen Vorlagen-Legende.
+# SV-Anlage: Gruppenbatterie-Verteiler-Block der Rivoplan-Bibliothek (Rechteck
+# mit Diagonale, beide Hälften gefüllt) — der Block der Vorlagen-Legende.
 # Wird NICHT als Leuchten-Platzierung gesetzt; der Render zeichnet ihn, wenn
 # die LB einen system_typ deklariert (LB-explizit).
 gruppenbatterie_anlage:
@@ -101,11 +102,8 @@ gruppenbatterie_anlage:
   category: anlage
   scale_abs: 50.0
 
-# Plan-Vorlage (Owner 2026-09-05): kompletter Legenden-Rahmen (Beleuchtung /
-# Notbeleuchtung / Erdung / Verteiler / BMA / Kommunikation / Abkürzungen).
-# Kein Punktsymbol — wird vom Render als Ganzes rechts an den Plan gesetzt
-# (Fallback-Modus ohne Blatt; das Blatt selbst kommt aus der Planvorlage).
-vorlage_legende:
-  block_name: "Vorlage_Legende"
-  label: "Plan-Vorlage (Legenden-Rahmen)"
-  category: vorlage
+# HINWEIS Migration 2026-09-20: der frühere Key `vorlage_legende`
+# (Block "Vorlage_Legende" der Vorgänger-Bibliothek) ist gestrichen — die
+# Rivoplan-Bibliothek führt keinen Legenden-Rahmen-Block; die Legende kommt
+# im Blatt-Modus aus der Rivoplan-Planvorlage selbst, der Fallback-Modus
+# nutzt die Stücklisten-Box des Renderers.

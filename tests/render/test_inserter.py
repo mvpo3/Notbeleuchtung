@@ -54,7 +54,7 @@ def test_xor_mirror_mapping_entry(monkeypatch):
     # (die Pfeil-Blöcke sind seit dem Rechts-Fix alle unge­spiegelt gemappt).
     fake = dict(library.load_mapping())
     fake["_mirror_probe"] = {
-        "block_name": "RIVO-SIBEL-ARR-down",
+        "block_name": "RIVO_NL_ARR_down",
         "label": "probe",
         "category": "notlicht",
         "mirror_x": True,

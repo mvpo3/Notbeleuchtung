@@ -1,16 +1,18 @@
-"""library.py — Loader für CAD_Symbole/Notbeleuchtungssymbole_neu+.dxf.
+"""library.py — Loader für CAD_Symbole/Rivoplan_Notbeleuchtungs_Symbole.dxf.
 
-Migration Phase A (Owner 2026-09-18): die neue Owner-Bibliothek
-`Notbeleuchtungssymbole_neu+.dxf` ist die EINZIGE Symbolquelle (RIVO-RZ-Schilder
-mit echtem Piktogramm statt der alten Voll-Grün-Schilder). Ursprünglich portiert
-aus elektro-planer backend/symbols/schrack_library.py (docs/PORT_LOG.md). Liest
-die Library einmal und cacht sie; Helfer zum Layer-Sync und Block-Import in ein
-Output-DXF via ezdxf.addons.Importer. Der Importer ist per-output_doc und wird
-NICHT global gecacht — nur die geladene Library und das validierte Mapping.
+Migration Rivoplan-Master (Owner 2026-09-20, nach Phase A 2026-09-18): die
+Rivoplan-Bibliothek `Rivoplan_Notbeleuchtungs_Symbole.dxf` ist die EINZIGE
+produktive Symbolquelle (RIVO_NL_ARR_down/left/right + echter Beidseitig-Block
+RIVO_NL_ARR_bothsided; right ist jetzt klein-nativ wie down/left). Ursprünglich
+portiert aus elektro-planer backend/symbols/schrack_library.py
+(docs/PORT_LOG.md). Liest die Library einmal und cacht sie; Helfer zum
+Layer-Sync und Block-Import in ein Output-DXF via ezdxf.addons.Importer. Der
+Importer ist per-output_doc und wird NICHT global gecacht — nur die geladene
+Library und das validierte Mapping.
 
 Pfad-Resolution: explizites Argument → env `NOTBELEUCHTUNG_SYMBOL_LIB` →
-Aufwärts-Suche nach `CAD_Symbole/Notbeleuchtungssymbole_neu+.dxf` ab dieser
-Datei (src-Layout: Repo-Root).
+Aufwärts-Suche nach `CAD_Symbole/Rivoplan_Notbeleuchtungs_Symbole.dxf` ab
+dieser Datei (src-Layout: Repo-Root).
 """
 from __future__ import annotations
 
@@ -42,10 +44,10 @@ _LIB_SAFETY_LAYER = "E_Sicherheitsbeleuchtung"
 SAFETY_LAYER = "din_SIBEL_10_emergency_lighting"
 
 _ENV_VAR = "NOTBELEUCHTUNG_SYMBOL_LIB"
-# Kanonische Library (Migration Phase A, Owner 2026-09-18): die neue
-# Owner-Bibliothek. Die alte Bibliothek ist entfernt —
+# Kanonische Library (Migration Rivoplan-Master, Owner 2026-09-20): die
+# Rivoplan-Bibliothek. Vorgänger-Bibliotheken sind entfernt —
 # es gibt keinen Fallback (Git-Historie ist das Backup).
-_LIB_RELPATH = Path("CAD_Symbole") / "Notbeleuchtungssymbole_neu+.dxf"
+_LIB_RELPATH = Path("CAD_Symbole") / "Rivoplan_Notbeleuchtungs_Symbole.dxf"
 
 # Pflichtfelder je Mapping-Eintrag (Vokabular kommt aus symbols/__init__.py,
 # die Block-Existenz-Validierung gegen die echte Library passiert hier).
@@ -79,13 +81,13 @@ def _resolve_library_path(path: Path | str | None = None) -> Path:
         if cand.is_file():
             return cand
     raise FileNotFoundError(
-        "Symbol-Library Notbeleuchtungssymbole_neu+.dxf nicht gefunden. Kandidaten:\n  - "
+        "Symbol-Library Rivoplan_Notbeleuchtungs_Symbole.dxf nicht gefunden. Kandidaten:\n  - "
         + "\n  - ".join(str(c) for c in candidates)
     )
 
 
 def load_library(path: Path | str | None = None) -> Drawing:
-    """Notbeleuchtungssymbole_neu+.dxf einmal lesen, cachen. Thread-safe.
+    """Rivoplan_Notbeleuchtungs_Symbole.dxf einmal lesen, cachen. Thread-safe.
 
     `path` wird nur beim ERSTEN Laden berücksichtigt (danach Cache;
     für Tests `reset_cache()`)."""

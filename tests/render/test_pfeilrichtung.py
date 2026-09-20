@@ -86,14 +86,14 @@ def test_links_und_rechts_gleiche_weltgroesse():
 
 
 def test_mapping_nutzt_nur_eine_down_schreibweise():
-    """Duplikat-Guard: die Library führt 'RIVO-SIBEL-ARR-down' (Bindestrich,
-    klein-nativ) UND 'RIVO-SIBEL-ARR_down' (Unterstrich, groß-nativ) — die
-    Registry darf nur EINE kanonische Schreibweise nutzen."""
+    """Duplikat-Guard: Vorgänger-Bibliotheken führten mehrere down-Schreibweisen
+    (Bindestrich klein-nativ / Unterstrich groß-nativ) — die Registry darf nur
+    die EINE kanonische Rivoplan-Schreibweise nutzen."""
     unten_bloecke = {
         e["block_name"] for e in load_symbol_mapping().values()
         if e["block_name"].lower().replace("_", "-").endswith("-down")
     }
-    assert unten_bloecke == {"RIVO-SIBEL-ARR-down"}
+    assert unten_bloecke == {"RIVO_NL_ARR_down"}
 
 
 def _vertikaler_gang(ausgang_y: float) -> RaumModell:

@@ -1,8 +1,10 @@
-"""Migration Phase A (2026-09-18) — Guard: kein Pfad zurück zu den alten Symbolen.
+"""Migrations-Guard: kein Pfad zurück zu Vorgänger-Bibliotheken.
 
-Die alte Bibliothek (CAD_Symbole/Notbeleuchtungssymbole.dxf, per git rm entfernt —
-Git-Historie ist das Backup) und ihre Blocknamen dürfen in Code, Tests, Skripten
-und Konfigs NICHT mehr vorkommen; ebenso wenig der entfernte gelbe SL-Zwilling-
+Phase A (2026-09-18) entfernte CAD_Symbole/Notbeleuchtungssymbole.dxf, die
+Rivoplan-Master-Migration (2026-09-20) entfernte Notbeleuchtungssymbole_neu+.dxf
+samt RIVO-SIBEL-/RIVO-RZ-Blocknamen (per git rm — Git-Historie ist das Backup).
+Alt-Bibliothekspfade und Alt-Blocknamen dürfen in Code, Tests, Skripten und
+Konfigs NICHT mehr vorkommen; ebenso wenig der entfernte gelbe SL-Zwilling-
 Layer und der gestrichene rz_sl_farbtrennung-Parameter. docs/ ist bewusst
 ausgenommen (die Migrations-Doku dokumentiert das Mapping alt → neu, ADRs sind
 Historie).
@@ -17,8 +19,7 @@ from notbeleuchtung.symbols.orientation import ZIEL_DEG, basis_deg, transformati
 _REPO = Path(__file__).resolve().parents[2]
 _SELBST = Path(__file__).resolve()
 
-# Alt-Marker (case-insensitiv). Der alte Bibliothekspfad matcht NICHT die neue
-# Datei (Notbeleuchtungssymbole_neu+.dxf hat "_neu+" vor ".dxf").
+# Alt-Marker (case-insensitiv).
 # Bewusst NICHT verboten: "din_SIBEL_10_emergency_lighting_yellow" — der String
 # lebt legitim im din-REFERENZPLAN-Leser weiter (scripts/plan_pruefen._REF_LAYER_KIND
 # liest den Fachplaner-Plan Barawitzkagasse, dessen Fremd-Konvention grün/gelb ist);
@@ -26,7 +27,11 @@ _SELBST = Path(__file__).resolve()
 _VERBOTEN = (
     "richtungspfeil nach",                  # alte Pfeil-Blocknamen (alle drei)
     "notbeleuchtung- antipanikleuchte",     # alter Antipanik-Block
-    "notbeleuchtungssymbole.dxf",           # alter Bibliothekspfad
+    "notbeleuchtungssymbole.dxf",           # Bibliothekspfad Phase-A-Vorgänger
+    "notbeleuchtungssymbole_neu",           # Bibliothekspfad Phase A (abgelöst 2026-09-20)
+    "rivo-sibel",                           # Phase-A-Blocknamen (down/left + Duplikate)
+    "rivo-rz-arr",                          # Phase-A-right-Block (groß-nativ)
+    'block_name: "vorlage_legende"',        # gestrichener Legenden-Rahmen-Block (Registry)
     "safety_layer_sl",                      # entfernte SL-Zwilling-Konstante
     "rz_sl_farbtrennung",                   # gestrichener Render-Parameter
 )
@@ -53,7 +58,9 @@ def test_keine_alt_referenzen_im_code():
 
 def test_alte_bibliothek_ist_entfernt():
     assert not (_REPO / "CAD_Symbole" / "Notbeleuchtungssymbole.dxf").exists()
-    assert (_REPO / "CAD_Symbole" / "Notbeleuchtungssymbole_neu+.dxf").is_file()
+    # Phase-A-Bibliothek ist seit der Rivoplan-Master-Migration ebenfalls Geschichte.
+    kanonisch = _REPO / "CAD_Symbole" / "Rivoplan_Notbeleuchtungs_Symbole.dxf"
+    assert kanonisch.is_file()
 
 
 def test_registry_loest_jeden_typ_genau_einmal_auf():

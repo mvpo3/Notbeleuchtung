@@ -20,16 +20,18 @@ from notbeleuchtung.symbols import load_symbol_mapping
 ZIEL_DEG: dict[str, float] = {"rechts": 0.0, "oben": 90.0, "links": 180.0, "unten": 270.0}
 
 # Basisorientierung je Library-Block bei rotation=0 (lowercase-Lookup).
-# Migration Phase A (2026-09-18): neue RIVO-Blöcke aus
-# Notbeleuchtungssymbole_neu+.dxf. Gemessen, nicht geraten — Pfeil-Geometrie
-# (Schaft→Spitze) je Blockdefinition analysiert + im Render verifiziert
-# (Workflow-Analyse A1): down = (0,−1) = 270°, left = (−1,0) = 180°,
-# right = (+1,0) = 0° (Achtung: der right-Pfeil-HATCH liegt in gespiegeltem
-# OCS mit Extrusion (0,0,−1) — Welt-Richtung ist trotzdem +x).
+# Migration Rivoplan-Master (2026-09-20): RIVO_NL-Blöcke aus
+# Rivoplan_Notbeleuchtungs_Symbole.dxf. Gemessen, nicht geraten — Pfeil-Geometrie
+# (Schaft→Spitze) je Blockdefinition analysiert: down-Spitze (0,−1) = 270°,
+# left-Spitze (−1,0) = 180°, right-Spitze (+1,0) = 0° (der Rivoplan-right liegt
+# in NORMALEM OCS, Extrusion (0,0,+1) — der frühere Spiegel-OCS-Sonderfall des
+# alten right-Blocks ist Geschichte). Der Beidseitig-Block (bothsided) ist hier
+# bewusst NICHT gelistet: er trägt zwei gegenläufige Schilder übereinander und
+# wird über seine Achs-Rotation gestellt, nicht über eine Pfeil-Basis.
 _BLOCK_BASE_DEG: dict[str, float] = {
-    "rivo-sibel-arr-down": 270.0,
-    "rivo-sibel-arr-left": 180.0,
-    "rivo-rz-arr_right": 0.0,
+    "rivo_nl_arr_down": 270.0,
+    "rivo_nl_arr_left": 180.0,
+    "rivo_nl_arr_right": 0.0,
 }
 
 
