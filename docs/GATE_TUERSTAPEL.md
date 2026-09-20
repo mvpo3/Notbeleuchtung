@@ -1,15 +1,22 @@
-# Merge-Gate des Türstapels S4a → S4b → S5b → S7a+S7b → S3b → S5c
+# Merge-Gate des Türstapels S4a → S4b → S5b → S4c → S7a+S7b → S3b → S5c
 
 Stand: 2026-09-20 (Nachträge: Lesart B zu M17-04-c 2026-09-18; Stapel-Erweiterung, Bedingungen
 (7)/(8) und Diagnose S7a/S3b 2026-09-19; Reihenfolge, S7a+S7b, Bedingung (9) und Folgeauftrag
-S-KG 2026-09-20) · Owner: Selman (`src/notbeleuchtung/raumerkennung/`) ·
+S-KG 2026-09-20; Bedingung (10) Barawitzka, Entscheide zu § 8a und § 8b 2026-09-20) ·
+Owner: Selman (`src/notbeleuchtung/raumerkennung/`) ·
 Branch `selman/uebernahme-enis-m17` · Nullmessung auf Code-Stand `f15d03f` (Tranche 1)
 
-**Reihenfolge seit 2026-09-20 (Owner-Ansage, verbindlich, nichts parallel):** S5b →
+**Reihenfolge seit 2026-09-20 (Owner-Ansage, verbindlich, nichts parallel):** S5b → **S4c** →
 S7a+S7b (= Leonis' Paket S-W „Wohnung ≠ Fluchtweg", § 6f) → S3b → S5c → Gate → Merge des
-Stapels → danach S-KG (Kellergeschosse und Garage) als eigenes Paket (§ 5a). Regeln
-unverändert: nur `raumerkennung/`, kein Owner-Package importieren, Contract nur über das
-Board, ein Slice ein Commit, kein Merge vor dem Gate.
+Stapels → danach S-KG (Kellergeschosse und Garage) als eigenes Paket (§ 5a) und S-MST
+(Maßstab-Kontrolle, `docs/OFFENE_FRAGEN.md`). Regeln unverändert: nur `raumerkennung/`, kein
+Owner-Package importieren, Contract nur über das Board, ein Slice ein Commit, kein Merge vor
+dem Gate.
+
+**S4c** ist der S4a-Rest: die Doppelflügel-Fehlpaarung, die auf Barawitzka EG die echte Tür des
+ABSTELLRAUMS 1,98 m² verschluckt (§ 1f). Der Slice kam am 2026-09-20 in den Stapel, weil der
+Owner die zugehörige Bedingung **(10) als Merge-Pflicht** entschieden hat — ohne S4c ist das
+Gate nicht erfüllbar.
 
 **Stapel seit 2026-09-18 (Owner-Entscheid nach S4b): S4a → S4b → S5b → S7a → S3b → S5c.**
 S7a (Vorraum-Regel, U14/F11) und S3b (Restflächen vor Blocktüren, Owner-Definition) gehören
@@ -140,6 +147,23 @@ Die „gefordert"-Zeilen sind eine **Ergänzung des Planers** (Bedingung (8)): S
 verneinten Verbindungen schließen, ohne die geforderten offenen Übergänge mitzunehmen. Die
 fünf Zusatz-Paare stehen als Schutz gegen einen Rückschritt.
 
+### 1f. Barawitzka EG — ABSTELLRAUM 1,98 m² (`tests/gate/gate_barawitzka.py`, seit 2026-09-20)
+
+Der einzige Messfall außerhalb der Rennweg-Familie (Owner-Entscheid 2026-09-20, Bedingung
+(10)). Von den acht Räumen, die S5b auf 0 Verbindungen fallen lässt (§ 8e), ist dies der
+einzige mit einer **echten Tür ohne Ersatz**: die 830er Bogenöffnung hat keine eigene Tür,
+sie steckt als Fehlpaarung zweier Einzeltüren im „doppelfluegel" 1660 mm (S4a-Rest). Gemessen
+auf dem versionierten Plan `Projekte/Barawitzkagasse/…EG.dxf`, floor `EG` — derselbe Plan und
+derselbe Weg über `tests/plaene.py`, den `tests/naht/test_soll_barawitzka.py` nimmt.
+
+Gezählt werden die Türen, die den Raum als `von_raum` oder `nach_raum` führen; daneben stehen
+als Messwerte die nächste erkannte Tür überhaupt (id, quelle, Breite, Abstand zum Raumpolygon)
+und die „doppelfluegel"-Türen innerhalb von 2 m. Der Raum wird wie in § 1e über `raum_typ` +
+Fläche (± 0,05 m²) aufgelöst, nicht über die ID; passt kein oder mehr als ein Raum, ist der
+Fall nicht messbar (`anzahl` None mit Grund). **Ist 2026-09-20 auf `826b157`:** `raum_28`,
+**0 Verbindungen**, nächste Tür `tuer_38` (quelle `doppelfluegel`, 1660 mm) 967,1 mm entfernt
+— die Bedingung ist heute verletzt und dreht erst mit dem S4a-Rest.
+
 ### Eingabe und Rechenstand
 
 Alle Messungen gegen die getrackten DXF unter `Projekte/Rennweg/` (die Familien-Soll-Tests
@@ -255,6 +279,7 @@ Der Stapel **S4a → S4b → S5b → S7a+S7b → S3b → S5c wird nur gemeinsam 
 | (7) | OG1: keine von der Referenz **verneinte** Verbindung besteht | `anzahl == 0` für jeden Eintrag aus `gate_referenz.VERNEINT` (§ 1e), Zusatz-Paare eingeschlossen; nicht auflösbarer Raum (`anzahl` None) oder fehlender Abschnitt = Verstoß (Owner-Entscheid 2026-09-18 nach S4b) |
 | (8) | OG1: jeder von der Referenz **geforderte** offene Übergang besteht | `anzahl ≥ 1` für O03, O04, O05 und den Ersatzfall O01/O02 (§ 1e); Ergänzung des Planers, damit S5b keine geforderten Übergänge löscht; None = Verstoß |
 | (9) | Mollgasse 1OG: keine Zirkulation in der Wohnung | `python scripts/analyse/mollgasse_gt_vergleich.py 1OG` gegen `tests/fixtures/mollgasse_gt/`: Zirkulationspunkte in ZIMMER, BAD, WC und privatem VORRAUM = 0 (Owner-Ansage 2026-09-20, Abnahme von S7a+S7b, § 6f). Vorher-Wert laut Leonis: VORRAUM 69, ZIMMER 3, dazu WC/BAD/AR — **nicht selbst gemessen**. **Noch nicht in `gate_regel.py` verdrahtet:** Skript, Fixtures und Leonis' Bericht liegen am 2026-09-20 weder auf `origin/main` noch auf einem anderen Remote-Branch; bis sie im Baum sind, ist (9) Doku-Pflicht, keine geprüfte Regel |
+| (10) | Barawitzka EG: der ABSTELLRAUM 1,98 m² hat mindestens eine Verbindung | `barawitzka.anzahl ≥ 1` (§ 1f, `tests/gate/gate_barawitzka.py`); `anzahl` None oder fehlender Abschnitt = Verstoß. Owner-Entscheid 2026-09-20 nach dem Blast Radius: **heute verletzt** (0 Verbindungen), zu drehen ist sie vom S4a-Rest (Doppelflügel-Paarung), nicht von S7 — festgehalten, damit sie nicht untergeht. Gemessen wird nur der Nachher-Stand; die eingecheckte Nullmessung stammt von vor dem Messfall und führt den Abschnitt nicht: als Vorher-Stand ist das kein Absturz, als Nachher-Stand ein Verstoß (fail closed) |
 
 Zur Nummer: die Owner-Ansage vom 2026-09-20 nennt die Mollgasse-Abnahme „Bedingung (7)".
 (7) und (8) sind seit `dd3cfdc` mit den Referenz-Verbindungen belegt; die Mollgasse-Abnahme
@@ -266,11 +291,13 @@ tests/gate/gate_messung.py --out <datei.json>`, dann `pruefe_gate`), aber **nich
 gemergt** — auch nicht bei Verbesserung. (5) und (6) bleiben Merge-Pflicht, obwohl der
 Türstapel im engen Sinn sie nicht heilen kann — dafür stehen S7a und S3b im Stapel.
 
-Heute liefert `pruefe_gate(nullmessung, nullmessung)` genau neun Verstöße:
+Heute liefert `pruefe_gate(nullmessung, nullmessung)` genau zehn Verstöße:
 `(2) M17-02-b ist NICHT_BESTANDEN`, `(2) M17-04-c ist NICHT_BESTANDEN`,
-`(5) Einraum-Wohnungen sinken nicht: 2 → 2` und sechs Verstöße gegen (7) — die sechs
-bestehenden verneinten Verbindungen aus § 2e (zusammen 8 Durchgänge). (8) ist auf f15d03f
-erfüllt.
+`(5) Einraum-Wohnungen sinken nicht: 2 → 2`, sechs Verstöße gegen (7) — die sechs
+bestehenden verneinten Verbindungen aus § 2e (zusammen 8 Durchgänge) — und
+`(10) Barawitzka EG nicht gemessen — Abschnitt »barawitzka« fehlt`, weil die Nullmessung
+von vor diesem Messfall stammt und nicht neu geschrieben wird (neun waren es, bevor (10)
+dazukam). (8) ist auf f15d03f erfüllt.
 
 **Test:** `tests/gate/test_gate_tuerstapel.py::test_gate_tuerstapel_erfuellt` ist
 `xfail(strict=True, raises=AssertionError)`. Er bleibt rot-per-Design (XFAIL), bis der
@@ -278,7 +305,9 @@ Stapel das Gate erfüllt; dann dreht er auf XPASS, der strenge Marker lässt die
 fehlschlagen, der Marker wird entfernt und der Stapel gemergt. Infrastrukturfehler
 (Exception statt AssertionError) gehen nicht als XFAIL durch. Die Gate-Tests tragen den
 Marker `gate` und sind — wie `visual` — in der normalen Suite deselektiert
-(`pytest -m gate tests/gate`, ~45 s mit vorhandenen Caches, ~2,5 min kalt). Ohne
+(`pytest -m gate tests/gate`; mit dem Barawitzka-Messfall aus § 1f gemessen 2026-09-20:
+47,2 s mit vorhandenen Caches, 86,2 s wenn die M1-M4-Caches erst gebaut werden — der
+Barawitzka-Parse kostet davon 10,6 s). Ohne
 Referenzpaket (CI) werden sie übersprungen; ist `NOTBEL_M17_REFERENZ` gesetzt, aber
 ungültig, schlagen sie fehl statt still zu skippen.
 
@@ -530,6 +559,57 @@ hier nicht gemessen.
 `tests/fixtures/mollgasse_gt/`) liegen am 2026-09-20 auf keinem Remote-Branch; der Wortlaut
 oben stammt aus der Owner-Ansage.
 
+### 6g. Das Verfahren für S7a+S7b (Owner-Entscheid 2026-09-20, verbindlich)
+
+Die Regel aus § 6b ist **zirkulär**: „erschließt zwei Wohnungen" hängt davon ab, ob die
+Nachbarn privat sind, was davon abhängt, ob dieser Gang allgemein ist. Die Messung vom
+2026-09-20 hat gezeigt, wie teuer das ist — dieselbe Regel, zwei Zählbasen, gegensätzliche
+Ergebnisse für ein ganzes Geschoss (Mollgasse 1OG `raum_34` GANG 16,99 m²: gegen die
+verfeinerte Klasse 0 private Gruppen → privat, Segmente 22 → 3; gegen die statische Klasse
+3 Gruppen → allgemein, Segmente 22 → 10). Der Owner löst das **zweistufig**:
+
+1. **Anker zuerst, ohne Iteration.** Erreichbarkeit vom STIEGENHAUS über Türen: ein Raum, der
+   nur über eine Wohnungseingangstür erreichbar ist, ist PRIVAT; ein Raum, der vom Stiegenhaus
+   ohne Wohnungseingangstür erreichbar ist, ist ALLGEMEIN. Das ist Geometrie und Türtyp, **keine
+   Raumklasse** — und damit reihenfolgeunabhängig. Schritt 1 liest keine `nutzungsklasse`.
+2. **Zwei-Wohnungen-Regel nur auf die Räume, die Schritt 1 nicht entschieden hat**, auf der
+   Basis von Schritt 1, iterativ bis zum Fixpunkt, **Deckel 10 Runden**.
+3. **Unbestimmt statt Raten.** Oszilliert ein Raum nach Schritt 2, oder erreicht Schritt 1 ihn
+   nicht, wird er als **unbestimmt** geführt — mit Grund, im Bericht aufgelistet, in der
+   Darstellung magenta. Keine willkürliche Festlegung. Ohne Contract-Änderung möglich:
+   `Raum.nutzungsklasse` ist `Nutzungsklasse | None` und der Contract nennt „None/leer =
+   unbestimmt". **Aber** `wohnungen._klasse()` und `fluchtweg._klasse()` fallen bei `None`
+   heute still auf `nutzungsklasse_fuer(raum_typ)` zurück und machen aus unbestimmt genau die
+   willkürliche Festlegung — diese Stellen gehören zum Slice. Ein unbestimmter Raum wird
+   konservativ behandelt: er verliert weder Leuchte noch Anker und reißt den Graph nicht auf.
+4. **Test:** Ergebnis identisch bei umgekehrter Raum- **und** Türreihenfolge. Für Mollgasse 1OG
+   `raum_34` ist im Bericht auszuweisen, welcher Schritt entschieden hat, über welche Tür, plus
+   Segmente, Anker und Wohnungen.
+
+**Durchleitung (Owner-Entscheid 2026-09-20).** Privat heißt **keine Notbeleuchtung und keine
+eigene Zirkulation — kein Loch im Graph.** Eigene Regel in `fluchtweg.py`: ein privater Raum
+bleibt Knoten für Wege zwischen zwei communalen Räumen, bekommt aber selbst keine
+Segment-Stützpunkte, keine Anker, keine Leuchten. Grund ist eine gemessene Nebenwirkung: ohne
+Durchleitung fällt ein kippender Vorraum als Knoten aus `fluchtweg.py` (`erschliessung`) und
+zerreißt Wege zwischen zwei communalen Räumen — Mollgasse 1OG STIEGENHAUS `raum_35` 10 → 2
+Segmente, Rennweg UG KINDERWAGENRAUM 21,49 m² verliert sein einziges, und die Engine meldet
+drei neue `fluchtweg_warnungen` „kein final_exit erreichbar".
+
+Vier Messfälle für die Abnahme: (i) Mollgasse 1OG STIEGENHAUS `raum_35` behält seine Segmente;
+(ii) Rennweg UG KINDERWAGENRAUM behält seinen Weg; (iii) die drei neuen „kein final_exit
+erreichbar" verschwinden; (iv) `raum_34` wie in Punkt 4.
+
+**Board-Antrag (offen, blockiert den Slice nicht):** der Owner will durchgeleitete Segmente mit
+`durchleitung=True` markiert sehen. `FluchtwegSegment.quelle` ist
+`Literal["LINIE", "GRAPH", "FALLBACK"] | None`; ein neuer Wert oder ein neues Feld ist eine
+Contract-Änderung mit Approval aller drei Owner und Schema-Regen. Der Slice baut deshalb die
+**Wirkung** und weist die Durchleitung als Provider-Warnung aus (Muster `tuer_warnungen`); das
+Feld wird über das Board beantragt.
+
+**Nicht mehr gültig:** die Zahlen in § 6c stammen von Code-Stand `1e5e5ac`, also **vor** S5b.
+S5b hat über die zehn Prüfpläne 204 Durchgänge entfernt (§ 8e); die Kipp-Mengen und
+Wohnungszahlen haben sich dadurch verschoben. Vor dem Bau wurde am 2026-09-20 neu gemessen.
+
 ---
 
 ## 7. Diagnose S3b — Restflächen enden vor den Blocktüren (Owner-Definition, kein Code)
@@ -633,31 +713,51 @@ Flutung zurückdehnt. **Nicht erklärt** (eigene Ursachen): Muthgasse `tuer_20`/
 S5b (Diagnose U13) gibt `durchgaenge_ohne_tuerblatt` ein Querungsprädikat: ein freier
 Streifen ist nur dann ein Durchgang, wenn er **beide** Raumseiten erreicht; die Breite wird
 entlang der gemeinsamen Grenze gemessen statt als Rechtecklänge des Streifens. § 8a und § 8b
-sind die zwei Punkte, die vor den Merge auf den Tisch gehören; § 8c bis § 8f tragen die
+waren die zwei Punkte, die vor den Merge auf den Tisch gehörten — beide sind seit dem
+2026-09-20 entschieden (§ 8a übernommen, § 8b als strict-xfail markiert); § 8c bis § 8f tragen die
 Korrektur vom 2026-09-20, die Gate-Messung, den Blast Radius über alle Familien und die
 dabei gefundenen offenen Befunde nach.
 
-### 8a. Kontaktgrenze — Abweichung vom wörtlichen 1-mm-Kriterium
+### 8a. Kontaktgrenze — dieselbe Toleranz, angewandt auf das Band in der Wandmitte
 
-Das Owner-Kriterium lautet wörtlich „Kontakt beider Räume innerhalb 1 mm". Gebaut ist
-`tuer_zuordnung._kontakt_grenze(abstand) = max(0, abstand − 250) + 1,0`.
+**Entschieden (Owner, 2026-09-20): übernommen.** Maßgeblich sind die in § 4 festgelegten
+Toleranzen des Gates — `KONTAKT_TOL_MM = 1,0` · `UEBERLAPPUNG_TOL_MM2 = 1,0` ·
+`PORTAL_WAND_MM = 250,0`, gemessen auf der Quellpräzision im Speicher, nie auf exportierten
+oder gerundeten Werten. § 8a stellt ihnen **keine zweite Zahl** daneben, sondern verweist auf
+sie.
 
-Grund: die Kontaktzone ist `pa.buffer(250) ∩ pb.buffer(250)`. Bei Raumabstand *d* > 250 mm
-liegt sie als Band **in der Wandmitte** und hat zu beiden Räumen den Abstand *d* − 250.
-Gemessen auf der Quellpräzision: `zone.distance(pa) = zone.distance(pb)` = 0 mm bei
-*d* = 100, 50 mm bei *d* = 300, 200 mm bei *d* = 450. Ein fester 1-mm-Wert ist damit ab
-*d* > 251 mm nie erfüllbar und löscht jede Öffnung in einer dickeren Wand — am Rennweg OG1
-die geforderten Übergänge O01/O02 (VORRAUM 10,94 ↔ Wohnküche 73,06 m², *d* = 450 mm) und
-T08 (ZIMMER 10,59 ↔ BALKON 7,51 m², *d* = 400 mm) sowie drei Unit-Tests an einer
-400-mm-Wand.
+Gebaut ist `tuer_zuordnung._kontakt_grenze(abstand) = max(0, abstand − 250) + 1,0`. Beide
+Konstanten darin sind die aus § 4: die 250 mm sind die halbe Wanddicke `PORTAL_WAND_MM`
+(im Code `_KONTAKT_MM` — derselbe Radius, mit dem die Erkennung eine Tür einer Wand zuordnet
+und mit dem das Gate zurückmisst), die 1,0 mm sind `KONTAKT_TOL_MM`. Die Kontaktzone ist
+`pa.buffer(250) ∩ pb.buffer(250)`; bei Raumabstand *d* > 250 mm liegt sie als Band **in der
+Wandmitte** und hat zu beiden Räumen den Abstand *d* − 250 (`zone.distance(pa) =
+zone.distance(pb)`: 0 mm bei *d* = 100, 50 mm bei *d* = 300, 200 mm bei *d* = 450). Die
+Grenze ist damit nichts anderes als **dieselbe 1-mm-Kontakttoleranz, angewandt auf dieses
+Band** statt direkt auf das Raumpolygon: der freie Teil muss das Band bis auf `KONTAKT_TOL_MM`
+durchspannen. Der Summand *d* − 250 ist keine Toleranz, sondern die Lage des Bandes.
 
-Bis *d* = 250 mm gilt das Kriterium also wörtlich (1 mm), darüber lautet es „der Streifen
+Auf die Raumpolygone gerechnet wäre ein fester 1-mm-Wert ab Wänden über `PORTAL_WAND_MM` nie
+erfüllbar und löschte jede Öffnung in einer dickeren Wand — am Rennweg OG1 die geforderten
+Übergänge O01/O02 (VORRAUM 10,94 ↔ Wohnküche 73,06 m², *d* = 450 mm) und T08 (ZIMMER 10,59 ↔
+BALKON 7,51 m², *d* = 400 mm) sowie drei Unit-Tests an einer 400-mm-Wand. Nach oben ist die
+Grenze durch § 4 gedeckelt: die Zone ist leer, sobald *d* die doppelte halbe Wanddicke
+erreicht (in der Praxis früher, § 8c K3) — ein freier Teil kann deshalb nie weiter von einem
+Raum entfernt liegen als `PORTAL_WAND_MM` plus `KONTAKT_TOL_MM`, und das ist genau der
+Radius, in dem das Gate selbst eine Tür noch „an der markierten Wand" zählt (§ 1a,
+`direct_portal_in_probe_segment`).
+
+Bis *d* = 250 mm gilt das Kriterium wörtlich (1 mm zum Raum), darüber lautet es „der Streifen
 durchspannt das Band ganz" — dieselbe Aussage „die Querung führt nicht durch Wandkörper".
 Die Zone bleibt unverändert bei `buffer(250)`; die Schlitz-/Asymmetrie-Varianten der
-Diagnose sind **nicht** gebaut. **Offen (Owner):** so übernehmen — oder das wörtliche
-1-mm-Prädikat über eine abstandsabhängige Zone (`pa.buffer(d + eps) ∩ pb.buffer(d + eps)`,
-Schlitz-Variante) erzwingen; dann sind O01/O02, T08 und die drei 400-mm-Unit-Tests neu zu
-prüfen.
+Diagnose sind **nicht** gebaut.
+
+**Fachlicher Abgleich (Planer, 2026-09-20, gegen § 4 und `tests/gate/gate_m17.py`):** keine
+Abweichung von den Gate-Toleranzen — es sind dieselben zwei Konstanten, auf derselben
+Quellpräzision, nur auf die abgeleitete Geometrie (Band) statt auf das Raumpolygon angewandt,
+und nach oben durch dieselben Konstanten gedeckelt. Eine Board-Frage entsteht daraus nicht.
+Unberührt davon bleibt offen, **welcher** Abstand *d* in die Grenze geht (globaler
+Paarabstand statt lokaler) — § 8f Punkt 1.
 
 Den Nebeneffekt, den die Diagnose (`34b5dd0`, Cluster K5, Liste „Nicht übernehmen") dem
 absoluten Filter vorhält — er löscht den echten Wohnungseingang OG1 `durchgang_22`, dessen
@@ -684,11 +784,16 @@ mit Befund und heilendem Slice in § 8e (Stand nach der Korrektur: acht Räume; 
 sechs Rennweg-Geschosse verlieren keinen Raum ganz). Volle Suite auf `94b7480`: 5 failed
 (diese drei und die zwei vorbestehenden), 1544 passed, 16 xfailed, kein XPASS.
 
-**Offen (Planer/Owner) vor dem Merge:** entweder strict-xfail mit Stapelbegründung wie bei
-`test_soll_segmente_aus_graph`/`test_keine_anker_in_wohnung_privat` (Bedingung (6)) — dann
-müssen sie nach S7a/S3b auf XPASS drehen — oder bewusst rot als bekannter Stapelrest.
-Guard-Bänder werden in keinem Fall abgesenkt; der Branch `selman/fix-s5b-querung` setzt
-keine neuen Marker.
+**Entschieden (Owner, 2026-09-20):** nicht bewusst rot lassen, sondern markieren. Die drei
+Tests tragen seither `@pytest.mark.xfail(strict=True, raises=AssertionError, reason="Türstapel
+unvollständig (S7a/S7b/S3b ausstehend), muss vor Merge XPASS sein")` — dasselbe Muster wie
+`test_soll_segmente_aus_graph`/`test_keine_anker_in_wohnung_privat` (Bedingung (6)). Weil der
+Marker `strict` ist, müssen sie nach S7a/S7b/S3b auf XPASS drehen, sonst wird die Suite rot.
+Geändert wurden **nur die Dekoratorzeilen**: Guard-Bänder, Fixtures und Testkörper bleiben
+unverändert, abgesenkt wird nichts. Beleg 2026-09-20 auf `826b157`
+(`pytest tests/naht/test_soll_rennweg.py tests/naht/test_soll_barawitzka.py`): `1 failed,
+8 passed, 9 xfailed` — die drei laufen als XFAIL, der vorbestehend rote
+`test_soll_keine_leuchten_in_wohnung_privat` bleibt rot.
 
 ### 8c. Korrektur nach dem Blast Radius (2026-09-20, Test `ddf90e1`, Fix `94b7480`)
 
@@ -733,6 +838,11 @@ WOHNUNG_PRIVAT 3. **Erfüllt:** (0); (1); (2) — beide roten Fälle gedreht, **
 BESTANDEN**, M17-02-a bleibt BESTANDEN; (4); (7) alle elf verneinten Verbindungen 0;
 (8) alle vier geforderten Übergänge ≥ 1. `pytest -m gate tests/gate`: 3 passed, 1 xfailed
 (per Design).
+
+**Nachtrag 2026-09-20 (Bedingung (10) dazu):** derselbe Lauf auf `826b157` liefert **6
+Verstöße** — die fünf oben plus `(10) Barawitzka EG ABSTELLRAUM 1.98 m² ohne Verbindung:
+0 Tür(en)` (§ 1f). Die Zahl ist gewollt: (10) hält einen Befund fest, den kein Slice dieses
+Branches heilt. `pytest -m gate tests/gate` bleibt unverändert 3 passed, 1 xfailed.
 
 | Nullmessung → S4b → S5b | OG1 | OG3 |
 |---|---|---|
@@ -828,7 +938,9 @@ Durchgänge waren in diesen Familien die Stellvertreter echter Türen, deren Rau
    Räumen bei Grenze 151,000 mm, `_grenz_breite` misst 45,7 mm → verworfen. Gleiches Muster
    Barawitzka STIEGENHAUS 30,02 ↔ (leer) 29,87 (global 0, lokal 270 mm). Betrifft § 8a;
    ein lokaler Abstand je freiem Teil wäre die Korrektur, mit eigenem Blast Radius.
-   Ob am DG2 Fenstertür oder Festverglasung steht, ist nicht gemessen.
+   **Vom Entscheid zu § 8a (2026-09-20, Kontaktgrenze übernommen) ist dieser Befund nicht
+   berührt und bleibt offen:** er betrifft nicht die Toleranz, sondern welchen Abstand sie
+   anwendet. Ob am DG2 Fenstertür oder Festverglasung steht, ist nicht gemessen.
 2. **Breitenmaß bei Raumabstand 0:** `_grenz_breite` zählt den Umfang eines kleinen Polygons
    in der Kerbe eines großen als Öffnungsbreite (DD 9472 mm bei 2920 mm gemeinsamer Kante).
 3. **Phantom Rennweg OG3 ZIMMER 45,36 ↔ WC 1,51, 1794 mm:** 1667 der gezählten mm liegen
