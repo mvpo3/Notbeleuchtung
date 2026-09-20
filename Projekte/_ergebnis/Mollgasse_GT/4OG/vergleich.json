@@ -1,0 +1,186 @@
+{
+ "geschoss": "4OG",
+ "engine_n": 14,
+ "engine_by_kind": {
+  "rz": 11,
+  "sicherheitsleuchte": 3
+ },
+ "gt_n": 7,
+ "gt_by_klasse": {
+  "rz": 7
+ },
+ "gepaart": 5,
+ "fehlt_n": 2,
+ "ueberfluessig_n": 9,
+ "distanz_median_mm": 958.7,
+ "distanz_max_mm": 1812.4,
+ "beidseitig_treffer": 0,
+ "beidseitig_gt_gesamt": 0,
+ "paare": [
+  {
+   "gt": "4121F",
+   "gt_typ": "rz",
+   "gt_richtung": "right",
+   "engine_key": "notlicht_ks_stiege_unten",
+   "engine_richtung": "unten",
+   "distanz_mm": 932.6,
+   "rot_delta_deg": 0.1,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  },
+  {
+   "gt": "41220",
+   "gt_typ": "rz",
+   "gt_richtung": "left",
+   "engine_key": "notlicht_ks_stiege_unten",
+   "engine_richtung": "unten",
+   "distanz_mm": 1186.9,
+   "rot_delta_deg": 89.4,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  },
+  {
+   "gt": "413A0",
+   "gt_typ": "rz",
+   "gt_richtung": "down",
+   "engine_key": "notlicht_ks_stiege_rechts",
+   "engine_richtung": "rechts",
+   "distanz_mm": 958.7,
+   "rot_delta_deg": 179.7,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  },
+  {
+   "gt": "413E8",
+   "gt_typ": "rz",
+   "gt_richtung": "down",
+   "engine_key": "notlicht_ks_stiege_unten",
+   "engine_richtung": "unten",
+   "distanz_mm": 1812.4,
+   "rot_delta_deg": 0.3,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  },
+  {
+   "gt": "415B6",
+   "gt_typ": "rz",
+   "gt_richtung": "right",
+   "engine_key": "notlicht_ks_stiege_links",
+   "engine_richtung": "links",
+   "distanz_mm": 933.6,
+   "rot_delta_deg": 89.9,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  }
+ ],
+ "fehlt": [
+  {
+   "handle": "41249",
+   "typ": "rz",
+   "richtung": "left",
+   "xy": [
+    2835146.9,
+    1753917.4
+   ]
+  },
+  {
+   "handle": "41593",
+   "typ": "rz",
+   "richtung": "left",
+   "xy": [
+    2875278.2,
+    1727549.0
+   ]
+  }
+ ],
+ "ueberfluessig": [
+  {
+   "key": "notlicht_ks_stiege_unten",
+   "klasse": "rz",
+   "xy": [
+    2830574.7,
+    1747276.4
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_rechts",
+   "klasse": "rz",
+   "xy": [
+    2831237.3,
+    1758213.8
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_unten",
+   "klasse": "rz",
+   "xy": [
+    2875060.3,
+    1740447.5
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege",
+   "klasse": "rz",
+   "xy": [
+    2876460.3,
+    1717187.1
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_unten",
+   "klasse": "rz",
+   "xy": [
+    2831723.8,
+    1748036.8
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_unten",
+   "klasse": "rz",
+   "xy": [
+    2831131.3,
+    1753419.9
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2874861.1,
+    1728305.7
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2835850.4,
+    1757469.2
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2871520.8,
+    1727534.1
+   ]
+  }
+ ],
+ "pair_radius_mm": 3000.0,
+ "transform": {
+  "n_namen": 53,
+  "n_inlier": 53,
+  "tx_mm": -2911030.4,
+  "ty_mm": -1722984.7
+ },
+ "engine_summary": {
+  "n_symbols": 14,
+  "by_kind": {
+   "rz": 11,
+   "sicherheitsleuchte": 3
+  },
+  "n_raeume": 53
+ },
+ "gt_lux_nachweis": null
+}

@@ -1,0 +1,213 @@
+{
+ "geschoss": "1OG",
+ "engine_n": 12,
+ "engine_by_kind": {
+  "rz": 8,
+  "sicherheitsleuchte": 4
+ },
+ "gt_n": 11,
+ "gt_by_klasse": {
+  "rz": 9,
+  "antipanik": 2
+ },
+ "gepaart": 4,
+ "fehlt_n": 7,
+ "ueberfluessig_n": 8,
+ "distanz_median_mm": 1420.8,
+ "distanz_max_mm": 2155.9,
+ "beidseitig_treffer": 0,
+ "beidseitig_gt_gesamt": 0,
+ "paare": [
+  {
+   "gt": "94FE8",
+   "gt_typ": "rz",
+   "gt_richtung": "down",
+   "engine_key": "notlicht_ks_stiege_unten",
+   "engine_richtung": "unten",
+   "distanz_mm": 1059.7,
+   "rot_delta_deg": 179.8,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  },
+  {
+   "gt": "95019",
+   "gt_typ": "rz",
+   "gt_richtung": "left",
+   "engine_key": "notlicht_ks_stiege_links",
+   "engine_richtung": "links",
+   "distanz_mm": 2155.9,
+   "rot_delta_deg": 90.4,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  },
+  {
+   "gt": "952E8",
+   "gt_typ": "rz",
+   "gt_richtung": "down",
+   "engine_key": "notlicht_ks_stiege_rechts",
+   "engine_richtung": "rechts",
+   "distanz_mm": 798.7,
+   "rot_delta_deg": 179.8,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  },
+  {
+   "gt": "9568B",
+   "gt_typ": "rz",
+   "gt_richtung": "right",
+   "engine_key": "notlicht_ks_stiege_unten",
+   "engine_richtung": "unten",
+   "distanz_mm": 1781.9,
+   "rot_delta_deg": 90.0,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  }
+ ],
+ "fehlt": [
+  {
+   "handle": "94FE7",
+   "typ": "rz",
+   "richtung": "right",
+   "xy": [
+    2848212.3,
+    1696953.1
+   ]
+  },
+  {
+   "handle": "95042",
+   "typ": "rz",
+   "richtung": "down",
+   "xy": [
+    2854667.4,
+    1699955.6
+   ]
+  },
+  {
+   "handle": "95066",
+   "typ": "antipanik",
+   "richtung": null,
+   "xy": [
+    2857757.6,
+    1700493.0
+   ]
+  },
+  {
+   "handle": "95067",
+   "typ": "antipanik",
+   "richtung": null,
+   "xy": [
+    2864054.7,
+    1700492.1
+   ]
+  },
+  {
+   "handle": "952E9",
+   "typ": "rz",
+   "richtung": "left",
+   "xy": [
+    2888642.1,
+    1669116.3
+   ]
+  },
+  {
+   "handle": "9568D",
+   "typ": "rz",
+   "richtung": "down",
+   "xy": [
+    2822727.6,
+    1726261.2
+   ]
+  },
+  {
+   "handle": "956B0",
+   "typ": "rz",
+   "richtung": "down",
+   "xy": [
+    2882850.9,
+    1670578.4
+   ]
+  }
+ ],
+ "ueberfluessig": [
+  {
+   "key": "notlicht_ks_stiege",
+   "klasse": "rz",
+   "xy": [
+    2847372.6,
+    1688674.9
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege",
+   "klasse": "rz",
+   "xy": [
+    2870187.0,
+    1672599.3
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege",
+   "klasse": "rz",
+   "xy": [
+    2887362.0,
+    1658597.0
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_links",
+   "klasse": "rz",
+   "xy": [
+    2885680.6,
+    1682042.9
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2854367.6,
+    1697777.3
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2881667.5,
+    1669946.6
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2860809.0,
+    1700381.7
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2888185.9,
+    1672388.0
+   ]
+  }
+ ],
+ "pair_radius_mm": 3000.0,
+ "transform": {
+  "n_namen": 63,
+  "n_inlier": 63,
+  "tx_mm": -3201370.3,
+  "ty_mm": -1665467.3
+ },
+ "engine_summary": {
+  "n_symbols": 12,
+  "by_kind": {
+   "rz": 8,
+   "sicherheitsleuchte": 4
+  },
+  "n_raeume": 92
+ },
+ "gt_lux_nachweis": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\Projekte\\_ergebnis\\Mollgasse_GT\\1OG\\gt_lux_nachweis.png"
+}
