@@ -1,18 +1,17 @@
-"""library.py — Loader für CAD_Symbole/Rivoplan_Notbeleuchtungs_Symbole.dxf.
+"""library.py — Loader für CAD_Symbole/RIVO_NL_Symbole.dxf.
 
-Migration Rivoplan-Master (Owner 2026-09-20, nach Phase A 2026-09-18): die
-Rivoplan-Bibliothek `Rivoplan_Notbeleuchtungs_Symbole.dxf` ist die EINZIGE
-produktive Symbolquelle (RIVO_NL_ARR_down/left/right + echter Beidseitig-Block
-RIVO_NL_ARR_bothsided; right ist jetzt klein-nativ wie down/left). Ursprünglich
-portiert aus elektro-planer backend/symbols/schrack_library.py
-(docs/PORT_LOG.md). Liest die Library einmal und cacht sie; Helfer zum
-Layer-Sync und Block-Import in ein Output-DXF via ezdxf.addons.Importer. Der
-Importer ist per-output_doc und wird NICHT global gecacht — nur die geladene
-Library und das validierte Mapping.
+Migration Rivoplan-Master (Owner 2026-09-20; Bibliotheks-Update 2026-09-21): die
+Rivoplan-Bibliothek `RIVO_NL_Symbole.dxf` ist die EINZIGE produktive Symbolquelle
+(RIVO_ARR_down/left/right + echter Beidseitig-Block RIVO_ARR_bothsided; right ist
+klein-nativ wie down/left). Ursprünglich portiert aus elektro-planer
+backend/symbols/schrack_library.py (docs/PORT_LOG.md). Liest die Library einmal
+und cacht sie; Helfer zum Layer-Sync und Block-Import in ein Output-DXF via
+ezdxf.addons.Importer. Der Importer ist per-output_doc und wird NICHT global
+gecacht — nur die geladene Library und das validierte Mapping.
 
 Pfad-Resolution: explizites Argument → env `NOTBELEUCHTUNG_SYMBOL_LIB` →
-Aufwärts-Suche nach `CAD_Symbole/Rivoplan_Notbeleuchtungs_Symbole.dxf` ab
-dieser Datei (src-Layout: Repo-Root).
+Aufwärts-Suche nach `CAD_Symbole/RIVO_NL_Symbole.dxf` ab dieser Datei
+(src-Layout: Repo-Root).
 """
 from __future__ import annotations
 
@@ -37,7 +36,7 @@ log = logging.getLogger(__name__)
 # (Vorlagen-Legende/Rivoplan_Notbeleuchtungs_Vorlage.dxf führt genau diesen
 # einen Notbeleuchtungs-Layer; „Symbole landen auf den Layern der Vorlage",
 # Owner 2026-09-18). Die RIVO-Blöcke tragen ihre Farben EXPLIZIT in der
-# Block-Geometrie (grünes Schild + schwarzes Piktogramm, blauer Aufheller) —
+# Block-Geometrie (grünes Schild + schwarzes Piktogramm, grüner Aufheller) —
 # die Layer-Farbe ist Anzeige-Beiwerk, kein Farbgeber mehr.
 _SAFETY_GREEN_RGB = (30, 179, 80)   # true_color des Vorlagen-Layers (0x1EB350)
 _LIB_SAFETY_LAYER = "E_Sicherheitsbeleuchtung"
@@ -47,7 +46,7 @@ _ENV_VAR = "NOTBELEUCHTUNG_SYMBOL_LIB"
 # Kanonische Library (Migration Rivoplan-Master, Owner 2026-09-20): die
 # Rivoplan-Bibliothek. Vorgänger-Bibliotheken sind entfernt —
 # es gibt keinen Fallback (Git-Historie ist das Backup).
-_LIB_RELPATH = Path("CAD_Symbole") / "Rivoplan_Notbeleuchtungs_Symbole.dxf"
+_LIB_RELPATH = Path("CAD_Symbole") / "RIVO_NL_Symbole.dxf"
 
 # Pflichtfelder je Mapping-Eintrag (Vokabular kommt aus symbols/__init__.py,
 # die Block-Existenz-Validierung gegen die echte Library passiert hier).
@@ -81,13 +80,13 @@ def _resolve_library_path(path: Path | str | None = None) -> Path:
         if cand.is_file():
             return cand
     raise FileNotFoundError(
-        "Symbol-Library Rivoplan_Notbeleuchtungs_Symbole.dxf nicht gefunden. Kandidaten:\n  - "
+        "Symbol-Library RIVO_NL_Symbole.dxf nicht gefunden. Kandidaten:\n  - "
         + "\n  - ".join(str(c) for c in candidates)
     )
 
 
 def load_library(path: Path | str | None = None) -> Drawing:
-    """Rivoplan_Notbeleuchtungs_Symbole.dxf einmal lesen, cachen. Thread-safe.
+    """RIVO_NL_Symbole.dxf einmal lesen, cachen. Thread-safe.
 
     `path` wird nur beim ERSTEN Laden berücksichtigt (danach Cache;
     für Tests `reset_cache()`)."""
@@ -217,10 +216,10 @@ def _normalize_block_origin(output_doc: Drawing, block_name: str) -> None:
     Basispunkte sind Teil der Parent-Komposition); `fast=False` löst nested
     INSERTs für die Extents korrekt auf.
 
-    KEINE Farb-Umschreibung: die neuen Blöcke tragen ihre Farben absichtlich
-    explizit (blauer Aufheller-Kreis, grünes Schild, schwarzes Piktogramm) —
-    „Erscheinungsbild ist Wahrheit". Der alte Blau→BYLAYER-Rewrite hätte den
-    Owner-Aufheller grün gefärbt.
+    KEINE Farb-Umschreibung: die Blöcke tragen ihre Farben absichtlich selbst
+    (grünes Schild, schwarzes Piktogramm, grün-umrandeter Aufheller mit BYLAYER-
+    Füllung) — „Erscheinungsbild ist Wahrheit". Ein Farb-Rewrite würde die
+    bewusst gesetzten Owner-Farben zerstören.
     """
     normalized = _normalized_blocks_for(output_doc)
     if block_name in normalized:

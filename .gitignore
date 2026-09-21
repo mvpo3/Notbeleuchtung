@@ -24,8 +24,9 @@ tests/failures/
 # DXF — nur die kanonische Symbol-Library ist getrackt
 *.dxf
 !assets/E-Symbole.dxf
-# Kanonische Symbol-Library seit 2026-09-20 (Migration Rivoplan-Master).
-!CAD_Symbole/Rivoplan_Notbeleuchtungs_Symbole.dxf
+# Kanonische Symbol-Library seit 2026-09-20 (Migration Rivoplan-Master;
+# Bibliotheks-Update 2026-09-21: umbenannt auf RIVO_NL_Symbole.dxf).
+!CAD_Symbole/RIVO_NL_Symbole.dxf
 # Vorlagen (Legende etc.) fürs ganze Team
 !Vorlagen-Legende/**
 # Wissens-Konvertate (z.B. Stromkreisnummer via ODA aus DWG) bleiben getrackt

@@ -27,9 +27,10 @@ DE_GLOBAL_SCALE = 185.0
 # Wasserscheide-Beidseitig-RZ für richtung="gerade": ein beidseitiger RZ steht in
 # der Flur-Mitte zwischen zwei Ausgängen und weist in BEIDE Richtungen (Profi-Plan
 # RZ_PLPR, Referenz PROFI_DIN_PLAN_UND_VORSCHRIFTEN.md §1.1). Seit der Rivoplan-
-# Master-Migration (2026-09-20) als EIN echter Bibliotheks-Block gerendert
-# (RIVO_NL_ARR_bothsided) statt der früheren links+rechts-Komposition — kein
-# Contract-Feld, rein Render-seitig aus `richtung` abgeleitet.
+# Master-Migration (2026-09-20; Bibliotheks-Update 2026-09-21) als EIN echter
+# Bibliotheks-Block gerendert (RIVO_ARR_bothsided) statt der früheren
+# links+rechts-Komposition — kein Contract-Feld, rein Render-seitig aus
+# `richtung` abgeleitet.
 _BEIDSEITIG_KEY = "notlicht_ks_beidseitig"
 
 
@@ -87,7 +88,7 @@ def insert_platzierung(
     Output ist mm-Welt; `p.xy_mm` wird 1:1 geschrieben. Rotationen kommen
     unverändert aus dem Contract (359.7° etc. werden NICHT normalisiert). Bei einem
     **Rettungszeichen** mit `richtung="gerade"` wird statt eines Einzelpfeils der
-    **echte beidseitige Rivoplan-Block** (RIVO_NL_ARR_bothsided, Wasserscheide)
+    **echte beidseitige Rivoplan-Block** (RIVO_ARR_bothsided, Wasserscheide)
     gesetzt; er trägt auch den Stromkreis-XDATA-Tag. Andere Leuchtenarten mit
     `richtung="gerade"` (Sicherheitsleuchte, Antipanik = „keine Richtung")
     behalten ihr eigenes Katalog-Symbol.

@@ -93,7 +93,7 @@ def test_mapping_nutzt_nur_eine_down_schreibweise():
         e["block_name"] for e in load_symbol_mapping().values()
         if e["block_name"].lower().replace("_", "-").endswith("-down")
     }
-    assert unten_bloecke == {"RIVO_NL_ARR_down"}
+    assert unten_bloecke == {"RIVO_ARR_down"}
 
 
 def _vertikaler_gang(ausgang_y: float) -> RaumModell:

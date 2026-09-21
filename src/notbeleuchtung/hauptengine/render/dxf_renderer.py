@@ -1167,20 +1167,22 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None,
     # „gruppenbatterie" (Substring), „spot" vor „aufheller" (Zeilentext
     # „Spot-Aufheller" enthält beides).
     from ezdxf import bbox as _ezbbox
-    # Migration Rivoplan-Master (2026-09-20): Blöcke der Rivoplan-Bibliothek —
+    # Migration Rivoplan-Master (2026-09-20; Bibliotheks-Update 2026-09-21,
+    # Blöcke umbenannt): Blöcke der Rivoplan-Bibliothek RIVO_NL_Symbole.dxf —
     # die Zeilen entsprechen der Legende der Rivoplan-Planvorlage. „beidseitig"
-    # ist jetzt ein ECHTER Bibliotheks-Block (RIVO_NL_ARR_bothsided), keine
-    # 2-Block-Komposition mehr.
+    # ist ein ECHTER Bibliotheks-Block (RIVO_ARR_bothsided), keine
+    # 2-Block-Komposition mehr. Spot = RIVO_Aufheller_Variante (kein eigener
+    # Spot-Block mehr in der Bibliothek).
     _LEGENDE_BLOCKS = {
-        "pfeil nach unten": ["RIVO_NL_ARR_down"],
-        "pfeil nach links": ["RIVO_NL_ARR_left"],
-        "pfeil nach rechts": ["RIVO_NL_ARR_right"],
-        "spot": ["Spot Notbeleuchtung"],
-        "aufheller": ["Aufheller Notbeleuchtung"],
-        "antipanikleuchte": ["Antipanikleuchte-RIVO"],
-        "beidseitig": ["RIVO_NL_ARR_bothsided"],
-        "gruppenbatterie-verteiler": ["Gruppenbatterie-Verteiler"],
-        "gruppenbatterie": ["Gruppenbatterie-Verteiler"],
+        "pfeil nach unten": ["RIVO_ARR_down"],
+        "pfeil nach links": ["RIVO_ARR_left"],
+        "pfeil nach rechts": ["RIVO_ARR_right"],
+        "spot": ["RIVO_Aufheller_Variante"],
+        "aufheller": ["RIVO_Aufheller"],
+        "antipanikleuchte": ["RIVO_Antipanik"],
+        "beidseitig": ["RIVO_ARR_bothsided"],
+        "gruppenbatterie-verteiler": ["RIVO_Gruppenbatterie_Verteiler"],
+        "gruppenbatterie": ["RIVO_Gruppenbatterie_Verteiler"],
     }
     for text, (tx, ty) in legenden_texte.items():
         low = text.lower()
@@ -1200,7 +1202,7 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None,
             # (doppelte native Höhe) — je Schild soll so groß sein wie ein
             # Einzel-RZ, darum die doppelte Zielhöhe (sonst wird er auf die Höhe
             # EINES Schilds gestaucht = halb so groß).
-            ziel_h = hoehe_lokal * (2.0 if bname == "RIVO_NL_ARR_bothsided" else 1.0)
+            ziel_h = hoehe_lokal * (2.0 if bname == "RIVO_ARR_bothsided" else 1.0)
             sc = ziel_h * S / max(bb.size.y, 1e-6)
             off_y = 0.0 if len(bloecke) == 1 else (1.7 - 3.4 * i)
             wx = (anker["spalte_x0"] + 13.4) * S + dx

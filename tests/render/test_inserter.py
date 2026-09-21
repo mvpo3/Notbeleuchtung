@@ -54,7 +54,7 @@ def test_xor_mirror_mapping_entry(monkeypatch):
     # (die Pfeil-Blöcke sind seit dem Rechts-Fix alle unge­spiegelt gemappt).
     fake = dict(library.load_mapping())
     fake["_mirror_probe"] = {
-        "block_name": "RIVO_NL_ARR_down",
+        "block_name": "RIVO_ARR_down",
         "label": "probe",
         "category": "notlicht",
         "mirror_x": True,
@@ -142,11 +142,13 @@ def test_gerade_nur_bei_rz_beidseitig(catalog_key, kind):
     assert ins.dxf.name == mapping[catalog_key]["block_name"]
 
 
-def test_sl_aufheller_behaelt_owner_blau():
-    """Migration Phase A (2026-09-18, „Erscheinungsbild ist Wahrheit"): der
-    Owner-Aufheller ist ein voll BLAU gefüllter Kreis (SOLID-HATCH ACI 150,
-    grüner Rand) — die Library-Farben werden beim Import NICHT mehr auf
-    BYLAYER umgeschrieben (das frühere Verhalten hätte ihn grün gefärbt)."""
+def test_sl_aufheller_farbe_wie_owner_symbol():
+    """Bibliotheks-Update 2026-09-21 („Erscheinungsbild ist Wahrheit"): der
+    RIVO_Aufheller der neuen Owner-Bibliothek RIVO_NL_Symbole.dxf ist ein Kreis
+    mit grünem Rand (CIRCLE ACI 3) und BYLAYER-Füllung (SOLID-HATCH ACI 256) —
+    auf dem Notlicht-Layer rendert er grün. Owner-Entscheid 2026-09-21: „grün ist
+    ok" (der frühere Blau-Aufheller ACI 150 ist Geschichte). Die Library-Farben
+    werden beim Import NICHT umgeschrieben — der Block trägt seine Farbe selbst."""
     doc = ezdxf.new("R2018")
     library.sync_layers(doc)
     p = Platzierung(xy_mm=(0.0, 0.0), catalog_key="sicherheitsleuchte_aufheller",
@@ -161,4 +163,5 @@ def test_sl_aufheller_behaelt_owner_blau():
 
     alle = list(entities(ins.dxf.name))
     farben = {e.dxftype(): e.dxf.color for e in alle}
-    assert farben["HATCH"] == 150  # Owner-Blau bleibt
+    assert farben["HATCH"] == 256   # BYLAYER-Füllung → Notlicht-Layer (grün)
+    assert farben["CIRCLE"] == 3    # grüner Rand (Owner-Symbol)

@@ -1,4 +1,4 @@
-"""Real-Asset-Naht: symbols/library.py gegen CAD_Symbole/Rivoplan_Notbeleuchtungs_Symbole.dxf.
+"""Real-Asset-Naht: symbols/library.py gegen CAD_Symbole/RIVO_NL_Symbole.dxf.
 
 Migration Rivoplan-Master (2026-09-20): die Rivoplan-Bibliothek ist die einzige
 produktive Symbolquelle. Sichert die Kette Registry-YAML → Library-Block ab,
@@ -32,8 +32,8 @@ def test_library_resolves_and_loads():
     # Die aufgelöste Datei ist die Rivoplan-Bibliothek (inkl. echtem
     # Beidseitig-Block, den keine Vorgänger-Bibliothek führte).
     namen = {n.lower() for n in doc.blocks.block_names()}
-    assert "rivo_nl_arr_down" in namen
-    assert "rivo_nl_arr_bothsided" in namen
+    assert "rivo_arr_down" in namen
+    assert "rivo_arr_bothsided" in namen
 
 
 def test_every_mapping_block_exists_in_library():
@@ -60,7 +60,7 @@ def test_sync_layers_adds_safety_layer_green():
 
 def test_import_block_idempotent_and_origin_normalized():
     doc = ezdxf.new("R2018")
-    block_name = "RIVO_NL_ARR_down"
+    block_name = "RIVO_ARR_down"
     library.import_block(doc, block_name)
     library.import_block(doc, block_name)  # zweiter Aufruf = No-op
     extents = ezbbox.extents(doc.blocks[block_name], fast=True)

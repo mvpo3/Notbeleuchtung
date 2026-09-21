@@ -34,6 +34,10 @@ _VERBOTEN = (
     'block_name: "vorlage_legende"',        # gestrichener Legenden-Rahmen-Block (Registry)
     "safety_layer_sl",                      # entfernte SL-Zwilling-Konstante
     "rz_sl_farbtrennung",                   # gestrichener Render-Parameter
+    "rivo_nl_arr",                          # 2026-09-20-Pfeil-Blocknamen (abgelöst 09-21 → RIVO_ARR_*)
+    'block_name: "antipanikleuchte-rivo"',  # 2026-09-20-Antipanik-Block (→ RIVO_Antipanik)
+    'block_name: "spot notbeleuchtung"',    # 2026-09-20-Spot-Block (→ RIVO_Aufheller_Variante)
+    'block_name: "aufheller notbeleuchtung"',  # 2026-09-20-Aufheller-Block (→ RIVO_Aufheller)
 )
 
 _SCAN_ORDNER = ("src", "tests", "scripts")
@@ -71,8 +75,10 @@ def test_keine_alt_referenzen_im_code():
 
 def test_alte_bibliothek_ist_entfernt():
     assert not (_REPO / "CAD_Symbole" / "Notbeleuchtungssymbole.dxf").exists()
-    # Phase-A-Bibliothek ist seit der Rivoplan-Master-Migration ebenfalls Geschichte.
-    kanonisch = _REPO / "CAD_Symbole" / "Rivoplan_Notbeleuchtungs_Symbole.dxf"
+    # Phase-A-Bibliothek ist seit der Rivoplan-Master-Migration ebenfalls Geschichte;
+    # die 2026-09-20-Fassung wurde 2026-09-21 auf RIVO_NL_Symbole.dxf umbenannt.
+    assert not (_REPO / "CAD_Symbole" / "Rivoplan_Notbeleuchtungs_Symbole.dxf").exists()
+    kanonisch = _REPO / "CAD_Symbole" / "RIVO_NL_Symbole.dxf"
     assert kanonisch.is_file()
 
 
