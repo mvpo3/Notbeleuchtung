@@ -13,10 +13,22 @@ gezeichnet — die statische Layout-Vorlage trägt ihn nicht. Das `pruefung`-Dic
 import json
 
 import ezdxf
+import pytest
 
 from fakes import build_fake_bundle_mit_oib
 from notbeleuchtung.hauptengine.contracts import Gebaeudeteil, ProjektKontext
 from notbeleuchtung.hauptengine.pipeline import run
+
+# Vorlagen-Update 2026-09-21: die neue Rivoplan-Vorlage hat ihren großen
+# Plan-Viewport verloren (Layout1 1545×657 → 477×529 mm) → der Plan passt in
+# 1:50 nicht ins Planfenster, der Layout1-Blatt-Pfad wirft, das Modelspace-
+# Blatt-Sibling (`<name>.modelspace.dxf`) wird nicht geschrieben, auf dem der
+# Prüfvermerk lebt. Owner-WIP 2026-09-21 („Vorlage muss am Grundriss angepasst
+# werden"). strict-xfail → XPASS sobald der Plan-Viewport wieder passt.
+_VORLAGE_VIEWPORT_WIP = pytest.mark.xfail(
+    reason="Vorlage-Viewport zu klein → kein Modelspace-Blatt-Sibling (Owner-WIP 2026-09-21)",
+    strict=True,
+)
 
 _KONTEXT = ProjektKontext(
     jurisdiction="AT",
@@ -29,6 +41,7 @@ def _texte(dxf_pfad) -> list[str]:
     return [e.dxf.text for e in doc.modelspace().query("TEXT")]
 
 
+@_VORLAGE_VIEWPORT_WIP
 def test_oib_stufe_steht_im_gezeichneten_vermerk(tmp_path):
     out = run(
         build_fake_bundle_mit_oib(), "<fake>", "4OG",
@@ -57,6 +70,7 @@ def test_pruefung_dict_ist_json_serialisierbar(tmp_path):
     json.dumps(out.render_summary["pruefung"])
 
 
+@_VORLAGE_VIEWPORT_WIP
 def test_stufen_zeile_liegt_zwischen_kopf_und_details(tmp_path):
     """Layout-Invariante der Bande: PRÜFVERMERK-Kopf oben, Stufen-Zeile darunter,
     Details-Verweis zuunterst — die neue Zeile schiebt nichts aus der Bande,
