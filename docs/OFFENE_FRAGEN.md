@@ -1562,12 +1562,16 @@ Nullmessung und alle laufenden Gate-Zahlen verschieben, bevor der Stapel steht.
 Owner-Ansage 2026-09-20 aus Leonis' Paket; Reihenfolge und Wortlaut in
 `docs/GATE_TUERSTAPEL.md` § 5a. **Kein Code vor dem Merge des Türstapels.** Offen sind:
 
-- **@mvpo3 — Unterlagen fehlen im Repo.** Board-Eintrag 2026-09-20,
-  `MOLLGASSE_RIVOPLAN_GT_BERICHT` § K, `scripts/analyse/mollgasse_gt_vergleich.py`,
-  `tests/fixtures/mollgasse_gt/`, NB-R17 in `knowledge/notbeleuchtung/regeln.md` und
-  das ER-Stempel-Muster unter `knowledge/Pläne zeichnen Wissen/` liegen am 2026-09-20 auf
-  keinem Remote-Branch. Ohne sie ist weder die Abnahme von S-KG noch Gate-Bedingung (9)
-  (S7a+S7b, Mollgasse 1OG) messbar. Bitte Branch oder PR nennen.
+- **@mvpo3 — Unterlagen fehlen im Repo. ERLEDIGT am 2026-09-23:** sie liegen auf
+  `leonis/demo-l-gebaeude` @ `8257ff9`, nachgeprüft mit `git ls-tree`:
+  `scripts/analyse/mollgasse_gt_vergleich.py` (275 Z.), `tests/fixtures/mollgasse_gt/`
+  (1KG, 2KG, EG, 1OG–4OG, DG), `knowledge/notbeleuchtung/regeln.md` mit **NB-R13** (Z. 133)
+  und **NB-R17** (Z. 173, dazu `regeln.yaml`), `knowledge/notbeleuchtung/abgleich/{1KG,2KG}/`
+  (16 bzw. 38 Seiten-PNGs + `abgleich_*.md`) und `docs/COORDINATION.md` § S-KG (Z. 555–584).
+  **Auf `origin/main` (4b950d1) und auf diesem Branch fehlt `knowledge/notbeleuchtung/**`
+  vollständig** — die Abnahme von S-KG und Gate-Bedingung (9) sind erst messbar, wenn das
+  Material auf `main` ist (Merge von Leonis' Branch oder eigener Transport). Offen an @mvpo3:
+  wann kommt es nach `main`?
 - **Raumtyp KELLERABTEIL ist nicht im Kanon.** `docs/VOKABULAR.md` kennt ihn nicht;
   `raumtyp.py` bildet den Text „kellerabteil" heute auf `KELLER` ab. Für die Abnahme
   „KELLERABTEIL > 0" braucht es entweder einen neuen Kanon-Typ (Vorschlag über das Board,
