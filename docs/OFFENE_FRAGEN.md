@@ -1576,3 +1576,20 @@ Owner-Ansage 2026-09-20 aus Leonis' Paket; Reihenfolge und Wortlaut in
 - **Gebäudehälften über Graph-Komponenten:** kein neues Contract-Feld vorgesehen. Ob die
   Komponenten-Zuordnung für Leonis ohne Feld konsumierbar ist, ist mit ihm zu klären, bevor
   gebaut wird.
+
+---
+
+## Übergabe Leonis — die „nicht-im-Merge"-Pakete (eingetragen 2026-09-23, Selman)
+
+**Vermerk:** nach 12-Pläne-Gate-Merge, Quelle Leonis, HEAD `8257ff9`
+(`docs/HANDOFF_SELMAN_NICHT_IM_MERGE.md` auf `leonis/demo-l-gebaeude`).
+**Reihenfolge:** Der laufende Türstapel (S7a/b/c, dann S4e, S4c, S3b, S5c, Gate-Lauf, Merge) bleibt
+unverändert vorne. Die drei Pakete sind Folgeaufträge, sie werden jetzt nicht gebaut.
+
+Owner-Ansage im Wortlaut:
+
+> Reihenfolge der drei Pakete: S-KG → S4d → WOHNKÜCHE. Bei jedem gilt: nach meinem Stand pinge ich Leonis, er fährt Consumer- und Naht-Prüfung plus GT-Re-Run. Kein Contract-Touch nötig; falls doch, erst in docs/COORDINATION.md, 3-Owner.
+>
+> 1. S-KG (Kellergeschosse + Garage), größter Hebel für die GT-Quote. Soll: KELLERABTEIL erkennen (Stempel "ER"), Garage-Zirkulation (NB-R17: Motorrad durchquerbar, Doppelparker/PKW/Gruben nicht), Gebäudehälften zusammenhängend. Leonis' Engine-Vorlauf NB-R13 (UG flüchtet hinauf) steht, sobald ich liefere, platziert die Engine ohne weiteren Leonis-Bau. Abnahme: python scripts/analyse/mollgasse_gt_vergleich.py 1KG 2KG → KELLERABTEIL > 0, Zirk-Segmente zweistellig, "fehlt" im 2KG < 20. Material: docs/COORDINATION.md §S-KG, knowledge/notbeleuchtung/abgleich/{1KG,2KG}/, GT-Fixtures tests/fixtures/mollgasse_gt/{1KG,2KG}.json.
+> 2. S4d (Balkontür): Balkontüren dürfen nicht als final_exit zählen, Wurzel der dünnen Fluchtwege. Leonis' Consumer-Seite (ist_echte_tuer, R2) ist gebaut und freigegeben. Nach meinem Fix Leonis pingen, er re-testet Elektroplan v9+ und die E2E-Bänder.
+> 3. KINDERZIMMER/WOHNKÜCHE: KINDERZIMMER ist schon Kanon (falls es hakt, ist es ein Token). WOHNKÜCHE neu: ich lege RoomType.WOHNKUECHE plus Erkennungs-Token an, Alias mit Leonis gegenprüfen, Enis macht die Norm, gemeinsam mergen (test_lb_raumtyp_naht.py guardet beide Richtungen).
