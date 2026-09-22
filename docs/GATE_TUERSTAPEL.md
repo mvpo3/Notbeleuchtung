@@ -373,6 +373,15 @@ Owner-Ansage im Wortlaut:
 > 2. S4d (Balkontür): Balkontüren dürfen nicht als final_exit zählen, Wurzel der dünnen Fluchtwege. Leonis' Consumer-Seite (ist_echte_tuer, R2) ist gebaut und freigegeben. Nach meinem Fix Leonis pingen, er re-testet Elektroplan v9+ und die E2E-Bänder.
 > 3. KINDERZIMMER/WOHNKÜCHE: KINDERZIMMER ist schon Kanon (falls es hakt, ist es ein Token). WOHNKÜCHE neu: ich lege RoomType.WOHNKUECHE plus Erkennungs-Token an, Alias mit Leonis gegenprüfen, Enis macht die Norm, gemeinsam mergen (test_lb_raumtyp_naht.py guardet beide Richtungen).
 
+**Planer-Vermerk 2026-09-23 (Zitat oben unverändert):** Die Nummer „S4d" war doppelt vergeben.
+Leonis behält **S4d** (Balkontür-Folgeregel, auf dieser Seite bereits gebaut). Das Selman-Paket
+„ArchiCAD-Türblöcke / Rectangular Door Opening" heißt ab jetzt **S4f**; die drei Restlöcher aus
+Leonis' Regel (`provider.py:102`, `ausgaenge.py:69`, EG-Ausnahme `tuer_68`) laufen als **S4g**.
+Beide stehen in `docs/OFFENE_FRAGEN.md`. KINDERZIMMER ist erledigt (Kanon mit zwei
+Erkennungswegen), der geplante Slice entfällt. WOHNKÜCHE: Stempel-Messung erst nach dem
+Gate-Merge, bis dahin nur ein grober Anhalt (54 typlose Räume über 12 Pläne, belegter Fall
+Rennweg OG1 `raum_10` mit 73,06 m²).
+
 ---
 
 ## 6. Diagnose S7a — Vorraum mit Stiegenhaustür wird Erschließung (U14/F11, kein Code)
