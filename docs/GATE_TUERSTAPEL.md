@@ -985,7 +985,7 @@ würde.
 |---|---|---|
 | **(6)** | Rennweg OG3 `segmente_graph = 0` — Fluchtweg-Graph, nicht Klassifikation. Der Anker-Teil derselben Bedingung ist erfüllt (0 Anker in `WOHNUNG_PRIVAT` auf OG3) | **S7c** (Rolle wandert nach außen) und **S3b** (Restflächen enden vor den Blocktüren; auf OG3 ist das Stiegenhaus `rest_3`/`rest_4`, keine Tür erreicht es, § 6c) |
 | **(10)** | Barawitzka EG ABSTELLRAUM 1,98 m² ohne Verbindung, `raum_28` — Türerkennung | **S4c** |
-| **(3)** | `M4.einraum` DG2 0 → 1: `raum_5` ZIMMER bildet die Einraum-Wohnung `top_2`, weil VORRAUM `raum_7` Erschließung ist und `raum_5` nur über `tuer_1` an ihm hängt; die Wohnungsgrenze (b) fällt damit auf `tuer_1` | **offen** — keine S7-Regel heilt sie |
+| **(3)** | `M4.einraum` DG2 0 → 1: `raum_5` ZIMMER bildet die Einraum-Wohnung `top_2`, weil VORRAUM `raum_7` Erschließung ist und `raum_5` nur über `tuer_1` an ihm hängt; die Wohnungsgrenze (b) fällt damit auf `tuer_1` | **offen, NICHT S4e** (nachgemessen: 0 Regel-5-Türen auf DG2) — Kandidaten **Board 3 (Blatt-Semantik, @EnisAMG)** und **S5c**; keine S7-Regel heilt sie |
 
 Zu **(3)** im Einzelnen, weil die Zuordnung eine Entscheidung braucht: der Verstoß ist
 gegenüber der Nullmessung `f15d03f` entstanden, aber **vorbestehend gegenüber HEAD
@@ -1022,6 +1022,9 @@ unverändert.
   OG2 2/2 · OG3 4/4 · DG1 4/4 · DG2 0/0 · DD 0/0 · BARA 0/0 · MOLL_EG 27/13 ·
   MOLL_1OG 16/13 · MUTH_E2 13/8. Größte Nester: MUTH `raum_94` 6 · OG2 `raum_9` 6 ·
   MOLL_1OG `raum_42` 5. Blast Radius über alle 12 Pläne ist Teil von S4e.
+  **S4e heilt Gate (3) auf DG2 NICHT** (Owner-Klarstellung 2026-09-26): dort zählt die
+  Ausgangsmessung 0/0 Regel-5-Türen, die Rolle sitzt auf blattlosen Durchgängen. Diese
+  Bedingung hängt an Board 3 (Blatt-Semantik) und S5c, nicht an S4e.
 - **S4c** — heilt Gate (10) (Barawitzka `raum_28`).
 - **S3b** — heilt die andere Hälfte von Gate (6) (OG3 `segmente_graph = 0`).
 - **S5c** — die blattlosen Öffnungen, auf denen S7a überwiegend steht (F10; 12 der 14
