@@ -528,12 +528,24 @@ def wohnungsgruppen(privat: set[str], tueren: list[Tuer]) -> list[list[str]]:
 
 def wohnungseingaenge(gruppe: list[str], tueren: list[Tuer],
                       erschliessung: set[str]) -> list[str]:
-    """Die Wohnungseingänge einer Wohnung aus KLASSEN und ROHEN Rollen: eine
-    Tür mit genau einer Seite in der Wohnung, die roh ``wohnungseingang`` ist
-    oder als ``zimmertuer`` in einen Erschließungsraum führt. Dasselbe
-    Ergebnis wie ``korrigierte_rollen(…) == "wohnungseingang"`` — aber ohne
-    eine korrigierte Rolle zu lesen: E7.2, „die gesamte Klassifikation
-    (…, Wohnungsbildung) liest KEINE korrigierte Rolle"."""
+    """Die Wohnungseingänge einer Wohnung nach (b), aus ROHEN Rollen und der
+    klassenfreien Erschließung von ``wohnungszugehoerigkeit``: eine Tür mit
+    genau einer Seite in der Wohnung, die roh ``wohnungseingang`` ist oder als
+    ``zimmertuer`` in einen Erschließungsraum führt. Liest keine Klasse und
+    keine korrigierte Rolle (E7.2: „die gesamte Klassifikation (…,
+    Wohnungsbildung) liest KEINE korrigierte Rolle").
+
+    Die Liste ist NICHT dasselbe wie ``korrigierte_rollen(…) ==
+    "wohnungseingang"`` (Frage (a), Fluchtweg): beide lesen verschiedene
+    Erschließungs-Begriffe, Gleichheit ginge nur durch Rückspeisen von (a)
+    nach (b). Gemessen (S7c Runde 2, 66 Topologien, 12 Prüfpläne) stimmen
+    beide Tür für Tür überein, außer: NUR hier, wenn der Raum auf der
+    Wohnungsseite für (a) nicht privat ist (unbestimmt, allgemein
+    klassifiziert, Option W); NUR korrigiert ausschließlich an einer Tür mit
+    anderer roher Rolle als Zimmertür/Wohnungseingang, die S7c an der Grenze
+    privat|Erschließung zum Wohnungseingang macht. Auf den 12 Prüfplänen:
+    0 Abweichungen.
+    Gebunden in ``test_e7_bilde_wohnungen_liest_keine_korrigierte_rolle``."""
     drin = set(gruppe)
     out: list[str] = []
     for t in tueren:
@@ -653,17 +665,30 @@ def korrigierte_rollen(raeume: list[Raum], tueren: list[Tuer]) -> dict[str, str 
     Eine Zimmertür oder ein Wohnungseingang zwischen zwei Räumen der
     Wohnungsmenge ist eine Zimmertür; zwischen Wohnung und Erschließung ein
     Wohnungseingang; sonst bleibt die rohe Rolle (``wohnungsraeume``).
+
+    **S7c (Owner 2026-09-26):** „Wird ein Vorraum privat, wandert die Rolle
+    Wohnungseingang an die ÄUSSERE Tür (Vorraum zu Stiegenhaus oder allgemeinem
+    Gang). Die innere Tür wird zimmertuer." Der Wohnungseingang ist damit
+    ausschließlich eine Frage der Grenze privat|Erschließung — die ROHE Rolle
+    der äußeren Tür entscheidet nicht mit. Vorher stand der Filter
+    ``rolle in ("zimmertuer", "wohnungseingang")`` auch vor diesem Zweig: die
+    äußere Tür eines privat gewordenen GANGES trägt roh ``stiegenhaustuer``
+    (Regel 4: GANG ist im Kanon statisch allgemein) oder gar keine Rolle
+    (GANG × GANG) und blieb liegen. Der HERABSTUFENDE Zweig behält den Filter:
+    innen ist nur die Rolle zu korrigieren, die dort eine Grenze behauptet.
+    Eine ``balkontuer`` wandert nie: das Modul zählt sie weder als
+    Wohnungsgrenze (``wohnungsgruppen``) noch als Ausgang.
     """
     privat, erschliessung = wohnungsraeume(raeume, tueren)
     out: dict[str, str | None] = {}
     for t in tueren:
         rolle = t.tuer_detail
-        if rolle in ("zimmertuer", "wohnungseingang"):
-            a, b = t.von_raum in privat, t.nach_raum in privat
-            if a and b:
-                rolle = "zimmertuer"
-            elif a != b and (t.nach_raum if a else t.von_raum) in erschliessung:
-                rolle = "wohnungseingang"
+        a, b = t.von_raum in privat, t.nach_raum in privat
+        if a and b and rolle in ("zimmertuer", "wohnungseingang"):
+            rolle = "zimmertuer"
+        elif (a != b and rolle != "balkontuer"
+              and (t.nach_raum if a else t.von_raum) in erschliessung):
+            rolle = "wohnungseingang"
         out[t.id] = rolle
     return out
 
