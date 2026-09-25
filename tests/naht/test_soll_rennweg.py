@@ -145,10 +145,6 @@ def test_soll_eg_90_prozent_tueren_typisiert(rm_eg):
         f"nur {typ}/{len(rm_eg.tueren)} Türen typisiert")
 
 
-@pytest.mark.xfail(
-    strict=True, raises=AssertionError,
-    reason="S4a allein, Türstapel unvollständig, muss vor Merge XPASS sein — "
-           "Gate-Bedingung (6) in docs/GATE_TUERSTAPEL.md")
 def test_keine_anker_in_wohnung_privat(rm):
     """Fachteil 2: Anker nur in Erschließung (Stiegenhaus/Gang), nie in
     WOHNUNG_PRIVAT-Räumen."""
