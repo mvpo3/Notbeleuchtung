@@ -556,6 +556,523 @@ hier nicht gemessen.
 `tests/fixtures/mollgasse_gt/`) liegen am 2026-09-20 auf keinem Remote-Branch; der Wortlaut
 oben stammt aus der Owner-Ansage.
 
+### 6g. Das Verfahren für S7a+S7b — der gebaute Stand (Owner-Entscheide 2026-09-21 und 2026-09-22)
+
+**Diese Fassung ersetzt die Fassung vom 2026-09-20.** Sie beschreibt den Code der vier
+Commits auf `5ac3e0f`: `b77cadf` (Tests zuerst), `d2cb2ef` (die Regel), `6515689`
+(strict-xfail von `test_keine_anker_in_wohnung_privat` entfernt, der Marker ist XPASS),
+`e617fd1` (Prüfstrecke: unbestimmte Räume magenta, Tiebreak- und Loch-Zeilen im Bericht).
+Alle Zeilenangaben beziehen sich auf `e617fd1`.
+
+Zwei Sätze der bisherigen Fassung sind **aufgehoben**:
+
+- **2026-09-20, Schritt 1:** „ein Raum, der vom Stiegenhaus ohne Wohnungseingangstür
+  erreichbar ist, ist ALLGEMEIN". Der Owner hat seine eigene Formulierung am 2026-09-21
+  korrigiert: F11 ist ein **UND**, die Erreichbarkeit ist bloß die Voraussetzung
+  (§ 6g.2).
+- **2026-09-21, E5 Satz 2** (Planer-Auslegung, nicht Owner-Wortlaut): „Ein unbestimmter
+  Raum darf keine Wohnung ohne Eingang erzeugen; wenn doch, gilt er als allgemein."
+  **Aufgehoben am 2026-09-22** — der Satz hat eine Notlicht-Regel (a) auf die
+  Wohnungsbildung (b) wirken lassen und die Wohnungen auf OG2, OG3, DG1, Barawitzka und
+  Muthgasse zerteilt (Gate 4 → 12). „Keine neue Wohnung ohne Eingang" bleibt als
+  **Mess-Abnahme** (§ 6g.7), nicht als Regel im Code.
+
+Unverändert weiter gültig aus der Fassung 2026-09-20: die Begründung der Zweistufigkeit
+(die Regel aus § 6b ist **zirkulär** — „erschließt zwei Wohnungen" hängt an den Klassen der
+Nachbarn, die daran hängen, ob dieser Gang allgemein ist; Mollgasse 1OG `raum_34` GANG
+16,99 m² entschied sich unter zwei Zählbasen gegensätzlich, Segmente 22 → 3 bzw. 22 → 10),
+Schritt 3 („unbestimmt statt Raten", konservativ behandelt), der Reihenfolge-Test, die
+**Durchleitung** und der Board-Antrag auf ein Segment-Feld `durchleitung`. Ebenfalls weiter
+gültig: die Zahlen in § 6c stammen von Code-Stand `1e5e5ac`, also **vor** S5b, und sind vor
+dem Bau neu gemessen worden.
+
+#### 6g.1 Die Trennung: (a) Notlicht, (b) Wohnungszugehörigkeit
+
+Owner Selman, 2026-09-22, wörtlich:
+
+> Es sind zwei getrennte Fragen, die nie vermischt werden:
+> (a) Bekommt der Raum Notlicht? Entscheidet fail-safe: im Zweifel ja. Nur hierfür gilt
+> der Board-4-Satz „bei zwei Fixpunkten gilt der allgemeine".
+> (b) Zu welcher Wohnung gehört der Raum? Entscheiden ausschließlich rohe Türen:
+> Wohnungseingang ist Grenze, Zimmertür ist innen. Board 4 gilt hierfür nie. Eine Regel zu
+> (a) darf keine Wohnung zerteilen.
+
+Darüber steht weiter der Grundsatz aus dem Auftrag der Runde 4: **„Im Zweifel Notlicht
+behalten. Fehlendes Notlicht ist gefährlich, überflüssiges nur teurer."** Wo eine Regel
+nicht greift oder sich widerspricht, wird nicht entzogen.
+
+Im Code sind die beiden Fragen durch **verschiedene Funktionen mit verschiedener Eingabe**
+getrennt (Planer-Vorgabe G1):
+
+| Frage | Funktion | liest | liest nachweislich **nicht** |
+|---|---|---|---|
+| **(b)** Wohnung | `wohnungsklasse.wohnungszugehoerigkeit` (`wohnungsklasse.py:576`) | `raum_typ`, Tür-Topologie, **rohe** `tuer_detail`, Türblatt, STIEGENHAUS und Türen ins Freie als Ursprung | `nutzungsklasse`, `ist_fluchtweg`/`ist_communal`, `wohnung_id`, korrigierte Rollen, jedes Ergebnis von Schritt 1/2/3, den Fixpunkt-Tiebreak |
+| **(a)** Notlicht | `klassifiziere` (`:383`), die Iteration in `wohnungen.bilde_wohnungen` (`wohnungen.py:152`), `bestaetigt_privat` (`:405`), `setze_wohnungsflags` (`:762`) | Klassen, Flags, Riegel, Tiebreak, Beleg-Kriterium | — (darf (b) nicht ändern) |
+
+`bilde_wohnungen` ruft (b) **zuerst und einmal** auf; die Wohnungsgruppen und ihre Eingänge
+stehen damit fest, bevor irgendeine Klasse berechnet wird. Beleg: der Naht-Test
+`test_r10_wohnung_liest_weder_klasse_noch_tiebreak` fährt 21 Muster mit **verfälschten**
+Klassen, Flags und `wohnung_id` und umgedrehtem Tiebreak — die Wohnungszugehörigkeit ist
+identisch (21 × grün, Runden 10–14).
+
+#### 6g.2 Schritt 1 / Schritt 2 / Schritt 3 in der gültigen Fassung
+
+**Geltungsbereich V2 (eng), unverändert:** nur GANG/VORRAUM mit mindestens einer Tür zu
+einem STIEGENHAUS (`kandidaten`, `wohnungsklasse.py:123`). Für alle anderen GANG/VORRAUM
+bleibt `wohnungen._verfeinere_gang_privat` zuständig — unter demselben Riegel.
+
+**Schritt 1 — Ankerregel, ohne Iteration** (`ankerurteil` `:193`, `schritt1` `:233`).
+Erreichbarkeit vom STIEGENHAUS über Türen, reine Topologie plus Türtyp; die Funktion
+bekommt Raum-IDs und Türen, keine Klassen. Sie entscheidet **nur PRIVAT endgültig**
+(E1, das UND aus F11: „ALLGEMEIN nur, wenn vom Stiegenhaus ohne Wohnungseingang erreichbar
+UND mindestens zwei Wohnungen oder ein Ausgang darüber erschlossen werden"):
+
+| Befund der Ankerregel | Folge |
+|---|---|
+| nur über eine `wohnungseingang`-Tür **mit Türblatt** erreichbar | `WOHNUNG_PRIVAT`, endgültig |
+| ohne Wohnungseingang erreichbar | nur die erste Hälfte von F11 — **offen** an Schritt 2 |
+| nur durch eine **blattlose** Öffnung getrennt | offen an Schritt 2 (E1: „eine blattlose Öffnung schließt keine Wohnung ab") |
+| über keine Tür erreichbar (Loch-Raum) | offen; siehe § 6g.5 |
+
+Schritt 1 spricht niemanden privat, den der Riegel sperrt (§ 6g.4).
+
+**Schritt 2 — Erschließungsregel** (`schritt2_urteil` `:335`, `schritt2` `:352`) auf allem,
+was Schritt 1 offen lässt. `PRIVAT` genau dann, wenn der Raum **genau eine** Wohnung
+erschließt und nichts Allgemeines: keinen Ausgang ins Freie, keinen Raum der Nutzungsklasse
+`ALLGEMEIN_NEBENRAUM` (die Menge steht in `nutzungsklasse.py` — Kellerabteil, Keller,
+Technik, Müll, Fahrrad, Kinderwagen, Waschküche, Lager), keine zweite Wohnung. Sonst
+`ALLGEMEIN` — **auch bei null Wohnungen** (Board 5: „Ein Raum, der null Wohnungen
+erschließt (Podest, Foyer), kann nicht privat sein"). Der Nebenraum-Zweig ist die
+Owner-Erweiterung vom 2026-09-21 mit der Begründung: in UG/KG gibt es keine Wohnungen — ein
+Kellergang würde sonst privat und verlöre sein Notlicht.
+
+„Erschließt" ist **transitiv** definiert (Board 5, `_erschliesst` `:280`): Ziel Z ist von X
+erschlossen, wenn Z von X über Türen erreichbar ist und **alle Zwischenräume nicht privat**
+sind. Eine erreichte Wohnung zählt und **beendet den Weg dort** (nicht in die Wohnung
+hinein); jede getrennte private Komponente zählt als eigene Wohnung, auch ein einzelnes WC.
+**Das STIEGENHAUS ist Ursprung, nicht Durchgang** (Planer-Auslegung, im Bericht
+ausgewiesen): was nur über das Stiegenhaus erreichbar ist, erschließt das Stiegenhaus, nicht
+X. `stair_exit` zählt nicht als Ausgang, nur eine Tür ins Freie.
+
+Iteriert wird bis zum Fixpunkt, **Start bei ALLGEMEIN** (Board 4: von mehreren Fixpunkten
+gilt der, der Notlicht behält), Deckel `DECKEL = 10` Runden (`:109`), jede Runde aus
+demselben Schnappschuss (Jacobi). Pendelt die Iteration, starten die pendelnden Räume neu
+bei ALLGEMEIN.
+
+**Schritt 3 — unbestimmt statt Raten.** Erreicht die Iteration keinen Fixpunkt, bleibt
+`nutzungsklasse` `None` (Contract: „None/leer = unbestimmt") und der Grund geht als Warnung
+in den Prüfbericht; die Meldung behauptet **nur, was gemessen ist** („die Iteration erreicht
+in 10 Runden keinen Fixpunkt; ob die Regel einen hat, ist nicht geprüft"). Ein unbestimmter
+Raum wird konservativ behandelt: er ist nicht privat, verliert weder Leuchte noch Anker,
+bleibt Knoten im Fluchtweg-Graph und behält seine Stützpunkte (`volle_knoten` `:739`; ohne
+das fiel Barawitzka EG `raum_30` aus dem Graph). Auf den 12 Prüfplänen sind **14 Räume
+unbestimmt**, alle mit Flags 11 und einer Warnzeile; keiner verliert Anker, Zirkulation,
+Stützpunkte oder Leuchten gegenüber HEAD `5ac3e0f`. In allen drei Darstellungen sind sie
+**magenta** (`e617fd1`).
+
+#### 6g.3 Fixpunkt-Wahl: physischer Beleg vor Tiebreak
+
+Owner 2026-09-22, Rangfolge bei Konflikt: **der physische Beleg geht dem Fixpunkt-Tiebreak
+vor.** Physischer Beleg heißt: ein Wohnungseingang mit Türblatt, und die Ankerregel
+bestätigt die strittigen Räume **ausnahmslos** und lässt keinen offen. Der Tiebreak aus
+Board 4 („von mehreren Fixpunkten gilt der, der Notlicht behält") gilt nur, wo kein
+physischer Beleg entscheidet.
+
+Umsetzung (G2, `wohnungen.py:286-330`): bleiben nach der ersten Iteration **ankerprivate**
+Räume allgemein, läuft die Iteration erneut mit ihnen privat gestartet — erst alle
+zusammen, dann je Gruppe benachbarter beweglicher Räume (`_gruppen`), jeweils **ab dem
+erreichten Stand**, nicht ab ALLGEMEIN (ohne diesen Startstand fiel ein voll belegter
+Fixpunkt zusammen — gemessen in 13 von 20 000 Zufallstopologien). Ist das Ergebnis ein
+Fixpunkt, in dem **alle** abweichenden Räume privat und ankerbestätigt sind und keiner offen
+bleibt, gilt er. Sonst gilt der allgemeine, und jeder solche Raum bekommt eine
+`tiebreak:`-Zeile mit Grund. Die Probe läuft nur, wenn der ganze Plan einen Fixpunkt
+erreicht hat; pendelt ein fremder Teil, gilt überall der Tiebreak (als `ponytail:`-Deckel
+vermerkt, `wohnungen.py:297-299`, Richtung sicher: Notlicht bleibt).
+
+**Wo das real entscheidet, auf den 12 Plänen:**
+
+- **Beleg gewinnt:** Rennweg OG1 `raum_4`/`raum_5` werden `WOHNUNG_PRIVAT` (Flags 00),
+  `bestaetigt_privat` = {`raum_4`, `raum_5`, `raum_8`}; auf OG1 steht **keine**
+  `tiebreak:`-Zeile.
+- **Tiebreak entscheidet:** **genau ein Fall** über alle 12 Pläne — Mollgasse EG `raum_57`
+  VORRAUM 7,78 m². Grund in der Warnzeile: die Ankerregel urteilt privat, es wurde aber
+  **kein voll ankerbestätigter Fixpunkt gefunden**; ob daneben ein zweiter Fixpunkt
+  besteht, ist nicht geprüft. Der Raum bleibt `ALLGEMEIN_ERSCHLIESSUNG` mit Flags 11,
+  behält also sein Notlicht. Die Zeile behauptet ausdrücklich keinen zweiten Fixpunkt — die
+  Zeugensuche des Reviewers fand keinen (0 von 12 Dumps, Planer-Korrektur P4).
+
+Der Planer-Entscheid P3 (die Probe startet ab dem erreichten Stand) ist **kein
+„fail-safe only"**-Eingriff: in 40 000 Zufallsplänen unterscheidet er 54 Klassen, in 31
+davon **entzieht** er Notlicht, das der Vorstand behielt. Richtig ist: **P3 setzt G2 durch,
+und G2 stellt den physischen Beleg über den Fail-Safe-Tiebreak.** Auf den 12 Prüfplänen ist
+P3 wirkungslos (Klassen und Flags 12/12 unverändert).
+
+#### 6g.4 Riegel (G3), Entzugs-Kriterium (G4) und die Lesart von „bestätigt"
+
+**Riegel (G3), Owner 2026-09-22 wörtlich:** „Ein Raum mit Hauseingang, Tür ins Freie oder
+Tür zu einem allgemeinen Nebenraum ist in **keinem** Schritt PRIVAT, auch nicht in Schritt 1
+und nicht an der E8-Grenze." Umgesetzt in `riegel_nie_privat` (`:250`); gelesen werden nur
+Raumtyp, Tür-Topologie und rohe Rolle. Auf den 12 Plänen greift der Riegel bei **8 Räumen**,
+alle `ALLGEMEIN_ERSCHLIESSUNG` mit Flags 11. **Offengelegte Asymmetrie:** „Tür ins Freie"
+zählt hier **jede** Tür nach AUSSEN, auch eine Balkontür; der (b)-Ursprung in
+`wohnungszugehoerigkeit` schließt die Balkontür ausdrücklich aus. Die Richtung ist sicher
+(der Riegel nimmt kein Notlicht, er verhindert nur den Entzug), und auf den 12 Prüfplänen
+hat kein GANG/VORRAUM eine Balkontür.
+
+**Entzugs-Kriterium.** Notlicht (beide Flags `False`, R3, und keine eigenen Anker/Leuchten,
+R4) wird **nur** entzogen, wenn alle vier Bedingungen zusammen zutreffen:
+
+1. Klasse `WOHNUNG_PRIVAT`,
+2. die **Ankerregel auf den ROHEN Rollen** urteilt privat (Wohnungseingang mit Türblatt),
+3. **G4 (Owner 2026-09-22):** in derselben Wohnung nach (b) liegt mindestens ein
+   **Aufenthaltsraum** — `AUFENTHALTSRAUM` = {ZIMMER, WOHNZIMMER, SCHLAFZIMMER, KÜCHE}
+   (`:107`, Kanon-Namen aus `raumtyp.py`). Bad, WC, Abstellraum oder untypisierte Räume
+   allein belegen keine Wohnung, dort bleibt Notlicht. **Keine Geschossregel** (die
+   Geschosserkennung liefert auf 41 von 62 Plänen nichts).
+4. kein Riegel nach G3.
+
+**Lesart „bestätigt", für diese Doku festgeschrieben** (Owner 2026-09-22): *bestätigt =
+Klasse `WOHNUNG_PRIVAT` **∧** Ankerregel auf rohen Rollen privat.* Das sind die Bedingungen
+1 und 2, im Code die Zwischenmenge `kandidat` in `bestaetigt_privat` (`:405`).
+
+**Wichtig für jeden, der den Code gegen diesen Text liest** (Naht-Urteil R13, Punkt (d)):
+die Code-Funktion `bestaetigt_privat` meint die um **G4 und den Riegel verengte** Menge,
+also `kandidat ∩ belegt − riegel`. Sie ist **enger** als die Owner-Lesart. Gemessen auf
+Mollgasse 1OG: Owner-Lesart 11 Räume (`raum_2`, `4`, `5`, `16`, `19`, `26`, `37`, `42`,
+`63`, `69`, `72`), Code-Menge 6 (`raum_2`, `4`, `5`, `37`, `42`, `63`). Enger heißt weniger
+Entzug, also fail-safe; beide Verengungen sind selbst Owner-Entscheide vom 2026-09-22. Wer
+eine Zusicherung mit dem Wort „bestätigt" formuliert, muss deshalb sagen, **welche** der
+beiden Mengen er meint — ein Guard, dessen Wirkung an der Lesart eines Wortes hängt, ist
+kein Guard (§ 6g.9).
+
+`bestaetigt_privat` liegt ohne eigenen `raum_typ`-Filter **ganz in GANG/VORRAUM**, und zwar
+**per Konstruktion**: `ankerurteil` überspringt jeden Nicht-Scope-Raum, der Default ist
+`A_UNKLAR`. Ein zusätzliches `and r.raum_typ in SCOPE_TYPEN` wäre ein beweisbarer No-Op und
+ist darum nur als Kommentar an der Stelle vermerkt, nicht als Bedingung.
+
+#### 6g.5 Loch-Räume und die R1-Regel (Loch-GANG zu Einzelräumen)
+
+**Loch-Raum** = GANG/VORRAUM, den die Ankerregel vom Stiegenhaus über **keine** Tür
+erreicht (`loch_raeume` `:466`). Owner 2026-09-21: „das ist ein Tür- oder Raumerkennungsloch,
+kein Klassifikationsproblem" (Messfall für S4c und S3b). Nicht dazu gehört der nur durch
+eine blattlose Öffnung getrennte Raum (E1; Mollgasse EG `raum_23`).
+
+Für (b) gilt (Owner-Fragebogen 2026-09-22): ein Loch-Raum, der über eine **rohe Zimmertür**
+an eine Wohnung gebunden ist, gehört zu dieser Wohnung und bleibt für (a) unbestimmt **mit**
+Notlicht (Flags 11). Ein Loch-Raum, der nur über **rohe Wohnungseingänge** angebunden ist,
+ist Erschließung und für (a) allgemein.
+
+**R1 (Owner-Entscheid 2026-09-22), Ausnahme davon:** *Ein Loch-**GANG**, hinter dessen rohen
+Wohnungseingängen **nur Einzelräume** liegen (jede dahinterliegende Raumgruppe hat genau
+einen Raum), bildet mit diesen Räumen **eine** Wohnung; er selbst bleibt für (a) unbestimmt
+mit Notlicht.* Umgesetzt in `_loch_gang_einzelraeume` (`:549`) — reine Topologie der rohen
+Türen, liest keine Klasse.
+
+Grund für die Regel: die rohe Rolle `wohnungseingang` ist bei GANG-Türen **kein physischer
+Beleg**. `tuer_typisierung.py:197` (Regel 5) setzt sie allein aus dem Raumtyp-Paar
+`ALLGEMEIN_ERSCHLIESSUNG × WOHNUNG_PRIVAT`, und im Kanon ist GANG statisch allgemein,
+VORRAUM statisch privat. Ein Wohnungsflur vom Typ GANG trägt roh daher an **jeder** Tür
+einen „Wohnungseingang"; ein Loch-VORRAUM bindet über Zimmertüren, ein Loch-GANG nie. Die
+Wurzel ist ein Erkennungsfehler, keine Klassenfrage — sie wird in Slice **S4e** behoben
+(§ 6g.8); R1 bleibt daneben in Kraft und fängt die Fälle, die S4e nicht klärt.
+
+| Fall | Befund |
+|---|---|
+| **Messfall Rennweg OG3 `raum_10`** GANG | hinter den vier rohen Wohnungseingängen liegen nur Einzelräume (`durchgang_1` → `raum_1` KÜCHE 38,35 m² blattlos, `tuer_11` → `raum_4` ZIMMER 23,27 m², `tuer_13` → `raum_6` BAD 6,01 m², `tuer_14` → `raum_7` ABSTELLRAUM 3,51 m²). R1 bindet: **eine** Wohnung `{raum_1, raum_4, raum_6, raum_7, raum_10}` wie HEAD, Einraum 0, `raum_10` selbst unbestimmt mit Flags 11 und eigener Begründung in der Warnzeile. Ohne R1 wären es 6 Wohnungen und 4 Einraum-Wohnungen |
+| **Gegenfall Muthgasse E2 `raum_94`** GANG | bleibt Erschließung, weil hinter seinen rohen Wohnungseingängen **mehrräumige** Wohnungen liegen (6 Kandidaten-Türen, u. a. `tuer_7` → `raum_51` VORRAUM) |
+
+Auf den 12 Plänen gibt es **16 Loch-Räume**: 10 über rohe Zimmertür gebunden, **1 nach R1**
+(OG3 `raum_10`), 5 Erschließung ohne Wohnung (OG2 `raum_9`, MOLL_1OG `raum_52`/`raum_65`,
+MUTH `raum_46`/`raum_94`).
+
+**R1 kann strukturell nie an einen GANG/VORRAUM binden** (spart dem nächsten Prüfer den
+Grenzfall): ein Loch-GANG ist vom Stiegenhaus über keine Tür erreichbar, also ist jeder Raum
+hinter seinen rohen Wohnungseingängen ebenfalls unerreichbar; ist dieser Nachbar
+GANG/VORRAUM, ist er selbst Loch-Raum und liegt in der freien, nicht in der gebundenen Menge
+(keine Gruppengröße, keine Bindung); kommt er über eine rohe Zimmertür in die gebundene
+Menge, ist seine Gruppe ≥ 2 und die Bedingung „nur Einzelräume" ist verletzt. Verifiziert mit
+2 Konstruktionen und 2 258 R1-Bindungen in 40 000 Zufallsplänen, **0 mit
+GANG/VORRAUM-Nachbar**; auf OG3 sind die Nachbarn von `raum_10` KÜCHE, ZIMMER, BAD und
+ABSTELLRAUM.
+
+**R2 (Owner 2026-09-22):** ein **untypisierter** Raum gehört nie zu einer Wohnung („kein
+Beleg", passend zu G4). Die Folgen sind akzeptiert und hier benannt: MOLL_1OG `raum_69` wird
+eine Einraum-Wohnung, Rennweg OG1 `raum_10` (73,06 m², Wohnküchen-Stempel) bleibt ohne
+Wohnung.
+
+#### 6g.6 Einbahn (Board 7): rohe Rolle → Klasse → korrigierte Rolle → Fluchtweg
+
+Owner Board 7: „Die Ankerregel liest nur rohe Türrollen, nie Raumklassen und nie korrigierte
+Rollen. Korrigierte Rollen (S7c, Wohnungseingang wandert nach außen) entstehen danach aus
+der fertigen Klassifikation und werden nur für Fluchtweg und Zirkulation verwendet. Die
+Richtung ist einseitig: rohe Rolle → Klasse → korrigierte Rolle → Fluchtweg, nie zurück."
+
+Gebaut ist Entscheidung **(i)**: die korrigierten Rollen werden **nicht** in `tuer_detail`
+persistiert.
+
+- **Wo sie entstehen:** `wohnungsklasse.korrigierte_rollen` (`:646`), genau einmal, aus der
+  fertigen Klassifikation und den rohen Rollen. Eine Zimmertür oder ein Wohnungseingang
+  zwischen zwei Räumen der Wohnungsmenge ist eine Zimmertür; zwischen Wohnung und
+  Erschließung ein Wohnungseingang; sonst bleibt die rohe Rolle.
+- **Sie stehen nicht im Modell:** das ausgelieferte `tuer_detail` trägt die **rohe** Rolle.
+  Damit liest ein zweiter Lauf dieselbe Eingabe und ist automatisch idempotent. Belegt über
+  11 Pläne: die ausgelieferten `tuer_detail` sind zwischen zwei unabhängigen vollen Läufen
+  feldgleich (90 186 Felder, 0 Abweichungen).
+- **Wer sie liest:** nur `fluchtweg.py` — Segment-Starts (`fluchtweg.py:329`), die
+  Durchleitung (`:247`, `durchleitung_raeume` `:755`) und die weichen Knoten (`:252`,
+  `volle_knoten` `:739`). Sonst niemand.
+
+**Durchleitung (Owner-Entscheid 2026-09-20, weiter gültig und jetzt gebaut).** Privat heißt
+keine Notbeleuchtung und keine eigene Zirkulation — **kein Loch im Graph**: ein privat
+gewordener Erschließungsraum bleibt Knoten für Wege zwischen zwei allgemeinen Räumen (nur
+wenn das Raumpolygon die Strecke deckt), bekommt aber keine eigenen Stützpunkte, Anker oder
+Leuchten. Ohne das zerreißen Wege — gemessen: Mollgasse 1OG STIEGENHAUS `raum_35` 10 → 2
+Segmente, Rennweg UG KINDERWAGENRAUM verliert sein einziges, drei neue
+`fluchtweg_warnungen` „kein final_exit erreichbar". Messfall (ii) (KINDERWAGENRAUM behält
+seinen Weg) und (iii) (die drei Warnungen verschwinden) sind erfüllt und im Naht-Test
+gebunden; Messfall (i) bleibt Charakterisierung für **S7c** (§ 6g.8); Messfall (iv)
+Mollgasse 1OG `raum_34` entscheidet Schritt 2 mit **3 Wohnungen → ALLGEMEIN**, Flags 11.
+
+**Board-Antrag weiter offen (blockiert den Slice nicht):** durchgeleitete Segmente sollen
+`durchleitung=True` tragen. `FluchtwegSegment.quelle` ist
+`Literal["LINIE", "GRAPH", "FALLBACK"] | None`; ein neuer Wert oder ein neues Feld ist eine
+Contract-Änderung mit Approval aller drei Owner. Der Slice baut die **Wirkung** und weist die
+Durchleitung als Prüfstrecken-Warnung aus (Muster `tuer_warnungen`, `provider.py:176-178`).
+
+**Lesehilfe für Dumps** (hat in zwei Reviews Scheinabweichungen erzeugt): in den
+Messdumps des Slices steht unter `tueren[…]["detail"]` die **ROHE** Rolle und unter
+`korrigiert` die korrigierte — auf 628 Türen weichen 41 voneinander ab. Legt ein Werkzeug
+unter `detail` die korrigierte Rolle ab, entstehen beim Quervergleich genau diese 41
+Scheinabweichungen. Die Leuchten der Pipeline-Dumps stehen unter `raum.raeume`, nicht unter
+`raeume`; ein Zugriff auf `raeume` liefert stillschweigend 0 Leuchten statt 7.
+
+#### 6g.7 Messung und Abnahme auf dem sauberen Baum `e617fd1`
+
+Grundlage: 12 Pläne einzeln geparst (7 Rennweg-Geschosse, Barawitzka EG, Dachdraufsicht,
+Mollgasse EG und 1OG, Muthgasse E2), volle Pipeline auf 11 Plänen (Muthgasse ohne
+Platzierung), Gate-Messung und Gate-Prüfung gegen `tests/gate/nullmessung_f15d03f.json`.
+Zwei unabhängige volle Läufe stimmen in 9 863 Messschlüsseln und 90 186 Pipeline-Feldern
+überein (0 Abweichungen), das Gate in allen Kennzahlen.
+
+**Gate: 3 Verstöße, keiner neu.** Der Verstoß **(0)** („Nachher-Stand mit unsauberem
+Arbeitsbaum unter `src/` oder `scripts/` gemessen") ist mit dem Commit weggefallen; die
+Menge der Sachverstöße ist unverändert die des Stands R6:
+
+```
+(3) M4.einraum steigt in DG2: 0 → 1
+(6) Rennweg OG3 ohne GRAPH-Segment: segmente_graph=0, erwartet: >= 1
+(10) Barawitzka EG ABSTELLRAUM 1.98 m² ohne Verbindung: 0 Tür(en)
+```
+
+Alle drei sind **vorbestehend** (schon auf den Ständen R6 und R10–R14). Gegen den Stand R10
+weichen genau vier Schlüssel ab, alle auf OG3 und alle durch R1 (`M4.OG3.einraum` 4 → 0,
+`M4.OG3.wohnungen` 6 → 3, `og3.einraum_wohnungen` 4 → 0, `og3.wohnungen` 6 → 3); gegen R6
+drei Schlüssel, keiner in die schlechtere Richtung.
+
+**Notlicht-Verlierer (Flags 00): 9 Räume, 47,71 m²** — je Raum sind alle vier Bedingungen
+aus § 6g.4 ausgewiesen:
+
+| Plan | Raum | Typ | m² | Anker roh privat über | Aufenthaltsraum in der (b)-Wohnung |
+|---|---|---|---|---|---|
+| OG1 | `raum_4` | VORRAUM | 3,40 | `tuer_3` mit Blatt | `top_1`: `raum_1`/`2`/`3` ZIMMER |
+| OG1 | `raum_5` | VORRAUM | 2,59 | `tuer_3` | `top_1` |
+| OG1 | `raum_8` | GANG | 6,48 | `tuer_3` | `top_1` |
+| MOLL_1OG | `raum_2` | VORRAUM | 7,07 | `tuer_3` | `top_1`: `raum_1`/`36` KÜCHE, `raum_6`/`10`/`30`/`31`/`90` ZIMMER |
+| MOLL_1OG | `raum_4` | VORRAUM | 6,45 | `tuer_4` | `top_1` |
+| MOLL_1OG | `raum_5` | GANG | 4,73 | `tuer_4` | `top_1` |
+| MOLL_1OG | `raum_37` | VORRAUM | 7,18 | `tuer_44` | `top_14`: `raum_87` ZIMMER |
+| MOLL_1OG | `raum_42` | GANG | 5,69 | `tuer_44` | `top_15`: `raum_38`/`41`/`85` ZIMMER |
+| MOLL_1OG | `raum_63` | VORRAUM | 4,12 | `tuer_49` | `top_16`: `raum_43` ZIMMER, `raum_61` KÜCHE |
+
+Kein Riegel bei einem der neun. Gegenüber dem früheren Stand mit 13 Verlierern sind DG2
+`raum_1`, MOLL_1OG `raum_69`, MOLL_1OG `raum_72` und OG1 `raum_12` **weggefallen**; neu ist
+keiner.
+
+**Ankerprivat und trotzdem alles behalten: 9 Räume**, je mit Grund — das ist die
+Gegenrichtung derselben Regel und der Beleg, dass die Verengung aus § 6g.4 wirkt:
+
+| Plan | Raum | Typ | m² | Klasse | Grund, warum nichts entzogen wird |
+|---|---|---|---|---|---|
+| UG | `raum_6` | VORRAUM | 4,77 | `WOHNUNG_PRIVAT` | G4: kein Aufenthaltsraum in `top_4` |
+| OG1 | `raum_12` | VORRAUM | 10,94 | `WOHNUNG_PRIVAT` | G4 (`top_2`; der Raum trägt einen Wohnküchen-Stempel, siehe § 6g.8) |
+| MOLL_1OG | `raum_16` | VORRAUM | 3,96 | `WOHNUNG_PRIVAT` | G4 (`top_5`) |
+| MOLL_1OG | `raum_19` | VORRAUM | 8,21 | `WOHNUNG_PRIVAT` | G4 (`top_7`) |
+| MOLL_1OG | `raum_26` | VORRAUM | 6,88 | `WOHNUNG_PRIVAT` | G4 (`top_12`) |
+| MOLL_1OG | `raum_69` | VORRAUM | 4,66 | `WOHNUNG_PRIVAT` | G4 (`top_28`) |
+| MOLL_1OG | `raum_72` | VORRAUM | 5,06 | `WOHNUNG_PRIVAT` | G4 (`top_30`) |
+| MOLL_EG | `raum_34` | GANG | 6,92 | `ALLGEMEIN_ERSCHLIESSUNG` | Riegel G3: Tür ins Freie `tuer_16` → nie privat |
+| MOLL_EG | `raum_57` | VORRAUM | 7,78 | `ALLGEMEIN_ERSCHLIESSUNG` | Tiebreak (§ 6g.3), kein voll ankerbestätigter Fixpunkt |
+
+Alle neun tragen Flags 11. `raum_69` und `raum_72` sind nach der Owner-Lesart aus § 6g.4
+„bestätigt" und fallen **allein über G4** aus der Code-Menge — das ist der Fall, an dem das
+doppelt belegte Wort hängt.
+
+**Einraum-Abnahme nach R3** („keine Einraum-Wohnung, die HEAD nicht hatte — außer den
+benannten; weniger als HEAD ist erlaubt, wenn die Ursache aus rohen Türen belegt ist"):
+erfüllt, **genau die vier zugelassenen Neuzugänge**, kein fünfter.
+
+| Plan | Einraum HEAD → jetzt | neu gegenüber HEAD | weg gegenüber HEAD |
+|---|---|---|---|
+| UG | 4 → 3 | – | `raum_7` |
+| EG | 1 → 1 | – | – |
+| OG1 | 3 → 1 | – | `raum_11`, `raum_13` |
+| OG2 / OG3 / DG1 / DD | 0 → 0 | – | – |
+| DG2 | 1 → 1 | – | – |
+| BARA | 8 → 6 | – | `raum_40`, `raum_5` |
+| MOLL_EG | 15 → 15 | `raum_18` ZIMMER, `raum_20` ZIMMER | `raum_24`, `raum_26` |
+| MOLL_1OG | 26 → 19 | `raum_16` VORRAUM, `raum_69` VORRAUM | `raum_12`, `raum_20`, `raum_21`, `raum_28`, `raum_29`, `raum_62`, `raum_73`, `raum_82`, `raum_86` |
+| MUTH_E2 | 15 → 13 | – | `raum_45`, `raum_89` |
+
+**Keine neue Wohnung ohne Eingang gegenüber HEAD: 12/12** (0 Zeilen „neu gegenüber HEAD").
+Rennweg OG3 hat wie HEAD 3 eingangslose Wohnungen von 3, alle drei raummengengleich, und ist
+**seit `b77cadf` auch im Test gebunden** (`test_jede_wohnung_hat_einen_wohnungseingang[og3]`
+mit `VORBESTEHEND_OHNE_EINGANG["og3"]`). Einschränkung, damit eine spätere Runde daraus keine
+Deckung liest, die es nicht gibt: **für OG3 ist die Eingangs-Hälfte der Zusicherung inert** —
+alle drei Wohnungen stehen in der Ausnahmeliste, geprüft wird dort nur die Mengenidentität
+der eingangslosen Wohnungen.
+
+**Anker in `WOHNUNG_PRIVAT`** (geometrische Zählweise von `tests/gate/gate_og3.py`), je
+Plan: DG1 **2** (`raum_4_ende_7`, `raum_4_tuer_5`, beide HEAD-vorbestehend), MOLL_EG **1**
+(`raum_51_tuer_durchgang_25`, HEAD-vorbestehend), **alle übrigen 0** — insbesondere OG3 0
+(damit ist der Anker-Teil der Gate-Bedingung (6) erfüllt, und der strict-xfail-Marker von
+`tests/naht/test_soll_rennweg.py::test_keine_anker_in_wohnung_privat` ist in `6515689`
+entfernt) und Mollgasse 1OG 0 (§ 6g.9). Anker gesamt, Ausgänge und Segmente je Quelle sind
+auf 12/12 gleich HEAD, bis auf die Messfall-(i)-Segmente. Fußnote zur Ankerzahl: die
+Kopfzahl zählt **nach** dem Liftschacht-Filter (`provider.py:230-235`); vier Pläne haben
+davor je einen Anker mehr — UG 20/21, OG3 17/18, DG1 15/16, MOLL_EG 144/145.
+
+**Was der Slice nicht erreicht:** über 11 Pläne stehen noch **7 Leuchten in 5 Räumen der
+Klasse `WOHNUNG_PRIVAT`** (HEAD 19 → 7), alle in Räumen mit Flags 00, vier davon von diesem
+Slice selbst entzogen: OG1 `raum_8` 2 SL, OG3 `raum_4` 1 SL (ZIMMER, HEAD-gleich), MOLL_EG
+`raum_18` 2 RZ, MOLL_1OG `raum_42` 1 SL, MOLL_1OG `raum_5` 1 SL. Ursache liegt in
+`platzierung/deckung.py` — das Package liest die Flags nicht (Board 1, § 6g.8). Zwei der
+vier roten `tests/naht`-Meldungen hängen daran; die Mollgasse-Fälle sind heute **nicht**
+vom Test gefangen, weil eine Parametrisierung auf Mollgasse drei neue Rotmeldungen erzeugen
+würde.
+
+#### 6g.8 Verbliebene Gate-Verstöße, Slice-Zuordnung und Merge-Reife
+
+| # | Ursache (gemessen) | Zuordnung |
+|---|---|---|
+| **(6)** | Rennweg OG3 `segmente_graph = 0` — Fluchtweg-Graph, nicht Klassifikation. Der Anker-Teil derselben Bedingung ist erfüllt (0 Anker in `WOHNUNG_PRIVAT` auf OG3) | **S7c** (Rolle wandert nach außen) und **S3b** (Restflächen enden vor den Blocktüren; auf OG3 ist das Stiegenhaus `rest_3`/`rest_4`, keine Tür erreicht es, § 6c) |
+| **(10)** | Barawitzka EG ABSTELLRAUM 1,98 m² ohne Verbindung, `raum_28` — Türerkennung | **S4c** |
+| **(3)** | `M4.einraum` DG2 0 → 1: `raum_5` ZIMMER bildet die Einraum-Wohnung `top_2`, weil VORRAUM `raum_7` Erschließung ist und `raum_5` nur über `tuer_1` an ihm hängt; die Wohnungsgrenze (b) fällt damit auf `tuer_1` | **offen** — keine S7-Regel heilt sie |
+
+Zu **(3)** im Einzelnen, weil die Zuordnung eine Entscheidung braucht: der Verstoß ist
+gegenüber der Nullmessung `f15d03f` entstanden, aber **vorbestehend gegenüber HEAD
+`5ac3e0f`** (DG2 Einraum = 1 auf HEAD, R6, R10 und jetzt). Die Wurzel ist dieselbe wie bei
+R1 und Regel 5: eine **rohe** Rolle `wohnungseingang`, die kein physischer Beleg ist. Auf
+DG2 tragen `durchgang_3`–`durchgang_6` zwischen den VORRÄUMEN `raum_6`/`raum_7` und den
+Stiegenhäusern `rest_1`/`rest_3`/`rest_4` die Rolle `wohnungseingang`, sind aber **blattlose
+Durchgänge** (1 263–5 379 mm) — nach E1 schließt eine blattlose Öffnung keine Wohnung ab,
+die Flut geht durch, `raum_7` ist Erschließung, und `raum_5` bleibt allein.
+
+**Planer-Einordnung 2026-09-25 (nach der Messung des Reviewers):** **S4e scheidet aus** —
+die Rolle sitzt hier nicht auf einer Regel-5-Tür (GANG × privater Raum), sondern auf
+blattlosen Durchgängen an VORRÄUMEN; die S4e-Ausgangsmessung zählt auf DG2 **0/0**
+Regel-5-Türen. Die Wurzel ist die **Blatt-Semantik**: eine blattlose Öffnung trägt die
+Rolle `wohnungseingang`, schließt aber nach E1 keine Wohnung ab. Kandidaten für die Heilung
+sind daher **Board 3 (Blatt-Semantik, @EnisAMG)** und **S5c** (die blattlosen Öffnungen);
+`tuer_1` selbst ist roh `zimmertuer`, an ihr ist nichts zu heilen. Alternative bleibt eine
+benannte Owner-Ausnahme für DG2. **Keine neue S7-Regel** — der Wert ist gegenüber HEAD
+unverändert.
+
+**Was bis zur Merge-Reife des Stapels noch fehlt** (der Stapel wird nur gemeinsam gemergt,
+§ 1 dieser Datei):
+
+- **S7c** — Messfall (i): die Rolle `wohnungseingang` muss an die **äußere** Tür wandern
+  (Vorraum → Stiegenhaus bzw. → allgemeiner Gang). Abnahme, damit sie nicht verloren geht:
+  Mollgasse 1OG `raum_35` Start/Ziel-Segmente wieder 17, Rennweg OG1 `raum_14` wieder 4 an
+  `rest_2`, die acht Wege über das Stiegenhaus wieder da — mit der Stiegenhaustür als Start.
+  Solange S7c fehlt, führt `tests/naht` beide Werte als **Charakterisierung** (kein xfail,
+  nicht grün gebogen); OG1 liegt bereits wieder auf den HEAD-Werten.
+- **S4e** (Owner R5) — Regel 5 der Türtypisierung einschränken: eine Tür GANG → privater
+  Raum wird nur dann roh zum Wohnungseingang, wenn der Gang selbst allgemein erschlossen
+  ist, also vom Stiegenhaus ohne Wohnungseingang erreichbar. Ausgangsmessung liegt vor:
+  **70 Regel-5-Türen, davon 46 S4e-Kandidaten** über 12 Pläne — UG 2/0 · EG 0/0 · OG1 2/2 ·
+  OG2 2/2 · OG3 4/4 · DG1 4/4 · DG2 0/0 · DD 0/0 · BARA 0/0 · MOLL_EG 27/13 ·
+  MOLL_1OG 16/13 · MUTH_E2 13/8. Größte Nester: MUTH `raum_94` 6 · OG2 `raum_9` 6 ·
+  MOLL_1OG `raum_42` 5. Blast Radius über alle 12 Pläne ist Teil von S4e.
+- **S4c** — heilt Gate (10) (Barawitzka `raum_28`).
+- **S3b** — heilt die andere Hälfte von Gate (6) (OG3 `segmente_graph = 0`).
+- **S5c** — die blattlosen Öffnungen, auf denen S7a überwiegend steht (F10; 12 der 14
+  Stiegenhaustüren der Kipp-Räume sind Durchgänge, § 6c).
+- **Board 1 an @mvpo3 (Leonis):** `platzierung/deckung.py` liest die Flags nicht. Einzelliste
+  der 5 Räume / 7 Leuchten in § 6g.7. Nichts davon liegt in diesem Slice — fremdes Package.
+- **Board-Punkt an @EnisAMG (Enis): WOHNKÜCHE in den Kanon.** Größenordnung gemessen:
+  **28 Räume auf 7 von 12 Plänen** (24 heute KÜCHE, 3 untypisiert, 1 GANG) plus 6 Randlagen.
+  **Die 28 sind eine UNTERGRENZE** — beide Messungen suchen denselben Stamm „Wohnk…";
+  Stempel wie „WoKue" oder „W-Küche" fände keine von beiden. Die Folgen hängen an zwei
+  Entscheidungen (wo der Eintrag greift, ob `nutzungsklasse._MAP` mitgeführt wird): heute
+  gewinnt bei einem Eintrag **hinter** `classify_room` weiter der Kompositum-Kopf „…küche"
+  → KÜCHE, es ändert sich nichts. Notlicht kostet nur der Eintrag, der auch die umlautlose
+  Stempelschreibweise `Wohnkche` abdeckt (Rennweg OG1 `raum_10`, 73,06 m² → `raum_12`
+  verliert sein Notlicht); die vom Owner gemeinte Hypothese („die Stempelräume bekommen den
+  Typ") kostet **2 Räume / 88,01 m²** — OG1 `raum_12` (10,94 m²) und MOLL_EG `raum_41`
+  (77,07 m², Raum des `final_exit` `exit_4`, 7 Leuchten). Bis zur Entscheidung ist WOHNKÜCHE
+  **kein** Aufenthaltsraum: fail-safe, das Notlicht bleibt.
+- **KINDERZIMMER** (Owner R4): steht im Kanon und **wird** Aufenthaltsraum — als eigener
+  Slice **nach** dem Stapel, nicht hier. Auf den 12 Plänen heute 0 Fälle, Wirkung 0; der
+  Kommentar über `AUFENTHALTSRAUM` (`wohnungsklasse.py:100-106`) zeigt darauf.
+- Die **8 strict-xfail-Marker** in `test_soll_rennweg.py`/`test_soll_muthgasse.py` müssen
+  vor dem Merge XPASS drehen; die 4 roten `tests/naht`-Meldungen müssen weg sein (2 davon
+  Board 1, 1 S5b-Türblöcke Muthgasse, 1 dieselbe Leuchte wie eine der beiden).
+
+#### 6g.9 Planer-Entscheid 2026-09-25 zu P2 — Weg (ii), der Guard bleibt unverändert
+
+`anker_aus_privat_ziehen` (`wohnungsklasse.py:792`, gerufen in `provider.py:229`) zieht
+Türanker des Stiegenhauses, die geometrisch in einen privat gewordenen Nachbarraum fallen,
+auf die Seite ihres **eigenen** Raums — es streicht sie nicht. Planer-Korrektur **P2** wollte
+die Sperrmenge dieser Funktion von „Klasse `WOHNUNG_PRIVAT`" auf „`bestaetigt_privat`"
+umstellen, und der Planer-Entscheid dazu (Weg (i)) sah vor, den Naht-Guard
+`test_keine_anker_wo_das_notlicht_entzogen_wurde` umzuschreiben und P2 zu bauen.
+
+**Dieser Entscheid ist am 2026-09-25 ZURÜCKGENOMMEN. Es gilt Weg (ii): P2 ist nicht gebaut,
+der Guard bleibt in beiden Zusicherungen wörtlich unverändert.** Begründung, in der Form, in
+der die Urteile sie gemessen haben:
+
+1. **Die vorgeschlagene neue Guard-Fassung wäre eine Tautologie.** „Fremde Anker in einem
+   *bestätigt* privaten Raum" ist eine echte **Teilmenge** der ersten Zusicherung desselben
+   Tests (alle Anker in `bestaetigt_privat` — nicht nur die fremden) und kann deshalb nie
+   fallen, solange die erste grün ist. Das gilt **per Konstruktion**, weil
+   `bestaetigt_privat` strukturell in GANG/VORRAUM liegt (§ 6g.4), und ist zusätzlich
+   gemessen: auf 6/6 geprüften Plänen ist die neue Fassung in **beiden** Ständen 0 — auch auf
+   Mollgasse 1OG, wo die heutige Fassung mit P2 von 0 auf 2 geht.
+2. **Netto wäre der Umbau der Wegfall des einzigen Bandes über die 8 unbestätigt privaten
+   Räume** (UG `raum_6`, OG1 `raum_12`, DG1 `raum_8`, MOLL_1OG `raum_16`/`19`/`26`/`69`/
+   `72`). Das übrige Deckungsinventar ist OG3-gebunden, und OG3 hat `bestaetigt_privat` und
+   `unbestaetigt_privat` **leer** — dort ist der Stand mit und ohne P2 in allen Zählweisen
+   gleich.
+3. **Die Begründung des Entscheids trägt nicht: `anker_aus_privat_ziehen` entzieht nichts.**
+   Die Anker gehören dem STIEGENHAUS (`raum_64` auf Mollgasse 1OG); MOLL_1OG `raum_69` und
+   `raum_72` haben keine eigenen Anker, behalten in beiden Lesarten Flags 11, ihre
+   Zirkulation und ihre Leuchten, und die Ankerzahl ist in beiden Ständen 47. Der
+   Owner-Grundsatz zum Entzug entscheidet diesen Fall also nicht. **Was P2 messbar ändert,
+   ist allein die Abnahmezahl des Slices:** „Anker in `WOHNUNG_PRIVAT`" (geometrische
+   Zählweise `tests/gate/gate_og3.py`) steigt auf Mollgasse 1OG von **0 auf 2**. Ein
+   schlechterer Ist-Wert ohne Gegenleistung ist keine zulässige Richtung.
+
+Zusätzlich gemessen: P2 macht **vier** Zusicherungen in **zwei** Dateien rot (drei
+Unit-Zusicherungen im Abschnitt „(j) B2" von `tests/raumerkennung/test_wohnungsklasse.py` —
+eine davon, `test_fremder_anker_wird_auch_aus_unbestaetigt_privatem_raum_gezogen`, sagt die
+Gegenthese im Namen — und `test_keine_anker_wo_das_notlicht_entzogen_wurde[1OG_MOLL]` in
+`tests/naht/test_s7_wohnungsklasse.py`). P2 ist also **nutzlos, nicht schädlich**: auf
+12/12 Plänen gewinnt kein Raum einen Anker, eine Zirkulation, ein Notlicht oder eine
+Leuchte. Und nach der Owner-Lesart aus § 6g.4 („bestätigt = Klasse PRIVAT ∧ Ankerregel roh
+PRIVAT") wäre die neu gefasste Zusicherung mit P2 **selbst rot**, weil `raum_69`/`raum_72`
+nach diesem Wortlaut bestätigt privat sind (§ 6g.7).
+
+**Ausdrücklich festgehalten, damit die Gegenmeinung nicht verloren geht:** die Review-Linse
+*Regel* hat empfohlen, **P2 zu bauen, aber mit einer anderen Guard-Fassung** („die Sache
+selbst ist richtig und kostet nachweislich nichts — nur die Fassung des Guards ist falsch";
+Vorschlag: die zweite Zusicherung behalten und die zwei Anker als benannte Ausnahme
+abziehen). Diese Linse hat ihre Korrektur in der Folgerunde selbst zurückgezogen, weil sie
+nur **eine von vier** Zusicherungen geheilt hätte. Soll P2 später doch kommen, darf die
+zweite Zusicherung nicht durch eine Teilmenge der ersten ersetzt werden, sondern nur durch
+eine Zusicherung mit eigenem Inhalt (etwa ein gemessenes Höchstband „Anker in
+`WOHNUNG_PRIVAT`, geometrische Gate-Zählweise, je Plan ≤ heutiger Wert" über alle 12 Pläne)
+— und die drei B2-Unit-Zusicherungen müssen ausdrücklich mitentschieden werden.
+
 ---
 
 ## 7. Diagnose S3b — Restflächen enden vor den Blocktüren (Owner-Definition, kein Code)
