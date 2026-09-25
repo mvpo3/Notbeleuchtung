@@ -78,6 +78,13 @@ _KAT: dict[str, tuple[str, str, str, str | None]] = {
     "aussen_zu":  ("AUSSEN_GESCHLOSSEN (kein Weg ins Freie)", "#42a5f5",
                    "#0d47a1", "xx"),
     "unbekannt":  ("UNBEKANNT — nicht typisiert", "#ff00ff", "#8b0060", None),
+    # § 6g Schritt 3: GANG/VORRAUM, dessen Nutzungsklasse keine Regel
+    # entschieden hat. Magenta wie „unbekannt" (Ehrlichkeit vor Schönheit),
+    # die Schraffur trennt beide. Ohne diesen Eintrag zeichnete das Bild ihn
+    # als `gang_allg` bzw. `stiege` — es behauptete eine Entscheidung, die
+    # niemand getroffen hat (Befund B5).
+    "unbestimmt": ("UNBESTIMMT — Nutzungsklasse nicht entschieden",
+                   "#ff00ff", "#8b0060", "xx"),
 }
 
 #: raum_typ → Kategorie. Typen, die es im Korpus gibt (18 gemessen) plus die
@@ -160,6 +167,8 @@ def _kategorie(raum) -> str:
         # kennen ihn nur nicht einsortiert. Als Nebenraum zeigen, nicht als
         # UNBEKANNT — sonst behauptet das Bild eine Lücke, die keine ist.
         return "neben"
+    if typ in ("GANG", "VORRAUM") and raum.nutzungsklasse is None:
+        return "unbestimmt"
     if kat == "gang_allg" and (raum.nutzungsklasse or "") == "WOHNUNG_PRIVAT":
         return "gang_priv"
     if kat == "freiflaeche" and (raum.nutzungsklasse or "") == "AUSSEN":

@@ -124,6 +124,11 @@ _KAT: dict[str, tuple[str, str, str, str | None]] = {
     "frei":      ("Balkon / Loggia / Terrasse", "#a5d6a7", "#2e7d4f", None),
     "sonstig":   ("sonstiger Typ (nicht in der Farbtabelle)", "#d7ccc8", "#5d4037", None),
     "unbekannt": ("UNBEKANNT — nicht typisiert", "#ff00ff", "#8b0060", None),
+    # § 6g Schritt 3: Gang/Vorraum, dessen Klasse das zweistufige Verfahren
+    # NICHT entschieden hat. Magenta wie „unbekannt" (Ehrlichkeit vor
+    # Schönheit), die Schraffur trennt beide.
+    "unbestimmt": ("UNBESTIMMT — Nutzungsklasse nicht entschieden",
+                   "#ff00ff", "#8b0060", "xx"),
     "nische":    ("NISCHE — Nische, Hinweis: prüfen, ob eigener Raum", "#ff00ff", "#8b0060", None),
 }
 #: raum_typ → Kategorie. Ein Typ, der hier fehlt, wird "sonstig" — NICHT
@@ -213,6 +218,8 @@ def _kategorie(typ: str | None, nutzungsklasse: str | None) -> str:
     k = _TYP_KAT.get(t)
     if k is None:
         return "sonstig"
+    if t in ("GANG", "VORRAUM") and nutzungsklasse is None:
+        return "unbestimmt"
     if k == "gang" and nutzungsklasse == "WOHNUNG_PRIVAT":
         return "gang_whg"
     return k
