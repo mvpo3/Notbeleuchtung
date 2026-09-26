@@ -830,12 +830,14 @@ def anker_aus_privat_ziehen(anker: list[Anker], raeume: list[Raum],
     striche 8 Anker (Mollgasse EG 4, Mollgasse 1OG 4), „ziehen" keinen — die
     Anker wandern 50 bis 189 mm.
 
-    „Privat geworden" heißt: GANG/VORRAUM der Klasse ``WOHNUNG_PRIVAT`` — nur
-    deren Klasse ändert der Slice, auch ohne Bestätigung der Ankerregel
-    (gemessen Mollgasse EG ``raum_7``, von Schritt 2 privat: vier Anker von
-    STIEGENHAUS ``raum_51`` darin). Zimmer, Bäder usw. waren schon vorher
-    privat; was dort liegt, ist nicht Sache dieses Slices. Gezogen werden nur
-    FREMDE Anker; die eigenen eines unbestätigt privaten Raums bleiben, er
+    Gesperrt ist jeder Raum der Klasse ``WOHNUNG_PRIVAT`` — auch ohne
+    Bestätigung der Ankerregel (gemessen Mollgasse EG ``raum_7``, von Schritt 2
+    privat: vier Anker von STIEGENHAUS ``raum_51`` darin) und seit Slice S3b
+    auch Zimmer, Bäder usw., nicht nur GANG/VORRAUM: erreicht die Restfläche
+    des Stiegenhauses eine Blocktür, liegt ihr Türanker auf dem Türpunkt, den
+    das gestempelte Zimmer deckt (Rennweg OG3 ``rest_3_tuer_tuer_4`` in ZIMMER
+    ``raum_2``, Gate (6) zählt jeden ``WOHNUNG_PRIVAT``-Raum). Gezogen werden
+    nur FREMDE Anker; die eigenen eines unbestätigt privaten Raums bleiben, er
     behält sein Notlicht.
 
     **Planer-Entscheid P2 (Runde 11) — gemessen, NICHT gebaut (Runde 14):**
@@ -858,8 +860,7 @@ def anker_aus_privat_ziehen(anker: list[Anker], raeume: list[Raum],
     polys = {r.id: Polygon(r.polygon_mm).buffer(0) for r in raeume
              if len(r.polygon_mm) >= 3}
     sperren = [(r.id, polys[r.id]) for r in sorted(raeume, key=lambda x: x.id)
-               if r.raum_typ in SCOPE_TYPEN and r.nutzungsklasse == PRIVAT
-               and r.id in polys]
+               if r.nutzungsklasse == PRIVAT and r.id in polys]
     if not sperren:
         return anker
 
