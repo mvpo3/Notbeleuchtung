@@ -305,11 +305,17 @@ FIXTURE_PLAENE = ["og1", "og2", "og3", "ug", "eg", "dg1", "dg2", "dd", "bara",
 #: Duplikat des äußeren Wegs, also eine Änderung der Start-Regel in
 #: ``fluchtweg.py``. Keins von beiden ist gebaut; Entscheidung beim Owner
 #: (Board-Frage 1, Messung A/B/C im Bericht S7c Runde 2).
+#: **Owner-Entscheid 2026-09-26 zu Board-Frage 1: Option A.** (2, 9) ist damit
+#: ZIELBILD, kein Charakterisierungswert mehr: „privat heißt keine eigene
+#: Zirkulation" (Durchleitungs-Entscheid) gilt unverändert; die 17 stammt aus
+#: einem Stand, in dem die Vorräume Erschließung waren, und ist überholt
+#: (docs/GATE_TUERSTAPEL.md § 6g.10). B und C sind verworfen.
 MESSFALL_I_MOLL = (2, 9)
 MESSFALL_I_OG1 = (3, 9, 4)
 #: Die acht Wege, die § 6g.8/``bericht_r14.md`` als S7c-Abnahme führt
 #: (HEAD-IDs) — mit der gebauten Regel je Starttür unerreichbar, zurück nur
-#: über (B) oder (C), s. o.
+#: über (B) oder (C), s. o. Owner-Entscheid 2026-09-26 (Option A): ihre
+#: Abwesenheit ist Zielbild.
 S7C_ACHT_WEGE = ("seg_graph_tuer_25", "seg_graph_tuer_28", "seg_graph_tuer_5",
                  "seg_graph_tuer_6", "seg_graph_tuer_7", "seg_graph_tuer_8",
                  "seg_graph_tuer_82", "seg_graph_tuer_83")
@@ -995,8 +1001,9 @@ def test_keine_leuchten_in_wohnung_privat(pfad, floor):
 
 # ── (g) Messfälle (i) und (iv) in der Zählweise aus § 6g ────────────────────
 def test_messfall_i_stiegenhaus_raum_35(moll1og):
-    """CHARAKTERISIERUNG, KEIN ZIELBILD — S7c Runde 1 hat die Owner-Regel
-    gebaut und die Abnahmezahl NICHT erreicht; mit der gebauten Regel ist sie
+    """ZIELBILD seit Owner-Entscheid 2026-09-26 (Board-Frage 1, Option A) —
+    S7c Runde 1 hat die Owner-Regel gebaut und die alte Abnahmezahl 17 NICHT
+    erreicht; mit der gebauten Regel ist sie
     je Starttür unerreichbar (ein GRAPH-Segment je Tür mit korrigierter Rolle
     ``wohnungseingang``, ``fluchtweg.py:329ff``, ID ``seg_graph_<tuer>``).
     17 nur über (B) innere Türen als Start — gegen den Owner-Satz „die innere
@@ -1049,8 +1056,11 @@ def test_messfall_i_acht_wege_ueber_das_stiegenhaus(moll1og):
     die acht nur über (B) die inneren Türen als Start — gegen den Owner-Satz
     „die innere Tür wird zimmertuer" — oder (C) je innerer Tür ein Duplikat
     des äußeren Wegs (Start-Regel in ``fluchtweg.py``). Diese Zusicherung hält
-    beide Befunde fest, damit die Zahl nicht unbemerkt wandert
-    (Board-Frage 1)."""
+    beide Befunde fest, damit die Zahl nicht unbemerkt wandert.
+
+    Owner-Entscheid 2026-09-26 (Board-Frage 1, Option A): die Abwesenheit der
+    acht Wege ist ZIELBILD — ihre Startpunkte waren innere Türen privater
+    Vorräume, und „privat heißt keine eigene Zirkulation" (§ 6g.10)."""
     _, modell, _ = moll1og
     ids = {s.segment_id for s in modell.zirkulation.segmente}
     assert {"seg_graph_tuer_3", "seg_graph_tuer_4"} <= ids, sorted(ids)
@@ -1111,8 +1121,8 @@ def test_messfall_iv_gang_raum_34(moll1og):
     Messfalls (i); mit der gebauten Regel sind sie je Starttür unerreichbar
     (ein GRAPH-Segment je Tür mit korrigierter Rolle ``wohnungseingang``,
     ``fluchtweg.py:329ff``) und kämen nur über (B) oder (C) zurück (bei
-    ``MESSFALL_I_MOLL``). Die 9 bleiben damit CHARAKTERISIERUNG — gemessen nach
-    S7c unverändert, kein schlechterer Ist-Wert. Start/Ziel 3 ist HEAD =
+    ``MESSFALL_I_MOLL``). Die 9 sind seit Owner-Entscheid 2026-09-26 (Option A)
+    ZIELBILD — gemessen nach S7c unverändert. Start/Ziel 3 ist HEAD =
     Runde 6."""
     prov, modell, _ = moll1og
     r34 = next(r for r in modell.raeume if r.id == "raum_34")
