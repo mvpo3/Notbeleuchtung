@@ -842,6 +842,32 @@ def test_fremder_anker_wird_auch_aus_unbestaetigt_privatem_raum_gezogen():
     assert neu["vor_tuer_1"].xy_mm == (7000.0, 2000.0)
 
 
+def test_stiegenhaus_anker_wird_auch_aus_privatem_zimmer_gezogen():
+    """Slice S3b, Rennweg OG3 ``rest_3_tuer_tuer_4``: erreicht die Restfläche
+    des Stiegenhauses die Blocktür, bekommt es seinen Türanker auf dem
+    Türpunkt. Den deckt das gestempelte ZIMMER, das durch die Öffnung ragt —
+    die Restfläche endet ``_BELEGT_PUFFER_MM`` + ½ Zelle davor (nominal
+    125 mm, an ``tuer_4`` nach simplify/snap gemessen 118,5 mm).
+    Gate (6) zählt JEDEN Raum der Klasse ``WOHNUNG_PRIVAT``, nicht nur
+    GANG/VORRAUM: der Anker wird auch aus dem Zimmer auf die Stiegenhaus-Seite
+    gezogen, nicht gestrichen."""
+    from notbeleuchtung.hauptengine.contracts.raum_modell import Anker
+
+    stgh = Raum(id="stgh", raum_typ="STIEGENHAUS",
+                polygon_mm=_rechteck(0, 0, 4880, 4000),
+                nutzungsklasse="ALLGEMEIN_ERSCHLIESSUNG")
+    zi = Raum(id="zi", raum_typ="ZIMMER",
+              polygon_mm=_rechteck(4990, 0, 9000, 4000),
+              nutzungsklasse="WOHNUNG_PRIVAT")
+    tueren = [_tuer("tw", "zi", "stgh", "wohnungseingang", xy=(5000.0, 2000.0))]
+    a = Anker(id="stgh_tuer_tw", typ="TUER", xy_mm=(5000.0, 2000.0),
+              raum_id="stgh")
+    neu = wk.anker_aus_privat_ziehen([a], [stgh, zi], tueren)
+    assert len(neu) == 1
+    assert not Polygon(zi.polygon_mm).contains(Point(neu[0].xy_mm)), neu[0].xy_mm
+    assert Polygon(stgh.polygon_mm).contains(Point(neu[0].xy_mm)), neu[0].xy_mm
+
+
 def test_anker_ohne_ausweg_wird_gestrichen():
     """Lässt sich der Anker nicht auf die eigene Seite ziehen, wird er
     gestrichen — ein Anker in einer Wohnung ist die Verletzung, die Gate (6)
