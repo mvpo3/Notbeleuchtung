@@ -6,8 +6,9 @@ Wandmaske rekonstruiert:
 
     Fläche = Außenkontur − wand_union − bereits belegte Räume; Türöffnungen
     werden als Trennlinien (Kreisstempel) in die Wandmaske eingezeichnet
-    (50-mm-Raster wie stempel_flutung), freie Zellen gelabelt, je Komponente
-    ≥1 m² ein ``Raum``. Typ-Regeln:
+    (50-mm-Raster wie stempel_flutung), freie Zellen gelabelt, die Labels
+    geodätisch in die Türscheiben zurückgedehnt (wie stempel_flutung, Slice
+    S3b) und je Komponente ≥1 m² ein ``Raum``. Typ-Regeln:
 
     - klein (<3 m²) mit Schacht-Text/STO-Kästchen drin    → SCHACHT (Planzeichen)
     - enthält STIEGE-/Treppen-/LIFT-Block-Insert          → STIEGENHAUS
@@ -27,6 +28,7 @@ import numpy as np
 from shapely.geometry import Point, Polygon
 from skimage.measure import label
 from skimage.morphology import disk
+from skimage.segmentation import watershed
 
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
 
@@ -174,6 +176,7 @@ def komponenten_ohne_stempel(
     _fuelle(wand, union, raster)
     blockiert |= wand
     # Türöffnungen als Trennlinien versiegeln (wie stempel_flutung, Stufe 0).
+    siegel = np.zeros((h, w), dtype=bool)
     for t in tueren:
         r_px = max(1, round(max(_TUER_RAND_MM, t.breite_mm or 0.0) / res))
         rr, cc = raster.px(t.xy_mm)
@@ -181,21 +184,40 @@ def komponenten_ohne_stempel(
         r0, c0 = rr - r_px, cc - r_px
         rs = slice(max(r0, 0), min(r0 + d.shape[0], h))
         cs = slice(max(c0, 0), min(c0 + d.shape[1], w))
-        blockiert[rs, cs] |= d[rs.start - r0:rs.stop - r0, cs.start - c0:cs.stop - c0]
+        siegel[rs, cs] |= d[rs.start - r0:rs.stop - r0, cs.start - c0:cs.stop - c0]
+    blockiert |= siegel
+    belegt = np.zeros((h, w), dtype=bool)
     for poly in bereits_belegte_polygone:
         if len(poly) < 3:
             continue
         shp = Polygon(poly).buffer(_BELEGT_PUFFER_MM)
         if not shp.is_empty:
             _fuelle(blockiert, shp, raster)
+            _fuelle(belegt, shp, raster)
 
     stiegen, sto = _marker_punkte(plan)
     schacht_texte = _schacht_text_punkte(plan)
     grenze = union.boundary if not union.is_empty else None
-    labels = label(~blockiert)
+    frei = ~blockiert
+    labels = label(frei)
+    # Slice S3b (docs/GATE_TUERSTAPEL.md § 7): die Türscheiben geodätisch
+    # zurückdehnen wie stempel_flutung.masken — nur Zellen, die allein die
+    # Scheibe sperrt (nie Wand, Freiland, belegter Raum), Watershed auf
+    # konstantem Relief mit ALLEN Labels als Markern, damit sich zwei
+    # Restflächen an derselben Tür an der Türlinie treffen. Ohne das endeten
+    # die Konturen r mm vor der Tür (Rennweg OG3: `seite_fehlt` an 7 Blocktüren).
+    # Keine Lochfüllung: `_vektorisiere` nimmt ohnehin die Außenkontur; die
+    # Füllung wirkte nur an Diagonal-Engstellen und zog dort Wandzellen als
+    # Brücke ein (Rennweg DG2: Schacht-Lappen 1,85 m² an `rest_1`).
+    siegel &= innen & ~wand & ~belegt
+    if siegel.any() and labels.max():
+        labels = watershed(np.zeros(labels.shape, dtype=np.uint8), markers=labels,
+                           mask=frei | siegel)
     out: list[Raum] = []
     for lbl in range(1, int(labels.max()) + 1):
         m = labels == lbl
+        # _MIN_M2 erst NACH der Rückdehnung (vorher fielen Kleinräume hinter
+        # einer Tür weg, deren erodierter Kern < 1 m² war).
         if m.sum() * res * res < _MIN_M2 * 1e6:
             continue
         shp = _vektorisiere(m, raster, grenze)
