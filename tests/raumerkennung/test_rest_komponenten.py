@@ -155,3 +155,129 @@ def test_text_ohne_schacht_wortgrenze_ist_keine_evidenz():
                  stiegen=[_SCHACHT_MITTE])
     klein = _klein(komponenten_ohne_stempel(plan, _WAENDE_S3A, [_TUER], [_LINKS]))
     assert klein.raum_typ == "STIEGENHAUS"
+
+
+# --- S3b: Rückdehnung der Türscheiben (docs/GATE_TUERSTAPEL.md § 7) ---------
+#
+# Die Türscheibe (r = max(600, Breite) mm) trennt die Restflächen an der
+# Öffnung; ohne Rückdehnung enden die Konturen r mm vor der Tür (Rennweg OG3:
+# 810–968 mm, 7 Blocktüren `seite_fehlt`). Zurückgedehnt wird wie in
+# ``stempel_flutung``: nur die versiegelten Zellen, geodätisch, mit allen
+# Restflächen als konkurrierenden Markern — nie in Wand, Freiland oder belegte
+# Räume.
+
+_ZELLE_MM = 50.0                       # Rasterweite der Rest-Stufe
+_TUERPUNKT = Point(_TUER.xy_mm)        # (4000, 1950), Trennwand x 3900..4100
+_WAENDE_S3B = _WAENDE[:6]              # zwei leere Räume, eine 0.9-m-Öffnung
+
+
+def _links_rechts(raeume):
+    links = [Polygon(r.polygon_mm) for r in raeume
+             if Polygon(r.polygon_mm).centroid.x < _TUERPUNKT.x]
+    rechts = [Polygon(r.polygon_mm) for r in raeume
+              if Polygon(r.polygon_mm).centroid.x > _TUERPUNKT.x]
+    return links, rechts
+
+
+def test_s3b_kontur_erreicht_die_tuerlinie():
+    """Beide Restflächen reichen bis auf eine Rasterzelle an den Türpunkt."""
+    links, rechts = _links_rechts(
+        komponenten_ohne_stempel(None, _WAENDE_S3B, [_TUER], []))
+    assert len(links) == 1 and len(rechts) == 1
+    abstand = [round(p.distance(_TUERPUNKT), 1) for p in (links[0], rechts[0])]
+    assert max(abstand) <= _ZELLE_MM, abstand
+
+
+def test_s3b_zwei_restflaechen_trennen_sich_an_der_tuerlinie():
+    """Zwei Restflächen an derselben Tür treffen sich an der Türlinie: keine
+    läuft über die andere, beide bleiben eigene Räume."""
+    links, rechts = _links_rechts(
+        komponenten_ohne_stempel(None, _WAENDE_S3B, [_TUER], []))
+    assert len(links) == 1 and len(rechts) == 1
+    li, re_ = links[0], rechts[0]
+    assert li.intersection(re_).area < 1e4          # < 0,01 m²
+    assert li.bounds[2] <= _TUERPUNKT.x + _ZELLE_MM, li.bounds
+    assert re_.bounds[0] >= _TUERPUNKT.x - _ZELLE_MM, re_.bounds
+    assert li.distance(re_) <= 2 * _ZELLE_MM
+
+
+def test_s3b_kein_wachsen_in_belegte_raeume():
+    """Die Rückdehnung endet am (gepufferten) belegten Raum — die Restfläche
+    reicht bis an die Tür, aber nicht in den gestempelten Raum hinein."""
+    raeume = komponenten_ohne_stempel(None, _WAENDE_S3B, [_TUER], [_LINKS])
+    assert len(raeume) == 1
+    rest = Polygon(raeume[0].polygon_mm)
+    assert rest.intersection(Polygon(_LINKS)).area < 1e4
+    assert rest.distance(_TUERPUNKT) <= 2 * _ZELLE_MM
+
+
+# Drei Räume in einer Reihe, zwei Öffnungen: Reihenfolge-Invarianz.
+_WAENDE_REIHE = [
+    _wk(0, 0, 11000, 200), _wk(0, 3800, 11000, 4000),
+    _wk(0, 0, 200, 4000), _wk(10800, 0, 11000, 4000),
+    _wk(3900, 200, 4100, 1500), _wk(3900, 2400, 4100, 3800),
+    _wk(7400, 200, 7600, 1500), _wk(7400, 2400, 7600, 3800),
+]
+_TUER_2 = TuerOeffnung(xy_mm=(7500.0, 1950.0), breite_mm=900.0,
+                       winkel_grad=None, quelle="block")
+_RECHTS_REIHE = [(7600.0, 200.0), (10800.0, 200.0), (10800.0, 3800.0),
+                 (7600.0, 3800.0)]
+
+
+def _abdruck(raeume):
+    return [(r.id, r.raum_typ, round(r.flaeche_m2, 6),
+             [(round(x, 3), round(y, 3)) for x, y in r.polygon_mm])
+            for r in raeume]
+
+
+def test_s3b_reihenfolge_invariant():
+    """Türen, Wandkörper und belegte Polygone in anderer Reihenfolge →
+    dieselben Räume (IDs, Typen, Polygone)."""
+    for belegt in ([], [_LINKS, _RECHTS_REIHE]):
+        a = komponenten_ohne_stempel(None, _WAENDE_REIHE, [_TUER, _TUER_2], belegt)
+        b = komponenten_ohne_stempel(None, list(reversed(_WAENDE_REIHE)),
+                                     [_TUER_2, _TUER], list(reversed(belegt)))
+        assert a
+        assert _abdruck(a) == _abdruck(b)
+
+
+def test_s3b_mittlerer_raum_erreicht_beide_tueren():
+    """Der Mittelraum reicht an beide Türlinien, auch wenn beide Nachbarn
+    belegt sind (Muster Rennweg OG3 `rest_4`: Stiegenhaus zwischen Wohnungen)."""
+    raeume = komponenten_ohne_stempel(None, _WAENDE_REIHE, [_TUER, _TUER_2],
+                                      [_LINKS, _RECHTS_REIHE])
+    assert len(raeume) == 1
+    mitte = Polygon(raeume[0].polygon_mm)
+    assert mitte.distance(_TUERPUNKT) <= 2 * _ZELLE_MM
+    assert mitte.distance(Point(_TUER_2.xy_mm)) <= 2 * _ZELLE_MM
+
+
+# Kleinraum hinter einer 600-mm-Tür: erodiert < 1 m², zurückgedehnt ≥ 1 m².
+# Gang unten (y 200..1200), Kleinraum oben rechts (x 3800..4800, y 1400..2700,
+# 1,30 m²), Tür in der Zwischenwand bei (4300, 1300).
+_WAENDE_KLEIN = [
+    _wk(0, 0, 5000, 200), _wk(0, 2700, 5000, 2900),
+    _wk(0, 0, 200, 2900), _wk(4800, 0, 5000, 2900),
+    _wk(200, 1200, 4000, 1400), _wk(4600, 1200, 4800, 1400),
+    _wk(3600, 1400, 3800, 2700),
+]
+_TUER_KLEIN = TuerOeffnung(xy_mm=(4300.0, 1300.0), breite_mm=600.0,
+                           winkel_grad=None, quelle="block")
+_KLEINRAUM = Polygon([(3800, 1400), (4800, 1400), (4800, 2700), (3800, 2700)])
+
+
+def test_s3b_mindestflaeche_gilt_nach_der_rueckdehnung():
+    """``_MIN_M2`` wird NACH der Rückdehnung geprüft: der Kleinraum ist
+    erodiert kleiner als 1 m² (die Türscheibe frisst 0,6 m tief hinein),
+    zurückgedehnt 1,3 m² — er ist ein Raum und endet an der Türlinie."""
+    raeume = komponenten_ohne_stempel(None, _WAENDE_KLEIN, [_TUER_KLEIN], [])
+    klein = [r for r in raeume
+             if _KLEINRAUM.contains(Polygon(r.polygon_mm).representative_point())]
+    assert len(klein) == 1, [(r.id, r.flaeche_m2) for r in raeume]
+    assert 1.0 <= klein[0].flaeche_m2 <= 1.4
+    assert Polygon(klein[0].polygon_mm).distance(Point(_TUER_KLEIN.xy_mm)) <= _ZELLE_MM
+    # Der Gang wächst bis an die Tür, aber nicht in den Kleinraum.
+    gang = [Polygon(r.polygon_mm) for r in raeume if r is not klein[0]
+            and Polygon(r.polygon_mm).distance(Point(_TUER_KLEIN.xy_mm)) <= _ZELLE_MM]
+    assert len(gang) == 1
+    assert gang[0].intersection(_KLEINRAUM).area < 1e4
