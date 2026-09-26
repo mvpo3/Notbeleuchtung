@@ -280,6 +280,7 @@ Der Stapel **S4a → S4b → S5b → S7a+S7b → S3b → S5c wird nur gemeinsam 
 | (8) | OG1: jeder von der Referenz **geforderte** offene Übergang besteht | `anzahl ≥ 1` für O03, O04, O05 und den Ersatzfall O01/O02 (§ 1e); Ergänzung des Planers, damit S5b keine geforderten Übergänge löscht; None = Verstoß |
 | (9) | Mollgasse 1OG: keine Zirkulation in der Wohnung | `python scripts/analyse/mollgasse_gt_vergleich.py 1OG` gegen `tests/fixtures/mollgasse_gt/`: Zirkulationspunkte in ZIMMER, BAD, WC und privatem VORRAUM = 0 (Owner-Ansage 2026-09-20, Abnahme von S7a+S7b, § 6f). Vorher-Wert laut Leonis: VORRAUM 69, ZIMMER 3, dazu WC/BAD/AR — **nicht selbst gemessen**. **Noch nicht in `gate_regel.py` verdrahtet:** Skript, Fixtures und Leonis' Bericht liegen am 2026-09-20 weder auf `origin/main` noch auf einem anderen Remote-Branch; bis sie im Baum sind, ist (9) Doku-Pflicht, keine geprüfte Regel |
 | (10) | Barawitzka EG: der ABSTELLRAUM 1,98 m² hat mindestens eine Verbindung | `barawitzka.anzahl ≥ 1` (§ 1f, `tests/gate/gate_barawitzka.py`); `anzahl` None oder fehlender Abschnitt = Verstoß. Owner-Entscheid 2026-09-20 nach dem Blast Radius: **heute verletzt** (0 Verbindungen), zu drehen ist sie vom S4a-Rest (Doppelflügel-Paarung), nicht von S7 — festgehalten, damit sie nicht untergeht. Gemessen wird nur der Nachher-Stand; die eingecheckte Nullmessung stammt von vor dem Messfall und führt den Abschnitt nicht: als Vorher-Stand ist das kein Absturz, als Nachher-Stand ein Verstoß (fail closed) |
+| (11) | Rennweg DG1: das Geschoss behält nach dem Stapel einen echten Ausgang | Owner-Entscheid 2026-09-26 (VA-5, § 6g.11): „DG1 hat nach dem Stapel mindestens einen Ausgang, und keiner davon führt durch den Liftschacht." Messbar als `dg1.ausgaenge ≥ 1` **und** kein Ausgang, dessen Tür am Liftschacht liegt (Raumpaar mit dem Aufzugsring bzw. Türpunkt < 250 mm vom `lift_1`-Polygon). Heute ist `durchgang_9` (`rest_2` ↔ `rest_3`, 4 215 mm, Mittelpunkt im Lift) der **einzige** Ausgang von DG1 — S5c darf ihn nur entfernen, wenn ein echter Ausgang bleibt; sonst wäre das Geschoss ausgangslos. **Noch nicht in `gate_regel.py` verdrahtet** (Verdrahtung mit S5c; bis dahin Doku-Pflicht). Derselbe Messfall gilt für die Lifttür-Ausgänge OG1 `exit_durchgang_8`, EG `exit_durchgang_19`, UG `exit_durchgang_2` (Nebenbefund VA-5) |
 
 Zur Nummer: die Owner-Ansage vom 2026-09-20 nennt die Mollgasse-Abnahme „Bedingung (7)".
 (7) und (8) sind seit `dd3cfdc` mit den Referenz-Verbindungen belegt; die Mollgasse-Abnahme
@@ -1017,7 +1018,11 @@ unverändert.
   `raum_35` Start/Ziel; die 17 ist überholt, § 6g.10), `tests/naht` führt (2, 9) / 9 als
   Zielbild; Rennweg OG1 `rest_2` = 4 bleibt Abnahme und ist erfüllt (hängt an Option W von
   `raum_12`, Kanon-Punkt WOHNKÜCHE). S7c ist damit im Stapel merge-reif; Gate (3)(6)(10) wie
-  vor S7c.
+  vor S7c. Branch `selman/fix-s7c-rolle-aussen` gepusht (Owner-GO 2026-09-26), kein Merge.
+- **Reihenfolge ab 2026-09-26 (Owner):** nächster Stapel-Slice ist **S3b**; S4e, S4c und S5c
+  folgen. **S3c** (Fremdcluster-Filter und Extents-Ausreißer, VA-6 § 6g.11, `OFFENE_FRAGEN.md`)
+  kommt als eigener Slice **nach dem Merge**, nicht in den Stapel. Neue Gate-Bedingung **(11)**
+  (§ 3, VA-5): DG1 behält nach dem Stapel einen echten Ausgang, keiner durch den Liftschacht.
 - **S4e** (Owner R5) — Regel 5 der Türtypisierung einschränken: eine Tür GANG → privater
   Raum wird nur dann roh zum Wohnungseingang, wenn der Gang selbst allgemein erschlossen
   ist, also vom Stiegenhaus ohne Wohnungseingang erreichbar. Ausgangsmessung liegt vor:
@@ -1321,6 +1326,15 @@ Raum-/Türreihenfolge (`fluchtweg.py:420-452`; EG, OG3, MUTH_E2).
   aber am Lifttür-Ausgang — Messfall für die Lift-Reihenfolge. Belege:
   Session-Scratch `…/8d935db0-…/scratchpad/s7c/va_diag/` (Executor `bericht_va.md`, zwei
   `review_*_r1/urteil.md`).
+  **Owner-Entscheid 2026-09-26:** Zuordnung primär S5b mit S5c-Rest übernommen — Heilung im
+  Stapel-Slice S5c (blattlose Öffnungen), Ursache im S5b-Prädikat (§ 8f). **Gate-Bedingung (11)**
+  (§ 3): „DG1 hat nach dem Stapel mindestens einen Ausgang, und keiner davon führt durch den
+  Liftschacht" — ohne diese Bedingung könnte S5c den falschen Ausgang entfernen und das Geschoss
+  ausgangslos zurücklassen. Der Nebenbefund gehört dazu: dieselbe Mitursache macht die Lifttüren
+  zu `stair_exit` (OG1 `exit_durchgang_8`, EG `exit_durchgang_19`, UG `exit_durchgang_2`). Die
+  OG1-Abnahme „4 an `rest_2`" besteht aus drei Wegen mit zwei Liftfahrten plus einem Fallback im
+  Aufzugsgang: **nach S5c prüfen, ob sie auf 1 fällt, und dann die Abnahme nachziehen, nicht die
+  Regel.**
 - **VA-6 (Owner 2026-09-26) Zweiter Zeichnungscluster im EG-DXF.** Bestätigt: **11 Räume**
   (171,74 m²), **15 Türen**, **1 365,8 m** Polygonabstand (Zentrum 1 380,3 m), Lage
   27,3 × 20,3 m. Reiner ArchiCAD-Zonensatz: 28 Top-Level-Entities (11 LWPOLYLINE „New_080
@@ -1358,7 +1372,19 @@ Raum-/Türreihenfolge (`fluchtweg.py:420-452`; EG, OG3, MUTH_E2).
   **Zuständigkeit, nur benannt:** Ursprung Raumerkennung (Selman: `raumlayer`, `provider`,
   `durchgaenge_ohne_tuerblatt`, `dxf_load`); Render-Wächter hauptengine; Leuchten als Folge
   Platzierung (@mvpo3). Die Owner-Frage aus dem Audit bleibt: **soll das Modell fremde Cluster
-  führen?** Gesonderte Untersuchung wie vom Owner verlangt — kein Slice des Türstapels.
+  führen?**
+  **Owner-Entscheid 2026-09-26: Nein.** Ein Cluster ohne jeden Wandpunkt, über 1 km vom
+  Hauptgebäude entfernt, gehört nicht ins RaumModell. Regel (wörtlich): Hauptcluster ist die zusammenhängende Menge mit den meisten Wandpunkten. Alles, was weiter als
+  100 m davon entfernt liegt UND null Wandkörper enthält, wird verworfen — nicht stillschweigend,
+  sondern als Warnung „Fremdcluster verworfen" mit Anzahl Räume, Türen, Entfernung und Koordinaten
+  im Bericht. Ein entfernter Cluster MIT Wandkörpern wird nicht verworfen (könnte ein zweiter Bauteil
+  sein), sondern gemeldet und zur Entscheidung vorgelegt. Der Filter greift zentral an einer Stelle,
+  nicht in jeder Teilfunktion einzeln (Kandidat: direkt nach dem Laden, vor der Raumbildung; Stelle
+  prüfen und im Bericht begründen). Erwartete Wirkung ausweisen: Rennweg EG Wohnungen 2 → 1, Anker
+  39 → 35, 8 Fluchtweg-Warnungen weg, Platzierung 21 → 17, plus die Wirkung auf alle anderen Pläne.
+  Wenn irgendwo ein echter Bauteil wegfällt, stoppen und melden.
+  **Eigener Slice S3c, nach dem Merge, nicht im Stapel** (`docs/OFFENE_FRAGEN.md`). Zu S3c gehören
+  auch die beiden Zusatzbefunde der Widerleger (dritte Lage im EG-DXF, Extents-Ausreißer im UG).
 
 ## 7. Diagnose S3b — Restflächen enden vor den Blocktüren (Owner-Definition, kein Code)
 
