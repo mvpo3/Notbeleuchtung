@@ -860,7 +860,8 @@ Leuchten. Ohne das zerreißen Wege — gemessen: Mollgasse 1OG STIEGENHAUS `raum
 Segmente, Rennweg UG KINDERWAGENRAUM verliert sein einziges, drei neue
 `fluchtweg_warnungen` „kein final_exit erreichbar". Messfall (ii) (KINDERWAGENRAUM behält
 seinen Weg) und (iii) (die drei Warnungen verschwinden) sind erfüllt und im Naht-Test
-gebunden; Messfall (i) bleibt Charakterisierung für **S7c** (§ 6g.8); Messfall (iv)
+gebunden; Messfall (i) ist mit S7c entschieden — Owner 2026-09-26, Option A: Zielbild 9 statt 17
+(§ 6g.10); Messfall (iv)
 Mollgasse 1OG `raum_34` entscheidet Schritt 2 mit **3 Wohnungen → ALLGEMEIN**, Flags 11.
 
 **Board-Antrag weiter offen (blockiert den Slice nicht):** durchgeleitete Segmente sollen
@@ -1011,11 +1012,12 @@ unverändert.
 § 1 dieser Datei):
 
 - **S7c** — **gebaut** (§ 6g.10, Stand `38b977f`), Wirkung auf den 12 Prüfplänen 0 Türen.
-  Die Abnahme aus Messfall (i) (Mollgasse 1OG `raum_35` Start/Ziel 17, die acht Wege) ist
-  mit der Owner-Regel **je Starttür unerreichbar** — **Board-Frage 1 (Owner)**, A/B/C
-  gemessen in § 6g.10. Bis zum Entscheid führt `tests/naht` (2, 9) / 9 als
-  Charakterisierung; OG1 `rest_2` = 4 ist erfüllt, hängt aber an Option W von `raum_12`
-  (Kanon-Punkt WOHNKÜCHE, § 6g.10). S7c ist bis zum Entscheid nicht merge-reif.
+  Board-Frage 1 (Owner-Regel gegen die alte Abnahmezahl 17) ist **entschieden 2026-09-26:
+  Option A** — die Abnahme aus Messfall (i) steht auf dem gemessenen Wert **9** (Mollgasse 1OG
+  `raum_35` Start/Ziel; die 17 ist überholt, § 6g.10), `tests/naht` führt (2, 9) / 9 als
+  Zielbild; Rennweg OG1 `rest_2` = 4 bleibt Abnahme und ist erfüllt (hängt an Option W von
+  `raum_12`, Kanon-Punkt WOHNKÜCHE). S7c ist damit im Stapel merge-reif; Gate (3)(6)(10) wie
+  vor S7c.
 - **S4e** (Owner R5) — Regel 5 der Türtypisierung einschränken: eine Tür GANG → privater
   Raum wird nur dann roh zum Wohnungseingang, wenn der Gang selbst allgemein erschlossen
   ist, also vom Stiegenhaus ohne Wohnungseingang erreichbar. Ausgangsmessung liegt vor:
@@ -1145,13 +1147,13 @@ Tür roh `stiegenhaustuer`/rollenlos) ist als Unit-Zusicherung gebunden.
 
 **Abnahme (i), gemessen:**
 
-| Größe | HEAD `5ac3e0f` | `bface2b` | S7c | Owner-Soll |
-|---|---|---|---|---|
-| MOLL_1OG `raum_35` Start/Ziel | 17 | 9 | **9** | 17 |
-| MOLL_1OG `raum_35` Stütz / Zirk | 10 / 64 | 2 / 13 | **2 / 13** | 10 / – |
-| MOLL_1OG `raum_34` Stütz / Zirk | 17 / 49 | 9 / 41 | **9 / 41** | 17 / – |
-| die acht Wege `seg_graph_tuer_5/6/7/8/25/28/82/83` | da | weg | **weg (0/8)** | da |
-| OG1 `rest_2` Start/Ziel (`raum_14` Stütz / Zirk) | 4 (3 / 9) | 4 (3 / 9) | **4 (3 / 9)** | 4 |
+| Größe | HEAD `5ac3e0f` | `bface2b` | S7c | Soll alt (E4 2026-09-21, **überholt**) | **Soll neu (Owner 2026-09-26, A)** |
+|---|---|---|---|---|---|
+| MOLL_1OG `raum_35` Start/Ziel | 17 | 9 | **9** | 17 | **9** — erfüllt |
+| MOLL_1OG `raum_35` Stütz / Zirk | 10 / 64 | 2 / 13 | **2 / 13** | 10 / – | **2** / – — erfüllt |
+| MOLL_1OG `raum_34` Stütz / Zirk | 17 / 49 | 9 / 41 | **9 / 41** | 17 / – | **9** / – — erfüllt |
+| die acht Wege `seg_graph_tuer_5/6/7/8/25/28/82/83` | da | weg | **weg (0/8)** | da | **weg** — erfüllt |
+| OG1 `rest_2` Start/Ziel (`raum_14` Stütz / Zirk) | 4 (3 / 9) | 4 (3 / 9) | **4 (3 / 9)** | 4 | **4** — erfüllt |
 
 **Warum 17 je Starttür unerreichbar ist:** ein GRAPH-Segment entsteht je Tür mit korrigierter Rolle
 `wohnungseingang` (`fluchtweg.py:329ff`, ID `seg_graph_<tuer>`); auf MOLL_1OG enden alle am
@@ -1166,9 +1168,9 @@ Wohnungseingang erreichbar und nie ankerprivat — als Zusicherung gebunden). HE
 die Vorräume dort Erschließung waren (U14) und die acht inneren Türen als Wohnungseingang mit
 Stützpunkten im Vorraum starteten — der Zustand, den S7a beendet hat.
 
-**Board-Frage 1 (Owner Selman, blockiert die Merge-Reife von S7c):** Regel und Abnahmezahl
-schließen sich je Starttür aus. Drei Wege, alle in-memory mit voller Pipeline gemessen (Executor
-und zwei Linsen unabhängig), nichts davon gebaut:
+**Board-Frage 1 (Owner Selman) — entschieden 2026-09-26: Option A** (Wortlaut unten). Regel und
+Abnahmezahl schließen sich je Starttür aus. Drei Wege, alle in-memory mit voller Pipeline gemessen
+(Executor und zwei Linsen unabhängig), nichts davon gebaut:
 
 | | **A gebaut:** Regel gilt, Zahl fällt | **B:** Regel erweitern | **C:** Duplikate |
 |---|---|---|---|
@@ -1190,6 +1192,22 @@ S7c-Fall mehr und Gate (6) OG3 bleibt allein bei S3b. Bei B oder C kippen die dr
 `MESSFALL_I_MOLL`, `raum_34`-Liste und `test_messfall_i_acht_wege_ueber_das_stiegenhaus` gemeinsam
 (gewollt, kein Rückfall) — B braucht zudem die ausdrückliche Rücknahme des Satzes „die innere Tür
 wird zimmertuer".
+
+**Owner-Entscheid 2026-09-26 (Selman), wörtlich:** „Board-Frage 1: Option A. Begründung: ‚privat'
+heißt keine eigene Zirkulation, das ist der Grundsatz aus der Durchleitungs-Entscheidung, und er
+gilt unverändert. Die Zahl 17 stammt aus einem Stand, in dem die Vorräume Erschließung waren; sie
+ist mit der Regel nicht erreichbar und wird daher angepasst, nicht die Regel. B scheidet aus:
+private Vorräume für den Fluchtweg als Erschließung zu zählen, hebt genau das auf, was S7a/S7b
+gebaut haben, und 7 der 8 Wege laufen per Skelettpfad durch Räume ohne Notlicht. C scheidet aus:
+8 punktgleiche Duplikate (Hausdorff 0 mm) sind keine zusätzlichen Wege, nur doppelte Einträge."
+
+Folgen: die Abnahme (i) steht auf dem gemessenen Wert (Tabelle oben, Spalte „Soll neu"); die 17
+bleibt als überholte Vorgabe dokumentiert, nicht gelöscht. `tests/naht` führt `MESSFALL_I_MOLL =
+(2, 9)`, die `raum_34`-Liste (9) und die Abwesenheit der acht Wege als **Zielbild**. Rennweg OG1
+`rest_2` = 4 bleibt Abnahme und ist erfüllt. Leonis ist informiert (Board `docs/COORDINATION.md`,
+2026-09-26): die 17 war seine Vorgabe; besteht er auf der Durchleitung mit eigenen Wegen aus den
+privaten Vorräumen, ist das eine Regeländerung (Option B), keine Abnahme-Anpassung, und geht ins
+Board.
 
 **Rennweg OG1 — Owner-Zusatz 2026-09-25 und VA-4, gemessen (Executor + Linse Sicherheit):**
 
