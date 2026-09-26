@@ -1276,6 +1276,89 @@ Raum-/Türreihenfolge (`fluchtweg.py:420-452`; EG, OG3, MUTH_E2).
   `wohnungseingang`; e617fd1: roh `zimmertuer`, korrigiert `wohnungseingang` (`raum_12` unbestätigt
   privat). Nach S7c gemessen: **eigene Ursache** (Option W von `raum_12`, hängt am Kanon-Punkt
   WOHNKÜCHE), nicht S7c — § 6g.10.
+- **VA-5 (Owner 2026-09-26) Liftkern-Durchgang — `DURCHGANG_DURCH_WAND` ist kein Einzelfall.**
+  Vision-Audit EG (f15d03f): 6 Meldungen, 5 richtig, 1 strittig. Auf dem Stapel-Stand `8b07780`
+  (src = `42e8e14`) sind **3 von 6 offen**: B013 EG `durchgang_28` heißt heute **`durchgang_20`**
+  (gleiche Lage, `rest_1` ↔ `rest_2`, 4 671 mm statt 2 187 — S5b misst über `_grenz_breite`
+  statt über die MRR), B009/B010 `aussenoeffnung_2`/`_1` (Außenöffnungen an der Feuermauer,
+  150 × 1 019 / 1 235 mm, 91–98 % außerhalb der Gebäudekontur, 250 mm Wandkörper auf der Linie;
+  B009 wird über den Windfang `hauseingang` → `final_exit`, `seg_graph_tuer_17` endet dort).
+  B003/B005/B007 sind durch S4a/S4b (Dublette der Blocktür `tuer_9`) und S5b (Querung NEIN)
+  erledigt. Derselbe Kern liegt auf **OG1** (`durchgang_9`, 4 689 mm, = VA-1) und **DG1**
+  (`durchgang_9`, `rest_2` ↔ `rest_3`, 4 215 mm) — **auf DG1 ist der Phantom-Durchgang der
+  einzige Ausgang des Geschosses** (ohne ihn 0 Ausgänge, GRAPH 4 → 0). Zensus 12 Pläne (213
+  Durchgänge, 17 Außenöffnungen): das Liftkern-Muster nur Rennweg EG/OG1/DG1; der Proxy
+  „Mittelpunkt im Wandkörper" trifft es nicht, seine 25 Treffer (OG3 1, Mollgasse 7, Muthgasse
+  17) sind unverifizierte Kandidaten.
+  **Mechanismus** (Executor + Widerleger, unabhängig gemessen): einzige Quelle ist
+  `tuer_zuordnung.durchgaenge_ohne_tuerblatt` (`:334-380`). `rest_2` ist zur Durchgangs- und
+  Fluchtwegzeit der **ganze Schachtinnenraum inkl. Kabine** (2,70 m²) als STIEGENHAUS —
+  Treppenmarker-Regel `rest_komponenten.py:130-131` vor der SCHACHT-Regel `:136-138`;
+  `finde_lifte` läuft erst `provider.py:210` und lässt den Aufzugsring 0,96 m² übrig. Die
+  Schachtwand (Stahlbeton 150 mm, U-förmig, EG Wall_38/39/40) liegt als Wandkörper dazwischen,
+  77 % des Bands zwischen den Polygonen ist Wand. Der freie Teil der Kontaktzone ist ein
+  **U-Ring um den Schacht** (1,015 m², MRR 2 161 × 2 187 mm), der beide Räume nur an den **zwei
+  Wandenden auf der Lifttürseite** berührt (0,055 / 0,052 m²): `pa.distance(g) = pb.distance(g)
+  = 0` ist damit trivial erfüllt (`:345-349`, `_kontakt_grenze` `:234-245`), die Breite ist die
+  ganze U-Grenze (`_grenz_breite` `:248-278`), der Schwerpunkt liegt in `lift_1`, die Linie vom
+  Türpunkt zu `rest_1` läuft 150 mm im Wandkörper. **Am Ort gibt es keine Öffnung und keine
+  Wandlücke** — die Verbindung schließt sich um die Wandenden, nicht durch die Wand.
+  **Zuordnung: primär S5b** — das Querungsprädikat sagt fälschlich JA, § 8a („die Querung führt
+  nicht durch Wandkörper") ist verletzt, § 8f kennt den Fall nicht → **neuer S5b-Befund**;
+  **Mitursache Rest-Typisierung/Lift-Reihenfolge** (Schacht bis `provider.py:210` STIEGENHAUS,
+  der S5a-Guard `:322-323` greift nur für `KEIN_RAUM`). Dieselbe Mitursache macht die
+  **Lifttüren zu `stair_exit`** (`tuer_typisierung.py:192-194`, `ausgaenge.py:74-76`): OG1
+  `exit_durchgang_8`, EG `exit_durchgang_19`, UG `exit_durchgang_2`. **Nicht S5c** im
+  Diagnose-Sinn (S5c = `aussen_durchgaenge` ohne Querungsprädikat, `tuer_zuordnung.py:389-451`)
+  — dorthin gehören B009/B010; Gate-§-7-S3b ist nicht beteiligt.
+  **Wirkung, gemessen:** EG ohne `durchgang_20`: Ausgänge 7 gleich (Dedup zu
+  `exit_durchgang_19`), GRAPH 7 → 6, FALLBACK 1 → 3 (`rest_1` verliert sein einziges Segment),
+  `raum_15` Stütz 5 → 4, Klassen/Flags/Wohnungen/Anker/M1–M4 gleich. OG1 ohne `durchgang_9`:
+  alles gleich, `rest_2` Start/Ziel bleibt 4. **Hinweis zur OG1-Abnahme „4 an `rest_2`"** (keine
+  Bewertung): sie besteht aus 3 Wegen mit Ziel **Lifttür** `exit_durchgang_8` (`raum_14` ↔
+  `rest_2`, 209 mm neben `lift_1`) plus 1 FALLBACK im Aufzugsring; ohne `exit_durchgang_8` enden
+  die Wege an `exit_durchgang_6` und `rest_2` fällt auf 1. Sie hängt nicht am Phantom-Durchgang,
+  aber am Lifttür-Ausgang — Messfall für die Lift-Reihenfolge. Belege:
+  Session-Scratch `…/8d935db0-…/scratchpad/s7c/va_diag/` (Executor `bericht_va.md`, zwei
+  `review_*_r1/urteil.md`).
+- **VA-6 (Owner 2026-09-26) Zweiter Zeichnungscluster im EG-DXF.** Bestätigt: **11 Räume**
+  (171,74 m²), **15 Türen**, **1 365,8 m** Polygonabstand (Zentrum 1 380,3 m), Lage
+  27,3 × 20,3 m. Reiner ArchiCAD-Zonensatz: 28 Top-Level-Entities (11 LWPOLYLINE „New_080
+  Raumdefinitionen", 11 Zonenstempel-INSERTs, 6 MTEXT), keine Wände, keine Türblöcke, 0
+  Wandkörper. Räume: `raum_1` KÜCHE („Wohnküche") 45,6 · `raum_2` AR · `raum_3` BAD · `raum_4`
+  ZIMMER → `WOHNUNG_PRIVAT` `top_1`, Flags 00; `raum_5` GARAGE; `raum_6` VR 21,03 und `raum_7`
+  STIEGENHAUS 6,72 (Erschließung); `raum_8` TERRASSE; `raum_9`/`18`/`19` untypisiert
+  (Müllplatz, Zugangsweg, Garageneinfahrt); Stempel ohne Flächenwert. Alle 15 Türen sind
+  synthetische `durchgang_1..15` (948–5 710 mm): in einer Zone ohne Wand verbindet
+  `durchgaenge_ohne_tuerblatt` jedes Raumpaar ≤ 500 mm.
+  **Warum keine Ausreißer-Logik greift:** `dxf_load._raw_wall_span` (2–98-%-Perzentil,
+  `:59-63/107-118`) kalibriert nur den Faktor und sieht auf Rennweg EG 0 Wandpunkte (Faktor aus
+  `$INSUNITS`); `bounds_mm` und die Wandkörper-Bounds decken nur den Hauptkörper;
+  `tueren.im_planbereich` (`:480-503`) filtert nur Türobjekte, die Cluster-Türen entstehen erst
+  danach in `provider.py:160`; die L-Stufe `raumlayer.raeume_aus_layer` (`:98-124`) hat keinen
+  Planbereichs-Filter; nur der Render-Wächter `_geschoss_extents` (`dxf_renderer.py:338-370`)
+  fängt den Fall, und nur fürs Blatt. **Keine Stelle der Raumerkennung filtert Räume.**
+  **Wirkung** (Cluster an der Quelle entfernt, voller Parse): Räume/Türen 22/40 → 11/25,
+  Wohnungen 2 → 1, Anker 39 → 35, alle 8 EG-Fluchtweg-Warnungen weg, 1 FALLBACK weg, Platzierung
+  21 → 17 (Hauptkörper-Positionen identisch), Gate M1–M3 gleich, M4 `wohnungen` 2 → 1,
+  `privatraum_ohne_wohnung` 1 → 0. **ID-Verschiebung:** die Hauptkörper-Durchgänge
+  `durchgang_16..25` würden `durchgang_1..10`, `exit_durchgang_16..19` → `exit_durchgang_1..4`
+  — EG-Abnahmen über Raumpaar + Lage formulieren, nicht über IDs (VA-5 hieße dann `durchgang_5`).
+  **Zensus 12 Pläne:** ferne Raum-Cluster (> 100 m) nur Rennweg EG und Muthgasse E2 (Randcluster
+  8 Räume, 26,78 m², 400,5 m — § 8c nennt „rund 347 m", andere Bezugsgröße; dort eine echte
+  Nebenzeichnung mit 56 Wandkörpern, 0 Segmente/Anker/Ausgänge). **Zwei Zusatzbefunde des
+  Widerlegers:** (a) das EG-DXF hat eine **dritte Lage** — 12 „Level Dimension"-INSERTs (Layer
+  105 Bemassungen Projekt), 1 368,9 m vom Hauptkörper, ohne Räume/Türen; (b) der echte
+  **Extents-Ausreißer sitzt im UG**: `modell.bounds_mm` spannt 319,9 × 1 391,2 m, weil zwei
+  Wand-Layer-INSERTs mit fernem Einfügepunkt (Wall_2 1 304 m, Opening_1 204 m) in die Hülle
+  eingehen (`dxf_load.py:227-228` nimmt für INSERTs nur den Einfügepunkt); Leser von `bounds_mm`
+  außerhalb der Raumerkennung (`platzierung/aussen_strategy.py:73`,
+  `hauptengine/bestand_leuchten.py:62`, `render/dxf_renderer.py`, `render/lux_nachweis_bericht.py:165`)
+  — Wirkung dort nicht gemessen.
+  **Zuständigkeit, nur benannt:** Ursprung Raumerkennung (Selman: `raumlayer`, `provider`,
+  `durchgaenge_ohne_tuerblatt`, `dxf_load`); Render-Wächter hauptengine; Leuchten als Folge
+  Platzierung (@mvpo3). Die Owner-Frage aus dem Audit bleibt: **soll das Modell fremde Cluster
+  führen?** Gesonderte Untersuchung wie vom Owner verlangt — kein Slice des Türstapels.
 
 ## 7. Diagnose S3b — Restflächen enden vor den Blocktüren (Owner-Definition, kein Code)
 
@@ -1596,6 +1679,12 @@ Durchgänge waren in diesen Familien die Stellvertreter echter Türen, deren Rau
 **diese Fragmentierung sieht es nicht.**
 
 ### 8f. Offene Befunde aus Messung und Review (nicht gebaut)
+
+**Nachtrag 2026-09-26 — neuer S5b-Befund aus dem Vision-Audit, VA-5 (§ 6g.11):** am Liftkern
+(Rennweg EG `durchgang_20`, OG1 `durchgang_9`, DG1 `durchgang_9`) sagt das Querungsprädikat JA,
+obwohl am Ort keine Öffnung ist — der freie Teil der Kontaktzone ist ein U-Ring um die
+Schachtwand, der beide Räume nur an den Wandenden zur Lifttürseite berührt; Mitursache ist der
+Schacht als STIEGENHAUS bis `provider.py:210`. Details, Zahlen und Wirkung in § 6g.11.
 
 1. **Kontaktgrenze rechnet mit dem globalen Paarabstand.** Rennweg DG2 TERRASSE 9,93 ↔
    VORRAUM 15,96: Wandkörper-Lücke 1371 mm (Sonde, am Rennweg kalibriert), globaler
