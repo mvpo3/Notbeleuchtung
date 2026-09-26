@@ -18,11 +18,32 @@ from plaene import plan
 
 
 @pytest.fixture(scope="module")
-def rm():
+def og3():
+    """(Provider, RaumModell) — der Provider trägt die Prüfstrecken-Ausgabe
+    ``tuer_warnungen`` (``seite_fehlt``), die der Contract nicht führt."""
     plan(PLAN)
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
 
-    return ArchitekturRaumProvider().parse(str(PLAN), "OG3")
+    p = ArchitekturRaumProvider()
+    return p, p.parse(str(PLAN), "OG3")
+
+
+@pytest.fixture(scope="module")
+def rm(og3):
+    return og3[1]
+
+
+def test_soll_blocktueren_ohne_seite_fehlt(og3):
+    """S3b (docs/GATE_TUERSTAPEL.md § 7): die Restflächen reichen bis an die
+    Blocktüren, jede Blocktür findet beidseits einen Raum. Vorher 7 Blocktüren
+    ``seite_fehlt`` (``tuer_4/5/6/8/9/10/12``, 10 Seiten) — die Rest-Stufe
+    labelte die um die Türscheibe erodierte Maske ohne Rückdehnung."""
+    p, m = og3
+    block = {t.id for t in m.tueren if t.quelle == "block"}
+    assert len(block) == 11, sorted(block)
+    fehlt = sorted({w.split()[1] for w in p.tuer_warnungen
+                    if w.startswith("seite_fehlt:")} & block)
+    assert not fehlt, f"Blocktüren mit seite_fehlt: {fehlt}"
 
 
 @pytest.mark.xfail(
