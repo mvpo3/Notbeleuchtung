@@ -183,8 +183,10 @@ def fremde_anker_in_privat(modell) -> list[str]:
     """Anker, deren Punkt in einem PRIVAT GEWORDENEN Raum liegt (GANG/VORRAUM
     der Klasse WOHNUNG_PRIVAT — nur deren Klasse ändert S7), der NICHT ihr
     eigener ist (``raum_id``) — die B2-Zählweise. Anker in Zimmern/Bädern
-    liegen dort schon auf HEAD 5ac3e0f (DG1 ``raum_4_tuer_5``/``ende_7`` in
-    ``raum_1``, Mollgasse EG ``raum_51_tuer_durchgang_25`` in ``raum_33``)."""
+    lagen dort schon auf HEAD 5ac3e0f (DG1 ``raum_4_tuer_5``/``ende_7`` in
+    ``raum_1``, Mollgasse EG ``raum_51_tuer_durchgang_25`` in ``raum_33``);
+    seit Slice S3b zieht B2 auch sie (``test_og3_keine_anker_in_wohnung_privat``,
+    Rennweg OG3 ``rest_3_tuer_tuer_4`` in ZIMMER ``raum_2``)."""
     privat = [(r.id, Polygon(r.polygon_mm)) for r in modell.raeume
               if r.raum_typ in ("GANG", "VORRAUM")
               and r.nutzungsklasse == "WOHNUNG_PRIVAT" and len(r.polygon_mm) >= 3]
@@ -542,11 +544,16 @@ _A, _P = "ALLGEMEIN_ERSCHLIESSUNG", "WOHNUNG_PRIVAT"
     ("ug", "raum_12", _A, (True, True)),
     ("dg2", "raum_6", _A, (True, True)),
     ("moll_eg", "raum_7", _A, (True, True)),
-    # Loch-Räume nach rohen Türen (Owner 2026-09-22, G1.2): nur über rohe
-    # Wohnungseingänge angebunden → allgemein; über eine rohe Zimmertür an
-    # die Wohnung gebunden → unbestimmt, in ihr.
-    ("og2", "raum_9", _A, (True, True)),
-    ("og2", "raum_10", None, (True, True)),
+    # Bis Slice S3b Loch-Räume nach rohen Türen (Owner 2026-09-22, G1.2):
+    # ``raum_9`` allgemein, ``raum_10`` unbestimmt. S3b schließt das Loch —
+    # die 940er Blocktür ``tuer_1`` erreicht das Stiegenhaus ``rest_1`` (roh
+    # ``wohnungseingang`` mit Blatt), die Ankerregel bestätigt alle vier
+    # privat, G4 belegt → Flags 00 wie OG1 ``raum_4``/``5``/``8`` (die Zahl
+    # folgt der Regel, § 6g.10). Wohnungen: ``OG2_NACH_S3B``.
+    ("og2", "raum_4", _P, (False, False)),
+    ("og2", "raum_5", _P, (False, False)),
+    ("og2", "raum_9", _P, (False, False)),
+    ("og2", "raum_10", _P, (False, False)),
     # Board 4: zwei Fixpunkte, kein voller Beleg → Tiebreak, allgemein.
     ("moll_eg", "raum_29", _A, (True, True)),
     ("moll_eg", "raum_57", _A, (True, True)),
@@ -624,13 +631,11 @@ def test_kinderwagenraum_behaelt_seinen_weg(ug):
 #: ABSTELLRAUM, jeder für sich allein. Er ist damit unbestimmt IN der Wohnung
 #: ``{raum_1, raum_4, raum_6, raum_7, raum_10}`` — wie auf HEAD 5ac3e0f — statt
 #: Erschließung mit vier Einraum-Wohnungen dahinter (Runde 10, Gate (3) OG3).
-#: Rennweg OG2 ``raum_9`` bleibt Erschließung: hinter ``durchgang_8`` liegt
+#: Rennweg OG2 ``raum_9`` blieb Erschließung: hinter ``durchgang_8`` liegt
 #: eine mehrräumige Wohnung, die Bedingung „NUR Einzelräume" ist verletzt.
+#: **Slice S3b (2026-09-26):** OG2 ist kein Loch mehr (``tuer_1`` erreicht das
+#: Stiegenhaus) — die vier OG2-Zeilen stehen seither in ``OG2_NACH_S3B``.
 LOCH_ROH = {
-    ("og2", "raum_4"): (None, {"raum_3", "raum_4", "raum_5", "raum_6"}),
-    ("og2", "raum_5"): (None, {"raum_3", "raum_4", "raum_5", "raum_6"}),
-    ("og2", "raum_10"): (None, {"raum_1", "raum_8", "raum_10", "raum_11", "raum_12"}),
-    ("og2", "raum_9"): (_A, {"raum_7", "raum_10"}),
     ("og3", "raum_10"): (None, {"raum_1", "raum_4", "raum_6", "raum_7", "raum_10"}),
 }
 
@@ -666,6 +671,36 @@ def test_loch_raum_folgt_rohen_tueren(plan_name, raum_id, request):
     assert [w for w in prov.wohnungsklasse_warnungen
             if w.startswith(f"loch: {raum_id} — ") and "über keine Tür" in w
             and "Messfall S4c/S3b" in w], raum_id
+
+
+#: Slice S3b (2026-09-26) schließt das OG2-Loch (bis dahin ``LOCH_ROH``): die
+#: 940er Blocktür ``tuer_1`` (STIEGENHAUS ``rest_1`` ↔ VORRAUM ``raum_4``, roh
+#: ``wohnungseingang`` mit Blatt) hat jetzt beide Seiten; die Ankerregel sagt
+#: für ``raum_4``/``5``/``9``/``10`` „nur über die Wohnungseingangstür tuer_1
+#: (mit Türblatt) erreichbar". Die Wohnung (b) folgt den rohen Türen:
+#: ``raum_4``/``5`` wie bis S3b mit ``raum_3``/``raum_6`` hinter ``tuer_1``;
+#: ``raum_9``/``10`` in der Wohnung jenseits des untypisierten ``raum_2``
+#: (59,53 m², R2: gehört zu keiner Wohnung, Wohnküchen-Verdacht) — ohne
+#: Wohnungseingang, raummengengleich HEAD 5ac3e0f. Wer den Kanon-Punkt
+#: WOHNKÜCHE entscheidet (@EnisAMG), entscheidet diese Grenze mit — wie bei
+#: OG1 ``raum_10`` (§ 6g.10), kein S3b-Rückfall.
+_OG2_HINTER_TUER_1 = {"raum_3", "raum_4", "raum_5", "raum_6"}
+_OG2_JENSEITS_RAUM_2 = {"raum_1", "raum_7", "raum_8", "raum_9", "raum_10",
+                        "raum_11", "raum_12", "raum_15", "raum_16"}
+OG2_NACH_S3B = {"raum_4": _OG2_HINTER_TUER_1, "raum_5": _OG2_HINTER_TUER_1,
+                "raum_9": _OG2_JENSEITS_RAUM_2, "raum_10": _OG2_JENSEITS_RAUM_2}
+
+
+@pytest.mark.parametrize("raum_id", sorted(OG2_NACH_S3B))
+def test_og2_loch_von_s3b_geschlossen(raum_id, og2):
+    """Wohnung nach rohen Türen und kein ``loch:`` mehr im Bericht — Klasse
+    und Flags bindet ``test_r7_klasse_nach_den_owner_entscheiden``."""
+    prov, modell, _ = og2
+    r = next(x for x in modell.raeume if x.id == raum_id)
+    assert {x.id for x in modell.raeume
+            if x.wohnung_id and x.wohnung_id == r.wohnung_id} == OG2_NACH_S3B[raum_id]
+    assert not [w for w in prov.wohnungsklasse_warnungen
+                if w.startswith(f"loch: {raum_id} — ")], raum_id
 
 
 def test_moll_eg_raum_23_behaelt_seine_wege(moll_eg):
