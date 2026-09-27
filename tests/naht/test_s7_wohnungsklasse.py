@@ -320,7 +320,20 @@ FIXTURE_PLAENE = ["og1", "og2", "og3", "ug", "eg", "dg1", "dg2", "dd", "bara",
 #: einem Stand, in dem die Vorräume Erschließung waren, und ist überholt
 #: (docs/GATE_TUERSTAPEL.md § 6g.10). B und C sind verworfen.
 MESSFALL_I_MOLL = (2, 9)
-MESSFALL_I_OG1 = (3, 9, 4)
+#: **Slice S5c, Owner-Entscheid F3 (2026-09-27), mit Auflage:** Rennweg OG1
+#: steht auf (3, 9, 0), dazu ``rest_1`` Start/Ziel 4 (``MESSFALL_I_OG1_REST_1``).
+#: Die 4 an ``rest_2`` (HEAD 5ac3e0f, S7c-Abnahme „rest_2 wieder 4") stammt aus
+#: einem Stand, in dem Lifttüren als Ausgänge zählten: ``rest_2`` war der
+#: Stiegenhaus-Ring um die Liftkabine, die 4 waren die GRAPH-Wege
+#: ``seg_graph_tuer_3``/``10``/``11`` an der Lifttür ``exit_durchgang_8``
+#: (208,9 mm vom Schacht) und das FALLBACK-Segment von ``rest_2``. Seit S5c ist
+#: ``rest_2`` Liftschacht (Kabinenanteil 0,635, F1/K1_T); dieselben drei Wege
+#: enden an der Treppenöffnung ``exit_durchgang_6`` und führen ``rest_1`` als
+#: Ziel, dazu dessen FALLBACK — ``rest_1`` = 4. Die Absenkung 4 → 0 ist eine
+#: KORREKTUR, keine Bandabsenkung. Überholt, nicht gelöscht: (3, 9, 4) mit
+#: ``rest_2`` = 4.
+MESSFALL_I_OG1 = (3, 9, 0)
+MESSFALL_I_OG1_REST_1 = 4
 #: Die acht Wege, die § 6g.8/``bericht_r14.md`` als S7c-Abnahme führt
 #: (HEAD-IDs) — mit der gebauten Regel je Starttür unerreichbar, zurück nur
 #: über (B) oder (C), s. o. Owner-Entscheid 2026-09-26 (Option A): ihre
@@ -753,7 +766,11 @@ STUETZ_SOLL: dict[str, dict[str, int]] = {
     "dg1": {"raum_4": 1},
     "dg2": {"raum_1": 0},
     "bara": {"raum_9": 0, "raum_12": 0, "raum_31": 0},
-    "moll_eg": {"raum_23": 3, "raum_29": 0, "raum_49": 0, "raum_57": 0},
+    # raum_55: S5c/F5 — seine Hauseingangs-Öffnung aussenoeffnung_8 (Streifen
+    # zwischen Wandkörpern) fällt, der GANG wird unbestimmt (ALLG → None).
+    # Gemessen 5ac3e0f / Runde 6 / S5c-Nachher je 3 (seg_13, seg_16, seg_17).
+    "moll_eg": {"raum_23": 3, "raum_29": 0, "raum_49": 0, "raum_55": 3,
+                "raum_57": 0},
     "moll1og": {"raum_16": 1, "raum_19": 2, "raum_26": 2, "raum_34": 17,
                 "raum_52": 1, "raum_57": 0, "raum_59": 0, "raum_65": 1},
 }
@@ -1133,11 +1150,16 @@ def test_messfall_i_auch_auf_rennweg_og1(og1):
     sind korrigiert Wohnungseingänge und Start. Mit typisierter Wohnküche
     (Kanon-Punkt WOHNKÜCHE, @Enis) wird ``raum_12`` bestätigt privat und
     ``rest_2`` gemessen 2 (S7c Runde 2, § 6) — das wäre dann Folge des
-    Kanons, kein S7c-Rückfall."""
+    Kanons, kein S7c-Rückfall.
+
+    **Slice S5c (Owner F3):** ``rest_2`` ist Liftschacht, seine 4 waren
+    Lifttür-Wege (überholt, s. ``MESSFALL_I_OG1``); dieselben Wege enden an
+    ``exit_durchgang_6`` und führen ``rest_1`` als Start/Ziel."""
     _, modell, _ = og1
     assert (len(stuetzpunkt_segmente(modell, "raum_14")),
             zirkulationspunkte(modell, "raum_14"),
             len(startziel_segmente(modell, "rest_2"))) == MESSFALL_I_OG1
+    assert len(startziel_segmente(modell, "rest_1")) == MESSFALL_I_OG1_REST_1
 
 
 def test_messfall_iv_gang_raum_34(moll1og):
