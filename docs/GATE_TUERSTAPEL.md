@@ -802,7 +802,13 @@ Türen, liest keine Klasse.
 ausschließlich Einzelräume erschließt und selbst keinen rohen Wohnungseingang trägt, bildet mit
 diesen Einzelräumen eine Wohnung.* Einzelraum heißt: hinter jedem rohen Wohnungseingang des Gangs
 liegt eine Raumgruppe aus genau einem Raum, und keiner führt aus der Wohnungsmenge heraus. Ist der
-Gang vom Stiegenhaus über keine Tür erreichbar (Loch-Gang), genügt das — unverändert seit
+Gang vom Stiegenhaus über keine Tür erreichbar (Loch-Gang), genügt das. **Ein Vorraum oder Gang zählt nie als
+Einzelraum** (Owner 2026-09-27, § 7e Frage 3/4: „Vestibül oder Flur hinter einer Wohnungseingangstür zählt nicht
+als Einzelraum. Ein Durchgangsraum ist kein Beleg für eine eigene Wohnung, er erschließt nur. Eine Wohnung braucht
+mindestens einen Aufenthaltsraum" — vgl. Kellervorraum-Entscheidung UG `raum_6`); liegt einer hinter einem rohen
+Wohnungseingang des Gangs, bindet der Gang nicht und der Nachbar behält, was er ohne R1 hat — „der Nachbar verliert
+sein Notlicht nicht" (Typfilter `typ not in SCOPE_TYPEN`, `c9d7854`). Im Loch-Fall hätte die Einzelraum-Bedingung
+ohnehin genügt — unverändert seit
 2026-09-22. Ist er erreichbar, gilt die Regel nur für den **Wohnungsflur hinter der Stiegenhaustür**:
 **(A)** sein Zugang — alle seine Türen außer den rohen Wohnungseingängen — besteht ausschließlich aus
 Stiegenhaustüren **mit Türblatt** ohne rohe Rolle Wohnungseingang (ein Hauseingang, eine Tür ins
@@ -836,9 +842,9 @@ Auf den 12 Plänen gibt es **16 Loch-Räume**: 10 über rohe Zimmertür gebunden
 MUTH `raum_46`/`raum_94`).
 
 **Im Loch-Fall kann R1 strukturell nie an einen GANG/VORRAUM binden** (spart dem nächsten Prüfer
-den Grenzfall; für die Erweiterung A+C gilt das **nicht** — ein VORRAUM oder GANG hinter einem
-rohen Wohnungseingang mit Blatt ist eine Gruppe der Größe 1 und zählt als Einzelraum, § 7e Owner-
-Frage 3; auf den 12 Plänen 0 Fälle; die Zählung „16 Loch-Räume, 1 nach R1" unten ist Stand vor S3b): ein Loch-GANG ist vom Stiegenhaus über keine Tür erreichbar, also ist jeder Raum
+den Grenzfall; für die Erweiterung A+C schließt es der Typfilter aus — ein VORRAUM oder GANG hinter
+einem rohen Wohnungseingang ist nie Einzelraum, Owner 2026-09-27, § 7e Frage 3/4; die Zählung „16 Loch-Räume,
+1 nach R1" unten ist Stand vor S3b): ein Loch-GANG ist vom Stiegenhaus über keine Tür erreichbar, also ist jeder Raum
 hinter seinen rohen Wohnungseingängen ebenfalls unerreichbar; ist dieser Nachbar
 GANG/VORRAUM, ist er selbst Loch-Raum und liegt in der freien, nicht in der gebundenen Menge
 (keine Gruppengröße, keine Bindung); kommt er über eine rohe Zimmertür in die gebundene
@@ -1717,7 +1723,16 @@ unbestimmt), gebaut; 3 und 4 offen (unten):**
   trägt die benannte, exakte Ausnahme `R1_GEBUNDEN = {"og3": {"raum_10"}}` — direkte Folge der
   Owner-Setzung „unbestimmt" für einen Kandidaten (Schritt 1–3 sagen ALLGEMEIN); gegen `7105618` rot, darf
   weder wachsen noch wandern.
-- **Noch offen — Owner-Frage 3 (G4-Pfad) und 4 (VORRAUM als Einzelraum) entfallen mit A+C NICHT** (zwei
+- **Owner-Frage 3 und 4 — entschieden und gebaut 2026-09-27 (Typfilter, `6c1feb4` Tests rot, `c9d7854` Fix):**
+  „Vestibül oder Flur hinter einer Wohnungseingangstür zählt nicht als Einzelraum […] der Nachbar verliert sein
+  Notlicht nicht. […] baue ihn. Gegenprobe: nach dem Filter messen, ob irgendwo ein Raum sein Notlicht verliert,
+  der es vorher hatte." Gegenprobe auf 12 Plänen (Executor in-memory auf der bilde_wohnungen-Eingabe, Reviewer mit
+  voller Pipeline in zwei Ständen): **0 Abweichungen** in `r1_gaenge`, (b)-Gruppen, Wohnungen, Klassen, Flags,
+  `wohnung_id`, Anker, Leuchten; **80 Räume mit Flags 11 behalten sie alle**; einzige Differenz der Text der
+  `r1:`-Zeile von OG3 `raum_10`; 38 200 Zufallstopologien ohne Notlichtverlust; T11/T27 vorher 11 → 00, jetzt 11
+  (der Gang bindet dort nicht, die Räume dahinter sind wieder je eine Einraum-Wohnung wie ohne R1). Gate wie
+  `36579f5`. Die Vorgeschichte zur Frage (Befund der Linsen, ursprünglicher Wortlaut):
+- **Vorher offen — Owner-Frage 3 (G4-Pfad) und 4 (VORRAUM als Einzelraum) entfallen mit A+C NICHT** (zwei
   Linsen, Konstruktionen T11/T27, auf 12 Plänen **0 Fälle**): ein VORRAUM oder GANG hinter einem rohen
   Wohnungseingang **mit Blatt** ist eine (b)-Gruppe der Größe 1 und zählt als Einzelraum; bindet der
   Wohnungsflur ihn mit, ist die gemeinsame Wohnung über den Aufenthaltsraum G4-belegt, der ankerprivate
