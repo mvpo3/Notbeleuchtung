@@ -264,6 +264,13 @@ KIPPER: dict[str, set[str]] = {
     "dg2": set(),
     "dd": set(),
 }
+#: R1-Erweiterung A+C (Owner 2026-09-27): „Der gebundene Gang bleibt
+#: unbestimmt wie der Loch-Gang" — auch dort, wo Schritt 1–3 ihn als Kandidaten
+#: mit Stiegenhaustür allgemein sprechen (``klassifiziere``). Keine
+#: Nicht-Konvergenz, sondern eine Owner-Setzung aus (b); GEMESSEN Runde 1 der
+#: Erweiterung: nur OG3 ``raum_10``. Wächst oder wandert die Menge, fällt der
+#: Test auf.
+R1_GEBUNDEN: dict[str, set[str]] = {"og3": {"raum_10"}}
 #: Alle Pläne mit Fixture (Muthgasse E2 nicht: ein Parse ~10 min; die
 #: Invarianz dort steht im Bericht).
 FIXTURE_PLAENE = ["og1", "og2", "og3", "ug", "eg", "dg1", "dg2", "dd", "bara",
@@ -506,16 +513,24 @@ def test_kandidatenklasse_ist_fixpunkt_der_eigenen_regel(plan_name, request):
     gesetzt, also war die Bedingung immer erfüllt. Jetzt wird die Menge der
     Räume, die dem Fixpunkt widersprechen, GEGEN DIE GEMESSENE MENGE geprüft
     — sie darf weder wachsen noch wandern. Alles andere muss exakt gleich
-    sein, und jeder Kipper muss mit Grund im Bericht stehen."""
+    sein, und jeder Kipper muss mit Grund im Bericht stehen. Dazu kommen die
+    nach R1 gebundenen Gänge (``R1_GEBUNDEN``, Owner 2026-09-27): ebenfalls
+    unbestimmt, mit ihrem eigenen Grund."""
     prov, modell, _ = request.getfixturevalue(plan_name)
     nach, _ = klassifiziere(modell.raeume, modell.tueren)
     abweichung = {r.id for r in modell.raeume
                   if r.id in nach and r.nutzungsklasse != nach[r.id]}
-    assert abweichung == KIPPER[plan_name] & set(nach), (
+    r1 = R1_GEBUNDEN.get(plan_name, set())
+    assert abweichung == (KIPPER[plan_name] | r1) & set(nach), (
         f"{plan_name}: Kipper-Menge gewandert — {sorted(abweichung)}")
     for rid in abweichung:
         r = next(x for x in modell.raeume if x.id == rid)
         assert r.nutzungsklasse is None, f"{rid} widerspricht, ist aber gesetzt"
+        if rid in r1:
+            assert [w for w in prov.wohnungsklasse_warnungen
+                    if w.startswith(f"unbestimmt: {rid} — R1: Wohnungsflur")], (
+                f"{rid}: nicht im Bericht")
+            continue
         assert [w for w in prov.wohnungsklasse_warnungen
                 if rid in w and "Schritt 3" in w], f"{rid}: nicht im Bericht"
 
@@ -634,51 +649,44 @@ def test_kinderwagenraum_behaelt_seinen_weg(ug):
 #: Rennweg OG2 ``raum_9`` blieb Erschließung: hinter ``durchgang_8`` liegt
 #: eine mehrräumige Wohnung, die Bedingung „NUR Einzelräume" ist verletzt.
 #: **Slice S3b (2026-09-26):** OG2 ist kein Loch mehr (``tuer_1`` erreicht das
-#: Stiegenhaus) — die vier OG2-Zeilen stehen seither in ``OG2_NACH_S3B``.
-LOCH_ROH = {
+#: Stiegenhaus) — die vier OG2-Zeilen stehen seither in ``OG2_NACH_S3B``. OG3
+#: ``raum_10`` ebenfalls nicht: ``tuer_5`` (940 mm, Blatt) erreicht das
+#: STIEGENHAUS ``rest_3``, roh ``stiegenhaustuer``.
+#: **R1-Erweiterung, Fassung A+C (Owner 2026-09-27):** der Gang bindet
+#: trotzdem — sein Zugang ist nur diese Stiegenhaustür mit Blatt (A), hinter
+#: ihm liegen Küche/Zimmer UND Bad/Abstellraum als Einzelräume (C) — und
+#: bleibt wie der Loch-Gang unbestimmt: „der Gang gehört zur Wohnung, ist aber
+#: kein Beleg für eine eigene Wohnung; unbestimmt heißt Notlicht bleibt". Der
+#: Bericht führt ihn als ``r1:``-Zeile, nicht mehr als ``loch:``-Zeile.
+R1_GANG_ROH = {
     ("og3", "raum_10"): (None, {"raum_1", "raum_4", "raum_6", "raum_7", "raum_10"}),
 }
 
 
-@pytest.mark.xfail(
-    strict=True, raises=AssertionError,
-    reason="Stapelrest S3b, Gate (3) OG3: tuer_5 (940 mm, Blatt) STIEGENHAUS x GANG ist roh "
-           "stiegenhaustuer, raum_10 kein Loch mehr, Regel 5 macht vier Einraum-Wohnungen; "
-           "Owner-Entscheid (R1-Erweiterung / S4e / Ausnahme) ausstehend, muss vor Merge XPASS sein")
-@pytest.mark.parametrize("plan_name,raum_id", sorted(LOCH_ROH))
+@pytest.mark.parametrize("plan_name,raum_id", sorted(R1_GANG_ROH))
 def test_loch_raum_folgt_rohen_tueren(plan_name, raum_id, request):
-    """G1.2 auf den echten Plänen: Klasse und Wohnung des Loch-Raums folgen
-    den rohen Türen, er behält beide Flags, und der Messfall S4c/S3b bleibt
-    als ``loch:``-Warnung im Bericht. Ist er Erschließung, hat jede Wohnung
-    dahinter einen Wohnungseingang (korrigierte Rolle, an der der Fluchtweg
-    startet)."""
-    from notbeleuchtung.raumerkennung.wohnungsklasse import korrigierte_rollen
-
+    """G1.2 und R1 auf den echten Plänen (der Testname stammt aus der Zeit, in
+    der ``raum_10`` ein Loch-Raum war; § 6g.8/§ 7e führen ihn so): der Gang
+    gehört nach rohen Türen zu seiner Wohnung, bleibt für (a) unbestimmt mit
+    eigenem Grund, behält beide Flags, und die Bindung steht im Bericht als
+    ``r1:``-Zeile mit ihrem Zugang ``tuer_5`` — keine ``loch:``-Zeile."""
     prov, modell, _ = request.getfixturevalue(plan_name)
-    klasse, menge = LOCH_ROH[(plan_name, raum_id)]
+    klasse, menge = R1_GANG_ROH[(plan_name, raum_id)]
     r = next(x for x in modell.raeume if x.id == raum_id)
     assert r.nutzungsklasse == klasse, r.nutzungsklasse
     assert (r.ist_fluchtweg, r.ist_communal) == (True, True)
-    if klasse is None:
-        assert {x.id for x in modell.raeume
-                if x.wohnung_id and x.wohnung_id == r.wohnung_id} == menge
-    else:
-        assert r.wohnung_id is None
-        rollen = korrigierte_rollen(modell.raeume, modell.tueren)
-        for x in modell.raeume:
-            if x.id not in menge:
-                continue
-            assert x.wohnung_id is not None, x.id
-            gruppe = {y.id for y in modell.raeume if y.wohnung_id == x.wohnung_id}
-            assert [t.id for t in modell.tueren if rollen[t.id] == "wohnungseingang"
-                    and len({t.von_raum, t.nach_raum} & gruppe) == 1], (
-                f"{x.wohnung_id} {sorted(gruppe)} ohne Wohnungseingang")
-    assert [w for w in prov.wohnungsklasse_warnungen
-            if w.startswith(f"loch: {raum_id} — ") and "über keine Tür" in w
-            and "Messfall S4c/S3b" in w], raum_id
+    assert {x.id for x in modell.raeume
+            if x.wohnung_id and x.wohnung_id == r.wohnung_id} == menge
+    warn = prov.wohnungsklasse_warnungen
+    assert [w for w in warn if w.startswith(f"unbestimmt: {raum_id} — ")
+            and "Wohnungsflur hinter Stiegenhaustür" in w], raum_id
+    assert [w for w in warn if w.startswith(f"r1: {raum_id} — ") and "tuer_5" in w
+            and "nur Einzelräume" in w and "(R1)" in w], raum_id
+    assert not [w for w in warn if w.startswith(f"loch: {raum_id} — ")], raum_id
 
 
-#: Slice S3b (2026-09-26) schließt das OG2-Loch (bis dahin ``LOCH_ROH``): die
+#: Slice S3b (2026-09-26) schließt das OG2-Loch (bis dahin ``LOCH_ROH``, heute
+#: ``R1_GANG_ROH``): die
 #: 940er Blocktür ``tuer_1`` (STIEGENHAUS ``rest_1`` ↔ VORRAUM ``raum_4``, roh
 #: ``wohnungseingang`` mit Blatt) hat jetzt beide Seiten; die Ankerregel sagt
 #: für ``raum_4``/``5``/``9``/``10`` „nur über die Wohnungseingangstür tuer_1
@@ -833,10 +841,13 @@ def test_og3_keine_anker_in_wohnung_privat():
 #: **Runde 14, OG3:** dort sind es alle DREI Wohnungen, raummengengleich HEAD
 #: (``m_vorher_OG3.json``: ``{1,4,6,7,10}`` — ``tuer_5`` führt nach KEIN_RAUM
 #: —, ``{2,8}``, ``{3,5}``). OG3 stand bis Runde 13 in keiner der beiden
-#: Eingangsprüfungen: ``test_loch_raum_folgt_rohen_tueren`` prüft die Eingänge
-#: nur im ``_A``-Zweig, und seit R1 ist der Sollwert für ``raum_10`` ``None``.
-#: Die Abnahme „keine neue Wohnung ohne Eingang" hing für OG3 damit allein an
-#: der Messung; hier ist sie gebunden.
+#: Eingangsprüfungen: ``test_loch_raum_folgt_rohen_tueren`` prüft keine
+#: Eingänge (sein Sollwert für ``raum_10`` ist ``None``, R1). Die Abnahme
+#: „keine neue Wohnung ohne Eingang" hing für OG3 damit allein an der
+#: Messung; hier ist sie gebunden. Seit S3b trägt ``tuer_5`` roh
+#: ``stiegenhaustuer`` (kein Wohnungseingang, Owner: nicht (b)) — mit der
+#: R1-Erweiterung A+C (Owner 2026-09-27) bleibt ``{1,4,6,7,10}`` eine Wohnung
+#: ohne Eingang, wie auf HEAD.
 VORBESTEHEND_OHNE_EINGANG: dict[str, set[frozenset[str]]] = {
     "ug": {frozenset({"raum_3"}), frozenset({"raum_5"})},
     "og3": {frozenset({"raum_1", "raum_4", "raum_6", "raum_7", "raum_10"}),
