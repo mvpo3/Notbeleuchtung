@@ -280,7 +280,7 @@ Der Stapel **S4a → S4b → S5b → S7a+S7b → S3b → S5c wird nur gemeinsam 
 | (8) | OG1: jeder von der Referenz **geforderte** offene Übergang besteht | `anzahl ≥ 1` für O03, O04, O05 und den Ersatzfall O01/O02 (§ 1e); Ergänzung des Planers, damit S5b keine geforderten Übergänge löscht; None = Verstoß |
 | (9) | Mollgasse 1OG: keine Zirkulation in der Wohnung | `python scripts/analyse/mollgasse_gt_vergleich.py 1OG` gegen `tests/fixtures/mollgasse_gt/`: Zirkulationspunkte in ZIMMER, BAD, WC und privatem VORRAUM = 0 (Owner-Ansage 2026-09-20, Abnahme von S7a+S7b, § 6f). Vorher-Wert laut Leonis: VORRAUM 69, ZIMMER 3, dazu WC/BAD/AR — **nicht selbst gemessen**. **Noch nicht in `gate_regel.py` verdrahtet:** Skript, Fixtures und Leonis' Bericht liegen am 2026-09-20 weder auf `origin/main` noch auf einem anderen Remote-Branch; bis sie im Baum sind, ist (9) Doku-Pflicht, keine geprüfte Regel |
 | (10) | Barawitzka EG: der ABSTELLRAUM 1,98 m² hat mindestens eine Verbindung | `barawitzka.anzahl ≥ 1` (§ 1f, `tests/gate/gate_barawitzka.py`); `anzahl` None oder fehlender Abschnitt = Verstoß. Owner-Entscheid 2026-09-20 nach dem Blast Radius: **heute verletzt** (0 Verbindungen), zu drehen ist sie vom S4a-Rest (Doppelflügel-Paarung), nicht von S7 — festgehalten, damit sie nicht untergeht. Gemessen wird nur der Nachher-Stand; die eingecheckte Nullmessung stammt von vor dem Messfall und führt den Abschnitt nicht: als Vorher-Stand ist das kein Absturz, als Nachher-Stand ein Verstoß (fail closed) |
-| (11) | Rennweg DG1: das Geschoss behält nach dem Stapel einen echten Ausgang | Owner-Entscheid 2026-09-26 (VA-5, § 6g.11): „DG1 hat nach dem Stapel mindestens einen Ausgang, und keiner davon führt durch den Liftschacht." Messbar als `dg1.ausgaenge ≥ 1` **und** kein Ausgang, dessen Tür am Liftschacht liegt (Raumpaar mit dem Aufzugsring bzw. Türpunkt < 250 mm vom `lift_1`-Polygon). Heute ist `durchgang_9` (`rest_2` ↔ `rest_3`, 4 215 mm, Mittelpunkt im Lift) der **einzige** Ausgang von DG1 — S5c darf ihn nur entfernen, wenn ein echter Ausgang bleibt; sonst wäre das Geschoss ausgangslos. **Noch nicht in `gate_regel.py` verdrahtet** (Verdrahtung mit S5c; bis dahin Doku-Pflicht). Derselbe Messfall gilt für die Lifttür-Ausgänge OG1 `exit_durchgang_8`, EG `exit_durchgang_19`, UG `exit_durchgang_2` (Nebenbefund VA-5). IDs nach S3b (`ecf9406`): EG `exit_durchgang_19` → `exit_durchgang_21`, `durchgang_20` → `durchgang_24` (gleiche Tür, gleiche Lage) — Abnahme über Raumpaar + Lage formulieren |
+| (11) | Rennweg DG1: das Geschoss behält nach dem Stapel einen echten Ausgang | Owner-Entscheid 2026-09-26 (VA-5, § 6g.11): „DG1 hat nach dem Stapel mindestens einen Ausgang, und keiner davon führt durch den Liftschacht." Messbar als `dg1.ausgaenge ≥ 1` **und** kein Ausgang, dessen Türpunkt in einem LIFT-Polygon (`raum_typ == "LIFT"`, auch gestempelte) liegt oder näher als 250 mm daran (`tests/gate/gate_dg1.py`; das Raumpaar-Kriterium der ersten Fassung ist falsch-positiv — OG3 hat alle drei Ausgänge am Ring-Raum `rest_3` — und nicht verdrahtet). Heute ist `durchgang_9` (`rest_2` ↔ `rest_3`, 4 215 mm, Mittelpunkt im Lift) der **einzige** Ausgang von DG1 — S5c darf ihn nur entfernen, wenn ein echter Ausgang bleibt; sonst wäre das Geschoss ausgangslos. **Verdrahtet seit `936e8f7`** (`gate_messung` Abschnitt `dg1` + Info `lift_ausgaenge_info` UG/EG/OG1; `_pruefe_dg1`, fail closed wie (10)); auf `7105618` gemessen **verletzt**: 1 Ausgang, davon 1 durch den Liftschacht (§ 9a). Derselbe Messfall gilt für die Lifttür-Ausgänge OG1 `exit_durchgang_8`, EG `exit_durchgang_19`, UG `exit_durchgang_2` (Nebenbefund VA-5). IDs nach S3b (`ecf9406`): EG `exit_durchgang_19` → `exit_durchgang_21`, `durchgang_20` → `durchgang_24` (gleiche Tür, gleiche Lage) — Abnahme über Raumpaar + Lage formulieren |
 
 Zur Nummer: die Owner-Ansage vom 2026-09-20 nennt die Mollgasse-Abnahme „Bedingung (7)".
 (7) und (8) sind seit `dd3cfdc` mit den Referenz-Verbindungen belegt; die Mollgasse-Abnahme
@@ -292,7 +292,7 @@ tests/gate/gate_messung.py --out <datei.json>`, dann `pruefe_gate`), aber **nich
 gemergt** — auch nicht bei Verbesserung. (5) und (6) bleiben Merge-Pflicht, obwohl der
 Türstapel im engen Sinn sie nicht heilen kann — dafür stehen S7a und S3b im Stapel.
 
-Heute liefert `pruefe_gate(nullmessung, nullmessung)` genau zehn Verstöße:
+Heute liefert `pruefe_gate(nullmessung, nullmessung)` genau zehn Verstöße (seit `936e8f7` elf: dazu „(11) Rennweg DG1 nicht gemessen — Abschnitt »dg1« fehlt"):
 `(2) M17-02-b ist NICHT_BESTANDEN`, `(2) M17-04-c ist NICHT_BESTANDEN`,
 `(5) Einraum-Wohnungen sinken nicht: 2 → 2`, sechs Verstöße gegen (7) — die sechs
 bestehenden verneinten Verbindungen aus § 2e (zusammen 8 Durchgänge) — und
@@ -1041,7 +1041,8 @@ unverändert.
   (Board-Frage 1, Owner) und Einraum-Neuzugang MOLL_1OG `raum_54` (Board-Frage 1b); Verlierer-Abnahme
   9 → 14 nach der Owner-Formel nachgezogen (Planer-Bestätigung 2026-09-27).
 - **S5c** — die blattlosen Öffnungen, auf denen S7a überwiegend steht (F10; 12 der 14
-  Stiegenhaustüren der Kipp-Räume sind Durchgänge, § 6c).
+  Stiegenhaustüren der Kipp-Räume sind Durchgänge, § 6c). **Inventur und Entscheidungsvorlage § 9**
+  (2026-09-27, Branch `selman/fix-s5c-blattlose-oeffnungen`); Gate (11) verdrahtet (`936e8f7`, § 9a).
 - **Board 1 an @mvpo3 (Leonis):** `platzierung/deckung.py` liest die Flags nicht. Einzelliste
   der 5 Räume / 7 Leuchten in § 6g.7. Nichts davon liegt in diesem Slice — fremdes Package.
 - **Board-Punkt an @EnisAMG (Enis): WOHNKÜCHE in den Kanon.** Größenordnung gemessen:
@@ -1947,3 +1948,123 @@ Schacht als STIEGENHAUS bis `provider.py:210`. Details, Zahlen und Wirkung in §
 7. **Grenzen der Wandsonde:** an Barawitzka laufen Wandkörper durch die Türöffnungen (an 15
    erkannten Türen findet die Sonde nur bei 4 eine Lücke) — „Sonde 0" ist dort kein Beleg
    für „keine Öffnung".
+
+
+## 9. Diagnose S5c — Inventur der blattlosen Öffnungen und Entscheidungsvorlage (2026-09-27, kein Code außer Gate (11))
+
+**Anlass (Owner 2026-09-27):** „Danach S5c. […] EG-Slivers `rest_3`/`rest_4`, Barawitzka `durchgang_5` durch die
+Brandschutztür-XPASS, Gate-Bedingung (11) muss vor S5c verdrahtet sein (sonst bleibt DG1 ausgangslos),
+ID-Verschiebungen EG/BARA/MOLL_1OG. Dazu VA-5: nach S5c muss DG1 mindestens einen Ausgang haben, und keiner davon
+darf durch den Liftschacht führen." Anders als S3b (§ 7) hat S5c keine Owner-Definition — § 6g.8 nennt nur „die
+blattlosen Öffnungen, auf denen S7a überwiegend steht (F10)". S5c ist ein Bündel von Einzelentscheidungen; dieser
+Abschnitt ist die gemessene Vorlage dafür (Branch `selman/fix-s5c-blattlose-oeffnungen`, Worktree `nb-wt/s5c`,
+Executor + drei Linsen in zwei Runden; Belege Session-Scratch `…/8d935db0-…/scratchpad/s5c/`).
+
+### 9a. Gate (11) verdrahtet (`936e8f7`)
+
+`tests/gate/gate_dg1.py` (Muster `gate_barawitzka.py`): je Ausgang Tür-ID, Raumpaar, Breite, Abstand zum nächsten
+LIFT-Polygon, `im_lift`, `durch_liftschacht` = Türpunkt im LIFT-Polygon (`raum_typ == "LIFT"`, auch gestempelte wie
+Muthgasse `raum_79`) oder < 250 mm daran; ohne LIFT-Polygon `None` mit Grund (fail closed). `gate_messung` schreibt
+`dg1` (Rennweg DG1) und `lift_ausgaenge_info` (UG/EG/OG1, Nebenbefund VA-5, ohne Regel); `gate_regel._pruefe_dg1`
+meldet (11) bei fehlendem Abschnitt, ungültiger Zahl, `ausgaenge < 1` oder `durch_liftschacht > 0` — nur der
+Nachher-Stand, wie (10). Kalibrierung auf 12 Plänen: Phantom 0 mm, Lifttüren 199,9–208,9 mm, nächster anderer
+Ausgang 873 mm, kein Ausgang im Band 250–873 mm; Grenzfälle ohne Ausgangsrolle Barawitzka `tuer_30` 260 mm,
+Muthgasse `tuer_106/107/108` 135 mm. Das Raumpaar-Kriterium aus der ersten Fassung von § 3 ist **nicht**
+verdrahtet — falsch-positiv (OG3 hat alle drei Ausgänge am Ring-Raum `rest_3`). Gemessen auf `7105618`: **4
+Verstöße** — (3) OG3, (3) DG2, (10) und neu **„(11) DG1: 1 Ausgang, davon 1 durch den Liftschacht
+(`exit_durchgang_9`)"**; Nullmessung gegen sich selbst 10 → 11; `tests/gate` 81 passed, `-m gate` 3 passed /
+1 xfailed. Info: UG 3 Ausgänge / 1 Lifttür (`exit_durchgang_2`), EG 7 / 1 (`exit_durchgang_21`), OG1 3 / 1
+(`exit_durchgang_8`).
+
+### 9b. Zensus und Kategorien (12 Pläne, Stand `7105618`)
+
+638 Türen, davon **240 blattlos** (223 Durchgänge, 17 Außenöffnungen). Kategorien sind Merkmalsmengen, **22
+Öffnungen liegen in mehreren** — Wirkungen sind nicht addierbar. 103 in mindestens einer Kategorie, 137 Residuum:
+**Fremdcluster 16** (EG 14 + `durchgang_14`, Muthgasse Randcluster 2 → S3c), **6 tragende Treppenöffnungen**
+STGH ↔ STGH mit `stair_exit` (UG `durchgang_3`, EG `_19`/`_20`, OG1 `_6`/`_7`, MUTH `_70` — **keine S5c-Regel darf
+sie berühren**), 43 rollenlos, 72 mit Rolle (42 wohnungsintern, 21 Balkontüren, 8 Wohnungseingänge, 1 VR ↔ VR);
+das Residuum ist geometrisch unauffällig (nur MOLL_1OG `durchgang_5`/`_6` mit 100 mm Wandkörper auf der Linie).
+
+| K | Kategorie | Zahl | Beispiele / heutige Wirkung |
+|---|---|---|---|
+| 1 | **Liftkern-Phantome** (S5b-Prädikat JA über den U-Ring, § 8f) | 3 | EG `durchgang_24` (1 GRAPH-Weg, Ausgang per Dedup verworfen), OG1 `durchgang_9`, **DG1 `durchgang_9` = einziger Ausgang, 4 GRAPH-Wege**; dazu 6 Lifttüren < 250 mm: UG `_2`, EG `_21`, OG1 `_8` sind `stair_exit`, DG1 `_8` (58 mm) und DG2 `_6` Wohnungseingänge, MUTH `_69` |
+| 2 | **Blattlose Stiegenhaustüren** STGH ↔ VR/GANG (F10, § 6c) | 11 auf 6 Plänen, 1 213–14 200 mm | DG1 `_6`/`_7`/`_8` (privater VR `raum_8`, Flags 11), DG2 `_3`–`_6` (halten `raum_6`/`raum_7` als Erschließung → Gate (3) DG2), EG `_18` und MOLL_1OG `_10` tragende `stair_exit`; ≤ 1 100 mm trifft 0. § 6c-Abgleich: 12 → 9 (DG2 `raum_7` 5 → 2, Mollgasse `durchgang_10` 7 690 heißt heute `durchgang_9` 14 200 mm) |
+| 3 | **Außenöffnungen** (`aussen_durchgaenge`, kein Querungsprädikat) | 17 (UG 1, EG 2, OG3 1, DD 1, MOLL_EG 10, MUTH 2) | 3 durchgehend (UG `_1`, MOLL_EG `_6` Garagentor, `_10`), 7 Außenstreifen vor geschlossener Wand, 3 Innenstreifen (MOLL_EG `_2`/`_4`/`_5`), 4 Zwischenstücke; Ausgänge heute: EG `_2` (B009, Hauseingang → `final_exit`), MOLL_EG `_4`/`_5`/`_9` `final_exit`, `_6` Garagentor, `_8` Hauseingang von `raum_55` |
+| 4 | **Restflächen-Durchgänge aus S3b** | 10 | EG `_16`/`_17`/`_22`/`_23`, OG3 `_3`/`_4`, BARA `_4`/`_5`/`_28`, MOLL_1OG `_21`; kein Ausgang; BARA `_5` trägt die einzige `brandschutztuer`; MOLL_1OG `_21` macht `raum_54` zum Einraum |
+| 5 | **§ 8f-Befunde 1–7** | 8f.1: 2 · 8f.2: 95 (16 mit gemeinsamer Kante < 797) · 8f.3: 30 · 8f.4: 24 Dubletten · 8f.5: 6 · 8f.6: 73 Türnummern mit `KEIN_RAUM`-Seite · 8f.7: Sonde auf BARA 0/17 | Volllisten `…/s5c/r1/b_tabellen_12.txt` |
+| 6 | **Mittelpunkt im Wandkörper** (Proxy VA-5) | 26 | 15 echte Öffnungen, **5 Sonden-Phantome** (OG3 `_2`, MOLL_EG `_18`, MOLL_1OG `_2`, MUTH `_46`/`_64`), 6 unklar |
+
+### 9c. Kategorie 1 im Detail — Liftkern-Varianten (in-memory, volle Kette, Gate M1–M4 gemessen)
+
+| Variante | Mechanik | DG1 Ausgänge / durch Lift → (11) | Lifttür-`stair_exit` UG/EG/OG1 | OG1 `rest_2` (3, 9, 4) | Gate gesamt |
+|---|---|---|---|---|---|
+| Basis `7105618` | — | 1 / 1 → verletzt | 1/1/1 | (3, 9, 4) | 4 |
+| K1_P nur die 3 Phantome weg | ohne beschreibende Regel | **0 / 0 → verletzt (ausgangslos)** | 1/1/1 | gleich | 4 |
+| K1_S100 / K1_S700 Sonde als Prädikat | < 100 mm ändert MOLL_EG-Wohnungen 21 → 18; < 700 mm nimmt OG1 `durchgang_7` (tragend) und die `brandschutztuer` | 0 / 0 | 1/1/1 | gleich | 4 / scheidet aus |
+| K1_R `finde_lifte` vorgezogen | Phantom nur umnummeriert (`durchgang_8`, 0 mm) | 1 / 1 | 1/1/1 | gleich | 4 |
+| **K1_T** Restfläche mit > 50 % Liftkabine = SCHACHT | Kabinenanteil 0,635–0,684 (Rennweg) gegen ≤ 0,204 (Stiegenhaus-Reste); Muthgasse 0,551/0,574 (knapp) | 0 / 0 → verletzt | **0/0/0** | **(3, 9, 0)**, Wege enden an `exit_durchgang_6`, `rest_1` 4 | 4 (neu „(11) 0 Ausgänge") |
+| K1_E = K1_P + Ausgangsregel | „OG ohne `stair_exit`: Wohnungseingang ins Stiegenhaus ist Geschossausgang" (`ausgaenge.py`) | 3 / 1 (Lifttür `_8`) → verletzt | 1/1/1 | gleich | 4 |
+| **K1_TE** = K1_T + Ausgangsregel | dito | **2 / 0 (`exit_durchgang_6`/`_7`, 943/1 047 mm) → erfüllt** | 0/0/0 | (3, 9, 0) | **3** |
+
+Blast Radius K1_T: Leuchten UG 15 → 12, EG 21 → 20 (GRAPH 7 → 5), OG1 10 → 7, DG1 1 SL in privat `raum_3`, DG2
+7 → 5; Anker UG 20 → 18, EG 39 → 37, OG1 19 → 17, DG2 7 → 6; Muthgasse `stiegenhaus_1`/`_2` werden SCHACHT,
+`stair_exit` 2 → 1 (`durchgang_69`, 6,6 mm vom Lift, nicht plangeprüft), Anker 44 → 39 (Leuchten dort nicht
+gemessen); M1 `klein_ohne_stempel` 1 → 0 auf 5 Plänen, sonst M1–M4 gleich; die tragenden Treppenöffnungen bleiben.
+K1_TE zusätzlich: OG2 +1 Ausgang, DG2 +3 (GRAPH 0 → 3, an den 4 854/1 263/5 379-mm-Öffnungen `durchgang_3/4/5` =
+K2, Board 3); die Regel hängt am rohen `wohnungseingang` und macht auf DG1 Türen eines privaten VR ohne
+`wohnung_id` zu Ausgängen.
+
+### 9d. Regelvorschläge in Owner-Sprache und ihre gemessene Wirkung
+
+- **K1:** „Eine Restfläche, die zu mehr als der Hälfte Liftkabine ist, ist ein Liftschacht, kein Stiegenhaus" (K1_T)
+  — gezielt, Phantome und Lifttür-Ausgänge weg; heilt (11) **nicht** allein (DG1 dann ausgangslos): (11) braucht
+  eine **Ausgangsregel** (K1_TE) oder eine andere Quelle für den DG1-Ausgang.
+- **K2:** „E1 bleibt (blattlos = offen); ob eine Öffnung STGH ↔ VR eine Wohnungstür ohne erkanntes Blatt ist, wird
+  je Fall entschieden (Board 3), nicht über eine Breite" — ≤ 1 100 mm trifft 0; ≤ 1 500 mm: neuer (3)-Verstoß DG1
+  und 21,13 m² Notlichtverlust, DG2 nicht geheilt; alle 11: DG2 (3) geheilt, aber 42,00 m² Verlust + DG1-Schaden.
+- **K3:** Querungsprädikat auch für Außenöffnungen — P_A (einseitig): 11 von 17 fallen; **P_A2 (beidseitig, § 8a)**:
+  14 fallen; gemeinsam EG `final_exit` 3 → 2 (B009), Leuchten 21 → 18, DD 4 → 3, OG3 F8-Lücke ohne Folge, MUTH
+  Anker 44 → 43 / Leuchten 142 → 139; MOLL_EG `final_exit` 12 → 10 (P_A) bzw. 12 → 8 (P_A2, `raum_44` verliert beide
+  Endausgänge), Leuchten 64 → 56 / 52; in beiden fällt `raum_55` aus der Erschließung (`_8` ist ein Streifen zwischen
+  zwei Wandkörpern; `tuer_66` Gegenseite `KEIN_RAUM`); falsch-positiv MOLL_EG `_10`; Gate bleibt 4. **Vorläufig:** die
+  K3-Zahlen wurden als Filter *nach* `aussen_durchgaenge` gemessen; mit dem Prädikat *in* der Schleife (echter Bau)
+  deckt ein verworfener Teil keinen Folge-Teil mehr — MOLL_EG dann `final_exit` 12 → 9 (P_A2) / 11 (P_A), Leuchten
+  53 / 57, und an `raum_51` (§ 8c-Außenanlage) entsteht eine **neue** Außenöffnung (zweiter Falsch-Positiver);
+  Vorschlag der Linse Inventur: Außenanteil des freien Teils außerhalb der gedeckten Kontur ≥ 10 % als
+  Zusatzkriterium. Nachmessung mit Prädikat in der Schleife steht aus (Restbefund Runde 2). Vor dem Bau am Plan
+  prüfen: `raum_55`, `raum_44`, `raum_51`.
+- **K4:** „je Fall, nicht pauschal" — pauschal entfernen: BARA `brandschutztuer` 1 → 0 (Test wieder rot),
+  `raum_12` → None, FLW 6 → 2; MOLL_1OG `raum_54` kein Einraum mehr, `raum_57`/`59` wieder Loch; Sonden-Urteil: EG
+  `_16`/`_17`, OG3 `_3`, MOLL_1OG `_21` offen, OG3 `_4` Phantom, BARA braucht einen Planblick.
+- **K5:** „kein § 8f-Befund pauschal nach S5c" — 8f.2 bringt Gate +2 und nimmt MOLL_1OG den einzigen `stair_exit`;
+  8f.3/8f.4 bauen MOLL/MUTH-Wohnungen um und kosten die `brandschutztuer`; 8f.1 wirkt nur auf Anker.
+- **K6:** „Mittelpunkt im Wandkörper allein ist kein Befund; die 5 Sonden-Phantome als S5b-Messfälle führen" —
+  Entfernen wirkt nur auf MUTH (Wohnungen 27 → 28).
+
+**Was S5c nicht löst:** Gate (3) OG3 (R1-Erweiterung, § 7e) und (10) (S4c); Gate (3) DG2 (Board 3 / benannte
+Ausnahme, nicht S4e); (11) ohne Ausgangsregel; S4e (Regel 5, `raum_54`); S3c (15 EG- und 2 Muthgasse-
+Fremdcluster-Durchgänge); die 6 tragenden Treppenöffnungen; Muthgasse-Türnummern (S4b-Rest); Board 1; Kanon
+WOHNKÜCHE.
+
+### 9e. Entscheidungen des Owners (F1–F8)
+
+- **F1 Liftkern-Phantom:** (a) **K1_T** (Planer-Empfehlung als S5c-Kern: gezielt, tragende Öffnungen bleiben, M1–M4
+  gemessen; Kosten Leuchten −3/−1/−3/−1/−2 an den Ring-Resten, 1 SL in privat DG1 `raum_3`), (b) Sonde als Prädikat
+  (scheidet aus), (c) nur die Phantome (ohne Regel), (d) K1_R (heilt nichts). **Muthgasse:** sind `stiegenhaus_1`
+  (3,00 m²) / `stiegenhaus_2` (2,41 m²) Liftschächte? (K1_T macht beide SCHACHT, `durchgang_69` fällt als
+  `stair_exit`, Anker 44 → 39, Leuchten dort nicht gemessen.)
+- **F2 Ausgang für DG1 / Gate (11):** auf DG1 gibt es außer dem Phantom keinen Geschossausgang — die blattlosen
+  VR ↔ STGH-Öffnungen `durchgang_6`/`_7`/`_8` sind Wohnungseingänge. Nur die Ausgangsregel „OG ohne
+  Stiegenhaus-Ausgang: Wohnungseingang ins Stiegenhaus ist Geschossausgang" (K1_TE) erfüllt (11) (DG1 2 Ausgänge,
+  Gate 4 → 3; Nebenwirkung OG2 +1, DG2 +3 an K2-Öffnungen). Gehört die Ausgangsregel zu S5c (`ausgaenge.py`, Nähe zu
+  S4d/S4g) — oder Ausgang am Treppenlauf / andere Fassung (nicht gemessen)?
+- **F3 OG1-Abnahme „4 an `rest_2`":** fällt unter K1_T auf **0** (nicht 1); die Wege enden an `exit_durchgang_6`,
+  `rest_1` hat 4. Nachziehen auf `MESSFALL_I_OG1 = (3, 9, 0)` mit `rest_1` = 4?
+- **F4 Blatt-Semantik STGH ↔ VR/GANG (K2):** E1 behalten (Empfehlung; Board 3 je Fall) — DG2 (3) bleibt dann
+  Board 3 oder benannte Ausnahme.
+- **F5 Außenöffnungen (K3):** P_A / **P_A2** (Empfehlung, wie S5b) / alle 17 (nimmt auch echte UG-Lücke und
+  Garagentor); zusätzlich Außenanteil ≥ 10 %? Erst nach der Nachmessung mit Prädikat in der Schleife und dem
+  Planblick auf MOLL_EG `raum_55`/`raum_44`/`raum_51` entscheiden.
+- **F6 Restflächen-Durchgänge (K4):** je Fall (Empfehlung) statt pauschal; BARA `_4`/`_5`/`_28` Planblick.
+- **F7 § 8f-Befunde:** nicht pauschal (Empfehlung); 8f.1 als eigener kleiner Slice möglich (nur Anker).
+- **F8:** die 5 Sonden-Phantome als S5b-Messfälle führen (Empfehlung), nicht entfernen.
