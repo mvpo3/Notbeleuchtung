@@ -2958,3 +2958,64 @@ def test_r1ac_einbahn_idempotent_und_reihenfolge_invariant(bau, monkeypatch):
     monkeypatch.setattr(W, "ALLGEMEIN", wk.PRIVAT)
     raeume, tueren = bau()
     assert _wohnungsstand(raeume, bilde_wohnungen(raeume, tueren)) == soll, "Tiebreak umgedreht"
+
+
+# ── (t) R1-Typfilter (Owner 2026-09-27, § 7e Frage 3 und 4) ─────────────────
+# „Vestibül oder Flur hinter einer Wohnungseingangstür zählt nicht als
+# Einzelraum. Begründung: derselbe Grundsatz wie beim gebundenen Gang. Ein
+# Durchgangsraum ist kein Beleg für eine eigene Wohnung, er erschließt nur."
+# „Der Nachbar verliert sein Notlicht nicht. Wenn der gebundene Gang unbestimmt
+# bleibt (A+C), bleibt auch sein Nachbar unbestimmt, solange kein eigener Beleg
+# vorliegt."
+_og3_flur_vorraum = _og3_flur_anders(
+    "vorraum", raeume_dazu=[lambda: _r("N", "VORRAUM")],
+    tueren_dazu=[lambda: _t("tn", "L", "N", "wohnungseingang")])
+_og3_flur_gang = _og3_flur_anders(
+    "gang", raeume_dazu=[lambda: _r("N", "GANG")],
+    tueren_dazu=[lambda: _t("tn", "L", "N", "wohnungseingang")])
+
+
+def _og3_loch_gang_vorraum():
+    """Der Loch-Fall mit einem VORRAUM N hinter einem rohen Wohnungseingang von
+    L: N ist selbst Loch-Raum, hat keine Gruppengröße, L bindet nicht — schon
+    ohne Typfilter (§ 6g.5, im Loch-Fall strukturell ohne Wirkung)."""
+    raeume, tueren = _og3_loch_gang()
+    return (raeume + [_r("N", "VORRAUM")],
+            tueren + [_t("tn", "L", "N", "wohnungseingang")])
+
+
+@pytest.mark.parametrize("bau,loch,soll", [
+    (_og3_flur_vorraum, False, sorted([*_GETRENNT, (("N",), ("tn",))])),
+    (_og3_flur_gang, False, sorted([*_GETRENNT, (("N",), ("tn",))])),
+    (_og3_loch_gang_vorraum, True, _GETRENNT),
+], ids=["vorraum_T11", "gang_T27", "loch_vorraum"])
+def test_r1_typfilter_vorraum_und_gang_zaehlen_nicht_als_einzelraum(bau, loch, soll,
+                                                                    monkeypatch):
+    """``_og3_flur`` (A und C erfüllt) mit einem VORRAUM (T11) oder GANG (T27) N
+    hinter einem weiteren rohen Wohnungseingang MIT Blatt von L: N ist eine
+    Gruppe aus genau einem Raum, zählt aber nicht als Einzelraum — L bindet
+    NICHT, keine Wohnung {L, N, …}. Vor dem Filter band L, die gemeinsame
+    Wohnung war über Küche/Zimmer G4-belegt, N wurde bestätigt privat und
+    verlor sein Notlicht (11 → 00). Jetzt behält N, was er ohne R1 hat: der
+    ganze Zustand (Klassen, Flags, Wohnungen, Warnungen) ist der ohne R1, N hat
+    Flags 11. Dazu der Loch-Fall mit VORRAUM-Nachbar: bindet nicht."""
+    raeume, tueren = bau()
+    assert ("L" in wk.loch_raeume(raeume, tueren)) is loch, "Vorbedingung"
+    assert wk.wohnungszugehoerigkeit(raeume, tueren)[3] == set()
+    warnungen: list[str] = []
+    wohnungen = bilde_wohnungen(raeume, tueren, warnungen)
+    by_id = {r.id: r for r in raeume}
+    assert _wohnungsstand(raeume, wohnungen)[0] == soll
+    assert by_id["L"].wohnung_id is None
+    assert by_id["L"].nutzungsklasse == wk.ALLGEMEIN, by_id["L"].nutzungsklasse
+    for rid in ("L", "N"):
+        assert (by_id[rid].ist_fluchtweg, by_id[rid].ist_communal) == (True, True), rid
+    assert "N" not in wk.bestaetigt_privat(raeume, tueren)
+    assert not [w for w in warnungen if w.startswith("r1: ")], warnungen
+    assert len(_stichprobe_reihenfolgen(bau)) == 1
+    eins = (_vollzustand(raeume, tueren, wohnungen), warnungen)
+    monkeypatch.setattr(wk, "_gang_einzelraeume", lambda *_a: set())
+    raeume, tueren = bau()
+    ohne_r1: list[str] = []
+    assert (_vollzustand(raeume, tueren, bilde_wohnungen(raeume, tueren, ohne_r1)),
+            ohne_r1) == eins, "wie ohne R1"
