@@ -75,6 +75,16 @@ Die Bedingungen (Owner-Vorgabe, § 3 des Gate-Auftrags; (0) ist die Vorbedingung
       NACHHER-Stand: die Aussage ist absolut. Damit ist eine Vorher-Messung ohne
       den Abschnitt (die eingecheckte Nullmessung) kein Absturz — als
       Nachher-Stand gelesen ist sie ein Verstoß (fail closed).
+  (11) Rennweg DG1 (Owner-Entscheid 2026-09-26, VA-5): „DG1 hat nach dem Stapel
+      mindestens einen Ausgang, und keiner davon führt durch den Liftschacht" —
+      ``dg1.ausgaenge >= 1`` UND ``dg1.ausgaenge_durch_liftschacht == 0``
+      (``tests/gate/gate_dg1.py``: Türpunkt im LIFT-Polygon oder < 250 mm
+      daran). **Heute ist (11) verletzt**: der einzige Ausgang
+      ``exit_durchgang_9`` ist der Phantom-Durchgang im Liftkern; S5c darf ihn
+      nur entfernen, wenn ein echter Ausgang bleibt. Keine Zahl (None, weil
+      kein LIFT-Polygon erkannt wurde) und ein fehlender Abschnitt sind
+      Verstöße. Wie (10) nur der NACHHER-Stand; die eingecheckte Nullmessung
+      führt den Abschnitt nicht und bleibt als Vorher-Stand prüfbar.
 """
 from __future__ import annotations
 
@@ -265,6 +275,22 @@ def _pruefe_barawitzka(nachher: dict) -> list[str]:
     return []
 
 
+def _pruefe_dg1(nachher: dict) -> list[str]:
+    """(11) Rennweg DG1: mindestens ein Ausgang, keiner durch den Liftschacht."""
+    dg1 = nachher.get("dg1")
+    if not dg1:
+        return ["(11) Rennweg DG1 nicht gemessen — Abschnitt »dg1« fehlt"]
+    n, lift = dg1.get("ausgaenge"), dg1.get("ausgaenge_durch_liftschacht")
+    if not _ist_zahl(n) or not _ist_zahl(lift):
+        return [(f"(11) DG1 nicht messbar: ausgaenge={n!r}, ausgaenge_durch_liftschacht={lift!r}"
+                 f" — {dg1.get('grund') or 'ohne Grund'}")]
+    if n >= 1 and lift == 0:
+        return []
+    ids = [a.get("id") for a in dg1.get("ausgaenge_liste") or [] if a.get("durch_liftschacht")]
+    return [f"(11) DG1: {n} {'Ausgang' if n == 1 else 'Ausgänge'}, davon {lift} durch den "
+            "Liftschacht" + (f" ({', '.join(ids)})" if ids else "")]
+
+
 def pruefe_gate(vorher: dict, nachher: dict) -> list[str]:
     """Verstöße gegen die Gate-Regel im Klartext; leere Liste = Gate erfüllt."""
     return (_pruefe_vergleichbarkeit(vorher, nachher)
@@ -273,4 +299,5 @@ def pruefe_gate(vorher: dict, nachher: dict) -> list[str]:
             + _pruefe_og1(vorher, nachher)
             + _pruefe_og3(nachher)
             + _pruefe_referenz(nachher)
-            + _pruefe_barawitzka(nachher))
+            + _pruefe_barawitzka(nachher)
+            + _pruefe_dg1(nachher))
