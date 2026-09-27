@@ -558,31 +558,57 @@ def wohnungseingaenge(gruppe: list[str], tueren: list[Tuer],
     return out
 
 
-def _loch_gang_einzelraeume(raeume: list[Raum], tueren: list[Tuer],
-                            drin: set[str], frei: set[str]) -> set[str]:
-    """R1 (Owner 2026-09-22): die noch ungebundenen Loch-GÄNGE, hinter deren
-    rohen Wohnungseingängen NUR Einzelräume liegen — jede dahinterliegende
-    Raumgruppe hat genau EINEN Raum. Sie bilden mit diesen Räumen eine
-    Wohnung (gemessen Rennweg OG3 ``raum_10``, dessen echte Eingangsseite
-    ``tuer_5`` nach KEIN_RAUM führt).
+#: R1-Erweiterung, Bedingung C (Owner 2026-09-27): neben einem
+#: Aufenthaltsraum belegt einer dieser Räume hinter dem Gang eine Wohnung.
+NEBENRAUM_C = frozenset({"BAD", "WC", "ABSTELLRAUM"})
 
-    Reine Topologie der ROHEN Türen, keine Klasse. Führt auch nur ein roher
-    Wohnungseingang in eine mehrräumige Gruppe oder aus der Wohnungsmenge
-    heraus (Erschließung, ``KEIN_RAUM``, ``AUSSEN``), bindet der Gang nicht —
-    Muthgasse E2 ``raum_94``. Alle Kandidaten werden gegen DENSELBEN Stand
-    geprüft, darum hängt das Ergebnis nicht an der Reihenfolge.
+
+def _gang_einzelraeume(raeume: list[Raum], tueren: list[Tuer], drin: set[str],
+                       offen: set[str], loch: set[str]) -> set[str]:
+    """R1: die GÄNGE aus ``offen`` (noch in keiner Wohnung), hinter deren rohen
+    Wohnungseingängen NUR Einzelräume liegen — jede dahinterliegende
+    Raumgruppe hat genau EINEN Raum, und keiner führt aus der Wohnungsmenge
+    heraus (Erschließung, ``KEIN_RAUM``, ``AUSSEN``; Muthgasse E2 ``raum_94``
+    bindet darum nicht). Sie bilden mit diesen Räumen eine Wohnung.
+
+    * **Loch-GANG** (``loch``; Owner 2026-09-22): das genügt, unverändert.
+    * **Erschlossener GANG** (R1-Erweiterung, Owner 2026-09-27, Fassung A+C —
+      der Wohnungsflur hinter der Stiegenhaustür, gemessen Rennweg OG3
+      ``raum_10`` seit S3b hinter ``tuer_5``, 940 mm mit Blatt) nur, wenn
+      zusätzlich **A** alle übrigen Türen des Gangs — sein Zugang —
+      Stiegenhaustüren MIT Türblatt ohne rohe Rolle Wohnungseingang sind
+      (ein Hauseingang, eine Tür ins Freie, eine rollenlose Tür zu einem
+      anderen Raum oder eine blattlose Öffnung genügt nicht: Mollgasse EG
+      ``raum_34``/``raum_39``, Rennweg UG ``raum_12``), und **C** unter den
+      Einzelräumen ein Aufenthaltsraum UND ein Bad, WC oder Abstellraum liegt
+      (ein Gang vor Studios oder nur vor Nassräumen ist kein Wohnungsflur).
+
+    Reine Topologie der ROHEN Türen und Raumtypen, keine Klasse. Alle
+    Kandidaten werden gegen DENSELBEN Stand geprüft, darum hängt das Ergebnis
+    nicht an der Reihenfolge.
     """
     typ = {r.id: r.raum_typ for r in raeume}
     groesse = {rid: len(g) for g in wohnungsgruppen(drin, tueren) for rid in g}
     hinter: dict[str, set[str]] = {}
+    zugang: dict[str, bool] = {}
     for t in tueren:
-        if t.tuer_detail != "wohnungseingang":
-            continue
         for a, b in ((t.von_raum, t.nach_raum), (t.nach_raum, t.von_raum)):
-            if a in frei and typ.get(a) == "GANG":
+            if a not in offen or typ.get(a) != "GANG":
+                continue
+            if t.tuer_detail == "wohnungseingang":
                 hinter.setdefault(a, set()).add(b)
-    return {rid for rid, nachbarn in hinter.items()
-            if all(groesse.get(x) == 1 for x in nachbarn)}
+            else:                                           # A
+                zugang[a] = (zugang.get(a, True) and typ.get(b) == "STIEGENHAUS"
+                             and not t.ohne_tuerblatt)
+    out: set[str] = set()
+    for rid, nachbarn in hinter.items():
+        if not all(groesse.get(x) == 1 for x in nachbarn):
+            continue
+        typen = {typ.get(x) for x in nachbarn}
+        if rid in loch or (zugang.get(rid, False)
+                           and typen & AUFENTHALTSRAUM and typen & NEBENRAUM_C):
+            out.add(rid)
+    return out
 
 
 def wohnungszugehoerigkeit(raeume: list[Raum], tueren: list[Tuer]
@@ -592,9 +618,10 @@ def wohnungszugehoerigkeit(raeume: list[Raum], tueren: list[Tuer]
     rohe Türen: Wohnungseingang ist Grenze, Zimmertür ist innen. Board 4 gilt
     hierfür nie. Eine Regel zu (a) darf keine Wohnung zerteilen." (Owner
     2026-09-22). Liefert ``([(raum_ids, eingangs_tuer_ids)], loch_in_wohnung,
-    loch_erschliessung, loch_einzelraeume)`` — ``loch_einzelraeume`` ist die
-    Teilmenge von ``loch_in_wohnung``, die R1 gebunden hat (nur für den Grund
-    im Bericht).
+    loch_erschliessung, r1_gaenge)`` — ``r1_gaenge`` sind die Gänge, die R1
+    gebunden hat, Loch-Raum oder nicht; ``loch_in_wohnung`` führt davon nur
+    die Loch-Räume. (a) liest beide: diese Räume bleiben unbestimmt mit
+    Notlicht (``wohnungen.bilde_wohnungen``).
 
     Liest NUR Raumtyp, Tür-Topologie, rohe Rolle und Türblatt — nie
     ``nutzungsklasse``, nie ein Ergebnis von Schritt 1/2/3, nie den
@@ -615,8 +642,11 @@ def wohnungszugehoerigkeit(raeume: list[Raum], tueren: list[Tuer]
       gebunden ist; sonst — nur über rohe Wohnungseingänge angebunden — ist er
       Erschließung (Owner-Fragebogen 2026-09-22). Ausnahme R1 (Owner
       2026-09-22): ein Loch-GANG, hinter dessen rohen Wohnungseingängen NUR
-      Einzelräume liegen, bildet mit ihnen eine Wohnung
-      (``_loch_gang_einzelraeume``).
+      Einzelräume liegen, bildet mit ihnen eine Wohnung; ebenso — R1-
+      Erweiterung, Owner 2026-09-27, Fassung A+C — ein erschlossener GANG,
+      dessen Zugang nur Stiegenhaustüren mit Blatt sind und hinter dem ein
+      Aufenthaltsraum und ein Bad/WC/Abstellraum liegen
+      (``_gang_einzelraeume``).
     * Die Wohnungen sind die Zusammenhänge darin (``wohnungsgruppen``: innen
       verbinden Zimmertür, Wohnungseingang und Tür ohne Rolle); ihre Eingänge
       sind die Türen zur Erschließung (``wohnungseingaenge``).
@@ -643,7 +673,7 @@ def wohnungszugehoerigkeit(raeume: list[Raum], tueren: list[Tuer]
     while True:
         gebunden = {rid for rid in frei if zimmertuer.get(rid, set()) & drin}
         if not gebunden:
-            gebunden = _loch_gang_einzelraeume(raeume, tueren, drin, frei)
+            gebunden = _gang_einzelraeume(raeume, tueren, drin, scope - drin, loch)
             einzel |= gebunden
         if not gebunden:
             break
@@ -729,13 +759,26 @@ def loch_warnungen(raeume: list[Raum], tueren: list[Tuer],
     """Der Messfall S4c/S3b als Berichtszeilen: JEDER Loch-Raum
     (``loch_raeume``), gleich welche Klasse er bekommen hat, mit seiner
     Wohnungszugehörigkeit nach rohen Türen (``in_wohnung`` = an eine Wohnung
-    gebunden, ``einzelraeume`` = davon die nach R1 gebundenen Loch-GÄNGE;
-    beide aus ``wohnungszugehoerigkeit``)."""
+    gebunden, ``einzelraeume`` = die nach R1 gebundenen GÄNGE; beide aus
+    ``wohnungszugehoerigkeit``). Dazu je GANG, den R1 OHNE Loch gebunden hat
+    (R1-Erweiterung A+C, Owner 2026-09-27), eine ``r1:``-Zeile, die seinen
+    Zugang nennt — seine Türen außer den rohen Wohnungseingängen."""
     urteil = ankerurteil(raeume, tueren)
     klasse = {r.id: r.nutzungsklasse for r in raeume}
     kurz = {PRIVAT: "privat", ALLGEMEIN: "allgemein", None: "offen"}
+    loch = loch_raeume(raeume, tueren)
     out: list[str] = []
-    for rid in sorted(loch_raeume(raeume, tueren)):
+    for rid in sorted(set(einzelraeume) - loch):
+        zugang = sorted(t.id for t in tueren if rid in (t.von_raum, t.nach_raum)
+                        and t.tuer_detail != "wohnungseingang")
+        out.append(f"r1: {rid} — Zugang nur über {', '.join(zugang)} vom Stiegenhaus "
+                   "(mit Türblatt, kein Wohnungseingang); hinter seinen rohen "
+                   "Wohnungseingängen nur Einzelräume, darunter Aufenthaltsraum und "
+                   "Bad/WC/Abstellraum → Wohnungsflur, er bildet mit ihnen eine "
+                   f"Wohnung (R1); Klasse {kurz.get(klasse[rid], klasse[rid])}: gehört "
+                   "zur Wohnung, ist kein Beleg für eine eigene Wohnung (Wohnung "
+                   "folgt rohen Türen, Owner 2026-09-27), Notlicht bleibt")
+    for rid in sorted(loch):
         if rid in einzelraeume:
             wie = ("hinter seinen rohen Wohnungseingängen liegen nur "
                    "Einzelräume → er bildet mit ihnen eine Wohnung (R1)")

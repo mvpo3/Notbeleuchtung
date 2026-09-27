@@ -264,6 +264,13 @@ KIPPER: dict[str, set[str]] = {
     "dg2": set(),
     "dd": set(),
 }
+#: R1-Erweiterung A+C (Owner 2026-09-27): „Der gebundene Gang bleibt
+#: unbestimmt wie der Loch-Gang" — auch dort, wo Schritt 1–3 ihn als Kandidaten
+#: mit Stiegenhaustür allgemein sprechen (``klassifiziere``). Keine
+#: Nicht-Konvergenz, sondern eine Owner-Setzung aus (b); GEMESSEN Runde 1 der
+#: Erweiterung: nur OG3 ``raum_10``. Wächst oder wandert die Menge, fällt der
+#: Test auf.
+R1_GEBUNDEN: dict[str, set[str]] = {"og3": {"raum_10"}}
 #: Alle Pläne mit Fixture (Muthgasse E2 nicht: ein Parse ~10 min; die
 #: Invarianz dort steht im Bericht).
 FIXTURE_PLAENE = ["og1", "og2", "og3", "ug", "eg", "dg1", "dg2", "dd", "bara",
@@ -506,16 +513,24 @@ def test_kandidatenklasse_ist_fixpunkt_der_eigenen_regel(plan_name, request):
     gesetzt, also war die Bedingung immer erfüllt. Jetzt wird die Menge der
     Räume, die dem Fixpunkt widersprechen, GEGEN DIE GEMESSENE MENGE geprüft
     — sie darf weder wachsen noch wandern. Alles andere muss exakt gleich
-    sein, und jeder Kipper muss mit Grund im Bericht stehen."""
+    sein, und jeder Kipper muss mit Grund im Bericht stehen. Dazu kommen die
+    nach R1 gebundenen Gänge (``R1_GEBUNDEN``, Owner 2026-09-27): ebenfalls
+    unbestimmt, mit ihrem eigenen Grund."""
     prov, modell, _ = request.getfixturevalue(plan_name)
     nach, _ = klassifiziere(modell.raeume, modell.tueren)
     abweichung = {r.id for r in modell.raeume
                   if r.id in nach and r.nutzungsklasse != nach[r.id]}
-    assert abweichung == KIPPER[plan_name] & set(nach), (
+    r1 = R1_GEBUNDEN.get(plan_name, set())
+    assert abweichung == (KIPPER[plan_name] | r1) & set(nach), (
         f"{plan_name}: Kipper-Menge gewandert — {sorted(abweichung)}")
     for rid in abweichung:
         r = next(x for x in modell.raeume if x.id == rid)
         assert r.nutzungsklasse is None, f"{rid} widerspricht, ist aber gesetzt"
+        if rid in r1:
+            assert [w for w in prov.wohnungsklasse_warnungen
+                    if w.startswith(f"unbestimmt: {rid} — R1: Wohnungsflur")], (
+                f"{rid}: nicht im Bericht")
+            continue
         assert [w for w in prov.wohnungsklasse_warnungen
                 if rid in w and "Schritt 3" in w], f"{rid}: nicht im Bericht"
 
