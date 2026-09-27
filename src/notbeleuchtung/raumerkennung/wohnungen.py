@@ -165,7 +165,10 @@ def bilde_wohnungen(raeume: list[Raum], tueren: list[Tuer],
     (über rohe Zimmertür an ihre Wohnung gebunden oder — R1, Owner
     2026-09-22 — ein Loch-GANG mit nur Einzelräumen hinter seinen rohen
     Wohnungseingängen → unbestimmt mit Notlicht, sonst allgemein), ebenso
-    der Riegel (G3: Hauseingang, Tür ins Freie oder Tür
+    jeder andere nach R1 gebundene GANG (R1-Erweiterung A+C, Owner
+    2026-09-27: der Wohnungsflur hinter der Stiegenhaustür „gehört zur
+    Wohnung, ist aber kein Beleg für eine eigene Wohnung" → unbestimmt mit
+    Notlicht) und der Riegel (G3: Hauseingang, Tür ins Freie oder Tür
     zu einem Nebenraum → allgemein). Die übrigen Kandidaten (Schritt 2) und
     GANG/VORRAUM (Flur-Verfeinerung + Riegel der Ankerregel) werden
     gemeinsam iteriert, jede Runde aus demselben Schnappschuss (Jacobi), Start
@@ -188,12 +191,12 @@ def bilde_wohnungen(raeume: list[Raum], tueren: list[Tuer],
             r.nutzungsklasse = nutzungsklasse_fuer(r.raum_typ)
     by_id = {r.id: r for r in raeume}
     (zugehoerig, loch_in_wohnung, loch_erschliessung,
-     loch_einzelraeume) = wohnungszugehoerigkeit(raeume, tueren)
+     r1_gaenge) = wohnungszugehoerigkeit(raeume, tueren)
     kand = kandidaten(raeume, tueren)
     stiegenhaus = {r.id for r in raeume if r.raum_typ == "STIEGENHAUS"}
     grenze = erschliessung_erwiesen(raeume, tueren)
     urteil = ankerurteil(raeume, tueren)
-    fest: dict[str, str | None] = dict.fromkeys(loch_in_wohnung)
+    fest: dict[str, str | None] = dict.fromkeys(loch_in_wohnung | r1_gaenge)
     fest.update(dict.fromkeys(loch_erschliessung, ALLGEMEIN))
     for rid in riegel_nie_privat(raeume, tueren):
         fest.setdefault(rid, ALLGEMEIN)
@@ -216,10 +219,14 @@ def bilde_wohnungen(raeume: list[Raum], tueren: list[Tuer],
         gruende.update({rid: (f"Ankerregel nicht auswertbar: {urteil[rid][1]}; "
                               + ("hinter seinen rohen Wohnungseingängen liegen nur "
                                  "Einzelräume, er bildet mit ihnen eine Wohnung (R1)"
-                                 if rid in loch_einzelraeume else
+                                 if rid in r1_gaenge else
                                  "über eine rohe Zimmertür an seine Wohnung gebunden")
                               + " — die Wohnung folgt rohen Türen, die Klasse bleibt "
                               "offen (Owner 2026-09-22)") for rid in loch_in_wohnung})
+        gruende.update(dict.fromkeys(
+            r1_gaenge - loch_in_wohnung,
+            "R1: Wohnungsflur hinter Stiegenhaustür — gehört zur Wohnung, ist kein "
+            "Beleg für eine eigene Wohnung; Notlicht bleibt, Owner 2026-09-27"))
         for rid in scope:
             by_id[rid].nutzungsklasse = fest.get(
                 rid, PRIVAT if rid in eins or rid in privat_start
@@ -338,8 +345,7 @@ def bilde_wohnungen(raeume: list[Raum], tueren: list[Tuer],
     if warnungen is not None:
         warnungen.extend(warnungen_aus(
             {rid: by_id[rid].nutzungsklasse for rid in scope}, gruende))
-        warnungen.extend(loch_warnungen(raeume, tueren, loch_in_wohnung,
-                                        loch_einzelraeume))
+        warnungen.extend(loch_warnungen(raeume, tueren, loch_in_wohnung, r1_gaenge))
         warnungen.extend(tiebreak)
 
     # `wohnung_id` ZUERST leeren (Befund B1): wer keine Wohnung mehr hat,

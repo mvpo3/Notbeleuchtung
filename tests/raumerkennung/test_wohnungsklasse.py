@@ -1912,10 +1912,11 @@ def test_r8_idempotent_und_reihenfolge_invariant(bau):
 # ── (n) Runde 9: Board 4 als ALLGEMEINE Regel (L1) ──────────────────────────
 def _fest(raeume, tueren) -> dict:
     """Die festen Räume der Regel (Owner 2026-09-22): Loch-Räume nach rohen
-    Türen (an die Wohnung gebunden → offen, sonst allgemein) und der Riegel
-    (G3, allgemein) — wie ``bilde_wohnungen``."""
-    _, in_wohnung, erschliessung, _einzel = wk.wohnungszugehoerigkeit(raeume, tueren)
-    fest = dict.fromkeys(in_wohnung)
+    Türen (an die Wohnung gebunden → offen, sonst allgemein), die nach R1
+    gebundenen Gänge (offen, R1-Erweiterung 2026-09-27) und der Riegel (G3,
+    allgemein) — wie ``bilde_wohnungen``."""
+    _, in_wohnung, erschliessung, r1_gaenge = wk.wohnungszugehoerigkeit(raeume, tueren)
+    fest = dict.fromkeys(in_wohnung | r1_gaenge)
     fest.update(dict.fromkeys(erschliessung, wk.ALLGEMEIN))
     for rid in wk.riegel_nie_privat(raeume, tueren):
         fest.setdefault(rid, wk.ALLGEMEIN)
