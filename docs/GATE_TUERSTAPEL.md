@@ -798,6 +798,26 @@ einen Raum), bildet mit diesen Räumen **eine** Wohnung; er selbst bleibt für (
 mit Notlicht.* Umgesetzt in `_loch_gang_einzelraeume` (`:549`) — reine Topologie der rohen
 Türen, liest keine Klasse.
 
+**R1, erweitert (Owner-Entscheid 2026-09-27, Fassung A+C; gebaut `bfa6350`):** *Ein Gang, der
+ausschließlich Einzelräume erschließt und selbst keinen rohen Wohnungseingang trägt, bildet mit
+diesen Einzelräumen eine Wohnung.* Einzelraum heißt: hinter jedem rohen Wohnungseingang des Gangs
+liegt eine Raumgruppe aus genau einem Raum, und keiner führt aus der Wohnungsmenge heraus. Ist der
+Gang vom Stiegenhaus über keine Tür erreichbar (Loch-Gang), genügt das — unverändert seit
+2026-09-22. Ist er erreichbar, gilt die Regel nur für den **Wohnungsflur hinter der Stiegenhaustür**:
+**(A)** sein Zugang — alle seine Türen außer den rohen Wohnungseingängen — besteht ausschließlich aus
+Stiegenhaustüren **mit Türblatt** ohne rohe Rolle Wohnungseingang (ein Hauseingang, eine Tür ins
+Freie, eine rollenlose Tür zu einem anderen Raum oder eine blattlose Öffnung genügt nicht); **(C)**
+unter den Einzelräumen liegt mindestens ein Aufenthaltsraum (Zimmer, Wohnzimmer, Schlafzimmer,
+Küche) **und** mindestens ein Bad, WC oder Abstellraum. Der gebundene Gang bleibt für (a)
+**unbestimmt mit Notlicht** (Flags 11): „der Gang gehört zur Wohnung, ist aber kein Beleg für eine
+eigene Wohnung; unbestimmt heißt Notlicht bleibt, und das ist die sichere Richtung — derselbe
+Grundsatz wie bei den Loch-Räumen: im Zweifel Notlicht behalten" (Owner). Die Stiegenhaustür
+bleibt Stiegenhaustür; die Wohnung bekommt dort keinen Eingang. Umgesetzt in `_gang_einzelraeume`
+(`wohnungsklasse.py:566`, vormals `_loch_gang_einzelraeume`); `bilde_wohnungen` setzt den
+gebundenen Gang fest auf `None` mit dem Grund „R1: Wohnungsflur hinter Stiegenhaustür — gehört zur
+Wohnung, ist kein Beleg für eine eigene Wohnung; Notlicht bleibt", dazu eine `r1:`-Warnzeile mit den
+Zugangstüren. Auf den 12 Plänen bindet die Erweiterung **nur** Rennweg OG3 `raum_10` (§ 7e).
+
 Grund für die Regel: die rohe Rolle `wohnungseingang` ist bei GANG-Türen **kein physischer
 Beleg**. `tuer_typisierung.py:197` (Regel 5) setzt sie allein aus dem Raumtyp-Paar
 `ALLGEMEIN_ERSCHLIESSUNG × WOHNUNG_PRIVAT`, und im Kanon ist GANG statisch allgemein,
@@ -815,8 +835,10 @@ Auf den 12 Plänen gibt es **16 Loch-Räume**: 10 über rohe Zimmertür gebunden
 (OG3 `raum_10`), 5 Erschließung ohne Wohnung (OG2 `raum_9`, MOLL_1OG `raum_52`/`raum_65`,
 MUTH `raum_46`/`raum_94`).
 
-**R1 kann strukturell nie an einen GANG/VORRAUM binden** (spart dem nächsten Prüfer den
-Grenzfall): ein Loch-GANG ist vom Stiegenhaus über keine Tür erreichbar, also ist jeder Raum
+**Im Loch-Fall kann R1 strukturell nie an einen GANG/VORRAUM binden** (spart dem nächsten Prüfer
+den Grenzfall; für die Erweiterung A+C gilt das **nicht** — ein VORRAUM oder GANG hinter einem
+rohen Wohnungseingang mit Blatt ist eine Gruppe der Größe 1 und zählt als Einzelraum, § 7e Owner-
+Frage 3; auf den 12 Plänen 0 Fälle; die Zählung „16 Loch-Räume, 1 nach R1" unten ist Stand vor S3b): ein Loch-GANG ist vom Stiegenhaus über keine Tür erreichbar, also ist jeder Raum
 hinter seinen rohen Wohnungseingängen ebenfalls unerreichbar; ist dieser Nachbar
 GANG/VORRAUM, ist er selbst Loch-Raum und liegt in der freien, nicht in der gebundenen Menge
 (keine Gruppengröße, keine Bindung); kommt er über eine rohe Zimmertür in die gebundene
@@ -989,7 +1011,7 @@ würde.
 |---|---|---|
 | **(6)** — **erfüllt seit S3b `ecf9406`** (§ 7e: GRAPH 5, 0 Anker in privat) | Rennweg OG3 `segmente_graph = 0` — Fluchtweg-Graph, nicht Klassifikation. Der Anker-Teil derselben Bedingung ist erfüllt (0 Anker in `WOHNUNG_PRIVAT` auf OG3) | **S3b** (Restflächen enden vor den Blocktüren; auf OG3 ist das Stiegenhaus `rest_3`/`rest_4`, keine Tür erreicht es, § 6c). S7c heilt den GRAPH-Teil **nicht** — gemessen § 6g.10: OG3 hat keinen Ausgang, `segmente_graph` 0 vor wie nach |
 | **(10)** | Barawitzka EG ABSTELLRAUM 1,98 m² ohne Verbindung, `raum_28` — Türerkennung | **S4c** |
-| **(3) OG3** | `M4.einraum` OG3 0 → 4 — **neu seit S3b** (`ecf9406`): `tuer_5` (940 mm, Blatt) STIEGENHAUS `rest_3` × GANG `raum_10` roh `stiegenhaustuer`, `raum_10` kein Loch mehr, R1 greift nicht, Regel 5 → vier Einraum-Wohnungen; S4e in der Owner-Fassung heilt es nicht | **Owner-Entscheid** (§ 7e Board-Frage 1: R1-Erweiterung / `tuer_5` als Wohnungseingang / benannte Ausnahme; Planer-Empfehlung R1-Erweiterung); bis dahin Stapelrest, `test_loch_raum_folgt_rohen_tueren[og3-raum_10]` strict-xfail. **Owner 2026-09-27: R1-Erweiterung (a)** — gebaut und gemessen, **STOPP** nach Owner-Kriterium (MOLL_EG `raum_34`/`raum_39`, UG `raum_12`); Fassung A / A+B / A+C und (a)-Klasse offen, § 7e; Stand `selman/wip-r1ext-stopp-2026-09-27` |
+| **(3) OG3** | `M4.einraum` OG3 0 → 4 — **neu seit S3b** (`ecf9406`): `tuer_5` (940 mm, Blatt) STIEGENHAUS `rest_3` × GANG `raum_10` roh `stiegenhaustuer`, `raum_10` kein Loch mehr, R1 greift nicht, Regel 5 → vier Einraum-Wohnungen; S4e in der Owner-Fassung heilt es nicht | **Owner-Entscheid** (§ 7e Board-Frage 1: R1-Erweiterung / `tuer_5` als Wohnungseingang / benannte Ausnahme; Planer-Empfehlung R1-Erweiterung); **Geheilt durch die R1-Erweiterung, Fassung A+C** (Owner 2026-09-27, `c639205`/`bfa6350`/`36579f5`, § 6g.5/§ 7e): OG3 wieder eine Wohnung {1, 4, 6, 7, 10} wie HEAD, Einraum 4 → 0, `raum_10` unbestimmt mit Notlicht, kein `datenbefund`; strict-xfail `[og3-raum_10]` XPASS und entfernt. Vorgeschichte: wörtliche Fassung im STOPP (`selman/wip-r1ext-stopp-2026-09-27`) |
 | **(3)** | `M4.einraum` DG2 0 → 1: `raum_5` ZIMMER bildet die Einraum-Wohnung `top_2`, weil VORRAUM `raum_7` Erschließung ist und `raum_5` nur über `tuer_1` an ihm hängt; die Wohnungsgrenze (b) fällt damit auf `tuer_1` | **offen, NICHT S4e** (nachgemessen: 0 Regel-5-Türen auf DG2) — Kandidaten **Board 3 (Blatt-Semantik, @EnisAMG)** und **S5c**; keine S7-Regel heilt sie |
 
 Zu **(3)** im Einzelnen, weil die Zuordnung eine Entscheidung braucht: der Verstoß ist
@@ -1637,8 +1659,8 @@ allgemeiner Gang vor Einraum-Wohnungen dieselbe Topologie — Regel 5 gibt jeder
 
 Keine Fassung ist vom Owner-Wortlaut wörtlich gedeckt; A liegt am nächsten an „hinter einer Blatt-Tür".
 
-**Offene Owner-Fragen zur R1-Erweiterung (bis dahin bleibt Gate (3) OG3 `M4.einraum` 0 → 4 der benannte
-Stapelrest aus `ecf9406`, Marker strict-xfail):**
+**Owner-Fragen zur R1-Erweiterung — 1 und 2 entschieden 2026-09-27 (Fassung A+C; gebundener Gang
+unbestimmt), gebaut; 3 und 4 offen (unten):**
 1. **Fassung:** wörtlich mit benannten Neuzugängen (MOLL_EG `raum_34`/`raum_39`, UG `raum_12`; drei
    Unit-Erwartungen und Naht `[ug]` neu zu entscheiden) — oder A / A+B / A+C — oder Erweiterung zurück.
    **Planer-Empfehlung: A + C.** Sie trifft genau den Wohnungsflur (Blatt-Tür vom Stiegenhaus ohne WE-Rolle,
@@ -1654,6 +1676,48 @@ Stapelrest aus `ecf9406`, Marker strict-xfail):**
    ankerprivaten, (b)-erschlossenen Gang über „belegt" das Notlicht nimmt?
 4. Nachrangig: ist ein allein stehender VORRAUM ein „Einzelraum" (bindet {GANG, VORRAUM} ohne Aufenthaltsraum,
    ohne Eingang; 0 Fälle)? Mit A + C entfällt der Fall.
+
+**R1-Erweiterung, Fassung A+C — gebaut 2026-09-27** (Branch `selman/fix-s3b-rest-rueckdehnung`, Commits
+`c639205` Tests rot · `bfa6350` Fix · `36579f5` Naht; Executor + drei Linsen, eine Runde, kein STOPP):
+
+- **Wirkung:** R1 bindet ohne Loch **nur** Rennweg OG3 `raum_10` (Zugang `tuer_5` Stiegenhaustür mit Blatt;
+  Einzelräume KÜCHE, ZIMMER, BAD, ABSTELLRAUM) → eine Wohnung {1, 4, 6, 7, 10} = HEAD `5ac3e0f` `top_1`,
+  Einraum 4 → 0, Wohnungen 5 → 2 (die zweite {2, 3, 5, 8, `rest_5`} seit S3b). `raum_10` Klasse
+  ALLGEMEIN → **None**, Flags 11, Grund „R1: Wohnungsflur hinter Stiegenhaustür …", `r1:`-Zeile, keine
+  `loch:`-Zeile. Segmente (GRAPH 5, FALLBACK 1), 3 `stair_exit`, Anker 25 (0 in privat), Platzierung 7
+  unverändert.
+- **Blast Radius 12 Pläne, vor dem Commit:** 11 Pläne raummengengleich; Klassen (außer `raum_10`), Flags,
+  Verlierer 14 / 75,07 m², Anker, Segmente, Ausgänge, Leuchten, Türrollen roh und korrigiert auf 12/12
+  unverändert; **STOPP-Prüfung 0** (keine Wohnung aus HEAD-getrennten Gruppen). Nicht gebunden, mit Grund:
+  UG `raum_12` (A: rollenlose Türen zu GANG `raum_10`/untypisiert `raum_13`; C: nur WC), MOLL_EG `raum_34`
+  (A: Zugang Hauseingang), `raum_39` (A: rollenlose Tür zum Hauptgang; C), `raum_56` (A: blattloser Zugang;
+  C), Muthgasse `raum_94` (Gruppen der Größe 3 und 7).
+- **Gate auf dem sauberen Baum `36579f5`: 2 Verstöße** — (3) DG2 `M4.einraum` 0 → 1 (Board 3), (10)
+  Barawitzka (S4c). **(3) OG3 weg**, `datenbefund` OG3/UG 0, (6) erfüllt (GRAPH 5, 0 Anker in privat).
+  Messung `_arbeit/gate/messung_r1ac_36579f5.json`. Gate (11) lebt auf dem S5c-Branch.
+- **Tests:** `test_wohnungsklasse.py` 272 passed (21 neue in Abschnitt (s): Bindungsfall rot gegen
+  `7105618`; acht Gegenfälle A/C/Einzelräume/Zweiergruppe und Loch-Fall grün, gegen die wörtliche Fassung
+  rot); `tests/raumerkennung` + `contract` 745 passed / 6 skipped / 2 xfailed; `tests/naht` 3 failed
+  (vorbestehend) / 303 passed / 2 skipped / 12 xfailed. Die drei Bestandstests aus der STOPP-Runde bleiben
+  unverändert grün.
+- **Planer-Bestätigung 2026-09-27:** `tests/naht::test_kandidatenklasse_ist_fixpunkt_der_eigenen_regel`
+  trägt die benannte, exakte Ausnahme `R1_GEBUNDEN = {"og3": {"raum_10"}}` — direkte Folge der
+  Owner-Setzung „unbestimmt" für einen Kandidaten (Schritt 1–3 sagen ALLGEMEIN); gegen `7105618` rot, darf
+  weder wachsen noch wandern.
+- **Noch offen — Owner-Frage 3 (G4-Pfad) und 4 (VORRAUM als Einzelraum) entfallen mit A+C NICHT** (zwei
+  Linsen, Konstruktionen T11/T27, auf 12 Plänen **0 Fälle**): ein VORRAUM oder GANG hinter einem rohen
+  Wohnungseingang **mit Blatt** ist eine (b)-Gruppe der Größe 1 und zählt als Einzelraum; bindet der
+  Wohnungsflur ihn mit, ist die gemeinsame Wohnung über den Aufenthaltsraum G4-belegt, der ankerprivate
+  Nachbar wird `bestaetigt_privat` und **verliert sein Notlicht** (T11 VORRAUM 11 → 00, T27 GANG 11 → 00).
+  Der gebundene Gang selbst ist nicht betroffen (None, Flags 11). **Planer-Empfehlung:** Typfilter —
+  VORRAUM und GANG zählen nicht als Einzelraum (eine Zeile in `_gang_einzelraeume`), damit die Bindung nach
+  „im Zweifel Notlicht behalten" nie einem Nachbarn Notlicht nimmt; bis zum Entscheid unverändert (0 Fälle).
+- Weitere Eigenschaften (0 Fälle, benannt): zwei Stiegenhaus-Gänge, die dieselben Einzelräume erschließen,
+  werden eine Wohnung ohne Eingang (T16); A prüft Gegenseite STIEGENHAUS + Blatt, nicht die rohe Rolle
+  (eine `brandschutztuer` zum Stiegenhaus zählt als Zugang, T14); Balkontür, Zimmertür, Kellerraum-Tür,
+  Tür ins Freie oder zweite blattlose Stiegenhaus-Öffnung am Gang schließen die Bindung aus (fail-safe).
+  `scripts/plan_pruefen.py:1191` zeigt nur `loch:`-Zeilen — die `r1:`-Zeile erreicht den Prüfbericht noch
+  nicht (Prüfstrecke, eigener Nachzug).
 
 **Board-Frage 1b — entschieden (Owner 2026-09-27): `raum_54` ist benannter, begründeter Neuzugang der
 Einraum-Abnahme, bis S4e zurückgestellt; nicht stillschweigend akzeptiert.** Begründung (gemessen): das neue
