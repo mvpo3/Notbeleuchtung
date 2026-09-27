@@ -1,5 +1,5 @@
 """Ein vollständiger Gate-Messlauf: Herkunft, 18 Erwartungen, Referenz, OG1, OG3,
-Barawitzka, M1-M4.
+Barawitzka, DG1 (mit Lift-Ausgängen UG/EG/OG1 als Information), M1-M4.
 
 ``messung(repo)`` liefert das Vergleichsobjekt des Türstapel-Gates. Es enthält
 NUR Zahlen, IDs, Typen und Namen — keine absoluten Pfade, keine Koordinaten und
@@ -34,6 +34,7 @@ for _pfad in (WURZEL / "src", WURZEL / "tests", Path(__file__).resolve().parent)
         sys.path.insert(0, str(_pfad))
 
 import gate_barawitzka
+import gate_dg1
 import gate_m1_m4
 import gate_m17
 import gate_og1
@@ -88,7 +89,8 @@ def _meta(repo: Path, referenz: Path, laufzeit_s: float) -> dict:
 
 
 def messung(repo: Path) -> dict:
-    """Alle Messfälle des Gates: meta, m17, referenz, og1, og3, barawitzka, m1_m4."""
+    """Alle Messfälle des Gates: meta, m17, referenz, og1, og3, barawitzka, dg1,
+    lift_ausgaenge_info, m1_m4."""
     repo = Path(repo)
     referenz = gate_m17.referenz_pfad()
     if referenz is None:
@@ -109,6 +111,12 @@ def messung(repo: Path) -> dict:
     # Einziger Messfall außerhalb der Rennweg-Familie (Bedingung (10), § 8e):
     # der ABSTELLRAUM 1,98 m² des Barawitzka-EG. Kostet einen zusätzlichen Parse.
     barawitzka = gate_barawitzka.verbindung_abstellraum(erkenne(BARAWITZKA_EG, "EG").modell)
+    # Bedingung (11): Rennweg DG1 behält einen Ausgang, keiner durch den Liftschacht.
+    # UG/EG/OG1 nur als Information (Lifttür-Ausgänge, Nebenbefund VA-5) — ohne Regel.
+    dg1 = gate_dg1.ausgaenge_lift(erkenne(dxf_pfad(repo, "DG1"), "DG1").modell)
+    lift_info = {plan: gate_dg1.ausgaenge_lift(erkenne(dxf_pfad(repo, plan), plan).modell)
+                 for plan in ("UG", "EG")}
+    lift_info["OG1"] = gate_dg1.ausgaenge_lift(lauf.modell)
     # Nur die Kopfzahlen übernehmen: das rohe Ergebnis führt absolute Pfade und Laufzeiten.
     roh = gate_m1_m4.messe(repo, gate_m1_m4.erzeuge_caches(repo))
     m1_m4 = {k: roh[k] for k in ("M1", "M2", "M3", "M4")}
@@ -116,12 +124,13 @@ def messung(repo: Path) -> dict:
     laufzeit = round(time.monotonic() - t0, 1)
     return {"meta": _meta(repo, referenz, laufzeit), "m17": m17,
             "referenz": referenz_verbindungen, "og1": og1, "og3": og3,
-            "barawitzka": barawitzka, "m1_m4": m1_m4}
+            "barawitzka": barawitzka, "dg1": dg1, "lift_ausgaenge_info": lift_info,
+            "m1_m4": m1_m4}
 
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(
-        description="Vollständiger Gate-Messlauf (M17, OG1, OG3, M1-M4).")
+        description="Vollständiger Gate-Messlauf (M17, OG1, OG3, Barawitzka, DG1, M1-M4).")
     ap.add_argument("--repo", default=str(WURZEL))
     ap.add_argument("--out", required=True, help="Zieldatei für die Messung (JSON)")
     a = ap.parse_args(argv)
@@ -147,6 +156,11 @@ def main(argv: list[str] | None = None) -> int:
     bara = ergebnis["barawitzka"]
     print(f"Barawitzka EG: {bara['bezeichnung']} hat {bara['anzahl']} Verbindung(en)"
           + (f" — {bara['grund']}" if bara["grund"] else ""))
+    for plan, e in (("DG1", ergebnis["dg1"]), *ergebnis["lift_ausgaenge_info"].items()):
+        print(f"{plan}: {e['ausgaenge']} Ausgänge, davon {e['ausgaenge_durch_liftschacht']} "
+              "durch den Liftschacht "
+              f"{[a['id'] for a in e['ausgaenge_liste'] if a['durch_liftschacht']]}"
+              + (f" — {e['grund']}" if e["grund"] else ""))
     print(f"geschrieben: {ziel.name} ({ergebnis['meta']['laufzeit_s']} s)")
     return 0
 
