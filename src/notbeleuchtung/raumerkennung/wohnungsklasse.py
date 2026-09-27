@@ -571,7 +571,16 @@ def _gang_einzelraeume(raeume: list[Raum], tueren: list[Tuer], drin: set[str],
     heraus (Erschließung, ``KEIN_RAUM``, ``AUSSEN``; Muthgasse E2 ``raum_94``
     bindet darum nicht). Sie bilden mit diesen Räumen eine Wohnung.
 
-    * **Loch-GANG** (``loch``; Owner 2026-09-22): das genügt, unverändert.
+    Ein VORRAUM oder GANG zählt nie als Einzelraum (Owner 2026-09-27, § 7e
+    Frage 3/4): „Vestibül oder Flur hinter einer Wohnungseingangstür zählt
+    nicht als Einzelraum … Ein Durchgangsraum ist kein Beleg für eine eigene
+    Wohnung, er erschließt nur." Liegt einer hinter einem rohen
+    Wohnungseingang des Gangs, bindet der Gang nicht; der Nachbar behält, was
+    er ohne R1 hat, und verliert sein Notlicht nicht (im Zweifel Notlicht
+    behalten). Im Loch-Fall strukturell ohne Wirkung (§ 6g.5).
+
+    * **Loch-GANG** (``loch``; Owner 2026-09-22): die Einzelraum-Bedingung
+      genügt, in der Wirkung unverändert (der Typfilter oben greift dort nie).
     * **Erschlossener GANG** (R1-Erweiterung, Owner 2026-09-27, Fassung A+C —
       der Wohnungsflur hinter der Stiegenhaustür, gemessen Rennweg OG3
       ``raum_10`` seit S3b hinter ``tuer_5``, 940 mm mit Blatt) nur, wenn
@@ -602,7 +611,7 @@ def _gang_einzelraeume(raeume: list[Raum], tueren: list[Tuer], drin: set[str],
                              and not t.ohne_tuerblatt)
     out: set[str] = set()
     for rid, nachbarn in hinter.items():
-        if not all(groesse.get(x) == 1 for x in nachbarn):
+        if not all(groesse.get(x) == 1 and typ.get(x) not in SCOPE_TYPEN for x in nachbarn):
             continue
         typen = {typ.get(x) for x in nachbarn}
         if rid in loch or (zugang.get(rid, False)
@@ -773,7 +782,8 @@ def loch_warnungen(raeume: list[Raum], tueren: list[Tuer],
                         and t.tuer_detail != "wohnungseingang")
         out.append(f"r1: {rid} — Zugang nur über {', '.join(zugang)} vom Stiegenhaus "
                    "(mit Türblatt, kein Wohnungseingang); hinter seinen rohen "
-                   "Wohnungseingängen nur Einzelräume, darunter Aufenthaltsraum und "
+                   "Wohnungseingängen nur Einzelräume (kein Vorraum oder Gang — ein "
+                   "Durchgangsraum erschließt nur), darunter Aufenthaltsraum und "
                    "Bad/WC/Abstellraum → Wohnungsflur, er bildet mit ihnen eine "
                    f"Wohnung (R1); Klasse {kurz.get(klasse[rid], klasse[rid])}: gehört "
                    "zur Wohnung, ist kein Beleg für eine eigene Wohnung (Wohnung "
