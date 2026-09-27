@@ -26,7 +26,7 @@ from .geometrie_typ import typisiere_geometrisch
 from .geschoss import geschoss_befund
 from .kaskade import KaskadeErgebnis, raeume_aus_kaskade
 from .kreuzcheck import kreuzcheck
-from .lift_erkennung import finde_lifte
+from .lift_erkennung import finde_lifte, liftschacht_reste
 from .raumtyp import beschrifte_raeume
 from .stiegenhaus import baue_stiegenhaus_modell
 from .tuer_typisierung import brandschutz_hinweise_aus_dxf, typisiere_tueren
@@ -156,6 +156,12 @@ class ArchitekturRaumProvider:
             f"seite_fehlt: {t.id} Seite {zeichen} bis {stufe:.0f} mm kein Raum "
             "und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)"
             for t, zeichen, stufe in fehlende_seiten]
+        # S5c, Owner-Entscheid F1 (K1_T): eine Stiegenhausfläche, die zu mehr
+        # als der Hälfte Liftkabine ist, ist Liftschacht — VOR den Durchgängen
+        # und der Türtypisierung, damit der S5a-Guard an ihr keine blattlose
+        # Öffnung bildet (Liftkern-Phantom VA-5, Lifttür-Ausgänge). Erst nach
+        # der Außenanalyse: die liest die Raumtypen für die Innen-Zonen.
+        schacht_reste = liftschacht_reste(plan, raeume)
         if k.wandkoerper:
             tueren = tueren + durchgaenge_ohne_tuerblatt(raeume, tueren, wu,
                                                          k.tueroeffnungen)
@@ -207,7 +213,7 @@ class ArchitekturRaumProvider:
         # ── Fachteil 2: Lifte (LIFT/KEIN_RAUM, aus STIEGENHAUS ausgestanzt)
         # + Stiegenhaus-Modelle + Anker (Stiegenhaus + Gang). Anker liefern
         # nur Azimute (ADR-0006) — Platzierung bleibt Leonis.
-        lifte = finde_lifte(plan, raeume)
+        lifte = finde_lifte(plan, raeume, schacht_reste)
         stiegenhaeuser = []
         anker = []
         wohnungsintern = bestaetigt_privat(raeume, tueren)
