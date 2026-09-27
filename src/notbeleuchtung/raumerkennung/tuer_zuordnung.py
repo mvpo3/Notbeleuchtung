@@ -384,6 +384,11 @@ def durchgaenge_ohne_tuerblatt(
 # ── Öffnungen in der AUSSENWAND (ohne Türblatt) ──────────────────────────────
 _AUSSEN_KONTAKT_MM = 400.0   # Außenwände sind dicker als Innenwände (≤ 800)
 _AUSSEN_DURCHGANG_MAX_MM = 2600.0  # breiter = Fassaden-Artefakt, keine Tür
+# S5c, Owner-Entscheid F5: so viel des freien Teils muss außerhalb der gedeckten
+# Kontur liegen. Gemessen trennt 0,10 die echten Öffnungen (Rennweg UG
+# `aussenoeffnung_1` 0,149, Mollgasse EG Garagentor 0,591) von den Innenstreifen,
+# die die Kontur nur berühren (Mollgasse EG `_10` 0,000, `raum_51` 0,002).
+_AUSSEN_ANTEIL_MIN = 0.10
 
 
 def aussen_durchgaenge(raeume: list[Raum], tueren: list[Tuer],
@@ -396,12 +401,20 @@ def aussen_durchgaenge(raeume: list[Raum], tueren: list[Tuer],
     minus Wandkörper. Nur ALLGEMEIN-Räume (Rennweg-EG-Muster: Rampenkorridor
     mit 1340-mm-Lücke) — Wohnungs-Fensteröffnungen bleiben draußen.
 
-    OFFEN (Diagnose U8, Slice S5c Z.1271-1274, Frage F8 Z.1406): Sobald S2 die
-    Innen-Zonen deckt, liest diese Funktion am Rennweg OG3 eine 1547-mm-Lücke
-    in der Stiegenhausfassade als Weg ins Freie (gemessene Folge: Notlicht in
-    einer Privatwohnung). Ob eine Fassadenlücke im Obergeschoss ein Fenster
-    oder ein Durchgang ist, entscheidet F8; das Querungskriterium dafür gehört
-    zu S5c. S2 nimmt weder das eine noch das andere vorweg.
+    Querung (Slice S5c, Owner-Entscheid F5 2026-09-27, P_A2 wie § 8a): ein
+    freier Teil ist nur dann eine Öffnung, wenn er am Raum anliegt, die Kante
+    der gedeckten Kontur erreicht (beide ≤ ``_KONTAKT_TOL_MM``) UND zu
+    mindestens ``_AUSSEN_ANTEIL_MIN`` außerhalb der Kontur liegt.
+    Außenstreifen vor einer geschlossenen Wand (erreichen den Raum nicht),
+    Innenstreifen dahinter (erreichen das Freie nicht) und Zwischenstücke
+    zwischen Wandkörpern queren nicht (Rennweg OG3-Stiegenhauslücke F8, EG
+    B009). Geprüft IN der Schleife: ein verworfener Teil deckt keinen
+    Folge-Teil über ``tuer_punkte``.
+
+    ponytail: die Zone reicht ``_AUSSEN_KONTAKT_MM`` ab dem Raum. In einer
+    Außenwand dicker als 400 mm erreicht der freie Teil einer echten Lücke den
+    Raum nicht und fällt (auf den 12 Plänen: geschlossene Wand an den Streifen
+    150–330 mm). Ausbaupfad: die Zone aus der gemessenen Wanddicke puffern.
     """
     if (wand_union_geom is None or wand_union_geom.is_empty
             or kontur is None or kontur.is_empty):
@@ -411,6 +424,7 @@ def aussen_durchgaenge(raeume: list[Raum], tueren: list[Tuer],
     # komplex — je Raum gepuffert war das der Zeitfresser auf Muthgasse).
     aussen_ring = (kontur.buffer(2000.0).difference(kontur)
                    .buffer(_AUSSEN_KONTAKT_MM))
+    kante = kontur.boundary
     tuer_punkte = [t.xy_mm for t in tueren]
     out: list[Tuer] = []
     for r in raeume:
@@ -436,6 +450,10 @@ def aussen_durchgaenge(raeume: list[Raum], tueren: list[Tuer],
             breite = max(math.dist(coords[0], coords[1]),
                          math.dist(coords[1], coords[2]))
             if not (_DURCHGANG_MIN_MM < breite <= _AUSSEN_DURCHGANG_MAX_MM):
+                continue
+            if (poly.distance(g) > _KONTAKT_TOL_MM
+                    or g.distance(kante) > _KONTAKT_TOL_MM
+                    or g.difference(kontur).area < _AUSSEN_ANTEIL_MIN * g.area):
                 continue
             c = g.centroid
             xy = (float(c.x), float(c.y))

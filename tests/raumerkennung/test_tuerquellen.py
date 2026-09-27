@@ -3,6 +3,7 @@ Garagentor-Endausgang, untypisiert_grund."""
 from __future__ import annotations
 
 import ezdxf
+import pytest
 from shapely.geometry import box
 
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum, Tuer
@@ -62,10 +63,16 @@ def test_aussentor_aus_bogen_an_der_kontur():
 
 
 # ── (a) Öffnung in der Außenwand ─────────────────────────────────────────────
-def _gang_mit_wandluecke():
-    """Gang 0..6000×0..2000, rundum 600er-Wand; oben eine 1340-mm-Lücke."""
+def _gang_mit_wandluecke(nase_mm=300.0):
+    """Gang 0..6000×0..2000, rundum 600er-Wand; oben eine 1340-mm-Lücke, in
+    die der Gang ``nase_mm`` hineinragt (wie Raumpolygone, die in die
+    Türöffnung zurückgedehnt sind). S5c/F5: ohne Nase erreicht der freie Teil
+    in der 600er-Wand den Raum nicht (Zwischenstück, § 9d), mit 200 mm Nase
+    endet er an der Kontur ohne Außenanteil."""
     gang = Raum(id="g", raum_typ="GANG",
-                polygon_mm=[(0, 0), (6000, 0), (6000, 2000), (0, 2000)])
+                polygon_mm=[(0, 0), (6000, 0), (6000, 2000), (3340, 2000),
+                            (3340, 2000 + nase_mm), (2000, 2000 + nase_mm),
+                            (2000, 2000), (0, 2000)])
     wand = (box(-600, -600, 6600, 0)
             .union(box(-600, 0, 0, 2600)).union(box(6000, 0, 6600, 2600))
             .union(box(-600, 2000, 2000, 2600)).union(box(3340, 2000, 6600, 2600)))
@@ -76,8 +83,9 @@ def test_aussen_durchgang_allgemeinraum_ohne_tuerblatt():
     """Die Signatur trägt KEIN Geschoss: die Geschossregel für Wandöffnungen
     (»im Obergeschoss ist eine Fassadenlücke ein Fenster«) ist ein eigener
     Concern — Diagnose Z.1271-1274 weist ``aussen_durchgaenge`` dem Slice S5c
-    zu, und F8 (Z.1406, »Soll jede Wandöffnung geschlossen werden?«) ist
-    unentschieden. S2 entscheidet sie nicht vor."""
+    zu. S5c (Owner-Entscheid F5, 2026-09-27) prüft statt eines Geschosses die
+    Querung: die Lücke zählt, weil der freie Teil am Gang anliegt und über die
+    Kontur hinausreicht (24 % außerhalb)."""
     gang, wand, kontur = _gang_mit_wandluecke()
     neu = aussen_durchgaenge([gang], [], wand, kontur)
     assert len(neu) == 1
@@ -90,6 +98,44 @@ def test_aussen_durchgang_allgemeinraum_ohne_tuerblatt():
               polygon_mm=[(0, 0), (6000, 0), (6000, 2000), (0, 2000)])
     assert aussen_durchgaenge([zi], [], wand, kontur) == []
 
+
+
+def _schmaler_gang(wand_mm, luecke):
+    """Gang 1600 × 2000, Seiten und Boden 600er-Wand, oben ``wand_mm``;
+    mit ``luecke`` eine 1000-mm-Öffnung mittig in der oberen Wand."""
+    oben = (box(0, 2000, 300, 2000 + wand_mm).union(box(1300, 2000, 1600, 2000 + wand_mm))
+            if luecke else box(0, 2000, 1600, 2000 + wand_mm))
+    wand = (box(-600, -600, 2200, 0).union(box(-600, 0, 0, 2000 + wand_mm))
+            .union(box(1600, 0, 2200, 2000 + wand_mm)).union(oben))
+    gang = Raum(id="g", raum_typ="GANG",
+                polygon_mm=[(0, 0), (1600, 0), (1600, 2000), (0, 2000)])
+    return gang, wand, box(-600, -600, 2200, 2000 + wand_mm)
+
+
+@pytest.mark.parametrize(("luecke", "anzahl"), [
+    (True, 1),     # durchgehend: am Raum, 30 % außerhalb der Kontur
+    (False, 0),    # geschlossen: Außenstreifen (300 mm vom Raum) + Innenstreifen (0 % außen)
+])
+def test_aussenoeffnung_quert_die_wand(luecke, anzahl):
+    """S5c, Owner-Entscheid F5 (P_A2 wie § 8a): Außenöffnung ist nur, was vom
+    Raum durch die Außenwand ins Freie reicht. Vor einer geschlossenen 300er-Wand
+    liegen zwei freie Teile — der Außenstreifen erreicht den Raum nicht, der
+    Innenstreifen die Außenkante nicht (vorher: der Außenstreifen war Öffnung)."""
+    gang, wand, kontur = _schmaler_gang(300, luecke)
+    assert len(aussen_durchgaenge([gang], [], wand, kontur)) == anzahl
+
+
+@pytest.mark.parametrize(("nase_mm", "anzahl"), [
+    (200.0, 0),    # endet an der Kontur, 0 % außerhalb (Muster MOLL_EG _10 / raum_51)
+    (230.0, 0),    # 7,9 % außerhalb
+    (250.0, 1),    # 13,0 % außerhalb
+])
+def test_aussenanteil_schwelle(nase_mm, anzahl):
+    """S5c, Owner-Entscheid F5: zusätzlich ≥ 10 % des freien Teils außerhalb der
+    gedeckten Kontur — ein Innenstreifen, der die Kante nur berührt, ist keine
+    Öffnung ins Freie."""
+    gang, wand, kontur = _gang_mit_wandluecke(nase_mm)
+    assert len(aussen_durchgaenge([gang], [], wand, kontur)) == anzahl
 
 # ── (b) Text-Türen + Text-Typisierung ────────────────────────────────────────
 def _text_plan(text: str, xy):
