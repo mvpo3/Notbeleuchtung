@@ -2048,6 +2048,20 @@ WOHNKÜCHE.
 
 ### 9e. Entscheidungen des Owners (F1–F8)
 
+**Owner-Entscheid 2026-09-27 (zweite Runde) — F1 bis F8 entschieden, Empfehlungen übernommen, eine Auflage
+bei F3 (Wortlaut):** „F1: Liftkabinen-Fassung, K1_T ist Liftschacht, Muthgasse `stiegenhaus_1`/`_2` als Liftschacht
+führen. F2: Ausgangsregel zu S5c wie vorgeschlagen. F3: OG1-Abnahme auf (3, 9, 0) nachziehen. Auflage: im Gate-Text
+festhalten, dass die 4 aus einem Stand stammt, in dem Lifttüren als Ausgänge zählten, und dass die Absenkung eine
+Korrektur ist, keine Bandabsenkung. Alte Zahl als überholt kennzeichnen, nicht löschen. F4: DG2 (3) bleibt, Board 3
+an Enis bleibt offen. F5: Außenöffnungen P_A2 mit Außenanteil-Schwelle, Nachmessung mit Prädikat in der Schleife.
+F6 bis F8: wie empfohlen, F6 und F8 je Fall statt pauschal. Der Restbefund (`raum_51` und `raum_55` brauchen einen
+Filter) wird als eigener Punkt geführt, nicht in S5c mitgelöst (`docs/OFFENE_FRAGEN.md`)." Dazu für den Bau von
+S5c: „Gate (11) muss nach S5c grün sein (VA-5-Messfall). Blast Radius der Liftkabinen-Typisierung über alle 12
+Pläne: wie viele Räume werden SCHACHT, wie viele Ausgänge entfallen, und ob irgendwo ein Geschoss ausgangslos wird.
+Wenn ja, stoppen und melden, nicht durch die OG-Regel überdecken." Push-GO für `selman/fix-s5c-blattlose-oeffnungen`.
+
+Die Fragen im Wortlaut der Vorlage:
+
 - **F1 Liftkern-Phantom:** (a) **K1_T** (Planer-Empfehlung als S5c-Kern: gezielt, tragende Öffnungen bleiben, M1–M4
   gemessen; Kosten Leuchten −3/−1/−3/−1/−2 an den Ring-Resten, 1 SL in privat DG1 `raum_3`), (b) Sonde als Prädikat
   (scheidet aus), (c) nur die Phantome (ohne Regel), (d) K1_R (heilt nichts). **Muthgasse:** sind `stiegenhaus_1`

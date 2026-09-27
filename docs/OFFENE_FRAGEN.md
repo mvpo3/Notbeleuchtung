@@ -1688,6 +1688,28 @@ und Mollgasse 1OG ist die Abnahme von S7a+S7b (Bedingung (9)). Greift die Kalibr
 nicht, ist die Abnahme wertlos. Messung dazu liegt beim S7-Blast.
 ---
 
+## Außenöffnungen Mollgasse EG `raum_51` / `raum_55` — Filterfrage (Owner 2026-09-27, eigener Punkt, nicht in S5c)
+
+Aus der S5c-Inventur (`docs/GATE_TUERSTAPEL.md` § 9d, Kategorie 3). Owner: „Der Restbefund (raum_51 und raum_55
+brauchen einen Filter) wird als eigener Punkt geführt, nicht in S5c mitgelöst."
+
+- **MOLL_EG `raum_55`** (Erschließung mit Hauseingang `aussenoeffnung_8`): `_8` ist laut Ausschnitt ein **Streifen
+  zwischen zwei Wandkörpern**, keine Öffnung ins Freie; `tuer_66` desselben Raums hat die Gegenseite `KEIN_RAUM`. Mit
+  dem Querungsprädikat für Außenöffnungen (P_A wie P_A2) fällt `_8` und `raum_55` **verliert die
+  Erschließungsklasse** — Folge für Notlicht und Wege dort nicht bewertet. Frage: eigener Filter (welche Tür ist der
+  wirkliche Hauseingang von `raum_55`?) oder Planblick + Korrektur der Türseite von `tuer_66` (S4g-Nähe).
+- **MOLL_EG `raum_51`** (§ 8c-Außenanlage, 122,43 m²): mit dem Prädikat **in der Schleife** von `aussen_durchgaenge`
+  (echter Bau, nicht der Nachfilter der Runde 1) deckt eine verworfene Öffnung keinen Folge-Teil mehr, und an
+  `raum_51` entsteht eine **neue** Außenöffnung — ein Innenstreifen mit 0,0–0,2 % Außenanteil, weil der Raum bis an
+  die gedeckte Kontur reicht (der Außenring greift 400 mm hinein). Die Außenanteil-Schwelle (F5, ≥ 10 % des freien
+  Teils außerhalb der Kontur) fängt genau das; ob sie für `raum_51` reicht, zeigt die Nachmessung in S5c. Bleibt der
+  Fall, braucht `raum_51` einen eigenen Filter (Außenanlage ≠ Gebäuderaum).
+- Verwandt, laut Bild korrekt: `raum_44` verliert unter P_A2 beide Endausgänge (`_4`/`_5` sind Innenstreifen hinter
+  150/199 mm geschlossener Wand); Planblick empfohlen, kein eigener Filter nötig.
+
+Messstand `7105618`, Belege Session-Scratch `…/8d935db0-…/scratchpad/s5c/r2/` (`_k3.py`, `k3_MOLL_EG.json`,
+`bilder/*.png`) und `review_inventur_r2/urteil.md` (B1: Prädikat in der Schleife, `raum_51`).
+
 ## S3c — Fremdcluster-Filter und Extents-Ausreißer (Owner-Entscheid 2026-09-26, nach dem Stapel-Merge)
 
 **Anlass:** Vision-Audit Rennweg EG (`docs/VISION_AUDIT.md` § 10.5) und Diagnose 2026-09-26
