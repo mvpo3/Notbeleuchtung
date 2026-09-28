@@ -61,6 +61,62 @@ def test_lauf_ohne_version_bricht_ab(tmp_path, capsys):
     assert list((tmp_path / "out").iterdir()) == []
 
 
+def _kz_cache(tueren):
+    raeume = [{**_raum(rid, typ, x, 0, x + 2000, 2000), "wohnung_id": w}
+              for rid, typ, x, w in (("a1", "ZIMMER", 0, "W1"), ("a2", "BAD", 2000, "W1"),
+                                     ("b1", "ZIMMER", 5000, "W3"), ("c1", "KÜCHE", 8000, "W2"),
+                                     ("l", "LIFT", 11000, None), ("s", "SCHACHT", 14000, None))]
+    cache = {"raeume": raeume, "stempel": [], "aussen_offen": [], "aussen_geschlossen": [],
+             "zuordnung_quelle": "Erkennung", "raeume_nicht_gezeigt": 0, "geschoss": "OG1",
+             "geschoss_quelle": "test", "kein_umriss": False, "rotation_vermerk": ""}
+    if tueren is not None:
+        cache["tueren"] = tueren
+    return cache
+
+
+def test_kennzahlen_einraum_tueren_lifte():
+    tueren = [{"tuer_detail": d, "ohne_tuerblatt": o}
+              for d, o in (("zimmertuer", False), (None, True), (None, False),
+                           ("wohnungseingang", False), ("zimmertuer", False))]
+    kz = rd._kennzahlen(_kz_cache(tueren), [])
+    assert kz["einraum_wohnungen"] == 2 and kz["einraum_wohnungen_liste"] == ["W2", "W3"]
+    assert kz["tueren_gesamt"] == 5 and kz["tueren_typisiert"] == 3
+    assert kz["durchgaenge_ohne_tuerblatt"] == 1
+    # nach Anzahl absteigend, bei Gleichstand nach Name
+    assert list(kz["tueren_je_typ"].items()) == [
+        ("untypisiert", 2), ("zimmertuer", 2), ("wohnungseingang", 1)]
+    assert kz["lifte_erkannt"] == 1 and kz["schaechte_erkannt"] == 1
+
+
+def test_kennzahlen_alter_cache_ohne_tueren_ist_none_nicht_null():
+    kz = rd._kennzahlen(_kz_cache(None), [])
+    for k in ("tueren_gesamt", "tueren_typisiert", "tueren_je_typ", "durchgaenge_ohne_tuerblatt"):
+        assert kz[k] is None, k
+    # Tabellen lesen auch eine v2-kennzahlen.json ohne die neuen Schlüssel.
+    v2 = {k: v for k, v in kz.items() if k not in (
+        "einraum_wohnungen", "einraum_wohnungen_liste", "lifte_erkannt")}
+    v2.update(status="ok", laufzeit_s={"gesamt": 1, "erkennung": 1, "zeichnen": 0})
+    zeilen = {label: wert for label, wert, _ in rd._owner_zeilen(v2)}
+    assert zeilen["Türen gesamt (inkl. Durchgänge)"] == "—"
+    assert zeilen["Einraum-Wohnungen"] == "—" and zeilen["Lifte erkannt"] == "—"
+    (_d, _kz, _s, werte), = rd._uebersicht([(Path("OG1"), v2)])
+    assert len(werte) == len(rd._UEB_KOPF) - 2
+
+
+def test_titel_mit_und_ohne_basis():
+    cache = {"geschoss": "OG1", "geschoss_quelle": "Dateiname"}
+    meta = {"version": "v3", "datum": "2026-09-28", "slices": ["S1", "S2"]}
+    ohne = rd._titel("Rennweg", "OG1", cache, "abc1234", meta)
+    mit = rd._titel("Rennweg", "OG1", cache, "abc1234", {**meta, "basis": "aa05143"})
+    assert "Commit abc1234 · Slices S1, S2" in ohne and "Stapel" not in ohne
+    assert "Commit abc1234 (Stapel aa05143) · Slices S1, S2" in mit
+
+
+def test_vergleich_links_aus_dateiname(tmp_path):
+    (tmp_path / "VERGLEICH_v2_v3.md").write_text("x", encoding="utf-8")
+    assert rd._vergleich_links(tmp_path) == [("Vergleich v2 → v3", "VERGLEICH_v2_v3.md")]
+
+
 def test_kategorie_unbestimmter_gang_ist_magenta():
     """§ 6g Schritt 3: ein GANG/VORRAUM ohne entschiedene Klasse wird magenta
     ausgewiesen statt still als „Gang allgemein" gezeichnet — und nur er:
