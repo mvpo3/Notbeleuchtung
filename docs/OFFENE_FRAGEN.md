@@ -1735,6 +1735,32 @@ Stiegenhaus im Obergeschoss ↔ Stiegenhaus = Geschossausgang" (heute gibt es si
 
 Belege: Session-Scratch `…/8d935db0-…/scratchpad/s5c/nachgang/` (`r2/_dd.py`, `dd_r2.json`, `review_rest_r2/`).
 
+## OCS gespiegelter Blöcke und Fenster-Bögen — Mollgasse (Befund aus S4c, 2026-09-28, vorbestehend)
+
+Gemessen in S4c Runde 2 (`docs/GATE_TUERSTAPEL.md` § 10e, zwei Linsen): `tueren.tuer_oeffnungen` liest ARC-Zentren über
+`e.dxf.center` ohne `e.ocs().to_wcs(...)`. Die Rohdateien haben keine Entity mit Extrusion −z; −z entsteht erst, wenn
+`virtual_entities` gespiegelte INSERTs auflöst (xscale · yscale < 0; im Walk MOLL_EG 169, MOLL_1OG 228). Die Bögen landen
+dann gespiegelt außerhalb des Plans und fallen in `im_planbereich` weg.
+
+- Tür-Bögen betroffen: **nur Mollgasse** — MOLL_EG 10 von 43, MOLL_1OG 32 von 63 Kaskaden-Bögen, **alle aus Fenster- und
+  Duschblöcken** (Fenster Doppelt 196, FENSTER_115/_120/_140/_184/_204/_214, 07-Dusche). Kein Tür-INSERT mit −z auf 12
+  Plänen; Rennweg (8 Pläne), Barawitzka und Muthgasse verlieren keine Tür (Muthgasse hat −z-INSERTs nur für Pfosten,
+  Höhenkoten, Schnittlinien).
+- Eine reine OCS-Umrechnung macht aus den Fensterbögen Türen: Mollgasse 5 Räume verlieren Notlicht (MOLL_EG `raum_29`
+  GANG und `raum_57` VORRAUM Flags, `raum_8` und `raum_51` je 1 SL, MOLL_1OG `raum_65` GANG einzige SL), 2 `final_exit`
+  entfallen (u. a. Windfang-Haustür), die Kaskade schneidet Räume neu. Schon heute stammen auf MOLL_1OG 28 von 31
+  +z-Kaskadenbögen aus Fenster-/Duschblöcken (MOLL_EG 14 von 33, Rest Modelspace-Bögen).
+- Nicht gemessen: dieselbe Spiegelung trifft LWPOLYLINE/CIRCLE in gespiegelten Blöcken (MOLL_EG 1 127, MOLL_1OG 2 116
+  Polylinien); `dxf_load._wand_punkte` und `tueren._block_geometrie_teile` lesen ohne OCS, `stiegenhaus`,
+  `layer_features`, `aussenbereich`, `geometrie_typ` rechnen bereits um.
+
+**Frage an den Owner:** OCS-Umrechnung nur zusammen mit einer Fenster/Tür-Trennung der Bögen (Block-/Layer-Herkunft:
+Fenster auf `04-SYM-…-EP`, Duschen auf `07-SAN`, Türen auf `05-SYM`) als eigener Schritt nach dem Stapel-Merge —
+und davor messen, ob die gespiegelten Polylinien Wandpunkte liefern?
+
+Belege: Session-Scratch `…/8d935db0-…/scratchpad/s4c/` (`bericht_s4c_r2.md` § 6–7, `r2/ocs_zensus_*.log`,
+`r2/blastgeo_n_xocs*_moll.txt`, `r2/review_ocs-raum9/`).
+
 ## S3c — Fremdcluster-Filter und Extents-Ausreißer (Owner-Entscheid 2026-09-26, nach dem Stapel-Merge)
 
 **Anlass:** Vision-Audit Rennweg EG (`docs/VISION_AUDIT.md` § 10.5) und Diagnose 2026-09-26
