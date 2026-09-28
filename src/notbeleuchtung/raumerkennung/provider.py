@@ -135,7 +135,7 @@ class ArchitekturRaumProvider:
         # Verschmelzen NACH aussentor_tueren: nur so sieht es auch die
         # 'arc_aussen'-Türen (Hoftüren), deren Doppelflügel-Paare sonst nie
         # zusammenfinden — verschmelze_doppelfluegel akzeptiert sie ausdrücklich.
-        tueren = verschmelze_doppelfluegel(tueren, wand_segmente(plan))
+        tueren = verschmelze_doppelfluegel(tueren, wand_segmente(plan), k.tueroeffnungen)
         tueren += text_tueren(plan, tueren)
         # Wand-Union EINMAL, schon hier: die Seitenprobe überspringt damit
         # Probepunkte im Wandkörper (Slice S4b), die Durchgänge unten nutzen

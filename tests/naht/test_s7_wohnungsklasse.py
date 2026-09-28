@@ -913,7 +913,7 @@ def test_bara_raum_19_behaelt_klasse_und_zirkulation(bara):
     ausgeht, entscheidet Schritt 2 ihn stabil: zwei Wohnungen → ALLGEMEIN,
     wie auf HEAD 5ac3e0f — mit 10 Zirkulationspunkten und 4
     Stützpunkt-Segmenten wie dort. Die WOHNUNG folgt seit dem Owner-Grundsatz
-    2026-09-22 den rohen Türen (b): hinter dem Wohnungseingang ``tuer_28`` MIT
+    2026-09-22 den rohen Türen (b): hinter dem Wohnungseingang ``tuer_32`` (vor S4c ``tuer_28``) MIT
     Blatt gehört er mit Küche, Abstellraum, ``raum_30`` und Bad zu einer
     Wohnung; Klasse und Notlicht (a) ändert das nicht."""
     _, modell, _ = bara
@@ -1026,14 +1026,19 @@ def test_bara_raum_30_wird_nicht_von_der_auswertungsreihenfolge_entschieden(bara
     seit die Rollenkorrektur von der rohen Rolle ausgeht, hat die Kette einen
     Fixpunkt und er bleibt, was er auf HEAD war: ALLGEMEIN, beide Flags,
     4 Zirkulationspunkte und sein Segment. Seine WOHNUNG folgt den rohen
-    Türen (Owner 2026-09-22, b): über Zimmertüren hinter ``tuer_28``."""
+    Türen (Owner 2026-09-22, b): über Zimmertüren hinter ``tuer_32``.
+
+    S4c: die zwei Doppelflügel sind vier Einzeltüren, die Nummern ab
+    ``tuer_14`` rücken nach — ``tuer_28`` → ``tuer_32`` (Wohnungseingang),
+    ``tuer_35`` → ``tuer_39`` (BAD ``raum_5`` | ``raum_30``, dieselbe Tür bei
+    2 910 / −5 615, derselbe Weg mit 18 Punkten)."""
     _, modell, _ = bara
     r30 = next(r for r in modell.raeume if r.id == "raum_30")
     assert r30.nutzungsklasse == "ALLGEMEIN_ERSCHLIESSUNG"
     assert (r30.ist_fluchtweg, r30.ist_communal) == (True, True)
     r19 = next(r for r in modell.raeume if r.id == "raum_19")
     assert r30.wohnung_id is not None and r30.wohnung_id == r19.wohnung_id
-    assert stuetzpunkt_segmente(modell, "raum_30") == ["seg_graph_tuer_35"]
+    assert stuetzpunkt_segmente(modell, "raum_30") == ["seg_graph_tuer_39"]
     assert zirkulationspunkte(modell, "raum_30") == 4
 
 
