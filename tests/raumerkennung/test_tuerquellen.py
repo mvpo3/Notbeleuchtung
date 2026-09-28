@@ -2,6 +2,8 @@
 Garagentor-Endausgang, untypisiert_grund."""
 from __future__ import annotations
 
+import math
+
 import ezdxf
 import pytest
 from shapely.geometry import box
@@ -15,6 +17,7 @@ from notbeleuchtung.raumerkennung.tueren import (
     TuerOeffnung,
     aussentor_tueren,
     text_tueren,
+    tuer_oeffnungen,
     tuer_texte,
     verschmelze_doppelfluegel,
 )
@@ -43,6 +46,63 @@ def test_gegenueberliegende_gangtueren_werden_nicht_verschmolzen():
         [_arc_tuer("a", (4000.0, 0.0), 900.0), _arc_tuer("b", (4000.0, 1800.0), 900.0)],
         waende)
     assert [x.id for x in t] == ["a", "b"]
+
+
+def _bogen(xy, r, zu, auf):
+    """Schwenkbogen am Drehpunkt ``xy``: Blatt geschlossen in Richtung ``zu``,
+    offen in Richtung ``auf`` (Grad) — die Endpunkte, die ``tuer_oeffnungen``
+    aus dem ARC liest."""
+    enden = tuple((xy[0] + r * math.cos(math.radians(w)),
+                   xy[1] + r * math.sin(math.radians(w))) for w in (zu, auf))
+    return TuerOeffnung(xy_mm=xy, breite_mm=r, winkel_grad=float(zu),
+                        quelle="arc", blatt_enden=enden)
+
+
+def test_echte_doppeltuer_mit_boegen_bleibt_eine_tuer():
+    """S4c: beide Blätter schließen zueinander (Drehpunkte an den Enden der
+    gemeinsamen Öffnung) → weiter EINE Tür."""
+    oeff = [_bogen((4000.0, 0.0), 900.0, 0, 90), _bogen((5800.0, 0.0), 900.0, 180, 90)]
+    t = verschmelze_doppelfluegel(
+        [_arc_tuer("a", (4000.0, 0.0), 900.0), _arc_tuer("b", (5800.0, 0.0), 900.0)],
+        [((0.0, 0.0), (10000.0, 0.0))], oeff)
+    assert [(x.quelle, x.breite_mm, x.xy_mm) for x in t] == [
+        ("doppelfluegel", 1800.0, (4900.0, 0.0))]
+
+
+def test_zwei_einzeltueren_nebeneinander_werden_nicht_verschmolzen():
+    """S4c, Barawitzka EG ``tuer_14``/``tuer_15`` (KINDERWAGENRAUM | ABSTELLRAUM
+    25,67): Abstand = Summe der Radien, Verbindung ∥ Wand — aber beide Blätter
+    schließen VONEINANDER WEG. Zwei Öffnungen, keine Doppeltür."""
+    oeff = [_bogen((4000.0, 0.0), 900.0, 180, 270), _bogen((5800.0, 0.0), 900.0, 0, 270)]
+    t = verschmelze_doppelfluegel(
+        [_arc_tuer("a", (4000.0, 0.0), 900.0), _arc_tuer("b", (5800.0, 0.0), 900.0)],
+        [((0.0, 0.0), (10000.0, 0.0))], oeff)
+    assert [x.id for x in t] == ["a", "b"]
+
+
+def test_gangtueren_gegenueber_an_der_laibung_werden_nicht_verschmolzen():
+    """S4c, Barawitzka EG ``tuer_17``/``tuer_22`` (ABSTELLRAUM 1,98 | ZIMMER
+    10,45 über den VORRAUM): die Drehpunkte sitzen an der Laibung, die nächste
+    Wandlinie ist die Laibungsfläche QUER zur Wand — sie steht parallel zur
+    Verbindung, die Wand-Kollinearität greift nicht. Das Blatt von ``b``
+    schließt nicht zu ``a`` hin → zwei Türen."""
+    oeff = [_bogen((0.0, 0.0), 830.0, 0, 270), _bogen((0.0, -1660.0), 830.0, 0, 270)]
+    laibungen = [((0.0, 0.0), (0.0, 250.0)), ((0.0, -1660.0), (0.0, -1910.0))]
+    tueren = [_arc_tuer("a", (0.0, 0.0), 830.0), _arc_tuer("b", (0.0, -1660.0), 830.0)]
+    # ohne Bogen-Endpunkte (alte Signatur) verschmilzt das Paar wie bisher
+    assert [x.quelle for x in verschmelze_doppelfluegel(list(tueren), laibungen)] == [
+        "doppelfluegel"]
+    assert [x.id for x in verschmelze_doppelfluegel(tueren, laibungen, oeff)] == ["a", "b"]
+
+
+def test_tuer_oeffnungen_tragen_die_bogen_endpunkte():
+    doc = ezdxf.new()
+    msp = doc.modelspace()
+    msp.add_arc(center=(1000.0, 0.0), radius=900.0, start_angle=0.0, end_angle=90.0)
+    (o,) = tuer_oeffnungen(DxfPlan(doc=doc, space=msp, factor=1.0))
+    assert o.quelle == "arc"
+    assert [tuple(round(v, 6) for v in p) for p in o.blatt_enden] == [
+        (1900.0, 0.0), (1000.0, 900.0)]
 
 
 # ── Türbögen an der AUSSEN-Grenze ────────────────────────────────────────────
