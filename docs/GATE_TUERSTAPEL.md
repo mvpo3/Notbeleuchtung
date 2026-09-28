@@ -2280,3 +2280,87 @@ Leuchten in `WOHNUNG_PRIVAT` Board 1, Muthgasse Türblöcke S5b-Rest), **neu 3 m
   S5c"), oder gilt der STOP nur für Geschosse, die S5c ausgangslos macht — und DD wird als vorbestehender Befund
   (untypisierte Räume, Stiegenhaus ohne Ausgang) eigener Punkt?
 
+
+
+### 9g. S5c-Nachgang B1–B6 (Owner-Entscheide 2026-09-28, Messung vor dem Merge)
+
+**Owner 2026-09-28 (Kurzfassung des Wortlauts):** B1 und B2 als Korrektur nachziehen; B3 (`raum_55`) und B4 (Müllraum
+`raum_30`, Garage `raum_50`) **vor dem Merge klären, nicht hinnehmen** — „eine Wohnung ohne Eingang ist derselbe
+Fehlertyp wie die Einraum-Wohnungen, und ein Raum ohne jede Leuchte ist der Fall, den wir bei Barawitzka ABSTELLRAUM
+zur Merge-Pflicht gemacht haben"; zum Tor: „ein Tor ist kein final_exit ohne Beleg, aber es ist eine Verbindung";
+B6 (Rennweg DD) löst den STOP nicht aus, eigener Befund. Push-GO `s5c`. Belege: Session-Scratch
+`…/8d935db0-…/scratchpad/s5c/nachgang/` (`bericht_nachgang_r2.md`, Bilder `r1/bilder/`, `r2/bilder/`, zwei
+`review_*_r2/urteil.md`; alle Zahlen von einer zweiten Linse unabhängig reproduziert).
+
+- **B1 erledigt (`c88022c`):** DG1 `rest_2` Zirkulation 17 → **0** — „17 überholt: Phantom-Ausgang im Liftschacht, seit
+  S5c entfallen"; Korrektur, keine Bandabsenkung; alte Zahl steht im Docstring.
+- **B2 erledigt (`c88022c`):** Muthgasse Stiegenhaus-Band ≥ 5 → **≥ 3** — „die 5 stammt aus einem Stand, in dem
+  Liftschächte als Stiegenhaus zählten"; Schächte sind keine Stiegenhäuser (F1).
+- **Rote Naht-Tests danach: 4, keiner S5c-eigen** — OG1 `raum_8`, OG2 `raum_9` und **DG1 `raum_3`** (Leuchten in
+  `WOHNUNG_PRIVAT`, Board 1) und Muthgasse Türblöcke (S5b-Rest). **DG1 `raum_3` dreht nicht mit der Tor-Regel:** die SL
+  steht als „fachpraxis: aufheller-500mm" 500 mm hinter dem neuen Fluchtweg-RZ in `rest_2`, 47 mm innerhalb des ZIMMERS;
+  `platzierung/fachpraxis.aufheller_je_rz` (`:168ff`) prüft über `_in_einem_raum` nur „liegt in irgendeinem Raum",
+  nicht Klasse/Flags — der Aufheller springt durch die Wand. Board-1-Familie, aber in `fachpraxis.py`, nicht in
+  `deckung.py`. Zwei Formen gemessen (DG1 6 → 5 Leuchten, 0 privat): „kein Aufheller-Ziel in `WOHNUNG_PRIVAT`/Flags 00"
+  oder „Aufheller nur im Raum seines RZ". → Erweiterung des Board-1-Antrags an @mvpo3.
+- **B3 MOLL_EG `raum_55` — Urteil: Scheinöffnung, nicht knapp.** `aussenoeffnung_8` (1 648 mm) ist ein **100-mm-Hohlraum
+  zwischen zwei Wänden** (Profil N→S: `raum_62` | Wand 250 | Teil 100 | Wand 200 | `raum_55`), Abstände T-R 200,7 / T-K
+  200,0 mm, **Außenanteil 0,0000** (Schwelle 0,10), im DXF im Umkreis 1 m weder Türblock noch Bogen noch Tür-Text; die
+  Nordwand läuft 2 710 mm geschlossen durch. Der eigentliche Fehler liegt in der Raumbildung: **`raum_55` sind zwei Zonen
+  in einem Polygon**, verschmolzen durch die Türlücke von `tuer_66`: West 4,85 m² = offene, gedeckte **Außenzone** (Rand
+  ohne Wand zu AUSSEN 3,89 m und zum Eigengarten `raum_8` 1,81 m; Schachttexte, 09-WEG-Linie; hier stand die einzige
+  frühere Leuchte, die Phantom-Ausgangs-SL), Ost 3,92 m² = **Stück des Fahrradraums** `raum_40` (2,25 m ohne Wand zu
+  ihm; Stellplatz-Nummern 01–03). `tuer_66` (1 000 mm, Blatt, Bogen r 1 000, „EI2 30-C", Oberlicht „FENSTERLÜFTUNG")
+  ist die **Wartungstür zwischen Außenzone und Fahrradraum**, kein Hauseingang; ihre Gegenseite ist `KEIN_RAUM`, weil
+  die Sonde in der Wandachse den Pfeiler trifft und `raum_55` beidseits der Türwand liegt. Folgefehler: die Wohnung
+  `top_1` = {`raum_10`, `raum_40`} ist der **Fahrradraum**. Gemessene Varianten:
+
+  | Variante | `raum_55` | `top_1` | MOLL_EG `final_exit` | Leuchten MOLL_EG |
+  |---|---|---|---|---|
+  | vor F5 (`bebba16`) | Erschließung, 1 SL (Phantom-Ausgang) | 2 Eingänge | 12 | 64 (alle 9 Phantome zurück) |
+  | heute (`cc45ee0`) | unbestimmt, 0 Leuchten, in `top_1` | kein Eingang | 8 | 51 |
+  | `tuer_66` Gegenseite AUSSEN | Erschließung, 1 RZ | Eingänge zurück | 9 (`tuer_66` wird Hauseingang) | 53 |
+  | Eigengarten-Seite als Freiland | Erschließung, 0 Leuchten | Eingänge zurück | 9 | 53 |
+
+  Nicht gemessen: Raumbildung heilen (`raum_55` an der Türwand trennen: West wird außen, Ost zum Fahrradraum) und
+  „Fahrradraum ist keine Wohnung" (Wohnungsbildung). **Zusatzbefund:** eine eigene Gang-Leuchte hatte `raum_55` nie; die
+  verlorene war die Phantom-Ausgangs-SL in der Außenzone.
+- **B4a MOLL_EG `raum_30` MÜLLRAUM — Ursache: Türerkennung + Raumloch, kein S5c-Codefehler.** Der Raum ist plausibel
+  (Stempel MÜLL 34,47 m², +1,8 %; 4 × 1100-l- und 2 × 770-l-Tonnen-Blöcke). Die echte Tür ist eine **Stulp-Doppeltür an
+  der Ostseite** (Bögen r 900 und r 500, „EI2 30-C", Türachsen-Marke; Wandlücke 1 775 mm); dahinter fehlt ein Raum
+  (≈ 1 635 mm gedeckte Fläche ohne Raum vor der Außenwand). Keine Türquelle findet sie (Türblöcke 0/44, Außentor 0/27,
+  geordnet 0/71): `tueren.py:117-123` mit `provider.py:84-85` macht **Bögen nur dann zu Türen, wenn der Plan keine
+  Türblöcke hat** — Mollgasse EG hat 44; `aussentor_tueren` verwirft r 900 (764 mm vom Rand), r 500 liegt unter
+  `_ARC_MIN_MM` 600. **Familienweit 6 Bogen-Öffnungen ohne Modelltür** auf MOLL_EG. Nebenbefund: `exit_2` (MOLL_EG
+  `final_exit` in keinem Raum, 8 mm neben `raum_30`) ist die Mitte zwischen dem Müllraum-Bogen r 900 und einem anderen
+  Bogen r 1 000, 2 576 mm auseinander, knapp unter `footprint._PAIR_MAX_MM` 2 600 — eine **Doppeltür-Fehlpaarung aus
+  zwei verschiedenen Türen**, dieselbe Klasse wie S4c. Vorschlag: „Bogen-Türen auf Block-Plänen" und `exit_2` als
+  Messfälle in **S4c**; das Raumloch als eigener Befund der Raumerkennung.
+- **B4b MOLL_EG `raum_50` „GARAGE" — die Prämisse der Tor-Regel trägt hier nicht.** `raum_50` ist ein **1,10-m²-Zwickel**
+  (MRR 1 700 × 1 520 mm), typisiert aus dem Text „BRE ABLUFT GARAGE" (3,54 m², Abweichung −68,9 %). Das „Tor"
+  (`aussenoeffnung_1`, vorher `_6`, 2 483 mm, blattlos, `raum_50` ↔ AUSSEN, Rolle `garagentor` aus
+  `tuer_typisierung.py:203`, `final_exit` weil ein Fluchtweg-Ende 1 707 mm entfernt liegt) hat **im DXF weder Block noch
+  Bogen noch Text**. Das **echte Garagentor** (Plantext „GARAGENTOR") liegt in `raum_62` GARAGENRAMPE — untypisiert, 0
+  Leuchten, seine Durchgänge ohne Rolle; die Tor-Regel erreicht es nicht. Die verlorenen Pflicht-Leuchten von `raum_50`
+  hingen am Zwischenstück `aussenoeffnung_7` (894 mm, Anteil 0). Die Tor-Regel in-memory (`platzierung.bausteine.
+  ist_echte_tuer` für Rolle `garagentor` ohne Breitendeckel) dreht auf 11 Plänen **3 Öffnungen, alle ohne Türblatt und
+  keine im Plan als Tor belegt** (MOLL_EG `aussenoeffnung_1` ohne Plangeometrie; Rennweg EG `durchgang_11`
+  GARAGE ↔ STIEGENHAUS 3 222 mm und `durchgang_13` GARAGE ↔ untypisiert 4 549 mm, beide nur über die Breite > 2 200 mm
+  typisiert): Leuchten MOLL_EG 51 → 52 (Pflicht-SL im Zwickel), Rennweg EG 17 = 17 (Garagen-RZ wandert auf die
+  3,2-m-Lücke ins Stiegenhaus), Sichtketten 11/11 unverändert. Variante „breit mit Türblatt": 2 Türen (Barawitzka
+  `tuer_37`/`_38`), 0 Leuchten. **Der Board-Antrag an @mvpo3 ist vorbereitet, aber nicht gestellt** — erst Owner-
+  Entscheid (unten).
+- **B6 Rennweg DD** → eigener Punkt in `docs/OFFENE_FRAGEN.md` (gemessene Ursache dort).
+
+**Offene Owner-Fragen aus dem Nachgang:**
+1. **B3:** welcher Heilungsweg vor dem Merge — Raumbildung trennen (Planer-Empfehlung, trifft die Ursache; noch nicht
+   gemessen), `tuer_66` Gegenseite AUSSEN **ohne** Rolle Hauseingang (nicht gemessen), Eigengarten als Freiland, oder
+   „Fahrradraum ist keine Wohnung"? Und gilt „Raum ohne Leuchte" für `raum_55` als Merge-Pflicht, obwohl er nie eine
+   eigene Gang-Leuchte hatte (die verlorene war die Phantom-Ausgangs-SL)?
+2. **B4a:** „Bogen-Türen auf Block-Plänen" (6 Öffnungen MOLL_EG, Müllraum-Stulptür) und `exit_2` in S4c mitnehmen, und
+   gilt für den Müllraum Merge-Pflicht wie (10)?
+3. **B4b:** Tor-Regel trotzdem als Board-Antrag (heute trifft sie nur Phantom-/Lücken-Öffnungen), oder `raum_50` als
+   Fehltypisierung führen (dann entfallen die Pflicht-Leuchten zu Recht) und das echte Garagentor an `raum_62` als
+   eigenen Punkt (Tür, Rolle, Leuchte)?
+4. **DG1 `raum_3`:** Board-1-Antrag an @mvpo3 um `fachpraxis.aufheller_je_rz` erweitern (Form: kein Aufheller-Ziel in
+   `WOHNUNG_PRIVAT`)?

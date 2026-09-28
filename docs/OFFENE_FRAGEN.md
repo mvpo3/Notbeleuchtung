@@ -1710,6 +1710,31 @@ brauchen einen Filter) wird als eigener Punkt geführt, nicht in S5c mitgelöst.
 Messstand `7105618`, Belege Session-Scratch `…/8d935db0-…/scratchpad/s5c/r2/` (`_k3.py`, `k3_MOLL_EG.json`,
 `bilder/*.png`) und `review_inventur_r2/urteil.md` (B1: Prädikat in der Schleife, `raum_51`).
 
+## Rennweg DD — Geschoss ohne Ausgang (Owner 2026-09-28, eigener Befund, kein S5c-STOP)
+
+Owner: „B6 löst den STOP nicht aus. Der STOP gilt nur für Geschosse, die S5c ausgangslos macht. DD war vorher schon
+null […]. Trotzdem als eigener Befund führen: ein Geschoss ohne Ausgang ist für die Notbeleuchtung nicht verwertbar."
+
+Gemessen (S5c-Nachgang, zwei Linsen): `DD - Rennweg 15…` ist die Dachdraufsicht (Kote +20,06) mit 3 Räumen —
+`stiegenhaus_1` STIEGENHAUS 5,74 m², `raum_1` 56,0 m² (Stempel „Dachterrasse", ArchiCAD-Zone, **ohne Typ**: `classify_room`
+vergleicht ganze Wörter, „Dachterrasse" trifft keinen Eintrag) und `raum_2` 4,52 m² (kein Stempel, kein Text) — dazu
+die Treppe `Stair_1`, kein Türblock, kein Bogen. `durchgang_2` (`raum_1` ↔ Stiegenhaus, 9 472 mm, blattlos) trägt keine
+Rolle (Kombination STIEGENHAUS × untypisiert trifft keine Regel der Türtypisierung).
+
+**Die fehlende Typisierung ist nicht der Hebel:** mit dem Plantyp TERRASSE wird `durchgang_2` nach der Freiflächen-Regel
+(`tuer_typisierung.py:179`) zur `balkontuer`, und es bleibt bei **0 Ausgängen** (ebenso als TECHNIK oder DACHBODEN, auch
+mit Geschoss DG). Einen `stair_exit` erzeugt nur die sachlich falsche Einstufung GANG (oder eine direkt gesetzte Rolle
+`stiegenhaustuer`). `raum_2` ist für die Ausgänge ohne Einfluss. Nebenbefund: der Dateiname „DD" trifft
+`_NICHT_PLAN_RE` (`geschoss.py:199`), das Geschoss bleibt UNBEKANNT (Warnung „Geschoss unbekannt"); das ist nicht die
+Ursache der 0 Ausgänge.
+
+**Frage an den Owner:** DD als Nicht-Grundriss aus der Ausgangsbewertung nehmen (Dachdraufsicht), oder die Dachterrasse
+als begehbare Fläche mit Ausgang über das Stiegenhaus führen — dann braucht es eine eigene Regel „Freifläche am
+Stiegenhaus im Obergeschoss ↔ Stiegenhaus = Geschossausgang" (heute gibt es sie nicht) und den Kanon-Eintrag
+„Dachterrasse" (@EnisAMG)?
+
+Belege: Session-Scratch `…/8d935db0-…/scratchpad/s5c/nachgang/` (`r2/_dd.py`, `dd_r2.json`, `review_rest_r2/`).
+
 ## S3c — Fremdcluster-Filter und Extents-Ausreißer (Owner-Entscheid 2026-09-26, nach dem Stapel-Merge)
 
 **Anlass:** Vision-Audit Rennweg EG (`docs/VISION_AUDIT.md` § 10.5) und Diagnose 2026-09-26
