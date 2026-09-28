@@ -957,7 +957,17 @@ def test_dg1_raum_8_behaelt_sein_notlicht_ohne_ankerbestaetigung(dg1):
     ``seg_graph_durchgang_3`` weg — Start im WOHNZIMMER ``raum_1`` —,
     STIEGENHAUS ``rest_2`` 17 → 11): die Rollenkorrektur machte
     ``durchgang_3`` zur Zimmertür. Reviewer-Befund Runde 4 (Linse
-    Sicherheit): Fail-Safe verletzt. Soll = HEAD 5ac3e0f."""
+    Sicherheit): Fail-Safe verletzt. Soll = HEAD 5ac3e0f.
+
+    **Slice S5c, Owner-Entscheid B1 (2026-09-28):** ``rest_2`` steht auf 0.
+    Die 17 (HEAD 5ac3e0f) sind überholt — Phantom-Ausgang im Liftschacht, seit
+    S5c entfallen: sie waren die GRAPH-Wege zum Phantom-Ausgang
+    ``exit_durchgang_9`` mit Ziel ``rest_3``, und ``rest_3`` ist seit S5c
+    Liftschacht (Kabinenanteil 0,684, F1/K1_T). Der verbleibende Weg
+    ``seg_graph_durchgang_3`` endet an der Stiegenhaus-Öffnung
+    ``exit_durchgang_6`` und läuft nicht mehr durch ``rest_2``. Die Absenkung
+    17 → 0 ist eine KORREKTUR, keine Bandabsenkung. Überholt, nicht gelöscht:
+    ``rest_2`` = 17."""
     _, modell, _ = dg1
     r8 = next(r for r in modell.raeume if r.id == "raum_8")
     assert r8.nutzungsklasse == "WOHNUNG_PRIVAT"
@@ -965,7 +975,7 @@ def test_dg1_raum_8_behaelt_sein_notlicht_ohne_ankerbestaetigung(dg1):
     assert "seg_graph_durchgang_3" in {s.segment_id
                                        for s in modell.zirkulation.segmente}
     assert zirkulationspunkte(modell, "raum_8") == 3
-    assert zirkulationspunkte(modell, "rest_2") == 17
+    assert zirkulationspunkte(modell, "rest_2") == 0  # 17 überholt (S5c, B1)
 
 
 def test_ug_raum_12_behaelt_die_wege_durch_ihn(ug):
