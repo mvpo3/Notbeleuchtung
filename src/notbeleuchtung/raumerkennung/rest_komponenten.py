@@ -13,7 +13,8 @@ Wandmaske rekonstruiert:
     - klein (<3 m²) mit Schacht-Text/STO-Kästchen drin    → SCHACHT (Planzeichen)
     - enthält STIEGE-/Treppen-/LIFT-Block-Insert          → STIEGENHAUS
     - schmal (Breite <2.5 m) mit ≥3 Türöffnungen am Rand  → GANG
-    - klein (<3 m²) ohne Tür oder mit STO-Kästchen drin   → SCHACHT
+    - klein (<3 m²) ohne Tür, mit Schacht-Beleg            → SCHACHT
+    - klein (<3 m²) ohne Tür, ohne Schacht-Beleg           → NISCHE (Slice K2)
     - sonst                                               → "" (untypisiert)
 
 Grenze: rein 2D, Rasterauflösung ``raster_mm``; nur das größte zusammenhängende
@@ -23,9 +24,12 @@ from __future__ import annotations
 
 import re
 from collections.abc import Sequence
+from dataclasses import dataclass, field
 
 import numpy as np
 from shapely.geometry import Point, Polygon
+from shapely.geometry.base import BaseGeometry
+from shapely.ops import unary_union
 from skimage.measure import label
 from skimage.morphology import disk
 from skimage.segmentation import watershed
@@ -37,6 +41,7 @@ from .stempel_flutung import _fuelle, _Raster, _vektorisiere
 from .tueren import TuerOeffnung
 from .wandkoerper import (
     Wandkoerper,
+    _hatch_punkte,
     _kurzseite,
     aussenkontur,
     bounds_aus_wandkoerpern,
@@ -66,6 +71,37 @@ _SCHACHT_TEXT_RX = re.compile(
     r"(?<![A-ZÄÖÜ])SCHACHT(?![A-ZÄÖÜ])|(?<![A-Z])(?:F?BDB|DDB)(?![A-Z])")
 _SCHACHT_AUSSCHLUSS_RX = re.compile(
     r"(?<![A-ZÄÖÜ])RAUM(?![A-ZÄÖÜ])|TREPP|STIEG|AUFZUG|LIFT")
+
+# Owner-Regel a, Slice K2 (2026-09-29): „rote Kontur allein ist kein Beleg.
+# SCHACHT braucht mindestens eines: Text DDB/BDB/DBA/Schacht/Durchbruch in
+# 500 mm, U-förmige Schachtmauer, FEUERFESTER_STEIN-Keil, Schacht-Zone oder
+# -Layer. Sonst NISCHE." Sie greift an der einzigen SCHACHT-Quelle ohne
+# Planzeichen, der türlosen Kleinfläche (Diagnose Rennweg U5, DG2 `rest_5`).
+# Stempel-SCHACHT (Zone, `raumtyp`) und Liftschacht-Reste (S5c/F1, Kabine
+# > 50 %) sind durch ihre Quelle belegt und laufen hier nie durch.
+# ponytail: U-förmige Schachtmauer ist NICHT umgesetzt — eine Fensternische ist
+# ebenso ummauert (gemessen docs/SLICES_K1_K4.md, K2); Owner-Frage dort.
+_BELEG_TEXT_RX = re.compile(
+    r"(?<![A-ZÄÖÜ])(?:F?BDB|DDB|DBA|SCHACHT)(?![A-ZÄÖÜ])|DURCHBRUCH")
+_BELEG_TEXT_MM = 500.0
+# Keil = HATCH FEUERFESTER_STEIN (Rennweg HKLS). Er belegt den Schacht, den er
+# markiert: den Kasten (geschlossene Polylinie ≤ 3 m², die ihn enthält). Die
+# Fläche muss zu mindestens der Hälfte in solchen Kästen liegen — gemessen
+# Rennweg: DBA-/Installationsschächte 0,65–0,99, Fensternische DG2 `rest_5`
+# 0,18 (der Kasten „Schachtverzug über Dach" streift sie nur).
+_KEIL_MUSTER = "FEUERFESTER_STEIN"
+_KASTEN_TOL_MM = 20.0
+_KASTEN_ANTEIL = 0.5
+_SCHACHT_LAYER_RX = re.compile(r"SCHACHT", re.IGNORECASE)
+
+
+@dataclass
+class _Belege:
+    """Schacht-Belege eines Plans (mm): Textpunkte, Kasten-Union, Layer-Punkte."""
+
+    texte: list[XY] = field(default_factory=list)
+    kaesten: BaseGeometry = field(default_factory=Polygon)
+    layer_punkte: list[XY] = field(default_factory=list)
 
 
 def _marker_punkte(plan: DxfPlan | None) -> tuple[list[XY], list[XY]]:
@@ -119,9 +155,51 @@ def _schacht_text_punkte(plan: DxfPlan | None) -> list[XY]:
     return out
 
 
+def _schacht_belege(plan: DxfPlan | None) -> _Belege:
+    """Beleg-Kandidaten der Owner-Regel a (Slice K2) aus dem Plan, in mm."""
+    b = _Belege()
+    if plan is None:
+        return b
+    keile: list[Polygon] = []
+    polylinien: list[Polygon] = []
+    for e in plan.space:
+        t = e.dxftype()
+        if t in ("TEXT", "MTEXT"):
+            s = " ".join(str(e.plain_text() if t == "MTEXT" else e.dxf.text).upper().split())
+            if _BELEG_TEXT_RX.search(s) and not _SCHACHT_AUSSCHLUSS_RX.search(s):
+                b.texte.append(plan._scale(e.dxf.insert))
+            continue
+        if t == "HATCH" and str(e.dxf.pattern_name or "").upper() == _KEIL_MUSTER:
+            pts = [plan._scale(p) for p in _hatch_punkte(e)]
+            if len(pts) >= 3 and not (k := Polygon(pts).buffer(0)).is_empty:
+                keile.append(k)
+        elif t in ("LWPOLYLINE", "POLYLINE") and getattr(e, "closed", False):
+            pts = plan.entity_points(e)
+            if len(pts) >= 3:
+                p = Polygon(pts).buffer(0)
+                if 0 < p.area <= _SCHACHT_MAX_M2 * 1e6:
+                    polylinien.append(p)
+        if _SCHACHT_LAYER_RX.search(str(e.dxf.layer)) and (pts := plan.entity_points(e)):
+            b.layer_punkte.append((sum(x for x, _ in pts) / len(pts),
+                                   sum(y for _, y in pts) / len(pts)))
+    if keile:
+        b.kaesten = unary_union([p for p in polylinien
+                                 if any(p.buffer(_KASTEN_TOL_MM).covers(k) for k in keile)])
+    return b
+
+
+def _hat_beleg(shp: Polygon, b: _Belege) -> bool:
+    """Owner-Regel a: Text in 500 mm, Keil-Kasten über die halbe Fläche, Schacht-Layer."""
+    return (any(shp.distance(Point(p)) <= _BELEG_TEXT_MM for p in b.texte)
+            or (not b.kaesten.is_empty
+                and shp.intersection(b.kaesten).area >= _KASTEN_ANTEIL * shp.area)
+            or any(shp.covers(Point(p)) for p in b.layer_punkte))
+
+
 def _typisiere(shp: Polygon, tueren: list[TuerOeffnung],
                stiegen: list[XY], sto: list[XY],
-               schacht_texte: Sequence[XY] = ()) -> tuple[str, bool, bool]:
+               schacht_texte: Sequence[XY] = (),
+               belege: _Belege | None = None) -> tuple[str, bool, bool]:
     """Typ-Regeln (s. Modul-Doc) → (raum_typ, ist_fluchtweg, ist_communal)."""
     # Diagnose Rennweg U2, Slice S3a: Planzeichen schlägt den Treppenmarker —
     # das Bbox-Zentrum der U-Treppe um den Lift liegt IM Schacht, damit wurde
@@ -135,9 +213,13 @@ def _typisiere(shp: Polygon, tueren: list[TuerOeffnung],
                  if shp.distance(Point(t.xy_mm)) <= _TUER_RAND_MM)
     if _kurzseite(shp) < _GANG_BREITE_MAX_MM and tuer_n >= _GANG_MIN_TUEREN:
         return "GANG", True, True
-    if shp.area < _SCHACHT_MAX_M2 * 1e6 and (
-            tuer_n == 0 or any(shp.covers(Point(p)) for p in sto)):
-        return "SCHACHT", False, False
+    # STO im Polygon hat schon die erste Regel gefangen — hier bleibt „türlos".
+    # Slice K2: ohne Schacht-Beleg ist die türlose Kleinfläche eine NISCHE
+    # (Nutzungsklasse None, also fail-safe kein KEIN_RAUM).
+    if shp.area < _SCHACHT_MAX_M2 * 1e6 and tuer_n == 0:
+        if _hat_beleg(shp, belege or _Belege()):
+            return "SCHACHT", False, False
+        return "NISCHE", False, False
     # Leerer raum_typ = untypisiert — „UNBEKANNT" ist KEIN Typ (VOKABULAR.md §1).
     return "", False, False
 
@@ -197,6 +279,7 @@ def komponenten_ohne_stempel(
 
     stiegen, sto = _marker_punkte(plan)
     schacht_texte = _schacht_text_punkte(plan)
+    belege = _schacht_belege(plan)
     grenze = union.boundary if not union.is_empty else None
     frei = ~blockiert
     labels = label(frei)
@@ -223,7 +306,7 @@ def komponenten_ohne_stempel(
         shp = _vektorisiere(m, raster, grenze)
         if shp.is_empty or shp.area < _MIN_M2 * 1e6:
             continue
-        typ, flucht, communal = _typisiere(shp, tueren, stiegen, sto, schacht_texte)
+        typ, flucht, communal = _typisiere(shp, tueren, stiegen, sto, schacht_texte, belege)
         out.append(Raum(
             id=f"rest_{len(out) + 1}",
             raum_typ=typ,

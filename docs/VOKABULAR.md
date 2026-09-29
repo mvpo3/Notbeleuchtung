@@ -48,6 +48,18 @@ außerhalb des Kanons brechen bewusst den LB-Naht-Guard.
 Leerer `raum_typ` = **untypisiert** (kein Raumtyp „UNBEKANNT" im Contract);
 Coverage-Warnung im Summary, Leuchten-Arten nicht ableitbar.
 
+`NISCHE` = **geometrische Kategorie der Raumerkennung, kein Kanon-Typ** (neu
+2026-09-29, Slice K2, Owner-Auftrag Selman „Schächte nur mit Beleg"): eine
+türlose Restfläche unter 3 m² OHNE Schacht-Beleg (Text DDB/BDB/DBA/Schacht/
+Durchbruch in 500 mm, FEUERFESTER_STEIN-Keil im Kasten der Fläche,
+Schacht-Layer) — vorher SCHACHT. Vergeben nur von
+`raumerkennung/rest_komponenten.py`, NICHT von `raumtyp.py`; darum steht sie
+weder in der Tabelle oben noch in der LB-Stützliste (kein Stempel typt
+„Nische", keine LB-Regel adressiert sie). Nutzungsklasse `None`,
+`ist_fluchtweg`/`ist_communal` False — fail-safe: nicht `KEIN_RAUM`, also
+nicht wie ein Schacht von allem ausgenommen; Konsumenten behandeln sie wie
+einen Raumtyp ohne eigene Regel.
+
 ## 2. Naht-Begriffe (Glossar)
 
 - **Rolle ≠ Produkt** — RZ/SL/Antipanik sind NORM-Rollen; das Produkt kann
