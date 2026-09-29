@@ -828,7 +828,7 @@ E2-VF-11b, `:970-997`).
 
 ### 5.1 Commits
 
-Branch `selman/fix-svok-schreibweise`, nicht gepusht:
+Branch `selman/fix-svok-schreibweise`, gepusht (kein Merge):
 
 | Commit | Inhalt |
 |---|---|
@@ -951,7 +951,7 @@ Befehl: `.venv/Scripts/python.exe -m pytest -q -p no:cacheprovider`
 
 ### 5.8 Status
 
-**OFFEN.** Der Owner entscheidet zwischen 1, 2 und 3. Der Slice ist nicht gepusht und nicht
+**OFFEN.** Der Owner entscheidet zwischen 1, 2 und 3. Der Slice ist auf dem Branch gepusht, aber nicht
 gemergt.
 
 `docs/OFFENE_FRAGEN.md:713-717` und `:730` führen `Vorr.` weiter als Frage an Enis. Das
