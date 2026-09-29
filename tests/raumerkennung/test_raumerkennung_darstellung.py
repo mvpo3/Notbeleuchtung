@@ -55,6 +55,17 @@ def test_versionsordner_mit_kennzahlen_bricht_ab(tmp_path, capsys):
     assert sorted(p.name for p in (tmp_path / "out").iterdir()) == ["Rennweg_v2"]
 
 
+def test_version_aktuell_ist_gueltig_und_ebenso_gesperrt(tmp_path, capsys):
+    assert rd._ordner_version("Rennweg_aktuell") == "aktuell"
+    assert rd._ordner_version("Rennweg_v3") == "v3" and rd._ordner_version("Rennweg") == "v1"
+    args = _eingang(tmp_path)
+    kz = tmp_path / "out" / "Rennweg_aktuell" / "UG" / "kennzahlen.json"
+    kz.parent.mkdir(parents=True)
+    kz.write_text(json.dumps({"status": "ok", "version": "aktuell"}), encoding="utf-8")
+    assert rd.main([*args, "--version", "aktuell", "--slices", "keine", "--neu"]) == 2
+    assert "Rennweg_aktuell enthält schon kennzahlen.json" in capsys.readouterr().err
+
+
 def test_lauf_ohne_version_bricht_ab(tmp_path, capsys):
     assert rd.main(_eingang(tmp_path)) == 2
     assert "jede neue Ausgabe als eigener Versionsordner" in capsys.readouterr().err
