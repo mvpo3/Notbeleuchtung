@@ -79,8 +79,9 @@ _SCHACHT_AUSSCHLUSS_RX = re.compile(
 # Planzeichen, der türlosen Kleinfläche (Diagnose Rennweg U5, DG2 `rest_5`).
 # Stempel-SCHACHT (Zone, `raumtyp`) und Liftschacht-Reste (S5c/F1, Kabine
 # > 50 %) sind durch ihre Quelle belegt und laufen hier nie durch.
-# ponytail: U-förmige Schachtmauer ist NICHT umgesetzt — eine Fensternische ist
-# ebenso ummauert (gemessen docs/SLICES_K1_K4.md, K2); Owner-Frage dort.
+# ponytail: U-förmige Schachtmauer ist NICHT umgesetzt — im Korpus hängt kein
+# SCHACHT allein daran, ohne Positivbeispiel gibt es keinen Schwellwert
+# (Randmessung und Owner-Frage: docs/SLICES_K1_K4.md, K2).
 _BELEG_TEXT_RX = re.compile(
     r"(?<![A-ZÄÖÜ])(?:F?BDB|DDB|DBA|SCHACHT)(?![A-ZÄÖÜ])|DURCHBRUCH")
 _BELEG_TEXT_MM = 500.0
