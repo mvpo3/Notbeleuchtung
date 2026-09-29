@@ -201,9 +201,14 @@ def _commit() -> str:
     return f"{sha}-dirty" if git("status", "--porcelain", "--", "src", "scripts") else sha
 
 
+#: Versionskennung: ``v<Zahl>`` oder ``aktuell`` (Owner 2026-09-29: ``Rennweg_aktuell``).
+#: Auch ``<Ordner>_aktuell`` wird nie überschrieben — die Sperre gilt für jede Kennung.
+_VERSION_RX = r"v\d+|aktuell"
+
+
 def _ordner_version(name: str) -> str:
-    """Versionsordner ``Rennweg_v2`` → ``v2``; ohne Suffix ist es v1."""
-    m = re.search(r"_(v\d+)$", name)
+    """Versionsordner ``Rennweg_v2`` → ``v2``, ``Rennweg_aktuell`` → ``aktuell``; ohne Suffix v1."""
+    m = re.search(rf"_({_VERSION_RX})$", name)
     return m.group(1) if m else "v1"
 
 
@@ -1435,7 +1440,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--dxf", help="nur diesen einen Plan (Ausgabe unter <out>/_einzel/)")
     ap.add_argument("--ordner", action="append",
                     help="nur diesen Unterordner des Eingangs (mehrfach möglich), z. B. Rennweg")
-    ap.add_argument("--version", help="Versionsordner v<Zahl>, z. B. v2 → <out>/<Ordner>_v2/")
+    ap.add_argument("--version", help="Versionsordner v<Zahl> oder aktuell, z. B. v2 → <out>/<Ordner>_v2/")
     ap.add_argument("--slices", help='umgesetzte Slices als Kommaliste, z. B. "S1,S2,S5a" oder "keine"')
     ap.add_argument("--basis", help='Stapel-Kopf, auf dem gerechnet wird, z. B. "aa05143" '
                                     "(Bildtitel, kennzahlen.json, Index)")
@@ -1445,8 +1450,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--worker", type=int, default=WORKER)
     ap.add_argument("--timeout-min", type=float, default=TIMEOUT_MIN)
     a = ap.parse_args(argv)
-    if a.version is not None and not re.fullmatch(r"v\d+", a.version):
-        ap.error(f"--version {a.version!r}: erwartet v<Zahl>, z. B. v2")
+    if a.version is not None and not re.fullmatch(_VERSION_RX, a.version):
+        ap.error(f"--version {a.version!r}: erwartet v<Zahl> oder aktuell, z. B. v2")
     slices = None if a.slices is None else [
         s for s in (t.strip() for t in a.slices.split(",")) if s and s.lower() != "keine"]
     meta = {"version": a.version, "datum": f"{datetime.now().astimezone():%Y-%m-%d}",
