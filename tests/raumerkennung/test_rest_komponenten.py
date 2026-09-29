@@ -67,10 +67,12 @@ def _klein(raeume):
     return min(raeume, key=lambda r: r.flaeche_m2)
 
 
-def test_rest_findet_rechten_raum_und_schacht():
+def test_rest_findet_rechten_raum_und_nische():
     raeume = komponenten_ohne_stempel(None, _WAENDE, [_TUER], [_LINKS])
     typen = sorted(r.raum_typ for r in raeume)
-    assert "SCHACHT" in typen                      # türlose Kleinfläche
+    # Slice K2 (Owner-Regel a): ohne Plan kein Schacht-Beleg — die türlose
+    # Kleinfläche ist NISCHE, nicht mehr SCHACHT.
+    assert "NISCHE" in typen and "SCHACHT" not in typen
     gross = max(raeume, key=lambda r: r.flaeche_m2)
     assert gross.raum_typ == ""                    # untypisiert, kein "UNBEKANNT"
     assert 8.0 <= gross.flaeche_m2 <= 14.0         # rechter Raum minus Schacht-Box
@@ -155,6 +157,87 @@ def test_text_ohne_schacht_wortgrenze_ist_keine_evidenz():
                  stiegen=[_SCHACHT_MITTE])
     klein = _klein(komponenten_ohne_stempel(plan, _WAENDE_S3A, [_TUER], [_LINKS]))
     assert klein.raum_typ == "STIEGENHAUS"
+
+
+# --- K2: Schacht nur mit Beleg (Owner-Regel a, 2026-09-29) -------------------
+#
+# „Rote Kontur allein ist kein Beleg. SCHACHT braucht mindestens eines: Text
+# DDB/BDB/DBA/Schacht/Durchbruch in 500 mm, U-förmige Schachtmauer,
+# FEUERFESTER_STEIN-Keil, Schacht-Zone oder -Layer. Sonst NISCHE."
+# Schacht-Box innen x 5600..7000, y 1600..2500 (1,26 m², türlos).
+
+_BOX_INNEN = [(5600.0, 1600.0), (7000.0, 1600.0), (7000.0, 2500.0), (5600.0, 2500.0)]
+
+
+def _plan_k2(texte=(), kaesten=(), keile=(), layer_linien=()) -> DxfPlan:
+    """Plan ohne Treppenmarker; Kästen als geschlossene rote LWPOLYLINE,
+    Keile als HATCH FEUERFESTER_STEIN, Schacht-Layer als LINE."""
+    doc = ezdxf.new(setup=True)
+    msp = doc.modelspace()
+    for txt, xy in texte:
+        msp.add_text(txt, dxfattribs={"insert": xy})
+    for pts in kaesten:
+        msp.add_lwpolyline(pts, close=True, dxfattribs={"color": 1})
+    for pts in keile:
+        h = msp.add_hatch(color=1)
+        h.set_pattern_fill("ANSI31", scale=10)
+        h.dxf.pattern_name = "FEUERFESTER_STEIN"
+        h.paths.add_polyline_path(pts, is_closed=True)
+    for layer, a, b in layer_linien:
+        msp.add_line(a, b, dxfattribs={"layer": layer})
+    return DxfPlan(doc=doc, space=msp, factor=1.0)
+
+
+def _box_typ(plan) -> str:
+    klein = _klein(komponenten_ohne_stempel(plan, _WAENDE_S3A, [_TUER], [_LINKS]))
+    assert klein.flaeche_m2 < 3.0
+    return klein.raum_typ
+
+
+def test_k2_tuerlose_kleinflaeche_ohne_beleg_ist_nische():
+    """Rennweg DG2 `rest_5`-Muster: klein, türlos, kein Planzeichen → NISCHE,
+    ohne Fluchtweg-/communal-Flag und ohne Nutzungsklasse (fail-safe)."""
+    from notbeleuchtung.raumerkennung.nutzungsklasse import nutzungsklasse_fuer
+
+    klein = _klein(komponenten_ohne_stempel(_plan_k2(), _WAENDE_S3A, [_TUER], [_LINKS]))
+    assert klein.raum_typ == "NISCHE"
+    assert not klein.ist_fluchtweg and not klein.ist_communal
+    assert nutzungsklasse_fuer("NISCHE") is None
+
+
+def test_k2_text_im_umkreis_500_ist_beleg():
+    """Text außerhalb der Fläche, 400 mm unter der Box: Beleg (DBA zählt, Owner)."""
+    assert _box_typ(_plan_k2(texte=[("DBA 40/70", (6300.0, 1200.0))])) == "SCHACHT"
+    assert _box_typ(_plan_k2(texte=[("Deckendurchbruch", (6300.0, 1200.0))])) == "SCHACHT"
+
+
+def test_k2_text_weiter_als_500_ist_kein_beleg():
+    assert _box_typ(_plan_k2(texte=[("DDB 40/70", (6300.0, 900.0))])) == "NISCHE"
+
+
+def test_k2_keil_im_kasten_der_flaeche_ist_beleg():
+    """Keil (FEUERFESTER_STEIN) in einem Kasten, der die Fläche deckt → SCHACHT."""
+    plan = _plan_k2(kaesten=[_BOX_INNEN],
+                    keile=[[(6700.0, 1600.0), (7000.0, 1600.0), (7000.0, 1900.0)]])
+    assert _box_typ(plan) == "SCHACHT"
+
+
+def test_k2_keil_kasten_streift_die_flaeche_nur_ist_nische():
+    """Rennweg DG2 `rest_5`: der Kasten „Schachtverzug über Dach" deckt nur 18 %
+    der Nische. Hier deckt er 0,12 von 1,26 m² → kein Beleg → NISCHE."""
+    ecke = [(5600.0, 1600.0), (6000.0, 1600.0), (6000.0, 1900.0), (5600.0, 1900.0)]
+    plan = _plan_k2(kaesten=[ecke],
+                    keile=[[(5600.0, 1600.0), (5800.0, 1600.0), (5600.0, 1800.0)]])
+    assert _box_typ(plan) == "NISCHE"
+
+
+def test_k2_rote_kontur_allein_ist_kein_beleg():
+    assert _box_typ(_plan_k2(kaesten=[_BOX_INNEN])) == "NISCHE"
+
+
+def test_k2_schacht_layer_ist_beleg():
+    plan = _plan_k2(layer_linien=[("HKLS Schacht", (6000.0, 2000.0), (6600.0, 2000.0))])
+    assert _box_typ(plan) == "SCHACHT"
 
 
 # --- S3b: Rückdehnung der Türscheiben (docs/GATE_TUERSTAPEL.md § 7) ---------

@@ -139,3 +139,33 @@ def test_kategorie_unbestimmter_gang_ist_magenta():
     assert rd._kategorie("NISCHE", None) == "nische"
     assert rd._kategorie("", None) == "unbekannt"
     assert rd._KAT["unbestimmt"][1] == "#ff00ff"
+
+
+def _schacht_plan(ordner: Path, name: str, geschoss: str, schaechte: list[tuple[str, float]]):
+    """Plan-Unterordner mit kennzahlen.json (ok) und _cache.pkl (SCHACHT-Räume bei x)."""
+    import pickle
+    d = ordner / name
+    d.mkdir(parents=True)
+    (d / "kennzahlen.json").write_text(json.dumps({"status": "ok"}), encoding="utf-8")
+    raeume = [_raum(rid, "SCHACHT", x, 0, x + 1000, 1000) for rid, x in schaechte]
+    (d / "_cache.pkl").write_bytes(pickle.dumps({"raeume": raeume, "geschoss": geschoss}))
+
+
+def test_schaechte_md_zahl_je_geschoss_lagen_und_warnung(tmp_path):
+    """Slice K2, Owner-Regel b: SCHAECHTE.md je Projektordner — Schachtzahl je
+    Geschoss (unten → oben, DG1 vor DG2 über den Namen), Lagen mit belegten
+    Geschossen, Warnung für das Geschoss dazwischen."""
+    ordner = tmp_path / "Rennweg_aktuell"
+    _schacht_plan(ordner, "DG2 - x", "DG", [("r4", 0.0)])
+    _schacht_plan(ordner, "DG1 - x", "DG", [("r3", 100.0), ("r1", 50000.0)])
+    _schacht_plan(ordner, "OG2 - x", "2OG", [])
+    _schacht_plan(ordner, "OG1 - x", "1OG", [("r2", 0.0)])
+    ziel = rd._schaechte_md(ordner, rd._eintraege(ordner))
+    text = ziel.read_text(encoding="utf-8")
+    assert ziel.name == "SCHAECHTE.md"
+    zeilen = [z for z in text.splitlines() if z.split(" | ")[0].endswith(" - x")]
+    assert [z.split(" | ")[:3] for z in zeilen] == [
+        ["| OG1 - x", "1OG", "1"], ["| OG2 - x", "2OG", "0"],
+        ["| DG1 - x", "DG", "2"], ["| DG2 - x", "DG", "1"]]
+    assert "| (500, 500) | OG1 - x, DG1 - x, DG2 - x | r2, r3, r4 |" in text
+    assert "Schacht erwartet, nicht gefunden: OG2 - x bei (500, 500)" in text
