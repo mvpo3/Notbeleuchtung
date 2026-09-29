@@ -1,0 +1,26 @@
+{
+  "cell_drawing_units": 10,
+  "closing_size_cells": 5,
+  "outlining_dilation_cells": 2,
+  "pattern_segments": 182713,
+  "approximate_instructional_outlines": true,
+  "source_layers": [
+    "112 Wand Außen Bekleidung",
+    "115 Wand Aussen tragend",
+    "120 Wand Innen",
+    "125 Wand Innen tragend",
+    "129 Wand Innen Trennwand WC",
+    "130 Wand Vorsatzschale",
+    "150 Stuetze"
+  ],
+  "method": "Repeated material hatch line segments and selected solid partition fills were grouped into approximate enclosures. Openings were inspected visually in eight overlapping sectors. Whole wall layers were not recolored, because they also contain door graphics.",
+  "line_width_pdf_points": 1.5,
+  "red_fill_opacity": 0.15,
+  "excluded": "Door leaves, swing arcs, sport markings, most fixtures, overhead projection lines and original orange fire-compartment markings.",
+  "limitations": [
+    "Not a full semantic inventory of every door or window.",
+    "Thin edge offsets and jagged insulation outlines reflect an approximate drawing annotation.",
+    "Wall height, foundation level and real-world usability cannot be inferred from red alone.",
+    "No exact collision mask or room polygons are supplied."
+  ]
+}

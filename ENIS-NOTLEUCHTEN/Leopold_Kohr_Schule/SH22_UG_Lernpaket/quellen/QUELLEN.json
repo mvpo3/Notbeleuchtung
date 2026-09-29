@@ -1,0 +1,20 @@
+{
+  "project": "SH22 Leopold-Kohr-Schule",
+  "floor": "UG",
+  "artifacts": [
+    {
+      "file": "quellen/Schule_SH22_UG.pdf",
+      "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "unchanged_original": true
+    },
+    {
+      "file": "quellen/20220225-SH22-LKS-GE-AP-U1-01-C-UG.dxf",
+      "sha256": "2ed15b2da3d49af248488c8e0bf35ba06450b199d60b85340525ad4a68f29703",
+      "unchanged_original": true
+    }
+  ],
+  "derived_from_existing_package": "V3: raumerkennung_wissen_v3 / UG source export and crop reference positions",
+  "V1_coordinate_system_used": false,
+  "other_floors_included": false,
+  "current_repository_commit_verified": false
+}

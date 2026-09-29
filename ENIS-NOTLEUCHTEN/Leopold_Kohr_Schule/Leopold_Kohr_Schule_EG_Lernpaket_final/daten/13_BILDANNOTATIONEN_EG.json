@@ -1,0 +1,5926 @@
+{
+  "schema": "rivoplan.eg.annotations/4",
+  "annotations": [
+    {
+      "example_id": "EG-01",
+      "heading": "Außenkante",
+      "explanation": "Rahmen umfasst die volle Wandbreite.",
+      "color": "red",
+      "target_pdf_pt": [
+        911.8,
+        438.5
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-01-R1"
+      ]
+    },
+    {
+      "example_id": "EG-01",
+      "heading": "Innenkante",
+      "explanation": "Rahmen zeigt Wand und innere Randlinie.",
+      "color": "blue",
+      "target_pdf_pt": [
+        959.5,
+        624.5
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-01-R2"
+      ]
+    },
+    {
+      "example_id": "EG-01",
+      "heading": "Wandecke",
+      "explanation": "Rahmen umfasst den Eckanschluss.",
+      "color": "orange",
+      "target_pdf_pt": [
+        935.65,
+        43.25
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-01-R3"
+      ]
+    },
+    {
+      "example_id": "EG-01",
+      "heading": "Öffnung",
+      "explanation": "Fenster unterbricht das Mauerstück.",
+      "color": "purple",
+      "target_pdf_pt": [
+        1317.25,
+        52.550000000000004
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-02",
+      "heading": "Außenmauer",
+      "explanation": "Rahmen: massiver Gebäudeabschluss.",
+      "color": "red",
+      "target_pdf_pt": [
+        936.0,
+        1385.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-02-R1"
+      ]
+    },
+    {
+      "example_id": "EG-02",
+      "heading": "Zwei Wandkanten",
+      "explanation": "Rahmen umfasst beide Kanten und Material.",
+      "color": "blue",
+      "target_pdf_pt": [
+        1260.0,
+        1170.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-02-R2"
+      ]
+    },
+    {
+      "example_id": "EG-02",
+      "heading": "Türöffnung",
+      "explanation": "Zwischen den Wandenden bleibt das Portal.",
+      "color": "green",
+      "target_pdf_pt": [
+        1468.0,
+        1256.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-02",
+      "heading": "Raumstempel",
+      "explanation": "Nummer und Raumtext; keine bauliche Grenze.",
+      "color": "orange",
+      "target_pdf_pt": [
+        1604.0,
+        1296.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-03",
+      "heading": "Außenwand",
+      "explanation": "Rahmen: Wandkörper zwischen zwei Kanten.",
+      "color": "red",
+      "target_pdf_pt": [
+        2564.0,
+        1945.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-03-R1"
+      ]
+    },
+    {
+      "example_id": "EG-03",
+      "heading": "Trennwand",
+      "explanation": "Rahmen: Materialband zwischen Räumen.",
+      "color": "blue",
+      "target_pdf_pt": [
+        3000.0,
+        1945.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-03-R2"
+      ]
+    },
+    {
+      "example_id": "EG-03",
+      "heading": "Massive Stütze",
+      "explanation": "Orange umfasst das schraffierte Quadrat.",
+      "color": "orange",
+      "target_pdf_pt": [
+        3151.0,
+        884.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-03-R3"
+      ]
+    },
+    {
+      "example_id": "EG-03",
+      "heading": "Deckenrand",
+      "explanation": "Violett folgt der Linie über dem Boden.",
+      "color": "purple",
+      "target_pdf_pt": [
+        3000.0,
+        1146.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-04",
+      "heading": "Hallenwand",
+      "explanation": "Rahmen umfasst den schraffierten Wandkörper.",
+      "color": "red",
+      "target_pdf_pt": [
+        3582.25,
+        1140.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-04-R1"
+      ]
+    },
+    {
+      "example_id": "EG-04",
+      "heading": "Innenwand",
+      "explanation": "Rahmen umfasst das feste Wandstück.",
+      "color": "blue",
+      "target_pdf_pt": [
+        4332,
+        1725
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-04-R2"
+      ]
+    },
+    {
+      "example_id": "EG-04",
+      "heading": "Schacht",
+      "explanation": "Lift gesondert lesen; keine Gehfläche.",
+      "color": "purple",
+      "target_pdf_pt": [
+        3871.77,
+        1769.825
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-04-R3"
+      ]
+    },
+    {
+      "example_id": "EG-04",
+      "heading": "Türöffnung",
+      "explanation": "Bogen plus Blatt im Wanddurchgang.",
+      "color": "green",
+      "target_pdf_pt": [
+        4525.923842863509,
+        1642.7571359900899
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-05",
+      "heading": "Breite Außenwand",
+      "explanation": "Rahmen umfasst den ganzen Wandaufbau.",
+      "color": "red",
+      "target_pdf_pt": [
+        5075.0,
+        2730.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-05-R1"
+      ]
+    },
+    {
+      "example_id": "EG-05",
+      "heading": "Massives Wandstück",
+      "explanation": "Rahmen liegt um den schraffierten Abschnitt.",
+      "color": "blue",
+      "target_pdf_pt": [
+        4492.0,
+        2130.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-05-R2"
+      ]
+    },
+    {
+      "example_id": "EG-05",
+      "heading": "Türportal",
+      "explanation": "Blatt und Bogen stehen in der Wandlücke.",
+      "color": "green",
+      "target_pdf_pt": [
+        4493.0,
+        2640.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-05",
+      "heading": "Tischreihe",
+      "explanation": "Orange umfasst die gesamte Tischreihe.",
+      "color": "orange",
+      "target_pdf_pt": [
+        3658,
+        2440
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-05-R3"
+      ]
+    },
+    {
+      "example_id": "EG-06",
+      "heading": "Schräge Außenwand",
+      "explanation": "Gedrehter Rahmen folgt der Außenwand.",
+      "color": "red",
+      "target_pdf_pt": [
+        500,
+        3247.5
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-06-R1"
+      ]
+    },
+    {
+      "example_id": "EG-06",
+      "heading": "Innenwand",
+      "explanation": "Rahmen umfasst das feste Wandstück.",
+      "color": "blue",
+      "target_pdf_pt": [
+        324.0,
+        3350.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-06-R2"
+      ]
+    },
+    {
+      "example_id": "EG-06",
+      "heading": "Möbel",
+      "explanation": "Orange: drei einzelne Gegenstände.",
+      "color": "orange",
+      "target_pdf_pt": [
+        425.0,
+        3390.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-06",
+      "heading": "Einbauten",
+      "explanation": "Violett: längliche Möbel an der Wand.",
+      "color": "purple",
+      "target_pdf_pt": [
+        220.0,
+        3250.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-07",
+      "heading": "Wandkern",
+      "explanation": "Rot umfasst die diagonale Schraffur.",
+      "color": "red",
+      "target_pdf_pt": [
+        5065.0,
+        2740.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-07-R1"
+      ]
+    },
+    {
+      "example_id": "EG-07",
+      "heading": "Dämmlage",
+      "explanation": "Orange umfasst die Schlaufenstruktur.",
+      "color": "orange",
+      "target_pdf_pt": [
+        5080.0,
+        2740.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-07-R2"
+      ]
+    },
+    {
+      "example_id": "EG-07",
+      "heading": "Raumseite",
+      "explanation": "Blau folgt der inneren Wandkante.",
+      "color": "blue",
+      "target_pdf_pt": [
+        5059.0,
+        2782.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-07-R3"
+      ]
+    },
+    {
+      "example_id": "EG-07",
+      "heading": "Türöffnung",
+      "explanation": "Grün liegt zwischen den Wandenden.",
+      "color": "green",
+      "target_pdf_pt": [
+        5082.0,
+        2575.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-08",
+      "heading": "Dünne Trennwand",
+      "explanation": "Rahmen zeigt das untere schmale Wandstück.",
+      "color": "red",
+      "target_pdf_pt": [
+        4226.775,
+        1983.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-08-R1"
+      ]
+    },
+    {
+      "example_id": "EG-08",
+      "heading": "Oberes Wandstück",
+      "explanation": "Rahmen zeigt das obere schmale Wandstück.",
+      "color": "red",
+      "target_pdf_pt": [
+        4226.775,
+        1900.75
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-08-R2"
+      ]
+    },
+    {
+      "example_id": "EG-08",
+      "heading": "Türblatt",
+      "explanation": "Gerade Linie am Bandpunkt.",
+      "color": "blue",
+      "target_pdf_pt": [
+        4245.3,
+        1903.55
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-08",
+      "heading": "Schwenkbogen",
+      "explanation": "Orange folgt dem Bogen des Türblatts.",
+      "color": "orange",
+      "target_pdf_pt": [
+        4259.741585563262,
+        1932.3234455403922
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-09",
+      "heading": "Türblatt offen",
+      "explanation": "Blaue Gerade steht am Bandpunkt.",
+      "color": "blue",
+      "target_pdf_pt": [
+        1414.4,
+        1056.51
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-09",
+      "heading": "Öffnungsbogen",
+      "explanation": "Orange Kurve zeigt den Schwenkweg.",
+      "color": "orange",
+      "target_pdf_pt": [
+        1453.0,
+        1051.81
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-09",
+      "heading": "Geschlossen",
+      "explanation": "Violett gestrichelt: gedachte Blattlage.",
+      "color": "purple",
+      "target_pdf_pt": [
+        1437.0,
+        1088.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-09",
+      "heading": "Durchgang",
+      "explanation": "Zwischen beiden Laibungen.",
+      "color": "green",
+      "target_pdf_pt": [
+        1438.2,
+        1083.77
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-09",
+      "heading": "Bandpunkt",
+      "explanation": "Hier dreht das Türblatt.",
+      "color": "blue",
+      "target_pdf_pt": [
+        1414.4,
+        1087.765
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-09",
+      "heading": "DL 90 / 220",
+      "explanation": "Lichte Breite / Höhe laut Beschriftung.",
+      "color": "orange",
+      "target_pdf_pt": [
+        1440.0,
+        1068.025
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-10",
+      "heading": "Flügel links",
+      "explanation": "Ein gerades Türblatt.",
+      "color": "blue",
+      "target_pdf_pt": [
+        2447.975,
+        983.95
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-10",
+      "heading": "Flügel rechts",
+      "explanation": "Zweites Blatt derselben Tür.",
+      "color": "blue",
+      "target_pdf_pt": [
+        2549.3,
+        983.95
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-10",
+      "heading": "Zwei Bögen",
+      "explanation": "Beide Schwenkbögen sind orange nachgezogen.",
+      "color": "orange",
+      "target_pdf_pt": [
+        2493.570513343561,
+        993.4208222396182
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-10",
+      "heading": "Ein Portal",
+      "explanation": "Beide Flügel teilen einen Durchgang.",
+      "color": "green",
+      "target_pdf_pt": [
+        2500.3,
+        1014.76
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-11",
+      "heading": "Schiebeflügel",
+      "explanation": "Kurze parallele Blattlinien.",
+      "color": "blue",
+      "target_pdf_pt": [
+        3097.5,
+        861.55
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-11",
+      "heading": "Schieberichtung",
+      "explanation": "Kleine Pfeile parallel zur Öffnung.",
+      "color": "orange",
+      "target_pdf_pt": [
+        3346.0,
+        1014.675
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-11",
+      "heading": "Äußerer Zugang",
+      "explanation": "Zwei Türgruppen an der Außenfront.",
+      "color": "green",
+      "target_pdf_pt": [
+        3165.0,
+        861.55
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-11",
+      "heading": "Zur Eingangshalle",
+      "explanation": "Zwei weitere Gruppen, ohne Drehbogen.",
+      "color": "green",
+      "target_pdf_pt": [
+        3104.0,
+        1019.575
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-12",
+      "heading": "Rahmen / Glas",
+      "explanation": "Eng benachbarte Linien in der Öffnung.",
+      "color": "blue",
+      "target_pdf_pt": [
+        1492.4,
+        1609.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-12",
+      "heading": "Öffnungsbogen",
+      "explanation": "Orange: beide Bögen der Fensterflügel.",
+      "color": "orange",
+      "target_pdf_pt": [
+        1461.1932474124117,
+        1580.4557517137453
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-12",
+      "heading": "Brüstung",
+      "explanation": "FPH 0,45: Höhe über Fertigboden.",
+      "color": "purple",
+      "target_pdf_pt": [
+        1510.55,
+        1584.1
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-12",
+      "heading": "Mauerstück",
+      "explanation": "Roter Rahmen umfasst den festen Wandaufbau.",
+      "color": "red",
+      "target_pdf_pt": [
+        1631.0,
+        1598.5
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-12-R1"
+      ]
+    },
+    {
+      "example_id": "EG-13",
+      "heading": "Fensterrahmen",
+      "explanation": "Rahmenlinien zwischen Wandstücken.",
+      "color": "blue",
+      "target_pdf_pt": [
+        1000.8,
+        63.75
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-13",
+      "heading": "Fensterbogen",
+      "explanation": "Orange folgt den Bögen der Fensterflügel.",
+      "color": "orange",
+      "target_pdf_pt": [
+        1000.6143314133519,
+        119.69330480994722
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-13",
+      "heading": "Höhenbezug UG",
+      "explanation": "FPH ü. FBOK UG 4,50 lesen.",
+      "color": "purple",
+      "target_pdf_pt": [
+        1003.08,
+        92.5
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-13",
+      "heading": "Material dazwischen",
+      "explanation": "Wandpfeiler bleibt undurchlässig.",
+      "color": "red",
+      "target_pdf_pt": [
+        1054.0,
+        72.95
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-13-R1"
+      ]
+    },
+    {
+      "example_id": "EG-14",
+      "heading": "Fester Abschluss",
+      "explanation": "Parallele Linien: keine offene Lücke.",
+      "color": "purple",
+      "target_pdf_pt": [
+        3001.0,
+        958.1
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-14-R2"
+      ]
+    },
+    {
+      "example_id": "EG-14",
+      "heading": "Mauerstück",
+      "explanation": "Schraffur mit zwei Randlinien.",
+      "color": "red",
+      "target_pdf_pt": [
+        2766.48,
+        1005.35
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-14-R1"
+      ]
+    },
+    {
+      "example_id": "EG-14",
+      "heading": "Drehflügel",
+      "explanation": "Bogen und Blatt oben am Raum.",
+      "color": "blue",
+      "target_pdf_pt": [
+        2728.0,
+        877.1
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-14",
+      "heading": "Körperprüfung",
+      "explanation": "Durch Glas führt kein normaler Weg.",
+      "color": "orange",
+      "target_pdf_pt": [
+        3001.0,
+        998.6
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-14-R2"
+      ]
+    },
+    {
+      "example_id": "EG-15",
+      "heading": "Gangfläche",
+      "explanation": "Grüner Boden vor dem Kopierraum.",
+      "color": "green",
+      "target_pdf_pt": [
+        1610.0,
+        1350.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-15",
+      "heading": "Um den Raum",
+      "explanation": "Der Weg läuft außen am Kopierraum vorbei.",
+      "color": "green",
+      "target_pdf_pt": [
+        1750.0,
+        1125.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-15",
+      "heading": "Echte Raumgrenze",
+      "explanation": "Rahmen umfasst die untere Raumwand.",
+      "color": "red",
+      "target_pdf_pt": [
+        1340.0,
+        1340.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-15-R1"
+      ]
+    },
+    {
+      "example_id": "EG-15",
+      "heading": "Türöffnung",
+      "explanation": "Öffnung zwischen den Wandenden.",
+      "color": "blue",
+      "target_pdf_pt": [
+        1469.0,
+        1255.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-16",
+      "heading": "Ein Zugang",
+      "explanation": "Hier kommt man hinein und zurück.",
+      "color": "green",
+      "target_pdf_pt": [
+        1436.8,
+        1090.265
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-16",
+      "heading": "Wandabschluss",
+      "explanation": "Rahmen zeigt den geschlossenen Wandabschluss.",
+      "color": "red",
+      "target_pdf_pt": [
+        1456.6,
+        918.52
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-16-R1"
+      ]
+    },
+    {
+      "example_id": "EG-16",
+      "heading": "Sackgasse",
+      "explanation": "Zugänglicher Raum, keine Durchverbindung.",
+      "color": "orange",
+      "target_pdf_pt": [
+        1485.2,
+        990.55
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-16",
+      "heading": "Kein zweites Portal",
+      "explanation": "Rahmen zeigt die geschlossene Seitenwand.",
+      "color": "red",
+      "target_pdf_pt": [
+        1516.0,
+        1037.1
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-16-R2"
+      ]
+    },
+    {
+      "example_id": "EG-17",
+      "heading": "Deckenrand",
+      "explanation": "Oberer Bauteilrand laut VK RD / STUK.",
+      "color": "purple",
+      "target_pdf_pt": [
+        3021.0,
+        1149.13
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-17",
+      "heading": "Kein Wandkörper",
+      "explanation": "Innenfläche bleibt Teil der Halle.",
+      "color": "green",
+      "target_pdf_pt": [
+        2993.25,
+        1354.9
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-17",
+      "heading": "Fester Rand",
+      "explanation": "Rahmen zeigt den massiven Hallenrand.",
+      "color": "red",
+      "target_pdf_pt": [
+        2560.35,
+        1360.6
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-17-R1"
+      ]
+    },
+    {
+      "example_id": "EG-17",
+      "heading": "Hallenboden",
+      "explanation": "Verbindung setzt sich darunter fort.",
+      "color": "green",
+      "target_pdf_pt": [
+        2993.25,
+        1565.8
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-18",
+      "heading": "Technik-Hinweis",
+      "explanation": "Text: Leitung mit Abschottung.",
+      "color": "orange",
+      "target_pdf_pt": [
+        2637.0,
+        987.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-18",
+      "heading": "Wandmaterial",
+      "explanation": "Schraffiertes Band unter dem Raum.",
+      "color": "red",
+      "target_pdf_pt": [
+        2670.0,
+        1006.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-18-R1"
+      ]
+    },
+    {
+      "example_id": "EG-18",
+      "heading": "Einbauschrank",
+      "explanation": "Beschriftung und Einbaukontur gehören zusammen.",
+      "color": "blue",
+      "target_pdf_pt": [
+        2639.0,
+        1026.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-18",
+      "heading": "Kein Personenportal",
+      "explanation": "Der Hinweis ist kein Beleg für eine Gehtür.",
+      "color": "purple",
+      "target_pdf_pt": [
+        2628.0,
+        1014.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-19",
+      "heading": "Liftbereich",
+      "explanation": "Kabine und Schacht bleiben vollständig weiß.",
+      "color": "purple",
+      "target_pdf_pt": [
+        3868.0,
+        1745.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-19",
+      "heading": "Schachtwand",
+      "explanation": "Rahmen umfasst die schraffierte Schachtwand.",
+      "color": "red",
+      "target_pdf_pt": [
+        3924.0,
+        1740.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-19-R1"
+      ]
+    },
+    {
+      "example_id": "EG-19",
+      "heading": "Treppenstufen",
+      "explanation": "Wiederholte Querlinien gehören zur Stiege.",
+      "color": "blue",
+      "target_pdf_pt": [
+        3705.0,
+        1805.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-19",
+      "heading": "Vorbereich",
+      "explanation": "Grüner Boden vor der Lift-Türseite.",
+      "color": "green",
+      "target_pdf_pt": [
+        3880.0,
+        1638.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-29",
+      "heading": "Kabine",
+      "explanation": "Violett: eigene Umgrenzung innerhalb des Schachts.",
+      "color": "purple",
+      "target_pdf_pt": [
+        3840.0,
+        1740.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-29",
+      "heading": "Schachtwand",
+      "explanation": "Rahmen umfasst die schraffierte Schachtwand.",
+      "color": "red",
+      "target_pdf_pt": [
+        3924.0,
+        1760.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-29-R1"
+      ]
+    },
+    {
+      "example_id": "EG-29",
+      "heading": "Schiebetürlinien",
+      "explanation": "Blau: parallele Blätter an der Türseite.",
+      "color": "blue",
+      "target_pdf_pt": [
+        3865.0,
+        1682.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-29",
+      "heading": "Technik",
+      "explanation": "Orange: Abstand und Mechanik, kein Gang.",
+      "color": "orange",
+      "target_pdf_pt": [
+        3912.0,
+        1755.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-29",
+      "heading": "Plantext",
+      "explanation": "Größe und Lastangabe im Kabinenbereich.",
+      "color": "ink",
+      "target_pdf_pt": [
+        3870.0,
+        1709.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-29",
+      "heading": "Vorbereich",
+      "explanation": "Grün: Vorbereich vor der Türseite.",
+      "color": "green",
+      "target_pdf_pt": [
+        3865.0,
+        1653.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-20",
+      "heading": "Stufenkante",
+      "explanation": "Regelmäßige parallele Querlinien.",
+      "color": "blue",
+      "target_pdf_pt": [
+        3734.2,
+        1851.08
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-20",
+      "heading": "Lauflinie / Pfeil",
+      "explanation": "Richtungssymbol im rechten Lauf.",
+      "color": "orange",
+      "target_pdf_pt": [
+        3764.6,
+        1694.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-20",
+      "heading": "Treppenbruch",
+      "explanation": "Schräge Unterbrechung; keine Wand.",
+      "color": "purple",
+      "target_pdf_pt": [
+        3643.0,
+        1757.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-20",
+      "heading": "Podestbereich",
+      "explanation": "Grün mit erhaltenen schwarzen Linien.",
+      "color": "green",
+      "target_pdf_pt": [
+        3703.8,
+        1971.2
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-20",
+      "heading": "Zwei Läufe",
+      "explanation": "In der Mitte bleibt die Trennung.",
+      "color": "red",
+      "target_pdf_pt": [
+        3704.94,
+        1845.2
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-21",
+      "heading": "Stufenfolge",
+      "explanation": "Querlinien werden fortlaufend nummeriert.",
+      "color": "blue",
+      "target_pdf_pt": [
+        2238.0,
+        1344.02
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-21",
+      "heading": "Pfeilsymbol",
+      "explanation": "Richtung aus Konvention und Höhen prüfen.",
+      "color": "orange",
+      "target_pdf_pt": [
+        2239.5,
+        1265.24
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-21",
+      "heading": "Bruchlinie",
+      "explanation": "Schräger Strich unterbricht Darstellung.",
+      "color": "purple",
+      "target_pdf_pt": [
+        2370.0,
+        1349.48
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-21",
+      "heading": "Laufmaß",
+      "explanation": "13 STG 15/30: Steigungen und Auftritt.",
+      "color": "green",
+      "target_pdf_pt": [
+        2240.1,
+        1360.4
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-22",
+      "heading": "Treppenlauf",
+      "explanation": "Regelmäßige Querlinien plus Nummern.",
+      "color": "blue",
+      "target_pdf_pt": [
+        4998.8,
+        2226.7
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-22",
+      "heading": "Laufpfeil",
+      "explanation": "Pfeilspitze unten auf dem Blatt.",
+      "color": "orange",
+      "target_pdf_pt": [
+        5010.8,
+        2369.8
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-22",
+      "heading": "19 STG 16,2/27",
+      "explanation": "19 Steigungen; Maße gesondert prüfen.",
+      "color": "purple",
+      "target_pdf_pt": [
+        5010.8,
+        2285.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-22",
+      "heading": "Podest / Zugang",
+      "explanation": "Boden vor der Außentür.",
+      "color": "green",
+      "target_pdf_pt": [
+        5018.0,
+        2433.4
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-23",
+      "heading": "Stufen",
+      "explanation": "Wiederholte schwarze Querlinien.",
+      "color": "blue",
+      "target_pdf_pt": [
+        979.2,
+        1601.4
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-23",
+      "heading": "Pfeilspitze",
+      "explanation": "Blatt-unten bedeutet nicht automatisch ab.",
+      "color": "orange",
+      "target_pdf_pt": [
+        982.8,
+        1749.8
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-23",
+      "heading": "Getrennter Lauf",
+      "explanation": "Eigene Anlage Stiege 6.",
+      "color": "purple",
+      "target_pdf_pt": [
+        982.8,
+        1559.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-23",
+      "heading": "Bodenanschluss",
+      "explanation": "Kleiner Bereich vor dem Ausgang.",
+      "color": "green",
+      "target_pdf_pt": [
+        979.2,
+        1813.4
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-24",
+      "heading": "Querlinien",
+      "explanation": "Außenlauf aus vielen Stufenkanten.",
+      "color": "blue",
+      "target_pdf_pt": [
+        2168.6,
+        2120.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-24",
+      "heading": "Pfeil",
+      "explanation": "Lauflinie längs durch die Stufen.",
+      "color": "orange",
+      "target_pdf_pt": [
+        2369.6,
+        2120.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-24",
+      "heading": "Darstellungsbruch",
+      "explanation": "Schräge Linien sind keine Sperrwand.",
+      "color": "purple",
+      "target_pdf_pt": [
+        1950.85,
+        2120.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-24",
+      "heading": "Unterlaufschutz",
+      "explanation": "Beschrifteten Schutzbereich beachten.",
+      "color": "red",
+      "target_pdf_pt": [
+        2161.9,
+        2050.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-25",
+      "heading": "Stufenkanten",
+      "explanation": "Schwarze Linien bleiben über Grün sichtbar.",
+      "color": "blue",
+      "target_pdf_pt": [
+        3210.6,
+        2632.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-25",
+      "heading": "Lauflinie",
+      "explanation": "Symbolachse entlang der Treppe.",
+      "color": "orange",
+      "target_pdf_pt": [
+        3267.3,
+        2632.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-25",
+      "heading": "Bruch",
+      "explanation": "Darstellung wechselt an schrägen Linien.",
+      "color": "purple",
+      "target_pdf_pt": [
+        2927.1,
+        2634.4
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-25",
+      "heading": "NA ist lokal",
+      "explanation": "Kennzeichnet hier den Ausgangsbezug.",
+      "color": "green",
+      "target_pdf_pt": [
+        2847.72,
+        2634.4
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-26",
+      "heading": "Türportal",
+      "explanation": "Außenverbindung an dieser Öffnung.",
+      "color": "blue",
+      "target_pdf_pt": [
+        3682.76,
+        2715.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-26",
+      "heading": "NA-Symbol",
+      "explanation": "Kennzeichnung neben dem Ausgang.",
+      "color": "orange",
+      "target_pdf_pt": [
+        3667.14,
+        2797.5
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-26",
+      "heading": "Fassadenabschluss",
+      "explanation": "Glasfelder daneben sind keine Türen.",
+      "color": "purple",
+      "target_pdf_pt": [
+        3919.9,
+        2717.5
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-26-R1"
+      ]
+    },
+    {
+      "example_id": "EG-26",
+      "heading": "Außenweg offen",
+      "explanation": "Weiterführung braucht einen Lageplan.",
+      "color": "green",
+      "target_pdf_pt": [
+        3820.5,
+        2862.5
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung"
+    },
+    {
+      "example_id": "EG-27",
+      "heading": "Materialband",
+      "explanation": "Schraffur zwischen den Randlinien.",
+      "color": "red",
+      "target_pdf_pt": [
+        1512.0,
+        973.2
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-27-R1"
+      ]
+    },
+    {
+      "example_id": "EG-27",
+      "heading": "Innere Randlinie",
+      "explanation": "Grenze zum benachbarten Raum.",
+      "color": "blue",
+      "target_pdf_pt": [
+        1508.56,
+        984.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-27-R1"
+      ]
+    },
+    {
+      "example_id": "EG-27",
+      "heading": "Zweite Randlinie",
+      "explanation": "Begrenzt die andere Wandseite.",
+      "color": "orange",
+      "target_pdf_pt": [
+        1521.92,
+        993.0
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-27-R1"
+      ]
+    },
+    {
+      "example_id": "EG-28",
+      "heading": "Wandkern",
+      "explanation": "Diagonal schraffierter fester Bereich.",
+      "color": "red",
+      "target_pdf_pt": [
+        5008.5,
+        2805.29
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-28-R1"
+      ]
+    },
+    {
+      "example_id": "EG-28",
+      "heading": "Dämmlage",
+      "explanation": "Schlaufen im äußeren Aufbau.",
+      "color": "orange",
+      "target_pdf_pt": [
+        5001.25,
+        2820.5
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-28-R2"
+      ]
+    },
+    {
+      "example_id": "EG-28",
+      "heading": "Innere Kante",
+      "explanation": "Hier endet der Innenraum.",
+      "color": "blue",
+      "target_pdf_pt": [
+        5023.0,
+        2797.62
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-28-R3"
+      ]
+    },
+    {
+      "example_id": "EG-28",
+      "heading": "Außenecke",
+      "explanation": "Aufbau setzt sich um die Ecke fort.",
+      "color": "purple",
+      "target_pdf_pt": [
+        5086.8,
+        2828.95
+      ],
+      "source_pdf": "Schule_SH22_EG.pdf",
+      "page": 1,
+      "target_accuracy": "visueller_Zeiger_keine_Vermessung",
+      "frame_ids": [
+        "EG-28-R4"
+      ]
+    }
+  ],
+  "line_highlights_normalized": {
+    "EG-07": [
+      [
+        "blue",
+        [
+          [
+            0.125,
+            0.8618421052631579
+          ],
+          [
+            0.7041666666666667,
+            0.8618421052631579
+          ],
+          [
+            0.7041666666666667,
+            0.3631578947368421
+          ]
+        ]
+      ],
+      [
+        "green",
+        [
+          [
+            0.8,
+            0.2
+          ],
+          [
+            0.8,
+            0.35526315789473684
+          ]
+        ]
+      ]
+    ],
+    "EG-08": [
+      [
+        "red",
+        [
+          [
+            0.445,
+            0.18
+          ],
+          [
+            0.445,
+            0.316
+          ]
+        ]
+      ],
+      [
+        "red",
+        [
+          [
+            0.445,
+            0.56
+          ],
+          [
+            0.445,
+            0.746
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.445,
+            0.316
+          ],
+          [
+            0.65,
+            0.316
+          ]
+        ]
+      ]
+    ],
+    "EG-10": [
+      [
+        "blue",
+        [
+          [
+            0.211,
+            0.5
+          ],
+          [
+            0.211,
+            0.76
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.797,
+            0.5
+          ],
+          [
+            0.797,
+            0.76
+          ]
+        ]
+      ],
+      [
+        "green",
+        [
+          [
+            0.215,
+            0.775
+          ],
+          [
+            0.796,
+            0.775
+          ]
+        ]
+      ]
+    ],
+    "EG-11": [
+      [
+        "blue",
+        [
+          [
+            0.112,
+            0.196
+          ],
+          [
+            0.39,
+            0.196
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.112,
+            0.835
+          ],
+          [
+            0.39,
+            0.835
+          ]
+        ]
+      ],
+      [
+        "orange",
+        [
+          [
+            0.73,
+            0.815
+          ],
+          [
+            0.77,
+            0.815
+          ]
+        ]
+      ]
+    ],
+    "EG-12": [
+      [
+        "blue",
+        [
+          [
+            0.16,
+            0.64
+          ],
+          [
+            0.525,
+            0.64
+          ]
+        ]
+      ],
+      [
+        "purple",
+        [
+          [
+            0.24,
+            0.516
+          ],
+          [
+            0.409,
+            0.516
+          ]
+        ]
+      ]
+    ],
+    "EG-13": [
+      [
+        "blue",
+        [
+          [
+            0.09,
+            0.266
+          ],
+          [
+            0.24,
+            0.266
+          ]
+        ]
+      ],
+      [
+        "purple",
+        [
+          [
+            0.086,
+            0.517
+          ],
+          [
+            0.23,
+            0.517
+          ]
+        ]
+      ]
+    ],
+    "EG-14": [
+      [
+        "purple",
+        [
+          [
+            0.923,
+            0.234
+          ],
+          [
+            0.923,
+            0.731
+          ]
+        ]
+      ],
+      [
+        "red",
+        [
+          [
+            0.263,
+            0.72
+          ],
+          [
+            0.4,
+            0.72
+          ]
+        ]
+      ]
+    ],
+    "EG-16": [
+      [
+        "red",
+        [
+          [
+            0.3,
+            0.097
+          ],
+          [
+            0.8,
+            0.097
+          ]
+        ]
+      ],
+      [
+        "green",
+        [
+          [
+            0.39,
+            0.84
+          ],
+          [
+            0.39,
+            0.69
+          ]
+        ]
+      ]
+    ],
+    "EG-17": [
+      [
+        "purple",
+        [
+          [
+            0.05,
+            0.21
+          ],
+          [
+            0.95,
+            0.21
+          ]
+        ]
+      ]
+    ],
+    "EG-18": [
+      [
+        "orange",
+        [
+          [
+            0.2727272727272727,
+            0.08421052631578947
+          ],
+          [
+            0.5393939393939394,
+            0.08421052631578947
+          ],
+          [
+            0.5393939393939394,
+            0.3684210526315789
+          ],
+          [
+            0.2727272727272727,
+            0.3684210526315789
+          ],
+          [
+            0.2727272727272727,
+            0.08421052631578947
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.18484848484848485,
+            0.5947368421052631
+          ],
+          [
+            0.509090909090909,
+            0.5947368421052631
+          ],
+          [
+            0.509090909090909,
+            0.7
+          ],
+          [
+            0.18484848484848485,
+            0.7
+          ],
+          [
+            0.18484848484848485,
+            0.5947368421052631
+          ]
+        ]
+      ],
+      [
+        "purple",
+        [
+          [
+            0.18181818181818182,
+            0.4631578947368421
+          ],
+          [
+            0.6303030303030303,
+            0.4631578947368421
+          ],
+          [
+            0.6303030303030303,
+            0.5894736842105263
+          ],
+          [
+            0.18181818181818182,
+            0.5894736842105263
+          ],
+          [
+            0.18181818181818182,
+            0.4631578947368421
+          ]
+        ]
+      ]
+    ],
+    "EG-20": [
+      [
+        "blue",
+        [
+          [
+            0.534,
+            0.574
+          ],
+          [
+            0.8,
+            0.574
+          ]
+        ]
+      ],
+      [
+        "orange",
+        [
+          [
+            0.665,
+            0.68
+          ],
+          [
+            0.665,
+            0.171
+          ]
+        ]
+      ],
+      [
+        "purple",
+        [
+          [
+            0.22,
+            0.393
+          ],
+          [
+            0.506,
+            0.31
+          ]
+        ]
+      ]
+    ],
+    "EG-21": [
+      [
+        "blue",
+        [
+          [
+            0.1,
+            0.318
+          ],
+          [
+            0.45,
+            0.318
+          ]
+        ]
+      ],
+      [
+        "purple",
+        [
+          [
+            0.48,
+            0.293
+          ],
+          [
+            0.839,
+            0.373
+          ]
+        ]
+      ]
+    ],
+    "EG-22": [
+      [
+        "blue",
+        [
+          [
+            0.324,
+            0.391
+          ],
+          [
+            0.515,
+            0.391
+          ]
+        ]
+      ],
+      [
+        "orange",
+        [
+          [
+            0.418,
+            0.187
+          ],
+          [
+            0.418,
+            0.655
+          ]
+        ]
+      ]
+    ],
+    "EG-23": [
+      [
+        "blue",
+        [
+          [
+            0.28,
+            0.377
+          ],
+          [
+            0.532,
+            0.377
+          ]
+        ]
+      ],
+      [
+        "orange",
+        [
+          [
+            0.445,
+            0.195
+          ],
+          [
+            0.445,
+            0.655
+          ]
+        ]
+      ]
+    ],
+    "EG-24": [
+      [
+        "blue",
+        [
+          [
+            0.55,
+            0.224
+          ],
+          [
+            0.55,
+            0.723
+          ]
+        ]
+      ],
+      [
+        "orange",
+        [
+          [
+            0.25,
+            0.48
+          ],
+          [
+            0.87,
+            0.48
+          ]
+        ]
+      ]
+    ],
+    "EG-25": [
+      [
+        "blue",
+        [
+          [
+            0.53,
+            0.27
+          ],
+          [
+            0.53,
+            0.82
+          ]
+        ]
+      ],
+      [
+        "orange",
+        [
+          [
+            0.205,
+            0.55
+          ],
+          [
+            0.9,
+            0.55
+          ]
+        ]
+      ]
+    ],
+    "EG-27": [
+      [
+        "red",
+        [
+          [
+            0.65,
+            0.1
+          ],
+          [
+            0.65,
+            0.5
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.607,
+            0.1
+          ],
+          [
+            0.607,
+            0.9
+          ]
+        ]
+      ],
+      [
+        "orange",
+        [
+          [
+            0.774,
+            0.1
+          ],
+          [
+            0.774,
+            0.9
+          ]
+        ]
+      ]
+    ],
+    "EG-28": [
+      [
+        "blue",
+        [
+          [
+            0.03,
+            0.674
+          ],
+          [
+            0.648,
+            0.674
+          ],
+          [
+            0.648,
+            0.1
+          ]
+        ]
+      ],
+      [
+        "red",
+        [
+          [
+            0.03,
+            0.929
+          ],
+          [
+            0.86,
+            0.929
+          ],
+          [
+            0.86,
+            0.1
+          ]
+        ]
+      ]
+    ],
+    "EG-19": [
+      [
+        "red",
+        [
+          [
+            0.843956043956044,
+            0.14634146341463414
+          ],
+          [
+            0.843956043956044,
+            0.4609756097560976
+          ],
+          [
+            0.6373626373626373,
+            0.4609756097560976
+          ]
+        ]
+      ],
+      [
+        "purple",
+        [
+          [
+            0.6593406593406593,
+            0.16585365853658537
+          ],
+          [
+            0.8065934065934066,
+            0.16585365853658537
+          ],
+          [
+            0.8065934065934066,
+            0.44146341463414634
+          ],
+          [
+            0.6593406593406593,
+            0.44146341463414634
+          ],
+          [
+            0.6593406593406593,
+            0.16585365853658537
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.16483516483516483,
+            0.44878048780487806
+          ],
+          [
+            0.4725274725274725,
+            0.44878048780487806
+          ]
+        ]
+      ]
+    ],
+    "EG-02": [
+      [
+        "red",
+        [
+          [
+            0.02038216560509554,
+            0.4642857142857143
+          ],
+          [
+            0.02038216560509554,
+            0.5275510204081633
+          ],
+          [
+            0.055414012738853505,
+            0.5275510204081633
+          ]
+        ]
+      ],
+      [
+        "red",
+        [
+          [
+            0.038853503184713374,
+            0.4642857142857143
+          ],
+          [
+            0.038853503184713374,
+            0.5142857142857142
+          ],
+          [
+            0.055414012738853505,
+            0.5142857142857142
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.1573248407643312,
+            0.26632653061224487
+          ],
+          [
+            0.3471337579617834,
+            0.26632653061224487
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.1573248407643312,
+            0.2755102040816326
+          ],
+          [
+            0.3471337579617834,
+            0.2755102040816326
+          ]
+        ]
+      ],
+      [
+        "green",
+        [
+          [
+            0.3681528662420382,
+            0.33163265306122447
+          ],
+          [
+            0.3681528662420382,
+            0.38571428571428573
+          ]
+        ]
+      ],
+      [
+        "orange",
+        [
+          [
+            0.4356687898089172,
+            0.3693877551020408
+          ],
+          [
+            0.49044585987261147,
+            0.3693877551020408
+          ],
+          [
+            0.49044585987261147,
+            0.4387755102040816
+          ],
+          [
+            0.4356687898089172,
+            0.4387755102040816
+          ],
+          [
+            0.4356687898089172,
+            0.3693877551020408
+          ]
+        ]
+      ]
+    ],
+    "EG-03": [
+      [
+        "red",
+        [
+          [
+            0.13425925925925927,
+            0.6538461538461539
+          ],
+          [
+            0.13425925925925927,
+            0.8269230769230769
+          ]
+        ]
+      ],
+      [
+        "red",
+        [
+          [
+            0.1574074074074074,
+            0.6538461538461539
+          ],
+          [
+            0.1574074074074074,
+            0.8269230769230769
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.5398148148148149,
+            0.6666666666666666
+          ],
+          [
+            0.5398148148148149,
+            0.782051282051282
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.5527777777777778,
+            0.6666666666666666
+          ],
+          [
+            0.5527777777777778,
+            0.782051282051282
+          ]
+        ]
+      ],
+      [
+        "purple",
+        [
+          [
+            0.37962962962962965,
+            0.21602564102564104
+          ],
+          [
+            0.7592592592592593,
+            0.21602564102564104
+          ]
+        ]
+      ]
+    ],
+    "EG-05": [
+      [
+        "red",
+        [
+          [
+            0.9491620111731843,
+            0.8210526315789474
+          ],
+          [
+            0.9491620111731843,
+            0.9273684210526316
+          ]
+        ]
+      ],
+      [
+        "red",
+        [
+          [
+            0.9670391061452513,
+            0.8210526315789474
+          ],
+          [
+            0.9670391061452513,
+            0.9273684210526316
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.6301675977653631,
+            0.18947368421052632
+          ],
+          [
+            0.6301675977653631,
+            0.25263157894736843
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.6374301675977654,
+            0.18947368421052632
+          ],
+          [
+            0.6374301675977654,
+            0.25263157894736843
+          ]
+        ]
+      ],
+      [
+        "green",
+        [
+          [
+            0.6329608938547486,
+            0.7105263157894737
+          ],
+          [
+            0.6329608938547486,
+            0.7736842105263158
+          ]
+        ]
+      ]
+    ],
+    "EG-06": [
+      [
+        "red",
+        [
+          [
+            0.5515890410958905,
+            0.09367909238249625
+          ],
+          [
+            0.8637397260273972,
+            0.43165316045380864
+          ]
+        ]
+      ],
+      [
+        "red",
+        [
+          [
+            0.5562191780821918,
+            0.06717990275526713
+          ],
+          [
+            0.8806849315068492,
+            0.4184764991896269
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.38446027397260274,
+            0.16211993517017795
+          ],
+          [
+            0.4693671232876712,
+            0.45238735818476505
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.3707,
+            0.16775526742301478
+          ],
+          [
+            0.4556068493150685,
+            0.4580210696920586
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.47293835616438357,
+            0.4645964343598054
+          ],
+          [
+            0.5365164383561644,
+            0.6819432739059967
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.4591780821917808,
+            0.4702317666126415
+          ],
+          [
+            0.5227561643835617,
+            0.6875786061588328
+          ]
+        ]
+      ],
+      [
+        "orange",
+        [
+          [
+            0.33287671232876714,
+            0.4319286871961102
+          ],
+          [
+            0.3835616438356164,
+            0.37844408427876824
+          ],
+          [
+            0.42054794520547945,
+            0.42625607779578606
+          ],
+          [
+            0.3684931506849315,
+            0.4813614262560778
+          ],
+          [
+            0.33287671232876714,
+            0.4319286871961102
+          ]
+        ]
+      ],
+      [
+        "orange",
+        [
+          [
+            0.541095890410959,
+            0.4538087520259319
+          ],
+          [
+            0.5821917808219178,
+            0.4100486223662885
+          ],
+          [
+            0.6287671232876713,
+            0.47163695299837927
+          ],
+          [
+            0.5876712328767123,
+            0.5129659643435981
+          ],
+          [
+            0.541095890410959,
+            0.4538087520259319
+          ]
+        ]
+      ],
+      [
+        "orange",
+        [
+          [
+            0.6589041095890411,
+            0.39708265802269044
+          ],
+          [
+            0.6993150684931507,
+            0.3541329011345219
+          ],
+          [
+            0.7458904109589041,
+            0.41491085899513774
+          ],
+          [
+            0.7054794520547946,
+            0.45786061588330634
+          ],
+          [
+            0.6589041095890411,
+            0.39708265802269044
+          ]
+        ]
+      ],
+      [
+        "purple",
+        [
+          [
+            0.07945205479452055,
+            0.28687196110210694
+          ],
+          [
+            0.35205479452054794,
+            0.17504051863857376
+          ],
+          [
+            0.3698630136986301,
+            0.22204213938411668
+          ],
+          [
+            0.0958904109589041,
+            0.3354943273905997
+          ],
+          [
+            0.07945205479452055,
+            0.28687196110210694
+          ]
+        ]
+      ],
+      [
+        "purple",
+        [
+          [
+            0.3863013698630137,
+            0.15721231766612642
+          ],
+          [
+            0.5465753424657535,
+            0.0940032414910859
+          ],
+          [
+            0.563013698630137,
+            0.14424635332252836
+          ],
+          [
+            0.4041095890410959,
+            0.20907617504051865
+          ],
+          [
+            0.3863013698630137,
+            0.15721231766612642
+          ]
+        ]
+      ]
+    ],
+    "EG-15": [
+      [
+        "red",
+        [
+          [
+            0.12682926829268293,
+            0.7922077922077922
+          ],
+          [
+            0.36585365853658536,
+            0.7922077922077922
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.39902439024390246,
+            0.5064935064935064
+          ],
+          [
+            0.39902439024390246,
+            0.6441558441558441
+          ]
+        ]
+      ]
+    ],
+    "EG-29": [
+      [
+        "purple",
+        [
+          [
+            0.21428571428571427,
+            0.28205128205128205
+          ],
+          [
+            0.21428571428571427,
+            0.8512820512820513
+          ],
+          [
+            0.6892857142857143,
+            0.8512820512820513
+          ],
+          [
+            0.6892857142857143,
+            0.28205128205128205
+          ]
+        ]
+      ],
+      [
+        "red",
+        [
+          [
+            0.8142857142857143,
+            0.2564102564102564
+          ],
+          [
+            0.8142857142857143,
+            0.9076923076923077
+          ],
+          [
+            0.17857142857142858,
+            0.9076923076923077
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.2342857142857156,
+            0.2394871794871797
+          ],
+          [
+            0.419285714285713,
+            0.2394871794871797
+          ]
+        ]
+      ],
+      [
+        "blue",
+        [
+          [
+            0.4078571428571422,
+            0.2517948717948713
+          ],
+          [
+            0.5928571428571429,
+            0.2517948717948713
+          ]
+        ]
+      ],
+      [
+        "orange",
+        [
+          [
+            0.7142857142857143,
+            0.40512820512820513
+          ],
+          [
+            0.7714285714285715,
+            0.40512820512820513
+          ],
+          [
+            0.7714285714285715,
+            0.7435897435897436
+          ],
+          [
+            0.7142857142857143,
+            0.7435897435897436
+          ],
+          [
+            0.7142857142857143,
+            0.40512820512820513
+          ]
+        ]
+      ],
+      [
+        "green",
+        [
+          [
+            0.2,
+            0.09230769230769231
+          ],
+          [
+            0.6071428571428571,
+            0.09230769230769231
+          ]
+        ]
+      ]
+    ]
+  },
+  "note": "Pfeile und geschlossene Erklärrahmen sind Kommentare. Rechtecke zeigen den besprochenen Ausschnitt; sie sind keine Wandpolygone und dürfen nicht als Original-CAD importiert werden.",
+  "closed_frames": [
+    {
+      "id": "EG-01-R1",
+      "example_id": "EG-01",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          903,
+          365
+        ],
+        [
+          953,
+          365
+        ],
+        [
+          953,
+          505
+        ],
+        [
+          903,
+          505
+        ],
+        [
+          903,
+          365
+        ]
+      ],
+      "meaning": "Außenwandabschnitt mit voller Breite",
+      "headings": [
+        "Außenkante"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-01-R2",
+      "example_id": "EG-01",
+      "color": "blue",
+      "polygon_pdf_pt": [
+        [
+          904,
+          565
+        ],
+        [
+          961,
+          565
+        ],
+        [
+          961,
+          695
+        ],
+        [
+          904,
+          695
+        ],
+        [
+          904,
+          565
+        ]
+      ],
+      "meaning": "Wandabschnitt an der raumseitigen Kante",
+      "headings": [
+        "Innenkante"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-01-R3",
+      "example_id": "EG-01",
+      "color": "orange",
+      "polygon_pdf_pt": [
+        [
+          904,
+          22
+        ],
+        [
+          984,
+          22
+        ],
+        [
+          984,
+          110
+        ],
+        [
+          904,
+          110
+        ],
+        [
+          904,
+          22
+        ]
+      ],
+      "meaning": "Geschlossener Eckanschluss",
+      "headings": [
+        "Wandecke"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-02-R1",
+      "example_id": "EG-02",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          918,
+          1350
+        ],
+        [
+          959,
+          1350
+        ],
+        [
+          959,
+          1415
+        ],
+        [
+          918,
+          1415
+        ],
+        [
+          918,
+          1350
+        ]
+      ],
+      "meaning": "Außenwand am Gebäudeabschluss",
+      "headings": [
+        "Außenmauer"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-02-R2",
+      "example_id": "EG-02",
+      "color": "blue",
+      "polygon_pdf_pt": [
+        [
+          1185,
+          1160
+        ],
+        [
+          1360,
+          1160
+        ],
+        [
+          1360,
+          1181
+        ],
+        [
+          1185,
+          1181
+        ],
+        [
+          1185,
+          1160
+        ]
+      ],
+      "meaning": "Innenwand mit beiden Kanten",
+      "headings": [
+        "Zwei Wandkanten"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-03-R1",
+      "example_id": "EG-03",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          2548,
+          1855
+        ],
+        [
+          2588,
+          1855
+        ],
+        [
+          2588,
+          2040
+        ],
+        [
+          2548,
+          2040
+        ],
+        [
+          2548,
+          1855
+        ]
+      ],
+      "meaning": "Seitlicher massiver Wandkörper",
+      "headings": [
+        "Außenwand"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-03-R2",
+      "example_id": "EG-03",
+      "color": "blue",
+      "polygon_pdf_pt": [
+        [
+          2986,
+          1855
+        ],
+        [
+          3015,
+          1855
+        ],
+        [
+          3015,
+          2040
+        ],
+        [
+          2986,
+          2040
+        ],
+        [
+          2986,
+          1855
+        ]
+      ],
+      "meaning": "Trennwand mit Materialband",
+      "headings": [
+        "Trennwand"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-03-R3",
+      "example_id": "EG-03",
+      "color": "orange",
+      "polygon_pdf_pt": [
+        [
+          3135,
+          868
+        ],
+        [
+          3167,
+          868
+        ],
+        [
+          3167,
+          900
+        ],
+        [
+          3135,
+          900
+        ],
+        [
+          3135,
+          868
+        ]
+      ],
+      "meaning": "Massive Stütze",
+      "headings": [
+        "Massive Stütze"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-04-R1",
+      "example_id": "EG-04",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          3567,
+          1045
+        ],
+        [
+          3608,
+          1045
+        ],
+        [
+          3608,
+          1230
+        ],
+        [
+          3567,
+          1230
+        ],
+        [
+          3567,
+          1045
+        ]
+      ],
+      "meaning": "Hallenwand in voller Dicke",
+      "headings": [
+        "Hallenwand"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-04-R2",
+      "example_id": "EG-04",
+      "color": "blue",
+      "polygon_pdf_pt": [
+        [
+          4321,
+          1697
+        ],
+        [
+          4344,
+          1697
+        ],
+        [
+          4344,
+          1758
+        ],
+        [
+          4321,
+          1758
+        ],
+        [
+          4321,
+          1697
+        ]
+      ],
+      "meaning": "Schraffiertes Innenwandstück unter der Halle",
+      "headings": [
+        "Innenwand"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-04-R3",
+      "example_id": "EG-04",
+      "color": "purple",
+      "polygon_pdf_pt": [
+        [
+          3826,
+          1670
+        ],
+        [
+          3933,
+          1670
+        ],
+        [
+          3933,
+          1813
+        ],
+        [
+          3826,
+          1813
+        ],
+        [
+          3826,
+          1670
+        ]
+      ],
+      "meaning": "Abgegrenzter Liftbereich",
+      "headings": [
+        "Schacht"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-05-R1",
+      "example_id": "EG-05",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          5052,
+          2682
+        ],
+        [
+          5097,
+          2682
+        ],
+        [
+          5097,
+          2780
+        ],
+        [
+          5052,
+          2780
+        ],
+        [
+          5052,
+          2682
+        ]
+      ],
+      "meaning": "Gesamter Außenwandaufbau",
+      "headings": [
+        "Breite Außenwand"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-05-R2",
+      "example_id": "EG-05",
+      "color": "blue",
+      "polygon_pdf_pt": [
+        [
+          4483,
+          2094
+        ],
+        [
+          4506,
+          2094
+        ],
+        [
+          4506,
+          2165
+        ],
+        [
+          4483,
+          2165
+        ],
+        [
+          4483,
+          2094
+        ]
+      ],
+      "meaning": "Massives Küchenwandstück",
+      "headings": [
+        "Massives Wandstück"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-05-R3",
+      "example_id": "EG-05",
+      "color": "orange",
+      "polygon_pdf_pt": [
+        [
+          3606.4,
+          2307.3
+        ],
+        [
+          3710.1,
+          2307.3
+        ],
+        [
+          3710.1,
+          2609.8
+        ],
+        [
+          3606.4,
+          2609.8
+        ],
+        [
+          3606.4,
+          2307.3
+        ]
+      ],
+      "meaning": "Vollständige markierte Tischreihe nach Nutzerkorrektur",
+      "headings": [
+        "Tischreihe"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-06-R1",
+      "example_id": "EG-06",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          458.64276407251623,
+          3192.7087686172467
+        ],
+        [
+          558.2349158704139,
+          3283.848240309069
+        ],
+        [
+          541.3572359274838,
+          3302.2912313827533
+        ],
+        [
+          441.76508412958617,
+          3211.151759690931
+        ],
+        [
+          458.64276407251623,
+          3192.7087686172467
+        ]
+      ],
+      "meaning": "Rechteck entlang der schrägen Außenwand",
+      "headings": [
+        "Schräge Außenwand"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-06-R2",
+      "example_id": "EG-06",
+      "color": "blue",
+      "polygon_pdf_pt": [
+        [
+          309.39353631336263,
+          3275.6905038466084
+        ],
+        [
+          358.45158485811004,
+          3417.441369357127
+        ],
+        [
+          338.60646368663737,
+          3424.3094961533916
+        ],
+        [
+          289.54841514188996,
+          3282.558630642873
+        ],
+        [
+          309.39353631336263,
+          3275.6905038466084
+        ]
+      ],
+      "meaning": "Rechteck entlang der schrägen Innenwand",
+      "headings": [
+        "Innenwand"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-07-R1",
+      "example_id": "EG-07",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          5059,
+          2690
+        ],
+        [
+          5072,
+          2690
+        ],
+        [
+          5072,
+          2780
+        ],
+        [
+          5059,
+          2780
+        ],
+        [
+          5059,
+          2690
+        ]
+      ],
+      "meaning": "Schraffierter Wandkern",
+      "headings": [
+        "Wandkern"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-07-R2",
+      "example_id": "EG-07",
+      "color": "orange",
+      "polygon_pdf_pt": [
+        [
+          5073,
+          2690
+        ],
+        [
+          5086,
+          2690
+        ],
+        [
+          5086,
+          2780
+        ],
+        [
+          5073,
+          2780
+        ],
+        [
+          5073,
+          2690
+        ]
+      ],
+      "meaning": "Dämmschicht mit Schlaufen",
+      "headings": [
+        "Dämmlage"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-07-R3",
+      "example_id": "EG-07",
+      "color": "blue",
+      "polygon_pdf_pt": [
+        [
+          5048,
+          2781
+        ],
+        [
+          5094,
+          2781
+        ],
+        [
+          5094,
+          2836
+        ],
+        [
+          5048,
+          2836
+        ],
+        [
+          5048,
+          2781
+        ]
+      ],
+      "meaning": "Wandaufbau am raumseitigen Eckanschluss",
+      "headings": [
+        "Raumseite"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-08-R1",
+      "example_id": "EG-08",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          4221,
+          1947
+        ],
+        [
+          4233,
+          1947
+        ],
+        [
+          4233,
+          1999
+        ],
+        [
+          4221,
+          1999
+        ],
+        [
+          4221,
+          1947
+        ]
+      ],
+      "meaning": "Unteres schmales Trennwandstück",
+      "headings": [
+        "Dünne Trennwand"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-08-R2",
+      "example_id": "EG-08",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          4221,
+          1880
+        ],
+        [
+          4233,
+          1880
+        ],
+        [
+          4233,
+          1907
+        ],
+        [
+          4221,
+          1907
+        ],
+        [
+          4221,
+          1880
+        ]
+      ],
+      "meaning": "Oberes schmales Trennwandstück",
+      "headings": [
+        "Oberes Wandstück"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-12-R1",
+      "example_id": "EG-12",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          1562.2,
+          1590.0
+        ],
+        [
+          1723.0,
+          1590.0
+        ],
+        [
+          1723.0,
+          1629.1
+        ],
+        [
+          1562.2,
+          1629.1
+        ],
+        [
+          1562.2,
+          1590.0
+        ]
+      ],
+      "meaning": "Vom Nutzer markierter voller Fassadenwandabschnitt",
+      "headings": [
+        "Mauerstück"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-13-R1",
+      "example_id": "EG-13",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          1043,
+          49
+        ],
+        [
+          1066,
+          49
+        ],
+        [
+          1066,
+          89
+        ],
+        [
+          1043,
+          89
+        ],
+        [
+          1043,
+          49
+        ]
+      ],
+      "meaning": "Mauerpfeiler zwischen Fensterfeldern",
+      "headings": [
+        "Material dazwischen"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-14-R1",
+      "example_id": "EG-14",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          2730,
+          998
+        ],
+        [
+          2784,
+          998
+        ],
+        [
+          2784,
+          1027
+        ],
+        [
+          2730,
+          1027
+        ],
+        [
+          2730,
+          998
+        ]
+      ],
+      "meaning": "Materialband unter dem Schulwartraum",
+      "headings": [
+        "Mauerstück"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-14-R2",
+      "example_id": "EG-14",
+      "color": "purple",
+      "polygon_pdf_pt": [
+        [
+          2991,
+          916
+        ],
+        [
+          3009,
+          916
+        ],
+        [
+          3009,
+          1017
+        ],
+        [
+          2991,
+          1017
+        ],
+        [
+          2991,
+          916
+        ]
+      ],
+      "meaning": "Fester Glasabschluss als eigenes Hindernis",
+      "headings": [
+        "Fester Abschluss",
+        "Körperprüfung"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-15-R1",
+      "example_id": "EG-15",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          1260,
+          1333
+        ],
+        [
+          1410,
+          1333
+        ],
+        [
+          1410,
+          1348
+        ],
+        [
+          1260,
+          1348
+        ],
+        [
+          1260,
+          1333
+        ]
+      ],
+      "meaning": "Untere Wand des Kopierraums",
+      "headings": [
+        "Echte Raumgrenze"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-16-R1",
+      "example_id": "EG-16",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          1393,
+          909
+        ],
+        [
+          1522,
+          909
+        ],
+        [
+          1522,
+          939
+        ],
+        [
+          1393,
+          939
+        ],
+        [
+          1393,
+          909
+        ]
+      ],
+      "meaning": "Geschlossener oberer Wandabschluss",
+      "headings": [
+        "Wandabschluss"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-16-R2",
+      "example_id": "EG-16",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          1503,
+          992
+        ],
+        [
+          1530,
+          992
+        ],
+        [
+          1530,
+          1077
+        ],
+        [
+          1503,
+          1077
+        ],
+        [
+          1503,
+          992
+        ]
+      ],
+      "meaning": "Geschlossene seitliche Mauer",
+      "headings": [
+        "Kein zweites Portal"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-17-R1",
+      "example_id": "EG-17",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          2548,
+          1318
+        ],
+        [
+          2590,
+          1318
+        ],
+        [
+          2590,
+          1410
+        ],
+        [
+          2548,
+          1410
+        ],
+        [
+          2548,
+          1318
+        ]
+      ],
+      "meaning": "Massiver seitlicher Hallenrand",
+      "headings": [
+        "Fester Rand"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-18-R1",
+      "example_id": "EG-18",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          2640,
+          1003.8
+        ],
+        [
+          2688,
+          1003.8
+        ],
+        [
+          2688,
+          1008.8
+        ],
+        [
+          2640,
+          1008.8
+        ],
+        [
+          2640,
+          1003.8
+        ]
+      ],
+      "meaning": "Schraffiertes Wandmaterial am technischen Einbau",
+      "headings": [
+        "Wandmaterial"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-19-R1",
+      "example_id": "EG-19",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          3915,
+          1697
+        ],
+        [
+          3935,
+          1697
+        ],
+        [
+          3935,
+          1797
+        ],
+        [
+          3915,
+          1797
+        ],
+        [
+          3915,
+          1697
+        ]
+      ],
+      "meaning": "Rechte Schachtwand neben der Kabine",
+      "headings": [
+        "Schachtwand"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-29-R1",
+      "example_id": "EG-29",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          3915,
+          1697
+        ],
+        [
+          3935,
+          1697
+        ],
+        [
+          3935,
+          1800
+        ],
+        [
+          3915,
+          1800
+        ],
+        [
+          3915,
+          1697
+        ]
+      ],
+      "meaning": "Schraffierte Schachtwand in der Nahaufnahme",
+      "headings": [
+        "Schachtwand"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-26-R1",
+      "example_id": "EG-26",
+      "color": "purple",
+      "polygon_pdf_pt": [
+        [
+          3825,
+          2700
+        ],
+        [
+          4020,
+          2700
+        ],
+        [
+          4020,
+          2730
+        ],
+        [
+          3825,
+          2730
+        ],
+        [
+          3825,
+          2700
+        ]
+      ],
+      "meaning": "Fester Fassadenabschluss neben der Tür",
+      "headings": [
+        "Fassadenabschluss"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-27-R1",
+      "example_id": "EG-27",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          1503,
+          940
+        ],
+        [
+          1527,
+          940
+        ],
+        [
+          1527,
+          1012
+        ],
+        [
+          1503,
+          1012
+        ],
+        [
+          1503,
+          940
+        ]
+      ],
+      "meaning": "Gesamtes Wandband zwischen beiden Randlinien",
+      "headings": [
+        "Materialband",
+        "Innere Randlinie",
+        "Zweite Randlinie"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-28-R1",
+      "example_id": "EG-28",
+      "color": "red",
+      "polygon_pdf_pt": [
+        [
+          4981,
+          2795
+        ],
+        [
+          5032,
+          2795
+        ],
+        [
+          5032,
+          2813
+        ],
+        [
+          4981,
+          2813
+        ],
+        [
+          4981,
+          2795
+        ]
+      ],
+      "meaning": "Schraffierter Kern im Außenwanddetail",
+      "headings": [
+        "Wandkern"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-28-R2",
+      "example_id": "EG-28",
+      "color": "orange",
+      "polygon_pdf_pt": [
+        [
+          4981,
+          2813
+        ],
+        [
+          5032,
+          2813
+        ],
+        [
+          5032,
+          2829
+        ],
+        [
+          4981,
+          2829
+        ],
+        [
+          4981,
+          2813
+        ]
+      ],
+      "meaning": "Dämmlage im Außenwanddetail",
+      "headings": [
+        "Dämmlage"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-28-R3",
+      "example_id": "EG-28",
+      "color": "blue",
+      "polygon_pdf_pt": [
+        [
+          5012,
+          2788
+        ],
+        [
+          5033,
+          2788
+        ],
+        [
+          5033,
+          2810
+        ],
+        [
+          5012,
+          2810
+        ],
+        [
+          5012,
+          2788
+        ]
+      ],
+      "meaning": "Raumseitige Wandkante",
+      "headings": [
+        "Innere Kante"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    },
+    {
+      "id": "EG-28-R4",
+      "example_id": "EG-28",
+      "color": "purple",
+      "polygon_pdf_pt": [
+        [
+          5073,
+          2815
+        ],
+        [
+          5096,
+          2815
+        ],
+        [
+          5096,
+          2834
+        ],
+        [
+          5073,
+          2834
+        ],
+        [
+          5073,
+          2815
+        ]
+      ],
+      "meaning": "Äußerer Eckanschluss",
+      "headings": [
+        "Außenecke"
+      ],
+      "role": "Erklaerrahmen_keine_Objektgrenze"
+    }
+  ],
+  "source_arc_highlights": [
+    {
+      "example_id": "EG-04",
+      "layer": "125 Wand Innen tragend",
+      "handle": "79768",
+      "type": "ELLIPSE",
+      "bbox": [
+        4524.385923562516,
+        1604.1677065003787,
+        4575.405115694871,
+        1655.1940692814117
+      ],
+      "points": [
+        [
+          4575.405115694871,
+          1604.1677065003787
+        ],
+        [
+          4572.875046740084,
+          1604.2305908692024
+        ],
+        [
+          4570.362158585486,
+          1604.417732343239
+        ],
+        [
+          4567.87063320507,
+          1604.7273983478497
+        ],
+        [
+          4565.40465257283,
+          1605.1578563083967
+        ],
+        [
+          4562.96839866276,
+          1605.7073736502416
+        ],
+        [
+          4560.566053448853,
+          1606.3742177987456
+        ],
+        [
+          4558.201798905105,
+          1607.1566561792708
+        ],
+        [
+          4555.879817005507,
+          1608.0529562171787
+        ],
+        [
+          4553.604289724056,
+          1609.0613853378313
+        ],
+        [
+          4551.379399034744,
+          1610.18021096659
+        ],
+        [
+          4549.209326911565,
+          1611.4077005288163
+        ],
+        [
+          4547.098255328513,
+          1612.7421214498722
+        ],
+        [
+          4545.050366259582,
+          1614.1817411551194
+        ],
+        [
+          4543.069841678767,
+          1615.7248270699195
+        ],
+        [
+          4541.1608635600605,
+          1617.369646619634
+        ],
+        [
+          4539.327613877456,
+          1619.1144672296248
+        ],
+        [
+          4537.583050926283,
+          1620.9479621080498
+        ],
+        [
+          4535.938499677136,
+          1622.8571713678618
+        ],
+        [
+          4534.395692116908,
+          1624.837912791616
+        ],
+        [
+          4532.956360232495,
+          1626.8860041618661
+        ],
+        [
+          4531.62223601079,
+          1628.9972632611668
+        ],
+        [
+          4530.395051438688,
+          1631.1675078720732
+        ],
+        [
+          4529.2765385030825,
+          1633.392555777139
+        ],
+        [
+          4528.268429190867,
+          1635.668224758919
+        ],
+        [
+          4527.372455488938,
+          1637.9903325999678
+        ],
+        [
+          4526.590349384186,
+          1640.35469708284
+        ],
+        [
+          4525.923842863509,
+          1642.7571359900899
+        ],
+        [
+          4525.3746679137985,
+          1645.1934671042718
+        ],
+        [
+          4524.94455652195,
+          1647.6595082079405
+        ],
+        [
+          4524.635240674857,
+          1650.1510770836503
+        ],
+        [
+          4524.448452359415,
+          1652.6639915139558
+        ],
+        [
+          4524.385923562516,
+          1655.1940692814117
+        ]
+      ],
+      "color": "green",
+      "role": "Nachzeichnung_originaler_Oeffnungsbogen",
+      "unit": "PDF_point_top_left_origin"
+    },
+    {
+      "example_id": "EG-05",
+      "layer": "120 Wand Innen",
+      "handle": "B09F8",
+      "type": "ELLIPSE",
+      "bbox": [
+        4432.508608328399,
+        2596.4589361879475,
+        4487.247949910159,
+        2651.2059712319974
+      ],
+      "points": [
+        [
+          4487.247949910159,
+          2596.4589361879475
+        ],
+        [
+          4484.533396760725,
+          2596.526405874186
+        ],
+        [
+          4481.837277178103,
+          2596.727193079567
+        ],
+        [
+          4479.164078071892,
+          2597.059438895886
+        ],
+        [
+          4476.518286351689,
+          2597.52128441494
+        ],
+        [
+          4473.904388927095,
+          2598.110870728525
+        ],
+        [
+          4471.326872707707,
+          2598.8263389284366
+        ],
+        [
+          4468.790224603123,
+          2599.6658301064717
+        ],
+        [
+          4466.298931522941,
+          2600.627485354426
+        ],
+        [
+          4463.857480376761,
+          2601.709445764096
+        ],
+        [
+          4461.47035807418,
+          2602.9098524272777
+        ],
+        [
+          4459.142051524797,
+          2604.2268464357676
+        ],
+        [
+          4456.877047638211,
+          2605.658568881361
+        ],
+        [
+          4454.6798333240195,
+          2607.2031608558555
+        ],
+        [
+          4452.554895491821,
+          2608.858763451047
+        ],
+        [
+          4450.506721051215,
+          2610.62351775873
+        ],
+        [
+          4448.5397969117985,
+          2612.4955648707028
+        ],
+        [
+          4446.668026244606,
+          2614.4627520832228
+        ],
+        [
+          4444.903559799344,
+          2616.511174517485
+        ],
+        [
+          4443.248255853621,
+          2618.6363450026893
+        ],
+        [
+          4441.703972685043,
+          2620.8337763680347
+        ],
+        [
+          4440.272568571216,
+          2623.0989814427226
+        ],
+        [
+          4438.955901789749,
+          2625.4274730559514
+        ],
+        [
+          4437.755830618249,
+          2627.8147640369216
+        ],
+        [
+          4436.674213334321,
+          2630.256367214833
+        ],
+        [
+          4435.712908215574,
+          2632.7477954188857
+        ],
+        [
+          4434.873773539615,
+          2635.2845614782796
+        ],
+        [
+          4434.158667584051,
+          2637.8621782222144
+        ],
+        [
+          4433.569448626488,
+          2640.47615847989
+        ],
+        [
+          4433.107974944534,
+          2643.122015080506
+        ],
+        [
+          4432.776104815797,
+          2645.795260853263
+        ],
+        [
+          4432.5756965178825,
+          2648.4914086273598
+        ],
+        [
+          4432.508608328399,
+          2651.2059712319974
+        ]
+      ],
+      "color": "green",
+      "role": "Nachzeichnung_originaler_Oeffnungsbogen",
+      "unit": "PDF_point_top_left_origin"
+    },
+    {
+      "example_id": "EG-08",
+      "layer": "129 Wand Innen Trennwand WC",
+      "handle": "A9BF0",
+      "type": "ELLIPSE",
+      "bbox": [
+        4226.93295989388,
+        1905.2767428675834,
+        4269.448953355874,
+        1947.7987118333872
+      ],
+      "points": [
+        [
+          4226.93295989388,
+          1947.7987118333872
+        ],
+        [
+          4229.120977139928,
+          1947.7432326495564
+        ],
+        [
+          4231.280263302735,
+          1947.578885646271
+        ],
+        [
+          4233.408147023203,
+          1947.3083425580803
+        ],
+        [
+          4235.501956942236,
+          1946.9342751195345
+        ],
+        [
+          4237.559021700735,
+          1946.4593550651834
+        ],
+        [
+          4239.576669939603,
+          1945.8862541295757
+        ],
+        [
+          4241.552230299742,
+          1945.2176440472622
+        ],
+        [
+          4243.483031422055,
+          1944.4561965527919
+        ],
+        [
+          4245.3664019474445,
+          1943.6045833807143
+        ],
+        [
+          4247.199670516811,
+          1942.6654762655794
+        ],
+        [
+          4248.98016577106,
+          1941.641546941937
+        ],
+        [
+          4250.705216351092,
+          1940.535467144336
+        ],
+        [
+          4252.372150897809,
+          1939.349908607327
+        ],
+        [
+          4253.978298052114,
+          1938.0875430654592
+        ],
+        [
+          4255.520986454909,
+          1936.7510422532819
+        ],
+        [
+          4256.997544747097,
+          1935.3430779053454
+        ],
+        [
+          4258.405301569581,
+          1933.8663217561989
+        ],
+        [
+          4259.741585563262,
+          1932.3234455403922
+        ],
+        [
+          4261.0037253690425,
+          1930.717120992475
+        ],
+        [
+          4262.189049627826,
+          1929.050019846997
+        ],
+        [
+          4263.294886980513,
+          1927.3248138385077
+        ],
+        [
+          4264.318566068008,
+          1925.5441747015566
+        ],
+        [
+          4265.257415531213,
+          1923.7107741706939
+        ],
+        [
+          4266.108764011029,
+          1921.8272839804688
+        ],
+        [
+          4266.86994014836,
+          1919.8963758654309
+        ],
+        [
+          4267.538272584107,
+          1917.92072156013
+        ],
+        [
+          4268.111089959173,
+          1915.9029927991162
+        ],
+        [
+          4268.5857209144615,
+          1913.8458613169382
+        ],
+        [
+          4268.959494090873,
+          1911.7519988481467
+        ],
+        [
+          4269.22973812931,
+          1909.6240771272905
+        ],
+        [
+          4269.393781670677,
+          1907.4647678889196
+        ],
+        [
+          4269.448953355874,
+          1905.2767428675834
+        ]
+      ],
+      "color": "orange",
+      "role": "Nachzeichnung_originaler_Oeffnungsbogen",
+      "unit": "PDF_point_top_left_origin"
+    },
+    {
+      "example_id": "EG-10",
+      "layer": "110 Wand Aussen",
+      "handle": "A3533",
+      "type": "ELLIPSE",
+      "bbox": [
+        2447.816653731711,
+        964.6722764946737,
+        2498.5772541834003,
+        1015.4257436911862
+      ],
+      "points": [
+        [
+          2498.5772541834003,
+          1015.4257436911862
+        ],
+        [
+          2498.5110259077665,
+          1012.8137981037148
+        ],
+        [
+          2498.3148366726573,
+          1010.2361502468591
+        ],
+        [
+          2497.991875861192,
+          1007.6959890555415
+        ],
+        [
+          2497.5453328564895,
+          1005.1965034646851
+        ],
+        [
+          2496.9783970416674,
+          1002.7408824092124
+        ],
+        [
+          2496.294257799845,
+          1000.3323148240463
+        ],
+        [
+          2495.496104514141,
+          997.9739896441104
+        ],
+        [
+          2494.5871265676733,
+          995.6690958043266
+        ],
+        [
+          2493.570513343561,
+          993.4208222396182
+        ],
+        [
+          2492.449454224922,
+          991.2323578849082
+        ],
+        [
+          2491.2271385948757,
+          989.106891675119
+        ],
+        [
+          2489.90675583654,
+          987.0476125451735
+        ],
+        [
+          2488.4914953330344,
+          985.0577094299952
+        ],
+        [
+          2486.9845464674763,
+          983.1403712645058
+        ],
+        [
+          2485.389098622985,
+          981.2987869836293
+        ],
+        [
+          2483.7083411826784,
+          979.5361455222883
+        ],
+        [
+          2481.945463529676,
+          977.8556358154049
+        ],
+        [
+          2480.103655047096,
+          976.2604467979027
+        ],
+        [
+          2478.1861051180563,
+          974.7537674047046
+        ],
+        [
+          2476.1960031256767,
+          973.3387865707332
+        ],
+        [
+          2474.1365384530745,
+          972.0186932309109
+        ],
+        [
+          2472.0109004833694,
+          970.7966763201612
+        ],
+        [
+          2469.822278599679,
+          969.6759247734069
+        ],
+        [
+          2467.5738621851224,
+          968.6596275255706
+        ],
+        [
+          2465.268840622818,
+          967.7509735115755
+        ],
+        [
+          2462.910403295885,
+          966.9531516663437
+        ],
+        [
+          2460.5017395874406,
+          966.2693509247986
+        ],
+        [
+          2458.0460388806046,
+          965.7027602218634
+        ],
+        [
+          2455.546490558495,
+          965.2565684924605
+        ],
+        [
+          2453.0062840042306,
+          964.9339646715125
+        ],
+        [
+          2450.4286086009297,
+          964.7381376939425
+        ],
+        [
+          2447.816653731711,
+          964.6722764946737
+        ]
+      ],
+      "color": "orange",
+      "role": "Nachzeichnung_originaler_Oeffnungsbogen",
+      "unit": "PDF_point_top_left_origin"
+    },
+    {
+      "example_id": "EG-10",
+      "layer": "110 Wand Aussen",
+      "handle": "A3534",
+      "type": "ELLIPSE",
+      "bbox": [
+        2498.5772541837455,
+        964.6651432382737,
+        2549.3307213788703,
+        1015.425743691334
+      ],
+      "points": [
+        [
+          2549.3307213788703,
+          964.6651432382737
+        ],
+        [
+          2546.718775791401,
+          964.7313715139785
+        ],
+        [
+          2544.141127934551,
+          964.9275607491572
+        ],
+        [
+          2541.6009667432427,
+          965.2505215606911
+        ],
+        [
+          2539.1014811523983,
+          965.6970645654615
+        ],
+        [
+          2536.6458600969413,
+          966.2640003803499
+        ],
+        [
+          2534.2372925117943,
+          966.9481396222377
+        ],
+        [
+          2531.87896733188,
+          967.7462929080059
+        ],
+        [
+          2529.5740734921214,
+          968.6552708545357
+        ],
+        [
+          2527.325799927441,
+          969.6718840787094
+        ],
+        [
+          2525.1373355727615,
+          970.7929431974069
+        ],
+        [
+          2523.0118693630056,
+          972.0152588275109
+        ],
+        [
+          2520.952590233097,
+          973.3356415859021
+        ],
+        [
+          2518.962687117957,
+          974.7509020894622
+        ],
+        [
+          2517.045348952509,
+          976.257850955072
+        ],
+        [
+          2515.2037646716763,
+          977.853298799613
+        ],
+        [
+          2513.4411232103807,
+          979.5340562399672
+        ],
+        [
+          2511.7606135035458,
+          981.2969338930152
+        ],
+        [
+          2510.165424486094,
+          983.1387423756382
+        ],
+        [
+          2508.6587450929483,
+          985.0562923047182
+        ],
+        [
+          2507.2437642590307,
+          987.0463942971364
+        ],
+        [
+          2505.9236709192646,
+          989.1058589697741
+        ],
+        [
+          2504.7016540085733,
+          991.2314969395125
+        ],
+        [
+          2503.5809024618784,
+          993.420118823233
+        ],
+        [
+          2502.5646052141037,
+          995.6685352378165
+        ],
+        [
+          2501.6559512001713,
+          997.9735568001454
+        ],
+        [
+          2500.8581293550037,
+          1000.3319941271002
+        ],
+        [
+          2500.1743286135247,
+          1002.7406578355628
+        ],
+        [
+          2499.6077379106564,
+          1005.1963585424137
+        ],
+        [
+          2499.1615461813212,
+          1007.6959068645351
+        ],
+        [
+          2498.8389423604426,
+          1010.2361134188079
+        ],
+        [
+          2498.643115382943,
+          1012.813788822114
+        ],
+        [
+          2498.5772541837455,
+          1015.425743691334
+        ]
+      ],
+      "color": "orange",
+      "role": "Nachzeichnung_originaler_Oeffnungsbogen",
+      "unit": "PDF_point_top_left_origin"
+    },
+    {
+      "example_id": "EG-12",
+      "layer": "115 Wand Aussen tragend",
+      "handle": "8DFF2",
+      "type": "ELLIPSE",
+      "bbox": [
+        1533.4326778049005,
+        1573.2336158684427,
+        1567.976922493567,
+        1607.7827156523292
+      ],
+      "points": [
+        [
+          1567.976922493567,
+          1573.2336158684427
+        ],
+        [
+          1566.1991584811533,
+          1573.278692705264
+        ],
+        [
+          1564.4447384738705,
+          1573.4122246453924
+        ],
+        [
+          1562.7158329509857,
+          1573.6320409045068
+        ],
+        [
+          1561.0146123917655,
+          1573.9359706982852
+        ],
+        [
+          1559.3432472754769,
+          1574.3218432424064
+        ],
+        [
+          1557.7039080813865,
+          1574.787487752549
+        ],
+        [
+          1556.0987652887616,
+          1575.330733444391
+        ],
+        [
+          1554.5299893768686,
+          1575.9494095336113
+        ],
+        [
+          1552.9997508249746,
+          1576.641345235888
+        ],
+        [
+          1551.5102201123464,
+          1577.4043697668997
+        ],
+        [
+          1550.063567718251,
+          1578.236312342325
+        ],
+        [
+          1548.6619641219552,
+          1579.1350021778421
+        ],
+        [
+          1547.3075798027255,
+          1580.0982684891299
+        ],
+        [
+          1546.0025852398294,
+          1581.1239404918665
+        ],
+        [
+          1544.7491509125332,
+          1582.2098474017303
+        ],
+        [
+          1543.549447300104,
+          1583.3538184344
+        ],
+        [
+          1542.4056448818087,
+          1584.5536828055538
+        ],
+        [
+          1541.3199141369141,
+          1585.8072697308705
+        ],
+        [
+          1540.294425544687,
+          1587.1124084260282
+        ],
+        [
+          1539.3313495843943,
+          1588.4669281067058
+        ],
+        [
+          1538.4328567353027,
+          1589.8686579885814
+        ],
+        [
+          1537.6011174766793,
+          1591.3154272873337
+        ],
+        [
+          1536.838302287791,
+          1592.805065218641
+        ],
+        [
+          1536.1465816479042,
+          1594.3354009981817
+        ],
+        [
+          1535.5281260362863,
+          1595.9042638416345
+        ],
+        [
+          1534.985105932204,
+          1597.5094829646775
+        ],
+        [
+          1534.5196918149243,
+          1599.1488875829896
+        ],
+        [
+          1534.1340541637135,
+          1600.820306912249
+        ],
+        [
+          1533.830363457839,
+          1602.521570168134
+        ],
+        [
+          1533.6107901765672,
+          1604.2505065663236
+        ],
+        [
+          1533.4775047991654,
+          1606.004945322496
+        ],
+        [
+          1533.4326778049005,
+          1607.7827156523292
+        ]
+      ],
+      "color": "orange",
+      "role": "Nachzeichnung_originaler_Oeffnungsbogen",
+      "unit": "PDF_point_top_left_origin"
+    },
+    {
+      "example_id": "EG-12",
+      "layer": "115 Wand Aussen tragend",
+      "handle": "8DFF3",
+      "type": "ELLIPSE",
+      "bbox": [
+        1440.9621339546861,
+        1573.784658037238,
+        1474.969078635178,
+        1607.786823808392
+      ],
+      "points": [
+        [
+          1474.969078635178,
+          1607.786823808392
+        ],
+        [
+          1474.9271688242636,
+          1606.1006382695489
+        ],
+        [
+          1474.8024468300996,
+          1604.4259030181288
+        ],
+        [
+          1474.5960673414902,
+          1602.7654051655506
+        ],
+        [
+          1474.3091850472404,
+          1601.1219318232324
+        ],
+        [
+          1473.9429546361546,
+          1599.4982701025929
+        ],
+        [
+          1473.4985307970376,
+          1597.8972071150508
+        ],
+        [
+          1472.977068218694,
+          1596.3215299720243
+        ],
+        [
+          1472.3797215899285,
+          1594.774025784932
+        ],
+        [
+          1471.7076455995452,
+          1593.2574816651925
+        ],
+        [
+          1470.9619949363496,
+          1591.7746847242245
+        ],
+        [
+          1470.1439242891458,
+          1590.328422073446
+        ],
+        [
+          1469.2545883467385,
+          1588.921480824276
+        ],
+        [
+          1468.2951417979323,
+          1587.5566480881328
+        ],
+        [
+          1467.2667393315319,
+          1586.2367109764348
+        ],
+        [
+          1466.170535636342,
+          1584.964456600601
+        ],
+        [
+          1465.007685401167,
+          1583.7426720720491
+        ],
+        [
+          1463.7857374608168,
+          1582.5799935546902
+        ],
+        [
+          1462.5133290400088,
+          1581.4839686695557
+        ],
+        [
+          1461.1932474124117,
+          1580.4557517137453
+        ],
+        [
+          1459.8282798516925,
+          1579.496496984359
+        ],
+        [
+          1458.42121363152,
+          1578.6073587784974
+        ],
+        [
+          1456.974836025562,
+          1577.78949139326
+        ],
+        [
+          1455.491934307485,
+          1577.0440491257473
+        ],
+        [
+          1453.9752957509588,
+          1576.372186273059
+        ],
+        [
+          1452.42770762965,
+          1575.7750571322952
+        ],
+        [
+          1450.8519572172268,
+          1575.2538160005558
+        ],
+        [
+          1449.250831787357,
+          1574.8096171749412
+        ],
+        [
+          1447.6271186137085,
+          1574.4436149525511
+        ],
+        [
+          1445.9836049699495,
+          1574.1569636304857
+        ],
+        [
+          1444.3230781297473,
+          1573.950817505845
+        ],
+        [
+          1442.6483253667702,
+          1573.826330875729
+        ],
+        [
+          1440.9621339546861,
+          1573.784658037238
+        ]
+      ],
+      "color": "orange",
+      "role": "Nachzeichnung_originaler_Oeffnungsbogen",
+      "unit": "PDF_point_top_left_origin"
+    },
+    {
+      "example_id": "EG-13",
+      "layer": "115 Wand Aussen tragend",
+      "handle": "6D3DF",
+      "type": "ELLIPSE",
+      "bbox": [
+        972.083792876228,
+        66.23934807552541,
+        1032.6690835607073,
+        126.83315385071774
+      ],
+      "points": [
+        [
+          972.083792876228,
+          126.83315385071774
+        ],
+        [
+          975.088249760071,
+          126.75847866409367
+        ],
+        [
+          978.0723044437568,
+          126.53624816501997
+        ],
+        [
+          981.0309908331678,
+          126.16851978587783
+        ],
+        [
+          983.9593428341836,
+          125.65735095904756
+        ],
+        [
+          986.8523943526866,
+          125.00479911691082
+        ],
+        [
+          989.7051792945581,
+          124.2129216918479
+        ],
+        [
+          992.5127315656787,
+          123.2837761162391
+        ],
+        [
+          995.2700850719307,
+          122.21941982246517
+        ],
+        [
+          997.9722737191946,
+          121.02191024290778
+        ],
+        [
+          1000.6143314133519,
+          119.69330480994722
+        ],
+        [
+          1003.191292060284,
+          118.2356609559638
+        ],
+        [
+          1005.6981895658728,
+          116.65103611333916
+        ],
+        [
+          1008.1300578359987,
+          114.94148771445361
+        ],
+        [
+          1010.4819307765433,
+          113.10907319168746
+        ],
+        [
+          1012.748842293388,
+          111.1558499774228
+        ],
+        [
+          1014.9258262924136,
+          109.08387550403904
+        ],
+        [
+          1016.9974947979131,
+          106.90660033684162
+        ],
+        [
+          1018.950399407297,
+          104.63941434169419
+        ],
+        [
+          1020.7824833861273,
+          102.28728390181095
+        ],
+        [
+          1022.4916899999639,
+          99.85517540040837
+        ],
+        [
+          1024.0759625143683,
+          97.34805522070201
+        ],
+        [
+          1025.5332441949008,
+          94.77088974590697
+        ],
+        [
+          1026.861478307123,
+          92.12864535923882
+        ],
+        [
+          1028.0586081165961,
+          89.42628844391356
+        ],
+        [
+          1029.1225768888798,
+          86.66878538314677
+        ],
+        [
+          1030.0513278895369,
+          83.861102560154
+        ],
+        [
+          1030.8428043841268,
+          81.0082063581508
+        ],
+        [
+          1031.4949496382105,
+          78.1150631603532
+        ],
+        [
+          1032.0057069173495,
+          75.1866393499754
+        ],
+        [
+          1032.3730194871046,
+          72.22790131023521
+        ],
+        [
+          1032.5948306130372,
+          69.24381542434594
+        ],
+        [
+          1032.6690835607073,
+          66.23934807552541
+        ]
+      ],
+      "color": "orange",
+      "role": "Nachzeichnung_originaler_Oeffnungsbogen",
+      "unit": "PDF_point_top_left_origin"
+    },
+    {
+      "example_id": "EG-13",
+      "layer": "115 Wand Aussen tragend",
+      "handle": "6D3AF",
+      "type": "ELLIPSE",
+      "bbox": [
+        1075.721979589845,
+        66.23389542926498,
+        1110.266224278525,
+        100.78299521319013
+      ],
+      "points": [
+        [
+          1075.721979589845,
+          100.78299521319013
+        ],
+        [
+          1077.49974360226,
+          100.73791837636873
+        ],
+        [
+          1079.2541636095443,
+          100.60438643624047
+        ],
+        [
+          1080.983069132431,
+          100.38457017712562
+        ],
+        [
+          1082.6842896916523,
+          100.08064038334669
+        ],
+        [
+          1084.3556548079428,
+          99.69476783922528
+        ],
+        [
+          1085.9949940020342,
+          99.22912332908209
+        ],
+        [
+          1087.60013679466,
+          98.68587763723917
+        ],
+        [
+          1089.1689127065547,
+          98.0672015480186
+        ],
+        [
+          1090.6991512584495,
+          97.37526584574061
+        ],
+        [
+          1092.188681971079,
+          96.61224131472773
+        ],
+        [
+          1093.6353343651754,
+          95.78029873930154
+        ],
+        [
+          1095.0369379614717,
+          94.88160890378322
+        ],
+        [
+          1096.3913222807023,
+          93.91834259249435
+        ],
+        [
+          1097.6963168435996,
+          92.89267058975656
+        ],
+        [
+          1098.9497511708964,
+          91.80676367989145
+        ],
+        [
+          1100.1494547833263,
+          90.66279264722016
+        ],
+        [
+          1101.293257201622,
+          89.46292827606476
+        ],
+        [
+          1102.378987946517,
+          88.20934135074685
+        ],
+        [
+          1103.4044765387443,
+          86.9042026555876
+        ],
+        [
+          1104.3675524990376,
+          85.54968297490859
+        ],
+        [
+          1105.266045348129,
+          84.14795309303099
+        ],
+        [
+          1106.0977846067526,
+          82.70118379427731
+        ],
+        [
+          1106.8605997956406,
+          81.21154586296825
+        ],
+        [
+          1107.5523204355272,
+          79.68121008342587
+        ],
+        [
+          1108.1707760471445,
+          78.11234723997177
+        ],
+        [
+          1108.7137961512267,
+          76.50712811692665
+        ],
+        [
+          1109.1792102685058,
+          74.86772349861303
+        ],
+        [
+          1109.5648479197162,
+          73.19630416935206
+        ],
+        [
+          1109.8685386255902,
+          71.49504091346489
+        ],
+        [
+          1110.0881119068604,
+          69.76610451527404
+        ],
+        [
+          1110.2213972842615,
+          68.0116657591002
+        ],
+        [
+          1110.266224278525,
+          66.23389542926498
+        ]
+      ],
+      "color": "orange",
+      "role": "Nachzeichnung_originaler_Oeffnungsbogen",
+      "unit": "PDF_point_top_left_origin"
+    },
+    {
+      "example_id": "EG-13",
+      "layer": "115 Wand Aussen tragend",
+      "handle": "6D3B0",
+      "type": "ELLIPSE",
+      "bbox": [
+        1166.0748146738788,
+        66.2275464573213,
+        1200.6190593625588,
+        100.77664624124691
+      ],
+      "points": [
+        [
+          1166.0748146738788,
+          100.77664624124691
+        ],
+        [
+          1167.8525786862942,
+          100.7315694044255
+        ],
+        [
+          1169.6069986935781,
+          100.59803746429725
+        ],
+        [
+          1171.3359042164648,
+          100.3782212051824
+        ],
+        [
+          1173.0371247756862,
+          100.07429141140346
+        ],
+        [
+          1174.7084898919766,
+          99.6884188672816
+        ],
+        [
+          1176.347829086068,
+          99.22277435713886
+        ],
+        [
+          1177.9529718786944,
+          98.67952866529595
+        ],
+        [
+          1179.5217477905885,
+          98.06085257607492
+        ],
+        [
+          1181.0519863424838,
+          97.36891687379739
+        ],
+        [
+          1182.5415170551128,
+          96.60589234278495
+        ],
+        [
+          1183.9881694492092,
+          95.77394976735832
+        ],
+        [
+          1185.389773045506,
+          94.87525993183999
+        ],
+        [
+          1186.7441573647366,
+          93.91199362055113
+        ],
+        [
+          1188.0491519276334,
+          92.88632161781288
+        ],
+        [
+          1189.3025862549302,
+          91.80041470794822
+        ],
+        [
+          1190.50228986736,
+          90.65644367527693
+        ],
+        [
+          1191.6460922856559,
+          89.45657930412153
+        ],
+        [
+          1192.731823030551,
+          88.20299237880317
+        ],
+        [
+          1193.7573116227782,
+          86.89785368364392
+        ],
+        [
+          1194.7203875830714,
+          85.54333400296491
+        ],
+        [
+          1195.6188804321628,
+          84.14160412108731
+        ],
+        [
+          1196.4506196907864,
+          82.69483482233409
+        ],
+        [
+          1197.2134348796749,
+          81.20519689102503
+        ],
+        [
+          1197.905155519561,
+          79.67486111148219
+        ],
+        [
+          1198.5236111311783,
+          78.10599826802809
+        ],
+        [
+          1199.0666312352605,
+          76.50077914498343
+        ],
+        [
+          1199.5320453525396,
+          74.86137452666935
+        ],
+        [
+          1199.91768300375,
+          73.18995519740838
+        ],
+        [
+          1200.221373709624,
+          71.48869194152121
+        ],
+        [
+          1200.4409469908942,
+          69.75975554333036
+        ],
+        [
+          1200.5742323682953,
+          68.00531678715652
+        ],
+        [
+          1200.6190593625588,
+          66.2275464573213
+        ]
+      ],
+      "color": "orange",
+      "role": "Nachzeichnung_originaler_Oeffnungsbogen",
+      "unit": "PDF_point_top_left_origin"
+    },
+    {
+      "example_id": "EG-14",
+      "layer": "110 Wand Aussen",
+      "handle": "84844",
+      "type": "ELLIPSE",
+      "bbox": [
+        2687.305017117019,
+        855.0572942293397,
+        2768.960136681082,
+        902.8907509537155
+      ],
+      "points": [
+        [
+          2687.305017117019,
+          888.8866746266926
+        ],
+        [
+          2688.6075454045053,
+          890.1409714656711
+        ],
+        [
+          2689.9487064585155,
+          891.3387369208431
+        ],
+        [
+          2691.3267435929693,
+          892.479621693943
+        ],
+        [
+          2692.7399001217873,
+          893.5632764867069
+        ],
+        [
+          2694.18641935889,
+          894.5893520008701
+        ],
+        [
+          2695.6645446181974,
+          895.5574989381671
+        ],
+        [
+          2697.1725192136296,
+          896.4673680003339
+        ],
+        [
+          2698.7085864591068,
+          897.3186098891051
+        ],
+        [
+          2700.2709896685496,
+          898.1108753062163
+        ],
+        [
+          2701.8579721558785,
+          898.8438149534034
+        ],
+        [
+          2703.4677772350133,
+          899.5170795324007
+        ],
+        [
+          2705.0986482198746,
+          900.1303197449436
+        ],
+        [
+          2706.7488284243823,
+          900.6831862927679
+        ],
+        [
+          2708.4165611624567,
+          901.1753298776089
+        ],
+        [
+          2710.100089748018,
+          901.6064012012012
+        ],
+        [
+          2711.797657494987,
+          901.9760509652804
+        ],
+        [
+          2713.5075077172837,
+          902.2839298715819
+        ],
+        [
+          2715.2278837288286,
+          902.5296886218407
+        ],
+        [
+          2716.957028843541,
+          902.7129779177926
+        ],
+        [
+          2718.693186375342,
+          902.8334484611723
+        ],
+        [
+          2720.434599638152,
+          902.8907509537155
+        ],
+        [
+          2722.179511945891,
+          902.8845360971568
+        ],
+        [
+          2723.926166612479,
+          902.8144545932321
+        ],
+        [
+          2725.6728069518367,
+          902.6801571436768
+        ],
+        [
+          2727.4176762778843,
+          902.4812944502255
+        ],
+        [
+          2729.1590179045415,
+          902.2175172146135
+        ],
+        [
+          2730.8950751457296,
+          901.8884761385771
+        ],
+        [
+          2732.624091315368,
+          901.4938219238506
+        ],
+        [
+          2734.344309727377,
+          901.0332052721692
+        ],
+        [
+          2736.053973695677,
+          900.5062768852692
+        ],
+        [
+          2737.751326534189,
+          899.9126874648848
+        ],
+        [
+          2739.4346115568324,
+          899.2520877127513
+        ],
+        [
+          2741.091886729866,
+          898.5287071069704
+        ],
+        [
+          2742.711717834151,
+          897.7480008549221
+        ],
+        [
+          2744.2931099055113,
+          896.9114582522623
+        ],
+        [
+          2745.8350679797704,
+          896.0205685946455
+        ],
+        [
+          2747.336597092753,
+          895.0768211777279
+        ],
+        [
+          2748.7967022802823,
+          894.0817052971643
+        ],
+        [
+          2750.214388578182,
+          893.0367102486098
+        ],
+        [
+          2751.588661022277,
+          891.9433253277198
+        ],
+        [
+          2752.9185246483903,
+          890.8030398301496
+        ],
+        [
+          2754.202984492346,
+          889.6173430515541
+        ],
+        [
+          2755.4410455899683,
+          888.387724287589
+        ],
+        [
+          2756.6317129770805,
+          887.1156728339095
+        ],
+        [
+          2757.773991689507,
+          885.8026779861702
+        ],
+        [
+          2758.866886763072,
+          884.4502290400274
+        ],
+        [
+          2759.909403233599,
+          883.0598152911355
+        ],
+        [
+          2760.900546136911,
+          881.6329260351501
+        ],
+        [
+          2761.839320508833,
+          880.1710505677265
+        ],
+        [
+          2762.724731385189,
+          878.6756781845197
+        ],
+        [
+          2763.5557838018026,
+          877.148298181185
+        ],
+        [
+          2764.3314827944973,
+          875.5903998533777
+        ],
+        [
+          2765.0508333990974,
+          874.0034724967536
+        ],
+        [
+          2765.7128406514266,
+          872.3890054069666
+        ],
+        [
+          2766.316509587309,
+          870.7484878796731
+        ],
+        [
+          2766.8608452425683,
+          869.0834092105283
+        ],
+        [
+          2767.3448526530287,
+          867.3952586951864
+        ],
+        [
+          2767.7675368545138,
+          865.6855256293043
+        ],
+        [
+          2768.1279028828476,
+          863.9556993085357
+        ],
+        [
+          2768.4249557738535,
+          862.2072690285368
+        ],
+        [
+          2768.6577005633562,
+          860.4417240849625
+        ],
+        [
+          2768.8251422871795,
+          858.6605537734681
+        ],
+        [
+          2768.926285981147,
+          856.8652473897087
+        ],
+        [
+          2768.960136681082,
+          855.0572942293397
+        ]
+      ],
+      "color": "blue",
+      "role": "Nachzeichnung_originaler_Oeffnungsbogen",
+      "unit": "PDF_point_top_left_origin"
+    }
+  ]
+}

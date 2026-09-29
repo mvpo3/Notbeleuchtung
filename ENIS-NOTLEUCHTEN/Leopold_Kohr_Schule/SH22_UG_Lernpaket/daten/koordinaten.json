@@ -1,0 +1,20 @@
+{
+  "pdf_page_points": [
+    4651,
+    3205
+  ],
+  "pdf_origin": "top_left",
+  "dxf_origin": "source WCS; y up",
+  "dxf_to_pdf": {
+    "x": "ox + sx * X",
+    "y": "oy - sy * Y",
+    "sx": 0.05668494820224622,
+    "sy": 0.05668494820247358,
+    "ox": 1516.6787851256527,
+    "oy": 2175.8252230348885
+  },
+  "dxf_header_INSUNITS": 4,
+  "header_unit_name": "millimetres",
+  "metric_calibration_verified": false,
+  "note": "Header units are a source hint. Verify scaling against original dimension labels before converting lengths. Crop boxes and red marks are not room or opening geometries."
+}

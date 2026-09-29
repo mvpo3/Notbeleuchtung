@@ -1,0 +1,435 @@
+{
+  "book_pages": 39,
+  "examples": 29,
+  "annotations": 120,
+  "closed_frames": 38,
+  "additional_source_arcs": 11,
+  "raster_images_in_book": 0,
+  "vector_placements": 35,
+  "revision": "EG_Claude_Code_Komplettuebergabe_6_2026-09-21",
+  "entrypoint": "CLAUDE_STARTPROMPT_EG.md",
+  "implementation_guide": "18_UMSETZUNG_UND_UEBERGABE_EG.md",
+  "engine_included": false,
+  "files": [
+    {
+      "path": "00_START_HIER.md",
+      "sha256": "b89bb8c4f96144cf210b461fe6f351827a590d17aed4485799af1969babec31d",
+      "bytes": 3250
+    },
+    {
+      "path": "01_LERNWISSEN_EG.md",
+      "sha256": "a31e9c3a45292db9356a9d9cc24cc7476749e121f67ece794d20036b2b519d0c",
+      "bytes": 36457
+    },
+    {
+      "path": "02_CLAUDE_AUFTRAG_EG.md",
+      "sha256": "a7517d85888f3f31530ffe253fdce083f61c14f15b6769a365c56c12fad07ed3",
+      "bytes": 4863
+    },
+    {
+      "path": "09_OFFENE_PUNKTE_EG.md",
+      "sha256": "4c84cfb27cb5d02fbaf74019aaeffce00da150e1cfceccaead4a7d2f14b525f9",
+      "bytes": 2087
+    },
+    {
+      "path": "10_PRUEFBERICHT_EG.md",
+      "sha256": "a0af313a2020605f998a83cc218b06e2cfeb691cc1112a00fe915bedf5dfe3fe",
+      "bytes": 1609
+    },
+    {
+      "path": "11_DATENVERTRAG_EG.md",
+      "sha256": "e3911f60fe0e93d832180160a40caf3e11b306d656bf37011400fd02d4fbd787",
+      "bytes": 3212
+    },
+    {
+      "path": "14_AENDERUNGEN_UND_GEHFLAECHEN.md",
+      "sha256": "1f805062d7a0b550d632315bd73b6379058967e193acef62cbe3488a198d7cb4",
+      "bytes": 1992
+    },
+    {
+      "path": "15_UMSETZUNG_DEINER_KORREKTUREN.md",
+      "sha256": "c21db478435666b73f97575192974d2b5d383c6698bc7f704a513604fbe7fbb0",
+      "bytes": 3517
+    },
+    {
+      "path": "16_RAHMEN_UND_BOEGEN.md",
+      "sha256": "78c54638e1580bf5f1ba004a305946404c152287dd94f90538735d8af43681ed",
+      "bytes": 2342
+    },
+    {
+      "path": "17_VEKTOREXPORT.md",
+      "sha256": "5abfc869eb5d30cde6568bec2ea0a206dc775a8d93ccfbd11795c05ce51bbfe0",
+      "bytes": 1571
+    },
+    {
+      "path": "18_UMSETZUNG_UND_UEBERGABE_EG.md",
+      "sha256": "dabd8d42059199f5b3bb8eec0e3b190e51374972c739cb386c08e7328c238a80",
+      "bytes": 4915
+    },
+    {
+      "path": "ARBEITSSTAND_EG.md",
+      "sha256": "2fb8af5909d96d046525fe3719c65019a17e696027b0bacdf2ff0794cf574a11",
+      "bytes": 2452
+    },
+    {
+      "path": "CLAUDE_STARTPROMPT_EG.md",
+      "sha256": "fa20d75f496c5280d3b4ff7add1d13ba55bf73036bc2c1c7108f7d92a839287d",
+      "bytes": 4036
+    },
+    {
+      "path": "DATEIUEBERSICHT_EG.md",
+      "sha256": "ab8b8fe45c34a2e2b25a2ceb8b98cf7a3a90670847518a272b6ec7e7d5926fd9",
+      "bytes": 3174
+    },
+    {
+      "path": "Leopold_Kohr_Schule_EG_Lernbuch_final.pdf",
+      "sha256": "58e276ad914cbf3ed3f91acc6baaee62320d97fdac64ac324b6b0355d024a069",
+      "bytes": 16990642
+    },
+    {
+      "path": "bilder/00_EG_Mauern_Gesamt.png",
+      "sha256": "339cbd6391a55d86c0b4a63e99261f54ce99d8297cd14b74ff2c5b2249771bbb",
+      "bytes": 1245326
+    },
+    {
+      "path": "bilder/00b_EG_Gehflaechen_Gesamt.png",
+      "sha256": "d0d3e21e0c0b0ff9724371e0e858fd559740a531328ae5b89984f2ee5588da96",
+      "bytes": 1127819
+    },
+    {
+      "path": "bilder/EG-01.png",
+      "sha256": "fe19b97e9b86a7fa6e026052abce4a165358ee6bd196c0d5f9624bb8fab89840",
+      "bytes": 476641
+    },
+    {
+      "path": "bilder/EG-02.png",
+      "sha256": "cc614ebfb17002a607a1f283e92cdf4486698094ebe8f10ba92771969abfb236",
+      "bytes": 788692
+    },
+    {
+      "path": "bilder/EG-03.png",
+      "sha256": "c5e36b474b65de44421ea3749e02a3e47ddd63274360b64f530cf8f4f876154b",
+      "bytes": 569848
+    },
+    {
+      "path": "bilder/EG-04.png",
+      "sha256": "8e391baf4e6abc3104d97286781614d01c1b17b051254fcb2bdd1e9e4e4c2f19",
+      "bytes": 803516
+    },
+    {
+      "path": "bilder/EG-05.png",
+      "sha256": "05d4520aa41af9f1bf614a708b0bc8cf636999020284340f8e20e3db71de1461",
+      "bytes": 589737
+    },
+    {
+      "path": "bilder/EG-06.png",
+      "sha256": "fcdb247411f7db401f0574fa4b8c29330c688e8c31ffca23c081f1376403b7bb",
+      "bytes": 702865
+    },
+    {
+      "path": "bilder/EG-07.png",
+      "sha256": "ae718a8290023f103eb6c66260b013b3f6042911e23744c14ca54cc02d4b0ec3",
+      "bytes": 325243
+    },
+    {
+      "path": "bilder/EG-08.png",
+      "sha256": "f6d701eb97a18ef7be2a7e32035dcc48a6d728a6ef1c4ea0972eb08517f810de",
+      "bytes": 531011
+    },
+    {
+      "path": "bilder/EG-09.png",
+      "sha256": "78fb39f17ce1943f0eb22388b3cf35c0523c8f5fa4a5fc5cfb77975c7a6819c7",
+      "bytes": 407396
+    },
+    {
+      "path": "bilder/EG-10.png",
+      "sha256": "3b78b21ce38397e5210b5dcbed023327d32f99c586be47ded96cacc399bef964",
+      "bytes": 329744
+    },
+    {
+      "path": "bilder/EG-11.png",
+      "sha256": "10d1f245fba0bd41a0129c6abc78f75af324bc98479d43722b721b3212bf829e",
+      "bytes": 244137
+    },
+    {
+      "path": "bilder/EG-12.png",
+      "sha256": "2ef6e6a8ee9a65b5349f01c6f05b548f46f41c8c27fd8089d3d7eaa8c09b6b75",
+      "bytes": 246085
+    },
+    {
+      "path": "bilder/EG-13.png",
+      "sha256": "dd5d37a7da030a667cdcab15411db2fd3d8feaa8e188623c788e15e4c9169030",
+      "bytes": 219820
+    },
+    {
+      "path": "bilder/EG-14.png",
+      "sha256": "c3715324687681c237fba6b8a1e51a8e79b9373141d92482daf6ab63b2853e1a",
+      "bytes": 304729
+    },
+    {
+      "path": "bilder/EG-15.png",
+      "sha256": "06b4eee5605741c0da76dd6b8a800893b2008082cdb4e597e3439c4273a43714",
+      "bytes": 353135
+    },
+    {
+      "path": "bilder/EG-16.png",
+      "sha256": "73890edf6ed1d94cbf471841ee190176e9d55549cd55af35bbe79c03529314ae",
+      "bytes": 412025
+    },
+    {
+      "path": "bilder/EG-17.png",
+      "sha256": "1ef0ecb8253a5160225c74e0bf7a9f44fa4739da2e0078000296b06e4e99d5a3",
+      "bytes": 222591
+    },
+    {
+      "path": "bilder/EG-18.png",
+      "sha256": "2568103ba68195904628d566a645724b3ccafcd7eb80cdc74ed009916a93a82d",
+      "bytes": 247015
+    },
+    {
+      "path": "bilder/EG-19.png",
+      "sha256": "013e2e565be734dd271faed99081c98ed0f391b7b5d24390935430a41786b438",
+      "bytes": 625876
+    },
+    {
+      "path": "bilder/EG-20.png",
+      "sha256": "9dbfece20fedf0f3d2e22ebec8d0a148a13850c837e68085c72c6513e012cf97",
+      "bytes": 502914
+    },
+    {
+      "path": "bilder/EG-21.png",
+      "sha256": "9085ba414db381609758ef15e89c86c788d156c9a94a2cc7c23156e5c924571e",
+      "bytes": 428822
+    },
+    {
+      "path": "bilder/EG-22.png",
+      "sha256": "3f07dc244341dff7cc0643e9e06e5eab174bb7fba4fdb7af926b4b6b120a1264",
+      "bytes": 348913
+    },
+    {
+      "path": "bilder/EG-23.png",
+      "sha256": "65c0db78f46fd607c3a0359561e7c7904adf37f878f60b3a94afe2869e9ee2ff",
+      "bytes": 333436
+    },
+    {
+      "path": "bilder/EG-24.png",
+      "sha256": "e7cbc356191b9d77ea63f04887c895796d1f9327f77f64aa65b9c0cb227a1a73",
+      "bytes": 159513
+    },
+    {
+      "path": "bilder/EG-25.png",
+      "sha256": "3d0b4ab1144c8f5962e83995bde9bc19ff6e8660deab7bd9ee43942559ee9145",
+      "bytes": 238201
+    },
+    {
+      "path": "bilder/EG-26.png",
+      "sha256": "3b9d17640c7dfe7c985fea3d9e53aab4262671e07a20eb95a0ce520c83995532",
+      "bytes": 173377
+    },
+    {
+      "path": "bilder/EG-27.png",
+      "sha256": "a7566da137643fb553a3cbcf5e4c69892074c2d1e8c45cdf3598b62261c3991e",
+      "bytes": 192701
+    },
+    {
+      "path": "bilder/EG-28.png",
+      "sha256": "671acf76e4490db586662ef960a7fd5f6d6d27b75a240728ec3e366f9474b8da",
+      "bytes": 364018
+    },
+    {
+      "path": "bilder/EG-29.png",
+      "sha256": "7696a2c7c9ae6740451f437175807c676e83885737be383206bd9d15e7c46af6",
+      "bytes": 408237
+    },
+    {
+      "path": "bilder/G-A.png",
+      "sha256": "05e1eec0ab449a37e4e293c4aa71e808629e0811adf9473013cb9056a2c06844",
+      "bytes": 834372
+    },
+    {
+      "path": "bilder/G-B.png",
+      "sha256": "8b1bb16fd398c7282cff4c26b235908c6b8f8d1a1b10f83230c8ec0425c2e516",
+      "bytes": 506737
+    },
+    {
+      "path": "bilder/G-C.png",
+      "sha256": "2844dc063317b68ff46acb984a8354a963ae26be584611bdd1a98e000914905b",
+      "bytes": 798526
+    },
+    {
+      "path": "bilder/G-D.png",
+      "sha256": "e82fe72449bf4fce8e969c74bfd9b126ef16bbafda19fc9b378f4569236e341a",
+      "bytes": 588860
+    },
+    {
+      "path": "daten/03_REGELN_EG.json",
+      "sha256": "ba4a3c2a0253901c6447adaf0ab38c0c883b1fbcc47eb8da9f6bf6e07adab68e",
+      "bytes": 8729
+    },
+    {
+      "path": "daten/04_BEISPIELE_EG.json",
+      "sha256": "047e622422e3900ccf92ac38202c86f8065294b4f8e710b9013c2b224695d8a4",
+      "bytes": 49880
+    },
+    {
+      "path": "daten/05_PRUEFFAELLE_EG.json",
+      "sha256": "73562b8fd3dd005f779abb5a4d01e942a81e813bdaeb142df55f79b9f7d88c8d",
+      "bytes": 12177
+    },
+    {
+      "path": "daten/06_MAUER_MARKIERUNGEN_EG.geojson",
+      "sha256": "e45f19f5e49389953fdff06906da2d5168c9b7f38826597c33038417a0bcda97",
+      "bytes": 3084886
+    },
+    {
+      "path": "daten/06a_MARKIERUNG_HERKUNFT.json",
+      "sha256": "14582c3d8496ea5070618bdc70f3efcb1a891bd12c4d0e880be1af8a5c79b3fa",
+      "bytes": 1948140
+    },
+    {
+      "path": "daten/07_TREPPEN_UEBERGABE_EG.json",
+      "sha256": "1f022a2cc3ed2d11cda9ba0236ed1bcd124b9d00c31319a7c9396418639fa707",
+      "bytes": 3262
+    },
+    {
+      "path": "daten/08_QUELLEN_EG.json",
+      "sha256": "03d679979d0b6e9d7fa67e3e116f3fcb11bbf08f950a376515582f98bac52def",
+      "bytes": 1713
+    },
+    {
+      "path": "daten/08a_DXF_TEXTBELEGE_EG.json",
+      "sha256": "16e099893bccd41dba791f35213cf2b3db25e8470c5c099b8d042441e38e5c16",
+      "bytes": 720899
+    },
+    {
+      "path": "daten/08b_DXF_LAYERINVENTAR_EG.json",
+      "sha256": "dee0a709f4a2bba5ddb25e4d035985b03a478d7d1ece37c8e475eab9b952fb0c",
+      "bytes": 7087
+    },
+    {
+      "path": "daten/12_GEHFLaECHEN_EG.geojson",
+      "sha256": "c7d23b567a61f0cd39daafaa2502660565e2f8f109988308bc9542739cea0b5b",
+      "bytes": 3418004
+    },
+    {
+      "path": "daten/12a_GEHFLAECHEN_HERKUNFT.json",
+      "sha256": "79f15162d3052b11344386c2208d68d215a33e751b3ca4811f64e9ffe09fc4fd",
+      "bytes": 955
+    },
+    {
+      "path": "daten/13_BILDANNOTATIONEN_EG.json",
+      "sha256": "18cf17b91a92a214a90725a66dc95a3aff8ea827d996c278812f7ba08eac4c18",
+      "bytes": 120651
+    },
+    {
+      "path": "daten/15_MOEBEL_KORREKTUREN_EG.geojson",
+      "sha256": "1620183f725b7cd348418461cd81cd11c6294144f60e367d9c83521460a886b0",
+      "bytes": 7881
+    },
+    {
+      "path": "daten/15a_EINBAUKONTUREN_EG.geojson",
+      "sha256": "6c2a3e0f76198723801f28257322c44a532c0d8b6efad206c68f4c4a55314e17",
+      "bytes": 722805
+    },
+    {
+      "path": "daten/16_NUTZERKORREKTUREN_EG.json",
+      "sha256": "6a7b1932906c979e51e22e4e6785b1902c4c7107ea3e2dfe62f2fd442a03f1bb",
+      "bytes": 13848
+    },
+    {
+      "path": "daten/17_RAHMEN_UND_BOEGEN_KORREKTUR_EG.json",
+      "sha256": "7d544bae8b9d6872dc64f11a41f03db79e72832e6545f9a649014ccd015b7773",
+      "bytes": 3540
+    },
+    {
+      "path": "plaene/EG_Architekturbasis_Lernansicht.pdf",
+      "sha256": "ccf3f5c32285312c6f4dd940d459a7045ad001a6339705b54a5b8d0ed11e7519",
+      "bytes": 4930311
+    },
+    {
+      "path": "plaene/EG_Erklaerte_Details_Vektor.pdf",
+      "sha256": "b4998f62c6b3e06dae8b9cb2d7fa8e12536671aa8d200317042ecb8d5d1767ed",
+      "bytes": 16151825
+    },
+    {
+      "path": "plaene/EG_Gehflaechen_Basis.pdf",
+      "sha256": "09d786b0d88d32a3ee7fb53d22b72c36720448d70338af03bfcdf48485c84a52",
+      "bytes": 6158199
+    },
+    {
+      "path": "plaene/Leopold_Kohr_Schule_EG_Gehflaechen_gruen.pdf",
+      "sha256": "b3a288c59c57937a343116b04b7bbd4bb95a802732a612b4b4eb40b8a88412f2",
+      "bytes": 6166067
+    },
+    {
+      "path": "plaene/Leopold_Kohr_Schule_EG_Mauern_rot_v1.pdf",
+      "sha256": "73c6c077018b53ca204d4e93401456b5d8d0ed7440ba8eba3afc08f8acbb8de7",
+      "bytes": 5907568
+    },
+    {
+      "path": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "sha256": "06e6bbb51121939c7340c1ba1c22649ea1247d7f15edc686da8ef82eded37b10",
+      "bytes": 47279454
+    },
+    {
+      "path": "quellen/Schule_SH22_EG.pdf",
+      "sha256": "dfa6a71a1907b0c2b2ecc3f7912cea62985358a3dfe77db2c2402968514cf34f",
+      "bytes": 6212279
+    },
+    {
+      "path": "skripte/README.md",
+      "sha256": "e485917e113bcd0561996b80ed89f29e4df451b0ea8bb768e5a037ed0d0ba88d",
+      "bytes": 2196
+    },
+    {
+      "path": "skripte/annotation_data.py",
+      "sha256": "81d0431a64b709cd88bf9e5c10a5793e96fa5c59e420854b8b44b089a97212d4",
+      "bytes": 16693
+    },
+    {
+      "path": "skripte/baue_lernbuch.py",
+      "sha256": "a972efa1f520e49c4f6a9dfac2f8fe6a0d512596e76b0a89c7678878842abc3b",
+      "bytes": 15373
+    },
+    {
+      "path": "skripte/erzeuge_markierte_details.py",
+      "sha256": "5b22a6abd56117347216d5c12c4d070812d619d854b7da8f3b205593f922d22b",
+      "bytes": 6540
+    },
+    {
+      "path": "skripte/fonts/DejaVuSans-Bold.ttf",
+      "sha256": "b184b89e3c1075f22f6b71575b6fc20d4972b3cfd3b23322ca6fd596dcaef167",
+      "bytes": 704128
+    },
+    {
+      "path": "skripte/fonts/DejaVuSans.ttf",
+      "sha256": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22",
+      "bytes": 756072
+    },
+    {
+      "path": "skripte/fonts/LICENSE_DEJAVU.txt",
+      "sha256": "d75938dec098f06f0ac3c00853065d94f020be1c3c62ef1dc2975ba15b4d9b0e",
+      "bytes": 4816
+    },
+    {
+      "path": "skripte/herstellung_dokumentation.py",
+      "sha256": "0ccbf47fc45c0660c9e1907362d1cf29b7ffeaf24b42b8f0af681ee240893db7",
+      "bytes": 37755
+    },
+    {
+      "path": "skripte/lese_beispiel.py",
+      "sha256": "7f3ea3726a0868fc7c38b0c81805392075fb7b8405d8a10a9446363d69bdf7fa",
+      "bytes": 762
+    },
+    {
+      "path": "skripte/pruefe_paket.py",
+      "sha256": "5938abdc797b2c34f05688958ad1ec938fdaa5c6ea37002b724575c810be54de",
+      "bytes": 5686
+    },
+    {
+      "path": "skripte/requirements.txt",
+      "sha256": "8b44e26ac0c794719fb41c1e2a13e7236ce70d42b48258e2656e208e44884096",
+      "bytes": 25
+    }
+  ]
+}

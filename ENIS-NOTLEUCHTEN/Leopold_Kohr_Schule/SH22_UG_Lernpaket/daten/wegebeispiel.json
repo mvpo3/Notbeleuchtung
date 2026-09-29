@@ -1,0 +1,22 @@
+{
+  "type": "educational_local_polyline",
+  "coordinate_system": "PDF points, top-left, y down",
+  "source_pdf": "quellen/Schule_SH22_UG.pdf",
+  "source_page_1_based": 1,
+  "points": [
+    [
+      250,
+      1178
+    ],
+    [
+      1130,
+      1178
+    ]
+  ],
+  "context": "Local section of Erschließung -1.007",
+  "confirmed_scope": "No massive transverse wall visible along this local centerline.",
+  "body_clearance_verified": false,
+  "door_state_verified": false,
+  "global_route_verified": false,
+  "not_a_route_to_exit": true
+}

@@ -1,0 +1,19 @@
+{
+  "corrections": [
+    {
+      "id": "K1",
+      "date": "2026-09-21",
+      "source_type": "user_confirmation",
+      "statement_verbatim": "doch man kann dort tatsächlich gehen, das was du sagst ist falsch",
+      "context": "Korrektur zu Punkt 2 auf Buchseite 39: der zuvor orange hervorgehobene Bereich ist begehbar.",
+      "scope": "Bestätigung der Begehbarkeit des besprochenen Bereichs; die rechteckige Hervorhebung ist eine Beispielstelle, keine vermessene vollständige Flächengrenze.",
+      "example_region_pdf_points": [
+        2852.9,
+        2177.6,
+        3177.2,
+        2321.6
+      ],
+      "not_an_independent_site_inspection": true
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "revision": 4,
+  "source_name": "Leopold_Kohr_Schule_EG_Lernbuch_verbessert(1).pdf",
+  "source_sha256": "5f41eca67b4763b8baadfc4bb139feafef4e0e1642490baa2701f4d6b853c8a0",
+  "request": "Jede erläuterte Mauer zusätzlich zum Pfeil mit geschlossenem rechteckigem Rahmen kennzeichnen; dieselbe Korrektur auf alle vergleichbaren Stellen übertragen.",
+  "source_annotations": [
+    {
+      "page": 7,
+      "type": "Circle",
+      "rect": [
+        410.25,
+        531.22,
+        436.27,
+        560.77
+      ],
+      "text": ""
+    },
+    {
+      "page": 7,
+      "type": "Line",
+      "rect": [
+        409.69,
+        522.32,
+        414.69,
+        545.27
+      ],
+      "text": ""
+    },
+    {
+      "page": 7,
+      "type": "Line",
+      "rect": [
+        415.25,
+        521.37,
+        420.25,
+        543.71
+      ],
+      "text": ""
+    },
+    {
+      "page": 7,
+      "type": "FreeText",
+      "rect": [
+        287.56,
+        495.63,
+        655.58,
+        550.99
+      ],
+      "text": "Zeichne das mit Strichen usw besser ein\n"
+    },
+    {
+      "page": 8,
+      "type": "Square",
+      "rect": [
+        226.12,
+        371.33,
+        257.51,
+        462.94
+      ],
+      "text": ""
+    },
+    {
+      "page": 8,
+      "type": "Line",
+      "rect": [
+        238.8,
+        387.44,
+        287.13,
+        445.64
+      ],
+      "text": ""
+    },
+    {
+      "page": 8,
+      "type": "Line",
+      "rect": [
+        231.48,
+        386.36,
+        286.15,
+        441.03
+      ],
+      "text": ""
+    },
+    {
+      "page": 11,
+      "type": "Line",
+      "rect": [
+        398.81,
+        319.35,
+        516.94,
+        437.14
+      ],
+      "text": ""
+    },
+    {
+      "page": 11,
+      "type": "FreeText",
+      "rect": [
+        417.47,
+        418.64,
+        623.85,
+        449.0
+      ],
+      "text": "Denn Bogen makieren"
+    },
+    {
+      "page": 13,
+      "type": "Line",
+      "rect": [
+        313.55,
+        386.17,
+        427.28,
+        484.35
+      ],
+      "text": ""
+    },
+    {
+      "page": 13,
+      "type": "Line",
+      "rect": [
+        424.83,
+        393.12,
+        539.35,
+        492.31
+      ],
+      "text": ""
+    },
+    {
+      "page": 13,
+      "type": "FreeText",
+      "rect": [
+        330.24,
+        341.49,
+        527.59,
+        396.86
+      ],
+      "text": "Bogen in Farbe makieren"
+    },
+    {
+      "page": 15,
+      "type": "Square",
+      "rect": [
+        417.84,
+        406.13,
+        681.92,
+        470.31
+      ],
+      "text": ""
+    },
+    {
+      "page": 15,
+      "type": "Line",
+      "rect": [
+        585.48,
+        483.13,
+        623.24,
+        538.59
+      ],
+      "text": ""
+    },
+    {
+      "page": 15,
+      "type": "Square",
+      "rect": [
+        624.94,
+        528.72,
+        705.77,
+        574.7
+      ],
+      "text": ""
+    },
+    {
+      "page": 15,
+      "type": "Stamp",
+      "rect": [
+        697.86,
+        511.01,
+        729.59,
+        548.44
+      ],
+      "text": ""
+    },
+    {
+      "page": 15,
+      "type": "Circle",
+      "rect": [
+        737.94,
+        519.25,
+        764.48,
+        558.6
+      ],
+      "text": ""
+    }
+  ],
+  "frames": 38,
+  "highlighted_arcs": 11,
+  "affected_examples": [
+    "EG-01",
+    "EG-02",
+    "EG-03",
+    "EG-04",
+    "EG-05",
+    "EG-06",
+    "EG-07",
+    "EG-08",
+    "EG-10",
+    "EG-12",
+    "EG-13",
+    "EG-14",
+    "EG-15",
+    "EG-16",
+    "EG-17",
+    "EG-18",
+    "EG-19",
+    "EG-26",
+    "EG-27",
+    "EG-28",
+    "EG-29"
+  ],
+  "engine_ausgefuehrt": false
+}

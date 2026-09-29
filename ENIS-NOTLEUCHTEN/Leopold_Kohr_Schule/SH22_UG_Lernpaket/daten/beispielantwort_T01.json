@@ -1,0 +1,40 @@
+{
+  "case_id": "T01",
+  "floor": "UG",
+  "object_role": "door",
+  "evidence": [
+    "Wall opening between material-bearing wall ends",
+    "Leaf and swing arc align with this opening",
+    "Local inscription DL 90 / DL 210"
+  ],
+  "source": {
+    "file": "quellen/Schule_SH22_UG.pdf",
+    "page": 1,
+    "clip_pdf_points": [
+      88.21809387207031,
+      1115.816650390625,
+      224.261962890625,
+      1234.8551025390625
+    ],
+    "dxf_handles": [
+      "72DEB",
+      "72DEC",
+      "72DED",
+      "72DEE"
+    ]
+  },
+  "passability": "door_state_unknown",
+  "open_questions": [
+    "Actual open/locked state",
+    "Units and effective usable width before metric routing"
+  ],
+  "connects": [
+    "Erschließung -1.008",
+    "Erschließung -1.007"
+  ],
+  "raw_text": [
+    "DL 90",
+    "DL 210"
+  ],
+  "height_direction": "not_applicable"
+}

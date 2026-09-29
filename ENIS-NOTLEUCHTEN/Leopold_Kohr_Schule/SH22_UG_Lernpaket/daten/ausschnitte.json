@@ -1,0 +1,1470 @@
+{
+  "floor": "UG",
+  "source_coordinate_system": "V3 PDF export, points, origin top-left, y down",
+  "crops": [
+    {
+      "id": "PLAN",
+      "title": "Untergeschoss · Mauern in Rot",
+      "book_page": 1,
+      "clip_pdf_points": [
+        0.0,
+        0.0,
+        4651.0,
+        3205.0
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/PLAN_original.png",
+      "marked_png": "bilder/PLAN_rot.png",
+      "legacy_crop_id": null,
+      "source_texts": [],
+      "crop_is_room_polygon": false
+    },
+    {
+      "id": "LESEN",
+      "title": "So liest du dieses Lernbuch",
+      "book_page": 4,
+      "clip_pdf_points": [
+        0.0,
+        0.0,
+        4651.0,
+        3205.0
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/LESEN_original.png",
+      "marked_png": "bilder/LESEN_rot.png",
+      "legacy_crop_id": null,
+      "source_texts": [],
+      "crop_is_room_polygon": false
+    },
+    {
+      "id": "Z01",
+      "title": "Oben links: breite Außenwände",
+      "book_page": 5,
+      "clip_pdf_points": [
+        0.0,
+        0.0,
+        1580.0,
+        960.0
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/Z01_original.png",
+      "marked_png": "bilder/Z01_rot.png",
+      "legacy_crop_id": null,
+      "source_texts": [],
+      "crop_is_room_polygon": false
+    },
+    {
+      "id": "Z02",
+      "title": "Links unten: Innenwände und Öffnungen",
+      "book_page": 6,
+      "clip_pdf_points": [
+        0.0,
+        900.0,
+        1580.0,
+        1880.0
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/Z02_original.png",
+      "marked_png": "bilder/Z02_rot.png",
+      "legacy_crop_id": null,
+      "source_texts": [],
+      "crop_is_room_polygon": false
+    },
+    {
+      "id": "Z03",
+      "title": "Mitte oben: Wände, Stützen und kurze Treppe",
+      "book_page": 7,
+      "clip_pdf_points": [
+        1500.0,
+        520.0,
+        2760.0,
+        1600.0
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/Z03_original.png",
+      "marked_png": "bilder/Z03_rot.png",
+      "legacy_crop_id": null,
+      "source_texts": [],
+      "crop_is_room_polygon": false
+    },
+    {
+      "id": "Z04",
+      "title": "Mitte unten: Raumgrenzen entlang des Flurs",
+      "book_page": 8,
+      "clip_pdf_points": [
+        1450.0,
+        1550.0,
+        2760.0,
+        2210.0
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/Z04_original.png",
+      "marked_png": "bilder/Z04_rot.png",
+      "legacy_crop_id": null,
+      "source_texts": [],
+      "crop_is_room_polygon": false
+    },
+    {
+      "id": "Z05",
+      "title": "Oben rechts: zweite Halle, gleiche Leseregel",
+      "book_page": 9,
+      "clip_pdf_points": [
+        2700.0,
+        500.0,
+        4220.0,
+        1460.0
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/Z05_original.png",
+      "marked_png": "bilder/Z05_rot.png",
+      "legacy_crop_id": null,
+      "source_texts": [],
+      "crop_is_room_polygon": false
+    },
+    {
+      "id": "Z06",
+      "title": "Rechts unten: Flur, Stiege 1 und Schacht",
+      "book_page": 10,
+      "clip_pdf_points": [
+        2650.0,
+        1390.0,
+        4210.0,
+        2200.0
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/Z06_original.png",
+      "marked_png": "bilder/Z06_rot.png",
+      "legacy_crop_id": null,
+      "source_texts": [],
+      "crop_is_room_polygon": false
+    },
+    {
+      "id": "Z07",
+      "title": "Ganz rechts: Anbau und Stiege 5",
+      "book_page": 11,
+      "clip_pdf_points": [
+        4100.0,
+        1470.0,
+        4651.0,
+        2550.0
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/Z07_original.png",
+      "marked_png": "bilder/Z07_rot.png",
+      "legacy_crop_id": null,
+      "source_texts": [],
+      "crop_is_room_polygon": false
+    },
+    {
+      "id": "Z08",
+      "title": "Unterer Bereich: bestätigte Gehfläche",
+      "book_page": 12,
+      "clip_pdf_points": [
+        1630.0,
+        2120.0,
+        4280.0,
+        3205.0
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/Z08_original.png",
+      "marked_png": "bilder/Z08_rot.png",
+      "legacy_crop_id": null,
+      "source_texts": [],
+      "crop_is_room_polygon": false
+    },
+    {
+      "id": "M01",
+      "title": "Was ist eine Mauer?",
+      "book_page": 13,
+      "clip_pdf_points": [
+        31.53314208984375,
+        531.9617309570312,
+        116.56056213378906,
+        645.3316040039062
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/M01_original.png",
+      "marked_png": "bilder/M01_rot.png",
+      "legacy_crop_id": "U03",
+      "source_texts": [],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 14,
+      "annotated_png": "bilder/beschriftet/M01_BILD.png"
+    },
+    {
+      "id": "M02",
+      "title": "Breite Außenmauer: alle Schichten gehören dazu",
+      "book_page": 15,
+      "clip_pdf_points": [
+        241.2674560546875,
+        21.797191619873047,
+        331.96337890625,
+        101.15612030029297
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/M02_original.png",
+      "marked_png": "bilder/M02_rot.png",
+      "legacy_crop_id": "U28",
+      "source_texts": [],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 16,
+      "annotated_png": "bilder/beschriftet/M02_BILD.png"
+    },
+    {
+      "id": "M03",
+      "title": "Wandecken und Rücksprünge richtig verfolgen",
+      "book_page": 17,
+      "clip_pdf_points": [
+        37.201637268066406,
+        1127.1536865234375,
+        184.58250427246094,
+        1297.20849609375
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/M03_original.png",
+      "marked_png": "bilder/M03_rot.png",
+      "legacy_crop_id": "U26",
+      "source_texts": [
+        {
+          "handle": "568E9",
+          "text": "-1.008",
+          "insert": [
+            -25510.66910588053,
+            16558.44406983558,
+            0.0
+          ]
+        },
+        {
+          "handle": "568EA",
+          "text": "Erschließung",
+          "insert": [
+            -25510.65657532644,
+            16380.1213430282,
+            0.0
+          ]
+        },
+        {
+          "handle": "568EC",
+          "text": "Betonplatte",
+          "insert": [
+            -25369.09806332213,
+            16196.73072151052,
+            0.0
+          ]
+        },
+        {
+          "handle": "568EE",
+          "text": "Putz",
+          "insert": [
+            -25360.08500362395,
+            16010.87624072899,
+            0.0
+          ]
+        },
+        {
+          "handle": "568F0",
+          "text": "3,46",
+          "insert": [
+            -25279.89025185347,
+            15829.85147771031,
+            0.0
+          ]
+        },
+        {
+          "handle": "568F2",
+          "text": "6,16",
+          "insert": [
+            -25510.60510049443,
+            15647.57759481006,
+            0.0
+          ]
+        }
+      ],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 18,
+      "annotated_png": "bilder/beschriftet/M03_BILD.png"
+    },
+    {
+      "id": "M04",
+      "title": "Dünne feste Trennwände bleiben Begrenzungen",
+      "book_page": 19,
+      "clip_pdf_points": [
+        263.9414367675781,
+        1195.1756591796875,
+        689.0785522460938,
+        1427.5838623046875
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/M04_original.png",
+      "marked_png": "bilder/M04_rot.png",
+      "legacy_crop_id": "U13",
+      "source_texts": [
+        {
+          "handle": "56843",
+          "text": "-1.27.A",
+          "insert": [
+            -20879.33589603344,
+            13323.23568216177,
+            0.0
+          ]
+        },
+        {
+          "handle": "56853",
+          "text": "-1.23.A",
+          "insert": [
+            -17164.74026579139,
+            13201.83621909875,
+            0.0
+          ]
+        }
+      ],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 20,
+      "annotated_png": "bilder/beschriftet/M04_BILD.png"
+    },
+    {
+      "id": "T01",
+      "title": "Tür erkennen: Öffnung, Flügel und Bogen",
+      "book_page": 21,
+      "clip_pdf_points": [
+        88.21809387207031,
+        1115.816650390625,
+        224.261962890625,
+        1234.8551025390625
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/T01_original.png",
+      "marked_png": "bilder/T01_rot.png",
+      "legacy_crop_id": "U02",
+      "source_texts": [],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 22,
+      "annotated_png": "bilder/beschriftet/T01_BILD.png"
+    },
+    {
+      "id": "T02",
+      "title": "Zwei Flügel, eine gemeinsame Öffnung",
+      "book_page": 23,
+      "clip_pdf_points": [
+        1635.7171630859375,
+        1070.46875,
+        1811.4405517578125,
+        1246.1920166015625
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/T02_original.png",
+      "marked_png": "bilder/T02_rot.png",
+      "legacy_crop_id": "U27",
+      "source_texts": [
+        {
+          "handle": "567A5",
+          "text": "-1.34.B",
+          "insert": [
+            4775.285357300774,
+            16402.33356510734,
+            0.0
+          ]
+        },
+        {
+          "handle": "9F449",
+          "text": "Brüstung",
+          "insert": [
+            2309.011042858678,
+            19108.72247057573,
+            0.0
+          ]
+        },
+        {
+          "handle": "9F44C",
+          "text": "100cm",
+          "insert": [
+            2814.54570962413,
+            19108.7579938078,
+            0.0
+          ]
+        },
+        {
+          "handle": "A155A",
+          "text": "15,2",
+          "insert": [
+            4793.459588093784,
+            17609.36315202255,
+            0.0
+          ]
+        },
+        {
+          "handle": "A2CB2",
+          "text": "Brüstung",
+          "insert": [
+            4006.516478566424,
+            18489.66545620562,
+            0.0
+          ]
+        },
+        {
+          "handle": "A2CB9",
+          "text": "Handlauf",
+          "insert": [
+            4006.523410623864,
+            18391.01511364287,
+            0.0
+          ]
+        },
+        {
+          "handle": "A2CBA",
+          "text": "H=85cm",
+          "insert": [
+            4356.827608987209,
+            18391.03972905731,
+            0.0
+          ]
+        },
+        {
+          "handle": "A2CBB",
+          "text": "Brüstung",
+          "insert": [
+            4006.625444872276,
+            16938.95523516608,
+            0.0
+          ]
+        },
+        {
+          "handle": "A2CC2",
+          "text": "Handlauf",
+          "insert": [
+            4006.632376929716,
+            16840.30489260333,
+            0.0
+          ]
+        },
+        {
+          "handle": "A2CC3",
+          "text": "H=85cm",
+          "insert": [
+            4356.936575293075,
+            16840.32950798983,
+            0.0
+          ]
+        }
+      ],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 24,
+      "annotated_png": "bilder/beschriftet/T02_BILD.png"
+    },
+    {
+      "id": "T03",
+      "title": "Ein Kreuzfeld widerlegt eine Tür nicht",
+      "book_page": 25,
+      "clip_pdf_points": [
+        184.58250427246094,
+        1166.8331298828125,
+        292.2839050292969,
+        1280.2030029296875
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/T03_original.png",
+      "marked_png": "bilder/T03_rot.png",
+      "legacy_crop_id": "U23",
+      "source_texts": [],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 26,
+      "annotated_png": "bilder/beschriftet/T03_BILD.png"
+    },
+    {
+      "id": "F01",
+      "title": "Fenster erkennen – und falsche Fenster vermeiden",
+      "book_page": 27,
+      "clip_pdf_points": [
+        31.53314208984375,
+        395.9178466796875,
+        127.89755249023438,
+        509.2877502441406
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/F01_original.png",
+      "marked_png": "bilder/F01_rot.png",
+      "legacy_crop_id": "U04",
+      "source_texts": [],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 28,
+      "annotated_png": "bilder/beschriftet/F01_BILD.png"
+    },
+    {
+      "id": "F02",
+      "title": "Wo sind im UG Fenster sicher belegt?",
+      "book_page": 29,
+      "clip_pdf_points": [
+        70.0,
+        70.0,
+        540.0,
+        225.0
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/F02_original.png",
+      "marked_png": "bilder/F02_rot.png",
+      "legacy_crop_id": "F_SMOKE",
+      "source_texts": [],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 30,
+      "annotated_png": "bilder/beschriftet/F02_BILD.png"
+    },
+    {
+      "id": "W01",
+      "title": "Freier Weg: Fläche und Verbindung unterscheiden",
+      "book_page": 32,
+      "clip_pdf_points": [
+        144.90304565429688,
+        1087.4742431640625,
+        1216.24853515625,
+        1280.2030029296875
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/W01_original.png",
+      "marked_png": "bilder/W01_rot.png",
+      "legacy_crop_id": "U11",
+      "source_texts": [
+        {
+          "handle": "565D3",
+          "text": "-1.007",
+          "insert": [
+            -9442.898174687674,
+            18304.02571072313,
+            0.0
+          ]
+        },
+        {
+          "handle": "565D4",
+          "text": "Erschließung",
+          "insert": [
+            -9442.885644133587,
+            18125.70298394368,
+            0.0
+          ]
+        },
+        {
+          "handle": "565D6",
+          "text": "Feinsteinzeug",
+          "insert": [
+            -9301.326953818267,
+            17939.77344193403,
+            0.0
+          ]
+        },
+        {
+          "handle": "565D9",
+          "text": "Rohdecke,",
+          "insert": [
+            -9292.31433109664,
+            17760.13969986343,
+            0.0
+          ]
+        },
+        {
+          "handle": "565DA",
+          "text": "beschichtet",
+          "insert": [
+            -8697.687145046584,
+            17760.18148353899,
+            0.0
+          ]
+        },
+        {
+          "handle": "565DC",
+          "text": "3,60",
+          "insert": [
+            -9212.119320660626,
+            17575.43311862579,
+            0.0
+          ]
+        },
+        {
+          "handle": "565DE",
+          "text": "51,24",
+          "insert": [
+            -9442.83416935747,
+            17393.15923569761,
+            0.0
+          ]
+        },
+        {
+          "handle": "5687F",
+          "text": "-1.24",
+          "insert": [
+            -14410.75707686478,
+            16261.74748898723,
+            0.0
+          ]
+        },
+        {
+          "handle": "56883",
+          "text": "Feinsteinzeug",
+          "insert": [
+            -14269.18585605125,
+            15897.4952201702,
+            0.0
+          ]
+        }
+      ],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 33,
+      "annotated_png": "bilder/beschriftet/W01_BILD.png"
+    },
+    {
+      "id": "W02",
+      "title": "Durch eine Tür zu einem anderen Bereich",
+      "book_page": 34,
+      "clip_pdf_points": [
+        31.53314208984375,
+        1098.8111572265625,
+        314.9578857421875,
+        1314.2139892578125
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/W02_original.png",
+      "marked_png": "bilder/W02_rot.png",
+      "legacy_crop_id": "U01",
+      "source_texts": [
+        {
+          "handle": "568E9",
+          "text": "-1.008",
+          "insert": [
+            -25510.66910588053,
+            16558.44406983558,
+            0.0
+          ]
+        },
+        {
+          "handle": "568EA",
+          "text": "Erschließung",
+          "insert": [
+            -25510.65657532644,
+            16380.1213430282,
+            0.0
+          ]
+        },
+        {
+          "handle": "568EC",
+          "text": "Betonplatte",
+          "insert": [
+            -25369.09806332213,
+            16196.73072151052,
+            0.0
+          ]
+        },
+        {
+          "handle": "568EE",
+          "text": "Putz",
+          "insert": [
+            -25360.08500362395,
+            16010.87624072899,
+            0.0
+          ]
+        },
+        {
+          "handle": "568F0",
+          "text": "3,46",
+          "insert": [
+            -25279.89025185347,
+            15829.85147771031,
+            0.0
+          ]
+        },
+        {
+          "handle": "568F2",
+          "text": "6,16",
+          "insert": [
+            -25510.60510049443,
+            15647.57759481006,
+            0.0
+          ]
+        }
+      ],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 35,
+      "annotated_png": "bilder/beschriftet/W02_BILD.png"
+    },
+    {
+      "id": "W03",
+      "title": "Begehbar kann trotzdem eine Sackgasse sein",
+      "book_page": 36,
+      "clip_pdf_points": [
+        1800.0,
+        1490.0,
+        2180.0,
+        2190.0
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/W03_original.png",
+      "marked_png": "bilder/W03_rot.png",
+      "legacy_crop_id": "W_ARCHIVE",
+      "source_texts": [],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 37,
+      "annotated_png": "bilder/beschriftet/W03_BILD.png"
+    },
+    {
+      "id": "W04",
+      "title": "Der gezeigte Bereich ist begehbar",
+      "book_page": 38,
+      "clip_pdf_points": [
+        1880.0,
+        2120.0,
+        3290.0,
+        2840.0
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/W04_original.png",
+      "marked_png": "bilder/W04_rot.png",
+      "legacy_crop_id": "W_LEVEL",
+      "source_texts": [],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 39,
+      "annotated_png": "bilder/beschriftet/W04_BILD.png"
+    },
+    {
+      "id": "S01",
+      "title": "Eine Treppe als Ganzes erkennen",
+      "book_page": 40,
+      "clip_pdf_points": [
+        25.864646911621094,
+        1115.816650390625,
+        212.9249725341797,
+        1852.7210693359375
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/S01_original.png",
+      "marked_png": "bilder/S01_rot.png",
+      "legacy_crop_id": "U16",
+      "source_texts": [
+        {
+          "handle": "56871",
+          "text": "-1.27",
+          "insert": [
+            -23581.2074586546,
+            13167.97870336456,
+            0.0
+          ]
+        },
+        {
+          "handle": "56872",
+          "text": "Garderobe",
+          "insert": [
+            -23581.19479449298,
+            12987.75370382795,
+            0.0
+          ]
+        },
+        {
+          "handle": "56874",
+          "text": "Feinsteinzeug",
+          "insert": [
+            -23439.63623784107,
+            12803.72643451959,
+            0.0
+          ]
+        },
+        {
+          "handle": "56877",
+          "text": "Gipskarton",
+          "insert": [
+            -23430.62337796746,
+            12620.71769245453,
+            0.0
+          ]
+        },
+        {
+          "handle": "5687A",
+          "text": "2,50",
+          "insert": [
+            -23350.42860462755,
+            12439.38611123929,
+            0.0
+          ]
+        },
+        {
+          "handle": "5687C",
+          "text": "17,81",
+          "insert": [
+            -23581.14345326852,
+            12257.11222833904,
+            0.0
+          ]
+        },
+        {
+          "handle": "5688F",
+          "text": "-1.26",
+          "insert": [
+            -23519.50506025667,
+            14952.50111106964,
+            0.0
+          ]
+        },
+        {
+          "handle": "56893",
+          "text": "Feinsteinzeug",
+          "insert": [
+            -23377.93383944313,
+            14588.24884222466,
+            0.0
+          ]
+        },
+        {
+          "handle": "56896",
+          "text": "Metalldecke",
+          "insert": [
+            -23368.92106584725,
+            14406.46737283406,
+            0.0
+          ]
+        },
+        {
+          "handle": "5689A",
+          "text": "2,50",
+          "insert": [
+            -23288.72620622961,
+            14223.90851894436,
+            0.0
+          ]
+        },
+        {
+          "handle": "5689C",
+          "text": "4,76",
+          "insert": [
+            -23519.44106090555,
+            14041.71901099159,
+            0.0
+          ]
+        },
+        {
+          "handle": "568D5",
+          "text": "-1.009",
+          "insert": [
+            -25443.94941742304,
+            13809.66379681968,
+            0.0
+          ]
+        },
+        {
+          "handle": "568D6",
+          "text": "Stiege",
+          "insert": [
+            -25443.93658076185,
+            13626.98425182239,
+            0.0
+          ]
+        },
+        {
+          "handle": "568D9",
+          "text": "Betonplatte",
+          "insert": [
+            -25302.37837492053,
+            13447.95044846668,
+            0.0
+          ]
+        },
+        {
+          "handle": "568DA",
+          "text": "9,16",
+          "insert": [
+            -25443.91101422491,
+            13263.14391177643,
+            0.0
+          ]
+        },
+        {
+          "handle": "568E9",
+          "text": "-1.008",
+          "insert": [
+            -25510.66910588053,
+            16558.44406983558,
+            0.0
+          ]
+        },
+        {
+          "handle": "568EA",
+          "text": "Erschließung",
+          "insert": [
+            -25510.65657532644,
+            16380.1213430282,
+            0.0
+          ]
+        },
+        {
+          "handle": "568EC",
+          "text": "Betonplatte",
+          "insert": [
+            -25369.09806332213,
+            16196.73072151052,
+            0.0
+          ]
+        },
+        {
+          "handle": "568EE",
+          "text": "Putz",
+          "insert": [
+            -25360.08500362395,
+            16010.87624072899,
+            0.0
+          ]
+        },
+        {
+          "handle": "568F0",
+          "text": "3,46",
+          "insert": [
+            -25279.89025185347,
+            15829.85147771031,
+            0.0
+          ]
+        },
+        {
+          "handle": "568F2",
+          "text": "6,16",
+          "insert": [
+            -25510.60510049443,
+            15647.57759481006,
+            0.0
+          ]
+        },
+        {
+          "handle": "56BF3",
+          "text": "16,2",
+          "insert": [
+            -24974.07304965623,
+            14111.61392196731,
+            0.0
+          ]
+        },
+        {
+          "handle": "56C77",
+          "text": "16,2",
+          "insert": [
+            -24973.89617110335,
+            11594.42642880341,
+            0.0
+          ]
+        }
+      ],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 41,
+      "annotated_png": "bilder/beschriftet/S01_BILD.png"
+    },
+    {
+      "id": "S02",
+      "title": "Rauf oder runter: Bildrichtung ist keine Höhenrichtung",
+      "book_page": 42,
+      "clip_pdf_points": [
+        48.53862762451172,
+        1297.20849609375,
+        156.24002075195312,
+        1484.268798828125
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/S02_original.png",
+      "marked_png": "bilder/S02_rot.png",
+      "legacy_crop_id": "U17",
+      "source_texts": [
+        {
+          "handle": "568D5",
+          "text": "-1.009",
+          "insert": [
+            -25443.94941742304,
+            13809.66379681968,
+            0.0
+          ]
+        },
+        {
+          "handle": "568D6",
+          "text": "Stiege",
+          "insert": [
+            -25443.93658076185,
+            13626.98425182239,
+            0.0
+          ]
+        },
+        {
+          "handle": "568D9",
+          "text": "Betonplatte",
+          "insert": [
+            -25302.37837492053,
+            13447.95044846668,
+            0.0
+          ]
+        },
+        {
+          "handle": "568DA",
+          "text": "9,16",
+          "insert": [
+            -25443.91101422491,
+            13263.14391177643,
+            0.0
+          ]
+        },
+        {
+          "handle": "56BF3",
+          "text": "16,2",
+          "insert": [
+            -24974.07304965623,
+            14111.61392196731,
+            0.0
+          ]
+        }
+      ],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 43,
+      "annotated_png": "bilder/beschriftet/S02_BILD.png"
+    },
+    {
+      "id": "S03",
+      "title": "Stufenangaben lesen und richtig zuordnen",
+      "book_page": 44,
+      "clip_pdf_points": [
+        48.53862762451172,
+        1297.20849609375,
+        156.24002075195312,
+        1484.268798828125
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/S03_original.png",
+      "marked_png": "bilder/S03_rot.png",
+      "legacy_crop_id": "U17",
+      "source_texts": [
+        {
+          "handle": "568D5",
+          "text": "-1.009",
+          "insert": [
+            -25443.94941742304,
+            13809.66379681968,
+            0.0
+          ]
+        },
+        {
+          "handle": "568D6",
+          "text": "Stiege",
+          "insert": [
+            -25443.93658076185,
+            13626.98425182239,
+            0.0
+          ]
+        },
+        {
+          "handle": "568D9",
+          "text": "Betonplatte",
+          "insert": [
+            -25302.37837492053,
+            13447.95044846668,
+            0.0
+          ]
+        },
+        {
+          "handle": "568DA",
+          "text": "9,16",
+          "insert": [
+            -25443.91101422491,
+            13263.14391177643,
+            0.0
+          ]
+        },
+        {
+          "handle": "56BF3",
+          "text": "16,2",
+          "insert": [
+            -24974.07304965623,
+            14111.61392196731,
+            0.0
+          ]
+        }
+      ],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 45,
+      "annotated_png": "bilder/beschriftet/S03_BILD.png"
+    },
+    {
+      "id": "S04",
+      "title": "Schräger Treppenschnitt ist keine Rampe",
+      "book_page": 47,
+      "clip_pdf_points": [
+        48.53862762451172,
+        1484.268798828125,
+        150.571533203125,
+        1637.3182373046875
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/S04_original.png",
+      "marked_png": "bilder/S04_rot.png",
+      "legacy_crop_id": "U18",
+      "source_texts": [
+        {
+          "handle": "56C77",
+          "text": "16,2",
+          "insert": [
+            -24973.89617110335,
+            11594.42642880341,
+            0.0
+          ]
+        }
+      ],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 48,
+      "annotated_png": "bilder/beschriftet/S04_BILD.png"
+    },
+    {
+      "id": "S05",
+      "title": "Kurze Treppe, Brüstung und Handlauf trennen",
+      "book_page": 49,
+      "clip_pdf_points": [
+        1635.7171630859375,
+        1070.46875,
+        1811.4405517578125,
+        1246.1920166015625
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/S05_original.png",
+      "marked_png": "bilder/S05_rot.png",
+      "legacy_crop_id": "U27",
+      "source_texts": [
+        {
+          "handle": "567A5",
+          "text": "-1.34.B",
+          "insert": [
+            4775.285357300774,
+            16402.33356510734,
+            0.0
+          ]
+        },
+        {
+          "handle": "9F449",
+          "text": "Brüstung",
+          "insert": [
+            2309.011042858678,
+            19108.72247057573,
+            0.0
+          ]
+        },
+        {
+          "handle": "9F44C",
+          "text": "100cm",
+          "insert": [
+            2814.54570962413,
+            19108.7579938078,
+            0.0
+          ]
+        },
+        {
+          "handle": "A155A",
+          "text": "15,2",
+          "insert": [
+            4793.459588093784,
+            17609.36315202255,
+            0.0
+          ]
+        },
+        {
+          "handle": "A2CB2",
+          "text": "Brüstung",
+          "insert": [
+            4006.516478566424,
+            18489.66545620562,
+            0.0
+          ]
+        },
+        {
+          "handle": "A2CB9",
+          "text": "Handlauf",
+          "insert": [
+            4006.523410623864,
+            18391.01511364287,
+            0.0
+          ]
+        },
+        {
+          "handle": "A2CBA",
+          "text": "H=85cm",
+          "insert": [
+            4356.827608987209,
+            18391.03972905731,
+            0.0
+          ]
+        },
+        {
+          "handle": "A2CBB",
+          "text": "Brüstung",
+          "insert": [
+            4006.625444872276,
+            16938.95523516608,
+            0.0
+          ]
+        },
+        {
+          "handle": "A2CC2",
+          "text": "Handlauf",
+          "insert": [
+            4006.632376929716,
+            16840.30489260333,
+            0.0
+          ]
+        },
+        {
+          "handle": "A2CC3",
+          "text": "H=85cm",
+          "insert": [
+            4356.936575293075,
+            16840.32950798983,
+            0.0
+          ]
+        }
+      ],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 50,
+      "annotated_png": "bilder/beschriftet/S05_BILD.png"
+    },
+    {
+      "id": "S06",
+      "title": "Vorraum, Treppe und Lift getrennt erkennen",
+      "book_page": 51,
+      "clip_pdf_points": [
+        1166.0721435546875,
+        1046.4749755859375,
+        1551.440673828125,
+        1597.95068359375
+      ],
+      "source_page_1_based": 1,
+      "source_pdf": "quellen/Schule_SH22_UG.pdf",
+      "source_sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+      "original_png": "bilder/S06_original.png",
+      "marked_png": "bilder/S06_rot.png",
+      "legacy_crop_id": "U24",
+      "source_texts": [
+        {
+          "handle": "5671E",
+          "text": "Nebenräume",
+          "insert": [
+            -6040.658660458227,
+            13604.70071528172,
+            0.0
+          ]
+        },
+        {
+          "handle": "56784",
+          "text": "-1.005",
+          "insert": [
+            -4289.602433717082,
+            19025.20398372422,
+            0.0
+          ]
+        },
+        {
+          "handle": "56785",
+          "text": "Erschließung",
+          "insert": [
+            -4289.589855721424,
+            18846.20625689001,
+            0.0
+          ]
+        },
+        {
+          "handle": "56786",
+          "text": "Stiege",
+          "insert": [
+            -3573.192669994125,
+            18846.25659711965,
+            0.0
+          ]
+        },
+        {
+          "handle": "56789",
+          "text": "Feinsteinzeug",
+          "insert": [
+            -4148.031212847665,
+            18660.95171490719,
+            0.0
+          ]
+        },
+        {
+          "handle": "5678C",
+          "text": "Holzwolle",
+          "insert": [
+            -4139.018680650595,
+            18482.60660917271,
+            0.0
+          ]
+        },
+        {
+          "handle": "5678D",
+          "text": "Akustikplatte",
+          "insert": [
+            -3611.650674141507,
+            18482.6436666004,
+            0.0
+          ]
+        },
+        {
+          "handle": "5678E",
+          "text": "(A2)",
+          "insert": [
+            -2903.423800889752,
+            18482.69343278144,
+            0.0
+          ]
+        },
+        {
+          "handle": "56790",
+          "text": "2,50",
+          "insert": [
+            -4058.823579690026,
+            18296.61139159895,
+            0.0
+          ]
+        },
+        {
+          "handle": "56792",
+          "text": "19,73",
+          "insert": [
+            -4289.538428275118,
+            18114.3375086987,
+            0.0
+          ]
+        },
+        {
+          "handle": "567DA",
+          "text": "R10B",
+          "insert": [
+            -5912.510332315957,
+            15335.37868678381,
+            0.0
+          ]
+        },
+        {
+          "handle": "567F5",
+          "text": "-1.006",
+          "insert": [
+            -2329.215893040717,
+            12202.15172907207,
+            0.0
+          ]
+        },
+        {
+          "handle": "567F6",
+          "text": "Stiege",
+          "insert": [
+            -2329.203056379527,
+            12019.47218407478,
+            0.0
+          ]
+        },
+        {
+          "handle": "567F9",
+          "text": "Feinsteinzeug",
+          "insert": [
+            -2187.6446721713,
+            11837.89946028298,
+            0.0
+          ]
+        },
+        {
+          "handle": "567FB",
+          "text": "26,35",
+          "insert": [
+            -2329.177495765805,
+            11655.71621906011,
+            0.0
+          ]
+        },
+        {
+          "handle": "9F3FF",
+          "text": "Pers.",
+          "insert": [
+            -5099.191859910018,
+            15831.29060888948,
+            0.0
+          ]
+        },
+        {
+          "handle": "9F401",
+          "text": "1000",
+          "insert": [
+            -4785.084536448848,
+            15831.3126808154,
+            0.0
+          ]
+        },
+        {
+          "handle": "9F467",
+          "text": "Revisionstür",
+          "insert": [
+            -3533.772609547654,
+            16820.79623355504,
+            0.0
+          ]
+        },
+        {
+          "handle": "9F469",
+          "text": "Stahlnetzumwehrung",
+          "insert": [
+            -2931.698636456815,
+            16820.83854048487,
+            0.0
+          ]
+        }
+      ],
+      "crop_is_room_polygon": false,
+      "annotated_book_page": 52,
+      "annotated_png": "bilder/beschriftet/S06_BILD.png"
+    }
+  ]
+}

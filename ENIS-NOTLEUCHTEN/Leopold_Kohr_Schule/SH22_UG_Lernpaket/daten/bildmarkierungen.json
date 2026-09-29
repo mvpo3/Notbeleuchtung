@@ -1,0 +1,2545 @@
+{
+  "version": "2.1",
+  "source_pdf": "quellen/Schule_SH22_UG.pdf",
+  "source_page": 1,
+  "annotations": [
+    {
+      "case_id": "M01",
+      "title": "Diese Merkmale machen das Band zur Wand",
+      "book_page": 14,
+      "image": "bilder/beschriftet/M01_BILD.png",
+      "source_clip_pdf_points": [
+        31.53314208984375,
+        531.9617309570312,
+        116.56056213378906,
+        645.3316040039062
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "rect",
+          "points": [
+            0.08,
+            0.31,
+            0.35,
+            0.58
+          ],
+          "color": "#CE2029",
+          "fill": 0.17
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.539,
+              0.33
+            ],
+            [
+              0.539,
+              0.91
+            ]
+          ],
+          "color": "#1765C1"
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.001,
+            0.1,
+            0.083,
+            0.28
+          ],
+          "color": "#B66A08",
+          "fill": 0.15
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.39,
+              0.19
+            ],
+            [
+              0.53,
+              0.19
+            ],
+            [
+              0.53,
+              0.29
+            ],
+            [
+              0.4,
+              0.29
+            ]
+          ],
+          "color": "#A52188"
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#B66A08",
+          "title": "1 · Wiederholtes Muster",
+          "text": "Das Zickzack liegt innerhalb einer begrenzten Schicht.",
+          "target": [
+            0.045,
+            0.2
+          ],
+          "target_pdf_points": [
+            35.35937599182129,
+            554.6357055664063
+          ]
+        },
+        {
+          "slot": "L2",
+          "color": "#CE2029",
+          "title": "2 · Wandkörper",
+          "text": "Die Diagonalschraffur liegt zwischen zwei Bauteilkanten.",
+          "target": [
+            0.2,
+            0.44
+          ],
+          "target_pdf_points": [
+            48.53862609863282,
+            581.8444750976563
+          ]
+        },
+        {
+          "slot": "R1",
+          "color": "#A52188",
+          "title": "3 · Schichtanschluss",
+          "text": "Das Band springt zurück und setzt sich als Bauteil fort.",
+          "target": [
+            0.49,
+            0.27
+          ],
+          "target_pdf_points": [
+            73.19657791137695,
+            562.5715966796874
+          ]
+        },
+        {
+          "slot": "R3",
+          "color": "#1765C1",
+          "title": "4 · Raumseitige Kante",
+          "text": "An dieser Oberfläche endet die freie Raumfläche.",
+          "target": [
+            0.539,
+            0.72
+          ],
+          "target_pdf_points": [
+            77.36292149353028,
+            613.5880395507812
+          ]
+        }
+      ],
+      "reasoning": "Wandränder, Materialmuster und Anschlüsse passen zusammen. Die farbigen Linien zeigen konkrete Merkmale des Originals. Nicht jede einzelne Schraffurlinie ist eine eigene Mauer.",
+      "added_closed_door_positions_are_explanatory": false,
+      "not_new_source_geometry": true
+    },
+    {
+      "case_id": "M02",
+      "title": "Eine Außenwand besteht aus mehreren Schichten",
+      "book_page": 16,
+      "image": "bilder/beschriftet/M02_BILD.png",
+      "source_clip_pdf_points": [
+        241.2674560546875,
+        21.797191619873047,
+        331.96337890625,
+        101.15612030029297
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "rect",
+          "points": [
+            0.08,
+            0.11,
+            0.85,
+            0.24
+          ],
+          "color": "#B66A08",
+          "fill": 0.18
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.08,
+            0.29,
+            0.85,
+            0.48
+          ],
+          "color": "#CE2029",
+          "fill": 0.18
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.08,
+            0.505,
+            0.85,
+            0.688
+          ],
+          "color": "#A52188",
+          "fill": 0.1
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.05,
+              0.727
+            ],
+            [
+              0.94,
+              0.727
+            ]
+          ],
+          "color": "#1765C1"
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#B66A08",
+          "title": "1 · Äußere Schicht",
+          "text": "Das begrenzte Zickzackmuster gehört zum Wandaufbau.",
+          "target": [
+            0.22,
+            0.18
+          ],
+          "target_pdf_points": [
+            261.22055908203123,
+            36.081798782348635
+          ]
+        },
+        {
+          "slot": "L3",
+          "color": "#CE2029",
+          "title": "2 · Schraffierter Körper",
+          "text": "Die dicht angeordneten Linien füllen ein Bauteilband.",
+          "target": [
+            0.27,
+            0.4
+          ],
+          "target_pdf_points": [
+            265.7553552246094,
+            53.54076309204102
+          ]
+        },
+        {
+          "slot": "R1",
+          "color": "#A52188",
+          "title": "3 · Weiteres Band",
+          "text": "Auch die dunkle Schicht gehört zur dargestellten Wandgruppe.",
+          "target": [
+            0.75,
+            0.59
+          ],
+          "target_pdf_points": [
+            309.2893981933594,
+            68.6189595413208
+          ]
+        },
+        {
+          "slot": "R3",
+          "color": "#1765C1",
+          "title": "4 · Innere Oberfläche",
+          "text": "Darunter beginnt die weiße Raumseite. Hier endet die Wandgruppe.",
+          "target": [
+            0.72,
+            0.727
+          ],
+          "target_pdf_points": [
+            306.5685205078125,
+            79.49113277053833
+          ]
+        }
+      ],
+      "reasoning": "Alle zusammenhängenden Schichten werden gemeinsam gelesen. Ihre genaue Materialart folgt nicht allein aus Farbe oder Muster. Schichtzwischenräume sind keine Gehwege.",
+      "added_closed_door_positions_are_explanatory": false,
+      "not_new_source_geometry": true
+    },
+    {
+      "case_id": "M03",
+      "title": "Der Raum folgt jeder Ecke der Mauer",
+      "book_page": 18,
+      "image": "bilder/beschriftet/M03_BILD.png",
+      "source_clip_pdf_points": [
+        37.201637268066406,
+        1127.1536865234375,
+        184.58250427246094,
+        1297.20849609375
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "rect",
+          "points": [
+            0.72,
+            0.615,
+            0.98,
+            0.675
+          ],
+          "color": "#CE2029",
+          "fill": 0.17
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.945,
+              0.44
+            ],
+            [
+              0.945,
+              0.568
+            ],
+            [
+              0.647,
+              0.568
+            ],
+            [
+              0.647,
+              0.97
+            ]
+          ],
+          "color": "#1765C1"
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.37,
+            0.64,
+            0.59,
+            0.84
+          ],
+          "color": "#138544",
+          "fill": 0.17
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.2,
+              0.084
+            ],
+            [
+              0.365,
+              0.183
+            ]
+          ],
+          "color": "#B66A08"
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#B66A08",
+          "title": "1 · Dünne Diagonale",
+          "text": "Diese Linie liegt im Bodenbereich. Allein ist sie keine Wand.",
+          "target": [
+            0.29,
+            0.135
+          ],
+          "target_pdf_points": [
+            79.94208869934081,
+            1150.1110858154298
+          ]
+        },
+        {
+          "slot": "L3",
+          "color": "#138544",
+          "title": "2 · Freie Raumseite",
+          "text": "Die Fläche bleibt links vor dem Wandversprung.",
+          "target": [
+            0.48,
+            0.73
+          ],
+          "target_pdf_points": [
+            107.94445343017578,
+            1251.2936975097657
+          ]
+        },
+        {
+          "slot": "R1",
+          "color": "#CE2029",
+          "title": "3 · Wandversprung",
+          "text": "Der gemusterte Körper setzt sich über die Ecke fort.",
+          "target": [
+            0.81,
+            0.645
+          ],
+          "target_pdf_points": [
+            156.58013954162598,
+            1236.839038696289
+          ]
+        },
+        {
+          "slot": "R3",
+          "color": "#1765C1",
+          "title": "4 · Innenkante",
+          "text": "Die Raumgrenze knickt ab. Eine gerade Abkürzung wäre falsch.",
+          "target": [
+            0.647,
+            0.79
+          ],
+          "target_pdf_points": [
+            132.55705821990966,
+            1261.4969860839844
+          ]
+        }
+      ],
+      "reasoning": "Die blaue Kante folgt dem baulichen Rücksprung. Wer die Ecke gerade abschneidet, vergrößert die freie Raumfläche unzulässig und kann einen Weg durch Mauerwerk erzeugen.",
+      "added_closed_door_positions_are_explanatory": false,
+      "not_new_source_geometry": true
+    },
+    {
+      "case_id": "M04",
+      "title": "Breite und dünne feste Begrenzungen",
+      "book_page": 20,
+      "image": "bilder/beschriftet/M04_BILD.png",
+      "source_clip_pdf_points": [
+        263.9414367675781,
+        1195.1756591796875,
+        689.0785522460938,
+        1427.5838623046875
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "rect",
+          "points": [
+            0.365,
+            0.2,
+            0.421,
+            0.69
+          ],
+          "color": "#CE2029",
+          "fill": 0.18
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.233,
+              0.54
+            ],
+            [
+              0.365,
+              0.54
+            ]
+          ],
+          "color": "#B66A08"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.127,
+              0.541
+            ],
+            [
+              0.228,
+              0.541
+            ]
+          ],
+          "color": "#138544",
+          "dash": true
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.37,
+            0.707,
+            0.47,
+            0.79
+          ],
+          "color": "#1765C1",
+          "fill": 0.16
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#CE2029",
+          "title": "1 · Schraffierte Wand",
+          "text": "Ein zusammenhängender Körper trennt benachbarte Bereiche.",
+          "target": [
+            0.391,
+            0.37
+          ],
+          "target_pdf_points": [
+            430.17004891967775,
+            1281.1666943359376
+          ]
+        },
+        {
+          "slot": "L3",
+          "color": "#B66A08",
+          "title": "2 · Dünne Trennwand",
+          "text": "Auch dieses schmale feste Bauteil verhindert das Durchgehen.",
+          "target": [
+            0.28,
+            0.54
+          ],
+          "target_pdf_points": [
+            382.97982910156253,
+            1320.6760888671874
+          ]
+        },
+        {
+          "slot": "R1",
+          "color": "#138544",
+          "title": "3 · Türstelle",
+          "text": "Hier unterbricht die Öffnung die feste Begrenzung.",
+          "target": [
+            0.18,
+            0.541
+          ],
+          "target_pdf_points": [
+            340.46611755371094,
+            1320.9084970703125
+          ]
+        },
+        {
+          "slot": "R3",
+          "color": "#1765C1",
+          "title": "4 · Bauteilanschluss",
+          "text": "Die senkrechte und waagrechte Wand stoßen zusammen.",
+          "target": [
+            0.418,
+            0.754
+          ],
+          "target_pdf_points": [
+            441.64875103759766,
+            1370.4114443359374
+          ]
+        }
+      ],
+      "reasoning": "Dicke ist kein alleiniger Maßstab für Begehbarkeit. Eine dünne feste Trennwand ist eine Grenze; die benachbarte Türöffnung muss dagegen als Zugang erhalten bleiben.",
+      "added_closed_door_positions_are_explanatory": false,
+      "not_new_source_geometry": true
+    },
+    {
+      "case_id": "T01",
+      "title": "Eine Tür: Blatt, Drehpunkt, Bogen und Schließung",
+      "book_page": 22,
+      "image": "bilder/beschriftet/T01_BILD.png",
+      "source_clip_pdf_points": [
+        88.21809387207031,
+        1115.816650390625,
+        224.261962890625,
+        1234.8551025390625
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "rect",
+          "points": [
+            0.693,
+            0.182,
+            0.795,
+            0.609
+          ],
+          "color": "#138544",
+          "fill": 0.12
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.329,
+              0.182
+            ],
+            [
+              0.697,
+              0.182
+            ]
+          ],
+          "color": "#1765C1"
+        },
+        {
+          "kind": "arc",
+          "points": [
+            0.697,
+            0.182
+          ],
+          "color": "#A52188",
+          "rx": 0.368,
+          "ry": 0.427,
+          "start": 180,
+          "end": 90
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.697,
+              0.182
+            ],
+            [
+              0.697,
+              0.609
+            ]
+          ],
+          "color": "#138544",
+          "dash": true
+        },
+        {
+          "kind": "circle",
+          "points": [
+            0.697,
+            0.182
+          ],
+          "color": "#B66A08"
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.55,
+            0.33,
+            0.7,
+            0.45
+          ],
+          "color": "#202A31",
+          "fill": 0.05
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#1765C1",
+          "title": "1 · Türblatt, offen",
+          "text": "Die gerade Linie zeigt das zur Seite geschwenkte Blatt.",
+          "target": [
+            0.46,
+            0.182
+          ],
+          "target_pdf_points": [
+            150.79827362060547,
+            1137.4816486816405
+          ]
+        },
+        {
+          "slot": "L3",
+          "color": "#A52188",
+          "title": "2 · Schwenkbogen",
+          "text": "Der Viertelkreis zeigt, welchen Bereich das Blatt beim Drehen überstreicht.",
+          "target": [
+            0.416,
+            0.459
+          ],
+          "target_pdf_points": [
+            144.81234338378906,
+            1170.4552999267578
+          ]
+        },
+        {
+          "slot": "R1",
+          "color": "#B66A08",
+          "title": "3 · Drehpunkt",
+          "text": "Am Anschlag dreht sich das Blatt. Hier beginnt seine Bewegung.",
+          "target": [
+            0.697,
+            0.182
+          ],
+          "target_pdf_points": [
+            183.0406705780029,
+            1137.4816486816405
+          ]
+        },
+        {
+          "slot": "R2",
+          "color": "#138544",
+          "title": "4 · Geschlossene Stellung",
+          "text": "Grün gestrichelt ergänzt: Das Blatt liegt im Durchgang und schließt die Öffnung.",
+          "target": [
+            0.697,
+            0.55
+          ],
+          "target_pdf_points": [
+            183.0406705780029,
+            1181.2877990722657
+          ]
+        },
+        {
+          "slot": "R3",
+          "color": "#202A31",
+          "title": "5 · DL 90 / DL 210",
+          "text": "Örtliche Durchlichtangaben stützen die Türzuordnung.",
+          "target": [
+            0.63,
+            0.39
+          ],
+          "target_pdf_points": [
+            173.92573135375977,
+            1162.2416467285157
+          ]
+        }
+      ],
+      "reasoning": "Wandöffnung, Flügel, Drehpunkt, Bogen und Beschriftung bilden gemeinsam den Türbeleg. Die grün gestrichelte geschlossene Stellung ist eine erklärende Ergänzung, keine zweite Tür und kein Originalstrich.",
+      "added_closed_door_positions_are_explanatory": true,
+      "not_new_source_geometry": true
+    },
+    {
+      "case_id": "T02",
+      "title": "Zwei Flügel schließen eine gemeinsame Öffnung",
+      "book_page": 24,
+      "image": "bilder/beschriftet/T02_BILD.png",
+      "source_clip_pdf_points": [
+        1635.7171630859375,
+        1070.46875,
+        1811.4405517578125,
+        1246.1920166015625
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.024,
+              0.315
+            ],
+            [
+              0.283,
+              0.315
+            ]
+          ],
+          "color": "#1765C1"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.024,
+              0.893
+            ],
+            [
+              0.283,
+              0.893
+            ]
+          ],
+          "color": "#1765C1"
+        },
+        {
+          "kind": "arc",
+          "points": [
+            0.024,
+            0.315
+          ],
+          "color": "#A52188",
+          "rx": 0.259,
+          "ry": 0.288,
+          "start": 0,
+          "end": 90
+        },
+        {
+          "kind": "arc",
+          "points": [
+            0.024,
+            0.893
+          ],
+          "color": "#A52188",
+          "rx": 0.259,
+          "ry": 0.29,
+          "start": -90,
+          "end": 0
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.024,
+              0.315
+            ],
+            [
+              0.024,
+              0.893
+            ]
+          ],
+          "color": "#138544",
+          "dash": true
+        },
+        {
+          "kind": "circle",
+          "points": [
+            0.024,
+            0.315
+          ],
+          "color": "#B66A08"
+        },
+        {
+          "kind": "circle",
+          "points": [
+            0.024,
+            0.893
+          ],
+          "color": "#B66A08"
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#1765C1",
+          "title": "1 · Zwei offene Blätter",
+          "text": "Die beiden geraden Linien gehören zu zwei Türflügeln.",
+          "target": [
+            0.17,
+            0.315
+          ],
+          "target_pdf_points": [
+            1665.5901391601562,
+            1125.8215789794922
+          ]
+        },
+        {
+          "slot": "L3",
+          "color": "#B66A08",
+          "title": "2 · Zwei Drehpunkte",
+          "text": "Jeder Flügel hat einen eigenen Anschlag.",
+          "target": [
+            0.024,
+            0.893
+          ],
+          "target_pdf_points": [
+            1639.9345244140625,
+            1227.3896270751952
+          ]
+        },
+        {
+          "slot": "R1",
+          "color": "#A52188",
+          "title": "3 · Zwei Bewegungsbögen",
+          "text": "Jeder Bogen beschreibt die Bewegung eines Flügels.",
+          "target": [
+            0.24,
+            0.46
+          ],
+          "target_pdf_points": [
+            1677.8907763671875,
+            1151.3014526367188
+          ]
+        },
+        {
+          "slot": "R2",
+          "color": "#138544",
+          "title": "4 · Mitte der Schließung",
+          "text": "Hier treffen die Flügel in der erklärten geschlossenen Stellung aufeinander.",
+          "target": [
+            0.024,
+            0.603
+          ],
+          "target_pdf_points": [
+            1639.9345244140625,
+            1176.429879760742
+          ]
+        },
+        {
+          "slot": "R3",
+          "color": "#202A31",
+          "title": "5 · Gemeinsame Türangabe",
+          "text": "DL 180 / DL 210 gehört zur gemeinsamen Öffnung.",
+          "target": [
+            0.13,
+            0.61
+          ],
+          "target_pdf_points": [
+            1658.5612036132814,
+            1177.6599426269531
+          ]
+        }
+      ],
+      "reasoning": "Zwei Flügel bedeuten hier ein gemeinsames Portal. Grün gestrichelt ist die ergänzte geschlossene Stellung. Ob einer oder beide Flügel im Betrieb nutzbar sind, zeigt der Grundriss nicht.",
+      "added_closed_door_positions_are_explanatory": true,
+      "not_new_source_geometry": true
+    },
+    {
+      "case_id": "T03",
+      "title": "Dieses Kreuzfeld liegt in einer Türöffnung",
+      "book_page": 26,
+      "image": "bilder/beschriftet/T03_BILD.png",
+      "source_clip_pdf_points": [
+        184.58250427246094,
+        1166.8331298828125,
+        292.2839050292969,
+        1280.2030029296875
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.251,
+              0.104
+            ],
+            [
+              0.251,
+              0.553
+            ]
+          ],
+          "color": "#1765C1"
+        },
+        {
+          "kind": "arc",
+          "points": [
+            0.251,
+            0.553
+          ],
+          "color": "#A52188",
+          "rx": 0.472,
+          "ry": 0.449,
+          "start": -90,
+          "end": 0
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.251,
+              0.553
+            ],
+            [
+              0.723,
+              0.553
+            ]
+          ],
+          "color": "#138544",
+          "dash": true
+        },
+        {
+          "kind": "circle",
+          "points": [
+            0.251,
+            0.553
+          ],
+          "color": "#B66A08"
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.208,
+            0.575,
+            0.59,
+            0.674
+          ],
+          "color": "#CE2029",
+          "fill": 0.07
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#1765C1",
+          "title": "1 · Offenes Türblatt",
+          "text": "Die senkrechte Linie ist am unteren Drehpunkt angeschlagen.",
+          "target": [
+            0.251,
+            0.27
+          ],
+          "target_pdf_points": [
+            211.61555586242676,
+            1197.4429956054687
+          ]
+        },
+        {
+          "slot": "L3",
+          "color": "#B66A08",
+          "title": "2 · Drehpunkt",
+          "text": "Hier dreht das Blatt in die Öffnung zurück.",
+          "target": [
+            0.251,
+            0.553
+          ],
+          "target_pdf_points": [
+            211.61555586242676,
+            1229.5266696777344
+          ]
+        },
+        {
+          "slot": "R1",
+          "color": "#A52188",
+          "title": "3 · Schwenkbogen",
+          "text": "Der Bogen verbindet die offene mit der geschlossenen Stellung.",
+          "target": [
+            0.66,
+            0.33
+          ],
+          "target_pdf_points": [
+            255.66542877197264,
+            1204.2451879882813
+          ]
+        },
+        {
+          "slot": "R2",
+          "color": "#138544",
+          "title": "4 · Schließstellung",
+          "text": "Die ergänzte grüne Linie liegt zwischen den Wandenden.",
+          "target": [
+            0.55,
+            0.553
+          ],
+          "target_pdf_points": [
+            243.8182746887207,
+            1229.5266696777344
+          ]
+        },
+        {
+          "slot": "R3",
+          "color": "#CE2029",
+          "title": "5 · X im Öffnungsfeld",
+          "text": "Das X wird im Türzusammenhang gelesen. Es beweist hier keinen Schrank.",
+          "target": [
+            0.42,
+            0.631
+          ],
+          "target_pdf_points": [
+            229.81709259033204,
+            1238.3695197753907
+          ]
+        }
+      ],
+      "reasoning": "Das Kreuzfeld darf die Türmerkmale nicht überschreiben. Flügel und Bogen sitzen an einer Öffnung im Wandband. Die gestrichelte Schließstellung ist nur eine zusätzliche Lernzeichnung.",
+      "added_closed_door_positions_are_explanatory": true,
+      "not_new_source_geometry": true
+    },
+    {
+      "case_id": "F01",
+      "title": "Hier sind parallele Linien noch kein Fenster",
+      "book_page": 28,
+      "image": "bilder/beschriftet/F01_BILD.png",
+      "source_clip_pdf_points": [
+        31.53314208984375,
+        395.9178466796875,
+        127.89755249023438,
+        509.2877502441406
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "rect",
+          "points": [
+            0.09,
+            0.22,
+            0.3,
+            0.48
+          ],
+          "color": "#CE2029",
+          "fill": 0.17
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.469,
+              0.1
+            ],
+            [
+              0.469,
+              0.66
+            ]
+          ],
+          "color": "#1765C1"
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.36,
+            0.34,
+            0.455,
+            0.57
+          ],
+          "color": "#B66A08",
+          "fill": 0.2
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.58,
+            0.37,
+            0.79,
+            0.6
+          ],
+          "color": "#138544",
+          "fill": 0.12
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#CE2029",
+          "title": "1 · Wandmaterial",
+          "text": "Die Schraffur setzt sich ohne belegten Fensterdurchbruch fort.",
+          "target": [
+            0.2,
+            0.34
+          ],
+          "target_pdf_points": [
+            50.806024169921876,
+            434.46361389160154
+          ]
+        },
+        {
+          "slot": "L3",
+          "color": "#B66A08",
+          "title": "2 · Weißer Zwischenraum",
+          "text": "Eine helle Schichtfuge ist kein nachgewiesener Geh- oder Fensterdurchbruch.",
+          "target": [
+            0.4,
+            0.49
+          ],
+          "target_pdf_points": [
+            70.07890625,
+            451.4690994262695
+          ]
+        },
+        {
+          "slot": "R1",
+          "color": "#1765C1",
+          "title": "3 · Parallele Schichtlinie",
+          "text": "Sie gehört hier zum Wand-/Bekleidungszusammenhang.",
+          "target": [
+            0.469,
+            0.25
+          ],
+          "target_pdf_points": [
+            76.72805056762695,
+            424.2603225708008
+          ]
+        },
+        {
+          "slot": "R3",
+          "color": "#138544",
+          "title": "4 · Raumseite",
+          "text": "Die freie Raumseite liegt außerhalb des Wandaufbaus.",
+          "target": [
+            0.68,
+            0.49
+          ],
+          "target_pdf_points": [
+            97.06094116210937,
+            451.4690994262695
+          ]
+        }
+      ],
+      "reasoning": "Dieser UG-Ausschnitt ist ein Gegenbeispiel: Mehrere parallele Linien genügen nicht für die Klasse Fenster. Ein positiv beschriftetes Fensterschema folgt zusätzlich; es ist ausdrücklich kein erfundenes UG-Fenster.",
+      "added_closed_door_positions_are_explanatory": false,
+      "not_new_source_geometry": true
+    },
+    {
+      "case_id": "F02",
+      "title": "Rauchableitung: Text und Öffnung unterscheiden",
+      "book_page": 30,
+      "image": "bilder/beschriftet/F02_BILD.png",
+      "source_clip_pdf_points": [
+        70.0,
+        70.0,
+        540.0,
+        225.0
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "rect",
+          "points": [
+            0.131,
+            0.337,
+            0.483,
+            0.504
+          ],
+          "color": "#B66A08",
+          "fill": 0.17
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.14,
+              0.48
+            ],
+            [
+              0.4,
+              0.48
+            ]
+          ],
+          "color": "#1765C1"
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.12,
+            0.003,
+            0.46,
+            0.045
+          ],
+          "color": "#CE2029",
+          "fill": 0.15
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#CE2029",
+          "title": "1 · Wand-/Randband",
+          "text": "Ein Bauteilband allein lokalisiert keine Fensteröffnung.",
+          "target": [
+            0.28,
+            0.025
+          ],
+          "target_pdf_points": [
+            201.60000000000002,
+            73.875
+          ]
+        },
+        {
+          "slot": "L3",
+          "color": "#B66A08",
+          "title": "2 · Rauchableitungstext",
+          "text": "Der Hinweis beschreibt eine Funktion bzw. Anforderung.",
+          "target": [
+            0.28,
+            0.383
+          ],
+          "target_pdf_points": [
+            201.60000000000002,
+            129.365
+          ]
+        },
+        {
+          "slot": "R2",
+          "color": "#1765C1",
+          "title": "3 · Höhenbezug zum EG",
+          "text": "Die letzte Zeile nennt den Weg im EG. Das ist keine bestätigte Gehöffnung im UG.",
+          "target": [
+            0.32,
+            0.48
+          ],
+          "target_pdf_points": [
+            220.4,
+            144.39999999999998
+          ]
+        }
+      ],
+      "reasoning": "Es fehlt hier die eindeutig zugeordnete Öffnungsgeometrie mit passender Höhe. Die Stelle bleibt offen, bis eine Ansicht, ein Schnitt oder eine Öffnungsliste die Zuordnung trägt.",
+      "added_closed_door_positions_are_explanatory": false,
+      "not_new_source_geometry": true
+    },
+    {
+      "case_id": "W01",
+      "title": "Der Gang ist eine zusammenhängende Fläche",
+      "book_page": 33,
+      "image": "bilder/beschriftet/W01_BILD.png",
+      "source_clip_pdf_points": [
+        144.90304565429688,
+        1087.4742431640625,
+        1216.24853515625,
+        1280.2030029296875
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.25,
+              0.12
+            ],
+            [
+              0.78,
+              0.12
+            ]
+          ],
+          "color": "#CE2029"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.3643,
+              0.7811
+            ],
+            [
+              0.4251,
+              0.7811
+            ]
+          ],
+          "color": "#CE2029"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.4781,
+              0.7811
+            ],
+            [
+              0.5394,
+              0.7811
+            ]
+          ],
+          "color": "#CE2029"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.5923,
+              0.7811
+            ],
+            [
+              0.6807,
+              0.7811
+            ]
+          ],
+          "color": "#CE2029"
+        },
+        {
+          "kind": "circle",
+          "points": [
+            0.033,
+            0.35
+          ],
+          "color": "#B66A08"
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "A",
+          "color": "#CE2029",
+          "title": "1 · Wandgrenze oben",
+          "text": "Hier begrenzt das Wandband den Gang.",
+          "target": [
+            0.48,
+            0.12
+          ],
+          "target_pdf_points": [
+            659.1488806152344,
+            1110.6016943359375
+          ]
+        },
+        {
+          "slot": "B",
+          "color": "#138544",
+          "title": "2 · Grün gefüllter Gang",
+          "text": "Die Fläche bleibt zwischen den Wänden zusammenhängend.",
+          "target": [
+            0.48,
+            0.5
+          ],
+          "target_pdf_points": [
+            659.1488806152344,
+            1183.838623046875
+          ]
+        },
+        {
+          "slot": "C",
+          "color": "#B66A08",
+          "title": "3 · Zugang durch eine Tür",
+          "text": "Die seitliche Verbindung liegt an einer echten Türstelle.",
+          "target": [
+            0.033,
+            0.35
+          ],
+          "target_pdf_points": [
+            180.25744680786133,
+            1154.9293090820313
+          ]
+        },
+        {
+          "slot": "D",
+          "color": "#CE2029",
+          "title": "4 · Wandstücke unten",
+          "text": "Zwischen den Türen darf der Weg die Mauer nicht queren.",
+          "target": [
+            0.503,
+            0.7811
+          ],
+          "target_pdf_points": [
+            683.7898268737792,
+            1238.014677416992
+          ]
+        }
+      ],
+      "reasoning": "Grün bezeichnet hier die dargestellte Gangfläche. Die durchgehende Verbindung bleibt im Gang; ein Wechsel in andere Bereiche erfolgt durch die einzelnen Portale. Der Türzustand wird separat behandelt.",
+      "added_closed_door_positions_are_explanatory": false,
+      "not_new_source_geometry": true
+    },
+    {
+      "case_id": "W02",
+      "title": "Der Weg wechselt an der Tür die Raumseite",
+      "book_page": 35,
+      "image": "bilder/beschriftet/W02_BILD.png",
+      "source_clip_pdf_points": [
+        31.53314208984375,
+        1098.8111572265625,
+        314.9578857421875,
+        1314.2139892578125
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.28,
+              0.8
+            ],
+            [
+              0.28,
+              0.3
+            ],
+            [
+              0.58,
+              0.3
+            ],
+            [
+              0.88,
+              0.3
+            ]
+          ],
+          "color": "#138544"
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.19,
+            0.74,
+            0.3,
+            0.87
+          ],
+          "color": "#138544",
+          "fill": 0.17
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.515,
+              0.49
+            ],
+            [
+              0.515,
+              0.579
+            ],
+            [
+              0.354,
+              0.579
+            ],
+            [
+              0.354,
+              0.9
+            ]
+          ],
+          "color": "#CE2029"
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#138544",
+          "title": "1 · Ausgangsfläche",
+          "text": "Der Weg beginnt innerhalb der freien Erschließungsfläche.",
+          "target": [
+            0.28,
+            0.8
+          ],
+          "target_pdf_points": [
+            110.89207031250001,
+            1271.1334228515625
+          ]
+        },
+        {
+          "slot": "L3",
+          "color": "#CE2029",
+          "title": "2 · Wandversprung",
+          "text": "Die Mauer darf nicht als Abkürzung gequert werden.",
+          "target": [
+            0.354,
+            0.72
+          ],
+          "target_pdf_points": [
+            131.86550134277343,
+            1253.9011962890625
+          ]
+        },
+        {
+          "slot": "R1",
+          "color": "#B66A08",
+          "title": "3 · Türportal",
+          "text": "Der Übergang liegt in der tatsächlichen Öffnung.",
+          "target": [
+            0.58,
+            0.3
+          ],
+          "target_pdf_points": [
+            195.91949340820312,
+            1163.4320068359375
+          ]
+        },
+        {
+          "slot": "R3",
+          "color": "#138544",
+          "title": "4 · Fortsetzung im Flur",
+          "text": "Auf der anderen Seite setzt sich die freie Fläche fort.",
+          "target": [
+            0.88,
+            0.3
+          ],
+          "target_pdf_points": [
+            280.9469165039062,
+            1163.4320068359375
+          ]
+        }
+      ],
+      "reasoning": "Die grüne Verbindung ist ein örtliches Lernbeispiel bei nutzbarer Tür. Die Mauer bleibt eine Sperre. Zwei verbundene Flächen bleiben trotzdem zwei getrennte Bereiche.",
+      "added_closed_door_positions_are_explanatory": false,
+      "not_new_source_geometry": true
+    },
+    {
+      "case_id": "W03",
+      "title": "Ein Endbereich ist begehbar, aber kein Durchlauf",
+      "book_page": 37,
+      "image": "bilder/beschriftet/W03_BILD.png",
+      "source_clip_pdf_points": [
+        1800.0,
+        1490.0,
+        2180.0,
+        2190.0
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.29,
+              0.25
+            ],
+            [
+              0.29,
+              0.65
+            ],
+            [
+              0.29,
+              0.91
+            ]
+          ],
+          "color": "#138544"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.17,
+              0.96
+            ],
+            [
+              0.79,
+              0.96
+            ]
+          ],
+          "color": "#CE2029"
+        },
+        {
+          "kind": "circle",
+          "points": [
+            0.66,
+            0.132
+          ],
+          "color": "#B66A08"
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.406,
+            0.26,
+            0.55,
+            0.94
+          ],
+          "color": "#202A31",
+          "fill": 0.04
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#B66A08",
+          "title": "1 · Zugang oben",
+          "text": "Die Tür verbindet den Bereich mit dem Flur.",
+          "target": [
+            0.66,
+            0.132
+          ],
+          "target_pdf_points": [
+            2050.8,
+            1582.4
+          ]
+        },
+        {
+          "slot": "L3",
+          "color": "#138544",
+          "title": "2 · Hinein und zurück",
+          "text": "Die freie Fläche ist betretbar. Rückkehr über denselben Zugang.",
+          "target": [
+            0.29,
+            0.7
+          ],
+          "target_pdf_points": [
+            1910.2,
+            1980.0
+          ]
+        },
+        {
+          "slot": "R1",
+          "color": "#202A31",
+          "title": "3 · Einbau aussparen",
+          "text": "Der mittlere Einbau wird nicht als Gehfläche eingefärbt.",
+          "target": [
+            0.478,
+            0.53
+          ],
+          "target_pdf_points": [
+            1981.6399999999999,
+            1861.0
+          ]
+        },
+        {
+          "slot": "R3",
+          "color": "#CE2029",
+          "title": "4 · Ende an der Mauer",
+          "text": "An der unteren Wand geht es nicht geradeaus weiter.",
+          "target": [
+            0.7,
+            0.96
+          ],
+          "target_pdf_points": [
+            2066.0,
+            2162.0
+          ]
+        }
+      ],
+      "reasoning": "Kein zweiter gewöhnlicher Ausgang ist hier belegt. Das macht die Fläche zum Endbereich im betrachteten Verbindungsmodell, nicht automatisch zu einem unbetretbaren Raum.",
+      "added_closed_door_positions_are_explanatory": false,
+      "not_new_source_geometry": true
+    },
+    {
+      "case_id": "W04",
+      "title": "Punkt 2 korrigiert: Hier kann man gehen",
+      "book_page": 39,
+      "image": "bilder/beschriftet/W04_BILD.png",
+      "source_clip_pdf_points": [
+        1880.0,
+        2120.0,
+        3290.0,
+        2840.0
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "rect",
+          "points": [
+            0.601,
+            0.292,
+            0.625,
+            0.329
+          ],
+          "color": "#CE2029",
+          "fill": 0.12
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.69,
+            0.08,
+            0.92,
+            0.28
+          ],
+          "color": "#098748",
+          "fill": 0.25
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.08,
+              0.08
+            ],
+            [
+              0.9,
+              0.08
+            ]
+          ],
+          "color": "#CE2029"
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#CE2029",
+          "title": "1 · Begrenzung der Raumreihe",
+          "text": "Die obere Wand begrenzt die Raumreihe. Sie bleibt eine feste Grenze.",
+          "target": [
+            0.22,
+            0.08
+          ],
+          "target_pdf_points": [
+            2190.2,
+            2177.6
+          ]
+        },
+        {
+          "slot": "L3",
+          "color": "#098748",
+          "title": "2 · Hier kann man gehen",
+          "text": "Der Nutzer bestätigt: Dieser Bereich ist begehbar. Deshalb ist die Beispielstelle jetzt grün.",
+          "target": [
+            0.73,
+            0.23
+          ],
+          "target_pdf_points": [
+            2909.3,
+            2285.6
+          ]
+        },
+        {
+          "slot": "R2",
+          "color": "#CE2029",
+          "title": "3 · Dargestellte Bauteile",
+          "text": "Höhen- und Projektionsbezug müssen zusätzlich gelesen werden.",
+          "target": [
+            0.613,
+            0.31
+          ],
+          "target_pdf_points": [
+            2744.33,
+            2343.2
+          ]
+        }
+      ],
+      "reasoning": "Der zuvor orange hervorgehobene Bereich ist begehbar. Das hat der Nutzer am 21.09.2026 ausdrücklich bestätigt. Die grüne Markierung zeigt diese Beispielstelle; ihr Rahmen ist keine Mauer und keine vermessene Raumgrenze.",
+      "added_closed_door_positions_are_explanatory": false,
+      "not_new_source_geometry": true,
+      "correction_source": "daten/nutzerkorrekturen.json#K1"
+    },
+    {
+      "case_id": "S01",
+      "title": "Stiege 6: Zugang, Stufen, Podeste und Begrenzung",
+      "book_page": 41,
+      "image": "bilder/beschriftet/S01_BILD.png",
+      "source_clip_pdf_points": [
+        25.864646911621094,
+        1115.816650390625,
+        212.9249725341797,
+        1852.7210693359375
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "rect",
+          "points": [
+            0.2,
+            0.05,
+            0.52,
+            0.21
+          ],
+          "color": "#138544",
+          "fill": 0.1
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.2,
+            0.245,
+            0.58,
+            0.42
+          ],
+          "color": "#1765C1",
+          "fill": 0.08
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.2,
+            0.43,
+            0.58,
+            0.5
+          ],
+          "color": "#B66A08",
+          "fill": 0.14
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.17,
+              0.23
+            ],
+            [
+              0.17,
+              0.93
+            ]
+          ],
+          "color": "#CE2029"
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#138544",
+          "title": "1 · Zugang vor dem Lauf",
+          "text": "Erst die freie Vorfläche, dann der Beginn der Stufen.",
+          "target": [
+            0.37,
+            0.14
+          ],
+          "target_pdf_points": [
+            95.07696739196777,
+            1218.9832690429687
+          ]
+        },
+        {
+          "slot": "L3",
+          "color": "#CE2029",
+          "title": "2 · Seitliche Wand",
+          "text": "Seitlich wird der Lauf durch ein festes Bauteil begrenzt.",
+          "target": [
+            0.17,
+            0.7
+          ],
+          "target_pdf_points": [
+            57.66490226745606,
+            1631.6497436523437
+          ]
+        },
+        {
+          "slot": "R1",
+          "color": "#1765C1",
+          "title": "3 · Stufenfolge",
+          "text": "Wiederholte Querlinien gehören zusammen zur Treppe.",
+          "target": [
+            0.45,
+            0.31
+          ],
+          "target_pdf_points": [
+            110.04179344177247,
+            1344.2570202636718
+          ]
+        },
+        {
+          "slot": "R3",
+          "color": "#B66A08",
+          "title": "4 · Übergangszone",
+          "text": "Zwischen den Läufen ändert sich die Darstellung. Den Podestanschluss gesondert lesen.",
+          "target": [
+            0.4,
+            0.46
+          ],
+          "target_pdf_points": [
+            100.68877716064453,
+            1454.7926831054688
+          ]
+        }
+      ],
+      "reasoning": "Die Treppenfläche bleibt grün; Stufen und Lauflinien sind schwarz nachgezogen. Grün bedeutet hier einen Höhenwechsel über Stufen, keinen durchgehend ebenen Gang.",
+      "added_closed_door_positions_are_explanatory": false,
+      "not_new_source_geometry": true
+    },
+    {
+      "case_id": "S02",
+      "title": "Kreis, Lauflinie und Pfeil zeigen die Treppenlesart",
+      "book_page": 43,
+      "image": "bilder/beschriftet/S02_BILD.png",
+      "source_clip_pdf_points": [
+        48.53862762451172,
+        1297.20849609375,
+        156.24002075195312,
+        1484.268798828125
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "circle",
+          "points": [
+            0.4764,
+            0.1734
+          ],
+          "color": "#B66A08"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.4764,
+              0.1734
+            ],
+            [
+              0.4765,
+              0.5569
+            ]
+          ],
+          "color": "#1765C1"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.3778,
+              0.5001
+            ],
+            [
+              0.4765,
+              0.5569
+            ],
+            [
+              0.5751,
+              0.5001
+            ]
+          ],
+          "color": "#A52188"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.1804,
+              0.4035
+            ],
+            [
+              0.7725,
+              0.4035
+            ]
+          ],
+          "color": "#202A31"
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.385,
+            0.315,
+            0.54,
+            0.425
+          ],
+          "color": "#138544",
+          "fill": 0.12
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#B66A08",
+          "title": "1 · Antrittskreis",
+          "text": "Bei üblicher Aufstiegsdarstellung markiert der Kreis den unteren Beginn.",
+          "target": [
+            0.4764,
+            0.1734
+          ],
+          "target_pdf_points": [
+            99.8475713104248,
+            1329.6447525878907
+          ]
+        },
+        {
+          "slot": "L3",
+          "color": "#202A31",
+          "title": "2 · Stufenkante",
+          "text": "Die Querlinie gehört zu einer Stufe, nicht zu einer Mauer.",
+          "target": [
+            0.28,
+            0.4035
+          ],
+          "target_pdf_points": [
+            78.69501770019531,
+            1372.6873282470704
+          ]
+        },
+        {
+          "slot": "R1",
+          "color": "#1765C1",
+          "title": "3 · Lauflinie",
+          "text": "Die mittlere Linie ordnet die Stufen zu einem Lauf.",
+          "target": [
+            0.4764,
+            0.3
+          ],
+          "target_pdf_points": [
+            99.8475713104248,
+            1353.3265869140625
+          ]
+        },
+        {
+          "slot": "R2",
+          "color": "#A52188",
+          "title": "4 · Pfeilspitze",
+          "text": "Sie zeigt im Bild nach unten. Das heißt nicht automatisch Abstieg.",
+          "target": [
+            0.4765,
+            0.5569
+          ],
+          "target_pdf_points": [
+            99.85834144973754,
+            1401.3823786865235
+          ]
+        },
+        {
+          "slot": "R3",
+          "color": "#138544",
+          "title": "5 · Steigungsangabe",
+          "text": "6 STG 16,2 / 27 beschreibt den Treppenlauf.",
+          "target": [
+            0.44,
+            0.36
+          ],
+          "target_pdf_points": [
+            95.92724060058595,
+            1364.550205078125
+          ]
+        }
+      ],
+      "reasoning": "Unter der üblichen Aufstiegskonvention führt die Richtung vom Kreis zum Pfeil nach oben im Gebäude. Die Seitenansicht im Zusatzblatt erklärt dies. Der absolute UG–EG-Anschluss bleibt zu bestätigen.",
+      "added_closed_door_positions_are_explanatory": false,
+      "not_new_source_geometry": true
+    },
+    {
+      "case_id": "S03",
+      "title": "Was 6 STG 16,2 / 27 bedeutet",
+      "book_page": 45,
+      "image": "bilder/beschriftet/S03_BILD.png",
+      "source_clip_pdf_points": [
+        48.53862762451172,
+        1297.20849609375,
+        156.24002075195312,
+        1484.268798828125
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "rect",
+          "points": [
+            0.375,
+            0.305,
+            0.433,
+            0.436
+          ],
+          "color": "#B66A08",
+          "fill": 0.18
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.453,
+            0.27,
+            0.522,
+            0.455
+          ],
+          "color": "#1765C1",
+          "fill": 0.15
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.64,
+              0.244
+            ],
+            [
+              0.72,
+              0.244
+            ]
+          ],
+          "color": "#A52188"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.64,
+              0.596
+            ],
+            [
+              0.72,
+              0.596
+            ]
+          ],
+          "color": "#A52188"
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#B66A08",
+          "title": "1 · Anzahl: 6 STG",
+          "text": "STG bezeichnet die Zahl der Steigungen des beschriebenen Laufes.",
+          "target": [
+            0.4,
+            0.37
+          ],
+          "target_pdf_points": [
+            91.61918487548829,
+            1366.4208081054687
+          ]
+        },
+        {
+          "slot": "L3",
+          "color": "#A52188",
+          "title": "2 · Nummerierte Stufen",
+          "text": "Die kleinen Zahlen gehören zur Stufenfolge, nicht zu Räumen.",
+          "target": [
+            0.68,
+            0.596
+          ],
+          "target_pdf_points": [
+            121.77557495117188,
+            1408.6964365234376
+          ]
+        },
+        {
+          "slot": "R1",
+          "color": "#1765C1",
+          "title": "3 · 16,2 / 27",
+          "text": "Übliche Lesart: Steigungshöhe / Auftritt. Die Einheit muss zur Planlegende passen.",
+          "target": [
+            0.49,
+            0.34
+          ],
+          "target_pdf_points": [
+            101.312310256958,
+            1360.8089990234375
+          ]
+        },
+        {
+          "slot": "R3",
+          "color": "#138544",
+          "title": "4 · Bedingte Höhe",
+          "text": "Bei Zentimetern: 6 × 16,2 = 97,2 cm. Das beweist keinen ganzen Geschossabstand.",
+          "target": [
+            0.48,
+            0.66
+          ],
+          "target_pdf_points": [
+            100.23529632568359,
+            1420.6682958984375
+          ]
+        }
+      ],
+      "reasoning": "Die Seitenansicht zeigt Steigung und Auftritt räumlich. Die berechnete Höhe gilt unter der genannten Einheitannahme; sie ist keine vermessene Höhenkote und kein bestätigter Anschluss an das EG.",
+      "added_closed_door_positions_are_explanatory": false,
+      "not_new_source_geometry": true
+    },
+    {
+      "case_id": "S04",
+      "title": "Diese schrägen Linien unterbrechen das Treppenbild",
+      "book_page": 48,
+      "image": "bilder/beschriftet/S04_BILD.png",
+      "source_clip_pdf_points": [
+        48.53862762451172,
+        1484.268798828125,
+        150.571533203125,
+        1637.3182373046875
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.1905,
+              0.3438
+            ],
+            [
+              0.8156,
+              0.5313
+            ]
+          ],
+          "color": "#A52188"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.1905,
+              0.3819
+            ],
+            [
+              0.8156,
+              0.5694
+            ]
+          ],
+          "color": "#A52188"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.1905,
+              0.2501
+            ],
+            [
+              0.8155,
+              0.2501
+            ]
+          ],
+          "color": "#202A31"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.1906,
+              0.7188
+            ],
+            [
+              0.8156,
+              0.7188
+            ]
+          ],
+          "color": "#202A31"
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#202A31",
+          "title": "1 · Stufen vor dem Zeichen",
+          "text": "Regelmäßige Querlinien zeigen den Treppenzusammenhang.",
+          "target": [
+            0.3,
+            0.2501
+          ],
+          "target_pdf_points": [
+            79.1484992980957,
+            1522.5464633911133
+          ]
+        },
+        {
+          "slot": "L3",
+          "color": "#202A31",
+          "title": "2 · Stufenfortsetzung",
+          "text": "Auch hinter der Unterbrechung setzt sich das Stufenbild fort.",
+          "target": [
+            0.3,
+            0.7188
+          ],
+          "target_pdf_points": [
+            79.1484992980957,
+            1594.2807352050781
+          ]
+        },
+        {
+          "slot": "R2",
+          "color": "#A52188",
+          "title": "3 · Schnittzeichen",
+          "text": "Die schrägen Linien unterbrechen die Darstellung. Sie bedeuten nicht automatisch eine Rampe.",
+          "target": [
+            0.6,
+            0.4666
+          ],
+          "target_pdf_points": [
+            109.75837097167968,
+            1555.6816668212891
+          ]
+        }
+      ],
+      "reasoning": "Die markierte Diagonale ist kein belastbarer Rampenbeleg. Die Stufen davor und dahinter müssen als Zusammenhang gelesen werden. Eine Seitenansicht hilft, Zeichenebene und tatsächlichen Höhenverlauf zu trennen.",
+      "added_closed_door_positions_are_explanatory": false,
+      "not_new_source_geometry": true
+    },
+    {
+      "case_id": "S05",
+      "title": "Kurze Treppe: Brüstung, Handlauf und Stufen",
+      "book_page": 50,
+      "image": "bilder/beschriftet/S05_BILD.png",
+      "source_clip_pdf_points": [
+        1635.7171630859375,
+        1070.46875,
+        1811.4405517578125,
+        1246.1920166015625
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.09,
+              0.159
+            ],
+            [
+              0.614,
+              0.159
+            ],
+            [
+              0.614,
+              0.283
+            ]
+          ],
+          "color": "#B66A08"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.625,
+              0.301
+            ],
+            [
+              0.974,
+              0.301
+            ]
+          ],
+          "color": "#A52188"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.7919195778004853,
+              0.3129008023714077
+            ],
+            [
+              0.7919603789288994,
+              0.8935462028866783
+            ]
+          ],
+          "color": "#1765C1",
+          "source_dxf_handle": "A1545"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.763,
+              0.539
+            ],
+            [
+              0.7,
+              0.603
+            ],
+            [
+              0.763,
+              0.663
+            ]
+          ],
+          "color": "#138544"
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#B66A08",
+          "title": "1 · Brüstung H = 100 cm",
+          "text": "Die niedrige feste Begrenzung ist kein seitlicher Durchgang.",
+          "target": [
+            0.34,
+            0.159
+          ],
+          "target_pdf_points": [
+            1695.463115234375,
+            1098.4087493896484
+          ]
+        },
+        {
+          "slot": "L3",
+          "color": "#138544",
+          "title": "2 · Laufrichtung im Blatt",
+          "text": "Der Pfeil zeigt links. Die absolute Höhenbindung ist damit noch nicht geklärt.",
+          "target": [
+            0.7,
+            0.603
+          ],
+          "target_pdf_points": [
+            1758.72353515625,
+            1176.429879760742
+          ]
+        },
+        {
+          "slot": "R1",
+          "color": "#A52188",
+          "title": "3 · Handlauf H = 85 cm",
+          "text": "Diese Höhe gehört zum Handlauf, nicht zur Wand.",
+          "target": [
+            0.86,
+            0.301
+          ],
+          "target_pdf_points": [
+            1786.83927734375,
+            1123.3614532470704
+          ]
+        },
+        {
+          "slot": "R3",
+          "color": "#1765C1",
+          "title": "4 · Stufenkanten",
+          "text": "Die parallelen Linien gehören zur kurzen Folge mit 5 STG.",
+          "target": [
+            0.7919399783646923,
+            0.603223502629043
+          ],
+          "target_pdf_points": [
+            1774.8795397089125,
+            1176.4691543728118
+          ]
+        }
+      ],
+      "reasoning": "Stufenfläche, Brüstung und Handlauf sind drei verschiedene Rollen. Die Treppe ist grün hinterlegt und schwarz lesbar; über die seitliche Brüstung wird kein gewöhnlicher Gehweg erzeugt.",
+      "added_closed_door_positions_are_explanatory": false,
+      "not_new_source_geometry": true
+    },
+    {
+      "case_id": "S06",
+      "title": "Vorraum, Treppenläufe und Lift sauber trennen",
+      "book_page": 52,
+      "image": "bilder/beschriftet/S06_BILD.png",
+      "source_clip_pdf_points": [
+        1166.0721435546875,
+        1046.4749755859375,
+        1551.440673828125,
+        1597.95068359375
+      ],
+      "coordinates": "Normalized 0..1 in crop; x right, y down. Target points are approximate explanatory search points, not exact CAD vertices.",
+      "features": [
+        {
+          "kind": "rect",
+          "points": [
+            0.37,
+            0.08,
+            0.88,
+            0.25
+          ],
+          "color": "#138544",
+          "fill": 0.08
+        },
+        {
+          "kind": "rect",
+          "points": [
+            0.072,
+            0.353,
+            0.305,
+            0.604
+          ],
+          "color": "#CE2029",
+          "fill": 0.08
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.643,
+              0.328
+            ],
+            [
+              0.643,
+              0.768
+            ]
+          ],
+          "color": "#B66A08"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.35254395834784225,
+              0.6785707722413445
+            ],
+            [
+              0.640755138687029,
+              0.6785566414144899
+            ]
+          ],
+          "color": "#1765C1",
+          "source_dxf_handle": "A06DF"
+        },
+        {
+          "kind": "line",
+          "points": [
+            [
+              0.9386111398863053,
+              0.6207243741589165
+            ],
+            [
+              0.6504011246873831,
+              0.6207385275470774
+            ]
+          ],
+          "color": "#1765C1",
+          "source_dxf_handle": "A1617"
+        }
+      ],
+      "callouts": [
+        {
+          "slot": "L1",
+          "color": "#138544",
+          "title": "1 · Vorbereich",
+          "text": "Diese Fläche liegt vor dem Treppenlauf.",
+          "target": [
+            0.47,
+            0.16
+          ],
+          "target_pdf_points": [
+            1347.1953527832031,
+            1134.7110888671875
+          ]
+        },
+        {
+          "slot": "L3",
+          "color": "#CE2029",
+          "title": "2 · Liftbereich",
+          "text": "Der Schacht ist ausgespart. Kein gewöhnlicher Weg darf ihn queren.",
+          "target": [
+            0.19,
+            0.48
+          ],
+          "target_pdf_points": [
+            1239.2921643066406,
+            1311.1833154296874
+          ]
+        },
+        {
+          "slot": "R1",
+          "color": "#1765C1",
+          "title": "3 · Zwei Läufe",
+          "text": "Die Stufenfolgen bleiben als Treppe erkennbar.",
+          "target": [
+            0.7945061322868442,
+            0.6207314508529969
+          ],
+          "target_pdf_points": [
+            1472.249804047302,
+            1388.7932919278105
+          ]
+        },
+        {
+          "slot": "R3",
+          "color": "#B66A08",
+          "title": "4 · Mittlere Begrenzung",
+          "text": "Hier darf der Weg nicht einfach quer zwischen den Läufen wechseln.",
+          "target": [
+            0.643,
+            0.61
+          ],
+          "target_pdf_points": [
+            1413.864108520508,
+            1382.875157470703
+          ]
+        }
+      ],
+      "reasoning": "Grün zeigt die Lauf- und Podestflächen, nicht den Liftschacht. Ein Wechsel zwischen den Läufen erfolgt am passenden Podest. Eine geometrische Nachbarschaft allein erzeugt keine Verbindung.",
+      "added_closed_door_positions_are_explanatory": false,
+      "not_new_source_geometry": true
+    }
+  ],
+  "schematics": [
+    {
+      "id": "F03_SCHEMA",
+      "book_page": 31,
+      "is_project_geometry": false
+    },
+    {
+      "id": "S07_SEITE",
+      "book_page": 46,
+      "is_project_geometry": false,
+      "height_assumption_cm": true
+    }
+  ]
+}

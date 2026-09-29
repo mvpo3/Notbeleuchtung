@@ -1,0 +1,87 @@
+{
+  "source_pdf": "plaene/SH22_UG_Begehbare_Flaechen_Gruen.pdf",
+  "source_page": 1,
+  "coordinate_system": "PDF points, origin top-left, y down",
+  "crops": [
+    {
+      "id": "Z01",
+      "clip_pdf_points": [
+        0,
+        0,
+        1580,
+        960
+      ],
+      "image": "bilder/gruen/Z01_Gruen.png"
+    },
+    {
+      "id": "Z02",
+      "clip_pdf_points": [
+        0,
+        900,
+        1580,
+        1880
+      ],
+      "image": "bilder/gruen/Z02_Gruen.png"
+    },
+    {
+      "id": "Z03",
+      "clip_pdf_points": [
+        1500,
+        520,
+        2760,
+        1600
+      ],
+      "image": "bilder/gruen/Z03_Gruen.png"
+    },
+    {
+      "id": "Z04",
+      "clip_pdf_points": [
+        1450,
+        1550,
+        2760,
+        2210
+      ],
+      "image": "bilder/gruen/Z04_Gruen.png"
+    },
+    {
+      "id": "Z05",
+      "clip_pdf_points": [
+        2700,
+        500,
+        4220,
+        1460
+      ],
+      "image": "bilder/gruen/Z05_Gruen.png"
+    },
+    {
+      "id": "Z06",
+      "clip_pdf_points": [
+        2650,
+        1390,
+        4210,
+        2200
+      ],
+      "image": "bilder/gruen/Z06_Gruen.png"
+    },
+    {
+      "id": "Z07",
+      "clip_pdf_points": [
+        4100,
+        1470,
+        4651,
+        2550
+      ],
+      "image": "bilder/gruen/Z07_Gruen.png"
+    },
+    {
+      "id": "Z08",
+      "clip_pdf_points": [
+        1630,
+        2120,
+        4280,
+        3205
+      ],
+      "image": "bilder/gruen/Z08_Gruen.png"
+    }
+  ]
+}

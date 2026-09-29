@@ -1,0 +1,1350 @@
+{
+  "schema": "rivoplan.eg_lernpaket.examples/4",
+  "examples": [
+    {
+      "id": "EG-01",
+      "title": "Außen beginnen: linker Hallenbereich",
+      "topic": "Mauern",
+      "roi": [
+        880,
+        20,
+        2470,
+        950
+      ],
+      "base": "walls",
+      "sections": [
+        [
+          "Was ist rot?",
+          "Die massiven Außenwandbereiche und die Wand unterhalb der Halle. Die Umrandung folgt dem Wandaufbau einschließlich der erkennbaren Bekleidung und Dämmung. Öffnungen bleiben unterbrochen."
+        ],
+        [
+          "Woran erkenne ich die Wand?",
+          "Zwei begrenzende Seiten, Materialschraffuren und durchgehende Eckanschlüsse ergeben zusammen einen Wandkörper. Die Breite kann sich entlang der Fassade ändern. Eine einzelne dünne Linie wäre dafür kein ausreichender Beleg."
+        ],
+        [
+          "Was folgt daraus?",
+          "Durch einen Wandkörper führt kein normaler Fußweg. Die Fenster und der dargestellte Sportboden müssen zusätzlich nach Höhe und Geschoss gelesen werden. Die Sportlinien erzeugen keine Räume und beweisen hier keinen Boden auf EG-Niveau."
+        ]
+      ],
+      "rules": [
+        "R01",
+        "R02",
+        "R03",
+        "R12",
+        "R20"
+      ],
+      "image": "bilder/EG-01.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -44429.29994127489,
+        34907.59390037611,
+        -16383.002428725209,
+        51312.032068093846
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4,
+      "markers": []
+    },
+    {
+      "id": "EG-02",
+      "title": "Nach innen: Verwaltung und Stiege 2",
+      "topic": "Mauern",
+      "roi": [
+        890,
+        905,
+        2460,
+        1885
+      ],
+      "base": "walls",
+      "sections": [
+        [
+          "Außenwand: zwei Seiten zeigen",
+          "Die beiden roten Linien verfolgen einen Abschnitt am linken Gebäudeabschluss. Zwischen den Randlinien liegen Schraffur und Wandaufbau. Deshalb ist der ganze Streifen eine Mauer und keine begehbare Fläche."
+        ],
+        [
+          "Innenwand und Tür unterscheiden",
+          "Am Kopierraum zeigen zwei blaue Linien die gegenüberliegenden Wandkanten. An der grün markierten Türstelle endet dieses Materialband. Türblatt und Bogen gehören zur Öffnung; sie füllen die Wandlücke nicht aus."
+        ],
+        [
+          "Was der orange Rahmen bedeutet",
+          "Der Rahmen umfasst den Raumstempel des Wartebereichs 0.013. Nummer, Name und Flächenangaben beschreiben den Bereich. Der Rahmen ist nur eine Lernmarkierung: Im Original verläuft hier keine geschlossene Raumwand."
+        ]
+      ],
+      "rules": [
+        "R01",
+        "R04",
+        "R07",
+        "R17"
+      ],
+      "image": "bilder/EG-02.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -44252.90813301986,
+        18414.959828530857,
+        -16559.39423698024,
+        35701.35703752374
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4,
+      "markers": []
+    },
+    {
+      "id": "EG-03",
+      "title": "Mitte: Mauern, Pfeiler und Glas",
+      "topic": "Mauern",
+      "roi": [
+        2410,
+        810,
+        3490,
+        2370
+      ],
+      "base": "walls",
+      "sections": [
+        [
+          "Wand und Stütze konkret erkennen",
+          "Rot und Blau verfolgen jeweils zwei Wandseiten. Das Material dazwischen begrenzt Räume. Der orange Rahmen liegt direkt um die schraffierte Stütze im Windfang; der danebenstehende Text 40/40 ist nur ihre Beschriftung."
+        ],
+        [
+          "Die Deckenlinie liegt über dem Boden",
+          "Die violett nachgezogene Linie gehört zum großen Rechteck in der Eingangshalle. Die Angaben VK RD und STUK liefern den Höhenbezug. Ein Deckenrand allein ist keine bodenstehende Mauer."
+        ],
+        [
+          "Was für den Weg zählt",
+          "Die Stütze ist ein einzelnes Hindernis. Eine durchgehende Wand trennt Flächen; das Deckenrechteck dagegen zerteilt den Hallenboden nicht. Glasfelder und Türöffnungen am Rand müssen zusätzlich unterschieden werden."
+        ]
+      ],
+      "rules": [
+        "R02",
+        "R05",
+        "R13",
+        "R19"
+      ],
+      "image": "bilder/EG-03.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -17441.353278255385,
+        9859.957128161928,
+        1608.9620132877953,
+        37377.07921594652
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4,
+      "markers": []
+    },
+    {
+      "id": "EG-04",
+      "title": "Rechts: Hallenwand und Nebenräume",
+      "topic": "Mauern",
+      "roi": [
+        3500,
+        550,
+        5145,
+        2025
+      ],
+      "base": "walls",
+      "sections": [
+        [
+          "Von der Fassade zum Kern",
+          "Die obere und rechte Fassade, die untere Hallenbegrenzung und die Mauern um Nebenräume sind rot markiert. Der rote Rechteckrahmen umfasst ein konkretes Stück der Hallenwand. Blau umrahmt das schraffierte Innenwandstück unter der Halle; der Pfeil endet jetzt darin."
+        ],
+        [
+          "Räumliche Verbindung prüfen",
+          "Der violette Rahmen zeigt den abgegrenzten Liftbereich. Der grüne Türbogen macht die echte Öffnung sichtbar. Benachbarte Bereiche sind nur dort verbunden, wo eine passende Öffnung durch den Wandaufbau führt."
+        ],
+        [
+          "Dünn bleibt ein Hindernis",
+          "Auch dünne Trennwände zählen für die Bewegungsprüfung. Weder geringe Dicke noch eine andere Schraffur erlaubt es, eine Wand zu übergehen."
+        ]
+      ],
+      "rules": [
+        "R01",
+        "R04",
+        "R05",
+        "R14"
+      ],
+      "image": "bilder/EG-04.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        1785.3538215428248,
+        15945.474512960443,
+        30801.80627949517,
+        41963.26623057729
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4,
+      "markers": []
+    },
+    {
+      "id": "EG-05",
+      "title": "Rechts unten: breite Außenwand und Stiege 5",
+      "topic": "Mauern",
+      "roi": [
+        3360,
+        1920,
+        5150,
+        2870
+      ],
+      "base": "walls",
+      "sections": [
+        [
+          "Außenwand vollständig erfassen",
+          "Die roten Linien markieren Innen- und Außenseite des breiten Fassadenaufbaus rechts unten. Dazwischen liegen Kern und weitere Schichten. Für die Raumgrenze zählt die gesamte feste Ausdehnung."
+        ],
+        [
+          "Pfeile treffen jetzt das konkrete Bauteil",
+          "Blau zeigt das kurze, schraffierte Wandstück an der Küche. Die lange benachbarte Liniengruppe darf man nicht allein wegen ihrer Richtung pauschal als massive Mauer lesen. Grün bezeichnet die tatsächliche Türöffnung weiter unten."
+        ],
+        [
+          "Möbel und Treppe getrennt behandeln",
+          "Der orange Rahmen ist auf die von dir markierte vollständige Tischreihe versetzt und vergrößert. Tisch und Sitzplätze sind Möbelhindernisse, keine Raumtrennwand. Rechts bleiben Stiege 5 und ihr Vorbereich mit den Stufenkanten getrennt lesbar."
+        ]
+      ],
+      "rules": [
+        "R02",
+        "R06",
+        "R13",
+        "R21"
+      ],
+      "image": "bilder/EG-05.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -684.1314940275875,
+        1040.3667154104558,
+        30890.002183622684,
+        17797.588499638252
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4,
+      "markers": []
+    },
+    {
+      "id": "EG-06",
+      "title": "Das schräge Nebengebäude gehört dazu",
+      "topic": "Mauern",
+      "roi": [
+        0,
+        3110,
+        730,
+        3727
+      ],
+      "base": "walls",
+      "sections": [
+        [
+          "Schräger Verlauf ist kein Sonderfall",
+          "Die rote Außenwand und die blaue Innenwand haben jeweils zwei Begrenzungen mit Material dazwischen. Ihre schräge Lage auf dem Blatt ändert ihre Funktion nicht. Anschlüsse und Schraffur bestätigen den Wandverlauf."
+        ],
+        [
+          "Deine markierten Möbel",
+          "Die drei orange umrandeten Gegenstände und die violett umrandeten länglichen Einbauten sind keine Mauern. Ihre Grundflächen werden im grünen Plan weiß ausgespart. Ein Möbel kann einen Weg blockieren, ohne einen eigenständigen Raum zu begrenzen."
+        ],
+        [
+          "Was im grünen Detail zu sehen ist",
+          "Auch die Waschbecken und WC-Gegenstände bleiben als Hindernisse weiß; ihre Originalumrisse bleiben sichtbar. Grün liegt dazwischen auf dem Boden. Die Türstellen bleiben lokale Zugänge zum jeweiligen Bereich."
+        ]
+      ],
+      "rules": [
+        "R01",
+        "R03",
+        "R16",
+        "R27"
+      ],
+      "image": "bilder/EG-06.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -59951.779067717485,
+        -14076.411252045567,
+        -47075.17706510033,
+        -3193.036682710251
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4,
+      "markers": []
+    },
+    {
+      "id": "EG-07",
+      "title": "Was macht eine breite Wand zur Wand?",
+      "topic": "Mauern",
+      "roi": [
+        4890,
+        2470,
+        5130,
+        2850
+      ],
+      "base": "clean",
+      "sections": [
+        [
+          "Welche Markierung zeigt was?",
+          "Rot umrandet einen Ausschnitt des diagonal schraffierten Kerns. Orange umrandet die benachbarte Schicht mit Schlaufen. Blau liegt auf der raumseitigen Kante und folgt ihr bis um die Ecke. Die Markierungen sind jetzt direkt an den jeweiligen Originalmerkmalen."
+        ],
+        [
+          "Warum ist das insgesamt eine Wand?",
+          "Die Schichten verlaufen zusammen, besitzen zwei Außengrenzen und setzen sich um die Ecke fort. Zwischen Raum und Außenbereich liegt ein zusammenhängender Aufbau. Ein heller Streifen innerhalb des Aufbaus ist kein Weg."
+        ],
+        [
+          "Wo liegt die echte Unterbrechung?",
+          "Oben rechts unterbricht die grün markierte Türstelle den Aufbau. Türblatt, Schwenkbogen und DL 100/220 gehören zu dieser Öffnung. Die Tragfunktion des Kerns wird aus der Schraffur allein nicht festgelegt."
+        ]
+      ],
+      "rules": [
+        "R01",
+        "R02",
+        "R24",
+        "R25"
+      ],
+      "image": "bilder/EG-07.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        26303.815168991918,
+        1393.1503319205146,
+        30537.218567112624,
+        8096.039045611634
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4,
+      "markers": []
+    },
+    {
+      "id": "EG-08",
+      "title": "Auch eine sehr dünne Trennwand sperrt",
+      "topic": "Mauern",
+      "roi": [
+        4140,
+        1850,
+        4335,
+        2025
+      ],
+      "base": "walls",
+      "sections": [
+        [
+          "Konkretes Beispiel",
+          "Im Bereich 0.10 ist eine schmale feste Kabinentrennwand zu sehen. Zwei geschlossene rote Rahmen zeigen ihr oberes und unteres Wandstück. Dazwischen liegt die Türöffnung. Das blaue Türblatt und der vollständig orange nachgezogene Bogen gehören zur Tür, nicht zur Mauer."
+        ],
+        [
+          "Warum das wichtig ist",
+          "Eine Mindestdicke für tragende Mauern ist kein allgemeiner Filter für Hindernisse. Leichte Trennwände und Verglasungen können für eine Person genauso sperren wie eine dicke Außenwand."
+        ],
+        [
+          "Was hier nicht untersucht wird",
+          "Waschbecken, WC-Nutzung und Sanitärausstattung werden nicht klassifiziert. Die Darstellung ist nur wegen der festen Trennwand und ihrer echten Türöffnung relevant."
+        ]
+      ],
+      "rules": [
+        "R04",
+        "R07",
+        "R14"
+      ],
+      "image": "bilder/EG-08.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        13074.42954986471,
+        15945.474512960443,
+        16514.069810837784,
+        19032.331157423458
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4,
+      "markers": []
+    },
+    {
+      "id": "EG-09",
+      "title": "Eine Drehtür vollständig lesen",
+      "topic": "Türen",
+      "roi": [
+        1350,
+        900,
+        1550,
+        1135
+      ],
+      "base": "clean",
+      "markers": [],
+      "sections": [
+        [
+          "Beleg im EG",
+          "Raum 0.21, IKT Verteiler: Die untere Wand ist unterbrochen. Ein Türblatt, sein Drehpunkt und ein Viertelkreisbogen gehören zur Öffnung. Der Bogen zeigt den Schwenkbereich des gezeichneten Türblatts."
+        ],
+        [
+          "Was kann man ablesen?",
+          "Die Beschriftung DL 90 / DL 220, die Anschlagseite und die dargestellte Öffnungsrichtung. Der Bogenradius beträgt in der DXF-Geometrie rund 900 mm und passt damit zur Breitenangabe 90 cm. Die lichte Höhe steht als Text im Plan; sie ist keine Messung aus der Draufsicht."
+        ],
+        [
+          "Was folgt nicht daraus?",
+          "Der Bogen ist keine Mauer. Er beweist aber auch nicht, dass die Tür im Betrieb offen oder unversperrt ist. Den Durchgang als Türverbindung mit gesondertem Zustandsfeld führen."
+        ]
+      ],
+      "rules": [
+        "R07",
+        "R08",
+        "R09",
+        "R24"
+      ],
+      "image": "bilder/EG-09.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -36138.88495328851,
+        31644.345447658066,
+        -32611.048788187916,
+        35789.55294165126
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 6
+    },
+    {
+      "id": "EG-10",
+      "title": "Zweiflügelig: ein Portal, zwei Türflügel",
+      "topic": "Türen",
+      "roi": [
+        2410,
+        865,
+        2585,
+        1060
+      ],
+      "base": "clean",
+      "markers": [],
+      "sections": [
+        [
+          "Was sieht man?",
+          "Links neben dem Windfang liegen zwei Türflügel in einer gemeinsamen Fassadenöffnung. Beide geraden Blätter sind blau markiert. Die zwei zugehörigen Öffnungsbögen sind jetzt über ihren gesamten Verlauf orange nachgezogen: ein Bogen je Flügel."
+        ],
+        [
+          "So wird daraus eine Verbindung",
+          "Die zusammengehörenden Flügel zu einem Türportal bündeln und dessen beide Raum- beziehungsweise Außenseiten bestimmen. Zwei Bögen bedeuten hier nicht zwei voneinander unabhängige Durchgänge durch zwei Wände."
+        ],
+        [
+          "NA ist ein Zusatzhinweis",
+          "Die NA-Kennzeichnung stützt die Lesart einer Ausgangsstelle. Sie allein beweist weder den weiteren Außenweg noch den aktuellen Türzustand. Der Weg endet in diesem Beispiel zunächst am außenliegenden Anschluss."
+        ]
+      ],
+      "rules": [
+        "R08",
+        "R10",
+        "R16"
+      ],
+      "image": "bilder/EG-10.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -17441.353278255385,
+        32967.28400957079,
+        -14354.496633792369,
+        36406.92427054386
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4
+    },
+    {
+      "id": "EG-11",
+      "title": "Schiebetüren funktionieren ohne Türbogen",
+      "topic": "Türen",
+      "roi": [
+        2970,
+        815,
+        3470,
+        1060
+      ],
+      "base": "clean",
+      "markers": [],
+      "sections": [
+        [
+          "Eindeutige Merkmalskombination",
+          "Im Windfang 0.003 sieht man parallel zur Fassade bewegte Flügel und seitliche Pfeile. Zusätzlich steht im Plan ausdrücklich „Schiebetüren Fluchtweg gemäß AutSchR“. Ein Drehbogen fehlt hier aus gutem Grund."
+        ],
+        [
+          "Was die Erkennung tun muss",
+          "Schiebetüren als eigenen Öffnungstyp berücksichtigen. Den beweglichen Flügel von festen Glasfeldern und den seitlichen Wandpfeilern trennen. Ein Verfahren, das nur Kreisbögen sucht, verliert diese Eingänge."
+        ],
+        [
+          "Grenze der Aussage",
+          "Der Planhinweis wird als Beleg übernommen, nicht als von uns geprüfte technische Zulassung. Öffnungszustand und tatsächliche Nutzbarkeit bleiben eigene Angaben."
+        ]
+      ],
+      "rules": [
+        "R07",
+        "R11",
+        "R13"
+      ],
+      "image": "bilder/EG-11.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -7563.412015973736,
+        32967.28400957079,
+        1256.1783967777365,
+        37288.88331181901
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4
+    },
+    {
+      "id": "EG-12",
+      "title": "Fenster: Öffnung im Baukörper, kein Fußweg",
+      "topic": "Fenster",
+      "roi": [
+        1400,
+        1510,
+        1730,
+        1660
+      ],
+      "base": "clean",
+      "markers": [],
+      "sections": [
+        [
+          "Beleg am Verwaltungsflügel",
+          "An der unteren Fassade stehen Rahmenprofile, Glaslinien und Parapethöhen. Blau zeigt die Fensterlinien, Orange die Bögen der beiden Fensterflügel. Der geschlossene rote Rechteckrahmen umfasst den von dir bezeichneten festen Wandabschnitt rechts neben dem Fenster einschließlich seiner Schichten."
+        ],
+        [
+          "Warum ist das kein Türportal?",
+          "Die Öffnung enthält einen Fensterabschluss; außerdem ist ein Parapethinweis vorhanden. Die Lücke in der Mauerschraffur reicht daher nicht als Nachweis einer begehbaren Verbindung."
+        ],
+        [
+          "Für die Software",
+          "Fenster als eigene Objekte behalten und bei normalen Fußwegen sperren. Auch ein öffenbarer Flügel macht ein Fenster nicht automatisch zu einer Tür. Niedrige Brüstung oder Transparenz ändern diese Einordnung nicht."
+        ]
+      ],
+      "rules": [
+        "R12",
+        "R13",
+        "R15"
+      ],
+      "image": "bilder/EG-12.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -35256.92591201336,
+        22383.77551426902,
+        -29435.99623959739,
+        25029.65263809446
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4
+    },
+    {
+      "id": "EG-13",
+      "title": "Ein Bogen kann auch zu einem Fenster gehören",
+      "topic": "Fenster",
+      "roi": [
+        940,
+        35,
+        1320,
+        150
+      ],
+      "base": "clean",
+      "markers": [],
+      "sections": [
+        [
+          "Das Gegenbeispiel im Original",
+          "Die obere Hallenfassade zeigt Öffnungsbögen. Daneben steht FPH ü. FBOK UG 4,50. Das Fenster liegt nach dieser Beschriftung 4,50 m über dem fertigen Fußboden des Untergeschosses."
+        ],
+        [
+          "Der entscheidende Unterschied",
+          "Bogen plus Rahmen bedeutet noch nicht Tür. Hier widersprechen Höhe und Fensterbeschriftung einer gewöhnlichen bodengleichen Durchgangstür. Der Bezug „UG“ muss mitgelesen werden, obwohl das Planblatt Erdgeschoss heißt."
+        ],
+        [
+          "Erwartetes Ergebnis",
+          "Keine Türverbindung vom Hallenbereich durch dieses Fenster erzeugen. Auch der dargestellte Sportboden wird dadurch nicht zum bestätigten EG-Fußboden. Höhe und Geschossbezug getrennt führen."
+        ]
+      ],
+      "rules": [
+        "R09",
+        "R12",
+        "R20"
+      ],
+      "image": "bilder/EG-13.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -43370.94909174471,
+        49018.938560778464,
+        -36668.0603780536,
+        51047.444355711305
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4
+    },
+    {
+      "id": "EG-14",
+      "title": "Glas trennt Räume ebenfalls",
+      "topic": "Fenster und Glas",
+      "roi": [
+        2520,
+        815,
+        3040,
+        1085
+      ],
+      "base": "clean",
+      "markers": [],
+      "sections": [
+        [
+          "Beispiel Schulwart und Windfang",
+          "Zwischen Schulwartraum 0.01 und Windfang 0.003 ist ein schmaler Abschluss mit Rahmen und Höhenangaben dargestellt. Er darf nicht als freie Verbindung behandelt werden, nur weil die dicke Mauerschraffur fehlt."
+        ],
+        [
+          "Objekte sauber unterscheiden",
+          "Massive Wand, festes Glasfeld, Fenster und beweglicher Türflügel erhalten verschiedene Klassen. Für die Wegprüfung kann dennoch jede dieser Klassen eine Sperre bilden."
+        ],
+        [
+          "Weiße Stelle ist kein Beweis",
+          "Ein Durchgang wird erst aus einer bestätigten Öffnung mit passenden Flächen auf beiden Seiten. Die Erkennung darf nicht die gesamte Strecke zwischen zwei roten Wandpfeilern freigeben."
+        ]
+      ],
+      "rules": [
+        "R05",
+        "R13",
+        "R15"
+      ],
+      "image": "bilder/EG-14.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -15501.043387450061,
+        32526.304488933212,
+        -6328.66935818853,
+        37288.88331181901
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4
+    },
+    {
+      "id": "EG-15",
+      "title": "Einen freien Abschnitt positiv erkennen",
+      "topic": "Wege",
+      "roi": [
+        1060,
+        1035,
+        2085,
+        1420
+      ],
+      "base": "walls",
+      "markers": [],
+      "sections": [
+        [
+          "Boden und Hindernisse unterscheiden",
+          "Grün zeigt den zusammenhängenden Boden vor und um den Kopierraum. Möbelgrundflächen, einschließlich der von dir markierten Sessel und Tischgruppe rechts, sind weiß ausgespart. Die schwarzen Konturen zeigen weiterhin ihre Form."
+        ],
+        [
+          "Wo liegt die Raumgrenze?",
+          "Der rote Pfeil trifft jetzt die schraffierte untere Kopierraumwand. Das Möbel unmittelbar davor ist ein anderes Objekt. Die blaue Markierung liegt an der Türöffnung: Dort endet die Wand lokal und ein Zugang ist erkennbar."
+        ],
+        [
+          "Was ein freier Weg zusätzlich braucht",
+          "Eine zusammenhängende grüne Fläche zeigt eine mögliche Verbindung. Für einen Körperweg müssen lichte Breite, Höhe, Hindernisabstand und Türzustand passen. Diese Prüfung erfolgt mit den Originalmaßen und einem festgelegten Nutzerprofil."
+        ]
+      ],
+      "rules": [
+        "R15",
+        "R16",
+        "R18",
+        "R26"
+      ],
+      "image": "bilder/EG-15.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -41254.24739268436,
+        26617.178912389725,
+        -23174.087046543842,
+        33408.26353020836
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4
+    },
+    {
+      "id": "EG-16",
+      "title": "Sackgasse heißt: begehbar, aber kein Durchweg",
+      "topic": "Wege",
+      "roi": [
+        1340,
+        895,
+        1560,
+        1140
+      ],
+      "base": "clean",
+      "markers": [],
+      "sections": [
+        [
+          "Beispiel IKT Verteiler 0.21",
+          "Im vollständigen sichtbaren Raumumriss ist ein normaler Zugang an der unteren Wand erkennbar. Ein zweiter Personendurchgang ist dort nicht belegt. Der Raum kann betreten werden, sofern die Tür nutzbar ist."
+        ],
+        [
+          "Richtiges Wegmodell",
+          "Der Zugang führt hinein und wieder über dasselbe Portal zurück. Der Raum darf keine erfundene Abkürzung zu seinen Nachbarräumen erhalten. Eine Sackgasse ist deshalb nicht dasselbe wie eine gesperrte Fläche."
+        ],
+        [
+          "Allgemeine Prüfung",
+          "Erst den vollständigen Verbindungsgraphen betrachten. Ein Ausschnitt ohne zweiten sichtbaren Ausgang allein beweist für beliebige andere Räume noch keine Sackgasse."
+        ]
+      ],
+      "rules": [
+        "R15",
+        "R17",
+        "R18"
+      ],
+      "image": "bilder/EG-16.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -36315.27676154354,
+        31556.14954353055,
+        -32434.656979932886,
+        35877.74884577877
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4
+    },
+    {
+      "id": "EG-17",
+      "title": "Eine Deckenlinie darf keinen Raum teilen",
+      "topic": "Gegenbeispiele",
+      "roi": [
+        2540,
+        1030,
+        3465,
+        1600
+      ],
+      "base": "clean",
+      "markers": [],
+      "sections": [
+        [
+          "Was ist im Halleninneren gezeichnet?",
+          "In der Eingangshalle 0.004 liegen ein großes Rechteck und diagonale Linien. Die Hinweise VK RD und STUK mit positiven Höhenangaben gehören zu Bauteilen oberhalb der betrachteten Bewegungsfläche."
+        ],
+        [
+          "Warum keine Mauer?",
+          "Es fehlen die für eine Wand in der Gehzone passenden Wandseiten und Materialflächen. Die zugehörigen Höhenhinweise sprechen gegen eine raumteilende Wand auf Bodenhöhe."
+        ],
+        [
+          "Prüffall für Claude Code",
+          "Diese Linien dürfen weder einen zusätzlichen Innenraum erzeugen noch den Gehbereich entlang des Rechtecks sperren. Höhenbezüge nicht mit einem pauschalen Linienfilter verlieren."
+        ]
+      ],
+      "rules": [
+        "R05",
+        "R19",
+        "R20"
+      ],
+      "image": "bilder/EG-17.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -15148.259770940002,
+        23442.126363799194,
+        1167.9824926502217,
+        33496.45943433588
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4
+    },
+    {
+      "id": "EG-18",
+      "title": "Technischer Durchbruch ist kein Durchgang",
+      "topic": "Gegenbeispiele",
+      "roi": [
+        2575,
+        965,
+        2740,
+        1060
+      ],
+      "base": "clean",
+      "markers": [],
+      "sections": [
+        [
+          "Den Text zuerst lesen",
+          "Der orange Rahmen zeigt den Hinweis auf einen „Durchbruch Trockensteigleitung“ mit Weichschott und Streckenisolierung. Diese Wörter beschreiben eine technische Leitungsführung. Der Pfeil bezeichnet den Textbeleg; er behauptet keine exakt vermessene Öffnungsgrenze."
+        ],
+        [
+          "Wand und Einbau getrennt zeigen",
+          "Rot umrandet ein Stück des schraffierten Wandbandes. Blau bezeichnet den Einbau mit zugehörigem Schrankhinweis. Das große helle Feld innerhalb dieses Aufbaus ist deshalb nicht automatisch eine freie Türöffnung."
+        ],
+        [
+          "Warum kein Fußgängerweg?",
+          "An der markierten Stelle ist keine Gehtür mit zugehörigem Personendurchgang belegt. Eine technische Durchführung kann klein, hochliegend oder abgeschottet sein. Ihre genaue Größe und Lage benötigen ein Detail; für die Raumerkennung entsteht hier keine Verbindungskante."
+        ]
+      ],
+      "rules": [
+        "R06",
+        "R14",
+        "R15"
+      ],
+      "image": "bilder/EG-18.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -14530.888442047399,
+        32967.28400957079,
+        -11620.423605839413,
+        34643.00618799357
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4
+    },
+    {
+      "id": "EG-19",
+      "title": "Lift, Treppe und Vorbereich getrennt lesen",
+      "topic": "Gegenbeispiele",
+      "roi": [
+        3540,
+        1620,
+        3995,
+        2030
+      ],
+      "base": "walls",
+      "markers": [],
+      "sections": [
+        [
+          "Drei getrennte Bereiche",
+          "Die violette Kontur zeigt die Liftkabine. Die rote Kontur verfolgt Teile der Schachtwand. Links liegt die Treppe mit regelmäßig wiederholten Stufenkanten. Ein eigener grüner Vorbereich erschließt diese Bauteile."
+        ],
+        [
+          "Weiß im Lift ist bewusst gewählt",
+          "Kabine und Schacht sind aus der allgemeinen Gehfläche ausgespart. Das bedeutet nicht, dass niemand eine Liftkabine betreten kann: Ihr Zugang und die Fahrt werden als eigene Verbindung behandelt. Zwischen Kabine und Schachtwand gibt es keinen umlaufenden Gang."
+        ],
+        [
+          "Die nächste Seite zeigt den Lift im Detail",
+          "Dort werden Türseite, Kabinenumriss, Schachtwand und technische Zwischenräume einzeln farbig nachgezeichnet. So lässt sich der Aufzug erkennen, ohne seine Mechanik als Tür oder seine Zwischenräume als Wege fehlzulesen."
+        ]
+      ],
+      "rules": [
+        "R05",
+        "R14",
+        "R23"
+      ],
+      "image": "bilder/EG-19.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        2490.9210545629426,
+        15857.278608832929,
+        10516.748330166782,
+        23089.342747289138
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4
+    },
+    {
+      "id": "EG-29",
+      "title": "Lift im Detail: Kabine, Tür und Schacht",
+      "topic": "Lift-Detail",
+      "roi": [
+        3810,
+        1635,
+        3950,
+        1830
+      ],
+      "base": "clean",
+      "rules": [
+        "R05",
+        "R14",
+        "R23"
+      ],
+      "sections": [
+        [
+          "Woran erkennt man den Lift?",
+          "Im schraffierten Schacht liegt ein eigener rechteckiger Kabinenumriss. Im Inneren stehen FWA, 110 × 210 cm und 13 Pers. / 1000 kg. Kabine, Türmechanik und der DXF-Layer „Neubau_430 Aufzug“ stützen die Zuordnung gemeinsam."
+        ],
+        [
+          "Welche Linie zeigt welchen Teil?",
+          "Violett folgt dem Kabinenumriss. Rot liegt auf der massiven Schachteinfassung. Blau hebt die parallelen Schiebetürlinien an der oberen Kabinenseite hervor. Orange zeigt den technischen Zwischenraum seitlich der Kabine."
+        ],
+        [
+          "Wie entsteht hier eine Verbindung?",
+          "Vom Vorbereich führt der Zugang an der Türseite in die Kabine, wenn diese auf dem Geschoss hält und die Türen geöffnet sind. Die Fahrt zum anderen Geschoss ist eine eigene Verbindung. Der technische Zwischenraum ist kein Fußweg; eine Zielhöhe ist hier nicht bestätigt."
+        ]
+      ],
+      "image": "bilder/EG-29.png",
+      "annotation_count": 6,
+      "markers": [],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "cad_bbox_mm": [
+        7253.499877448738,
+        19385.114773933517,
+        9722.98519301915,
+        22824.755034906593
+      ]
+    },
+    {
+      "id": "EG-20",
+      "title": "Stiege 1: Woran erkennt man eine Treppe?",
+      "topic": "Treppen",
+      "roi": [
+        3510,
+        1610,
+        3890,
+        2030
+      ],
+      "base": "clean",
+      "markers": [],
+      "sections": [
+        [
+          "Mehrere klare Merkmale",
+          "Im Raum 0.002 stehen wiederholte Stufenkanten, Laufpfeile, Stufennummern und der Name Stiege 1. Dazu kommen die Angaben 13 STG 15/30 und 16 STG 15/30 sowie ein Podest."
+        ],
+        [
+          "Die Angabe lesen",
+          "STG bezeichnet Steigungen; 15/30 beschreibt hier die gezeichnete Steigungs-/Auftrittsangabe. Stufenkanten werden zu einem Treppenlauf zusammengefasst. Sie sind keine Reihe schmaler Einzelräume."
+        ],
+        [
+          "Oben und unten",
+          "Die Laufpfeile zeigen auf dem Blatt in verschiedene Richtungen. Die höhere Ebene liegt nicht immer oben im Bild. Für die Geschossverknüpfung zusätzlich Start, Podest und Höhenanschluss im Nachbarplan bestätigen."
+        ]
+      ],
+      "rules": [
+        "R21",
+        "R22",
+        "R27"
+      ],
+      "image": "bilder/EG-20.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        1961.7456297978542,
+        15857.278608832929,
+        8664.634343488973,
+        23265.734555544168
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 5
+    },
+    {
+      "id": "EG-21",
+      "title": "Stiege 2: Schnittlinie ist keine Mauer",
+      "topic": "Treppen",
+      "roi": [
+        2160,
+        1220,
+        2460,
+        1610
+      ],
+      "base": "clean",
+      "markers": [],
+      "sections": [
+        [
+          "Konkreter Befund",
+          "Stiege 2 trägt die Raumkennung 0.006. Wiederholte Stufen, Pfeile und Nummern bilden zwei zusammengehörige Laufbereiche. Die diagonale Unterbrechung gehört zur Darstellung des Treppenlaufs."
+        ],
+        [
+          "Fehler vermeiden",
+          "Eine schräge Schnitt- oder Bruchlinie im Lauf ist keine quer eingebaute Wand. Ebenso ist die mittlere Geländerzone kein eigener begehbarer Raum. Beide gehören zur Treppendarstellung."
+        ],
+        [
+          "Verbindung zur Erschließung",
+          "Die Erschließung 0.005 und der Treppenraum werden nur über die im Plan vorhandenen Öffnungen verbunden. Gleiche Lage untereinander in mehreren Geschossen reicht für einen bestätigten Laufanschluss nicht aus."
+        ]
+      ],
+      "rules": [
+        "R14",
+        "R21",
+        "R22",
+        "R27"
+      ],
+      "image": "bilder/EG-21.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -21851.14848463112,
+        23265.734555544168,
+        -16559.39423698024,
+        30145.015077490316
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4
+    },
+    {
+      "id": "EG-22",
+      "title": "Stiege 5: Pfeilrichtung und Ausgang trennen",
+      "topic": "Treppen",
+      "roi": [
+        4910,
+        2020,
+        5150,
+        2550
+      ],
+      "base": "clean",
+      "sections": [
+        [
+          "Was der Plan zeigt",
+          "Stiege 5 heißt 0.010. Der Lauf enthält 19 nummerierte Steigungen und die Angabe 19 STG 16,2/27. Am unteren Blattrand schließt die Erschließung 0.011 mit einer nach außen gezeichneten Tür an."
+        ],
+        [
+          "Was „rauf“ bedeutet",
+          "Entlang eines aufwärts bezeichneten Treppenlaufs gelangt man zur höheren Ebene; in Gegenrichtung zur niedrigeren. Die Blattorientierung ist dafür ohne Bedeutung. Startkreis, Pfeil, Nummerierung und Höhenbezug zusammen lesen."
+        ],
+        [
+          "Was hier offen bleibt",
+          "Das genaue Zielgeschoss und die Höhen beider Endpunkte werden in diesem EG-Paket nicht endgültig festgelegt. Diese Angaben müssen mit dem UG-Arbeitsstrang und den passenden Nachbarplänen abgeglichen werden."
+        ]
+      ],
+      "rules": [
+        "R16",
+        "R21",
+        "R22",
+        "R27"
+      ],
+      "image": "bilder/EG-22.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        26656.598785501978,
+        6684.904579571398,
+        30890.002183622684,
+        16033.670417087958
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4,
+      "markers": []
+    },
+    {
+      "id": "EG-23",
+      "title": "Stiege 6: spiegelähnlich, aber eigenes Objekt",
+      "topic": "Treppen",
+      "roi": [
+        900,
+        1400,
+        1080,
+        1930
+      ],
+      "base": "clean",
+      "sections": [
+        [
+          "Eigene Kennung behalten",
+          "Die linke Randstiege trägt 0.015, der anschließende Bereich 0.016. Sichtbar sind 19 STG 16,2/27, die fortlaufenden Stufennummern, ein Laufpfeil und eine Tür am äußeren Anschluss."
+        ],
+        [
+          "Nicht von Stiege 5 kopieren",
+          "Eine ähnliche Form ist ein guter Suchhinweis, aber kein Beleg für identische Anschlüsse. Stiege 6 erhält eine eigene ID, eigene Geometrie und eigene Quellenstellen."
+        ],
+        [
+          "Höhenverbindung prüfen",
+          "Das Paket übergibt diesen Treppenanschluss als zu prüfende Verbindung. Eine feste Behauptung „führt von EG nach UG“ benötigt zusätzlich den belegten Anschluss am anderen Ende."
+        ]
+      ],
+      "rules": [
+        "R21",
+        "R22",
+        "R27"
+      ],
+      "image": "bilder/EG-23.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -44076.51632476483,
+        17621.196691383222,
+        -40901.4637761743,
+        26969.962528899785
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4,
+      "markers": []
+    },
+    {
+      "id": "EG-24",
+      "title": "Außenstiege 4: Verlauf und Unterlaufschutz",
+      "topic": "Treppen",
+      "roi": [
+        1780,
+        2000,
+        2450,
+        2250
+      ],
+      "base": "clean",
+      "sections": [
+        [
+          "Die Treppe ist seitlich gedreht",
+          "Stiege 4 trägt F0.06. Die Stufen laufen quer über das Blatt; der Plan nennt 31 STG 15/30. Die Merkmale einer Treppe bleiben erkennbar, auch wenn ihr Lauf horizontal im Bild erscheint."
+        ],
+        [
+          "Unter der Treppe nicht raten",
+          "Die Beschriftung „Sitzelement Unterlaufschutz“ ist ein deutlicher Hinweis auf eine zusätzliche Begrenzung. Der Bereich unter einem Lauf darf ohne Höhen- und Hindernisprüfung nicht als freier Durchlauf angenommen werden."
+        ],
+        [
+          "Richtung und Geschoss",
+          "Die Laufdarstellung hilft beim Erkennen der Bewegungsrichtung. Die tatsächlichen Höhen und Anschlüsse sind mit Nachbargrundriss oder Schnitt zu bestätigen. NA am Planrand ersetzt diesen Abgleich nicht."
+        ]
+      ],
+      "rules": [
+        "R14",
+        "R21",
+        "R22",
+        "R27"
+      ],
+      "image": "bilder/EG-24.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -28554.03719832224,
+        11976.658827222282,
+        -16735.78604523527,
+        16386.454033598016
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4,
+      "markers": []
+    },
+    {
+      "id": "EG-25",
+      "title": "Außenstiege 3: gleicher Typ, eigener Anschluss",
+      "topic": "Treppen",
+      "roi": [
+        2820,
+        2500,
+        3450,
+        2740
+      ],
+      "base": "clean",
+      "sections": [
+        [
+          "Beleg im EG",
+          "Die zweite äußere Stiege heißt F0.07 beziehungsweise Stiege 3. Auch hier stehen 31 STG 15/30 und fortlaufende Stufennummern. Ihre Lage ist von Stiege 4 getrennt."
+        ],
+        [
+          "Was die Software speichern soll",
+          "Eine eigene Treppenanlage mit Laufbereich, Endbereichen, Quellbelegen und noch offenen Höhenanschlüssen. Die Anlagen-ID bleibt geschossübergreifend gleich; die konkrete Geschossinstanz erhält eine eigene Kennung."
+        ],
+        [
+          "Zusammenarbeit mit dem UG-Chat",
+          "Beide Arbeitsstränge vergleichen später Anlage, Lage, Orientierung und Höhen. Erst danach wird ein bestätigter Geschossübergang eingetragen. Die bloße Nummer 3 ist kein ausreichender Geometriebeleg."
+        ]
+      ],
+      "rules": [
+        "R21",
+        "R22",
+        "R27"
+      ],
+      "image": "bilder/EG-25.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        -10209.289139799177,
+        3333.460222725839,
+        903.3947802676776,
+        7566.863620846545
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4,
+      "markers": []
+    },
+    {
+      "id": "EG-26",
+      "title": "Ausgang erkannt: Außenweg noch nicht belegt",
+      "topic": "Wege",
+      "roi": [
+        3430,
+        2670,
+        4140,
+        2920
+      ],
+      "base": "clean",
+      "markers": [],
+      "sections": [
+        [
+          "Positiver Beleg",
+          "An der unteren Fassade des Speiseraums sind Türöffnungen und NA-Kennzeichnungen sichtbar. Daraus lässt sich ein Übergang zwischen Innenbereich und unmittelbar angrenzender Außenseite untersuchen."
+        ],
+        [
+          "Die Wegkette hört nicht bei NA auf",
+          "Ein sicher erreichbarer Außenendpunkt benötigt den weiteren Verlauf mit Boden, Gelände, Einfriedung und möglichen Hindernissen. Diese Prüfung ist im vorliegenden EG-Grundriss nicht vollständig enthalten."
+        ],
+        [
+          "Für die Ausgabe",
+          "Türportal erkannt und Außenanschluss vorhanden dürfen getrennte Ergebnisse sein. Einen unbestätigten weiteren Weg ausdrücklich offen lassen. Dieses Lernpaket enthält keine freigegebenen Fluchtwege."
+        ]
+      ],
+      "rules": [
+        "R15",
+        "R16",
+        "R26"
+      ],
+      "image": "bilder/EG-26.png",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "cad_bbox_mm": [
+        550.6111637576187,
+        158.4076741353085,
+        13074.42954986471,
+        4568.202880511045
+      ],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "annotation_count": 4
+    },
+    {
+      "id": "EG-27",
+      "title": "Mauer lesen: zwei Kanten und Material dazwischen",
+      "topic": "Mauer-Detail",
+      "roi": [
+        1460,
+        930,
+        1540,
+        1020
+      ],
+      "base": "clean",
+      "sections": [
+        [
+          "Was genau ist die Mauer?",
+          "Der geschlossene rote Rahmen umfasst das gesamte Wandstück. Im Rahmen begrenzen die blaue und orange Randlinie ein schraffiertes Band. Material zwischen zwei Kanten und die Fortsetzung nach oben und unten sind gemeinsam die Belege für einen Wandkörper."
+        ],
+        [
+          "Warum kein Durchgang?",
+          "Zwischen den Kanten liegt Material. Der Körper kann diese Fläche nicht queren. Ein heller Zwischenraum in einer mehrschichtigen Darstellung ist ohne Öffnungsbeleg kein Gang."
+        ],
+        [
+          "Welche Linie gehört nicht dazu?",
+          "Die Beschriftung im Raum und ihre Buchstaben bilden keine Geometriegrenze. Wanddicke nur am Original-DXF oder an einer belegten Maßangabe bestimmen."
+        ]
+      ],
+      "rules": [
+        "R01",
+        "R02"
+      ],
+      "image": "bilder/EG-27.png",
+      "annotation_count": 3,
+      "markers": [],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "cad_bbox_mm": [
+        -34198.575062483185,
+        33672.85124259091,
+        -32787.440596442946,
+        35260.37751688617
+      ]
+    },
+    {
+      "id": "EG-28",
+      "title": "Außenwand: Kern, Dämmung und Eckanschluss",
+      "topic": "Mauer-Detail",
+      "roi": [
+        4965,
+        2710,
+        5110,
+        2840
+      ],
+      "base": "clean",
+      "sections": [
+        [
+          "Gesamten Aufbau erkennen",
+          "Der schraffierte Kern und die mit Schlaufen dargestellte Dämmlage gehören zum festen Außenabschluss. Die farbigen Konturen umfassen den gesamten sichtbaren Wandaufbau."
+        ],
+        [
+          "Warum ist die Ecke wichtig?",
+          "Die Schichten setzen sich um die Ecke fort. Innenkante und Außenkante bilden zusammen eine geschlossene Begrenzung. Der Innenraum endet vor diesem Aufbau."
+        ],
+        [
+          "Für die Raumerkennung",
+          "Die Außenseite des Kerns allein ist keine ausreichende Hindernisgrenze. Auch breite Dämm- und Bekleidungsschichten nicht als begehbaren Streifen ausgeben."
+        ]
+      ],
+      "rules": [
+        "R01",
+        "R02"
+      ],
+      "image": "bilder/EG-28.png",
+      "annotation_count": 4,
+      "markers": [],
+      "source_pdf": "quellen/Schule_SH22_EG.pdf",
+      "source_dxf": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "pdf_page": 1,
+      "roi_unit": "PDF_point_top_left_origin",
+      "geometry_type": "Suchbereich_keine_Objektgrenze",
+      "status": "am_Originalplan_visuell_interpretiert_kein_Engine_Test",
+      "cad_bbox_mm": [
+        27626.75373090464,
+        1569.542140175544,
+        30184.434950602565,
+        3862.635647490927
+      ]
+    }
+  ]
+}

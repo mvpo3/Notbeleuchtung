@@ -1,0 +1,649 @@
+{
+  "source_name": "Leopold_Kohr_Schule_EG_Lernbuch_final(1).pdf",
+  "source_sha256": "6a536b6354a1761bbe5f89f76383c16eccd3f774742aa9b7ff8da0397f6cc8a8",
+  "source_pages": 38,
+  "revision_pages": 39,
+  "korrekturen": [
+    {
+      "alte_seite": 5,
+      "neue_seite": 5,
+      "beispiel": "EG-02",
+      "umsetzung": "Außen- und Innenwandkanten direkt nachgezeichnet; Türöffnung und Raumstempel getrennt und präzise markiert."
+    },
+    {
+      "alte_seite": 6,
+      "neue_seite": 6,
+      "beispiel": "EG-03",
+      "umsetzung": "Je zwei Wandkanten markiert; Stützenpfeil auf die tatsächliche schraffierte Stütze gesetzt; Deckenrand nachgezogen."
+    },
+    {
+      "alte_seite": 8,
+      "neue_seite": 8,
+      "beispiel": "EG-05",
+      "umsetzung": "Massives Küchenwandstück, Türöffnung, gesamte Außenwand und Tischgruppe räumlich eindeutig markiert."
+    },
+    {
+      "alte_seite": 9,
+      "neue_seite": 9,
+      "beispiel": "EG-06",
+      "umsetzung": "Schräge Wandkanten ergänzt; die markierten Möbel und länglichen Einbauten separat umrandet."
+    },
+    {
+      "alte_seite": 10,
+      "neue_seite": 10,
+      "beispiel": "EG-07",
+      "umsetzung": "Sauberer Originalausschnitt; Kern und Dämmlage als Flächen umrandet; innere Kante und Türöffnung direkt verfolgt; unbelegte Tragfunktion entfernt."
+    },
+    {
+      "alte_seite": 18,
+      "neue_seite": 18,
+      "beispiel": "EG-15",
+      "umsetzung": "Möbel und Sessel weiß ausgespart; Wandpfeil von einem Möbel auf die tatsächliche schraffierte Wand versetzt."
+    },
+    {
+      "alte_seite": 21,
+      "neue_seite": 21,
+      "beispiel": "EG-18",
+      "umsetzung": "Stark vergrößerter Ausschnitt; Techniktext, Wandmaterial und Einbau getrennt markiert; genaue Durchbruchkontur ausdrücklich ungeklärt."
+    },
+    {
+      "alte_seite": 22,
+      "neue_seite": 22,
+      "beispiel": "EG-19",
+      "umsetzung": "Lift, Treppe und Vorbereich gemeinsam dargestellt; Lift vollständig aus grüner Fläche ausgespart."
+    },
+    {
+      "alte_seite": null,
+      "neue_seite": 23,
+      "beispiel": "EG-29",
+      "umsetzung": "Gewünschte zusätzliche Lift-Seite mit Kabine, Schiebetürlinien, Schachtwand, Technikabstand, Beschriftung und Vorbereich."
+    },
+    {
+      "alte_seite": 31,
+      "neue_seite": 32,
+      "beispiel": "EG-28",
+      "umsetzung": "Gelobte Außenwand-Nahaufnahme unverändert erhalten."
+    },
+    {
+      "alte_seite": 35,
+      "neue_seite": 36,
+      "beispiel": "G-D",
+      "umsetzung": "Alle sechs markierten Möbel-/Waschbeckenstellen weiß ausgespart; auch Gesamtplan und andere betroffene Ausschnitte aktualisiert."
+    }
+  ],
+  "originalanmerkungen": [
+    {
+      "seite": 5,
+      "typ": "Line",
+      "rechteck_pt": [
+        284.5552978515625,
+        316.08551025390625,
+        319.4681091308594,
+        321.173828125
+      ],
+      "text": ""
+    },
+    {
+      "seite": 5,
+      "typ": "Line",
+      "rechteck_pt": [
+        284.02978515625,
+        320.12164306640625,
+        319.4418029785156,
+        325.3887939453125
+      ],
+      "text": ""
+    },
+    {
+      "seite": 5,
+      "typ": "Circle",
+      "rechteck_pt": [
+        677.01171875,
+        293.3387451171875,
+        831.1514892578125,
+        447.478515625
+      ],
+      "text": ""
+    },
+    {
+      "seite": 5,
+      "typ": "Stamp",
+      "rechteck_pt": [
+        757.9415283203125,
+        383.94830322265625,
+        772.9387817382812,
+        408.1676025390625
+      ],
+      "text": ""
+    },
+    {
+      "seite": 5,
+      "typ": "Stamp",
+      "rechteck_pt": [
+        765.1350708007812,
+        406.08392333984375,
+        770.4913940429688,
+        412.2436218261719
+      ],
+      "text": ""
+    },
+    {
+      "seite": 5,
+      "typ": "Line",
+      "rechteck_pt": [
+        350.1319885253906,
+        338.61151123046875,
+        355.1319885253906,
+        360.27239990234375
+      ],
+      "text": ""
+    },
+    {
+      "seite": 5,
+      "typ": "Line",
+      "rechteck_pt": [
+        346.3951110839844,
+        337.79412841796875,
+        355.1907043457031,
+        342.8592224121094
+      ],
+      "text": ""
+    },
+    {
+      "seite": 5,
+      "typ": "Line",
+      "rechteck_pt": [
+        346.45111083984375,
+        338.1269226074219,
+        351.6470031738281,
+        360.3558044433594
+      ],
+      "text": ""
+    },
+    {
+      "seite": 5,
+      "typ": "Line",
+      "rechteck_pt": [
+        346.64129638671875,
+        355.6329040527344,
+        356.77740478515625,
+        360.7645263671875
+      ],
+      "text": ""
+    },
+    {
+      "seite": 5,
+      "typ": "Circle",
+      "rechteck_pt": [
+        142.74510192871094,
+        376.6647033691406,
+        190.1179962158203,
+        425.1317138671875
+      ],
+      "text": ""
+    },
+    {
+      "seite": 5,
+      "typ": "Circle",
+      "rechteck_pt": [
+        8.974074363708496,
+        155.14239501953125,
+        173.30189514160156,
+        272.86712646484375
+      ],
+      "text": ""
+    },
+    {
+      "seite": 5,
+      "typ": "Stamp",
+      "rechteck_pt": [
+        64.87699890136719,
+        228.8590087890625,
+        79.76909637451172,
+        250.300537109375
+      ],
+      "text": ""
+    },
+    {
+      "seite": 5,
+      "typ": "Stamp",
+      "rechteck_pt": [
+        68.1691665649414,
+        252.32171630859375,
+        75.16570281982422,
+        258.8765869140625
+      ],
+      "text": ""
+    },
+    {
+      "seite": 6,
+      "typ": "Line",
+      "rechteck_pt": [
+        413.9613037109375,
+        269.18719482421875,
+        464.2052917480469,
+        274.18719482421875
+      ],
+      "text": ""
+    },
+    {
+      "seite": 6,
+      "typ": "Line",
+      "rechteck_pt": [
+        413.662109375,
+        264.12054443359375,
+        464.06610107421875,
+        269.322998046875
+      ],
+      "text": ""
+    },
+    {
+      "seite": 6,
+      "typ": "Circle",
+      "rechteck_pt": [
+        466.7348937988281,
+        184.17071533203125,
+        495.3171081542969,
+        212.75299072265625
+      ],
+      "text": ""
+    },
+    {
+      "seite": 6,
+      "typ": "Line",
+      "rechteck_pt": [
+        301.59381103515625,
+        455.56561279296875,
+        307.2085876464844,
+        537.7404174804688
+      ],
+      "text": ""
+    },
+    {
+      "seite": 6,
+      "typ": "Line",
+      "rechteck_pt": [
+        310.6846008300781,
+        455.7629089355469,
+        316.410888671875,
+        534.858642578125
+      ],
+      "text": ""
+    },
+    {
+      "seite": 6,
+      "typ": "Line",
+      "rechteck_pt": [
+        432.7860107421875,
+        480.2095031738281,
+        437.7860107421875,
+        522.93310546875
+      ],
+      "text": ""
+    },
+    {
+      "seite": 6,
+      "typ": "Line",
+      "rechteck_pt": [
+        437.8117980957031,
+        480.2400207519531,
+        442.8117980957031,
+        522.904296875
+      ],
+      "text": ""
+    },
+    {
+      "seite": 8,
+      "typ": "Circle",
+      "rechteck_pt": [
+        475.9879150390625,
+        454.75732421875,
+        507.6431884765625,
+        480.7262268066406
+      ],
+      "text": ""
+    },
+    {
+      "seite": 8,
+      "typ": "Circle",
+      "rechteck_pt": [
+        24.16250991821289,
+        290.647216796875,
+        134.93429565429688,
+        401.41900634765625
+      ],
+      "text": ""
+    },
+    {
+      "seite": 8,
+      "typ": "Circle",
+      "rechteck_pt": [
+        666.852783203125,
+        269.83489990234375,
+        845.3947143554688,
+        433.78192138671875
+      ],
+      "text": ""
+    },
+    {
+      "seite": 8,
+      "typ": "Circle",
+      "rechteck_pt": [
+        249.7689971923828,
+        397.048828125,
+        273.58209228515625,
+        420.8619079589844
+      ],
+      "text": ""
+    },
+    {
+      "seite": 8,
+      "typ": "Stamp",
+      "rechteck_pt": [
+        728.4124145507812,
+        375.80291748046875,
+        755.084716796875,
+        425.3564147949219
+      ],
+      "text": ""
+    },
+    {
+      "seite": 8,
+      "typ": "Stamp",
+      "rechteck_pt": [
+        741.413330078125,
+        423.3053283691406,
+        753.6544799804688,
+        436.42352294921875
+      ],
+      "text": ""
+    },
+    {
+      "seite": 8,
+      "typ": "Line",
+      "rechteck_pt": [
+        662.2681884765625,
+        462.718017578125,
+        667.2681884765625,
+        510.2873229980469
+      ],
+      "text": ""
+    },
+    {
+      "seite": 8,
+      "typ": "Line",
+      "rechteck_pt": [
+        672.9588012695312,
+        461.7043151855469,
+        677.9588012695312,
+        501.7532043457031
+      ],
+      "text": ""
+    },
+    {
+      "seite": 8,
+      "typ": "Circle",
+      "rechteck_pt": [
+        478.42669677734375,
+        365.1142272949219,
+        505.1642150878906,
+        391.8517150878906
+      ],
+      "text": ""
+    },
+    {
+      "seite": 8,
+      "typ": "Stamp",
+      "rechteck_pt": [
+        477.67120361328125,
+        346.8979187011719,
+        490.5237121582031,
+        360.79241943359375
+      ],
+      "text": ""
+    },
+    {
+      "seite": 8,
+      "typ": "Circle",
+      "rechteck_pt": [
+        483.59869384765625,
+        360.4981994628906,
+        488.6575012207031,
+        365.5569152832031
+      ],
+      "text": ""
+    },
+    {
+      "seite": 9,
+      "typ": "Circle",
+      "rechteck_pt": [
+        311.3086853027344,
+        329.1688232421875,
+        392.39801025390625,
+        410.2580261230469
+      ],
+      "text": ""
+    },
+    {
+      "seite": 9,
+      "typ": "Circle",
+      "rechteck_pt": [
+        496.4861145019531,
+        321.4244384765625,
+        563.3823852539062,
+        388.3207092285156
+      ],
+      "text": ""
+    },
+    {
+      "seite": 9,
+      "typ": "Circle",
+      "rechteck_pt": [
+        433.70001220703125,
+        350.49700927734375,
+        496.5281066894531,
+        408.46612548828125
+      ],
+      "text": ""
+    },
+    {
+      "seite": 9,
+      "typ": "Square",
+      "rechteck_pt": [
+        357.222412109375,
+        207.6842041015625,
+        462.3561096191406,
+        271.3115234375
+      ],
+      "text": ""
+    },
+    {
+      "seite": 9,
+      "typ": "Square",
+      "rechteck_pt": [
+        191.56390380859375,
+        244.1710205078125,
+        356.8052978515625,
+        328.98748779296875
+      ],
+      "text": ""
+    },
+    {
+      "seite": 10,
+      "typ": "Stamp",
+      "rechteck_pt": [
+        589.5025024414062,
+        397.7106018066406,
+        755.4395141601562,
+        580.4373779296875
+      ],
+      "text": ""
+    },
+    {
+      "seite": 10,
+      "typ": "Circle",
+      "rechteck_pt": [
+        639.9716796875,
+        602.8177490234375,
+        706.3536987304688,
+        640.4765014648438
+      ],
+      "text": ""
+    },
+    {
+      "seite": 18,
+      "typ": "Circle",
+      "rechteck_pt": [
+        509.7225036621094,
+        429.3533020019531,
+        550.9766235351562,
+        493.78582763671875
+      ],
+      "text": ""
+    },
+    {
+      "seite": 18,
+      "typ": "Line",
+      "rechteck_pt": [
+        600.5211181640625,
+        447.1413269042969,
+        668.88818359375,
+        503.492919921875
+      ],
+      "text": ""
+    },
+    {
+      "seite": 21,
+      "typ": "Stamp",
+      "rechteck_pt": [
+        345.9429016113281,
+        184.239501953125,
+        458.0071105957031,
+        305.7974853515625
+      ],
+      "text": ""
+    },
+    {
+      "seite": 21,
+      "typ": "Circle",
+      "rechteck_pt": [
+        412.1619873046875,
+        314.04888916015625,
+        449.67388916015625,
+        351.5608215332031
+      ],
+      "text": ""
+    },
+    {
+      "seite": 21,
+      "typ": "FreeText",
+      "rechteck_pt": [
+        150.47760009765625,
+        546.720703125,
+        536.2907104492188,
+        577.087646484375
+      ],
+      "text": "Besser Erklären und besser einzeichnen"
+    },
+    {
+      "seite": 22,
+      "typ": "FreeText",
+      "rechteck_pt": [
+        599.0734252929688,
+        488.7375183105469,
+        885.9066162109375,
+        569.1043090820312
+      ],
+      "text": "Besser erklären und besser einzeichnen/ mach eine extra Seite wo du denn Lift erklärst "
+    },
+    {
+      "seite": 31,
+      "typ": "FreeText",
+      "rechteck_pt": [
+        610.2197875976562,
+        644.9677124023438,
+        1065.9959716796875,
+        675.3345336914062
+      ],
+      "text": "Sowas ist sehr gut, brav"
+    },
+    {
+      "seite": 35,
+      "typ": "Circle",
+      "rechteck_pt": [
+        667.1126708984375,
+        385.60772705078125,
+        736.5510864257812,
+        449.2679138183594
+      ],
+      "text": ""
+    },
+    {
+      "seite": 35,
+      "typ": "Circle",
+      "rechteck_pt": [
+        609.7208251953125,
+        318.27569580078125,
+        697.6715698242188,
+        406.2264099121094
+      ],
+      "text": ""
+    },
+    {
+      "seite": 35,
+      "typ": "Circle",
+      "rechteck_pt": [
+        687.6629028320312,
+        297.52099609375,
+        775.6723022460938,
+        385.530517578125
+      ],
+      "text": ""
+    },
+    {
+      "seite": 35,
+      "typ": "Circle",
+      "rechteck_pt": [
+        759.1488037109375,
+        332.51080322265625,
+        879.17041015625,
+        434.7540283203125
+      ],
+      "text": ""
+    },
+    {
+      "seite": 35,
+      "typ": "Circle",
+      "rechteck_pt": [
+        456.03680419921875,
+        294.55340576171875,
+        549.1655883789062,
+        387.6822204589844
+      ],
+      "text": ""
+    },
+    {
+      "seite": 35,
+      "typ": "Circle",
+      "rechteck_pt": [
+        440.33441162109375,
+        488.0157165527344,
+        486.21209716796875,
+        553.8482055664062
+      ],
+      "text": ""
+    },
+    {
+      "seite": 35,
+      "typ": "FreeText",
+      "rechteck_pt": [
+        668.6339721679688,
+        592.6441040039062,
+        977.5772705078125,
+        673.0109252929688
+      ],
+      "text": "Das was ist makiert habe sind Möbel oder Waschbecken, gehört auch in weiß"
+    }
+  ],
+  "engine_ausgefuehrt": false
+}

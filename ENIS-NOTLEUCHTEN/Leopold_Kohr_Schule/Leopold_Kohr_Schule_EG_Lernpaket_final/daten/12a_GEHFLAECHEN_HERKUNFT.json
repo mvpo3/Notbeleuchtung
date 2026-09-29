@@ -1,0 +1,20 @@
+{
+  "floor": "EG",
+  "methode": "Manuelle Bereichsumrisse, Abzug der dokumentierten Lern-Wandkonturen sowie gesonderter Sperrflächen und CAD-Einbaukonturen einschließlich Kurven sowie ergänzter Möbelumrisse nach Nutzerkorrektur.",
+  "originale_unveraendert": true,
+  "dunkelgruen": "zusammenhaengende_Erschliessungsbeispiele",
+  "hellgruen": "Bodenbereiche_mit_erkennbaren_Hindernissen_ausgespart",
+  "amber": "Geschossboden_ungeklaert",
+  "keine_gemessene_Koerperhuelle": true,
+  "keine_automatische_Sackgasseninventur": true,
+  "treppen_zielgeschoss_bestaetigt": false,
+  "engine_ausgefuehrt": false,
+  "revision": "Nutzerkorrekturen_3",
+  "kurven_beruecksichtigt": true,
+  "geschlossene_teilpolygone_mit_kurven": 1277,
+  "manuelle_moebelumrisse": 7,
+  "manuelle_moebel_datei": "15_MOEBEL_KORREKTUREN_EG.geojson",
+  "lift_1_vollstaendig_ausgespart": true,
+  "mobiliar_polygonanzahl_vorversion_nur_linien": 799,
+  "moebel_umrisse_mit_kurven": 1277
+}

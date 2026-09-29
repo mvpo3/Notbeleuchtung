@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UG recognition observation",
+  "type": "object",
+  "required": [
+    "case_id",
+    "floor",
+    "object_role",
+    "evidence",
+    "source",
+    "passability",
+    "open_questions"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "floor": {
+      "const": "UG"
+    },
+    "object_role": {
+      "enum": [
+        "wall",
+        "fixed_partition",
+        "column",
+        "door",
+        "window",
+        "open_passage",
+        "corridor",
+        "stair",
+        "low_barrier",
+        "handrail",
+        "lift_shaft",
+        "annotation",
+        "unresolved"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "file",
+        "page",
+        "clip_pdf_points"
+      ],
+      "properties": {
+        "file": {
+          "type": "string"
+        },
+        "page": {
+          "const": 1
+        },
+        "clip_pdf_points": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number"
+          }
+        },
+        "dxf_handles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "passability": {
+      "enum": [
+        "blocked_at_relevant_level",
+        "door_state_unknown",
+        "open_geometry_clearance_unverified",
+        "stairs_height_link_unverified",
+        "not_an_ordinary_walk_portal",
+        "unresolved"
+      ]
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "connects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Only locally supported endpoints; no invented floor link."
+    },
+    "raw_text": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "height_direction": {
+      "enum": [
+        "up_confirmed",
+        "down_confirmed",
+        "conditional_convention",
+        "not_applicable",
+        "unknown"
+      ]
+    }
+  }
+}

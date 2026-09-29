@@ -1,0 +1,13 @@
+{
+  "floor": "UG",
+  "source_pdf": "quellen/Schule_SH22_UG.pdf",
+  "confirmed_window_annotations": [],
+  "meaning": "No window unambiguously localized in this reviewed sheet. This is not proof that no windows exist.",
+  "counterexample": "F01",
+  "unresolved_evidence": "F02",
+  "needed_for_confirmation": [
+    "Matching elevation or section",
+    "Window/opening schedule or identifier",
+    "Sill and head elevation related to UG walking level"
+  ]
+}

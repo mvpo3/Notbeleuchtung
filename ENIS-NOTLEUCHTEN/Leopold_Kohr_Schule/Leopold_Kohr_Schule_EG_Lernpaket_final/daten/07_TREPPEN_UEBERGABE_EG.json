@@ -1,0 +1,98 @@
+{
+  "schema": "rivoplan.eg_lernpaket.stairs/1",
+  "stairs": [
+    {
+      "anlage_id": "SH22-LKS-STIEGE-1",
+      "eg_instanz": "SH22-LKS-EG-0.002",
+      "raumkennung": "0.002",
+      "angrenzender_bereich_label": "0.001",
+      "example_id": "EG-20",
+      "planbeschriftung": [
+        "13 STG 15/30",
+        "16 STG 15/30"
+      ],
+      "hoehe_start_mm": null,
+      "hoehe_ziel_mm": null,
+      "zielgeschoss": null,
+      "verbindung_bestaetigt": false,
+      "naechster_schritt": "Mit UG-/OG-Instanz anhand Geometrie, Laufdarstellung und Höhen abgleichen; keine Zuordnung nur aus Nummer."
+    },
+    {
+      "anlage_id": "SH22-LKS-STIEGE-2",
+      "eg_instanz": "SH22-LKS-EG-0.006",
+      "raumkennung": "0.006",
+      "angrenzender_bereich_label": "0.005",
+      "example_id": "EG-21",
+      "planbeschriftung": [
+        "13 STG 15/30",
+        "16 STG 15/30"
+      ],
+      "hoehe_start_mm": null,
+      "hoehe_ziel_mm": null,
+      "zielgeschoss": null,
+      "verbindung_bestaetigt": false,
+      "naechster_schritt": "Mit UG-/OG-Instanz anhand Geometrie, Laufdarstellung und Höhen abgleichen; keine Zuordnung nur aus Nummer."
+    },
+    {
+      "anlage_id": "SH22-LKS-STIEGE-3",
+      "eg_instanz": "SH22-LKS-EG-F0.07",
+      "raumkennung": "F0.07",
+      "angrenzender_bereich_label": null,
+      "example_id": "EG-25",
+      "planbeschriftung": [
+        "31 STG 15/30"
+      ],
+      "hoehe_start_mm": null,
+      "hoehe_ziel_mm": null,
+      "zielgeschoss": null,
+      "verbindung_bestaetigt": false,
+      "naechster_schritt": "Mit UG-/OG-Instanz anhand Geometrie, Laufdarstellung und Höhen abgleichen; keine Zuordnung nur aus Nummer."
+    },
+    {
+      "anlage_id": "SH22-LKS-STIEGE-4",
+      "eg_instanz": "SH22-LKS-EG-F0.06",
+      "raumkennung": "F0.06",
+      "angrenzender_bereich_label": null,
+      "example_id": "EG-24",
+      "planbeschriftung": [
+        "31 STG 15/30"
+      ],
+      "hoehe_start_mm": null,
+      "hoehe_ziel_mm": null,
+      "zielgeschoss": null,
+      "verbindung_bestaetigt": false,
+      "naechster_schritt": "Mit UG-/OG-Instanz anhand Geometrie, Laufdarstellung und Höhen abgleichen; keine Zuordnung nur aus Nummer."
+    },
+    {
+      "anlage_id": "SH22-LKS-STIEGE-5",
+      "eg_instanz": "SH22-LKS-EG-0.010",
+      "raumkennung": "0.010",
+      "angrenzender_bereich_label": "0.011",
+      "example_id": "EG-22",
+      "planbeschriftung": [
+        "19 STG 16,2/27"
+      ],
+      "hoehe_start_mm": null,
+      "hoehe_ziel_mm": null,
+      "zielgeschoss": null,
+      "verbindung_bestaetigt": false,
+      "naechster_schritt": "Mit UG-/OG-Instanz anhand Geometrie, Laufdarstellung und Höhen abgleichen; keine Zuordnung nur aus Nummer."
+    },
+    {
+      "anlage_id": "SH22-LKS-STIEGE-6",
+      "eg_instanz": "SH22-LKS-EG-0.015",
+      "raumkennung": "0.015",
+      "angrenzender_bereich_label": "0.016",
+      "example_id": "EG-23",
+      "planbeschriftung": [
+        "19 STG 16,2/27"
+      ],
+      "hoehe_start_mm": null,
+      "hoehe_ziel_mm": null,
+      "zielgeschoss": null,
+      "verbindung_bestaetigt": false,
+      "naechster_schritt": "Mit UG-/OG-Instanz anhand Geometrie, Laufdarstellung und Höhen abgleichen; keine Zuordnung nur aus Nummer."
+    }
+  ],
+  "freigegebene_routen": []
+}

@@ -1,0 +1,450 @@
+[
+  {
+    "layer": "0",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "TEXT": 1
+    }
+  },
+  {
+    "layer": "E_BRK",
+    "color": 150,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 154
+    }
+  },
+  {
+    "layer": "E_Brandabschnitt",
+    "color": 30,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LWPOLYLINE": 27
+    }
+  },
+  {
+    "layer": "E_FDB",
+    "color": 20,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 23,
+      "SOLID": 4,
+      "WIPEOUT": 1,
+      "MTEXT": 2,
+      "CIRCLE": 2,
+      "HATCH": 2
+    }
+  },
+  {
+    "layer": "E_BMA",
+    "color": 1,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "ELLIPSE": 30,
+      "SOLID": 9
+    }
+  },
+  {
+    "layer": "E_AV_Lichteinbau",
+    "color": 150,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 1592,
+      "MTEXT": 404,
+      "WIPEOUT": 8
+    }
+  },
+  {
+    "layer": "E_AV_Verteiler",
+    "color": 150,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 50,
+      "WIPEOUT": 8,
+      "ELLIPSE": 32,
+      "MTEXT": 8
+    }
+  },
+  {
+    "layer": "E_Hausalarm",
+    "color": 5,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "CIRCLE": 8,
+      "LINE": 32,
+      "HATCH": 8
+    }
+  },
+  {
+    "layer": "E_BRE",
+    "color": 30,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 32,
+      "CIRCLE": 10,
+      "HATCH": 2
+    }
+  },
+  {
+    "layer": "810 Raumstempel",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "MTEXT": 665
+    }
+  },
+  {
+    "layer": "Neubau_810 Raumstempel",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "MTEXT": 62
+    }
+  },
+  {
+    "layer": "210 Decke",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 845,
+      "SOLID": 171
+    }
+  },
+  {
+    "layer": "220 Bodenaufbau",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 604,
+      "ELLIPSE": 8
+    }
+  },
+  {
+    "layer": "211 Decke abgehaengt",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 282
+    }
+  },
+  {
+    "layer": "212 Unterdaemmung",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 126
+    }
+  },
+  {
+    "layer": "410 Treppe",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 896,
+      "ELLIPSE": 28,
+      "MTEXT": 198
+    }
+  },
+  {
+    "layer": "130 Wand Vorsatzschale",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 6906,
+      "ELLIPSE": 3740,
+      "SOLID": 156
+    }
+  },
+  {
+    "layer": "125 Wand Innen tragend",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 58019,
+      "SOLID": 4,
+      "ELLIPSE": 44,
+      "MTEXT": 150
+    }
+  },
+  {
+    "layer": "120 Wand Innen",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 12923,
+      "ELLIPSE": 8,
+      "MTEXT": 52,
+      "SOLID": 110
+    }
+  },
+  {
+    "layer": "115 Wand Aussen tragend",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 40749,
+      "SOLID": 494,
+      "ELLIPSE": 45,
+      "MTEXT": 367
+    }
+  },
+  {
+    "layer": "112 Wand Außen Bekleidung",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 23085,
+      "ELLIPSE": 7306,
+      "SOLID": 8
+    }
+  },
+  {
+    "layer": "110 Wand Aussen",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 874,
+      "ELLIPSE": 12,
+      "MTEXT": 56,
+      "SOLID": 24
+    }
+  },
+  {
+    "layer": "Neubau_120 Wand Innen",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 371,
+      "SOLID": 12
+    }
+  },
+  {
+    "layer": "135 Fertigteile",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 437
+    }
+  },
+  {
+    "layer": "160 Fassade Pfosten-Riegel vorgehaengt",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 659,
+      "ELLIPSE": 19,
+      "SOLID": 331
+    }
+  },
+  {
+    "layer": "140 Bruestung",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 61
+    }
+  },
+  {
+    "layer": "440 Gelaender",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "SOLID": 1427,
+      "LINE": 817,
+      "ELLIPSE": 36,
+      "CIRCLE": 8
+    }
+  },
+  {
+    "layer": "340 Ablaeufe",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 691
+    }
+  },
+  {
+    "layer": "510 Moeblierung",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 13326,
+      "ELLIPSE": 2715,
+      "CIRCLE": 9,
+      "MTEXT": 3
+    }
+  },
+  {
+    "layer": "530 Kueche",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 506,
+      "CIRCLE": 6,
+      "MTEXT": 6,
+      "ELLIPSE": 6
+    }
+  },
+  {
+    "layer": "540 Sanitaereinrichtung",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 1141,
+      "ELLIPSE": 113,
+      "CIRCLE": 17
+    }
+  },
+  {
+    "layer": "971 Beschriftung Brandschutz",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 327,
+      "SOLID": 191,
+      "MTEXT": 262,
+      "ELLIPSE": 153
+    }
+  },
+  {
+    "layer": "961 Beschriftung",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "SOLID": 28,
+      "LINE": 48,
+      "MTEXT": 92
+    }
+  },
+  {
+    "layer": "216 Decke Vouten.3D",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 24,
+      "SOLID": 6
+    }
+  },
+  {
+    "layer": "150 Stuetze",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 2252
+    }
+  },
+  {
+    "layer": "330 Dachaufbau",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 76
+    }
+  },
+  {
+    "layer": "Neubau_125 Wand Innen tragend",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 123,
+      "ELLIPSE": 188
+    }
+  },
+  {
+    "layer": "170 Sonnenschutz",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 12
+    }
+  },
+  {
+    "layer": "230 Traeger",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 151,
+      "SOLID": 30
+    }
+  },
+  {
+    "layer": "132 Verkleidung vertikal",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 8
+    }
+  },
+  {
+    "layer": "Neubau_430 Aufzug",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 1759
+    }
+  },
+  {
+    "layer": "963 Beschriftung Rohbau",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "LINE": 10,
+      "MTEXT": 184
+    }
+  },
+  {
+    "layer": "129 Wand Innen Trennwand WC",
+    "color": 7,
+    "off": false,
+    "frozen": false,
+    "types": {
+      "SOLID": 16,
+      "LINE": 22,
+      "ELLIPSE": 2,
+      "MTEXT": 8
+    }
+  }
+]

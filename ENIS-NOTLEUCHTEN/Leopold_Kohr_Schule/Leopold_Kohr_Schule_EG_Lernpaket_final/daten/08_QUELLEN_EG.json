@@ -1,0 +1,53 @@
+{
+  "schema": "rivoplan.eg_lernpaket.sources/1",
+  "project": "SH22-LKS / Leopold-Kohr-Schule",
+  "floor": "EG",
+  "created": "2026-09-21",
+  "sources": [
+    {
+      "id": "Q-DXF",
+      "path": "quellen/20220225-SH22-LKS-GE-AP-EG-01-C.dxf",
+      "sha256": "06e6bbb51121939c7340c1ba1c22649ea1247d7f15edc686da8ef82eded37b10",
+      "bytes": 47279454,
+      "status": "unveraendertes_Original",
+      "insunits": 4,
+      "units": "mm"
+    },
+    {
+      "id": "Q-PDF",
+      "path": "quellen/Schule_SH22_EG.pdf",
+      "sha256": "dfa6a71a1907b0c2b2ecc3f7912cea62985358a3dfe77db2c2402968514cf34f",
+      "bytes": 6212279,
+      "status": "unveraenderte_vorhandene_PDF_Ansicht",
+      "pages": 1,
+      "page_size_pt": [
+        5227,
+        3727
+      ]
+    }
+  ],
+  "display_changes": [
+    "Elektrische Überlagerungen ausgeblendet",
+    "Architektur abgedunkelt",
+    "Unveränderte rote Lernkonturen",
+    "Direkte farbige Merkmal-Linien, Textkarten und Pfeile",
+    "Grüne interpretierte Bodenflächen mit ausgesparten Hindernissen; Originalstufen schwarz"
+  ],
+  "transform_dxf_mm_to_pdf_pt": {
+    "x_pdf": "3398.78476561896 + x_dxf * 0.056691975091847105",
+    "y_pdf": "2928.9804439164363 - y_dxf * 0.056691975091847105",
+    "scale": 0.056691975091847105,
+    "tx": 3398.78476561896,
+    "ty": 2928.9804439164363,
+    "verification_anchor_count": 6,
+    "max_residual_pt": 0.00010075847072894581
+  },
+  "door_radius_check": {
+    "source_handle": "87DB2",
+    "type": "ELLIPSE",
+    "major_axis_mm": 899.9999999998089,
+    "ratio": 1.0,
+    "example": "EG-09"
+  },
+  "scope_limit": "Planstand aus Dateiname 25.02.2022; keine Bestandsbegehung, Normenprüfung oder aktuelle Ausführungsbestätigung."
+}

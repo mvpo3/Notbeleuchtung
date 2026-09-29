@@ -1,0 +1,687 @@
+{
+  "version": "2.1",
+  "project": "SH22",
+  "floor": "UG",
+  "purpose": "instructional_examples_not_exhaustive_object_inventory",
+  "cases": [
+    {
+      "id": "M01",
+      "floor": "UG",
+      "title": "Was ist eine Mauer?",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          31.53314208984375,
+          531.9617309570312,
+          116.56056213378906,
+          645.3316040039062
+        ],
+        "legacy_crop_id": "U03"
+      },
+      "lesson_file": "lektionen/M01.md",
+      "book_page": 13,
+      "classification": "wall_assembly",
+      "observations": [
+        "Das senkrechte Band besitzt mehrere klare Ränder. Dazwischen liegen Diagonalschraffur und ein wiederholtes Zickzackmuster. Rechts beginnt die freie Hallenseite.",
+        "Die Muster sind in begrenzten Schichten organisiert und setzen sich entlang der Wand fort. Im Gesamtplan schließen sie an andere Wandabschnitte an. Diese Kombination ist stärker als eine einzelne dicke Linie.",
+        "Lage, Verlauf, Ecken, Schichtfolge und Anschlüsse sind sichtbar. Exakte Dicke braucht eine bestätigte Bemaßung oder kalibrierte Geometrie. Material und Tragwirkung nicht allein aus Grauton oder Muster ableiten.",
+        "Die komplette bauliche Dicke bildet eine Sperre auf dem relevanten Niveau. Die freie Raumfläche endet an der raumseitigen Oberfläche. Dünne Schichtzwischenräume sind keine begehbaren Räume."
+      ],
+      "question": "Ist eine Schraffurlinie selbst die ganze Wand?",
+      "expected_answer": "Nein. Wandränder, Schichten, Muster und Anschlüsse müssen zusammen gelesen werden.",
+      "forbidden_inferences": [
+        "single_line_equals_wall",
+        "hatch_cell_equals_room"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 14,
+      "annotated_image": "bilder/beschriftet/M01_BILD.png"
+    },
+    {
+      "id": "M02",
+      "floor": "UG",
+      "title": "Breite Außenmauer: alle Schichten gehören dazu",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          241.2674560546875,
+          21.797191619873047,
+          331.96337890625,
+          101.15612030029297
+        ],
+        "legacy_crop_id": "U28"
+      },
+      "lesson_file": "lektionen/M02.md",
+      "book_page": 15,
+      "classification": "wall_assembly",
+      "observations": [
+        "Am oberen Hallenrand liegen mehrere horizontale Schichten. Die Quelle zeigt Zickzackmuster, Diagonalschraffur, dunkle Bänder und die anschließende weiße Raumseite.",
+        "Ein Mensch kann nicht durch den Kern oder durch die Bekleidung gehen. Für die Raumhülle zählt deshalb die gesamte zusammenhängende Bauteilgruppe, einschließlich ihrer Außen- und Innenseite.",
+        "Für die freie Bodenfläche wird die raumseitige Oberfläche verfolgt. Eine weiter außen liegende Schichtlinie würde Wandmaterial zur Raumfläche zählen.",
+        "Schraffur und Quelllayer liefern Hinweise auf den Wandaufbau. Eine verbindliche Materialbezeichnung oder statische Einstufung verlangt weitere Planangaben."
+      ],
+      "question": "Sind vier parallele Schichten vier Räume?",
+      "expected_answer": "Nein. Sie sind hier Teile eines gemeinsamen Wandaufbaus.",
+      "forbidden_inferences": [
+        "wall_layer_gap_equals_passage"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 16,
+      "annotated_image": "bilder/beschriftet/M02_BILD.png"
+    },
+    {
+      "id": "M03",
+      "floor": "UG",
+      "title": "Wandecken und Rücksprünge richtig verfolgen",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          37.201637268066406,
+          1127.1536865234375,
+          184.58250427246094,
+          1297.20849609375
+        ],
+        "legacy_crop_id": "U26"
+      },
+      "lesson_file": "lektionen/M03.md",
+      "book_page": 17,
+      "classification": "wall_corner",
+      "observations": [
+        "Die Erschließung -1.008 besitzt an der rechten Seite einen Rücksprung. Das gemusterte Wandband folgt der Ecke; die Fläche ist dadurch nicht einfach rechteckig.",
+        "Eine gerade Verbindung zwischen den äußersten Punkten würde eine Ecke des Wandkörpers abschneiden. Dadurch könnte eine berechnete Route durch Mauerwerk laufen.",
+        "An einer Innenkante beginnen, jeden Richtungswechsel nachvollziehen und bis zur nächsten Öffnung weitergehen. Nach der Öffnung am passenden Wandende fortsetzen.",
+        "Eine Raumkontur darf zur Trennung an einem Türportal rechnerisch geschlossen werden. Diese virtuelle Trennlinie ist aber keine massive Wand und darf die Türverbindung nicht löschen."
+      ],
+      "question": "Darf man einen Rücksprung für eine einfachere Kontur weglassen?",
+      "expected_answer": "Nein. Er verändert die freie Raumfläche und die mögliche Bewegung.",
+      "forbidden_inferences": [
+        "straight_line_through_wall_corner"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 18,
+      "annotated_image": "bilder/beschriftet/M03_BILD.png"
+    },
+    {
+      "id": "M04",
+      "floor": "UG",
+      "title": "Dünne feste Trennwände bleiben Begrenzungen",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          263.9414367675781,
+          1195.1756591796875,
+          689.0785522460938,
+          1427.5838623046875
+        ],
+        "legacy_crop_id": "U13"
+      },
+      "lesson_file": "lektionen/M04.md",
+      "book_page": 19,
+      "classification": "fixed_partition",
+      "observations": [
+        "Zwischen den kleinen Teilbereichen liegen schmale feste Bauteile. Einige enden an einer Türöffnung, andere schließen an die längere Trennwand an.",
+        "Eine dünne feste Trennwand ist für das Durchgehen ebenso eine Grenze wie eine dicke Außenwand. Eine einzelne dünne Maß- oder Projektionslinie ist dagegen keine solche Grenze.",
+        "Begrenzung, Materialdarstellung, Anschlüsse und vorhandene Öffnungen gemeinsam prüfen. Ein Objekt innerhalb eines Bereichs ersetzt nicht dessen Raumhülle.",
+        "Hier werden nur feste Grenzen und Zugänge gelernt. Waschbecken, WC und Raumnutzung sind keine Klassifikationsziele dieses Lernpakets."
+      ],
+      "question": "Darf eine dünne Trennwand als freie Fläche behandelt werden?",
+      "expected_answer": "Nein, wenn die Quelle sie als feste bauliche Begrenzung zeigt.",
+      "forbidden_inferences": [
+        "thin_equals_passable"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 20,
+      "annotated_image": "bilder/beschriftet/M04_BILD.png"
+    },
+    {
+      "id": "T01",
+      "floor": "UG",
+      "title": "Tür erkennen: Öffnung, Flügel und Bogen",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          88.21809387207031,
+          1115.816650390625,
+          224.261962890625,
+          1234.8551025390625
+        ],
+        "legacy_crop_id": "U02"
+      },
+      "lesson_file": "lektionen/T01.md",
+      "book_page": 21,
+      "classification": "door",
+      "observations": [
+        "Rechts liegt eine Unterbrechung des gemusterten Wandbands. Ein gerades Blatt und ein Viertelkreisbogen gehören zu dieser Stelle. Die Beschriftung lautet DL 90 / DL 210.",
+        "Wandenden, Öffnung, angeschlagener Flügel, Schwenkbogen und örtliche Maßangaben passen zueinander. Ein Bogen allein würde diese Aussage nicht tragen.",
+        "Lage, Anzahl der Flügel und die dargestellte Öffnungsseite. DL bezeichnet hier die Tür-Durchlichtangaben; 90 und 210 werden als Breite und Höhe gelesen. Einheiten und Detailbezug vor metrischer Verwendung im Projekt bestätigen.",
+        "Der Grundriss zeigt die geplante Tür, nicht ob sie heute geöffnet, versperrt oder zugänglich ist. Die Verbindung deshalb als Türportal mit unbekanntem Betriebszustand speichern."
+      ],
+      "question": "Ist der Bogen eine gekrümmte Wand?",
+      "expected_answer": "Nein. Er beschreibt hier den Schwenkbereich des Türblatts.",
+      "forbidden_inferences": [
+        "swing_arc_equals_wall",
+        "planned_door_equals_unlocked"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 22,
+      "annotated_image": "bilder/beschriftet/T01_BILD.png"
+    },
+    {
+      "id": "T02",
+      "floor": "UG",
+      "title": "Zwei Flügel, eine gemeinsame Öffnung",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          1635.7171630859375,
+          1070.46875,
+          1811.4405517578125,
+          1246.1920166015625
+        ],
+        "legacy_crop_id": "U27"
+      },
+      "lesson_file": "lektionen/T02.md",
+      "book_page": 23,
+      "classification": "double_leaf_door",
+      "observations": [
+        "Links liegen zwei Flügel mit zwei Bögen an einer gemeinsamen breiten Öffnung. Daneben steht DL 180 / DL 210. Rechts folgt eine kleine Treppe.",
+        "Beide Flügel schließen denselben Wanddurchbruch. Sie sind Teile einer zweiflügeligen Tür, nicht zwei voneinander unabhängige Raumverbindungen.",
+        "Die gemeinsame Beschriftung beschreibt die Türstelle. Daraus nicht automatisch eine dauerhaft freie Breite von 180 ableiten: Die tatsächlich geöffneten Flügel und der Betrieb sind unbekannt.",
+        "Hinter der Tür liegt nicht überall eine ebene Fläche. Der Zugang zur Treppe und die seitlichen Brüstungen gehören in ein eigenes Verbindungsmodell."
+      ],
+      "question": "Sind zwei Bögen immer zwei Türen?",
+      "expected_answer": "Nein. Hier gehören zwei Flügel zu einer gemeinsamen Türöffnung.",
+      "forbidden_inferences": [
+        "two_leaves_equals_two_portals"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 24,
+      "annotated_image": "bilder/beschriftet/T02_BILD.png"
+    },
+    {
+      "id": "T03",
+      "floor": "UG",
+      "title": "Ein Kreuzfeld widerlegt eine Tür nicht",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          184.58250427246094,
+          1166.8331298828125,
+          292.2839050292969,
+          1280.2030029296875
+        ],
+        "legacy_crop_id": "U23"
+      },
+      "lesson_file": "lektionen/T03.md",
+      "book_page": 25,
+      "classification": "door",
+      "observations": [
+        "In der Öffnung liegt zusätzlich ein X-Feld. Gleichzeitig sind Wandunterbrechung, Flügel, Viertelkreisbogen und DL 90 / DL 210 vorhanden.",
+        "Die zusammenpassenden Türmerkmale bestimmen den Zusammenhang. Die isolierte Regel „X bedeutet Schrank“ wäre hier falsch.",
+        "Der Flur und der angrenzende Raum bleiben getrennte Flächen. Die Tür bildet die Verbindung zwischen ihnen. Die virtuelle Raumtrennung ist kein festes Hindernis.",
+        "Jede Klassifikation muss lokale und benachbarte Zeichen berücksichtigen. Das X-Feld nicht als massiven Verschluss der gesamten Öffnung übernehmen."
+      ],
+      "question": "Darf jedes X als nicht begehbarer Kasten klassifiziert werden?",
+      "expected_answer": "Nein. Seine Bedeutung hängt von den übrigen Zeichen an derselben Stelle ab.",
+      "forbidden_inferences": [
+        "x_always_equals_furniture"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 26,
+      "annotated_image": "bilder/beschriftet/T03_BILD.png"
+    },
+    {
+      "id": "F01",
+      "floor": "UG",
+      "title": "Fenster erkennen – und falsche Fenster vermeiden",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          31.53314208984375,
+          395.9178466796875,
+          127.89755249023438,
+          509.2877502441406
+        ],
+        "legacy_crop_id": "U04"
+      },
+      "lesson_file": "lektionen/F01.md",
+      "book_page": 27,
+      "classification": "wall_not_confirmed_window",
+      "observations": [
+        "Eine Öffnung in einer Wand mit zugehörigen Rahmen- bzw. Glaslinien. Brüstungshöhe, Fensterkennzeichen und ein passender Schnitt oder eine Ansicht können die Zuordnung absichern.",
+        "Hier laufen mehrere Schichten mit Materialmustern parallel. Es ist kein eindeutig belegter Fensterdurchbruch. Das Beispiel ist deshalb eine Gegenprobe, kein positives Fensterbeispiel.",
+        "Wandbekleidung, Vorsatzschale und Schichtgrenzen erzeugen ebenfalls parallele Linien. Eine Fensterzuordnung braucht zusätzlich die passende Öffnung und weitere Merkmale.",
+        "Ein bestätigtes Fenster ist noch kein gewöhnliches Gehportal. Glas, Rahmen, Brüstung und Höhenlage können das Durchgehen verhindern. Eine Flurverbindung darf daraus nicht automatisch entstehen."
+      ],
+      "question": "Sind mehrere dünne parallele Linien ein sicherer Fensternachweis?",
+      "expected_answer": "Nein. Dieser Ausschnitt zeigt, warum der Wandzusammenhang mitgeprüft werden muss.",
+      "forbidden_inferences": [
+        "parallel_lines_equal_window",
+        "window_equals_walk_portal"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 28,
+      "annotated_image": "bilder/beschriftet/F01_BILD.png"
+    },
+    {
+      "id": "F02",
+      "floor": "UG",
+      "title": "Wo sind im UG Fenster sicher belegt?",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          70,
+          70,
+          540,
+          225
+        ],
+        "legacy_crop_id": "F_SMOKE"
+      },
+      "lesson_file": "lektionen/F02.md",
+      "book_page": 29,
+      "classification": "unresolved_opening_note",
+      "observations": [
+        "Im geprüften UG-Blatt wurde kein Fenster eindeutig lokalisiert und als bestätigt annotiert. Das bedeutet nicht, dass das Gebäude keine Fenster hat.",
+        "Bei der Halle steht ein Hinweis zur Rauchableitung. Er nennt eine Höhenlage über FOK Weg im EG. Diese Textangabe allein lokalisiert kein gewöhnliches Fenster auf dem UG-Laufniveau.",
+        "Eine passende Ansicht, ein Schnitt, eine Öffnungskennzeichnung oder eine Fensterliste mit Bezug auf diese Stelle. Erst danach kann ein konkreter Fensterdatensatz bestätigt werden.",
+        "Status „nicht eindeutig zugeordnet“ speichern. Weder eine fiktive Fensterposition noch eine Fensterzahl für das ganze Gebäude ableiten. Die Rohbeobachtung und die fehlende Bestätigung getrennt dokumentieren."
+      ],
+      "question": "Beweist der Rauchableitungstext eine begehbare Öffnung im UG?",
+      "expected_answer": "Nein. Er liefert ohne lokale Zuordnung und Höhenabgleich keinen UG-Gehdurchgang.",
+      "forbidden_inferences": [
+        "smoke_note_equals_ug_window",
+        "no_confirmed_window_equals_no_windows"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 30,
+      "annotated_image": "bilder/beschriftet/F02_BILD.png"
+    },
+    {
+      "id": "W01",
+      "floor": "UG",
+      "title": "Freier Weg: Fläche und Verbindung unterscheiden",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          144.90304565429688,
+          1087.4742431640625,
+          1216.24853515625,
+          1280.2030029296875
+        ],
+        "legacy_crop_id": "U11"
+      },
+      "lesson_file": "lektionen/W01.md",
+      "book_page": 32,
+      "classification": "local_corridor_connection",
+      "observations": [
+        "Die Erschließung -1.007 bildet einen langen Streifen zwischen begrenzenden Bauteilen. Entlang der unteren Seite liegen einzelne Türstellen zu angrenzenden Bereichen.",
+        "Der freie Streifen setzt sich seitlich fort und ist nicht in regelmäßige Stufen zerlegt. Keine massive Querwand schließt den hier grün markierten Beispielabschnitt.",
+        "Die grüne Linie zeigt nur eine lokale Verbindung im Flur. Sie ist keine optimierte Route und kein Nachweis einer vorgeschriebenen oder körperbezogen ausreichenden Durchgangsbreite.",
+        "Freie Breite, Hindernisse, Türzustände und Bodenhöhe separat ermitteln. Ein mathematischer Punkt passt durch kleinere Spalten als ein Mensch; eine bloße Mittellinie genügt nicht."
+      ],
+      "question": "Macht eine weiße Bildstelle allein einen freien Weg?",
+      "expected_answer": "Nein. Es braucht zusammenhängenden Boden, ausreichend Platz und nachgewiesene Übergänge.",
+      "forbidden_inferences": [
+        "white_equals_walkable",
+        "line_of_sight_equals_route"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 33,
+      "annotated_image": "bilder/beschriftet/W01_BILD.png"
+    },
+    {
+      "id": "W02",
+      "floor": "UG",
+      "title": "Durch eine Tür zu einem anderen Bereich",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          31.53314208984375,
+          1098.8111572265625,
+          314.9578857421875,
+          1314.2139892578125
+        ],
+        "legacy_crop_id": "U01"
+      },
+      "lesson_file": "lektionen/W02.md",
+      "book_page": 34,
+      "classification": "door_connection",
+      "observations": [
+        "Die Erschließung -1.008 liegt links. An ihrer rechten oberen Seite befindet sich die Tür zum anschließenden Flur -1.007, der im größeren Ausschnitt erkennbar ist.",
+        "Der Weg bleibt erst in der freien Fläche, erreicht die Öffnung zwischen den Wandenden und setzt sich auf der anderen Seite fort. Die Wand daneben wird nicht gequert.",
+        "Die Verbindung ist geometrisch als Türstelle erkennbar. Ob sie aktuell nutzbar ist, bleibt offen. Im Modell lautet die Kante deshalb „Tür, Zustand unbekannt“.",
+        "Eine Türöffnung darf benachbarte Bereiche nicht zu einem einzigen ungeteilten Raum machen. Flächenzugehörigkeit und Verbindbarkeit sind unterschiedliche Informationen."
+      ],
+      "question": "Müssen zwei durch eine Tür verbundene Bereiche ein einziger Raum sein?",
+      "expected_answer": "Nein. Sie bleiben getrennte Flächen mit einer gemeinsamen Türverbindung.",
+      "forbidden_inferences": [
+        "portal_merges_rooms",
+        "wall_crossing_is_shortcut"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 35,
+      "annotated_image": "bilder/beschriftet/W02_BILD.png"
+    },
+    {
+      "id": "W03",
+      "floor": "UG",
+      "title": "Begehbar kann trotzdem eine Sackgasse sein",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          1800,
+          1490,
+          2180,
+          2190
+        ],
+        "legacy_crop_id": "W_ARCHIVE"
+      },
+      "lesson_file": "lektionen/W03.md",
+      "book_page": 36,
+      "classification": "single_access_candidate",
+      "observations": [
+        "Die große mittlere Fläche besitzt oben eine Tür zum Flur. Die seitlichen und unteren Begrenzungen sind im betrachteten Ausschnitt durchgehend als Wände dargestellt.",
+        "Eine Sackgasse ist nicht automatisch unbetretbar. Man kann hineingehen und auf demselben Zugang zurückkehren. Es fehlt eine belegte Weiterverbindung zu einem anderen Ausgang.",
+        "Hier ist kein zweiter gewöhnlicher Ausgang belegt. Für eine endgültige Aussage müssen die vollständige Raumhülle und gegebenenfalls weitere Pläne geprüft werden.",
+        "Nicht allein die Anzahl benachbarter Räume zählen. Unterschiedliche bestätigte Portale und deren Ziele prüfen. Ein Möbelrechteck in der Mitte wird dabei nicht zu einem zweiten Weg."
+      ],
+      "question": "Ist eine Fläche mit einem einzigen Zugang verboten oder unbetretbar?",
+      "expected_answer": "Das folgt daraus nicht. Sie ist im Verbindungsmodell ein Endbereich, sofern kein weiterer Zugang nachgewiesen wird.",
+      "forbidden_inferences": [
+        "dead_end_equals_impassable",
+        "furniture_equals_exit"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 37,
+      "annotated_image": "bilder/beschriftet/W03_BILD.png"
+    },
+    {
+      "id": "W04",
+      "floor": "UG",
+      "title": "Der gezeigte Bereich ist begehbar",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          1880,
+          2120,
+          3290,
+          2840
+        ],
+        "legacy_crop_id": "W_LEVEL"
+      },
+      "lesson_file": "lektionen/W04.md",
+      "book_page": 38,
+      "classification": "walkable_surface_user_confirmed",
+      "observations": [
+        "Unterhalb der Raumreihe liegt der besprochene, ursprünglich weiß dargestellte Bereich.",
+        "Der Nutzer bestätigt, dass man dort tatsächlich gehen kann. Diese Projektinformation korrigiert die frühere Einordnung als ungeklärt.",
+        "Die Beispielstelle wird grün dargestellt. Der rechteckige Rahmen hebt den besprochenen Bereich hervor; er zeichnet keine neue bauliche Grenze.",
+        "Die Fläche als begehbar übernehmen und K1 als Quelle speichern. Wände und reale Hindernisse bleiben bei der Wegführung zu berücksichtigen. Ein konkreter Zugang durch die obere Wand wird durch diese Korrektur nicht neu eingezeichnet."
+      ],
+      "question": "Ist der in W04 hervorgehobene Bereich begehbar?",
+      "expected_answer": "Ja. Der Nutzer hat seine Begehbarkeit bestätigt. Die frühere Einordnung als ungeklärt ist für diesen Bereich korrigiert.",
+      "forbidden_inferences": [
+        "white_area_equals_not_walkable",
+        "user_confirmation_is_independent_cad_verification",
+        "highlight_rectangle_equals_wall"
+      ],
+      "review_status": "corrected_from_user_confirmation_2026-09-21",
+      "implementation_test_run": false,
+      "annotated_book_page": 39,
+      "annotated_image": "bilder/beschriftet/W04_BILD.png",
+      "confirmation_source": "daten/nutzerkorrekturen.json#K1"
+    },
+    {
+      "id": "S01",
+      "floor": "UG",
+      "title": "Eine Treppe als Ganzes erkennen",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          25.864646911621094,
+          1115.816650390625,
+          212.9249725341797,
+          1852.7210693359375
+        ],
+        "legacy_crop_id": "U16"
+      },
+      "lesson_file": "lektionen/S01.md",
+      "book_page": 40,
+      "classification": "stair",
+      "observations": [
+        "In dem schmalen langen Bereich liegen wiederholte Querlinien, Lauflinien, Pfeile, nummerierte Stufen und Podeste. Die Raumangabe benennt Stiege 6.",
+        "Die Kombination aus Stufenfolge, Richtungszeichen und Treppenbeschriftung passt zusammen. Weder die schmale Form noch eine einzelne Querlinie würde allein genügen.",
+        "Lage und Verlauf der Läufe, Zwischenpodeste, Begrenzungen sowie örtliche Steigungsangaben. Ein Lauf und ein Podest erfüllen unterschiedliche Funktionen.",
+        "Die Treppe als Verbindung mit Höhenwechsel erfassen. Nicht aus jeder Stufe einen Raum oder eine unpassierbare Querwand bilden. Ein Treppenauge ist dagegen keine begehbare Abkürzung."
+      ],
+      "question": "Sind die vielen Querlinien viele Wände?",
+      "expected_answer": "Nein. Zusammen mit den übrigen Zeichen zeigen sie hier eine Stufenfolge.",
+      "forbidden_inferences": [
+        "each_step_equals_wall",
+        "stair_well_equals_walk_surface"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 41,
+      "annotated_image": "bilder/beschriftet/S01_BILD.png"
+    },
+    {
+      "id": "S02",
+      "floor": "UG",
+      "title": "Rauf oder runter: Bildrichtung ist keine Höhenrichtung",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          48.53862762451172,
+          1297.20849609375,
+          156.24002075195312,
+          1484.268798828125
+        ],
+        "legacy_crop_id": "U17"
+      },
+      "lesson_file": "lektionen/S02.md",
+      "book_page": 42,
+      "classification": "stair_direction_conditional",
+      "observations": [
+        "Die Lauflinie beginnt am Kreis, durchquert die nummerierten Stufen und endet in einer nach unten im Bild gerichteten Spitze. Daneben steht 6 STG 16,2 / 27.",
+        "Bei der üblichen Aufstiegsdarstellung kennzeichnet der Kreis den Antritt; die Pfeilrichtung führt zum höher gelegenen Austritt. Unter dieser Voraussetzung zeigt der Aufstieg hier nach unten auf dem Papier.",
+        "Die Darstellungskonvention mit Legende und Schnitt abgleichen, Anfangs- und Endhöhe zuordnen und den Anschluss im Nachbargeschoss prüfen. Der Weg in Gegenrichtung wäre der Abstieg derselben Treppe.",
+        "Stufenfolge und Bildrichtung sind belegt. Der absolute Höhen- und Geschossanschluss ist nicht abschließend bestätigt. Deshalb keine feste UG–EG-Verbindung aus dem Pfeil allein exportieren."
+      ],
+      "question": "Bedeutet ein Pfeil nach unten im Bild automatisch Abstieg?",
+      "expected_answer": "Nein. Unter der üblichen Aufstiegskonvention kann er gerade den Aufstieg zeigen. Höhenbezug und Projektkonvention bleiben zu bestätigen.",
+      "forbidden_inferences": [
+        "page_down_equals_descent",
+        "arrow_alone_proves_floor_link"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 43,
+      "annotated_image": "bilder/beschriftet/S02_BILD.png"
+    },
+    {
+      "id": "S03",
+      "floor": "UG",
+      "title": "Stufenangaben lesen und richtig zuordnen",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          48.53862762451172,
+          1297.20849609375,
+          156.24002075195312,
+          1484.268798828125
+        ],
+        "legacy_crop_id": "U17"
+      },
+      "lesson_file": "lektionen/S03.md",
+      "book_page": 44,
+      "classification": "stair_annotation",
+      "observations": [
+        "6 STG 16,2 / 27 gehört zur gezeigten Stufenfolge. STG bezeichnet Steigungen. Die anschließenden Werte werden in der üblichen Schreibweise als Steigungshöhe und Auftritt gelesen.",
+        "Wenn die Werte in Zentimetern gelten, ergeben 6 × 16,2 cm einen Höhenunterschied von 97,2 cm. Das ist eine Rechnung aus der Beschriftung, kein gemessener Geschossabstand.",
+        "Die sechs Steigungen bedeuten nicht zwingend sechs volle horizontale Auftritte innerhalb desselben Laufes. Podeste und die Darstellung des letzten Austritts müssen mitgelesen werden.",
+        "Rohtext, interpretierte Anzahl, angenommene Einheit und bestätigte Höhen getrennt speichern. Aus der Steigungsangabe nicht automatisch auf das Erdgeschoss schließen."
+      ],
+      "question": "Beweist 6 STG, dass diese Teiltreppe ein ganzes Geschoss verbindet?",
+      "expected_answer": "Nein. Sie kann nur einen Teil eines Höhenwechsels abbilden.",
+      "forbidden_inferences": [
+        "stair_count_equals_floor_count"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 45,
+      "annotated_image": "bilder/beschriftet/S03_BILD.png"
+    },
+    {
+      "id": "S04",
+      "floor": "UG",
+      "title": "Schräger Treppenschnitt ist keine Rampe",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          48.53862762451172,
+          1484.268798828125,
+          150.571533203125,
+          1637.3182373046875
+        ],
+        "legacy_crop_id": "U18"
+      },
+      "lesson_file": "lektionen/S04.md",
+      "book_page": 47,
+      "classification": "stair_break_symbol",
+      "observations": [
+        "Eine schräge Zeichenlinie unterbricht die regelmäßige Stufendarstellung. Auf beiden Seiten bleibt der Zusammenhang mit dem Treppenlauf erkennbar.",
+        "Eine solche Linie kann die zeichnerische Unterbrechung bzw. Schnittdarstellung eines weiterführenden Laufes markieren. Sie ist kein Beweis für einen schrägen ebenen Gehbelag.",
+        "Für eine Rampe müssten Verlauf, Ränder und Neigungshinweise zusammenpassen. Hier sprechen die wiederholten Stufen und der umliegende Treppenkontext für eine Treppendarstellung.",
+        "Die Unterbrechung nicht als massive Diagonalwand und nicht als zusätzlichen Raum behandeln. Die Fortsetzung nur anhand passender weiterer Darstellung anbinden."
+      ],
+      "question": "Macht eine diagonale Linie zwischen Stufen daraus eine Rampe?",
+      "expected_answer": "Nein. Der gesamte Darstellungskontext ist entscheidend.",
+      "forbidden_inferences": [
+        "diagonal_stair_break_equals_ramp"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 48,
+      "annotated_image": "bilder/beschriftet/S04_BILD.png"
+    },
+    {
+      "id": "S05",
+      "floor": "UG",
+      "title": "Kurze Treppe, Brüstung und Handlauf trennen",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          1635.7171630859375,
+          1070.46875,
+          1811.4405517578125,
+          1246.1920166015625
+        ],
+        "legacy_crop_id": "U27"
+      },
+      "lesson_file": "lektionen/S05.md",
+      "book_page": 49,
+      "classification": "stair_with_low_barrier",
+      "observations": [
+        "Rechts liegen 5 STG 15,2 / 30. Die seitlichen Begrenzungen tragen Brüstung H = 100 cm und Handlauf H = 85 cm.",
+        "Stufen tragen den Höhenwechsel. Die Brüstung bildet eine seitliche Begrenzung. Der Handlauf ist ein eigenes Bauteil. Seine Höhe darf nicht als Wandhöhe gespeichert werden.",
+        "Der Lauf wird längs über die Stufen benutzt. Die seitliche Brüstung ist kein freier Durchgang, obwohl sie nicht bis zur Decke reicht. Klettern wird nicht als gewöhnlicher Gehweg modelliert.",
+        "Auch wenige Stufen bedeuten Niveauwechsel. Treppenrichtung und absolute Höhen werden separat bestätigt; das kurze Bauteil ist nicht automatisch eine Verbindung in ein anderes Geschoss."
+      ],
+      "question": "Ist jede nicht raumhohe Begrenzung frei durchgehbar?",
+      "expected_answer": "Nein. Eine Brüstung kann den gewöhnlichen seitlichen Durchgang verhindern.",
+      "forbidden_inferences": [
+        "low_barrier_equals_free_passage",
+        "handrail_height_equals_wall_height"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 50,
+      "annotated_image": "bilder/beschriftet/S05_BILD.png"
+    },
+    {
+      "id": "S06",
+      "floor": "UG",
+      "title": "Vorraum, Treppe und Lift getrennt erkennen",
+      "source": {
+        "file": "quellen/Schule_SH22_UG.pdf",
+        "sha256": "a2860aa692aaa0f610306fb76296d20e3d2797e6342a760cdb8b6fda5975a82e",
+        "page": 1,
+        "clip_pdf_points": [
+          1166.0721435546875,
+          1046.4749755859375,
+          1551.440673828125,
+          1597.95068359375
+        ],
+        "legacy_crop_id": "U24"
+      },
+      "lesson_file": "lektionen/S06.md",
+      "book_page": 51,
+      "classification": "stair_and_lift_context",
+      "observations": [
+        "Oben liegt ein Vorbereich, darunter Stiege 2 mit Läufen und Podest. Links neben dem Lauf ist ein eigener Liftbereich eingezeichnet. Ein großer Bogen reicht über den Treppenbereich.",
+        "Nicht jeder große Bogen ist ein Türschwenk. Hier müssen Lauflinien und Treppendarstellung von den wirklichen Türblättern an den Wandöffnungen unterschieden werden.",
+        "Der Vorbereich kann über einen belegten Zugang zur Treppe führen. Der Liftschacht ist keine freie Bodenfläche. Eine Liftverbindung setzt zusätzliche betriebliche und geschossbezogene Informationen voraus.",
+        "Diese Objekte als getrennte Rollen speichern. Die geometrische Nachbarschaft allein verbindet weder die Geschosse noch den Vorraum mit dem Schacht."
+      ],
+      "question": "Ist der Liftbereich ein kleiner frei durchgehbarer Raum?",
+      "expected_answer": "Nein. Er darf nicht als gewöhnlicher Flurdurchgang verwendet werden.",
+      "forbidden_inferences": [
+        "lift_shaft_equals_corridor",
+        "every_arc_equals_door"
+      ],
+      "review_status": "visually_read_from_source; interpretation limits stated",
+      "implementation_test_run": false,
+      "annotated_book_page": 52,
+      "annotated_image": "bilder/beschriftet/S06_BILD.png"
+    }
+  ]
+}

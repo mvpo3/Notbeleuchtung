@@ -1,0 +1,189 @@
+{
+  "execution_status": "not_run_against_Claude_or_project_code",
+  "cases": [
+    {
+      "id": "M01",
+      "prompt": "Ist eine Schraffurlinie selbst die ganze Wand?",
+      "expected": "Nein. Wandränder, Schichten, Muster und Anschlüsse müssen zusammen gelesen werden.",
+      "must_not_infer": [
+        "single_line_equals_wall",
+        "hatch_cell_equals_room"
+      ],
+      "source_case": "M01"
+    },
+    {
+      "id": "M02",
+      "prompt": "Sind vier parallele Schichten vier Räume?",
+      "expected": "Nein. Sie sind hier Teile eines gemeinsamen Wandaufbaus.",
+      "must_not_infer": [
+        "wall_layer_gap_equals_passage"
+      ],
+      "source_case": "M02"
+    },
+    {
+      "id": "M03",
+      "prompt": "Darf man einen Rücksprung für eine einfachere Kontur weglassen?",
+      "expected": "Nein. Er verändert die freie Raumfläche und die mögliche Bewegung.",
+      "must_not_infer": [
+        "straight_line_through_wall_corner"
+      ],
+      "source_case": "M03"
+    },
+    {
+      "id": "M04",
+      "prompt": "Darf eine dünne Trennwand als freie Fläche behandelt werden?",
+      "expected": "Nein, wenn die Quelle sie als feste bauliche Begrenzung zeigt.",
+      "must_not_infer": [
+        "thin_equals_passable"
+      ],
+      "source_case": "M04"
+    },
+    {
+      "id": "T01",
+      "prompt": "Ist der Bogen eine gekrümmte Wand?",
+      "expected": "Nein. Er beschreibt hier den Schwenkbereich des Türblatts.",
+      "must_not_infer": [
+        "swing_arc_equals_wall",
+        "planned_door_equals_unlocked"
+      ],
+      "source_case": "T01"
+    },
+    {
+      "id": "T02",
+      "prompt": "Sind zwei Bögen immer zwei Türen?",
+      "expected": "Nein. Hier gehören zwei Flügel zu einer gemeinsamen Türöffnung.",
+      "must_not_infer": [
+        "two_leaves_equals_two_portals"
+      ],
+      "source_case": "T02"
+    },
+    {
+      "id": "T03",
+      "prompt": "Darf jedes X als nicht begehbarer Kasten klassifiziert werden?",
+      "expected": "Nein. Seine Bedeutung hängt von den übrigen Zeichen an derselben Stelle ab.",
+      "must_not_infer": [
+        "x_always_equals_furniture"
+      ],
+      "source_case": "T03"
+    },
+    {
+      "id": "F01",
+      "prompt": "Sind mehrere dünne parallele Linien ein sicherer Fensternachweis?",
+      "expected": "Nein. Dieser Ausschnitt zeigt, warum der Wandzusammenhang mitgeprüft werden muss.",
+      "must_not_infer": [
+        "parallel_lines_equal_window",
+        "window_equals_walk_portal"
+      ],
+      "source_case": "F01"
+    },
+    {
+      "id": "F02",
+      "prompt": "Beweist der Rauchableitungstext eine begehbare Öffnung im UG?",
+      "expected": "Nein. Er liefert ohne lokale Zuordnung und Höhenabgleich keinen UG-Gehdurchgang.",
+      "must_not_infer": [
+        "smoke_note_equals_ug_window",
+        "no_confirmed_window_equals_no_windows"
+      ],
+      "source_case": "F02"
+    },
+    {
+      "id": "W01",
+      "prompt": "Macht eine weiße Bildstelle allein einen freien Weg?",
+      "expected": "Nein. Es braucht zusammenhängenden Boden, ausreichend Platz und nachgewiesene Übergänge.",
+      "must_not_infer": [
+        "white_equals_walkable",
+        "line_of_sight_equals_route"
+      ],
+      "source_case": "W01"
+    },
+    {
+      "id": "W02",
+      "prompt": "Müssen zwei durch eine Tür verbundene Bereiche ein einziger Raum sein?",
+      "expected": "Nein. Sie bleiben getrennte Flächen mit einer gemeinsamen Türverbindung.",
+      "must_not_infer": [
+        "portal_merges_rooms",
+        "wall_crossing_is_shortcut"
+      ],
+      "source_case": "W02"
+    },
+    {
+      "id": "W03",
+      "prompt": "Ist eine Fläche mit einem einzigen Zugang verboten oder unbetretbar?",
+      "expected": "Das folgt daraus nicht. Sie ist im Verbindungsmodell ein Endbereich, sofern kein weiterer Zugang nachgewiesen wird.",
+      "must_not_infer": [
+        "dead_end_equals_impassable",
+        "furniture_equals_exit"
+      ],
+      "source_case": "W03"
+    },
+    {
+      "id": "W04",
+      "prompt": "Ist der in W04 hervorgehobene Bereich begehbar?",
+      "expected": "Ja. Der Nutzer hat seine Begehbarkeit bestätigt. Die frühere Einordnung als ungeklärt ist für diesen Bereich korrigiert.",
+      "must_not_infer": [
+        "white_area_equals_not_walkable",
+        "user_confirmation_is_independent_cad_verification",
+        "highlight_rectangle_equals_wall"
+      ],
+      "source_case": "W04"
+    },
+    {
+      "id": "S01",
+      "prompt": "Sind die vielen Querlinien viele Wände?",
+      "expected": "Nein. Zusammen mit den übrigen Zeichen zeigen sie hier eine Stufenfolge.",
+      "must_not_infer": [
+        "each_step_equals_wall",
+        "stair_well_equals_walk_surface"
+      ],
+      "source_case": "S01"
+    },
+    {
+      "id": "S02",
+      "prompt": "Bedeutet ein Pfeil nach unten im Bild automatisch Abstieg?",
+      "expected": "Nein. Unter der üblichen Aufstiegskonvention kann er gerade den Aufstieg zeigen. Höhenbezug und Projektkonvention bleiben zu bestätigen.",
+      "must_not_infer": [
+        "page_down_equals_descent",
+        "arrow_alone_proves_floor_link"
+      ],
+      "source_case": "S02"
+    },
+    {
+      "id": "S03",
+      "prompt": "Beweist 6 STG, dass diese Teiltreppe ein ganzes Geschoss verbindet?",
+      "expected": "Nein. Sie kann nur einen Teil eines Höhenwechsels abbilden.",
+      "must_not_infer": [
+        "stair_count_equals_floor_count"
+      ],
+      "source_case": "S03"
+    },
+    {
+      "id": "S04",
+      "prompt": "Macht eine diagonale Linie zwischen Stufen daraus eine Rampe?",
+      "expected": "Nein. Der gesamte Darstellungskontext ist entscheidend.",
+      "must_not_infer": [
+        "diagonal_stair_break_equals_ramp"
+      ],
+      "source_case": "S04"
+    },
+    {
+      "id": "S05",
+      "prompt": "Ist jede nicht raumhohe Begrenzung frei durchgehbar?",
+      "expected": "Nein. Eine Brüstung kann den gewöhnlichen seitlichen Durchgang verhindern.",
+      "must_not_infer": [
+        "low_barrier_equals_free_passage",
+        "handrail_height_equals_wall_height"
+      ],
+      "source_case": "S05"
+    },
+    {
+      "id": "S06",
+      "prompt": "Ist der Liftbereich ein kleiner frei durchgehbarer Raum?",
+      "expected": "Nein. Er darf nicht als gewöhnlicher Flurdurchgang verwendet werden.",
+      "must_not_infer": [
+        "lift_shaft_equals_corridor",
+        "every_arc_equals_door"
+      ],
+      "source_case": "S06"
+    }
+  ]
+}

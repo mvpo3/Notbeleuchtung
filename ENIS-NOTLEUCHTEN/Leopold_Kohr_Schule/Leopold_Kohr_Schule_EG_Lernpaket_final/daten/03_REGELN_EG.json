@@ -1,0 +1,295 @@
+{
+  "schema": "rivoplan.eg_lernpaket.rules/1",
+  "scope": "Geometrische_Planinterpretation_EG",
+  "normative_rules": false,
+  "productive_import": false,
+  "rules": [
+    {
+      "id": "R01",
+      "title": "Wand nur mit mehreren passenden Belegen",
+      "rule": "Wandseiten, Materialdarstellung, Dicke und Anschlüsse gemeinsam prüfen; Linienfarbe oder Layername allein reicht nicht.",
+      "examples": [
+        "EG-01",
+        "EG-02",
+        "EG-04",
+        "EG-06",
+        "EG-07",
+        "EG-27",
+        "EG-28"
+      ]
+    },
+    {
+      "id": "R02",
+      "title": "Gesamten Wandaufbau berücksichtigen",
+      "rule": "Außen- und Innenkante einschließlich räumlich wirksamer Bekleidungen erfassen; keine Durchwege in Dämm- oder Schichtzwischenräumen erzeugen.",
+      "examples": [
+        "EG-01",
+        "EG-03",
+        "EG-05",
+        "EG-07",
+        "EG-27",
+        "EG-28"
+      ]
+    },
+    {
+      "id": "R03",
+      "title": "Beliebige Orientierung zulassen",
+      "rule": "Wände können schräg oder gekrümmt sein. Keine Beschränkung auf horizontale/vertikale Linien und keine feste Schraffurrichtung.",
+      "examples": [
+        "EG-01",
+        "EG-06"
+      ]
+    },
+    {
+      "id": "R04",
+      "title": "Öffnungen beim Wandaufbau erhalten",
+      "rule": "Bestätigte Türöffnungen nicht durch pauschales Schließen von Polygonlücken oder Wandpuffern zusetzen.",
+      "examples": [
+        "EG-02",
+        "EG-04",
+        "EG-08"
+      ]
+    },
+    {
+      "id": "R05",
+      "title": "Weiße Fläche ist nicht automatisch begehbar",
+      "rule": "Boden, Höhe, Hindernisse und tatsächlicher Anschluss sind zusätzlich erforderlich; Schacht und Verglasung gesondert behandeln.",
+      "examples": [
+        "EG-03",
+        "EG-04",
+        "EG-14",
+        "EG-17",
+        "EG-19",
+        "EG-29"
+      ]
+    },
+    {
+      "id": "R06",
+      "title": "Durchbruch nach Zweck und Höhe unterscheiden",
+      "rule": "Technische Öffnungen, Nischen und Leitungsdurchführungen nicht als Personendurchgänge behandeln.",
+      "examples": [
+        "EG-05",
+        "EG-18"
+      ]
+    },
+    {
+      "id": "R07",
+      "title": "Portal braucht zwei belegte Seiten",
+      "rule": "Öffnung muss den Wandkörper tatsächlich unterbrechen und auf beiden Seiten an passende Bewegungsflächen anschließen.",
+      "examples": [
+        "EG-02",
+        "EG-08",
+        "EG-09",
+        "EG-11"
+      ]
+    },
+    {
+      "id": "R08",
+      "title": "Türblatt, Anschlag und Schwenkbereich trennen",
+      "rule": "Türbogen ist keine Wand. Öffnungsrichtung, Flügelanzahl und ein gemeinsames Portal getrennt erfassen.",
+      "examples": [
+        "EG-09",
+        "EG-10"
+      ]
+    },
+    {
+      "id": "R09",
+      "title": "Bogen nicht pauschal als Tür klassifizieren",
+      "rule": "Fenster können Öffnungsbögen besitzen. Rahmen, Parapethöhe, Geschossbezug und Flügelkontext mitlesen.",
+      "examples": [
+        "EG-09",
+        "EG-13"
+      ]
+    },
+    {
+      "id": "R10",
+      "title": "Mehrflügelige Türen bündeln",
+      "rule": "Zusammengehörende Flügel einer Wandöffnung erhalten ein gemeinsames Portal und keine doppelten Raumverbindungen.",
+      "examples": [
+        "EG-10"
+      ]
+    },
+    {
+      "id": "R11",
+      "title": "Schiebetüren ohne Kreisbogen erkennen",
+      "rule": "Parallele Flügel, Schieberichtung, Öffnungsgeometrie und Beschriftung gemeinsam auswerten.",
+      "examples": [
+        "EG-11"
+      ]
+    },
+    {
+      "id": "R12",
+      "title": "Fenster sperren normale Fußwege",
+      "rule": "Eine Fensteröffnung ist keine automatische Türverbindung; Brüstungs- und Höhenbezüge müssen erhalten bleiben.",
+      "examples": [
+        "EG-01",
+        "EG-12",
+        "EG-13"
+      ]
+    },
+    {
+      "id": "R13",
+      "title": "Glas als räumlichen Abschluss erfassen",
+      "rule": "Feste Verglasung ist trotz dünner Linien und Transparenz eine Sperre. Bewegliche Türfelder gesondert identifizieren.",
+      "examples": [
+        "EG-03",
+        "EG-05",
+        "EG-11",
+        "EG-12",
+        "EG-14"
+      ]
+    },
+    {
+      "id": "R14",
+      "title": "Dünne feste Hindernisse nicht verlieren",
+      "rule": "Trennwand, Geländer und andere feste Sperren nicht allein wegen kleiner Dicke entfernen; ihre Klassen getrennt halten.",
+      "examples": [
+        "EG-04",
+        "EG-08",
+        "EG-18",
+        "EG-19",
+        "EG-21",
+        "EG-24",
+        "EG-29"
+      ]
+    },
+    {
+      "id": "R15",
+      "title": "Freien Weg positiv nachweisen",
+      "rule": "Ein Weg benötigt zusammenhängenden geeigneten Boden und eine hindernisfreie Verbindung. Unbekannte Zustände bleiben unbekannt.",
+      "examples": [
+        "EG-12",
+        "EG-14",
+        "EG-15",
+        "EG-16",
+        "EG-18",
+        "EG-26"
+      ]
+    },
+    {
+      "id": "R16",
+      "title": "Lokale Verbindung von vollständiger Route trennen",
+      "rule": "Ein Portal, ein NA-Hinweis oder ein einzelner Linienabschnitt beweist keinen durchgehenden Weg zu einem bestätigten Endpunkt.",
+      "examples": [
+        "EG-06",
+        "EG-10",
+        "EG-15",
+        "EG-22",
+        "EG-26"
+      ]
+    },
+    {
+      "id": "R17",
+      "title": "Nutzungstext erzeugt keine Raumgrenze",
+      "rule": "Raumstempel nur als semantischen Hinweis einsetzen; geometrische Grenze über Bauteile und Abschlüsse belegen.",
+      "examples": [
+        "EG-02",
+        "EG-16"
+      ]
+    },
+    {
+      "id": "R18",
+      "title": "Sackgasse von Sperre unterscheiden",
+      "rule": "Eine Sackgasse kann begehbar sein und nur über denselben Zugang verlassen werden. Topologie erst nach vollständiger Anschlussprüfung bewerten.",
+      "examples": [
+        "EG-15",
+        "EG-16"
+      ]
+    },
+    {
+      "id": "R19",
+      "title": "Decken- und Bodenlinien nicht als Wände verwenden",
+      "rule": "Höhenhinweise und Herkunft der Geometrie auswerten; Deckenkanten und Sportmarkierungen erzeugen keine Räume.",
+      "examples": [
+        "EG-03",
+        "EG-17"
+      ]
+    },
+    {
+      "id": "R20",
+      "title": "Höhenangaben ihrem Bezugsniveau zuordnen",
+      "rule": "EG-Planname ist kein Beweis für EG-Boden bei jeder Darstellung. UG-Bezug in FPH/RPH und überlagerte Bauteile erhalten.",
+      "examples": [
+        "EG-01",
+        "EG-13",
+        "EG-17"
+      ]
+    },
+    {
+      "id": "R21",
+      "title": "Treppenlauf als Objekt erkennen",
+      "rule": "Stufenkanten, Laufpfeil, Nummerierung, Steigungsangaben und Podest gemeinsam lesen; Stufen nicht zu Einzelräumen machen.",
+      "examples": [
+        "EG-05",
+        "EG-20",
+        "EG-21",
+        "EG-22",
+        "EG-23",
+        "EG-24",
+        "EG-25"
+      ]
+    },
+    {
+      "id": "R22",
+      "title": "Auf/ab nicht aus der Blattorientierung ableiten",
+      "rule": "Richtung aus Laufdarstellung und Höhenbezug bestimmen; unbekannte Zielhöhe und Zielgeschoss nicht erfinden.",
+      "examples": [
+        "EG-20",
+        "EG-21",
+        "EG-22",
+        "EG-23",
+        "EG-24",
+        "EG-25"
+      ]
+    },
+    {
+      "id": "R23",
+      "title": "Aufzug und Schacht gesondert behandeln",
+      "rule": "Keine normale Fußwegverbindung durch Schacht oder Kabine annehmen; Evakuierungsfunktion braucht eigene belegte Freigabe.",
+      "examples": [
+        "EG-19",
+        "EG-29"
+      ]
+    },
+    {
+      "id": "R24",
+      "title": "Einheiten und Quellmaß unterscheiden",
+      "rule": "DXF-Einheiten, Textmaß und geometrisch gemessene Größe getrennt speichern. Zentimeterbeschriftung nicht ungeprüft als Millimeter importieren.",
+      "examples": [
+        "EG-07",
+        "EG-09"
+      ]
+    },
+    {
+      "id": "R25",
+      "title": "Lernmarkierung ist keine exakte Sollgeometrie",
+      "rule": "Rote Konturen und Beispiel-ROIs sind visuelle Referenzen. Präzise Kollisionsflächen müssen aus geprüfter Originalgeometrie entstehen.",
+      "examples": [
+        "EG-07"
+      ]
+    },
+    {
+      "id": "R26",
+      "title": "Keine Freigabe aus Lernbeispielen ableiten",
+      "rule": "Nutzbare Breite, Höhe, Türzustand und Nutzerprofil prüfen; geometrische Verbindung ist keine normative Fluchtwegfreigabe.",
+      "examples": [
+        "EG-15",
+        "EG-26"
+      ]
+    },
+    {
+      "id": "R27",
+      "title": "Geschossübergänge beidseitig belegen",
+      "rule": "EG- und UG-/OG-Instanzen über Anlage, Geometrie, Orientierung und Höhen verknüpfen. Gleiche Nummer oder Nähe genügt nicht.",
+      "examples": [
+        "EG-06",
+        "EG-20",
+        "EG-21",
+        "EG-22",
+        "EG-23",
+        "EG-24",
+        "EG-25"
+      ]
+    }
+  ]
+}

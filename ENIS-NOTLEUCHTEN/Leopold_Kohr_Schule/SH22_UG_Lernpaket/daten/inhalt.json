@@ -1,0 +1,274 @@
+{
+  "pages": [
+    {
+      "page": 1,
+      "id": "PLAN",
+      "title": "Untergeschoss · Mauern in Rot"
+    },
+    {
+      "page": 2,
+      "id": "GRUEN",
+      "title": "UG: zusammenhängende grüne Bodenflächen"
+    },
+    {
+      "page": 3,
+      "id": "GRUEN_LESEN",
+      "title": "Grün lesen: Durchlauf, Endbereich und Treppe"
+    },
+    {
+      "page": 4,
+      "id": "LESEN",
+      "title": "So liest du die farbigen Erklärungen"
+    },
+    {
+      "page": 5,
+      "id": "Z01",
+      "title": "Oben links: breite Außenwände"
+    },
+    {
+      "page": 6,
+      "id": "Z02",
+      "title": "Links unten: Innenwände und Öffnungen"
+    },
+    {
+      "page": 7,
+      "id": "Z03",
+      "title": "Mitte oben: Wände, Stützen und kurze Treppe"
+    },
+    {
+      "page": 8,
+      "id": "Z04",
+      "title": "Mitte unten: Raumgrenzen entlang des Flurs"
+    },
+    {
+      "page": 9,
+      "id": "Z05",
+      "title": "Oben rechts: zweite Halle, gleiche Leseregel"
+    },
+    {
+      "page": 10,
+      "id": "Z06",
+      "title": "Rechts unten: Flur, Stiege 1 und Schacht"
+    },
+    {
+      "page": 11,
+      "id": "Z07",
+      "title": "Ganz rechts: Anbau und Stiege 5"
+    },
+    {
+      "page": 12,
+      "id": "Z08",
+      "title": "Unterer Bereich: bestätigte Gehfläche"
+    },
+    {
+      "page": 13,
+      "id": "M01",
+      "title": "Was ist eine Mauer?"
+    },
+    {
+      "page": 14,
+      "id": "M01_BILD",
+      "title": "Diese Merkmale machen das Band zur Wand"
+    },
+    {
+      "page": 15,
+      "id": "M02",
+      "title": "Breite Außenmauer: alle Schichten gehören dazu"
+    },
+    {
+      "page": 16,
+      "id": "M02_BILD",
+      "title": "Eine Außenwand besteht aus mehreren Schichten"
+    },
+    {
+      "page": 17,
+      "id": "M03",
+      "title": "Wandecken und Rücksprünge richtig verfolgen"
+    },
+    {
+      "page": 18,
+      "id": "M03_BILD",
+      "title": "Der Raum folgt jeder Ecke der Mauer"
+    },
+    {
+      "page": 19,
+      "id": "M04",
+      "title": "Dünne feste Trennwände bleiben Begrenzungen"
+    },
+    {
+      "page": 20,
+      "id": "M04_BILD",
+      "title": "Breite und dünne feste Begrenzungen"
+    },
+    {
+      "page": 21,
+      "id": "T01",
+      "title": "Tür erkennen: Öffnung, Flügel und Bogen"
+    },
+    {
+      "page": 22,
+      "id": "T01_BILD",
+      "title": "Eine Tür: Blatt, Drehpunkt, Bogen und Schließung"
+    },
+    {
+      "page": 23,
+      "id": "T02",
+      "title": "Zwei Flügel, eine gemeinsame Öffnung"
+    },
+    {
+      "page": 24,
+      "id": "T02_BILD",
+      "title": "Zwei Flügel schließen eine gemeinsame Öffnung"
+    },
+    {
+      "page": 25,
+      "id": "T03",
+      "title": "Ein Kreuzfeld widerlegt eine Tür nicht"
+    },
+    {
+      "page": 26,
+      "id": "T03_BILD",
+      "title": "Dieses Kreuzfeld liegt in einer Türöffnung"
+    },
+    {
+      "page": 27,
+      "id": "F01",
+      "title": "Fenster erkennen – und falsche Fenster vermeiden"
+    },
+    {
+      "page": 28,
+      "id": "F01_BILD",
+      "title": "Hier sind parallele Linien noch kein Fenster"
+    },
+    {
+      "page": 29,
+      "id": "F02",
+      "title": "Wo sind im UG Fenster sicher belegt?"
+    },
+    {
+      "page": 30,
+      "id": "F02_BILD",
+      "title": "Rauchableitung: Text und Öffnung unterscheiden"
+    },
+    {
+      "page": 31,
+      "id": "F03_SCHEMA",
+      "title": "Fenster: Rahmen, Glas und Brüstung im Schema"
+    },
+    {
+      "page": 32,
+      "id": "W01",
+      "title": "Freier Weg: Fläche und Verbindung unterscheiden"
+    },
+    {
+      "page": 33,
+      "id": "W01_BILD",
+      "title": "Der Gang ist eine zusammenhängende Fläche"
+    },
+    {
+      "page": 34,
+      "id": "W02",
+      "title": "Durch eine Tür zu einem anderen Bereich"
+    },
+    {
+      "page": 35,
+      "id": "W02_BILD",
+      "title": "Der Weg wechselt an der Tür die Raumseite"
+    },
+    {
+      "page": 36,
+      "id": "W03",
+      "title": "Begehbar kann trotzdem eine Sackgasse sein"
+    },
+    {
+      "page": 37,
+      "id": "W03_BILD",
+      "title": "Ein Endbereich ist begehbar, aber kein Durchlauf"
+    },
+    {
+      "page": 38,
+      "id": "W04",
+      "title": "Der gezeigte Bereich ist begehbar"
+    },
+    {
+      "page": 39,
+      "id": "W04_BILD",
+      "title": "Punkt 2 korrigiert: Hier kann man gehen"
+    },
+    {
+      "page": 40,
+      "id": "S01",
+      "title": "Eine Treppe als Ganzes erkennen"
+    },
+    {
+      "page": 41,
+      "id": "S01_BILD",
+      "title": "Stiege 6: Zugang, Stufen, Podeste und Begrenzung"
+    },
+    {
+      "page": 42,
+      "id": "S02",
+      "title": "Rauf oder runter: Bildrichtung ist keine Höhenrichtung"
+    },
+    {
+      "page": 43,
+      "id": "S02_BILD",
+      "title": "Kreis, Lauflinie und Pfeil zeigen die Treppenlesart"
+    },
+    {
+      "page": 44,
+      "id": "S03",
+      "title": "Stufenangaben lesen und richtig zuordnen"
+    },
+    {
+      "page": 45,
+      "id": "S03_BILD",
+      "title": "Was 6 STG 16,2 / 27 bedeutet"
+    },
+    {
+      "page": 46,
+      "id": "S07_SEITE",
+      "title": "Treppe von der Seite: Steigung und Auftritt"
+    },
+    {
+      "page": 47,
+      "id": "S04",
+      "title": "Schräger Treppenschnitt ist keine Rampe"
+    },
+    {
+      "page": 48,
+      "id": "S04_BILD",
+      "title": "Diese schrägen Linien unterbrechen das Treppenbild"
+    },
+    {
+      "page": 49,
+      "id": "S05",
+      "title": "Kurze Treppe, Brüstung und Handlauf trennen"
+    },
+    {
+      "page": 50,
+      "id": "S05_BILD",
+      "title": "Kurze Treppe: Brüstung, Handlauf und Stufen"
+    },
+    {
+      "page": 51,
+      "id": "S06",
+      "title": "Vorraum, Treppe und Lift getrennt erkennen"
+    },
+    {
+      "page": 52,
+      "id": "S06_BILD",
+      "title": "Vorraum, Treppenläufe und Lift sauber trennen"
+    },
+    {
+      "page": 53,
+      "id": "ARBEIT",
+      "title": "Arbeitsauftrag für Claude Code"
+    },
+    {
+      "page": 54,
+      "id": "QUELLEN",
+      "title": "Quellen, Prüfung und offene Punkte"
+    }
+  ]
+}

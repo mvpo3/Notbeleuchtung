@@ -1,0 +1,306 @@
+{
+  "schema": "rivoplan.eg_lernpaket.tests/1",
+  "engine_tests_executed": false,
+  "tests": [
+    {
+      "id": "T01",
+      "example_id": "EG-07",
+      "rule_id": "R02",
+      "expected": "Breite Außenwand als Hindernis mit vollständigem Aufbau erfassen; keine Route durch Schichten.",
+      "negative_case": "Eine bloße Wandmittellinie oder ein schmaler Kern ohne übrigen Aufbau genügt nicht.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T02",
+      "example_id": "EG-09",
+      "rule_id": "R07",
+      "expected": "Ein Türportal zwischen 0.21 und Erschließung erhalten.",
+      "negative_case": "Wandschließen darf die reale Öffnung nicht vernichten.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T03",
+      "example_id": "EG-13",
+      "rule_id": "R09",
+      "expected": "Fenster mit UG-Höhenbezug nicht als normale Fußgängertür klassifizieren.",
+      "negative_case": "Ein Öffnungsbogen allein darf keine Tür erzeugen.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T04",
+      "example_id": "EG-11",
+      "rule_id": "R11",
+      "expected": "Vier im ROI dargestellte Schiebetürgruppen erkennen: zwei außen, zwei zur Halle.",
+      "negative_case": "Fehlender Türbogen ist kein Grund, die Öffnungen zu verlieren.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T05",
+      "example_id": "EG-10",
+      "rule_id": "R10",
+      "expected": "Zwei Flügel in der markierten Öffnung zu einem Portal bündeln.",
+      "negative_case": "Keine doppelten Verbindungen für denselben Wanddurchgang erzeugen.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T06",
+      "example_id": "EG-16",
+      "rule_id": "R18",
+      "expected": "0.21 als Raum mit einem im Umriss belegten normalen Zugang führen.",
+      "negative_case": "Keine erfundene Verbindung zum Nachbarraum und keine pauschale Unbegehbarkeit.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T07",
+      "example_id": "EG-17",
+      "rule_id": "R19",
+      "expected": "Keine Wand oder eigener Innenraum entlang des großen Deckenrechtecks in 0.004.",
+      "negative_case": "Rechteckiger Linienzug allein ist keine Raumgrenze.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T08",
+      "example_id": "EG-13",
+      "rule_id": "R20",
+      "expected": "Bezugsniveau UG in FPH-Angabe erhalten; EG-Boden des Hallenbereichs nicht daraus ableiten.",
+      "negative_case": "Blatttitel EG darf den expliziten UG-Höhenbezug nicht überschreiben.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T09",
+      "example_id": "EG-14",
+      "rule_id": "R13",
+      "expected": "Den festen Abschluss zwischen Schulwartraum und Windfang nicht als freien Durchlauf behandeln.",
+      "negative_case": "Weiße oder dünne Glasdarstellung ist nicht gleich offene Fläche.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T10",
+      "example_id": "EG-20",
+      "rule_id": "R21",
+      "expected": "Stufenkanten zu Laufobjekten von Stiege 1 zusammenfassen.",
+      "negative_case": "Keine schmalen Einzelräume pro Stufe erzeugen.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T11",
+      "example_id": "EG-23",
+      "rule_id": "R27",
+      "expected": "Stiege 6 mit eigener EG-Instanz führen; Höhenanschluss bis Abgleich unbekannt.",
+      "negative_case": "Ähnlichkeit zu Stiege 5 darf deren Anschluss nicht kopieren.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T12",
+      "example_id": "EG-18",
+      "rule_id": "R06",
+      "expected": "Technischen Durchbruch als solchen führen, ohne Fußwegkante.",
+      "negative_case": "Das Wort Durchbruch darf nicht automatisch Tür bedeuten.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T13",
+      "example_id": "EG-19",
+      "rule_id": "R23",
+      "expected": "Schacht und Kabine vom normalen Gehbereich trennen.",
+      "negative_case": "Kein begehbarer Ringraum um die Liftkabine.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T14",
+      "example_id": "EG-08",
+      "rule_id": "R14",
+      "expected": "Feste schmale Trennwandstücke erhalten; deren Türöffnung separat führen.",
+      "negative_case": "Dickenfilter darf die feste Trennwand nicht löschen.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T15",
+      "example_id": "EG-06",
+      "rule_id": "R03",
+      "expected": "Alle Orientierungen des Nebengebäudes berücksichtigen, insbesondere die rechte schräge Außenwand.",
+      "negative_case": "Orthogonaler Linienfilter ist hier unzulässig.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T16",
+      "example_id": "EG-03",
+      "rule_id": "R05",
+      "expected": "Massive Stützen in der Bewegungsprüfung als Sperren führen.",
+      "negative_case": "Ein Pfeiler ist kein Raum, darf aber nicht durchlaufen werden.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T17",
+      "example_id": "EG-26",
+      "rule_id": "R16",
+      "expected": "Türportal und unbestätigten weiteren Außenweg getrennt ausgeben.",
+      "negative_case": "NA darf keinen automatisch freigegebenen Außenendpunkt erzeugen.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T18",
+      "example_id": "EG-15",
+      "rule_id": "R26",
+      "expected": "Interpretierte grüne Bodenflächen von einer geprüften Körperroute unterscheiden.",
+      "negative_case": "Grüne Flächen sind kein Freigabenachweis und kein geprüftes Breitenmodell.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T19",
+      "example_id": "EG-21",
+      "rule_id": "R22",
+      "expected": "Treppenbruchlinie nicht als querstehende Wand behandeln.",
+      "negative_case": "Blattrichtung allein darf keine Auf-/Ab-Zuordnung liefern.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    },
+    {
+      "id": "T20",
+      "example_id": "EG-09",
+      "rule_id": "R24",
+      "expected": "900-mm-Bogenradius und DL-90-Beschriftung getrennt mit Quelle speichern.",
+      "negative_case": "DL 90 darf nicht als 90 mm importiert werden.",
+      "status": "Spezifikation_nicht_ausgefuehrt",
+      "required_evidence": [
+        "Engine_Zwischendaten",
+        "Originalplan_Overlay",
+        "Codeversion",
+        "Konfiguration"
+      ],
+      "pass_fail_criterion": "Erwartung und Gegenfall am genannten ROI nachvollziehbar prüfen; nicht aus Dateivorhandensein ableiten."
+    }
+  ]
+}
