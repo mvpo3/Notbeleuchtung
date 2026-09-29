@@ -1173,8 +1173,10 @@ def _index_projekt(out: Path, projekt: str) -> Path:
     meta = _ordner_meta(plaene)
     aktuell = meta["commit"]
     basis = f" (Stapel <code>{escape(meta['basis'])}</code>)" if meta["basis"] else ""
+    _schaechte_md(ordner, plaene)
     vergleich = "".join(f" · <a href='{quote(datei)}'>{escape(text)}</a>"
                         for text, datei in _vergleich_links(ordner))
+    vergleich += " · <a href='SCHAECHTE.md'>Schächte</a>"
     teile = [_kopf(f"Raumerkennung — {projekt}"),
              f"<h1>{escape(projekt)} — Raumerkennung, nur Räume</h1>",
              (f"<div class='sub'><a href='../index.html'>← Gesamtübersicht</a>{vergleich} · "
@@ -1324,12 +1326,60 @@ def _md(text) -> str:
     return str(text).replace("|", "\\|")
 
 
+def _schaechte_md(ordner: Path, plaene: list[tuple[Path, dict]]) -> Path:
+    """SCHAECHTE.md je Projektordner (Slice K2, Owner-Regel b): Schachtzahl je
+    Geschoss, Lagen mit belegten Geschossen, Warnungen „Schacht erwartet, nicht
+    gefunden" — aus den ``_cache.pkl`` der Pläne, nichts wird erfunden."""
+    from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
+    from notbeleuchtung.raumerkennung.schacht_abgleich import (
+        TOLERANZ_MM,
+        geschoss_rang,
+        gleiche_schaechte_ab,
+    )
+    geschosse, ohne_rang = [], []
+    for d, kz in plaene:
+        if kz.get("status") != "ok" or not (d / "_cache.pkl").is_file():
+            continue
+        cache = pickle.loads((d / "_cache.pkl").read_bytes())
+        raeume = [Raum(id=r["id"], raum_typ=r["typ"], polygon_mm=r["polygon_mm"],
+                       flaeche_m2=r["flaeche_m2"]) for r in cache["raeume"]]
+        g = cache.get("geschoss") or ""
+        rang = geschoss_rang(g, d.name)
+        (ohne_rang if rang is None else geschosse).append((rang, d.name, g, raeume))
+    geschosse.sort(key=lambda x: (x[0], x[1]))
+    lagen = gleiche_schaechte_ab([(name, raeume) for _, name, _, raeume in geschosse])
+    md = [f"# Schächte — {ordner.name}", "",
+          ("Owner-Regel b (Slice K2): Schächte laufen senkrecht. Lage = Schwerpunkt des "
+           f"SCHACHT-Polygons in CAD-mm, gleiche Lage bis {TOLERANZ_MM:.0f} mm. Fehlt ein "
+           "Schacht in einem Geschoss zwischen zwei belegten, steht unten eine Warnung — "
+           "erfunden oder umtypisiert wird nichts. NISCHE und LIFT zählen nicht."), "",
+          "## Schachtzahl je Geschoss (unten → oben)", "",
+          "| Plan | Geschoss | Schächte | Raum-IDs |", "|---|---|--:|---|"]
+    for _, name, g, raeume in geschosse:
+        ids = [r.id for r in raeume if r.raum_typ == "SCHACHT"]
+        md.append(f"| {_md(name)} | {g} | {len(ids)} | {', '.join(ids) or '—'} |")
+    for _, name, g, raeume in ohne_rang:
+        n = sum(r.raum_typ == "SCHACHT" for r in raeume)
+        md.append(f"| {_md(name)} | {g or 'unbekannt'} (nicht abgeglichen) | {n} | — |")
+    md += ["", "## Lagen", "", "| Lage (x, y) mm | belegt in | Raum-IDs | Warnungen |",
+           "|---|---|---|--:|"]
+    md += [f"| ({lg.xy[0]}, {lg.xy[1]}) | {_md(', '.join(lg.belegt))} | "
+           f"{', '.join(lg.belegt.values())} | {len(lg.warnungen)} |" for lg in lagen]
+    warnungen = [w for lg in lagen for w in lg.warnungen]
+    md += ["", "## Warnungen", ""] + ([f"- {_md(w)}" for w in warnungen] or ["keine"])
+    ziel = ordner / "SCHAECHTE.md"
+    ziel.write_text("\n".join(md) + "\n", encoding="utf-8")
+    return ziel
+
+
 def _readme_projekt(out: Path, projekt: str, plaene: list[tuple[Path, dict]]) -> Path:
     bericht = " · [Bericht](../BERICHT.md)" if (out / "BERICHT.md").exists() else ""
     meta = _ordner_meta(plaene)
     basis = f" (Stapel `{meta['basis']}`)" if meta["basis"] else ""
     vergleich = "".join(f" · [{_md(text)}]({quote(datei)})"
                         for text, datei in _vergleich_links(out / projekt))
+    if (out / projekt / "SCHAECHTE.md").is_file():
+        vergleich += " · [Schächte](SCHAECHTE.md)"
     md = [f"# {projekt} — Raumerkennung, nur Räume", "",
           f"[← Gesamtübersicht](../README.md){bericht}{vergleich}", "",
           (f"Version **{_md(meta['version'])}** · Datum {_md(meta['datum'])} · "

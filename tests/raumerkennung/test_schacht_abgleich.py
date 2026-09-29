@@ -30,8 +30,8 @@ def test_luecke_im_mittleren_geschoss_gibt_warnung_und_erfindet_nichts():
     lage = lagen[0]
     assert lage.xy == (500, 500)
     assert lage.belegt == {"UG": "s_ug", "1OG": "s_og"}
-    assert lage.warnungen == [f"{WARNUNG}: EG bei (500, 500) — belegt in UG, 1OG; "
-                              "an der Stelle: STIEGENHAUS sh"]
+    assert lage.warnungen == [(f"{WARNUNG}: EG bei (500, 500) — belegt in UG, 1OG; "
+                               "an der Stelle: STIEGENHAUS sh")]
     assert [[(r.id, r.raum_typ) for r in g] for g in (ug, eg, og)] == vorher
 
 
