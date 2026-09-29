@@ -1,0 +1,185 @@
+{
+  "status": "Register aus PDF S. 84–85; keine geometrische Vollinventur, keine Soll-Raumanzahl",
+  "entries": [
+    {
+      "pdf_page": 84,
+      "plan_id_group": "3.15 / 3.16 / 3.17",
+      "designation": "Bildungsräume links",
+      "interpretation": "Je eigener Raum; Tür zum Gang, Möbel innen."
+    },
+    {
+      "pdf_page": 84,
+      "plan_id_group": "3.18",
+      "designation": "Teamraum inkl. Küche",
+      "interpretation": "Ein Raum mit Küchen- und Sitzausstattung."
+    },
+    {
+      "pdf_page": 84,
+      "plan_id_group": "3.19",
+      "designation": "WC päd",
+      "interpretation": "Kleiner Raum; Beschriftungszuordnung beachten."
+    },
+    {
+      "pdf_page": 84,
+      "plan_id_group": "3.20",
+      "designation": "Drucker",
+      "interpretation": "Eigenes kleines Zimmer zwischen Nebenräumen."
+    },
+    {
+      "pdf_page": 84,
+      "plan_id_group": "3.21",
+      "designation": "WC b",
+      "interpretation": "Planbezeichnung übernehmen; Eigenschaften prüfen."
+    },
+    {
+      "pdf_page": 84,
+      "plan_id_group": "3.22",
+      "designation": "Bildungsraum rechts oben im linken Flügel",
+      "interpretation": "Eigene Umfassung und Tür zum offenen Bereich."
+    },
+    {
+      "pdf_page": 84,
+      "plan_id_group": "3.23 / 3.24",
+      "designation": "WC Schülerin / WC Schüler",
+      "interpretation": "Zwei Räume; Kabinen als Unterstruktur."
+    },
+    {
+      "pdf_page": 84,
+      "plan_id_group": "3.25",
+      "designation": "Abstellr.",
+      "interpretation": "Zugang vom angrenzenden Erschließungsbereich."
+    },
+    {
+      "pdf_page": 84,
+      "plan_id_group": "3.13",
+      "designation": "Allg. Abstellr.",
+      "interpretation": "Schmaler Nebenraum beim Lift/Stiegenkern."
+    },
+    {
+      "pdf_page": 84,
+      "plan_id_group": "3.14",
+      "designation": "Garderobe",
+      "interpretation": "Eigener Raum; Bankreihen als Hindernisse."
+    },
+    {
+      "pdf_page": 84,
+      "plan_id_group": "3.007",
+      "designation": "Erschließung",
+      "interpretation": "Offener Zusammenhang um die Garderobe."
+    },
+    {
+      "pdf_page": 84,
+      "plan_id_group": "3.007.A / B / C",
+      "designation": "MUFU-Teilbereiche",
+      "interpretation": "Nutzungszonen; fehlende Wände nicht ergänzen."
+    },
+    {
+      "pdf_page": 84,
+      "plan_id_group": "3.005 / 3.006",
+      "designation": "Erschließung Stiege 2 / Stiege 2",
+      "interpretation": "Vorraum, Abschluss, Läufe und Podest trennen."
+    },
+    {
+      "pdf_page": 84,
+      "plan_id_group": "F3.01 / F3.02",
+      "designation": "Freiklasse / Erschließung Stiege 4",
+      "interpretation": "Außenflächen; Sicherung und Einbauten aussparen."
+    },
+    {
+      "pdf_page": 84,
+      "plan_id_group": "F3.03",
+      "designation": "Stiege 4",
+      "interpretation": "Außenstiege; Geschossanschlüsse separat prüfen."
+    },
+    {
+      "pdf_page": 85,
+      "plan_id_group": "3.26 / 3.27",
+      "designation": "Lehrküche / Physik, Chemie, Biologie",
+      "interpretation": "Fachräume; Einbauten sind keine Raumgrenzen."
+    },
+    {
+      "pdf_page": 85,
+      "plan_id_group": "3.004",
+      "designation": "Erschließung Mitte",
+      "interpretation": "Umlaufender Bereich mit innerer Aussparung."
+    },
+    {
+      "pdf_page": 85,
+      "plan_id_group": "3.28 / 3.29",
+      "designation": "Sammlung / IKT Verteiler",
+      "interpretation": "Eigene kleine Räume mit getrennten Zugängen."
+    },
+    {
+      "pdf_page": 85,
+      "plan_id_group": "3.30",
+      "designation": "WC b",
+      "interpretation": "Einzelraum am Mittelteil; Planbezeichnung."
+    },
+    {
+      "pdf_page": 85,
+      "plan_id_group": "3.01 / 3.05",
+      "designation": "WC Schülerin / WC Schüler",
+      "interpretation": "Zwei WC-Gruppen beidseits der Erschließung."
+    },
+    {
+      "pdf_page": 85,
+      "plan_id_group": "3.02",
+      "designation": "WC päd",
+      "interpretation": "Einzel-WC oberhalb der Gruppe 3.01."
+    },
+    {
+      "pdf_page": 85,
+      "plan_id_group": "3.03.1",
+      "designation": "Drucker",
+      "interpretation": "Kleiner Raum neben dem Teamraum/MUFU."
+    },
+    {
+      "pdf_page": 85,
+      "plan_id_group": "3.04",
+      "designation": "Teamraum inkl. Küche",
+      "interpretation": "Geschlossener Raum; Küche als Ausstattung."
+    },
+    {
+      "pdf_page": 85,
+      "plan_id_group": "3.06",
+      "designation": "Abstellr.",
+      "interpretation": "Schmaler Raum mit eigener Tür."
+    },
+    {
+      "pdf_page": 85,
+      "plan_id_group": "3.07 / 3.08 / 3.09 / 3.11",
+      "designation": "Bildungsräume rechts",
+      "interpretation": "Je eigener Raum; Wand- und Türlage prüfen."
+    },
+    {
+      "pdf_page": 85,
+      "plan_id_group": "3.10 / 3.12",
+      "designation": "Garderobe / Putzr.",
+      "interpretation": "Möbel beziehungsweise Becken als Ausstattung."
+    },
+    {
+      "pdf_page": 85,
+      "plan_id_group": "3.003 / 3.003.A / B / C",
+      "designation": "Erschließung / MUFU-Teilbereiche",
+      "interpretation": "Offenen Zusammenhang und Teilnutzungen trennen."
+    },
+    {
+      "pdf_page": 85,
+      "plan_id_group": "3.001 / 3.002",
+      "designation": "Erschließung Stiege 1 / Stiege 1",
+      "interpretation": "Vorraum, Lift, Warteplatz und Treppe trennen."
+    },
+    {
+      "pdf_page": 85,
+      "plan_id_group": "F3.04",
+      "designation": "Terrasse",
+      "interpretation": "Große Außenfläche mit Gefälle und Sicherungen."
+    },
+    {
+      "pdf_page": 85,
+      "plan_id_group": "F3.05 / F3.06 / F3.07",
+      "designation": "Erschließung Stiege 3 / Stiege 3 / Freiklasse",
+      "interpretation": "Außenboden und Höhenverbindungen getrennt."
+    }
+  ]
+}

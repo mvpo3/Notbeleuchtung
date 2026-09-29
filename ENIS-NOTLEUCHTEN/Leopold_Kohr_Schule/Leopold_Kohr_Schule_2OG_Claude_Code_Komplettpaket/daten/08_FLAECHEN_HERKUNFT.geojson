@@ -1,0 +1,1321 @@
+{
+  "type": "FeatureCollection",
+  "coordinate_reference": "PDF_SOURCE_PT_4268x2953_TOP_LEFT_NOT_WGS84",
+  "floor": "2OG",
+  "ground_truth": false,
+  "meaning": "Manuelle Konstruktionsbereiche der Lernfüllung. Die ausgeschlossenen Rechtecke sind Such-/Sperrbereiche, keine vermessenen Schachtkonturen.",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-001",
+      "properties": {
+        "name": "Innen West oben",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1537.0,
+              82.0
+            ],
+            [
+              1537.0,
+              505.0
+            ],
+            [
+              77.0,
+              505.0
+            ],
+            [
+              77.0,
+              82.0
+            ],
+            [
+              1537.0,
+              82.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-002",
+      "properties": {
+        "name": "Innen West Mitte",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1544.0,
+              505.0
+            ],
+            [
+              1544.0,
+              1469.0
+            ],
+            [
+              77.0,
+              1469.0
+            ],
+            [
+              77.0,
+              505.0
+            ],
+            [
+              1544.0,
+              505.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-003",
+      "properties": {
+        "name": "Innen West unten",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              510.0,
+              1469.0
+            ],
+            [
+              510.0,
+              1820.0
+            ],
+            [
+              77.0,
+              1820.0
+            ],
+            [
+              77.0,
+              1469.0
+            ],
+            [
+              510.0,
+              1469.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-004",
+      "properties": {
+        "name": "Stiege 2 unteres Podest",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1544.0,
+              1469.0
+            ],
+            [
+              1544.0,
+              1593.0
+            ],
+            [
+              1123.0,
+              1593.0
+            ],
+            [
+              1123.0,
+              1469.0
+            ],
+            [
+              1544.0,
+              1469.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-005",
+      "properties": {
+        "name": "Mitte oben",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2691.0,
+              608.0
+            ],
+            [
+              2691.0,
+              1030.0
+            ],
+            [
+              1560.0,
+              1030.0
+            ],
+            [
+              1560.0,
+              608.0
+            ],
+            [
+              2691.0,
+              608.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-006",
+      "properties": {
+        "name": "Mitte Umgang",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2690.0,
+              1030.0
+            ],
+            [
+              2690.0,
+              1590.0
+            ],
+            [
+              1558.0,
+              1590.0
+            ],
+            [
+              1558.0,
+              1030.0
+            ],
+            [
+              2690.0,
+              1030.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-007",
+      "properties": {
+        "name": "Mitte Klassen",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2285.0,
+              1624.0
+            ],
+            [
+              2285.0,
+              2012.0
+            ],
+            [
+              1702.0,
+              2012.0
+            ],
+            [
+              1702.0,
+              1624.0
+            ],
+            [
+              2285.0,
+              1624.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-008",
+      "properties": {
+        "name": "Ost oben und Mitte",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4185.0,
+              609.0
+            ],
+            [
+              4185.0,
+              2086.0
+            ],
+            [
+              2715.0,
+              2086.0
+            ],
+            [
+              2715.0,
+              609.0
+            ],
+            [
+              4185.0,
+              609.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-009",
+      "properties": {
+        "name": "Ost Klasse Süd",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4185.0,
+              2086.0
+            ],
+            [
+              4185.0,
+              2256.0
+            ],
+            [
+              3755.0,
+              2256.0
+            ],
+            [
+              3755.0,
+              2086.0
+            ],
+            [
+              4185.0,
+              2086.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-010",
+      "properties": {
+        "name": "Ost Erschließung Süd",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3735.0,
+              2086.0
+            ],
+            [
+              3735.0,
+              2112.0
+            ],
+            [
+              3150.0,
+              2112.0
+            ],
+            [
+              3150.0,
+              2086.0
+            ],
+            [
+              3735.0,
+              2086.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-011",
+      "properties": {
+        "name": "Ost Klasse 2.11",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3130.0,
+              2020.0
+            ],
+            [
+              3130.0,
+              2527.0
+            ],
+            [
+              2717.0,
+              2527.0
+            ],
+            [
+              2717.0,
+              2020.0
+            ],
+            [
+              3130.0,
+              2020.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-012",
+      "properties": {
+        "name": "Außen West",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0,
+              1838.0
+            ],
+            [
+              515.0,
+              1838.0
+            ],
+            [
+              515.0,
+              1491.0
+            ],
+            [
+              1095.0,
+              1491.0
+            ],
+            [
+              1095.0,
+              1610.0
+            ],
+            [
+              1545.0,
+              1610.0
+            ],
+            [
+              1545.0,
+              1950.0
+            ],
+            [
+              77.0,
+              1950.0
+            ],
+            [
+              77.0,
+              1838.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-013",
+      "properties": {
+        "name": "Außen Podest Stiege 4",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1690.0,
+              1610.0
+            ],
+            [
+              1690.0,
+              1760.0
+            ],
+            [
+              1545.0,
+              1760.0
+            ],
+            [
+              1545.0,
+              1610.0
+            ],
+            [
+              1690.0,
+              1610.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-014",
+      "properties": {
+        "name": "Außen Mitte links",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1690.0,
+              1760.0
+            ],
+            [
+              1690.0,
+              2320.0
+            ],
+            [
+              1518.0,
+              2320.0
+            ],
+            [
+              1518.0,
+              1760.0
+            ],
+            [
+              1690.0,
+              1760.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-015",
+      "properties": {
+        "name": "Außen Mitte unten",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2550.0,
+              2040.0
+            ],
+            [
+              2550.0,
+              2320.0
+            ],
+            [
+              1690.0,
+              2320.0
+            ],
+            [
+              1690.0,
+              2040.0
+            ],
+            [
+              2550.0,
+              2040.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-016",
+      "properties": {
+        "name": "Außen Mitte rechts",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2692.0,
+              1614.0
+            ],
+            [
+              2692.0,
+              2040.0
+            ],
+            [
+              2308.0,
+              2040.0
+            ],
+            [
+              2308.0,
+              1614.0
+            ],
+            [
+              2692.0,
+              1614.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-017",
+      "properties": {
+        "name": "Außen Ost Streifen",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2692.0,
+              2040.0
+            ],
+            [
+              2692.0,
+              2880.0
+            ],
+            [
+              2550.0,
+              2880.0
+            ],
+            [
+              2550.0,
+              2040.0
+            ],
+            [
+              2692.0,
+              2040.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-018",
+      "properties": {
+        "name": "Außen Ost unten",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4185.0,
+              2550.0
+            ],
+            [
+              4185.0,
+              2880.0
+            ],
+            [
+              2692.0,
+              2880.0
+            ],
+            [
+              2692.0,
+              2550.0
+            ],
+            [
+              4185.0,
+              2550.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-019",
+      "properties": {
+        "name": "Außen Ost Freiklasse",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3730.0,
+              2130.0
+            ],
+            [
+              3730.0,
+              2550.0
+            ],
+            [
+              3170.0,
+              2550.0
+            ],
+            [
+              3170.0,
+              2130.0
+            ],
+            [
+              3730.0,
+              2130.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-020",
+      "properties": {
+        "name": "Außen Ost Rand",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4185.0,
+              2280.0
+            ],
+            [
+              4185.0,
+              2550.0
+            ],
+            [
+              3730.0,
+              2550.0
+            ],
+            [
+              3730.0,
+              2280.0
+            ],
+            [
+              4185.0,
+              2280.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-021",
+      "properties": {
+        "name": "Tür Mitte West",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1570.0,
+              1040.0
+            ],
+            [
+              1570.0,
+              1130.0
+            ],
+            [
+              1530.0,
+              1130.0
+            ],
+            [
+              1530.0,
+              1040.0
+            ],
+            [
+              1570.0,
+              1040.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-022",
+      "properties": {
+        "name": "Tür Mitte Ost",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2730.0,
+              1265.0
+            ],
+            [
+              2730.0,
+              1342.0
+            ],
+            [
+              2680.0,
+              1342.0
+            ],
+            [
+              2680.0,
+              1265.0
+            ],
+            [
+              2730.0,
+              1265.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-023",
+      "properties": {
+        "name": "Tür Klasse Mitte",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1830.0,
+              1580.0
+            ],
+            [
+              1830.0,
+              1640.0
+            ],
+            [
+              1750.0,
+              1640.0
+            ],
+            [
+              1750.0,
+              1580.0
+            ],
+            [
+              1830.0,
+              1580.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-REGIONS-024",
+      "properties": {
+        "name": "Tür Klasse Südost",
+        "role": "candidate_floor_region",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3120.0,
+              2000.0
+            ],
+            [
+              3120.0,
+              2040.0
+            ],
+            [
+              3040.0,
+              2040.0
+            ],
+            [
+              3040.0,
+              2000.0
+            ],
+            [
+              3120.0,
+              2000.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-EXCLUDED-001",
+      "properties": {
+        "name": "Umwehrter Bereich Mitte mit Brücke",
+        "role": "excluded_special_area",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2538.0,
+              1144.0
+            ],
+            [
+              2538.0,
+              1477.0
+            ],
+            [
+              1732.0,
+              1477.0
+            ],
+            [
+              1732.0,
+              1144.0
+            ],
+            [
+              2538.0,
+              1144.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-EXCLUDED-002",
+      "properties": {
+        "name": "Umwehrter Bereich West außen",
+        "role": "excluded_special_area",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              978.0,
+              1603.0
+            ],
+            [
+              978.0,
+              1825.0
+            ],
+            [
+              750.0,
+              1825.0
+            ],
+            [
+              750.0,
+              1603.0
+            ],
+            [
+              978.0,
+              1603.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-EXCLUDED-003",
+      "properties": {
+        "name": "Umwehrter Bereich Mitte außen",
+        "role": "excluded_special_area",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2545.0,
+              1614.0
+            ],
+            [
+              2545.0,
+              2029.0
+            ],
+            [
+              2295.0,
+              2029.0
+            ],
+            [
+              2295.0,
+              1614.0
+            ],
+            [
+              2545.0,
+              1614.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-EXCLUDED-004",
+      "properties": {
+        "name": "Umwehrter Bereich Ost außen",
+        "role": "excluded_special_area",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3635.0,
+              2420.0
+            ],
+            [
+              3635.0,
+              2700.0
+            ],
+            [
+              3300.0,
+              2700.0
+            ],
+            [
+              3300.0,
+              2420.0
+            ],
+            [
+              3635.0,
+              2420.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-EXCLUDED-005",
+      "properties": {
+        "name": "Wartungssteg West Kern",
+        "role": "excluded_special_area",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              977.0,
+              788.0
+            ],
+            [
+              977.0,
+              903.0
+            ],
+            [
+              657.0,
+              903.0
+            ],
+            [
+              657.0,
+              788.0
+            ],
+            [
+              977.0,
+              788.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-EXCLUDED-006",
+      "properties": {
+        "name": "Wartungssteg West Nord",
+        "role": "excluded_special_area",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1437.0,
+              612.0
+            ],
+            [
+              1540.0,
+              612.0
+            ],
+            [
+              1540.0,
+              872.0
+            ],
+            [
+              1437.0,
+              872.0
+            ],
+            [
+              1437.0,
+              612.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-EXCLUDED-007",
+      "properties": {
+        "name": "Wartungssteg Ost Kern",
+        "role": "excluded_special_area",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3620.0,
+              1345.0
+            ],
+            [
+              3620.0,
+              1434.0
+            ],
+            [
+              3306.0,
+              1434.0
+            ],
+            [
+              3306.0,
+              1345.0
+            ],
+            [
+              3620.0,
+              1345.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-EXCLUDED-008",
+      "properties": {
+        "name": "Wartungssteg Ost Süd",
+        "role": "excluded_special_area",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3130.0,
+              1805.0
+            ],
+            [
+              3130.0,
+              2002.0
+            ],
+            [
+              2965.0,
+              2002.0
+            ],
+            [
+              2965.0,
+              1805.0
+            ],
+            [
+              3130.0,
+              1805.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-EXCLUDED-009",
+      "properties": {
+        "name": "Technische Fortsetzung Ost",
+        "role": "excluded_special_area",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3130.0,
+              1650.0
+            ],
+            [
+              3130.0,
+              1805.0
+            ],
+            [
+              3048.0,
+              1805.0
+            ],
+            [
+              3048.0,
+              1650.0
+            ],
+            [
+              3130.0,
+              1650.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-EXCLUDED-010",
+      "properties": {
+        "name": "Aufzug West",
+        "role": "excluded_special_area",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1309.0,
+              1247.0
+            ],
+            [
+              1309.0,
+              1393.0
+            ],
+            [
+              1220.0,
+              1393.0
+            ],
+            [
+              1220.0,
+              1247.0
+            ],
+            [
+              1309.0,
+              1247.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-EXCLUDED-011",
+      "properties": {
+        "name": "Aufzug Ost",
+        "role": "excluded_special_area",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3048.0,
+              1660.0
+            ],
+            [
+              3048.0,
+              1806.0
+            ],
+            [
+              2960.0,
+              1806.0
+            ],
+            [
+              2960.0,
+              1660.0
+            ],
+            [
+              3048.0,
+              1660.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2OG-EXCLUDED-012",
+      "properties": {
+        "name": "Technischer Bereich West",
+        "role": "excluded_special_area",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1307.0,
+              1400.0
+            ],
+            [
+              1307.0,
+              1570.0
+            ],
+            [
+              1257.0,
+              1570.0
+            ],
+            [
+              1257.0,
+              1400.0
+            ],
+            [
+              1307.0,
+              1400.0
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

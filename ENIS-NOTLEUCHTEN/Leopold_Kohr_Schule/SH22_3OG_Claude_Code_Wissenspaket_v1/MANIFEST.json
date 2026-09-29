@@ -1,0 +1,392 @@
+{
+  "package_id": "SH22-3OG-v1",
+  "version": "1.0.0",
+  "created": "2026-09-23",
+  "project": "SH22 Leopold-Kohr-Schule",
+  "floor": "3. OG",
+  "payload_file_count": 73,
+  "counts": {
+    "pdf_pages": 87,
+    "examples": 32,
+    "individual_features": 134,
+    "acceptance_cases": 32,
+    "acceptance_assertions": 104,
+    "unique_claim_keys": 88,
+    "dxf_text_fragments": 2774
+  },
+  "status": {
+    "knowledge_package": "created_and_checked",
+    "source_pdf": "unchanged",
+    "approved_learning_pdf": "unchanged",
+    "repository_implementation": "not_performed",
+    "recognition_test_run": "not_performed"
+  },
+  "integrity_note": "Manifest lists payload only. SHA256SUMS includes payload and manifest; checksum list itself is intentionally not self-hashed. Python cache files are not part of the archive.",
+  "files": [
+    {
+      "path": "00_START_HIER.md",
+      "bytes": 3797,
+      "sha256": "d77f1907f17296c2d54c192acb8548128fbc396b23cebdb999efb1c2279ec338"
+    },
+    {
+      "path": "01_PDF/Leopold_Kohr_Schule_3OG_Lernbuch_zur_Kontrolle.pdf",
+      "bytes": 6540252,
+      "sha256": "108f4c5b5524baf6673cce3a75e2007598db25f5511a6771e4be785bfea6d040"
+    },
+    {
+      "path": "02_Originale/20220325-SH22-LKS-GE-AP-03-01-A-3OG.dxf",
+      "bytes": 47723955,
+      "sha256": "4b0055a4fee104dd43debd96c71dfa66f0f95f003136bf5405ce180f941c766c"
+    },
+    {
+      "path": "02_Originale/Schule_SH22_3_OG.pdf",
+      "bytes": 5786263,
+      "sha256": "4745ff61e673c665ba54b355346da8cad9adc53f7485fa583ac14afd08088a14"
+    },
+    {
+      "path": "03_Wissen/Beispiele/B01.md",
+      "bytes": 3786,
+      "sha256": "1e82d036af09f4ffe94567f674f69e0d36dc037d1da0e28c612b66db091abcd3"
+    },
+    {
+      "path": "03_Wissen/Beispiele/B02.md",
+      "bytes": 3041,
+      "sha256": "904d135ccf5e82113a0d3b1cfc8d0aaf498379f9df935a6c46baf0e169ecd419"
+    },
+    {
+      "path": "03_Wissen/Beispiele/B03.md",
+      "bytes": 3657,
+      "sha256": "90ab9942f644767487824af33d28ee11469bb9c2eaaa570ad22d450ec8dc59de"
+    },
+    {
+      "path": "03_Wissen/Beispiele/B04.md",
+      "bytes": 3483,
+      "sha256": "b392d39c2eaa5dffc92788f487de49a07d183fdd5943a4f5d6147a8d0d227dce"
+    },
+    {
+      "path": "03_Wissen/Beispiele/B05.md",
+      "bytes": 3257,
+      "sha256": "7594c0d96f27e9b86cf03ee8086a2d614286a329d4366cf84d96e6ac21bc464c"
+    },
+    {
+      "path": "03_Wissen/Beispiele/D01.md",
+      "bytes": 3698,
+      "sha256": "240763c2d320b4c992398f064320cc5c46d797f4a2092ef9100c3578d33e6c4f"
+    },
+    {
+      "path": "03_Wissen/Beispiele/D02.md",
+      "bytes": 3381,
+      "sha256": "8b02de6119892620c59d73ed2c3c122eedb7a8b87b2167a2cc3bae5c73c05895"
+    },
+    {
+      "path": "03_Wissen/Beispiele/D03.md",
+      "bytes": 3323,
+      "sha256": "4ff0cf1dc888b86f045b770aa3d4237bf8721c57726be82ae3c3e12c0c02a77d"
+    },
+    {
+      "path": "03_Wissen/Beispiele/F01.md",
+      "bytes": 3872,
+      "sha256": "e239ff765b26c01407dea9470772ec92735a76f5668f9d3504c3520fa5722875"
+    },
+    {
+      "path": "03_Wissen/Beispiele/F02.md",
+      "bytes": 4003,
+      "sha256": "137d7e0ad8e924cbc4bbe6e7ce4e634c24408346bb2de2679c71611d92f5efd5"
+    },
+    {
+      "path": "03_Wissen/Beispiele/F03.md",
+      "bytes": 3385,
+      "sha256": "edc1f70de69b2c0110e34d45e88cb24fc1ca9f31798529b516c019df99fa33f0"
+    },
+    {
+      "path": "03_Wissen/Beispiele/G01.md",
+      "bytes": 3365,
+      "sha256": "0ad830e9fee2b1af3668a4d762be9a5890a6ced1c80c98653ed62c974c1c3c29"
+    },
+    {
+      "path": "03_Wissen/Beispiele/L01.md",
+      "bytes": 3408,
+      "sha256": "2786d9c6e2d2513cd6b4f898f5b23b59effd5a0985ca9308717d747e2293b5ce"
+    },
+    {
+      "path": "03_Wissen/Beispiele/L02.md",
+      "bytes": 3480,
+      "sha256": "e090ca0662545fce613927c39060ae4775c89320e0612e5397e62493db6576f5"
+    },
+    {
+      "path": "03_Wissen/Beispiele/M01.md",
+      "bytes": 3610,
+      "sha256": "11638df8f721b2e58f991bf60829d16756ff16d1d49b6a6f9ced98245e459be1"
+    },
+    {
+      "path": "03_Wissen/Beispiele/M02.md",
+      "bytes": 3303,
+      "sha256": "67a192e987b10f6af88730bfa71a3f71e10c056313b65e31230a3bc5fd78fa10"
+    },
+    {
+      "path": "03_Wissen/Beispiele/M03.md",
+      "bytes": 3614,
+      "sha256": "02679a7a1b22c67e81cd76032294a62c4df92ea3ed8cfb3d049f7b002b1eaeea"
+    },
+    {
+      "path": "03_Wissen/Beispiele/M04.md",
+      "bytes": 3276,
+      "sha256": "f8eb6286e05f7b0c7cc22dcf84c98f23b112af78fd72bb9aa3be347c74ca04ea"
+    },
+    {
+      "path": "03_Wissen/Beispiele/R01.md",
+      "bytes": 3378,
+      "sha256": "a5eece86c29b2654e620ecf3b878918253ca7ea8bcba105e126a5cc628c45fa8"
+    },
+    {
+      "path": "03_Wissen/Beispiele/R02.md",
+      "bytes": 3086,
+      "sha256": "1ba810b743b5fc111b70c5e26925c69a7a960b2fd9d3a4186677805743f6bf93"
+    },
+    {
+      "path": "03_Wissen/Beispiele/R03.md",
+      "bytes": 3267,
+      "sha256": "cd096fd5e3abe37f1f04c892ae7490faec289e4872b2171db4130dd2935213b8"
+    },
+    {
+      "path": "03_Wissen/Beispiele/R04.md",
+      "bytes": 3227,
+      "sha256": "c7f8d9e868ef7ff53adb48a100cb6bd6ef577f361c68cb09a8927f0cddf338f5"
+    },
+    {
+      "path": "03_Wissen/Beispiele/S01.md",
+      "bytes": 3503,
+      "sha256": "bb711ec78e04335cb128dd858b79098d180cdb3ee5f675eb911cbffb3e1bad0a"
+    },
+    {
+      "path": "03_Wissen/Beispiele/S02.md",
+      "bytes": 3240,
+      "sha256": "11eee11ebc78795c40df342174587edd6d5f805ed8227f48a29585aeb7cece3e"
+    },
+    {
+      "path": "03_Wissen/Beispiele/T01.md",
+      "bytes": 3647,
+      "sha256": "4ced7dce55eef8c3e3804e23c07a94a36fa02225e8e938180d3e719fde36c4a0"
+    },
+    {
+      "path": "03_Wissen/Beispiele/T02.md",
+      "bytes": 3667,
+      "sha256": "6339cc96fbd0a261ae68b19fb1d38783be6af9fe56564aca7f5cf91bf49b12d5"
+    },
+    {
+      "path": "03_Wissen/Beispiele/T03.md",
+      "bytes": 3165,
+      "sha256": "8ff11efea6bcd684f67e95f8faea5445b0a295b67d272d76a3f56985534a571d"
+    },
+    {
+      "path": "03_Wissen/Beispiele/T04.md",
+      "bytes": 3176,
+      "sha256": "1a97bf1c6b381a10c74e0604e7f5046b4bb7f0d61bec89aa05e960007cf13a1a"
+    },
+    {
+      "path": "03_Wissen/Beispiele/T05.md",
+      "bytes": 3137,
+      "sha256": "66c34a0356707ce098c931ee6d0c544bca99eaf5d8445580c3beb773315086bf"
+    },
+    {
+      "path": "03_Wissen/Beispiele/W01.md",
+      "bytes": 3521,
+      "sha256": "1c3229a43699151ed0679922fb36c7c70b9e96954a7248f5a17cabe345283cd9"
+    },
+    {
+      "path": "03_Wissen/Beispiele/W02.md",
+      "bytes": 3294,
+      "sha256": "ee9ecf1879e17c19e31741959f5a33fb016e059490da299474211af82ae7b81f"
+    },
+    {
+      "path": "03_Wissen/Beispiele/W03.md",
+      "bytes": 3564,
+      "sha256": "809e98712990e5ed697630583c3c7a22e4ed12456da5c0bdfe370b946860b26f"
+    },
+    {
+      "path": "03_Wissen/DATENVERTRAG.md",
+      "bytes": 5363,
+      "sha256": "be8b59ad04f650260b4281aadd38cb6624a460a62ec11f8c0cd90b8836e48412"
+    },
+    {
+      "path": "03_Wissen/FREIE_BODENFLAECHE.md",
+      "bytes": 3839,
+      "sha256": "b915f84a4fc9b95ffdedb5a22988fbf20af68ef6e0b31f0f6aecedb1806146ac"
+    },
+    {
+      "path": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md",
+      "bytes": 140490,
+      "sha256": "8a556f843a7316286529ab38462216321c67705b67e6e954b63e29cd9666fef6"
+    },
+    {
+      "path": "03_Wissen/TEXT_UND_HOEHE.md",
+      "bytes": 3650,
+      "sha256": "5e3b1c6f1171902c0fcde9e335b7c336dba86bb2d589259aeb4e0e3bcbe28084"
+    },
+    {
+      "path": "03_Wissen/UMSETZUNGSPLAN.md",
+      "bytes": 5908,
+      "sha256": "baaae80438f3548ff50dc3d3d782fac133619c1d918fbe2edfbdec924e818c5b"
+    },
+    {
+      "path": "03_Wissen/VISUELLE_AUSGABE.md",
+      "bytes": 2763,
+      "sha256": "d63072035c4a64eeda181668531a857d950fea8eb2313cf953156adc9d2bef33"
+    },
+    {
+      "path": "04_Daten/dxf_textfragmente.json",
+      "bytes": 893557,
+      "sha256": "582cb442674348af1b69df5f40b9db32484feef52046de43f0ddb80bc6b43a57"
+    },
+    {
+      "path": "04_Daten/erkennungsregeln.json",
+      "bytes": 117337,
+      "sha256": "6da45c6d566bc0d66208ae5ada9e5e39c0032835f9be4384315ca530a3aa3fd6"
+    },
+    {
+      "path": "04_Daten/glossar.json",
+      "bytes": 2639,
+      "sha256": "cac5cadd67d385dbc7785ce68ccc33bbd7ddfb82ba2edf1dfc261cc3bf3ae993"
+    },
+    {
+      "path": "04_Daten/koordinaten.json",
+      "bytes": 1689,
+      "sha256": "5e47c3377045ae84e1d89357a104fb134f2a1811e7230031bea4b6a00ec9151c"
+    },
+    {
+      "path": "04_Daten/lernbeispiele.json",
+      "bytes": 145533,
+      "sha256": "20ac623cb04317daddfd5d549cc5b67643184f72c5c99858f92d73f209af90e4"
+    },
+    {
+      "path": "04_Daten/linienbelege.json",
+      "bytes": 655967,
+      "sha256": "92df2e107a89400a8cc530e4f5aa99cca56415a5f471bff0c5f6336920ca5543"
+    },
+    {
+      "path": "04_Daten/offene_punkte.json",
+      "bytes": 13212,
+      "sha256": "a04becc8d59e67a33d189f3944a6bf3ca89405a9b5e1b8d324f4fd42cfcc76c6"
+    },
+    {
+      "path": "04_Daten/quellen.json",
+      "bytes": 1438,
+      "sha256": "c5afcd2c94a5173d056100ea0a448e23146315f40bc997a9ddcc07f8f70338a5"
+    },
+    {
+      "path": "04_Daten/raumregister.json",
+      "bytes": 5707,
+      "sha256": "5721f6939c31bf24b38cf2fcfba6444214d79523e90cb291969cc3033d323119"
+    },
+    {
+      "path": "04_Daten/seitenindex.json",
+      "bytes": 17022,
+      "sha256": "787b678b7c497c9eeddf83c7942d30c79e7767c00a07ad6890cc81bf20db07e2"
+    },
+    {
+      "path": "05_Pruefung/ABNAHME.md",
+      "bytes": 3652,
+      "sha256": "cee1d7fc27dd1b0f4b5d3d89b7a3e1e6c251f6fd91acf818cbea91cf314765e9"
+    },
+    {
+      "path": "05_Pruefung/CLAIMS_MESSANLEITUNG.md",
+      "bytes": 19782,
+      "sha256": "cc9bca7c08e63c2371b8a81c012467fcef6e75125e73864b957268b50f3c7e27"
+    },
+    {
+      "path": "05_Pruefung/PAKETPRUEFUNG.json",
+      "bytes": 975,
+      "sha256": "8d543c7a5d244c9166e00b678f25da0754d3762e5920d99c199ca58476b1e84c"
+    },
+    {
+      "path": "05_Pruefung/PAKETPRUEFUNG.md",
+      "bytes": 1637,
+      "sha256": "1227c4afdb0773fa3f0d9cf25e8d3b848548b851bbdc3abedad4afcdb79c2983"
+    },
+    {
+      "path": "05_Pruefung/akzeptanzfaelle.json",
+      "bytes": 37915,
+      "sha256": "f5c6cb7c157fd8c4544699f17151602ecc59fe16a261f3c86520c00d4d1584cb"
+    },
+    {
+      "path": "05_Pruefung/claims_woerterbuch.json",
+      "bytes": 33031,
+      "sha256": "85da012374d38ae5f62f0401ead2c0c556b3ccd40f8d75242171cb68783b60be"
+    },
+    {
+      "path": "05_Pruefung/ergebnis_vorlage.json",
+      "bytes": 6583,
+      "sha256": "95fbfac7f82dc4304b22daa8e0721811b2358e3eb0d0e728bcea4e832703cb3d"
+    },
+    {
+      "path": "06_Werkzeuge/README.md",
+      "bytes": 2580,
+      "sha256": "b1569557c0fc18f935df31ba9df7e2d9cfc540e86fb641691ad8b4293d4a52b6"
+    },
+    {
+      "path": "06_Werkzeuge/pruefe_erkennung.py",
+      "bytes": 4225,
+      "sha256": "499f04da9e80c2dad2e1071b0cbce93fd841ed81da1b001e0f095471c6760dce"
+    },
+    {
+      "path": "06_Werkzeuge/pruefe_paket.py",
+      "bytes": 5311,
+      "sha256": "3a8109f9fca4a993fd95f07fa41d3545c9455cb63d655f496b499f712754f512"
+    },
+    {
+      "path": "06_Werkzeuge/pruefe_schemata.py",
+      "bytes": 1047,
+      "sha256": "000eaa1bbf07af5a6fd58d783ac06b6863916ce96f66c2120d9aa4ecd6fc3347"
+    },
+    {
+      "path": "06_Werkzeuge/tests/test_report_checks.py",
+      "bytes": 2936,
+      "sha256": "6239a977ffb88fd220b70397394876f1322f2e4f691d241ea6e00e1baca2bf56"
+    },
+    {
+      "path": "06_Werkzeuge/zeige_beleg.py",
+      "bytes": 4473,
+      "sha256": "e456afaf1463b1dce2efd533d4e219f28296eb717ded8a20bad7ff0e46fbc079"
+    },
+    {
+      "path": "07_Schemata/akzeptanzfaelle.schema.json",
+      "bytes": 2393,
+      "sha256": "1720b418ed0dcf12f82661e5534a2a8b1c54ad854f30fd0ed0eefd041f0dad5b"
+    },
+    {
+      "path": "07_Schemata/erkennungsmodell.schema.json",
+      "bytes": 9623,
+      "sha256": "80c9a73b5865a1f81c3a6ab10494449ef98ff707b2da2055d7c6abb165ec7dea"
+    },
+    {
+      "path": "07_Schemata/lernbeispiele.schema.json",
+      "bytes": 4059,
+      "sha256": "192ff717aea576451881314ed807434c51b41c95b028b7930a0e0f08e93f93e3"
+    },
+    {
+      "path": "07_Schemata/linienbelege.schema.json",
+      "bytes": 4798,
+      "sha256": "cc2642d08b57b404e78664df514dda50b5ed643a5dbc872665d5a1823d667d79"
+    },
+    {
+      "path": "07_Schemata/pruefergebnis.schema.json",
+      "bytes": 2963,
+      "sha256": "0d55d4290719c305d7871131d81c2082fdd08faeef6a5d134f9b1a679991ca31"
+    },
+    {
+      "path": "07_Schemata/regeln.schema.json",
+      "bytes": 2616,
+      "sha256": "48a766cf80d37ce5219359043bb6264abaabffc1871cd645090227522749655e"
+    },
+    {
+      "path": "07_Schemata/zuordnung.json",
+      "bytes": 603,
+      "sha256": "ba46f5d1e0c02299abb94b4c90f9985a863fdfc775e47b779cc5b16d82c9ad33"
+    },
+    {
+      "path": "CLAUDE_CODE_STARTPROMPT.md",
+      "bytes": 5390,
+      "sha256": "d93bc83e1848e0104cbf15d226266bcb51a7647f5164f446aa4d308c2f18e567"
+    }
+  ]
+}

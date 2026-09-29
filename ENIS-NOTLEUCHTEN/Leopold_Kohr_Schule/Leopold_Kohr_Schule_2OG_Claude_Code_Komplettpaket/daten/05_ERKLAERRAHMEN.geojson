@@ -1,0 +1,3709 @@
+{
+  "type": "FeatureCollection",
+  "coordinate_reference": "PDF_SOURCE_PT_4268x2953_TOP_LEFT_NOT_WGS84",
+  "floor": "2OG",
+  "ground_truth": false,
+  "meaning": "100 geschlossene Erklärrahmen; niemals als Wand- oder Raumgrenzen importieren.",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "W01-A1",
+      "properties": {
+        "example_id": "W01",
+        "meaning": "Außenkante",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              38,
+              90
+            ],
+            [
+              53,
+              90
+            ],
+            [
+              53,
+              190
+            ],
+            [
+              38,
+              190
+            ],
+            [
+              38,
+              90
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W01-A2",
+      "properties": {
+        "example_id": "W01",
+        "meaning": "Material",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              53,
+              183
+            ],
+            [
+              83,
+              183
+            ],
+            [
+              83,
+              278
+            ],
+            [
+              53,
+              278
+            ],
+            [
+              53,
+              183
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W01-A3",
+      "properties": {
+        "example_id": "W01",
+        "meaning": "Innenkante",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75,
+              201
+            ],
+            [
+              88,
+              201
+            ],
+            [
+              88,
+              280
+            ],
+            [
+              75,
+              280
+            ],
+            [
+              75,
+              201
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W01-A4",
+      "properties": {
+        "example_id": "W01",
+        "meaning": "Öffnung",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              247,
+              47
+            ],
+            [
+              316,
+              47
+            ],
+            [
+              316,
+              77
+            ],
+            [
+              247,
+              77
+            ],
+            [
+              247,
+              47
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W02-A1",
+      "properties": {
+        "example_id": "W02",
+        "meaning": "Breiter Aufbau",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1250,
+              40
+            ],
+            [
+              1440,
+              40
+            ],
+            [
+              1440,
+              85
+            ],
+            [
+              1250,
+              85
+            ],
+            [
+              1250,
+              40
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W02-A2",
+      "properties": {
+        "example_id": "W02",
+        "meaning": "Dämmung",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1340,
+              39
+            ],
+            [
+              1450,
+              39
+            ],
+            [
+              1450,
+              61
+            ],
+            [
+              1340,
+              61
+            ],
+            [
+              1340,
+              39
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W02-A3",
+      "properties": {
+        "example_id": "W02",
+        "meaning": "Eckanschluss",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1521,
+              80
+            ],
+            [
+              1562,
+              80
+            ],
+            [
+              1562,
+              240
+            ],
+            [
+              1521,
+              240
+            ],
+            [
+              1521,
+              80
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W02-A4",
+      "properties": {
+        "example_id": "W02",
+        "meaning": "Raumseite",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1400,
+              140
+            ],
+            [
+              1500,
+              140
+            ],
+            [
+              1500,
+              225
+            ],
+            [
+              1400,
+              225
+            ],
+            [
+              1400,
+              140
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W03-A1",
+      "properties": {
+        "example_id": "W03",
+        "meaning": "Wandstreifen",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              585,
+              284
+            ],
+            [
+              613,
+              284
+            ],
+            [
+              613,
+              421
+            ],
+            [
+              585,
+              421
+            ],
+            [
+              585,
+              284
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W03-A2",
+      "properties": {
+        "example_id": "W03",
+        "meaning": "Zwei Seiten",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              585,
+              210
+            ],
+            [
+              614,
+              210
+            ],
+            [
+              614,
+              276
+            ],
+            [
+              585,
+              276
+            ],
+            [
+              585,
+              210
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W03-A3",
+      "properties": {
+        "example_id": "W03",
+        "meaning": "Anschluss",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              580,
+              451
+            ],
+            [
+              623,
+              451
+            ],
+            [
+              623,
+              503
+            ],
+            [
+              580,
+              503
+            ],
+            [
+              580,
+              451
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W03-A4",
+      "properties": {
+        "example_id": "W03",
+        "meaning": "Einbau daneben",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              622,
+              177
+            ],
+            [
+              698,
+              177
+            ],
+            [
+              698,
+              253
+            ],
+            [
+              622,
+              253
+            ],
+            [
+              622,
+              177
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W04-A1",
+      "properties": {
+        "example_id": "W04",
+        "meaning": "Seitliche Mauer",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              633,
+              786
+            ],
+            [
+              660,
+              786
+            ],
+            [
+              660,
+              885
+            ],
+            [
+              633,
+              885
+            ],
+            [
+              633,
+              786
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W04-A2",
+      "properties": {
+        "example_id": "W04",
+        "meaning": "Querwand",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              710,
+              897
+            ],
+            [
+              907,
+              897
+            ],
+            [
+              907,
+              922
+            ],
+            [
+              710,
+              922
+            ],
+            [
+              710,
+              897
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W04-A3",
+      "properties": {
+        "example_id": "W04",
+        "meaning": "Anschluss",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              633,
+              894
+            ],
+            [
+              671,
+              894
+            ],
+            [
+              671,
+              926
+            ],
+            [
+              633,
+              926
+            ],
+            [
+              633,
+              894
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W04-A4",
+      "properties": {
+        "example_id": "W04",
+        "meaning": "Sonderbereich",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              710,
+              817
+            ],
+            [
+              899,
+              817
+            ],
+            [
+              899,
+              887
+            ],
+            [
+              710,
+              887
+            ],
+            [
+              710,
+              817
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W05-A1",
+      "properties": {
+        "example_id": "W05",
+        "meaning": "Dünne Trennwand",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1271,
+              670
+            ],
+            [
+              1282,
+              670
+            ],
+            [
+              1282,
+              724
+            ],
+            [
+              1271,
+              724
+            ],
+            [
+              1271,
+              670
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W05-A2",
+      "properties": {
+        "example_id": "W05",
+        "meaning": "Zweites Beispiel",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1320,
+              670
+            ],
+            [
+              1331,
+              670
+            ],
+            [
+              1331,
+              724
+            ],
+            [
+              1320,
+              724
+            ],
+            [
+              1320,
+              670
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W05-A3",
+      "properties": {
+        "example_id": "W05",
+        "meaning": "Türblatt",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1317,
+              611
+            ],
+            [
+              1328,
+              611
+            ],
+            [
+              1328,
+              657
+            ],
+            [
+              1317,
+              657
+            ],
+            [
+              1317,
+              611
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W05-A4",
+      "properties": {
+        "example_id": "W05",
+        "meaning": "Raumbegrenzung",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1210,
+              725
+            ],
+            [
+              1300,
+              725
+            ],
+            [
+              1300,
+              744
+            ],
+            [
+              1210,
+              744
+            ],
+            [
+              1210,
+              725
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W06-A1",
+      "properties": {
+        "example_id": "W06",
+        "meaning": "Feste Schachtwand",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1200,
+              1260
+            ],
+            [
+              1221,
+              1260
+            ],
+            [
+              1221,
+              1396
+            ],
+            [
+              1200,
+              1396
+            ],
+            [
+              1200,
+              1260
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W06-A2",
+      "properties": {
+        "example_id": "W06",
+        "meaning": "Kabine",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1228,
+              1260
+            ],
+            [
+              1295,
+              1260
+            ],
+            [
+              1295,
+              1377
+            ],
+            [
+              1228,
+              1377
+            ],
+            [
+              1228,
+              1260
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W06-A3",
+      "properties": {
+        "example_id": "W06",
+        "meaning": "Türzone",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1223,
+              1232
+            ],
+            [
+              1298,
+              1232
+            ],
+            [
+              1298,
+              1255
+            ],
+            [
+              1223,
+              1255
+            ],
+            [
+              1223,
+              1232
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W06-A4",
+      "properties": {
+        "example_id": "W06",
+        "meaning": "Bauteilbeleg",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1238,
+              1272
+            ],
+            [
+              1295,
+              1272
+            ],
+            [
+              1295,
+              1300
+            ],
+            [
+              1238,
+              1300
+            ],
+            [
+              1238,
+              1272
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W07-A1",
+      "properties": {
+        "example_id": "W07",
+        "meaning": "Stützenkörper",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              691,
+              1808
+            ],
+            [
+              722,
+              1808
+            ],
+            [
+              722,
+              1840
+            ],
+            [
+              691,
+              1840
+            ],
+            [
+              691,
+              1808
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W07-A2",
+      "properties": {
+        "example_id": "W07",
+        "meaning": "Eigenes Hindernis",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              687,
+              1804
+            ],
+            [
+              726,
+              1804
+            ],
+            [
+              726,
+              1843
+            ],
+            [
+              687,
+              1843
+            ],
+            [
+              687,
+              1804
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W07-A3",
+      "properties": {
+        "example_id": "W07",
+        "meaning": "Maßhinweis",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              703,
+              1830
+            ],
+            [
+              741,
+              1830
+            ],
+            [
+              741,
+              1848
+            ],
+            [
+              703,
+              1848
+            ],
+            [
+              703,
+              1830
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W07-A4",
+      "properties": {
+        "example_id": "W07",
+        "meaning": "Umgehbare Fläche",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              739,
+              1818
+            ],
+            [
+              765,
+              1818
+            ],
+            [
+              765,
+              1852
+            ],
+            [
+              739,
+              1852
+            ],
+            [
+              739,
+              1818
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W08-A1",
+      "properties": {
+        "example_id": "W08",
+        "meaning": "Absturzsicherung",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1780,
+              1446
+            ],
+            [
+              1880,
+              1446
+            ],
+            [
+              1880,
+              1470
+            ],
+            [
+              1780,
+              1470
+            ],
+            [
+              1780,
+              1446
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W08-A2",
+      "properties": {
+        "example_id": "W08",
+        "meaning": "Raumhohe Grenze",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1725,
+              1210
+            ],
+            [
+              1745,
+              1210
+            ],
+            [
+              1745,
+              1410
+            ],
+            [
+              1725,
+              1410
+            ],
+            [
+              1725,
+              1210
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W08-A3",
+      "properties": {
+        "example_id": "W08",
+        "meaning": "Brüstung",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2128,
+              1148
+            ],
+            [
+              2205,
+              1148
+            ],
+            [
+              2205,
+              1206
+            ],
+            [
+              2128,
+              1206
+            ],
+            [
+              2128,
+              1148
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W08-A4",
+      "properties": {
+        "example_id": "W08",
+        "meaning": "Brückenbereich",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2215,
+              1260
+            ],
+            [
+              2340,
+              1260
+            ],
+            [
+              2340,
+              1360
+            ],
+            [
+              2215,
+              1360
+            ],
+            [
+              2215,
+              1260
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "D01-A1",
+      "properties": {
+        "example_id": "D01",
+        "meaning": "Wandlaibung",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              446,
+              455
+            ],
+            [
+              459,
+              455
+            ],
+            [
+              459,
+              502
+            ],
+            [
+              446,
+              502
+            ],
+            [
+              446,
+              455
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "D01-A2",
+      "properties": {
+        "example_id": "D01",
+        "meaning": "Türblatt",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              456,
+              468
+            ],
+            [
+              466,
+              468
+            ],
+            [
+              466,
+              517
+            ],
+            [
+              456,
+              517
+            ],
+            [
+              456,
+              468
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "D01-A3",
+      "properties": {
+        "example_id": "D01",
+        "meaning": "Schwenkbogen",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              483,
+              488
+            ],
+            [
+              507,
+              488
+            ],
+            [
+              507,
+              516
+            ],
+            [
+              483,
+              516
+            ],
+            [
+              483,
+              488
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "D01-A4",
+      "properties": {
+        "example_id": "D01",
+        "meaning": "Gedacht geschlossen",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              461,
+              462
+            ],
+            [
+              509,
+              462
+            ],
+            [
+              509,
+              475
+            ],
+            [
+              461,
+              475
+            ],
+            [
+              461,
+              462
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "D02-A1",
+      "properties": {
+        "example_id": "D02",
+        "meaning": "DL 90",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              474,
+              474
+            ],
+            [
+              482,
+              474
+            ],
+            [
+              482,
+              496
+            ],
+            [
+              474,
+              496
+            ],
+            [
+              474,
+              474
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "D02-A2",
+      "properties": {
+        "example_id": "D02",
+        "meaning": "DL 210",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              481,
+              474
+            ],
+            [
+              489,
+              474
+            ],
+            [
+              489,
+              496
+            ],
+            [
+              481,
+              496
+            ],
+            [
+              481,
+              474
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "D02-A3",
+      "properties": {
+        "example_id": "D02",
+        "meaning": "STUK +2,18",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              483,
+              450
+            ],
+            [
+              544,
+              450
+            ],
+            [
+              544,
+              463
+            ],
+            [
+              483,
+              463
+            ],
+            [
+              483,
+              450
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "D02-A4",
+      "properties": {
+        "example_id": "D02",
+        "meaning": "Türkennung",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              470,
+              497
+            ],
+            [
+              497,
+              497
+            ],
+            [
+              497,
+              514
+            ],
+            [
+              470,
+              514
+            ],
+            [
+              470,
+              497
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "D03-A1",
+      "properties": {
+        "example_id": "D03",
+        "meaning": "Zwei Anschläge",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1108,
+              1027
+            ],
+            [
+              1126,
+              1027
+            ],
+            [
+              1126,
+              1140
+            ],
+            [
+              1108,
+              1140
+            ],
+            [
+              1108,
+              1027
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "D03-A2",
+      "properties": {
+        "example_id": "D03",
+        "meaning": "Zwei Bögen",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1120,
+              1036
+            ],
+            [
+              1168,
+              1036
+            ],
+            [
+              1168,
+              1126
+            ],
+            [
+              1120,
+              1126
+            ],
+            [
+              1120,
+              1036
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "D03-A3",
+      "properties": {
+        "example_id": "D03",
+        "meaning": "Öffnungsstreifen",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1107,
+              1039
+            ],
+            [
+              1127,
+              1039
+            ],
+            [
+              1127,
+              1127
+            ],
+            [
+              1107,
+              1127
+            ],
+            [
+              1107,
+              1039
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "D03-A4",
+      "properties": {
+        "example_id": "D03",
+        "meaning": "Feste Wand",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1096,
+              1003
+            ],
+            [
+              1130,
+              1003
+            ],
+            [
+              1130,
+              1029
+            ],
+            [
+              1096,
+              1029
+            ],
+            [
+              1096,
+              1003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "D04-A1",
+      "properties": {
+        "example_id": "D04",
+        "meaning": "Fester Glasabschluss",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              680,
+              1475
+            ],
+            [
+              968,
+              1475
+            ],
+            [
+              968,
+              1504
+            ],
+            [
+              680,
+              1504
+            ],
+            [
+              680,
+              1475
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "D04-A2",
+      "properties": {
+        "example_id": "D04",
+        "meaning": "Rahmen / Pfosten",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              734,
+              1477
+            ],
+            [
+              749,
+              1477
+            ],
+            [
+              749,
+              1504
+            ],
+            [
+              734,
+              1504
+            ],
+            [
+              734,
+              1477
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "D04-A3",
+      "properties": {
+        "example_id": "D04",
+        "meaning": "Innenboden",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              775,
+              1410
+            ],
+            [
+              883,
+              1410
+            ],
+            [
+              883,
+              1461
+            ],
+            [
+              775,
+              1461
+            ],
+            [
+              775,
+              1410
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "D04-A4",
+      "properties": {
+        "example_id": "D04",
+        "meaning": "Außenbereich",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              767,
+              1511
+            ],
+            [
+              890,
+              1511
+            ],
+            [
+              890,
+              1542
+            ],
+            [
+              767,
+              1542
+            ],
+            [
+              767,
+              1511
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "F01-A1",
+      "properties": {
+        "example_id": "F01",
+        "meaning": "Rahmen und Glas",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              250,
+              57
+            ],
+            [
+              313,
+              57
+            ],
+            [
+              313,
+              75
+            ],
+            [
+              250,
+              75
+            ],
+            [
+              250,
+              57
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "F01-A2",
+      "properties": {
+        "example_id": "F01",
+        "meaning": "Fensterflügel",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              309,
+              66
+            ],
+            [
+              319,
+              66
+            ],
+            [
+              319,
+              127
+            ],
+            [
+              309,
+              127
+            ],
+            [
+              309,
+              66
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "F01-A3",
+      "properties": {
+        "example_id": "F01",
+        "meaning": "Öffnungsbogen",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              252,
+              82
+            ],
+            [
+              312,
+              82
+            ],
+            [
+              312,
+              128
+            ],
+            [
+              252,
+              128
+            ],
+            [
+              252,
+              82
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "F01-A4",
+      "properties": {
+        "example_id": "F01",
+        "meaning": "Parapethöhe",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              255,
+              77
+            ],
+            [
+              309,
+              77
+            ],
+            [
+              309,
+              91
+            ],
+            [
+              255,
+              91
+            ],
+            [
+              255,
+              77
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "F02-A1",
+      "properties": {
+        "example_id": "F02",
+        "meaning": "RPH",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              435,
+              74
+            ],
+            [
+              491,
+              74
+            ],
+            [
+              491,
+              83
+            ],
+            [
+              435,
+              83
+            ],
+            [
+              435,
+              74
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "F02-A2",
+      "properties": {
+        "example_id": "F02",
+        "meaning": "FPH 0,85",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              435,
+              82
+            ],
+            [
+              487,
+              82
+            ],
+            [
+              487,
+              92
+            ],
+            [
+              435,
+              92
+            ],
+            [
+              435,
+              82
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "F02-A3",
+      "properties": {
+        "example_id": "F02",
+        "meaning": "Glaslinien",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              493,
+              56
+            ],
+            [
+              548,
+              56
+            ],
+            [
+              548,
+              75
+            ],
+            [
+              493,
+              75
+            ],
+            [
+              493,
+              56
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "F02-A4",
+      "properties": {
+        "example_id": "F02",
+        "meaning": "Wandstück",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              557,
+              39
+            ],
+            [
+              603,
+              39
+            ],
+            [
+              603,
+              77
+            ],
+            [
+              557,
+              77
+            ],
+            [
+              557,
+              39
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "F03-A1",
+      "properties": {
+        "example_id": "F03",
+        "meaning": "Wartungsflügel",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1063,
+              75
+            ],
+            [
+              1131,
+              75
+            ],
+            [
+              1131,
+              98
+            ],
+            [
+              1063,
+              98
+            ],
+            [
+              1063,
+              75
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "F03-A2",
+      "properties": {
+        "example_id": "F03",
+        "meaning": "Kleiner Bogen",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1048,
+              63
+            ],
+            [
+              1068,
+              63
+            ],
+            [
+              1068,
+              84
+            ],
+            [
+              1048,
+              84
+            ],
+            [
+              1048,
+              63
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "F03-A3",
+      "properties": {
+        "example_id": "F03",
+        "meaning": "Rahmenzone",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1047,
+              54
+            ],
+            [
+              1116,
+              54
+            ],
+            [
+              1116,
+              77
+            ],
+            [
+              1047,
+              77
+            ],
+            [
+              1047,
+              54
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "F03-A4",
+      "properties": {
+        "example_id": "F03",
+        "meaning": "Begrenzung",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1112,
+              79
+            ],
+            [
+              1128,
+              79
+            ],
+            [
+              1128,
+              143
+            ],
+            [
+              1112,
+              143
+            ],
+            [
+              1112,
+              79
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G01-A1",
+      "properties": {
+        "example_id": "G01",
+        "meaning": "Flurfläche",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              521,
+              941
+            ],
+            [
+              606,
+              941
+            ],
+            [
+              606,
+              1190
+            ],
+            [
+              521,
+              1190
+            ],
+            [
+              521,
+              941
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G01-A2",
+      "properties": {
+        "example_id": "G01",
+        "meaning": "Türverbindung",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              612,
+              907
+            ],
+            [
+              686,
+              907
+            ],
+            [
+              686,
+              999
+            ],
+            [
+              612,
+              999
+            ],
+            [
+              612,
+              907
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G01-A3",
+      "properties": {
+        "example_id": "G01",
+        "meaning": "Wandgrenze",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              710,
+              1224
+            ],
+            [
+              917,
+              1224
+            ],
+            [
+              917,
+              1266
+            ],
+            [
+              710,
+              1266
+            ],
+            [
+              710,
+              1224
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G01-A4",
+      "properties": {
+        "example_id": "G01",
+        "meaning": "Zweite Flurseite",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1002,
+              1015
+            ],
+            [
+              1085,
+              1015
+            ],
+            [
+              1085,
+              1210
+            ],
+            [
+              1002,
+              1210
+            ],
+            [
+              1002,
+              1015
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G02-A1",
+      "properties": {
+        "example_id": "G02",
+        "meaning": "Oberer Umgang",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1880,
+              1052
+            ],
+            [
+              2230,
+              1052
+            ],
+            [
+              2230,
+              1123
+            ],
+            [
+              1880,
+              1123
+            ],
+            [
+              1880,
+              1052
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G02-A2",
+      "properties": {
+        "example_id": "G02",
+        "meaning": "Unterer Umgang",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1920,
+              1498
+            ],
+            [
+              2260,
+              1498
+            ],
+            [
+              2260,
+              1580
+            ],
+            [
+              1920,
+              1580
+            ],
+            [
+              1920,
+              1498
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G02-A3",
+      "properties": {
+        "example_id": "G02",
+        "meaning": "Feste Grenze",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1724,
+              1198
+            ],
+            [
+              1748,
+              1198
+            ],
+            [
+              1748,
+              1410
+            ],
+            [
+              1724,
+              1410
+            ],
+            [
+              1724,
+              1198
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G02-A4",
+      "properties": {
+        "example_id": "G02",
+        "meaning": "Ungeklärter Anschluss",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1995,
+              1146
+            ],
+            [
+              2480,
+              1146
+            ],
+            [
+              2480,
+              1480
+            ],
+            [
+              1995,
+              1480
+            ],
+            [
+              1995,
+              1146
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G03-A1",
+      "properties": {
+        "example_id": "G03",
+        "meaning": "Ein belegter Zugang",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              448,
+              453
+            ],
+            [
+              517,
+              453
+            ],
+            [
+              517,
+              520
+            ],
+            [
+              448,
+              520
+            ],
+            [
+              448,
+              453
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G03-A2",
+      "properties": {
+        "example_id": "G03",
+        "meaning": "Raumboden",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              380,
+              233
+            ],
+            [
+              434,
+              233
+            ],
+            [
+              434,
+              337
+            ],
+            [
+              380,
+              337
+            ],
+            [
+              380,
+              233
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G03-A3",
+      "properties": {
+        "example_id": "G03",
+        "meaning": "Fester Abschluss",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              584,
+              216
+            ],
+            [
+              615,
+              216
+            ],
+            [
+              615,
+              346
+            ],
+            [
+              584,
+              346
+            ],
+            [
+              584,
+              216
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G03-A4",
+      "properties": {
+        "example_id": "G03",
+        "meaning": "Fenster bleibt Grenze",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              247,
+              49
+            ],
+            [
+              315,
+              49
+            ],
+            [
+              315,
+              88
+            ],
+            [
+              247,
+              88
+            ],
+            [
+              247,
+              49
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G04-A1",
+      "properties": {
+        "example_id": "G04",
+        "meaning": "Originaltext",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              710,
+              813
+            ],
+            [
+              911,
+              813
+            ],
+            [
+              911,
+              889
+            ],
+            [
+              710,
+              889
+            ],
+            [
+              710,
+              813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G04-A2",
+      "properties": {
+        "example_id": "G04",
+        "meaning": "Eigener Zugang",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              968,
+              836
+            ],
+            [
+              998,
+              836
+            ],
+            [
+              998,
+              906
+            ],
+            [
+              968,
+              906
+            ],
+            [
+              968,
+              836
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G04-A3",
+      "properties": {
+        "example_id": "G04",
+        "meaning": "Wand unten",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              710,
+              897
+            ],
+            [
+              910,
+              897
+            ],
+            [
+              910,
+              924
+            ],
+            [
+              710,
+              924
+            ],
+            [
+              710,
+              897
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G04-A4",
+      "properties": {
+        "example_id": "G04",
+        "meaning": "Sonderfläche",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              772,
+              782
+            ],
+            [
+              921,
+              782
+            ],
+            [
+              921,
+              815
+            ],
+            [
+              772,
+              815
+            ],
+            [
+              772,
+              782
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G05-A1",
+      "properties": {
+        "example_id": "G05",
+        "meaning": "Freiklasse / Boden",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              572,
+              1598
+            ],
+            [
+              701,
+              1598
+            ],
+            [
+              701,
+              1733
+            ],
+            [
+              572,
+              1733
+            ],
+            [
+              572,
+              1598
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G05-A2",
+      "properties": {
+        "example_id": "G05",
+        "meaning": "Stütze aussparen",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              691,
+              1808
+            ],
+            [
+              722,
+              1808
+            ],
+            [
+              722,
+              1840
+            ],
+            [
+              691,
+              1840
+            ],
+            [
+              691,
+              1808
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G05-A3",
+      "properties": {
+        "example_id": "G05",
+        "meaning": "Umwehrter Bereich",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              750,
+              1600
+            ],
+            [
+              980,
+              1600
+            ],
+            [
+              980,
+              1825
+            ],
+            [
+              750,
+              1825
+            ],
+            [
+              750,
+              1600
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "G05-A4",
+      "properties": {
+        "example_id": "G05",
+        "meaning": "Treppenlauf",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1115,
+              1613
+            ],
+            [
+              1545,
+              1613
+            ],
+            [
+              1545,
+              1745
+            ],
+            [
+              1115,
+              1745
+            ],
+            [
+              1115,
+              1613
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S01-A1",
+      "properties": {
+        "example_id": "S01",
+        "meaning": "Stufenfolge",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1315,
+              1250
+            ],
+            [
+              1420,
+              1250
+            ],
+            [
+              1420,
+              1448
+            ],
+            [
+              1315,
+              1448
+            ],
+            [
+              1315,
+              1250
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S01-A2",
+      "properties": {
+        "example_id": "S01",
+        "meaning": "Laufhinweis",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1354,
+              1313
+            ],
+            [
+              1393,
+              1313
+            ],
+            [
+              1393,
+              1354
+            ],
+            [
+              1354,
+              1354
+            ],
+            [
+              1354,
+              1313
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S01-A3",
+      "properties": {
+        "example_id": "S01",
+        "meaning": "Podest",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1320,
+              1466
+            ],
+            [
+              1540,
+              1466
+            ],
+            [
+              1540,
+              1538
+            ],
+            [
+              1320,
+              1538
+            ],
+            [
+              1320,
+              1466
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S01-A4",
+      "properties": {
+        "example_id": "S01",
+        "meaning": "Mittlere Grenze",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1421,
+              1238
+            ],
+            [
+              1437,
+              1238
+            ],
+            [
+              1437,
+              1458
+            ],
+            [
+              1421,
+              1458
+            ],
+            [
+              1421,
+              1238
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S02-A1",
+      "properties": {
+        "example_id": "S02",
+        "meaning": "Stufen bleiben schwarz",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2845,
+              1715
+            ],
+            [
+              2946,
+              1715
+            ],
+            [
+              2946,
+              1852
+            ],
+            [
+              2845,
+              1852
+            ],
+            [
+              2845,
+              1715
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S02-A2",
+      "properties": {
+        "example_id": "S02",
+        "meaning": "Bruchdarstellung",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2725,
+              1734
+            ],
+            [
+              2837,
+              1734
+            ],
+            [
+              2837,
+              1780
+            ],
+            [
+              2725,
+              1780
+            ],
+            [
+              2725,
+              1734
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S02-A3",
+      "properties": {
+        "example_id": "S02",
+        "meaning": "Aufzug daneben",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2965,
+              1654
+            ],
+            [
+              3045,
+              1654
+            ],
+            [
+              3045,
+              1805
+            ],
+            [
+              2965,
+              1805
+            ],
+            [
+              2965,
+              1654
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S02-A4",
+      "properties": {
+        "example_id": "S02",
+        "meaning": "Podestfläche",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2730,
+              1880
+            ],
+            [
+              2940,
+              1880
+            ],
+            [
+              2940,
+              1990
+            ],
+            [
+              2730,
+              1990
+            ],
+            [
+              2730,
+              1880
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S03-A1",
+      "properties": {
+        "example_id": "S03",
+        "meaning": "26 STG",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1107,
+              1659
+            ],
+            [
+              1145,
+              1659
+            ],
+            [
+              1145,
+              1690
+            ],
+            [
+              1107,
+              1690
+            ],
+            [
+              1107,
+              1659
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S03-A2",
+      "properties": {
+        "example_id": "S03",
+        "meaning": "Stufen / Nummern",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1284,
+              1620
+            ],
+            [
+              1440,
+              1620
+            ],
+            [
+              1440,
+              1740
+            ],
+            [
+              1284,
+              1740
+            ],
+            [
+              1284,
+              1620
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S03-A3",
+      "properties": {
+        "example_id": "S03",
+        "meaning": "Bruch im Lauf",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1112,
+              1610
+            ],
+            [
+              1151,
+              1610
+            ],
+            [
+              1151,
+              1747
+            ],
+            [
+              1112,
+              1747
+            ],
+            [
+              1112,
+              1610
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S03-A4",
+      "properties": {
+        "example_id": "S03",
+        "meaning": "Seitliche Sicherung",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1410,
+              1720
+            ],
+            [
+              1534,
+              1720
+            ],
+            [
+              1534,
+              1742
+            ],
+            [
+              1410,
+              1742
+            ],
+            [
+              1410,
+              1720
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S04-A1",
+      "properties": {
+        "example_id": "S04",
+        "meaning": "Treppenbeleg",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2900,
+              2568
+            ],
+            [
+              2970,
+              2568
+            ],
+            [
+              2970,
+              2610
+            ],
+            [
+              2900,
+              2610
+            ],
+            [
+              2900,
+              2568
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S04-A2",
+      "properties": {
+        "example_id": "S04",
+        "meaning": "Stufenfolge",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2960,
+              2555
+            ],
+            [
+              3115,
+              2555
+            ],
+            [
+              3115,
+              2698
+            ],
+            [
+              2960,
+              2698
+            ],
+            [
+              2960,
+              2555
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S04-A3",
+      "properties": {
+        "example_id": "S04",
+        "meaning": "Absturzsicherung",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3075,
+              2661
+            ],
+            [
+              3180,
+              2661
+            ],
+            [
+              3180,
+              2686
+            ],
+            [
+              3075,
+              2686
+            ],
+            [
+              3075,
+              2661
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S04-A4",
+      "properties": {
+        "example_id": "S04",
+        "meaning": "Vorbereich",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2750,
+              2713
+            ],
+            [
+              2925,
+              2713
+            ],
+            [
+              2925,
+              2745
+            ],
+            [
+              2750,
+              2745
+            ],
+            [
+              2750,
+              2713
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S05-A1",
+      "properties": {
+        "example_id": "S05",
+        "meaning": "Raumstempel",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              778,
+              936
+            ],
+            [
+              874,
+              936
+            ],
+            [
+              874,
+              1005
+            ],
+            [
+              778,
+              1005
+            ],
+            [
+              778,
+              936
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S05-A2",
+      "properties": {
+        "example_id": "S05",
+        "meaning": "Einbauraster",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              752,
+              997
+            ],
+            [
+              932,
+              997
+            ],
+            [
+              932,
+              1052
+            ],
+            [
+              752,
+              1052
+            ],
+            [
+              752,
+              997
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S05-A3",
+      "properties": {
+        "example_id": "S05",
+        "meaning": "Keine Stufenbelege",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              685,
+              1100
+            ],
+            [
+              875,
+              1100
+            ],
+            [
+              875,
+              1160
+            ],
+            [
+              685,
+              1160
+            ],
+            [
+              685,
+              1100
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S05-A4",
+      "properties": {
+        "example_id": "S05",
+        "meaning": "Türen zum Raum",
+        "role": "closed_explanation_frame",
+        "ground_truth": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              935,
+              1150
+            ],
+            [
+              991,
+              1150
+            ],
+            [
+              991,
+              1225
+            ],
+            [
+              935,
+              1225
+            ],
+            [
+              935,
+              1150
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

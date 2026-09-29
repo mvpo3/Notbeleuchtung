@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "coordinate_space": "sh22_1og_pdf_pt_top_left",
+  "floor_id": "1OG",
+  "page": 1,
+  "page_size_pdf_pt": [
+    4268,
+    3325
+  ],
+  "origin": "top_left",
+  "x_axis": "right",
+  "y_axis": "down",
+  "pdf_unit": "1/72 inch on the PDF sheet; not a building dimension",
+  "dxf_header_INSUNITS": 4,
+  "dxf_declared_unit": "millimetre",
+  "metric_validation": "header declaration available; clear widths and physical dimensions not independently checked",
+  "dxf_to_pdf_matrix": [
+    [
+      0.05667995001595397,
+      0,
+      2530.494102783198
+    ],
+    [
+      0,
+      -0.05667995001595397,
+      2923.3616110185685
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "pdf_to_dxf_matrix": [
+    [
+      17.64292310982147,
+      0,
+      -44645.312885260624
+    ],
+    [
+      0,
+      -17.64292310982147,
+      51576.644125404426
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "formula": {
+    "pdf_x": "ox + sx * cad_x",
+    "pdf_y": "oy - sy * cad_y"
+  },
+  "parameters": {
+    "sx": 0.05667995001595397,
+    "sy": 0.05667995001595397,
+    "ox": 2530.494102783198,
+    "oy": 2923.3616110185685
+  },
+  "registration_scope": "only the included DXF and source PDF; no universal scale",
+  "reference_polygon_simplification_tolerance_pdf_pt": 0.25,
+  "source_dxf_sha256": "f6252eba05c1c51812958f321c0aa25f1563e7dee8bc0491d441ad76af73156c",
+  "source_pdf_sha256": "c1cd9ca2b5062f67537905a02ce6b988ed73fdd39cc5980bfdb5500d2dde9c54"
+}

@@ -1,0 +1,146 @@
+{
+  "schema_version": "rivoplan.2og.result/1",
+  "floor": "2OG",
+  "run": {
+    "status": "nicht_ausgefuehrt",
+    "engine_name": null,
+    "code_commit": null,
+    "executed_at": null,
+    "source_dxf_sha256": "61ba94fe55ba1e365bdc82cdc85dd230a9c1cc632acb1ef9865ad37f0e9c4df5",
+    "source_pdf_sha256": "03409f14145f0fb0046d289319c1bf7edf239db127ece82dfeb2565cbec7d76c",
+    "command": null,
+    "notes": "Leere Vorlage. Noch kein Erkennungslauf, keine erkannten Objekte."
+  },
+  "objects": [],
+  "connections": [],
+  "assessments": [
+    {
+      "example_id": "W01",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "W02",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "W03",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "W04",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "W05",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "W06",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "W07",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "W08",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "D01",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "D02",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "D03",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "D04",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "F01",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "F02",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "F03",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "G01",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "G02",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "G03",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "G04",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "G05",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "S01",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "S02",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "S03",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "S04",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    },
+    {
+      "example_id": "S05",
+      "outcome": "nicht_geprueft",
+      "reason": ""
+    }
+  ],
+  "open_questions": [
+    "Treppenanschlüsse und Brückenniveau sind noch nicht abschließend belegt."
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": null,
+  "engine_revision": null,
+  "source_hashes": {},
+  "results": [
+    {
+      "case_id": "SH22-W01",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-W02",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-W03",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-D01",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-D02",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-D03",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-F01",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-F02",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-M01",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-M02",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-M03",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-S01",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-S02",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-M04",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-T01",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-T02",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-T03",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-T04",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-T05",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-L01",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-L02",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-B01",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-B02",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-B03",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-B04",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-B05",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-F03",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-R01",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-R02",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-R03",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-R04",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    },
+    {
+      "case_id": "SH22-G01",
+      "status": "not_run",
+      "claims": {},
+      "evidence_by_claim": {},
+      "note": "Vom Adapter nach echtem Lauf befüllen; keine Sollwerte kopieren."
+    }
+  ]
+}

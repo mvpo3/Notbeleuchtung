@@ -1,0 +1,40 @@
+{
+  "floor": "2OG",
+  "items": [
+    {
+      "id": "OPEN-01",
+      "topic": "Treppen",
+      "question": "Welche Endpodeste liegen auf dem 2.-OG-Niveau und welche Zielgeschosse werden erreicht?",
+      "needed": "Höhenbelege, Schnitt und Anschlussplan",
+      "blocks": "Bestätigte geschossübergreifende Verbindung"
+    },
+    {
+      "id": "OPEN-02",
+      "topic": "Brücke",
+      "question": "Ist die schräge Brücke auf dem im Plan gezeigten Niveau regulär angeschlossen?",
+      "needed": "Anschlusshöhen und Bauteilplan",
+      "blocks": "Freigabe als 2OG-Durchgang"
+    },
+    {
+      "id": "OPEN-03",
+      "topic": "Körperfreiraum",
+      "question": "Sind die Konturen aller realen Hindernisse und Türzustände vollständig?",
+      "needed": "Tatsächliche lichte Öffnung, aktuelle Einbauten und vereinbarte Körperhülle",
+      "blocks": "Behauptung einer exakt vollständig begehbaren Fläche"
+    },
+    {
+      "id": "OPEN-04",
+      "topic": "Erkennung",
+      "question": "Welche Fehler macht die bestehende Engine am echten 2OG-Plan?",
+      "needed": "Unveränderter Ausgangslauf mit dokumentiertem Code-Stand",
+      "blocks": "Behauptung eines gemessenen Erkennungsfortschritts"
+    },
+    {
+      "id": "OPEN-05",
+      "topic": "Maßstab",
+      "question": "Stimmen aus Geometrie abgeleitete reale Maße mit den schriftlichen Maßbelegen überein?",
+      "needed": "Mehrere unabhängige Maßreferenzen",
+      "blocks": "Ungeprüfte metrische Distanzschwellen aus der reinen PDF/DXF-Registrierung"
+    }
+  ]
+}

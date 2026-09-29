@@ -1,0 +1,17 @@
+{
+  "learning_cases": 24,
+  "rules": 15,
+  "regression_probes": 37,
+  "source_text_fragments": 3074,
+  "cached_source_entities": 205070,
+  "guard_source_entities": 1209,
+  "native_modelspace_entities": 206095,
+  "native_types_omitted_from_visual_cache": {
+    "INSERT": 928,
+    "CIRCLE": 96,
+    "TEXT": 1
+  },
+  "full_room_segmentation": false,
+  "full_door_window_inventory": false,
+  "native_dxf_included": true
+}

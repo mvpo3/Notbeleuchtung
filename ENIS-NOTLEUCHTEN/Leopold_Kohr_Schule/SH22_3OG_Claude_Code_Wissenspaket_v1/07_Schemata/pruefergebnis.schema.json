@@ -1,0 +1,122 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "run_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "engine_revision": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_hashes": {
+      "type": "object",
+      "properties": {
+        "ORIGINAL_PDF": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "ORIGINAL_DXF": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "case_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "not_run",
+              "observed"
+            ]
+          },
+          "claims": {
+            "type": "object",
+            "additionalProperties": {
+              "type": [
+                "string",
+                "number",
+                "boolean",
+                "null"
+              ]
+            }
+          },
+          "evidence_by_claim": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "source_id": {
+                    "enum": [
+                      "ORIGINAL_PDF",
+                      "ORIGINAL_DXF"
+                    ]
+                  },
+                  "source_locator": {
+                    "type": "string",
+                    "minLength": 8
+                  },
+                  "engine_reference": {
+                    "type": "string",
+                    "minLength": 8
+                  },
+                  "explanation": {
+                    "type": "string",
+                    "minLength": 8
+                  }
+                },
+                "required": [
+                  "source_id",
+                  "source_locator",
+                  "engine_reference",
+                  "explanation"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 1
+            }
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "case_id",
+          "status",
+          "claims",
+          "evidence_by_claim",
+          "note"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "engine_revision",
+    "source_hashes",
+    "results"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Allows an unrun template; the semantic checker additionally requires run metadata, both source hashes, all cases observed, actual claims and evidence."
+}

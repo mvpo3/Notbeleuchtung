@@ -1,0 +1,6 @@
+# Tested with Python 3.12.14, ezdxf 1.4.4, Shapely 2.1.2,
+# PyMuPDF 1.26.6 and jsonschema 4.26.0 in the creation environment.
+ezdxf>=1.4,<2
+shapely>=2.0,<3
+PyMuPDF>=1.24,<2
+jsonschema>=4.20,<5

@@ -1,0 +1,38 @@
+{
+  "status": "bestanden",
+  "checked_at_utc": "2026-09-21T14:58:06.743173+00:00",
+  "checks": 974,
+  "file_count_manifest": 93,
+  "examples": 25,
+  "closed_frames": 100,
+  "extended": true,
+  "recognition_engine_run": false,
+  "recognition_quality_verified": false,
+  "errors": [],
+  "reproduction": {
+    "executed": true,
+    "cwd": "different_working_directory",
+    "exit_code": 0,
+    "pages": 36,
+    "all_page_text_equal_to_approved": true,
+    "data_files_equal_to_reviewed": {
+      "registration.json": true,
+      "walls_final.geojson": true,
+      "floor.geojson": true,
+      "annotations.json": true,
+      "lessons.json": true
+    },
+    "pixel_comparison_pages": {
+      "1": true,
+      "2": true,
+      "15": true,
+      "28": true
+    },
+    "source_and_approved_pdfs_modified": false
+  },
+  "helpers": {
+    "example_D01_resolves": true,
+    "empty_result_template_valid": true,
+    "missing_execution_evidence_rejected": true
+  }
+}

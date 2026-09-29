@@ -1,0 +1,183 @@
+{
+  "floor": "2OG",
+  "classes": [
+    {
+      "id": "wall",
+      "meaning": "Fester Wandkörper",
+      "required_evidence": [
+        "Kantenpaar oder geschlossener Körper",
+        "Material-/Anschlussbeleg",
+        "lokaler Kontext"
+      ],
+      "walk_effect": "blocks"
+    },
+    {
+      "id": "column",
+      "meaning": "Massive Stütze",
+      "required_evidence": [
+        "geschlossener Körper",
+        "Material oder Maß-/Bauteilbeleg"
+      ],
+      "walk_effect": "blocks"
+    },
+    {
+      "id": "partition",
+      "meaning": "Dünne feste Trennwand",
+      "required_evidence": [
+        "feste Begrenzung",
+        "Abgrenzung zum beweglichen Blatt"
+      ],
+      "walk_effect": "blocks"
+    },
+    {
+      "id": "door",
+      "meaning": "Begehbare Türöffnung mit eigenem Zustand",
+      "required_evidence": [
+        "Öffnung",
+        "Blatt/Anschlag oder eindeutiger Bauteilbeleg",
+        "beidseitiger Bodenkontakt"
+      ],
+      "walk_effect": "conditional_connection"
+    },
+    {
+      "id": "window",
+      "meaning": "Fensteröffnung",
+      "required_evidence": [
+        "Fassadenlage/Rahmen",
+        "Höhen-/Bauteiltext oder Verglasungsbeleg"
+      ],
+      "walk_effect": "no_regular_connection"
+    },
+    {
+      "id": "glass_barrier",
+      "meaning": "Fester Glasabschluss",
+      "required_evidence": [
+        "durchgehender Abschluss",
+        "kein Türbeleg im betrachteten Teil"
+      ],
+      "walk_effect": "blocks"
+    },
+    {
+      "id": "guardrail",
+      "meaning": "Geländer/Absturzsicherung",
+      "required_evidence": [
+        "Originaltext oder eindeutige Konstruktionsdarstellung"
+      ],
+      "walk_effect": "blocks_boundary"
+    },
+    {
+      "id": "parapet",
+      "meaning": "Brüstung",
+      "required_evidence": [
+        "Originaltext und Höhenbezug"
+      ],
+      "walk_effect": "blocks_boundary"
+    },
+    {
+      "id": "floor_area",
+      "meaning": "Bodenbereich",
+      "required_evidence": [
+        "Bodenbeleg/Niveau",
+        "keine ungeklärte Öffnung an dieser Stelle"
+      ],
+      "walk_effect": "potential_area"
+    },
+    {
+      "id": "stairs",
+      "meaning": "Treppe",
+      "required_evidence": [
+        "Stufenfolge",
+        "Lauf/Podest",
+        "STG-, Raum- oder Höhenbeleg"
+      ],
+      "walk_effect": "vertical_connection_requires_endpoints"
+    },
+    {
+      "id": "elevator",
+      "meaning": "Aufzug",
+      "required_evidence": [
+        "Kabine/Schacht",
+        "Türzone",
+        "Beschriftung"
+      ],
+      "walk_effect": "separate_vertical_connection"
+    },
+    {
+      "id": "maintenance_area",
+      "meaning": "Wartungsbereich",
+      "required_evidence": [
+        "Wartungsbezeichnung",
+        "Zugang und Niveau gesondert"
+      ],
+      "walk_effect": "not_regular_route_without_evidence"
+    },
+    {
+      "id": "void_or_unresolved",
+      "meaning": "Luftraum oder ungeklärter Boden",
+      "required_evidence": [
+        "Umwehrung/Niveaubeleg oder fehlender Bodenbeleg"
+      ],
+      "walk_effect": "not_confirmed_walkable"
+    },
+    {
+      "id": "furniture",
+      "meaning": "Einbau/Möbel",
+      "required_evidence": [
+        "Objektkontur und Kontext"
+      ],
+      "walk_effect": "possible_obstacle"
+    },
+    {
+      "id": "open_passage",
+      "meaning": "Freie Öffnung ohne Türblatt",
+      "required_evidence": [
+        "tatsächlich unterbrochene Barriere",
+        "Bodenkontakt beidseitig",
+        "keine feste Glas-/Geländergrenze"
+      ],
+      "walk_effect": "potential_connection"
+    }
+  ],
+  "rules": [
+    {
+      "id": "R01",
+      "rule": "Eine Linie allein ist kein Wandbeweis."
+    },
+    {
+      "id": "R02",
+      "rule": "Ein Bogen allein unterscheidet Tür und Fenster nicht."
+    },
+    {
+      "id": "R03",
+      "rule": "Nahe Originaltexte inklusive Höhe und Bezugsniveau mitlesen."
+    },
+    {
+      "id": "R04",
+      "rule": "Weißraum allein ist kein Bodenbeleg."
+    },
+    {
+      "id": "R05",
+      "rule": "Gehfläche und Verbindung zwischen Flächen getrennt modellieren."
+    },
+    {
+      "id": "R06",
+      "rule": "Ein Endraum ist betretbar, aber keine Durchgangsroute."
+    },
+    {
+      "id": "R07",
+      "rule": "Treppenrichtung braucht Startpunkt und Höhenbeleg; Seitenlage im Blatt genügt nicht."
+    },
+    {
+      "id": "R08",
+      "rule": "Erklärrahmen, Pfeile und rote/grüne Lernkonturen sind keine produktiven CAD-Bauteile."
+    },
+    {
+      "id": "R09",
+      "rule": "Geschossspezifische Koordinaten nicht als allgemeine Erkennungsregel übernehmen."
+    },
+    {
+      "id": "R10",
+      "rule": "Keine Verbindung durch einen bloß rechnerisch erzeugten Spalt ohne Originalbeleg."
+    }
+  ]
+}

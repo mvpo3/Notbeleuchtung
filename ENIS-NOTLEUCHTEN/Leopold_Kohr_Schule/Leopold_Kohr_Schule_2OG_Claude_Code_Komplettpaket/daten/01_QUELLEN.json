@@ -1,0 +1,34 @@
+{
+  "project": "SH22-LKS / Leopold-Kohr-Schule",
+  "floor": "2OG",
+  "package_version": "1.0",
+  "date": "2026-09-21",
+  "user_approved_pdf": true,
+  "user_authorized_zip": true,
+  "recognition_engine_run": false,
+  "sources": [
+    {
+      "path": "quellen/20220225-SH22-LKS-GE-AP-02-01-A-2OG.dxf",
+      "kind": "original_dxf",
+      "sha256": "61ba94fe55ba1e365bdc82cdc85dd230a9c1cc632acb1ef9865ad37f0e9c4df5",
+      "bytes": 51330506,
+      "library_file_id": "libfile_1ad884ea270c8191828d701073509dd4"
+    },
+    {
+      "path": "quellen/Schule_SH22_2_OG.pdf",
+      "kind": "original_pdf",
+      "sha256": "03409f14145f0fb0046d289319c1bf7edf239db127ece82dfeb2565cbec7d76c",
+      "bytes": 6608209,
+      "library_file_id": "libfile_36f808dfa6348191812675f4e9b4a8b5"
+    },
+    {
+      "path": "pdf/2OG_Lernbuch.pdf",
+      "kind": "user_approved_learning_pdf",
+      "sha256": "dc01432717c054466763c11fd527c74dc45103710fabcff61df05f340171f10f",
+      "bytes": 7689977,
+      "library_file_id": "libfile_79f8a5f26e8c81919da0af5477ed7da4",
+      "pages": 36
+    }
+  ],
+  "note": "Das freigegebene PDF wird byteidentisch übernommen. Seine frühere Bezeichnung zur Kontrolle bleibt im Dokument erhalten; die Freigabe und ZIP-Anforderung erfolgten danach."
+}

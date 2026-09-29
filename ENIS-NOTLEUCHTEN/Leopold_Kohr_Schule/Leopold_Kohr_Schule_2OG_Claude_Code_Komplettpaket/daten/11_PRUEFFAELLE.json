@@ -1,0 +1,406 @@
+{
+  "floor": "2OG",
+  "engine_run": false,
+  "cases": [
+    {
+      "id": "CHECK-W01",
+      "example_id": "W01",
+      "book_page": 7,
+      "expected": "Zwei Begrenzungen, Materialzeichnung und der durchgehende Anschluss an der Ecke bilden gemeinsam einen Wandkörper. Eine einzelne dicke Linie wäre als Beleg zu wenig.",
+      "check_context": "Der Körper kann diesen Wandstreifen nicht durchqueren. Auch die Fensteröffnung daneben verbindet nicht automatisch zwei Gehflächen.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-W02",
+      "example_id": "W02",
+      "book_page": 8,
+      "expected": "Nicht nur die auffälligste Linie sperrt den Weg. Der mehrschichtige Wandkörper reicht von seiner inneren bis zur äußeren Begrenzung.",
+      "check_context": "Unterbrechungen mit Rahmen, Glaslinien und Flügeln werden als Fenster untersucht. Die rote Kontur darf eine solche Öffnung nicht als durchgehendes Mauerstück schließen.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-W03",
+      "example_id": "W03",
+      "book_page": 9,
+      "expected": "Der schraffierte Körper liegt zwischen Raumflächen und besitzt nachvollziehbare Anschlüsse. Er ist nicht bloß eine Raumstempellinie oder die Kante eines Tisches.",
+      "check_context": "Diese Wand trennt Bodenbereiche. Erst eine belegte Öffnung kann an einer bestimmten Stelle eine Verbindung herstellen.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-W04",
+      "example_id": "W04",
+      "book_page": 10,
+      "expected": "Materialdarstellung und Kanten setzen sich bis in den Anschluss fort. Ein sichtbares Wandende ist nicht automatisch eine Türlaibung.",
+      "check_context": "Jedes erklärte Wandstück ist zusätzlich rechteckig eingerahmt. Der Pfeil ordnet den Text genau diesem Ausschnitt zu.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-W05",
+      "example_id": "W05",
+      "book_page": 11,
+      "expected": "Eine feste Kabinentrennwand lässt sich nicht durchqueren. Ihre geringe Zeichnungsbreite ist kein Beleg für einen freien Weg.",
+      "check_context": "Ein bewegliches Blatt steht in einer Öffnung. Die feststehende Trennwand daneben bleibt ein Hindernis, auch bei offener Tür.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-W06",
+      "example_id": "W06",
+      "book_page": 12,
+      "expected": "Die umschließenden Wände, die eingezeichnete Kabine und die Beschriftung gehören zusammen. Ein weißes Rechteck innerhalb einer Wand ist kein automatisch begehbarer Raum.",
+      "check_context": "Der Schacht bleibt ausgespart. Ein Weg endet an der Aufzugstür, bis eine gesonderte Aufzugsverbindung modelliert ist.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-W07",
+      "example_id": "W07",
+      "book_page": 13,
+      "expected": "Die Stütze ist ein massiver Körper im Bewegungsraum. Für die Raumerkennung gehört sie zu den festen Hindernissen, auch wenn sie keinen ganzen Raum abtrennt.",
+      "check_context": "Die schriftliche Angabe dient als Hinweis. Das verkleinerte Lernblatt ist keine maßstäbliche Messgrundlage.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-W08",
+      "example_id": "W08",
+      "book_page": 14,
+      "expected": "Eine Brüstung oder Absturzsicherung begrenzt den Körperweg, ist aber eine andere Bauteilklasse als eine massive geschosshohe Wand. Die Originalbeschriftung entscheidet mit.",
+      "check_context": "Bauteil und Wegwirkung getrennt speichern: Geländer kann den Durchgang sperren, ohne ein Mauerobjekt zu sein.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-D01",
+      "example_id": "D01",
+      "book_page": 15,
+      "expected": "Die Unterbrechung im Wandaufbau, ein am Anschlag drehendes Blatt und der zugehörige Bogen liefern gemeinsam den Beleg.",
+      "check_context": "Bei geöffneter Tür verbindet die Öffnung die beiden Bodenbereiche. Der tatsächliche Türzustand und die benötigte Körperbreite werden zusätzlich geprüft.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-D02",
+      "example_id": "D02",
+      "book_page": 16,
+      "expected": "An dieser Tür stehen DL 90 und DL 210. Die Zuordnung ist eine lichte Breite von 90 cm und eine lichte Höhe von 210 cm in der üblichen Maßangabe dieses Plans.",
+      "check_context": "Türkennung und Originaltexte mitführen. Geschriebene Maße nicht durch Abmessen an der verkleinerten Buchseite ersetzen.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-D03",
+      "example_id": "D03",
+      "book_page": 17,
+      "expected": "Zwei Drehpunkte und zwei zugehörige Bewegungsbögen bilden eine gemeinsame Türöffnung. Sie sind nicht zwei voneinander unabhängige Räume.",
+      "check_context": "Hier wird die Erschließung mit dem Vorbereich von Stiege 2 verbunden. Die Treppe dahinter erhält eine eigene Verbindungsklasse.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-D04",
+      "example_id": "D04",
+      "book_page": 18,
+      "expected": "Ein Glasfeld kann Sicht zulassen und trotzdem den Körperweg sperren. Mehrere Rahmenlinien ohne Türbeleg werden nicht als offene Passage behandelt.",
+      "check_context": "Innen- und Außenboden können beide grün sein. Eine feste Trennlinie dazwischen verhindert trotzdem eine direkte Verbindung.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-F01",
+      "example_id": "F01",
+      "book_page": 19,
+      "expected": "Die Lage in der Außenfassade, die Rahmen-/Glaslinien und der Höhenhinweis passen zusammen. Ein Bogen allein würde Tür und Fenster nicht sicher unterscheiden.",
+      "check_context": "Blau hebt Rahmen und Flügel hervor. Orange folgt dem originalen Bogen. Der Textpfeil benennt den zusätzlichen Höhenbeleg.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-F02",
+      "example_id": "F02",
+      "book_page": 20,
+      "expected": "Die Originalangaben unterscheiden RPH über Rohdeckenoberkante und FPH über Fertigbodenoberkante. Der FPH-Wert 0,85 ist hier unmittelbar lesbar.",
+      "check_context": "Die Fensterzone bleibt als Barriere erhalten. Weder ein großer Fensterflügel noch eine transparente Glaslinie beweist eine Gehöffnung.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-F03",
+      "example_id": "F03",
+      "book_page": 21,
+      "expected": "Im Plan steht Wartungsflügel mit Öffnungsbegrenzer, angetrieben durch BMA. Diese Funktion darf nicht durch eine reine Bogen-Erkennung zu einer Tür werden.",
+      "check_context": "Fenster, Wartungsöffnung und Tür bekommen unterschiedliche Klassen. Nur eine belegte begehbare Öffnung verbindet reguläre Bodenbereiche.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-G01",
+      "example_id": "G01",
+      "book_page": 22,
+      "expected": "Die Quelle bezeichnet die Zone als Erschließung. Zusätzlich ist ein zusammenhängender Bodenstreifen ohne querende Mauer erkennbar.",
+      "check_context": "Die Füllung beschreibt interpretierte Bodenflächen. Sie ersetzt keine Prüfung der realen Möblierung, Türzustände oder erforderlichen Körperbreite.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-G02",
+      "example_id": "G02",
+      "book_page": 23,
+      "expected": "Der Raumstempel 2.004 benennt die Erschließung. Die Bodenflächen um den umwehrten Bereich können als zusammenhängende Zone untersucht werden.",
+      "check_context": "Die schräge Darstellung wird als eigener Kandidat geführt. Für eine nutzbare Verbindung auf diesem Geschoss fehlen hier bestätigte Anschluss- und Höhenbelege.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-G03",
+      "example_id": "G03",
+      "book_page": 24,
+      "expected": "Der Bildungsraum 2.17 ist über seine eingezeichnete Tür erreichbar. Als Durchgangsroute endet der Weg jedoch im Raum.",
+      "check_context": "Zum Verlassen wird derselbe Türzugang benutzt. Eine Raumerkennung muss Endräume und gesperrte Flächen unterschiedlich behandeln.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-G04",
+      "example_id": "G04",
+      "book_page": 25,
+      "expected": "Die Quelle nennt Wartung und Stahlunterkonstruktion. Das ist ein Funktionshinweis, der eine pauschale Gleichsetzung mit dem regulären Flur verhindert.",
+      "check_context": "Die gleiche Regel gilt für die weiteren bezeichneten Wartungsbereiche bei den Kernen. Schwarze schräge Darstellungen darin sind nicht automatisch neue Mauern.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-G05",
+      "example_id": "G05",
+      "book_page": 26,
+      "expected": "Die Bereiche sind als Freiklasse bzw. Erschließung von Stiege 4 bezeichnet. Der Plan enthält dazu Boden- und Gefällehinweise.",
+      "check_context": "Lange Gefällelinien und Prozentangaben beschreiben den Boden bzw. die Entwässerung. Eine Treppe braucht zusätzlich wiederholte Stufenkanten und einen Laufbeleg.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-S01",
+      "example_id": "S01",
+      "book_page": 27,
+      "expected": "Stufenlinien, fortlaufende Nummern, ein Laufpfeil, Podeste und die Beschriftung Stiege 2 belegen gemeinsam eine Treppe.",
+      "check_context": "Die aufsteigende Stufenzählung und der Laufpfeil helfen beim Lesen des Laufs. Welches benachbarte Geschoss am Ende erreicht wird, wird erst über Höhen und den Anschlussplan bestätigt.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-S02",
+      "example_id": "S02",
+      "book_page": 28,
+      "expected": "Sie liegt innerhalb der Treppendarstellung und unterbricht die Stufenfolge. Ein schraffierter geschlossener Wandkörper fehlt an dieser Stelle.",
+      "check_context": "Eine Bruchlinie kennzeichnet die Darstellung, nicht automatisch eine bestimmte Bewegungsrichtung. Zielgeschoss und Anschlusshöhen benötigen zusätzliche Belege.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-S03",
+      "example_id": "S03",
+      "book_page": 29,
+      "expected": "Der Raumstempel F2.03 benennt Stiege 4. Stufenfolge, Laufpfeil und Maßtext liefern die geometrischen Zusatzbelege.",
+      "check_context": "Den Lauf als vertikale Verbindung mit zwei Enden speichern. Einen horizontalen Weg nicht einfach durch beide Geschosse auf derselben Höhe fortsetzen.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-S04",
+      "example_id": "S04",
+      "book_page": 30,
+      "expected": "Die gleiche Erkennungsregel gilt hier wie bei Stiege 4. Trotzdem erhalten Stiege 3 und Stiege 4 eigene Positionen und Verbindungen.",
+      "check_context": "Rechts im Blatt bedeutet nicht automatisch hinauf. Den konkreten Geschossanschluss erst mit Höhen- und Nachbarplanbelegen festlegen.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    },
+    {
+      "id": "CHECK-S05",
+      "example_id": "S05",
+      "book_page": 31,
+      "expected": "Wiederholte parallele Linien treten auch bei Regalen, Garderoben und anderen Einbauten auf. Eine Treppe darf nicht nur über dieses Muster erkannt werden.",
+      "check_context": "Nur Boden zwischen den erkannten Einbauten wird gefüllt. Die Rasterkörper selbst bleiben ausgespart.",
+      "result": "nicht_geprueft",
+      "automatic_numeric_ground_truth": false,
+      "review_fields": [
+        "Bauteilklasse",
+        "Originalbeleg",
+        "Wegwirkung",
+        "Offene Unsicherheit"
+      ],
+      "pass_requires": "Geometrie und Beschriftung am Original kontrollieren; bloße Deckung mit Lernrahmen genügt nicht."
+    }
+  ]
+}

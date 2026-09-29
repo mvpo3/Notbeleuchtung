@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "coordinate_space": "sh22_1og_pdf_pt_top_left",
+  "corrections": [
+    {
+      "id": "K01",
+      "case": "M05",
+      "book_pages": [
+        20,
+        21
+      ],
+      "before": "Untersichtskontur der Terrasse wurde als Wand markiert.",
+      "after": "An dieser Kontur keine feste Wandbarriere; Boden fortsetzen.",
+      "rule": "Linientyp, Darstellungsebene, Anschluss und Text zusammen lesen.",
+      "focus_pdf_pt": [
+        2552.73,
+        1850
+      ],
+      "source_specific": true
+    },
+    {
+      "id": "K02",
+      "case": "M06",
+      "book_pages": [
+        22,
+        23
+      ],
+      "before": "Randsicherungen fehlten teilweise in der Markierung.",
+      "after": "Randsicherungen separat als guard, rot gestrichelt.",
+      "rule": "Eine Absturzsicherung begrenzt den Durchtritt, ohne eine massive Mauer zu sein.",
+      "source_specific": true
+    },
+    {
+      "id": "K03",
+      "case": "W02",
+      "book_pages": [
+        38,
+        39
+      ],
+      "classification": "Absturzsicherung",
+      "label": "Absturzsicherung raumhoch",
+      "source_text_handles": [
+        "8720B",
+        "8720C"
+      ],
+      "source_line_handles": [
+        "8556D",
+        "85576",
+        "85578",
+        "8557A"
+      ],
+      "label_box_pdf_pt": [
+        1794,
+        1452,
+        1860,
+        1465
+      ],
+      "through_passage": false,
+      "evidence": "Originalbeschriftung und zugeordnete Kontur; Nutzerkorrektur vom 2026-09-21",
+      "material": null,
+      "numerical_height": null,
+      "before": "Zentraler Innenrand war trotz Beschriftung nicht ausreichend kenntlich.",
+      "after": "Absturzsicherung raumhoch ausdrücklich zugeordnet; Rand kein Durchgang.",
+      "rule": "Benachbarte Originalbeschriftung zuordnen; Material und numerische Höhe bleiben unbekannt."
+    },
+    {
+      "id": "K04",
+      "case": "W06",
+      "book_pages": [
+        7
+      ],
+      "removed_unsubstantiated_mask_pdf_pt": [
+        79,
+        1872,
+        1480,
+        1929
+      ],
+      "source_label": "Pflanzentrog",
+      "source_text_handle": "87211",
+      "floor_boundary_handles": [
+        "7E768",
+        "7E8DA",
+        "7E8D8",
+        "7E929"
+      ],
+      "stair_connection_handle": "7C044",
+      "rule": "Bauteiltext zuordnen; keine frei erfundene rechteckige Sperrflaeche. Boden bis zur zugehoerigen Randsicherung fuehren.",
+      "verified_samples_pdf_pt": [
+        [
+          800,
+          1895
+        ],
+        [
+          1525,
+          2250
+        ],
+        [
+          1516,
+          2120
+        ]
+      ],
+      "before": "Pauschaler weißer Balken und zurückgesetzte Flächenbegrenzung unterbrachen den Boden.",
+      "after": "Freies Rechteck entfernt; Boden bis Sicherung und Treppenanschluss ergänzt."
+    }
+  ]
+}

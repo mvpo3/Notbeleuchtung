@@ -1,0 +1,1906 @@
+{
+  "floor": "2OG",
+  "coordinate_space": "PDF_SOURCE_PT",
+  "annotations": [
+    {
+      "id": "W01-A1",
+      "example_id": "W01",
+      "heading": "Außenkante",
+      "text": "Die äußere Begrenzung läuft um die Gebäudeecke.",
+      "color": "blue",
+      "target_pdf_pt": [
+        47,
+        130
+      ],
+      "frame_bbox_pdf_pt": [
+        38,
+        90,
+        53,
+        190
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W01-A2",
+      "example_id": "W01",
+      "heading": "Material",
+      "text": "Die Schraffur liegt innerhalb des Wandkörpers.",
+      "color": "red",
+      "target_pdf_pt": [
+        67,
+        220
+      ],
+      "frame_bbox_pdf_pt": [
+        53,
+        183,
+        83,
+        278
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W01-A3",
+      "example_id": "W01",
+      "heading": "Innenkante",
+      "text": "Diese Kante grenzt die Mauer vom Raumboden ab.",
+      "color": "purple",
+      "target_pdf_pt": [
+        80,
+        250
+      ],
+      "frame_bbox_pdf_pt": [
+        75,
+        201,
+        88,
+        280
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W01-A4",
+      "example_id": "W01",
+      "heading": "Öffnung",
+      "text": "Das Fenster unterbricht die Mauer; es ist kein freier Durchgang.",
+      "color": "orange",
+      "target_pdf_pt": [
+        283,
+        63
+      ],
+      "frame_bbox_pdf_pt": [
+        247,
+        47,
+        316,
+        77
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W02-A1",
+      "example_id": "W02",
+      "heading": "Breiter Aufbau",
+      "text": "Der Rahmen umfasst den Wandquerschnitt mit seinen Schichten.",
+      "color": "red",
+      "target_pdf_pt": [
+        1340,
+        64
+      ],
+      "frame_bbox_pdf_pt": [
+        1250,
+        40,
+        1440,
+        85
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W02-A2",
+      "example_id": "W02",
+      "heading": "Dämmung",
+      "text": "Wiederholte Schleifen und Schräglinien liegen zwischen den Kanten.",
+      "color": "orange",
+      "target_pdf_pt": [
+        1400,
+        51
+      ],
+      "frame_bbox_pdf_pt": [
+        1340,
+        39,
+        1450,
+        61
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W02-A3",
+      "example_id": "W02",
+      "heading": "Eckanschluss",
+      "text": "Die Außenmauer setzt sich am rechten Gebäuderand fort.",
+      "color": "blue",
+      "target_pdf_pt": [
+        1540,
+        120
+      ],
+      "frame_bbox_pdf_pt": [
+        1521,
+        80,
+        1562,
+        240
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W02-A4",
+      "example_id": "W02",
+      "heading": "Raumseite",
+      "text": "Auf der Innenseite beginnt die Bodenfläche des Bildungsraums.",
+      "color": "green",
+      "target_pdf_pt": [
+        1460,
+        190
+      ],
+      "frame_bbox_pdf_pt": [
+        1400,
+        140,
+        1500,
+        225
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W03-A1",
+      "example_id": "W03",
+      "heading": "Wandstreifen",
+      "text": "Die beiden Kanten fassen einen schraffierten Streifen ein.",
+      "color": "red",
+      "target_pdf_pt": [
+        598,
+        350
+      ],
+      "frame_bbox_pdf_pt": [
+        585,
+        284,
+        613,
+        421
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W03-A2",
+      "example_id": "W03",
+      "heading": "Zwei Seiten",
+      "text": "Links und rechts schließen verschiedene Bodenbereiche an.",
+      "color": "blue",
+      "target_pdf_pt": [
+        603,
+        250
+      ],
+      "frame_bbox_pdf_pt": [
+        585,
+        210,
+        614,
+        276
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W03-A3",
+      "example_id": "W03",
+      "heading": "Anschluss",
+      "text": "Die Innenwand trifft am unteren Ende auf den Queraufbau.",
+      "color": "orange",
+      "target_pdf_pt": [
+        598,
+        478
+      ],
+      "frame_bbox_pdf_pt": [
+        580,
+        451,
+        623,
+        503
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W03-A4",
+      "example_id": "W03",
+      "heading": "Einbau daneben",
+      "text": "Möbellinien sind eigenständige Objekte, keine Fortsetzung der Wand.",
+      "color": "purple",
+      "target_pdf_pt": [
+        647,
+        205
+      ],
+      "frame_bbox_pdf_pt": [
+        622,
+        177,
+        698,
+        253
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W04-A1",
+      "example_id": "W04",
+      "heading": "Seitliche Mauer",
+      "text": "Der schraffierte Wandkörper läuft entlang des Kerns.",
+      "color": "red",
+      "target_pdf_pt": [
+        648,
+        818
+      ],
+      "frame_bbox_pdf_pt": [
+        633,
+        786,
+        660,
+        885
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W04-A2",
+      "example_id": "W04",
+      "heading": "Querwand",
+      "text": "Ein geschlossener Rahmen markiert das erklärte Querwandstück.",
+      "color": "red",
+      "target_pdf_pt": [
+        804,
+        908
+      ],
+      "frame_bbox_pdf_pt": [
+        710,
+        897,
+        907,
+        922
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W04-A3",
+      "example_id": "W04",
+      "heading": "Anschluss",
+      "text": "Hier treffen Längs- und Querwand ohne Durchgang aufeinander.",
+      "color": "orange",
+      "target_pdf_pt": [
+        649,
+        908
+      ],
+      "frame_bbox_pdf_pt": [
+        633,
+        894,
+        671,
+        926
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W04-A4",
+      "example_id": "W04",
+      "heading": "Sonderbereich",
+      "text": "Die Beschriftung nennt einen Gitterrost-Wartungssteg.",
+      "color": "purple",
+      "target_pdf_pt": [
+        805,
+        850
+      ],
+      "frame_bbox_pdf_pt": [
+        710,
+        817,
+        899,
+        887
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W05-A1",
+      "example_id": "W05",
+      "heading": "Dünne Trennwand",
+      "text": "Zwei eng benachbarte Linien begrenzen das feste Trennwandstück.",
+      "color": "red",
+      "target_pdf_pt": [
+        1276.4,
+        694
+      ],
+      "frame_bbox_pdf_pt": [
+        1271,
+        670,
+        1282,
+        724
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W05-A2",
+      "example_id": "W05",
+      "heading": "Zweites Beispiel",
+      "text": "Dasselbe Merkmal wiederholt sich an der nächsten Kabine.",
+      "color": "red",
+      "target_pdf_pt": [
+        1325.7,
+        694
+      ],
+      "frame_bbox_pdf_pt": [
+        1320,
+        670,
+        1331,
+        724
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W05-A3",
+      "example_id": "W05",
+      "heading": "Türblatt",
+      "text": "Die bewegliche Linie im Öffnungsbereich ist keine feste Mauer.",
+      "color": "blue",
+      "target_pdf_pt": [
+        1322,
+        639
+      ],
+      "frame_bbox_pdf_pt": [
+        1317,
+        611,
+        1328,
+        657
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W05-A4",
+      "example_id": "W05",
+      "heading": "Raumbegrenzung",
+      "text": "Die seitliche und untere Einfassung schließt an feste Bauteile an.",
+      "color": "orange",
+      "target_pdf_pt": [
+        1248,
+        733
+      ],
+      "frame_bbox_pdf_pt": [
+        1210,
+        725,
+        1300,
+        744
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W06-A1",
+      "example_id": "W06",
+      "heading": "Feste Schachtwand",
+      "text": "Der Rahmen umfasst den massiven seitlichen Wandstreifen.",
+      "color": "red",
+      "target_pdf_pt": [
+        1213,
+        1320
+      ],
+      "frame_bbox_pdf_pt": [
+        1200,
+        1260,
+        1221,
+        1396
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W06-A2",
+      "example_id": "W06",
+      "heading": "Kabine",
+      "text": "Die inneren Linien beschreiben den Aufzug, keinen Flur.",
+      "color": "blue",
+      "target_pdf_pt": [
+        1260,
+        1300
+      ],
+      "frame_bbox_pdf_pt": [
+        1228,
+        1260,
+        1295,
+        1377
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W06-A3",
+      "example_id": "W06",
+      "heading": "Türzone",
+      "text": "Nur hier liegt der Zugang; nicht entlang der ganzen Schachtseite.",
+      "color": "orange",
+      "target_pdf_pt": [
+        1260,
+        1242
+      ],
+      "frame_bbox_pdf_pt": [
+        1223,
+        1232,
+        1298,
+        1255
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W06-A4",
+      "example_id": "W06",
+      "heading": "Bauteilbeleg",
+      "text": "FWA und die Kabinenangaben stützen die Zuordnung.",
+      "color": "purple",
+      "target_pdf_pt": [
+        1261,
+        1287
+      ],
+      "frame_bbox_pdf_pt": [
+        1238,
+        1272,
+        1295,
+        1300
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W07-A1",
+      "example_id": "W07",
+      "heading": "Stützenkörper",
+      "text": "Ein kleiner geschlossener Körper mit Materialdarstellung.",
+      "color": "red",
+      "target_pdf_pt": [
+        706,
+        1824
+      ],
+      "frame_bbox_pdf_pt": [
+        691,
+        1808,
+        722,
+        1840
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W07-A2",
+      "example_id": "W07",
+      "heading": "Eigenes Hindernis",
+      "text": "Auch ohne lange Wand ist der Körper nicht durchquerbar.",
+      "color": "orange",
+      "target_pdf_pt": [
+        713,
+        1820
+      ],
+      "frame_bbox_pdf_pt": [
+        687,
+        1804,
+        726,
+        1843
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W07-A3",
+      "example_id": "W07",
+      "heading": "Maßhinweis",
+      "text": "Die nahe Angabe 43/43 gehört zur Stütze.",
+      "color": "blue",
+      "target_pdf_pt": [
+        718,
+        1838
+      ],
+      "frame_bbox_pdf_pt": [
+        703,
+        1830,
+        741,
+        1848
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W07-A4",
+      "example_id": "W07",
+      "heading": "Umgehbare Fläche",
+      "text": "Die Bodenfläche neben der Stütze ist gesondert erkennbar.",
+      "color": "green",
+      "target_pdf_pt": [
+        752,
+        1830
+      ],
+      "frame_bbox_pdf_pt": [
+        739,
+        1818,
+        765,
+        1852
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W08-A1",
+      "example_id": "W08",
+      "heading": "Absturzsicherung",
+      "text": "Der Text benennt die Umwehrung ausdrücklich.",
+      "color": "purple",
+      "target_pdf_pt": [
+        1815,
+        1458
+      ],
+      "frame_bbox_pdf_pt": [
+        1780,
+        1446,
+        1880,
+        1470
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W08-A2",
+      "example_id": "W08",
+      "heading": "Raumhohe Grenze",
+      "text": "Diese Kante wird nicht als massive Mauer umgedeutet.",
+      "color": "purple",
+      "target_pdf_pt": [
+        1736,
+        1320
+      ],
+      "frame_bbox_pdf_pt": [
+        1725,
+        1210,
+        1745,
+        1410
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W08-A3",
+      "example_id": "W08",
+      "heading": "Brüstung",
+      "text": "Die nahe Beschriftung lautet Brüstung H=120cm.",
+      "color": "orange",
+      "target_pdf_pt": [
+        2160,
+        1174
+      ],
+      "frame_bbox_pdf_pt": [
+        2128,
+        1148,
+        2205,
+        1206
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "W08-A4",
+      "example_id": "W08",
+      "heading": "Brückenbereich",
+      "text": "Der schräge Bereich braucht einen belegten Niveauanschluss.",
+      "color": "blue",
+      "target_pdf_pt": [
+        2275,
+        1305
+      ],
+      "frame_bbox_pdf_pt": [
+        2215,
+        1260,
+        2340,
+        1360
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "D01-A1",
+      "example_id": "D01",
+      "heading": "Wandlaibung",
+      "text": "Der eingerahmte Wandabschluss begrenzt die Öffnung.",
+      "color": "red",
+      "target_pdf_pt": [
+        452,
+        482
+      ],
+      "frame_bbox_pdf_pt": [
+        446,
+        455,
+        459,
+        502
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "D01-A2",
+      "example_id": "D01",
+      "heading": "Türblatt",
+      "text": "Blau liegt direkt auf der gezeichneten Blattlage.",
+      "color": "blue",
+      "target_pdf_pt": [
+        460.64,
+        490
+      ],
+      "frame_bbox_pdf_pt": [
+        456,
+        468,
+        466,
+        517
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "D01-A3",
+      "example_id": "D01",
+      "heading": "Schwenkbogen",
+      "text": "Orange zeichnet den originalen Öffnungsbogen nach.",
+      "color": "orange",
+      "target_pdf_pt": [
+        494.45,
+        501.7
+      ],
+      "frame_bbox_pdf_pt": [
+        483,
+        488,
+        507,
+        516
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "D01-A4",
+      "example_id": "D01",
+      "heading": "Gedacht geschlossen",
+      "text": "Violett gestrichelt: gedachte Schließlage, keine zusätzliche Mauer.",
+      "color": "purple",
+      "target_pdf_pt": [
+        483,
+        467.9
+      ],
+      "frame_bbox_pdf_pt": [
+        461,
+        462,
+        509,
+        475
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "D02-A1",
+      "example_id": "D02",
+      "heading": "DL 90",
+      "text": "Die erste DL-Angabe benennt die lichte Breite.",
+      "color": "blue",
+      "target_pdf_pt": [
+        478.2,
+        483
+      ],
+      "frame_bbox_pdf_pt": [
+        474,
+        474,
+        482,
+        496
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "D02-A2",
+      "example_id": "D02",
+      "heading": "DL 210",
+      "text": "Die zweite DL-Angabe benennt die lichte Höhe.",
+      "color": "orange",
+      "target_pdf_pt": [
+        484.7,
+        485
+      ],
+      "frame_bbox_pdf_pt": [
+        481,
+        474,
+        489,
+        496
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "D02-A3",
+      "example_id": "D02",
+      "heading": "STUK +2,18",
+      "text": "Unterkante des Sturzes über der Oberkante des Fertigbodens.",
+      "color": "purple",
+      "target_pdf_pt": [
+        514,
+        456.8
+      ],
+      "frame_bbox_pdf_pt": [
+        483,
+        450,
+        544,
+        463
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "D02-A4",
+      "example_id": "D02",
+      "heading": "Türkennung",
+      "text": "2.17-358 / TI A 01 identifiziert das Türelement.",
+      "color": "green",
+      "target_pdf_pt": [
+        485,
+        506
+      ],
+      "frame_bbox_pdf_pt": [
+        470,
+        497,
+        497,
+        514
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "D03-A1",
+      "example_id": "D03",
+      "heading": "Zwei Anschläge",
+      "text": "Je ein Flügel gehört zum oberen und unteren Anschlag.",
+      "color": "blue",
+      "target_pdf_pt": [
+        1117.45,
+        1034.99
+      ],
+      "frame_bbox_pdf_pt": [
+        1108,
+        1027,
+        1126,
+        1140
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "D03-A2",
+      "example_id": "D03",
+      "heading": "Zwei Bögen",
+      "text": "Beide orange Kurven stammen aus der Originalzeichnung.",
+      "color": "orange",
+      "target_pdf_pt": [
+        1150,
+        1067
+      ],
+      "frame_bbox_pdf_pt": [
+        1120,
+        1036,
+        1168,
+        1126
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "D03-A3",
+      "example_id": "D03",
+      "heading": "Öffnungsstreifen",
+      "text": "Die Passage liegt zwischen den Anschlägen in der Wandebene.",
+      "color": "green",
+      "target_pdf_pt": [
+        1117.45,
+        1083
+      ],
+      "frame_bbox_pdf_pt": [
+        1107,
+        1039,
+        1127,
+        1127
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "D03-A4",
+      "example_id": "D03",
+      "heading": "Feste Wand",
+      "text": "Der feste Anschluss oberhalb der Tür bleibt vom Bogen getrennt.",
+      "color": "red",
+      "target_pdf_pt": [
+        1121.3,
+        1015
+      ],
+      "frame_bbox_pdf_pt": [
+        1096,
+        1003,
+        1130,
+        1029
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "D04-A1",
+      "example_id": "D04",
+      "heading": "Fester Glasabschluss",
+      "text": "Die durchgehende Rahmenzone bildet hier eine Grenze.",
+      "color": "purple",
+      "target_pdf_pt": [
+        824,
+        1488
+      ],
+      "frame_bbox_pdf_pt": [
+        680,
+        1475,
+        968,
+        1504
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "D04-A2",
+      "example_id": "D04",
+      "heading": "Rahmen / Pfosten",
+      "text": "Senkrechte Teilungen gehören zum Fassadenelement.",
+      "color": "blue",
+      "target_pdf_pt": [
+        740,
+        1487
+      ],
+      "frame_bbox_pdf_pt": [
+        734,
+        1477,
+        749,
+        1504
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "D04-A3",
+      "example_id": "D04",
+      "heading": "Innenboden",
+      "text": "Die Erschließung liegt auf der Innenseite.",
+      "color": "green",
+      "target_pdf_pt": [
+        820,
+        1440
+      ],
+      "frame_bbox_pdf_pt": [
+        775,
+        1410,
+        883,
+        1461
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "D04-A4",
+      "example_id": "D04",
+      "heading": "Außenbereich",
+      "text": "Die Freiklasse liegt jenseits des Abschlusses.",
+      "color": "orange",
+      "target_pdf_pt": [
+        816,
+        1530
+      ],
+      "frame_bbox_pdf_pt": [
+        767,
+        1511,
+        890,
+        1542
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "F01-A1",
+      "example_id": "F01",
+      "heading": "Rahmen und Glas",
+      "text": "Mehrere dünne parallele Linien liegen in der Außenöffnung.",
+      "color": "blue",
+      "target_pdf_pt": [
+        280,
+        65
+      ],
+      "frame_bbox_pdf_pt": [
+        250,
+        57,
+        313,
+        75
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "F01-A2",
+      "example_id": "F01",
+      "heading": "Fensterflügel",
+      "text": "Der gezeichnete Flügel liegt am Rahmenanschlag.",
+      "color": "blue",
+      "target_pdf_pt": [
+        313.68,
+        99
+      ],
+      "frame_bbox_pdf_pt": [
+        309,
+        66,
+        319,
+        127
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "F01-A3",
+      "example_id": "F01",
+      "heading": "Öffnungsbogen",
+      "text": "Auch ein Fenster kann einen Viertelkreisbogen haben.",
+      "color": "orange",
+      "target_pdf_pt": [
+        270.8,
+        106.9
+      ],
+      "frame_bbox_pdf_pt": [
+        252,
+        82,
+        312,
+        128
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "F01-A4",
+      "example_id": "F01",
+      "heading": "Parapethöhe",
+      "text": "FPH ü. FBOK 0,85 bezeichnet die Fensterbrüstungshöhe.",
+      "color": "purple",
+      "target_pdf_pt": [
+        285,
+        85.5
+      ],
+      "frame_bbox_pdf_pt": [
+        255,
+        77,
+        309,
+        91
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "F02-A1",
+      "example_id": "F02",
+      "heading": "RPH",
+      "text": "Rohparapethöhe wird auf RDOK bezogen.",
+      "color": "orange",
+      "target_pdf_pt": [
+        465,
+        80
+      ],
+      "frame_bbox_pdf_pt": [
+        435,
+        74,
+        491,
+        83
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "F02-A2",
+      "example_id": "F02",
+      "heading": "FPH 0,85",
+      "text": "Fertigparapethöhe wird auf FBOK bezogen.",
+      "color": "purple",
+      "target_pdf_pt": [
+        465,
+        85.5
+      ],
+      "frame_bbox_pdf_pt": [
+        435,
+        82,
+        487,
+        92
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "F02-A3",
+      "example_id": "F02",
+      "heading": "Glaslinien",
+      "text": "Die eng benachbarten Linien markieren das Fassadenfeld.",
+      "color": "blue",
+      "target_pdf_pt": [
+        521,
+        64
+      ],
+      "frame_bbox_pdf_pt": [
+        493,
+        56,
+        548,
+        75
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "F02-A4",
+      "example_id": "F02",
+      "heading": "Wandstück",
+      "text": "Materialzeichnung zwischen den Öffnungen bleibt ein fester Körper.",
+      "color": "red",
+      "target_pdf_pt": [
+        576,
+        54
+      ],
+      "frame_bbox_pdf_pt": [
+        557,
+        39,
+        603,
+        77
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "F03-A1",
+      "example_id": "F03",
+      "heading": "Wartungsflügel",
+      "text": "Die Beschriftung nennt die Funktion ausdrücklich.",
+      "color": "purple",
+      "target_pdf_pt": [
+        1090,
+        81
+      ],
+      "frame_bbox_pdf_pt": [
+        1063,
+        75,
+        1131,
+        98
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "F03-A2",
+      "example_id": "F03",
+      "heading": "Kleiner Bogen",
+      "text": "Der kurze Originalbogen zeigt eine begrenzte Flügelstellung.",
+      "color": "orange",
+      "target_pdf_pt": [
+        1054,
+        73
+      ],
+      "frame_bbox_pdf_pt": [
+        1048,
+        63,
+        1068,
+        84
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "F03-A3",
+      "example_id": "F03",
+      "heading": "Rahmenzone",
+      "text": "Der Flügel sitzt in der Fassadenöffnung.",
+      "color": "blue",
+      "target_pdf_pt": [
+        1080,
+        65
+      ],
+      "frame_bbox_pdf_pt": [
+        1047,
+        54,
+        1116,
+        77
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "F03-A4",
+      "example_id": "F03",
+      "heading": "Begrenzung",
+      "text": "Ein Wartungsflügel ist kein normaler Türdurchgang.",
+      "color": "red",
+      "target_pdf_pt": [
+        1117,
+        95
+      ],
+      "frame_bbox_pdf_pt": [
+        1112,
+        79,
+        1128,
+        143
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G01-A1",
+      "example_id": "G01",
+      "heading": "Flurfläche",
+      "text": "Die grüne Füllung folgt dem Boden seitlich am Kern vorbei.",
+      "color": "green",
+      "target_pdf_pt": [
+        557,
+        1050
+      ],
+      "frame_bbox_pdf_pt": [
+        521,
+        941,
+        606,
+        1190
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G01-A2",
+      "example_id": "G01",
+      "heading": "Türverbindung",
+      "text": "An einer nachgewiesenen Tür kann der Weg in den Raum wechseln.",
+      "color": "blue",
+      "target_pdf_pt": [
+        639,
+        953
+      ],
+      "frame_bbox_pdf_pt": [
+        612,
+        907,
+        686,
+        999
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G01-A3",
+      "example_id": "G01",
+      "heading": "Wandgrenze",
+      "text": "Die eingerahmte Querwand wird nicht grün überbrückt.",
+      "color": "red",
+      "target_pdf_pt": [
+        805,
+        1250
+      ],
+      "frame_bbox_pdf_pt": [
+        710,
+        1224,
+        917,
+        1266
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G01-A4",
+      "example_id": "G01",
+      "heading": "Zweite Flurseite",
+      "text": "Ein weiterer Bodenstreifen erschließt die andere Kernseite.",
+      "color": "green",
+      "target_pdf_pt": [
+        1040,
+        1110
+      ],
+      "frame_bbox_pdf_pt": [
+        1002,
+        1015,
+        1085,
+        1210
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G02-A1",
+      "example_id": "G02",
+      "heading": "Oberer Umgang",
+      "text": "Der Bodenstreifen verbindet die Seiten der Erschließung.",
+      "color": "green",
+      "target_pdf_pt": [
+        2040,
+        1094
+      ],
+      "frame_bbox_pdf_pt": [
+        1880,
+        1052,
+        2230,
+        1123
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G02-A2",
+      "example_id": "G02",
+      "heading": "Unterer Umgang",
+      "text": "Auch der untere Streifen wird flächig dargestellt.",
+      "color": "green",
+      "target_pdf_pt": [
+        2090,
+        1541
+      ],
+      "frame_bbox_pdf_pt": [
+        1920,
+        1498,
+        2260,
+        1580
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G02-A3",
+      "example_id": "G02",
+      "heading": "Feste Grenze",
+      "text": "Die Absturzsicherung unterbricht den direkten Körperweg.",
+      "color": "purple",
+      "target_pdf_pt": [
+        1736,
+        1280
+      ],
+      "frame_bbox_pdf_pt": [
+        1724,
+        1198,
+        1748,
+        1410
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G02-A4",
+      "example_id": "G02",
+      "heading": "Ungeklärter Anschluss",
+      "text": "Die Brückendarstellung ist kein pauschaler Bodenfüllbereich.",
+      "color": "orange",
+      "target_pdf_pt": [
+        2220,
+        1290
+      ],
+      "frame_bbox_pdf_pt": [
+        1995,
+        1146,
+        2480,
+        1480
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G03-A1",
+      "example_id": "G03",
+      "heading": "Ein belegter Zugang",
+      "text": "Die Tür 2.17-358 liegt am unteren Raumrand.",
+      "color": "green",
+      "target_pdf_pt": [
+        460.64,
+        467.9
+      ],
+      "frame_bbox_pdf_pt": [
+        448,
+        453,
+        517,
+        520
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G03-A2",
+      "example_id": "G03",
+      "heading": "Raumboden",
+      "text": "Die freie Fläche zwischen den Einbauten kann betreten werden.",
+      "color": "green",
+      "target_pdf_pt": [
+        408,
+        293
+      ],
+      "frame_bbox_pdf_pt": [
+        380,
+        233,
+        434,
+        337
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G03-A3",
+      "example_id": "G03",
+      "heading": "Fester Abschluss",
+      "text": "Die Innenwand bietet hier keinen weiteren Durchgang.",
+      "color": "red",
+      "target_pdf_pt": [
+        598,
+        267
+      ],
+      "frame_bbox_pdf_pt": [
+        584,
+        216,
+        615,
+        346
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G03-A4",
+      "example_id": "G03",
+      "heading": "Fenster bleibt Grenze",
+      "text": "Die Außenöffnung ist wegen des Parapets keine Ausgehtür.",
+      "color": "purple",
+      "target_pdf_pt": [
+        281,
+        65
+      ],
+      "frame_bbox_pdf_pt": [
+        247,
+        49,
+        315,
+        88
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G04-A1",
+      "example_id": "G04",
+      "heading": "Originaltext",
+      "text": "Gitterrost-Wartungssteg steht direkt im Bereich.",
+      "color": "purple",
+      "target_pdf_pt": [
+        800,
+        855
+      ],
+      "frame_bbox_pdf_pt": [
+        710,
+        813,
+        911,
+        889
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G04-A2",
+      "example_id": "G04",
+      "heading": "Eigener Zugang",
+      "text": "Die beschriftete Öffnung gehört zum Wartungsbereich.",
+      "color": "orange",
+      "target_pdf_pt": [
+        980,
+        870
+      ],
+      "frame_bbox_pdf_pt": [
+        968,
+        836,
+        998,
+        906
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G04-A3",
+      "example_id": "G04",
+      "heading": "Wand unten",
+      "text": "Das feste Querwandstück bleibt eingerahmt und gesperrt.",
+      "color": "red",
+      "target_pdf_pt": [
+        805,
+        907
+      ],
+      "frame_bbox_pdf_pt": [
+        710,
+        897,
+        910,
+        924
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G04-A4",
+      "example_id": "G04",
+      "heading": "Sonderfläche",
+      "text": "Diese Fläche wird nicht als gewöhnlicher Gehbereich grün gefüllt.",
+      "color": "blue",
+      "target_pdf_pt": [
+        838,
+        797
+      ],
+      "frame_bbox_pdf_pt": [
+        772,
+        782,
+        921,
+        815
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G05-A1",
+      "example_id": "G05",
+      "heading": "Freiklasse / Boden",
+      "text": "Die bezeichnete Außenfläche hat einen erkennbaren Bodenaufbau.",
+      "color": "green",
+      "target_pdf_pt": [
+        640,
+        1690
+      ],
+      "frame_bbox_pdf_pt": [
+        572,
+        1598,
+        701,
+        1733
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G05-A2",
+      "example_id": "G05",
+      "heading": "Stütze aussparen",
+      "text": "Die grüne Fläche endet am festen Stützenkörper.",
+      "color": "red",
+      "target_pdf_pt": [
+        706,
+        1824
+      ],
+      "frame_bbox_pdf_pt": [
+        691,
+        1808,
+        722,
+        1840
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G05-A3",
+      "example_id": "G05",
+      "heading": "Umwehrter Bereich",
+      "text": "Die Absturzsicherung begrenzt die nicht grün gefüllte Fläche.",
+      "color": "purple",
+      "target_pdf_pt": [
+        822,
+        1802
+      ],
+      "frame_bbox_pdf_pt": [
+        750,
+        1600,
+        980,
+        1825
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "G05-A4",
+      "example_id": "G05",
+      "heading": "Treppenlauf",
+      "text": "Die Treppenfläche ist grün, ihre Originalstufen bleiben schwarz.",
+      "color": "orange",
+      "target_pdf_pt": [
+        1342,
+        1669
+      ],
+      "frame_bbox_pdf_pt": [
+        1115,
+        1613,
+        1545,
+        1745
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S01-A1",
+      "example_id": "S01",
+      "heading": "Stufenfolge",
+      "text": "Die vielen regelmäßigen Querlinien bilden den Treppenlauf.",
+      "color": "blue",
+      "target_pdf_pt": [
+        1370,
+        1350
+      ],
+      "frame_bbox_pdf_pt": [
+        1315,
+        1250,
+        1420,
+        1448
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S01-A2",
+      "example_id": "S01",
+      "heading": "Laufhinweis",
+      "text": "Pfeil, Stufennummern und 13 STG 15/30 gehören zusammen.",
+      "color": "orange",
+      "target_pdf_pt": [
+        1373,
+        1335
+      ],
+      "frame_bbox_pdf_pt": [
+        1354,
+        1313,
+        1393,
+        1354
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S01-A3",
+      "example_id": "S01",
+      "heading": "Podest",
+      "text": "Am Ende der Stufenfolge liegt die zusammenhängende Zwischenfläche.",
+      "color": "green",
+      "target_pdf_pt": [
+        1430,
+        1510
+      ],
+      "frame_bbox_pdf_pt": [
+        1320,
+        1466,
+        1540,
+        1538
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S01-A4",
+      "example_id": "S01",
+      "heading": "Mittlere Grenze",
+      "text": "Die beschriftete raumhohe Brüstung trennt die Läufe.",
+      "color": "purple",
+      "target_pdf_pt": [
+        1430,
+        1350
+      ],
+      "frame_bbox_pdf_pt": [
+        1421,
+        1238,
+        1437,
+        1458
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S02-A1",
+      "example_id": "S02",
+      "heading": "Stufen bleiben schwarz",
+      "text": "Die originalen Stufenkanten liegen sichtbar über der grünen Fläche.",
+      "color": "blue",
+      "target_pdf_pt": [
+        2898,
+        1800
+      ],
+      "frame_bbox_pdf_pt": [
+        2845,
+        1715,
+        2946,
+        1852
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S02-A2",
+      "example_id": "S02",
+      "heading": "Bruchdarstellung",
+      "text": "Die schräge Unterbrechung markiert die Darstellung des Treppenlaufs.",
+      "color": "orange",
+      "target_pdf_pt": [
+        2770,
+        1755
+      ],
+      "frame_bbox_pdf_pt": [
+        2725,
+        1734,
+        2837,
+        1780
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S02-A3",
+      "example_id": "S02",
+      "heading": "Aufzug daneben",
+      "text": "Der Schacht rechts ist eine eigene Anlage, keine Fortsetzung des Laufs.",
+      "color": "purple",
+      "target_pdf_pt": [
+        2990,
+        1730
+      ],
+      "frame_bbox_pdf_pt": [
+        2965,
+        1654,
+        3045,
+        1805
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S02-A4",
+      "example_id": "S02",
+      "heading": "Podestfläche",
+      "text": "Die größere Fläche am Laufende ist ein Podest.",
+      "color": "green",
+      "target_pdf_pt": [
+        2848,
+        1940
+      ],
+      "frame_bbox_pdf_pt": [
+        2730,
+        1880,
+        2940,
+        1990
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S03-A1",
+      "example_id": "S03",
+      "heading": "26 STG",
+      "text": "Die Originalbeschriftung nennt 26 STG 15/30.",
+      "color": "orange",
+      "target_pdf_pt": [
+        1124,
+        1675
+      ],
+      "frame_bbox_pdf_pt": [
+        1107,
+        1659,
+        1145,
+        1690
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S03-A2",
+      "example_id": "S03",
+      "heading": "Stufen / Nummern",
+      "text": "Die regelmäßigen Querlinien und Nummern laufen über die Treppenfläche.",
+      "color": "blue",
+      "target_pdf_pt": [
+        1345,
+        1690
+      ],
+      "frame_bbox_pdf_pt": [
+        1284,
+        1620,
+        1440,
+        1740
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S03-A3",
+      "example_id": "S03",
+      "heading": "Bruch im Lauf",
+      "text": "Die schräge Bruchdarstellung bleibt schwarz sichtbar.",
+      "color": "purple",
+      "target_pdf_pt": [
+        1130,
+        1660
+      ],
+      "frame_bbox_pdf_pt": [
+        1112,
+        1610,
+        1151,
+        1747
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S03-A4",
+      "example_id": "S03",
+      "heading": "Seitliche Sicherung",
+      "text": "Die raumhohe Absturzsicherung begrenzt den Lauf.",
+      "color": "purple",
+      "target_pdf_pt": [
+        1465,
+        1731
+      ],
+      "frame_bbox_pdf_pt": [
+        1410,
+        1720,
+        1534,
+        1742
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S04-A1",
+      "example_id": "S04",
+      "heading": "Treppenbeleg",
+      "text": "F2.06 und Stiege 3 stehen innerhalb des Bereichs.",
+      "color": "orange",
+      "target_pdf_pt": [
+        2926,
+        2587
+      ],
+      "frame_bbox_pdf_pt": [
+        2900,
+        2568,
+        2970,
+        2610
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S04-A2",
+      "example_id": "S04",
+      "heading": "Stufenfolge",
+      "text": "Die Originallinien wiederholen sich quer zum Lauf.",
+      "color": "blue",
+      "target_pdf_pt": [
+        2990,
+        2630
+      ],
+      "frame_bbox_pdf_pt": [
+        2960,
+        2555,
+        3115,
+        2698
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S04-A3",
+      "example_id": "S04",
+      "heading": "Absturzsicherung",
+      "text": "Diese Grenze ist als raumhoch bezeichnet.",
+      "color": "purple",
+      "target_pdf_pt": [
+        3108,
+        2674
+      ],
+      "frame_bbox_pdf_pt": [
+        3075,
+        2661,
+        3180,
+        2686
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S04-A4",
+      "example_id": "S04",
+      "heading": "Vorbereich",
+      "text": "F2.05 bezeichnet die zugehörige Erschließung.",
+      "color": "green",
+      "target_pdf_pt": [
+        2830,
+        2734
+      ],
+      "frame_bbox_pdf_pt": [
+        2750,
+        2713,
+        2925,
+        2745
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S05-A1",
+      "example_id": "S05",
+      "heading": "Raumstempel",
+      "text": "Der Plan benennt den Raum 2.26 als Garderobe.",
+      "color": "purple",
+      "target_pdf_pt": [
+        795,
+        955
+      ],
+      "frame_bbox_pdf_pt": [
+        778,
+        936,
+        874,
+        1005
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S05-A2",
+      "example_id": "S05",
+      "heading": "Einbauraster",
+      "text": "Die kleinen Rechtecke gehören zu den Einbauten.",
+      "color": "blue",
+      "target_pdf_pt": [
+        807,
+        1019
+      ],
+      "frame_bbox_pdf_pt": [
+        752,
+        997,
+        932,
+        1052
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S05-A3",
+      "example_id": "S05",
+      "heading": "Keine Stufenbelege",
+      "text": "Hier fehlen ein Treppenlauf, STG-Angabe und zusammengehörige Podeste.",
+      "color": "orange",
+      "target_pdf_pt": [
+        768,
+        1130
+      ],
+      "frame_bbox_pdf_pt": [
+        685,
+        1100,
+        875,
+        1160
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    },
+    {
+      "id": "S05-A4",
+      "example_id": "S05",
+      "heading": "Türen zum Raum",
+      "text": "Die Seitenzugänge verbinden den Raum mit der Erschließung.",
+      "color": "green",
+      "target_pdf_pt": [
+        981,
+        1208
+      ],
+      "frame_bbox_pdf_pt": [
+        935,
+        1150,
+        991,
+        1225
+      ],
+      "role": "Erklaerung_keine_Objektgrenze",
+      "ground_truth": false
+    }
+  ]
+}

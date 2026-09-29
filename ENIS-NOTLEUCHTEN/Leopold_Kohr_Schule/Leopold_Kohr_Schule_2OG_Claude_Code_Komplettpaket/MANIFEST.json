@@ -1,0 +1,490 @@
+{
+  "package": "Leopold_Kohr_Schule_2OG_Claude_Code_Komplettpaket",
+  "version": "1.0",
+  "floor": "2OG",
+  "recognition_engine_run": false,
+  "files": [
+    {
+      "path": "CLAUDE.md",
+      "bytes": 2787,
+      "sha256": "09a9c8e775d184081cbabe044157dd102d4eb438a7bdd5da1aa6921c2219bcbe"
+    },
+    {
+      "path": "PROMPT_FUER_CLAUDE_CODE.md",
+      "bytes": 3111,
+      "sha256": "4afe25e63dbdebfab4f839540cd3a900b70478c8aad66f2e971582f2d211321b"
+    },
+    {
+      "path": "START_HIER.md",
+      "bytes": 2792,
+      "sha256": "579ec843e62c2ed20a9ca14050c7e0a5487293269e2c0f46d1e85bea73455ae0"
+    },
+    {
+      "path": "bilder/00_Gehflaechen.png",
+      "bytes": 1059938,
+      "sha256": "2ac5cb7a9fd8f18ed259e3c356b2a00927371a4941d2b4f281687772125882cd"
+    },
+    {
+      "path": "bilder/00_Mauern.png",
+      "bytes": 1127442,
+      "sha256": "5ee6d0578c6502047b46e075242d5e2983768da0bcda6d44cffd8ff997b161c3"
+    },
+    {
+      "path": "bilder/D01.png",
+      "bytes": 207307,
+      "sha256": "1ed7825e9ab6a71af43eaa6c20bd4e1e5e7cd970526dd1461d63139378c31e86"
+    },
+    {
+      "path": "bilder/D02.png",
+      "bytes": 168026,
+      "sha256": "84ae67560414c2d535dea9ee8b3672e22a44427e12c91d7401391d4c6d776c6f"
+    },
+    {
+      "path": "bilder/D03.png",
+      "bytes": 197139,
+      "sha256": "243288f347dc38f9bd45e4554a833d087aa3a9fce29e7211340deaca27099734"
+    },
+    {
+      "path": "bilder/D04.png",
+      "bytes": 182900,
+      "sha256": "57782bddfd76a609dd7a18d1e28043ff7cebb993cab0451a7af780a3d92a7fd7"
+    },
+    {
+      "path": "bilder/F01.png",
+      "bytes": 218413,
+      "sha256": "e3e0686a02107d426f1b26655c02bb890b552bd0c50b823c1035c1a926a3e4c4"
+    },
+    {
+      "path": "bilder/F02.png",
+      "bytes": 214813,
+      "sha256": "fa62afeb238a4320f5e4327ec7c84e350388ab64aa2f590ef5d9415873693187"
+    },
+    {
+      "path": "bilder/F03.png",
+      "bytes": 223203,
+      "sha256": "6dc2ecf07bbbf8b1f02512d7526a92f0c00f3711db293ad1fdaac2c428dfff51"
+    },
+    {
+      "path": "bilder/G01.png",
+      "bytes": 419474,
+      "sha256": "a532018c7d5004bd63677167fb582b7e9b1b1774b3939067a8b1c729d9958ed0"
+    },
+    {
+      "path": "bilder/G02.png",
+      "bytes": 329260,
+      "sha256": "e34f8a5a364c5d30aeece11e74af72bcb03e3e08ca3de80f593f74eca84c626d"
+    },
+    {
+      "path": "bilder/G03.png",
+      "bytes": 503118,
+      "sha256": "9f74390399c24da8a70397a398d3c1acf8a0ad2d39a0af1a5eb2faaa344c3e60"
+    },
+    {
+      "path": "bilder/G04.png",
+      "bytes": 358734,
+      "sha256": "426e29edb0f3b551dda7d7b00e38f82cd0c3fb73f6a4b30c34c6ba18b9bff133"
+    },
+    {
+      "path": "bilder/G05.png",
+      "bytes": 342273,
+      "sha256": "41b6ef414756bc371a4ce0992d8f8410cd4e79239b16081f5e949a9851f452da"
+    },
+    {
+      "path": "bilder/S01.png",
+      "bytes": 499405,
+      "sha256": "50eb6f02b4b5961e4c0e74f7eb9c71c9e1d6f15814ca3a7a9cbb4c87266e21d9"
+    },
+    {
+      "path": "bilder/S02.png",
+      "bytes": 494981,
+      "sha256": "f481f5ce52f0cc565e46d8e00b43463bf2cc7c5df4957e64e5aeb471ccd8d088"
+    },
+    {
+      "path": "bilder/S03.png",
+      "bytes": 254067,
+      "sha256": "e2230421287c1062535e7598ccce664f94a4a8da4c2714c1b31dc8eeaba5bda5"
+    },
+    {
+      "path": "bilder/S04.png",
+      "bytes": 251727,
+      "sha256": "649a520479d723b3818be4e36f2474d461bac41051a18d3863546dcaef382711"
+    },
+    {
+      "path": "bilder/S05.png",
+      "bytes": 261622,
+      "sha256": "d0e9cb0cc5a6dd1903b9e176a327aee37f6b280cea599e0827c1f4dcf32f19aa"
+    },
+    {
+      "path": "bilder/W01.png",
+      "bytes": 399640,
+      "sha256": "5bb5476bcf35f2e4b7ba6ea82e38356aaef101c473921011374b970956b9e134"
+    },
+    {
+      "path": "bilder/W02.png",
+      "bytes": 323612,
+      "sha256": "27100f93fd258e3d84b0e5e96bc2f02bd059c1d9b30c4b562cea00a6ff5e7545"
+    },
+    {
+      "path": "bilder/W03.png",
+      "bytes": 284927,
+      "sha256": "307082cd27c46bed38106b0e5be39072f21ffe6aaf934eeb8c7f317e38d30c28"
+    },
+    {
+      "path": "bilder/W04.png",
+      "bytes": 583287,
+      "sha256": "53bcce9a41d59c4dc99b75736cb3973eccaaafddbac8179d03ab9c480418ddbe"
+    },
+    {
+      "path": "bilder/W05.png",
+      "bytes": 345048,
+      "sha256": "bd002fc7006df14bea9516bed14023547986977cb863f3d4d9bad5aeeaecdf04"
+    },
+    {
+      "path": "bilder/W06.png",
+      "bytes": 357419,
+      "sha256": "7b82c65d717ea9d84dd17cf50468cb0cf7b9abeec7ddcbf3a057ec25a2bdd2ff"
+    },
+    {
+      "path": "bilder/W07.png",
+      "bytes": 212883,
+      "sha256": "a0b94e1aad6d823e7c29b9062c661296c0093c755795cdf275bfdbd359acf277"
+    },
+    {
+      "path": "bilder/W08.png",
+      "bytes": 164167,
+      "sha256": "02bc7d3acb3dc9ef6c9ff60cad9a51b3821a230556220468bc479320c74c157f"
+    },
+    {
+      "path": "daten/01_QUELLEN.json",
+      "bytes": 1261,
+      "sha256": "b9d074fc3b5dae119a2c6f804a39712b6d01debc7e67baefcbbe764f97c27c1f"
+    },
+    {
+      "path": "daten/02_KOORDINATEN.json",
+      "bytes": 1126,
+      "sha256": "35f60aeb0f7c7219f61df68c4f61ce5a1147129aa6bdc6f973ab22e730d21a9e"
+    },
+    {
+      "path": "daten/03_BEISPIELE.json",
+      "bytes": 41576,
+      "sha256": "4bb067cf272c9f477378450a1761daa216faa38bc1e7b24f529edf69614869b9"
+    },
+    {
+      "path": "daten/04_ANNOTATIONEN.json",
+      "bytes": 41992,
+      "sha256": "56722c416161c24ac84795ed40ab05b7dd62c13b65d03f37dc7c6ae319b74b42"
+    },
+    {
+      "path": "daten/05_ERKLAERRAHMEN.geojson",
+      "bytes": 67915,
+      "sha256": "678a46aa9753fe216925464e7ec999bebd0ae3e6e10c330d5d3ed692aecd9e58"
+    },
+    {
+      "path": "daten/06_WAND_LERNKONTUREN.geojson",
+      "bytes": 4089691,
+      "sha256": "ea151bd62c2ec28a936adbe5aaed7e127193f1b804216401428a986838131385"
+    },
+    {
+      "path": "daten/07_BODEN_LERNFLAECHEN.geojson",
+      "bytes": 5734671,
+      "sha256": "3bf36070c8f0073c4cec82ae69243103cea0fda500e5bf47e1c3d776478ddcef"
+    },
+    {
+      "path": "daten/08_FLAECHEN_HERKUNFT.geojson",
+      "bytes": 25172,
+      "sha256": "f7305c98f940b418ac91d06295d67f6c14a93c7cda98da456d36b9d767d2edc8"
+    },
+    {
+      "path": "daten/09_EINBAU_REFERENZEN.geojson",
+      "bytes": 2578374,
+      "sha256": "0159248774e6c2d8ac4acf2da4f7898ada44078ae152ddd3a29cd7e61c4dffb4"
+    },
+    {
+      "path": "daten/10_WAND_HERKUNFT.json",
+      "bytes": 1697298,
+      "sha256": "6adfc11cf14b81794d3612a0996bd1cc5ca9f8485453a80df9a8546ba2c2db07"
+    },
+    {
+      "path": "daten/11_PRUEFFAELLE.json",
+      "bytes": 19063,
+      "sha256": "76eb48ef211d14689005df9cdcfcf0547f52e73d1289db9bfab57a6e1c3f1c92"
+    },
+    {
+      "path": "daten/12_TREPPEN_UND_HOEHEN.json",
+      "bytes": 1981,
+      "sha256": "a059699b36c32dd92d5303ad8fa993a8fc3365f40174cb9556749da492a91e56"
+    },
+    {
+      "path": "daten/13_OFFENE_PUNKTE.json",
+      "bytes": 1547,
+      "sha256": "025c9699aed843ac2212561c1a6c6f6d7a436c6d1c468709bcd7051d4ebb9808"
+    },
+    {
+      "path": "daten/14_KLASSEN_UND_REGELN.json",
+      "bytes": 4721,
+      "sha256": "82b78639cb7efd8b799483550b7fb48380538637890996f7c6862f9536a308f0"
+    },
+    {
+      "path": "daten/15_LAUFZEIT.json",
+      "bytes": 562,
+      "sha256": "8b7c097f69752af8e34bd189cf24ca20f35cce0a9f9ab41bad3d4e82daa06bc6"
+    },
+    {
+      "path": "daten/roh/annotations.json",
+      "bytes": 28311,
+      "sha256": "410dfc87c62d30a013c8bb3a6709b13906d6806f7327c30c877c2e03305387e0"
+    },
+    {
+      "path": "daten/roh/arcs.json",
+      "bytes": 2532289,
+      "sha256": "58c6d72cf2093a2db1257823271d1607cafe02ad646e4b4b52c874591bfdfd00"
+    },
+    {
+      "path": "daten/roh/floor_provenance.json",
+      "bytes": 6333,
+      "sha256": "4c2edecbeb979de5d5059a22f4f3f1121f1a0759dff9b7b2cb6cbbdcc9b804ea"
+    },
+    {
+      "path": "daten/roh/furniture.geojson",
+      "bytes": 581029,
+      "sha256": "84da0e51d22c651691c38ee1510a93d444323151d59ae4e90c52c7ae1997d095"
+    },
+    {
+      "path": "daten/roh/lessons.json",
+      "bytes": 49576,
+      "sha256": "5c56a6f061582165d5757b697279b6001b8516b67700343dfc3e1c03fa8616e7"
+    },
+    {
+      "path": "daten/roh/lines.json",
+      "bytes": 19714305,
+      "sha256": "f3608769212efa728f7ae66fe6490b0c03e25ff01ac35a4e6c0686ba0e6c9a61"
+    },
+    {
+      "path": "daten/roh/registration.json",
+      "bytes": 116,
+      "sha256": "8c293a93fa46c2d1b7cc30cbb18d3b15fc4da6e9a87aae859decdb129beba5dd"
+    },
+    {
+      "path": "daten/roh/texts.json",
+      "bytes": 455667,
+      "sha256": "db7f35533935af799041ac738903084ee0c194f6fd108b9c4971e91283fb3b10"
+    },
+    {
+      "path": "daten/roh/texts_pdf.json",
+      "bytes": 605352,
+      "sha256": "01a278377c18b4ca62a96d1aeddc23053adad1595fa62afd5d85d55e57369dda"
+    },
+    {
+      "path": "daten/roh/wall_provenance.json",
+      "bytes": 1174749,
+      "sha256": "d8afb67c1c6d38b7179fd48da50c83d6fd5017aad254ba5f410a369ede133776"
+    },
+    {
+      "path": "daten/roh/walls.geojson",
+      "bytes": 1751201,
+      "sha256": "4557589c5c5e84b3330c9f8dd0155870cd25ece8bf78018d4abcd7d579bb3f8b"
+    },
+    {
+      "path": "pdf/2OG_Architekturbasis.pdf",
+      "bytes": 6200837,
+      "sha256": "62c82c3cf58e6a4d0539b56d8c1d948ffde571a00f5d9234113c858a704d4a70",
+      "pages": 1
+    },
+    {
+      "path": "pdf/2OG_Erklaerte_Details.pdf",
+      "bytes": 7661100,
+      "sha256": "a4a263274f94b8ff733811d0ef3e4bb15d697f0b4e0eb694c0753c6eeb8e42ba",
+      "pages": 25
+    },
+    {
+      "path": "pdf/2OG_Gehflaechen_gruen.pdf",
+      "bytes": 6664421,
+      "sha256": "33fbffae34fa676df3804e2fe6920eecaf550f5976290d81da28aa958af9e5d3",
+      "pages": 1
+    },
+    {
+      "path": "pdf/2OG_Lernbuch.pdf",
+      "bytes": 7689977,
+      "sha256": "dc01432717c054466763c11fd527c74dc45103710fabcff61df05f340171f10f",
+      "pages": 36
+    },
+    {
+      "path": "pdf/2OG_Mauern_rot.pdf",
+      "bytes": 6357019,
+      "sha256": "787972b897ef74072187a0063d481a64aa004d5f1a7498e0ba91cef0700178ec",
+      "pages": 1
+    },
+    {
+      "path": "quellen/20220225-SH22-LKS-GE-AP-02-01-A-2OG.dxf",
+      "bytes": 51330506,
+      "sha256": "61ba94fe55ba1e365bdc82cdc85dd230a9c1cc632acb1ef9865ad37f0e9c4df5"
+    },
+    {
+      "path": "quellen/Schule_SH22_2_OG.pdf",
+      "bytes": 6608209,
+      "sha256": "03409f14145f0fb0046d289319c1bf7edf239db127ece82dfeb2565cbec7d76c",
+      "pages": 1
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 139,
+      "sha256": "bfc366b7f5f27dbc42e1e2fe64d9a861685314e99aba1919fe9f6524d0257410"
+    },
+    {
+      "path": "schemata/ERKENNUNGSERGEBNIS.schema.json",
+      "bytes": 9719,
+      "sha256": "7918eae99f92c4fd88a81666a57a68c8311595eaa1c0d65a852e2ee472fc20db"
+    },
+    {
+      "path": "skripte/baue_lernbuch.py",
+      "bytes": 21332,
+      "sha256": "8cb05b4e94fa090c30959654b638919a20366777a1efd7315f54dbbab469f48a"
+    },
+    {
+      "path": "skripte/bereite_geometrie_vor.py",
+      "bytes": 4344,
+      "sha256": "d08b71b21534bac5ba87ec67bff44c7d84ba5057cf46150deebdd19df633c081"
+    },
+    {
+      "path": "skripte/extrahiere_dxf.py",
+      "bytes": 1307,
+      "sha256": "b86315c8cb66a996090694aee0bb080992c2f2289c9f504974c6d06de9331aa0"
+    },
+    {
+      "path": "skripte/fonts/DejaVuSans-Bold.ttf",
+      "bytes": 704128,
+      "sha256": "b184b89e3c1075f22f6b71575b6fc20d4972b3cfd3b23322ca6fd596dcaef167"
+    },
+    {
+      "path": "skripte/fonts/DejaVuSans.ttf",
+      "bytes": 756072,
+      "sha256": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22"
+    },
+    {
+      "path": "skripte/fonts/LIZENZ.txt",
+      "bytes": 3859,
+      "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
+    },
+    {
+      "path": "skripte/lessons.py",
+      "bytes": 27729,
+      "sha256": "4d256ab89a9400c684ec6d35758cb1e2888a06963d2f577ee120197940d92e0e"
+    },
+    {
+      "path": "skripte/pruefe_erkennung.py",
+      "bytes": 3523,
+      "sha256": "b8b775ea9248be762105df584834dc8aa64368c6b8485c9959104203004a4fdb"
+    },
+    {
+      "path": "skripte/pruefe_paket.py",
+      "bytes": 5383,
+      "sha256": "fea61df7dc6fa5379d23a7652163318fe16821634bf8c3ac29a6b122d5522dde"
+    },
+    {
+      "path": "skripte/reproduziere.py",
+      "bytes": 591,
+      "sha256": "b01dfcbffcdd5eeb27bf04ffe135b6ab0066f7ece22ea3334eee924277bb6ae3"
+    },
+    {
+      "path": "skripte/zeige_beispiel.py",
+      "bytes": 1407,
+      "sha256": "dea174e78e0be0b5faa3d8360b0863c353a189272b93d6cfd0c3d058c0f7ea45"
+    },
+    {
+      "path": "vorlagen/BEFUND.md",
+      "bytes": 871,
+      "sha256": "3324f1d477c2425516c6c313504129a9f4103086452fccdc5233acedf21bdb37"
+    },
+    {
+      "path": "vorlagen/ERGEBNIS_VORLAGE.json",
+      "bytes": 3000,
+      "sha256": "ebbae708283e5f588b0c3fa7ceb6a94ad6666974aed75f50065901179a23a129"
+    },
+    {
+      "path": "vorlagen/OFFEN.md",
+      "bytes": 613,
+      "sha256": "62e1a2e6cb424ebb50f63e55c9727cc759f8dab7d7d5b2cb68c68341becda344"
+    },
+    {
+      "path": "wissen/00_DATEIWEGWEISER.md",
+      "bytes": 3933,
+      "sha256": "df3f542623437173150862ac0eaaeb571f90a6eb34b8afcfdf260e2030248ab7"
+    },
+    {
+      "path": "wissen/01_MAUERN.md",
+      "bytes": 2061,
+      "sha256": "e834eaa4431ada67a25f0ab3194b3556c078ae9f871e6766b7a996a4528ca59a"
+    },
+    {
+      "path": "wissen/02_TUEREN.md",
+      "bytes": 1511,
+      "sha256": "214a25e1388078e2e332b3b48a1e6e2ae57cfcc322f645bdbda0d670ef2325a4"
+    },
+    {
+      "path": "wissen/03_FENSTER.md",
+      "bytes": 1257,
+      "sha256": "f849e375cab561d5bad84fc30b83d60f0abbb292c4a0dab6a74db1b73269cd74"
+    },
+    {
+      "path": "wissen/04_BODEN_WEGE_SACKGASSEN.md",
+      "bytes": 1997,
+      "sha256": "9f7128075200d7f640ad89b7eca424d1beaf77fa4a2bc096ff8c05a895177ea4"
+    },
+    {
+      "path": "wissen/05_GRENZEN_UND_SONDERBEREICHE.md",
+      "bytes": 1483,
+      "sha256": "b07b3a9c6fa66d0df921196809a444e164b36df333a6863ac9623d2a052a92ab"
+    },
+    {
+      "path": "wissen/06_TREPPEN.md",
+      "bytes": 1597,
+      "sha256": "51c92eb8ae0806e5127f607da1f8531545a8296e2e48d46d2aee58069407ae18"
+    },
+    {
+      "path": "wissen/07_FEHLKLASSIFIZIERUNGEN.md",
+      "bytes": 1274,
+      "sha256": "8c545c593875364f8ff095886daad0daf473fb6bac35997d6e7ce699ea9e8bc6"
+    },
+    {
+      "path": "wissen/08_DATEN_UND_KOORDINATEN.md",
+      "bytes": 2514,
+      "sha256": "12e233d47ff7c26ec883eb372781c8aec33cc6644d7a1615106aaa47540e0579"
+    },
+    {
+      "path": "wissen/09_UMSETZUNGSPLAN.md",
+      "bytes": 2171,
+      "sha256": "d9cced843764d0d6327434d65fdbf80213bee7d9b547b4c9a28bda0df0b4f594"
+    },
+    {
+      "path": "wissen/10_ABNAHME.md",
+      "bytes": 1703,
+      "sha256": "8207cb7a3f03e326fe09e77b4dc083a8bfe4dc9f8bbb8536791fa6248f07299f"
+    },
+    {
+      "path": "wissen/11_GRENZEN_UND_OFFENES.md",
+      "bytes": 1372,
+      "sha256": "f8f9a2fef71222c3f11f29d81c48acd61e42cd70a955b7df9f73815f1c808580"
+    },
+    {
+      "path": "wissen/12_GESCHOSSE_UND_PARALLELE_ARBEIT.md",
+      "bytes": 844,
+      "sha256": "ac0cd2bc81b11ed22e0e4972989971c42f1f0b8f4ba96069e696098691beeb96"
+    },
+    {
+      "path": "wissen/13_ALLE_BEISPIELE.md",
+      "bytes": 32424,
+      "sha256": "7a5a38c96a00f20e921c6f2c364dd294ad4146c69a97f20319f30ce56e951794"
+    }
+  ],
+  "manifest_exclusions": [
+    "MANIFEST.json",
+    "PRUEFSUMMEN.txt",
+    "PRUEFUNG.json"
+  ],
+  "runtime_folders_not_shipped": [
+    "_build/",
+    "reproduziert/",
+    "__pycache__/"
+  ],
+  "note": "PRUEFSUMMEN.txt deckt zusätzlich Manifest und Prüfbericht ab; nur die Prüfsummenliste selbst ist davon ausgenommen."
+}

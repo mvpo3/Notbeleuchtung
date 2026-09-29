@@ -1,0 +1,408 @@
+{
+  "schema_version": "1.0",
+  "coordinate_space": "sh22_1og_pdf_pt_top_left",
+  "source_dxf_sha256": "f6252eba05c1c51812958f321c0aa25f1563e7dee8bc0491d441ad76af73156c",
+  "scope": "selected semantic regression probes; not proof of complete room recognition",
+  "position_tolerance_scope": "PDF registration tolerance only; not a physical passage-width requirement",
+  "tests": [
+    {
+      "id": "WALL_1",
+      "kind": "class_at",
+      "case": "M01",
+      "point": [
+        70,
+        105
+      ],
+      "expected_class": "wall",
+      "expected": true
+    },
+    {
+      "id": "WALL_FLOOR_1",
+      "kind": "walkable_at",
+      "case": "M01",
+      "point": [
+        70,
+        105
+      ],
+      "expected": false
+    },
+    {
+      "id": "WALL_2",
+      "kind": "class_at",
+      "case": "M02",
+      "point": [
+        472,
+        70
+      ],
+      "expected_class": "wall",
+      "expected": true
+    },
+    {
+      "id": "WALL_FLOOR_2",
+      "kind": "walkable_at",
+      "case": "M02",
+      "point": [
+        472,
+        70
+      ],
+      "expected": false
+    },
+    {
+      "id": "WALL_3",
+      "kind": "class_at",
+      "case": "M03",
+      "point": [
+        604,
+        460
+      ],
+      "expected_class": "wall",
+      "expected": true
+    },
+    {
+      "id": "WALL_FLOOR_3",
+      "kind": "walkable_at",
+      "case": "M03",
+      "point": [
+        604,
+        460
+      ],
+      "expected": false
+    },
+    {
+      "id": "WALL_4",
+      "kind": "class_at",
+      "case": "M03",
+      "point": [
+        635,
+        504
+      ],
+      "expected_class": "wall",
+      "expected": true
+    },
+    {
+      "id": "WALL_FLOOR_4",
+      "kind": "walkable_at",
+      "case": "M03",
+      "point": [
+        635,
+        504
+      ],
+      "expected": false
+    },
+    {
+      "id": "WALL_5",
+      "kind": "class_at",
+      "case": "M04",
+      "point": [
+        1276,
+        691
+      ],
+      "expected_class": "wall",
+      "expected": true
+    },
+    {
+      "id": "WALL_FLOOR_5",
+      "kind": "walkable_at",
+      "case": "M04",
+      "point": [
+        1276,
+        691
+      ],
+      "expected": false
+    },
+    {
+      "id": "FLOOR_FURNITURE",
+      "kind": "walkable_at",
+      "case": "W03",
+      "point": [
+        334,
+        256
+      ],
+      "expected": true
+    },
+    {
+      "id": "WEST_STRIP",
+      "kind": "walkable_at",
+      "case": "W06",
+      "point": [
+        800,
+        1895
+      ],
+      "expected": true
+    },
+    {
+      "id": "WEST_EDGE",
+      "kind": "walkable_at",
+      "case": "W06",
+      "point": [
+        1525,
+        2250
+      ],
+      "expected": true
+    },
+    {
+      "id": "WEST_STAIR_JOIN",
+      "kind": "walkable_at",
+      "case": "W06",
+      "point": [
+        1516,
+        2120
+      ],
+      "expected": true
+    },
+    {
+      "id": "TERRACE_PROJECTION",
+      "kind": "walkable_at",
+      "case": "M05",
+      "point": [
+        2552,
+        1940
+      ],
+      "expected": true
+    },
+    {
+      "id": "TERRACE",
+      "kind": "walkable_at",
+      "case": "W05",
+      "point": [
+        1820,
+        2120
+      ],
+      "expected": true
+    },
+    {
+      "id": "ENDROOM",
+      "kind": "walkable_at",
+      "case": "W04",
+      "point": [
+        3580,
+        777
+      ],
+      "expected": true
+    },
+    {
+      "id": "STAIR_FLOOR",
+      "kind": "walkable_at",
+      "case": "S01",
+      "point": [
+        1380,
+        1450
+      ],
+      "expected": true
+    },
+    {
+      "id": "CENTRAL_WALK",
+      "kind": "walkable_at",
+      "case": "W02",
+      "point": [
+        1820,
+        1090
+      ],
+      "expected": true
+    },
+    {
+      "id": "LIFT_FRONT",
+      "kind": "walkable_at",
+      "case": "L02",
+      "point": [
+        3085,
+        1640
+      ],
+      "expected": true
+    },
+    {
+      "id": "TERRACE_NOT_WALL",
+      "kind": "class_at",
+      "case": "M05",
+      "point": [
+        2552,
+        1940
+      ],
+      "expected_class": "wall",
+      "expected": false
+    },
+    {
+      "id": "CABINET",
+      "kind": "class_at",
+      "case": "F03",
+      "point": [
+        220,
+        480
+      ],
+      "expected_class": "furniture",
+      "expected": true
+    },
+    {
+      "id": "CABINET_NOT_WALL",
+      "kind": "class_at",
+      "case": "F03",
+      "point": [
+        220,
+        480
+      ],
+      "expected_class": "wall",
+      "expected": false
+    },
+    {
+      "id": "CABINET_NO_FLOOR",
+      "kind": "walkable_at",
+      "case": "F03",
+      "point": [
+        220,
+        480
+      ],
+      "expected": false
+    },
+    {
+      "id": "CENTRAL_NO_SHORTCUT",
+      "kind": "walkable_at",
+      "case": "W02",
+      "point": [
+        2100,
+        1340
+      ],
+      "expected": false
+    },
+    {
+      "id": "GUARD_NO_FLOOR",
+      "kind": "walkable_at",
+      "case": "W02",
+      "point": [
+        2400,
+        1468.2
+      ],
+      "expected": false
+    },
+    {
+      "id": "LIFT_NO_ORDINARY_FLOOR",
+      "kind": "walkable_at",
+      "case": "L01",
+      "point": [
+        1260,
+        1330
+      ],
+      "expected": false
+    },
+    {
+      "id": "CENTRAL_GUARD",
+      "kind": "class_at",
+      "case": "W02",
+      "point": [
+        2400,
+        1468.2
+      ],
+      "expected_class": "guard",
+      "expected": true
+    },
+    {
+      "id": "GUARD_SOURCE_CLASS",
+      "kind": "source_class",
+      "case": "W02",
+      "source_handles": [
+        "8556D",
+        "85576",
+        "85578",
+        "8557A"
+      ],
+      "expected_class": "guard"
+    },
+    {
+      "id": "GUARD_TEXT_BINDING",
+      "kind": "label_binding",
+      "case": "W02",
+      "label_handles": [
+        "8720B",
+        "8720C"
+      ],
+      "expected_class": "guard"
+    },
+    {
+      "id": "PORTAL_T01",
+      "kind": "portal_matches",
+      "case": "T01",
+      "segment": [
+        [
+          460.62,
+          467.73
+        ],
+        [
+          508.44,
+          467.73
+        ]
+      ],
+      "tolerance_pdf_pt": 4.0
+    },
+    {
+      "id": "PORTAL_T02",
+      "kind": "portal_matches",
+      "case": "T02",
+      "segment": [
+        [
+          1117.44,
+          1034.82
+        ],
+        [
+          1117.44,
+          1130.48
+        ]
+      ],
+      "tolerance_pdf_pt": 4.0
+    },
+    {
+      "id": "PORTAL_T03",
+      "kind": "portal_matches",
+      "case": "T03",
+      "segment": [
+        [
+          1922.204,
+          1031.447
+        ],
+        [
+          1973.751,
+          1031.447
+        ]
+      ],
+      "tolerance_pdf_pt": 4.0
+    },
+    {
+      "id": "NO_PORTAL_WINDOW_F01",
+      "kind": "no_portal_near",
+      "case": "F01",
+      "point": [
+        230,
+        60
+      ],
+      "tolerance_pdf_pt": 12.0
+    },
+    {
+      "id": "NO_PORTAL_WINDOW_F02",
+      "kind": "no_portal_near",
+      "case": "F02",
+      "point": [
+        60,
+        1100
+      ],
+      "tolerance_pdf_pt": 12.0
+    },
+    {
+      "id": "NO_PORTAL_CENTRAL_GUARD",
+      "kind": "no_portal_near",
+      "case": "W02",
+      "point": [
+        2400,
+        1468.2
+      ],
+      "tolerance_pdf_pt": 12.0
+    },
+    {
+      "id": "STAIR_VERTICAL",
+      "kind": "height_transition",
+      "case": "S01",
+      "point": [
+        1380,
+        1450
+      ],
+      "expected_class": "stair"
+    }
+  ]
+}

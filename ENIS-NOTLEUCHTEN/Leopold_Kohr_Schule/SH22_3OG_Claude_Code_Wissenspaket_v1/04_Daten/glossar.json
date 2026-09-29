@@ -1,0 +1,60 @@
+{
+  "pdf_page": 86,
+  "entries": [
+    {
+      "token": "B / D / W",
+      "meaning": "Boden / Decke / Wand; Schlüssel im Raumstempel",
+      "interpretation": "Das Material der Decke ist nicht automatisch das Material der Wand. Den Schlüssel mit dem Wert speichern."
+    },
+    {
+      "token": "RH",
+      "meaning": "Raumhöhe",
+      "interpretation": "Beschreibt eine Höhe des Raums; ersetzt weder die Raumkontur noch die Grundfläche."
+    },
+    {
+      "token": "FBOK",
+      "meaning": "Fertige Bodenoberkante",
+      "interpretation": "Bezugsebene des fertig aufgebauten Fußbodens. Das ist nicht dieselbe Ebene wie der Rohbau darunter."
+    },
+    {
+      "token": "RDOK",
+      "meaning": "Rohdeckenoberkante",
+      "interpretation": "Oberseite der Rohdecke vor dem fertigen Bodenaufbau. Werte mit RDOK nicht ohne Umrechnung auf FBOK beziehen."
+    },
+    {
+      "token": "FPH ü. FBOK",
+      "meaning": "Fertige Parapet-/Brüstungshöhe über fertigem Boden",
+      "interpretation": "F01: 0,85 ist ein Höhenbeleg der Brüstung, keine Türbreite. Er spricht gegen einen normalen bodengleichen Durchgang."
+    },
+    {
+      "token": "RPH ü. RDOK",
+      "meaning": "Rohbau-Parapethöhe über der Rohdecke",
+      "interpretation": "Der rohe Bezug unterscheidet sich vom fertigen Bezug. Die Originalmaßschreibweise einschließlich hochgestellter Ziffern erhalten; nicht als Rechenpotenz behandeln."
+    },
+    {
+      "token": "STUK ü. FBOK",
+      "meaning": "Sturzunterkante über fertigem Boden",
+      "interpretation": "F03: benennt die obere Begrenzung. Der untere Bodenanschluss muss für eine Gehpassage trotzdem geprüft werden."
+    },
+    {
+      "token": "DL",
+      "meaning": "Durchgangslichte im gezeigten Türkontext",
+      "interpretation": "Breiten- und Höhenangabe anhand ihrer Stellung und des Türsymbols zuordnen. Nicht beide Zahlen als Breiten lesen."
+    },
+    {
+      "token": "STG / Auftritt",
+      "meaning": "Steigungen / Tiefe der Trittfläche in Laufrichtung",
+      "interpretation": "T01–T04: Anzahl, Höhe und Auftritt erklären den relativen Höhenwechsel; Zielgeschoss braucht passende Anschlusshöhen."
+    },
+    {
+      "token": "raumhoch",
+      "meaning": "Über die entsprechende Raumhöhe ausgebildet",
+      "interpretation": "Bei einer Absturzsicherung beschreibt es die Höhe des Schutzbauteils, nicht einen begehbaren Raum dahinter."
+    },
+    {
+      "token": "lt. Statik",
+      "meaning": "Laut statischer Planung",
+      "interpretation": "Die konkrete Konstruktion wird auf eine weitere Planquelle bezogen. Fehlende Details nicht frei ergänzen."
+    }
+  ]
+}

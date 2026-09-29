@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "floor_id": "1OG",
+  "project": "SH22 Leopold-Kohr-Schule",
+  "review_release": "User requested the complete package after reviewing the corrections in this conversation.",
+  "files": [
+    {
+      "path": "01_PDF/SH22_1OG_Gehflaechen_Gruen.pdf",
+      "sha256": "444465e7978200fdddcc57353c2cf2d1e02352e1f48808b9c41064df89b7822a",
+      "bytes": 7557759,
+      "role": "reviewed_learning_pdf"
+    },
+    {
+      "path": "01_PDF/SH22_1OG_Lernbuch.pdf",
+      "sha256": "4f7795dc85cddc948b63c8a70d19ea529e935dbffc57321195097f7d55b47b1c",
+      "bytes": 22507780,
+      "role": "reviewed_learning_pdf"
+    },
+    {
+      "path": "01_PDF/SH22_1OG_Mauern_Rot.pdf",
+      "sha256": "1545df297b7c0f8bb68b4fba7266b8de6b9e1ee4b78fb615a1035860646a7156",
+      "bytes": 7202766,
+      "role": "reviewed_learning_pdf"
+    },
+    {
+      "path": "02_Originalquellen/20220225-SH22-LKS-GE-AP-01-01-A-1OG.dxf",
+      "sha256": "f6252eba05c1c51812958f321c0aa25f1563e7dee8bc0491d441ad76af73156c",
+      "bytes": 53819656,
+      "role": "original_source"
+    },
+    {
+      "path": "02_Originalquellen/Schule_SH22_1_OG.pdf",
+      "sha256": "c1cd9ca2b5062f67537905a02ce6b988ed73fdd39cc5980bfdb5500d2dde9c54",
+      "bytes": 6866517,
+      "role": "original_source"
+    }
+  ],
+  "pdf_page_counts": {
+    "01_PDF/SH22_1OG_Lernbuch.pdf": 61,
+    "01_PDF/SH22_1OG_Mauern_Rot.pdf": 1,
+    "01_PDF/SH22_1OG_Gehflaechen_Gruen.pdf": 1,
+    "02_Originalquellen/Schule_SH22_1_OG.pdf": 1
+  }
+}

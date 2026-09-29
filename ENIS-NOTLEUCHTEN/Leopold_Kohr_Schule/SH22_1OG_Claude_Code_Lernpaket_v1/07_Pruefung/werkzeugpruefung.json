@@ -1,0 +1,38 @@
+{
+  "actual_user_engine_tested": false,
+  "learning_schema_valid": true,
+  "python_scripts_parse": true,
+  "coordinate_roundtrip_passed": true,
+  "tool_tests": [
+    {
+      "test": "controlled_fixture_W06",
+      "passed": true,
+      "probe_count": 3
+    },
+    {
+      "test": "controlled_fixture_W02",
+      "passed": true,
+      "probe_count": 7
+    },
+    {
+      "test": "empty_floor_rejected_W06",
+      "passed": true,
+      "failed_probes": 3
+    },
+    {
+      "test": "missing_guard_text_binding_detected",
+      "passed": true
+    },
+    {
+      "test": "wrong_source_rejected",
+      "passed": true
+    }
+  ],
+  "python": "3.12.14",
+  "dependencies": {
+    "ezdxf": "1.4.4",
+    "shapely": "2.1.2",
+    "pymupdf": "1.26.6",
+    "jsonschema": "4.26.0"
+  }
+}

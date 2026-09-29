@@ -1,0 +1,58 @@
+{
+  "spaces": {
+    "plan_norm_2000": {
+      "unit": "dimensionless",
+      "origin": "PDF top left",
+      "x": "right",
+      "y": "down",
+      "width": 2000,
+      "height": 1383.7863167760074
+    },
+    "source_pdf_points": {
+      "unit": "PDF point",
+      "width": 4268,
+      "height": 2953,
+      "origin": "top left",
+      "x": "right",
+      "y": "down"
+    },
+    "DXF_WCS_original": {
+      "unit": "mm per $INSUNITS=4; verify physical measurements before metric use",
+      "origin": "original CAD WCS",
+      "x": "CAD x",
+      "y": "CAD y",
+      "header": {
+        "$INSUNITS": 4,
+        "$MEASUREMENT": 1,
+        "$LUNITS": 2
+      }
+    }
+  },
+  "transforms": [
+    {
+      "from": "source_pdf_points",
+      "to": "plan_norm_2000",
+      "x": "x * 2000 / 4268",
+      "y": "y * 2000 / 4268",
+      "scope": "Exact source PDF only"
+    },
+    {
+      "from": "DXF_WCS_original",
+      "to": "plan_norm_2000",
+      "x_scale": 0.02656042602058278,
+      "x_offset": 1186.4297993395123,
+      "y_scale": -0.02656042401484239,
+      "y_offset": 1370.1313539929156,
+      "status": "registration_for_reference_locations",
+      "basis": "Zuvor an wiederkehrenden Bauteilkoordinaten und Raumtexten mit der Original-PDF abgeglichen.",
+      "quantified_error": null,
+      "scope": "Only ORIGINAL_DXF Model and ORIGINAL_PDF hash in quellen.json; verify independent control points before metric use."
+    }
+  ],
+  "restrictions": [
+    "Normalized coordinates are not millimetres.",
+    "No global CAD scale is to be inferred from the printed 1:50 alone.",
+    "No transform across floors/projects.",
+    "Crops are view locations, not room or obstacle polygons."
+  ]
+}

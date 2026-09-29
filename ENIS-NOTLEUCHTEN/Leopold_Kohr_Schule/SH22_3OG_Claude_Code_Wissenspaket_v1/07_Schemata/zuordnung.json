@@ -1,0 +1,24 @@
+{
+  "validations": [
+    {
+      "data": "04_Daten/lernbeispiele.json",
+      "schema": "07_Schemata/lernbeispiele.schema.json"
+    },
+    {
+      "data": "04_Daten/erkennungsregeln.json",
+      "schema": "07_Schemata/regeln.schema.json"
+    },
+    {
+      "data": "04_Daten/linienbelege.json",
+      "schema": "07_Schemata/linienbelege.schema.json"
+    },
+    {
+      "data": "05_Pruefung/akzeptanzfaelle.json",
+      "schema": "07_Schemata/akzeptanzfaelle.schema.json"
+    },
+    {
+      "data": "05_Pruefung/ergebnis_vorlage.json",
+      "schema": "07_Schemata/pruefergebnis.schema.json"
+    }
+  ]
+}

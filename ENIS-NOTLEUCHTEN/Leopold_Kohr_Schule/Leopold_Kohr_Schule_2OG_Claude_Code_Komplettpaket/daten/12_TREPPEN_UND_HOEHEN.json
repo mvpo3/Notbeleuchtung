@@ -1,0 +1,62 @@
+{
+  "floor": "2OG",
+  "source": "quellen/Schule_SH22_2_OG.pdf",
+  "stairs": [
+    {
+      "id": "2OG-ST-2",
+      "name": "Stiege 2",
+      "example_id": "S01",
+      "source_stair_label": "2.006",
+      "risers_label": 13,
+      "rise_cm_label": 15,
+      "tread_cm_label": 30,
+      "calculated_run_rise_m": 1.95,
+      "start_floor_confirmed": null,
+      "end_floor_confirmed": null,
+      "direction_relative_to_2OG": "unbekannt",
+      "evidence_status": "Grundrissmerkmale und Maßtexte belegt; Anschlussniveau nicht abschließend belegt"
+    },
+    {
+      "id": "2OG-ST-1",
+      "name": "Stiege 1",
+      "example_id": "S02",
+      "source_stair_label": "2.002",
+      "risers_label": 13,
+      "rise_cm_label": 15,
+      "tread_cm_label": 30,
+      "calculated_run_rise_m": 1.95,
+      "start_floor_confirmed": null,
+      "end_floor_confirmed": null,
+      "direction_relative_to_2OG": "unbekannt",
+      "evidence_status": "Grundrissmerkmale und Maßtexte belegt; Anschlussniveau nicht abschließend belegt"
+    },
+    {
+      "id": "2OG-ST-4",
+      "name": "Stiege 4",
+      "example_id": "S03",
+      "source_stair_label": "F2.03",
+      "risers_label": 26,
+      "rise_cm_label": 15,
+      "tread_cm_label": 30,
+      "calculated_run_rise_m": 3.9,
+      "start_floor_confirmed": null,
+      "end_floor_confirmed": null,
+      "direction_relative_to_2OG": "unbekannt",
+      "evidence_status": "Grundrissmerkmale und Maßtexte belegt; Anschlussniveau nicht abschließend belegt"
+    },
+    {
+      "id": "2OG-ST-3",
+      "name": "Stiege 3",
+      "example_id": "S04",
+      "source_stair_label": "F2.06",
+      "risers_label": 26,
+      "rise_cm_label": 15,
+      "tread_cm_label": 30,
+      "calculated_run_rise_m": 3.9,
+      "start_floor_confirmed": null,
+      "end_floor_confirmed": null,
+      "direction_relative_to_2OG": "unbekannt",
+      "evidence_status": "Grundrissmerkmale und Maßtexte belegt; Anschlussniveau nicht abschließend belegt"
+    }
+  ]
+}

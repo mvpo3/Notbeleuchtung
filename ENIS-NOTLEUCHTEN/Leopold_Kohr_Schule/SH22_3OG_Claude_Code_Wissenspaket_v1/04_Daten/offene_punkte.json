@@ -1,0 +1,356 @@
+{
+  "items": [
+    {
+      "id": "OFFEN-W01",
+      "example_id": "W01",
+      "pages": [
+        14,
+        15
+      ],
+      "question": "Der vollständige Schichtenaufbau und seine Materialien sind mit dieser Übersicht allein nicht für jede Lage nachgewiesen.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-W02",
+      "example_id": "W02",
+      "pages": [
+        16,
+        17
+      ],
+      "question": "Aus dem gezeigten Raumstempel allein lässt sich der Aufbau jeder Innenwand nicht vollständig ableiten.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-W03",
+      "example_id": "W03",
+      "pages": [
+        18,
+        19
+      ],
+      "question": "Material, genaue Plattenhöhe und verdeckte Leitungsführung brauchen Detail- oder Ausstattungsangaben.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-D01",
+      "example_id": "D01",
+      "pages": [
+        20,
+        21
+      ],
+      "question": "Türblattmaterial, Verglasung, realer Öffnungszustand und Zugangsberechtigung sind aus diesem Symbol allein nicht bestimmt.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-D02",
+      "example_id": "D02",
+      "pages": [
+        22,
+        23
+      ],
+      "question": "Schwellenhöhe und genaue nutzbare Breite unter allen Türstellungen müssen mit Detail und Maßangaben geprüft werden.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-D03",
+      "example_id": "D03",
+      "pages": [
+        24,
+        25
+      ],
+      "question": "Welcher Flügel im Betrieb zuerst öffnet und welche Freigaben gelten, wird nicht allein aus der Bogenform abgeleitet.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-F01",
+      "example_id": "F01",
+      "pages": [
+        26,
+        27
+      ],
+      "question": "Glasaufbau, Rahmenmaterial und genaue untere Anschlusskonstruktion sind hier nicht vollständig beschrieben.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-F02",
+      "example_id": "F02",
+      "pages": [
+        28,
+        29
+      ],
+      "question": "Genauer Rahmenquerschnitt, Werkstoff, Glasanzahl, Beschichtung und etwaige opake Füllung brauchen das zugehörige Detail.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-M01",
+      "example_id": "M01",
+      "pages": [
+        30,
+        31
+      ],
+      "question": "Exakte Möbelhöhen, Unterfahrbarkeit und die Benennung jedes kleinen Beschlagstrichs sind nicht vollständig belegt.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-M02",
+      "example_id": "M02",
+      "pages": [
+        32,
+        33
+      ],
+      "question": "Türart der Schränke, Innenaufteilung und Möbeltiefe außerhalb des dargestellten Maßbezugs bleiben gesondert zu prüfen.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-M03",
+      "example_id": "M03",
+      "pages": [
+        34,
+        35
+      ],
+      "question": "Die exakte Bauart einzelner Garderobenelemente braucht Möbel- oder Ausstattungsdetails.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-S01",
+      "example_id": "S01",
+      "pages": [
+        36,
+        37
+      ],
+      "question": "Montagehöhe, verdeckte Leitungen, Fabrikat und genaue technische Anschlüsse sind aus dem Symbol nicht vollständig abzulesen.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-S02",
+      "example_id": "S02",
+      "pages": [
+        38,
+        39
+      ],
+      "question": "Die vollständigen Anforderungen an eine besondere WC-Ausführung sind kein Ergebnis bloßer Symbolerkennung.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-M04",
+      "example_id": "M04",
+      "pages": [
+        40,
+        41
+      ],
+      "question": "Anschlussarten, Gerätefabrikate und genaue Aufbauhöhen sind in dieser Grundrissdarstellung nicht vollständig belegt.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-T01",
+      "example_id": "T01",
+      "pages": [
+        42,
+        43
+      ],
+      "question": "Welcher konkrete Anschluss vom 3. OG zum 2. OG oder zu einer höheren Ebene führt, muss mit Höhen und passenden Anschlussplänen abgeglichen werden.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-T02",
+      "example_id": "T02",
+      "pages": [
+        44,
+        45
+      ],
+      "question": "Die genaue Zuordnung aller sichtbaren und projizierten Laufteile zu den Geschossen ist ohne ergänzenden Höhenabgleich offen.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-T03",
+      "example_id": "T03",
+      "pages": [
+        47,
+        48
+      ],
+      "question": "Absolute Anfangs- und Endhöhe sowie die gesicherte Zielgeschoss-ID benötigen ergänzende Anschlussbelege.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-T04",
+      "example_id": "T04",
+      "pages": [
+        49,
+        50
+      ],
+      "question": "Absolute Höhen und Verbindungen werden durch diese einzelne Draufsicht nicht vollständig aufgelöst.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-T05",
+      "example_id": "T05",
+      "pages": [
+        51,
+        52
+      ],
+      "question": "Die genaue Bedeutung dieser Großbogendarstellung ist aus dem vorliegenden Ausschnitt nicht ausreichend belegt.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-L01",
+      "example_id": "L01",
+      "pages": [
+        53,
+        54
+      ],
+      "question": "FWA ist im Aufzugskontext plausibel als Feuerwehraufzug zu lesen. Die ausgeschriebene Anlagenart und ihre Betriebsbedingungen müssen im zugehörigen Anlagen-/Brandschutzplan bestätigt werden.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-L02",
+      "example_id": "L02",
+      "pages": [
+        55,
+        56
+      ],
+      "question": "Die genauen Höhen, Schachtausdehnung, Stegtragstruktur und Zugangsvoraussetzungen brauchen den passenden Schnitt oder Fachplan.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-B01",
+      "example_id": "B01",
+      "pages": [
+        57,
+        58
+      ],
+      "question": "LK und RA sind hier plausibel als Lichtkuppel und Rauchabzug zu lesen. Ohne zugehörige Legende bleiben diese Auflösungen eine kontextgestützte Deutung; Tiefe und unterer Abschluss der Innenfläche brauchen einen Schnitt.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-B02",
+      "example_id": "B02",
+      "pages": [
+        59,
+        60
+      ],
+      "question": "Der genaue Aufbau und Höhenbezug innerhalb der Umwehrung bleibt ohne Schnitt offen.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-B03",
+      "example_id": "B03",
+      "pages": [
+        61,
+        62
+      ],
+      "question": "Die genaue dreidimensionale Oberfläche braucht die vollständigen Höhen und den zugehörigen Bodenaufbau.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-B04",
+      "example_id": "B04",
+      "pages": [
+        63,
+        64
+      ],
+      "question": "Die exakte räumliche Reichweite der Ausführungsanweisung ist mit dem vollständigen Plan-/Detailzusammenhang zu prüfen.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-B05",
+      "example_id": "B05",
+      "pages": [
+        65,
+        66
+      ],
+      "question": "Genaue Unterkanten, Resthöhen und konstruktive Ausführung benötigen die zugehörigen Detail- und Höhenangaben.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-F03",
+      "example_id": "F03",
+      "pages": [
+        67,
+        68
+      ],
+      "question": "Untertypen einzelner Felder und exakter Glas-/Paneelaufbau sind im gezeigten Grundriss teilweise offen.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-R01",
+      "example_id": "R01",
+      "pages": [
+        69,
+        70
+      ],
+      "question": "Einzelne überlagerte Darstellungsstriche und vollständige Materialaufbauten sind nicht sämtlich durch den Raumstempel erklärt.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-R02",
+      "example_id": "R02",
+      "pages": [
+        71,
+        72
+      ],
+      "question": "Die genaue betriebliche Abgrenzung der Nutzung kann unabhängig von der baulichen Raumgrenze festgelegt sein.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-R03",
+      "example_id": "R03",
+      "pages": [
+        73,
+        74
+      ],
+      "question": "Wo ein Zeiger oder eine Schriftgruppe nicht eindeutig lesbar ist, bleibt die konkrete Zuordnung prüfpflichtig.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-R04",
+      "example_id": "R04",
+      "pages": [
+        75,
+        76
+      ],
+      "question": "Exakte Engstellen und Möbelabstände müssen für ein bestimmtes Bewegungsprofil maßlich geprüft werden.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    },
+    {
+      "id": "OFFEN-G01",
+      "example_id": "G01",
+      "pages": [
+        77,
+        78
+      ],
+      "question": "Personenabhängige Durchgangsbreiten, reale Türzustände und betriebliche Freigaben sind zusätzliche Prüfungen.",
+      "status": "unknown",
+      "resolution": "Passende zusätzliche Planquelle, Detail oder bestätigte Betriebsangabe zuordnen; keine freie Ergänzung."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "floor": "2OG",
+  "pdf": {
+    "source": "quellen/Schule_SH22_2_OG.pdf",
+    "page": 1,
+    "width_pt": 4268,
+    "height_pt": 2953,
+    "origin": "top_left",
+    "x_direction": "right",
+    "y_direction": "down",
+    "unit": "PDF point"
+  },
+  "dxf": {
+    "source": "quellen/20220225-SH22-LKS-GE-AP-02-01-A-2OG.dxf",
+    "INSUNITS": 4,
+    "declared_unit": "mm",
+    "origin": "original_modelspace",
+    "x_direction": "right",
+    "y_direction": "up"
+  },
+  "transform": {
+    "scale": 0.056679941873416954,
+    "tx": 2530.510496675943,
+    "ty": 2923.5246627711567,
+    "forward": [
+      "u = tx + scale*x",
+      "v = ty - scale*y"
+    ],
+    "inverse": [
+      "x = (u-tx)/scale",
+      "y = (ty-v)/scale"
+    ],
+    "control_point_max_residual_pt": 6.092287117098749e-05,
+    "scope": "Nur dieses Dateipaar; geometrische Registrierung ist kein vollständiger physikalischer Maßstabsnachweis."
+  },
+  "not_georeferenced": true,
+  "geojson_coordinates": "project-local planar PDF points, not longitude/latitude",
+  "frames": "Rechtecke [x0,y0,x1,y1] im Originalblatt, nicht in der Buchseite und nicht in Pixeln."
+}

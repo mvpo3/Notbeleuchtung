@@ -1,0 +1,613 @@
+{
+  "pages": [
+    {
+      "page": 1,
+      "title": "Zuerst: Wo stehen die festen Wände?",
+      "kind": "overview",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 2,
+      "title": "Dann: Die gesamte freie Bodenfläche",
+      "kind": "overview",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 3,
+      "title": "Was diese Fassung anders erklärt",
+      "kind": "notes",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 4,
+      "title": "Die Grundfrage: Was stellen diese Linien dar?",
+      "kind": "notes",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 5,
+      "title": "Farben und Stricharten richtig lesen",
+      "kind": "table",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 6,
+      "title": "Z01 · Linker oberer Gebäudeteil",
+      "kind": "zone",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 7,
+      "title": "Z02 · Linker Kern und Garderobe",
+      "kind": "zone",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 8,
+      "title": "Z03 · Linke Klassen und Außenerschließung",
+      "kind": "zone",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 9,
+      "title": "Z04 · Fachräume und mittlerer Umlauf",
+      "kind": "zone",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 10,
+      "title": "Z05 · Terrasse F3.04",
+      "kind": "zone",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 11,
+      "title": "Z06 · Rechter oberer Gebäudeteil",
+      "kind": "zone",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 12,
+      "title": "Z07 · Rechter Kern und Bildungsräume",
+      "kind": "zone",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 13,
+      "title": "Z08 · Unterer rechter Gebäudeteil",
+      "kind": "zone",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 14,
+      "title": "W01 · Warum ist das eine Außenwand?",
+      "kind": "anatomy",
+      "example_id": "W01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 15,
+      "title": "W01 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "W01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 16,
+      "title": "W02 · Innenwand und Möbel davor auseinanderhalten",
+      "kind": "anatomy",
+      "example_id": "W02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 17,
+      "title": "W02 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "W02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 18,
+      "title": "W03 · Warum sind das WC-Kabinentrennwände?",
+      "kind": "anatomy",
+      "example_id": "W03",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 19,
+      "title": "W03 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "W03",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 20,
+      "title": "D01 · Türblatt, Drehpunkt und Bogen einzeln lesen",
+      "kind": "anatomy",
+      "example_id": "D01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 21,
+      "title": "D01 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "D01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 22,
+      "title": "D02 · Wo genau kann man durch die Tür gehen?",
+      "kind": "anatomy",
+      "example_id": "D02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 23,
+      "title": "D02 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "D02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 24,
+      "title": "D03 · Zwei Flügel sind nicht zwei Durchgänge",
+      "kind": "anatomy",
+      "example_id": "D03",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 25,
+      "title": "D03 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "D03",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 26,
+      "title": "F01 · Fenster: ähnlicher Bogen, andere Bedeutung",
+      "kind": "anatomy",
+      "example_id": "F01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 27,
+      "title": "F01 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "F01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 28,
+      "title": "F02 · Rahmen, Glaszone und Brüstung unterscheiden",
+      "kind": "anatomy",
+      "example_id": "F02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 29,
+      "title": "F02 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "F02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 30,
+      "title": "M01 · Wie erkennt man Tische und Stühle?",
+      "kind": "anatomy",
+      "example_id": "M01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 31,
+      "title": "M01 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "M01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 32,
+      "title": "M02 · Schrankreihe: Was bedeutet das X?",
+      "kind": "anatomy",
+      "example_id": "M02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 33,
+      "title": "M02 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "M02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 34,
+      "title": "M03 · Warum sind die parallelen Linien Garderobenbänke?",
+      "kind": "anatomy",
+      "example_id": "M03",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 35,
+      "title": "M03 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "M03",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 36,
+      "title": "S01 · WC-Schüssel, Waschbecken und Installation",
+      "kind": "anatomy",
+      "example_id": "S01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 37,
+      "title": "S01 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "S01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 38,
+      "title": "S02 · Raumfunktion aus Text und Ausstattung prüfen",
+      "kind": "anatomy",
+      "example_id": "S02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 39,
+      "title": "S02 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "S02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 40,
+      "title": "M04 · Kochfeld, Arbeitstisch und Lehrküche",
+      "kind": "anatomy",
+      "example_id": "M04",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 41,
+      "title": "M04 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "M04",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 42,
+      "title": "T01 · Stiege 2: Was macht Linien zu einer Treppe?",
+      "kind": "anatomy",
+      "example_id": "T01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 43,
+      "title": "T01 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "T01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 44,
+      "title": "T02 · Stiege 1: Darstellungsbruch und Gegenrichtung",
+      "kind": "anatomy",
+      "example_id": "T02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 45,
+      "title": "T02 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "T02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 46,
+      "title": "Treppe verstehen: von oben gezeichnet, in der Höhe benutzt",
+      "kind": "schema",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 47,
+      "title": "T03 · Außenstiege 4: ein langer Lauf",
+      "kind": "anatomy",
+      "example_id": "T03",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 48,
+      "title": "T03 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "T03",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 49,
+      "title": "T04 · Außenstiege 3: dasselbe Prinzip überprüfen",
+      "kind": "anatomy",
+      "example_id": "T04",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 50,
+      "title": "T04 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "T04",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 51,
+      "title": "T05 · Der große Bogen ist kein Türbeweis",
+      "kind": "anatomy",
+      "example_id": "T05",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 52,
+      "title": "T05 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "T05",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 53,
+      "title": "L01 · Lift: Kabine, Schacht und Zugang trennen",
+      "kind": "anatomy",
+      "example_id": "L01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 54,
+      "title": "L01 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "L01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 55,
+      "title": "L02 · Schachtleiter und Wartungssteg: Text entscheidet",
+      "kind": "anatomy",
+      "example_id": "L02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 56,
+      "title": "L02 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "L02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 57,
+      "title": "B01 · „Absturzsicherung raumhoch“ ist kein Raumstempel",
+      "kind": "anatomy",
+      "example_id": "B01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 58,
+      "title": "B01 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "B01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 59,
+      "title": "B02 · Auch außen: Schutzkante und Boden getrennt lesen",
+      "kind": "anatomy",
+      "example_id": "B02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 60,
+      "title": "B02 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "B02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 61,
+      "title": "B03 · Warum laufen hier Gefällelinien zum Ablauf?",
+      "kind": "anatomy",
+      "example_id": "B03",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 62,
+      "title": "B03 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "B03",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 63,
+      "title": "B04 · Ein Architektenhinweis kann die erste Deutung ändern",
+      "kind": "anatomy",
+      "example_id": "B04",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 64,
+      "title": "B04 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "B04",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 65,
+      "title": "B05 · Voute, Decke, Fuge: Eine Linie ist nicht immer am Boden",
+      "kind": "anatomy",
+      "example_id": "B05",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 66,
+      "title": "B05 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "B05",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 67,
+      "title": "F03 · Ein Profilband ist nicht überall ein Ausgang",
+      "kind": "anatomy",
+      "example_id": "F03",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 68,
+      "title": "F03 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "F03",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 69,
+      "title": "R01 · Warum ist 3.16 ein Raum?",
+      "kind": "anatomy",
+      "example_id": "R01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 70,
+      "title": "R01 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "R01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 71,
+      "title": "R02 · MUFU: eine Nutzungszone ohne neue Zimmerwand",
+      "kind": "anatomy",
+      "example_id": "R02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 72,
+      "title": "R02 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "R02",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 73,
+      "title": "R03 · Beschriftungszeiger richtig verfolgen",
+      "kind": "anatomy",
+      "example_id": "R03",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 74,
+      "title": "R03 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "R03",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 75,
+      "title": "R04 · Schmaler Abstellraum oder Schacht?",
+      "kind": "anatomy",
+      "example_id": "R04",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 76,
+      "title": "R04 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "R04",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 77,
+      "title": "G01 · Der ganze Gang ist begehbare Fläche",
+      "kind": "anatomy",
+      "example_id": "G01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 78,
+      "title": "G01 · Warum diese Zuordnung?",
+      "kind": "reason",
+      "example_id": "G01",
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 79,
+      "title": "Tür und Fenster: derselbe Bogen reicht nicht",
+      "kind": "comparison",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 80,
+      "title": "Wie Claude jede Entscheidung begründen soll",
+      "kind": "notes",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 81,
+      "title": "Die wichtigsten Verwechslungen auf einen Blick",
+      "kind": "table",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 82,
+      "title": "Raumerkennung in der richtigen Reihenfolge",
+      "kind": "notes",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 83,
+      "title": "Konkrete Prüffragen an die Umsetzung",
+      "kind": "table",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 84,
+      "title": "Raum- und Zonenregister - linker Teil",
+      "kind": "table",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 85,
+      "title": "Raum- und Zonenregister - Mitte und rechter Teil",
+      "kind": "table",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 86,
+      "title": "Planwörter: Wozu gehört die Angabe?",
+      "kind": "table",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    },
+    {
+      "page": 87,
+      "title": "Quellen, Lesebelege und Umfang",
+      "kind": "notes",
+      "example_id": null,
+      "text_file": "03_Wissen/LERNBUCH_VOLLSTAENDIG.md"
+    }
+  ]
+}

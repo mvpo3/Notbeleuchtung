@@ -1,0 +1,22 @@
+{
+  "tested_python": "3.12.14",
+  "dependencies": {
+    "PyMuPDF": "1.26.6",
+    "ezdxf": "1.4.4",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "Pillow": "12.3.0",
+    "contourpy": "1.3.3",
+    "shapely": "2.1.2",
+    "reportlab": "4.4.9",
+    "jsonschema": "4.26.0"
+  },
+  "reproduction": "skripte/reproduziere.py",
+  "recognition_engine_included": false,
+  "fonts": "skripte/fonts",
+  "outputs": [
+    "reproduziert/",
+    "_build/"
+  ],
+  "note": "Diese Skripte rekonstruieren das Lernmaterial. Sie sind keine fertige allgemeine Raumerkennungs-Engine."
+}

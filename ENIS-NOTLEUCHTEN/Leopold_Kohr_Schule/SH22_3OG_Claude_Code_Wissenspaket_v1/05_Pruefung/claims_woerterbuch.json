@@ -1,0 +1,1038 @@
+{
+  "schema_version": "1.0.0",
+  "note": "Messanleitung für den Adapter. Die Werte werden aus echten Ergebnissen ermittelt; dieses Wörterbuch ist keine Engine-Ausgabe.",
+  "claims": [
+    {
+      "claim": "wall_body_blocks_floor",
+      "meaning_de": "Die ganze belegte Wandbreite ist aus dem freien Boden ausgespart.",
+      "measurement_instruction_de": "Wandkörper und Freifläche räumlich vergleichen, nicht nur die Achslinie.",
+      "used_in": [
+        {
+          "case_id": "SH22-W01",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "layer_gaps_are_walkway",
+      "meaning_de": "Schichtzwischenräume der Außenwand wurden als Gehflächen behandelt.",
+      "measurement_instruction_de": "Freiflächen im belegten Wandpaket und ihre Quellzuordnung untersuchen.",
+      "used_in": [
+        {
+          "case_id": "SH22-W01",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "material_claim_without_source",
+      "meaning_de": "Ein Wandmaterial wurde ohne passenden Materialbeleg behauptet.",
+      "measurement_instruction_de": "Materialattribute und ihre konkreten Belege prüfen; Layerfarbe allein genügt nicht.",
+      "used_in": [
+        {
+          "case_id": "SH22-W01",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "wall_separate_from_furniture",
+      "meaning_de": "Die bauliche Wand und die davorstehende Einrichtung sind verschiedene Objekte.",
+      "measurement_instruction_de": "Objekt- und Grenzbezüge hinter der Möblierung verfolgen.",
+      "used_in": [
+        {
+          "case_id": "SH22-W02",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "portal_in_solid_partition",
+      "meaning_de": "In der geschlossenen Trennwand wurde eine unbewiesene Passage erzeugt.",
+      "measurement_instruction_de": "Alle lokalen Portale gegen den vollständigen Wandkörper prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-W02",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "ceiling_material_used_as_wall_material",
+      "meaning_de": "Eine D:-Angabe wurde als Materialbeweis der Wand verwendet.",
+      "measurement_instruction_de": "Attributprovenienz von D:, W: und Materialfeld vergleichen.",
+      "used_in": [
+        {
+          "case_id": "SH22-W02",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "thin_partitions_block_crossing",
+      "meaning_de": "Auch die dünnen WC-Kabinenplatten verhindern seitlichen Durchtritt.",
+      "measurement_instruction_de": "Sperrflächen und Graphkanten an den konkreten Trennplatten prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-W03",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "cubicles_are_subspaces",
+      "meaning_de": "Kabinen werden als Unterstruktur des WC-Raums geführt.",
+      "measurement_instruction_de": "Elternraum-/Teilraumrelation und Zugänge prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-W03",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "arc_is_solid_obstacle",
+      "meaning_de": "Der Schwenkbogen oder sein ganzer Sektor wurde als massive Sperrfläche benutzt.",
+      "measurement_instruction_de": "Bogenherkunft und daraus abgeleitete Hindernisgeometrie nachverfolgen.",
+      "used_in": [
+        {
+          "case_id": "SH22-W03",
+          "expected": false
+        },
+        {
+          "case_id": "SH22-D01",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "leaf_and_arc_separate",
+      "meaning_de": "Türblatt und Bewegungsbogen sind semantisch getrennt.",
+      "measurement_instruction_de": "Beide Ursprungsgeometrien müssen mit unterschiedlicher Funktion auffindbar sein.",
+      "used_in": [
+        {
+          "case_id": "SH22-D01",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "portal_at_wall_opening",
+      "meaning_de": "Die Verbindung liegt in der tatsächlichen Wandöffnung.",
+      "measurement_instruction_de": "Portalgeometrie, Laibungen und beide Nachbarflächen räumlich abgleichen.",
+      "used_in": [
+        {
+          "case_id": "SH22-D01",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "live_door_state",
+      "meaning_de": "Tatsächlicher gegenwärtiger Öffnungs-/Verriegelungszustand der Tür.",
+      "measurement_instruction_de": "Die gezeichnete Stellung ist kein Live-Sensor; ohne Betriebsquelle unknown.",
+      "used_in": [
+        {
+          "case_id": "SH22-D01",
+          "expected": "unknown"
+        }
+      ]
+    },
+    {
+      "claim": "jambs_bound_portal",
+      "meaning_de": "Die Laibungen begrenzen die lichte Portalöffnung.",
+      "measurement_instruction_de": "Enden der Portalgeometrie mit beiden Original-Laibungen abgleichen.",
+      "used_in": [
+        {
+          "case_id": "SH22-D02",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "graph_edge_through_solid_jamb",
+      "meaning_de": "Eine Wegkante schneidet die feste Laibung.",
+      "measurement_instruction_de": "Schnittprüfung im lokalisierten Türbereich durchführen.",
+      "used_in": [
+        {
+          "case_id": "SH22-D02",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "leaf_state_is_conditional",
+      "meaning_de": "Die Benutzbarkeit berücksichtigt einen veränderlichen Türblattzustand.",
+      "measurement_instruction_de": "Portalbedingung und Bewegungs-/Blattmodell getrennt nachweisen.",
+      "used_in": [
+        {
+          "case_id": "SH22-D02",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "one_opening_two_leaves",
+      "meaning_de": "Zwei Flügel gehören zu einer gemeinsamen Öffnung.",
+      "measurement_instruction_de": "Gemeinsame Laibungsöffnung sowie zwei Drehpunkte/Blätter zuordnen.",
+      "used_in": [
+        {
+          "case_id": "SH22-D03",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "two_arcs_are_two_rooms",
+      "meaning_de": "Zwei Bögen wurden als zwei eigene Räume gezählt.",
+      "measurement_instruction_de": "Prüfen, ob Bogenkonturen produktive Raumgrenzen erzeugen.",
+      "used_in": [
+        {
+          "case_id": "SH22-D03",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "clear_width_counted_twice",
+      "meaning_de": "Die gemeinsame lichte Breite wurde pro Flügel nochmals addiert.",
+      "measurement_instruction_de": "Portalmaß und Flügelmaße mit Provenienz vergleichen.",
+      "used_in": [
+        {
+          "case_id": "SH22-D03",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "classification",
+      "meaning_de": "Fachliche Klasse des lokalisierten Beispielobjekts.",
+      "measurement_instruction_de": "Aus Engine-Klasse auf den vereinbarten Fallwert abbilden, nicht aus der Beispiel-ID ableiten.",
+      "used_in": [
+        {
+          "case_id": "SH22-F01",
+          "expected": "window"
+        },
+        {
+          "case_id": "SH22-M03",
+          "expected": "wardrobe_furniture"
+        },
+        {
+          "case_id": "SH22-T01",
+          "expected": "stair"
+        },
+        {
+          "case_id": "SH22-T03",
+          "expected": "stair"
+        },
+        {
+          "case_id": "SH22-T04",
+          "expected": "stair"
+        },
+        {
+          "case_id": "SH22-R04",
+          "expected": "storage_room"
+        }
+      ]
+    },
+    {
+      "claim": "normal_walking_portal",
+      "meaning_de": "Es existiert eine gewöhnliche Gehpassage durch dieses Element.",
+      "measurement_instruction_de": "Bodenanschluss, Brüstung und tatsächlich erzeugte Graphkante prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-F01",
+          "expected": false
+        },
+        {
+          "case_id": "SH22-F02",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "parapet_reference",
+      "meaning_de": "Höhenbezug der im Beispiel ausgewerteten FPH-Angabe.",
+      "measurement_instruction_de": "Originaltext und Attributbezug prüfen; FPH ü. FBOK ist nicht RPH ü. RDOK.",
+      "used_in": [
+        {
+          "case_id": "SH22-F01",
+          "expected": "FBOK"
+        }
+      ]
+    },
+    {
+      "claim": "glazing_layers",
+      "meaning_de": "Genau bestimmter Glasschichtenaufbau.",
+      "measurement_instruction_de": "Ohne zugehöriges Detail unknown; Fensterklasse allein reicht nicht.",
+      "used_in": [
+        {
+          "case_id": "SH22-F01",
+          "expected": "unknown"
+        }
+      ]
+    },
+    {
+      "claim": "frame_and_glazing_zone_separate",
+      "meaning_de": "Rahmen-/Profilzone und vermutete Verglasungszone bleiben unterscheidbar.",
+      "measurement_instruction_de": "Merkmalsrollen und Unsicherheit einzelner Linien prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-F02",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "exact_glass_panes",
+      "meaning_de": "Genau identifizierte einzelne Glasscheiben.",
+      "measurement_instruction_de": "Nicht jede parallele Linie als Scheibe deklarieren; ohne Detail unknown.",
+      "used_in": [
+        {
+          "case_id": "SH22-F02",
+          "expected": "unknown"
+        }
+      ]
+    },
+    {
+      "claim": "tables_chairs_are_furniture",
+      "meaning_de": "Tisch- und Sitzsymbole werden als Einrichtung gelesen.",
+      "measurement_instruction_de": "Wiederholung, Kontur und Raumbezug anhand tatsächlicher Objektrollen prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-M01",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "free_gaps_preserved",
+      "meaning_de": "Belegte freie Zwischenräume der konkreten Möbelgruppe bleiben erhalten.",
+      "measurement_instruction_de": "Objektweise Hindernisflächen mit den freien Zwischenräumen vergleichen.",
+      "used_in": [
+        {
+          "case_id": "SH22-M01",
+          "expected": true
+        },
+        {
+          "case_id": "SH22-M03",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "furniture_creates_room_boundaries",
+      "meaning_de": "Möbelkonturen erzeugen neue bauliche Raumgrenzen.",
+      "measurement_instruction_de": "Herkunft produktiver Raumgrenzen kontrollieren.",
+      "used_in": [
+        {
+          "case_id": "SH22-M01",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "cabinet_and_wall_separate",
+      "meaning_de": "Schrankreihe und Wand dahinter sind unterschiedliche Objekte.",
+      "measurement_instruction_de": "Durchgehende Wandanschlüsse hinter lokalen Einrichtungsfeldern prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-M02",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "cross_is_stair",
+      "meaning_de": "Diagonalkreuze in Schrankfeldern wurden als Treppe ausgelegt.",
+      "measurement_instruction_de": "Klasse/Höhenrelation der gekreuzten Möbelzellen kontrollieren.",
+      "used_in": [
+        {
+          "case_id": "SH22-M02",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "cabinet_footprint_blocked",
+      "meaning_de": "Die belegte Schrankstellfläche wird aus dem freien Boden ausgespart.",
+      "measurement_instruction_de": "Lokale Möbelfläche mit Freifläche vergleichen.",
+      "used_in": [
+        {
+          "case_id": "SH22-M02",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "height_transition_invented",
+      "meaning_de": "Aus der Garderobenmöblierung wurde ein unbelegter Höhenwechsel erzeugt.",
+      "measurement_instruction_de": "Stair-/Level-Verbindungen in dieser Möbelgruppe prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-M03",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "wc_and_basin_distinguished",
+      "meaning_de": "WC-Schüssel und Waschbecken sind als verschiedene Ausstattung erkannt.",
+      "measurement_instruction_de": "Kontur, Aufstellung und lokale Sanitärrolle vergleichen.",
+      "used_in": [
+        {
+          "case_id": "SH22-S01",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "installation_strip_is_general_walkway",
+      "meaning_de": "Die rückwärtige Installationszone wurde als allgemeiner Gang freigegeben.",
+      "measurement_instruction_de": "Boden-/Zugangsbelege und Verbindungen im Streifen prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-S01",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "sanitary_is_room_wall",
+      "meaning_de": "Sanitärkonturen wurden zu baulichen Raumwänden.",
+      "measurement_instruction_de": "Klassifikation und Raumgrenzen-Provenienz kontrollieren.",
+      "used_in": [
+        {
+          "case_id": "SH22-S01",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "room_labels_follow_leaders",
+      "meaning_de": "Ausgelagerte Raumtexte folgen ihren Zuordnungslinien.",
+      "measurement_instruction_de": "Textanker über Bezugslinie bis zum tatsächlich zugeordneten Raum nachweisen.",
+      "used_in": [
+        {
+          "case_id": "SH22-S02",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "printer_room_separate_from_wc",
+      "meaning_de": "Druckerraum und WC bleiben getrennte Räume mit passender Nutzung.",
+      "measurement_instruction_de": "Umfassung, eigene Türen und Textzuordnung prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-S02",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "nearest_text_only_assignment",
+      "meaning_de": "Die Zuordnung stützt sich ausschließlich auf nächsten Textabstand.",
+      "measurement_instruction_de": "Entscheidungsbelege prüfen; Nähe darf Kandidatensuche, nicht alleinige Begründung sein.",
+      "used_in": [
+        {
+          "case_id": "SH22-S02",
+          "expected": false
+        },
+        {
+          "case_id": "SH22-R03",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "kitchen_equipment_separate",
+      "meaning_de": "Küchengeräte/Einbauten sind von baulichen Grenzen getrennt.",
+      "measurement_instruction_de": "Gerätefelder, Arbeitsflächen und Raumumfassung als verschiedene Rollen auswerten.",
+      "used_in": [
+        {
+          "case_id": "SH22-M04",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "basin_alone_causes_wc_classification",
+      "meaning_de": "Ein einzelnes Becken hat ohne weiteren Beleg eine WC-Raumklasse ausgelöst.",
+      "measurement_instruction_de": "Funktionsklassifikation und die tatsächlich verwendeten Belege prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-M04",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "room_function_uses_label",
+      "meaning_de": "Der passend zugeordnete Raumtext wird für die Nutzung ausgewertet.",
+      "measurement_instruction_de": "Nutzungseigenschaft mit Raumstempel/Bezugslinie verknüpfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-M04",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "treads_are_walls",
+      "meaning_de": "Stufenvorderkanten wurden als bauliche Wände behandelt.",
+      "measurement_instruction_de": "Linienrollen und daraus abgeleitete Sperr-/Raumgrenzen prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-T01",
+          "expected": false
+        },
+        {
+          "case_id": "SH22-T03",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "ascent_from_arrow_and_sequence",
+      "meaning_de": "Aufwärtsrichtung wird mit Pfeil und Stufenfolge gemeinsam begründet.",
+      "measurement_instruction_de": "Pfeilanfang/-ende, Nummern, Folge und Podestbezug nachweisen.",
+      "used_in": [
+        {
+          "case_id": "SH22-T01",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "target_floor_without_height_evidence",
+      "meaning_de": "Ein Zielgeschoss wurde ohne passende Anschlusshöhen behauptet.",
+      "measurement_instruction_de": "Ziel-ID und ihre vertikalen Belege prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-T01",
+          "expected": false
+        },
+        {
+          "case_id": "SH22-T02",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "break_is_wall",
+      "meaning_de": "Das Treppenbruchzeichen wurde als schräge Wand behandelt.",
+      "measurement_instruction_de": "Funktion der markierten Bruchgeometrie im Modell prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-T02",
+          "expected": false
+        },
+        {
+          "case_id": "SH22-T04",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "flight_directions_separate",
+      "meaning_de": "Verschiedene Treppenläufe haben eigene Richtungsbezüge.",
+      "measurement_instruction_de": "Richtung pro Lauf führen statt einen globalen Blattpfeil auf alle anzuwenden.",
+      "used_in": [
+        {
+          "case_id": "SH22-T02",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "opposite_flight_interpretation_supported",
+      "meaning_de": "Die gegenläufige Darstellung wird mit ihren Originalmerkmalen begründet.",
+      "measurement_instruction_de": "Pfeile, Laufpositionen und Podestzuordnung beider Läufe vergleichen.",
+      "used_in": [
+        {
+          "case_id": "SH22-T02",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "relative_rise_separate_from_floor_id",
+      "meaning_de": "Relative Steigungssumme und absolute Zielgeschoss-ID bleiben getrennt.",
+      "measurement_instruction_de": "Anzahl × Steigung auswerten und fehlende absolute Anschlüsse separat offen lassen.",
+      "used_in": [
+        {
+          "case_id": "SH22-T03",
+          "expected": true
+        },
+        {
+          "case_id": "SH22-T04",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "large_arc_function",
+      "meaning_de": "Funktion des großen Treppenbogens.",
+      "measurement_instruction_de": "Ohne vollständigen Funktionsbeleg unknown; nicht allein Tür nennen.",
+      "used_in": [
+        {
+          "case_id": "SH22-T05",
+          "expected": "unknown"
+        }
+      ]
+    },
+    {
+      "claim": "extra_door_invented",
+      "meaning_de": "Aus dem Großbogen wurde eine zusätzliche unbelegte Tür erzeugt.",
+      "measurement_instruction_de": "Türinventur und Mechanik-/Öffnungsbeleg an T05 prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-T05",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "unresolved_feature_retained",
+      "meaning_de": "Der ungeklärte Großbogen bleibt als ungeklärtes Merkmal nachvollziehbar.",
+      "measurement_instruction_de": "Quellelement darf nicht still verschwinden oder als sicher klassifiziert werden.",
+      "used_in": [
+        {
+          "case_id": "SH22-T05",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "shaft_cabin_access_separate",
+      "meaning_de": "Liftschacht, Kabine und Zugang werden getrennt modelliert.",
+      "measurement_instruction_de": "Bauteile, Flächen und Zugangsrelationen prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-L01",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "entire_shaft_as_permanent_floor",
+      "meaning_de": "Der komplette Liftschacht wurde zu dauerhaftem Geschossboden.",
+      "measurement_instruction_de": "Schachtaußenraum und Kabinenboden mit Freifläche vergleichen.",
+      "used_in": [
+        {
+          "case_id": "SH22-L01",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "cabin_access_conditional",
+      "meaning_de": "Liftkabinenzugang trägt die notwendigen Zustands-/Betriebsbedingungen.",
+      "measurement_instruction_de": "Nicht als jederzeit offene unbedingte Gangverbindung ausgeben.",
+      "used_in": [
+        {
+          "case_id": "SH22-L01",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "fwa_expansion_unconditionally_proven",
+      "meaning_de": "Die ausgeschriebene Bedeutung von FWA wurde als endgültig belegt ausgegeben.",
+      "measurement_instruction_de": "Zusätzliche Anlagenquelle prüfen; aus Paket allein bleibt die genaue Auflösung kontextgestützt.",
+      "used_in": [
+        {
+          "case_id": "SH22-L01",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "maintenance_walkway_and_ladder_distinguished",
+      "meaning_de": "Wartungssteg und Schachtleiter werden als unterschiedliche technische Elemente erkannt.",
+      "measurement_instruction_de": "Textteile und passende Geometrien mit getrennten Funktionen verknüpfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-L02",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "ordinary_corridor_edge",
+      "meaning_de": "Im technischen Wartungsbereich wurde eine gewöhnliche Gangverbindung angelegt.",
+      "measurement_instruction_de": "Zugangsart und tatsächlich erzeugte Graphkante prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-L02",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "technical_area_automatically_all_void",
+      "meaning_de": "Die ganze technische Fläche wurde ohne Differenzierung zum bodenlosen Loch erklärt.",
+      "measurement_instruction_de": "Existenz eines Wartungsstegs und offene Restbereiche getrennt prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-L02",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "fall_barrier_blocks_crossing",
+      "meaning_de": "Die Absturzsicherung verhindert das Queren ihres Randes.",
+      "measurement_instruction_de": "Randgeometrie, Sperrfunktion und Graphkanten abgleichen.",
+      "used_in": [
+        {
+          "case_id": "SH22-B01",
+          "expected": true
+        },
+        {
+          "case_id": "SH22-B02",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "interior_general_floor_confirmed",
+      "meaning_de": "Die innere Fläche hinter der Sicherung wurde als allgemeiner Boden bestätigt.",
+      "measurement_instruction_de": "False bedeutet hier nicht bestätigter Boden; keine Aussage über bewiesene völlige Bodenlosigkeit.",
+      "used_in": [
+        {
+          "case_id": "SH22-B01",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "void_depth",
+      "meaning_de": "Tiefe/unterer Abschluss des betreffenden Innenfelds.",
+      "measurement_instruction_de": "Ohne Schnitt/Höhenbeleg unknown; raumhoch liefert keine Tiefe.",
+      "used_in": [
+        {
+          "case_id": "SH22-B01",
+          "expected": "unknown"
+        },
+        {
+          "case_id": "SH22-B02",
+          "expected": "unknown"
+        }
+      ]
+    },
+    {
+      "claim": "raumhoch_creates_room",
+      "meaning_de": "Aus dem Sicherungstext wurde ein begehbarer Raum abgeleitet.",
+      "measurement_instruction_de": "Textfunktion und erzeugte Raum-/Bodenobjekte prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-B01",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "adjoining_terrace_floor_preserved",
+      "meaning_de": "Der belegte Terrassenboden außerhalb des gesicherten Bereichs bleibt erhalten.",
+      "measurement_instruction_de": "Sperrung auf die richtige Rand-/Sonderfläche begrenzen.",
+      "used_in": [
+        {
+          "case_id": "SH22-B02",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "slope_lines_are_walls",
+      "meaning_de": "Gefällelinien wurden als feste Wände klassifiziert.",
+      "measurement_instruction_de": "Ablauf-/Prozentbelege und Linienrollen prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-B03",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "drain_text_used",
+      "meaning_de": "Der lokal zugeordnete Ablauftext fließt in die Interpretation ein.",
+      "measurement_instruction_de": "Originaltext mit Ablaufzeichen und Entwässerungsgeometrie verknüpfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-B03",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "terrace_split_into_triangular_rooms",
+      "meaning_de": "Gefällediagonalen erzeugen dreieckige neue Räume.",
+      "measurement_instruction_de": "Raumgrenzen und Linienherkunft auf der Terrasse kontrollieren.",
+      "used_in": [
+        {
+          "case_id": "SH22-B03",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "water_layer_and_paving_slopes_separate",
+      "meaning_de": "Wasserführende Schicht und Plattenbelag haben getrennte Neigungsattribute.",
+      "measurement_instruction_de": "Den zugehörigen Architektenhinweis nachweisbar auswerten.",
+      "used_in": [
+        {
+          "case_id": "SH22-B04",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "paving_slope_percent",
+      "meaning_de": "Zugeordneter Gefällewert des Plattenbelags in Prozent.",
+      "measurement_instruction_de": "Zahlenwert 1 aus dem konkreten Hinweis, nicht aus der benachbarten Abdichtungsneigung lesen.",
+      "used_in": [
+        {
+          "case_id": "SH22-B04",
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "claim": "water_layer_value_overwrites_paving",
+      "meaning_de": "Neigung der wasserführenden Schicht überschreibt den Belagwert.",
+      "measurement_instruction_de": "Attributwerte und Schichtzuordnung prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-B04",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "elevation_reference_preserved",
+      "meaning_de": "Höhenwerte behalten ihre eigene Bezugsebene.",
+      "measurement_instruction_de": "FBOK/RDOK und Bauteilbezug mit Wert und Einheit speichern.",
+      "used_in": [
+        {
+          "case_id": "SH22-B05",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "overhead_line_automatically_wall",
+      "meaning_de": "Ein Hinweis auf einen oberen Bauteil wurde automatisch zur Bodenwand.",
+      "measurement_instruction_de": "Höhenbeleg und Bodenwirkung getrennt prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-B05",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "dimension_line_automatically_wall",
+      "meaning_de": "Eine Maßlinie wurde automatisch zur Wand.",
+      "measurement_instruction_de": "Linienrolle, Maßtext und bauliche Sperrwirkung vergleichen.",
+      "used_in": [
+        {
+          "case_id": "SH22-B05",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "whole_profile_band_as_exit",
+      "meaning_de": "Das gesamte Fassadenprofilband wurde zum Ausgang.",
+      "measurement_instruction_de": "Öffnungsart und untere Anschlusshöhe für jedes relevante Feld prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-F03",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "lower_floor_connection_checked",
+      "meaning_de": "Der untere Anschluss wurde vor einer Gehpassage eigens geprüft.",
+      "measurement_instruction_de": "Ein Sturzmaß oder Flügelbogen alleine reicht nicht.",
+      "used_in": [
+        {
+          "case_id": "SH22-F03",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "lintel_height_used_as_portal_proof",
+      "meaning_de": "Die Sturzunterkante allein wurde als Gehportalbeweis verwendet.",
+      "measurement_instruction_de": "Beweiskette auf fehlenden unteren Bodenanschluss prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-F03",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "room_id",
+      "meaning_de": "Am konkret lokalisierten Beispiel zugeordnete Original-Raum-ID.",
+      "measurement_instruction_de": "Die ID aus dem zugeordneten Raumstempel lesen; keine Klassifikator-Konstante.",
+      "used_in": [
+        {
+          "case_id": "SH22-R01",
+          "expected": "3.16"
+        },
+        {
+          "case_id": "SH22-R04",
+          "expected": "3.06"
+        }
+      ]
+    },
+    {
+      "claim": "room_and_free_floor_separate",
+      "meaning_de": "Raumfläche und darin verbleibender freier Boden sind getrennt.",
+      "measurement_instruction_de": "Raumkontur und Hindernisabzug im Ergebnis unterscheiden.",
+      "used_in": [
+        {
+          "case_id": "SH22-R01",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "furniture_creates_extra_rooms",
+      "meaning_de": "Einrichtung erzeugt zusätzliche selbständige Räume.",
+      "measurement_instruction_de": "Raumanzahl lokal und Grenzherkunft prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-R01",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "mufu_is_usage_zone",
+      "meaning_de": "MUFU wird hier als offene Nutzungszone innerhalb der Erschließung geführt.",
+      "measurement_instruction_de": "Nutzungs-ID darf ohne feste Umfassung keine neue Mauer verlangen.",
+      "used_in": [
+        {
+          "case_id": "SH22-R02",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "imaginary_enclosing_wall",
+      "meaning_de": "Zur MUFU-Beschriftung wurde eine nicht vorhandene Umfassung erfunden.",
+      "measurement_instruction_de": "Produktive Grenzkanten mit Originalgeometrie abgleichen.",
+      "used_in": [
+        {
+          "case_id": "SH22-R02",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "open_floor_connection_preserved",
+      "meaning_de": "Die belegte offene Bodenverbindung der Nutzungszone bleibt erhalten.",
+      "measurement_instruction_de": "Keine Sperre allein aus Raum-/Zonen-ID einfügen.",
+      "used_in": [
+        {
+          "case_id": "SH22-R02",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "leader_target_used",
+      "meaning_de": "Das Ziel der Textbezugslinie wurde für die Zuordnung verwendet.",
+      "measurement_instruction_de": "Text → Bezugslinie → Zielraum konkret belegen.",
+      "used_in": [
+        {
+          "case_id": "SH22-R03",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "text_line_is_wall",
+      "meaning_de": "Eine Beschriftungsbezugslinie wird als Wand verwendet.",
+      "measurement_instruction_de": "Linienrolle und Auswirkungen auf Raum/Boden kontrollieren.",
+      "used_in": [
+        {
+          "case_id": "SH22-R03",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "single_access_suffices",
+      "meaning_de": "Ein einziger belegter Zugang genügt für die Erreichbarkeit des Abstellraums.",
+      "measurement_instruction_de": "Raum nicht wegen fehlendem zweiten Ausgang als Schacht verwerfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-R04",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "free_floor_reaches_back",
+      "meaning_de": "Die freie Bodenfläche reicht bis zum belegten hinteren Raumende.",
+      "measurement_instruction_de": "Innerhalb der Raumgrenzen verbleibenden Boden vollständig prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-R04",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "full_free_floor_not_route_band",
+      "meaning_de": "Die Ausgabe erhält vollständige freie Bodenflächen statt nur einer Route.",
+      "measurement_instruction_de": "Gesamtbreite, Nischen und Aufweitungen des Gangs gegen Original prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-G01",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "furniture_gaps_preserved",
+      "meaning_de": "Freie Zwischenräume zwischen einzelnen Möbeln bleiben in G01 erhalten.",
+      "measurement_instruction_de": "Kein Sammelrechteck als Stellfläche über die ganze Gruppe verwenden.",
+      "used_in": [
+        {
+          "case_id": "SH22-G01",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim": "edge_through_solid_wall",
+      "meaning_de": "Eine Graphkante quert den festen Wandkörper ohne Portalbeleg.",
+      "measurement_instruction_de": "Graphgeometrie gegen Sperrflächen und verifizierte Portale prüfen.",
+      "used_in": [
+        {
+          "case_id": "SH22-G01",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim": "person_clearance_claim_without_metric_check",
+      "meaning_de": "Benutzbarkeit einer Engstelle wurde ohne Maß-/Profilprüfung behauptet.",
+      "measurement_instruction_de": "Bestätigte Einheiten, Messwerte und gewähltes Bewegungsprofil verlangen.",
+      "used_in": [
+        {
+          "case_id": "SH22-G01",
+          "expected": false
+        }
+      ]
+    }
+  ]
+}

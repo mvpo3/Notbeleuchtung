@@ -1,0 +1,197 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "source_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "coordinate_space": {
+      "const": "plan_norm_2000"
+    },
+    "pdf_drawing_indices_are_dxf_handles": {
+      "const": false
+    },
+    "manual_teaching_mark_note": {
+      "type": "string",
+      "minLength": 1
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "feature_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "example_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "pdf_page": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 87
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "color": {
+            "enum": [
+              "red",
+              "blue",
+              "purple",
+              "orange",
+              "cyan",
+              "green",
+              "gray"
+            ]
+          },
+          "dashed": {
+            "type": "boolean"
+          },
+          "source_id": {
+            "const": "ORIGINAL_PDF"
+          },
+          "source_page": {
+            "const": 1
+          },
+          "coordinate_space": {
+            "const": "plan_norm_2000"
+          },
+          "arrow_target_xy": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "point_marker_xy": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "traces": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "polyline",
+                    "cubic_bezier"
+                  ]
+                },
+                "points": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "minItems": 2
+                },
+                "origin": {
+                  "enum": [
+                    "original_pdf_path",
+                    "manual_teaching_mark"
+                  ]
+                },
+                "pdf_drawing_index": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "source_layer_hint": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "kind",
+                "points",
+                "origin",
+                "pdf_drawing_index",
+                "source_layer_hint"
+              ],
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "kind": {
+                        "const": "cubic_bezier"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "points": {
+                        "minItems": 4,
+                        "maxItems": 4
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "minItems": 0
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "feature_id",
+          "example_id",
+          "pdf_page",
+          "title",
+          "color",
+          "dashed",
+          "source_id",
+          "source_page",
+          "coordinate_space",
+          "arrow_target_xy",
+          "point_marker_xy",
+          "traces",
+          "purpose"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "source_hash",
+    "coordinate_space",
+    "pdf_drawing_indices_are_dxf_handles",
+    "manual_teaching_mark_note",
+    "features"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

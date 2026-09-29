@@ -1,0 +1,846 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Semantische Sollfälle; kein bereits bestandener Erkennungslauf",
+  "cases": [
+    {
+      "case_id": "SH22-W01",
+      "example_id": "W01",
+      "title": "W01 · Warum ist das eine Außenwand?",
+      "pages": [
+        14,
+        15
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        18,
+        17,
+        100,
+        94
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "wall_body_blocks_floor": true,
+        "layer_gaps_are_walkway": false,
+        "material_claim_without_source": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Nur eine Mittellinie rot zeichnen und die restliche Wanddicke grün lassen. Ebenso falsch: jede Schraffur pauschal „Beton“ nennen.",
+      "unknowns_to_preserve": "Der vollständige Schichtenaufbau und seine Materialien sind mit dieser Übersicht allein nicht für jede Lage nachgewiesen.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-W02",
+      "example_id": "W02",
+      "title": "W02 · Innenwand und Möbel davor auseinanderhalten",
+      "pages": [
+        16,
+        17
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        28,
+        538,
+        285,
+        690
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "wall_separate_from_furniture": true,
+        "portal_in_solid_partition": false,
+        "ceiling_material_used_as_wall_material": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Die vordere Schrankkante als gesamte Raumwand nehmen oder aus dem Deckenmaterial auf den Baustoff aller Wände schließen.",
+      "unknowns_to_preserve": "Aus dem gezeigten Raumstempel allein lässt sich der Aufbau jeder Innenwand nicht vollständig ableiten.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-W03",
+      "example_id": "W03",
+      "title": "W03 · Warum sind das WC-Kabinentrennwände?",
+      "pages": [
+        18,
+        19
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        550,
+        280,
+        626,
+        362
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "thin_partitions_block_crossing": true,
+        "cubicles_are_subspaces": true,
+        "arc_is_solid_obstacle": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Jede Kabine als eigenständigen Hauptraum zählen oder die dünnen Trennlinien ignorieren, weil sie keine breite Schraffur tragen.",
+      "unknowns_to_preserve": "Material, genaue Plattenhöhe und verdeckte Leitungsführung brauchen Detail- oder Ausstattungsangaben.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-D01",
+      "example_id": "D01",
+      "title": "D01 · Türblatt, Drehpunkt und Bogen einzeln lesen",
+      "pages": [
+        20,
+        21
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        210,
+        388,
+        257,
+        432
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "leaf_and_arc_separate": true,
+        "arc_is_solid_obstacle": false,
+        "portal_at_wall_opening": true,
+        "live_door_state": "unknown"
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Den Bogen zur gebogenen Wand machen, die ganze Viertelkreisfläche sperren oder jede Gerade im Symbol als zusätzliche Trennwand speichern.",
+      "unknowns_to_preserve": "Türblattmaterial, Verglasung, realer Öffnungszustand und Zugangsberechtigung sind aus diesem Symbol allein nicht bestimmt.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-D02",
+      "example_id": "D02",
+      "title": "D02 · Wo genau kann man durch die Tür gehen?",
+      "pages": [
+        22,
+        23
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        208,
+        388,
+        261,
+        435
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "jambs_bound_portal": true,
+        "graph_edge_through_solid_jamb": false,
+        "leaf_state_is_conditional": true
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Raum und Gang zu einem Raum zusammenfassen, weil die Tür offen dargestellt ist, oder an einer bloßen Linienlücke eine neue Tür erfinden.",
+      "unknowns_to_preserve": "Schwellenhöhe und genaue nutzbare Breite unter allen Türstellungen müssen mit Detail und Maßangaben geprüft werden.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-D03",
+      "example_id": "D03",
+      "title": "D03 · Zwei Flügel sind nicht zwei Durchgänge",
+      "pages": [
+        24,
+        25
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        1257,
+        667,
+        1330,
+        748
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "one_opening_two_leaves": true,
+        "two_arcs_are_two_rooms": false,
+        "clear_width_counted_twice": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Aus zwei Bögen zwei Räume erzeugen, die Öffnungsbreite verdoppeln oder jeden benachbarten Großbogen als weitere Tür klassifizieren.",
+      "unknowns_to_preserve": "Welcher Flügel im Betrieb zuerst öffnet und welche Freigaben gelten, wird nicht allein aus der Bogenform abgeleitet.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-F01",
+      "example_id": "F01",
+      "title": "F01 · Fenster: ähnlicher Bogen, andere Bedeutung",
+      "pages": [
+        26,
+        27
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        95,
+        18,
+        164,
+        57
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "classification": "window",
+        "normal_walking_portal": false,
+        "parapet_reference": "FBOK",
+        "glazing_layers": "unknown"
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "„Viertelkreis = Tür“ oder „öffenbar = begehbar“ setzen. Ebenso falsch: 0,85 als Flügelbreite übernehmen.",
+      "unknowns_to_preserve": "Glasaufbau, Rahmenmaterial und genaue untere Anschlusskonstruktion sind hier nicht vollständig beschrieben.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-F02",
+      "example_id": "F02",
+      "title": "F02 · Rahmen, Glaszone und Brüstung unterscheiden",
+      "pages": [
+        28,
+        29
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        98,
+        24,
+        123,
+        37
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "frame_and_glazing_zone_separate": true,
+        "exact_glass_panes": "unknown",
+        "normal_walking_portal": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Vier parallele Striche als vier separate Wände oder als sicher vier Glasscheiben bezeichnen. Die Strichzahl beweist keinen Mehrscheibenaufbau.",
+      "unknowns_to_preserve": "Genauer Rahmenquerschnitt, Werkstoff, Glasanzahl, Beschichtung und etwaige opake Füllung brauchen das zugehörige Detail.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-M01",
+      "example_id": "M01",
+      "title": "M01 · Wie erkennt man Tische und Stühle?",
+      "pages": [
+        30,
+        31
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        570,
+        44,
+        643,
+        114
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "tables_chairs_are_furniture": true,
+        "free_gaps_preserved": true,
+        "furniture_creates_room_boundaries": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Jedes Tischrechteck als Raum oder Schacht erkennen. Ebenso falsch: die ganze Möbelgruppe samt Zwischenräumen pauschal als Sperrblock entfernen.",
+      "unknowns_to_preserve": "Exakte Möbelhöhen, Unterfahrbarkeit und die Benennung jedes kleinen Beschlagstrichs sind nicht vollständig belegt.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-M02",
+      "example_id": "M02",
+      "title": "M02 · Schrankreihe: Was bedeutet das X?",
+      "pages": [
+        32,
+        33
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        516,
+        42,
+        557,
+        164
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "cabinet_and_wall_separate": true,
+        "cross_is_stair": false,
+        "cabinet_footprint_blocked": true
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Jedes X automatisch „Schacht“ nennen oder aus jedem Frontfeld einen eigenen Raum erzeugen.",
+      "unknowns_to_preserve": "Türart der Schränke, Innenaufteilung und Möbeltiefe außerhalb des dargestellten Maßbezugs bleiben gesondert zu prüfen.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-M03",
+      "example_id": "M03",
+      "title": "M03 · Warum sind die parallelen Linien Garderobenbänke?",
+      "pages": [
+        34,
+        35
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        298,
+        426,
+        464,
+        590
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "classification": "wardrobe_furniture",
+        "free_gaps_preserved": true,
+        "height_transition_invented": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Parallele Linien automatisch als Treppe lesen oder alle Zwischenräume zwischen den Bänken pauschal sperren.",
+      "unknowns_to_preserve": "Die exakte Bauart einzelner Garderobenelemente braucht Möbel- oder Ausstattungsdetails.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-S01",
+      "example_id": "S01",
+      "title": "S01 · WC-Schüssel, Waschbecken und Installation",
+      "pages": [
+        36,
+        37
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        535,
+        315,
+        604,
+        382
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "wc_and_basin_distinguished": true,
+        "installation_strip_is_general_walkway": false,
+        "sanitary_is_room_wall": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Jede ovale Form als WC oder jedes Becken als Beweis für einen WC-Raum behandeln.",
+      "unknowns_to_preserve": "Montagehöhe, verdeckte Leitungen, Fabrikat und genaue technische Anschlüsse sind aus dem Symbol nicht vollständig abzulesen.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-S02",
+      "example_id": "S02",
+      "title": "S02 · Raumfunktion aus Text und Ausstattung prüfen",
+      "pages": [
+        38,
+        39
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        285,
+        277,
+        468,
+        359
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "room_labels_follow_leaders": true,
+        "printer_room_separate_from_wc": true,
+        "nearest_text_only_assignment": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Alle drei Räume zu einer WC-Gruppe verschmelzen oder den nächstgelegenen Text automatisch übernehmen.",
+      "unknowns_to_preserve": "Die vollständigen Anforderungen an eine besondere WC-Ausführung sind kein Ergebnis bloßer Symbolerkennung.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-M04",
+      "example_id": "M04",
+      "title": "M04 · Kochfeld, Arbeitstisch und Lehrküche",
+      "pages": [
+        40,
+        41
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        774,
+        302,
+        923,
+        460
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "kitchen_equipment_separate": true,
+        "basin_alone_causes_wc_classification": false,
+        "room_function_uses_label": true
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Jede Arbeitsinsel als Zimmer zählen oder ein Becken allein zur Entscheidung „Küche“ verwenden.",
+      "unknowns_to_preserve": "Anschlussarten, Gerätefabrikate und genaue Aufbauhöhen sind in dieser Grundrissdarstellung nicht vollständig belegt.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-T01",
+      "example_id": "T01",
+      "title": "T01 · Stiege 2: Was macht Linien zu einer Treppe?",
+      "pages": [
+        42,
+        43
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        604,
+        575,
+        732,
+        754
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "classification": "stair",
+        "treads_are_walls": false,
+        "ascent_from_arrow_and_sequence": true,
+        "target_floor_without_height_evidence": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Jede Querlinie als Wand behandeln oder zwischen den Läufen direkt über die mittlere Sicherung verbinden.",
+      "unknowns_to_preserve": "Welcher konkrete Anschluss vom 3. OG zum 2. OG oder zu einer höheren Ebene führt, muss mit Höhen und passenden Anschlussplänen abgeglichen werden.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-T02",
+      "example_id": "T02",
+      "title": "T02 · Stiege 1: Darstellungsbruch und Gegenrichtung",
+      "pages": [
+        44,
+        45
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        1269,
+        766,
+        1391,
+        942
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "break_is_wall": false,
+        "flight_directions_separate": true,
+        "opposite_flight_interpretation_supported": true,
+        "target_floor_without_height_evidence": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Die schräge Unterbrechung als Quermauer sperren oder die Pfeilrichtung mit einer Zielgeschossnummer gleichsetzen.",
+      "unknowns_to_preserve": "Die genaue Zuordnung aller sichtbaren und projizierten Laufteile zu den Geschossen ist ohne ergänzenden Höhenabgleich offen.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-T03",
+      "example_id": "T03",
+      "title": "T03 · Außenstiege 4: ein langer Lauf",
+      "pages": [
+        47,
+        48
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        506,
+        744,
+        740,
+        829
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "classification": "stair",
+        "treads_are_walls": false,
+        "relative_rise_separate_from_floor_id": true
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Die Stufen in viele schmale Räume zerlegen oder die gesamte Treppe als ebene Gangfläche speichern.",
+      "unknowns_to_preserve": "Absolute Anfangs- und Endhöhe sowie die gesicherte Zielgeschoss-ID benötigen ergänzende Anschlussbelege.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-T04",
+      "example_id": "T04",
+      "title": "T04 · Außenstiege 3: dasselbe Prinzip überprüfen",
+      "pages": [
+        49,
+        50
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        1252,
+        1184,
+        1498,
+        1275
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "classification": "stair",
+        "break_is_wall": false,
+        "relative_rise_separate_from_floor_id": true
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Die Daten einer ähnlich aussehenden Stiege vollständig kopieren oder aus einem Bruchzeichen eine Wand erzeugen.",
+      "unknowns_to_preserve": "Absolute Höhen und Verbindungen werden durch diese einzelne Draufsicht nicht vollständig aufgelöst.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-T05",
+      "example_id": "T05",
+      "title": "T05 · Der große Bogen ist kein Türbeweis",
+      "pages": [
+        51,
+        52
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        1268,
+        715,
+        1388,
+        784
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "large_arc_function": "unknown",
+        "extra_door_invented": false,
+        "unresolved_feature_retained": true
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Alle großen Bögen zu Türen erklären, obwohl kein vollständiger Türbeleg vorliegt.",
+      "unknowns_to_preserve": "Die genaue Bedeutung dieser Großbogendarstellung ist aus dem vorliegenden Ausschnitt nicht ausreichend belegt.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-L01",
+      "example_id": "L01",
+      "title": "L01 · Lift: Kabine, Schacht und Zugang trennen",
+      "pages": [
+        53,
+        54
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        1378,
+        777,
+        1439,
+        854
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "shaft_cabin_access_separate": true,
+        "entire_shaft_as_permanent_floor": false,
+        "cabin_access_conditional": true,
+        "fwa_expansion_unconditionally_proven": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Das ganze Schachtinnere grün füllen, seitlich durch die Schachtwand gehen oder die Kabinenmaße als Schachtaußenmaße verwenden.",
+      "unknowns_to_preserve": "FWA ist im Aufzugskontext plausibel als Feuerwehraufzug zu lesen. Die ausgeschriebene Anlagenart und ihre Betriebsbedingungen müssen im zugehörigen Anlagen-/Brandschutzplan bestätigt werden.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-L02",
+      "example_id": "L02",
+      "title": "L02 · Schachtleiter und Wartungssteg: Text entscheidet",
+      "pages": [
+        55,
+        56
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        1380,
+        842,
+        1490,
+        949
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "maintenance_walkway_and_ladder_distinguished": true,
+        "ordinary_corridor_edge": false,
+        "technical_area_automatically_all_void": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Ein weißes umschlossenes Feld automatisch als Zimmer füllen oder den Wartungssteg pauschal mit einem bodenlosen Loch gleichsetzen.",
+      "unknowns_to_preserve": "Die genauen Höhen, Schachtausdehnung, Stegtragstruktur und Zugangsvoraussetzungen brauchen den passenden Schnitt oder Fachplan.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-B01",
+      "example_id": "B01",
+      "title": "B01 · „Absturzsicherung raumhoch“ ist kein Raumstempel",
+      "pages": [
+        57,
+        58
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        778,
+        523,
+        1220,
+        715
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "fall_barrier_blocks_crossing": true,
+        "interior_general_floor_confirmed": false,
+        "void_depth": "unknown",
+        "raumhoch_creates_room": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "„Geschlossenes Rechteck = Zimmer“ oder „Absturzsicherung = sicher über alle Geschosse offenes Atrium“ behaupten.",
+      "unknowns_to_preserve": "LK und RA sind hier plausibel als Lichtkuppel und Rauchabzug zu lesen. Ohne zugehörige Legende bleiben diese Auflösungen eine kontextgestützte Deutung; Tiefe und unterer Abschluss der Innenfläche brauchen einen Schnitt.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-B02",
+      "example_id": "B02",
+      "title": "B02 · Auch außen: Schutzkante und Boden getrennt lesen",
+      "pages": [
+        59,
+        60
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        1538,
+        1064,
+        1720,
+        1272
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "fall_barrier_blocks_crossing": true,
+        "adjoining_terrace_floor_preserved": true,
+        "void_depth": "unknown"
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Den ganzen Außenbereich sperren oder die gesamte umschlossene Fläche als freie Abkürzung zulassen.",
+      "unknowns_to_preserve": "Der genaue Aufbau und Höhenbezug innerhalb der Umwehrung bleibt ohne Schnitt offen.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-B03",
+      "example_id": "B03",
+      "title": "B03 · Warum laufen hier Gefällelinien zum Ablauf?",
+      "pages": [
+        61,
+        62
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        970,
+        778,
+        1080,
+        905
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "slope_lines_are_walls": false,
+        "drain_text_used": true,
+        "terrace_split_into_triangular_rooms": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Die Diagonalen zu Mauern machen oder Gefällewerte ohne Schichtbezug auf die fertige Gehoberfläche übertragen.",
+      "unknowns_to_preserve": "Die genaue dreidimensionale Oberfläche braucht die vollständigen Höhen und den zugehörigen Bodenaufbau.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-B04",
+      "example_id": "B04",
+      "title": "B04 · Ein Architektenhinweis kann die erste Deutung ändern",
+      "pages": [
+        63,
+        64
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        453,
+        718,
+        514,
+        750
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "water_layer_and_paving_slopes_separate": true,
+        "paving_slope_percent": 1,
+        "water_layer_value_overwrites_paving": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Nur Prozentzahlen extrahieren und den erläuternden Satz ignorieren. Auch das Textfeld selbst darf keine Raumkontur werden.",
+      "unknowns_to_preserve": "Die exakte räumliche Reichweite der Ausführungsanweisung ist mit dem vollständigen Plan-/Detailzusammenhang zu prüfen.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-B05",
+      "example_id": "B05",
+      "title": "B05 · Voute, Decke, Fuge: Eine Linie ist nicht immer am Boden",
+      "pages": [
+        65,
+        66
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        782,
+        758,
+        886,
+        791
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "elevation_reference_preserved": true,
+        "overhead_line_automatically_wall": false,
+        "dimension_line_automatically_wall": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Jede durchgehende oder diagonale Linie zur Mauer machen. RDOK ist kein Beweis für ein Hindernis auf Fußbodenhöhe.",
+      "unknowns_to_preserve": "Genaue Unterkanten, Resthöhen und konstruktive Ausführung benötigen die zugehörigen Detail- und Höhenangaben.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-F03",
+      "example_id": "F03",
+      "title": "F03 · Ein Profilband ist nicht überall ein Ausgang",
+      "pages": [
+        67,
+        68
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        238,
+        653,
+        533,
+        743
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "whole_profile_band_as_exit": false,
+        "lower_floor_connection_checked": true,
+        "lintel_height_used_as_portal_proof": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Die ganze Profilreihe als Ausgang öffnen oder jede dünne Profilkante als neue massive Wand speichern.",
+      "unknowns_to_preserve": "Untertypen einzelner Felder und exakter Glas-/Paneelaufbau sind im gezeigten Grundriss teilweise offen.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-R01",
+      "example_id": "R01",
+      "title": "R01 · Warum ist 3.16 ein Raum?",
+      "pages": [
+        69,
+        70
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        23,
+        349,
+        290,
+        614
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "room_id": "3.16",
+        "room_and_free_floor_separate": true,
+        "furniture_creates_extra_rooms": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Aus jeder Tischkante oder großen Diagonale eine Raumgrenze erzeugen; ebenso falsch ist die reine Flächenschätzung aus dem Text.",
+      "unknowns_to_preserve": "Einzelne überlagerte Darstellungsstriche und vollständige Materialaufbauten sind nicht sämtlich durch den Raumstempel erklärt.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-R02",
+      "example_id": "R02",
+      "title": "R02 · MUFU: eine Nutzungszone ohne neue Zimmerwand",
+      "pages": [
+        71,
+        72
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        233,
+        580,
+        529,
+        714
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "mufu_is_usage_zone": true,
+        "imaginary_enclosing_wall": false,
+        "open_floor_connection_preserved": true
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Weil MUFU einen eigenen Stempel hat, eine unsichtbare Wand zum Gang ergänzen.",
+      "unknowns_to_preserve": "Die genaue betriebliche Abgrenzung der Nutzung kann unabhängig von der baulichen Raumgrenze festgelegt sein.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-R03",
+      "example_id": "R03",
+      "title": "R03 · Beschriftungszeiger richtig verfolgen",
+      "pages": [
+        73,
+        74
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        240,
+        240,
+        475,
+        384
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "leader_target_used": true,
+        "nearest_text_only_assignment": false,
+        "text_line_is_wall": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Den nächstgelegenen Namen übernehmen oder Boden-, Decken- und Wandangaben vermischen.",
+      "unknowns_to_preserve": "Wo ein Zeiger oder eine Schriftgruppe nicht eindeutig lesbar ist, bleibt die konkrete Zuordnung prüfpflichtig.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-R04",
+      "example_id": "R04",
+      "title": "R04 · Schmaler Abstellraum oder Schacht?",
+      "pages": [
+        75,
+        76
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        1638,
+        274,
+        1726,
+        492
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "room_id": "3.06",
+        "classification": "storage_room",
+        "single_access_suffices": true,
+        "free_floor_reaches_back": true
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "„Schmal = Schacht“ oder „nur eine Tür = nicht begehbar“ als Regel verwenden.",
+      "unknowns_to_preserve": "Exakte Engstellen und Möbelabstände müssen für ein bestimmtes Bewegungsprofil maßlich geprüft werden.",
+      "evaluation_status": "not_run"
+    },
+    {
+      "case_id": "SH22-G01",
+      "example_id": "G01",
+      "title": "G01 · Der ganze Gang ist begehbare Fläche",
+      "pages": [
+        77,
+        78
+      ],
+      "source_id": "ORIGINAL_PDF",
+      "view_crop_xyxy": [
+        240,
+        235,
+        525,
+        703
+      ],
+      "setup": "Engine auf ORIGINAL_DXF/ORIGINAL_PDF ausführen. Ergebnis am lokalisierten Beispiel auswerten; IDs und Koordinaten nur für die Evaluation verwenden.",
+      "expected_claims": {
+        "full_free_floor_not_route_band": true,
+        "furniture_gaps_preserved": true,
+        "edge_through_solid_wall": false,
+        "person_clearance_claim_without_metric_check": false
+      },
+      "evidence_required": "Pro Behauptung konkrete tatsächliche Engine-Objekte, Ursprungsfundstellen oder berechnete Prüfergebnisse nennen. Null/fehlend ist nicht falsch, sondern ungeprüft.",
+      "negative_case": "Nur eine grüne Gangmittellinie zeichnen, Möbelgruppen grob umrahmen oder jeden weißen Zwischenstreifen als sicheren Weg freigeben.",
+      "unknowns_to_preserve": "Personenabhängige Durchgangsbreiten, reale Türzustände und betriebliche Freigaben sind zusätzliche Prüfungen.",
+      "evaluation_status": "not_run"
+    }
+  ]
+}

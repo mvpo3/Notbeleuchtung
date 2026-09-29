@@ -1,0 +1,39 @@
+{
+  "package_id": "SH22-3OG-v1",
+  "project": "SH22 Leopold-Kohr-Schule",
+  "floor": "3. OG",
+  "created": "2026-09-23",
+  "sources": [
+    {
+      "source_id": "LEHRBUCH",
+      "path": "01_PDF/Leopold_Kohr_Schule_3OG_Lernbuch_zur_Kontrolle.pdf",
+      "original_filename": "Leopold_Kohr_Schule_3OG_Lernbuch_zur_Kontrolle.pdf",
+      "sha256": "108f4c5b5524baf6673cce3a75e2007598db25f5511a6771e4be785bfea6d040",
+      "bytes": 6540252,
+      "role": "Freigegebene Lernfassung, unverändert",
+      "pages": 87
+    },
+    {
+      "source_id": "ORIGINAL_PDF",
+      "path": "02_Originale/Schule_SH22_3_OG.pdf",
+      "original_filename": "Schule_SH22_3_OG.pdf",
+      "sha256": "4745ff61e673c665ba54b355346da8cad9adc53f7485fa583ac14afd08088a14",
+      "bytes": 5786263,
+      "role": "Originalgrundriss",
+      "pages": 1
+    },
+    {
+      "source_id": "ORIGINAL_DXF",
+      "path": "02_Originale/20220325-SH22-LKS-GE-AP-03-01-A-3OG.dxf",
+      "original_filename": "20220325-SH22-LKS-GE-AP-03-01-A-3OG(1).dxf",
+      "sha256": "4b0055a4fee104dd43debd96c71dfa66f0f95f003136bf5405ce180f941c766c",
+      "bytes": 47723955,
+      "role": "Zugehörige Architektur-DXF; Originalbytes mit vereinfachtem Paketdateinamen",
+      "pages": null
+    }
+  ],
+  "excluded_projects": [
+    "Mollgasse / MOL_GR / WHA_MOLL15"
+  ],
+  "scope": "Erkennung von Architektur, Raum, Boden und Verbindungen; keine Notleuchtenplatzierung und kein Normnachweis."
+}

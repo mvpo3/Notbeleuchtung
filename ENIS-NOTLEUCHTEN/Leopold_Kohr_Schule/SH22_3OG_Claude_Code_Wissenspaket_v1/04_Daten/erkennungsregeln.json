@@ -1,0 +1,1228 @@
+{
+  "schema_version": "1.0.0",
+  "execution": "Wissensregeln, kein fertiger Geometrie-Classifier; in bestehende Engine mit Quellenbelegen und Gegenproben übersetzen.",
+  "rules": [
+    {
+      "rule_id": "SH22-W01",
+      "example_id": "W01",
+      "pages": [
+        14,
+        15
+      ],
+      "principle": "Wandbeleg = begrenzter Körper + innere Schraffur + fortgesetzte Anschlüsse + passende Lage. Farbe ist kein Materialbeleg.",
+      "evidence_to_check": [
+        "Das wiederholte schlaufenartige Muster liegt in einer benachbarten, begrenzten Schicht. Es stützt die Lesart eines mehrschichtigen Außenbauteils. Den Baustoff darf Claude ohne zugehörige Legende nicht frei benennen.",
+        "Am Ende des Wandstücks folgt ein schmales Profil mit Flügelzeichen. Die Wand wird dort nicht einfach als gleichartiger Körper fortgesetzt. Das Fenster wird gesondert gelesen; es ist kein automatisch begehbarer Durchbruch.",
+        "Die diagonalen Striche liegen nur im Bauteilstreifen. Sie füllen nicht den Raum. Eine solche Schraffur beschreibt eine geschnittene Schicht; ihre Lage innerhalb zweier Kanten ist entscheidend.",
+        "Die roten Striche liegen an ausgewählten Bauteilkanten. Zwischen Außen- und Raumseite liegt ein breites, geschlossenes Paket. Seine Ecke setzt sich in die benachbarte Fassadenrichtung fort."
+      ],
+      "reasoning": [
+        {
+          "heading": "Beobachtung: Dicke statt Einzelstrich",
+          "text": "Die Außenkante und die innere Raumkante umschließen eine belegte Bauteilfläche. Das diagonale Muster bleibt innerhalb dieser Fläche. An der Ecke knicken die Schichten gemeinsam ab. Diese Kombination ist ein starker Wandbeleg: Ein Möbel hätte hier nicht denselben durchgehenden Anschluss an zwei Fassadenrichtungen und an die anschließenden Fensterfelder."
+        },
+        {
+          "heading": "Warum die Schraffur hilft – und wo ihre Grenze liegt",
+          "text": "Schraffuren kennzeichnen im Plan verschiedene Bauteilschichten. Entscheidend ist zuerst, dass sie in einem zusammenhängenden Wandkörper liegen. Das genaue Material folgt erst aus einer passenden Legende, Bauteilnummer oder Beschreibung. Ein ähnliches Muster kann in anderen Plänen anders verwendet werden. „Sieht schraffiert aus“ ist deshalb keine sichere Materialbestimmung."
+        },
+        {
+          "heading": "Außenwand, tragend und Baustoff sind getrennte Eigenschaften",
+          "text": "Die Lage zwischen Innenraum und Außenbereich begründet „Außenwand“. Die Quelldatei führt hier auch Ebenen für tragende Außenwand und Bekleidung. Diese Information stützt die Bauteilzuordnung, ersetzt aber keine Prüfung jedes Teilstrichs: Auf derselben Ebene liegen auch Fensterzeichen. Eine tragende Schicht und die davorliegende Bekleidung sind nicht dasselbe Bauteil."
+        },
+        {
+          "heading": "Folge für den freien Boden",
+          "text": "Der Boden endet an der inneren Oberfläche des gesamten Wandpakets. Schichtzwischenräume im Schnitt sind keine Gehwege. Claude muss die ganze belegte Breite sperren und die einzelnen Schichten bei Bedarf als Unterteile speichern. Wo ein Fenster anschließt, bleibt dessen eigene Bewegungswirkung zu prüfen."
+        }
+      ],
+      "consequence": "Außenwand als flächigen Bauteilkörper erfassen. Fenster, Bekleidung und tragende Schicht bei ausreichendem Beleg getrennt zuordnen.",
+      "reject_shortcut": "Nur eine Mittellinie rot zeichnen und die restliche Wanddicke grün lassen. Ebenso falsch: jede Schraffur pauschal „Beton“ nennen.",
+      "retain_unknown": "Der vollständige Schichtenaufbau und seine Materialien sind mit dieser Übersicht allein nicht für jede Lage nachgewiesen.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-W02",
+      "example_id": "W02",
+      "pages": [
+        16,
+        17
+      ],
+      "principle": "Raumgrenze folgt der baulichen Umfassung. Einrichtung davor beeinflusst den freien Boden innerhalb dieses Raums.",
+      "evidence_to_check": [
+        "Die freien Flächen auf beiden Seiten haben unterschiedliche Raumzugehörigkeit. Die Wanddicke dazwischen bleibt gesperrt. Eine dünne Ausstattungslinie davor ist eine zweite, andersartige Grenze.",
+        "Die rote Markierung verfolgt die lange Trennzone. Sie schließt seitlich an weitere Raumgrenzen an und trennt zwei eigene Innenbereiche. Das ist die durchgehende bauliche Ebene.",
+        "Kleinere Körper und Symbole sitzen auf einer Seite der Wand. Ihre Konturen reichen in den Raum hinein. Sie belegen zusätzliche Stellfläche, verschieben aber die Wand hinter ihnen nicht.",
+        "Die erkennbare Tür sitzt am rechten Raumrand. Über diese tatsächliche Öffnung wird der Raum an den Gang angebunden. In die lange Trennwand darf keine Verbindung hineingedacht werden."
+      ],
+      "reasoning": [
+        {
+          "heading": "Zuerst den durchgehenden Zusammenhang finden",
+          "text": "Verfolge die Trennzone unabhängig von Tafel, Schrank und Sanitärsymbolen. Sie läuft über einen großen Teil der Raumbreite und schließt an die seitlichen Umfassungen an. Auf beiden Seiten liegen beschriftete Bildungsräume. Zwei Räume plus durchgehender Bauteilkörper liefern gemeinsam den Beleg einer inneren Raumtrennung."
+        },
+        {
+          "heading": "Warum der Schrank keine zweite Wand ist",
+          "text": "Der Schrank endet innerhalb des Raums, während die bauliche Wand dahinter weiterläuft. Wiederholte Einrichtungsfelder und geringere, lokale Ausdehnung stützen den Möbelcharakter. Auch ein fest eingebauter Schrank bleibt funktional Einrichtung. Er kann Boden blockieren, ohne einen zusätzlichen abgeschlossenen Raum zu bilden."
+        },
+        {
+          "heading": "Türposition unabhängig vom Raumname prüfen",
+          "text": "Ein Bildungsraum braucht einen tatsächlichen Anschluss an die Erschließung. Hier zeigt das Öffnungszeichen diesen Anschluss seitlich. Der Name des Nachbarraums oder die Nähe zweier Bodenflächen erlaubt keinen Durchtritt durch die geschlossene Trennwand. Eine Software muss den realen Öffnungsort mit beiden angrenzenden Flächen verbinden."
+        },
+        {
+          "heading": "Wandart und Wandoberfläche nicht verwechseln",
+          "text": "„Innenwand“ beschreibt die Lage. „Tragend“ beschreibt eine statische Aufgabe; dafür braucht es zusätzliche Quelle. Ein Boden- oder Deckenmaterial aus dem Raumstempel beweist kein Wandmaterial. Der Eintrag „D: Sichtbeton“ betrifft zum Beispiel die Decke, während „W: Sichtbeton“ eine Wandoberfläche benennt."
+        }
+      ],
+      "consequence": "Zwei getrennte Raumflächen, eine flächige Trennwand und gesonderte Einrichtungsobjekte davor speichern.",
+      "reject_shortcut": "Die vordere Schrankkante als gesamte Raumwand nehmen oder aus dem Deckenmaterial auf den Baustoff aller Wände schließen.",
+      "retain_unknown": "Aus dem gezeigten Raumstempel allein lässt sich der Aufbau jeder Innenwand nicht vollständig ableiten.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-W03",
+      "example_id": "W03",
+      "pages": [
+        18,
+        19
+      ],
+      "principle": "Dünne Platte + WC auf jeder Seite + Türanschluss + Wiederholung erklärt die Kabinenabgrenzung.",
+      "evidence_to_check": [
+        "Violett folgt dem Originalbogen. Er verbindet die möglichen Stellungen des Blattendes. Er ist keine abgerundete Kabinenwand und keine ausgesparte Bodenfläche.",
+        "Der blaue Strich liegt auf dem geraden beweglichen Flügel. Sein Ende sitzt am Kabineneingang. Zwischen den Trennplatten wird eine Öffnung freigehalten.",
+        "Der rote Strich folgt einer tatsächlich gezeichneten Trennkante zwischen zwei WC-Ständen. Sie läuft von der rückwärtigen Zone bis zum Türanschlag. Diese Funktion unterscheidet sie von einer beliebigen Linie.",
+        "Die gerundete Kontur und die innere Öffnung des Sanitärsymbols liegen in der Kabine an der Installationsseite. Wiederholte Kombinationen aus WC, Trennplatte und Tür ergeben eine Kabinenreihe.",
+        "Die geschichtete horizontale Zone ist von den Kabinenböden getrennt. Dort sitzen die Rückseiten der Sanitärgegenstände. Eine schmale weiße Restfläche in dieser Zone ist kein belegter Gang."
+      ],
+      "reasoning": [
+        {
+          "heading": "Die Lage zwischen zwei Nutzungsplätzen ist entscheidend",
+          "text": "Die dünne Platte trennt zwei nebeneinanderliegende WC-Symbole. Vorn endet sie am jeweiligen Türanschlag, hinten an der gemeinsamen Installationsseite. Dieses wiederholte räumliche Muster erklärt die Funktion: Sicht- und Nutzungsabgrenzung einzelner Kabinen innerhalb eines größeren WC-Raums."
+        },
+        {
+          "heading": "Dünn bedeutet nicht durchlässig",
+          "text": "Eine WC-Trennwand kann im Grundriss sehr schmal sein und trotzdem den Körperdurchtritt verhindern. Für die allgemeine Bewegung ist sie eine feste seitliche Grenze. Sie muss nicht dieselbe Dicke, Schraffur, Tragfunktion oder Höhe besitzen wie die massive Raumumfassung. Deshalb lautet die Klasse „Kabinentrennwand“ und nicht pauschal „tragende Mauer“."
+        },
+        {
+          "heading": "Die Tür macht aus der Kabine einen zugänglichen Teilbereich",
+          "text": "Das Blatt, der zugehörige Kreisbogen und die lichte Öffnung liegen zusammen am vorderen Ende der Trennplatten. Der WC-Nutzer tritt hier vom gemeinsamen Vorbereich in die Kabine. Die Platte selbst bleibt gesperrt; der Bogen bleibt ein Bewegungszeichen. Die Türöffnung wird als bedingter Übergang erfasst."
+        },
+        {
+          "heading": "Installation ist keine zusätzliche Kabine",
+          "text": "Die gegenüberliegenden WC-Reihen orientieren sich mit ihren Rückseiten zu einer tieferen Zwischenzone. Deren geschichtete und abgegrenzte Darstellung spricht für bauliche beziehungsweise technische Einbauten. Ohne normalen Zugang und Bodenbeleg entsteht daraus kein zusätzlicher begehbarer Streifen. Leitungsarten oder ein geschossübergreifender Schacht sind damit noch nicht im Einzelnen bewiesen."
+        }
+      ],
+      "consequence": "WC-Raum, Kabinen, Trennplatten, Sanitärgegenstände und Kabinentüren als zusammengehörige, unterschiedliche Objekte führen.",
+      "reject_shortcut": "Jede Kabine als eigenständigen Hauptraum zählen oder die dünnen Trennlinien ignorieren, weil sie keine breite Schraffur tragen.",
+      "retain_unknown": "Material, genaue Plattenhöhe und verdeckte Leitungsführung brauchen Detail- oder Ausstattungsangaben.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-D01",
+      "example_id": "D01",
+      "pages": [
+        20,
+        21
+      ],
+      "principle": "Der Bogen erklärt eine Bewegung. Die Tür entsteht erst aus beweglichem Blatt, passender Wandöffnung, Maßen und Raumanschluss.",
+      "evidence_to_check": [
+        "Violett folgt exakt dem Originalbogen. Während das Blatt dreht, wandert seine äußere Spitze auf diesem Bogen. Der Bogen selbst ist kein Material und hat keine Wanddicke.",
+        "Die grün gestrichelte Linie ist eine ergänzte Lehrhilfe vom Drehpunkt zum anderen Bogenende. Dort läge das Blatt quer vor der Öffnung. Die Linie ist keine zusätzlich im Original gefundene Mauer.",
+        "Die Maßangaben stehen bei dieser Öffnung. Im Zusammenhang des Türsymbols werden Breite und Höhe der Durchgangslichte gelesen. Die Höhe 210 ist keine zweite Breite und kein Bogenradius.",
+        "Der orange Kreis markiert nur den Gelenkpunkt. Von hier bis zur Spitze hat das Türblatt eine feste Länge. Derselbe Punkt ist das geometrische Zentrum des Viertelkreisbogens.",
+        "Die gerade blaue Linie ist der geöffnete Flügel. Stell dir eine feste Platte vor, die an einem Ende gehalten wird. Sie dreht, bleibt dabei gleich lang und ist keine feststehende Raumwand."
+      ],
+      "reasoning": [
+        {
+          "heading": "Warum gehören Gerade und Bogen zusammen?",
+          "text": "Ein Ende der Geraden sitzt an der Wandöffnung. Der Abstand vom Drehpunkt zur Blattspitze passt zum Radius des Bogens. Der Bogen beginnt an einer Blattstellung und endet an der anderen. Diese gemeinsame Geometrie erklärt ein drehbares Bauteil. Eine zufällige Linie neben einem Kreis wäre ohne gemeinsamen Drehpunkt und passenden Radius noch kein Türsymbol."
+        },
+        {
+          "heading": "Warum ist das hier eine Tür?",
+          "text": "Das drehbare Bauteil liegt in einer Wandunterbrechung zwischen Bildungsraum und Gang. Der zugeordnete Text „DL 90 / DL 210“ beschreibt die Durchgangslichte. Beiderseits der Öffnung schließen genutzte Bodenflächen an. Erst diese Kombination unterscheidet die Raumtür von einem ähnlich gezeichneten Fensterflügel in einer Außenwand mit Brüstung."
+        },
+        {
+          "heading": "Was bedeutet der Bogen für den Boden?",
+          "text": "Der Viertelkreis zeigt einen Bewegungsbereich. Er ist nicht mit einer massiven Viertelkreisplatte gefüllt. Deshalb darf die Software nicht die ganze Bogenfläche vom Raumboden abziehen. Für eine genaue Bewegungssimulation ist der jeweilige Zustand des tatsächlichen Türblatts relevant; der gesamte Schwenkbereich bleibt eine gesonderte Freihalte- oder Kollisionsinformation."
+        },
+        {
+          "heading": "Was darf die Darstellung nicht behaupten?",
+          "text": "Das Symbol zeigt eine zeichnerische Öffnungsstellung, keinen Live-Zustand. Ob die Tür momentan offen, verriegelt oder nur für bestimmte Nutzer freigegeben ist, steht damit nicht fest. Auch das Material des Türblatts oder ein Glasausschnitt lässt sich aus der einzelnen Linie nicht ableiten. Die Erkennung des Türtyps ist von diesen offenen Eigenschaften zu trennen."
+        }
+      ],
+      "consequence": "Drehpunkt, Blatt, Schwenkbogen, lichte Öffnung und zwei benachbarte Bodenflächen getrennt speichern. Der Übergang liegt in der Wandöffnung.",
+      "reject_shortcut": "Den Bogen zur gebogenen Wand machen, die ganze Viertelkreisfläche sperren oder jede Gerade im Symbol als zusätzliche Trennwand speichern.",
+      "retain_unknown": "Türblattmaterial, Verglasung, realer Öffnungszustand und Zugangsberechtigung sind aus diesem Symbol allein nicht bestimmt.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-D02",
+      "example_id": "D02",
+      "pages": [
+        22,
+        23
+      ],
+      "principle": "Ein Türportal trennt Raumzugehörigkeiten und verbindet ihre Bewegung. Beides ist gleichzeitig richtig.",
+      "evidence_to_check": [
+        "Hier endet das obere Wandstück an der Laibung. Eine Laibung ist die seitliche Begrenzungsfläche einer Öffnung. Sie ist fest; der anschließende Bogen ist bewegungsbezogen.",
+        "Die grüne gestrichelte Verbindung zeigt zur Erklärung die Stelle, an der die Raumgrenze durch eine Tür überbrückt wird. Die Tür bleibt als Abschluss des Raums erhalten, obwohl Bewegung möglich ist.",
+        "Die blaue Linie gehört zur Tür. Sie kann im geöffneten Zustand lokal in eine Bodenfläche hineinragen. Dieser konkrete Flügel ist von seinem gesamten möglichen Schwenkbereich zu unterscheiden.",
+        "Am unteren Ende steht der feste Wandrand mit dem Türanschlag. Die beiden Enden begrenzen die lichte Passage. Die Öffnung wird weder aus der gesamten Wandlänge noch aus der Bogenbreite abgeleitet."
+      ],
+      "reasoning": [
+        {
+          "heading": "Eine Wandöffnung ist eine Unterbrechung an der richtigen Stelle",
+          "text": "Verfolge den festen Wandkörper bis zum oberen und unteren Ende der Öffnung. Zwischen diesen Enden fehlt die gleiche durchgehende massive Trennung. Das Türsymbol besetzt genau diese Stelle. Eine Lücke durch schlechte Scanqualität oder eine sich kreuzende Maßlinie wäre kein gleichwertiger Durchgangsbeleg."
+        },
+        {
+          "heading": "Zwei Flächen müssen tatsächlich anschließen",
+          "text": "Auf der einen Seite liegt der Bildungsraum, auf der anderen die Erschließung. Claude muss prüfen, ob die lichte Passage beide Bodenflächen erreicht. Ein Türsymbol an einem Schrank oder eine Öffnung über einer hohen Brüstung würden keine gleichartige Raumverbindung herstellen. Der Fußbodenbezug ist deshalb ein eigener Teil der Entscheidung."
+        },
+        {
+          "heading": "Raumgrenze und Bewegung sind zwei verschiedene Modelle",
+          "text": "Für die Raumaufteilung wird der Türabschluss als Grenze zwischen zwei Räumen behandelt. Für die Bewegung wird an derselben Stelle eine nutzbare Verbindung vorgesehen, abhängig vom Türzustand. Würde man den Abschluss beim Bilden von Räumen einfach löschen, könnten Zimmer und Gang zu einem einzigen Raum verschmelzen."
+        },
+        {
+          "heading": "Breite erst messen, wenn Maßbezug und Nutzung klar sind",
+          "text": "Die Zahl DL 90 stützt hier die lichte Breite des Durchgangs. Für die Prüfung, ob eine bestimmte Person oder ein Hilfsmittel hindurchpasst, braucht es darüber hinaus Maßstab, reale Einbauten und Bewegungsprofil. Eine grüne Fläche beweist zunächst den vorgesehenen Bodenanschluss, nicht jede individuelle Durchfahrbarkeit."
+        }
+      ],
+      "consequence": "Ein Türportal anlegen: Anfang und Ende der lichten Öffnung, Türtyp, benachbarte Raum-IDs und passierbare Zustände.",
+      "reject_shortcut": "Raum und Gang zu einem Raum zusammenfassen, weil die Tür offen dargestellt ist, oder an einer bloßen Linienlücke eine neue Tür erfinden.",
+      "retain_unknown": "Schwellenhöhe und genaue nutzbare Breite unter allen Türstellungen müssen mit Detail und Maßangaben geprüft werden.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-D03",
+      "example_id": "D03",
+      "pages": [
+        24,
+        25
+      ],
+      "principle": "Bögen zählen genügt nicht: Entscheidend sind Anschläge, Blattlinien, gemeinsame Öffnung und zugeordnete Maße.",
+      "evidence_to_check": [
+        "Blau folgt der geraden Linie des oberen Flügels. Sein Anschlag sitzt am oberen Ende derselben Wandöffnung. Die Blattspitze bewegt sich zum gemeinsamen Schließbereich.",
+        "Bei der Tür steht DL 170 / DL 210. Die Breite gehört hier zur gemeinsamen Öffnung. Sie darf nicht für jeden Teilflügel erneut als volle Breite angesetzt werden.",
+        "Violett zeigt die beiden Bewegungsbahnen. Die Bogenrichtungen und Anschläge erklären das Öffnen der Flügel. Keiner der beiden Bögen erzeugt eine feste Rundwand im Vorraum.",
+        "Türkis folgt dem zweiten geraden Flügelstrich. Er ist in einer anderen Öffnungsstellung dargestellt und hat einen eigenen Drehpunkt am unteren Ende der gemeinsamen lichten Öffnung. Die Blattstellung darf nicht mit der Lage der festen Wand verwechselt werden."
+      ],
+      "reasoning": [
+        {
+          "heading": "Zwei Drehpunkte, ein Portal",
+          "text": "Die beiden Flügel sitzen an entgegengesetzten Enden einer einzigen Wandunterbrechung. Ihre Bogenenden liegen zum gemeinsamen Schließbereich hin. Diese zusammenhängende Geometrie unterscheidet eine zweiflügelige Tür von zwei unabhängigen Türen, die durch ein festes Wandstück voneinander getrennt wären."
+        },
+        {
+          "heading": "Das Gesamtmaß gehört zum Bauteilzusammenhang",
+          "text": "Die Beschriftung DL 170 / DL 210 ist unmittelbar an dieser Zugangsstelle angeordnet. Sie beschreibt die Öffnung als Ganzes. Die Teilbreiten einzelner Flügel müssen aus ihrer jeweiligen Geometrie oder aus einer Türliste kommen. Claude darf die Gesamtbreite weder verdoppeln noch beiden Blättern unbesehen einzeln zuweisen."
+        },
+        {
+          "heading": "Andere Angaben haben andere Aufgaben",
+          "text": "Die zusätzlichen Türkennzeichnungen betreffen Eigenschaften des Abschlusses. Sie sind keine Geometrie des Bodens. Die Erkennung muss den Text mit der Tür verknüpfen, ohne die Buchstaben oder Umrandung der Kennzeichnung als Hindernis auszuschneiden. Eine vollständige Auslegung der brandschutztechnischen Angaben ist ein eigener Fachschritt."
+        },
+        {
+          "heading": "Warum der große Bogen daneben kein Beweis für eine weitere Tür ist",
+          "text": "Im Treppenbereich sind zusätzliche sehr große Bögen gezeichnet. Ihnen darf nicht allein aufgrund ihrer Kreisform ein gewöhnliches Türblatt zugeordnet werden. Die eigene Treppendarstellung, fehlende eindeutige Türteile und der andere Zusammenhang verlangen eine getrennte Prüfung. Diese Fassung korrigiert die frühere vorschnelle Benennung als Türabschluss."
+        }
+      ],
+      "consequence": "Eine zweiflügelige Zugangstür mit zwei beweglichen Blättern und einem gemeinsamen Portal erfassen.",
+      "reject_shortcut": "Aus zwei Bögen zwei Räume erzeugen, die Öffnungsbreite verdoppeln oder jeden benachbarten Großbogen als weitere Tür klassifizieren.",
+      "retain_unknown": "Welcher Flügel im Betrieb zuerst öffnet und welche Freigaben gelten, wird nicht allein aus der Bogenform abgeleitet.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-F01",
+      "example_id": "F01",
+      "pages": [
+        26,
+        27
+      ],
+      "principle": "Tür und Fenster unterscheiden sich nicht zuverlässig am Bogen. Entscheidend sind der Bodenanschluss, der Höhenbeleg und die Funktion der Öffnung.",
+      "evidence_to_check": [
+        "Türkis markiert ausgewählte parallele Originalstriche des Fensterelements. Sie liegen zwischen den massiven Fassadenabschnitten. Ihre einzelnen Funktionen werden auf F02 weiter getrennt.",
+        "Der orange Punkt liegt dort, wo Flügel und Fassadenprofil zusammentreffen. Der Radius vom Punkt zur Blattspitze passt zum Bogen. Das ist dieselbe mechanische Grundidee wie bei einer Drehtür.",
+        "Blau liegt auf der geraden Flügellinie. Sie beginnt am Fassadenprofil und ragt in den Raum. Die Linie beschreibt den beweglichen Flügel, nicht automatisch ein begehbares Türblatt.",
+        "Violett folgt der originalen Kurve. Auch ein Fensterflügel dreht um einen Anschlag. Die gemeinsame Geometrie von Flügel, Zentrum und Radius beweist deshalb nur die Drehbewegung.",
+        "Der Höhenhinweis steht am Fensterband. Er benennt hier eine fertige Brüstungs-/Parapethöhe über dem fertigen Fußboden. Damit ist gerade kein bodengleicher normaler Personendurchgang belegt."
+      ],
+      "reasoning": [
+        {
+          "heading": "Was Tür und Fenster gemeinsam haben",
+          "text": "Beide können einen drehbaren Flügel, einen Drehpunkt und einen Kreisbogen besitzen. Diese drei Merkmale erklären zunächst eine Bewegung. Würde Claude jeden Viertelkreis als Tür lesen, würde er hier an der Außenfassade falsche Zugänge erzeugen. Die Entscheidung muss deshalb um Lage, Höhe, feste Profile und Nutzungsanschluss erweitert werden."
+        },
+        {
+          "heading": "Der Höhenbeleg löst die Mehrdeutigkeit",
+          "text": "„FPH ü. FBOK 0,85“ wird zusammen mit dem Fensterband gelesen. FPH bezeichnet hier die fertige Parapet- beziehungsweise Brüstungshöhe; FBOK ist die fertige Bodenoberkante. Die 0,85 beschreibt also einen Höhenbezug über dem Fußboden. Sie ist weder die Breite des Flügels noch die Tiefe einer Passage. Die Brüstung unterbricht die normale Gehbewegung. Die zweite Angabe RPH ü. RDOK bezieht dagegen die Rohbau-Parapethöhe auf die Rohdeckenoberkante. Fertige und rohe Höhen haben unterschiedliche Bezugsebenen; ihre Zahlen dürfen nicht ohne diesen Bezug vermischt werden."
+        },
+        {
+          "heading": "Auch das bauliche Umfeld muss passen",
+          "text": "Das Element sitzt in einer Außenfassade zwischen massiven Wandteilen. Mehrere schmale Profile setzen sich als Fensterband fort. Der Öffnungsflügel ist in dieses Band eingebunden. Diese Merkmale stützen „Fenster“. Ein bodentiefes Fenstertürelement müsste trotzdem gesondert anhand seines unteren Anschlusses, einer tatsächlichen Türfunktion und der angrenzenden Bodenfläche geprüft werden."
+        },
+        {
+          "heading": "Warum daraus keine Gehwegkante nach außen entsteht",
+          "text": "Ein Mensch bewegt sich nicht automatisch durch jedes öffenbare Bauteil. Die festgestellte Brüstung und fehlende belegte bodengleiche Türpassage verhindern die Modellierung als normalen Weg. Das Fenster darf Licht, Sicht und Lüftung ermöglichen und zugleich eine Bewegungsgrenze sein. Diese Funktionen schließen einander nicht aus."
+        }
+      ],
+      "consequence": "Fensterelement mit Drehflügel und belegtem Brüstungshinweis erfassen; keine gewöhnliche Raum-zu-Außen-Gehverbindung anlegen.",
+      "reject_shortcut": "„Viertelkreis = Tür“ oder „öffenbar = begehbar“ setzen. Ebenso falsch: 0,85 als Flügelbreite übernehmen.",
+      "retain_unknown": "Glasaufbau, Rahmenmaterial und genaue untere Anschlusskonstruktion sind hier nicht vollständig beschrieben.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-F02",
+      "example_id": "F02",
+      "pages": [
+        28,
+        29
+      ],
+      "principle": "Genau erklären heißt auch: sichtbare Linie benennen und die Grenze der daraus ableitbaren Information ausdrücklich angeben.",
+      "evidence_to_check": [
+        "Blau verfolgt eine der äußeren horizontalen Begrenzungen. Sie gehört zur schmalen konstruktiven Zone des Fensterelements. Ein Profil ist das feste oder bewegliche Einfassungsteil eines Fensterquerschnitts.",
+        "Violett markiert die zwei inneren Längsstriche. Ihre Lage in einem Fensterelement spricht für die Glas-/Füllungsdarstellung. Welche Linie eine bestimmte Scheibenoberfläche ist, belegt dieser Grundriss nicht eindeutig.",
+        "Orange hebt die kurzen Profilstriche am Ende dieses Felds hervor. Dort werden lange Füllungs-/Profilzüge eingefasst. Das hilft, den Rahmenzusammenhang zu erkennen; die exakte Profilkonstruktion braucht ein Detail.",
+        "Türkis folgt der gegenüberliegenden Originalkante. Erst mehrere zusammengehörige Striche ergeben die dargestellte Bauteildicke. Jeder davon darf nicht als eigenständige raumtrennende Wand gespeichert werden.",
+        "Der rote Pfeil zeigt auf den Beginn der geöffnet gezeichneten Flügellinie. Die sichtbare Längslinie des Blatts verrät nicht, ob das Blatt massiv, verglast oder mehrschichtig ist."
+      ],
+      "reasoning": [
+        {
+          "heading": "Von außen nach innen lesen",
+          "text": "Suche zuerst das ganze Fensterelement zwischen den Wandanschlüssen. Darin liegen schmale Profile und feine parallele Längslinien. Die äußeren Linien begrenzen die dargestellte konstruktive Zone; innenliegende Linien können Füllung beziehungsweise Verglasung darstellen. Die Funktion folgt aus der Einbettung im Fenster, nicht daraus, dass „zwei Linien immer Glas“ wären."
+        },
+        {
+          "heading": "Was „Glas“ hier belegt – und was nicht",
+          "text": "Ein Fenster kann einen Rahmen, einen Flügelrahmen und eine Füllung besitzen. Im gezeigten Grundriss ist die Glas-/Füllungszone als Teil des Fensterelements plausibel erkennbar. Eine exakte Zuordnung jeder gezeichneten Linie zu Außen-, Zwischen- oder Innenscheibe ist ohne Profil- oder Fassadendetail nicht belastbar. Claude soll den belegten Elementtyp lernen und keine erfundene Glasschichtenliste ausgeben."
+        },
+        {
+          "heading": "Was mit „Platte“ gemeint sein kann",
+          "text": "Bei einer Tür bezeichnet das Blatt den beweglichen Abschluss; es kann aus unterschiedlichen Materialien bestehen. Unter einem Fenster bezeichnet Brüstung/Parapet den festen unteren Bereich, nicht den Schwenkbogen. Ein inneres Rechteck kann wiederum eine Füllung oder ein opakes Paneel sein. Der Ausdruck „Platte“ allein ist deshalb zu ungenau: Funktion, Lage und Materialbeleg müssen getrennt angegeben werden."
+        },
+        {
+          "heading": "Warum diese Unsicherheit fachlich richtig ist",
+          "text": "Ein großer Maßstab macht Linien besser sichtbar, erzeugt aber keine fehlende Bauteilinformation. Wenn der Grundriss Rahmen und Flügel vereinfacht darstellt, darf Claude die nicht gezeichneten Details nicht ergänzen. Er kann sicher den Fensterzusammenhang, den drehbaren Flügel und den Brüstungshinweis erfassen und für das genaue Profildetail eine offene Eigenschaft hinterlegen."
+        }
+      ],
+      "consequence": "Fensterelement mit Profil-/Rahmenzone, beweglichem Flügel und zu prüfender Glas-/Füllungszone strukturieren. Einzelstriche bleiben dem Element zugeordnet.",
+      "reject_shortcut": "Vier parallele Striche als vier separate Wände oder als sicher vier Glasscheiben bezeichnen. Die Strichzahl beweist keinen Mehrscheibenaufbau.",
+      "retain_unknown": "Genauer Rahmenquerschnitt, Werkstoff, Glasanzahl, Beschichtung und etwaige opake Füllung brauchen das zugehörige Detail.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-M01",
+      "example_id": "M01",
+      "pages": [
+        30,
+        31
+      ],
+      "principle": "Möbel erkennt man besonders an ihrer Beziehung zueinander: Tischkante + Sitzsymbole + wiederholte Anordnung im Raum.",
+      "evidence_to_check": [
+        "Orange hebt die kurzen Teile an den Ecken des Stuhlsymbols hervor. Sie gehören zur differenzierten Möbeldarstellung. Aus der schematischen Draufsicht lässt sich nicht jedes Teil sicher als Bein, Armlehne oder Beschlag benennen.",
+        "Violett verfolgt die kleinen gerundeten Konturen neben der Tischkante. Die wiederkehrende Form passt zu einem Sitzmöbel. Ihre Stellung zur Tischplatte macht diese Deutung wesentlich stärker als das Rechteck allein.",
+        "Blau markiert lange horizontale Originalkanten einer Tischplatte. Die Platte liegt als eigenständiger Körper innerhalb des Raums. Der Strich ist keine fortgesetzte bauliche Trennwand.",
+        "Türkis zeigt ausgewählte Teile der nächsten Tischgruppe. Gleiche Sitzsymbole stehen in gleicher Beziehung zu weiteren Tischplatten. Wiederholung mit konsistenter Funktion stärkt die Zuordnung als Unterrichtsmöbel."
+      ],
+      "reasoning": [
+        {
+          "heading": "Ein Rechteck allein ist kein Tischbeweis",
+          "text": "Auch Schächte, Fensterfelder, Platten und Räume können rechteckig erscheinen. Hier steht das Rechteck jedoch frei innerhalb eines beschrifteten Bildungsraums. Es besitzt keine durchgehenden Wandanschlüsse oder eigene Raumtür. Die benachbarten kleinen Sitzsymbole ergeben zusammen mit der Platte ein plausibles Benutzungsmuster."
+        },
+        {
+          "heading": "Die Beziehung Tisch–Stuhl trägt die Erkennung",
+          "text": "Die Stühle sind zur Tischkante ausgerichtet und treten mehrfach in ähnlicher Größe und Anordnung auf. Eine Mauer würde nicht für jeden Sitzplatz einen eigenen gerundeten Körper benötigen. Eine Treppe hätte Stufenkanten innerhalb eines Laufs und zusätzliche Richtungs-/Steigungsmerkmale. Die Kombination aus Platte, Sitzplätzen, Wiederholung und Raumfunktion ist deshalb aussagekräftig."
+        },
+        {
+          "heading": "Die Quelldaten helfen, sind aber keine Abkürzung",
+          "text": "Die gezeigten Linien liegen in der Quelle auf der Möblierungsebene. Das ist ein zusätzlicher Herkunftsbeleg. Trotzdem darf Claude nicht jede Linie derselben Ebene als massive Bodenbelegung behandeln: Dort können auch Hilfslinien oder Beschriftungen vorkommen. Zuerst müssen zusammengehörige tatsächliche Möbelkonturen gebildet werden."
+        },
+        {
+          "heading": "Wie sich Möbel auf Raum und Bewegung auswirken",
+          "text": "Tische und Stühle bleiben Objekte innerhalb desselben Raums. Ihre Stellflächen werden für den freien Boden ausgespart; die Zwischenräume bleiben vollständig erhalten. Ein unterfahrbarer Tisch kann für bestimmte Körperteile anders wirken als ein geschlossener Schrank. Die einfache Gehflächenfassung behandelt die Möblierung konservativ als belegte Stellfläche, ohne daraus neue Zimmer zu machen."
+        }
+      ],
+      "consequence": "Tischgruppen mit einzelnen Sitzmöbeln erkennen. Möbelflächen abziehen, Raumzugehörigkeit beibehalten und freie Zwischenräume erhalten.",
+      "reject_shortcut": "Jedes Tischrechteck als Raum oder Schacht erkennen. Ebenso falsch: die ganze Möbelgruppe samt Zwischenräumen pauschal als Sperrblock entfernen.",
+      "retain_unknown": "Exakte Möbelhöhen, Unterfahrbarkeit und die Benennung jedes kleinen Beschlagstrichs sind nicht vollständig belegt.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-M02",
+      "example_id": "M02",
+      "pages": [
+        32,
+        33
+      ],
+      "principle": "Ein X ist eine Zeichensignatur ohne universelle Bedeutung. Sein Objektzusammenhang entscheidet.",
+      "evidence_to_check": [
+        "Blau hebt ausgewählte horizontale Feldkanten der Reihe hervor. Die gleichartigen, begrenzten Felder stehen an einer Wand. Sie bilden eine Ausstattungsschicht innerhalb des Raums.",
+        "Violett folgt den originalen Diagonalen eines begrenzten Möbelfelds. Das X gehört zum Symbol dieser Einrichtung. Es bedeutet nicht in jedem Plan automatisch Schacht oder Luftraum.",
+        "Rot zeigt eine ausgewählte feste Kante hinter beziehungsweise neben der Reihe. Die Möbel sind der Wand vorgelagert. Ihre Trennung von der Umfassung verhindert eine falsche Verkleinerung oder Teilung des Raums.",
+        "Türkis verfolgt die vordere lange Möbelkante. Bis hier ist die Stellfläche belegt. Vor dieser Kante setzt sich der freie Raum fort; die Grenze ist keine weitere Raumwand."
+      ],
+      "reasoning": [
+        {
+          "heading": "Warum diese Reihe als Einrichtung gelesen wird",
+          "text": "Die wiederholten Felder stehen in einer schmalen Zone entlang der Raumwand. Sie gehören zum Ausstattungsmuster des Bildungsraums und liegen auf der Möblierungsebene der Quelle. Eine eigene normale Raumerschließung fehlt für jedes einzelne Feld. Diese Kombination stützt Schrank-/Stauraumausstattung statt vieler winziger Räume."
+        },
+        {
+          "heading": "Warum das X allein nichts entscheidet",
+          "text": "Ein diagonales Kreuz kann je nach Kontext Schrankdarstellung, Durchbruch, Aussparung oder eine andere Kennzeichnung sein. Claude muss die umgebenden Konturen, Beschriftungen, Höhe und Bauteilbeziehung mitlesen. Hier ist die Einbettung in eine wiederholte Einrichtungsreihe der tragende Beleg. Dieselbe X-Form an einer technischen Durchbruchsstelle würde anders bewertet."
+        },
+        {
+          "heading": "Feste Einbauten sind weiterhin Ausstattung",
+          "text": "Ob ein Schrank beweglich oder fest eingebaut ist, ändert nicht automatisch die Raumstruktur. Er beansprucht Stellfläche und kann Wege verengen. Er schafft aber ohne eigene bauliche Umfassung keinen zusätzlichen Raum hinter jeder Front. Die Raumwand dahinter und die vordere Möbelkante werden als unterschiedliche Objekte geführt."
+        },
+        {
+          "heading": "Wie Claude ähnliche Fälle selbst prüfen soll",
+          "text": "Zuerst die ganze Reihe suchen, dann ein typisches Feld vergrößern, anschließend die Wand dahinter und den freien Boden davor verfolgen. Danach Raumname und Quellebene abgleichen. Fehlt einer dieser Zusammenhänge, ist die sichere Oberklasse „Einbau/Ausstattung“ oft besser als eine unbelegte genaue Schrankbauart."
+        }
+      ],
+      "consequence": "Die tatsächliche Schrank-/Einrichtungszone als Hindernis im bestehenden Raum führen; vordere Kante und dahinterliegende Wand getrennt halten.",
+      "reject_shortcut": "Jedes X automatisch „Schacht“ nennen oder aus jedem Frontfeld einen eigenen Raum erzeugen.",
+      "retain_unknown": "Türart der Schränke, Innenaufteilung und Möbeltiefe außerhalb des dargestellten Maßbezugs bleiben gesondert zu prüfen.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-M03",
+      "example_id": "M03",
+      "pages": [
+        34,
+        35
+      ],
+      "principle": "Wiederholte Linien werden durch ihren Rahmen, ihre Anschlüsse, Richtungshinweise und den passenden Raumtext verständlich.",
+      "evidence_to_check": [
+        "Rot folgt ausgewählten äußeren Wandteilen. Sie begrenzen die Garderobe. Die inneren Bänke sind davon abgesetzt und machen aus dem Raum keine Reihe kleiner Zimmer.",
+        "Blau markiert ausgewählte lange Striche in der mittleren Reihe. Sie liegen innerhalb eines begrenzten Einrichtungsobjekts. Sie sind nicht die Stufenkanten eines von Podest zu Podest laufenden Treppenlaufs.",
+        "Der orange Unterstrich weist auf den Raumstempel. Name und Ausstattung passen zueinander. Der Text unterstützt die geometrische Erkennung; er ersetzt die Kontrolle der Einzelobjekte nicht.",
+        "Violett hebt kurze Querbauteile derselben Reihe hervor. Regelmäßige Einzelfelder und kleine Befestigungszeichen stützen die Lesart als Garderobenausstattung. Die genaue Möbelkonstruktion bleibt eine Ausstattungsfrage.",
+        "Türkis markiert Teile der zweiten freistehenden Reihe. Der Boden setzt sich seitlich und dazwischen fort. Die Reihen enden im Raum, statt eine vollständige Wand von Rand zu Rand zu bilden."
+      ],
+      "reasoning": [
+        {
+          "heading": "Warum nicht einfach „viele Linien = Treppe“?",
+          "text": "Die Längsstriche liegen hier in schmalen Möbelkörpern mit wiederholten Querbauteilen. Ein Treppenlauf würde andere zusätzliche Merkmale erwarten lassen: Trittfolge in Laufrichtung, Start-/Richtungszeichen, Steigungsangabe und Anschluss an Podeste. Diese Merkmale sind an den Bänken nicht gemeinsam belegt. Die reine Regelmäßigkeit entscheidet also nicht."
+        },
+        {
+          "heading": "Wieso „Garderobenausstattung“ plausibel ist",
+          "text": "Der Raum ist ausdrücklich als Garderobe beschriftet. Mehrere längliche Einrichtungsreihen stehen an den Wänden und frei im Inneren. Ihre Geometrie wiederholt sich auf der Möblierungsebene. Raumfunktion, Stellung und Bauteilsignatur passen zusammen. Damit ist die Oberklasse zuverlässig; jedes einzelne Rohr, jede Latte oder jeder Haken braucht nicht unbelegt benannt zu werden."
+        },
+        {
+          "heading": "Wie man die begehbaren Zwischenräume erkennt",
+          "text": "Die Reihen besitzen klar begrenzte Enden. Zwischen ihnen ist kein weiterer fester Bauteilkörper gezeichnet. Diese Bodenbereiche sind mit den seitlichen Türen und dem übrigen Garderobenboden verbunden. Deshalb werden alle freien Streifen und Aufweitungen grün, nicht nur eine gewählte Linie durch die Mitte."
+        },
+        {
+          "heading": "Wie man die Aussage korrekt begrenzt",
+          "text": "Die Draufsicht zeigt die Möblierung, aber keine vollständige Höhen- oder Benutzungsinformation. Eine Bank kann Sitzfläche, Träger und darüberliegende Teile besitzen. Für die einfache Personengehfläche wird ihre Stellzone ausgespart. Ob darunter Stauraum liegt oder welche Teile kopfhoch sind, wird nicht aus dem Grundriss geraten."
+        }
+      ],
+      "consequence": "Garderobe als Raum, Reihen als Ausstattung und freie Zwischenräume als zusammenhängenden Boden führen.",
+      "reject_shortcut": "Parallele Linien automatisch als Treppe lesen oder alle Zwischenräume zwischen den Bänken pauschal sperren.",
+      "retain_unknown": "Die exakte Bauart einzelner Garderobenelemente braucht Möbel- oder Ausstattungsdetails.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-S01",
+      "example_id": "S01",
+      "pages": [
+        36,
+        37
+      ],
+      "principle": "Sanitärerkennung braucht Form + innere Details + Orientierung zur Installation + passenden Nutzungszusammenhang.",
+      "evidence_to_check": [
+        "Türkis markiert die Beckenlinien am linken Vorbereich. Das annähernd rechteckige Becken besitzt eine innere Kontur und ein kleines Armatur-/Anschlusszeichen. Diese Kombination unterscheidet es von einem leeren Möbelrechteck.",
+        "Blau folgt den gerundeten Außen- und Innenkonturen eines WC-Symbols. Das längliche Becken sitzt mit seinem hinteren Anschluss zur Installationsseite. Es ist ein Gegenstand innerhalb einer Kabine.",
+        "Rot zeigt einzelne Kanten der horizontalen Rückwand-/Installationszone. Der gezeichnete Zwischenraum ist baulich und technisch belegt. Er gehört nicht zur freien Bewegung zwischen den beiden WC-Räumen.",
+        "Violett hebt ausgewählte Anschlussteile an der unteren WC-Reihe hervor. Die WC-Gegenstände stehen mit ihren Rückseiten an derselben technischen Zwischenzone. Ihre Vorderseiten zeigen zu den jeweiligen Kabinentüren."
+      ],
+      "reasoning": [
+        {
+          "heading": "Woran man das WC-Symbol erkennt",
+          "text": "Die äußere gerundete Form umschließt eine kleinere innere Beckenöffnung. Der rückwärtige Teil liegt an einer Installationswand; der freie vordere Teil zeigt in die Kabine. Mehrere gleiche Symbole wiederholen sich. Kabinen, Türlage und Raumtext „WC“ bestätigen die Interpretation. Ein einzelnes Oval ohne diesen Zusammenhang wäre noch kein sicherer WC-Nachweis."
+        },
+        {
+          "heading": "Woran man das Waschbecken erkennt",
+          "text": "Die äußere und innere Beckenkontur bilden zusammen eine Schale in Draufsicht. Das kleine Armaturzeichen sitzt auf der Wandseite. Das Becken liegt im gemeinsamen Vorbereich, wo mehrere Kabinenbenutzer es erreichen. Geometrie, Armatur, Anschlusslage und Sanitärkontext ergeben den Beleg. Nicht jedes Rechteck mit einer Innenlinie ist deshalb automatisch ein Waschbecken."
+        },
+        {
+          "heading": "Warum ein Sanitärsymbol keinen WC-Raum beweist",
+          "text": "Auch Küchen, Labore und Putzräume besitzen Becken. Ein Becken allein sagt zunächst „Sanitärgegenstand“, nicht „Toilette“. Die Raumfunktion wird erst mit vollständiger Ausstattung, Raumstempel und Umfassung bestimmt. Im Druckerraum daneben dürfen Möbel nicht zu WCs werden, nur weil benachbarte Räume Sanitärbereiche sind."
+        },
+        {
+          "heading": "Wie der Boden um Sanitärgegenstände behandelt wird",
+          "text": "Die belegten Grundflächen werden aus der allgemeinen freien Bodenfläche ausgespart. Der Vorbereich und die Zugänge zu den Kabinen bleiben erhalten. Eine an der Wand hängende Ausführung kann unten teilweise frei sein; ohne Höhen- und Bewegungsmodell wird daraus aber keine normale Personengehfläche unter dem Gegenstand konstruiert."
+        }
+      ],
+      "consequence": "Sanitärgegenstände als eigene Objekte mit Typ, Orientierung und Anschlussseite erfassen. Die WC-Gruppe bleibt ein Raum mit Kabinenstruktur.",
+      "reject_shortcut": "Jede ovale Form als WC oder jedes Becken als Beweis für einen WC-Raum behandeln.",
+      "retain_unknown": "Montagehöhe, verdeckte Leitungen, Fabrikat und genaue technische Anschlüsse sind aus dem Symbol nicht vollständig abzulesen.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-S02",
+      "example_id": "S02",
+      "pages": [
+        38,
+        39
+      ],
+      "principle": "Wenn Raumtext und Ausstattung widersprechen, muss Claude die Zuordnung erneut prüfen, statt die Geometrie passend zu erfinden.",
+      "evidence_to_check": [
+        "Türkis folgt dem Bogen der mittleren Raumtür. Die Tür erschließt den Druckerraum vom Gang. Sie begründet einen eigenen Raumanschluss, auch wenn der Raum sehr klein ist.",
+        "Orange verfolgt ein Stück einer vorhandenen Zuordnungslinie. Sie verbindet die Schrift im größeren Umfeld mit dem betreffenden kleinen Raum. Die nächste Überschrift ist nicht automatisch die richtige.",
+        "Blau markiert die Sanitärkonturen im linken kleinen Raum. Tür, Waschbecken und WC-Unterteilung bilden eine zusammenhängende Ausstattung, die zur WC-Nutzung passt.",
+        "Violett hebt Teile der zwei Einrichtungsfelder im mittleren Raum hervor. Diese liegen innerhalb einer eigenen Umfassung. Die benachbarten WC-Räume machen daraus keinen dritten Sanitärraum."
+      ],
+      "reasoning": [
+        {
+          "heading": "Zuerst die kleinen Umfassungen trennen",
+          "text": "Die drei nebeneinanderliegenden Bereiche besitzen unterschiedliche Grenzen und Zugänge. Diese geometrischen Räume werden zuerst bestimmt. Danach wird geprüft, welcher Raumstempel und welche Ausstattung zu welchem Bereich gehören. Gemeinsame Nachbarschaft ersetzt keine Raumzuordnung."
+        },
+        {
+          "heading": "Ausstattung als Gegenprobe zum gelesenen Namen nutzen",
+          "text": "Im WC-Bereich passen Becken, WC-Symbol und Kabinenunterteilung zur Beschriftung. Im Druckerraum stehen andere Einrichtungsfelder; ein WC-Symbol fehlt dort. Wenn die Texterkennung dem mittleren Raum einen WC-Namen zuweist, muss dieser Widerspruch auffallen. Die Software darf den ersten gelesenen Text nicht ungeprüft als Wahrheit festschreiben."
+        },
+        {
+          "heading": "Warum Textzeiger wichtiger als Abstand sein können",
+          "text": "Bei kleinen Räumen ist innerhalb der Bodenfläche wenig Platz für Schrift. Deshalb stehen Teile der Beschriftung außerhalb und werden über Linien zugeordnet. Claude muss solche Linien bis zum Endpunkt verfolgen. Bei mehreren möglichen Zielen bleibt die Zuordnung offen, bis Grenze, Tür und Ausstattung gemeinsam passen."
+        },
+        {
+          "heading": "Abkürzungen nicht überdehnen",
+          "text": "Die Bezeichnung „WC b“ wird zunächst genau so übernommen. Aus einem einzelnen Buchstaben darf nicht ohne weitere Merkmale eine vollständig geprüfte Barrierefreiheit folgen. Ebenso ist „WC päd“ ein Nutzungsname, kein Hinweis auf Wandmaterial. Raumname, Ausstattung und technische Eigenschaften werden in getrennten Feldern geführt."
+        }
+      ],
+      "consequence": "Jeden kleinen Raum mit seiner tatsächlichen Tür, seinem zugeordneten Stempel und seiner Ausstattung führen.",
+      "reject_shortcut": "Alle drei Räume zu einer WC-Gruppe verschmelzen oder den nächstgelegenen Text automatisch übernehmen.",
+      "retain_unknown": "Die vollständigen Anforderungen an eine besondere WC-Ausführung sind kein Ergebnis bloßer Symbolerkennung.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-M04",
+      "example_id": "M04",
+      "pages": [
+        40,
+        41
+      ],
+      "principle": "Raumfunktion entsteht aus zugeordnetem Namen und passender Ausstattung; die Raumgrenze entsteht aus baulichen Grenzen.",
+      "evidence_to_check": [
+        "Blau hebt die Kreise eines Kochfeldsymbols hervor. Mehrere große Kreise in einem begrenzten Feld und die kleinen Bedienelemente ergeben eine Gerätesignatur. Einzelne Kreise allein wären zu unspezifisch.",
+        "Türkis markiert ein weiteres gleichartiges Gerätefeld. Die geordnete Wiederholung in einem beschrifteten Lehrraum stützt die Nutzung als Unterrichtsküche.",
+        "Orange unterstreicht den Nutzungsnamen. Er bestätigt die aus den Gerätesymbolen hergeleitete Funktion. Der Raum wird trotzdem durch Wände und Zugang begrenzt, nicht durch das Schriftfeld.",
+        "Violett hebt einzelne Konturen der unteren Tisch-/Stuhlgruppe hervor. Das ist zusätzliche Ausstattung im selben Raum. Ein Tisch bildet keine neue Raumgrenze zwischen Küche und Sitzbereich."
+      ],
+      "reasoning": [
+        {
+          "heading": "Vom Symbol zum Gerät",
+          "text": "Ein Kochfeld wird hier durch mehrere kreisförmige Kochzonen und eine Reihe kleiner Bedienelemente in einer Gerätefläche dargestellt. Diese Kombination ist charakteristischer als „Rechteck“ oder „Kreis“ allein. Wiederholte gleichartige Felder stützen die Lesart. Die Zahl der gezeichneten Kreise ist eine Symbolinformation, kein Nachweis eines bestimmten Herstellers."
+        },
+        {
+          "heading": "Vom Gerät zur Raumfunktion",
+          "text": "Die Beschriftung „Lehrküche“ passt zur Anordnung mehrerer Kochstellen und Arbeits-/Sitzbereiche. Text und Ausstattung bestätigen sich gegenseitig. Die Software soll zuerst Geräte und Möbel als Objekte erkennen und daraus die Nutzung plausibilisieren. Sie soll nicht alle Linien als „Küche“ überspringen, nur weil der Raumname bereits bekannt ist."
+        },
+        {
+          "heading": "Kein neuer Raum hinter jeder Arbeitskante",
+          "text": "Arbeitsflächen und Einbauten belegen Boden innerhalb der Lehrküche. Ohne bauliche Trennung werden sie nicht zu eigenständigen Zimmern. Der Boden zwischen ihnen bleibt zusammenhängend, soweit keine weitere Barriere oder Höhenänderung belegt ist. Die allgemeine Raumfläche ist größer als ihre freie Bewegungsfläche."
+        },
+        {
+          "heading": "Auf den Fachraum daneben übertragen",
+          "text": "Im benachbarten Physik-/Chemie-/Biologieraum 3.27 können Arbeitstische und Becken ähnlich erscheinen. Dort sprechen Raumtext, Anordnung und besondere Einbauten für eine andere Nutzung. Ein Becken macht ihn nicht zur Küche und nicht zum WC. Die Geometrie der Raumgrenze wird unabhängig von der Nutzungsentscheidung geprüft."
+        }
+      ],
+      "consequence": "Kochstellen, Arbeitsflächen und Sitzmöbel als Ausstattung erfassen; die Nutzung Lehrküche durch den Raumstempel bestätigen.",
+      "reject_shortcut": "Jede Arbeitsinsel als Zimmer zählen oder ein Becken allein zur Entscheidung „Küche“ verwenden.",
+      "retain_unknown": "Anschlussarten, Gerätefabrikate und genaue Aufbauhöhen sind in dieser Grundrissdarstellung nicht vollständig belegt.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-T01",
+      "example_id": "T01",
+      "pages": [
+        42,
+        43
+      ],
+      "principle": "Treppenbeleg = Trittfolge + Laufbegrenzung + Richtungszeichen + STG-Angabe + passender Treppentext.",
+      "evidence_to_check": [
+        "Orange markiert die zusammengehörigen Richtungszeichen des linken Laufs. Vom unteren Startpunkt führt die Linie nach Blatt-oben. Die Nummern steigen in derselben Richtung von 1 zu 13.",
+        "Violett zeigt auf die Steigungsangabe im Lauf. STG bezeichnet die Steigungen. 15 und 30 beschreiben hier das Steigungsverhältnis: Höhe einer Steigung und Tiefe des Auftritts im üblichen Zentimeterbezug.",
+        "Blau folgt ausgewählten Originalkanten des linken Laufs. Sie liegen quer zur Laufrichtung und in regelmäßiger Folge zwischen den Laufseiten. Jede Folge gehört zu einem Höhenwechsel, nicht zu vielen Zimmern.",
+        "Rot verfolgt ausgewählte originale Geländerkanten in der Mitte. Zwischen den Läufen darf kein seitlicher Durchgang über Stufen und Sicherung erfunden werden. Die Läufe hängen über ihre tatsächlichen Podeste zusammen.",
+        "Türkis weist auf den unteren ebenen Bereich mit „3.006 Stiege 2“. Dort fehlt die regelmäßige Trittfolge. Der Stempel bestätigt die Treppennutzung und nennt außerdem Boden und Wandoberfläche."
+      ],
+      "reasoning": [
+        {
+          "heading": "Die Treppensignatur besteht aus mehreren Belegen",
+          "text": "Regelmäßige Querlinien allein könnten auch Latten oder Möbel sein. Hier liegen sie in zwei begrenzten Läufen, begleitet von Stufennummern, Start-/Richtungszeichen und der Angabe „13 STG 15/30“. Der Raumstempel nennt zusätzlich „Stiege 2“. Diese unabhängig voneinander passenden Merkmale machen die Treppenerkennung nachvollziehbar."
+        },
+        {
+          "heading": "Was eine einzelne Stufe bedeutet",
+          "text": "Im Grundriss sieht man die Kante einer Trittfläche von oben. Die Höhe selbst ist in dieser Ansicht nicht unmittelbar sichtbar; sie wird durch die Steigungsangabe beschrieben. Mehrere eng benachbarte Striche können Vorderkante und weitere Bauteilkanten derselben Stufe darstellen. Deshalb ist „Anzahl aller Striche = Anzahl der Steigungen“ falsch."
+        },
+        {
+          "heading": "So liest man die Richtung hier",
+          "text": "Links liegen die kleineren Stufennummern unten und die höheren oben; die Pfeilspitze zeigt ebenfalls nach Blatt-oben. Rechts beginnt die Nummernfolge oben und läuft nach unten. Die Zeichen beschreiben die Steigrichtung entlang des jeweiligen Laufs. Wer denselben Lauf in Gegenrichtung benutzt, steigt ab. Blatt-oben und Gebäude-oben sind unterschiedliche Begriffe."
+        },
+        {
+          "heading": "Podeste verbinden, Geländer trennen",
+          "text": "Ein Podest ist ein ebener Anschluss- oder Umlenkbereich ohne fortlaufende Trittfolge. Die Seitenbegrenzungen und das mittlere Geländer verhindern einen willkürlichen Querwechsel zwischen Läufen. Claude soll Läufe und Podeste als zusammengehörige Höhenverbindung modellieren, statt alle grünen Teilflächen zu einem gleich hohen Gang zusammenzuschütten."
+        }
+      ],
+      "consequence": "Zwei Treppenläufe, ihre Stufengeometrie, Richtungszeichen, Podeste und seitlichen Begrenzungen erfassen.",
+      "reject_shortcut": "Jede Querlinie als Wand behandeln oder zwischen den Läufen direkt über die mittlere Sicherung verbinden.",
+      "retain_unknown": "Welcher konkrete Anschluss vom 3. OG zum 2. OG oder zu einer höheren Ebene führt, muss mit Höhen und passenden Anschlussplänen abgeglichen werden.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-T02",
+      "example_id": "T02",
+      "pages": [
+        44,
+        45
+      ],
+      "principle": "Richtung im Blatt, Steigrichtung und Zielgeschoss müssen drei getrennte Angaben sein.",
+      "evidence_to_check": [
+        "Blau markiert die originale rechte Lauflinie mit ihren Richtungsteilen. Die Nummern steigen dort von unten nach oben. Beide Läufe müssen daher getrennt orientiert werden.",
+        "Orange hebt originale Lauflinien und Pfeilteilstücke hervor. Die Nummern beginnen oben mit 1 und nehmen nach unten zu. Die Pfeilrichtung ist deshalb nicht pauschal mit dem oberen Blattrand gleichzusetzen.",
+        "Violett verfolgt die schrägen Originalstriche durch den linken Lauf. Die Trittfolge und die Lauflinie setzen sich beiderseits fort. Das ist eine Unterbrechung der Darstellung, keine neu erkannte schräge Mauer.",
+        "Rot folgt einer der langen Geländerkanten zwischen den Läufen. Sie ist als eigene Sicherung zu lesen. Ein farbig freier Treppenlauf auf beiden Seiten erlaubt keinen seitlichen Kurzschluss.",
+        "Türkis unterstreicht den Raumstempel im ebenen Bereich. „B: Feinsteinzeug“ beschreibt den Boden; „W: Sichtbeton“ beschreibt eine Wandoberfläche. Die Buchstaben legen fest, zu welchem Bauteil die Materialangabe gehört."
+      ],
+      "reasoning": [
+        {
+          "heading": "Was am Bruchzeichen überprüft wird",
+          "text": "Der schräge Streifen schneidet die sonst gleichmäßig fortlaufende Stufenfolge. Auf beiden Seiten bleiben Laufbreite, Trittfolge und Richtungssystem nachvollziehbar. Dazu kommt die eindeutige Treppenbeschriftung. Diese Fortsetzungsbeziehung spricht für einen Darstellungsbruch. Ohne Treppenkontext dürfte dieselbe schräge Linie nicht automatisch so benannt werden."
+        },
+        {
+          "heading": "Warum die Pfeillinie mehrfach beginnen kann",
+          "text": "Ein unterbrochen dargestellter Lauf kann in getrennten Abschnitten gezeigt werden. Dann erscheinen Richtungszeichen in mehreren Teilstücken. Claude soll die bauliche Fortsetzung über Stufennummerierung, Laufkanten und Symbolzusammenhang prüfen. Er darf nicht aus jedem neuen Kreis eine weitere unabhängige Treppe erzeugen."
+        },
+        {
+          "heading": "Wie man aufwärts und abwärts präzise formuliert",
+          "text": "Für einen bestätigten Steigungspfeil gilt die Richtung entlang des Laufs zur höheren Stufenfolge. In Gegenrichtung nimmt die Höhe ab. Hier liegt diese Richtung links anders auf dem Blatt als rechts. Die Angabe muss daher lauten: „linker Lauf, zur Pfeilspitze nach Blatt-unten“, nicht bloß „die Treppe geht nach unten“."
+        },
+        {
+          "heading": "Warum das Zielgeschoss eine zweite Entscheidung bleibt",
+          "text": "Eine Zeichnung kann Teile oberhalb und unterhalb ihrer Schnittebene enthalten. Um den tatsächlich vom 3.-OG-Boden abgehenden Lauf sicher dem Nachbargeschoss zuzuordnen, braucht man die Höhen der angeschlossenen Podeste und gegebenenfalls den Gegenplan oder Schnitt. Die sichtbare Steigrichtung ist bereits verwertbar; eine unbelegte Geschossnummer wäre trotzdem falsch."
+        }
+      ],
+      "consequence": "Läufe getrennt orientieren und den Darstellungsbruch als Zeichen führen. Stufen, Geländer und Podest behalten ihre eigene Geometrie.",
+      "reject_shortcut": "Die schräge Unterbrechung als Quermauer sperren oder die Pfeilrichtung mit einer Zielgeschossnummer gleichsetzen.",
+      "retain_unknown": "Die genaue Zuordnung aller sichtbaren und projizierten Laufteile zu den Geschossen ist ohne ergänzenden Höhenabgleich offen.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-T03",
+      "example_id": "T03",
+      "pages": [
+        47,
+        48
+      ],
+      "principle": "Stufentext erklärt die Höhendifferenz; Anschlusspläne und Höhen erklären, welche Geschosse verbunden sind.",
+      "evidence_to_check": [
+        "Blau markiert ausgewählte querliegende Stufenlinien im begrenzten Treppenfeld. Der Unterschied zur Bank liegt im Gesamtsystem aus Lauf, Anschlüssen und Steigungsangaben.",
+        "Orange folgt der originalen horizontalen Lauflinie und ihren Richtungsteilen. Die sichtbare Pfeilrichtung liegt nach rechts im Blatt. Sie ist keine allgemeine Richtungsangabe für alle Außentreppen.",
+        "Türkis unterstreicht die zugehörige Bezeichnung. Der Text bestätigt die Objektart und die lokale Identität. Er ist kein ausreichender Beleg für die Endhöhe oder das Zielgeschoss.",
+        "Violett weist auf die Steigungsangabe. Stufenzahl und Verhältnis bestätigen, dass die regelmäßigen Linien einen Höhenwechsel darstellen. Ein Bodenbelag hätte keinen solchen Steigungstext."
+      ],
+      "reasoning": [
+        {
+          "heading": "Warum der lange Streifen eine Treppe ist",
+          "text": "Er besitzt eine durchgehende, begrenzte Trittfolge, einen Laufpfeil und die explizite Beschriftung „Stiege 4“. Dazu kommt „26 STG 15/30“. Mehrere voneinander unabhängige Hinweise stimmen überein. So wird eine Treppe auch dann erkannt, wenn sie im Plan anders orientiert ist als die innere Stiege."
+        },
+        {
+          "heading": "Was aus den 26 Steigungen folgt",
+          "text": "Im hier verwendeten Zentimeterbezug ergibt 26 × 15 cm rechnerisch 3,90 m relativen Höhenunterschied für die so bezeichnete Stiegenfolge. Das ist ein Konsistenzwert, kein selbstständiger Beweis für einen bestimmten Geschossanschluss. Zunächst muss klar sein, welche vollständig bezeichnete Folge mit „26 STG“ gemeint ist."
+        },
+        {
+          "heading": "Beide Laufenden verfolgen",
+          "text": "Eine funktionierende Höhenverbindung braucht Anfang und Ende. Claude muss an beiden Seiten prüfen, welches Podest oder welcher Außenboden tatsächlich anschließt. Ein Ende kann in der Darstellung unterbrochen oder auf einer anderen Höhenlage liegen. Eine rein zweidimensionale Berührung von Linien reicht nicht, um gleich hohe Bodenflächen zusammenzufügen."
+        },
+        {
+          "heading": "Begehbare Treppe ist nicht ebener Gang",
+          "text": "Die Trittflächen sind grundsätzlich für das Begehen vorgesehen, aber ihre Höhe ändert sich. Die grüne Darstellung darf die Treppe deshalb nicht als barrierefreien, waagerechten Bodendurchgang codieren. Laufneigung, Stufenfolge und Nutzerprofil bleiben zusätzliche Eigenschaften der Verbindung."
+        }
+      ],
+      "consequence": "Außenstiege mit geordnetem Lauf, relativer Steigungsinformation und separat zu prüfenden Endanschlüssen erfassen.",
+      "reject_shortcut": "Die Stufen in viele schmale Räume zerlegen oder die gesamte Treppe als ebene Gangfläche speichern.",
+      "retain_unknown": "Absolute Anfangs- und Endhöhe sowie die gesicherte Zielgeschoss-ID benötigen ergänzende Anschlussbelege.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-T04",
+      "example_id": "T04",
+      "pages": [
+        49,
+        50
+      ],
+      "principle": "Ein gleiches Symbolmuster erlaubt dieselbe Objektklasse – es beweist nicht dieselben Anschlüsse.",
+      "evidence_to_check": [
+        "Orange hebt Teile der Lauflinie hervor. Getrennte Zeichen können zusammengehörige Abschnitte eines unterbrochen dargestellten Laufs beschreiben. Sie werden anhand der Trittfolge verbunden.",
+        "Violett folgt den schrägen Originalteilen im Treppenfeld. Fortgesetzte Stufen und Richtungsteile auf beiden Seiten zeigen: Der Bruch betrifft die Darstellung, nicht eine beliebig ergänzte massive Sperre.",
+        "Türkis unterstreicht den zugehörigen Zahlenbereich. Die Angabe 26 STG / 15/30 liefert denselben Typ von Höheninformation, ohne dadurch die räumlichen Anschlüsse von Stiege 4 zu übernehmen.",
+        "Blau markiert ausgewählte reale Querlinien des linken Abschnitts. Sie gehören zu einem begrenzten Lauf. Der Text „Stiege 3“ bestätigt die gleiche Bauteilklasse wie bei Stiege 4."
+      ],
+      "reasoning": [
+        {
+          "heading": "Ein gelerntes Muster übertragen, nicht eine Lage kopieren",
+          "text": "Stiege 3 hat dieselbe grundlegende Signatur wie Stiege 4: begrenztes Stufenfeld, Richtungszeichen, Steigungsangabe und eindeutiger Name. Die Erkennung kann diese Merkmalskombination wiederverwenden. Sie darf aber weder die Koordinaten noch die Endanschlüsse einer anderen Treppe kopieren."
+        },
+        {
+          "heading": "Unterbrechung mit Fortsetzung belegen",
+          "text": "Eine schräge Linie innerhalb des Laufs wird durch den Zusammenhang als Darstellungsbruch interpretiert: Stufenabstände, seitliche Kanten und Laufrichtung setzen sich sinnvoll fort. Fehlt diese Fortsetzung, muss die Bedeutung neu geprüft werden. „Schräg in der Treppe“ allein ist kein universelles Bruchzeichen."
+        },
+        {
+          "heading": "Außenerschließung und Stiegenlauf getrennt halten",
+          "text": "Die benachbarte Außenerschließung F3.05 ist eine Bodenfläche. Die Treppe ist ein Objekt mit Höhenänderung. Am belegten Anschluss verbindet sie die Bodenfläche mit einer anderen Ebene. Der Lauf ist deshalb ein eigener Verbindungstyp und kein beliebig grüner Streifen, durch den jede Bewegungsart ungehindert laufen kann."
+        },
+        {
+          "heading": "Die offenen Höhenfragen explizit speichern",
+          "text": "Auch wenn Richtung und Stufenzahl lesbar sind, kann die absolute Endhöhe fehlen. Dann wird „Zielgeschoss ungeklärt“ gespeichert. Das verhindert falsche Routen zwischen Geschossen. Die vorhandene Information bleibt nutzbar: Bauteilklasse, Grundfläche, Trittfolge und relative Steigungsdaten sind bereits erkannt."
+        }
+      ],
+      "consequence": "Außenstiege 3 eigenständig verorten und ihre Anschlüsse separat von Stiege 4 prüfen.",
+      "reject_shortcut": "Die Daten einer ähnlich aussehenden Stiege vollständig kopieren oder aus einem Bruchzeichen eine Wand erzeugen.",
+      "retain_unknown": "Absolute Höhen und Verbindungen werden durch diese einzelne Draufsicht nicht vollständig aufgelöst.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-T05",
+      "example_id": "T05",
+      "pages": [
+        51,
+        52
+      ],
+      "principle": "Eine gute Erkennung benennt nicht mehr, als ihre Belege tragen. Ungeklärte Zeichen dürfen keine erfundenen Durchgänge erzeugen.",
+      "evidence_to_check": [
+        "Violett liegt auf den tatsächlichen Kurventeilen. Die Kreisform ist sichtbar. Damit ist zunächst nur eine Kurve in der Treppendarstellung nachgewiesen, noch keine gewöhnliche Drehtür.",
+        "Blau zeigt eine lange angrenzende Originalkante des Treppenfelds. Der Bogen muss in diesem baulichen Zusammenhang untersucht werden. Er wird nicht unabhängig davon wie die danebenliegenden Raumtüren gelesen.",
+        "Orange zeigt auf das Richtungszeichen am Lauf. Ein Treppenpfeil hat eine andere Aufgabe als ein Türschwenkbogen. Die räumliche Überlagerung macht aus den verschiedenen Symbolen kein einziges Türbauteil."
+      ],
+      "reasoning": [
+        {
+          "heading": "Die vorherige Benennung war zu sicher",
+          "text": "Die ältere Lernfassung hat diesen Großbogen sinngemäß als Abschluss im Treppenbereich beschrieben. Für eine gewöhnliche Tür mit eindeutigem Blatt, Anschlag, lichter Öffnung und passender Türbeschriftung reicht der hier untersuchte Befund nicht aus. Diese Revision nimmt die zu genaue Behauptung zurück und zeigt stattdessen den tatsächlich gesicherten Zusammenhang."
+        },
+        {
+          "heading": "Warum eine Kreisform nicht genügt",
+          "text": "Eine Drehtür braucht einen plausiblen Drehpunkt, ein gerades Blatt in passender Länge und eine zugehörige Öffnung. Der Großbogen wird hier zusammen mit den Treppenobjekten geführt. Eine eindeutige Türmechanik darf nicht nur deshalb angenommen werden, weil andere Viertelkreise im Plan Türen darstellen."
+        },
+        {
+          "heading": "Welche Daten trotzdem sicher erhalten bleiben",
+          "text": "Die Kurventeile und ihre Lage zur Treppe sind sichtbar und können geometrisch erfasst werden. Die Quellebene „410 Treppe“ stützt die Zugehörigkeit zur Treppendarstellung. Sie beweist allein jedoch nicht die genaue bauliche Funktion jedes Bogens. Das Objekt bleibt deshalb als ungeklärtes Darstellungselement an der Treppe referenziert."
+        },
+        {
+          "heading": "Wie die Software mit diesem Fall weiterarbeitet",
+          "text": "Die unbekannte Kurve darf weder eine neue massive Raumgrenze noch eine zusätzliche Türverbindung erzeugen. Für die Fußboden- und Raumlogik werden die nachgewiesenen festen Grenzen, Stufen, Podeste und wirklichen Zugangstüren verwendet. Soll der Bogen baulich benannt werden, muss ein zugehöriges Treppendetail oder eine Erläuterung des Planverfassers herangezogen werden."
+        }
+      ],
+      "consequence": "Die Kurve geometrisch erhalten und mit der Treppe verknüpfen; ihre genaue Funktion offen führen.",
+      "reject_shortcut": "Alle großen Bögen zu Türen erklären, obwohl kein vollständiger Türbeleg vorliegt.",
+      "retain_unknown": "Die genaue Bedeutung dieser Großbogendarstellung ist aus dem vorliegenden Ausschnitt nicht ausreichend belegt.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-L01",
+      "example_id": "L01",
+      "pages": [
+        53,
+        54
+      ],
+      "principle": "Liftbeleg = innere Kabine + feste Umfassung + Türzone + typische Maß-/Kapazitätsangaben. Schachtfläche ist keine allgemeine Gehfläche.",
+      "evidence_to_check": [
+        "Türkis verfolgt die kurzen horizontalen Teile im oberen Zugang. Die Kabine ist nur über diese zugeordnete Öffnung mit dem Vorraum verbunden. Durch die Seitenwand wird kein weiterer Zugang angelegt.",
+        "Orange unterstreicht die zugehörige Beschriftung im Aufzugselement. Abmessung und Tragfähigkeits-/Personenangabe passen zur Kabine. Diese ungewöhnliche Kombination ist ein starker Liftbeleg.",
+        "Blau hebt ausgewählte lange Innenkonturen des Aufzugselements hervor. Die Kabine befindet sich innerhalb des Schachts; sie ist nicht gleichbedeutend mit dem ganzen Schachtquerschnitt.",
+        "Rot verfolgt ausgewählte Kanten der breiten Umfassung. Diese bleibt im Gebäude fest stehen. Sie ist vom innen dargestellten beweglichen Aufzugskörper zu unterscheiden."
+      ],
+      "reasoning": [
+        {
+          "heading": "Warum dieses Rechteck ein Lift ist",
+          "text": "Es enthält eine innere Kabinengeometrie, seitliche technische Führungs-/Einbauteile und eine eigene Türzone zum Vorraum. Dazu steht die aufzugtypische Kombination aus Kabinenmaß, Personenzahl und Masse. Die Beschriftung „FWA“ ist dem Element zugeordnet. Diese Beweiskette ist wesentlich stärker als die äußere Rechteckform allein."
+        },
+        {
+          "heading": "Kabine und Schacht erfüllen verschiedene Funktionen",
+          "text": "Der Schacht ist der feste vertikale Raum für die Aufzugsanlage. Die Kabine bewegt sich darin zwischen Haltestellen. Die im Grundriss dargestellte Kabine belegt daher nicht, dass im gesamten Schacht auf Höhe des 3. OG jederzeit begehbarer Boden vorhanden ist. Der Restquerschnitt neben der Kabine ist kein Gang."
+        },
+        {
+          "heading": "Der Zugang ist ein bedingter Übergang",
+          "text": "Ein Nutzer steht zunächst im Vorraum vor der Aufzugstür. Er kann die Kabine betreten, wenn sie an dieser Haltestelle steht und der Zugang freigegeben ist. Das ist ein anderer Verbindungstyp als eine dauernd offene Bodenpassage. Die Erkennung braucht Kabine, Haltestelle, Tür und Schacht als getrennte, verknüpfte Objekte."
+        },
+        {
+          "heading": "Technische Hinweise nicht überinterpretieren",
+          "text": "„110 × 210 cm“ ist im Kabinenzusammenhang zu lesen, nicht als Außenmaß der gesamten Schachtumfassung. „13 Pers. / 1000 kg“ beschreibt die vorgesehene Kapazitätsinformation. Die Abkürzung FWA wird als Planangabe übernommen; aus ihr allein wird in diesem Lernbuch keine beliebige Benutzungs- oder Evakuierungsfreigabe abgeleitet."
+        }
+      ],
+      "consequence": "Liftanlage mit Schachtumfassung, Kabine, Haltestellenzugang und zugeordneter Beschriftung erfassen. Kabinenboden nur bedingt betretbar modellieren.",
+      "reject_shortcut": "Das ganze Schachtinnere grün füllen, seitlich durch die Schachtwand gehen oder die Kabinenmaße als Schachtaußenmaße verwenden.",
+      "retain_unknown": "FWA ist im Aufzugskontext plausibel als Feuerwehraufzug zu lesen. Die ausgeschriebene Anlagenart und ihre Betriebsbedingungen müssen im zugehörigen Anlagen-/Brandschutzplan bestätigt werden.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-L02",
+      "example_id": "L02",
+      "pages": [
+        55,
+        56
+      ],
+      "principle": "„Wartungssteg“ und „Schachtleiter“ sind Funktionsbelege. Sie erklären, warum hier kein allgemeiner Gehweg angesetzt wird.",
+      "evidence_to_check": [
+        "Blau unterstreicht ein Stück der schrägen Originalbeschriftung. Der Text benennt eine besondere Boden-/Stegkonstruktion für Wartung. Claude muss den gedrehten Text lesen, statt ihn als schräge Wand zu behandeln.",
+        "Türkis hebt ein Stück der zugehörigen diagonalen Linie hervor. Ihre Funktion ergibt sich aus dem Textzusammenhang. Sie darf nicht als massive schräge Wand durch die Fläche gespeichert werden.",
+        "Rot zeigt ausgewählte Kanten des abgegrenzten technischen Bereichs. Diese Konturen sind echte Begrenzungen. Der Innenraum wird dadurch aber noch nicht automatisch ein normaler Aufenthaltsraum.",
+        "Violett zeigt auf den weiteren Textverlauf mit Schachtleiter. Eine Leiter dient einer anderen Art von Höhenzugang als ein normaler Gang oder eine Treppe. Das ist ein konkreter Hinweis auf technische Erschließung."
+      ],
+      "reasoning": [
+        {
+          "heading": "Die genaue Form reicht hier nicht aus",
+          "text": "Das Feld wirkt auf den ersten Blick wie ein rechteckiger Raum. Entscheidend ist jedoch der Originaltext: „Gitterrost-Wartungssteg“, angepasst an HT und Stahlunterkonstruktion, sowie „Schachtleiter“. Diese Angaben beschreiben eine technische Wartungssituation. Sie verhindern die vorschnelle Zuordnung als allgemein begehbarer Nebenraum."
+        },
+        {
+          "heading": "Was ein Wartungssteg bedeutet",
+          "text": "Ein Steg kann tatsächlich eine tragende, betretbare Fläche für bestimmte Arbeiten besitzen. Deshalb wäre die pauschale Aussage „dort ist überhaupt kein Boden“ ebenso falsch wie „normaler Gang“. Die richtige Information lautet: besondere Konstruktion und besondere Nutzung. Höhe, Zugang und zulässige Verwendung müssen für die jeweilige Wegaufgabe bekannt sein."
+        },
+        {
+          "heading": "Was die Schachtleiter beweist",
+          "text": "Der ausdrücklich genannte Leiterzugang stützt die Einordnung als technische, vertikal erschlossene Situation. Er beweist aber nicht die exakte räumliche Ausdehnung jedes darunterliegenden Schachts. Eine Software muss die lokal nachgewiesene Funktion speichern und fehlende Höhen- oder Schnittinformationen separat anfordern, statt den ganzen weißen Bereich frei zu erfinden."
+        },
+        {
+          "heading": "Wie das die Gehfläche verändert",
+          "text": "Für allgemeine Personenwege wird dieser Bereich nicht als bequeme Abkürzung zwischen angrenzenden Böden freigegeben. Das bedeutet nicht, dass Wartungspersonal ihn nie betreten kann. Es bedeutet, dass Nutzungsart und Zugang anders sind. Bei einer späteren speziellen Wartungsnavigation kann derselbe Bereich mit passenden Bedingungen berücksichtigt werden."
+        }
+      ],
+      "consequence": "Technischen Wartungsbereich, Steg und benannten Leiterzugang getrennt vom allgemeinen Raum-/Gangmodell führen.",
+      "reject_shortcut": "Ein weißes umschlossenes Feld automatisch als Zimmer füllen oder den Wartungssteg pauschal mit einem bodenlosen Loch gleichsetzen.",
+      "retain_unknown": "Die genauen Höhen, Schachtausdehnung, Stegtragstruktur und Zugangsvoraussetzungen brauchen den passenden Schnitt oder Fachplan.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-B01",
+      "example_id": "B01",
+      "pages": [
+        57,
+        58
+      ],
+      "principle": "Der Text kann eine geometrisch plausible Raumdeutung widerlegen. Eine gesicherte Innenfläche ist nicht automatisch Boden auf Geschosshöhe.",
+      "evidence_to_check": [
+        "Violett hebt einzelne vorhandene Linien eines Innenfelds hervor. Die Kürzel gehören zu diesen technischen Elementen. Sie sind keine Raumstempel für acht kleine Zimmer und kein Nachweis einer allgemeinen Gehfläche.",
+        "Orange unterstreicht den Originaltext am unteren Rand. „Absturzsicherung“ bezeichnet die Schutzfunktion. „Raumhoch“ beschreibt die Höhe der Sicherung, nicht die Behauptung, dass ihr Inneres ein begehbares Zimmer ist.",
+        "Rot gestrichelt liegt auf dem inneren Begrenzungszug. Die Funktion als Sicherung wird aus dem zugeordneten Text gelesen. Die Linie wird nicht allein wegen ihrer Geschlossenheit zu einer massiven Raumwand.",
+        "Türkis verfolgt einen Teil der unteren tatsächlichen Sicherungskante. Auf der Außenseite setzt sich die Erschließung fort. Der räumliche Zusammenhang muss um den Rand herum verfolgt werden."
+      ],
+      "reasoning": [
+        {
+          "heading": "Was der Architekt mit der Beschriftung erklärt",
+          "text": "Die Wörter benennen zuerst ein Schutzbauteil gegen Absturz. „Raumhoch“ bedeutet eine Sicherung über die entsprechende Raumhöhe, nicht bloß eine niedrige Brüstung. Ob sie aus Glas, Gitter oder einer anderen Konstruktion besteht, ist dadurch noch nicht vollständig beschrieben. Auch Durchsicht und exakte Befestigung lassen sich aus dem Wort allein nicht ableiten."
+        },
+        {
+          "heading": "Warum ein umschlossenes Feld noch kein Zimmer ist",
+          "text": "Ein Raum braucht einen passenden Boden-/Höhenbezug und eine sinnvolle Nutzung beziehungsweise Erschließung. Hier liegt eine ausdrücklich gesicherte Innenfläche mit LK-/RA-Elementen vor. Eine normale Tür und ein normaler Raumstempel für diese Innenfläche sind im gezeigten Zusammenhang nicht belegt. Die Software darf die geschlossene Kontur deshalb nicht automatisch als begehbares Zimmer füllen."
+        },
+        {
+          "heading": "Was man über einen möglichen Luftraum sagen darf",
+          "text": "Eine Absturzsicherung ist ein starker Hinweis auf eine Fallkante oder einen gefährlichen Höhenunterschied. Sie erklärt, warum eine Querung gesperrt ist. Sie beweist aber nicht allein, dass man durch alle Geschosse bis ganz unten sehen kann. Ein tiefer liegendes Dach, eine technische Fläche oder ein anders ausgebildeter Hohlraum müssen mit Schnitt und Höhen unterschieden werden."
+        },
+        {
+          "heading": "Die sichere Bewegungsentscheidung ist bereits möglich",
+          "text": "Auch ohne die genaue Tiefe des Innenfelds zu kennen, ist die Barriere als Querungsgrenze belegt. Die allgemeine Gehfläche bleibt auf dem umlaufenden Boden außerhalb. Das Innere wird als nicht bestätigte allgemeine Bodenfläche ausgespart. Claude muss den sicheren Randbefund nutzen und die ungeklärte Innenkonstruktion getrennt offenlassen."
+        }
+      ],
+      "consequence": "Absturzsicherung als Barriere und das Innere als gesonderte, nicht für allgemeinen Durchgang belegte Fläche führen. Der Gang hat eine innere Aussparung.",
+      "reject_shortcut": "„Geschlossenes Rechteck = Zimmer“ oder „Absturzsicherung = sicher über alle Geschosse offenes Atrium“ behaupten.",
+      "retain_unknown": "LK und RA sind hier plausibel als Lichtkuppel und Rauchabzug zu lesen. Ohne zugehörige Legende bleiben diese Auflösungen eine kontextgestützte Deutung; Tiefe und unterer Abschluss der Innenfläche brauchen einen Schnitt.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-B02",
+      "example_id": "B02",
+      "pages": [
+        59,
+        60
+      ],
+      "principle": "Eine Barriere kann eindeutig sein, obwohl die Fläche dahinter noch nicht vollständig bestimmt ist.",
+      "evidence_to_check": [
+        "Rot gestrichelt folgt den tatsächlichen Randlinien des Felds. Diese begrenzen eine Querung. Die Linien werden als Sicherung gespeichert und nicht pauschal als tragende Mauer benannt.",
+        "Orange unterstreicht die zugehörige Beschriftung „Absturzsicherung raumhoch“. Derselbe Begriff wie im mittleren Gebäudeteil hat dieselbe Schutzfunktion, unabhängig davon, wie groß das Feld gezeichnet ist.",
+        "Türkis zeigt einen Teil der unteren Sicherungskante. Der davorliegende Boden gehört zum äußeren Bewegungszusammenhang. Die Trennung verläuft an der Sicherung, nicht an einer beliebigen gedachten Abkürzung durch das Feld."
+      ],
+      "reasoning": [
+        {
+          "heading": "Wiedererkennen durch Funktion und Text",
+          "text": "Die Proportion des Felds unterscheidet sich vom inneren Feld bei B01. Der Text „Absturzsicherung raumhoch“ und die zugehörigen Randlinien begründen jedoch dieselbe Oberklasse: Schutzbarriere. Der Algorithmus darf nicht auf eine einzige rechteckige Größe oder Orientierung festgelegt sein."
+        },
+        {
+          "heading": "Umwehrung und Innenfläche sind zwei Objekte",
+          "text": "Die Sicherung besitzt eine linien- oder flächenförmige Geometrie und eine Sperrwirkung. Die dahinterliegende Fläche besitzt eine andere, noch zu klärende Höhen-/Nutzungsinformation. Würde man beides in einer einzigen „Wandfläche“ zusammenfassen, ginge diese Unterscheidung verloren. Würde man nur die äußere Kontur als Raum nehmen, entstünde falscher Boden."
+        },
+        {
+          "heading": "Warum die umliegende Fläche weiter grün sein darf",
+          "text": "Die gesicherte Fläche unterbricht nicht pauschal den ganzen Außenbereich. Der belegte Boden außerhalb bleibt erhalten, einschließlich breiter Aufweitungen. Ein Weg kann um die Sicherung herumführen, wenn die angrenzenden Flächen tatsächlich zusammenhängen. Er kann nicht durch die gesicherte Innenfläche abkürzen."
+        },
+        {
+          "heading": "Die gesicherte Aussage nicht künstlich ausdehnen",
+          "text": "Aus dem Randtext folgt keine genaue Zahl der darunterliegenden Geschosse. Auch ein sicher betretbares Dach hinter einer Umwehrung wäre ohne bestätigten Zugang kein allgemeiner Gang. Claude muss die lokale Funktion präzise erfassen und die fehlende vertikale Geometrie als eigene offene Information behandeln."
+        }
+      ],
+      "consequence": "Außenboden mit ausgesparter Sonderfläche darstellen. Die umgebende Gehfläche vollständig erhalten.",
+      "reject_shortcut": "Den ganzen Außenbereich sperren oder die gesamte umschlossene Fläche als freie Abkürzung zulassen.",
+      "retain_unknown": "Der genaue Aufbau und Höhenbezug innerhalb der Umwehrung bleibt ohne Schnitt offen.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-B03",
+      "example_id": "B03",
+      "pages": [
+        61,
+        62
+      ],
+      "principle": "„Ablauf“ + Rostsymbol + Prozentwerte + zusammenlaufende Flächenlinien begründen Entwässerung, nicht Raumtrennung.",
+      "evidence_to_check": [
+        "Violett zeigt auf den Wert mit Richtungspfeil oberhalb des Ablaufs. Prozent beschreibt hier eine Neigung, keine Wanddicke und keine Raumhöhe. Der Zusammenhang mit dem Ablauf erklärt die Entwässerungsfunktion.",
+        "Türkis folgt ausgewählten originalnahen Gefälle-/Flächenteilungslinien. Sie beschreiben die geneigte Flächengeometrie. Ihnen fehlt der nachgewiesene aufstehende Wandkörper.",
+        "Orange unterstreicht das Wort direkt am kleinen Entwässerungssymbol. Damit ist der Zielpunkt der umgebenden Linien funktional beschrieben. Claude muss dieses Wort lesen und dem Symbol zuordnen.",
+        "Blau hebt Teile des im Original gezeichneten Ablaufzeichens hervor. Die innenliegenden kreis- und rasterförmigen Teile gehören zur Entwässerungsdarstellung. Das kleine Originalrechteck wird nicht als Raum interpretiert.",
+        "Grün unterstreicht die Nutzungsbezeichnung. Die Linien liegen auf einer Terrasse. Das Entwässerungsmuster erzeugt keine dreieckigen Zimmer."
+      ],
+      "reasoning": [
+        {
+          "heading": "Die Beweiskette beginnt am benannten Punkt",
+          "text": "Ein kleiner gerasterter Körper allein könnte verschiedene Bauteile zeigen. Hier steht „Ablauf“ unmittelbar darüber. Die geneigten Flächenlinien und Neigungswerte sind auf diesen Entwässerungsbereich bezogen. Text, Symbol, Flächengeometrie und Prozentangaben bestätigen sich gegenseitig. Darum ist die Deutung als Entwässerung nachvollziehbar."
+        },
+        {
+          "heading": "Was Gefälle bedeutet",
+          "text": "Eine geneigte Fläche ist an einem Ort höher und an einem anderen tiefer. Wasser kann zum tieferliegenden Entwässerungspunkt ablaufen. 2 % bedeutet als Rechenprinzip 2 Einheiten Höhenänderung auf 100 Einheiten horizontaler Strecke. Die Prozentangabe beschreibt also eine Neigung. Sie ist weder eine Stufenzahl noch die Dicke einer diagonal stehenden Wand."
+        },
+        {
+          "heading": "Warum die Diagonalen keine Mauern sind",
+          "text": "Die Linien bilden ein Muster geneigter Teilflächen und treffen beim Ablauf zusammen. Ein zugehöriger massiver Wandquerschnitt mit Dicke, Schraffur und Wandanschlüssen ist an diesen Diagonalen nicht belegt. Die Terrasse bleibt eine zusammenhängende Bodenfläche mit Gefälle. Ihre Teilflächen gehören zu einem Oberflächenmodell, nicht zu mehreren geschlossenen Räumen."
+        },
+        {
+          "heading": "Die Einschränkung des Architekten mitlesen",
+          "text": "Der Plan enthält zusätzlich den Hinweis, dass die Gefälleangaben die wasserführende Schicht betreffen und der Plattenbelag mit 1 % Gefälle auszuführen ist. Deshalb darf Claude einen 2,0-%-Wert nicht ungeprüft als Neigung der sichtbaren Gehoberfläche übernehmen. Schicht, Höhenbezug und zugehöriger Text müssen gemeinsam gespeichert werden."
+        }
+      ],
+      "consequence": "Ablauf, Gefälle-/Entwässerungsgeometrie und Bodenaufbau verknüpfen. Die Terrasse bleibt als Raum-/Bodenfläche zusammenhängend.",
+      "reject_shortcut": "Die Diagonalen zu Mauern machen oder Gefällewerte ohne Schichtbezug auf die fertige Gehoberfläche übertragen.",
+      "retain_unknown": "Die genaue dreidimensionale Oberfläche braucht die vollständigen Höhen und den zugehörigen Bodenaufbau.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-B04",
+      "example_id": "B04",
+      "pages": [
+        63,
+        64
+      ],
+      "principle": "Claude muss nicht nur Zahlen lesen. Er muss lesen, worauf der Architekt diese Zahlen ausdrücklich bezieht.",
+      "evidence_to_check": [
+        "Blau unterstreicht den Beginn des Originalhinweises. Diese Formulierung setzt den Geltungsbereich der Zahlen fest. Sie ist keine allgemeine Raumbeschriftung, sondern eine fachliche Einschränkung.",
+        "Violett markiert die nächste Textzeile. Die wasserführende Ebene und der darüberliegende Plattenbelag sind verschiedene Schichten. Ein Wert der einen darf nicht stillschweigend der anderen zugewiesen werden.",
+        "Orange hebt die Anweisung zum Plattenbelag hervor. Der Architekt beschreibt damit die Neigung einer anderen Ebene. Claude muss beide Angaben erhalten, statt einen scheinbaren Widerspruch durch Löschen aufzulösen.",
+        "Türkis zeigt auf die Einfassung des vorhandenen Hinweises. Dieses Original-Schriftfeld ist kein kleines Zimmer und kein Bodenhindernis. Seine Form darf nicht in die Raumgrenzen übernommen werden."
+      ],
+      "reasoning": [
+        {
+          "heading": "Den vollständigen Satz lesen",
+          "text": "Der Hinweis lautet sinngemäß: Die Gefälleangaben beziehen sich auf die wasserführende Schicht; der Plattenbelag ist mit 1 % Gefälle auszuführen. Wer nur die große Zahl neben einem Pfeil erkennt, verliert den entscheidenden Schichtbezug. Deshalb gehört Texterkennung vor die abschließende Interpretation der Oberflächenneigung."
+        },
+        {
+          "heading": "Ein scheinbarer Zahlenkonflikt kann fachlich sinnvoll sein",
+          "text": "Ein Plan kann für verschiedene Ebenen unterschiedliche Neigungen angeben. Das ist nicht automatisch ein Fehler. Die Schichten erfüllen unterschiedliche Aufgaben: Wasserführung und fertige Nutzoberfläche. Claude soll prüfen, auf welches Bauteil und welche Ebene jede Zahl verweist, bevor Werte zusammengeführt werden."
+        },
+        {
+          "heading": "Text und Geometrie wechselseitig zuordnen",
+          "text": "Der Hinweis steht bei der Terrasse und der Gefälledarstellung. Seine Bedeutung ergibt sich aus dieser örtlichen und fachlichen Beziehung. Eine Software sollte ihn als Regel für die zugehörigen Oberflächenangaben erfassen, nicht als Name eines neuen Raums. Umgekehrt darf ein allgemeiner Hinweis nicht ohne Prüfung auf völlig andere Bodenbereiche ausgedehnt werden."
+        },
+        {
+          "heading": "Wie das Wissen gespeichert werden soll",
+          "text": "Zum Gefälle gehören Wert, Richtung, bezogene Schicht und Quelle. Zum Plattenbelag gehört die eigene Ausführungsangabe. Wenn die genaue räumliche Reichweite des Hinweises nicht eindeutig ist, wird sie als zu prüfender Geltungsbereich geführt. Diese strukturierte Trennung verhindert, dass korrekte Einzelwerte zu einem falschen Gesamtmodell werden."
+        }
+      ],
+      "consequence": "Den Hinweis als schichtbezogene Auslegungsregel mit der Terrasse und ihren Gefälleangaben verknüpfen.",
+      "reject_shortcut": "Nur Prozentzahlen extrahieren und den erläuternden Satz ignorieren. Auch das Textfeld selbst darf keine Raumkontur werden.",
+      "retain_unknown": "Die exakte räumliche Reichweite der Ausführungsanweisung ist mit dem vollständigen Plan-/Detailzusammenhang zu prüfen.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-B05",
+      "example_id": "B05",
+      "pages": [
+        65,
+        66
+      ],
+      "principle": "Jede erkannte Linie braucht nicht nur einen Namen, sondern auch eine Bedeutung und einen Höhenbezug.",
+      "evidence_to_check": [
+        "Orange folgt dem schräg gesetzten Textbereich. Eine Voute bezeichnet hier einen konstruktiven Übergangs-/Verstärkungsbereich. Die konkrete Ausführung wird mit „lt. Statik“ auf die zugehörige Planung bezogen.",
+        "Blau markiert ein Stück der schrägen Bezugslinie. Sie verbindet sich mit einem Bauteilfeld und dem erklärenden Text. Ihre bloße Querung einer Bodenfläche macht sie nicht zur Raumtrennung.",
+        "Violett zeigt auf die Höhenangabe im selben Textpaket. RDOK ist eine Rohdeckenoberkante. Die Angabe gehört zu einer Decken-/Rohbauhöhe und ist kein Beleg einer auf dem Gehboden stehenden Mauer.",
+        "Türkis hebt die waagerechte Maßdarstellung hervor. Die Zahl beschreibt eine Länge. Maßhilfslinien und Maßstriche sind Messinformation; sie dürfen keine Hindernispolygone erzeugen."
+      ],
+      "reasoning": [
+        {
+          "heading": "Zuerst die Höhenebene klären",
+          "text": "Ein Grundriss kann Deckenränder, Unterzüge, Vouten und Fugen über der eigentlichen Gehfläche zeigen. Die zugehörigen Wörter und Höhenbezüge erklären, auf welcher Ebene eine Linie zu verstehen ist. Ohne diese Zuordnung würde Claude eine Deckenprojektion als aufstehende Wand in den Weg stellen."
+        },
+        {
+          "heading": "Was „lt. Statik“ für die Erkennung bedeutet",
+          "text": "Die konkrete bauliche Ausbildung wird auf die statische Planung bezogen. Der Grundriss liefert die Lage und eine Bezeichnung, aber nicht automatisch alle konstruktiven Eigenschaften. Die Software kann das Objekt als konstruktiven Hinweis erfassen. Tragwirkung, vollständiger Querschnitt und genaue Unterkante werden nicht frei ergänzt."
+        },
+        {
+          "heading": "Warum eine Fuge den Raum nicht automatisch teilt",
+          "text": "An den Außenflächen steht auch „Fuge Isokorb“. Eine Fuge bezeichnet einen Bauteilanschluss beziehungsweise eine Trennung im Aufbau. Daraus folgt noch keine aufstehende Sperre gegen Personen. Für die Bewegung sind tatsächlicher Spalt, Höhenversatz und Oberflächenausbildung relevant. Ohne solchen Nachweis bleibt der Bodenzusammenhang bestehen."
+        },
+        {
+          "heading": "Maße als Kontrollinformation nutzen",
+          "text": "Eine Maßlinie mit Zahl, Endmarken und Bezugslinien beschreibt eine Strecke. Sie besitzt keine eigene Materialdicke. Claude soll sie zur Größenprüfung verwenden und aus der Hinderniserkennung heraushalten. Dass eine Maßlinie einen Raum durchquert, ist kein Hinweis auf eine neue Wand im Raum."
+        }
+      ],
+      "consequence": "Decken-/Rohbauobjekte, Fugen und Maßinformationen getrennt von aufstehenden Bodenhindernissen führen.",
+      "reject_shortcut": "Jede durchgehende oder diagonale Linie zur Mauer machen. RDOK ist kein Beweis für ein Hindernis auf Fußbodenhöhe.",
+      "retain_unknown": "Genaue Unterkanten, Resthöhen und konstruktive Ausführung benötigen die zugehörigen Detail- und Höhenangaben.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-F03",
+      "example_id": "F03",
+      "pages": [
+        67,
+        68
+      ],
+      "principle": "Eine Öffnungshöhe beweist noch keinen offenen Bodenanschluss. Die Durchgangsentscheidung braucht beide.",
+      "evidence_to_check": [
+        "Orange unterstreicht den Höhenhinweis. STUK wird hier als Sturzunterkante über fertiger Bodenoberkante gelesen. Eine obere Öffnungshöhe beweist nicht, dass der untere Anschluss bodengleich und durchgehbar ist.",
+        "Türkis hebt ausgewählte kurze vertikale Profilteile hervor. Die Wiederholung gliedert ein Fassadenelement. Diese Teilfelder sind keine eigenständigen Zimmer und nicht automatisch einzelne Türportale.",
+        "Blau markiert ausgewählte lange Originalprofile. Die Zone unterscheidet sich vom breiten schraffierten Wandkörper. Trotzdem ist nicht jedes Feld darin automatisch offen und begehbar.",
+        "Violett folgt vorhandenen Kurventeilen im rechten Anschlussbereich. Ein mögliches Öffnungselement wird lokal mit Anschlägen und Boden geprüft. Seine Funktion wird nicht auf die gesamte Profilreihe übertragen."
+      ],
+      "reasoning": [
+        {
+          "heading": "Warum „kein massiver Wandkörper“ nicht „offen“ bedeutet",
+          "text": "Verglasungen, Rahmen, feste Paneele und Türen können in derselben schlanken Fassadenstruktur sitzen. Die fehlende breite Schraffur zeigt nur, dass die Darstellung anders aufgebaut ist als bei einer massiven Wand. Eine feste Glasscheibe verhindert den Durchtritt ebenso, obwohl sie optisch transparent und im Plan dünn dargestellt sein kann."
+        },
+        {
+          "heading": "Jedes Feld muss seine Funktion belegen",
+          "text": "Ein Türfeld braucht einen nachvollziehbaren beweglichen Abschluss oder eine belegte freie Passage und einen passenden Bodenanschluss. Ein Fenster-/Festfeld hat andere Merkmale. Claude darf ein Öffnungszeichen an einem Ende nicht als Freigabe des gesamten Bandes interpretieren. Die Zuordnung erfolgt feldweise innerhalb eines zusammenhängenden Fassadenobjekts."
+        },
+        {
+          "heading": "Obere Höhe und unterer Anschluss unterscheiden",
+          "text": "„STUK ü. FBOK +2,89“ beschreibt die Lage einer oberen Begrenzung. Die Information ist nützlich für die Höhe einer Öffnung. Sie beantwortet aber nicht, ob unten eine Brüstung, Schwelle, feste Füllung oder bodengleicher Durchgang liegt. Für eine Gehwegverbindung muss gerade dieser untere Bereich geklärt werden."
+        },
+        {
+          "heading": "Wie man mit unklaren Profilfeldern arbeitet",
+          "text": "Die belegte Oberklasse „Fassaden-/Profilelement“ wird erhalten. Ungeklärte Felder bekommen keine erfundene Türfunktion. Die Raum- und Bodenlogik verwendet nur bestätigte Öffnungen. Anschließend können Fassadenansicht, Elementliste oder Detail die Untertypen präzisieren, ohne die bereits gesicherte Geometrie zu verlieren."
+        }
+      ],
+      "consequence": "Fassadenband in zusammengehörige Felder strukturieren und nur lokal belegte Personendurchgänge verbinden.",
+      "reject_shortcut": "Die ganze Profilreihe als Ausgang öffnen oder jede dünne Profilkante als neue massive Wand speichern.",
+      "retain_unknown": "Untertypen einzelner Felder und exakter Glas-/Paneelaufbau sind im gezeigten Grundriss teilweise offen.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-R01",
+      "example_id": "R01",
+      "pages": [
+        69,
+        70
+      ],
+      "principle": "Raumnachweis = bauliche Umfassung + passender Boden-/Höhenbezug + zugeordneter Stempel + plausibler Zugang.",
+      "evidence_to_check": [
+        "Rot zeigt ausgewählte Wandkanten an oberem und unterem Rand. Die seitlichen Grenzen schließen den Innenbereich zusammen mit dem Türabschluss ab. Nischen gehören zur tatsächlichen Kontur.",
+        "Blau markiert das Türblatt im rechten Raumrand. Der Raum ist vom Gang erreichbar. Für die Raumzuordnung bleibt die Öffnung ein Abschluss, für die Bewegung ein bedingter Übergang.",
+        "Violett hebt einige Tisch-/Sitzkonturen hervor. Sie belegen lokale Stellflächen. Der Boden dazwischen bleibt demselben Raum zugeordnet; die Möbel erzeugen keine neuen Zimmer.",
+        "Orange unterstreicht den zugeordneten Stempel „3.16 Bildungsraum“. Darunter stehen Boden, Decke, Raumhöhe und Fläche. Diese Angaben stützen einen nutzbaren Innenraum auf der Geschossebene."
+      ],
+      "reasoning": [
+        {
+          "heading": "Eine geschlossene Linie allein wäre zu wenig",
+          "text": "Das Beispiel besitzt nicht nur eine äußere Kontur. Es hat eine passende bauliche Umfassung, einen nachgewiesenen Türzugang, einen zugeordneten Raumstempel und typische Einrichtung. Der Stempel benennt zudem Boden und Höhe. Diese gemeinsame Evidenz unterscheidet den Bildungsraum von einem geschlossenen technischen Feld oder einer umwehrten Aussparung."
+        },
+        {
+          "heading": "Der Raumstempel beschreibt Eigenschaften, nicht die exakte Form",
+          "text": "Die Angabe 3.16 identifiziert den Raum; „Bildungsraum“ nennt seine Nutzung. B betrifft den Boden, D die Decke und RH die Raumhöhe. Der Flächenwert ist eine Kontrollgröße. Er ersetzt nicht das Nachzeichnen der wirklichen Innenkanten und erlaubt nicht, eine fehlende Nische beliebig zu ergänzen."
+        },
+        {
+          "heading": "Raumfläche und freie Bodenfläche sind nicht gleich",
+          "text": "Die Raumfläche umfasst den Innenbereich. Möbel beanspruchen darin Stellfläche, ändern aber normalerweise nicht die Raumidentität. Für die freie Bodenfläche werden die belegten Möbel- und Einbauflächen ausgespart. Deshalb kann ein Raum eine große zusammenhängende Fläche besitzen und trotzdem nur bestimmte freie Zwischenräume zum Gehen anbieten."
+        },
+        {
+          "heading": "Große Diagonalen nicht ohne Beleg zu Wänden machen",
+          "text": "Im Raum liegen auch lange sich kreuzende Darstellungsstriche. Ihnen fehlen an dieser Stelle die vollständigen Belege eines aufstehenden Wandkörpers mit passenden Anschlüssen. Sie dürfen daher nicht willkürlich zwei diagonale Raumtrennungen erzeugen. Ihre genaue Symbolfunktion wird bei Bedarf gesondert geklärt, während die nachgewiesene Raumumfassung erhalten bleibt."
+        }
+      ],
+      "consequence": "Einen Bildungsraum mit echter Innenkontur, Türportal, Raumstempel und internen Möbelobjekten bilden.",
+      "reject_shortcut": "Aus jeder Tischkante oder großen Diagonale eine Raumgrenze erzeugen; ebenso falsch ist die reine Flächenschätzung aus dem Text.",
+      "retain_unknown": "Einzelne überlagerte Darstellungsstriche und vollständige Materialaufbauten sind nicht sämtlich durch den Raumstempel erklärt.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-R02",
+      "example_id": "R02",
+      "pages": [
+        71,
+        72
+      ],
+      "principle": "Eine funktionale Teilfläche ist nicht automatisch ein abgeschlossener geometrischer Raum.",
+      "evidence_to_check": [
+        "Der grüne Pfeil zeigt auf den freien Boden oberhalb der Möblierung. Dort ist keine durchgehende raumtrennende Wand belegt. Die Fläche geht in die Erschließung über.",
+        "Orange unterstreicht den zugehörigen Raum-/Nutzungsstempel. Eine eigene Bezeichnung kann eine funktionale Teilfläche definieren, ohne dass eine neue geschlossene bauliche Umfassung vorhanden ist.",
+        "Blau hebt Originalkonturen einer Sitzgruppe hervor. Die Möbel erklären den Aufenthaltscharakter der Zone. Ihre Stellfläche wird ausgespart; zwischen und neben ihnen bleibt Boden.",
+        "Rot hebt ausgewählte reale Begrenzungslinien am unteren Abschluss hervor. Die Außenbegrenzung ist eine bauliche Grenze; die offene obere Nutzungsgrenze ist fachlich etwas anderes."
+      ],
+      "reasoning": [
+        {
+          "heading": "Warum der Name kein neues Zimmer erzeugt",
+          "text": "Die Fläche ist als MUFU gekennzeichnet und besitzt eine eigene Nutzungsinformation. Zum benachbarten Gang fehlt jedoch eine durchgehende Wand mit Türabschluss. Deshalb bleibt der geometrische Bodenzusammenhang offen. Der Name darf die fehlende Wand nicht ersetzen."
+        },
+        {
+          "heading": "Zwei richtige Beschreibungen nebeneinander speichern",
+          "text": "Für die Nutzung kann 3.007.A als eigener Bereich geführt werden. Für die räumliche Verbindung gehört die offene Fläche zur zusammenhängenden Erschließung. Beide Modelle beantworten verschiedene Fragen. Claude soll eine funktionale Zone mit übergeordneter Raum-/Erschließungszuordnung speichern, statt eines davon zu verwerfen."
+        },
+        {
+          "heading": "Warum ein Möbelumriss keine Nutzungsgrenze erzwingt",
+          "text": "Sofa, Tisch oder Schrank stehen innerhalb der Zone. Ihre Grenzen sind lokal wirksame Hindernisse. Sie bilden ohne baulichen Anschluss keine geschlossene Zimmerumfassung. Eine gerade Hilfslinie oder ein dargestelltes Feld um die Möbel muss ebenfalls nach Bedeutung geprüft werden, bevor es den Raum teilt."
+        },
+        {
+          "heading": "Die grüne Fläche bleibt vollständig",
+          "text": "Alle belegten freien Bereiche zwischen Gang und Sitzmöbeln gehören zur betrachteten Bodenfläche. Eine schmale grüne Route würde viele erreichbare Aufweitungen verbergen. Erst nach Bildung dieser vollständigen Fläche darf eine konkrete Route für einen Start- und Zielpunkt ausgewählt werden."
+        }
+      ],
+      "consequence": "Offene Nutzungszone innerhalb der verbundenen Erschließungsfläche führen; Einrichtung als lokale Hindernisse erhalten.",
+      "reject_shortcut": "Weil MUFU einen eigenen Stempel hat, eine unsichtbare Wand zum Gang ergänzen.",
+      "retain_unknown": "Die genaue betriebliche Abgrenzung der Nutzung kann unabhängig von der baulichen Raumgrenze festgelegt sein.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-R03",
+      "example_id": "R03",
+      "pages": [
+        73,
+        74
+      ],
+      "principle": "Text wird über seine Referenz zugeordnet, nicht allein über den kleinsten Abstand.",
+      "evidence_to_check": [
+        "Blau unterstreicht die Bezeichnung. Der Text steht oberhalb des kleinen Raums. Sein räumlicher Abstand macht ihn nicht zum Namen der dazwischenliegenden Gangfläche.",
+        "Violett unterstreicht die danebenstehende WC-b-Bezeichnung. Auch dieser Text hat eine eigene räumliche Zuordnung. Zwei nahe Schriftpakete dürfen nicht zu einem gemeinsamen Raumstempel verschmolzen werden.",
+        "Orange markiert die originale Verbindung zum Druckerraum. Der Endpunkt liegt innerhalb der betreffenden Umfassung. Diese Beziehung ist stärker als die bloße Nähe zu anderen Schriftfeldern.",
+        "Rot verfolgt ausgewählte Kanten der Umfassungen. Die Textzuordnung muss zur tatsächlich eingeschlossenen Bodenfläche und deren Zugang passen. Ein Endpunkt außerhalb der passenden Geometrie wäre ein Prüfhinweis."
+      ],
+      "reasoning": [
+        {
+          "heading": "Die Textposition ist nicht die Raumposition",
+          "text": "Planverfasser verschieben Raumstempel bei Platzmangel nach außen. Die tatsächliche Zuordnung ergibt sich dann aus einer Linie mit Endpunkt oder einer anderen eindeutigen Referenz. Eine Software, die nur den nächstgelegenen Text sucht, kann benachbarte kleine Räume vertauschen."
+        },
+        {
+          "heading": "So wird die Zuordnung überprüft",
+          "text": "Zuerst wird das Schriftpaket aus ID, Name und Eigenschaftszeilen zusammengestellt. Dann folgt man dem zugehörigen Zeiger bis zu seinem Endpunkt. Anschließend prüft man, in welcher bestätigten Raumkontur dieser Punkt liegt. Tür und Ausstattung dienen als Gegenprobe. Erst wenn die Beziehungen passen, wird der Stempel mit der Raum-ID verbunden."
+        },
+        {
+          "heading": "B, D, W und RH sind keine austauschbaren Etiketten",
+          "text": "B benennt den Bodenaufbau beziehungsweise die Bodenoberfläche, D die Decke, W eine Wandangabe, sofern vorhanden, und RH die Raumhöhe. Ein „D: Rohdecke, beschichtet“ darf deshalb nicht als Wandaufbau gespeichert werden. Mehrzeilige Angaben bleiben dem richtigen Schlüssel zugeordnet, auch wenn sie weit über den Raum hinausreichen."
+        },
+        {
+          "heading": "Mit überlagerten Linien sorgfältig umgehen",
+          "text": "Eine Maßlinie, ein Türmaß und ein Raumtextzeiger können sich kreuzen. Ihre Kreuzung bedeutet nicht, dass alle Texte zum selben Objekt gehören. Richtung, Endmarkierung, Schriftgruppe und geometrisches Ziel müssen zusammen verfolgt werden. Bei zwei gleich plausiblen Zuordnungen wird die Mehrdeutigkeit sichtbar gemacht."
+        }
+      ],
+      "consequence": "Raumstempel anhand seines Zeigers und einer passenden Raumkontur verknüpfen. Textfelder mit ihrer jeweiligen Bedeutung speichern.",
+      "reject_shortcut": "Den nächstgelegenen Namen übernehmen oder Boden-, Decken- und Wandangaben vermischen.",
+      "retain_unknown": "Wo ein Zeiger oder eine Schriftgruppe nicht eindeutig lesbar ist, bleibt die konkrete Zuordnung prüfpflichtig.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-R04",
+      "example_id": "R04",
+      "pages": [
+        75,
+        76
+      ],
+      "principle": "Nicht die Proportion entscheidet zwischen Raum und Schacht, sondern Zugang, Boden-/Höhenbeleg, Ausstattung und Plantext.",
+      "evidence_to_check": [
+        "Der grüne Pfeil zeigt auf den freien hinteren Boden. Er bleibt vom Zugang aus Teil der Raumfläche. Ein Raum muss keinen zweiten Ausgang besitzen, um als erreichbarer Raum erkannt zu werden.",
+        "Orange unterstreicht „3.06 Abstellr.“. Darunter stehen Boden, Decke, RH und Fläche. Diese Angaben belegen eine vorgesehene Raumnutzung; die längliche Form allein sagt nicht „Schacht“. ",
+        "Violett zeigt ausgewählte Originaldiagonalen in der Einrichtungsreihe. Die Reihe liegt innerhalb der baulichen Umfassung. Ihre Stellfläche wird abgezogen, nicht der ganze Raum.",
+        "Blau folgt exakt der geraden Linie des geöffneten Flügels. Der schwarze Bogen daneben erklärt seine Drehbewegung. Diese Tür liegt in der unteren Wandöffnung und verbindet den Abstellraum mit der Erschließung."
+      ],
+      "reasoning": [
+        {
+          "heading": "Warum die Form kein Schachtbeweis ist",
+          "text": "Der Bereich ist schmal und länglich. Das trifft aber auf Abstellräume ebenso zu wie auf manche Schächte. Hier gibt es einen normalen Türzugang, einen zugeordneten Raumstempel mit Boden- und Höhenangabe sowie eine Schrankreihe. Diese Merkmale stützen den begehbaren Abstellraum und widersprechen einer rein formbasierten Schachtklassifikation."
+        },
+        {
+          "heading": "Ein Endraum bleibt ein Raum",
+          "text": "Am hinteren Ende schließt die Fassade die Fläche ab. Der Nutzer geht durch dieselbe Tür zurück. „Erreichbar“ bedeutet, dass eine Verbindung hinein besteht; „Durchgangsraum“ würde zusätzlich eine weitere Verbindung nach anderswo verlangen. Die zweite Eigenschaft ist für die erste nicht erforderlich."
+        },
+        {
+          "heading": "Die gesamte freie Fläche erhalten",
+          "text": "Der Boden zwischen linker Wand und Schrankreihe setzt sich bis zum hinteren Ende fort. Deshalb bleibt die ganze erkennbare freie Fläche grün. Eine Markierung nur vor der Tür wäre unvollständig. Die Schrankflächen selbst werden ausgespart; eine vollständige Sperre aller schmalen Bereiche würde zu viel Boden entfernen."
+        },
+        {
+          "heading": "Gegenprobe zum technischen Feld",
+          "text": "Beim Wartungsbereich L02 liefert der Text „Schachtleiter/Wartungssteg“ eine andere Funktion. Beim Lift L01 liefert die Kabinen-/Schachtgeometrie einen anderen Aufbau. Hier liefert „Abstellr.“ zusammen mit Tür und Boden eine normale Raumnutzung. Claude muss diese lokalen Belege vergleichen, statt allen Rechtecken denselben Typ zu geben."
+        }
+      ],
+      "consequence": "Abstellraum 3.06 mit einem Zugang und vollständig erhaltener freier Bodenfläche bis zum Ende führen.",
+      "reject_shortcut": "„Schmal = Schacht“ oder „nur eine Tür = nicht begehbar“ als Regel verwenden.",
+      "retain_unknown": "Exakte Engstellen und Möbelabstände müssen für ein bestimmtes Bewegungsprofil maßlich geprüft werden.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    },
+    {
+      "rule_id": "SH22-G01",
+      "example_id": "G01",
+      "pages": [
+        77,
+        78
+      ],
+      "principle": "Freier Boden ist eine Fläche. Eine Route ist eine Auswahl innerhalb dieser Fläche.",
+      "evidence_to_check": [
+        "Türkis weist auf die große freie Aufweitung oberhalb der Garderobe. Sie wird nicht entfernt, nur weil eine kurze Route am Rand vorbeiführen könnte. Bodenfläche und ausgewählte Route beantworten verschiedene Fragen.",
+        "Rot zeigt die feste Garderobenwand. Die seitlichen Türöffnungen verbinden die angrenzenden freien Flächen nur an ihren wirklichen Positionen. Es entsteht keine Querung durch den festen Wandkörper.",
+        "Der grüne Pfeil zeigt auf die freie Fläche neben der Garderobe. Die Markierung reicht bis zu den tatsächlichen Begrenzungen, nicht nur entlang einer gedachten Mittellinie.",
+        "Violett hebt Teile der Sitzmöbel in der unteren MUFU-Zone hervor. Die belegten Stellflächen werden abgezogen; der Boden um jedes einzelne Möbel bleibt erhalten."
+      ],
+      "reasoning": [
+        {
+          "heading": "Von der Bodenfläche aus denken",
+          "text": "Zuerst wird die gesamte bestätigte Geschossbodenfläche bis zu ihren realen Rändern bestimmt. Dazu gehören breite Gangzonen, Nischen, Aufweitungen und erreichbare Endbereiche. Eine Route ist lediglich eine mögliche Bewegung innerhalb dieser Fläche. Würde man zuerst nur die Route zeichnen, gingen viele nutzbare Bereiche verloren."
+        },
+        {
+          "heading": "Nur tatsächlich belegte Hindernisse abziehen",
+          "text": "Wände, feste Einbauten und Möbel werden entsprechend ihrer wirklichen Grundflächen ausgespart. Texte, Maßlinien, Türbögen und Gefällelinien sind keine massiven Stellflächen. Für Wartung, Schacht, Luftraum und andere Sonderbereiche wird die Boden-/Nutzungsfrage separat entschieden. Ein pauschales Rechteck um mehrere Möbel würde freie Zwischenräume fälschlich entfernen."
+        },
+        {
+          "heading": "Zusammenhang an den richtigen Stellen prüfen",
+          "text": "Zwei benachbarte grüne Flächen werden nur über eine belegte freie Öffnung oder eine geeignete Tür verbunden. Die Wanddicke wird nicht überbrückt, weil Flächen sich in einer vereinfachten Maske berühren. Treppen und Lift erhalten eigene Verbindungen mit Höhen- beziehungsweise Betriebsbedingungen."
+        },
+        {
+          "heading": "Vom freien Boden zur tatsächlich nutzbaren Bewegung",
+          "text": "Ein geometrisch freier Spalt ist noch kein Nachweis, dass eine Person mit bestimmter Breite und Abstandsvorgabe hindurchpasst. Für diese Prüfung wird die freie Fläche um das gewählte Bewegungsprofil eingeschränkt. Die Lernübersicht zeigt den belegten freien Boden; die spätere Routenprüfung verwendet Maße, Körperprofil und Zugangszustände."
+        }
+      ],
+      "consequence": "Eine vollständige freie Bodenfläche mit inneren Hindernissen und gezielt verknüpften Öffnungen bilden. Erst anschließend Routen berechnen.",
+      "reject_shortcut": "Nur eine grüne Gangmittellinie zeichnen, Möbelgruppen grob umrahmen oder jeden weißen Zwischenstreifen als sicheren Weg freigeben.",
+      "retain_unknown": "Personenabhängige Durchgangsbreiten, reale Türzustände und betriebliche Freigaben sind zusätzliche Prüfungen.",
+      "scope": "Merkmalkombination übertragbar; konkrete Koordinaten/Plan-IDs nur SH22 3. OG; andere Plansprachen erneut prüfen.",
+      "on_conflict": "review_required; keine künstliche Gehverbindung erzeugen"
+    }
+  ]
+}

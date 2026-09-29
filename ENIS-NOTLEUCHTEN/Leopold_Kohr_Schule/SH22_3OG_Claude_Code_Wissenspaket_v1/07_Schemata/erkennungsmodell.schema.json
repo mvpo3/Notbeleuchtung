@@ -1,0 +1,396 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "source_hashes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "coordinate_spaces": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "origin": {
+            "type": "string",
+            "minLength": 1
+          },
+          "x_axis": {
+            "type": "string",
+            "minLength": 1
+          },
+          "y_axis": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verification": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "unit",
+          "origin",
+          "x_axis",
+          "y_axis",
+          "verification"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "observation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "geometry",
+              "text",
+              "height",
+              "layer_hint",
+              "topology",
+              "external_detail"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "source_id",
+          "source_locator",
+          "observation",
+          "kind"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "class": {
+            "enum": [
+              "wall",
+              "column",
+              "cubicle_partition",
+              "door",
+              "door_leaf",
+              "swing_arc",
+              "window",
+              "frame",
+              "glazing_zone",
+              "parapet",
+              "furniture",
+              "sanitary_fixture",
+              "room",
+              "usage_zone",
+              "free_floor",
+              "stair",
+              "stair_flight",
+              "landing",
+              "lift_shaft",
+              "lift_cabin",
+              "maintenance_walkway",
+              "shaft_ladder",
+              "fall_barrier",
+              "void",
+              "drain",
+              "slope_annotation",
+              "overhead_element",
+              "dimension",
+              "label",
+              "unknown"
+            ]
+          },
+          "status": {
+            "enum": [
+              "confirmed",
+              "supported",
+              "unknown",
+              "conflicting"
+            ]
+          },
+          "geometry": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "coordinate_space": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "type": {
+                    "enum": [
+                      "Point",
+                      "LineString",
+                      "Polygon",
+                      "MultiPolygon",
+                      "CubicBezier"
+                    ]
+                  },
+                  "coordinates": {
+                    "type": "array",
+                    "minItems": 1
+                  },
+                  "provenance": {
+                    "enum": [
+                      "source",
+                      "derived",
+                      "teaching_only"
+                    ]
+                  }
+                },
+                "required": [
+                  "coordinate_space",
+                  "type",
+                  "coordinates",
+                  "provenance"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "reasoning": {
+            "type": "string",
+            "minLength": 1
+          },
+          "alternative_checked": {
+            "type": "string",
+            "minLength": 1
+          },
+          "unknown_properties": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "attributes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "value": {
+                  "type": [
+                    "string",
+                    "number",
+                    "boolean",
+                    "object",
+                    "array",
+                    "null"
+                  ]
+                },
+                "unit": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "reference_datum": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "status": {
+                  "enum": [
+                    "confirmed",
+                    "supported",
+                    "unknown",
+                    "conflicting"
+                  ]
+                },
+                "evidence_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "name",
+                "value",
+                "unit",
+                "reference_datum",
+                "status",
+                "evidence_ids"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0
+          },
+          "floor_presence": {
+            "enum": [
+              "confirmed",
+              "absent",
+              "unknown",
+              "not_applicable"
+            ]
+          },
+          "general_access": {
+            "enum": [
+              "allowed",
+              "conditional",
+              "forbidden",
+              "unknown",
+              "not_applicable"
+            ]
+          },
+          "barrier_effect": {
+            "enum": [
+              "blocks_crossing",
+              "state_dependent",
+              "no_physical_barrier",
+              "unknown"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "class",
+          "status",
+          "geometry",
+          "evidence_ids",
+          "reasoning",
+          "alternative_checked",
+          "unknown_properties",
+          "attributes",
+          "floor_presence",
+          "general_access",
+          "barrier_effect"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "from_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "to_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "bounds",
+              "contains",
+              "connects",
+              "located_in",
+              "part_of",
+              "annotates"
+            ]
+          },
+          "status": {
+            "enum": [
+              "confirmed",
+              "supported",
+              "unknown",
+              "conflicting"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "condition": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "from_id",
+          "to_id",
+          "kind",
+          "status",
+          "evidence_ids",
+          "condition"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "schema_version",
+    "source_hashes",
+    "coordinate_spaces",
+    "evidence",
+    "entities",
+    "relations"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Proposed adapter contract only. Polygon validity, coordinate dimensionality, source identity, evidence references and physical connectivity need engine-side checks beyond this schema."
+}

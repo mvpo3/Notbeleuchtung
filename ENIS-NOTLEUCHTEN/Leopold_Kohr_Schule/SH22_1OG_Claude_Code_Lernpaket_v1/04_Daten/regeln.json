@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "rules": [
+    {
+      "id": "R01",
+      "topic": "wall",
+      "rule": "Wandkörper über Schichten, Füllung, Kontinuität und Anschlüsse erkennen; gesamte Dicke sperren.",
+      "examples": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ]
+    },
+    {
+      "id": "R02",
+      "topic": "labels",
+      "rule": "Benachbarte Texte zuerst lesen und räumlich zuordnen; Position ist noch keine Bauteilkontur.",
+      "examples": [
+        "M06",
+        "W02",
+        "W06"
+      ]
+    },
+    {
+      "id": "R03",
+      "topic": "guard",
+      "rule": "Absturzsicherung, Geländer und Brüstung als gesonderte Barrieren erfassen.",
+      "examples": [
+        "M06",
+        "W02"
+      ]
+    },
+    {
+      "id": "R04",
+      "topic": "door",
+      "rule": "Wandöffnung, Anschlag, Türblatt und Bogen gemeinsam auswerten; Bogen ist keine Wand.",
+      "examples": [
+        "T01",
+        "T02",
+        "T03"
+      ]
+    },
+    {
+      "id": "R05",
+      "topic": "window",
+      "rule": "Rahmenlage und Höhenhinweis prüfen; Fensterbogen schafft keinen gewöhnlichen Durchgang.",
+      "examples": [
+        "F01",
+        "F02"
+      ]
+    },
+    {
+      "id": "R06",
+      "topic": "furniture",
+      "rule": "Möbelhindernisse von Raumgrenzen trennen; Kreuzfelder erzeugen keine neuen Räume.",
+      "examples": [
+        "M03",
+        "F03",
+        "W03"
+      ]
+    },
+    {
+      "id": "R07",
+      "topic": "walkable",
+      "rule": "Zusammenhängende Bodenflächen bilden und durch bestätigte Öffnungen verbinden.",
+      "examples": [
+        "W01",
+        "W05",
+        "W06"
+      ]
+    },
+    {
+      "id": "R08",
+      "topic": "dead_end",
+      "rule": "Endraum kann erreichbar und begehbar sein, ohne ein Durchgang zu einem weiteren Raum zu sein.",
+      "examples": [
+        "W04"
+      ]
+    },
+    {
+      "id": "R09",
+      "topic": "stair",
+      "rule": "Stufenfolge, Lauflinie und Geschossbezug zusammen lesen; eigener Höhenübergang.",
+      "examples": [
+        "S01",
+        "S02",
+        "S03",
+        "S04"
+      ]
+    },
+    {
+      "id": "R10",
+      "topic": "lift",
+      "rule": "Kabine, Schacht und Haltestelle getrennt führen; technischer Restspalt ist kein Gang.",
+      "examples": [
+        "L01",
+        "L02"
+      ]
+    },
+    {
+      "id": "R11",
+      "topic": "projection",
+      "rule": "Untersicht und projizierte Konturen nicht ungeprüft zu Wänden auf der aktuellen Ebene machen.",
+      "examples": [
+        "M05"
+      ]
+    },
+    {
+      "id": "R12",
+      "topic": "annotation",
+      "rule": "Elektrodiagonalen, Maßlinien und Textrahmen sind keine Wege oder Raumgrenzen.",
+      "examples": [
+        "W01",
+        "W02"
+      ]
+    },
+    {
+      "id": "R13",
+      "topic": "unknown",
+      "rule": "Widersprüche und fehlende Höhenbelege als offen ausgeben; keine versteckten Verbindungen erfinden.",
+      "examples": [
+        "S02",
+        "L02"
+      ]
+    },
+    {
+      "id": "R14",
+      "topic": "white",
+      "rule": "Weiß allein beweist weder freie Fläche noch Hindernis; konkrete Bauteile entscheiden.",
+      "examples": [
+        "W05",
+        "W06"
+      ]
+    },
+    {
+      "id": "R15",
+      "topic": "evidence",
+      "rule": "Jede Entscheidung mit Quelle, Geschoss, Koordinaten, Begründung und Status ausgeben.",
+      "examples": [
+        "W02",
+        "W06"
+      ]
+    }
+  ]
+}

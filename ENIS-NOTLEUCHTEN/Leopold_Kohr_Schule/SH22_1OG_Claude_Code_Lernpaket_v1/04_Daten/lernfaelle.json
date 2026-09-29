@@ -1,0 +1,2516 @@
+{
+  "schema_version": "1.0",
+  "coordinate_space": "sh22_1og_pdf_pt_top_left",
+  "cases": [
+    {
+      "id": "M01",
+      "title": "Außenecke: die gesamte Wand erkennen",
+      "section": "MAUERN",
+      "intro": "Am linken oberen Gebäudeeck treffen zwei breite Außenwandbänder aufeinander. Die Wand besteht aus mehreren gezeichneten Schichten.",
+      "rule": "Nicht nur eine dünne Mittellinie sperren: Der gesamte zusammenhängende Wandquerschnitt ist ein Hindernis.",
+      "marks": [
+        {
+          "title": "1 · Wandkern",
+          "text": "Die dichte diagonale Schraffur liegt zwischen zwei Begrenzungslinien. Diese Fläche gehört zum massiven Wandkörper.",
+          "color": "R",
+          "target": [
+            70,
+            105
+          ],
+          "shape": [
+            "rect",
+            [
+              65,
+              80,
+              77,
+              142
+            ]
+          ]
+        },
+        {
+          "title": "2 · Äußere Schicht",
+          "text": "Die Schleifen liegen innerhalb des Außenwandaufbaus. Auch diese Schicht darf ein Gehbereich nicht durchschneiden.",
+          "color": "O",
+          "target": [
+            57,
+            100
+          ],
+          "shape": [
+            "rect",
+            [
+              49,
+              79,
+              64,
+              142
+            ]
+          ]
+        },
+        {
+          "title": "3 · Geschlossene Ecke",
+          "text": "Die Wandbänder schließen aneinander an. Hier entsteht keine Öffnung und keine diagonale Abkürzung.",
+          "color": "R",
+          "target": [
+            70,
+            70
+          ],
+          "shape": [
+            "rect",
+            [
+              48,
+              48,
+              80,
+              80
+            ]
+          ]
+        },
+        {
+          "title": "4 · Innenseite",
+          "text": "Erst raumseitig hinter der Wandbegrenzung beginnt der freie Boden. Die Begrenzung ist nicht selbst ein Gang.",
+          "color": "G",
+          "target": [
+            84,
+            123
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                80,
+                85
+              ],
+              [
+                80,
+                145
+              ]
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "rot",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        30,
+        30,
+        140,
+        160
+      ],
+      "book_pages": [
+        12,
+        13
+      ],
+      "primary_class": "wall",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": []
+    },
+    {
+      "id": "M02",
+      "title": "Wandpfeiler zwischen zwei Fenstern",
+      "section": "MAUERN",
+      "intro": "Die Außenwand wird von Fensteröffnungen unterbrochen. Zwischen den Öffnungen bleibt ein breiter, mehrschichtiger Wandpfeiler.",
+      "rule": "Wand, Fensteröffnung und anschließender Wandpfeiler getrennt beschreiben; die Fassade ist kein durchgehender Ausgang.",
+      "marks": [
+        {
+          "title": "1 · Schraffierter Kern",
+          "text": "An dieser Stelle setzt sich die diagonale Wandfüllung fort. Sie endet klar an der seitlichen Fensterlaibung.",
+          "color": "R",
+          "target": [
+            472,
+            70
+          ],
+          "shape": [
+            "rect",
+            [
+              449,
+              65,
+              494,
+              77
+            ]
+          ]
+        },
+        {
+          "title": "2 · Dämm-/Bekleidungsschicht",
+          "text": "Die äußere Schicht gehört zum selben Bauteilpaket. Rot umfasst deshalb mehr als nur den tragenden Kern.",
+          "color": "O",
+          "target": [
+            472,
+            57
+          ],
+          "shape": [
+            "rect",
+            [
+              449,
+              49,
+              494,
+              64
+            ]
+          ]
+        },
+        {
+          "title": "3 · Fensteranschluss",
+          "text": "Links fehlen die massiven Schichten. Dort liegen feine parallele Rahmenlinien in einer Öffnung.",
+          "color": "B",
+          "target": [
+            400,
+            59
+          ],
+          "shape": [
+            "rect",
+            [
+              351,
+              54,
+              445,
+              63
+            ]
+          ]
+        },
+        {
+          "title": "4 · Innenkante",
+          "text": "Diese raumseitige Linie begrenzt die Wand. Der Boden schließt auf ihrer Innenseite an.",
+          "color": "G",
+          "target": [
+            472,
+            80
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                449,
+                80
+              ],
+              [
+                494,
+                80
+              ]
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "rot",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        330,
+        30,
+        520,
+        114
+      ],
+      "book_pages": [
+        14,
+        15
+      ],
+      "primary_class": "wall",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": []
+    },
+    {
+      "id": "M03",
+      "title": "Innenwand und Schrank sauber trennen",
+      "section": "MAUERN",
+      "intro": "An dieser Ecke treffen eine senkrechte Innenwand und eine waagrechte Wand aufeinander. Direkt daneben steht eine Reihe von Einbaumöbeln.",
+      "rule": "Ein X in einem Rechteck ist hier ein Möbelhinweis. Erst Begrenzung, Füllung und Anschluss zusammen begründen die Wandzuordnung.",
+      "marks": [
+        {
+          "title": "1 · Senkrechte Wand",
+          "text": "Ein schmaler, kontinuierlicher schraffierter Streifen trennt zwei Bereiche. Er bleibt ein Hindernis unabhängig von seiner Stärke.",
+          "color": "R",
+          "target": [
+            604,
+            460
+          ],
+          "shape": [
+            "rect",
+            [
+              597,
+              433,
+              611,
+              494
+            ]
+          ]
+        },
+        {
+          "title": "2 · Anschluss der Querwand",
+          "text": "Die Schraffuren treffen ohne Durchgang aufeinander. Der Wandanschluss verhindert einen diagonalen Durchtritt.",
+          "color": "R",
+          "target": [
+            635,
+            504
+          ],
+          "shape": [
+            "rect",
+            [
+              612,
+              498,
+              671,
+              511
+            ]
+          ]
+        },
+        {
+          "title": "3 · Einbaumöbel",
+          "text": "Die größeren Felder mit Kreuzlinien liegen vor der Wand. Sie sind Hindernisse für die Bodenfläche, aber keine Raumtrennwand.",
+          "color": "O",
+          "target": [
+            646,
+            483
+          ],
+          "shape": [
+            "rect",
+            [
+              616,
+              466,
+              674,
+              496
+            ]
+          ]
+        },
+        {
+          "title": "4 · Freier Boden",
+          "text": "Unterhalb der Querwand liegt die anschließende Bodenfläche. Eine Möbelkante darf hier keinen neuen Raum erzeugen.",
+          "color": "G",
+          "target": [
+            643,
+            522
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                619,
+                521
+              ],
+              [
+                669,
+                521
+              ]
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "rot",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        580,
+        430,
+        675,
+        535
+      ],
+      "book_pages": [
+        16,
+        17
+      ],
+      "primary_class": "wall",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": []
+    },
+    {
+      "id": "M04",
+      "title": "Auch dünne WC-Trennwände sperren",
+      "section": "MAUERN",
+      "intro": "Der WC-Bereich enthält massive Begrenzungen und sehr dünne Kabinentrennwände. Die Sanitärsymbole allein bestimmen keine Raumgrenze.",
+      "rule": "Dünne Trennwände als feste Barrieren behandeln. Waschbecken und WC bleiben als belegte Stellflächen weiß ausgespart.",
+      "marks": [
+        {
+          "title": "1 · Dünne Trennwand",
+          "text": "Die schmale durchgehende Doppellinie trennt benachbarte Kabinen. Ihre geringe Stärke macht sie nicht begehbar.",
+          "color": "R",
+          "target": [
+            1276,
+            691
+          ],
+          "shape": [
+            "rect",
+            [
+              1274,
+              663,
+              1278,
+              724
+            ]
+          ]
+        },
+        {
+          "title": "2 · Massive Querwand",
+          "text": "Der gefüllte bzw. schraffierte horizontale Streifen ist ein anderer Wandaufbau, erfüllt aber ebenfalls die Trennfunktion.",
+          "color": "R",
+          "target": [
+            1222,
+            731
+          ],
+          "shape": [
+            "rect",
+            [
+              1175,
+              726,
+              1260,
+              736
+            ]
+          ]
+        },
+        {
+          "title": "3 · Sanitärgegenstand",
+          "text": "Die gerundete Kontur gehört zum WC. Sie bleibt als Gegenstand ausgespart, wird jedoch nicht als Mauer erklärt.",
+          "color": "O",
+          "target": [
+            1255,
+            705
+          ],
+          "shape": [
+            "rect",
+            [
+              1245,
+              696,
+              1265,
+              724
+            ]
+          ]
+        },
+        {
+          "title": "4 · Kabinenboden",
+          "text": "Der freie Zwischenraum ist Boden innerhalb der Kabine. Der Zugang verläuft durch die Türöffnung am Kabinenende.",
+          "color": "G",
+          "target": [
+            1295,
+            681
+          ],
+          "shape": [
+            "rect",
+            [
+              1283,
+              664,
+              1318,
+              690
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "gruen",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        1115,
+        630,
+        1350,
+        780
+      ],
+      "book_pages": [
+        18,
+        19
+      ],
+      "primary_class": "wall",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": []
+    },
+    {
+      "id": "M05",
+      "title": "Terrassenkontur: hier steht keine Mauer",
+      "section": "MAUERN",
+      "intro": "Die von dir durchgestrichene Kontur bei F1.04 wurde fälschlich als Wand markiert. Die zugehörigen DXF-Linien enthalten einen Untersichtsbezug.",
+      "rule": "Korrektur: Diese Kontur erzeugt hier keine Mauer und keine neue Raumgrenze. Beschriftung, Darstellungsebene und Bauteilanschluss müssen die Zuordnung gemeinsam tragen.",
+      "marks": [
+        {
+          "title": "1 · Beanstandete Kontur",
+          "text": "Die dünne Kontur bleibt als Originalinformation sichtbar. Violett hebt sie nur zur Erklärung hervor; die rote Wandmarkierung wurde entfernt.",
+          "color": "P",
+          "target": [
+            2552.73,
+            1850
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                2552.72,
+                1610.6
+              ],
+              [
+                2552.75,
+                2031.45
+              ],
+              [
+                2318.15,
+                2031.46
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "2 · Tatsächliche Außenwand",
+          "text": "Links liegt ein mehrschichtiger, schraffierter Wandkörper. Er bleibt rot markiert und darf nicht mit der dünnen Kontur rechts gleichgesetzt werden.",
+          "color": "R",
+          "target": [
+            2308,
+            1860
+          ],
+          "shape": [
+            "rect",
+            [
+              2297,
+              1780,
+              2317,
+              1930
+            ]
+          ]
+        },
+        {
+          "title": "3 · Boden setzt sich fort",
+          "text": "Die grüne Bodenfläche wird an der beanstandeten Linie nicht mehr künstlich unterbrochen. Hier entsteht kein zusätzlicher Raum.",
+          "color": "G",
+          "target": [
+            2552,
+            1940
+          ],
+          "shape": [
+            "rect",
+            [
+              2527,
+              1915,
+              2580,
+              1970
+            ]
+          ]
+        },
+        {
+          "title": "4 · Beschriftung mitlesen",
+          "text": "F1.04, Terrasse und Betonplatte benennen die Fläche. In der DXF wird die betroffene Kontur zudem als Untersicht geführt; der Layername allein genügt nicht.",
+          "color": "O",
+          "target": [
+            2435,
+            2072
+          ],
+          "shape": [
+            "rect",
+            [
+              2403,
+              2047,
+              2550,
+              2101
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "gruen",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        2280,
+        1510,
+        2720,
+        2106
+      ],
+      "book_pages": [
+        20,
+        21
+      ],
+      "primary_class": "projection",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": []
+    },
+    {
+      "id": "M06",
+      "title": "Absturzsicherung ist keine massive Mauer",
+      "section": "MAUERN",
+      "intro": "Die von dir eingekreisten Außenränder sind jetzt ergänzt. Der Plan benennt die Randsicherung ausdrücklich als Absturzsicherung raumhoch.",
+      "rule": "Rot durchgezogen bezeichnet Wandkörper. Rot gestrichelt ergänzt Brüstungen, Geländer und Absturzsicherungen als eigene Barrierenart. Die vollständige Randzone wird dadurch nicht zur Mauer.",
+      "marks": [
+        {
+          "title": "1 · Text ist ein Bauteilhinweis",
+          "text": "Die eingerahmte Quellbeschriftung lautet Absturzsicherung raumhoch. Diese Information gehört zur Klassifizierung und darf nicht übergangen werden.",
+          "color": "O",
+          "target": [
+            1464,
+            1949
+          ],
+          "shape": [
+            "rect",
+            [
+              1431,
+              1944,
+              1500,
+              1954
+            ]
+          ]
+        },
+        {
+          "title": "2 · Gesicherter Außenrand",
+          "text": "Die gestrichelte rote Ergänzung folgt der gezeichneten Sicherung. Sie begrenzt den Durchtritt, ohne ein massiver Wandkörper zu sein.",
+          "color": "R",
+          "target": [
+            1410,
+            1945.65
+          ],
+          "shape": [
+            "dash",
+            [
+              [
+                1365,
+                1945.66
+              ],
+              [
+                1517.19,
+                1945.55
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "3 · Rand um die Ecke verfolgen",
+          "text": "Die Sicherung setzt sich am Knick fort. Solche Anschlüsse müssen auch an den übrigen eingekreisten Außenrändern zusammenhängend gelesen werden.",
+          "color": "R",
+          "target": [
+            1517.2,
+            1985
+          ],
+          "shape": [
+            "rect",
+            [
+              1514.5,
+              1943,
+              1520.5,
+              2018
+            ]
+          ]
+        },
+        {
+          "title": "4 · Randfläche getrennt lassen",
+          "text": "Die Fläche vor dem Rand ist nicht vollständig eine Mauer. Pflanzentrog, Boden und die schmale Sicherung bleiben unterschiedliche Elemente.",
+          "color": "P",
+          "target": [
+            1380,
+            1906
+          ],
+          "shape": [
+            "rect",
+            [
+              1355,
+              1890,
+              1405,
+              1927
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "rot",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        1340,
+        1880,
+        1560,
+        2050
+      ],
+      "book_pages": [
+        22,
+        23
+      ],
+      "primary_class": "guard",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": [
+        "7E8D8",
+        "7E8DA",
+        "87217",
+        "87218"
+      ]
+    },
+    {
+      "id": "T01",
+      "title": "Einflügelige Tür: Blatt, Bogen und Schluss",
+      "section": "TÜREN",
+      "intro": "Eine Türöffnung unterbricht die Innenwand. Die Zeichnung zeigt den Flügel geöffnet und beschreibt seine Bewegung mit einem Bogen.",
+      "rule": "Der Bogen ist keine Mauer. Die grüne gestrichelte Linie ergänzt die geschlossene Stellung nur zur Erklärung.",
+      "marks": [
+        {
+          "title": "1 · Drehpunkt",
+          "text": "Hier treffen Blatt und Wandanschluss zusammen. Um diesen Punkt dreht der Flügel; er ist der Mittelpunkt des Schwenkbogens.",
+          "color": "O",
+          "target": [
+            460.62,
+            467.73
+          ],
+          "shape": [
+            "circle",
+            [
+              460.62,
+              467.73,
+              2.2
+            ]
+          ]
+        },
+        {
+          "title": "2 · Türblatt, geöffnet",
+          "text": "Diese gerade Linie zeigt den geöffneten Flügel. Ihre Lage ist eine dargestellte Stellung, keine feste Raumtrennung.",
+          "color": "B",
+          "target": [
+            460.62,
+            495
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                460.62,
+                467.73
+              ],
+              [
+                460.62,
+                515.56
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "3 · Schwenkbogen",
+          "text": "Der Viertelkreis zeigt den Bewegungsbereich des Flügels. Die Fläche innerhalb des Bogens bleibt grundsätzlich Boden.",
+          "color": "P",
+          "target": [
+            494.4,
+            501.5
+          ],
+          "shape": [
+            "arc",
+            "8BFA2"
+          ]
+        },
+        {
+          "title": "4 · Geschlossen / Öffnung",
+          "text": "Das Blatt würde quer über die Wandöffnung schließen. DL 90 / DL 210 steht an der Tür; diese Maße getrennt vom Bogen lesen.",
+          "color": "G",
+          "target": [
+            486,
+            467.73
+          ],
+          "shape": [
+            "dash",
+            [
+              [
+                460.62,
+                467.73
+              ],
+              [
+                508.44,
+                467.73
+              ]
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "source",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        425,
+        430,
+        545,
+        550
+      ],
+      "book_pages": [
+        24,
+        25
+      ],
+      "primary_class": "door",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": [
+        "8BFA2"
+      ]
+    },
+    {
+      "id": "T02",
+      "title": "Zweiflügelige Tür mit weitem Schwenkbogen",
+      "section": "TÜREN",
+      "intro": "Diese Öffnung besitzt zwei Flügel. Einer ist rechtwinklig, der andere weit zurückgeschwenkt dargestellt; deshalb sind die Bögen unterschiedlich groß.",
+      "rule": "Die Wandöffnung reicht nur zwischen den beiden Drehpunkten. Der weit ausgeschlagene Bogen vergrößert die Öffnung nicht.",
+      "marks": [
+        {
+          "title": "1 · Zwei Drehpunkte",
+          "text": "Die Drehpunkte liegen am oberen und unteren Ende derselben Wandöffnung. Sie bestimmen den tatsächlichen Portalabschnitt.",
+          "color": "O",
+          "target": [
+            1117.44,
+            1130.48
+          ],
+          "shape": [
+            "circles",
+            [
+              [
+                1117.44,
+                1034.82,
+                2
+              ],
+              [
+                1117.44,
+                1130.48,
+                2
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "2 · Zwei geöffnete Flügel",
+          "text": "Oben steht das Blatt quer zur Öffnung. Unten ist das Blatt fast entlang der Wand zurückgeschwenkt. Beide sind beweglich.",
+          "color": "B",
+          "target": [
+            1144,
+            1034.82
+          ],
+          "shape": [
+            "lines",
+            [
+              [
+                [
+                  1117.44,
+                  1034.82
+                ],
+                [
+                  1165.26,
+                  1034.82
+                ]
+              ],
+              [
+                [
+                  1117.44,
+                  1130.48
+                ],
+                [
+                  1121.62,
+                  1178.11
+                ]
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "3 · Unterschiedliche Bögen",
+          "text": "Violett folgt beiden Originalbögen. Der lange untere Bogen gehört zur Flügelbewegung und ist keine gebogene Raumwand.",
+          "color": "P",
+          "target": [
+            1165,
+            1130
+          ],
+          "shape": [
+            "arcs",
+            [
+              "6775A",
+              "6775B"
+            ]
+          ]
+        },
+        {
+          "title": "4 · Geschlossener Abschluss",
+          "text": "Die ergänzte gestrichelte Linie verbindet die Anschläge. Beide Flügel würden sich ungefähr in der Mitte dieser Öffnung treffen.",
+          "color": "G",
+          "target": [
+            1117.44,
+            1082.65
+          ],
+          "shape": [
+            "dash",
+            [
+              [
+                1117.44,
+                1034.82
+              ],
+              [
+                1117.44,
+                1130.48
+              ]
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "source",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        1090,
+        1015,
+        1240,
+        1210
+      ],
+      "book_pages": [
+        26,
+        27
+      ],
+      "primary_class": "door",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": [
+        "6775A",
+        "6775B"
+      ]
+    },
+    {
+      "id": "T03",
+      "title": "Türöffnung im Wandanschluss",
+      "section": "TÜREN",
+      "intro": "Auch bei einer Ecke müssen Wandkörper, Laibung, Türblatt und Öffnung einzeln gelesen werden. Kleine Zusatzsymbole ändern die Grundgeometrie nicht.",
+      "rule": "Eine bestätigte Tür verbindet die Bodenbereiche auf ihren beiden Seiten. Sie erzeugt keinen Durchgang durch das danebenliegende Wandstück.",
+      "marks": [
+        {
+          "title": "1 · Ende der Wand",
+          "text": "Die schraffierte Wand endet an der Öffnung. Dieses bauliche Ende ist das entscheidende Gegenstück zum Türanschlag.",
+          "color": "R",
+          "target": [
+            1915,
+            1026
+          ],
+          "shape": [
+            "rect",
+            [
+              1903,
+              1017,
+              1919,
+              1033
+            ]
+          ]
+        },
+        {
+          "title": "2 · Geöffnetes Blatt",
+          "text": "Die senkrechte Blattlinie beginnt am rechten Anschlag und ragt in den angrenzenden Bodenbereich.",
+          "color": "B",
+          "target": [
+            1973.75,
+            1060
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                1973.75,
+                1031.447
+              ],
+              [
+                1973.75,
+                1082.987
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "3 · Schwenkrichtung",
+          "text": "Der Bogen verbindet die Blattspitze mit der geschlossenen Stellung. Er darf keine zusätzliche geschlossene Raumkontur bilden.",
+          "color": "P",
+          "target": [
+            1937.3,
+            1067.9
+          ],
+          "shape": [
+            "arc",
+            "5E280"
+          ]
+        },
+        {
+          "title": "4 · Abschluss der Öffnung",
+          "text": "Die grüne Ergänzung zeigt den Schluss zwischen den Anschlägen. Die Türmaße im Original dienen als zusätzlicher Hinweis.",
+          "color": "G",
+          "target": [
+            1947,
+            1031.447
+          ],
+          "shape": [
+            "dash",
+            [
+              [
+                1922.204,
+                1031.447
+              ],
+              [
+                1973.751,
+                1031.447
+              ]
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "source",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        1880,
+        950,
+        2035,
+        1120
+      ],
+      "book_pages": [
+        28,
+        29
+      ],
+      "primary_class": "door",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": [
+        "5E280"
+      ]
+    },
+    {
+      "id": "F01",
+      "title": "Fenster: Rahmen, Flügel und Brüstung",
+      "section": "FENSTER",
+      "intro": "An der Außenfassade liegen mehrere parallele Rahmenlinien. Die eingezeichneten Schwenkbögen können einer Tür ähnlich sehen.",
+      "rule": "Ein Bogen allein beweist keine Tür. Rahmenlage in der Fassade und die beschriftete Brüstung sprechen hier für Fenster.",
+      "marks": [
+        {
+          "title": "1 · Rahmen / Verglasung",
+          "text": "Mehrere eng beieinanderliegende parallele Linien liegen in der Fassadenöffnung. Diese Liniengruppe kennzeichnet das Fensterelement.",
+          "color": "B",
+          "target": [
+            230,
+            60
+          ],
+          "shape": [
+            "rect",
+            [
+              149,
+              55,
+              287,
+              66
+            ]
+          ]
+        },
+        {
+          "title": "2 · Öffnungsflügel",
+          "text": "Die senkrechte Linie und der Bogen gehören zum Fensterflügel. Seine Bewegung macht das Fenster nicht zu einem Laufweg.",
+          "color": "P",
+          "target": [
+            199.95,
+            85
+          ],
+          "shape": [
+            "compound",
+            [
+              [
+                "line",
+                [
+                  [
+                    199.95,
+                    63.93
+                  ],
+                  [
+                    199.95,
+                    98.47
+                  ]
+                ]
+              ],
+              [
+                "arc",
+                "88411"
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "3 · Höhenangabe",
+          "text": "Im Original steht FPH ü. FBOK 0,85. Das ist eine Höhe über fertiger Bodenoberkante, keine Durchgangsbreite.",
+          "color": "O",
+          "target": [
+            216,
+            85
+          ],
+          "shape": [
+            "rect",
+            [
+              173,
+              77,
+              252,
+              90
+            ]
+          ]
+        },
+        {
+          "title": "4 · Wandanschluss",
+          "text": "Rechts schließt der massive Außenwandpfeiler an. Das Fenster ist eine Unterbrechung des Wandaufbaus, aber kein normaler Ausgang.",
+          "color": "R",
+          "target": [
+            305,
+            72
+          ],
+          "shape": [
+            "rect",
+            [
+              296,
+              49,
+              309,
+              78
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "source",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        103,
+        28,
+        310,
+        138
+      ],
+      "book_pages": [
+        30,
+        31
+      ],
+      "primary_class": "window",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": [
+        "88411"
+      ]
+    },
+    {
+      "id": "F02",
+      "title": "Fenster an der senkrechten Außenwand",
+      "section": "FENSTER",
+      "intro": "Dasselbe Fenstersymbol ist hier um 90 Grad gedreht. Entscheidend sind Bauteilanschlüsse und Höhenangaben, nicht die Ausrichtung auf dem Papier.",
+      "rule": "Fenster als Fassadenelement erfassen; keine Verbindung im begehbaren Wegenetz allein aus einem Flügelbogen erzeugen.",
+      "marks": [
+        {
+          "title": "1 · Parallele Rahmenlinien",
+          "text": "Die feinen senkrechten Linien liegen zwischen zwei massiven Wandabschnitten. Sie bilden das Fensterband.",
+          "color": "B",
+          "target": [
+            61,
+            1100
+          ],
+          "shape": [
+            "rect",
+            [
+              56,
+              1045,
+              64,
+              1155
+            ]
+          ]
+        },
+        {
+          "title": "2 · Fensterflügel",
+          "text": "Der Flügel schwenkt in den Raum. Seine Darstellung ähnelt einer Tür, bleibt aber Teil dieses Fensterelements.",
+          "color": "P",
+          "target": [
+            84,
+            1041.94
+          ],
+          "shape": [
+            "compound",
+            [
+              [
+                "line",
+                [
+                  [
+                    64.31,
+                    1041.94
+                  ],
+                  [
+                    98.85,
+                    1041.94
+                  ]
+                ]
+              ],
+              [
+                "arc",
+                "89565"
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "3 · Brüstung lesen",
+          "text": "Die gedrehte Beschriftung nennt FPH ü. FBOK 0,85. Diese Information verhindert die falsche Annahme eines bodennahen Durchgangs.",
+          "color": "O",
+          "target": [
+            84,
+            1100
+          ],
+          "shape": [
+            "rect",
+            [
+              77,
+              1079,
+              91,
+              1146
+            ]
+          ]
+        },
+        {
+          "title": "4 · Geschlossener Pfeiler",
+          "text": "Unterhalb setzt sich das schraffierte Wandpaket fort. Durch diesen Anschluss führt ebenfalls kein Weg.",
+          "color": "R",
+          "target": [
+            65,
+            1200
+          ],
+          "shape": [
+            "rect",
+            [
+              49,
+              1183,
+              77,
+              1218
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "source",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        22,
+        940,
+        125,
+        1220
+      ],
+      "book_pages": [
+        32,
+        33
+      ],
+      "primary_class": "window",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": [
+        "89565"
+      ]
+    },
+    {
+      "id": "F03",
+      "title": "Gegenbeispiel: Kreuzfelder sind Möbel",
+      "section": "FENSTER",
+      "intro": "Die waagrechte Reihe mit großen X-Feldern steht vor einer Innenwand. Sie darf weder als Fensterband noch als neue Wand interpretiert werden.",
+      "rule": "Symbolähnlichkeit reicht nicht: Die X-Felder sind eine Möblierung vor der schraffierten Raumwand.",
+      "marks": [
+        {
+          "title": "1 · Schrankfelder",
+          "text": "Die großen Kreuzlinien liegen in nebeneinanderliegenden Rechtecken. Sie beschreiben hier Einbaumöbel.",
+          "color": "O",
+          "target": [
+            220,
+            480
+          ],
+          "shape": [
+            "rect",
+            [
+              82,
+              465,
+              348,
+              497
+            ]
+          ]
+        },
+        {
+          "title": "2 · Tatsächliche Wand",
+          "text": "Unter den Möbeln läuft ein eigenes, eng schraffiertes Wandband. Dieses Band bildet die Raumgrenze.",
+          "color": "R",
+          "target": [
+            230,
+            505
+          ],
+          "shape": [
+            "rect",
+            [
+              82,
+              498,
+              359,
+              509
+            ]
+          ]
+        },
+        {
+          "title": "3 · Wandversprung",
+          "text": "Die Wand wird an der Nische versetzt fortgeführt. Dem durchgehenden Bauteil folgen, nicht den Möbeltüren.",
+          "color": "R",
+          "target": [
+            394,
+            468
+          ],
+          "shape": [
+            "lines",
+            [
+              [
+                [
+                  356,
+                  497
+                ],
+                [
+                  356,
+                  470
+                ],
+                [
+                  425,
+                  470
+                ],
+                [
+                  425,
+                  498
+                ]
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "4 · Freier Bereich davor",
+          "text": "Die Stellfläche der Schränke bleibt weiß. Der Boden vor der Reihe gehört weiterhin zum angrenzenden Raum.",
+          "color": "G",
+          "target": [
+            231,
+            523
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                140,
+                523
+              ],
+              [
+                320,
+                523
+              ]
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "source",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        73,
+        440,
+        465,
+        535
+      ],
+      "book_pages": [
+        34,
+        35
+      ],
+      "primary_class": "furniture",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": []
+    },
+    {
+      "id": "W01",
+      "title": "Ein Gang ist eine zusammenhängende Fläche",
+      "section": "WEGE",
+      "intro": "Die beschriftete Erschließung verbindet mehrere Türen. Eine dünne Linie um eine Beschriftung oder eine Belagsgrenze ist noch keine Wand.",
+      "rule": "Grün muss durch echte Öffnungen zusammenhängen. Beschriftungsrahmen, Maßlinien und Möbelkanten dürfen den Gang nicht künstlich teilen.",
+      "marks": [
+        {
+          "title": "1 · Erschließung im Original",
+          "text": "Die Nutzungsbezeichnung und der genannte Bodenbelag stützen die Zuordnung als begehbare Fläche.",
+          "color": "G",
+          "target": [
+            704,
+            550
+          ],
+          "shape": [
+            "rect",
+            [
+              685,
+              517,
+              805,
+              590
+            ]
+          ]
+        },
+        {
+          "title": "2 · Türzugang",
+          "text": "Die Wand wird durch eine echte Türöffnung unterbrochen. Hier schließt der Nebenraum an den Gang an.",
+          "color": "B",
+          "target": [
+            683,
+            647
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                673,
+                620
+              ],
+              [
+                690,
+                650
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "3 · Kein zusätzlicher Raum",
+          "text": "Die dünne Begrenzung um den Druckerbereich besitzt hier keinen eigenständigen massiven Wandquerschnitt.",
+          "color": "O",
+          "target": [
+            865,
+            580
+          ],
+          "shape": [
+            "rect",
+            [
+              821,
+              518,
+              880,
+              636
+            ]
+          ]
+        },
+        {
+          "title": "4 · Gang vor den Türen",
+          "text": "Der freie Boden setzt sich vor den Türöffnungen fort. Flügelbögen werden nicht als Wände aus der Fläche ausgeschnitten.",
+          "color": "G",
+          "target": [
+            925,
+            576
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                830,
+                585
+              ],
+              [
+                1000,
+                585
+              ]
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "gruen",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        470,
+        488,
+        1125,
+        680
+      ],
+      "book_pages": [
+        36,
+        37
+      ],
+      "primary_class": "walkable_area",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": []
+    },
+    {
+      "id": "W02",
+      "title": "Absturzsicherung raumhoch: Beschriftung lesen",
+      "section": "WEGE",
+      "intro": "Am unteren Innenrand steht „Absturzsicherung raumhoch“. Der Text benennt die Sicherung direkt und erklärt die zugehörige Begrenzung.",
+      "rule": "Benachbarte Beschriftungen lesen und dem richtigen Bauteil zuordnen. Hier nennt der Plan ausdrücklich eine raumhohe Absturzsicherung: eine gesicherte Grenze ohne Durchgang. Der begehbare Umlauf liegt außerhalb.",
+      "marks": [
+        {
+          "title": "1 · Umlaufende Erschließung",
+          "text": "Die beschriftete Bodenfläche setzt sich außerhalb der inneren Begrenzung fort. Dieser umlaufende Bereich ist grün gefüllt.",
+          "color": "G",
+          "target": [
+            1830,
+            1090
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                1760,
+                1090
+              ],
+              [
+                2480,
+                1090
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "2 · Absturzsicherung raumhoch",
+          "text": "So steht es am unteren Rand. Die Sicherung schützt gegen Absturz. „Raumhoch“ beschreibt ihre Höhe; die Linien sind hier keine massive Mauer.",
+          "color": "O",
+          "target": [
+            1824,
+            1458
+          ],
+          "shape": [
+            "rect",
+            [
+              1794,
+              1452,
+              1860,
+              1465
+            ]
+          ]
+        },
+        {
+          "title": "3 · Keine diagonale Abkürzung",
+          "text": "Der innere Bereich bleibt ausgespart. Die schwarzen Diagonalen belegen für sich keinen Bodenweg auf dem 1.-OG-Niveau.",
+          "color": "R",
+          "target": [
+            2110,
+            1340
+          ],
+          "shape": [
+            "cross",
+            [
+              2090,
+              1320,
+              2130,
+              1360
+            ]
+          ]
+        },
+        {
+          "title": "4 · Blaue Linie ist Elektro",
+          "text": "Die blaue Diagonale trägt Beleuchtungswerte. Sie verbindet keine begehbaren Flächen und überbrückt keine gesicherte Kante.",
+          "color": "B",
+          "target": [
+            2240,
+            1238
+          ],
+          "shape": [
+            "circle",
+            [
+              2240,
+              1238,
+              12
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "gruen",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        1540,
+        1020,
+        2770,
+        1620
+      ],
+      "book_pages": [
+        38,
+        39
+      ],
+      "primary_class": "guard",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": [
+        "8556D",
+        "85576",
+        "85578",
+        "8557A",
+        "8720B",
+        "8720C"
+      ]
+    },
+    {
+      "id": "W03",
+      "title": "Möbel bleiben weiß, Raum bleibt ein Raum",
+      "section": "WEGE",
+      "intro": "Im Bildungsraum stehen Tische, Stühle und andere Einrichtungsgegenstände. Dazwischen liegt der nutzbare Boden desselben Raumes.",
+      "rule": "Möbel und Waschbecken als belegte Flächen aussparen. Aus jeder Möbelkante einen neuen Raum zu bilden wäre falsch.",
+      "marks": [
+        {
+          "title": "1 · Tischfläche",
+          "text": "Die rechteckige Tischplatte bleibt weiß. Sie ist eine belegte Stellfläche innerhalb des Raumes und kein eigener Raum.",
+          "color": "O",
+          "target": [
+            220,
+            225
+          ],
+          "shape": [
+            "rect",
+            [
+              202,
+              136,
+              234,
+              269
+            ]
+          ]
+        },
+        {
+          "title": "2 · Stuhl",
+          "text": "Die kleinere Kontur vor dem Tisch beschreibt einen Stuhl. Auch diese Stellfläche wird im grünen Plan ausgespart.",
+          "color": "O",
+          "target": [
+            193,
+            210
+          ],
+          "shape": [
+            "rect",
+            [
+              183,
+              204,
+              203,
+              232
+            ]
+          ]
+        },
+        {
+          "title": "3 · Boden dazwischen",
+          "text": "Zwischen den Möbeln verbleiben zusammenhängende Gehflächen. Engstellen müssen später mit einem passenden Körpermodell geprüft werden.",
+          "color": "G",
+          "target": [
+            334,
+            256
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                334,
+                130
+              ],
+              [
+                334,
+                370
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "4 · Raumgrenze außen",
+          "text": "Die schraffierte Außenwand begrenzt den Raum. Die blaue Beleuchtungsangabe und lange dünne Eintragslinien tun das nicht.",
+          "color": "R",
+          "target": [
+            71,
+            225
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                71,
+                90
+              ],
+              [
+                71,
+                350
+              ]
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "gruen",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        65,
+        72,
+        600,
+        380
+      ],
+      "book_pages": [
+        40,
+        41
+      ],
+      "primary_class": "furniture",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": []
+    },
+    {
+      "id": "W04",
+      "title": "Endraum: hinein und wieder zurück",
+      "section": "WEGE",
+      "intro": "Der Abstellraum besitzt in diesem Ausschnitt einen Türzugang. Am gegenüberliegenden Ende schließt eine Außenwand den Raum ab.",
+      "rule": "Ein erreichbarer Endraum ist begehbar. Er ist nur kein Durchgang zu einem weiteren Raum hinter seiner geschlossenen Wand.",
+      "marks": [
+        {
+          "title": "1 · Zugang unten",
+          "text": "Der Türbogen und die Öffnung zeigen den Eintritt vom Gang. Durch dieselbe Öffnung kann man wieder zurückgehen.",
+          "color": "B",
+          "target": [
+            3585,
+            1016
+          ],
+          "shape": [
+            "rect",
+            [
+              3562,
+              993,
+              3615,
+              1035
+            ]
+          ]
+        },
+        {
+          "title": "2 · Freier Boden",
+          "text": "Die Fläche zwischen den Einbauten ist als Abstellraum mit Bodenbelag beschriftet. Sie bleibt grundsätzlich zugänglich.",
+          "color": "G",
+          "target": [
+            3580,
+            777
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                3580,
+                995
+              ],
+              [
+                3580,
+                650
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "3 · Hier endet der Weg",
+          "text": "Die obere schraffierte Außenwand schließt den Raum. Ein weiterer Weg nach oben im Plan würde die Wand durchqueren.",
+          "color": "R",
+          "target": [
+            3580,
+            594
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                3520,
+                594
+              ],
+              [
+                3672,
+                594
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "4 · Schrank statt Mauer",
+          "text": "Die Kreuzfelder rechts sind Einbauten. Sie belegen Stellfläche; die echte rechte Raumwand liegt unmittelbar dahinter.",
+          "color": "O",
+          "target": [
+            3640,
+            810
+          ],
+          "shape": [
+            "rect",
+            [
+              3626,
+              623,
+              3658,
+              949
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "gruen",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        3485,
+        575,
+        3695,
+        1050
+      ],
+      "book_pages": [
+        42,
+        43
+      ],
+      "primary_class": "walkable_area",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": []
+    },
+    {
+      "id": "W05",
+      "title": "Terrasse: weiße Quelle, begehbarer Boden",
+      "section": "WEGE",
+      "intro": "Die Außenfläche F1.04 ist als Terrasse mit Betonplatte beschriftet. Ihre fehlende Schraffur ist kein Grund, sie als unbegehbar auszuschließen.",
+      "rule": "Weiße Quelle bedeutet zunächst nur ungefärbte Zeichnung. Hier belegen Nutzungsname, Belag und zusammenhängende Bodenfläche die grüne Zuordnung.",
+      "marks": [
+        {
+          "title": "1 · Nutzungs- und Belagsangabe",
+          "text": "F1.04 / Terrasse / B: Betonplatte gestrahlt sind direkte Hinweise auf die dargestellte Bodenfläche.",
+          "color": "G",
+          "target": [
+            2420,
+            2070
+          ],
+          "shape": [
+            "rect",
+            [
+              2400,
+              2043,
+              2538,
+              2115
+            ]
+          ]
+        },
+        {
+          "title": "2 · Freie Terrassenfläche",
+          "text": "Der Boden zwischen Gebäude und Randzone ist zusammenhängend. Gefällelinien beschreiben keine geschlossenen Wände.",
+          "color": "G",
+          "target": [
+            2060,
+            2124
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                1820,
+                2120
+              ],
+              [
+                2350,
+                2120
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "3 · Randzone Pflanzentrog",
+          "text": "Die ausdrücklich als Pflanzentrog bezeichnete Randfläche gehört nicht zur normalen Gehfläche und bleibt weiß ausgespart.",
+          "color": "O",
+          "target": [
+            2394,
+            2252
+          ],
+          "shape": [
+            "rect",
+            [
+              2190,
+              2215,
+              2520,
+              2290
+            ]
+          ]
+        },
+        {
+          "title": "4 · Gebäudegrenze",
+          "text": "Die Außenwand am oberen Rand bleibt rot begrenzt. Die Terrasse erzeugt keine Durchgänge durch geschlossene Fassadenfelder.",
+          "color": "R",
+          "target": [
+            2055,
+            2030
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                1910,
+                2030
+              ],
+              [
+                2190,
+                2030
+              ]
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "gruen",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        1480,
+        1900,
+        2740,
+        2370
+      ],
+      "book_pages": [
+        44,
+        45
+      ],
+      "primary_class": "walkable_area",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": []
+    },
+    {
+      "id": "S01",
+      "title": "Treppe und Podest als eigene Verbindung",
+      "section": "TREPPEN",
+      "intro": "Stiege 2 besitzt zwei nebeneinanderliegende Läufe, regelmäßige Stufenkanten und einen dazwischenliegenden Handlaufbereich.",
+      "rule": "Eine Treppe ist begehbar, überwindet aber Höhe. In der Raumerkennung eine eigene Treppenverbindung anstelle einer ebenen Raumabkürzung erfassen.",
+      "marks": [
+        {
+          "title": "1 · Wiederholte Stufenkanten",
+          "text": "Die vielen parallelen Querlinien gehören zur Treppe. Ihre Folge unterscheidet den Lauf von einer gewöhnlichen Bodenfläche.",
+          "color": "K",
+          "target": [
+            1380,
+            1370
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                1325,
+                1365
+              ],
+              [
+                1420,
+                1365
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "2 · Lauf und grüne Fläche",
+          "text": "Grün liegt auf dem Treppenlauf; die schwarzen Stufenkanten bleiben sichtbar. Das bedeutet begehbar mit Höhenwechsel.",
+          "color": "G",
+          "target": [
+            1380,
+            1450
+          ],
+          "shape": [
+            "rect",
+            [
+              1333,
+              1417,
+              1418,
+              1475
+            ]
+          ]
+        },
+        {
+          "title": "3 · Mittlere Trennung",
+          "text": "Die enge doppelte Kontur zwischen den Läufen ist Geländer/Handlaufbereich. Hier führt keine seitliche Abkürzung durch.",
+          "color": "O",
+          "target": [
+            1432,
+            1380
+          ],
+          "shape": [
+            "rect",
+            [
+              1427,
+              1250,
+              1440,
+              1488
+            ]
+          ]
+        },
+        {
+          "title": "4 · Podest und Zugang",
+          "text": "Der Bereich vor den Läufen gehört zum Treppenraum. Türflügel und Podest müssen beim Anschluss an den Gang mitgelesen werden.",
+          "color": "B",
+          "target": [
+            1420,
+            1540
+          ],
+          "shape": [
+            "rect",
+            [
+              1333,
+              1510,
+              1527,
+              1574
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "gruen",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        1295,
+        1200,
+        1560,
+        1620
+      ],
+      "book_pages": [
+        46,
+        47
+      ],
+      "primary_class": "stair",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": []
+    },
+    {
+      "id": "S02",
+      "title": "Steigungspfeil ist keine Himmelsrichtung",
+      "section": "TREPPEN",
+      "intro": "Im selben Treppenraum zeigen die Laufpfeile in unterschiedliche Richtungen auf dem Papier. Das darf nicht mit oben/unten im Gebäude gleichgesetzt werden.",
+      "rule": "Auf- und Abstieg ergeben sich aus Laufpfeil, Stufenfolge und Geschossbezug gemeinsam. Der Abstieg verläuft entgegen der Steigungsrichtung.",
+      "marks": [
+        {
+          "title": "1 · Anfangsmarke",
+          "text": "Der kleine Kreis markiert den Beginn der Lauflinie. Im linken Lauf liegt er neben der mit 1 bezeichneten Stufe.",
+          "color": "O",
+          "target": [
+            1371,
+            1467
+          ],
+          "shape": [
+            "circle",
+            [
+              1371,
+              1467,
+              3
+            ]
+          ]
+        },
+        {
+          "title": "2 · Pfeil am linken Lauf",
+          "text": "Die Stufenzahlen nehmen zur Pfeilspitze hin zu. Die Leserichtung des Steigungspfeils verläuft hier auf dem Blatt nach oben.",
+          "color": "B",
+          "target": [
+            1371,
+            1244
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                1371,
+                1455
+              ],
+              [
+                1371,
+                1250
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "3 · Rechter Lauf und Bruch",
+          "text": "Die schräge Unterbrechung zeigt eine zeichnerische Trennung des Laufes. Sie ist keine fehlende Stufe und keine Queröffnung.",
+          "color": "P",
+          "target": [
+            1482,
+            1340
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                1443,
+                1325
+              ],
+              [
+                1538,
+                1349
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "4 · Abstieg einordnen",
+          "text": "Entgegen dem Steigungspfeil geht man abwärts. Für das Zielgeschoss sind zusätzlich Höhen und der anschließende Geschossplan erforderlich.",
+          "color": "G",
+          "target": [
+            1494,
+            1432
+          ],
+          "shape": [
+            "arrow",
+            [
+              [
+                1494,
+                1472
+              ],
+              [
+                1494,
+                1390
+              ]
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "gruen",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        1310,
+        1225,
+        1550,
+        1510
+      ],
+      "book_pages": [
+        48,
+        49
+      ],
+      "primary_class": "stair",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": []
+    },
+    {
+      "id": "S03",
+      "title": "Außentreppe: 26 STG 15 / 30",
+      "section": "TREPPEN",
+      "intro": "Die Außenstiege F1.03 / Stiege 4 wird ausdrücklich als Treppe bezeichnet. Stufenzahl, Stufenkanten und Lauflinie stützen diese Zuordnung.",
+      "rule": "Treppenfläche grün füllen, Stufen- und Bruchlinien schwarz erhalten. Eine durchgehende Grünfläche darf die Höhenänderung nicht verdecken.",
+      "marks": [
+        {
+          "title": "1 · Eindeutige Beschriftung",
+          "text": "F1.03 / Stiege 4 bezeichnet das Bauteil. Die Nutzungsbezeichnung gehört zur Treppe und nicht zur benachbarten Terrasse.",
+          "color": "G",
+          "target": [
+            1310,
+            1660
+          ],
+          "shape": [
+            "rect",
+            [
+              1285,
+              1640,
+              1410,
+              1708
+            ]
+          ]
+        },
+        {
+          "title": "2 · Stufenfolge",
+          "text": "Die dicht wiederholten senkrechten Linien sind hier die Stufenkanten. Senkrecht auf dem Papier bedeutet nicht senkrecht im Gebäude.",
+          "color": "K",
+          "target": [
+            1421.69,
+            1700
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                1421.689,
+                1614.931
+              ],
+              [
+                1421.698,
+                1744.055
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "3 · Schriftlicher Stufenhinweis",
+          "text": "26 STG 15 / 30 nennt die Stufenzahl und das Steigungsverhältnis. Die Seitenansicht weiter hinten erklärt die beiden Größen.",
+          "color": "O",
+          "target": [
+            1135,
+            1676
+          ],
+          "shape": [
+            "rect",
+            [
+              1110,
+              1665,
+              1166,
+              1685
+            ]
+          ]
+        },
+        {
+          "title": "4 · Darstellungsbruch",
+          "text": "Die schrägen Linien unterbrechen die Darstellung des Laufes. Den Lauf funktional fortsetzen, nicht an dieser Stelle abschneiden.",
+          "color": "P",
+          "target": [
+            1164,
+            1700
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                1154,
+                1621
+              ],
+              [
+                1180,
+                1760
+              ]
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "gruen",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        1080,
+        1590,
+        1580,
+        1795
+      ],
+      "book_pages": [
+        50,
+        51
+      ],
+      "primary_class": "stair",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": []
+    },
+    {
+      "id": "S04",
+      "title": "Außentreppe mit 31 Stufen",
+      "section": "TREPPEN",
+      "intro": "Diese weitere Außentreppe zeigt 31 STG 15 / 30, eine Anfangsmarke, eine lange Lauflinie und eine Pfeilspitze am anderen Ende.",
+      "rule": "Zahl der Stufen, Richtungssymbol und begrenzender Rand beschreiben verschiedene Eigenschaften; keine davon allein ist ein vollständiger Geschossanschluss.",
+      "marks": [
+        {
+          "title": "1 · Anfang der Lauflinie",
+          "text": "Der kleine Kreis sitzt am Anfang der Linie. Er ist Teil des Treppensymbols und kein runder Pfosten im Gehweg.",
+          "color": "O",
+          "target": [
+            2016,
+            2626
+          ],
+          "shape": [
+            "circle",
+            [
+              2016,
+              2626,
+              3
+            ]
+          ]
+        },
+        {
+          "title": "2 · Steigungsangabe",
+          "text": "31 STG 15 / 30 ist aus der Quelle übernommen. Nicht aus dem PDF-Zoom vermeintliche reale Stufenmaße ableiten.",
+          "color": "P",
+          "target": [
+            2150,
+            2624
+          ],
+          "shape": [
+            "rect",
+            [
+              2134,
+              2613,
+              2174,
+              2635
+            ]
+          ]
+        },
+        {
+          "title": "3 · Pfeilspitze",
+          "text": "Der Pfeil beendet die Lauflinie. Das Zielgeschoss muss zusammen mit den angrenzenden Ebenen und Höhenangaben geprüft werden.",
+          "color": "B",
+          "target": [
+            2538,
+            2626
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                2440,
+                2626
+              ],
+              [
+                2536,
+                2626
+              ]
+            ]
+          ]
+        },
+        {
+          "title": "4 · Seitlicher Rand",
+          "text": "Die Brüstung begrenzt den Lauf seitlich. Die beschriftete Randhöhe macht daraus keinen zusätzlichen ebenerdigen Gang.",
+          "color": "R",
+          "target": [
+            2350,
+            2565
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                2090,
+                2565
+              ],
+              [
+                2515,
+                2565
+              ]
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "gruen",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        1930,
+        2525,
+        2600,
+        2755
+      ],
+      "book_pages": [
+        52,
+        53
+      ],
+      "primary_class": "stair",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": []
+    },
+    {
+      "id": "L01",
+      "title": "Lift: Kabine, Schacht und Haltestelle",
+      "section": "LIFT",
+      "intro": "Der Lift ist ein eigenes vertikales Verkehrsmittel. Seine Kabine liegt innerhalb eines umschlossenen Schachtes neben dem Treppenraum.",
+      "rule": "Die Kabine ist betretbar, sobald sie an der Haltestelle steht und der Zugang offen ist. Den umgebenden Schacht niemals als normalen Bodenweg füllen.",
+      "marks": [
+        {
+          "title": "1 · Schachtwand",
+          "text": "Das schraffierte Wandpaket umschließt den Lift. Es ist eine feste Begrenzung und keine freie Laufzone um die Kabine.",
+          "color": "R",
+          "target": [
+            1212,
+            1315
+          ],
+          "shape": [
+            "rect",
+            [
+              1207,
+              1274,
+              1217,
+              1387
+            ]
+          ]
+        },
+        {
+          "title": "2 · Kabine",
+          "text": "Das innere Rechteck bildet die Kabine ab. Die Beschriftung nennt FWA, 110 x 210 cm sowie 13 Pers. / 1000 kg.",
+          "color": "B",
+          "target": [
+            1260,
+            1330
+          ],
+          "shape": [
+            "rect",
+            [
+              1230,
+              1273,
+              1295,
+              1385
+            ]
+          ]
+        },
+        {
+          "title": "3 · Liftzugang",
+          "text": "Die schmalen parallelen Türlinien liegen an der oberen Schachtseite. Hier erfolgt der Anschluss an die Haltestelle.",
+          "color": "G",
+          "target": [
+            1260,
+            1264
+          ],
+          "shape": [
+            "rect",
+            [
+              1220,
+              1258,
+              1300,
+              1271
+            ]
+          ]
+        },
+        {
+          "title": "4 · Technischer Zwischenraum",
+          "text": "Der schmale Bereich zwischen Kabine und Schachtwand ist kein umlaufender Gang. Er gehört zur Liftanlage.",
+          "color": "O",
+          "target": [
+            1302,
+            1330
+          ],
+          "shape": [
+            "rect",
+            [
+              1298,
+              1280,
+              1306,
+              1383
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "rot",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        1195,
+        1215,
+        1332,
+        1420
+      ],
+      "book_pages": [
+        54,
+        55
+      ],
+      "primary_class": "lift",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": []
+    },
+    {
+      "id": "L02",
+      "title": "Wartungsschacht ist kein zweiter Gang",
+      "section": "LIFT",
+      "intro": "Neben dem zweiten Lift liegt ein gesonderter technischer Bereich. Die Quelle nennt Gitterrost-Wartungssteg, Stahlunterkonstruktion und Schachtleiter.",
+      "rule": "Technischer Wartungszugang und normale Raumerschließung getrennt behandeln. Eine kleine Öffnung oder Leitungstrasse ist noch keine Personentür.",
+      "marks": [
+        {
+          "title": "1 · Zweiter Lift",
+          "text": "Die gleiche Kabinenbeschriftung und der umschließende Schacht kennzeichnen erneut einen Lift. Seine Geometrie wird separat erfasst.",
+          "color": "B",
+          "target": [
+            3005,
+            1750
+          ],
+          "shape": [
+            "rect",
+            [
+              2965,
+              1680,
+              3037,
+              1792
+            ]
+          ]
+        },
+        {
+          "title": "2 · Technischer Bereich",
+          "text": "Der Bereich rechts und unterhalb ist als Wartungskonstruktion beschrieben. Er wird nicht dem gewöhnlichen Gang zugeschlagen.",
+          "color": "O",
+          "target": [
+            3090,
+            1740
+          ],
+          "shape": [
+            "rect",
+            [
+              3065,
+              1690,
+              3125,
+              1822
+            ]
+          ]
+        },
+        {
+          "title": "3 · Anlagenhinweis",
+          "text": "Die Beschriftung zur Trockensteigleitung beschreibt eine Installation. Daraus lässt sich kein zusätzlicher begehbarer Raumzugang ableiten.",
+          "color": "P",
+          "target": [
+            3090,
+            1688
+          ],
+          "shape": [
+            "rect",
+            [
+              3070,
+              1665,
+              3130,
+              1707
+            ]
+          ]
+        },
+        {
+          "title": "4 · Erschließung davor",
+          "text": "Die Haltestelle und der Wartebereich liegen außerhalb des Schachtes. Nur dort schließt der normale Gehbereich an den Lift an.",
+          "color": "G",
+          "target": [
+            3085,
+            1640
+          ],
+          "shape": [
+            "line",
+            [
+              [
+                3030,
+                1640
+              ],
+              [
+                3130,
+                1640
+              ]
+            ]
+          ]
+        }
+      ],
+      "observations": [],
+      "mode": "gruen",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        2935,
+        1620,
+        3165,
+        1875
+      ],
+      "book_pages": [
+        56,
+        57
+      ],
+      "primary_class": "service_area",
+      "evidence_status": "visual_learning_example",
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "explicit_source_handles": []
+    },
+    {
+      "id": "W06",
+      "title": "Außengang: keine pauschale weiße Sperrfläche",
+      "section": "WEGE",
+      "primary_class": "walkable_area",
+      "coordinate_space": "sh22_1og_pdf_pt_top_left",
+      "crop_pdf_pt": [
+        0,
+        1750,
+        1700,
+        2450
+      ],
+      "book_pages": [
+        7
+      ],
+      "evidence_status": "user_correction_and_source_alignment",
+      "intro": "Die frei gesetzte Rechteckmaske ist entfernt. Grün reicht bis zur gezeichneten Sicherung und schließt an die Treppe an.",
+      "rule": "Beschriftung dem Bauteil zuordnen. Ihre Position allein definiert keine Sperrfläche.",
+      "explicit_source_handles": [
+        "87211",
+        "7E768",
+        "7E8DA",
+        "7E8D8",
+        "7E929",
+        "7C044"
+      ],
+      "annotation_geometry_role": "explanatory_mark_not_exact_component_footprint",
+      "marks": [
+        {
+          "title": "Frühere unbelegte Aussparung",
+          "target": [
+            800,
+            1895
+          ],
+          "shape": [
+            "rect",
+            [
+              79,
+              1872,
+              1480,
+              1929
+            ]
+          ],
+          "text": "Dieses Rechteck ist keine bestätigte Bauteilkontur.",
+          "color": "G"
+        },
+        {
+          "title": "Randspalt und Treppenanschluss",
+          "target": [
+            1525,
+            2250
+          ],
+          "shape": [
+            "rect",
+            [
+              1518.3,
+              2195,
+              1534,
+              2316
+            ]
+          ],
+          "text": "Boden bis zur Sicherung; Durchgang zum Treppenlauf erhalten.",
+          "color": "O"
+        }
+      ],
+      "mode": "gruen"
+    }
+  ]
+}
