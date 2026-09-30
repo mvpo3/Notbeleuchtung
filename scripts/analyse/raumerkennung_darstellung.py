@@ -201,9 +201,14 @@ def _commit() -> str:
     return f"{sha}-dirty" if git("status", "--porcelain", "--", "src", "scripts") else sha
 
 
+#: Versionskennung: ``v<Zahl>`` oder ``aktuell`` (Owner 2026-09-29: ``Rennweg_aktuell``).
+#: Auch ``<Ordner>_aktuell`` wird nie überschrieben — die Sperre gilt für jede Kennung.
+_VERSION_RX = r"v\d+|aktuell"
+
+
 def _ordner_version(name: str) -> str:
-    """Versionsordner ``Rennweg_v2`` → ``v2``; ohne Suffix ist es v1."""
-    m = re.search(r"_(v\d+)$", name)
+    """Versionsordner ``Rennweg_v2`` → ``v2``, ``Rennweg_aktuell`` → ``aktuell``; ohne Suffix v1."""
+    m = re.search(rf"_({_VERSION_RX})$", name)
     return m.group(1) if m else "v1"
 
 
@@ -458,6 +463,11 @@ def _erkennen(dxf: Path, ziel: Path) -> dict:
     cache = {
         "raeume": raeume,
         "stempel": stempel,
+        "tueren": [{"id": t.id, "xy": (float(t.xy_mm[0]), float(t.xy_mm[1])),
+                    "tuer_detail": t.tuer_detail, "ohne_tuerblatt": t.ohne_tuerblatt,
+                    "quelle": t.quelle, "von_raum": t.von_raum, "nach_raum": t.nach_raum,
+                    "breite_mm": t.breite_mm}
+                   for t in modell.tueren],
         "zuordnung_quelle": zuordnung_quelle,
         "aussen_offen": [g.wkb for g in (ab.offen if ab is not None else [])],
         "aussen_geschlossen": [g.wkb for g in (ab.geschlossen if ab is not None else [])],
@@ -526,6 +536,9 @@ def _kennzahlen(cache: dict, bilder: list[dict]) -> dict:
     typen = Counter((r["typ"] or "UNBEKANNT") for r in raeume)
     whg = Counter(r["wohnung_id"] for r in raeume if r["wohnung_id"])
     kanon = _aussen_kanon(cache, polys)
+    einraum = sorted(w for w, n in whg.items() if n == 1)
+    tueren = cache.get("tueren")      # alter Cache (v1/v2) ohne Türen → None, nicht 0
+    tuer_typ = None if tueren is None else Counter(t["tuer_detail"] or "untypisiert" for t in tueren)
     return {
         "raeume_gesamt": len(raeume),
         "raeume_je_typ": dict(typen.most_common()),
@@ -534,7 +547,17 @@ def _kennzahlen(cache: dict, bilder: list[dict]) -> dict:
         "stempel_abweichung_gt10": sum(1 for v in abw.values() if v > ABWEICHUNG_PROZENT),
         "wohnungen": len(whg),
         "raeume_je_wohnung": dict(sorted(whg.items())),
+        "einraum_wohnungen": len(einraum),
+        "einraum_wohnungen_liste": einraum,
+        "tueren_gesamt": None if tueren is None else len(tueren),
+        "tueren_typisiert": None if tueren is None else sum(
+            1 for t in tueren if t["tuer_detail"] is not None),
+        "tueren_je_typ": None if tuer_typ is None else dict(
+            sorted(tuer_typ.items(), key=lambda kv: (-kv[1], kv[0]))),
+        "durchgaenge_ohne_tuerblatt": None if tueren is None else sum(
+            1 for t in tueren if t["ohne_tuerblatt"]),
         "schaechte_erkannt": typen.get("SCHACHT", 0),
+        "lifte_erkannt": typen.get("LIFT", 0),
         "raeume_nische": typen.get("NISCHE", 0),
         "aussen_ueberlagerung_kanon": len(kanon),
         "aussen_ueberlagerung_kanon_liste": kanon,
@@ -864,9 +887,11 @@ def _zeichnen(cache: dict, ziel: Path, titel: str) -> list[dict]:
 
 
 def _titel(projekt: str, name: str, cache: dict, commit: str, meta: dict) -> str:
-    """``meta`` trägt ``version``, ``datum``, ``slices`` (kennzahlen.json oder Lauf)."""
+    """``meta`` trägt ``version``, ``datum``, ``slices`` und optional ``basis``
+    (kennzahlen.json oder Lauf)."""
+    stand = f"Commit {commit}" + (f" (Stapel {meta['basis']})" if meta.get("basis") else "")
     kopf = " · ".join([f"{projekt} {meta.get('version') or ''}".strip(), meta.get("datum") or "?",
-                       f"Commit {commit}", f"Slices {_slices_text(meta.get('slices'))}"])
+                       stand, f"Slices {_slices_text(meta.get('slices'))}"])
     return (f"{kopf} — {name} — Raumerkennung, nur Räume · Geschoss "
             f"{cache['geschoss'] or 'UNBEKANNT'} ({cache['geschoss_quelle']})")
 
@@ -1027,12 +1052,31 @@ def _owner_zeilen(d: dict) -> list[tuple[str, str, bool]]:
         ("Wohnungen", str(d["wohnungen"]), False),
         ("Räume je Wohnung", ", ".join(f"{k} {v}" for k, v in d["raeume_je_wohnung"].items()) or "—",
          False),
+        ("Einraum-Wohnungen", _einraum_text(d), False),
+        ("Türen gesamt (inkl. Durchgänge)", _zahl(d.get("tueren_gesamt")), False),
+        ("davon typisiert", _zahl(d.get("tueren_typisiert")), False),
+        ("Türen je Typ", "—" if not d.get("tueren_je_typ")
+         else ", ".join(f"{k} {v}" for k, v in d["tueren_je_typ"].items()), False),
+        ("Durchgänge ohne Türblatt", _zahl(d.get("durchgaenge_ohne_tuerblatt")), False),
         ("Schächte erkannt", str(d.get("schaechte_erkannt", "—")), False),
+        ("Lifte erkannt", _zahl(d.get("lifte_erkannt")), False),
         ("Außenbereich-Überlagerungen mit Kanon-Räumen (Soll 0)", _kanon_text(d),
          bool(d.get("aussen_ueberlagerung_kanon"))),
         ("NISCHE", str(d.get("raeume_nische", "—")), bool(d.get("raeume_nische"))),
         ("Laufzeit", f"{lz['gesamt']} s (Erkennung {lz['erkennung']} s, Bild {lz['zeichnen']} s)", False),
     ]
+
+
+def _zahl(v) -> str:
+    """Kennzahl, die ältere kennzahlen.json (v1/v2) nicht kennen → „—“."""
+    return "—" if v is None else str(v)
+
+
+def _einraum_text(d: dict) -> str:
+    n = d.get("einraum_wohnungen")
+    if not n:
+        return _zahl(n)
+    return f"{n}: " + ", ".join(d.get("einraum_wohnungen_liste", []))
 
 
 def _kanon_text(d: dict) -> str:
@@ -1051,7 +1095,14 @@ def _ordner_meta(plaene: list[tuple[Path, dict]]) -> dict:
     commits = Counter(kz.get("commit", "?") for _, kz in plaene).most_common(1)
     return {"version": kz0.get("version") or "—", "datum": kz0.get("datum") or "—",
             "slices": _slices_text(kz0["slices"]) if "slices" in kz0 else "—",
-            "commit": commits[0][0] if commits else "?"}
+            "commit": commits[0][0] if commits else "?", "basis": kz0.get("basis")}
+
+
+def _vergleich_links(ordner: Path) -> list[tuple[str, str]]:
+    """(Linktext, Datei) je ``VERGLEICH_*.md`` im Projektordner —
+    ``VERGLEICH_v2_v3.md`` → „Vergleich v2 → v3“."""
+    return [("Vergleich " + " → ".join(p.stem.split("_")[1:]), p.name)
+            for p in sorted(ordner.glob("VERGLEICH_*.md"))]
 
 
 def _status_text(stat: Counter) -> str:
@@ -1060,7 +1111,7 @@ def _status_text(stat: Counter) -> str:
 
 
 _UEB_KOPF = ("Plan", "Status", "Räume", "UNBEKANNT", "mit Stempel", "Abw. > 10 %", "Wohnungen",
-             "Schächte", "Außen-Überlagerung Kanon")
+             "Einraum", "Türen", "ohne Türblatt", "Schächte", "Lifte", "Außen-Überlagerung Kanon")
 
 
 def _uebersicht(plaene: list[tuple[Path, dict]]) -> list[tuple[Path, dict, str, list]]:
@@ -1068,14 +1119,16 @@ def _uebersicht(plaene: list[tuple[Path, dict]]) -> list[tuple[Path, dict, str, 
     rows = []
     for d, kz in plaene:
         if kz["status"] != "ok":
-            rows.append((d, kz, _STATUS_TEXT[kz["status"]], [("", False)] * 7))
+            rows.append((d, kz, _STATUS_TEXT[kz["status"]], [("", False)] * (len(_UEB_KOPF) - 2)))
             continue
         kanon = kz.get("aussen_ueberlagerung_kanon")
         werte = [kz["raeume_gesamt"], kz["raeume_unbekannt"], kz["raeume_mit_stempel"],
-                 kz["stempel_abweichung_gt10"], kz["wohnungen"], kz.get("schaechte_erkannt", "—"),
+                 kz["stempel_abweichung_gt10"], kz["wohnungen"], _zahl(kz.get("einraum_wohnungen")),
+                 _zahl(kz.get("tueren_gesamt")), _zahl(kz.get("durchgaenge_ohne_tuerblatt")),
+                 kz.get("schaechte_erkannt", "—"), _zahl(kz.get("lifte_erkannt")),
                  "—" if kanon is None else kanon]
         rows.append((d, kz, _STATUS_TEXT["ok"],
-                     [(str(w), i == 6 and bool(kanon)) for i, w in enumerate(werte)]))
+                     [(str(w), i == len(werte) - 1 and bool(kanon)) for i, w in enumerate(werte)]))
     return rows
 
 
@@ -1119,11 +1172,16 @@ def _index_projekt(out: Path, projekt: str) -> Path:
     stat = Counter(kz["status"] for _, kz in plaene)
     meta = _ordner_meta(plaene)
     aktuell = meta["commit"]
+    basis = f" (Stapel <code>{escape(meta['basis'])}</code>)" if meta["basis"] else ""
+    _schaechte_md(ordner, plaene)
+    vergleich = "".join(f" · <a href='{quote(datei)}'>{escape(text)}</a>"
+                        for text, datei in _vergleich_links(ordner))
+    vergleich += " · <a href='SCHAECHTE.md'>Schächte</a>"
     teile = [_kopf(f"Raumerkennung — {projekt}"),
              f"<h1>{escape(projekt)} — Raumerkennung, nur Räume</h1>",
-             (f"<div class='sub'><a href='../index.html'>← Gesamtübersicht</a> · "
+             (f"<div class='sub'><a href='../index.html'>← Gesamtübersicht</a>{vergleich} · "
               f"Version <b>{escape(meta['version'])}</b> · Datum {escape(meta['datum'])} · "
-              f"Commit <code>{escape(aktuell)}</code> · Slices {escape(meta['slices'])}<br>"
+              f"Commit <code>{escape(aktuell)}</code>{basis} · Slices {escape(meta['slices'])}<br>"
               f"{len(plaene)} Pläne · {escape(_status_text(stat))}</div>"),
              "<div class='tab'><table><tr>" + "".join(f"<th>{escape(k)}</th>" for k in _UEB_KOPF)
              + "</tr>"]
@@ -1268,13 +1326,64 @@ def _md(text) -> str:
     return str(text).replace("|", "\\|")
 
 
+def _schaechte_md(ordner: Path, plaene: list[tuple[Path, dict]]) -> Path:
+    """SCHAECHTE.md je Projektordner (Slice K2, Owner-Regel b): Schachtzahl je
+    Geschoss, Lagen mit belegten Geschossen, Warnungen „Schacht erwartet, nicht
+    gefunden" — aus den ``_cache.pkl`` der Pläne, nichts wird erfunden."""
+    from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
+    from notbeleuchtung.raumerkennung.schacht_abgleich import (
+        TOLERANZ_MM,
+        geschoss_rang,
+        gleiche_schaechte_ab,
+    )
+    geschosse, ohne_rang = [], []
+    for d, kz in plaene:
+        if kz.get("status") != "ok" or not (d / "_cache.pkl").is_file():
+            continue
+        cache = pickle.loads((d / "_cache.pkl").read_bytes())
+        raeume = [Raum(id=r["id"], raum_typ=r["typ"], polygon_mm=r["polygon_mm"],
+                       flaeche_m2=r["flaeche_m2"]) for r in cache["raeume"]]
+        g = cache.get("geschoss") or ""
+        rang = geschoss_rang(g, d.name)
+        (ohne_rang if rang is None else geschosse).append((rang, d.name, g, raeume))
+    geschosse.sort(key=lambda x: (x[0], x[1]))
+    lagen = gleiche_schaechte_ab([(name, raeume) for _, name, _, raeume in geschosse])
+    md = [f"# Schächte — {ordner.name}", "",
+          ("Owner-Regel b (Slice K2): Schächte laufen senkrecht. Lage = Schwerpunkt des "
+           f"SCHACHT-Polygons in CAD-mm, gleiche Lage bis {TOLERANZ_MM:.0f} mm. Fehlt ein "
+           "Schacht in einem Geschoss zwischen zwei belegten, steht unten eine Warnung — "
+           "erfunden oder umtypisiert wird nichts. NISCHE und LIFT zählen nicht."), "",
+          "## Schachtzahl je Geschoss (unten → oben)", "",
+          "| Plan | Geschoss | Schächte | Raum-IDs |", "|---|---|--:|---|"]
+    for _, name, g, raeume in geschosse:
+        ids = [r.id for r in raeume if r.raum_typ == "SCHACHT"]
+        md.append(f"| {_md(name)} | {g} | {len(ids)} | {', '.join(ids) or '—'} |")
+    for _, name, g, raeume in ohne_rang:
+        n = sum(r.raum_typ == "SCHACHT" for r in raeume)
+        md.append(f"| {_md(name)} | {g or 'unbekannt'} (nicht abgeglichen) | {n} | — |")
+    md += ["", "## Lagen", "", "| Lage (x, y) mm | belegt in | Raum-IDs | Warnungen |",
+           "|---|---|---|--:|"]
+    md += [f"| ({lg.xy[0]}, {lg.xy[1]}) | {_md(', '.join(lg.belegt))} | "
+           f"{', '.join(lg.belegt.values())} | {len(lg.warnungen)} |" for lg in lagen]
+    warnungen = [w for lg in lagen for w in lg.warnungen]
+    md += ["", "## Warnungen", ""] + ([f"- {_md(w)}" for w in warnungen] or ["keine"])
+    ziel = ordner / "SCHAECHTE.md"
+    ziel.write_text("\n".join(md) + "\n", encoding="utf-8")
+    return ziel
+
+
 def _readme_projekt(out: Path, projekt: str, plaene: list[tuple[Path, dict]]) -> Path:
     bericht = " · [Bericht](../BERICHT.md)" if (out / "BERICHT.md").exists() else ""
     meta = _ordner_meta(plaene)
+    basis = f" (Stapel `{meta['basis']}`)" if meta["basis"] else ""
+    vergleich = "".join(f" · [{_md(text)}]({quote(datei)})"
+                        for text, datei in _vergleich_links(out / projekt))
+    if (out / projekt / "SCHAECHTE.md").is_file():
+        vergleich += " · [Schächte](SCHAECHTE.md)"
     md = [f"# {projekt} — Raumerkennung, nur Räume", "",
-          f"[← Gesamtübersicht](../README.md){bericht}", "",
+          f"[← Gesamtübersicht](../README.md){bericht}{vergleich}", "",
           (f"Version **{_md(meta['version'])}** · Datum {_md(meta['datum'])} · "
-           f"Commit `{meta['commit']}` · Slices {_md(meta['slices'])}"), "",
+           f"Commit `{meta['commit']}`{basis} · Slices {_md(meta['slices'])}"), "",
           f"{len(plaene)} Pläne · {_status_text(Counter(kz['status'] for _, kz in plaene))}", "",
           ("Die Legende steht in jedem Bild; ein Klick aufs Bild öffnet es in voller Größe. "
            "Offline mit allen Details: `index.html` in diesem Ordner lokal im Browser öffnen."), "",
@@ -1381,20 +1490,22 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--dxf", help="nur diesen einen Plan (Ausgabe unter <out>/_einzel/)")
     ap.add_argument("--ordner", action="append",
                     help="nur diesen Unterordner des Eingangs (mehrfach möglich), z. B. Rennweg")
-    ap.add_argument("--version", help="Versionsordner v<Zahl>, z. B. v2 → <out>/<Ordner>_v2/")
+    ap.add_argument("--version", help="Versionsordner v<Zahl> oder aktuell, z. B. v2 → <out>/<Ordner>_v2/")
     ap.add_argument("--slices", help='umgesetzte Slices als Kommaliste, z. B. "S1,S2,S5a" oder "keine"')
+    ap.add_argument("--basis", help='Stapel-Kopf, auf dem gerechnet wird, z. B. "aa05143" '
+                                    "(Bildtitel, kennzahlen.json, Index)")
     ap.add_argument("--nur-index", action="store_true")
     ap.add_argument("--nur-zeichnen", action="store_true")
     ap.add_argument("--neu", action="store_true", help="auch fertige Pläne neu rechnen")
     ap.add_argument("--worker", type=int, default=WORKER)
     ap.add_argument("--timeout-min", type=float, default=TIMEOUT_MIN)
     a = ap.parse_args(argv)
-    if a.version is not None and not re.fullmatch(r"v\d+", a.version):
-        ap.error(f"--version {a.version!r}: erwartet v<Zahl>, z. B. v2")
+    if a.version is not None and not re.fullmatch(_VERSION_RX, a.version):
+        ap.error(f"--version {a.version!r}: erwartet v<Zahl> oder aktuell, z. B. v2")
     slices = None if a.slices is None else [
         s for s in (t.strip() for t in a.slices.split(",")) if s and s.lower() != "keine"]
     meta = {"version": a.version, "datum": f"{datetime.now().astimezone():%Y-%m-%d}",
-            "slices": slices}
+            "slices": slices, **({"basis": a.basis} if a.basis else {})}
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     commit = _commit()

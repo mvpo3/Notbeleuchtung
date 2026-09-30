@@ -8,6 +8,11 @@
 #   3. Cache-Wurzel ERG aus NOTBEL_GATE_CACHES, sonst wie bisher
 #      REPO / "Projekte" / "_ergebnis_raumerkennung".
 #   4. "import os" ergaenzt — Anhang A.3 importiert os nicht.
+#   5. Gate-Definition (Owner-Entscheid 2026-09-30, K2 Option c): NISCHE ist wie SCHACHT/LIFT
+#      kein gezaehlter Raum (AUSGENOMMEN_TYPEN statt STANZ_TYPEN beim Bilden von "andere",
+#      auch in "konstanten" ausgegeben).
+#      NISCHE zaehlt NICHT als Stanzung (schacht_nah bleibt SCHACHT/LIFT). Der Docstring
+#      nennt noch "Nicht-STANZ-Raum".
 """M3-schacht-ohne-stanzung — Schacht-Marker (Text) in Raeumen ohne ausgestanzten SCHACHT/LIFT.
 
 Aufruf (Repo-venv, nur lesen):
@@ -81,6 +86,7 @@ SCHLUSS_TOL_MM = 5.0
 FLATTEN_MM = 5.0
 STANZ_TYPEN = frozenset({"SCHACHT", "LIFT"})
 FP_TYPEN = frozenset({"SCHACHT"})
+AUSGENOMMEN_TYPEN = STANZ_TYPEN | {"NISCHE"}   # Abweichung 5
 BSP_MAX = 6
 TOP_TEXTE = 60
 
@@ -300,7 +306,7 @@ def messe_plan(cpath: Path, inv: dict) -> dict:
     # ── Raeume ────────────────────────────────────────────────────────────
     raeume = [(r, g) for r in cache["raeume"] if (g := _polygon(r["polygon_mm"])) is not None]
     stanz = [(r, g) for r, g in raeume if (r.get("typ") or "") in STANZ_TYPEN]
-    andere = [(r, g) for r, g in raeume if (r.get("typ") or "") not in STANZ_TYPEN]
+    andere = [(r, g) for r, g in raeume if (r.get("typ") or "") not in AUSGENOMMEN_TYPEN]
 
     def einordnen(p: Point):
         d, sid = math.inf, None
@@ -475,6 +481,7 @@ def main() -> None:
         "konstanten": {"MAX_TIEFE": MAX_TIEFE, "NAH_MM": NAH_MM, "ROT_MAX_M2": ROT_MAX_M2, "ROT_R_MIN": ROT_R_MIN,
                        "ROT_GB_MAX": ROT_GB_MAX, "SCHLUSS_TOL_MM": SCHLUSS_TOL_MM, "FLATTEN_MM": FLATTEN_MM,
                        "STANZ_TYPEN": sorted(STANZ_TYPEN), "FP_TYPEN": sorted(FP_TYPEN),
+                       "AUSGENOMMEN_TYPEN": sorted(AUSGENOMMEN_TYPEN),
                        "MARKER": MARKER.pattern, "AUSSCHLUSS": AUSSCHLUSS.pattern, "DEDUP_MM": DEDUP_MM,
                        "NAH_MM_ALT": NAH_MM_ALT, "ROT_FLAECHE_MIN_M2": ROT_FLAECHE_MIN_M2, "TOKENS": TOKENS},
         "inventar": {"tokens": tokens, "texte_normalisiert_top": dict(inv["normtexte"].most_common(TOP_TEXTE)),
