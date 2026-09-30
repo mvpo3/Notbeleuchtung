@@ -9,7 +9,8 @@ oder sein Layer ein Wand-Hinweis ist. Möbel/Plangrafik und duplizierte
 Planvarianten (Barawitzka Icon_1/Icon_3) werden ausgeschlossen.
 
 Fallback: parallele Doppellinien auf Wand-Layern → Rechteck-Körper (leere
-Architektur-Inputs ohne Hatches).
+Architektur-Inputs ohne Hatches; ohne erkannten Wand-Layer die Layer mit
+Wand-Hinweis). Ohne Wand-Layer fallen Fern-Körper weg (``_ohne_fernkoerper``).
 
 Grenze: liefert 2D-Körper in mm; keine Öffnungs-/Türlogik (das macht tueren.py).
 """
@@ -18,6 +19,7 @@ from __future__ import annotations
 import math
 import os
 import re
+import statistics
 from dataclasses import dataclass
 from itertools import pairwise
 
@@ -26,7 +28,7 @@ from shapely.ops import unary_union
 
 from notbeleuchtung.hauptengine.contracts.raum_modell import BBox
 
-from .dxf_load import WALL_PATTERN, DxfPlan
+from .dxf_load import _SPAN_MAX_MM, WALL_PATTERN, DxfPlan
 from .material_matching import _LAYER_HINWEISE, bestimme_material, signatur_aus_hatch
 from .stempel_anker import finde_stempel
 
@@ -175,7 +177,28 @@ def finde_wandkoerper(plan: DxfPlan) -> list[Wandkoerper]:
     _walk(plan.space, "msp")
     if len(out) < 5:
         out.extend(_doppellinien(plan))
+    if not plan.wall_layers:
+        out = _ohne_fernkoerper(out)
     return out
+
+
+def _ohne_fernkoerper(koerper: list[Wandkoerper]) -> list[Wandkoerper]:
+    """Ohne Wand-Layer fehlt die Wand-Linien-Box als Planbezug. Körper, deren
+    Schwerpunkt weiter als eine Geschoss-Höchstausdehnung (``_SPAN_MAX_MM``)
+    vom Median-Schwerpunkt liegt, gehören nicht zum Grundriss (Am Rain OG4:
+    Weltkoordinaten-Blöcke *U25/*U26 bei x≈34,6 km spannten das Raster der
+    Rest-Stufe auf 34,7 km auf). Pläne MIT Wand-Layer bleiben unberührt.
+
+    ponytail: Median ± 500 m trägt nur, solange der Grundriss die Mehrheit der
+    Körper stellt — mehrere Geschosse in einem Modelspace brauchen Cluster-Wahl.
+    """
+    if not koerper:
+        return koerper
+    zs = [Polygon(k.polygon_mm).centroid for k in koerper]
+    mx = statistics.median(z.x for z in zs)
+    my = statistics.median(z.y for z in zs)
+    return [k for k, z in zip(koerper, zs, strict=True)
+            if abs(z.x - mx) <= _SPAN_MAX_MM and abs(z.y - my) <= _SPAN_MAX_MM]
 
 
 # ── Fallback: Doppellinien-Wände ─────────────────────────────────────────────
@@ -184,8 +207,12 @@ _MIN_UEBERLAPPUNG_MM = 200.0
 
 
 def _segmente(plan: DxfPlan) -> list[tuple[XY, XY]]:
+    # Ohne erkannten Wand-Layer (ARAI5 `Wand Trockenbau` …) tragen die Layer
+    # mit Wand-Hinweis die Linien — sonst hinge der Fallback am Layer-Muster.
+    quelle = (plan.wall_entities() if plan.wall_layers else
+              (e for e in plan.space if _WAND_LAYER.search(str(e.dxf.layer))))
     segs: list[tuple[XY, XY]] = []
-    for e in plan.wall_entities():
+    for e in quelle:
         if e.dxftype() not in ("LINE", "LWPOLYLINE", "POLYLINE"):
             continue
         pts = plan.entity_points(e)
