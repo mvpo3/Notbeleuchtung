@@ -21,12 +21,19 @@ direkt auf `de31621`.
 
 ## K2 — Schächte nur mit Beleg, und konsistent über Geschosse (Enis Referenz 15, Markierung 1; Diagnose „Schacht 1,4")
 
-**Status: STOPP.** Regel a und b sind gebaut, alle K2-Tests grün, keine Wand
-verloren, kein Notlicht-Wechsel — aber das Gate hat einen **neuen** Verstoß:
+**Status: GEBAUT** (Owner-Entscheid 2026-09-30 zu Owner-Frage 1: Option c,
+die Gate-Kennzahl M3 nimmt NISCHE wie SCHACHT aus). Regel a und b sind gebaut,
+alle K2-Tests grün, keine Wand verloren, kein Notlicht-Wechsel. Gate auf
+`d27c91a`: 2 Verstöße, dieselben wie auf der Basis `de31621` ((3) DG2
+`M4.einraum` 0 → 1, (10) Barawitzka), M3 DG2 wieder 4 Räume / 1,26 m², M17
+18/18 (Abschnitt „Gate").
+
+Vorher **STOPP**: auf `fed0378` hatte das Gate einen **neuen** Verstoß,
 (3) Rennweg DG2 `M3` 4 → 5 Räume / 1,26 → 1,522 m² rote Schachtfläche, genau
-die neue NISCHE (Owner-Frage 1). Die Commits bleiben stehen; K3 baut nicht auf
-K2. Branch `selman/fix-k2-schacht-beleg` von `de31621`: `57168bd` Test (rot),
-`6adc7b3` Fix, `fed0378` Kommentar-Korrektur, danach dieser Bericht.
+die neue NISCHE. Branch `selman/fix-k2-schacht-beleg` von `de31621`:
+`57168bd` Test (rot), `6adc7b3` Fix, `fed0378` Kommentar-Korrektur, `9c8fc7f`
+und `381c033` Bericht; Nachzug nach dem Owner-Entscheid: `9d8020a` Test Gate-M3
+(rot), `d27c91a` Gate-M3 nimmt NISCHE aus, danach dieser Nachtrag.
 
 ### Owner-Befund (wörtlich)
 
@@ -206,6 +213,12 @@ an einem STO-Kästchen, einem Schacht-Layer oder einer Schacht-Zone.
   (`test_rest_komponenten` 5, Darstellung 1: `_schaechte_md` fehlt),
   `test_schacht_abgleich` und `test_k2_schacht_beleg` ImportError
   (`schacht_abgleich` fehlt). **Grün auf `6adc7b3`:** 46 passed (20 s).
+* **Nachzug Gate-Definition (Owner-Entscheid 2026-09-30):**
+  `tests/gate/test_gate_m3_nische.py` — synthetischer Cache mit einem
+  ausgenommenen Raum und einem ZIMMER, je eine rote Kontur 0,25 m²; M3 zählt
+  nur das ZIMMER (`raeume_n` 1, `in_raeumen_m2` 0,25). Parametriert: SCHACHT
+  (Kontrolle) und NISCHE. **Rot auf `9d8020a`:** 1 failed (NISCHE: `rest_5`
+  mitgezählt), 1 passed (SCHACHT). **Grün auf `d27c91a`:** 2 passed.
 
 ### Blast Radius (23 Geschosse, `de31621` → `6adc7b3`)
 
@@ -308,6 +321,32 @@ Folge der Owner-Regel selbst: eine Nische mit roter Kontur ist jetzt
 ausdrücklich kein Schacht. Heilen lässt sich das nur über eine
 Owner-Entscheidung (Owner-Frage 1), nicht innerhalb des Auftrags.
 
+**Owner-Entscheid 2026-09-30: Option c** — die Gate-Kennzahl M3 nimmt NISCHE
+wie SCHACHT aus. Umgesetzt in `tests/gate/diagnose_skripte/m3_schacht_ohne_stanzung.py`
+als Abweichung 5 vom Diagnose-Anhang A.3 (im Kopf des Skripts, im Docstring von
+`tests/gate/gate_m1_m4.py` und in `docs/GATE_TUERSTAPEL.md` § 1b benannt):
+gezählt werden nur Räume außerhalb von `AUSGENOMMEN_TYPEN` = SCHACHT, LIFT,
+NISCHE (vorher `STANZ_TYPEN` = SCHACHT, LIFT). **Lesart:** NISCHE wird nur aus
+den gezählten Räumen genommen, sie zählt **nicht** als Stanzung — ein
+Schacht-Text neben einer Nische bleibt „ohne Stanzung", die Nische verdeckt
+keinen fehlenden Schacht. Vor K2 gab es keine NISCHE in der Raumerkennung
+(`git grep NISCHE f15d03f -- src/notbeleuchtung/raumerkennung`: 0 Treffer), die
+Nullmessung `f15d03f` bleibt deshalb gültig und ist nicht angefasst.
+
+| | `fed0378` (STOPP) | `d27c91a` (nach Owner-Entscheid) |
+|---|---|---|
+| `pruefe_gate(nullmessung_f15d03f, …)` | 4 Verstöße (siehe oben) | **2 Verstöße: (3) DG2 `M4.einraum` 0 → 1; (10) Barawitzka ABSTELLRAUM 1,98 m² ohne Verbindung** — dieselben wie auf `de31621` |
+| M3 DG2 | 5 Räume / 1,522 m² (`raum_1`, `raum_2`, `raum_5`, `raum_7`, `rest_5` NISCHE) | 4 Räume / 1,26 m² (`raum_1`, `raum_2`, `raum_5`, `raum_7`) = Nullmessung |
+| M3 übrige Geschosse, M1, M2, M4 | — | unverändert gegenüber `fed0378`; die ganze Messung ohne `meta` weicht nur in M3 DG2 ab |
+| M3-Markerwert DG2 (nicht im Gate) | 6 | 6 |
+| M17 | 18/18 BESTANDEN | 18/18 BESTANDEN |
+| (11) DG1 | 2 Ausgänge, 0 durch den Liftschacht | 2 Ausgänge, 0 durch den Liftschacht |
+| `pytest -m gate tests/gate` | 3 passed, 1 xfailed | 3 passed, 1 xfailed, 83 deselected (76 s) |
+
+Messung: `tests/gate/gate_messung.py --out _arbeit/gate/messung_d27c91a.json`
+(`arbeitsbaum_src_scripts_sauber = true`, 123,5 s). Der Nachtrag danach ändert
+nur `docs/`.
+
 ### Fremde Lanes (gemessen, nichts geändert)
 
 * `platzierung/` (Leonis): `pipeline.run(build_default_bundle(), …)` mit dem
@@ -330,6 +369,11 @@ roten, vorbestehenden: `test_s7_wohnungsklasse.py::test_keine_leuchten_in_wohnun
 OG1/OG2/DG1 (Board 1, Leonis) und `test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell`.
 `ruff check .` ohne Befund. Die volle Suite läuft erst im Output-Schritt.
 
+Nach dem Owner-Entscheid (`d27c91a`, nur `tests/gate` geändert):
+`pytest tests/raumerkennung tests/contract tests/gate`: **867 passed, 6 skipped,
+4 deselected (Gate-Marker), 2 xfailed, 0 failed** (4 min). `pytest -m gate
+tests/gate`: 3 passed, 1 xfailed. `ruff check .` ohne Befund.
+
 ### Offene Punkte / Owner-Fragen
 
 1. **Gate (3) M3 DG2 (STOPP-Grund).** Die Nische `rest_5` enthält 0,262 m² des
@@ -339,7 +383,8 @@ OG1/OG2/DG1 (Board 1, Leonis) und `test_soll_muthgasse.py::test_soll_plan_tuerbl
    Planzeichen, Diagnose U3/S11, Frage F4-Zusatz „über Dach gezeichneter
    Schachtverzug: Schacht des Geschosses oder außen?") — eigener Slice; (c) M3
    nimmt NISCHE wie SCHACHT aus (Gate-Definition). Solange nichts entschieden
-   ist, baut K3 nicht auf K2.
+   ist, baut K3 nicht auf K2. **Entschieden 2026-09-30: Option c**, umgesetzt
+   (`9d8020a`, `d27c91a`, Abschnitt „Gate").
 2. **FEUERFESTER_STEIN-Keil — Lesart bestätigen.** Umgesetzt: der Keil belegt
    nur eine Fläche, die zu ≥ 50 % in seinem Kasten liegt (gemessen 0,65–0,99
    gegen 0,18). Wörtlich („ein Keil genügt") bliebe die Nische SCHACHT, weil
