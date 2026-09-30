@@ -285,7 +285,7 @@ Der Stapel **S4a → S4b → S5b → S7a+S7b → S3b → S5c wird nur gemeinsam 
 | (7) | OG1: keine von der Referenz **verneinte** Verbindung besteht | `anzahl == 0` für jeden Eintrag aus `gate_referenz.VERNEINT` (§ 1e), Zusatz-Paare eingeschlossen; nicht auflösbarer Raum (`anzahl` None) oder fehlender Abschnitt = Verstoß (Owner-Entscheid 2026-09-18 nach S4b) |
 | (8) | OG1: jeder von der Referenz **geforderte** offene Übergang besteht | `anzahl ≥ 1` für O03, O04, O05 und den Ersatzfall O01/O02 (§ 1e); Ergänzung des Planers, damit S5b keine geforderten Übergänge löscht; None = Verstoß |
 | (9) | Mollgasse 1OG: keine Zirkulation in der Wohnung | `python scripts/analyse/mollgasse_gt_vergleich.py 1OG` gegen `tests/fixtures/mollgasse_gt/`: Zirkulationspunkte in ZIMMER, BAD, WC und privatem VORRAUM = 0 (Owner-Ansage 2026-09-20, Abnahme von S7a+S7b, § 6f). Vorher-Wert laut Leonis: VORRAUM 69, ZIMMER 3, dazu WC/BAD/AR — **nicht selbst gemessen**. **Noch nicht in `gate_regel.py` verdrahtet:** Skript, Fixtures und Leonis' Bericht liegen am 2026-09-20 weder auf `origin/main` noch auf einem anderen Remote-Branch; bis sie im Baum sind, ist (9) Doku-Pflicht, keine geprüfte Regel |
-| (10) | Barawitzka EG: der ABSTELLRAUM 1,98 m² hat mindestens eine Verbindung | `barawitzka.anzahl ≥ 1` (§ 1f, `tests/gate/gate_barawitzka.py`); `anzahl` None oder fehlender Abschnitt = Verstoß. Owner-Entscheid 2026-09-20 nach dem Blast Radius: **heute verletzt** (0 Verbindungen), zu drehen ist sie vom S4a-Rest (Doppelflügel-Paarung), nicht von S7 — festgehalten, damit sie nicht untergeht. Gemessen wird nur der Nachher-Stand; die eingecheckte Nullmessung stammt von vor dem Messfall und führt den Abschnitt nicht: als Vorher-Stand ist das kein Absturz, als Nachher-Stand ein Verstoß (fail closed). **Nachtrag S4c 2026-09-28:** „zu drehen vom S4a-Rest" ist überholt — die Paarung ist behoben (`55e73e7`), (10) bleibt rot wegen der Seitenzuordnung der Bogentür (Sehne aus dem offenen Blatt, § 10b); gemessen grün unter der engen Fassung `xsehne3` ohne Notlicht-Verlust, Entscheid beim Owner (§ 10f) |
+| (10) | Barawitzka EG: der ABSTELLRAUM 1,98 m² hat mindestens eine Verbindung | `barawitzka.anzahl ≥ 1` (§ 1f, `tests/gate/gate_barawitzka.py`); `anzahl` None oder fehlender Abschnitt = Verstoß. Owner-Entscheid 2026-09-20 nach dem Blast Radius: **heute verletzt** (0 Verbindungen), zu drehen ist sie vom S4a-Rest (Doppelflügel-Paarung), nicht von S7 — festgehalten, damit sie nicht untergeht. Gemessen wird nur der Nachher-Stand; die eingecheckte Nullmessung stammt von vor dem Messfall und führt den Abschnitt nicht: als Vorher-Stand ist das kein Absturz, als Nachher-Stand ein Verstoß (fail closed). **Nachtrag S4c 2026-09-28:** „zu drehen vom S4a-Rest" ist überholt — die Paarung ist behoben (`55e73e7`), (10) bleibt rot wegen der Seitenzuordnung der Bogentür (Sehne aus dem offenen Blatt, § 10b); gemessen grün unter der engen Fassung `xsehne3` ohne Notlicht-Verlust, Entscheid beim Owner (§ 10f). **Nachtrag 2026-09-30:** Owner-Entscheid Fassung A (`xsehne3`), gebaut (`209755c`), **(10) grün** — `raum_28` hängt an `tuer_17` (§ 10g) |
 | (11) | Rennweg DG1: das Geschoss behält nach dem Stapel einen echten Ausgang | Owner-Entscheid 2026-09-26 (VA-5, § 6g.11): „DG1 hat nach dem Stapel mindestens einen Ausgang, und keiner davon führt durch den Liftschacht." Messbar als `dg1.ausgaenge ≥ 1` **und** kein Ausgang, dessen Türpunkt in einem LIFT-Polygon (`raum_typ == "LIFT"`, auch gestempelte) liegt oder näher als 250 mm daran (`tests/gate/gate_dg1.py`; das Raumpaar-Kriterium der ersten Fassung ist falsch-positiv — OG3 hat alle drei Ausgänge am Ring-Raum `rest_3` — und nicht verdrahtet). Heute ist `durchgang_9` (`rest_2` ↔ `rest_3`, 4 215 mm, Mittelpunkt im Lift) der **einzige** Ausgang von DG1 — S5c darf ihn nur entfernen, wenn ein echter Ausgang bleibt; sonst wäre das Geschoss ausgangslos. **Verdrahtet seit `936e8f7`** (`gate_messung` Abschnitt `dg1` + Info `lift_ausgaenge_info` UG/EG/OG1; `_pruefe_dg1`, fail closed wie (10)); auf `7105618` gemessen **verletzt**: 1 Ausgang, davon 1 durch den Liftschacht (§ 9a). **Seit S5c (`72fa4aa`) grün:** DG1 2 Ausgänge (`exit_durchgang_6`/`_7`, 942,6 / 1 046,8 mm vom Lift, aus der Ausgangsregel), 0 durch den Liftschacht; die Lifttür-Ausgänge UG/EG/OG1 sind entfallen (§ 9f). Derselbe Messfall gilt für die Lifttür-Ausgänge OG1 `exit_durchgang_8`, EG `exit_durchgang_19`, UG `exit_durchgang_2` (Nebenbefund VA-5). IDs nach S3b (`ecf9406`): EG `exit_durchgang_19` → `exit_durchgang_21`, `durchgang_20` → `durchgang_24` (gleiche Tür, gleiche Lage) — Abnahme über Raumpaar + Lage formulieren |
 
 Zur Nummer: die Owner-Ansage vom 2026-09-20 nennt die Mollgasse-Abnahme „Bedingung (7)".
@@ -2371,7 +2371,7 @@ B6 (Rennweg DD) löst den STOP nicht aus, eigener Befund. Push-GO `s5c`. Belege:
 4. **DG1 `raum_3`:** Board-1-Antrag an @mvpo3 um `fachpraxis.aufheller_je_rz` erweitern (Form: kein Aufheller-Ziel in
    `WOHNUNG_PRIVAT`)?
 
-## 10. S4c — Doppelflügel-Paarung gebaut, Gate (10) bleibt rot (2026-09-28, Branch `selman/fix-s4c-doppelfluegel`)
+## 10. S4c — Doppelflügel-Paarung gebaut, Gate (10) bleibt rot (2026-09-28, Branch `selman/fix-s4c-doppelfluegel`); Fassung A gebaut, (10) grün (2026-09-30, § 10g)
 
 **Auftrag (Owner 2026-09-20 / 2026-09-28):** S4c ist der S4a-Rest, (10) ist Merge-Pflicht; „Nächster Schritt: B3 und B4
 aufklären mit Messwerten, dann S4c". Belege: Session-Scratch `…/8d935db0-…/scratchpad/s4c/` (`bericht_s4c_r1.md`,
@@ -2421,6 +2421,8 @@ Mit der Sehne des geschlossenen Blatts trifft die Probe nach Norden `raum_28`. *
 „zu drehen vom S4a-Rest (Doppelflügel-Paarung)" überholt:** die Paarung war notwendig, reicht aber nicht.
 
 ### 10c. Zweite Regel für (10) — drei Fassungen gemessen, keine gebaut (Runde 2, nur Messung, Vorher = `55e73e7`)
+
+**Nachtrag 2026-09-30:** der Owner hat Fassung A = `xsehne3` entschieden; gebaut in § 10g, dort mit denselben Zahlen.
 
 `tuer_zuordnung.ordne_tueren` bleibt, wie es ist; gemessen wurde in-memory, welche Tür die **andere Bogenrichtung**
 (Endwinkel statt Startwinkel) bekommt. Zwei Prüfer-Linsen haben die Zahlen unabhängig nachgemessen (eigene Umsetzung,
@@ -2493,7 +2495,7 @@ Raum verliert Notlicht**. Vorbehalt: welches Paar den geteilten Bogen bekommt, h
 
 ### 10f. Offene Owner-Fragen S4c (Stand 2026-09-28, Branch nicht gepusht)
 
-1. **Gate (10):** zweite Regel bauen — **(A) `xsehne3`** (Planer-Empfehlung: (10) grün, Gate 1 Verstoß (3) DG2, 5 Türen,
+1. **Entschieden 2026-09-30 (Owner): (A), gebaut — § 10g.** Die Frage war: **Gate (10):** zweite Regel bauen — **(A) `xsehne3`** (Planer-Empfehlung: (10) grün, Gate 1 Verstoß (3) DG2, 5 Türen,
    0 STOPP; Rollen an drei Innentüren planwidrig `wohnungseingang` wegen der Vorraum-Fehlklasse, sichere Richtung),
    (B) `xsehne2` (36 Türen, `raum_9` verliert Flags — planrichtig, aber Zwilling `raum_12` inkonsequent; braucht
    Freigabe des Verlusts), oder (C) nichts (Merge blockiert)? Die allgemeine Sehnen-Korrektur (geschlossenes Blatt) samt
@@ -2503,3 +2505,63 @@ Raum verliert Notlicht**. Vorbehalt: welches Paar den geteilten Bogen bekommt, h
 3. **Bogen-Türen auf Block-Plänen (§ 9g Frage 2):** mit den korrigierten Zahlen (2 Flag-STOPP MOLL_1OG) nicht in S4c,
    sondern nach einer Fenster/Tür-Trennung? Und bleibt der Müllraum ohne Tür bis dahin Merge-Pflicht wie (10)?
 4. **OCS gespiegelter Blöcke:** als eigener Punkt nach dem Merge (zusammen mit Fenster/Tür-Trennung)?
+
+### 10g. S4c Fassung A gebaut — die andere Bogenrichtung nur für verbindungslose Räume (2026-09-30, Commits `b9748b4` rot · `209755c` fix)
+
+**Auftrag (Owner 2026-09-30):** § 10f Frage 1 → **(A) `xsehne3`**, gebaut wie gemessen, kein `xsehne2`, kein `xbogen`,
+keine OCS-Änderung. Belege: Session-Scratch `…/0348f34d-…/scratchpad/int/s4c/` (Runner `_m.py`/`_blast.py` aus § 10c,
+Vorher = Code-Schnappschuss `1eed916` per `git archive`, Nachher = Arbeitsbaum mit dem Fix; `v_*.json`, `n_*.json`,
+`blast_v_n_11.txt`, `blast_v_n_muth.txt`, `gate_209755c.log`, `naht_209755c.log`).
+
+- **Regel (gebaut, `tuer_zuordnung.andere_bogenrichtung`):** Nachschritt im selben Parse, **nach** den Durchgängen und
+  Außenöffnungen (kein Doppel-Parse). Eine Tür mit **genau einer** zugeordneten Seite (die andere `KEIN_RAUM`; `AUSSEN`
+  zählt als zugeordnet), deren nächste Öffnung ein Bogen ist, wird quer zur Sehne aus dem **Endwinkel**
+  (`blatt_enden[1]`) geprobt — dieselbe Probe wie `ordne_tueren` (als `_proben` herausgezogen, Verhalten unverändert).
+  Übernommen nur, wenn die zugeordnete Seite bleibt und die neue Seite ein Raum ist, der im Modell **ohne jede
+  Verbindung** wäre (keine Tür, kein Durchgang, keine Außenöffnung). Nicht Zielseite: Klasse `KEIN_RAUM` (SCHACHT,
+  gestempelter LIFT — derselbe Filter wie der S5a-Guard) und untypisierte `rest`-Flächen (`raum_typ` leer). Die
+  `seite_fehlt`-Vermerke werden erst nach dem Nachschritt formatiert; geheilte Türen verlieren ihren Vermerk.
+- **Rot/grün:** gegen `1eed916` 4 × `ImportError andere_bogenrichtung` (Einheit: Nachbau `tuer_17`, ARC 270° → 360°,
+  `ordne_tueren` liefert `v | KEIN_RAUM`; Gegenproben verbundener Zielraum, SCHACHT, untypisierter `rest`) und Naht
+  `test_abstellraum_hat_eine_tuer` rot mit `('raum_28', [])`; nach dem Fix `test_tuer_zuordnung.py` +
+  `test_soll_barawitzka.py` 44 passed, 3 xfailed.
+- **Blast Radius 12 Pläne (Vorher `1eed916` · Nachher `209755c`):** genau **5 Türen auf 2 Plänen**, 10 Pläne feldgleich
+  (48 Messschlüssel; Muthgasse Provider allein, 805/834 s). Vorher reproduziert § 10c-Vorher schlüsselgleich; **Nachher
+  ist auf allen 12 Plänen in allen 47 gemeinsamen Messschlüsseln gleich der In-memory-Messung `xsehne3`** — die
+  Ausschlüsse (KEIN_RAUM, untypisierter `rest`) schneiden auf den 12 Plänen also nichts ab.
+
+| Plan | Tür | vorher | nachher | Rolle roh / korrigiert |
+|---|---|---|---|---|
+| OG3 | `tuer_2` arc 980 | `raum_3` ZIMMER \| KEIN_RAUM | `raum_9` BALKON 9,79 \| `raum_3` ZIMMER | `balkontuer` / `balkontuer` |
+| BARA | `tuer_17` arc 830 | `raum_12` VORRAUM \| KEIN_RAUM | `raum_28` ABSTELLRAUM 1,98 \| `raum_12` VORRAUM | `zimmertuer` / `wohnungseingang` |
+| BARA | `tuer_23` arc 830 | `raum_31` VORRAUM \| KEIN_RAUM | `raum_22` BAD 4,51 \| `raum_31` VORRAUM | `zimmertuer` / `wohnungseingang` |
+| BARA | `tuer_27` arc 830 | `raum_30` VORRAUM \| KEIN_RAUM | `raum_29` WC 1,97 \| `raum_30` VORRAUM | `zimmertuer` / `wohnungseingang` |
+| BARA | `tuer_34` arc 960 | `raum_35` STIEGENHAUS \| KEIN_RAUM | `raum_34` WASCHKÜCHE 4,46 \| `raum_35` STIEGENHAUS | keine / keine |
+
+- **Barawitzka:** Wohnungen 10 → 7, Einraum 5 → 2 (bleiben `raum_16`, `raum_32`), Segmente GRAPH 5 → 7 (neu `raum_29`
+  → `exit_tuer_31` 19 Punkte, `raum_34` → `exit_tuer_31` 10 Punkte), Leuchten 10 → 11 (+1 RZ 7 086,3 / −6 098,1 an
+  `tuer_34`, keine weg), `seite_fehlt` 28 → 24; Klassen und Flags aller Räume gleich, Verlierer 0, Anker 21 und
+  Ausgang gleich. **OG3:** nur die Balkontür, `seite_fehlt` 3 → 2, Leuchten 7 = 7 in gleicher Lage. **STOPP-Kandidaten 0**
+  (Flags auf 12, Leuchten auf 11 Plänen).
+- **Gate auf dem sauberen Baum `209755c`: 1 Verstoß** — (3) DG2 `M4.einraum` 0 → 1 (Bestand, Board 3). **(10) grün**
+  (`raum_28` `anzahl 1`, `tuer_17` arc 830, 150,0 mm, `zimmertuer`), M17 18/18 BESTANDEN, (6) OG3 GRAPH 5 / 0 Anker
+  privat, (11) DG1 2 Ausgänge / 0 durch den Liftschacht. Gegen die Messung auf `55e73e7` weicht nur der Abschnitt
+  `barawitzka` ab. Messung `_arbeit/gate/messung_209755c.json`.
+- **Tests:** ruff grün, Schema in sync, `tests/raumerkennung` + `tests/contract` 770 passed, 6 skipped, 2 xfailed;
+  `tests/gate` 81 passed; `-m gate` 3 passed + 1 xfailed; `tests/naht` **6 failed** / 302 passed, 2 skipped, 12 xfailed —
+  die vier bekannten (OG1/OG2/DG1 Leuchten in privat = Board 1, Muthgasse Türblöcke) und **zwei neue, von Fassung A
+  verursacht, NICHT nachgezogen** (Bänder nicht absenken, Owner-Frage unten):
+  `test_s7_wohnungsklasse::test_bara_raum_19_behaelt_klasse_und_zirkulation` (Wohnung von `raum_19` hat jetzt auch
+  `raum_29` WC 1,97; dahinter gemessen Zirkulationspunkte 10 → 14, Stützpunkt-Segmente 4 → 5, neu `seg_graph_tuer_27`)
+  und `test_bara_raum_30_wird_nicht_von_der_auswertungsreihenfolge_entschieden` (Stützpunkt-Segmente
+  `['seg_graph_tuer_39']` → `['seg_graph_tuer_27', 'seg_graph_tuer_39']`, Zirkulationspunkte 4 → 10). Klasse, Flags
+  und Wohnung von `raum_19`/`raum_30` wie gepinnt. Ursache: `seg_graph_tuer_27` (19 Punkte) startet im WC `raum_29`
+  an der planwidrig korrigierten `wohnungseingang`-Tür `tuer_27` und läuft über `raum_30` und `raum_19` zum Ausgang —
+  die in § 10c gemessene Folge „neu GRAPH ab `raum_29`", mehr Zirkulation, kein Notlicht-Verlust.
+- **Offene Owner-Frage (neu):** die beiden Pins auf den Fassung-A-Stand nachziehen (`raum_29` in die Wohnung,
+  `seg_graph_tuer_27` in `raum_19`/`raum_30`, Zirkulation 14 / 10) — oder erst mit dem Slice, der die Vorraum-Fehlklasse
+  `raum_12`/`30`/`31` behebt?
+- **Abweichung zu § 10c:** keine in den Kennzahlen (5 Türen, Gate 1 Verstoß, 0 STOPP, 10 Pläne feldgleich); neu sind
+  nur die zwei roten Naht-Pins oben. Die Grenzen aus § 10c gelten unverändert: `tuer_5`/`tuer_33` (`KEIN_RAUM` \|
+  `KEIN_RAUM`), `tuer_25` und `tuer_22` (falsches Raumpaar) bleiben; die Rolle `wohnungseingang` an `tuer_17`/`_23`/`_27`
+  ist planwidrig (Vorraum-Fehlklasse `raum_12`/`30`/`31`, sichere Richtung). Offen bleiben § 10f Fragen 2–4.
