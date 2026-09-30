@@ -163,3 +163,53 @@ def test_fischamender_bt1_eg_wandkoerper():
     assert len(wk) >= 150, f"nur {len(wk)} Wandkörper — Fischamender-Regress"
     assert sum(1 for k in wk if k.layer == "A_Waende") >= 150
     assert any(k.quelle.startswith("block:") for k in wk)
+
+
+# ── Ohne Wand-Layer (ARAI5-Dialekt `Wand <Material> …`, Am Rain) ───────────
+# Owner-Regel P0 (2026-09-30): kein Wand-Layer-Muster ist kein Abbruch — die
+# Erscheinungsbild-Pfade tragen allein, auch der Doppellinien-Fallback.
+def _plan_ohne_wandlayer(tmp_path, bauen) -> object:
+    import ezdxf
+
+    doc = ezdxf.new()
+    doc.header["$INSUNITS"] = 4
+    bauen(doc.modelspace())
+    p = tmp_path / "ohne_wandlayer.dxf"
+    doc.saveas(str(p))
+    plan = lade_dxf(p)
+    assert not plan.wall_layers        # Vorbedingung: kein WALL_PATTERN-Treffer
+    return plan
+
+
+def _schmale_hatch(msp, x0, y0, x1, y1, layer="Wand Beton tragend"):
+    h = msp.add_hatch(color=7, dxfattribs={"layer": layer})
+    h.paths.add_polyline_path([(x0, y0), (x1, y0), (x1, y1), (x0, y1)], is_closed=True)
+
+
+def test_ohne_wandlayer_doppellinien_auf_wand_hinweis_layer(tmp_path):
+    """Keine HATCHes, zwei Parallelen auf `Wand Trockenbau` → ein Doppellinien-Körper."""
+    def bauen(msp):
+        msp.add_line((0, 0), (20000, 0), dxfattribs={"layer": "Wand Trockenbau"})
+        msp.add_line((0, 100), (20000, 100), dxfattribs={"layer": "Wand Trockenbau"})
+
+    wk = finde_wandkoerper(_plan_ohne_wandlayer(tmp_path, bauen))
+    assert len(wk) == 1
+    assert wk[0].breite_mm == pytest.approx(100.0, abs=1.0)
+
+
+def test_ohne_wandlayer_fernkoerper_fallen_weg(tmp_path):
+    """Am Rain OG4: Weltkoordinaten-Blöcke (*U25/*U26) liegen ~34,6 km neben dem
+    Grundriss. Ohne Wand-Linien-Box als Planbezug spannten sie das Raster der
+    Rest-Stufe auf 34,7 km auf — sie gehören nicht zu den Wandkörpern."""
+    def bauen(msp):
+        _schmale_hatch(msp, 0, 0, 20000, 200)
+        _schmale_hatch(msp, 0, 11800, 20000, 12000)
+        _schmale_hatch(msp, 0, 200, 200, 11800)
+        _schmale_hatch(msp, 19800, 200, 20000, 11800)
+        _schmale_hatch(msp, 12000, 200, 12200, 5000, layer="Fuellung 3")
+        _schmale_hatch(msp, 34_637_525, 1_186_661, 34_640_525, 1_186_861, layer="0")
+
+    wk = finde_wandkoerper(_plan_ohne_wandlayer(tmp_path, bauen))
+    assert len(wk) == 5
+    b = bounds_aus_wandkoerpern(wk)
+    assert b.max_xy[0] <= 20000.0 and b.max_xy[1] <= 12000.0
