@@ -7,9 +7,11 @@ Badewanne) in einem stempellosen Rest-Raum: im 2.OG liegt sie im Umriss von
 ``top_13`` (BAD), im 3.OG grenzt sie an einen Gang ohne Wohnung und bleibt
 UNBEKANNT (Kontrolle greift).
 
-Die Typisierung ist ein Vorlauf ohne Rückkopplung: der Wohnungsumriss kommt
-aus einer Probe, danach läuft EIN regulärer Durchlauf mit dem neuen Typ — die
-Wohnung des Bades folgt dort rohen Türen (Grundsatz (b), 2026-09-22).
+Die Typisierung ist ein einmaliger Vorlauf: der Wohnungsumriss kommt aus
+einer Probe, danach läuft EIN regulärer Durchlauf mit dem neuen Typ — die
+Wohnung des Bades folgt dort rohen Türen (Grundsatz (b), 2026-09-22). Die
+Probe entscheidet nur, ob der Typ gesetzt wird (einmalige Rückkante, keine
+Iteration; Owner-Frage zu Board 7).
 """
 import pytest
 from shapely.geometry import Point, Polygon
