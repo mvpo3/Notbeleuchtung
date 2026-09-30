@@ -189,3 +189,79 @@ def test_wohnung_bleibt_wie_ohne_k4():
     raeume, tueren = _loch_vorraum()
     wohnungen = bilde_wohnungen(raeume, tueren)
     assert [(w.raum_ids, w.eingangs_tuer_ids) for w in wohnungen] == [(["b", "v", "z"], [])]
+
+
+# ── Owner-Entscheide 2026-09-30 (K4-Nachzug) ────────────────────────────────
+def _r1_flur():
+    """Rennweg OG3 ``raum_10`` im Kleinen (R1-Erweiterung, Fassung A+C): GANG L,
+    einziger Zugang die Stiegenhaustür ``t5`` MIT Blatt (A), hinter seinen
+    rohen Wohnungseingängen nur Einzelräume, darunter Zimmer UND Bad (C)."""
+    raeume = [_r("S", "STIEGENHAUS", _q(-3000, 0, -200, 3000)),
+              _r("L", "GANG", _q(0, 0, 2000, 3000)),
+              _r("z", "ZIMMER", _q(2200, 0, 6000, 3000)),
+              _r("b", "BAD", _q(0, 3200, 2000, 5000))]
+    tueren = [_t("t5", "S", "L", "stiegenhaustuer"),
+              _t("tz", "L", "z", "wohnungseingang"),
+              _t("tb", "L", "b", "wohnungseingang")]
+    return raeume, tueren
+
+
+def test_r1_flur_bekommt_keine_klasse():
+    """Owner 2026-09-30, R1-Aussetzung: für den nach R1 (Fassung A+C)
+    gebundenen Wohnungsflur setzt K4 KEINE Klasse — er bleibt unbestimmt mit
+    Grund „R1-Flur, Owner 2026-09-30", Flags 11 (Notlicht bleibt), die Wohnung
+    (b) bleibt. Rennweg OG3 ``raum_10`` ist damit wieder offen."""
+    raeume, tueren = _r1_flur()
+    warnungen: list[str] = []
+    wohnungen = bilde_wohnungen(raeume, tueren, warnungen)
+    by_id = {r.id: r for r in raeume}
+    assert sorted(w.raum_ids for w in wohnungen) == [["L", "b", "z"]], "Vorbedingung: R1"
+    assert by_id["L"].nutzungsklasse is None, by_id["L"].nutzungsklasse
+    assert (by_id["L"].ist_fluchtweg, by_id["L"].ist_communal) == (True, True)
+    assert [w for w in warnungen if w.startswith("k4: L — offen: R1-Flur, Owner 2026-09-30")], (
+        warnungen)
+    assert [w for w in warnungen if w.startswith("unbestimmt: L — R1: Wohnungsflur")], warnungen
+
+
+def _ring_ohne_aufenthaltsraum():
+    """``_ring`` mit Bad, WC und Abstellräumen statt Zimmern und Küche — eine
+    Wohnung (top_1) ohne Aufenthaltsraum (G4, Owner 2026-09-22)."""
+    ring = _ring()
+    for r, typ in zip(ring, ("BAD", "WC", "ABSTELLRAUM", "ABSTELLRAUM"), strict=True):
+        r.raum_typ = typ
+    return ring
+
+
+@pytest.mark.parametrize("wohnung", ["top_1", None], ids=["mitglied", "ohne-wohnung"])
+def test_g4_ohne_aufenthaltsraum_bleibt_unbestimmt(wohnung):
+    """Owner 2026-09-30, Aufenthaltsraum-Sperre: K4 setzt PRIVAT nur, wenn die
+    Wohnung mindestens einen Aufenthaltsraum hat (``AUFENTHALTSRAUM``);
+    sonst bleibt der Raum unbestimmt mit Grund „G4: kein Aufenthaltsraum"."""
+    raeume = _ring_ohne_aufenthaltsraum() + [_r("v", "VORRAUM", _q(0, 0, 3000, 3000), wohnung)]
+    k, grund = klasse_aus_umriss(raeume, [])["v"]
+    assert k is None
+    assert grund.startswith("G4: kein Aufenthaltsraum"), grund
+    assert "top_1" in grund and "Notlicht bleibt" in grund
+
+
+def test_g4_ein_aufenthaltsraum_genuegt():
+    raeume = _ring_ohne_aufenthaltsraum() + [_r("v", "VORRAUM", _q(0, 0, 3000, 3000), "top_1")]
+    raeume[0].raum_typ = "SCHLAFZIMMER"
+    assert klasse_aus_umriss(raeume, [])["v"][0] == "WOHNUNG_PRIVAT"
+
+
+def test_g4_loch_vorraum_ohne_aufenthaltsraum_im_durchlauf():
+    """``_loch_vorraum`` mit WC statt Zimmer: Wohnung {b, v, z} aus rohen
+    Türen bleibt, v bleibt unbestimmt mit K4-Grund G4, Flags 11, die
+    ``unbestimmt:``-Zeile der Iteration bleibt."""
+    raeume, tueren = _loch_vorraum()
+    raeume[1].raum_typ = "WC"
+    warnungen: list[str] = []
+    wohnungen = bilde_wohnungen(raeume, tueren, warnungen)
+    v = raeume[0]
+    assert [w.raum_ids for w in wohnungen] == [["b", "v", "z"]]
+    assert v.nutzungsklasse is None
+    assert (v.ist_fluchtweg, v.ist_communal) == (True, True)
+    assert [w for w in warnungen if w.startswith("k4: v — offen: G4: kein Aufenthaltsraum")], (
+        warnungen)
+    assert [w for w in warnungen if w.startswith("unbestimmt: v — ")], warnungen

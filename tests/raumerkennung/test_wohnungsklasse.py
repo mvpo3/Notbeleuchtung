@@ -1466,10 +1466,10 @@ def test_nicht_konvergenz_wird_unbestimmt_mit_grund(monkeypatch):
     unbestimmt mit Grund, Notlicht bleibt — gleich unter Deckel 9/10/11,
     über alle Reihenfolgen, idempotent. Der Grund behauptet nicht, die Regel
     habe keinen Fixpunkt. K4 (Owner 2026-09-30) danach: V ist Mitglied
-    seiner (Einraum-)Wohnung → privat, der Schritt-3-Grund steht in seiner
-    ``k4:``-Zeile, Notlicht bleibt (ohne Aufenthaltsraum keine Bestätigung,
-    G4); G liegt in keiner Wohnung und ist nur blattlos getrennt → bleibt
-    unbestimmt mit K4-Grund."""
+    seiner (Einraum-)Wohnung, die hat aber keinen Aufenthaltsraum →
+    Aufenthaltsraum-Sperre, V bleibt unbestimmt („G4: kein
+    Aufenthaltsraum"); G liegt in keiner Wohnung und ist nur blattlos
+    getrennt → bleibt unbestimmt mit K4-Grund."""
     from notbeleuchtung.raumerkennung import wohnungen as W
 
     ergebnisse = set()
@@ -1481,8 +1481,10 @@ def test_nicht_konvergenz_wird_unbestimmt_mit_grund(monkeypatch):
         eins = _vollzustand(raeume, tueren, w)
         w = bilde_wohnungen(raeume, tueren)
         assert _vollzustand(raeume, tueren, w) == eins, deckel
+        assert [x for x in warnungen
+                if x.startswith("k4: V — offen: G4: kein Aufenthaltsraum")], warnungen
         for rid, klasse, zeile in (("G", None, "unbestimmt: G "),
-                                   ("V", "WOHNUNG_PRIVAT", "k4: V — privat")):
+                                   ("V", None, "unbestimmt: V ")):
             r = next(x for x in raeume if x.id == rid)
             assert r.nutzungsklasse == klasse, (deckel, rid, r.nutzungsklasse)
             assert (r.ist_fluchtweg, r.ist_communal) == (True, True), rid
@@ -2752,11 +2754,13 @@ def test_r14_ohne_fixpunkt_gilt_der_tiebreak_ohne_probelauf():
     bilde_wohnungen(raeume, tueren, warnungen)
     by_id = {r.id: r for r in raeume}
     # Kein Fixpunkt: K und V1 pendeln und werden unbestimmt (Schritt 3). K4
-    # (Owner 2026-09-30) gibt V1 danach die Klasse seiner Wohnung (Mitglied);
-    # K liegt in keiner und bleibt offen.
-    assert [by_id[r].nutzungsklasse for r in ("K", "V1")] == [None, wk.PRIVAT], \
+    # (Owner 2026-09-30): V1 ist Mitglied einer Wohnung ohne Aufenthaltsraum →
+    # Aufenthaltsraum-Sperre, bleibt offen; K liegt in keiner und bleibt offen.
+    assert [by_id[r].nutzungsklasse for r in ("K", "V1")] == [None, None], \
         {r.id: r.nutzungsklasse for r in raeume}
-    assert [w for w in warnungen if w.startswith("k4: V1 — privat")
+    assert [w for w in warnungen
+            if w.startswith("k4: V1 — offen: G4: kein Aufenthaltsraum")], warnungen
+    assert [w for w in warnungen if w.startswith("unbestimmt: V1 — ")
             and "Schritt 3" in w], warnungen
     for rid in ("V2", "V3"):
         assert by_id[rid].nutzungsklasse == wk.ALLGEMEIN, rid
@@ -2941,9 +2945,8 @@ def test_r1ac_wohnungsflur_hinter_stiegenhaustuer_bildet_eine_wohnung():
     Stiegenhaustür"), nicht „Ankerregel nicht auswertbar"; dazu eine
     ``r1:``-Zeile, die den Zugang nennt, und keine ``loch:``-Zeile.
 
-    K4 (Owner 2026-09-30) überstimmt „L bleibt unbestimmt": L ist Mitglied
-    der Wohnung → Klasse privat; der R1-Grund steht in der ``k4:``-Zeile,
-    Flags bleiben 11 (die Ankerregel sagt allgemein, keine Bestätigung)."""
+    K4 (Owner 2026-09-30, R1-Aussetzung): K4 setzt für L keine Klasse, L
+    bleibt unbestimmt; die ``k4:``-Zeile nennt „R1-Flur, Owner 2026-09-30"."""
     raeume, tueren = _og3_flur()
     assert wk.ankerurteil(raeume, tueren)["L"][0] == wk.A_ALLGEMEIN, "Vorbedingung"
     assert "L" not in wk.loch_raeume(raeume, tueren), "Vorbedingung: kein Loch"
@@ -2954,11 +2957,12 @@ def test_r1ac_wohnungsflur_hinter_stiegenhaustuer_bildet_eine_wohnung():
     by_id = {r.id: r for r in raeume}
     assert _wohnungsstand(raeume, wohnungen)[0] == _R1AC_SOLL["_og3_flur"]
     assert by_id["L"].wohnung_id == by_id["z"].wohnung_id is not None
-    assert by_id["L"].nutzungsklasse == wk.PRIVAT, by_id["L"].nutzungsklasse
+    assert by_id["L"].nutzungsklasse is None, by_id["L"].nutzungsklasse
     assert (by_id["L"].ist_fluchtweg, by_id["L"].ist_communal) == (True, True)
     assert "L" not in wk.bestaetigt_privat(raeume, tueren)
-    assert not [w for w in warnungen if w.startswith("unbestimmt: L — ")], warnungen
-    offen = [w for w in warnungen if w.startswith("k4: L — privat")]
+    assert [w for w in warnungen
+            if w.startswith("k4: L — offen: R1-Flur, Owner 2026-09-30")], warnungen
+    offen = [w for w in warnungen if w.startswith("unbestimmt: L — ")]
     assert len(offen) == 1, warnungen
     assert "Wohnungsflur hinter Stiegenhaustür" in offen[0], offen[0]
     assert "kein Beleg für eine eigene Wohnung" in offen[0], offen[0]

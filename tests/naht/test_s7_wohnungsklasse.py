@@ -528,9 +528,9 @@ def test_kandidatenklasse_ist_fixpunkt_der_eigenen_regel(plan_name, request):
     — sie darf weder wachsen noch wandern. Alles andere muss exakt gleich
     sein, und jeder Kipper muss mit Grund im Bericht stehen. Dazu kommen die
     nach R1 gebundenen Gänge (``R1_GEBUNDEN``, Owner 2026-09-27): die
-    Iteration lässt sie unbestimmt, mit ihrem eigenen Grund; K4 (Owner
-    2026-09-30) gibt ihnen danach die Klasse ihrer Wohnung (Mitglied →
-    privat), der R1-Grund steht in der ``k4:``-Zeile."""
+    Iteration lässt sie unbestimmt, mit ihrem eigenen Grund, und K4 setzt für
+    sie keine Klasse (R1-Aussetzung, Owner 2026-09-30) — ``k4:``-Zeile
+    „offen: R1-Flur"."""
     prov, modell, _ = request.getfixturevalue(plan_name)
     nach, _ = klassifiziere(modell.raeume, modell.tueren)
     abweichung = {r.id for r in modell.raeume
@@ -540,14 +540,15 @@ def test_kandidatenklasse_ist_fixpunkt_der_eigenen_regel(plan_name, request):
         f"{plan_name}: Kipper-Menge gewandert — {sorted(abweichung)}")
     for rid in abweichung:
         r = next(x for x in modell.raeume if x.id == rid)
-        if rid in r1:
-            assert r.nutzungsklasse == "WOHNUNG_PRIVAT", r.nutzungsklasse
-            assert [w for w in prov.wohnungsklasse_warnungen
-                    if w.startswith(f"k4: {rid} — privat")
-                    and "vorher unbestimmt: R1: Wohnungsflur" in w], (
-                f"{rid}: nicht im Bericht")
-            continue
         assert r.nutzungsklasse is None, f"{rid} widerspricht, ist aber gesetzt"
+        if rid in r1:
+            assert [w for w in prov.wohnungsklasse_warnungen
+                    if w.startswith(f"unbestimmt: {rid} — R1: Wohnungsflur")], (
+                f"{rid}: nicht im Bericht")
+            assert [w for w in prov.wohnungsklasse_warnungen
+                    if w.startswith(f"k4: {rid} — offen: R1-Flur, Owner 2026-09-30")], (
+                f"{rid}: K4-Grund nicht im Bericht")
+            continue
         assert [w for w in prov.wohnungsklasse_warnungen
                 if rid in w and "Schritt 3" in w], f"{rid}: nicht im Bericht"
 
@@ -677,13 +678,10 @@ def test_kinderwagenraum_behaelt_seinen_weg(ug):
 #: bleibt wie der Loch-Gang unbestimmt: „der Gang gehört zur Wohnung, ist aber
 #: kein Beleg für eine eigene Wohnung; unbestimmt heißt Notlicht bleibt". Der
 #: Bericht führt ihn als ``r1:``-Zeile, nicht mehr als ``loch:``-Zeile.
-#: **K4 (Owner 2026-09-30)** überstimmt „bleibt unbestimmt": der Gang liegt
-#: als Mitglied im Umriss seiner Wohnung → Klasse privat; die Ankerregel sagt
-#: allgemein (über ``tuer_5`` ohne Wohnungseingang), also keine Bestätigung,
-#: Flags 11.
+#: **K4 (Owner 2026-09-30):** R1-Aussetzung — K4 setzt für den R1-Flur keine
+#: Klasse, er bleibt unbestimmt („R1-Flur, Owner 2026-09-30"), Flags 11.
 R1_GANG_ROH = {
-    ("og3", "raum_10"): ("WOHNUNG_PRIVAT",
-                         {"raum_1", "raum_4", "raum_6", "raum_7", "raum_10"}),
+    ("og3", "raum_10"): (None, {"raum_1", "raum_4", "raum_6", "raum_7", "raum_10"}),
 }
 
 
@@ -702,8 +700,10 @@ def test_loch_raum_folgt_rohen_tueren(plan_name, raum_id, request):
     assert {x.id for x in modell.raeume
             if x.wohnung_id and x.wohnung_id == r.wohnung_id} == menge
     warn = prov.wohnungsklasse_warnungen
-    assert [w for w in warn if w.startswith(f"k4: {raum_id} — privat")
+    assert [w for w in warn if w.startswith(f"unbestimmt: {raum_id} — ")
             and "Wohnungsflur hinter Stiegenhaustür" in w], raum_id
+    assert [w for w in warn
+            if w.startswith(f"k4: {raum_id} — offen: R1-Flur, Owner 2026-09-30")], raum_id
     assert [w for w in warn if w.startswith(f"r1: {raum_id} — ") and "tuer_5" in w
             and "nur Einzelräume" in w and "(R1)" in w], raum_id
     assert not [w for w in warn if w.startswith(f"loch: {raum_id} — ")], raum_id
@@ -753,12 +753,13 @@ def test_moll_eg_raum_23_behaelt_seine_wege(moll_eg):
     Stützpunkt-Segmente. Die WOHNUNG folgt seit dem Owner-Grundsatz
     2026-09-22 den rohen Türen (b): hinter dem Wohnungseingang ``tuer_20``
     MIT Blatt gehört ``raum_23`` mit WC und Abstellraum zu einer Wohnung —
-    das ändert keine Rolle, an der ein Weg startet. K4 (Owner 2026-09-30):
-    Mitglied dieser Wohnung → Klasse privat statt offen; nicht bestätigt,
-    also weiter Erschließung für die korrigierten Rollen — die Wege bleiben."""
+    das ändert keine Rolle, an der ein Weg startet. K4 (Owner 2026-09-30,
+    Aufenthaltsraum-Sperre): die Wohnung {23, 24, 26} hat keinen
+    Aufenthaltsraum → K4 setzt keine Klasse, ``raum_23`` bleibt offen
+    („G4: kein Aufenthaltsraum")."""
     _, modell, _ = moll_eg
     r = next(x for x in modell.raeume if x.id == "raum_23")
-    assert r.nutzungsklasse == "WOHNUNG_PRIVAT"
+    assert r.nutzungsklasse is None
     assert (r.ist_fluchtweg, r.ist_communal) == (True, True)
     assert {x.id for x in modell.raeume
             if x.wohnung_id and x.wohnung_id == r.wohnung_id} == {
