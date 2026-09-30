@@ -109,13 +109,13 @@ Prüfstrecken-Ausgabe außerhalb des Contracts (Attribute am Provider): `wand_wa
 | F-05 | Rohe Türrollen | `tuer_typisierung.py:typisiere_tueren:104` | `test_tuer_typisierung.py`; xfail `::test_soll_90_prozent_tueren_typisiert` (Barawitzka, Mollgasse, Muthgasse, Rennweg EG) | Quote je Plan: Basislauf § 7. Türen ohne Rolle erzeugen weder Ausgang noch Fluchtweg-Start. | P1 | Selman |
 | F-06 | Korrigierte Türrollen (Einbahn Board 7) | `wohnungsklasse.py:korrigierte_rollen:698`; Leser nur `fluchtweg.py:329`, `plan_pruefen.py:1281` | `test_wohnungsklasse.py::test_e7_*` (5); `tests/naht/test_s7_wohnungsklasse.py::test_korrigierte_rollen_sind_eine_funktion_von_klasse_und_roher_rolle` | Pflicht-Eintrag § 6.4. | P1 | Selman; Naht Leonis/Contract |
 | F-07 | Geschossausgänge aus Türen | `ausgaenge.py:leite_ausgaenge:62`, S5c F2 `:50-59`/`:91-92`, `ohne_unzulaessige_final_exits:116` | `test_ausgaenge.py` (5); `test_geschoss_befund.py::test_fail_closed_*`; Gate (11) | **Am Rain OG4: 0 Ausgänge** (Pflicht-Eintrag § 6.2). Rennweg DD: 0 Ausgänge (Owner-Frage: Dachdraufsicht aus der Bewertung nehmen oder Regel „Freifläche am Stiegenhaus im OG", `docs/OFFENE_FRAGEN.md` § Rennweg DD). Rennweg UG: kein `final_exit`, nur 2 `stair_exit` (`docs/COORDINATION.md` Log 2026-09-30 Punkt 5). Veraltete Zeilenangabe `provider.py:102` in `ausgaenge.py:122` und `tuer_typisierung.py:154` (heute `:175`). | P0 (OG4) · P1 (DD, UG) · P2 (Doku) | Selman |
-| F-08 | `final_exit` aus dem Footprint | `footprint.py:hauptausgaenge:123-135`, Aufruf `provider.py:175`, Zusammenlegung `:247-253` | `test_footprint.py::test_mollgasse_leer_hauptausgaenge` (sichert 1–6 `final_exit` aus dem Footprint); `test_soll_mollgasse.py::test_soll_hofausgaenge_cluster_a_und_b` | Pflicht-Eintrag § 6.3 (S4g). | P1 | Selman |
+| F-08 | `final_exit` aus dem Footprint | `footprint.py:hauptausgaenge:123-135`, Aufruf `provider.py:175`, Zusammenlegung `:247-253` | `test_footprint.py::test_mollgasse_leer_hauptausgaenge` (sichert 1–6 `final_exit` aus dem Footprint); `test_soll_mollgasse.py::test_soll_hofausgaenge_cluster_a_und_b` | Pflicht-Eintrag § 6.3 (S4g). **→ 2b (§ 13): offen, STOPP** — ohne die Footprint-Ausgänge fallen auf Mollgasse EG 10 von 14 GRAPH-Wegen weg und Cluster A wird rot; Naht als strict-xfail `test_s4g_ausgang_tuerbezug.py::test_soll_mollgasse_eg_kein_ausgang_ohne_tuerbezug`. | P1 | Selman |
 | F-09 | Fluchtweg-Segmente | `fluchtweg.py:fluchtwege:215` (GRAPH), `explizite_linien:88`/`linien_segmente:110` (LINIE), FALLBACK; `zirkulation.py:zirkulation_aus_dxf:61` | `test_fluchtweg.py`; `test_zirkulation.py::test_synth_fluchtweg` (`::test_mollgasse_fluchtweg` skipped); Gate (6) | Pläne nur mit FALLBACK-Segmenten (`richtung_unbekannt`), „kein final_exit erreichbar"-Warnungen: Zahlen Basislauf § 7. | P1 | Selman |
 | F-10 | Durchleitung durch private Räume | `wohnungsklasse.py:durchleitung_raeume:921`, `fluchtweg.py:382-399` | `test_wohnungsklasse.py::test_durchleitung_zerreisst_den_weg_nicht`, `::test_durchleitung_wird_als_warnung_ausgewiesen`, `::test_durchleitung_fuehrt_nicht_durch_die_wand` | Pflicht-Eintrag § 6.6. | P2 | Contract (3 Owner) |
 | F-11 | Kreuzcheck Linien ↔ `final_exit` | `kreuzcheck.py:kreuzcheck:57`, Aufruf `provider.py:321-324` | `test_kreuzcheck.py`; `test_soll_mollgasse.py::test_kreuzcheck_findet_endpunkte_an_der_aussenkante`; xfail `::test_soll_jeder_endpunkt_an_der_kante_hat_final_exit`, `::test_soll_final_exit_anzahl_gleich_endpunkte_an_der_kante` | Soll (jeder Kanten-Endpunkt hat einen `final_exit`) nicht erreicht. | P2 | Selman |
 | F-12 | Stiegenhaus-Modell, Anker | `stiegenhaus.py:baue_stiegenhaus_modell:263`, `gang_anker.py:anker_fuer_gang:102`, `wohnungsklasse.py:anker_aus_privat_ziehen:958` | `test_stiegenhaus.py`, `test_gang_anker.py`; Gate (6); `test_soll_mollgasse.py::test_keine_anker_in_liftpolygonen` | Laufrichtung ohne Nummern/Gehlinie bleibt `unbekannt`; AUFZUGSVORPLATZ nicht automatisch (§ Fachteil 2). 18 Anker in `WOHNUNG_PRIVAT` sind eigene Anker K4-privater Gänge, nach Grundsatz (a) gewollt (`docs/SLICES_K1_K4.md:1362-1366`). | P2 | Selman |
-| F-13 | Außenöffnungen Mollgasse EG | `tuer_zuordnung.py:aussen_durchgaenge:456` | — | `raum_55`: Hauseingang `aussenoeffnung_8` ist ein Streifen zwischen zwei Wandkörpern; `raum_51` (Außenanlage 122,43 m²) braucht ggf. eigenen Filter (`docs/OFFENE_FRAGEN.md` § Außenöffnungen). | P1 | Selman |
-| F-14 | Balkontür kein Ausgang (Leonis' S4d) | `tuer_typisierung.py:179-189`, Text dreht nicht zurück `:221-227` | `test_tuer_typisierung.py`, `test_ausgang_freiflaeche.py`; xfail `::test_soll_sentinel_aussen_ist_entscheidbar` | EG-Fenstertür AUSSEN × WOHNUNG_PRIVAT immer `balkontuer` (Norm-Frage an Enis, § Fachteil 1). | P2 | Enis (Norm) |
+| F-13 | Außenöffnungen Mollgasse EG | `tuer_zuordnung.py:aussen_durchgaenge:456` | — | `raum_55`: Hauseingang `aussenoeffnung_8` ist ein Streifen zwischen zwei Wandkörpern; `raum_51` (Außenanlage 122,43 m²) braucht ggf. eigenen Filter (`docs/OFFENE_FRAGEN.md` § Außenöffnungen). **Befund 2b (§ 13):** `raum_51` fasst Stiegenhaus und Hof, die Hof-Türen `tuer_52`/`tuer_68` bekommen keine `AUSSEN`-Seite — blockiert S4g a (Cluster A). | P1 | Selman |
+| F-14 | Balkontür kein Ausgang (Leonis' S4d) | `tuer_typisierung.py:179-189`, Text dreht nicht zurück `:221-227` | `test_tuer_typisierung.py`, `test_ausgang_freiflaeche.py`; xfail `::test_soll_sentinel_aussen_ist_entscheidbar` | EG-Fenstertür AUSSEN × WOHNUNG_PRIVAT immer `balkontuer` (Norm-Frage an Enis, § Fachteil 1). **→ 2b (§ 13):** `leite_ausgaenge` macht keine `balkontuer` mehr zum `final_exit`, auch mit gesetztem `ist_notausgang` (`ausgaenge.py:83-89`). | P2 | Enis (Norm) |
 
 ---
 
@@ -206,6 +206,7 @@ Prüfstrecken-Ausgabe außerhalb des Contracts (Attribute am Provider): `wand_wa
   Vor dem Bau ist ein eigener Messfall auf die Tür anzulegen (Owner 2026-09-23).
 - Prio **P1** (Owner-Satz, Notlicht-Wirkung nicht gemessen) · Lane Selman · Reihenfolge: nach dem Merge des
   Türstapels (Owner-Vermerk).
+- **→ 2b (§ 13):** b und c erledigt, a offen (STOPP; Messung und Einzelbefund `exit_1` … `exit_4` dort).
 
 ### 6.4 Türrollen (roh vs. korrigiert)
 
@@ -564,3 +565,127 @@ DG2 0 → 1** (Enis Board 3, unverändert); M17 18/18; Barawitzka ABSTELLRAUM 1 
   (KeyError, GEOS, kaputte HATCH-/INSERT-Referenzen) weiter nicht systematisch geprüft (§ 8). P2 · Selman.
 - `Projekte/_ergebnis/*/bericht.md` nicht neu erzeugt (Prüfstrecke mit Render nur nach 2f, RAM); die Am-Rain-
   Berichte zeigen `keine_wand_entities` erst nach dem nächsten Lauf.
+
+---
+
+## 13. Punkt 2b — S4g: Balkonkonturen sind kein Ausgang (b und c erledigt, **a offen: STOPP**)
+
+**Regel (Owner-Auftrag 2026-09-30):** ein `final_exit` braucht einen Türbezug (Tür/Öffnung mit Raumseite, Rolle ≠
+`balkontuer`) und einen Geschossbezug (EG oder belegter Ausgang ins Freie); eine Balkon-/Terrassen-/Loggia-Kontur
+ist nie Ausgang. Die EG-Ausnahme Mollgasse `exit_tuer_67` (Südgarten) bleibt erhalten.
+
+**Vorher** (Code `b849dd0`). Quelle: 12 Prüfpläne + Am Rain OG4 = Nachher 2a; Mollgasse 1KG/2KG und Am Rain UG/EG
+neu gerechnet auf `b849dd0` (je allein), Raumerkennung feldgleich zur Basis `0434392`. Türbezug = ID-Konvention
+`exit_<tuer_id>` zeigt auf eine Tür des Modells; Raumseite = mindestens eine Seite ist ein Raum des Modells (nicht
+`AUSSEN`/`KEIN_RAUM`).
+
+| Plan | Geschoss | final_exit | stair_exit | ohne Tür | Tür ohne Raumseite / Balkontür |
+|---|---|---|---|---|---|
+| Rennweg_UG | UG | 0: — | 2: `exit_tuer_7`, `exit_durchgang_2` | — | — |
+| Rennweg_EG | EG | 2: `exit_tuer_8`, `exit_tuer_18` | 3: `exit_durchgang_18`, `exit_durchgang_19`, `exit_durchgang_20` | — | — |
+| Rennweg_OG1 | 1OG | 0: — | 2: `exit_durchgang_6`, `exit_durchgang_7` | — | — |
+| Rennweg_OG2 | 2OG | 0: — | 1: `exit_tuer_1` | — | — |
+| Rennweg_OG3 | 3OG | 0: — | 3: `exit_tuer_5`, `exit_tuer_6`, `exit_tuer_12` | — | — |
+| Rennweg_DG1 | DG | 0: — | 2: `exit_durchgang_6`, `exit_durchgang_7` | — | — |
+| Rennweg_DG2 | DG | 0: — | 3: `exit_durchgang_4`, `exit_durchgang_5`, `exit_durchgang_6` | — | — |
+| Rennweg_DD | — | 0: — | 0: — | — | — |
+| Barawitzka_EG | EG | 1: `exit_tuer_31` | 0: — | — | `exit_tuer_31` |
+| Mollgasse_EG | EG | 8: `exit_1`, `exit_2`, `exit_3`, `exit_4`, `exit_tuer_16`, `exit_tuer_60`, `exit_tuer_67`, `exit_aussenoeffnung_1` | 1: `exit_tuer_68` | `exit_1`, `exit_2`, `exit_3`, `exit_4` | — |
+| Mollgasse_1OG | 1OG | 0: — | 1: `exit_durchgang_10` | — | — |
+| Muthgasse_E2 | 2OG | 0: — | 1: `exit_durchgang_74` | — | — |
+| Mollgasse_1KG | KG | 1: `exit_aussenoeffnung_1` | 0: — | — | — |
+| Mollgasse_2KG | KG | 0: — | 1: `exit_durchgang_8` | — | — |
+| AmRain_UG | UG | 2: `exit_tuer_113`, `exit_tuer_150` | 4: `exit_tuer_160`, `exit_tuer_186`, `exit_durchgang_4`, `exit_durchgang_22` | — | — |
+| AmRain_EG | EG | 2: `exit_tuer_68`, `exit_tuer_231` | 1: `exit_tuer_155` | — | — |
+| AmRain_OG4 | 4OG | 0: — | 0: — | — | — |
+
+Summe: 16 `final_exit`, 25 `stair_exit` auf 17 Plänen. **Ohne Tür:** nur Mollgasse EG `exit_1` … `exit_4`
+(`footprint.hauptausgaenge`, `footprint.py:123-135`, Aufruf `provider.py:183`). Alle 25 `stair_exit` hängen an einer
+Tür. **Tür ohne Raumseite:** nur Barawitzka EG `exit_tuer_31` (`tuer_31` `KEIN_RAUM`\|`KEIN_RAUM`, `hauseingang` über
+Text „Eingang"). **Balkontür als Ausgang:** 0. Das Zusammenlegen (`provider.py:255-261`) hat auf keinem der 17 Pläne
+einen türgebundenen Ausgang verdrängt (Mollgasse EG: alle 5 aus `leite_ausgaenge` im Modell).
+
+**Mollgasse EG `exit_1` … `exit_4` einzeln** (Plan angesehen: Bogenpaar, Nachbarraum, Komponentenkante; Diagnose-Lauf
+und Ausschnitte im Session-Scratch, nicht im Repo):
+
+| Ausgang | Lage | Bogenpaar (Layer, Radius, Drehpunkt-Abstand) | Befund | GRAPH-Wege mit Ziel |
+|---|---|---|---|---|
+| `exit_1` | Ostwand von `raum_51` (STIEGENHAUS 122,4 m²), öffnet nach Osten auf eine Fläche mit Text „GEFÄLLE 2%", Komponentenkante 1 920 mm | 2 × `05-SYM-G00-LEG-M0`, r 1 000 / 1 000, 2 000 mm, spiegelbildlich (270–360° / 0–90°), Text „EI2 30-C - FTS" | **echte Doppeltür**, aber keine Tür im Modell (nächste `tuer_35` 3,8 m): Loch der Türerkennung | 0 |
+| `exit_2` | 8 mm neben `raum_30` (MÜLLRAUM), keine Tür ≤ 4 m | oberer Flügel von `exit_1` (r 1 000) + Einzeltür Müllraum (r 900), 2 576 mm | **kein Ausgang** — zwei fremde Bögen gepaart | 0 |
+| `exit_3` | Hof-Teil von `raum_51` (Texte „ZAUN, H = 1.00 m", „GEFÄLLE 2%"), Komponentenkante 930 mm | `tuer_52` (`05-SYM`, r 1 000, Nordwand Stiegenhaus → Hof, „EI2 30-C - FTS") + `tuer_68` (`02-ANS`, r 800, an der Zaunlinie „ZAUN, H = 1.00 m"), 2 334 mm | **kein Doppeltürpaar**, steht aber für den echten Hof-Ausgang: `tuer_52` `raum_51`\|`KEIN_RAUM`, `tuer_68` `raum_51`\|`raum_51` — `raum_51` fasst Stiegenhaus und Hof (F-13), darum wird keine der beiden Türen `final_exit`. Einziger `final_exit` an Cluster A (837 mm) | 1 (`seg_graph_tuer_35`) |
+| `exit_4` | in `raum_41` (GANG 77,1 m²), Komponentenkante 978 mm | `tuer_55` (`05-SYM`, r 900) + Bogen auf dem Fluchtweg-Layer `09-WEG-G00-Leg-M0` (r 1 002, zugleich `tuer_64` `raum_41`\|`KEIN_RAUM`), 2 185 mm | **kein Doppeltürpaar**; der `09-WEG`-Bogen spricht für einen Fluchtweg-Ausgang aus `raum_41`, eine Tür dafür ist nicht belegt | 9 |
+
+Die GRAPH-Wege erreichen `exit_3`/`exit_4` über die Nächste-Tür-Bindung für Ausgänge ohne Tür
+(`fluchtweg.py:296-300`, ≤ 1 500 mm).
+
+**Rot vor dem Fix** (`pytest tests/naht/test_s4g_ausgang_tuerbezug.py --tb=line`, Kopf `b849dd0`, Kurzform):
+
+```
+test_mollgasse_eg_kein_ausgang_ohne_tuerbezug  test_s4g_ausgang_tuerbezug.py:37: AssertionError: assert ['exit_1', 'e..._3', 'exit_4'] == []
+test_balkontuer_ist_nie_final_exit             test_s4g_ausgang_tuerbezug.py:76: AssertionError: assert [('exit_t1', ...'final_exit')] == [('exit_t2', 'final_exit')]
+2 failed, 2 passed in 33.16s
+```
+
+(Zeilennummern und Testname vor dem xfail-Marker; heute `test_soll_mollgasse_eg_kein_ausgang_ohne_tuerbezug`.)
+
+Die zwei grünen sind die Messfälle, die schon vorher halten: `exit_tuer_67` `final_exit` / `exit_tuer_68` `stair_exit`
+und Rennweg EG `exit_tuer_8` + `exit_tuer_18`.
+
+**a — gebaut, gemessen, zurückgenommen (STOPP).** Fix: `provider.parse` ohne `footprint.hauptausgaenge`
+(`vorhandene` startet leer; Harness in `test_s7_wohnungsklasse._eingabe` nachgezogen). Mollgasse EG, Runner allein:
+
+| | vorher | nachher (Fix a) |
+|---|---|---|
+| Ausgänge | 8 `final_exit` + 1 `stair_exit` | 4 `final_exit` (`exit_tuer_16`, `_60`, `_67`, `exit_aussenoeffnung_1`) + 1 `stair_exit` (`exit_tuer_68`) |
+| GRAPH-Wege | 14 (`exit_4` 9, `exit_tuer_16` 4, `exit_3` 1) | 4 (`exit_tuer_16`); die 10 übrigen fallen weg, je Warnung „kein final_exit erreichbar" (`tuer_5`, `_9`, `_11`, `_20`, `_21`, `_24`, `_25`, `_26`, `_35`, `_50`) |
+| FALLBACK | 3 | 4 (`seg_fallback_raum_39`) |
+| Leuchten rz / SL | 24 / 27 | 22 / 25 |
+
+`pytest` (Mollgasse-, Ausgangs-, Provider-, GT- und e2e-Auswahl, 9 Dateien): `1 failed, 78 passed, 1 skipped, 4 xfailed`
+— rot: `test_soll_mollgasse.py::test_soll_hofausgaenge_cluster_a_und_b` („kein final_exit an Cluster A (2689400.0,
+1524600.0)"). Kein Geschoss verliert alle Ausgänge, aber ein scharfer Test wird rot und 10 von 14 Wegen samt 4 Leuchten
+fallen weg (Grundsatz (a)). Fix a ist darum **nicht** committet; der Naht-Test steht als strict-xfail
+`test_soll_mollgasse_eg_kein_ausgang_ohne_tuerbezug` (dreht, sobald a gebaut ist).
+
+**b — erledigt.** Kette geprüft: `tuer_typisierung` setzt `balkontuer` mit `ist_notausgang=False` (`:179-181`,
+`:187-189`), ein Türtext dreht das nicht zurück (`:225-227`); **aber** `markiere_windfang` setzt `ist_notausgang=True`
+ohne Blick auf die Rolle (`:276`), und `leite_ausgaenge` las nur das Flag. Neu: `ausgaenge.py:83-89` — eine
+`balkontuer` wird nie `final_exit`, auch mit gesetztem Flag (auf den 17 Plänen 0 Fälle, also ohne Wirkung auf die
+Messung). Test `test_balkontuer_ist_nie_final_exit`.
+
+**c — erledigt (Messfall).** `test_mollgasse_eg_messfall_suedgarten_und_hoftuer`: `exit_tuer_67` bleibt `final_exit`
+(`tuer_67` `AUSSEN`\|`raum_61` TERRASSE, `ist_notausgang`, Rolle ≠ `balkontuer`), `exit_tuer_68` bleibt `stair_exit`;
+dazu `test_rennweg_eg_behaelt_seine_zwei_final_exit`.
+
+**Raumseite nicht gebaut:** die Bedingung träfe einzig Barawitzka EG `exit_tuer_31`, den einzigen Ausgang des
+Geschosses → STOPP-Bedingung „kein Geschoss verliert alle Ausgänge". Die Ursache liegt in der Türzuordnung (F-03/F-04).
+
+**Nachher** (Commit-Stand = nur b; Runner je Plan allein): **17 von 17 feldgleich** zum Vorher (Vergleich des
+kompletten Runner-JSON ohne Lauf-Metadaten: Räume, Türen, Ausgänge, Segmente, Anker, Stiegenhäuser, Bounds,
+korrigierte Rollen, alle Provider-Warnungen, Leuchten je Lage und Klasse) — 12 Prüfpläne + Am Rain OG4 gegen 2a,
+Mollgasse 1KG/2KG und Am Rain UG/EG gegen die Basis `0434392`. final/stair je Plan vorher = nachher (Tabelle oben),
+**kein Ausgang entfallen**, kein Geschoss ohne Ausgang, das nicht schon vorher keinen hatte (Rennweg DD, Am Rain OG4).
+Laufzeit/Peak (Parse + Platzierung, je allein): Am Rain UG 114,2 s / 3,91 GB, EG 472,3 s / 6,30 GB, OG4 21,8 s / 0,43
+GB; Muthgasse E2 634,9 s / 11,29 GB.
+
+**Volle Suite:** (allein, 28 min 8 s): `6 failed, 2232 passed, 11 skipped, 6 deselected, 15 xfailed` — dieselben 6
+roten wie nach 2a (3 × `test_keine_leuchten_in_wohnung_privat` OG1/OG2/DG1 = Board 1 Leonis,
+`test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell`, die 2 S4c-Pins), 2232 = 2229 + 3 neue,
+15 xfailed = 14 + der neue strict-xfail, 0 xpassed.
+
+**Gate:** `pytest -m gate tests/gate` 3 passed, 1 xfailed (wie vorher). `gate_messung` auf dem Arbeitsbaum dieses
+Commits (vor dem Commit, `_arbeit/gate/messung_b849dd0-dirty-2b.json`), `pruefe_gate` gegen
+`nullmessung_f15d03f.json`: (0) unsauberer Arbeitsbaum (erwartet, vor dem Commit gemessen) und **(3) `M4.einraum` DG2
+0 → 1** (Enis Board 3, unverändert); M17 18/18; **(11) DG1 grün:** 2 Ausgänge (`exit_durchgang_6`, `_7`), 0 durch den
+Liftschacht. Alle Messfelder außer `meta` gleich der 2a-Messung.
+
+**Offen nach 2b:**
+- **S4g a (P1, Owner):** erst einen türgebundenen Ersatz, dann die footprint-Ausgänge entfernen — (i) Hof-Ausgang
+  Cluster A: `raum_51` trennt Stiegenhaus und Hof nicht (F-13), `tuer_52`/`tuer_68` bekommen darum nie `AUSSEN`;
+  (ii) `raum_41`: welche Tür ist der Ausgang, den `exit_4` vertritt (9 Wege)? (iii) `exit_1`: Doppeltür „EI2 30-C" ohne
+  Tür-Objekt (Türerkennung). Nicht gebaute, nicht gemessene Owner-Option: `footprint`-Ausgang nur mit Tür ≤ 1 500 mm
+  (dieselbe Bindung wie `fluchtweg.py:296-300`) — behielte `exit_3`/`exit_4`, verwürfe `exit_1`/`exit_2`.
+- **Raumseite (P1):** Barawitzka `tuer_31` `KEIN_RAUM`\|`KEIN_RAUM` — erst die Türzuordnung, dann die Bedingung.
+- `test_ausgang_freiflaeche.py::test_soll_sentinel_aussen_ist_entscheidbar` nennt im xfail-Grund noch „4 der 19 ohne
+  Türbezug, `provider.py:102`" (Marker unverändert gelassen).
+- `Projekte/_ergebnis/` nicht neu erzeugt (Verifikation über den Runner wie 2a).

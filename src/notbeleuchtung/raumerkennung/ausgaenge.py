@@ -80,9 +80,13 @@ def leite_ausgaenge(tueren: list[Tuer], raeume: list[Raum], geschoss: str,
             t.tuer_detail == "garagentor" and ins_freie
             and any(math.dist(t.xy_mm, p) < _GARAGENTOR_FLW_NAH_MM
                     for p in fluchtweg_enden))
+        # S4g b: eine balkontuer ist nie Ausgang — auch wenn ein späterer
+        # Schritt das Notausgang-Flag wieder setzt (markiere_windfang fragt
+        # nicht nach der Rolle).
         if eg_oder_ug and (
                 t.tuer_detail == "hauseingang"
-                or (t.ist_notausgang and ins_freie)
+                or (t.ist_notausgang and ins_freie
+                    and t.tuer_detail != "balkontuer")
                 or tor_mit_flw_ende):
             out.append(Ausgang(id=f"exit_{t.id}", xy_mm=t.xy_mm, typ="final_exit"))
         elif (_stiegen_seite(t, by_id)
