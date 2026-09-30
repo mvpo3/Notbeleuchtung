@@ -441,8 +441,9 @@ def unbestaetigt_privat(raeume: list[Raum], tueren: list[Tuer]) -> set[str]:
     privat gemacht hat (gemessen Runde 7: Rennweg DG1 ``raum_8``). Sie
     behalten ihr Notlicht; für die KORRIGIERTEN Türrollen — also Fluchtweg und
     Zirkulation, Frage (a) — zählen sie als Erschließung (Option W,
-    ``wohnungsraeume``). Die Wohnungsgrenze (b) kommt seit dem Owner-Grundsatz
-    2026-09-22 allein aus ``wohnungszugehoerigkeit`` (rohe Türen) und liest
+    ``wohnungsraeume``; ein Loch-Raum nicht, Punkt 2c). Die Wohnungsgrenze
+    (b) kommt seit dem Owner-Grundsatz 2026-09-22 allein aus
+    ``wohnungszugehoerigkeit`` (rohe Türen) und liest
     diese Menge NICHT."""
     entzug = bestaetigt_privat(raeume, tueren)
     return {r.id for r in raeume
@@ -485,21 +486,26 @@ def wohnungsraeume(raeume: list[Raum], tueren: list[Tuer]) -> tuple[set[str], se
 
     * privat: Klasse ``WOHNUNG_PRIVAT`` ohne die unbestätigt privaten
       GANG/VORRAUM (Option W, Runde 5: wer Notlicht behält, behält seine
-      Zirkulation), dazu die unbestimmten LOCH-Räume (``loch_raeume``) — nach
-      dem Owner-Grundsatz 2026-09-22 genau die, die über eine rohe Zimmertür
-      an ihre Wohnung gebunden sind.
+      Zirkulation), dazu die LOCH-Räume (``loch_raeume``), unbestimmt oder
+      von K4 unbestätigt privat — nach dem Owner-Grundsatz 2026-09-22 genau
+      die, die über eine rohe Zimmertür (oder R1) an ihre Wohnung gebunden
+      sind. Punkt 2c (LUECKEN.md § 14): Option W gilt für den Raum mit
+      Zirkulation vom Stiegenhaus; ein Loch-Raum hat keine, er gehört nach
+      rohen Türen zur Wohnung — seine Innentüren bleiben Zimmertüren (S7c),
+      wie vor K4 (gemessen 270 Türen, die K4 sonst zu Wohnungseingängen macht).
     * erschliessung: Klasse ``ALLGEMEIN_ERSCHLIESSUNG``, die übrigen
       unbestimmten GANG/VORRAUM (unbestimmt heißt nicht privat — auch der
-      nur blattlos getrennte, Runde 8) und die unbestätigt privaten.
+      nur blattlos getrennte, Runde 8) und die unbestätigt privaten außer
+      den Loch-Räumen.
     """
     kand = kandidaten(raeume, tueren)
     weich = unbestaetigt_privat(raeume, tueren)
     unbestimmt = {r.id for r in raeume
                   if r.raum_typ in SCOPE_TYPEN and r.nutzungsklasse is None}
-    loch = (unbestimmt - kand) & loch_raeume(raeume, tueren)
+    loch = ((unbestimmt | weich) - kand) & loch_raeume(raeume, tueren)
     privat = ({r.id for r in raeume if r.nutzungsklasse == PRIVAT} - weich) | loch
     erschliessung = ({r.id for r in raeume if r.nutzungsklasse == ALLGEMEIN}
-                     | (unbestimmt - loch) | weich)
+                     | ((unbestimmt | weich) - loch))
     return privat, erschliessung
 
 

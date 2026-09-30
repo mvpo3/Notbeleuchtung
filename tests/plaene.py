@@ -25,6 +25,7 @@ MOLLGASSE_EG = REPO / "Projekte/Mollgasse/Erdgeschoß.dxf"
 MOLLGASSE_1OG = REPO / "Projekte/Mollgasse/1.Obergeschoß.dxf"
 MOLLGASSE_2OG = REPO / "Projekte/Mollgasse/2.Obergeschoß.dxf"
 MOLLGASSE_3OG = REPO / "Projekte/Mollgasse/3.Obergeschoß.dxf"
+MOLLGASSE_DG = REPO / "Projekte/Mollgasse/Dachgeschoß.dxf"
 MUTHGASSE_E2 = (REPO / "Projekte/Pläne 19., Muthgasse 109B - 2026-05-07_13-12"
                 / "Architekt" / "Ausführungsplan"
                 / "M109B_-Plan - AR-AF-A-GR-E2 100 - GRUNDRISS E2.dxf")

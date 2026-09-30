@@ -213,9 +213,10 @@ Prüfstrecken-Ausgabe außerhalb des Contracts (Attribute am Provider): `wand_wa
 - Das Modell trägt die **rohe** Rolle (`tuer_detail`, `wohnungsklasse.py:21`, `:698-705`). Korrigierte Rollen
   leben nur in `korrigierte_rollen`, gelesen von `fluchtweg.py:329` und `plan_pruefen.py:1281`.
 - Leonis liest die rohe Rolle (`platzierung/fachpraxis.py:400`, `:461`, `:524`).
-- K4-Nachzug: netto **270** korrigierte Rollen kippen gegen `f682c77` (Muthgasse 260, Mollgasse 10), in beide
-  Richtungen (`docs/SLICES_K1_K4.md:1345`, `:1358`; die 277 ist überholt). K4-Frage 2 (Option W für K4-private
-  Loch-Räume) offen.
+- K4-Nachzug: netto **270** korrigierte Rollen kippen gegen `f682c77` (Muthgasse 260, Mollgasse 10)
+  (`docs/SLICES_K1_K4.md:1345`, `:1358`; die 277 ist überholt) — nachgemessen alle `zimmertuer` → `wohnungseingang`,
+  nicht in beide Richtungen. **→ 2c erledigt (§ 14):** Loch-Raum-Artefakt Option W, 277 fälschlich (dazu Barawitzka
+  EG 3, Am Rain EG 2 / OG2 2), 0 zu Recht, behoben in `wohnungsraeume`; K4-Frage 2 als Lesart zur Owner-Bestätigung.
 - Planwidrige korrigierte Rolle nach S4c A: Barawitzka `tuer_17`/`_23`/`_27` → `wohnungseingang` (§ 6.1).
 - K3-Probe als einmalige Rückkante gegen Board 7 (K3-Frage 9).
 - Basislauf, Türen mit roh ≠ korrigiert: Muthgasse E2 22, Barawitzka 15, Am Rain OG1 11, OG3 6,
@@ -689,3 +690,218 @@ Liftschacht. Alle Messfelder außer `meta` gleich der 2a-Messung.
 - `test_ausgang_freiflaeche.py::test_soll_sentinel_aussen_ist_entscheidbar` nennt im xfail-Grund noch „4 der 19 ohne
   Türbezug, `provider.py:102`" (Marker unverändert gelassen).
 - `Projekte/_ergebnis/` nicht neu erzeugt (Verifikation über den Runner wie 2a).
+
+---
+
+## 14. Punkt 2c — Kippende Türrollen nach K4 (erledigt mit dem Commit dieses Eintrags)
+
+**Auftrag (Owner 2026-09-30):** die nach K4 netto kippenden korrigierten Rollen je Tür aufschlüsseln, je Fall
+„zu Recht" (S7c: Wohnungseingang an der Grenze privat|Erschließung, Zimmertür innerhalb einer Wohnung) oder
+„fälschlich" (Tür zwischen zwei Räumen derselben Wohnung wird Wohnungseingang; Tür zu `KEIN_RAUM`/`AUSSEN`;
+Loch-Raum-Artefakt Option W), nur die fälschlichen beheben; keine Notlicht-Verluste.
+
+**Ausgangswert nachgemessen.** Quelle der 270: die erweiterten Läufe des K4-Berichts, vor K4 `f682c77` ↔ nach dem
+K4-Nachzug `bdbbd00`, 23 Geschosse (Mollgasse 8, Muthgasse E2–E9, Rennweg 7), Tür für Tür ausgewertet:
+**270 Türen, alle `zimmertuer` → `wohnungseingang`** — nur diese eine Richtung, nicht „in beide Richtungen"
+(§ 6.4 berichtigt). Muthgasse 260 (E2 22, E3 43, E4 42, E5 43, E6 40, E7 25, E8 29, E9 16), Mollgasse 10 (DG 8,
+3.OG 2) — wie `docs/SLICES_K1_K4.md:1358-1359`. Auf dem Kopf vor 2c (`2016268`, eigene Läufe je Plan allein)
+dieselben 270 Türen (Plan, ID, Seiten, rohe Rolle gleich; nur die `top_n`-Nummern in Muthgasse E5/E6/E7 um
+neu zugeordnete Türen verschoben). Dieselbe Wirkung außerhalb der 23 K4-Geschosse (K4 hat diese Pläne nicht
+gemessen): Barawitzka EG 3, Am Rain EG 2, Am Rain OG2 2 — zusammen **277** auf 31 gemessenen Plänen.
+
+**Mechanismus (am Code):** ein Loch-Raum (`loch_raeume`, `wohnungsklasse.py:468`: GANG/VORRAUM, vom Stiegenhaus
+über keine Tür erreichbar — Owner 2026-09-21 „Tür- oder Raumerkennungsloch") ist nach rohen Türen Mitglied einer
+Wohnung (E3/G1.2 2026-09-22: über eine rohe Zimmertür gebunden; R1 2026-09-22: der Loch-GANG bildet mit den
+Einzelräumen hinter seinen rohen Wohnungseingängen eine Wohnung). Vor K4: Klasse offen → `wohnungsraeume` zählt
+ihn privat (Loch-Regel) → seine Innentüren sind korrigiert `zimmertuer`. K4 macht ihn `WOHNUNG_PRIVAT`; die
+Ankerregel bestätigt ihn nicht („über keine Tür erreichbar") → `unbestaetigt_privat` → Option W zählt ihn als
+Erschließung → **jede Tür zu einem eigenen Zimmer wird korrigiert `wohnungseingang`** (`korrigierte_rollen`,
+Zweig `a != b`).
+
+**Befund je Tür (alle 277 gemessen):** Loch-Seite GANG/VORRAUM, Klasse `WOHNUNG_PRIVAT` (K4), Flags 11, nicht
+`bestaetigt_privat`; Nachbarseite KÜCHE 81, BAD 77, ZIMMER 47, ABSTELLRAUM 39, WC 33 — alle `WOHNUNG_PRIVAT`,
+Flags 00, **dieselbe `wohnung_id` wie der Loch-Raum**. Rohe Rolle `zimmertuer` 272, `wohnungseingang` 5 (R1-Loch-GANG
+Mollgasse DG `raum_13` 3, 3.OG `raum_48` 2); 251 blattlose Durchgänge, 26 mit Blatt. Tür zu `KEIN_RAUM`/`AUSSEN`: 0.
+Keine dieser Türen startet ein Fluchtweg-Segment (0 `seg_graph_<tür>` vor und nach 2c).
+
+**Urteil: 277 fälschlich, 0 zu Recht.** Regelbezug: S7c (Owner 2026-09-26, `korrigierte_rollen`-Docstring
+`wohnungsklasse.py:704-739`): „Eine Zimmertür oder ein Wohnungseingang zwischen zwei Räumen der Wohnungsmenge ist
+eine Zimmertür", Wohnungseingang ausschließlich an der Grenze privat|Erschließung; Grundsatz (b): beide Seiten liegen
+nach rohen Türen in derselben Wohnung. Die Tür ist also innen, der Wohnungseingang fälschlich — Loch-Raum-Artefakt
+Option W: Option W (Runde 5, „wer Notlicht behält, behält seine Zirkulation") meint den Raum mit Zirkulation vom
+Stiegenhaus (Rennweg DG1 `raum_8`, `test_unbestaetigt_privater_flur_behaelt_eingang_und_weg`); ein Loch-Raum hat
+keine. Bei den 5 R1-Türen ist `wohnungseingang` zugleich die rohe Rolle — R1 hat Gang und Einzelräume aber zu
+einer Wohnung gebunden, S7c macht die Tür darum zur Zimmertür (wie vor K4).
+
+**Fix** (`wohnungsklasse.py:wohnungsraeume`, `:481-509`): der Loch-Raum zählt für die korrigierten Rollen privat,
+ob unbestimmt oder von K4 unbestätigt privat — `loch = ((unbestimmt | weich) - kand) & loch_raeume(…)` (`:505`),
+Erschließung = allgemein ∪ ((unbestimmt ∪ unbestätigt privat) − Loch). Sonst unverändert: Klasse (K4 bleibt
+privat), Flags, `bestaetigt_privat`, `wohnung_id`, Option W für Nicht-Loch-Räume (Rennweg DG1 `raum_4`, DG2
+`raum_1` — blattlos getrennt, kein Loch —, Schritt-2-Flure), S4c (Barawitzka `tuer_17`/`_23`/`_27` unverändert
+`wohnungseingang`, § 6.1). Einbahn unverändert: liest Klasse, rohe Rollen, Ankerregel; `bilde_wohnungen` liest
+keine korrigierte Rolle. Unbestimmte Loch-Räume ohne Bindung gibt es hier nicht (`wohnungen.py:205` setzt sie
+`ALLGEMEIN_ERSCHLIESSUNG`, K4 sieht sie nicht). **Lesart zur Owner-Bestätigung:** beantwortet K4-Frage 2
+(`docs/SLICES_K1_K4.md:1184-1191`) mit „der K4-private Loch-Raum zählt für `wohnungsraeume` weiter als privat,
+wie vor K4".
+
+**Tests:** `tests/raumerkennung/test_k4_klasse_umriss.py::test_k4_privater_loch_raum_innentueren_bleiben_zimmertuer`
+`[loch-vorraum|r1-loch-gang]` (synthetisch: Loch-VORRAUM mit rohen Zimmertüren; Loch-GANG nach R1 mit rohen
+Wohnungseingängen; je Vorbedingung K4 privat, nicht bestätigt, Flags 11, eine Wohnung) und
+`tests/naht/test_k4_klasse_gang_vorraum.py::test_k4_loch_raum_innentuer_bleibt_zimmertuer` (echte Parse-Läufe,
+Tür über ihre Lage): Mollgasse DG `tuer_12` (`raum_9` VORRAUM ↔ ZIMMER, roh `zimmertuer`), DG `tuer_6`
+(`raum_13` R1-GANG ↔ ZIMMER, roh `wohnungseingang`), 3.OG `tuer_43` (`raum_48` R1-GANG ↔ ZIMMER, roh
+`wohnungseingang`). `tests/plaene.py`: `MOLLGASSE_DG` (getrackt).
+
+**Rot vor dem Fix** (`pytest tests/raumerkennung/test_k4_klasse_umriss.py tests/naht/test_k4_klasse_gang_vorraum.py
+-k innentuer --tb=line`, Kopf `2016268` + Tests, Kurzform — alle Vorbedingungen grün, rot nur die Rolle):
+
+```
+test_k4_klasse_umriss.py:226: AssertionError: {'tz': 'wohnungseingang', 'tb': 'wohnungseingang'}   [loch-vorraum]
+test_k4_klasse_umriss.py:226: AssertionError: {'tz': 'wohnungseingang', 'tb': 'wohnungseingang'}   [r1-loch-gang]
+test_k4_klasse_gang_vorraum.py:117: AssertionError: tuer_12   (assert 'wohnungseingang' == 'zimmertuer')
+test_k4_klasse_gang_vorraum.py:117: AssertionError: tuer_6
+test_k4_klasse_gang_vorraum.py:117: AssertionError: tuer_43
+5 failed, 26 deselected in 78.51s
+```
+
+**Grün nach dem Fix:** `test_k4_klasse_umriss.py`, `test_wohnungsklasse.py`, `test_k4_klasse_gang_vorraum.py`
+307 passed (87,8 s).
+
+**Nachher** (Runner je Plan allein; Vorher = Nachher 2b bzw. eigene Läufe auf `2016268`, Nachher = Arbeitsbaum
+dieses Commits; 31 Pläne: die 17 aus § 13, Mollgasse 2.OG/3.OG/4.OG/DG, Muthgasse E3–E9, Am Rain OG1–OG3):
+
+| | vorher (`2016268`) | nachher (2c) |
+|---|--:|--:|
+| gekippte Rollen, Urteil **fälschlich** (23 K4-Geschosse / andere Pläne) | **277** (270 / 7) | **0** |
+| gekippte Rollen, Urteil **zu Recht** | 0 | 0 |
+| korrigierte Rollen ≠ vor K4 (`f682c77`) auf den 23 K4-Geschossen | 278 | 8 (nicht aus K4, s. u.) |
+
+Je Plan geändert (nur `wohnungseingang` → `zimmertuer`): Muthgasse E2 22, E3 43, E4 42, E5 43, E6 40, E7 25, E8 29,
+E9 16; Mollgasse DG 8, 3.OG 2; Barawitzka EG 3; Am Rain EG 2, OG2 2. Die übrigen 18 Pläne: keine Rolle geändert.
+
+**Δ auf 31 Plänen** (Vergleich des Runner-JSON): Fluchtweg-Segmente neu/weg/geändert 0/0/0; Anker 0/0/0;
+Notlicht-Flags 0 Wechsel; Nutzungsklassen 0; `bestaetigt_privat` +0/−0; Räume, Türen (roh), Ausgänge, Stiegenhäuser,
+Bounds unverändert; **Leuchten** (Default-Platzierung, Art und Lage je Leuchte) auf 31/31 gleich.
+**Fluchtweg-Warnungen −4, +0:** Barawitzka EG „kein final_exit erreichbar von Tür `durchgang_11` (Endraum
+`raum_25`)", `tuer_19` (`raum_17`), `tuer_29` (`raum_10`); Am Rain EG `durchgang_62` (`raum_102`) — je „Türgraph endet
+vor dem Ausgang", je an einer Innentür eines Loch-VORRAUMS (`raum_9` bzw. `raum_98`), die nur als falscher
+Wohnungseingang Startpunkt war. Der Loch-Raum selbst bleibt als `loch:`-Zeile im Bericht (Wohnungsklasse-Warnungen
+unverändert). Keine Notlicht-Verluste: Flags und `bestaetigt_privat` unverändert → kein STOPP.
+**Prüfstrecke:** `plan_pruefen._fachteil3` listet in der Fluchtweg-Auskunft jede korrigierte `wohnungseingang`-Tür
+(`scripts/plan_pruefen.py:1281-1292`); auf den Prüfplänen entfallen dort Muthgasse E2 22, Barawitzka 3, Am Rain
+EG 2 und OG2 2 Zeilen (Luftlinie ohne Weg). `Projekte/_ergebnis/` nicht neu erzeugt (wie 2a/2b).
+
+**Die 8 Rollen-Unterschiede gegen `f682c77`, die nicht aus K4 kommen** (unverändert gelassen): Muthgasse E5 `tuer_30`,
+`tuer_46`, E6 `tuer_31`, E7 `tuer_36` (vor K4 Seite `KEIN_RAUM` ohne Rolle, heute Zimmertür zwischen zwei Räumen
+derselben Wohnung), Rennweg OG3 `tuer_2` (heute `balkontuer` BALKON ↔ ZIMMER), Rennweg DG2 `durchgang_2`, `_3`, `_6`
+(Türseiten/rohe Rollen seit `f682c77` anders zugeordnet) — Folgen späterer Slices an Türseite und roher Rolle.
+
+**Einzelliste** — die 277 Türen je Loch-Raum (Plan, Loch-Raum, jede Innentür mit Nachbarraum und roher Rolle,
+korrigierte Rolle vor K4 → `2016268` → 2c; `zt` = `zimmertuer`, `we` = `wohnungseingang`, `n. g.` = vor K4 nicht
+gemessen). Loch-Seite überall GANG/VORRAUM, Klasse `WOHNUNG_PRIVAT` (K4), Flags 11, nicht bestätigt; Nachbar überall
+`WOHNUNG_PRIVAT`, Flags 00, dieselbe Wohnung (Stand `2016268`, `top_n` dieses Stands):
+
+| Plan | Loch-Raum (Typ, m², Wohnung; Klasse K4 privat, Flags 11) | Innentür → Nachbar (Typ; rohe Rolle `zimmertuer`, sonst genannt) | korrigiert: vor K4 → 2016268 → 2c | Urteil |
+|---|---|---|---|---|
+| Muthgasse E2 | `raum_48` VORRAUM 11,91, top_17 | `durchgang_6` ZIMMER, `durchgang_8` KÜCHE, `durchgang_9` ABSTELLRAUM | 3× zt → we → zt | fälschlich |
+| Muthgasse E2 | `raum_51` VORRAUM 9,07, top_16 | `durchgang_52` KÜCHE, `durchgang_54` WC, `durchgang_55` BAD | 3× zt → we → zt | fälschlich |
+| Muthgasse E2 | `raum_54` VORRAUM 11,56, top_14 | `durchgang_41` ABSTELLRAUM, `durchgang_42` WC, `durchgang_43` BAD, `durchgang_45` KÜCHE, `durchgang_57` ZIMMER, `tuer_32` BAD, `tuer_89` WC | 7× zt → we → zt | fälschlich |
+| Muthgasse E2 | `raum_57` VORRAUM 13,10, top_13 | `durchgang_38` WC, `durchgang_40` BAD, `durchgang_58` ZIMMER, `durchgang_59` ZIMMER, `durchgang_61` KÜCHE | 5× zt → we → zt | fälschlich |
+| Muthgasse E2 | `raum_59` VORRAUM 10,92, top_4 | `durchgang_10` ZIMMER, `durchgang_62` KÜCHE, `durchgang_63` BAD | 3× zt → we → zt | fälschlich |
+| Muthgasse E2 | `raum_80` VORRAUM 4,73, top_15 | `durchgang_47` KÜCHE | 1× zt → we → zt | fälschlich |
+| Muthgasse E3 | `raum_22` VORRAUM 5,06, top_11 | `durchgang_25` KÜCHE, `durchgang_27` BAD, `durchgang_28` ABSTELLRAUM | 3× zt → we → zt | fälschlich |
+| Muthgasse E3 | `raum_64` VORRAUM 4,18, top_6 | `durchgang_19` KÜCHE, `durchgang_21` BAD, `durchgang_71` ABSTELLRAUM | 3× zt → we → zt | fälschlich |
+| Muthgasse E3 | `raum_67` VORRAUM 9,07, top_5 | `durchgang_43` ZIMMER, `durchgang_45` KÜCHE, `durchgang_73` WC, `durchgang_74` BAD | 4× zt → we → zt | fälschlich |
+| Muthgasse E3 | `raum_76` VORRAUM 13,10, top_18 | `durchgang_53` KÜCHE, `durchgang_78` BAD, `durchgang_79` ZIMMER, `durchgang_80` ZIMMER, `durchgang_81` WC, `tuer_39` ZIMMER | 6× zt → we → zt | fälschlich |
+| Muthgasse E3 | `raum_80` VORRAUM 15,23, top_22 | `durchgang_82` BAD, `durchgang_83` WC, `durchgang_84` ZIMMER, `durchgang_85` KÜCHE, `durchgang_87` ABSTELLRAUM | 5× zt → we → zt | fälschlich |
+| Muthgasse E3 | `raum_84` VORRAUM 13,10, top_2 | `durchgang_89` ZIMMER, `durchgang_91` ZIMMER, `durchgang_92` WC, `durchgang_93` KÜCHE, `tuer_26` ZIMMER | 5× zt → we → zt | fälschlich |
+| Muthgasse E3 | `raum_86` VORRAUM 4,73, top_4 | `durchgang_46` KÜCHE, `durchgang_48` BAD | 2× zt → we → zt | fälschlich |
+| Muthgasse E3 | `raum_87` VORRAUM 3,62, top_16 | `durchgang_40` BAD, `durchgang_62` KÜCHE | 2× zt → we → zt | fälschlich |
+| Muthgasse E3 | `raum_92` VORRAUM 7,06, top_14 | `durchgang_35` ZIMMER, `durchgang_68` BAD, `durchgang_69` KÜCHE, `durchgang_95` ABSTELLRAUM | 4× zt → we → zt | fälschlich |
+| Muthgasse E3 | `raum_99` VORRAUM 3,60, top_13 | `durchgang_30` KÜCHE, `durchgang_66` BAD, `durchgang_67` ZIMMER | 3× zt → we → zt | fälschlich |
+| Muthgasse E3 | `raum_102` VORRAUM 11,55, top_3 | `durchgang_55` KÜCHE, `durchgang_56` WC, `durchgang_76` BAD, `durchgang_77` ZIMMER, `durchgang_98` ABSTELLRAUM, `tuer_40` BAD | 6× zt → we → zt | fälschlich |
+| Muthgasse E4 | `raum_47` VORRAUM 4,18, top_7 | `durchgang_15` KÜCHE, `durchgang_16` BAD, `durchgang_52` ABSTELLRAUM | 3× zt → we → zt | fälschlich |
+| Muthgasse E4 | `raum_50` VORRAUM 9,07, top_5 | `durchgang_29` ZIMMER, `durchgang_31` KÜCHE, `durchgang_54` WC, `durchgang_55` BAD | 4× zt → we → zt | fälschlich |
+| Muthgasse E4 | `raum_58` VORRAUM 12,90, top_12 | `durchgang_40` KÜCHE, `durchgang_58` BAD, `durchgang_59` ZIMMER, `durchgang_60` ZIMMER, `durchgang_61` WC | 5× zt → we → zt | fälschlich |
+| Muthgasse E4 | `raum_60` VORRAUM 4,73, top_4 | `durchgang_32` KÜCHE, `durchgang_34` BAD | 2× zt → we → zt | fälschlich |
+| Muthgasse E4 | `raum_64` VORRAUM 5,06, top_8 | `durchgang_18` KÜCHE, `durchgang_62` BAD, `durchgang_63` ABSTELLRAUM | 3× zt → we → zt | fälschlich |
+| Muthgasse E4 | `raum_76` VORRAUM 15,23, top_18 | `durchgang_68` BAD, `durchgang_69` WC, `durchgang_70` ZIMMER, `durchgang_71` KÜCHE, `durchgang_72` ZIMMER, `durchgang_73` ABSTELLRAUM | 6× zt → we → zt | fälschlich |
+| Muthgasse E4 | `raum_80` VORRAUM 13,10, top_19 | `durchgang_75` ZIMMER, `durchgang_76` BAD, `durchgang_77` KÜCHE, `durchgang_78` ZIMMER, `durchgang_79` WC | 5× zt → we → zt | fälschlich |
+| Muthgasse E4 | `raum_98` VORRAUM 7,06, top_21 | `durchgang_87` BAD, `durchgang_88` KÜCHE, `durchgang_90` ABSTELLRAUM | 3× zt → we → zt | fälschlich |
+| Muthgasse E4 | `raum_99` VORRAUM 3,60, top_6 | `durchgang_83` KÜCHE, `durchgang_84` BAD, `durchgang_85` ZIMMER | 3× zt → we → zt | fälschlich |
+| Muthgasse E4 | `raum_101` VORRAUM 3,62, top_2 | `durchgang_26` BAD, `durchgang_46` KÜCHE | 2× zt → we → zt | fälschlich |
+| Muthgasse E4 | `raum_102` VORRAUM 11,55, top_3 | `durchgang_42` KÜCHE, `durchgang_43` WC, `durchgang_57` BAD, `durchgang_91` ABSTELLRAUM, `durchgang_92` ZIMMER, `tuer_44` BAD | 6× zt → we → zt | fälschlich |
+| Muthgasse E5 | `raum_6` VORRAUM 3,68, top_15 | `durchgang_6` BAD, `durchgang_7` KÜCHE | 2× zt → we → zt | fälschlich |
+| Muthgasse E5 | `raum_45` VORRAUM 5,65, top_10 | `durchgang_47` KÜCHE, `durchgang_48` BAD, `durchgang_49` ABSTELLRAUM | 3× zt → we → zt | fälschlich |
+| Muthgasse E5 | `raum_54` VORRAUM 5,65, top_16 | `durchgang_55` KÜCHE, `durchgang_57` BAD, `durchgang_58` ABSTELLRAUM | 3× zt → we → zt | fälschlich |
+| Muthgasse E5 | `raum_58` VORRAUM 3,80, top_14 | `durchgang_59` WC, `durchgang_60` KÜCHE, `tuer_34` ZIMMER | 3× zt → we → zt | fälschlich |
+| Muthgasse E5 | `raum_61` VORRAUM 3,98, top_14 | `durchgang_53` BAD, `durchgang_61` KÜCHE | 2× zt → we → zt | fälschlich |
+| Muthgasse E5 | `raum_65` VORRAUM 4,36, top_1 | `durchgang_2` KÜCHE, `durchgang_50` BAD, `durchgang_67` ABSTELLRAUM | 3× zt → we → zt | fälschlich |
+| Muthgasse E5 | `raum_72` VORRAUM 11,28, top_12 | `durchgang_35` ZIMMER, `durchgang_73` KÜCHE, `durchgang_74` BAD, `durchgang_75` WC, `durchgang_76` ABSTELLRAUM | 5× zt → we → zt | fälschlich |
+| Muthgasse E5 | `raum_79` VORRAUM 8,41, top_6 | `durchgang_21` KÜCHE, `durchgang_77` ZIMMER, `durchgang_79` ZIMMER, `durchgang_80` BAD, `durchgang_81` ABSTELLRAUM, `durchgang_82` ABSTELLRAUM, `durchgang_83` KÜCHE | 7× zt → we → zt | fälschlich |
+| Muthgasse E5 | `raum_89` VORRAUM 7,00, top_2 | `durchgang_13` ZIMMER, `durchgang_46` BAD, `durchgang_87` ABSTELLRAUM, `durchgang_88` KÜCHE | 4× zt → we → zt | fälschlich |
+| Muthgasse E5 | `raum_91` VORRAUM 3,65, top_5 | `durchgang_11` KÜCHE, `durchgang_43` BAD, `durchgang_44` ZIMMER | 3× zt → we → zt | fälschlich |
+| Muthgasse E5 | `raum_95` VORRAUM 3,56, top_9 | `durchgang_16` KÜCHE, `durchgang_37` BAD | 2× zt → we → zt | fälschlich |
+| Muthgasse E5 | `raum_99` VORRAUM 5,63, top_3 | `durchgang_66` KÜCHE, `durchgang_92` ABSTELLRAUM, `durchgang_93` BAD, `durchgang_94` BAD | 4× zt → we → zt | fälschlich |
+| Muthgasse E5 | `raum_108` VORRAUM 4,47, top_4 | `durchgang_23` KÜCHE, `durchgang_25` BAD | 2× zt → we → zt | fälschlich |
+| Muthgasse E6 | `raum_42` VORRAUM 5,65, top_10 | `durchgang_41` KÜCHE, `durchgang_42` ABSTELLRAUM, `durchgang_43` BAD | 3× zt → we → zt | fälschlich |
+| Muthgasse E6 | `raum_53` VORRAUM 4,36, top_1 | `durchgang_2` KÜCHE, `durchgang_44` BAD, `durchgang_55` ABSTELLRAUM | 3× zt → we → zt | fälschlich |
+| Muthgasse E6 | `raum_60` VORRAUM 11,28, top_13 | `durchgang_34` ZIMMER, `durchgang_61` KÜCHE, `durchgang_62` BAD, `durchgang_63` WC | 4× zt → we → zt | fälschlich |
+| Muthgasse E6 | `raum_67` VORRAUM 8,41, top_8 | `durchgang_21` KÜCHE, `durchgang_65` BAD, `durchgang_66` ABSTELLRAUM, `durchgang_67` WC | 4× zt → we → zt | fälschlich |
+| Muthgasse E6 | `raum_77` VORRAUM 3,98, top_15 | `durchgang_70` BAD, `durchgang_71` KÜCHE | 2× zt → we → zt | fälschlich |
+| Muthgasse E6 | `raum_78` VORRAUM 3,80, top_15 | `durchgang_47` WC, `durchgang_72` KÜCHE, `tuer_28` ZIMMER | 3× zt → we → zt | fälschlich |
+| Muthgasse E6 | `raum_83` VORRAUM 5,63, top_16 | `durchgang_53` KÜCHE, `durchgang_75` BAD, `durchgang_76` BAD, `durchgang_77` ABSTELLRAUM | 4× zt → we → zt | fälschlich |
+| Muthgasse E6 | `raum_86` VORRAUM 3,68, top_9 | `durchgang_8` KÜCHE, `durchgang_78` WC, `durchgang_79` BAD | 3× zt → we → zt | fälschlich |
+| Muthgasse E6 | `raum_95` VORRAUM 3,65, top_5 | `durchgang_12` KÜCHE, `durchgang_82` ZIMMER, `durchgang_84` BAD | 3× zt → we → zt | fälschlich |
+| Muthgasse E6 | `raum_101` VORRAUM 7,00, top_2 | `durchgang_86` ZIMMER, `durchgang_87` KÜCHE, `durchgang_88` BAD, `durchgang_89` ABSTELLRAUM | 4× zt → we → zt | fälschlich |
+| Muthgasse E6 | `raum_108` VORRAUM 3,56, top_3 | `durchgang_17` KÜCHE, `durchgang_69` BAD | 2× zt → we → zt | fälschlich |
+| Muthgasse E6 | `raum_109` VORRAUM 4,47, top_4 | `durchgang_23` BAD, `durchgang_26` KÜCHE | 2× zt → we → zt | fälschlich |
+| Muthgasse E6 | `raum_110` VORRAUM 5,65, top_6 | `durchgang_49` KÜCHE, `durchgang_51` BAD, `durchgang_52` ABSTELLRAUM | 3× zt → we → zt | fälschlich |
+| Muthgasse E7 | `raum_23` VORRAUM 4,47, top_1 | `durchgang_13` KÜCHE | 1× zt → we → zt | fälschlich |
+| Muthgasse E7 | `raum_33` VORRAUM 5,65, top_9 | `durchgang_33` KÜCHE, `durchgang_35` BAD, `durchgang_36` ABSTELLRAUM | 3× zt → we → zt | fälschlich |
+| Muthgasse E7 | `raum_37` VORRAUM 3,98, top_8 | `durchgang_37` BAD, `durchgang_38` KÜCHE | 2× zt → we → zt | fälschlich |
+| Muthgasse E7 | `raum_44` VORRAUM 11,28, top_5 | `durchgang_21` ZIMMER, `durchgang_43` KÜCHE, `durchgang_44` BAD, `durchgang_45` WC, `durchgang_46` ABSTELLRAUM | 5× zt → we → zt | fälschlich |
+| Muthgasse E7 | `raum_51` VORRAUM 8,41, top_14 | `durchgang_9` KÜCHE, `durchgang_47` BAD, `durchgang_48` WC, `durchgang_49` ABSTELLRAUM | 4× zt → we → zt | fälschlich |
+| Muthgasse E7 | `raum_66` VORRAUM 3,80, top_8 | `durchgang_31` WC, `durchgang_39` KÜCHE, `tuer_22` ZIMMER | 3× zt → we → zt | fälschlich |
+| Muthgasse E7 | `raum_75` VORRAUM 5,63, top_17 | `durchgang_52` KÜCHE, `durchgang_55` BAD, `durchgang_56` BAD, `durchgang_57` ABSTELLRAUM | 4× zt → we → zt | fälschlich |
+| Muthgasse E7 | `raum_82` VORRAUM 3,68, top_18 | `durchgang_60` KÜCHE, `durchgang_62` WC, `durchgang_63` BAD | 3× zt → we → zt | fälschlich |
+| Muthgasse E8 | `raum_27` VORRAUM 4,47, top_2 | `durchgang_12` BAD, `durchgang_15` KÜCHE, `tuer_5` WC | 3× zt → we → zt | fälschlich |
+| Muthgasse E8 | `raum_37` VORRAUM 5,65, top_6 | `durchgang_36` KÜCHE, `durchgang_38` BAD, `durchgang_39` ABSTELLRAUM | 3× zt → we → zt | fälschlich |
+| Muthgasse E8 | `raum_41` VORRAUM 3,98, top_5 | `durchgang_40` BAD, `durchgang_41` KÜCHE | 2× zt → we → zt | fälschlich |
+| Muthgasse E8 | `raum_44` VORRAUM 3,80, top_5 | `durchgang_34` WC, `durchgang_42` KÜCHE, `tuer_22` ZIMMER | 3× zt → we → zt | fälschlich |
+| Muthgasse E8 | `raum_50` VORRAUM 11,28, top_2 | `durchgang_23` ZIMMER, `durchgang_47` KÜCHE, `durchgang_48` BAD, `durchgang_49` WC, `durchgang_50` ABSTELLRAUM, `tuer_8` WC | 6× zt → we → zt | fälschlich |
+| Muthgasse E8 | `raum_57` VORRAUM 8,41, top_2 | `durchgang_11` KÜCHE, `durchgang_51` BAD, `durchgang_52` WC, `durchgang_53` BAD, `tuer_9` WC | 5× zt → we → zt | fälschlich |
+| Muthgasse E8 | `raum_76` VORRAUM 5,63, top_11 | `durchgang_8` KÜCHE, `durchgang_66` BAD, `durchgang_67` BAD, `durchgang_68` ABSTELLRAUM | 4× zt → we → zt | fälschlich |
+| Muthgasse E8 | `raum_83` VORRAUM 3,88, top_13 | `durchgang_71` KÜCHE, `durchgang_73` ABSTELLRAUM, `durchgang_74` BAD | 3× zt → we → zt | fälschlich |
+| Muthgasse E9 | `raum_13` VORRAUM 11,28, top_1 | `durchgang_13` BAD, `durchgang_14` KÜCHE, `durchgang_16` BAD, `durchgang_17` ZIMMER, `durchgang_18` ABSTELLRAUM | 5× zt → we → zt | fälschlich |
+| Muthgasse E9 | `raum_18` VORRAUM 4,47, top_3 | `durchgang_21` BAD, `durchgang_22` KÜCHE | 2× zt → we → zt | fälschlich |
+| Muthgasse E9 | `raum_23` VORRAUM 8,41, top_5 | `durchgang_23` KÜCHE, `durchgang_25` ZIMMER, `durchgang_27` ZIMMER, `durchgang_29` WC, `durchgang_30` BAD, `durchgang_31` ABSTELLRAUM, `durchgang_32` KÜCHE | 7× zt → we → zt | fälschlich |
+| Muthgasse E9 | `raum_38` VORRAUM 3,72, top_7 | `durchgang_37` ABSTELLRAUM, `durchgang_38` KÜCHE | 2× zt → we → zt | fälschlich |
+| Mollgasse DG | `raum_9` VORRAUM 9,10, top_7 | `tuer_12` ZIMMER, `tuer_14` WC, `tuer_15` ABSTELLRAUM, `tuer_16` ZIMMER, `tuer_34` KÜCHE | 5× zt → we → zt | fälschlich |
+| Mollgasse DG | `raum_13` GANG 3,44, top_4 | `tuer_6` ZIMMER (roh `wohnungseingang`), `tuer_7` ZIMMER (roh `wohnungseingang`), `tuer_27` ABSTELLRAUM (roh `wohnungseingang`) | 3× zt → we → zt | fälschlich |
+| Mollgasse 3.OG | `raum_48` GANG 4,58, top_21 | `tuer_43` ZIMMER (roh `wohnungseingang`), `tuer_45` BAD (roh `wohnungseingang`) | 2× zt → we → zt | fälschlich |
+| Barawitzka EG | `raum_9` VORRAUM 5,59, top_1 | `durchgang_11` KÜCHE, `tuer_19` WC, `tuer_29` BAD | 3× n. g. → we → zt | fälschlich |
+| Am Rain EG | `raum_81` VORRAUM 8,79, top_39 | `durchgang_61` KÜCHE | 1× n. g. → we → zt | fälschlich |
+| Am Rain EG | `raum_98` VORRAUM 18,86, top_1 | `durchgang_62` KÜCHE | 1× n. g. → we → zt | fälschlich |
+| Am Rain OG2 | `raum_49` VORRAUM 2,97, top_22 | `durchgang_29` KÜCHE, `tuer_202` BAD | 2× n. g. → we → zt | fälschlich |
+
+**Volle Suite:** (allein, 30 min 15 s): `6 failed, 2237 passed, 11 skipped, 6 deselected, 15 xfailed` — dieselben 6
+roten wie nach 2b (3 × `test_keine_leuchten_in_wohnung_privat` OG1/OG2/DG1 = Board 1 Leonis,
+`test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell`, die 2 S4c-Pins), 2237 = 2232 + 5 neue,
+15 xfailed wie nach 2b, 0 xpassed. Kein Test umgestellt, keine Schwelle, kein Soll, kein xfail-Marker angefasst.
+
+**Gate:** `pytest -m gate tests/gate` 3 passed, 1 xfailed (wie vorher). `gate_messung` auf dem Arbeitsbaum dieses
+Commits (vor dem Commit, `_arbeit/gate/messung_2016268-dirty-2c.json`, 60,5 s), `pruefe_gate` gegen
+`nullmessung_f15d03f.json`: (0) unsauberer Arbeitsbaum (erwartet, vor dem Commit gemessen) und **(3) `M4.einraum`
+DG2 0 → 1** (Enis Board 3, unverändert); M17 18/18 BESTANDEN; OG3 0 Anker in `WOHNUNG_PRIVAT`; DG1 2 Ausgänge,
+0 durch den Liftschacht; Barawitzka ABSTELLRAUM 1 Verbindung. Alle Messfelder außer `meta` gleich der 2b-Messung.
+
+**Offen nach 2c:**
+- **Owner-Bestätigung der Lesart** (K4-Frage 2): der K4-private Loch-Raum zählt für die korrigierten Rollen privat
+  wie vor K4; Option W bleibt für Räume mit Zirkulation vom Stiegenhaus. P1 · Selman (Owner).
+- **Die Loch-Räume selbst** bleiben Tür- oder Raumerkennungslöcher (Wohnungseingang fehlt im Modell): 81 Loch-Räume
+  in der Einzelliste (Muthgasse 74, Mollgasse DG 2 / 3.OG 1, Barawitzka EG 1, Am Rain EG 2 / OG2 1);
+  ihr Notlicht bleibt (Flags 11). Ursache Türerkennung, Messfall S4c/S3b. P1 · Selman.
+- Die 8 Rollen-Unterschiede gegen `f682c77`, die nicht aus K4 kommen (oben), sind nicht bewertet. P2 · Selman.
+- S4c unverändert (§ 6.1): Barawitzka `tuer_17`/`_23`/`_27` bleiben planwidrig `wohnungseingang`, die 2 Pins rot.
+- Naht: die Platzierung liest weiter die rohe Rolle (§ 6.4, N-04). P1 · Contract / Leonis.

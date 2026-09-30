@@ -14,7 +14,7 @@ Grund „R1-Flur, Owner 2026-09-30", Notlicht bleibt, Gate (6) bleibt grün.
 import pytest
 from shapely.geometry import Point, Polygon
 
-from plaene import RENNWEG_DG1, RENNWEG_DG2, RENNWEG_OG3, plan
+from plaene import MOLLGASSE_3OG, MOLLGASSE_DG, RENNWEG_DG1, RENNWEG_DG2, RENNWEG_OG3, plan
 
 # Ein Punkt je Raum (representative_point der Basis-Polygone auf f682c77).
 FAELLE = [
@@ -71,3 +71,47 @@ def test_og3_r1_flur_bleibt_offen():
     assert [w for w in warn
             if w.startswith(f"k4: {r.id} — offen: R1-Flur, Owner 2026-09-30")], warn
     assert [w for w in warn if w.startswith(f"unbestimmt: {r.id} — R1: Wohnungsflur")], warn
+
+
+# ── Punkt 2c (LUECKEN.md § 14): korrigierte Rollen am K4-privaten Loch-Raum ──
+#: Belegte Fälle aus der Aufschlüsselung der 270 gekippten Rollen (Tür-Lage und
+#: ein Punkt im Loch-Raum, Stand 2016268): Innentür des Loch-Raums zu einem Zimmer
+#: derselben Wohnung (rohe Türen), vor K4 korrigiert ``zimmertuer``, nach K4
+#: ``wohnungseingang`` (Option W zählte den unbestätigt privaten Loch-Raum als
+#: Erschließung).
+LOCH_INNENTUEREN = [
+    pytest.param(MOLLGASSE_DG, (2925051.1, 1670875.8), (2923849.0, 1668943.0), "VORRAUM",
+                 "zimmertuer", id="moll-dg-tuer_12-vorraum-zimmer"),
+    pytest.param(MOLLGASSE_DG, (2924781.1, 1685260.8), (2923392.0, 1684999.0), "GANG",
+                 "wohnungseingang", id="moll-dg-tuer_6-r1-gang-zimmer"),
+    pytest.param(MOLLGASSE_3OG, (2460319.2, 1406104.0), (2458480.0, 1406311.0), "GANG",
+                 "wohnungseingang", id="moll-3og-tuer_43-r1-gang-zimmer"),
+]
+
+
+@pytest.mark.parametrize(("pfad", "tuer_xy", "loch_xy", "loch_typ", "roh"), LOCH_INNENTUEREN)
+def test_k4_loch_raum_innentuer_bleibt_zimmertuer(pfad, tuer_xy, loch_xy, loch_typ, roh):
+    """S7c: Zimmertür innerhalb einer Wohnung. Der Loch-Raum ist K4-privat und
+    unbestätigt (Notlicht bleibt, Flags 11), gehört aber nach rohen Türen zur
+    Wohnung des Zimmers — seine Innentür bleibt korrigiert ``zimmertuer``, wie
+    vor K4. Die rohe Rolle bleibt unverändert."""
+    import math
+
+    from notbeleuchtung.raumerkennung import wohnungsklasse as wk
+
+    _, m = _parse(pfad)
+    loch = _raum_an(m, loch_xy)
+    assert loch.raum_typ == loch_typ
+    assert loch.id in wk.loch_raeume(m.raeume, m.tueren), "Vorbedingung: Loch-Raum"
+    assert loch.nutzungsklasse == "WOHNUNG_PRIVAT", "Vorbedingung: K4 privat"
+    assert loch.id not in wk.bestaetigt_privat(m.raeume, m.tueren)
+    assert (loch.ist_fluchtweg, loch.ist_communal) == (True, True)
+    t = min(m.tueren, key=lambda t: math.dist(t.xy_mm, tuer_xy))
+    assert math.dist(t.xy_mm, tuer_xy) < 50, (t.id, t.xy_mm)
+    assert loch.id in (t.von_raum, t.nach_raum), (t.id, t.von_raum, t.nach_raum)
+    zimmer = next(r for r in m.raeume
+                  if r.id in (t.von_raum, t.nach_raum) and r.id != loch.id)
+    assert zimmer.raum_typ == "ZIMMER"
+    assert zimmer.wohnung_id == loch.wohnung_id is not None
+    assert t.tuer_detail == roh
+    assert wk.korrigierte_rollen(m.raeume, m.tueren)[t.id] == "zimmertuer", t.id

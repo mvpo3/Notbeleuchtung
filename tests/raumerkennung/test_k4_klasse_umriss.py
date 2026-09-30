@@ -191,6 +191,41 @@ def test_wohnung_bleibt_wie_ohne_k4():
     assert [(w.raum_ids, w.eingangs_tuer_ids) for w in wohnungen] == [(["b", "v", "z"], [])]
 
 
+# ── Punkt 2c (LUECKEN.md § 14): korrigierte Rollen am K4-privaten Loch-Raum ──
+def _r1_loch_gang():
+    """Mollgasse DG ``raum_13`` im Kleinen: Loch-GANG L (vom Stiegenhaus über
+    keine Tür erreichbar), hinter seinen rohen Wohnungseingängen nur die
+    Einzelräume Zimmer z und Bad b → R1 (Owner 2026-09-22): eine Wohnung."""
+    raeume = [_r("L", "GANG", _q(0, 0, 2000, 3000)),
+              _r("z", "ZIMMER", _q(2200, 0, 6000, 3000)),
+              _r("b", "BAD", _q(0, 3200, 2000, 5000)),
+              _r("stgh", "STIEGENHAUS", _q(-3000, 0, -200, 3000))]
+    tueren = [_t("tz", "L", "z", "wohnungseingang"), _t("tb", "L", "b", "wohnungseingang")]
+    return raeume, tueren
+
+
+@pytest.mark.parametrize("bau", [_loch_vorraum, _r1_loch_gang],
+                         ids=["loch-vorraum", "r1-loch-gang"])
+def test_k4_privater_loch_raum_innentueren_bleiben_zimmertuer(bau):
+    """S7c: Zimmertür innerhalb einer Wohnung, Wohnungseingang nur an der Grenze
+    privat|Erschließung. Der K4-private Loch-Raum gehört nach rohen Türen zur
+    Wohnung (E3/G1.2, R1); Option W darf ihn für die korrigierten Rollen nicht
+    zur Erschließung machen — sonst werden seine Türen zu den eigenen Zimmern
+    Wohnungseingänge (vor 2c: 270 Türen auf Muthgasse/Mollgasse). Notlicht
+    bleibt: Flags 11, nicht ``bestaetigt_privat``."""
+    from notbeleuchtung.raumerkennung.wohnungsklasse import bestaetigt_privat, korrigierte_rollen
+
+    raeume, tueren = bau()
+    wohnungen = bilde_wohnungen(raeume, tueren)
+    loch = raeume[0]
+    assert [sorted(w.raum_ids) for w in wohnungen] == [sorted([loch.id, "b", "z"])]
+    assert loch.nutzungsklasse == "WOHNUNG_PRIVAT", "Vorbedingung: K4 privat"
+    assert loch.id not in bestaetigt_privat(raeume, tueren)
+    assert (loch.ist_fluchtweg, loch.ist_communal) == (True, True)
+    rollen = korrigierte_rollen(raeume, tueren)
+    assert (rollen["tz"], rollen["tb"]) == ("zimmertuer", "zimmertuer"), rollen
+
+
 # ── Owner-Entscheide 2026-09-30 (K4-Nachzug) ────────────────────────────────
 def _r1_flur():
     """Rennweg OG3 ``raum_10`` im Kleinen (R1-Erweiterung, Fassung A+C): GANG L,
