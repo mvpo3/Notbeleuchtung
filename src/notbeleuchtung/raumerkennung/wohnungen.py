@@ -363,8 +363,10 @@ def bilde_wohnungen(raeume: list[Raum], tueren: list[Tuer],
     # (rohe Rollen). Nur die Klasse — Wohnungen stehen schon, und die Flags
     # folgen unten aus ``bestaetigt_privat`` wie für jeden anderen Raum. Die
     # Iteration oben sieht K4 nicht: keine Rückkopplung, kein zweiter Lauf.
-    # Frühere Festlegungen „Klasse bleibt offen" (Loch in Wohnung, R1, blattlos
-    # getrennt) überstimmt die Owner-Regel ausdrücklich.
+    # Frühere Festlegungen „Klasse bleibt offen" (Loch in Wohnung, Loch-GANG R1,
+    # blattlos getrennt) überstimmt die Owner-Regel ausdrücklich; der R1-Flur
+    # (Fassung A+C) und Wohnungen ohne Aufenthaltsraum bleiben offen (Owner
+    # 2026-09-30, ``klasse_aus_umriss``).
     k4 = klasse_aus_umriss(raeume, tueren)
     for rid, (k, _) in k4.items():
         by_id[rid].nutzungsklasse = k
