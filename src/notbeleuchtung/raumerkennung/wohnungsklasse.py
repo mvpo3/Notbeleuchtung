@@ -839,6 +839,15 @@ def klasse_aus_umriss(raeume: list[Raum], tueren: list[Tuer]
       solcher Raum im Umriss bleibt unbestimmt (gemessen auf den 23
       Prüfgeschossen: 4 der 94 unbestimmten, je eine Tür ins Freie; dazu 1
       von 200 Zufallstopologien).
+    * **R1-Aussetzung (Owner 2026-09-30):** für den nach R1 gebundenen
+      Wohnungsflur hinter der Stiegenhaustür (Fassung A+C, „Erschlossener
+      GANG" in ``_gang_einzelraeume``, also R1 ohne Loch) setzt K4 keine
+      Klasse — er bleibt unbestimmt mit Grund „R1-Flur" (Rennweg OG3
+      ``raum_10``). Der Loch-GANG nach R1 fällt nicht darunter.
+    * **Aufenthaltsraum-Sperre (Owner 2026-09-30, G4):** privat nur, wenn die
+      Wohnung (``wohnung_id``; ohne Wohnung die umschließenden) mindestens
+      einen ``AUFENTHALTSRAUM`` hat; sonst unbestimmt mit Grund „G4: kein
+      Aufenthaltsraum".
 
     Die Klasse beantwortet nur Frage (a); Notlicht entzieht weiter allein
     ``bestaetigt_privat`` (Ankerregel privat) — ein hier privat gewordener
@@ -850,8 +859,16 @@ def klasse_aus_umriss(raeume: list[Raum], tueren: list[Tuer]
     umrisse = wohnungsumrisse(raeume)
     urteil = ankerurteil(raeume, tueren)
     sperre = riegel_nie_privat(raeume, tueren)
+    r1_flur = wohnungszugehoerigkeit(raeume, tueren)[3] - loch_raeume(raeume, tueren)
+    belegt = {r.wohnung_id for r in raeume
+              if r.wohnung_id and r.raum_typ in AUFENTHALTSRAUM}
     out: dict[str, tuple[str | None, str]] = {}
     for r in offen:
+        if r.id in r1_flur:
+            out[r.id] = (None, ("R1-Flur, Owner 2026-09-30: für den Wohnungsflur hinter "
+                                "der Stiegenhaustür (R1, Fassung A+C) setzt K4 keine "
+                                "Klasse — bleibt unbestimmt, Notlicht bleibt"))
+            continue
         anteil = anteile_im_umriss(r, umrisse)
         drin = sorted(w for w, a in anteil.items() if a >= VOLL)
         u, u_grund = urteil.get(r.id, (A_UNKLAR, "nicht bewertet"))
@@ -859,6 +876,12 @@ def klasse_aus_umriss(raeume: list[Raum], tueren: list[Tuer]
             out[r.id] = (None, (f"im Umriss von {', '.join(drin)}, aber Riegel (G3): "
                                 f"{sperre[r.id]} → nie privat — bleibt unbestimmt, "
                                 "Notlicht bleibt"))
+            continue
+        wohnung = [r.wohnung_id] if r.wohnung_id else drin
+        if drin and not belegt.intersection(wohnung):
+            out[r.id] = (None, (f"G4: kein Aufenthaltsraum in {', '.join(wohnung)} — "
+                                "im Umriss, aber privat nur mit Aufenthaltsraum "
+                                "(Owner 2026-09-30) — bleibt unbestimmt, Notlicht bleibt"))
             continue
         if drin:
             wie = ("Mitglied" if r.wohnung_id in drin
