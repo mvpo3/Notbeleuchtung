@@ -423,10 +423,10 @@ OG1/OG2/DG1 (Board 1, Leonis) und `test_soll_muthgasse.py::test_soll_plan_tuerbl
 **Status: STOPP.** Regel umgesetzt, K4-Tests grün, keine Wand verloren, kein
 Notlicht-Flag-Wechsel (00 ↔ 11: keiner), Wohnungen unverändert — aber **ein
 neuer Gate-Verstoß (6)**: Rennweg OG3 `raum_10` (Gang 9,38 m², R1-Wohnungsflur)
-ist jetzt `WOHNUNG_PRIVAT` und behält seine drei eigenen Anker (die Ankerregel
-bestätigt ihn nicht, Notlicht bleibt) → „Anker in WOHNUNG_PRIVAT (Rennweg OG3):
-3, erwartet: 0". Dazu werden zwei Tests rot, die genau das zusichern
-(`test_s7_wohnungsklasse.py::test_og3_keine_anker_in_wohnung_privat`,
+ist jetzt `WOHNUNG_PRIVAT` und behält alle sieben eigenen Anker, drei davon echt
+im Polygon (die Ankerregel bestätigt ihn nicht, Notlicht bleibt) → „Anker in
+WOHNUNG_PRIVAT (Rennweg OG3): 3, erwartet: 0". Dazu werden zwei Tests rot, die
+genau das zusichern (`test_s7_wohnungsklasse.py::test_og3_keine_anker_in_wohnung_privat`,
 `test_soll_rennweg.py::test_keine_anker_in_wohnung_privat`); sie sind nicht
 grün gebogen. Branch `selman/fix-k4-klasse-gang-vorraum` von `f682c77`:
 `4a578ff` Test (rot), `2241dd1` Fix, danach dieser Bericht. Ein nächster Slice
@@ -800,3 +800,65 @@ Output-Schritt.
    (`umschliessende_wohnung`, für Räume ohne Wohnung), K4 über die Fläche
    (Planer-Präzisierung). Auf den 23 Geschossen entscheidet in K4 nur die
    Mitgliedschaft. Zusammenführen, sobald ein Fall ohne Wohnung auftaucht?
+7. **G4 und K4 (Review).** Sechs der 90 K4-privaten Räume liegen in einer
+   Wohnung (rohe Türen) ohne Aufenthaltsraum, also in einer Gruppe, die nach
+   G4 (Owner 2026-09-22) „keine Wohnung belegt": Mollgasse 3.OG `raum_51`
+   VORRAUM 5,41 (`top_20` = VORRAUM + WC), DG `raum_12` VORRAUM 7,18 (`top_3` =
+   VORRAUM + WC + ABSTELLRAUM), EG `raum_23` VORRAUM 7,91 (`top_11` = VORRAUM +
+   ABSTELLRAUM + WC), EG `raum_49` VORRAUM 2,17 (`top_20` = VORRAUM + WC), EG
+   `raum_55` GANG 8,77 (`top_1` = GANG + 2 × ABSTELLRAUM), Muthgasse E2
+   `raum_2` VORRAUM 4,18 (`top_8` = VORRAUM + BAD + ABSTELLRAUM). Notlicht
+   bleibt bei allen sechs (Flags 11, nicht bestätigt; G4 sperrte die
+   Bestätigung ohnehin), die Klasse heißt aber `WOHNUNG_PRIVAT`; die neue
+   Fluchtweg-Warnung Mollgasse EG sitzt an `tuer_29` (roh `zimmertuer`
+   `raum_48` WC ↔ `raum_49`, korrigiert jetzt `wohnungseingang`), also in einer
+   dieser Gruppen. Soll K4 für
+   „privat" zusätzlich G4 verlangen (sonst bleibt der Raum unbestimmt mit
+   Grund)?
+
+### Review (adversarial, nachgemessen)
+
+Eigene Skripte und eigene Läufe, nicht die Läufe des Bauers; die Zahlen des
+Abschnitts halten, der Status STOPP ist bestätigt.
+
+* **Diff `f682c77..98074cb`:** nur `raumerkennung/` (`wohnungen.py`,
+  `wohnungsklasse.py`, `wohnungsumriss.py`), `tests/`, `docs/`;
+  `hauptengine/contracts/`, `platzierung/`, `normwissen/` unberührt. Kein
+  `wohnung_id`-Schreiber in K4; `umschliessende_wohnung` (K3-Probe) liest die
+  Klasse nur gegen `KEIN_RAUM`/`AUSSEN`, K4 wirkt also nicht in die Probe
+  zurück (Einbahn).
+* **Test zuerst rot:** eigener Worktree auf `4a578ff` —
+  `test_k4_klasse_umriss` ImportError (`klasse_aus_umriss`),
+  `test_k4_klasse_gang_vorraum` 3 failed (Klasse `None`). Auf `98074cb`: 21
+  passed; mit `test_wohnungsklasse.py` 297 passed.
+* **Owner-Test nachgemessen** (eigener Parse, `2241dd1`): Rennweg DG1 `raum_4`
+  GANG 12,19, DG2 `raum_1` VORRAUM 10,84, OG3 `raum_10` GANG 9,38 →
+  `WOHNUNG_PRIVAT`, `top_1`, Flags 11, nicht in `bestaetigt_privat`.
+* **Läufe des Bauers geprüft:** eigene Parses von Rennweg DG1/DG2/OG3
+  (nachher) sowie Mollgasse EG, 3.OG und Muthgasse E2, E9 (vorher `f682c77`
+  und nachher `2241dd1`) — Räume (Typ, Klasse, Wohnung, Flags, Fläche), Anker,
+  korrigierte Rollen, `bestaetigt_privat`, Segmentzahl und
+  Fluchtweg-Warnungen gleich den Läufen des Bauers (11 von 11 Läufen).
+* **Blast Radius, eigener Diff über 23/23** (IoU ≥ 0,5, gleiche ID vor):
+  90 Klassenwechsel `None` → `WOHNUNG_PRIVAT`; 0 Typ-, 0 Flächenwechsel, 0
+  neue/entfallene Räume, 0 `wohnung_id`-Wechsel, Wohnungen/Einraum gleich, 0
+  Flag-Wechsel, `bestaetigt_privat` gleich, 0 rohe Rollen, 0 Türen, 0
+  Ausgänge, Wandkörper gleich; 277 korrigierte Rollen `zimmertuer` →
+  `wohnungseingang` (Muthgasse 263, Mollgasse DG 10, 3.OG 3, EG 1); 0
+  Segmente; Anker 0 neu / 0 weg / 1 verschoben (OG3 `rest_3_tuer_tuer_5`);
+  Anker in `WOHNUNG_PRIVAT` 4 → 27; 1 neue Fluchtweg-Warnung (Mollgasse EG
+  `tuer_29`); unbestimmt 94 → 4, alle 94 mit Wohnung. Leuchten in den 90
+  Räumen (Läufe des Bauers): 60 = 21 RZ + 39 SL.
+* **Gate:** eigene Messung auf `98074cb` (`arbeitsbaum_src_scripts_sauber =
+  true`), `pruefe_gate` → 3 Verstöße (3), (6), (10); gegen die K3-Messung
+  (`7f2dd0e`) unterscheiden sich nur `og3.anker_in_wohnung_privat` 0 → 3 und
+  `og3.raeume_wohnung_privat_gang` 1 → 2. `pytest -m gate tests/gate`: 3
+  passed, 1 xfailed. Die zwei Anker-Tests sind auf `f682c77` grün (2 passed)
+  und auf `98074cb` rot; `test_s7_wohnungsklasse.py` + `test_soll_rennweg.py`
+  auf `98074cb`: 5 failed (3 bekannt Board 1, 2 neu), 239 passed, 1 xfailed.
+  **(6) ist ein neuer Verstoß — STOPP bestätigt.**
+* **Korrigiert:** Der Status nannte „seine drei eigenen Anker". `raum_10`
+  behält alle sieben eigenen Anker (0 entfernt); drei liegen echt im Polygon
+  (`raum_10_tuer_1`, `_3`, `_4`, Zählweise Gate (6)), vier auf der Raumkante
+  (`raum_10_tuer_2`, `_5`, `raum_10_ende_6`, `_7`, Abstand 0,0 mm).
+* **Nachgetragen:** Owner-Frage 7 (G4), oben.
