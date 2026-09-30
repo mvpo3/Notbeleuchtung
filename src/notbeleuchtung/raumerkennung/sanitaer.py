@@ -26,11 +26,14 @@ Prüfgeschossen und im Gate-Plan Barawitzka EG.
 
 **Reihenfolge (Einbahn, Owner Board 7):** der Wohnungsumriss steht erst nach
 ``bilde_wohnungen`` fest, die Türrollen brauchen den Typ vorher. Darum ein
-Vorlauf ohne Rückkopplung (``provider``): Türen und Wohnungen einmal als Probe
-auf Kopien, ``typisiere_sanitaer`` prüft darin den Umriss und setzt am echten
+einmaliger Vorlauf (``provider``): Türen und Wohnungen einmal als Probe auf
+Kopien, ``typisiere_sanitaer`` prüft darin den Umriss und setzt am echten
 Raum nur Typ und Flags — wie ein Stempel „Bad"/„WC". Danach läuft EIN
 regulärer Durchlauf; Klasse und Wohnung entstehen dort wie für jeden
-gestempelten Raum aus rohen Türen (Grundsatz (b) 2026-09-22). Keine Iteration.
+gestempelten Raum aus rohen Türen (Grundsatz (b) 2026-09-22). Keine Iteration
+bis zu einem Fixpunkt — aber eine einmalige Rückkante: Klasse und Wohnung der
+Probe entscheiden, ob der Typ gesetzt wird, und der Typ geht in die rohen
+Türrollen des regulären Laufs ein (Owner-Frage zu Board 7, docs/SLICES_K1_K4.md).
 """
 from __future__ import annotations
 
@@ -62,7 +65,8 @@ _ART = tuple((art, re.compile(muster, re.IGNORECASE)) for art, muster in (
     (BIDET, r"BIDET"),
 ))
 #: Zubehör mit Objektnamen: „HNP_Extern_Duschset" ist die Armatur der Dusche,
-#: die als „Dusche bodeneben" schon zählt (Muthgasse 119 : 118).
+#: die als „Dusche bodeneben" schon zählt (Muthgasse E2–E9: 121 Duschsets
+#: neben 119 Duschen).
 _ZUBEHOER = re.compile(r"DUSCHSET", re.IGNORECASE)
 #: Möbel-/Einbau-/Sanitär-Layer der Familien (``M.{1,2}BEL``: Umlaut ggf.
 #: cp-dekodiert).

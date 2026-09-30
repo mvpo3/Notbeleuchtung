@@ -199,10 +199,12 @@ class ArchitekturRaumProvider:
         # K3 (Enis Referenz 07): ein stempelloser Raum mit Sanitärbeleg im
         # Umriss einer Wohnung wird BAD/WC. Der Umriss steht erst nach der
         # Wohnungsbildung fest, die Türrollen brauchen den Typ vorher — darum
-        # ein Vorlauf OHNE Rückkopplung: Türen und Wohnungen einmal als Probe
-        # auf Kopien, dann setzt `typisiere_sanitaer` am echten Raum nur Typ
-        # und Flags (wie ein Stempel), und es folgt EIN regulärer Durchlauf.
+        # ein einmaliger Vorlauf: Türen und Wohnungen einmal als Probe auf
+        # Kopien, dann setzt `typisiere_sanitaer` am echten Raum nur Typ und
+        # Flags (wie ein Stempel), und es folgt EIN regulärer Durchlauf.
         # Klasse und Wohnung entstehen dort aus rohen Türen (Grundsatz (b)).
+        # Einmalige Rückkante Probe-Klasse/-Wohnung → Typ → rohe Türrolle,
+        # keine Iteration (Owner-Frage zu Board 7, docs/SLICES_K1_K4.md).
         # Ohne Kandidaten keine Probe — der Lauf ist dann derselbe wie vorher.
         kand = sanitaer_kandidaten(
             raeume, sanitaerobjekte(plan),
