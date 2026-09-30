@@ -420,7 +420,15 @@ OG1/OG2/DG1 (Board 1, Leonis) und `test_soll_muthgasse.py::test_soll_plan_tuerbl
 
 ## K4 — Nutzungsklasse für UNBESTIMMT-Gänge und -Vorräume (Owner-Lane)
 
-**Status: STOPP.** Regel umgesetzt, K4-Tests grün, keine Wand verloren, kein
+**Status: GEBAUT** — mit dem Nachzug nach den Owner-Entscheiden 2026-09-30
+(R1-Aussetzung, Aufenthaltsraum-Sperre; Abschnitt **„Nachzug"** am Ende von
+K4). Gate wieder mit den zwei bekannten Verstößen (3) und (10), (6) grün.
+Commits: `4a578ff` Test (rot), `2241dd1` Fix, `98074cb`/`5bd4ff2` Bericht und
+Review (STOPP), `0ec6512` Test Nachzug (rot), `bdbbd00` Fix Nachzug, danach der
+Nachtrag. Die Abschnitte zwischen hier und „Nachzug" beschreiben den ersten
+Stand `2241dd1` und bleiben als Messung stehen.
+
+**Erster Stand `2241dd1`: STOPP.** Regel umgesetzt, K4-Tests grün, keine Wand verloren, kein
 Notlicht-Flag-Wechsel (00 ↔ 11: keiner), Wohnungen unverändert — aber **ein
 neuer Gate-Verstoß (6)**: Rennweg OG3 `raum_10` (Gang 9,38 m², R1-Wohnungsflur)
 ist jetzt `WOHNUNG_PRIVAT` und behält alle sieben eigenen Anker, drei davon echt
@@ -429,8 +437,8 @@ WOHNUNG_PRIVAT (Rennweg OG3): 3, erwartet: 0". Dazu werden zwei Tests rot, die
 genau das zusichern (`test_s7_wohnungsklasse.py::test_og3_keine_anker_in_wohnung_privat`,
 `test_soll_rennweg.py::test_keine_anker_in_wohnung_privat`); sie sind nicht
 grün gebogen. Branch `selman/fix-k4-klasse-gang-vorraum` von `f682c77`:
-`4a578ff` Test (rot), `2241dd1` Fix, danach dieser Bericht. Ein nächster Slice
-baut nicht auf K4.
+`4a578ff` Test (rot), `2241dd1` Fix, danach dieser Bericht. (Damals: „Ein
+nächster Slice baut nicht auf K4" — durch den Nachzug erledigt.)
 
 ### Owner-Befund (wörtlich)
 
@@ -760,7 +768,8 @@ Output-Schritt.
 
 ### Offene Punkte / Owner-Fragen
 
-1. **STOPP-Grund: Anker in einem privat gewordenen Gang (Gate (6)).** K4 macht
+1. **[Entschieden 2026-09-30: R1-Aussetzung, siehe „Nachzug".]**
+   **STOPP-Grund: Anker in einem privat gewordenen Gang (Gate (6)).** K4 macht
    Gänge privat, denen die Ankerregel nichts entzieht; nach dem Grundsatz
    behalten sie Flags, Anker und Leuchten. Gate (6) und die zwei roten Tests
    sichern dagegen „kein Anker in `WOHNUNG_PRIVAT`" (Rennweg OG3). Gemessen:
@@ -773,7 +782,8 @@ Output-Schritt.
    Wohnungseingang erreichbar" nennt (R1-Flur OG3) — dann bekommt der
    Owner-Raum OG3 Gang 9,4 keine Klasse, gegen den Befund; (C) die Anker der
    K4-Räume streichen — Notlicht-Entzug gegen den Grundsatz, nicht empfohlen.
-2. **Korrigierte Rollen der Loch-Räume (277 Türen).** Bisher zählte ein
+2. **[Weiter offen; nach dem Nachzug neu gemessen, siehe „Nachzug".]**
+   **Korrigierte Rollen der Loch-Räume (277 Türen).** Bisher zählte ein
    Loch-Raum für Fluchtweg/Zirkulation als privat; privat geworden, aber
    unbestätigt, zählt er nach Option W als Erschließung, seine Türen zur eigenen
    Wohnung werden korrigiert `wohnungseingang`. Gemessen ohne Segment- oder
@@ -800,7 +810,8 @@ Output-Schritt.
    (`umschliessende_wohnung`, für Räume ohne Wohnung), K4 über die Fläche
    (Planer-Präzisierung). Auf den 23 Geschossen entscheidet in K4 nur die
    Mitgliedschaft. Zusammenführen, sobald ein Fall ohne Wohnung auftaucht?
-7. **G4 und K4 (Review).** Sechs der 90 K4-privaten Räume liegen in einer
+7. **[Entschieden 2026-09-30: Aufenthaltsraum-Sperre, siehe „Nachzug".]**
+   **G4 und K4 (Review).** Sechs der 90 K4-privaten Räume liegen in einer
    Wohnung (rohe Türen) ohne Aufenthaltsraum, also in einer Gruppe, die nach
    G4 (Owner 2026-09-22) „keine Wohnung belegt": Mollgasse 3.OG `raum_51`
    VORRAUM 5,41 (`top_20` = VORRAUM + WC), DG `raum_12` VORRAUM 7,18 (`top_3` =
@@ -862,3 +873,137 @@ Abschnitts halten, der Status STOPP ist bestätigt.
   (`raum_10_tuer_1`, `_3`, `_4`, Zählweise Gate (6)), vier auf der Raumkante
   (`raum_10_tuer_2`, `_5`, `raum_10_ende_6`, `_7`, Abstand 0,0 mm).
 * **Nachgetragen:** Owner-Frage 7 (G4), oben.
+
+### Nachzug — Owner-Entscheide 2026-09-30
+
+**Status: GEBAUT.** Branch `selman/fix-k4-klasse-gang-vorraum`: `0ec6512` Test
+(rot), `bdbbd00` Fix, danach dieser Nachtrag. Gate wieder bei den zwei
+bekannten Verstößen (3) und (10), (6) grün, M17 18/18; kein
+Notlicht-Flag-Wechsel, keine Wand, keine Wohnung, kein Segment verändert.
+
+**Entscheide (Auftrag, wörtlich zusammengefasst):**
+
+1. **R1-Aussetzung** (beantwortet Owner-Frage 1): K4 setzt für R1-gebundene
+   Wohnungsflure (Fassung A+C, `wohnungsklasse.py` „Erschlossener GANG",
+   Test-Konstante `R1_GEBUNDEN`) KEINE Klasse; sie bleiben UNBESTIMMT mit Grund
+   „R1-Flur, Owner 2026-09-30". Rennweg OG3 `raum_10` damit wieder offen,
+   Gate (6) grün, Anker-Tests grün.
+2. **Aufenthaltsraum-Sperre** (beantwortet Owner-Frage 7): K4 setzt PRIVAT
+   nur, wenn die Wohnung (`wohnung_id`) mindestens einen Aufenthaltsraum
+   (`AUFENTHALTSRAUM`) hat; sonst UNBESTIMMT mit Grund „G4: kein
+   Aufenthaltsraum".
+
+**Lesarten** (Executor, bitte bestätigen):
+
+* „R1-gebunden, Fassung A+C" = die Gänge, die `_gang_einzelraeume` bindet,
+  ohne die Loch-Räume (`wohnungszugehoerigkeit()[3] − loch_raeume`), also
+  genau die `r1:`-Zeilen. Der **Loch-GANG nach R1** (R1 vom 2026-09-22) fällt
+  NICHT darunter und bleibt unter K4: Mollgasse 3.OG `raum_48` und DG
+  `raum_13` sind weiter privat (je 4 bzw. 5 eigene Anker in
+  `WOHNUNG_PRIVAT`, nicht Gate-relevant — (6) zählt nur Rennweg OG3),
+  Mollgasse 4.OG `raum_10` bleibt über G3 offen.
+* „Wohnung" = `wohnung_id` des Raums; ein Raum ohne Wohnung, der voll in
+  einem Umriss liegt, braucht einen Aufenthaltsraum in einer der
+  umschließenden Wohnungen (auf den 23 Geschossen ohne Fall).
+* Reihenfolge: R1-Flur vor allem anderen, dann G3, dann G4, dann privat.
+
+**Umsetzung** (`bdbbd00`): nur `wohnungsklasse.py:klasse_aus_umriss` (zwei
+Sperren, liest rohe Türen, Raumtypen und `wohnung_id` — Einbahn
+unverändert) und ein Kommentar in `wohnungen.py:bilde_wohnungen`. Die
+`k4:`-Zeile nennt den Grund („k4: raum_10 — offen: R1-Flur, Owner
+2026-09-30: …", „k4: raum_55 — offen: G4: kein Aufenthaltsraum in top_1 — …");
+die `unbestimmt:`-Zeile der Iteration bleibt wie vor K4.
+
+**Test** — rot auf `0ec6512` (src = `5bd4ff2`), 12 failed:
+`test_k4_klasse_umriss.py` 4 neu (`test_r1_flur_bekommt_keine_klasse`,
+`test_g4_ohne_aufenthaltsraum_bleibt_unbestimmt[mitglied|ohne-wohnung]`,
+`test_g4_loch_vorraum_ohne_aufenthaltsraum_im_durchlauf`; dazu grün
+`test_g4_ein_aufenthaltsraum_genuegt`), `test_k4_klasse_gang_vorraum.py::test_og3_r1_flur_bleibt_offen`
+(neu, Naht: OG3 `raum_10` bleibt `None`, DG1 `raum_4`/DG2 `raum_1` bleiben
+`WOHNUNG_PRIVAT`), zurück auf „bleibt offen" mit K4-Grund:
+`test_wohnungsklasse.py` (`test_r1ac_wohnungsflur_…`, `test_nicht_konvergenz_…`
+V, `test_r14_…` V1), `test_s7_wohnungsklasse.py`
+(`test_kandidatenklasse_ist_fixpunkt_…[og3]`, `test_loch_raum_folgt_rohen_tueren[og3-raum_10]`,
+`test_moll_eg_raum_23_behaelt_seine_wege`) sowie der schon rote
+`test_og3_keine_anker_in_wohnung_privat`. **Grün auf `bdbbd00`:**
+`test_k4_klasse_umriss` + `test_wohnungsklasse` 299 passed; mit
+`test_k4_klasse_gang_vorraum`, `test_s7_wohnungsklasse`, `test_soll_rennweg`
+543 passed, 3 failed (die bekannten Board-1-Fälle), 1 xfailed.
+
+**Blast Radius** (23 Geschosse, echte `ArchitekturRaumProvider().parse`,
+alle `status ok`). Vorher = die Nachher-Läufe des alten K4 (`2241dd1`),
+nachher = `bdbbd00`; dazu netto gegen `f682c77` (vor K4, erweiterte Läufe).
+
+| | `2241dd1` → `bdbbd00` | `f682c77` → `bdbbd00` (K4 netto) |
+|---|--:|--:|
+| Klassenwechsel | 7 (`WOHNUNG_PRIVAT` → `None`) | 83 (`None` → `WOHNUNG_PRIVAT`) |
+| Typ / Fläche / Räume neu, weg | 0 / 0 / 0, 0 | 0 / 0 / 0, 0 |
+| `wohnung_id`, Wohnungen, Einraum | unverändert | unverändert |
+| Notlicht-Flags (00 ↔ 11) | 0 | 0 |
+| `bestaetigt_privat` neu / weg | 0 / 0 | 0 / 0 |
+| rohe Türrollen, Türen, Ausgänge | 0 | 0 |
+| Wandkörper (Anzahl, Fläche) | gleich 23/23 | gleich 23/23 |
+| **korrigierte Rollen, die kippen** | 7 (`wohnungseingang` → `zimmertuer`) | **270** (`zimmertuer` → `wohnungseingang`; war 277) |
+| Fluchtweg-Segmente neu / weg / geändert | 0 / 0 / 0 | 0 / 0 / 0 |
+| Anker neu / weg / verschoben | 0 / 0 / 1 | 0 / 0 / 0 |
+| Anker in `WOHNUNG_PRIVAT` (≥ 1 mm innen) | 27 → 18 | 4 → 18 |
+| Fluchtweg-Warnungen neu / weg | 0 / 1 | 0 / 0 |
+
+* Die 7 Klassenwechsel: Rennweg OG3 `raum_10` (R1-Flur); Mollgasse 3.OG
+  `raum_51`, DG `raum_12`, EG `raum_23`, `raum_49`, `raum_55`, Muthgasse E2
+  `raum_2` (G4) — genau die sechs Räume aus Owner-Frage 7.
+* Korrigierte Rollen `2241dd1` → `bdbbd00`: Mollgasse 3.OG `tuer_41`, DG
+  `tuer_10`, `tuer_18`, EG `tuer_29`, Muthgasse E2 `tuer_37`,
+  `durchgang_2`, `durchgang_3` — zurück auf `zimmertuer` wie vor K4 (die
+  G4-Loch-Räume zählen wieder als privat für `wohnungsraeume`).
+  Netto gegen `f682c77`: **270** = Muthgasse 260 (E2 22, E3 43, E4 42, E5 43,
+  E6 40, E7 25, E8 29, E9 16), Mollgasse 10 (DG 8, 3.OG 2); Mollgasse EG 0.
+  Owner-Frage 2 (Option W für K4-private Loch-Räume) bleibt offen.
+* Anker: der Stiegenhaus-Türanker `rest_3_tuer_tuer_5` in Rennweg OG3 liegt
+  wieder wie vor K4 (nicht mehr aus `raum_10` gezogen). In `WOHNUNG_PRIVAT`
+  −3 Rennweg OG3 `raum_10`, −6 Mollgasse EG `raum_55`; die 18 verbleibenden
+  (netto +14 gegen `f682c77`) sind eigene Anker der K4-privaten Gänge
+  Rennweg DG1 `raum_4` 5, Mollgasse 3.OG `raum_48` 4, DG `raum_13` 5 plus
+  die 4 von vorher.
+* Die Fluchtweg-Warnung Mollgasse EG „kein final_exit erreichbar von Tür
+  tuer_29" entfällt wieder (netto 0 neue Warnungen gegen `f682c77`).
+
+**Zählung** — 94 unbestimmte GANG/VORRAUM (vor K4) → **83 privat, 0
+allgemein, 11 offen**, alle offenen mit Grund und Flags 11:
+
+| Grund | Anzahl | Räume |
+|---|--:|---|
+| R1-Flur, Owner 2026-09-30 | 1 | Rennweg OG3 `raum_10` GANG 9,38 (`top_1`) |
+| G4: kein Aufenthaltsraum | 6 | Mollgasse 3.OG `raum_51` VORRAUM 5,41 (`top_20`), DG `raum_12` VORRAUM 7,18 (`top_3`), EG `raum_23` VORRAUM 7,91 (`top_11`), `raum_49` VORRAUM 2,17 (`top_20`), `raum_55` GANG 8,77 (`top_1`); Muthgasse E2 `raum_2` VORRAUM 4,18 (`top_8`) |
+| Riegel G3 (unverändert) | 4 | Mollgasse 4.OG `raum_10`, `raum_12`; Muthgasse E3 `raum_89`, E4 `raum_65` |
+
+Die drei Owner-Räume: DG1 `raum_4` und DG2 `raum_1` → `WOHNUNG_PRIVAT`
+(`top_1`, Flags 11), OG3 `raum_10` → offen (R1-Flur, `top_1`, Flags 11).
+
+**Gate** (`tests/gate/gate_messung.py --out _arbeit/gate/messung_bdbbd00.json`,
+`commit_head` `bdbbd00`, `arbeitsbaum_src_scripts_sauber = true`, 97 s):
+`pruefe_gate(nullmessung_f15d03f, …)` → **2 Verstöße**: (3) DG2 `M4.einraum`
+0 → 1; (10) Barawitzka EG ABSTELLRAUM 1,98 m² ohne Tür. M17 18/18
+BESTANDEN. Gegen `messung_2241dd1` unterscheiden sich nur
+`og3.anker_in_wohnung_privat` 3 → 0 und `og3.raeume_wohnung_privat_gang`
+2 → 1. `pytest -m gate tests/gate`: 3 passed, 1 xfailed (60 s).
+
+**Gezielte Tests** (`bdbbd00`, `pytest tests/raumerkennung tests/naht
+tests/contract`): **4 failed, 1 155 passed, 8 skipped, 14 xfailed** (20 min 2 s).
+Die vier sind genau die bekannt roten, vorbestehenden
+(`test_s7_wohnungsklasse.py::test_keine_leuchten_in_wohnung_privat`
+OG1/OG2/DG1, Board 1/Leonis; `test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell`);
+**kein neuer roter Test** — die zwei Anker-Tests des ersten Stands
+(`test_og3_keine_anker_in_wohnung_privat`,
+`test_soll_rennweg.py::test_keine_anker_in_wohnung_privat`) sind grün. Keine
+Schwelle, kein Soll, kein xfail-Marker gelockert (14 xfailed wie auf
+`2241dd1`). `ruff check .` ohne Befund.
+
+**Fremde Lanes:** `hauptengine/contracts/`, `platzierung/`, `normwissen/`
+nicht berührt. Board 1 (`test_keine_leuchten_in_wohnung_privat`, Leonis)
+wie auf `2241dd1`: OG1 2, OG2 2, DG1 2 (`raum_4:rz`, `raum_3`), rot wie
+vorher; OG3 grün.
+
+**Offen:** Owner-Fragen 2 (korrigierte Rollen, jetzt 270), 3 (Balkontür vor
+G3), 4 (Schritt 3), 5 (Zahl 47), 6 (zwei Umriss-Begriffe); neu die Lesart
+„Loch-GANG R1 bleibt unter K4" (oben).
