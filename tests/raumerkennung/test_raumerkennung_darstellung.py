@@ -59,3 +59,16 @@ def test_lauf_ohne_version_bricht_ab(tmp_path, capsys):
     assert rd.main(_eingang(tmp_path)) == 2
     assert "jede neue Ausgabe als eigener Versionsordner" in capsys.readouterr().err
     assert list((tmp_path / "out").iterdir()) == []
+
+
+def test_kategorie_unbestimmter_gang_ist_magenta():
+    """§ 6g Schritt 3: ein GANG/VORRAUM ohne entschiedene Klasse wird magenta
+    ausgewiesen statt still als „Gang allgemein" gezeichnet — und nur er:
+    ein NISCHE-Raum hat ebenfalls keine Nutzungsklasse und bleibt „nische"."""
+    assert rd._kategorie("GANG", None) == "unbestimmt"
+    assert rd._kategorie("VORRAUM", None) == "unbestimmt"
+    assert rd._kategorie("GANG", "ALLGEMEIN_ERSCHLIESSUNG") == "gang"
+    assert rd._kategorie("GANG", "WOHNUNG_PRIVAT") == "gang_whg"
+    assert rd._kategorie("NISCHE", None) == "nische"
+    assert rd._kategorie("", None) == "unbekannt"
+    assert rd._KAT["unbestimmt"][1] == "#ff00ff"

@@ -1,4 +1,8 @@
-"""Die Gate-Regel des Türstapels S4a → S4b → S5b → S5c als eine Funktion.
+"""Die Gate-Regel des Türstapels S4a → S4b → S5b → S7a → S3b → S5c als eine Funktion.
+
+Der Stapel lautet seit dem Owner-Entscheid vom 2026-09-18 S4a → S4b → S5b →
+S7a → S3b → S5c und wird nur GEMEINSAM gemergt: jede Scheibe allein verschiebt
+Zahlen, die eine spätere wieder einfängt. (5) und (6) bleiben Merge-Pflicht.
 
 ``pruefe_gate(vorher, nachher)`` vergleicht zwei Messungen im Format von
 ``gate_messung.messung`` und gibt die Verstöße im Klartext zurück — leere Liste
@@ -46,6 +50,31 @@ Die Bedingungen (Owner-Vorgabe, § 3 des Gate-Auftrags; (0) ist die Vorbedingung
       nicht davon abhängt, ob jemand den Marker rechtzeitig entfernt. Gemessen
       wird nur der NACHHER-Stand: die Aussage ist absolut, kein Vergleich. Fehlt
       der Abschnitt ``og3``, ist das ein Verstoß und kein stilles Bestehen.
+  (7) OG1: keine der von der Referenz VERNEINTEN Verbindungen besteht —
+      ``anzahl == 0`` für jeden Eintrag aus ``gate_referenz.VERNEINT``, die mit
+      ``zusatz`` markierten Nachbarschaften eingeschlossen (sie sind heute
+      schon 0 und stehen als Schutz gegen einen Rückschritt). Ein nicht
+      auflösbarer Raum (``anzahl`` None) ist ein Verstoß, kein Freispruch.
+  (8) OG1: jeder von der Referenz GEFORDERTE offene Übergang besteht —
+      ``anzahl >= 1`` für jeden Eintrag aus ``gate_referenz.GEFORDERT``. Das ist
+      eine Ergänzung des Planers zu (7): S5b soll die verneinten Verbindungen
+      schließen, ohne die geforderten Übergänge mitzunehmen. Auch hier ist
+      ``anzahl`` None ein Verstoß.
+      (7) und (8) messen nur den NACHHER-Stand — beide Aussagen sind absolut.
+  (9) Mollgasse 1OG (Owner-Ansage 2026-09-20, § 3 des Gate-Auftrags): NICHT hier
+      verdrahtet — Skript und Fixtures liegen noch in keinem Baum. Die Nummer
+      bleibt belegt, damit keine bestehende ihre Bedeutung wechselt.
+  (10) Barawitzka EG: der ABSTELLRAUM 1,98 m² hat mindestens eine Verbindung —
+      ``barawitzka.anzahl >= 1`` (``tests/gate/gate_barawitzka.py``). Er ist der
+      einzige der acht Räume, die S5b auf 0 Verbindungen fallen lässt, dessen
+      echte Tür KEINEN Ersatz im Modell hat (§ 8e); sie steckt als Fehlpaarung
+      in einem „doppelfluegel" 1660 mm. **Heute ist (10) verletzt** (anzahl 0)
+      und dreht erst mit dem S4a-Rest (Doppelflügel-Paarung) — kein Slice dieses
+      Branches heilt sie. ``anzahl`` None (Raum nicht eindeutig) und ein
+      fehlender Abschnitt sind Verstöße. Gemessen wird wie bei (6)-(8) NUR der
+      NACHHER-Stand: die Aussage ist absolut. Damit ist eine Vorher-Messung ohne
+      den Abschnitt (die eingecheckte Nullmessung) kein Absturz — als
+      Nachher-Stand gelesen ist sie ein Verstoß (fail closed).
 """
 from __future__ import annotations
 
@@ -177,10 +206,71 @@ def _pruefe_og3(nachher: dict) -> list[str]:
     return verstoesse
 
 
+def _paar(eintrag: dict) -> str:
+    """»BAD 11.76 m² ↔ BAD 4.66 m²« — Typ und Fläche, wie die Referenz sie nennt."""
+    def raum(seite: str) -> str:
+        r = eintrag.get(seite) or {}
+        return f"{r.get('raum_typ') or '(ohne Typ)'} {r.get('flaeche_m2')} m²"
+    return f"{raum('raum_a')} ↔ {raum('raum_b')}"
+
+
+def _pruefe_referenz(nachher: dict) -> list[str]:
+    """(7) verneinte Verbindungen sind 0, (8) geforderte Übergänge sind ≥ 1."""
+    referenz = nachher.get("referenz") or {}
+    verstoesse = []
+    verneint = referenz.get("verneint")
+    if not verneint:
+        verstoesse.append(
+            "(7) verneinte Verbindungen nicht gemessen — Abschnitt »referenz.verneint« fehlt")
+    else:
+        for e in verneint:
+            anzahl = e.get("anzahl")
+            if anzahl is None:
+                verstoesse.append(
+                    f"(7) verneinte Verbindung nicht messbar ({e.get('referenz')}): "
+                    f"{_paar(e)} — {e.get('grund') or 'ohne Grund'}")
+            elif anzahl != 0:
+                verstoesse.append(
+                    f"(7) verneinte Verbindung besteht ({e.get('referenz')}): "
+                    f"{_paar(e)} — {anzahl} Tür(en) {e.get('ids')}")
+    gefordert = referenz.get("gefordert")
+    if not gefordert:
+        verstoesse.append(
+            "(8) geforderte Übergänge nicht gemessen — Abschnitt »referenz.gefordert« fehlt")
+    else:
+        for e in gefordert:
+            anzahl = e.get("anzahl")
+            if anzahl is None:
+                verstoesse.append(
+                    f"(8) geforderter Übergang nicht messbar ({e.get('referenz')}): "
+                    f"{_paar(e)} — {e.get('grund') or 'ohne Grund'}")
+            elif anzahl < 1:
+                verstoesse.append(
+                    f"(8) geforderter Übergang fehlt ({e.get('referenz')}): {_paar(e)}")
+    return verstoesse
+
+
+def _pruefe_barawitzka(nachher: dict) -> list[str]:
+    """(10) Barawitzka EG: der ABSTELLRAUM 1,98 m² hat mindestens eine Verbindung."""
+    eintrag = nachher.get("barawitzka")
+    if not eintrag:
+        return ["(10) Barawitzka EG nicht gemessen — Abschnitt »barawitzka« fehlt"]
+    name = eintrag.get("bezeichnung") or "ABSTELLRAUM 1.98 m²"
+    anzahl = eintrag.get("anzahl")
+    if anzahl is None:
+        return [(f"(10) Barawitzka EG {name} nicht messbar — "
+                 f"{eintrag.get('grund') or 'ohne Grund'}")]
+    if anzahl < 1:
+        return [f"(10) Barawitzka EG {name} ohne Verbindung: {anzahl} Tür(en)"]
+    return []
+
+
 def pruefe_gate(vorher: dict, nachher: dict) -> list[str]:
     """Verstöße gegen die Gate-Regel im Klartext; leere Liste = Gate erfüllt."""
     return (_pruefe_vergleichbarkeit(vorher, nachher)
             + _pruefe_m17(vorher, nachher)
             + _pruefe_m1_m4(vorher, nachher)
             + _pruefe_og1(vorher, nachher)
-            + _pruefe_og3(nachher))
+            + _pruefe_og3(nachher)
+            + _pruefe_referenz(nachher)
+            + _pruefe_barawitzka(nachher))

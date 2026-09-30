@@ -1,7 +1,7 @@
 """Das Türstapel-Gate am echten Plan: Eingabe, Nenner, Gate-Regel.
 
 Der xfail-Test ist das Gate selbst. Er ist ``strict``: solange der Stapel
-S4a → S4b → S5b → S5c nicht gebaut ist, schlägt er erwartungsgemäß fehl
+S4a → S4b → S5b → S7a → S3b → S5c nicht gebaut ist, schlägt er erwartungsgemäß fehl
 (xfailed). Sobald eine Messung das Gate erfüllt, dreht er auf XPASS und die
 Suite wird rot — dann wird der Marker entfernt und der Stapel gemerged.
 
@@ -76,7 +76,7 @@ def test_nenner_bleibt_18(frische_messung):
 
 
 @pytest.mark.xfail(strict=True, raises=AssertionError,
-                   reason="Türstapel S4a→S4b→S5b→S5c nicht gebaut — Gate-Regel in "
+                   reason="Türstapel S4a→S4b→S5b→S7a→S3b→S5c nicht gebaut — Gate-Regel in "
                           "docs/GATE_TUERSTAPEL.md")
 def test_gate_tuerstapel_erfuellt(nullmessung, frische_messung):
     verstoesse = pruefe_gate(nullmessung, frische_messung)
