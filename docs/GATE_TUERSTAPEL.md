@@ -79,7 +79,8 @@ Die vier Messskripte aus Anhang A.1–A.4 der Diagnose liegen **wortgetreu** unt
 belegt). Einzige Abweichungen, je Datei im Kopf benannt: Kopfkommentar, `# ruff: noqa`,
 `REPO` aus `NOTBEL_REPO` (Pflicht), Cache-Wurzel aus `NOTBEL_GATE_CACHES`, bei A.2–A.4
 zusätzlich `import os`. Der Docstring von A.1 nennt wortgetreu noch den alten
-Default-Pfad.
+Default-Pfad. Seit 2026-09-30 bei A.3 (M3) zusätzlich die Gate-Definition „NISCHE wird wie
+SCHACHT/LIFT nicht gezählt" (Owner-Entscheid zu K2, Option c; `docs/SLICES_K1_K4.md`).
 
 Verfahren (`tests/gate/gate_m1_m4.py`): genau das Nachher-Verfahren der Diagnose — die 7
 Grundrisse (`Projekte/Rennweg/`, UG/EG/OG1/OG2/OG3/DG1/DG2; nicht DD, nicht Legende)
@@ -96,7 +97,7 @@ Diagnose § 4 reduziert:
 | M2.wert | Innenräume (ohne Freiflächen) mit Schnitt > 0,05 m² zum offenen Außenbereich | ja |
 | M2.inkl_freiflaechen | dito inkl. Balkon/Terrasse/Loggia | ja |
 | M2.offen_m2 | offene Außenfläche | nur berichtet (richtungsoffen) |
-| M3.hauptwert | Räume (nicht SCHACHT/LIFT) mit roter Schachtfläche ≥ 0,02 m² | ja |
+| M3.hauptwert | Räume (nicht SCHACHT/LIFT/NISCHE) mit roter Schachtfläche ≥ 0,02 m² | ja |
 | M3.rote_flaeche_m2 | rote Schachtfläche in Räumen | ja (Toleranz 0,001 m²) |
 | M4.wohnungen | Wohnungen | nur berichtet (richtungsoffen) |
 | M4.einraum, M4.datenbefund, M4.darstellungsbefund, M4.privatraum_ohne_wohnung | wie Diagnose § 4 | ja |
