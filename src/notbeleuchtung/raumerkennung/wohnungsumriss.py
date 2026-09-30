@@ -1,0 +1,63 @@
+"""wohnungsumriss — liegt ein Raum im Umriss einer Wohnung? Kontrolle, keine Zuordnung.
+
+Owner (K3, 2026-09-30): „Der Top-Stempel ist Kontrolle: der Raum muss innerhalb
+eines Wohnungsumrisses liegen, sonst bleibt UNBEKANNT." Welche Räume eine
+Wohnung bilden, entscheiden ausschließlich rohe Türen (``wohnungen.
+bilde_wohnungen``, Grundsatz (b) 2026-09-22). Dieses Modul liest ``wohnung_id``
+nur und setzt nie eine.
+
+**Umriss** = die Räume einer Wohnung samt dem, was zwischen ihnen und der
+Gebäudehülle liegt. Gemessen an Rennweg OG3 ``rest_6`` („UNBEKANNT 6,6 m²"): der
+Raum sitzt in einer Bucht von ``top_2`` an der Fassade — Nachbarn nur Räume von
+``top_2`` (0–152 mm), links die Außenwand. Die Außenkontur der Raumvereinigung
+(±250 mm geschlossen, ohne Löcher) deckt 0 % von ihm, weil die Bucht zur
+Fassade offen ist; erst ±2 000 mm schlössen sie. Darum hier die Prüfung über die
+Nachbarschaft statt über ein Schließ-Maß:
+
+* jeder Nachbarraum bis Wanddicke (``NACHBAR_MM``) gehört zu derselben Wohnung —
+  Schacht/Lift (``KEIN_RAUM``) und Freiflächen (``AUSSEN``) zählen nicht mit,
+  sie gehören keiner Wohnung und keiner Erschließung;
+* jede Tür des Raums führt in diese Wohnung — eine Tür ins Freie, ins
+  Unerkannte oder zu einem fremden Raum nimmt ihn heraus (im Zweifel bleibt der
+  Raum, was er war, und behält sein Notlicht).
+"""
+from __future__ import annotations
+
+from shapely.geometry import Polygon
+
+from notbeleuchtung.hauptengine.contracts.raum_modell import Raum, Tuer
+
+#: Bis zu diesem Abstand ist ein Raum Nachbar (Wanddicke). ponytail: Knopf,
+#: gemessen an den K3-Kandidaten (Nachbarn 0–152 mm); Wohnungstrenn- und
+#: Stiegenhauswände bis 500 mm. Nachmessen, wenn eine dickere Trennwand einen
+#: fremden Raum verdeckt.
+NACHBAR_MM = 500.0
+#: Klassen, die keiner Wohnung und keiner Erschließung gehören.
+_NEUTRAL = frozenset({"KEIN_RAUM", "AUSSEN"})
+
+
+def umschliessende_wohnung(raum: Raum, raeume: list[Raum], tueren: list[Tuer],
+                           nachbar_mm: float = NACHBAR_MM) -> tuple[str | None, str]:
+    """``(wohnung_id, grund)`` der Wohnung, in deren Umriss ``raum`` liegt,
+    sonst ``(None, grund)``. Liest nur ``wohnung_id``, Klasse und Türen."""
+    g = Polygon(raum.polygon_mm).buffer(0)
+    nachbarn = [r for r in raeume
+                if r.id != raum.id and len(r.polygon_mm) >= 3
+                and r.nutzungsklasse not in _NEUTRAL
+                and Polygon(r.polygon_mm).buffer(0).distance(g) <= nachbar_mm]
+    liste = ", ".join(f"{r.id} {r.raum_typ or '—'} {r.wohnung_id or 'ohne Wohnung'}"
+                      for r in nachbarn)
+    wohnungen = {r.wohnung_id for r in nachbarn}
+    if not nachbarn:
+        return None, f"kein Nachbarraum bis {nachbar_mm:.0f} mm"
+    if len(wohnungen) != 1 or None in wohnungen:
+        return None, f"Nachbarn nicht alle in einer Wohnung: {liste}"
+    (wid,) = wohnungen
+    drin = {r.id for r in raeume if r.wohnung_id == wid}
+    for t in tueren:
+        if raum.id not in (t.von_raum, t.nach_raum):
+            continue
+        andere = t.nach_raum if t.von_raum == raum.id else t.von_raum
+        if andere not in drin:
+            return None, f"Tür {t.id} führt nach {andere or '—'}, nicht in {wid}"
+    return wid, f"Nachbarn nur {wid}: {liste}"
