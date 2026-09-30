@@ -842,6 +842,32 @@ def test_fremder_anker_wird_auch_aus_unbestaetigt_privatem_raum_gezogen():
     assert neu["vor_tuer_1"].xy_mm == (7000.0, 2000.0)
 
 
+def test_stiegenhaus_anker_wird_auch_aus_privatem_zimmer_gezogen():
+    """Slice S3b, Rennweg OG3 ``rest_3_tuer_tuer_4``: erreicht die Restfläche
+    des Stiegenhauses die Blocktür, bekommt es seinen Türanker auf dem
+    Türpunkt. Den deckt das gestempelte ZIMMER, das durch die Öffnung ragt —
+    die Restfläche endet ``_BELEGT_PUFFER_MM`` + ½ Zelle davor (nominal
+    125 mm, an ``tuer_4`` nach simplify/snap gemessen 118,5 mm).
+    Gate (6) zählt JEDEN Raum der Klasse ``WOHNUNG_PRIVAT``, nicht nur
+    GANG/VORRAUM: der Anker wird auch aus dem Zimmer auf die Stiegenhaus-Seite
+    gezogen, nicht gestrichen."""
+    from notbeleuchtung.hauptengine.contracts.raum_modell import Anker
+
+    stgh = Raum(id="stgh", raum_typ="STIEGENHAUS",
+                polygon_mm=_rechteck(0, 0, 4880, 4000),
+                nutzungsklasse="ALLGEMEIN_ERSCHLIESSUNG")
+    zi = Raum(id="zi", raum_typ="ZIMMER",
+              polygon_mm=_rechteck(4990, 0, 9000, 4000),
+              nutzungsklasse="WOHNUNG_PRIVAT")
+    tueren = [_tuer("tw", "zi", "stgh", "wohnungseingang", xy=(5000.0, 2000.0))]
+    a = Anker(id="stgh_tuer_tw", typ="TUER", xy_mm=(5000.0, 2000.0),
+              raum_id="stgh")
+    neu = wk.anker_aus_privat_ziehen([a], [stgh, zi], tueren)
+    assert len(neu) == 1
+    assert not Polygon(zi.polygon_mm).contains(Point(neu[0].xy_mm)), neu[0].xy_mm
+    assert Polygon(stgh.polygon_mm).contains(Point(neu[0].xy_mm)), neu[0].xy_mm
+
+
 def test_anker_ohne_ausweg_wird_gestrichen():
     """Lässt sich der Anker nicht auf die eigene Seite ziehen, wird er
     gestrichen — ein Anker in einer Wohnung ist die Verletzung, die Gate (6)
@@ -1179,7 +1205,58 @@ _R7_BAUTEN = [_rueckkopplung, _plan_zwei_wohnungen, _loch_paar, _u1, _u2, _o3,
               _muth_paar, _flur_mit_stiegenhaustuer_und_ausgang]
 
 
-@pytest.mark.parametrize("bau", _R7_BAUTEN, ids=lambda f: f.__name__.lstrip("_"))
+def _s7c_wanderung(aussen_typ: str, aussen_detail: str | None, dreh: bool):
+    """Slice S7c (Abschnitt (r)), hier definiert, weil die E7-Zusicherungen
+    dieses Abschnitts sie mitparametrisieren. Owner-Regel S7c: privater
+    VORRAUM ``vor`` mit INNERER Tür ``t_in`` zum ZIMMER ``zi`` und ÄUSSERER
+    Tür ``t_out`` in die Erschließung ``aussen`` (STIEGENHAUS oder allgemeiner
+    GANG).
+
+    Die Klassen sind hier GESETZT — ``korrigierte_rollen`` leitet nach Contract
+    aus der FERTIGEN Klassifikation ab (Einbahn, § 6g.6), der Test prüft also
+    genau seine Eingabe. ``vor`` ist bestätigt privat: die Ankerregel erreicht
+    ihn vom Stiegenhaus NUR über ``t_we`` (Wohnungseingang MIT Türblatt), das
+    ZIMMER belegt die Wohnung (G4), kein Riegel greift.
+
+    ``dreh`` dreht beide Türseiten — die Regel darf nicht an ``von_raum`` vs.
+    ``nach_raum`` hängen.
+    """
+    raeume = [
+        Raum(id="zi", raum_typ="ZIMMER", nutzungsklasse=wk.PRIVAT,
+             polygon_mm=_rechteck(0, 0, 5000, 4000)),
+        Raum(id="vor", raum_typ="VORRAUM", nutzungsklasse=wk.PRIVAT,
+             polygon_mm=_rechteck(5000, 0, 9000, 4000)),
+        Raum(id="stgh", raum_typ="STIEGENHAUS", nutzungsklasse=wk.ALLGEMEIN,
+             polygon_mm=_rechteck(9000, 0, 13000, 4000),
+             ist_fluchtweg=True, ist_communal=True),
+        Raum(id="aussen", raum_typ=aussen_typ, nutzungsklasse=wk.ALLGEMEIN,
+             polygon_mm=_rechteck(5000, 4000, 9000, 8000),
+             ist_fluchtweg=True, ist_communal=True),
+    ]
+    paare = {"t_in": ("vor", "zi"), "t_we": ("stgh", "vor"),
+             "t_out": ("vor", "aussen")}
+    if dreh:
+        paare = {k: (b, a) for k, (a, b) in paare.items()}
+    tueren = [_tuer("t_in", *paare["t_in"], "zimmertuer", xy=(5000.0, 2000.0)),
+              _tuer("t_we", *paare["t_we"], "wohnungseingang", xy=(9000.0, 2000.0)),
+              _tuer("t_out", *paare["t_out"], aussen_detail, xy=(7000.0, 4000.0))]
+    return raeume, tueren
+
+
+def _s7c_flur_und_gang():
+    """Dieselbe S7c-Topologie ohne vorgesetzte Klassen und ohne Rolle an
+    ``t_out`` — für die E7-Zusicherungen, die ``bilde_wohnungen`` selbst
+    fahren. ``bilde_wohnungen`` macht hier den äußeren GANG selbst privat: die
+    rollenlose Tür verbindet ihn nach (b) mit ``vor``, die Ankerregel bestätigt
+    ihn über ``t_we`` (gemessen S7c Runde 2)."""
+    raeume, tueren = _s7c_wanderung("GANG", None, False)
+    for r in raeume:
+        r.nutzungsklasse = None
+    return raeume, tueren
+
+
+@pytest.mark.parametrize("bau", [*_R7_BAUTEN, _s7c_flur_und_gang],
+                         ids=lambda f: f.__name__.lstrip("_"))
 def test_e7_bilde_wohnungen_aendert_keine_tuerrolle(bau):
     """E7 (Owner Board 7): „Die Ankerregel liest nur rohe Türrollen, nie
     Raumklassen und nie korrigierte Rollen." Die korrigierten Rollen werden
@@ -1217,7 +1294,8 @@ def test_e7_ankerregel_liest_nur_rohe_rollen(bau, monkeypatch):
     assert not abweichend, f"Ankerregel las korrigierte Rollen: {abweichend[0]}"
 
 
-@pytest.mark.parametrize("bau", _R7_BAUTEN, ids=lambda f: f.__name__.lstrip("_"))
+@pytest.mark.parametrize("bau", [*_R7_BAUTEN, _s7c_flur_und_gang],
+                         ids=lambda f: f.__name__.lstrip("_"))
 def test_e7_klassifikation_haengt_nicht_an_korrigierten_rollen(bau, monkeypatch):
     """Einbahn: rohe Rolle → Klasse → korrigierte Rolle → Fluchtweg, nie
     zurück. Werden die korrigierten Rollen verfälscht (hier: jede Tür
@@ -1682,7 +1760,81 @@ _R8_BAUTEN = ([_topologie_l(a, b) for a, b in _ETIKETTEN]
                  _loch_rest_ohne_eingang, _blattlos_getrennt, _vorraum_am_keller])
 
 
-@pytest.mark.parametrize("bau", _R7_BAUTEN + _ROLLEN_OSZ + [_nicht_konvergent] + _R8_BAUTEN,
+# Gegenbeispiele des Reviewers zu S7c Runde 1 (Linse Einbahn, Blockierend 1):
+# Topologien, auf denen die (b)-Eingangsliste und die korrigierten
+# Wohnungseingänge auseinanderfallen. Klassen NICHT vorgesetzt wirken nur dort,
+# wo ``bilde_wohnungen`` sie ohnehin neu setzt (GANG/VORRAUM).
+def _s7c_aussen_stiegenhaustuer():
+    return _s7c_wanderung("GANG", "stiegenhaustuer", False)
+
+
+def _s7c_aussen_brandschutz():
+    return _s7c_wanderung("GANG", "brandschutztuer", False)
+
+
+def _s7c_aussen_balkontuer_an_gang():
+    return _s7c_wanderung("GANG", "balkontuer", False)
+
+
+def _s7c_zwei_aussen():
+    """Zwei äußere Türen des privaten Vorraums in zwei Gänge."""
+    raeume, tueren = _s7c_wanderung("GANG", "stiegenhaustuer", False)
+    raeume.append(Raum(id="gang2", raum_typ="GANG", nutzungsklasse=wk.ALLGEMEIN,
+                       polygon_mm=_rechteck(5000, -4000, 9000, 0),
+                       ist_fluchtweg=True, ist_communal=True))
+    tueren.append(_tuer("t_out2", "vor", "gang2", "brandschutztuer",
+                        xy=(7000.0, 0.0)))
+    return raeume, tueren
+
+
+def _s7c_privater_gang():
+    """Privat gewordener GANG ``flur`` statt VORRAUM, äußere Tür roh
+    ``stiegenhaustuer``."""
+    return ([Raum(id="zi", raum_typ="ZIMMER", polygon_mm=_rechteck(0, 0, 5000, 4000)),
+             Raum(id="flur", raum_typ="GANG",
+                  polygon_mm=_rechteck(5000, 0, 9000, 4000)),
+             Raum(id="stgh", raum_typ="STIEGENHAUS",
+                  polygon_mm=_rechteck(9000, 0, 13000, 4000),
+                  ist_fluchtweg=True, ist_communal=True),
+             Raum(id="gang", raum_typ="GANG",
+                  polygon_mm=_rechteck(5000, 4000, 9000, 8000),
+                  ist_fluchtweg=True, ist_communal=True)],
+            [_tuer("t_in", "flur", "zi", "zimmertuer", xy=(5000.0, 2000.0)),
+             _tuer("t_we", "stgh", "flur", "wohnungseingang", xy=(9000.0, 2000.0)),
+             _tuer("t_out", "flur", "gang", "stiegenhaustuer", xy=(7000.0, 4000.0))])
+
+
+def _s7c_verschachtelt_weich():
+    """Verschachtelte Vorräume ``stgh -t_we-> vor1 -t_mid-> vor2 -t_in-> zi``;
+    ``vor2`` ist zusätzlich blattlos vom Gang erreichbar (``t_loch``), also nur
+    unbestätigt privat (Option W). Vorbestehend schon auf ``bface2b``."""
+    loch = _tuer("t_loch", "vor2", "gang", xy=(5500.0, 4000.0))
+    loch.ohne_tuerblatt = True
+    return ([Raum(id="zi", raum_typ="ZIMMER", polygon_mm=_rechteck(0, 0, 4000, 4000)),
+             Raum(id="vor2", raum_typ="VORRAUM",
+                  polygon_mm=_rechteck(4000, 0, 7000, 4000)),
+             Raum(id="vor1", raum_typ="VORRAUM",
+                  polygon_mm=_rechteck(7000, 0, 10000, 4000)),
+             Raum(id="stgh", raum_typ="STIEGENHAUS",
+                  polygon_mm=_rechteck(10000, 0, 14000, 4000),
+                  ist_fluchtweg=True, ist_communal=True),
+             Raum(id="gang", raum_typ="GANG",
+                  polygon_mm=_rechteck(4000, 4000, 10000, 8000),
+                  ist_fluchtweg=True, ist_communal=True)],
+            [_tuer("t_in", "vor2", "zi", "zimmertuer", xy=(4000.0, 2000.0)),
+             _tuer("t_mid", "vor1", "vor2", "zimmertuer", xy=(7000.0, 2000.0)),
+             _tuer("t_we", "stgh", "vor1", "wohnungseingang", xy=(10000.0, 2000.0)),
+             _tuer("t_g", "gang", "stgh", xy=(10000.0, 6000.0)),
+             loch])
+
+
+_S7C_GEGENBEISPIELE = [_s7c_aussen_stiegenhaustuer, _s7c_aussen_brandschutz,
+                       _s7c_aussen_balkontuer_an_gang, _s7c_zwei_aussen,
+                       _s7c_privater_gang, _s7c_verschachtelt_weich]
+
+
+@pytest.mark.parametrize("bau", _R7_BAUTEN + _ROLLEN_OSZ + [_nicht_konvergent] + _R8_BAUTEN
+                         + [_s7c_flur_und_gang] + _S7C_GEGENBEISPIELE,
                          ids=lambda f: f.__name__.lstrip("_"))
 def test_e7_bilde_wohnungen_liest_keine_korrigierte_rolle(bau, monkeypatch):
     """E7.2 wörtlich: „Die gesamte Klassifikation (…, Wohnungsbildung/
@@ -1690,8 +1842,29 @@ def test_e7_bilde_wohnungen_liest_keine_korrigierte_rolle(bau, monkeypatch):
     ``bilde_wohnungen`` ``korrigierte_rollen`` für die Eingangsliste der
     Wohnungen. Jetzt ist die Funktion während des Laufs verboten — auch die
     neue Regel E5 Satz 2 („Wohnung ohne Eingang") liest nur Klassen und
-    rohe Rollen. Die Eingangsliste stimmt trotzdem mit den danach
-    abgeleiteten korrigierten Rollen überein."""
+    rohe Rollen.
+
+    Die Eingangsliste (b) und die danach abgeleiteten korrigierten
+    Wohnungseingänge (a) sind NICHT gleich, und sie dürfen es nicht erzwingen:
+    (b) liest einen klassenfreien Erschließungs-Begriff
+    (``wohnungszugehoerigkeit``), (a) Klassen und Ankerregel
+    (``wohnungsraeume``); Gleichheit ginge nur durch Rückspeisen von (a) nach
+    (b), gegen die Einbahn. Gemessen (S7c Runde 2, 66 Topologien: 55 aus
+    diesem Modul, 11 des Reviewers) weichen die Listen in BEIDEN Richtungen ab,
+    aber nur an zwei Stellen — genau das bindet diese Zusicherung, sonst gilt
+    Tür für Tür Gleichheit:
+
+    * NUR in (b): der Raum auf der Wohnungsseite gehört zur (b)-Wohnung, ist
+      für (a) aber nicht privat (unbestimmt, allgemein klassifiziert, Option
+      W) — schon auf ``bface2b`` 4× (``verschachtelt_weich``,
+      ``zwei_gruppen``, ``durchleitung_plan_direkt``);
+    * NUR korrigiert: ausschließlich an Türen mit anderer roher Rolle als
+      Zimmertür/Wohnungseingang, die S7c an der Grenze privat|Erschließung
+      zum Wohnungseingang macht (22×; 20 davon zusätzlich an einem Raum, den
+      (a) und (b) verschieden einordnen — der unbestätigt private GANG als
+      eigene (b)-Wohnung —, 2 nicht: ``_rollen_oszillator``, ``tz``). Eine
+      rohe Zimmertür oder ein roher Wohnungseingang am Rand ist nie NUR
+      korrigiert (Reviewer S7c Runde 2, 66 Topologien, 12 Pläne)."""
     from notbeleuchtung.raumerkennung import wohnungen as W
 
     echt = wk.korrigierte_rollen
@@ -1705,11 +1878,23 @@ def test_e7_bilde_wohnungen_liest_keine_korrigierte_rolle(bau, monkeypatch):
     wohnungen = bilde_wohnungen(raeume, tueren)
     monkeypatch.undo()
     korr = echt(raeume, tueren)
+    privat_a, _ = wk.wohnungsraeume(raeume, tueren)
+    in_wohnung = {rid for w in wohnungen for rid in w.raum_ids}
+    verschieden = {r.id for r in raeume
+                   if (r.id in in_wohnung) != (r.id in privat_a)}
     for w in wohnungen:
         drin = set(w.raum_ids)
-        assert w.eingangs_tuer_ids == [
-            t.id for t in tueren if korr[t.id] == "wohnungseingang"
-            and len({t.von_raum, t.nach_raum} & drin) == 1], w
+        rand = [t for t in tueren if len({t.von_raum, t.nach_raum} & drin) == 1]
+        assert set(w.eingangs_tuer_ids) <= {t.id for t in rand}, w
+        for t in rand:
+            in_b = t.id in w.eingangs_tuer_ids
+            in_k = korr[t.id] == "wohnungseingang"
+            innen = t.von_raum if t.von_raum in drin else t.nach_raum
+            if in_b and not in_k:
+                assert innen in verschieden, ("nur (b)", w, t.id, t.tuer_detail)
+            elif in_k and not in_b:
+                assert t.tuer_detail not in ("zimmertuer", "wohnungseingang"), (
+                    "nur korrigiert", w, t.id, t.tuer_detail)
 
 
 @pytest.mark.parametrize("bau", _R8_BAUTEN, ids=lambda f: f.__name__.lstrip("_"))
@@ -1727,10 +1912,11 @@ def test_r8_idempotent_und_reihenfolge_invariant(bau):
 # ── (n) Runde 9: Board 4 als ALLGEMEINE Regel (L1) ──────────────────────────
 def _fest(raeume, tueren) -> dict:
     """Die festen Räume der Regel (Owner 2026-09-22): Loch-Räume nach rohen
-    Türen (an die Wohnung gebunden → offen, sonst allgemein) und der Riegel
-    (G3, allgemein) — wie ``bilde_wohnungen``."""
-    _, in_wohnung, erschliessung, _einzel = wk.wohnungszugehoerigkeit(raeume, tueren)
-    fest = dict.fromkeys(in_wohnung)
+    Türen (an die Wohnung gebunden → offen, sonst allgemein), die nach R1
+    gebundenen Gänge (offen, R1-Erweiterung 2026-09-27) und der Riegel (G3,
+    allgemein) — wie ``bilde_wohnungen``."""
+    _, in_wohnung, erschliessung, r1_gaenge = wk.wohnungszugehoerigkeit(raeume, tueren)
+    fest = dict.fromkeys(in_wohnung | r1_gaenge)
     fest.update(dict.fromkeys(erschliessung, wk.ALLGEMEIN))
     for rid in wk.riegel_nie_privat(raeume, tueren):
         fest.setdefault(rid, wk.ALLGEMEIN)
@@ -2495,3 +2681,341 @@ def test_r14_ohne_fixpunkt_gilt_der_tiebreak_ohne_probelauf():
     for rid in ("K", "V1", "V2", "V3"):
         assert (by_id[rid].ist_fluchtweg, by_id[rid].ist_communal) == (True, True), rid
     assert not wk.bestaetigt_privat(raeume, tueren)
+
+
+# ── (r) Slice S7c: die Rolle wandert an die äußere Tür ───────────────────────
+# Die Topologie ``_s7c_wanderung`` und ``_s7c_flur_und_gang`` stehen in
+# Abschnitt (l), weil die E7-Zusicherungen dort sie mitparametrisieren.
+@pytest.mark.parametrize("dreh", [False, True], ids=["vor_nach", "gedreht"])
+@pytest.mark.parametrize("aussen_detail,soll", [
+    (None, "wohnungseingang"),
+    ("brandschutztuer", "wohnungseingang"),
+    ("stiegenhaustuer", "wohnungseingang"),
+    ("balkontuer", "balkontuer"),
+], ids=["ohne_rolle", "brandschutz", "stiegenhaustuer", "balkontuer"])
+def test_s7c_rolle_wandert_an_die_aeussere_tuer(aussen_detail, soll, dreh):
+    """Owner-Regel S7c (2026-09-26), wörtlich: „wird ein Vorraum privat,
+    wandert die Rolle Wohnungseingang an die äußere Tür (Vorraum zu
+    Stiegenhaus oder allgemeinem Gang). Die innere Tür wird zimmertuer."
+
+    Vor diesem Slice hing die Wanderung an der ROHEN Rolle: nur eine Tür, die
+    roh ``zimmertuer`` oder ``wohnungseingang`` war, konnte zum Wohnungseingang
+    werden. Die äußere Tür eines privat gewordenen GANGES trägt roh aber
+    ``stiegenhaustuer`` (Regel 4 der Türtypisierung: GANG ist im Kanon statisch
+    allgemein) oder gar keine Rolle (GANG × GANG) — sie blieb liegen, und
+    ``fluchtweg.py`` fand im Obergeschoss keinen Start. Der Fall ist auf den 12
+    Prüfplänen gemessen NICHT vorhanden (0 Türen); die Zusicherung hält die
+    Regel trotzdem fest, weil sie über die rohe Rolle nichts annehmen darf.
+
+    Die Klassen sind GESETZT. Die Variante ``ohne_rolle`` ist nur so
+    erreichbar: ohne vorgesetzte Klassen macht ``bilde_wohnungen`` den äußeren
+    GANG hier selbst privat (die rollenlose Tür verbindet ihn nach (b) mit
+    ``vor``, die Ankerregel bestätigt ihn über ``t_we``) — dann liegen beide
+    Seiten von ``t_out`` in der Wohnung, und nichts wandert (gemessen S7c
+    Runde 2, Reviewer-Hinweis 5).
+
+    ``balkontuer`` wandert NIE (Reviewer-Hinweis 1): das Modul zählt die
+    Balkontür bewusst weder als Wohnungsgrenze (``wohnungsgruppen``) noch als
+    Ausgang; sie bleibt, was sie ist. Auf echten Daten ist der Fall nicht
+    erreichbar (``tuer_typisierung`` vergibt ``balkontuer`` nur an BALKON/
+    TERRASSE oder AUSSEN, nie an Erschließung) — der Riegel hält ihn fest."""
+    raeume, tueren = _s7c_wanderung("GANG", aussen_detail, dreh)
+    assert "vor" in wk.bestaetigt_privat(raeume, tueren), "Vorbedingung"
+    rollen = wk.korrigierte_rollen(raeume, tueren)
+    assert rollen["t_out"] == soll, rollen
+    assert rollen["t_in"] == "zimmertuer", rollen
+    assert rollen["t_we"] == "wohnungseingang", rollen
+
+
+@pytest.mark.parametrize("dreh", [False, True], ids=["vor_nach", "gedreht"])
+def test_s7c_stiegenhaustuer_des_privaten_vorraums_ist_schon_der_eingang(dreh):
+    """Gegenprobe zur anderen Hälfte der Owner-Regel („Vorraum zu
+    Stiegenhaus"): dort ist die Wanderung STRUKTURELL schon erledigt.
+    ``tuer_typisierung.py`` Regel 3 (STIEGENHAUS × WOHNUNG_PRIVAT) gibt jeder
+    Tür STIEGENHAUS ↔ VORRAUM roh ``wohnungseingang``; und trüge sie eine
+    andere Rolle, wäre der Vorraum vom Stiegenhaus OHNE Wohnungseingang
+    erreichbar und damit nie ankerprivat (``ankerurteil`` → ``A_ALLGEMEIN``),
+    also nie in der privaten Menge von ``wohnungsraeume``. Gemessen auf
+    Mollgasse 1OG: ``tuer_3``/``tuer_4`` (``raum_35`` ↔ ``raum_2``/``raum_4``)
+    sind roh UND korrigiert Wohnungseingänge."""
+    raeume, tueren = _s7c_wanderung("GANG", None, dreh)
+    assert wk.korrigierte_rollen(raeume, tueren)["t_we"] == "wohnungseingang"
+    # Trägt dieselbe Tür roh `stiegenhaustuer`, ist `vor` nicht mehr ankerprivat.
+    for t in tueren:
+        if t.id == "t_we":
+            t.tuer_detail = "stiegenhaustuer"
+    assert wk.ankerurteil(raeume, tueren)["vor"][0] == wk.A_ALLGEMEIN
+    assert "vor" not in wk.bestaetigt_privat(raeume, tueren)
+
+
+# ── (s) R1-Erweiterung, Fassung A+C (Owner 2026-09-27): der Wohnungsflur ────
+# „§ 7e, R1-Erweiterung: Fassung (A+C). Der gebundene Gang bleibt unbestimmt wie
+# der Loch-Gang. Begründung: der Gang gehört zur Wohnung, ist aber kein Beleg
+# für eine eigene Wohnung; unbestimmt heißt Notlicht bleibt, und das ist die
+# sichere Richtung." A: sein Zugang sind nur Stiegenhaustüren MIT Blatt ohne
+# rohen Wohnungseingang; C: unter den Einzelräumen ein Aufenthaltsraum UND ein
+# Bad/WC/Abstellraum. Der Loch-Fall (Abschnitt (p)) bleibt, wie er ist.
+def _og3_flur():
+    """(i) Rennweg OG3 ``raum_10`` seit Slice S3b im Kleinen: ``_og3_loch_gang``,
+    aber ``t5`` erreicht das Stiegenhaus — roh ``stiegenhaustuer`` MIT Blatt
+    (``tuer_5``, 940 mm). L ist kein Loch mehr; ``t5`` ist sein einziger
+    Zugang (A), seine vier rohen Wohnungseingänge führen je zu einem
+    Einzelraum, darunter Küche/Zimmer UND Bad/Abstellraum (C). G davor ist ein
+    Gang vor EINEM Zimmer — ohne Bad/WC/Abstellraum, er bindet nicht (C)."""
+    raeume, tueren = _og3_loch_gang()
+    return raeume, [_t("t5", "S", "L", "stiegenhaustuer") if t.id == "t5" else t
+                    for t in tueren]
+
+
+def _og3_flur_anders(name: str, typen=None, t5=None, raeume_dazu=(), tueren_dazu=()):
+    """``_og3_flur`` mit genau EINER Abweichung — anderen Raumtypen hinter L
+    (dann kann nur C ausschließen), einem anderen ``t5`` oder zusätzlichen
+    Türen an L (dann nur A), oder einer Zweiergruppe (Einzelräume)."""
+    def bau():
+        raeume, tueren = _og3_flur()
+        for r in raeume:
+            r.raum_typ = (typen or {}).get(r.id, r.raum_typ)
+        if t5 is not None:
+            tueren = [t5() if t.id == "t5" else t for t in tueren]
+        return (raeume + [f() for f in raeume_dazu],
+                tueren + [f() for f in tueren_dazu])
+    bau.__name__ = f"_og3_flur_{name}"
+    return bau
+
+
+_og3_flur_studios = _og3_flur_anders(
+    "studios", typen={"k": "ZIMMER", "b": "ZIMMER", "a": "ZIMMER"})
+_og3_flur_nur_nassraeume = _og3_flur_anders("nur_nassraeume", typen={"k": "WC", "z": "BAD"})
+_og3_flur_hauseingang = _og3_flur_anders(
+    "hauseingang", t5=lambda: _t("t5", "L", wk.AUSSEN, "hauseingang"),
+    tueren_dazu=[lambda: _t("tzs", "z", "S", "wohnungseingang", blattlos=True)])
+_og3_flur_tuer_ins_freie = _og3_flur_anders(
+    "tuer_ins_freie", tueren_dazu=[lambda: _t("tx", "L", wk.AUSSEN)])
+_og3_flur_rollenlos_zum_gang = _og3_flur_anders(
+    "rollenlos_zum_gang", tueren_dazu=[lambda: _t("tx", "L", "G")])
+_og3_flur_rollenlos_untypisiert = _og3_flur_anders(
+    "rollenlos_untypisiert", raeume_dazu=[lambda: _r("U", "")],
+    tueren_dazu=[lambda: _t("tx", "L", "U")])
+_og3_flur_blattlos = _og3_flur_anders(
+    "blattlos", t5=lambda: _t("t5", "S", "L", "stiegenhaustuer", blattlos=True))
+_og3_flur_zweiergruppe = _og3_flur_anders(
+    "zweiergruppe", raeume_dazu=[lambda: _r("z2", "ZIMMER", False)],
+    tueren_dazu=[lambda: _t("tz2", "z", "z2", "zimmertuer")])
+
+
+def _og3_loch_gang_nur_zimmer():
+    """(vii) Der Loch-Fall ohne C: ``_og3_loch_gang`` (``t5`` nach KEIN_RAUM —
+    rollenlos, also auch ohne A), hinter L aber nur Zimmer. R1 vom 2026-09-22
+    bindet ihn; A und C dürfen den Loch-Fall nicht enger machen."""
+    raeume, tueren = _og3_loch_gang()
+    for r in raeume:
+        if r.id in ("k", "b", "a"):
+            r.raum_typ = "ZIMMER"
+    return raeume, tueren
+
+
+_GETRENNT = [(("Y",), ("ty",)), (("a",), ("t14",)), (("b",), ("t13",)),
+             (("k",), ("d1",)), (("z",), ("t11",))]
+_EINE_WOHNUNG = [(("L", "a", "b", "k", "z"), ()), (("Y",), ("ty",))]
+#: (b) je Bau: Wohnungen mit ihren Eingängen, wie ``_wohnungsstand`` sie führt.
+_R1AC_SOLL = {
+    "_og3_flur": _EINE_WOHNUNG,
+    "_og3_flur_studios": _GETRENNT,
+    "_og3_flur_nur_nassraeume": _GETRENNT,
+    "_og3_flur_hauseingang": [(("Y",), ("ty",)), (("a",), ("t14",)), (("b",), ("t13",)),
+                              (("k",), ("d1",)), (("z",), ("t11", "tzs"))],
+    "_og3_flur_tuer_ins_freie": _GETRENNT,
+    "_og3_flur_rollenlos_zum_gang": _GETRENNT,
+    "_og3_flur_rollenlos_untypisiert": _GETRENNT,
+    "_og3_flur_blattlos": _GETRENNT,
+    "_og3_flur_zweiergruppe": [(("Y",), ("ty",)), (("a",), ("t14",)), (("b",), ("t13",)),
+                               (("k",), ("d1",)), (("z", "z2"), ("t11",))],
+    "_og3_loch_gang": _EINE_WOHNUNG,
+    "_og3_loch_gang_nur_zimmer": _EINE_WOHNUNG,
+}
+_R1AC_GEGENFAELLE = [_og3_flur_studios, _og3_flur_nur_nassraeume, _og3_flur_hauseingang,
+                     _og3_flur_tuer_ins_freie, _og3_flur_rollenlos_zum_gang,
+                     _og3_flur_rollenlos_untypisiert, _og3_flur_blattlos,
+                     _og3_flur_zweiergruppe]
+_R1AC_BAUTEN = [_og3_flur, *_R1AC_GEGENFAELLE, _og3_loch_gang, _og3_loch_gang_nur_zimmer]
+
+
+def test_r1ac_wohnungsflur_hinter_stiegenhaustuer_bildet_eine_wohnung():
+    """(i) L ist vom Stiegenhaus über ``t5`` ohne Wohnungseingang erreichbar
+    (kein Loch), sein Zugang ist nur diese Stiegenhaustür mit Blatt (A), und
+    hinter seinen rohen Wohnungseingängen liegen nur Einzelräume mit Küche/
+    Zimmer UND Bad/Abstellraum (C) → EINE Wohnung {L, a, b, k, z} wie auf HEAD
+    5ac3e0f (Rennweg OG3 ``{raum_1, raum_4, raum_6, raum_7, raum_10}``) statt
+    vier Einraum-Wohnungen. Ohne Eingang: ``t5`` bleibt Stiegenhaustür (Owner,
+    Board-Frage 1: nicht (b)).
+
+    (a): L bleibt unbestimmt wie der Loch-Gang — Klasse ``None``, Flags 11,
+    nicht entzogen —, mit eigenem Grund („Wohnungsflur hinter
+    Stiegenhaustür"), nicht „Ankerregel nicht auswertbar"; dazu eine
+    ``r1:``-Zeile, die den Zugang nennt, und keine ``loch:``-Zeile."""
+    raeume, tueren = _og3_flur()
+    assert wk.ankerurteil(raeume, tueren)["L"][0] == wk.A_ALLGEMEIN, "Vorbedingung"
+    assert "L" not in wk.loch_raeume(raeume, tueren), "Vorbedingung: kein Loch"
+    _, in_wohnung, _, r1_gaenge = wk.wohnungszugehoerigkeit(raeume, tueren)
+    assert (in_wohnung, r1_gaenge) == (set(), {"L"})
+    warnungen: list[str] = []
+    wohnungen = bilde_wohnungen(raeume, tueren, warnungen)
+    by_id = {r.id: r for r in raeume}
+    assert _wohnungsstand(raeume, wohnungen)[0] == _R1AC_SOLL["_og3_flur"]
+    assert by_id["L"].wohnung_id == by_id["z"].wohnung_id is not None
+    assert by_id["L"].nutzungsklasse is None, by_id["L"].nutzungsklasse
+    assert (by_id["L"].ist_fluchtweg, by_id["L"].ist_communal) == (True, True)
+    assert "L" not in wk.bestaetigt_privat(raeume, tueren)
+    offen = [w for w in warnungen if w.startswith("unbestimmt: L — ")]
+    assert len(offen) == 1, warnungen
+    assert "Wohnungsflur hinter Stiegenhaustür" in offen[0], offen[0]
+    assert "kein Beleg für eine eigene Wohnung" in offen[0], offen[0]
+    assert "Notlicht bleibt" in offen[0] and "nicht auswertbar" not in offen[0], offen[0]
+    r1 = [w for w in warnungen if w.startswith("r1: L — ")]
+    assert len(r1) == 1, warnungen
+    assert "t5" in r1[0] and "nur Einzelräume" in r1[0] and "(R1)" in r1[0], r1[0]
+    assert not [w for w in warnungen if w.startswith("loch: L")], warnungen
+
+
+@pytest.mark.parametrize("bau", _R1AC_GEGENFAELLE, ids=lambda f: f.__name__[len("_og3_flur_"):])
+def test_r1ac_gang_bindet_nicht(bau):
+    """Gegenfälle, jeder weicht von (i) in genau EINEM Punkt ab:
+    (ii) C — ``studios`` (hinter L nur Zimmer, ein Gang vor Studios) und
+    ``nur_nassraeume`` (WC/Bad/Abstellraum, kein Aufenthaltsraum; Mollgasse EG
+    ``raum_39``); (iii) A — ``hauseingang`` (einziger Zugang ein Hauseingang,
+    die Zimmer hängen blattlos am Stiegenhaus; Mollgasse EG ``raum_34``) und
+    ``tuer_ins_freie``; (iv) A — eine rollenlose Tür zu einem anderen GANG oder
+    zu einem untypisierten Raum (Rennweg UG ``raum_12``); (v) A — ``blattlos``
+    (der Zugang ist eine Öffnung ohne Türblatt); (vi) ``zweiergruppe`` (hinter
+    ``t11`` eine Wohnung aus zwei Räumen, Muthgasse E2 ``raum_94``). L bleibt
+    Erschließung: keine Wohnung, allgemein, Flags 11, keine ``r1:``-Zeile."""
+    raeume, tueren = bau()
+    assert "L" not in wk.loch_raeume(raeume, tueren), "Vorbedingung: kein Loch"
+    assert wk.wohnungszugehoerigkeit(raeume, tueren)[3] == set()
+    warnungen: list[str] = []
+    wohnungen = bilde_wohnungen(raeume, tueren, warnungen)
+    r = {x.id: x for x in raeume}["L"]
+    assert r.wohnung_id is None
+    assert r.nutzungsklasse == wk.ALLGEMEIN, r.nutzungsklasse
+    assert (r.ist_fluchtweg, r.ist_communal) == (True, True)
+    assert _wohnungsstand(raeume, wohnungen)[0] == _R1AC_SOLL[bau.__name__]
+    assert not [w for w in warnungen if w.startswith("r1: ")], warnungen
+
+
+def test_r1ac_loch_gang_bindet_ohne_a_und_c():
+    """(vii) Der Loch-Fall wird durch A und C nicht enger: ein Loch-GANG mit
+    nur Zimmern dahinter und rollenlosem ``t5`` nach KEIN_RAUM bindet wie bis
+    jetzt (R1 vom 2026-09-22) — unbestimmt, Flags 11, ``loch:``-Zeile mit
+    R1-Grund, keine ``r1:``-Zeile. ``_og3_loch_gang`` selbst hält Abschnitt (p)
+    fest (``test_r11_loch_gang_zu_einzelraeumen_bildet_eine_wohnung``)."""
+    raeume, tueren = _og3_loch_gang_nur_zimmer()
+    assert "L" in wk.loch_raeume(raeume, tueren), "Vorbedingung: Loch"
+    warnungen: list[str] = []
+    wohnungen = bilde_wohnungen(raeume, tueren, warnungen)
+    r = {x.id: x for x in raeume}["L"]
+    assert _wohnungsstand(raeume, wohnungen)[0] == _R1AC_SOLL["_og3_loch_gang_nur_zimmer"]
+    assert r.nutzungsklasse is None, r.nutzungsklasse
+    assert (r.ist_fluchtweg, r.ist_communal) == (True, True)
+    loch = [w for w in warnungen if w.startswith("loch: L — ")]
+    assert len(loch) == 1 and "Einzelräume" in loch[0], warnungen
+    assert not [w for w in warnungen if w.startswith("r1: ")], warnungen
+
+
+@pytest.mark.parametrize("bau", _R1AC_BAUTEN, ids=lambda f: f.__name__.lstrip("_"))
+def test_r1ac_einbahn_idempotent_und_reihenfolge_invariant(bau, monkeypatch):
+    """(viii) Reihenfolge-Invarianz (Räume UND Türen), Idempotenz und Einbahn
+    (Board 7): verfälschte Klassen, Flags und ``wohnung_id`` und der
+    umgedrehte Tiebreak ändern die Wohnungen (b) nicht — sie stehen
+    AUSDRÜCKLICH fest (``_R1AC_SOLL``) —, verfälschte korrigierte Rollen
+    ändern die Klassen (a) nicht."""
+    import random
+
+    from notbeleuchtung.raumerkennung import wohnungen as W
+
+    raeume, tueren = bau()
+    w = bilde_wohnungen(raeume, tueren)
+    soll = _wohnungsstand(raeume, w)
+    assert soll[0] == _R1AC_SOLL[bau.__name__]
+    eins = _vollzustand(raeume, tueren, w)
+    assert _vollzustand(raeume, tueren, bilde_wohnungen(raeume, tueren)) == eins
+    assert len(_stichprobe_reihenfolgen(bau)) == 1
+    for seed in range(6):
+        rnd = random.Random(seed)
+        raeume, tueren = bau()
+        for r in raeume:
+            r.nutzungsklasse = rnd.choice([wk.PRIVAT, wk.ALLGEMEIN, wk.NEBENRAUM, None])
+            r.ist_fluchtweg = r.ist_communal = rnd.random() < .5
+            r.wohnung_id = rnd.choice([None, "top_9"])
+        assert _wohnungsstand(raeume, bilde_wohnungen(raeume, tueren)) == soll, seed
+
+    def falsch(_raeume, tueren_):
+        return {t.id: "wohnungseingang" for t in tueren_}
+
+    monkeypatch.setattr(wk, "korrigierte_rollen", falsch)
+    monkeypatch.setattr(W, "korrigierte_rollen", falsch, raising=False)
+    raeume, tueren = bau()
+    assert _vollzustand(raeume, tueren, bilde_wohnungen(raeume, tueren)) == eins
+    monkeypatch.setattr(W, "ALLGEMEIN", wk.PRIVAT)
+    raeume, tueren = bau()
+    assert _wohnungsstand(raeume, bilde_wohnungen(raeume, tueren)) == soll, "Tiebreak umgedreht"
+
+
+# ── (t) R1-Typfilter (Owner 2026-09-27, § 7e Frage 3 und 4) ─────────────────
+# „Vestibül oder Flur hinter einer Wohnungseingangstür zählt nicht als
+# Einzelraum. Begründung: derselbe Grundsatz wie beim gebundenen Gang. Ein
+# Durchgangsraum ist kein Beleg für eine eigene Wohnung, er erschließt nur."
+# „Der Nachbar verliert sein Notlicht nicht. Wenn der gebundene Gang unbestimmt
+# bleibt (A+C), bleibt auch sein Nachbar unbestimmt, solange kein eigener Beleg
+# vorliegt."
+_og3_flur_vorraum = _og3_flur_anders(
+    "vorraum", raeume_dazu=[lambda: _r("N", "VORRAUM")],
+    tueren_dazu=[lambda: _t("tn", "L", "N", "wohnungseingang")])
+_og3_flur_gang = _og3_flur_anders(
+    "gang", raeume_dazu=[lambda: _r("N", "GANG")],
+    tueren_dazu=[lambda: _t("tn", "L", "N", "wohnungseingang")])
+
+
+def _og3_loch_gang_vorraum():
+    """Der Loch-Fall mit einem VORRAUM N hinter einem rohen Wohnungseingang von
+    L: N ist selbst Loch-Raum, hat keine Gruppengröße, L bindet nicht — schon
+    ohne Typfilter (§ 6g.5, im Loch-Fall strukturell ohne Wirkung)."""
+    raeume, tueren = _og3_loch_gang()
+    return (raeume + [_r("N", "VORRAUM")],
+            tueren + [_t("tn", "L", "N", "wohnungseingang")])
+
+
+@pytest.mark.parametrize("bau,loch,soll", [
+    (_og3_flur_vorraum, False, sorted([*_GETRENNT, (("N",), ("tn",))])),
+    (_og3_flur_gang, False, sorted([*_GETRENNT, (("N",), ("tn",))])),
+    (_og3_loch_gang_vorraum, True, _GETRENNT),
+], ids=["vorraum_T11", "gang_T27", "loch_vorraum"])
+def test_r1_typfilter_vorraum_und_gang_zaehlen_nicht_als_einzelraum(bau, loch, soll,
+                                                                    monkeypatch):
+    """``_og3_flur`` (A und C erfüllt) mit einem VORRAUM (T11) oder GANG (T27) N
+    hinter einem weiteren rohen Wohnungseingang MIT Blatt von L: N ist eine
+    Gruppe aus genau einem Raum, zählt aber nicht als Einzelraum — L bindet
+    NICHT, keine Wohnung {L, N, …}. Vor dem Filter band L, die gemeinsame
+    Wohnung war über Küche/Zimmer G4-belegt, N wurde bestätigt privat und
+    verlor sein Notlicht (11 → 00). Jetzt behält N, was er ohne R1 hat: der
+    ganze Zustand (Klassen, Flags, Wohnungen, Warnungen) ist der ohne R1, N hat
+    Flags 11. Dazu der Loch-Fall mit VORRAUM-Nachbar: bindet nicht."""
+    raeume, tueren = bau()
+    assert ("L" in wk.loch_raeume(raeume, tueren)) is loch, "Vorbedingung"
+    assert wk.wohnungszugehoerigkeit(raeume, tueren)[3] == set()
+    warnungen: list[str] = []
+    wohnungen = bilde_wohnungen(raeume, tueren, warnungen)
+    by_id = {r.id: r for r in raeume}
+    assert _wohnungsstand(raeume, wohnungen)[0] == soll
+    assert by_id["L"].wohnung_id is None
+    assert by_id["L"].nutzungsklasse == wk.ALLGEMEIN, by_id["L"].nutzungsklasse
+    for rid in ("L", "N"):
+        assert (by_id[rid].ist_fluchtweg, by_id[rid].ist_communal) == (True, True), rid
+    assert "N" not in wk.bestaetigt_privat(raeume, tueren)
+    assert not [w for w in warnungen if w.startswith("r1: ")], warnungen
+    assert len(_stichprobe_reihenfolgen(bau)) == 1
+    eins = (_vollzustand(raeume, tueren, wohnungen), warnungen)
+    monkeypatch.setattr(wk, "_gang_einzelraeume", lambda *_a: set())
+    raeume, tueren = bau()
+    ohne_r1: list[str] = []
+    assert (_vollzustand(raeume, tueren, bilde_wohnungen(raeume, tueren, ohne_r1)),
+            ohne_r1) == eins, "wie ohne R1"

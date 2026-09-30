@@ -545,3 +545,58 @@ def test_durchgang_in_dicker_wand_ist_kein_splitter():
     (d,) = durchgaenge_ohne_tuerblatt(raeume, [], wand)
     assert {d.von_raum, d.nach_raum} == {"a", "b"}
     assert abs(d.breite_mm - 1198.0) <= 1.0, d.breite_mm
+
+
+# ── S4c Fassung A: andere Bogenrichtung nur für verbindungslose Zielräume ─────
+
+def _bogentuer_vor_abstellraum(typ_a="ABSTELLRAUM", id_a="a"):
+    """Nachbau Barawitzka EG ``tuer_17`` (Gate § 10b): VORRAUM ``v`` südlich,
+    Zielraum ``a`` nördlich einer 200-mm-Wand mit 830er Öffnung (x 1000..1830).
+    Drehpunkt an der Laibung (1000, 3000); der ARC läuft 270° → 360°: der
+    START zeigt auf das OFFENE Blatt (Süd, frei im VORRAUM), das ENDE liegt als
+    geschlossenes Blatt an der Wand (Ost). Die Sehne aus dem Startwinkel legt
+    die Normale entlang der Wand → ``v`` | KEIN_RAUM."""
+    raeume = [_raum("v", 0, 0, 4000, 3000, "VORRAUM"),
+              _raum(id_a, 0, 3200, 1500, 5000, typ_a)]
+    wand = box(0, 3000, 1000, 3200).union(box(1830, 3000, 4000, 3200))
+    kontur = box(0, 0, 4000, 5000)
+    t = Tuer(id="t1", xy_mm=(1000.0, 3000.0), breite_mm=830, quelle="arc")
+    o = TuerOeffnung(xy_mm=(1000.0, 3000.0), breite_mm=830, winkel_grad=270.0,
+                     quelle="arc", blatt_enden=((1000.0, 2170.0), (1830.0, 3000.0)))
+    ordne_tueren([t], [o], raeume, kontur, wand)
+    assert sorted((t.von_raum, t.nach_raum)) == sorted(("v", KEIN_RAUM))
+    return t, o, raeume, kontur, wand
+
+
+def test_andere_bogenrichtung_verbindet_verbindungslosen_raum():
+    """Gate (10): bleibt eine Seite KEIN_RAUM und wäre der Raum hinter der
+    Tür sonst ohne jede Verbindung, gilt die Sehne aus dem ENDwinkel — die
+    zugeordnete Seite ``v`` bleibt, ``a`` kommt dazu."""
+    from notbeleuchtung.raumerkennung.tuer_zuordnung import andere_bogenrichtung
+
+    t, o, raeume, kontur, wand = _bogentuer_vor_abstellraum()
+    assert andere_bogenrichtung([t], [o], raeume, kontur, wand) == [t]
+    assert sorted((t.von_raum, t.nach_raum)) == ["a", "v"]
+
+
+def test_andere_bogenrichtung_nicht_wenn_zielraum_verbunden():
+    """Hat ``a`` schon irgendeine Verbindung, bleibt die Tür, wie sie ist —
+    die Regel füllt nur Lücken, sie korrigiert die Sehne nicht allgemein."""
+    from notbeleuchtung.raumerkennung.tuer_zuordnung import andere_bogenrichtung
+
+    t, o, raeume, kontur, wand = _bogentuer_vor_abstellraum()
+    andere = Tuer(id="t2", xy_mm=(200.0, 3100.0), breite_mm=800,
+                  von_raum="a", nach_raum="v")
+    assert andere_bogenrichtung([t, andere], [o], raeume, kontur, wand) == []
+    assert sorted((t.von_raum, t.nach_raum)) == sorted(("v", KEIN_RAUM))
+
+
+@pytest.mark.parametrize(("typ_a", "id_a"), [("SCHACHT", "a"), ("", "rest_1")])
+def test_andere_bogenrichtung_nicht_in_schacht_oder_untypisierten_rest(typ_a, id_a):
+    """SCHACHT (nicht begehbar) und untypisierte ``rest``-Flächen sind keine
+    Zielseite, auch wenn sie verbindungslos sind."""
+    from notbeleuchtung.raumerkennung.tuer_zuordnung import andere_bogenrichtung
+
+    t, o, raeume, kontur, wand = _bogentuer_vor_abstellraum(typ_a, id_a)
+    assert andere_bogenrichtung([t], [o], raeume, kontur, wand) == []
+    assert sorted((t.von_raum, t.nach_raum)) == sorted(("v", KEIN_RAUM))

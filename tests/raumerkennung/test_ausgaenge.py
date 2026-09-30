@@ -1,6 +1,8 @@
 """ausgaenge — final_exit/stair_exit aus typisierten Türen."""
 from __future__ import annotations
 
+import pytest
+
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum, Tuer
 from notbeleuchtung.raumerkennung.ausgaenge import leite_ausgaenge
 from notbeleuchtung.raumerkennung.tuer_zuordnung import AUSSEN
@@ -40,3 +42,24 @@ def test_warnung_bei_keinem_ausgang():
     assert out == [] and len(warn) == 1
     assert warn[0].geschoss == "EG"
     assert len(warn[0].gescheiterte_regeln) == 2
+
+
+def test_obergeschoss_ohne_ausgang_wohnungseingang_ins_stiegenhaus():
+    """S5c, Owner-Entscheid F2 (K1_TE): „Obergeschoss ohne Stiegenhaus-Ausgang:
+    ein Wohnungseingang ins Stiegenhaus ist Geschossausgang" — Rennweg DG1, dessen
+    Wohnung direkt ins Stiegenhaus öffnet. Ein Wohnungseingang in einen Gang
+    bleibt Startseite."""
+    tueren = [_t("t1", "zi", "stgh", "wohnungseingang"),
+              _t("t2", "zi", "gang", "wohnungseingang")]
+    out, warn = leite_ausgaenge(tueren, RAEUME, "DG")
+    assert [(a.id, a.typ) for a in out] == [("exit_t1", "stair_exit")]
+    assert warn == []
+
+
+@pytest.mark.parametrize("geschoss", ["EG", "UG", ""])
+def test_ausgangsregel_nicht_im_eg_ug_und_ohne_geschoss(geschoss):
+    """Nur im Obergeschoss: EG/UG haben ihre Endausgänge, ein unbekanntes
+    Geschoss bleibt fail closed ohne Ausgang (Owner 2026-09-13)."""
+    out, _ = leite_ausgaenge([_t("t1", "zi", "stgh", "wohnungseingang")],
+                             RAEUME, geschoss)
+    assert out == []

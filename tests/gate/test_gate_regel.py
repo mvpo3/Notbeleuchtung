@@ -67,15 +67,39 @@ def _barawitzka(**abweichung) -> dict:
     return eintrag
 
 
+def _ausgang(ausgang_id: str, durch_liftschacht: bool) -> dict:
+    """Ein Eintrag aus ``dg1.ausgaenge_liste`` (``gate_dg1.ausgaenge_lift``)."""
+    tuer_id = ausgang_id.removeprefix("exit_")
+    return {"id": ausgang_id, "typ": "stair_exit", "tuer_id": tuer_id,
+            "raumpaar": ["rest_2", "rest_3"] if durch_liftschacht else ["raum_8", "rest_2"],
+            "breite_mm": 4215.0 if durch_liftschacht else 1200.0,
+            "abstand_lift_mm": 0.0 if durch_liftschacht else 1500.0,
+            "im_lift": durch_liftschacht, "durch_liftschacht": durch_liftschacht}
+
+
+def _dg1(*ausgaenge: dict, **abweichung) -> dict:
+    """DG1-Abschnitt im Format von ``gate_dg1.ausgaenge_lift``.
+
+    Ohne Argument der ZIELZUSTAND (ein echter Ausgang, keiner am Liftschacht),
+    nicht die heutige Lage: heute ist (11) verletzt — der einzige Ausgang
+    ``exit_durchgang_9`` liegt im Liftschacht und fällt erst mit S5c."""
+    liste = list(ausgaenge) or [_ausgang("exit_durchgang_6", durch_liftschacht=False)]
+    eintrag = {"ausgaenge": len(liste), "ausgaenge_liste": liste,
+               "ausgaenge_durch_liftschacht": sum(1 for a in liste if a["durch_liftschacht"]),
+               "lifte": ["lift_1"], "grund": ""}
+    eintrag.update(abweichung)
+    return eintrag
+
+
 def _messung(status: dict[str, str], einraum: int = 2, a_gleich_b: int = 0,
              graph: int = 5, anker_privat: int = 0, referenz: dict | None = None,
-             barawitzka: dict | None = None) -> dict:
+             barawitzka: dict | None = None, dg1: dict | None = None) -> dict:
     """Messung im Format von ``gate_messung.messung``; alle Kennzahlen auf 3.
 
     ``graph``/``anker_privat`` sind die Werte für Bedingung (6); die Vorgaben
     entsprechen der Lage der Nullmessung, dort ist (6) erfüllt. ``referenz``
-    ist der Abschnitt für (7)/(8), ``barawitzka`` der für (10); beide Vorgaben
-    erfüllen ihre Bedingung."""
+    ist der Abschnitt für (7)/(8), ``barawitzka`` der für (10), ``dg1`` der für
+    (11); alle drei Vorgaben erfüllen ihre Bedingung."""
     m1_m4: dict[str, dict[str, dict[str, float]]] = {}
     for kennzahl in GATE_KENNZAHLEN:
         skript, kopf = kennzahl.split(".")
@@ -88,6 +112,7 @@ def _messung(status: dict[str, str], einraum: int = 2, a_gleich_b: int = 0,
         "og3": {"segmente_graph": graph, "anker_in_wohnung_privat": anker_privat},
         "referenz": referenz if referenz is not None else _referenz(),
         "barawitzka": barawitzka if barawitzka is not None else _barawitzka(),
+        "dg1": dg1 if dg1 is not None else _dg1(),
         "m1_m4": m1_m4,
     }
 
@@ -343,6 +368,95 @@ def test_fehlender_barawitzka_abschnitt_im_vorher_ist_kein_absturz():
     assert pruefe_gate(vorher, _erfuellt()) == []
 
 
+# ------------------------------------------ (11) Rennweg DG1 behält einen Ausgang
+
+def test_dg1_ausgang_durch_liftschacht_ist_verstoss_elf():
+    """Das ist die HEUTIGE Lage: der einzige DG1-Ausgang ist der Phantom-Durchgang
+    im Liftkern (VA-5). Die Bedingung dreht erst, wenn S5c ihn durch einen echten
+    Ausgang ersetzt — ihn nur zu entfernen, ergäbe den nächsten Fall (0 Ausgänge)."""
+    nachher = _messung({}, einraum=1, dg1=_dg1(_ausgang("exit_durchgang_9", True)))
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        "(11) DG1: 1 Ausgang, davon 1 durch den Liftschacht (exit_durchgang_9)"]
+
+
+def test_dg1_ohne_ausgang_ist_verstoss_elf():
+    nachher = _messung({}, einraum=1, dg1=_dg1(ausgaenge=0, ausgaenge_liste=[],
+                                               ausgaenge_durch_liftschacht=0))
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        "(11) DG1: 0 Ausgänge, davon 0 durch den Liftschacht"]
+
+
+def test_dg1_echter_ausgang_neben_liftausgang_ist_verstoss_elf():
+    """„keiner davon führt durch den Liftschacht" — ein echter Ausgang daneben
+    entschuldigt den Phantom-Ausgang nicht."""
+    nachher = _messung({}, einraum=1, dg1=_dg1(
+        _ausgang("exit_durchgang_6", False), _ausgang("exit_durchgang_9", True)))
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        "(11) DG1: 2 Ausgänge, davon 1 durch den Liftschacht (exit_durchgang_9)"]
+
+
+def test_dg1_echter_ausgang_meldet_nichts():
+    nachher = _messung({}, einraum=1, dg1=_dg1(_ausgang("exit_durchgang_6", False)))
+    assert pruefe_gate(_nullmessung(), nachher) == []
+
+
+def test_dg1_nicht_messbar_ist_verstoss_elf():
+    """Ohne LIFT-Polygon lässt sich „durch den Liftschacht" nicht prüfen — das ist
+    ein Verstoß, kein Freispruch (sonst bestünde der Phantom-Ausgang still)."""
+    nachher = _messung({}, einraum=1, dg1=_dg1(
+        _ausgang("exit_durchgang_9", False), ausgaenge_durch_liftschacht=None, lifte=[],
+        grund="kein LIFT-Polygon im Modell"))
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        ("(11) DG1 nicht messbar: ausgaenge=1, ausgaenge_durch_liftschacht=None — "
+         "kein LIFT-Polygon im Modell")]
+
+
+def test_fehlender_dg1_abschnitt_im_nachher_ist_verstoss_elf():
+    nachher = _erfuellt()
+    del nachher["dg1"]
+    assert pruefe_gate(_nullmessung(), nachher) == [
+        "(11) Rennweg DG1 nicht gemessen — Abschnitt »dg1« fehlt"]
+
+
+def test_fehlender_dg1_abschnitt_im_vorher_ist_kein_absturz():
+    """(11) misst nur den Nachher-Stand (wie (10)): die eingecheckte Nullmessung
+    führt den Abschnitt nicht und bleibt als Vorher-Stand prüfbar."""
+    vorher = _nullmessung()
+    del vorher["dg1"]
+    assert pruefe_gate(vorher, _erfuellt()) == []
+
+
+def test_messgroesse_durch_liftschacht_zaehlt_tuerpunkt_im_lift_und_unter_250_mm():
+    """Die Messgröße selbst (``gate_dg1.ausgaenge_lift``) auf einem synthetischen
+    Modell: Türpunkt in der Kabine (Phantom, 0 mm) und 200 mm daneben (Lifttür)
+    zählen, 300 mm nicht; ohne LIFT ist die Zahl None (fail closed)."""
+    from types import SimpleNamespace as NS
+
+    from gate_dg1 import ausgaenge_lift
+
+    lift = NS(id="lift_1", raum_typ="LIFT", polygon_mm=[(0, 0), (1000, 0), (1000, 1000), (0, 1000)])
+    tueren = [NS(id="durchgang_9", xy_mm=(500.0, 500.0), von_raum="rest_2", nach_raum="rest_3",
+                 breite_mm=4215.0),
+              NS(id="durchgang_8", xy_mm=(1200.0, 500.0), von_raum="raum_14", nach_raum="rest_2",
+                 breite_mm=2033.0),
+              NS(id="durchgang_6", xy_mm=(1300.0, 500.0), von_raum="raum_14", nach_raum="rest_1",
+                 breite_mm=1445.0)]
+    ausgaenge = [NS(id=f"exit_{t.id}", typ="stair_exit", xy_mm=t.xy_mm) for t in tueren]
+    gemessen = ausgaenge_lift(NS(raeume=[lift], tueren=tueren, ausgaenge=ausgaenge))
+    assert gemessen["ausgaenge"] == 3
+    assert gemessen["ausgaenge_durch_liftschacht"] == 2
+    assert [(a["id"], a["abstand_lift_mm"], a["im_lift"], a["durch_liftschacht"])
+            for a in gemessen["ausgaenge_liste"]] == [
+        ("exit_durchgang_9", 0.0, True, True),
+        ("exit_durchgang_8", 200.0, False, True),
+        ("exit_durchgang_6", 300.0, False, False)]
+    assert gemessen["ausgaenge_liste"][0]["raumpaar"] == ["rest_2", "rest_3"]
+    ohne_lift = ausgaenge_lift(NS(raeume=[], tueren=tueren, ausgaenge=ausgaenge))
+    assert ohne_lift["ausgaenge"] == 3
+    assert ohne_lift["ausgaenge_durch_liftschacht"] is None
+    assert ohne_lift["grund"] == "kein LIFT-Polygon im Modell"
+
+
 # ----------------------------------------------- (0) Vergleichbarkeit
 
 def test_abweichende_dxf_ist_verstoss_null():
@@ -430,15 +544,16 @@ def test_negative_kennzahl_ist_verstoss():
 
 
 def test_echte_nullmessung_gegen_sich_selbst():
-    """Die eingecheckte Nullmessung ist der Vorher-Stand — heute fehlen (2), (5), (7), (10).
+    """Die eingecheckte Nullmessung ist der Vorher-Stand — heute fehlen (2), (5), (7), (10), (11).
 
     Die sechs (7)-Verstöße sind die acht Türverbindungen, die die Referenz
     verneint (dreimal zwischen den Bädern, fünfmal einzeln); (8) ist heute
-    erfüllt, alle vier geforderten Übergänge stehen. Der (10)-Verstoß ist die
-    Nullmessung selbst: sie stammt von VOR dem Messfall und führt den Abschnitt
-    ``barawitzka`` nicht — als Nachher-Stand gelesen ist das ein Verstoß (fail
-    closed), als Vorher-Stand kein Absturz. Neun Verstöße waren es, bevor (10)
-    dazukam. Diese Erwartung ist die LAGE, nicht die Regel — dreht S5b die Fälle,
+    erfüllt, alle vier geforderten Übergänge stehen. Der (10)- und der
+    (11)-Verstoß sind die Nullmessung selbst: sie stammt von VOR beiden
+    Messfällen und führt die Abschnitte ``barawitzka`` und ``dg1`` nicht — als
+    Nachher-Stand gelesen ist das ein Verstoß (fail closed), als Vorher-Stand
+    kein Absturz. Neun Verstöße waren es, bevor (10) dazukam, zehn vor (11).
+    Diese Erwartung ist die LAGE, nicht die Regel — dreht S5b die Fälle,
     schrumpft die Liste hier."""
     null = json.loads(NULLMESSUNG.read_text(encoding="utf-8"))
     verstoesse = pruefe_gate(null, deepcopy(null))
@@ -460,4 +575,5 @@ def test_echte_nullmessung_gegen_sich_selbst():
         ("(7) verneinte Verbindung besteht (Bsp. 07, 14): "
          "BAD 11.76 m² ↔ ZIMMER 17.04 m² — 1 Tür(en) ['durchgang_15']"),
         "(10) Barawitzka EG nicht gemessen — Abschnitt »barawitzka« fehlt",
+        "(11) Rennweg DG1 nicht gemessen — Abschnitt »dg1« fehlt",
     ]

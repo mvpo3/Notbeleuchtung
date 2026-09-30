@@ -18,16 +18,34 @@ from plaene import plan
 
 
 @pytest.fixture(scope="module")
-def rm():
+def og3():
+    """(Provider, RaumModell) — der Provider trägt die Prüfstrecken-Ausgabe
+    ``tuer_warnungen`` (``seite_fehlt``), die der Contract nicht führt."""
     plan(PLAN)
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
 
-    return ArchitekturRaumProvider().parse(str(PLAN), "OG3")
+    p = ArchitekturRaumProvider()
+    return p, p.parse(str(PLAN), "OG3")
 
 
-@pytest.mark.xfail(
-    strict=True, raises=AssertionError,
-    reason="Türstapel unvollständig (S7a/S7b/S3b ausstehend), muss vor Merge XPASS sein")
+@pytest.fixture(scope="module")
+def rm(og3):
+    return og3[1]
+
+
+def test_soll_blocktueren_ohne_seite_fehlt(og3):
+    """S3b (docs/GATE_TUERSTAPEL.md § 7): die Restflächen reichen bis an die
+    Blocktüren, jede Blocktür findet beidseits einen Raum. Vorher 7 Blocktüren
+    ``seite_fehlt`` (``tuer_4/5/6/8/9/10/12``, 10 Seiten) — die Rest-Stufe
+    labelte die um die Türscheibe erodierte Maske ohne Rückdehnung."""
+    p, m = og3
+    block = {t.id for t in m.tueren if t.quelle == "block"}
+    assert len(block) == 11, sorted(block)
+    fehlt = sorted({w.split()[1] for w in p.tuer_warnungen
+                    if w.startswith("seite_fehlt:")} & block)
+    assert not fehlt, f"Blocktüren mit seite_fehlt: {fehlt}"
+
+
 def test_soll_stair_exit_statt_final_exit(rm):
     """OG3 ist ein Regelgeschoß: Ausgang = Stiegenhaustür, kein Ausgang ins Freie."""
     stair = [a for a in rm.ausgaenge if a.typ == "stair_exit"]
@@ -36,19 +54,12 @@ def test_soll_stair_exit_statt_final_exit(rm):
     assert len(final) == 0, f"{len(final)} final_exit im Obergeschoß"
 
 
-@pytest.mark.xfail(
-    strict=True, raises=AssertionError,
-    reason="S4a allein, Türstapel unvollständig, muss vor Merge XPASS sein — "
-           "Gate-Bedingung (6) in docs/GATE_TUERSTAPEL.md")
 def test_soll_segmente_aus_graph(rm):
     """Ohne FLW-Linien im Plan müssen Segmente aus dem Zirkulationsgraphen kommen."""
     graph = [s for s in rm.zirkulation.segmente if s.quelle == "GRAPH"]
     assert len(graph) >= 1, "kein Segment mit quelle GRAPH"
 
 
-@pytest.mark.xfail(
-    strict=True, raises=AssertionError,
-    reason="Türstapel unvollständig (S7a/S7b/S3b ausstehend), muss vor Merge XPASS sein")
 def test_soll_tueren_mit_detail(rm):
     """11 Zargentüren (T1..T11) sollen eine Tür-Rolle tragen."""
     mit_detail = [t for t in rm.tueren if t.tuer_detail is not None]

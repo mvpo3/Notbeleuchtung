@@ -1688,6 +1688,131 @@ und Mollgasse 1OG ist die Abnahme von S7a+S7b (Bedingung (9)). Greift die Kalibr
 nicht, ist die Abnahme wertlos. Messung dazu liegt beim S7-Blast.
 ---
 
+## Außenöffnungen Mollgasse EG `raum_51` / `raum_55` — Filterfrage (Owner 2026-09-27, eigener Punkt, nicht in S5c)
+
+Aus der S5c-Inventur (`docs/GATE_TUERSTAPEL.md` § 9d, Kategorie 3). Owner: „Der Restbefund (raum_51 und raum_55
+brauchen einen Filter) wird als eigener Punkt geführt, nicht in S5c mitgelöst."
+
+- **MOLL_EG `raum_55`** (Erschließung mit Hauseingang `aussenoeffnung_8`): `_8` ist laut Ausschnitt ein **Streifen
+  zwischen zwei Wandkörpern**, keine Öffnung ins Freie; `tuer_66` desselben Raums hat die Gegenseite `KEIN_RAUM`. Mit
+  dem Querungsprädikat für Außenöffnungen (P_A wie P_A2) fällt `_8` und `raum_55` **verliert die
+  Erschließungsklasse** — Folge für Notlicht und Wege dort nicht bewertet. Frage: eigener Filter (welche Tür ist der
+  wirkliche Hauseingang von `raum_55`?) oder Planblick + Korrektur der Türseite von `tuer_66` (S4g-Nähe).
+- **MOLL_EG `raum_51`** (§ 8c-Außenanlage, 122,43 m²): mit dem Prädikat **in der Schleife** von `aussen_durchgaenge`
+  (echter Bau, nicht der Nachfilter der Runde 1) deckt eine verworfene Öffnung keinen Folge-Teil mehr, und an
+  `raum_51` entsteht eine **neue** Außenöffnung — ein Innenstreifen mit 0,0–0,2 % Außenanteil, weil der Raum bis an
+  die gedeckte Kontur reicht (der Außenring greift 400 mm hinein). Die Außenanteil-Schwelle (F5, ≥ 10 % des freien
+  Teils außerhalb der Kontur) fängt genau das; ob sie für `raum_51` reicht, zeigt die Nachmessung in S5c. Bleibt der
+  Fall, braucht `raum_51` einen eigenen Filter (Außenanlage ≠ Gebäuderaum).
+- Verwandt, laut Bild korrekt: `raum_44` verliert unter P_A2 beide Endausgänge (`_4`/`_5` sind Innenstreifen hinter
+  150/199 mm geschlossener Wand); Planblick empfohlen, kein eigener Filter nötig.
+
+Messstand `7105618`, Belege Session-Scratch `…/8d935db0-…/scratchpad/s5c/r2/` (`_k3.py`, `k3_MOLL_EG.json`,
+`bilder/*.png`) und `review_inventur_r2/urteil.md` (B1: Prädikat in der Schleife, `raum_51`).
+
+## Rennweg DD — Geschoss ohne Ausgang (Owner 2026-09-28, eigener Befund, kein S5c-STOP)
+
+Owner: „B6 löst den STOP nicht aus. Der STOP gilt nur für Geschosse, die S5c ausgangslos macht. DD war vorher schon
+null […]. Trotzdem als eigener Befund führen: ein Geschoss ohne Ausgang ist für die Notbeleuchtung nicht verwertbar."
+
+Gemessen (S5c-Nachgang, zwei Linsen): `DD - Rennweg 15…` ist die Dachdraufsicht (Kote +20,06) mit 3 Räumen —
+`stiegenhaus_1` STIEGENHAUS 5,74 m², `raum_1` 56,0 m² (Stempel „Dachterrasse", ArchiCAD-Zone, **ohne Typ**: `classify_room`
+vergleicht ganze Wörter, „Dachterrasse" trifft keinen Eintrag) und `raum_2` 4,52 m² (kein Stempel, kein Text) — dazu
+die Treppe `Stair_1`, kein Türblock, kein Bogen. `durchgang_2` (`raum_1` ↔ Stiegenhaus, 9 472 mm, blattlos) trägt keine
+Rolle (Kombination STIEGENHAUS × untypisiert trifft keine Regel der Türtypisierung).
+
+**Die fehlende Typisierung ist nicht der Hebel:** mit dem Plantyp TERRASSE wird `durchgang_2` nach der Freiflächen-Regel
+(`tuer_typisierung.py:179`) zur `balkontuer`, und es bleibt bei **0 Ausgängen** (ebenso als TECHNIK oder DACHBODEN, auch
+mit Geschoss DG). Einen `stair_exit` erzeugt nur die sachlich falsche Einstufung GANG (oder eine direkt gesetzte Rolle
+`stiegenhaustuer`). `raum_2` ist für die Ausgänge ohne Einfluss. Nebenbefund: der Dateiname „DD" trifft
+`_NICHT_PLAN_RE` (`geschoss.py:199`), das Geschoss bleibt UNBEKANNT (Warnung „Geschoss unbekannt"); das ist nicht die
+Ursache der 0 Ausgänge.
+
+**Frage an den Owner:** DD als Nicht-Grundriss aus der Ausgangsbewertung nehmen (Dachdraufsicht), oder die Dachterrasse
+als begehbare Fläche mit Ausgang über das Stiegenhaus führen — dann braucht es eine eigene Regel „Freifläche am
+Stiegenhaus im Obergeschoss ↔ Stiegenhaus = Geschossausgang" (heute gibt es sie nicht) und den Kanon-Eintrag
+„Dachterrasse" (@EnisAMG)?
+
+Belege: Session-Scratch `…/8d935db0-…/scratchpad/s5c/nachgang/` (`r2/_dd.py`, `dd_r2.json`, `review_rest_r2/`).
+
+## OCS gespiegelter Blöcke und Fenster-Bögen — Mollgasse (Befund aus S4c, 2026-09-28, vorbestehend)
+
+Gemessen in S4c Runde 2 (`docs/GATE_TUERSTAPEL.md` § 10e, zwei Linsen): `tueren.tuer_oeffnungen` liest ARC-Zentren über
+`e.dxf.center` ohne `e.ocs().to_wcs(...)`. Die Rohdateien haben keine Entity mit Extrusion −z; −z entsteht erst, wenn
+`virtual_entities` gespiegelte INSERTs auflöst (xscale · yscale < 0; im Walk MOLL_EG 169, MOLL_1OG 228). Die Bögen landen
+dann gespiegelt außerhalb des Plans und fallen in `im_planbereich` weg.
+
+- Tür-Bögen betroffen: **nur Mollgasse** — MOLL_EG 10 von 43, MOLL_1OG 32 von 63 Kaskaden-Bögen, **alle aus Fenster- und
+  Duschblöcken** (Fenster Doppelt 196, FENSTER_115/_120/_140/_184/_204/_214, 07-Dusche). Kein Tür-INSERT mit −z auf 12
+  Plänen; Rennweg (8 Pläne), Barawitzka und Muthgasse verlieren keine Tür (Muthgasse hat −z-INSERTs nur für Pfosten,
+  Höhenkoten, Schnittlinien).
+- Eine reine OCS-Umrechnung macht aus den Fensterbögen Türen: Mollgasse 5 Räume verlieren Notlicht (MOLL_EG `raum_29`
+  GANG und `raum_57` VORRAUM Flags, `raum_8` und `raum_51` je 1 SL, MOLL_1OG `raum_65` GANG einzige SL), 2 `final_exit`
+  entfallen (u. a. Windfang-Haustür), die Kaskade schneidet Räume neu. Schon heute stammen auf MOLL_1OG 28 von 31
+  +z-Kaskadenbögen aus Fenster-/Duschblöcken (MOLL_EG 14 von 33, Rest Modelspace-Bögen).
+- Nicht gemessen: dieselbe Spiegelung trifft LWPOLYLINE/CIRCLE in gespiegelten Blöcken (MOLL_EG 1 127, MOLL_1OG 2 116
+  Polylinien); `dxf_load._wand_punkte` und `tueren._block_geometrie_teile` lesen ohne OCS, `stiegenhaus`,
+  `layer_features`, `aussenbereich`, `geometrie_typ` rechnen bereits um.
+
+**Frage an den Owner:** OCS-Umrechnung nur zusammen mit einer Fenster/Tür-Trennung der Bögen (Block-/Layer-Herkunft:
+Fenster auf `04-SYM-…-EP`, Duschen auf `07-SAN`, Türen auf `05-SYM`) als eigener Schritt nach dem Stapel-Merge —
+und davor messen, ob die gespiegelten Polylinien Wandpunkte liefern?
+
+Belege: Session-Scratch `…/8d935db0-…/scratchpad/s4c/` (`bericht_s4c_r2.md` § 6–7, `r2/ocs_zensus_*.log`,
+`r2/blastgeo_n_xocs*_moll.txt`, `r2/review_ocs-raum9/`).
+
+## S3c — Fremdcluster-Filter und Extents-Ausreißer (Owner-Entscheid 2026-09-26, nach dem Stapel-Merge)
+
+**Anlass:** Vision-Audit Rennweg EG (`docs/VISION_AUDIT.md` § 10.5) und Diagnose 2026-09-26
+(`docs/GATE_TUERSTAPEL.md` § 6g.11 VA-6): das EG-DXF enthält einen zweiten Zeichnungscluster
+1 365,8 m vom Hauptkörper — 11 Räume (171,74 m²), 15 synthetische Durchgänge, reiner
+ArchiCAD-Zonensatz ohne Wände (28 Entities: 11 LWPOLYLINE „New_080 Raumdefinitionen", 11
+Zonenstempel, 6 MTEXT). Keine Stelle der Raumerkennung filtert Räume: die L-Stufe
+`raumlayer.raeume_aus_layer` (`:98-124`) hat keinen Planbereichs-Filter, `tueren.im_planbereich`
+(`:480-503`) filtert nur Türobjekte (die Cluster-Türen entstehen erst danach in `provider.py:160`),
+die Perzentil-Logik `dxf_load._raw_wall_span` sieht auf Rennweg EG 0 Wandpunkte, der
+Render-Wächter `_geschoss_extents` (`dxf_renderer.py:338-370`) fängt den Fall nur fürs Blatt.
+
+**Owner-Entscheid 2026-09-26 (wörtlich): Nein** — ein Cluster ohne jeden Wandpunkt, über 1 km vom
+Hauptgebäude entfernt, gehört nicht ins RaumModell. Regel:
+
+Hauptcluster ist die zusammenhängende Menge mit den meisten Wandpunkten. Alles, was weiter als
+100 m davon entfernt liegt UND null Wandkörper enthält, wird verworfen — nicht stillschweigend,
+sondern als Warnung „Fremdcluster verworfen" mit Anzahl Räume, Türen, Entfernung und Koordinaten
+im Bericht. Ein entfernter Cluster MIT Wandkörpern wird nicht verworfen (könnte ein zweiter Bauteil
+sein), sondern gemeldet und zur Entscheidung vorgelegt. Der Filter greift zentral an einer Stelle,
+nicht in jeder Teilfunktion einzeln (Kandidat: direkt nach dem Laden, vor der Raumbildung; Stelle
+prüfen und im Bericht begründen). Erwartete Wirkung ausweisen: Rennweg EG Wohnungen 2 → 1, Anker
+39 → 35, 8 Fluchtweg-Warnungen weg, Platzierung 21 → 17, plus die Wirkung auf alle anderen Pläne.
+Wenn irgendwo ein echter Bauteil wegfällt, stoppen und melden.
+
+Eigener Slice **S3c**, nach dem Merge, nicht im Stapel.
+
+**Erwartete Wirkung (in-memory gemessen, Executor + Widerleger):** Rennweg EG Räume/Türen
+22/40 → 11/25, Wohnungen 2 → 1, Anker 39 → 35, Fluchtweg-Warnungen 8 → 0, FALLBACK 1 → 0,
+Platzierung 21 → 17 (Hauptkörper-Positionen identisch), Gate M1–M3 gleich, M4 `wohnungen` 2 → 1,
+`privatraum_ohne_wohnung` 1 → 0. Achtung ID-Verschiebung der Hauptkörper-Durchgänge
+(`durchgang_16..25` → `durchgang_1..10`, `exit_durchgang_16..19` → `exit_durchgang_1..4`) —
+Abnahmen für EG über Raumpaar + Lage formulieren, nicht über IDs (VA-5 `durchgang_20` hieße dann
+`durchgang_5`). Übrige 11 Pläne: nur Muthgasse E2 hat einen fernen Cluster (8 Räume, 26,78 m²,
+400,5 m) — **mit** 56 Wandkörpern, also nach der Regel melden, nicht verwerfen.
+
+**Mit S3c zu untersuchen (Zusatzbefunde der Widerleger):**
+- Dritte Lage im EG-DXF: 12 „Level Dimension"-INSERTs (Layer 105 Bemassungen Projekt),
+  1 368,9 m vom Hauptkörper, 430,7 m vom fernen Cluster; erzeugt keine Räume/Türen.
+- Echter Extents-Ausreißer im **UG**: `modell.bounds_mm` spannt 319,9 × 1 391,2 m (Wandkörper-Bounds
+  19,1 × 27,0 m), weil zwei Wand-Layer-INSERTs mit fernem Einfügepunkt in die Hülle eingehen
+  (Wall_2 bei 1 304 m — dieselbe Weltkoordinaten-Lage wie die Level-Dimension-Gruppe im EG —,
+  Opening_1 bei 204 m; `dxf_load.py:227-228` nimmt für INSERTs nur den Einfügepunkt). Leser von
+  `bounds_mm` außerhalb der Raumerkennung: `platzierung/aussen_strategy.py:73`,
+  `hauptengine/bestand_leuchten.py:62`, `render/dxf_renderer.py:78/228/291/860/1238` (nicht über
+  `_geschoss_extents` geschützt), `render/lux_nachweis_bericht.py:165` — Wirkung dort nicht gemessen.
+
+**Zuständigkeit:** Raumerkennung (Selman: `raumlayer`, `provider`, `durchgaenge_ohne_tuerblatt`,
+`dxf_load`); Render-Wächter hauptengine (gemeinsam); Leuchten als Folge Platzierung (@mvpo3).
+Belege: Session-Scratch `…/8d935db0-…/scratchpad/s7c/va_diag/` (Executor `bericht_va.md`,
+`review_cluster_r1/urteil.md`, `r1_eg.json`, `r1_ug_bounds.json`, `r1_dxf_detail.json`).
+
 ## Übergabe Leonis — die „nicht-im-Merge"-Pakete (eingetragen 2026-09-23, Selman)
 
 **Vermerk:** nach 12-Pläne-Gate-Merge, Quelle Leonis, HEAD `8257ff9`
