@@ -10,6 +10,8 @@ sauberen, self-contained Port-Helfer (``._port.parsers.room_faces``,
 """
 from __future__ import annotations
 
+import copy
+
 from shapely.geometry import Point, Polygon
 from shapely.ops import unary_union
 
@@ -28,6 +30,8 @@ from .kaskade import KaskadeErgebnis, raeume_aus_kaskade
 from .kreuzcheck import kreuzcheck
 from .lift_erkennung import finde_lifte, liftschacht_reste
 from .raumtyp import beschrifte_raeume
+from .sanitaer import kandidaten as sanitaer_kandidaten
+from .sanitaer import sanitaerobjekte, typisiere_sanitaer
 from .stiegenhaus import baue_stiegenhaus_modell
 from .tuer_typisierung import brandschutz_hinweise_aus_dxf, typisiere_tueren
 from .tuer_zuordnung import (
@@ -51,6 +55,59 @@ from .wandkoerper import aussenkontur, bounds_aus_wandkoerpern, wand_union
 from .wohnungen import bilde_wohnungen
 from .wohnungsklasse import anker_aus_privat_ziehen, bestaetigt_privat
 from .zirkulation import zirkulation_aus_dxf
+
+
+def _tueren_und_wohnungen(plan, k: KaskadeErgebnis, raeume: list, tueren: list[Tuer],
+                          kontur, wu, aussen, geschoss: str, flw_enden: list
+                          ) -> tuple[list[Tuer], list[str], list[str], list[str]]:
+    """Türzuordnung → Liftschacht-Reste → Durchgänge → rohe Türrollen →
+    Wohnungen, in place auf ``raeume``/``tueren``. Liefert ``(tueren,
+    tuer_warnungen, schacht_reste, wohnungsklasse_warnungen)``. Läuft einmal
+    regulär und — nur mit K3-Kandidaten — vorher einmal als Probe auf Kopien."""
+    fehlende_seiten: list = []
+    ordne_tueren(tueren, k.tueroeffnungen, raeume, kontur, wu, fehlende_seiten)
+    # Eine Tür braucht mindestens einen Innenraum: beidseits AUSSEN ist
+    # keine Tür des Gebäudes (Fassaden-Bögen, Rest-Phantome).
+    tueren = [t for t in tueren if not (t.von_raum == t.nach_raum == AUSSEN)]
+    for i, t in enumerate(tueren, start=1):   # lückenlose IDs nach dem Filtern
+        t.id = f"tuer_{i}"
+    # S5c, Owner-Entscheid F1 (K1_T): eine Stiegenhausfläche, die zu mehr
+    # als der Hälfte Liftkabine ist, ist Liftschacht — VOR den Durchgängen
+    # und der Türtypisierung, damit der S5a-Guard an ihr keine blattlose
+    # Öffnung bildet (Liftkern-Phantom VA-5, Lifttür-Ausgänge). Erst nach
+    # der Außenanalyse: die liest die Raumtypen für die Innen-Zonen.
+    schacht_reste = liftschacht_reste(plan, raeume)
+    if k.wandkoerper:
+        tueren = tueren + durchgaenge_ohne_tuerblatt(raeume, tueren, wu,
+                                                     k.tueroeffnungen)
+        tueren = tueren + aussen_durchgaenge(raeume, tueren, wu, kontur)
+    # S4c Fassung A (Owner 2026-09-30): bleibt an einer Bogentür eine Seite
+    # KEIN_RAUM und wäre der Raum hinter ihr sonst ohne jede Verbindung,
+    # gilt die Sehne aus dem ARC-Endwinkel. Nach den Durchgängen, damit
+    # „ohne jede Verbindung" auch Durchgänge und Außenöffnungen zählt.
+    andere_bogenrichtung(tueren, k.tueroeffnungen, raeume, kontur, wu)
+    # Seiten, die bis 500 mm weder Raum noch AUSSEN fanden — Prüfstrecken-
+    # Ausgabe wie `ausgangs_warnungen`, kein Contract-Feld (`Tuer` kennt
+    # kein `seite_fehlt`). Erst NACH der Neunummerierung formatiert, sonst
+    # nennt der Text eine Tür-ID, die inzwischen einer anderen Tür gehört;
+    # erst NACH dem Nachschritt, der eine fehlende Seite füllen kann.
+    tuer_warnungen = [
+        f"seite_fehlt: {t.id} Seite {zeichen} bis {stufe:.0f} mm kein Raum "
+        "und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)"
+        for t, zeichen, stufe in fehlende_seiten
+        if KEIN_RAUM in (t.von_raum, t.nach_raum)]
+    typisiere_tueren(tueren, raeume, geschoss,
+                     brandschutz_hinweise_aus_dxf(plan), flw_enden,
+                     tuer_texte(plan),
+                     unary_union(aussen.geschlossen)
+                     if aussen is not None and aussen.geschlossen else None)
+    # Unbestimmt gebliebene Räume (§ 6g Schritt 3) und die Durchleitung
+    # privater Räume sind Prüfstrecken-Ausgabe wie `tuer_warnungen` —
+    # der Contract führt sie nicht (Board-Antrag: Segment-Feld
+    # `durchleitung`, docs/GATE_TUERSTAPEL.md § 6g).
+    wohnungsklasse_warnungen: list[str] = []
+    bilde_wohnungen(raeume, tueren, wohnungsklasse_warnungen)
+    return tueren, tuer_warnungen, schacht_reste, wohnungsklasse_warnungen
 
 
 class ArchitekturRaumProvider:
@@ -143,54 +200,33 @@ class ArchitekturRaumProvider:
         # Probepunkte im Wandkörper (Slice S4b), die Durchgänge unten nutzen
         # dieselbe Variable.
         wu = wand_union(k.wandkoerper) if k.wandkoerper else None
-        fehlende_seiten: list = []
-        ordne_tueren(tueren, k.tueroeffnungen, raeume, kontur, wu, fehlende_seiten)
-        # Eine Tür braucht mindestens einen Innenraum: beidseits AUSSEN ist
-        # keine Tür des Gebäudes (Fassaden-Bögen, Rest-Phantome).
-        tueren = [t for t in tueren if not (t.von_raum == t.nach_raum == AUSSEN)]
-        for i, t in enumerate(tueren, start=1):   # lückenlose IDs nach dem Filtern
-            t.id = f"tuer_{i}"
-        # S5c, Owner-Entscheid F1 (K1_T): eine Stiegenhausfläche, die zu mehr
-        # als der Hälfte Liftkabine ist, ist Liftschacht — VOR den Durchgängen
-        # und der Türtypisierung, damit der S5a-Guard an ihr keine blattlose
-        # Öffnung bildet (Liftkern-Phantom VA-5, Lifttür-Ausgänge). Erst nach
-        # der Außenanalyse: die liest die Raumtypen für die Innen-Zonen.
-        schacht_reste = liftschacht_reste(plan, raeume)
-        if k.wandkoerper:
-            tueren = tueren + durchgaenge_ohne_tuerblatt(raeume, tueren, wu,
-                                                         k.tueroeffnungen)
-            tueren = tueren + aussen_durchgaenge(raeume, tueren, wu, kontur)
-        # S4c Fassung A (Owner 2026-09-30): bleibt an einer Bogentür eine Seite
-        # KEIN_RAUM und wäre der Raum hinter ihr sonst ohne jede Verbindung,
-        # gilt die Sehne aus dem ARC-Endwinkel. Nach den Durchgängen, damit
-        # „ohne jede Verbindung" auch Durchgänge und Außenöffnungen zählt.
-        andere_bogenrichtung(tueren, k.tueroeffnungen, raeume, kontur, wu)
-        # Seiten, die bis 500 mm weder Raum noch AUSSEN fanden — Prüfstrecken-
-        # Ausgabe wie `ausgangs_warnungen`, kein Contract-Feld (`Tuer` kennt
-        # kein `seite_fehlt`). Erst NACH der Neunummerierung formatiert, sonst
-        # nennt der Text eine Tür-ID, die inzwischen einer anderen Tür gehört;
-        # erst NACH dem Nachschritt, der eine fehlende Seite füllen kann.
-        self.tuer_warnungen = [
-            f"seite_fehlt: {t.id} Seite {zeichen} bis {stufe:.0f} mm kein Raum "
-            "und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)"
-            for t, zeichen, stufe in fehlende_seiten
-            if KEIN_RAUM in (t.von_raum, t.nach_raum)]
         for s in zirkulation.segmente:      # 09-WEG = explizite Linien
             s.quelle = "LINIE"
         flw_enden = [p for s in zirkulation.segmente
                      for p in (s.polyline_mm[0], s.polyline_mm[-1])
                      if s.polyline_mm]
-        typisiere_tueren(tueren, raeume, geschoss,
-                         brandschutz_hinweise_aus_dxf(plan), flw_enden,
-                         tuer_texte(plan),
-                         unary_union(aussen.geschlossen)
-                         if aussen is not None and aussen.geschlossen else None)
-        # Unbestimmt gebliebene Räume (§ 6g Schritt 3) und die Durchleitung
-        # privater Räume sind Prüfstrecken-Ausgabe wie `tuer_warnungen` —
-        # der Contract führt sie nicht (Board-Antrag: Segment-Feld
-        # `durchleitung`, docs/GATE_TUERSTAPEL.md § 6g).
-        self.wohnungsklasse_warnungen: list[str] = []
-        bilde_wohnungen(raeume, tueren, self.wohnungsklasse_warnungen)
+        # K3 (Enis Referenz 07): ein stempelloser Raum mit Sanitärbeleg im
+        # Umriss einer Wohnung wird BAD/WC. Der Umriss steht erst nach der
+        # Wohnungsbildung fest, die Türrollen brauchen den Typ vorher — darum
+        # ein einmaliger Vorlauf: Türen und Wohnungen einmal als Probe auf
+        # Kopien, dann setzt `typisiere_sanitaer` am echten Raum nur Typ und
+        # Flags (wie ein Stempel), und es folgt EIN regulärer Durchlauf.
+        # Klasse und Wohnung entstehen dort aus rohen Türen (Grundsatz (b)).
+        # Einmalige Rückkante Probe-Klasse/-Wohnung → Typ → rohe Türrolle,
+        # keine Iteration (Owner-Frage zu Board 7, docs/SLICES_K1_K4.md).
+        # Ohne Kandidaten keine Probe — der Lauf ist dann derselbe wie vorher.
+        kand = sanitaer_kandidaten(
+            raeume, sanitaerobjekte(plan),
+            {z.raum.id for z in k.zuordnungen if z.raum is not None})
+        self.sanitaer_befund: list[str] = []   # Prüfstrecken-Ausgabe
+        if kand:
+            probe_r, probe_t = copy.deepcopy(raeume), copy.deepcopy(tueren)
+            probe_t = _tueren_und_wohnungen(plan, k, probe_r, probe_t, kontur, wu,
+                                            aussen, geschoss, flw_enden)[0]
+            self.sanitaer_befund = typisiere_sanitaer(raeume, kand, probe_r, probe_t)
+        (tueren, self.tuer_warnungen, schacht_reste,
+         self.wohnungsklasse_warnungen) = _tueren_und_wohnungen(
+            plan, k, raeume, tueren, kontur, wu, aussen, geschoss, flw_enden)
         # Ausgangs-Warnungen (u.a. „Geschoss unbekannt, Endausgang nicht
         # bestimmbar") als Prüfstrecken-Output — kein Contract-Feld.
         neue, self.ausgangs_warnungen = leite_ausgaenge(
