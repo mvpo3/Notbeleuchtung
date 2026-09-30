@@ -1,0 +1,90 @@
+{
+  "plan": "EG - Rennweg 15_1030 Wien_Ausfürung-2026-06-12",
+  "projekt": "Rennweg",
+  "dxf": "_arbeit/eingang_rennweg_v2/Rennweg/EG - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf",
+  "sha256": "7044ff3bed0a7d80b77eab79fcc6140f40679eadd7e6f0ab873ec3070663bc8f",
+  "bytes": 4015763,
+  "commit": "59583ff",
+  "version": "v2",
+  "datum": "2026-09-16",
+  "slices": [
+    "S1",
+    "S2",
+    "S5a",
+    "S3a",
+    "S9"
+  ],
+  "status": "ok",
+  "raeume_gesamt": 22,
+  "raeume_je_typ": {
+    "STIEGENHAUS": 5,
+    "UNBEKANNT": 5,
+    "KÜCHE": 2,
+    "TERRASSE": 2,
+    "ABSTELLRAUM": 1,
+    "BAD": 1,
+    "ZIMMER": 1,
+    "GARAGE": 1,
+    "VORRAUM": 1,
+    "MUELLRAUM": 1,
+    "GANG": 1,
+    "LIFT": 1
+  },
+  "raeume_unbekannt": 5,
+  "raeume_mit_stempel": 19,
+  "stempel_abweichung_gt10": 0,
+  "wohnungen": 2,
+  "raeume_je_wohnung": {
+    "top_1": 4,
+    "top_2": 1
+  },
+  "schaechte_erkannt": 0,
+  "raeume_nische": 0,
+  "aussen_ueberlagerung_kanon": 0,
+  "aussen_ueberlagerung_kanon_liste": [],
+  "kontext": {
+    "raeume_ohne_polygon": 0,
+    "raeume_ohne_label": 0,
+    "raeume_nicht_gezeigt": 0,
+    "stempel_gesamt": 19,
+    "stempel_ohne_raum": 0,
+    "stempel_nicht_im_zugeordneten_raum": 1,
+    "stempel_raum_nicht_im_endmodell": 0,
+    "stempel_flags": {
+      "ok": 19
+    },
+    "raeume_mit_mehreren_stempeln": 0,
+    "zuordnung_quelle": "Erkennung (KaskadeErgebnis.zuordnungen, 19 Stempel)",
+    "geschoss": "EG",
+    "geschoss_quelle": "dateiname",
+    "kein_gebaeudeumriss": false,
+    "aussen_offen": 0,
+    "aussen_geschlossen": 0,
+    "rotation": "Rotation: keine dominante Kantenrichtung — 0° belassen."
+  },
+  "bilder": [
+    {
+      "datei": "uebersicht.png",
+      "px": [
+        3195,
+        3708
+      ],
+      "raeume": 11,
+      "ohne_label": 0
+    },
+    {
+      "datei": "uebersicht_2.png",
+      "px": [
+        3196,
+        2089
+      ],
+      "raeume": 11,
+      "ohne_label": 0
+    }
+  ],
+  "laufzeit_s": {
+    "erkennung": 13.3,
+    "zeichnen": 5.6,
+    "gesamt": 18.9
+  }
+}

@@ -127,7 +127,12 @@ def durchgaenge_ohne_tuerblatt(raeume: list[Raum], tueren: list[Tuer],
     """
     if wand_union_geom is None or wand_union_geom.is_empty:
         return []
-    polys = _raum_polys(raeume)
+    from .nutzungsklasse import nutzungsklasse_fuer
+    # Diagnose Rennweg U13, Slice S5a: SCHACHT/LIFT (KEIN_RAUM) sind nicht
+    # begehbar — Paare mit so einer Seite geben keinen Durchgang. Statische Map,
+    # weil Raum.nutzungsklasse hier noch None ist (lift_* entstehen erst später).
+    polys = [x for x in _raum_polys(raeume)
+             if nutzungsklasse_fuer(x[0].raum_typ) != KEIN_RAUM]
     tuer_punkte = [t.xy_mm for t in tueren]
     out: list[Tuer] = []
     for i, (ra, pa, _) in enumerate(polys):
@@ -175,6 +180,13 @@ def aussen_durchgaenge(raeume: list[Raum], tueren: list[Tuer],
     Kontaktzone = Raum-Puffer ∩ Außenring (2 m um die gedeckte Kontur),
     minus Wandkörper. Nur ALLGEMEIN-Räume (Rennweg-EG-Muster: Rampenkorridor
     mit 1340-mm-Lücke) — Wohnungs-Fensteröffnungen bleiben draußen.
+
+    OFFEN (Diagnose U8, Slice S5c Z.1271-1274, Frage F8 Z.1406): Sobald S2 die
+    Innen-Zonen deckt, liest diese Funktion am Rennweg OG3 eine 1547-mm-Lücke
+    in der Stiegenhausfassade als Weg ins Freie (gemessene Folge: Notlicht in
+    einer Privatwohnung). Ob eine Fassadenlücke im Obergeschoss ein Fenster
+    oder ein Durchgang ist, entscheidet F8; das Querungskriterium dafür gehört
+    zu S5c. S2 nimmt weder das eine noch das andere vorweg.
     """
     if (wand_union_geom is None or wand_union_geom.is_empty
             or kontur is None or kontur.is_empty):

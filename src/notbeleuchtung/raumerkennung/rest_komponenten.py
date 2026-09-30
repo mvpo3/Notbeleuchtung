@@ -9,6 +9,7 @@ Wandmaske rekonstruiert:
     (50-mm-Raster wie stempel_flutung), freie Zellen gelabelt, je Komponente
     ≥1 m² ein ``Raum``. Typ-Regeln:
 
+    - klein (<3 m²) mit Schacht-Text/STO-Kästchen drin    → SCHACHT (Planzeichen)
     - enthält STIEGE-/Treppen-/LIFT-Block-Insert          → STIEGENHAUS
     - schmal (Breite <2.5 m) mit ≥3 Türöffnungen am Rand  → GANG
     - klein (<3 m²) ohne Tür oder mit STO-Kästchen drin   → SCHACHT
@@ -20,6 +21,7 @@ Bauteil (Außenkontur = größte Union-Komponente).
 from __future__ import annotations
 
 import re
+from collections.abc import Sequence
 
 import numpy as np
 from shapely.geometry import Point, Polygon
@@ -52,6 +54,16 @@ _STIEGE_RX = re.compile(r"STIEGE|TREPPE|STAIR|LIFT|AUFZUG", re.IGNORECASE)
 _STO_LAYER_RX = re.compile(r"0\d-STO", re.IGNORECASE)
 _STO_MAX_M2 = 0.5
 _MARKER_NAEHE_MM = 1000.0      # Insert-Basispunkte liegen oft AUF der Wand
+
+# Schacht-Beschriftung als Planzeichen (Diagnose Rennweg U2, Slice S3a):
+# Wortgrenze, „DBA" allein ist kein Schacht, Raum-/Treppen-/Lifttexte schließen
+# aus (Barawitzka „Aufzug 1 BD 1,98/2,02", „Treppenlauf BD 4,745/1,26").
+# ponytail: Wortschatz nur auf Rennweg gemessen (DG2 „DBA SCHACHT") — beim
+# ersten Plan einer anderen Familie mit Schacht-Beschriftung nachmessen.
+_SCHACHT_TEXT_RX = re.compile(
+    r"(?<![A-ZÄÖÜ])SCHACHT(?![A-ZÄÖÜ])|(?<![A-Z])(?:F?BDB|DDB)(?![A-Z])")
+_SCHACHT_AUSSCHLUSS_RX = re.compile(
+    r"(?<![A-ZÄÖÜ])RAUM(?![A-ZÄÖÜ])|TREPP|STIEG|AUFZUG|LIFT")
 
 
 def _marker_punkte(plan: DxfPlan | None) -> tuple[list[XY], list[XY]]:
@@ -86,9 +98,35 @@ def _marker_punkte(plan: DxfPlan | None) -> tuple[list[XY], list[XY]]:
     return stiegen, sto
 
 
+def _schacht_text_punkte(plan: DxfPlan | None) -> list[XY]:
+    """Einfügepunkte der Schacht-Beschriftungen (mm) — Planzeichen-Evidenz."""
+    out: list[XY] = []
+    if plan is None:
+        return out
+    for e in plan.space:
+        t = e.dxftype()
+        if t == "MTEXT":
+            txt = e.plain_text()
+        elif t == "TEXT":
+            txt = e.dxf.text
+        else:
+            continue
+        s = " ".join(str(txt).upper().split())
+        if _SCHACHT_TEXT_RX.search(s) and not _SCHACHT_AUSSCHLUSS_RX.search(s):
+            out.append(plan._scale(e.dxf.insert))
+    return out
+
+
 def _typisiere(shp: Polygon, tueren: list[TuerOeffnung],
-               stiegen: list[XY], sto: list[XY]) -> tuple[str, bool, bool]:
+               stiegen: list[XY], sto: list[XY],
+               schacht_texte: Sequence[XY] = ()) -> tuple[str, bool, bool]:
     """Typ-Regeln (s. Modul-Doc) → (raum_typ, ist_fluchtweg, ist_communal)."""
+    # Diagnose Rennweg U2, Slice S3a: Planzeichen schlägt den Treppenmarker —
+    # das Bbox-Zentrum der U-Treppe um den Lift liegt IM Schacht, damit wurde
+    # der beschriftete DBA-Schacht (DG2 `rest_2`) zum STIEGENHAUS.
+    if shp.area < _SCHACHT_MAX_M2 * 1e6 and any(
+            shp.covers(Point(p)) for p in (*schacht_texte, *sto)):
+        return "SCHACHT", False, False
     if any(shp.distance(Point(p)) <= _MARKER_NAEHE_MM for p in stiegen):
         return "STIEGENHAUS", True, True
     tuer_n = sum(1 for t in tueren
@@ -111,8 +149,8 @@ def komponenten_ohne_stempel(
 ) -> list[Raum]:
     """Restflächen (Außenkontur − Wände − belegte Räume) als Räume, Quelle 'REST'.
 
-    ``plan`` liefert nur die Typ-Marker (Stiegen-/Lift-Blöcke, STO-Kästchen) —
-    ``None`` ist erlaubt, dann typt nur die Geometrie-Regel.
+    ``plan`` liefert nur die Typ-Marker (Stiegen-/Lift-Blöcke, STO-Kästchen,
+    Schacht-Texte) — ``None`` ist erlaubt, dann typt nur die Geometrie-Regel.
     """
     if not wandkoerper:
         return []
@@ -152,6 +190,7 @@ def komponenten_ohne_stempel(
             _fuelle(blockiert, shp, raster)
 
     stiegen, sto = _marker_punkte(plan)
+    schacht_texte = _schacht_text_punkte(plan)
     grenze = union.boundary if not union.is_empty else None
     labels = label(~blockiert)
     out: list[Raum] = []
@@ -162,7 +201,7 @@ def komponenten_ohne_stempel(
         shp = _vektorisiere(m, raster, grenze)
         if shp.is_empty or shp.area < _MIN_M2 * 1e6:
             continue
-        typ, flucht, communal = _typisiere(shp, tueren, stiegen, sto)
+        typ, flucht, communal = _typisiere(shp, tueren, stiegen, sto, schacht_texte)
         out.append(Raum(
             id=f"rest_{len(out) + 1}",
             raum_typ=typ,

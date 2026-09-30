@@ -17,7 +17,7 @@ from notbeleuchtung.hauptengine.contracts import RaumModell
 from notbeleuchtung.hauptengine.contracts.raum_modell import Tuer
 
 from .ausgaenge import leite_ausgaenge, ohne_unzulaessige_final_exits
-from .aussenbereich import erkenne_aussenbereiche
+from .aussenbereich import erkenne_aussenbereiche, waehle_innen_zonen
 from .dxf_load import bounds_mm, lade_dxf
 from .fluchtweg import explizite_linien, fluchtwege, linien_segmente
 from .footprint import hauptausgaenge
@@ -84,11 +84,15 @@ class ArchitekturRaumProvider:
         if not tueren:
             # Rennweg: keine benannten Tür-Blöcke im Modelspace, aber Öffnungen
             # in den Blockdefinitionen — die Kaskade hat sie bereits gesucht.
+            # Diagnose U12/S4a: den spezifischen Grund der Öffnung durchreichen
+            # (Schiebetür: ``tueren._GRUND_OHNE_BOGEN``), sonst bleibt nur der
+            # allgemeine Satz.
             tueren = [
                 Tuer(id=f"tuer_{i}", xy_mm=o.xy_mm, breite_mm=o.breite_mm,
                      breite_quelle=o.breite_quelle,
-                     breite_grund=(None if o.breite_mm is not None
-                                   else "Tueroeffnung ohne messbare Breite"),
+                     breite_grund=(None if o.breite_mm is not None else
+                                   (o.breite_grund
+                                    or "Tueroeffnung ohne messbare Breite")),
                      ist_notausgang=False, quelle=o.quelle)
                 for i, o in enumerate(k.tueroeffnungen, start=1)
             ]
@@ -111,7 +115,13 @@ class ArchitekturRaumProvider:
         # Außen-Analyse je Gebäude-Komponente (Barawitzka: 2 Trakte) + Hof-
         # Erkennung (Mollgasse: Hof mit Weg ins Freie = AUSSEN → Hoftüren
         # werden Endausgänge). Fallback = alte Ein-Konturen-Heuristik.
-        aussen = erkenne_aussenbereiche(plan, k.wandkoerper) if k.wandkoerper else None
+        # Innen-Zonen mitgeben (Diagnose U8, Slice S2, Owner-Entscheid F6
+        # Option 4): Räume und Stempel liegen längst vor — ohne sie legt die
+        # Außenanalyse Wohn-/Bad-Zonen hinter dünnen Fassaden ins Freie.
+        aussen = None
+        if k.wandkoerper:
+            aussen = erkenne_aussenbereiche(
+                plan, k.wandkoerper, waehle_innen_zonen(plan, raeume, k.zuordnungen))
         self.letzte_aussenbereiche = aussen   # Prüfstrecken-Output (Bericht)
         if aussen is not None and aussen.komponenten:
             kontur = aussen.gedeckt()

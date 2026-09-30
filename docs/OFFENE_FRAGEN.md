@@ -1504,3 +1504,55 @@ nicht das, was sich geändert hat.
   und entkräftet die Lesart, ein `pip install` liefere die guten Zahlen nach.
 - **Nicht gebaut**, wie beauftragt: Schritt 5 (GBM), Contract-Felder
   `rolle`/`confidence`, jede Integration in `provider`/`kaskade`/`plan_pruefen`.
+
+## M17-04-c — zählt ein „Durchgang ohne Türblatt" als Türverbindung? (2026-09-18, Selman → @EnisAMG)
+
+Aus dem Merge-Gate des Türstapels (`docs/GATE_TUERSTAPEL.md`, Nullmessung auf `f15d03f`).
+Beispiel 17, Erwartung **M17-04-c**: „WC und Vorraum bleiben getrennte Räume mit genau
+einer zugeordneten Türverbindung an O."
+
+Gemessen (OG1, DXF `c64e73e3…245e`, Code-Stand `f15d03f`): WC = `raum_13` (3,50 m²),
+Vorraum = `raum_12` (10,94 m²) — getrennte Räume, das stimmt. Die **einzige** Verbindung
+zwischen beiden im Ausschnitt des Falls ist `durchgang_21`: ein synthetischer Durchgang
+**ohne Türblatt** (`ohne_tuerblatt = True`), 2506 mm breit, `tuer_detail` wohnungseingang,
+Mitte 534 mm von der Sonde O. Der Plan zeigt dort eine Tür mit Türblatt/Schwenkbogen
+(Türöffnung laut Referenz rund 880 mm breit); auf OG1 wird heute **kein einziger
+ArchiCAD-Türblock** als Tür erkannt (Ursache U12 der Diagnose, Slice S4a).
+
+**Frage:** Gilt die Erwartung als erfüllt, wenn die Software die Verbindung als „Durchgang
+ohne Türblatt" ausgibt (Lesart A: eine Verbindung ist eine Verbindung), oder erst, wenn
+sie eine Tür mit Türblatt ist (Lesart B: „Türverbindung" = erkannte Tür)?
+
+**Entschieden (Enis, 2026-09-18, über Selman): Lesart B.** Die Referenz meint die
+tatsächliche Türöffnung an O zwischen WC und privatem Vorraum, basierend auf dem
+ArchiCAD-Türblock `Zargentür_1_Fl 10[9]`. `durchgang_21` zählt nicht — er ist synthetisch
+ohne Türblatt und liegt 534 mm von O entfernt. Folgen: M17-04-c in der Nullmessung auf
+`f15d03f` **NICHT_BESTANDEN** (Bilanz 16 / 2 / 0); Gate-Regel: für den Merge des Türstapels
+müssen **beide** roten Fälle drehen (M17-02-b und M17-04-c), die übrigen 16 dürfen nicht
+regressieren (`docs/GATE_TUERSTAPEL.md`). Die Referenz selbst bleibt unverändert.
+
+**Weiter offen (bewusst nicht pauschal entschieden):** ob ein Durchgang ohne Türblatt
+*anderswo* — außerhalb dieses Falls — als Türverbindung gelten kann. Das wird je Fall
+entschieden, nicht per Regel.
+
+## S4d — Balkontür T08 / „Rectangular Door Opening" (vorgemerkt, 2026-09-18)
+
+OG1 trägt drei ArchiCAD-Blöcke `Rectangular Door Opening 27[6]`, `…27[11]` und
+`…27[12]` (in den Wandblöcken `Wall_13`, `Wall_23`, `Wall_63`). Sie liegen
+**außerhalb des Tür-Vokabulars**: `_ist_tuer_block`
+(`src/notbeleuchtung/raumerkennung/tueren.py`) sucht deutsche Wortstämme
+(`TÜR`/`ÖFFNUNG`/`BST`/`F+H`, außen `AUSSEN`/`EINGANG`/`WET`/`SCHIEBET`/`FENSTERT`)
+— die englischen `DOOR`/`OPENING` kennt es nicht, die drei Blöcke werden also
+weder als Tür erkannt noch als verworfener Kandidat gezählt. Aufgefallen ist das
+erst **nach** der Messung (Diagnose Türstapel; die Muthgasse-Erwartung dazu läuft
+als strict-xfail).
+
+Einer der drei ist der plausible Kandidat für die **Balkontür T08** (Beispiel 14:
+mittleres Zimmer 10,59 m² ↔ Balkon 7,51 m²). Die beiden anderen liegen an
+**offenen Übergängen** (Sonden O02 und O04) und wären dort gerade *keine* Tür.
+Welcher Block welcher Fall ist, ist damit nicht am Namen entscheidbar — es
+braucht die Geometrie.
+
+**Entscheid Owner:** eigener Slice **S4d**, **nach S5c**. Das Tür-Vokabular wird
+**jetzt nicht** angefasst — eine Vokabel-Erweiterung mitten im Türstapel würde die
+Nullmessung und alle laufenden Gate-Zahlen verschieben, bevor der Stapel steht.

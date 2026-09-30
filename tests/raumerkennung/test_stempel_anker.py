@@ -1,6 +1,6 @@
 """Tests stempel_anker — Raumstempel finden, gruppieren, Polygonen zuordnen.
 
-Echte Pläne (Projekte/_eingang) per skip-Gate; die ±10 %-Flag-Logik läuft
+Echte Pläne aus ``tests/plaene.py`` (versioniert); die ±10 %-Flag-Logik läuft
 deterministisch gegen eine synthetische In-Memory-DXF.
 """
 from __future__ import annotations
@@ -20,16 +20,12 @@ from notbeleuchtung.raumerkennung.stempel_anker import (
     ordne_zu,
     restflaechen,
 )
+from plaene import BARAWITZKA_EG, RENNWEG_OG3
+from plaene import plan as pruefe_plan
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
-EINGANG = REPO_ROOT / "Projekte" / "_eingang"
 
-
-def _plan(name: str):
-    p = EINGANG / f"{name}.dxf"
-    if not p.exists():
-        pytest.skip(f"Eingangs-DXF fehlt: {p}")
-    return lade_dxf(p)
+def _plan(pfad: Path):
+    return lade_dxf(pruefe_plan(pfad))
 
 
 # ---------------------------------------------------------------- Parsing-Einheiten
@@ -62,7 +58,7 @@ def test_belag_hinweis(belag, hinweis):
 # ---------------------------------------------------------------- Rennweg (INSERT-Stempel)
 
 def test_rennweg_zehn_stempel_mit_flaeche_und_belag():
-    plan = _plan("Rennweg_OG3")
+    plan = _plan(RENNWEG_OG3)
     stempel = finde_stempel(plan)
     assert len(stempel) == 10
     assert all(s.flaeche_m2 is not None for s in stempel)
@@ -76,7 +72,7 @@ def test_rennweg_zehn_stempel_mit_flaeche_und_belag():
 
 
 def test_rennweg_bad_601_trotz_grenz_einfuegepunkt_richtig_zugeordnet():
-    plan = _plan("Rennweg_OG3")
+    plan = _plan(RENNWEG_OG3)
     stempel = finde_stempel(plan)
     raeume = raeume_aus_layer(plan)
     assert len(raeume) == 10
@@ -93,7 +89,7 @@ def test_rennweg_bad_601_trotz_grenz_einfuegepunkt_richtig_zugeordnet():
 # ---------------------------------------------------------------- Barawitzka (lose MTEXT)
 
 def test_barawitzka_gruppierung_loser_mtexte():
-    plan = _plan("Barawitzka_EG")
+    plan = _plan(BARAWITZKA_EG)
     stempel = finde_stempel(plan)
     # Belegt (scripts-Analyse, Layer '0._EG PP_2_810 Raum'): 41 Flächen-MTEXT,
     # davon 38 mit Raumnamen aus dem Wörterbuch. Die 5 Rest-Flächen sind keine

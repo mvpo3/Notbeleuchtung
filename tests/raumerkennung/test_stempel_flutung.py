@@ -1,11 +1,9 @@
 """Tests für stempel_flutung (Raster-Flutung vom Stempelpunkt).
 
 Synthetische Mini-Pläne direkt aus Wandkoerper-Objekten (kein DXF nötig);
-die echte Rennweg-Probe skippt, wenn der Plan fehlt (Gate-Muster wie conftest).
+die echte Rennweg-Probe läuft auf dem versionierten Plan (``tests/plaene.py``).
 """
 from __future__ import annotations
-
-from pathlib import Path
 
 import pytest
 from shapely.geometry import Polygon
@@ -14,9 +12,8 @@ from notbeleuchtung.raumerkennung.stempel_anker import Stempel
 from notbeleuchtung.raumerkennung.stempel_flutung import FlutRaum, flute_stempel
 from notbeleuchtung.raumerkennung.tueren import TuerOeffnung
 from notbeleuchtung.raumerkennung.wandkoerper import Wandkoerper
-
-REPO_ROOT = Path(__file__).resolve().parents[2]
-EINGANG = REPO_ROOT / "Projekte" / "_eingang"
+from plaene import RENNWEG_OG3
+from plaene import plan as pruefe_plan
 
 
 def _wand(x0: float, y0: float, x1: float, y1: float) -> Wandkoerper:
@@ -130,9 +127,7 @@ def test_leere_inputs():
 
 # ── echte Rennweg-Probe (skip-Gate) ─────────────────────────────────────────
 def test_rennweg_mindestens_ein_raum_flutbar():
-    pfad = EINGANG / "Rennweg_OG3.dxf"
-    if not pfad.exists():
-        pytest.skip(f"Plan fehlt: {pfad}")
+    pfad = pruefe_plan(RENNWEG_OG3)
     from notbeleuchtung.raumerkennung.dxf_load import lade_dxf
     from notbeleuchtung.raumerkennung.stempel_anker import finde_stempel
     from notbeleuchtung.raumerkennung.tueren import tuer_oeffnungen

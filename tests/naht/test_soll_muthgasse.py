@@ -176,21 +176,16 @@ Stands nach der Bereinigung, darum gelten die Punkte 1-7 unabhaengig davon.
 """
 import math
 import re
-from pathlib import Path
 
 import pytest
 
-PLAN = Path("Projekte/_eingang/Muthgasse_E2.dxf")
-
-
-def _skip_ohne_plan():
-    if not PLAN.exists():                        # pragma: no cover — CAD-Asset fehlt
-        pytest.skip(f"Architekturplan nicht vorhanden: {PLAN}")
+from plaene import MUTHGASSE_E2 as PLAN
+from plaene import plan as _pruefe_plan
 
 
 @pytest.fixture(scope="module")
 def plan():
-    _skip_ohne_plan()
+    _pruefe_plan(PLAN)
     from notbeleuchtung.raumerkennung.dxf_load import lade_dxf
 
     return lade_dxf(str(PLAN))
