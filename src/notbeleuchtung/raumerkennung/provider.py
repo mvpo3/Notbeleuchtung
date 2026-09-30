@@ -26,12 +26,14 @@ from .geometrie_typ import typisiere_geometrisch
 from .geschoss import geschoss_befund
 from .kaskade import KaskadeErgebnis, raeume_aus_kaskade
 from .kreuzcheck import kreuzcheck
-from .lift_erkennung import finde_lifte
+from .lift_erkennung import finde_lifte, liftschacht_reste
 from .raumtyp import beschrifte_raeume
 from .stiegenhaus import baue_stiegenhaus_modell
 from .tuer_typisierung import brandschutz_hinweise_aus_dxf, typisiere_tueren
 from .tuer_zuordnung import (
     AUSSEN,
+    KEIN_RAUM,
+    andere_bogenrichtung,
     aussen_durchgaenge,
     durchgaenge_ohne_tuerblatt,
     ordne_tueren,
@@ -135,7 +137,7 @@ class ArchitekturRaumProvider:
         # Verschmelzen NACH aussentor_tueren: nur so sieht es auch die
         # 'arc_aussen'-Türen (Hoftüren), deren Doppelflügel-Paare sonst nie
         # zusammenfinden — verschmelze_doppelfluegel akzeptiert sie ausdrücklich.
-        tueren = verschmelze_doppelfluegel(tueren, wand_segmente(plan))
+        tueren = verschmelze_doppelfluegel(tueren, wand_segmente(plan), k.tueroeffnungen)
         tueren += text_tueren(plan, tueren)
         # Wand-Union EINMAL, schon hier: die Seitenprobe überspringt damit
         # Probepunkte im Wandkörper (Slice S4b), die Durchgänge unten nutzen
@@ -148,18 +150,31 @@ class ArchitekturRaumProvider:
         tueren = [t for t in tueren if not (t.von_raum == t.nach_raum == AUSSEN)]
         for i, t in enumerate(tueren, start=1):   # lückenlose IDs nach dem Filtern
             t.id = f"tuer_{i}"
-        # Seiten, die bis 500 mm weder Raum noch AUSSEN fanden — Prüfstrecken-
-        # Ausgabe wie `ausgangs_warnungen`, kein Contract-Feld (`Tuer` kennt
-        # kein `seite_fehlt`). Erst NACH der Neunummerierung formatiert, sonst
-        # nennt der Text eine Tür-ID, die inzwischen einer anderen Tür gehört.
-        self.tuer_warnungen = [
-            f"seite_fehlt: {t.id} Seite {zeichen} bis {stufe:.0f} mm kein Raum "
-            "und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)"
-            for t, zeichen, stufe in fehlende_seiten]
+        # S5c, Owner-Entscheid F1 (K1_T): eine Stiegenhausfläche, die zu mehr
+        # als der Hälfte Liftkabine ist, ist Liftschacht — VOR den Durchgängen
+        # und der Türtypisierung, damit der S5a-Guard an ihr keine blattlose
+        # Öffnung bildet (Liftkern-Phantom VA-5, Lifttür-Ausgänge). Erst nach
+        # der Außenanalyse: die liest die Raumtypen für die Innen-Zonen.
+        schacht_reste = liftschacht_reste(plan, raeume)
         if k.wandkoerper:
             tueren = tueren + durchgaenge_ohne_tuerblatt(raeume, tueren, wu,
                                                          k.tueroeffnungen)
             tueren = tueren + aussen_durchgaenge(raeume, tueren, wu, kontur)
+        # S4c Fassung A (Owner 2026-09-30): bleibt an einer Bogentür eine Seite
+        # KEIN_RAUM und wäre der Raum hinter ihr sonst ohne jede Verbindung,
+        # gilt die Sehne aus dem ARC-Endwinkel. Nach den Durchgängen, damit
+        # „ohne jede Verbindung" auch Durchgänge und Außenöffnungen zählt.
+        andere_bogenrichtung(tueren, k.tueroeffnungen, raeume, kontur, wu)
+        # Seiten, die bis 500 mm weder Raum noch AUSSEN fanden — Prüfstrecken-
+        # Ausgabe wie `ausgangs_warnungen`, kein Contract-Feld (`Tuer` kennt
+        # kein `seite_fehlt`). Erst NACH der Neunummerierung formatiert, sonst
+        # nennt der Text eine Tür-ID, die inzwischen einer anderen Tür gehört;
+        # erst NACH dem Nachschritt, der eine fehlende Seite füllen kann.
+        self.tuer_warnungen = [
+            f"seite_fehlt: {t.id} Seite {zeichen} bis {stufe:.0f} mm kein Raum "
+            "und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)"
+            for t, zeichen, stufe in fehlende_seiten
+            if KEIN_RAUM in (t.von_raum, t.nach_raum)]
         for s in zirkulation.segmente:      # 09-WEG = explizite Linien
             s.quelle = "LINIE"
         flw_enden = [p for s in zirkulation.segmente
@@ -207,7 +222,7 @@ class ArchitekturRaumProvider:
         # ── Fachteil 2: Lifte (LIFT/KEIN_RAUM, aus STIEGENHAUS ausgestanzt)
         # + Stiegenhaus-Modelle + Anker (Stiegenhaus + Gang). Anker liefern
         # nur Azimute (ADR-0006) — Platzierung bleibt Leonis.
-        lifte = finde_lifte(plan, raeume)
+        lifte = finde_lifte(plan, raeume, schacht_reste)
         stiegenhaeuser = []
         anker = []
         wohnungsintern = bestaetigt_privat(raeume, tueren)

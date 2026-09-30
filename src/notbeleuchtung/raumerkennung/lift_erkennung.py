@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import math
 import re
+from collections.abc import Collection
 
 from ezdxf import bbox
 from shapely.geometry import LineString, Point, Polygon
@@ -113,12 +114,9 @@ def _lift_texte(plan: DxfPlan) -> list[XY]:
     return out
 
 
-def finde_lifte(plan: DxfPlan, raeume: list[Raum]) -> list[Raum]:
-    """Lifte erkennen, als LIFT/KEIN_RAUM-Räume anhängen, aus STIEGENHAUS ausstanzen.
-
-    Gibt die NEU erzeugten Lift-Räume zurück (sie sind bereits an ``raeume``
-    angehängt; überdeckte STIEGENHAUS-Polygone sind in-place ausgestanzt).
-    """
+def _lift_rechtecke(plan: DxfPlan, raeume: list[Raum],
+                    schacht_reste: Collection[str] = ()) -> list[tuple[list[XY], XY]]:
+    """Belegte, entdoppelte Kabinen-Rechtecke (rect, center) — ohne Seiteneffekt."""
     f = plan.factor
     kandidaten: list[tuple[list[XY], XY, float, float, bool]] = []  # + belegt-Flag
     for e in plan.entities():
@@ -146,7 +144,7 @@ def finde_lifte(plan: DxfPlan, raeume: list[Raum]) -> list[Raum]:
     # Befund: 9 Fehltreffer in Küche/Bad/Waschküche/Terrasse). Text und
     # Blockname sind starke Evidenz und gelten überall.
     erschliessung = [Polygon(r.polygon_mm).buffer(0) for r in raeume
-                     if r.raum_typ in ("STIEGENHAUS", "GANG")
+                     if (r.raum_typ in ("STIEGENHAUS", "GANG") or r.id in schacht_reste)
                      and len(r.polygon_mm) >= 3]
     belegte: list[tuple[list[XY], XY]] = []
     for rect, center, w, h, belegt in kandidaten:
@@ -164,7 +162,21 @@ def finde_lifte(plan: DxfPlan, raeume: list[Raum]) -> list[Raum]:
                > 0.5 * Polygon(rect).area for r2, _ in lifte):
             continue
         lifte.append((rect, center))
+    return lifte
 
+
+def finde_lifte(plan: DxfPlan, raeume: list[Raum],
+                schacht_reste: Collection[str] = ()) -> list[Raum]:
+    """Lifte erkennen, als LIFT/KEIN_RAUM-Räume anhängen, aus STIEGENHAUS ausstanzen.
+
+    Gibt die NEU erzeugten Lift-Räume zurück (sie sind bereits an ``raeume``
+    angehängt; überdeckte STIEGENHAUS-Polygone sind in-place ausgestanzt).
+    ``schacht_reste`` = IDs, die ``liftschacht_reste`` aus STIEGENHAUS zu
+    SCHACHT gemacht hat: für die Marker-Evidenz zählen sie weiter als
+    Erschließung — sonst ginge eine allein per X/Achsenkreuz belegte Kabine in
+    ihrem eigenen Schacht verloren (gemessen: Muthgasse E2 ``lift_4``/``lift_5``).
+    """
+    lifte = _lift_rechtecke(plan, raeume, schacht_reste)
     neu: list[Raum] = []
     for i, (rect, center) in enumerate(lifte, start=1):
         # Schon ein LIFT-Raum an der Stelle? Dann nichts erfinden.
@@ -211,3 +223,35 @@ def finde_lifte(plan: DxfPlan, raeume: list[Raum]) -> list[Raum]:
         neu.append(raum)
     raeume.extend(neu)
     return neu
+
+
+# Owner-Entscheid F1 (2026-09-27, Slice S5c, docs/GATE_TUERSTAPEL.md § 9c/§ 9e):
+# „Eine Restfläche, die zu mehr als der Hälfte Liftkabine ist, ist ein
+# Liftschacht, kein Stiegenhaus." Gemessen: Kabinenanteil 0,635–0,684 an den
+# fünf Rennweg-Schachtresten (UG/EG/OG1/DG1/DG2), Muthgasse 0,551/0,574,
+# dagegen ≤ 0,204 an Stiegenhaus-Resten mit innenliegendem Lift.
+_KABINENANTEIL_SCHACHT = 0.5
+
+
+def liftschacht_reste(plan: DxfPlan, raeume: list[Raum]) -> list[str]:
+    """STIEGENHAUS-Flächen, die zu mehr als der Hälfte Liftkabine sind → SCHACHT.
+
+    Läuft im Provider VOR ``durchgaenge_ohne_tuerblatt`` und der Tür-
+    typisierung: der S5a-Guard gibt an SCHACHT keine blattlose Öffnung, also
+    entstehen weder der Phantom-Durchgang um die Wandenden des Liftkerns
+    (VA-5, Rennweg EG/OG1/DG1) noch Lifttür-Ausgänge (UG/EG/OG1). Ausgestanzt
+    und angehängt wird hier nichts — das macht ``finde_lifte`` am Ende, und
+    der SCHACHT-Rest bleibt dort ungestanzt. Gibt die IDs der umtypisierten
+    Räume zurück — der Provider reicht sie an ``finde_lifte`` weiter.
+    """
+    kabinen = [Polygon(rect) for rect, _ in _lift_rechtecke(plan, raeume)]
+    out: list[str] = []
+    for r in raeume:
+        if r.raum_typ != "STIEGENHAUS" or len(r.polygon_mm) < 3:
+            continue
+        poly = Polygon(r.polygon_mm).buffer(0)
+        if any(poly.intersection(k).area > _KABINENANTEIL_SCHACHT * poly.area
+               for k in kabinen):
+            r.raum_typ, r.ist_fluchtweg, r.ist_communal = "SCHACHT", False, False
+            out.append(r.id)
+    return out

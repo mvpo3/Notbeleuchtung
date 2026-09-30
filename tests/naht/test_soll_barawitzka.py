@@ -77,13 +77,40 @@ def test_soll_90_prozent_tueren_typisiert(rm):
         f"nur {typ}/{len(rm.tueren)} Türen typisiert")
 
 
-@pytest.mark.xfail(
-    strict=True, raises=AssertionError,
-    reason="Türstapel unvollständig (S7a/S7b/S3b ausstehend), muss vor Merge XPASS sein")
 def test_soll_brandschutztuer(rm):
     """Scharf seit Fachteil 1: EI30-Texte in 500 mm → brandschutztuer."""
     bst = [t for t in rm.tueren if t.tuer_detail == "brandschutztuer"]
     assert len(bst) >= 1, "keine Brandschutztür erkannt"
+
+
+def test_abstellraum_830er_bogentuer_ist_eine_eigene_tuer(rm):
+    """S4c (Gate § 1f, Bedingung (10)): die 830er Bogentür des ABSTELLRAUMS
+    1,98 m² (Drehpunkt 150 mm vor dem Raum) steckte als Flügel im
+    „doppelfluegel" 1660 mm — gepaart mit der Zimmertür gegenüber auf der
+    anderen Seite des VORRAUMS, 967,1 mm vom Raum (``tuer_38`` vor S4c). Die
+    Bogentür steht wieder als eigene Tür vor dem Raum, und kein Doppelflügel
+    liegt näher als 2 m."""
+    from shapely.geometry import Point, Polygon
+
+    (raum,) = [r for r in rm.raeume
+               if r.raum_typ == "ABSTELLRAUM" and abs(r.flaeche_m2 - 1.98) <= 0.05]
+    poly = Polygon(raum.polygon_mm)
+    nah = [(round(poly.distance(Point(t.xy_mm)), 1), t.id, t.quelle, t.breite_mm)
+           for t in rm.tueren if poly.distance(Point(t.xy_mm)) <= 2000.0]
+    assert any(q == "arc" and b == 830.0 and d <= 200.0 for d, _i, q, b in nah), nah
+    assert not any(q == "doppelfluegel" for _d, _i, q, _b in nah), nah
+
+
+def test_abstellraum_hat_eine_tuer(rm):
+    """S4c Fassung A (Gate § 10, Bedingung (10), Owner 2026-09-30): der
+    ABSTELLRAUM 1,98 m² hängt an mindestens einer Tür. Vor Fassung A stand
+    seine 830er Bogentür ``raum_12 | KEIN_RAUM`` — die Sehne aus dem
+    ARC-Startwinkel zeigt auf das offene Blatt (§ 10b)."""
+    (raum,) = [r for r in rm.raeume
+               if r.raum_typ == "ABSTELLRAUM" and abs(r.flaeche_m2 - 1.98) <= 0.05]
+    tueren = [(t.id, t.quelle, t.breite_mm, t.von_raum, t.nach_raum)
+              for t in rm.tueren if raum.id in (t.von_raum, t.nach_raum)]
+    assert len(tueren) >= 1, (raum.id, tueren)
 
 
 def test_soll_41_raeume_mit_stempel(rm):

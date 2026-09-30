@@ -141,6 +141,10 @@ class TuerOeffnung:
     #: Name des umgebenden Wand-Blocks — nur bei Weltkoordinaten-Blöcken
     #: gesetzt, deren Lage aus der Blockgeometrie stammt (s. ``_blockgeometrie``).
     wand_block: str | None = None
+    #: Endpunkte des Schwenkbogens (Start, Ende) — nur bei ``quelle="arc"``,
+    #: im selben Rahmen wie ``xy_mm`` (Zentrum + Radius · Winkel). Einer ist das
+    #: geschlossene, einer das offene Blatt (S4c, ``verschmelze_doppelfluegel``).
+    blatt_enden: tuple[XY, XY] | None = None
 
 
 def _blattbreite_aus_block(insert, factor: float, tiefe: int = 0) -> float | None:
@@ -312,10 +316,15 @@ def tuer_oeffnungen(plan: DxfPlan,
                 r = float(e.dxf.radius) * plan.factor
                 sweep = (float(e.dxf.end_angle) - float(e.dxf.start_angle)) % 360.0
                 if _ARC_MIN_MM < r < _ARC_MAX_MM and _SWEEP_MIN <= sweep <= _SWEEP_MAX:
+                    c = plan._scale(e.dxf.center)
+                    enden = tuple((c[0] + r * math.cos(math.radians(w)),
+                                   c[1] + r * math.sin(math.radians(w)))
+                                  for w in (float(e.dxf.start_angle),
+                                            float(e.dxf.end_angle)))
                     out.append(TuerOeffnung(
-                        xy_mm=plan._scale(e.dxf.center), breite_mm=float(round(r)),
+                        xy_mm=c, breite_mm=float(round(r)),
                         winkel_grad=float(e.dxf.start_angle), quelle="arc",
-                        breite_quelle="GEOMETRIE_SCHWENKRADIUS"))
+                        breite_quelle="GEOMETRIE_SCHWENKRADIUS", blatt_enden=enden))
 
     _walk(plan.space)
     return out
@@ -385,13 +394,49 @@ def _wandwinkel_bei(segs, xy: XY, max_mm: float = _WAND_NAH_MM) -> float | None:
     return best_w
 
 
-def verschmelze_doppelfluegel(tueren: list[Tuer], wand_segs) -> list[Tuer]:
+def _blatt_enden(t: Tuer, oeffnungen: list[TuerOeffnung] | None) -> tuple[XY, XY] | None:
+    """Bogen-Endpunkte der Öffnung, deren Zentrum der Drehpunkt der Tür ist."""
+    for o in oeffnungen or ():
+        if (o.blatt_enden is not None and o.breite_mm == t.breite_mm
+                and math.dist(o.xy_mm, t.xy_mm) < 1.0):
+            return o.blatt_enden
+    return None
+
+
+def _schliesst_zu(xy: XY, enden: tuple[XY, XY], ziel: XY) -> bool:
+    """Ein Bogen-Endpunkt liegt höchstens ``_PARALLEL_TOL_GRAD`` neben der
+    Richtung Drehpunkt → ``ziel``: das Blatt schließt zum Ziel hin."""
+    w_ziel = math.atan2(ziel[1] - xy[1], ziel[0] - xy[0])
+    return any(
+        abs((math.degrees(math.atan2(e[1] - xy[1], e[0] - xy[0]) - w_ziel) + 180.0)
+            % 360.0 - 180.0) <= _PARALLEL_TOL_GRAD
+        for e in enden)
+
+
+def verschmelze_doppelfluegel(tueren: list[Tuer], wand_segs,
+                              oeffnungen: list[TuerOeffnung] | None = None) -> list[Tuer]:
     """Doppelflügel-Türen: zwei Schwenkbögen an der GEMEINSAMEN Wand, deren
     Drehpunkt-Abstand ≈ Summe der Blattbreiten ist → EINE Tür mit Gesamtbreite.
 
     Die Wand-Kollinearität (Verbindungslinie ∥ Wand an beiden Drehpunkten)
     schließt gegenüberliegende Gangtüren aus (deren Verbindung steht senkrecht
     auf den Wänden). Nur ARC-Quellen — Block-Türen tragen ihre Breite selbst.
+
+    S4c: sie greift nicht, wenn der Drehpunkt an der Laibung sitzt — die
+    nächste Wandlinie ist dann die Laibungsfläche QUER zur Wand. Gemessen an
+    Barawitzka EG: ``tuer_38`` (1660) waren die Tür des ABSTELLRAUMS 1,98 und
+    die Zimmertür gegenüber (Wandwinkel 90°/90° gegen 79,1°), ``tuer_37``
+    (1863) zwei Außentüren nebeneinander, deren Blätter voneinander weg
+    schließen. Darum zusätzlich, wenn beide Bögen in ``oeffnungen`` stehen
+    (``blatt_enden``): jedes Blatt schließt zum anderen Drehpunkt hin
+    (``_schliesst_zu``) — die Drehpunkte sind die Enden EINER Öffnung. Ohne
+    Bogen-Endpunkte bleibt es bei der Prüfung oben.
+
+    ponytail: welcher Endpunkt das geschlossene Blatt ist, wissen die Bögen
+    allein nicht — zwei Gangtüren, deren OFFENE Blätter zueinander zeigen, sehen
+    aus wie eine um 90° gedrehte Doppeltür; die trennt weiter nur die
+    Wand-Kollinearität. Ausbaupfad: geschlossenes Blatt über den Wandkörper
+    bestimmen (Endpunkt an der Gegenlaibung).
     """
     arcs = [t for t in tueren if t.quelle in ("arc", "arc_aussen")
             and t.breite_mm is not None
@@ -415,6 +460,11 @@ def verschmelze_doppelfluegel(tueren: list[Tuer], wand_segs) -> list[Tuer]:
                 continue
             if any(min(abs(w_verb - w), 180.0 - abs(w_verb - w))
                    > _PARALLEL_TOL_GRAD for w in (w1, w2)):
+                continue
+            e1, e2 = _blatt_enden(t1, oeffnungen), _blatt_enden(t2, oeffnungen)
+            if e1 is not None and e2 is not None and not (
+                    _schliesst_zu(t1.xy_mm, e1, t2.xy_mm)
+                    and _schliesst_zu(t2.xy_mm, e2, t1.xy_mm)):
                 continue
             mitte = ((t1.xy_mm[0] + t2.xy_mm[0]) / 2,
                      (t1.xy_mm[1] + t2.xy_mm[1]) / 2)

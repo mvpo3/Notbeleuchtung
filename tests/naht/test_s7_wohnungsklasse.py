@@ -183,8 +183,10 @@ def fremde_anker_in_privat(modell) -> list[str]:
     """Anker, deren Punkt in einem PRIVAT GEWORDENEN Raum liegt (GANG/VORRAUM
     der Klasse WOHNUNG_PRIVAT — nur deren Klasse ändert S7), der NICHT ihr
     eigener ist (``raum_id``) — die B2-Zählweise. Anker in Zimmern/Bädern
-    liegen dort schon auf HEAD 5ac3e0f (DG1 ``raum_4_tuer_5``/``ende_7`` in
-    ``raum_1``, Mollgasse EG ``raum_51_tuer_durchgang_25`` in ``raum_33``)."""
+    lagen dort schon auf HEAD 5ac3e0f (DG1 ``raum_4_tuer_5``/``ende_7`` in
+    ``raum_1``, Mollgasse EG ``raum_51_tuer_durchgang_25`` in ``raum_33``);
+    seit Slice S3b zieht B2 auch sie (``test_og3_keine_anker_in_wohnung_privat``,
+    Rennweg OG3 ``rest_3_tuer_tuer_4`` in ZIMMER ``raum_2``)."""
     privat = [(r.id, Polygon(r.polygon_mm)) for r in modell.raeume
               if r.raum_typ in ("GANG", "VORRAUM")
               and r.nutzungsklasse == "WOHNUNG_PRIVAT" and len(r.polygon_mm) >= 3]
@@ -262,6 +264,13 @@ KIPPER: dict[str, set[str]] = {
     "dg2": set(),
     "dd": set(),
 }
+#: R1-Erweiterung A+C (Owner 2026-09-27): „Der gebundene Gang bleibt
+#: unbestimmt wie der Loch-Gang" — auch dort, wo Schritt 1–3 ihn als Kandidaten
+#: mit Stiegenhaustür allgemein sprechen (``klassifiziere``). Keine
+#: Nicht-Konvergenz, sondern eine Owner-Setzung aus (b); GEMESSEN Runde 1 der
+#: Erweiterung: nur OG3 ``raum_10``. Wächst oder wandert die Menge, fällt der
+#: Test auf.
+R1_GEBUNDEN: dict[str, set[str]] = {"og3": {"raum_10"}}
 #: Alle Pläne mit Fixture (Muthgasse E2 nicht: ein Parse ~10 min; die
 #: Invarianz dort steht im Bericht).
 FIXTURE_PLAENE = ["og1", "og2", "og3", "ug", "eg", "dg1", "dg2", "dd", "bara",
@@ -288,8 +297,50 @@ FIXTURE_PLAENE = ["og1", "og2", "og3", "ug", "eg", "dg1", "dg2", "dd", "bara",
 #: Start/Ziel-Segmente von ``raum_35`` wieder 17, Stützpunkt-Segmente wieder
 #: 10, mit der Stiegenhaustür als Start. Erst wenn das erreicht ist, geht die
 #: Zahl auf HEAD.
+#: **Slice S7c (Owner-GO 2026-09-26; Runde 1 gebaut, Runde 2 präzisiert): die
+#: Owner-Abnahme (10, 17) ist mit der gebauten Regel JE STARTTÜR
+#: unerreichbar** — die Zahl bleibt darum CHARAKTERISIERUNG auf (2, 9). Ein
+#: GRAPH-Segment entsteht je Tür mit korrigierter Rolle ``wohnungseingang``
+#: (Start-Regel ``fluchtweg.py:329ff``, ID ``seg_graph_<tuer>``). Die 17
+#: Start/Ziel-Segmente von HEAD sind die 17 GRAPH-Segmente des Plans; die 8
+#: fehlenden starteten an den 8 INNEREN Türen der bestätigt privaten Vorräume
+#: ``raum_2``/``raum_4`` (``tuer_5``/``6``/``7``/``8`` und ``tuer_25``/``28``/
+#: ``82``/``83``), und für genau diese sagt die Owner-Regel „die innere Tür
+#: wird zimmertuer". Die ÄUSSEREN Türen ``tuer_3``/``tuer_4`` (``raum_35`` ↔
+#: ``raum_2``/``raum_4``) tragen roh UND korrigiert schon ``wohnungseingang``
+#: und sind schon Start (``seg_graph_tuer_3``/``tuer_4``): 2 Wege, nicht 8.
+#: Die 17 kommen nur zurück über (B) die inneren Türen als Start — gegen den
+#: Owner-Satz „die innere Tür wird zimmertuer" — oder (C) je innerer Tür ein
+#: Duplikat des äußeren Wegs, also eine Änderung der Start-Regel in
+#: ``fluchtweg.py``. Keins von beiden ist gebaut; Entscheidung beim Owner
+#: (Board-Frage 1, Messung A/B/C im Bericht S7c Runde 2).
+#: **Owner-Entscheid 2026-09-26 zu Board-Frage 1: Option A.** (2, 9) ist damit
+#: ZIELBILD, kein Charakterisierungswert mehr: „privat heißt keine eigene
+#: Zirkulation" (Durchleitungs-Entscheid) gilt unverändert; die 17 stammt aus
+#: einem Stand, in dem die Vorräume Erschließung waren, und ist überholt
+#: (docs/GATE_TUERSTAPEL.md § 6g.10). B und C sind verworfen.
 MESSFALL_I_MOLL = (2, 9)
-MESSFALL_I_OG1 = (3, 9, 4)
+#: **Slice S5c, Owner-Entscheid F3 (2026-09-27), mit Auflage:** Rennweg OG1
+#: steht auf (3, 9, 0), dazu ``rest_1`` Start/Ziel 4 (``MESSFALL_I_OG1_REST_1``).
+#: Die 4 an ``rest_2`` (HEAD 5ac3e0f, S7c-Abnahme „rest_2 wieder 4") stammt aus
+#: einem Stand, in dem Lifttüren als Ausgänge zählten: ``rest_2`` war der
+#: Stiegenhaus-Ring um die Liftkabine, die 4 waren die GRAPH-Wege
+#: ``seg_graph_tuer_3``/``10``/``11`` an der Lifttür ``exit_durchgang_8``
+#: (208,9 mm vom Schacht) und das FALLBACK-Segment von ``rest_2``. Seit S5c ist
+#: ``rest_2`` Liftschacht (Kabinenanteil 0,635, F1/K1_T); dieselben drei Wege
+#: enden an der Treppenöffnung ``exit_durchgang_6`` und führen ``rest_1`` als
+#: Ziel, dazu dessen FALLBACK — ``rest_1`` = 4. Die Absenkung 4 → 0 ist eine
+#: KORREKTUR, keine Bandabsenkung. Überholt, nicht gelöscht: (3, 9, 4) mit
+#: ``rest_2`` = 4.
+MESSFALL_I_OG1 = (3, 9, 0)
+MESSFALL_I_OG1_REST_1 = 4
+#: Die acht Wege, die § 6g.8/``bericht_r14.md`` als S7c-Abnahme führt
+#: (HEAD-IDs) — mit der gebauten Regel je Starttür unerreichbar, zurück nur
+#: über (B) oder (C), s. o. Owner-Entscheid 2026-09-26 (Option A): ihre
+#: Abwesenheit ist Zielbild.
+S7C_ACHT_WEGE = ("seg_graph_tuer_25", "seg_graph_tuer_28", "seg_graph_tuer_5",
+                 "seg_graph_tuer_6", "seg_graph_tuer_7", "seg_graph_tuer_8",
+                 "seg_graph_tuer_82", "seg_graph_tuer_83")
 
 
 def _lauf(eingabe, permutation):
@@ -475,16 +526,24 @@ def test_kandidatenklasse_ist_fixpunkt_der_eigenen_regel(plan_name, request):
     gesetzt, also war die Bedingung immer erfüllt. Jetzt wird die Menge der
     Räume, die dem Fixpunkt widersprechen, GEGEN DIE GEMESSENE MENGE geprüft
     — sie darf weder wachsen noch wandern. Alles andere muss exakt gleich
-    sein, und jeder Kipper muss mit Grund im Bericht stehen."""
+    sein, und jeder Kipper muss mit Grund im Bericht stehen. Dazu kommen die
+    nach R1 gebundenen Gänge (``R1_GEBUNDEN``, Owner 2026-09-27): ebenfalls
+    unbestimmt, mit ihrem eigenen Grund."""
     prov, modell, _ = request.getfixturevalue(plan_name)
     nach, _ = klassifiziere(modell.raeume, modell.tueren)
     abweichung = {r.id for r in modell.raeume
                   if r.id in nach and r.nutzungsklasse != nach[r.id]}
-    assert abweichung == KIPPER[plan_name] & set(nach), (
+    r1 = R1_GEBUNDEN.get(plan_name, set())
+    assert abweichung == (KIPPER[plan_name] | r1) & set(nach), (
         f"{plan_name}: Kipper-Menge gewandert — {sorted(abweichung)}")
     for rid in abweichung:
         r = next(x for x in modell.raeume if x.id == rid)
         assert r.nutzungsklasse is None, f"{rid} widerspricht, ist aber gesetzt"
+        if rid in r1:
+            assert [w for w in prov.wohnungsklasse_warnungen
+                    if w.startswith(f"unbestimmt: {rid} — R1: Wohnungsflur")], (
+                f"{rid}: nicht im Bericht")
+            continue
         assert [w for w in prov.wohnungsklasse_warnungen
                 if rid in w and "Schritt 3" in w], f"{rid}: nicht im Bericht"
 
@@ -513,11 +572,16 @@ _A, _P = "ALLGEMEIN_ERSCHLIESSUNG", "WOHNUNG_PRIVAT"
     ("ug", "raum_12", _A, (True, True)),
     ("dg2", "raum_6", _A, (True, True)),
     ("moll_eg", "raum_7", _A, (True, True)),
-    # Loch-Räume nach rohen Türen (Owner 2026-09-22, G1.2): nur über rohe
-    # Wohnungseingänge angebunden → allgemein; über eine rohe Zimmertür an
-    # die Wohnung gebunden → unbestimmt, in ihr.
-    ("og2", "raum_9", _A, (True, True)),
-    ("og2", "raum_10", None, (True, True)),
+    # Bis Slice S3b Loch-Räume nach rohen Türen (Owner 2026-09-22, G1.2):
+    # ``raum_9`` allgemein, ``raum_10`` unbestimmt. S3b schließt das Loch —
+    # die 940er Blocktür ``tuer_1`` erreicht das Stiegenhaus ``rest_1`` (roh
+    # ``wohnungseingang`` mit Blatt), die Ankerregel bestätigt alle vier
+    # privat, G4 belegt → Flags 00 wie OG1 ``raum_4``/``5``/``8`` (die Zahl
+    # folgt der Regel, § 6g.10). Wohnungen: ``OG2_NACH_S3B``.
+    ("og2", "raum_4", _P, (False, False)),
+    ("og2", "raum_5", _P, (False, False)),
+    ("og2", "raum_9", _P, (False, False)),
+    ("og2", "raum_10", _P, (False, False)),
     # Board 4: zwei Fixpunkte, kein voller Beleg → Tiebreak, allgemein.
     ("moll_eg", "raum_29", _A, (True, True)),
     ("moll_eg", "raum_57", _A, (True, True)),
@@ -595,48 +659,74 @@ def test_kinderwagenraum_behaelt_seinen_weg(ug):
 #: ABSTELLRAUM, jeder für sich allein. Er ist damit unbestimmt IN der Wohnung
 #: ``{raum_1, raum_4, raum_6, raum_7, raum_10}`` — wie auf HEAD 5ac3e0f — statt
 #: Erschließung mit vier Einraum-Wohnungen dahinter (Runde 10, Gate (3) OG3).
-#: Rennweg OG2 ``raum_9`` bleibt Erschließung: hinter ``durchgang_8`` liegt
+#: Rennweg OG2 ``raum_9`` blieb Erschließung: hinter ``durchgang_8`` liegt
 #: eine mehrräumige Wohnung, die Bedingung „NUR Einzelräume" ist verletzt.
-LOCH_ROH = {
-    ("og2", "raum_4"): (None, {"raum_3", "raum_4", "raum_5", "raum_6"}),
-    ("og2", "raum_5"): (None, {"raum_3", "raum_4", "raum_5", "raum_6"}),
-    ("og2", "raum_10"): (None, {"raum_1", "raum_8", "raum_10", "raum_11", "raum_12"}),
-    ("og2", "raum_9"): (_A, {"raum_7", "raum_10"}),
+#: **Slice S3b (2026-09-26):** OG2 ist kein Loch mehr (``tuer_1`` erreicht das
+#: Stiegenhaus) — die vier OG2-Zeilen stehen seither in ``OG2_NACH_S3B``. OG3
+#: ``raum_10`` ebenfalls nicht: ``tuer_5`` (940 mm, Blatt) erreicht das
+#: STIEGENHAUS ``rest_3``, roh ``stiegenhaustuer``.
+#: **R1-Erweiterung, Fassung A+C (Owner 2026-09-27):** der Gang bindet
+#: trotzdem — sein Zugang ist nur diese Stiegenhaustür mit Blatt (A), hinter
+#: ihm liegen Küche/Zimmer UND Bad/Abstellraum als Einzelräume (C) — und
+#: bleibt wie der Loch-Gang unbestimmt: „der Gang gehört zur Wohnung, ist aber
+#: kein Beleg für eine eigene Wohnung; unbestimmt heißt Notlicht bleibt". Der
+#: Bericht führt ihn als ``r1:``-Zeile, nicht mehr als ``loch:``-Zeile.
+R1_GANG_ROH = {
     ("og3", "raum_10"): (None, {"raum_1", "raum_4", "raum_6", "raum_7", "raum_10"}),
 }
 
 
-@pytest.mark.parametrize("plan_name,raum_id", sorted(LOCH_ROH))
+@pytest.mark.parametrize("plan_name,raum_id", sorted(R1_GANG_ROH))
 def test_loch_raum_folgt_rohen_tueren(plan_name, raum_id, request):
-    """G1.2 auf den echten Plänen: Klasse und Wohnung des Loch-Raums folgen
-    den rohen Türen, er behält beide Flags, und der Messfall S4c/S3b bleibt
-    als ``loch:``-Warnung im Bericht. Ist er Erschließung, hat jede Wohnung
-    dahinter einen Wohnungseingang (korrigierte Rolle, an der der Fluchtweg
-    startet)."""
-    from notbeleuchtung.raumerkennung.wohnungsklasse import korrigierte_rollen
-
+    """G1.2 und R1 auf den echten Plänen (der Testname stammt aus der Zeit, in
+    der ``raum_10`` ein Loch-Raum war; § 6g.8/§ 7e führen ihn so): der Gang
+    gehört nach rohen Türen zu seiner Wohnung, bleibt für (a) unbestimmt mit
+    eigenem Grund, behält beide Flags, und die Bindung steht im Bericht als
+    ``r1:``-Zeile mit ihrem Zugang ``tuer_5`` — keine ``loch:``-Zeile."""
     prov, modell, _ = request.getfixturevalue(plan_name)
-    klasse, menge = LOCH_ROH[(plan_name, raum_id)]
+    klasse, menge = R1_GANG_ROH[(plan_name, raum_id)]
     r = next(x for x in modell.raeume if x.id == raum_id)
     assert r.nutzungsklasse == klasse, r.nutzungsklasse
     assert (r.ist_fluchtweg, r.ist_communal) == (True, True)
-    if klasse is None:
-        assert {x.id for x in modell.raeume
-                if x.wohnung_id and x.wohnung_id == r.wohnung_id} == menge
-    else:
-        assert r.wohnung_id is None
-        rollen = korrigierte_rollen(modell.raeume, modell.tueren)
-        for x in modell.raeume:
-            if x.id not in menge:
-                continue
-            assert x.wohnung_id is not None, x.id
-            gruppe = {y.id for y in modell.raeume if y.wohnung_id == x.wohnung_id}
-            assert [t.id for t in modell.tueren if rollen[t.id] == "wohnungseingang"
-                    and len({t.von_raum, t.nach_raum} & gruppe) == 1], (
-                f"{x.wohnung_id} {sorted(gruppe)} ohne Wohnungseingang")
-    assert [w for w in prov.wohnungsklasse_warnungen
-            if w.startswith(f"loch: {raum_id} — ") and "über keine Tür" in w
-            and "Messfall S4c/S3b" in w], raum_id
+    assert {x.id for x in modell.raeume
+            if x.wohnung_id and x.wohnung_id == r.wohnung_id} == menge
+    warn = prov.wohnungsklasse_warnungen
+    assert [w for w in warn if w.startswith(f"unbestimmt: {raum_id} — ")
+            and "Wohnungsflur hinter Stiegenhaustür" in w], raum_id
+    assert [w for w in warn if w.startswith(f"r1: {raum_id} — ") and "tuer_5" in w
+            and "nur Einzelräume" in w and "(R1)" in w], raum_id
+    assert not [w for w in warn if w.startswith(f"loch: {raum_id} — ")], raum_id
+
+
+#: Slice S3b (2026-09-26) schließt das OG2-Loch (bis dahin ``LOCH_ROH``, heute
+#: ``R1_GANG_ROH``): die
+#: 940er Blocktür ``tuer_1`` (STIEGENHAUS ``rest_1`` ↔ VORRAUM ``raum_4``, roh
+#: ``wohnungseingang`` mit Blatt) hat jetzt beide Seiten; die Ankerregel sagt
+#: für ``raum_4``/``5``/``9``/``10`` „nur über die Wohnungseingangstür tuer_1
+#: (mit Türblatt) erreichbar". Die Wohnung (b) folgt den rohen Türen:
+#: ``raum_4``/``5`` wie bis S3b mit ``raum_3``/``raum_6`` hinter ``tuer_1``;
+#: ``raum_9``/``10`` in der Wohnung jenseits des untypisierten ``raum_2``
+#: (59,53 m², R2: gehört zu keiner Wohnung, Wohnküchen-Verdacht) — ohne
+#: Wohnungseingang, raummengengleich HEAD 5ac3e0f. Wer den Kanon-Punkt
+#: WOHNKÜCHE entscheidet (@EnisAMG), entscheidet diese Grenze mit — wie bei
+#: OG1 ``raum_10`` (§ 6g.10), kein S3b-Rückfall.
+_OG2_HINTER_TUER_1 = {"raum_3", "raum_4", "raum_5", "raum_6"}
+_OG2_JENSEITS_RAUM_2 = {"raum_1", "raum_7", "raum_8", "raum_9", "raum_10",
+                        "raum_11", "raum_12", "raum_15", "raum_16"}
+OG2_NACH_S3B = {"raum_4": _OG2_HINTER_TUER_1, "raum_5": _OG2_HINTER_TUER_1,
+                "raum_9": _OG2_JENSEITS_RAUM_2, "raum_10": _OG2_JENSEITS_RAUM_2}
+
+
+@pytest.mark.parametrize("raum_id", sorted(OG2_NACH_S3B))
+def test_og2_loch_von_s3b_geschlossen(raum_id, og2):
+    """Wohnung nach rohen Türen und kein ``loch:`` mehr im Bericht — Klasse
+    und Flags bindet ``test_r7_klasse_nach_den_owner_entscheiden``."""
+    prov, modell, _ = og2
+    r = next(x for x in modell.raeume if x.id == raum_id)
+    assert {x.id for x in modell.raeume
+            if x.wohnung_id and x.wohnung_id == r.wohnung_id} == OG2_NACH_S3B[raum_id]
+    assert not [w for w in prov.wohnungsklasse_warnungen
+                if w.startswith(f"loch: {raum_id} — ")], raum_id
 
 
 def test_moll_eg_raum_23_behaelt_seine_wege(moll_eg):
@@ -676,7 +766,11 @@ STUETZ_SOLL: dict[str, dict[str, int]] = {
     "dg1": {"raum_4": 1},
     "dg2": {"raum_1": 0},
     "bara": {"raum_9": 0, "raum_12": 0, "raum_31": 0},
-    "moll_eg": {"raum_23": 3, "raum_29": 0, "raum_49": 0, "raum_57": 0},
+    # raum_55: S5c/F5 — seine Hauseingangs-Öffnung aussenoeffnung_8 (Streifen
+    # zwischen Wandkörpern) fällt, der GANG wird unbestimmt (ALLG → None).
+    # Gemessen 5ac3e0f / Runde 6 / S5c-Nachher je 3 (seg_13, seg_16, seg_17).
+    "moll_eg": {"raum_23": 3, "raum_29": 0, "raum_49": 0, "raum_55": 3,
+                "raum_57": 0},
     "moll1og": {"raum_16": 1, "raum_19": 2, "raum_26": 2, "raum_34": 17,
                 "raum_52": 1, "raum_57": 0, "raum_59": 0, "raum_65": 1},
 }
@@ -764,10 +858,13 @@ def test_og3_keine_anker_in_wohnung_privat():
 #: **Runde 14, OG3:** dort sind es alle DREI Wohnungen, raummengengleich HEAD
 #: (``m_vorher_OG3.json``: ``{1,4,6,7,10}`` — ``tuer_5`` führt nach KEIN_RAUM
 #: —, ``{2,8}``, ``{3,5}``). OG3 stand bis Runde 13 in keiner der beiden
-#: Eingangsprüfungen: ``test_loch_raum_folgt_rohen_tueren`` prüft die Eingänge
-#: nur im ``_A``-Zweig, und seit R1 ist der Sollwert für ``raum_10`` ``None``.
-#: Die Abnahme „keine neue Wohnung ohne Eingang" hing für OG3 damit allein an
-#: der Messung; hier ist sie gebunden.
+#: Eingangsprüfungen: ``test_loch_raum_folgt_rohen_tueren`` prüft keine
+#: Eingänge (sein Sollwert für ``raum_10`` ist ``None``, R1). Die Abnahme
+#: „keine neue Wohnung ohne Eingang" hing für OG3 damit allein an der
+#: Messung; hier ist sie gebunden. Seit S3b trägt ``tuer_5`` roh
+#: ``stiegenhaustuer`` (kein Wohnungseingang, Owner: nicht (b)) — mit der
+#: R1-Erweiterung A+C (Owner 2026-09-27) bleibt ``{1,4,6,7,10}`` eine Wohnung
+#: ohne Eingang, wie auf HEAD.
 VORBESTEHEND_OHNE_EINGANG: dict[str, set[frozenset[str]]] = {
     "ug": {frozenset({"raum_3"}), frozenset({"raum_5"})},
     "og3": {frozenset({"raum_1", "raum_4", "raum_6", "raum_7", "raum_10"}),
@@ -816,7 +913,7 @@ def test_bara_raum_19_behaelt_klasse_und_zirkulation(bara):
     ausgeht, entscheidet Schritt 2 ihn stabil: zwei Wohnungen → ALLGEMEIN,
     wie auf HEAD 5ac3e0f — mit 10 Zirkulationspunkten und 4
     Stützpunkt-Segmenten wie dort. Die WOHNUNG folgt seit dem Owner-Grundsatz
-    2026-09-22 den rohen Türen (b): hinter dem Wohnungseingang ``tuer_28`` MIT
+    2026-09-22 den rohen Türen (b): hinter dem Wohnungseingang ``tuer_32`` (vor S4c ``tuer_28``) MIT
     Blatt gehört er mit Küche, Abstellraum, ``raum_30`` und Bad zu einer
     Wohnung; Klasse und Notlicht (a) ändert das nicht."""
     _, modell, _ = bara
@@ -860,7 +957,17 @@ def test_dg1_raum_8_behaelt_sein_notlicht_ohne_ankerbestaetigung(dg1):
     ``seg_graph_durchgang_3`` weg — Start im WOHNZIMMER ``raum_1`` —,
     STIEGENHAUS ``rest_2`` 17 → 11): die Rollenkorrektur machte
     ``durchgang_3`` zur Zimmertür. Reviewer-Befund Runde 4 (Linse
-    Sicherheit): Fail-Safe verletzt. Soll = HEAD 5ac3e0f."""
+    Sicherheit): Fail-Safe verletzt. Soll = HEAD 5ac3e0f.
+
+    **Slice S5c, Owner-Entscheid B1 (2026-09-28):** ``rest_2`` steht auf 0.
+    Die 17 (HEAD 5ac3e0f) sind überholt — Phantom-Ausgang im Liftschacht, seit
+    S5c entfallen: sie waren die GRAPH-Wege zum Phantom-Ausgang
+    ``exit_durchgang_9`` mit Ziel ``rest_3``, und ``rest_3`` ist seit S5c
+    Liftschacht (Kabinenanteil 0,684, F1/K1_T). Der verbleibende Weg
+    ``seg_graph_durchgang_3`` endet an der Stiegenhaus-Öffnung
+    ``exit_durchgang_6`` und läuft nicht mehr durch ``rest_2``. Die Absenkung
+    17 → 0 ist eine KORREKTUR, keine Bandabsenkung. Überholt, nicht gelöscht:
+    ``rest_2`` = 17."""
     _, modell, _ = dg1
     r8 = next(r for r in modell.raeume if r.id == "raum_8")
     assert r8.nutzungsklasse == "WOHNUNG_PRIVAT"
@@ -868,7 +975,7 @@ def test_dg1_raum_8_behaelt_sein_notlicht_ohne_ankerbestaetigung(dg1):
     assert "seg_graph_durchgang_3" in {s.segment_id
                                        for s in modell.zirkulation.segmente}
     assert zirkulationspunkte(modell, "raum_8") == 3
-    assert zirkulationspunkte(modell, "rest_2") == 17
+    assert zirkulationspunkte(modell, "rest_2") == 0  # 17 überholt (S5c, B1)
 
 
 def test_ug_raum_12_behaelt_die_wege_durch_ihn(ug):
@@ -919,14 +1026,19 @@ def test_bara_raum_30_wird_nicht_von_der_auswertungsreihenfolge_entschieden(bara
     seit die Rollenkorrektur von der rohen Rolle ausgeht, hat die Kette einen
     Fixpunkt und er bleibt, was er auf HEAD war: ALLGEMEIN, beide Flags,
     4 Zirkulationspunkte und sein Segment. Seine WOHNUNG folgt den rohen
-    Türen (Owner 2026-09-22, b): über Zimmertüren hinter ``tuer_28``."""
+    Türen (Owner 2026-09-22, b): über Zimmertüren hinter ``tuer_32``.
+
+    S4c: die zwei Doppelflügel sind vier Einzeltüren, die Nummern ab
+    ``tuer_14`` rücken nach — ``tuer_28`` → ``tuer_32`` (Wohnungseingang),
+    ``tuer_35`` → ``tuer_39`` (BAD ``raum_5`` | ``raum_30``, dieselbe Tür bei
+    2 910 / −5 615, derselbe Weg mit 18 Punkten)."""
     _, modell, _ = bara
     r30 = next(r for r in modell.raeume if r.id == "raum_30")
     assert r30.nutzungsklasse == "ALLGEMEIN_ERSCHLIESSUNG"
     assert (r30.ist_fluchtweg, r30.ist_communal) == (True, True)
     r19 = next(r for r in modell.raeume if r.id == "raum_19")
     assert r30.wohnung_id is not None and r30.wohnung_id == r19.wohnung_id
-    assert stuetzpunkt_segmente(modell, "raum_30") == ["seg_graph_tuer_35"]
+    assert stuetzpunkt_segmente(modell, "raum_30") == ["seg_graph_tuer_39"]
     assert zirkulationspunkte(modell, "raum_30") == 4
 
 
@@ -972,7 +1084,15 @@ def test_keine_leuchten_in_wohnung_privat(pfad, floor):
 
 # ── (g) Messfälle (i) und (iv) in der Zählweise aus § 6g ────────────────────
 def test_messfall_i_stiegenhaus_raum_35(moll1og):
-    """CHARAKTERISIERUNG, KEIN ZIELBILD — wird von Slice S7c gelöst.
+    """ZIELBILD seit Owner-Entscheid 2026-09-26 (Board-Frage 1, Option A) —
+    S7c Runde 1 hat die Owner-Regel gebaut und die alte Abnahmezahl 17 NICHT
+    erreicht; mit der gebauten Regel ist sie
+    je Starttür unerreichbar (ein GRAPH-Segment je Tür mit korrigierter Rolle
+    ``wohnungseingang``, ``fluchtweg.py:329ff``, ID ``seg_graph_<tuer>``).
+    17 nur über (B) innere Türen als Start — gegen den Owner-Satz „die innere
+    Tür wird zimmertuer" — oder (C) je innerer Tür ein Duplikat des äußeren
+    Wegs, Start-Regel in ``fluchtweg.py`` (``MESSFALL_I_MOLL``,
+    Board-Frage 1).
 
     § 6g Messfall (i), Mollgasse 1OG STIEGENHAUS ``raum_35``. Das Kriterium ist
     in BEIDEN Zählweisen verfehlt; keine davon rettet es. Ursache ist nicht die
@@ -986,24 +1106,75 @@ def test_messfall_i_stiegenhaus_raum_35(moll1og):
     Vorraum → allgemeiner Gang) — es reicht nicht, die innere Tür zur
     ``zimmertuer`` zu machen. Abnahme von S7c: Start/Ziel-Segmente wieder 17,
     die acht Wege über das Stiegenhaus wieder da, jetzt mit der Stiegenhaustür
-    als Start. Hier wird NICHTS grün gebogen und NICHTS als xfail versteckt —
-    die Zahlen werden nur festgenagelt, damit sie nicht unbemerkt wandern."""
+    als Start.
+
+    **Gemessen in S7c Runde 1:** die Wanderung ist auf diesem Plan bereits
+    erledigt — ``tuer_3``/``tuer_4`` tragen roh und korrigiert
+    ``wohnungseingang`` und sind Start. Sie liefert zwei Wege statt acht, die
+    Zahl bleibt 9. Hier wird NICHTS grün gebogen und NICHTS als xfail
+    versteckt."""
     _, modell, _ = moll1og
     assert len(stuetzpunkt_segmente(modell, "raum_35")) == MESSFALL_I_MOLL[0]
     assert len(startziel_segmente(modell, "raum_35")) == MESSFALL_I_MOLL[1]
+
+
+def test_messfall_i_acht_wege_ueber_das_stiegenhaus(moll1og):
+    """Der dritte Owner-Punkt der S7c-Abnahme, aufgeschlüsselt und GEMESSEN:
+    „die acht Wege über das Stiegenhaus zurück, jetzt mit der Stiegenhaustür als
+    Start."
+
+    Die zweite Hälfte des Satzes ist ERFÜLLT und wird hier festgehalten: die
+    Stiegenhaustüren ``tuer_3``/``tuer_4`` (STIEGENHAUS ``raum_35`` ↔ die
+    bestätigt privaten Vorräume ``raum_2``/``raum_4``) sind Fluchtweg-Start,
+    ihre Wege ``seg_graph_tuer_3``/``tuer_4`` laufen durch das Stiegenhaus zum
+    ``stair_exit``. Die Rolle ist dort auch nicht erst gewandert — sie sitzt roh
+    auf der äußeren Tür (Regel 3 der Türtypisierung, STIEGENHAUS × VORRAUM).
+
+    Die erste Hälfte („die ACHT Wege") ist NICHT erfüllt und mit der gebauten
+    Regel je Starttür unerreichbar: die acht Wege starteten an den acht
+    INNEREN Türen derselben zwei Vorräume, und für die sagt die Regel
+    ``zimmertuer``. Ein GRAPH-Segment entsteht je Tür mit korrigierter Rolle
+    ``wohnungseingang`` (``fluchtweg.py:329ff``, ID ``seg_graph_<tuer>``),
+    die zwei äußeren Türen liefern also zwei Wege, nicht acht. Zurück kämen
+    die acht nur über (B) die inneren Türen als Start — gegen den Owner-Satz
+    „die innere Tür wird zimmertuer" — oder (C) je innerer Tür ein Duplikat
+    des äußeren Wegs (Start-Regel in ``fluchtweg.py``). Diese Zusicherung hält
+    beide Befunde fest, damit die Zahl nicht unbemerkt wandert.
+
+    Owner-Entscheid 2026-09-26 (Board-Frage 1, Option A): die Abwesenheit der
+    acht Wege ist ZIELBILD — ihre Startpunkte waren innere Türen privater
+    Vorräume, und „privat heißt keine eigene Zirkulation" (§ 6g.10)."""
+    _, modell, _ = moll1og
+    ids = {s.segment_id for s in modell.zirkulation.segmente}
+    assert {"seg_graph_tuer_3", "seg_graph_tuer_4"} <= ids, sorted(ids)
+    assert [s for s in S7C_ACHT_WEGE if s in ids] == []
 
 
 def test_messfall_i_auch_auf_rennweg_og1(og1):
     """Befund B3: derselbe Messfall ist AUCH auf Rennweg OG1 verfehlt, im
     Runde-3-Bericht stand nur der Mollgasse-Fall. Gemessen wurde dort
     STIEGENHAUS ``raum_14`` (Stützpunkt-Segmente 3 → 1, Zirkulationspunkte
-    9 → 3) und ``rest_2`` (Start/Ziel 4 → 2). Auch das ist
-    CHARAKTERISIERUNG, kein Zielbild — S7c löst es; Abnahme dort: ``rest_2``
-    wieder 4."""
+    9 → 3) und ``rest_2`` (Start/Ziel 4 → 2).
+
+    **Slice S7c: ZIELBILD** („Rennweg OG1 ``raum_14`` wieder 4 an ``rest_2``",
+    Owner-GO 2026-09-26). Seit Runde 10 (G4) liegen alle drei Zahlen schon
+    wieder auf HEAD — die Zusicherung hält sie dort fest.
+
+    Die 4 hängen an Option W von ``raum_12`` (``top_2`` = AR/VR/WC ohne
+    Aufenthaltsraum, weil ``raum_10`` untypisiert ist): ``tuer_10``/``tuer_11``
+    sind korrigiert Wohnungseingänge und Start. Mit typisierter Wohnküche
+    (Kanon-Punkt WOHNKÜCHE, @Enis) wird ``raum_12`` bestätigt privat und
+    ``rest_2`` gemessen 2 (S7c Runde 2, § 6) — das wäre dann Folge des
+    Kanons, kein S7c-Rückfall.
+
+    **Slice S5c (Owner F3):** ``rest_2`` ist Liftschacht, seine 4 waren
+    Lifttür-Wege (überholt, s. ``MESSFALL_I_OG1``); dieselben Wege enden an
+    ``exit_durchgang_6`` und führen ``rest_1`` als Start/Ziel."""
     _, modell, _ = og1
     assert (len(stuetzpunkt_segmente(modell, "raum_14")),
             zirkulationspunkte(modell, "raum_14"),
             len(startziel_segmente(modell, "rest_2"))) == MESSFALL_I_OG1
+    assert len(startziel_segmente(modell, "rest_1")) == MESSFALL_I_OG1_REST_1
 
 
 def test_messfall_iv_gang_raum_34(moll1og):
@@ -1033,12 +1204,14 @@ def test_messfall_iv_gang_raum_34(moll1og):
     ``raum_34``, und die Vorräume sind wieder Knoten: Stützpunkt-Segmente 9,
     Start/Ziel 3 — beides wieder Runde 6.
 
-    **Planer-Entscheid P1 (Runde 11):** die 9 Stützpunkt-Segmente sind
-    CHARAKTERISIERUNG auf dem Runde-6-Stand (HEAD 17), kein Zielbild — die
-    Richtung geht auf HEAD zu, ein schlechterer Ist-Wert wird nicht
-    eingetragen. Die Abnahme dafür ist S7c (Messfall (i)): erst wenn die acht
-    Wege über das Stiegenhaus zurückkommen, steht hier wieder HEAD 17.
-    Start/Ziel 3 ist dagegen HEAD = Runde 6."""
+    **Slice S7c, Runde 1:** der Owner nennt ``raum_34`` Stützpunkt-Segmente
+    wieder 17 als Abnahme. Die acht fehlenden sind die acht Wege des
+    Messfalls (i); mit der gebauten Regel sind sie je Starttür unerreichbar
+    (ein GRAPH-Segment je Tür mit korrigierter Rolle ``wohnungseingang``,
+    ``fluchtweg.py:329ff``) und kämen nur über (B) oder (C) zurück (bei
+    ``MESSFALL_I_MOLL``). Die 9 sind seit Owner-Entscheid 2026-09-26 (Option A)
+    ZIELBILD — gemessen nach S7c unverändert. Start/Ziel 3 ist HEAD =
+    Runde 6."""
     prov, modell, _ = moll1og
     r34 = next(r for r in modell.raeume if r.id == "raum_34")
     assert r34.nutzungsklasse == "ALLGEMEIN_ERSCHLIESSUNG"
