@@ -20,10 +20,18 @@ Nachbarschaft statt über ein Schließ-Maß:
 * jede Tür des Raums führt in diese Wohnung — eine Tür ins Freie, ins
   Unerkannte oder zu einem fremden Raum nimmt ihn heraus (im Zweifel bleibt der
   Raum, was er war, und behält sein Notlicht).
+
+**Umriss als Fläche (K4, Owner 2026-09-30)** — ``wohnungsumrisse`` /
+``anteile_im_umriss``: die Außenkontur ohne Löcher von ``unary_union(Räume
+gleicher wohnung_id).buffer(+SCHLIESS_MM).buffer(−SCHLIESS_MM)`` (Definition aus
+dem K1-Auftrag; die Darstellung zeichnet dieselbe Union mit ±200 mm).
+„Vollständig innerhalb" heißt ≥ ``VOLL`` der Raumfläche (Planer-Präzisierung
+K4); ein Mitglied von ``top_n`` liegt in ``top_n``.
 """
 from __future__ import annotations
 
 from shapely.geometry import Polygon
+from shapely.ops import unary_union
 
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum, Tuer
 
@@ -34,6 +42,40 @@ from notbeleuchtung.hauptengine.contracts.raum_modell import Raum, Tuer
 NACHBAR_MM = 500.0
 #: Klassen, die keiner Wohnung und keiner Erschließung gehören.
 _NEUTRAL = frozenset({"KEIN_RAUM", "AUSSEN"})
+#: Schließmaß des Flächen-Umrisses: Wände bis 2 × 250 mm fallen zu.
+SCHLIESS_MM = 250.0
+#: „Vollständig innerhalb" = mindestens dieser Anteil der Raumfläche.
+VOLL = 0.98
+
+
+def wohnungsumrisse(raeume: list[Raum]) -> dict:
+    """``{wohnung_id: Umriss}`` — Außenkontur ohne Löcher der geschlossenen
+    Raumvereinigung jeder Wohnung. Liest nur ``wohnung_id`` und Polygone."""
+    je: dict[str, list[Polygon]] = {}
+    for r in raeume:
+        if r.wohnung_id and len(r.polygon_mm) >= 3:
+            je.setdefault(r.wohnung_id, []).append(Polygon(r.polygon_mm).buffer(0))
+    out = {}
+    for wid, ps in je.items():
+        g = unary_union(ps).buffer(SCHLIESS_MM).buffer(-SCHLIESS_MM)
+        out[wid] = unary_union([Polygon(p.exterior)
+                                for p in getattr(g, "geoms", [g]) if not p.is_empty])
+    return out
+
+
+def anteile_im_umriss(raum: Raum, umrisse: dict) -> dict[str, float]:
+    """Anteil der Raumfläche je Wohnungsumriss (0..1); ein Mitglied liegt in
+    seiner eigenen Wohnung ganz (1.0), gleich wie der Umriss verläuft."""
+    g = Polygon(raum.polygon_mm).buffer(0) if len(raum.polygon_mm) >= 3 else None
+    out: dict[str, float] = {raum.wohnung_id: 1.0} if raum.wohnung_id else {}
+    for wid, u in umrisse.items():
+        if wid == raum.wohnung_id:
+            continue
+        if g is None or g.area <= 0:
+            out[wid] = 0.0
+        else:
+            out[wid] = g.intersection(u).area / g.area
+    return out
 
 
 def umschliessende_wohnung(raum: Raum, raeume: list[Raum], tueren: list[Tuer],
