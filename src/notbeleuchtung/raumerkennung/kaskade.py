@@ -108,11 +108,14 @@ def raeume_aus_kaskade(plan: DxfPlan,
         raeume.append(r)
         quelle[r.id] = "H"
     wk = finde_wandkoerper(plan)
-    oeff = tuer_oeffnungen(plan)
+    bounds = bounds_aus_wandkoerpern(wk) if wk else None
+    # ``bounds`` auch VORWÄRTS: Türblöcke mit INSERT-Punkt außerhalb des Plans
+    # werden an ihrer Geometrie verortet (Weltkoordinaten-Blöcke, S4a).
+    oeff = tuer_oeffnungen(plan, bounds)
     if wk:
         # Nur Öffnungen im Plan-Bereich der Wandkörper — Duplikat-Etagen-
-        # Varianten/zweiter Plan-Cluster liefern sonst Phantom-Türen.
-        oeff = im_planbereich(oeff, bounds_aus_wandkoerpern(wk))
+        # Varianten liefern sonst Phantom-Türen.
+        oeff = im_planbereich(oeff, bounds)
     zuord = ordne_zu(stempel, raeume)
     _ein_polygon_ein_stempel(zuord)
     flut_i = [

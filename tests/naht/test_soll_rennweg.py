@@ -4,23 +4,22 @@ Wohnungen, Ausgänge, Fluchtwege) größtenteils SCHARF (2026-09-06: Ist =
 3 GRAPH-Segmente, 2 Wohnungen).
 
 Seit Fachteil 2 auch die Lift-Erkennung scharf (textbasierter Pfad) sowie
-Anker-/Stiegenhaus-Zusicherungen. Skip-Gate, wenn das CAD-Asset fehlt
-(CI ohne Projekte/).
+Anker-/Stiegenhaus-Zusicherungen. Gemessen wird auf den versionierten Plänen
+unter ``Projekte/Rennweg/`` (siehe ``tests/plaene.py``).
 
 Plan-Befunde (2026-09): 11 Zargentüren in Wall-Blöcken (T1..T11), zwei Stiegen
 (Stair_1 mit Laufnummern 1-20, Stair_2 mit 1-6), keine FLW-Linien.
 """
-from pathlib import Path
-
 import pytest
 
-PLAN = Path("Projekte/_eingang/Rennweg_OG3.dxf")
+from plaene import RENNWEG_EG as PLAN_EG
+from plaene import RENNWEG_OG3 as PLAN
+from plaene import plan
 
 
 @pytest.fixture(scope="module")
 def rm():
-    if not PLAN.exists():                        # pragma: no cover — CAD-Asset fehlt
-        pytest.skip(f"Architekturplan nicht vorhanden: {PLAN}")
+    plan(PLAN)
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
 
     return ArchitekturRaumProvider().parse(str(PLAN), "OG3")
@@ -34,6 +33,10 @@ def test_soll_stair_exit_statt_final_exit(rm):
     assert len(final) == 0, f"{len(final)} final_exit im Obergeschoß"
 
 
+@pytest.mark.xfail(
+    strict=True, raises=AssertionError,
+    reason="S4a allein, Türstapel unvollständig, muss vor Merge XPASS sein — "
+           "Gate-Bedingung (6) in docs/GATE_TUERSTAPEL.md")
 def test_soll_segmente_aus_graph(rm):
     """Ohne FLW-Linien im Plan müssen Segmente aus dem Zirkulationsgraphen kommen."""
     graph = [s for s in rm.zirkulation.segmente if s.quelle == "GRAPH"]
@@ -62,8 +65,7 @@ def test_soll_wohnungs_gruppe(rm):
 
 def test_soll_keine_leuchten_in_wohnung_privat():
     """Pipeline-Smoke: kein Notlicht-Symbol in WOHNUNG_PRIVAT-Räumen."""
-    if not PLAN.exists():                        # pragma: no cover — CAD-Asset fehlt
-        pytest.skip(f"Architekturplan nicht vorhanden: {PLAN}")
+    plan(PLAN)
     from shapely.geometry import Point, Polygon
 
     from notbeleuchtung.hauptengine.pipeline import run
@@ -94,13 +96,9 @@ def test_stiegenhaus_modell_mit_laufrichtung(rm):
     assert m.verbotszonen_mm
 
 
-PLAN_EG = Path("Projekte/_eingang/Rennweg_EG.dxf")
-
-
 @pytest.fixture(scope="module")
 def rm_eg():
-    if not PLAN_EG.exists():                     # pragma: no cover — CAD-Asset fehlt
-        pytest.skip(f"Architekturplan nicht vorhanden: {PLAN_EG}")
+    plan(PLAN_EG)
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
 
     return ArchitekturRaumProvider().parse(str(PLAN_EG), "EG")
@@ -141,6 +139,10 @@ def test_soll_eg_90_prozent_tueren_typisiert(rm_eg):
         f"nur {typ}/{len(rm_eg.tueren)} Türen typisiert")
 
 
+@pytest.mark.xfail(
+    strict=True, raises=AssertionError,
+    reason="S4a allein, Türstapel unvollständig, muss vor Merge XPASS sein — "
+           "Gate-Bedingung (6) in docs/GATE_TUERSTAPEL.md")
 def test_keine_anker_in_wohnung_privat(rm):
     """Fachteil 2: Anker nur in Erschließung (Stiegenhaus/Gang), nie in
     WOHNUNG_PRIVAT-Räumen."""

@@ -27,12 +27,15 @@ Zwei Stufen je Plan: Stufe 1 = Erkennung + graue Plan-Kulisse →
 ``uebersicht.png`` (+ ``uebersicht_<n>.png`` je weiterem Ausschnitt).
 ``--nur-zeichnen`` wiederholt Stufe 2 aus dem Cache.
 
+Versionen: jede neue Ausgabe ist ein eigener Versionsordner ``<out>/<Ordner>_<version>/``
+(z. B. ``Rennweg_v2``). Ein Ordner mit ``kennzahlen.json`` wird nie überschrieben;
+``<out>/Rennweg/`` (v1) und ``BERICHT.md`` schreibt das Skript nicht.
+
 Aufruf:
-    python scripts/analyse/raumerkennung_darstellung.py                # alle Ordner
-    python scripts/analyse/raumerkennung_darstellung.py --neu          # alles neu rechnen
+    python scripts/analyse/raumerkennung_darstellung.py --ordner Rennweg --version v2 --slices "S1,S2"
     python scripts/analyse/raumerkennung_darstellung.py --dxf <pfad>   # ein Plan → _einzel/
-    python scripts/analyse/raumerkennung_darstellung.py --nur-zeichnen # Bilder aus Cache
-    python scripts/analyse/raumerkennung_darstellung.py --nur-index    # nur HTML
+    python scripts/analyse/raumerkennung_darstellung.py --nur-zeichnen --ordner Rennweg --version v2
+    python scripts/analyse/raumerkennung_darstellung.py --nur-index --ordner Rennweg --version v2
 """
 from __future__ import annotations
 
@@ -64,6 +67,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import uebersicht_karte as uk
+from matplotlib.font_manager import FontProperties
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 from matplotlib.transforms import Bbox
@@ -73,6 +77,7 @@ from shapely.geometry import LineString, Point, Polygon
 from shapely.ops import unary_union
 
 import plan_pruefen as pp
+from notbeleuchtung.raumerkennung.nutzungsklasse import nutzungsklasse_fuer
 
 EINGANG = REPO / "Projekte_Leere Architektpläne (Input)"
 AUSGABE = REPO / "Projekte" / "_ergebnis_raumerkennung"
@@ -97,6 +102,8 @@ ABWEICHUNG_PROZENT = 10.0
 #: Inneren eines anderen Raums, dann ist es immer eine Linie.
 STEMPEL_TOLERANZ_MM = 300.0
 MAX_AUSSCHNITTE = 4
+#: Außenbereich-Überlagerung zählt ab dieser Schnittfläche (wie M2 ``SCHNITT_MIN_M2``).
+SCHNITT_MIN_M2 = 0.05
 
 # ── Farbtabelle: die Owner-Vorgabe ──────────────────────────────────────────
 # key → (Legendentext, Füllung, Kontur, Schraffur)
@@ -117,6 +124,7 @@ _KAT: dict[str, tuple[str, str, str, str | None]] = {
     "frei":      ("Balkon / Loggia / Terrasse", "#a5d6a7", "#2e7d4f", None),
     "sonstig":   ("sonstiger Typ (nicht in der Farbtabelle)", "#d7ccc8", "#5d4037", None),
     "unbekannt": ("UNBEKANNT — nicht typisiert", "#ff00ff", "#8b0060", None),
+    "nische":    ("NISCHE — Nische, Hinweis: prüfen, ob eigener Raum", "#ff00ff", "#8b0060", None),
 }
 #: raum_typ → Kategorie. Ein Typ, der hier fehlt, wird "sonstig" — NICHT
 #: "unbekannt" (unbekannt = gar kein Typ) und NICHT stillschweigend grau.
@@ -134,6 +142,7 @@ _TYP_KAT = {
     "GARAGE": "neben", "MUELLRAUM": "neben", "MÜLLRAUM": "neben",
     "WASCHKÜCHE": "neben", "WASCHKUECHE": "neben", "KINDERWAGENRAUM": "neben",
     "BALKON": "frei", "LOGGIA": "frei", "TERRASSE": "frei",
+    "NISCHE": "nische",
 }
 _AUSSEN_FC, _AUSSEN_EC = "#42a5f5", "#0d47a1"
 _WOHNUNG_FARBE = "#3b1fa8"
@@ -185,6 +194,16 @@ def _commit() -> str:
                               cwd=REPO).stdout.strip()
     sha = git("rev-parse", "--short", "HEAD") or "?"
     return f"{sha}-dirty" if git("status", "--porcelain", "--", "src", "scripts") else sha
+
+
+def _ordner_version(name: str) -> str:
+    """Versionsordner ``Rennweg_v2`` → ``v2``; ohne Suffix ist es v1."""
+    m = re.search(r"_(v\d+)$", name)
+    return m.group(1) if m else "v1"
+
+
+def _slices_text(slices: list[str] | None) -> str:
+    return "nicht angegeben" if slices is None else (", ".join(slices) or "keine")
 
 
 def _kategorie(typ: str | None, nutzungsklasse: str | None) -> str:
@@ -473,6 +492,25 @@ def _auswertung(cache: dict) -> tuple[dict, dict, dict]:
     return polys, je_raum, abw
 
 
+def _aussen_kanon(cache: dict, polys: dict) -> list[dict]:
+    """Kanon-Räume (Nutzungsklasse bekannt, nicht AUSSEN), die ein Außenbereich
+    (offen ∪ Innenhof) um mehr als ``SCHNITT_MIN_M2`` überlagert. Soll: keiner."""
+    offen = unary_union([wkb.loads(w) for w in cache["aussen_offen"]])
+    geschl = unary_union([wkb.loads(w) for w in cache["aussen_geschlossen"]])
+    aussen = unary_union([offen, geschl])
+    out = []
+    for r in cache["raeume"]:
+        g = polys.get(r["id"])
+        klasse = nutzungsklasse_fuer(r["typ"])
+        if g is None or klasse is None or klasse == "AUSSEN":
+            continue
+        if g.intersection(aussen).area / 1e6 > SCHNITT_MIN_M2:
+            out.append({"id": r["id"], "typ": r["typ"], "flaeche_m2": round(r["flaeche_m2"], 2),
+                        "schnitt_offen_m2": round(g.intersection(offen).area / 1e6, 2),
+                        "schnitt_geschlossen_m2": round(g.intersection(geschl).area / 1e6, 2)})
+    return out
+
+
 def _kennzahlen(cache: dict, bilder: list[dict]) -> dict:
     """Owner-Kennzahlen auf oberster Ebene — genau die verlangten. Alles andere
     steht unter ``kontext`` und erklärt nur das Bild."""
@@ -480,6 +518,7 @@ def _kennzahlen(cache: dict, bilder: list[dict]) -> dict:
     raeume, st = cache["raeume"], cache["stempel"]
     typen = Counter((r["typ"] or "UNBEKANNT") for r in raeume)
     whg = Counter(r["wohnung_id"] for r in raeume if r["wohnung_id"])
+    kanon = _aussen_kanon(cache, polys)
     return {
         "raeume_gesamt": len(raeume),
         "raeume_je_typ": dict(typen.most_common()),
@@ -488,6 +527,10 @@ def _kennzahlen(cache: dict, bilder: list[dict]) -> dict:
         "stempel_abweichung_gt10": sum(1 for v in abw.values() if v > ABWEICHUNG_PROZENT),
         "wohnungen": len(whg),
         "raeume_je_wohnung": dict(sorted(whg.items())),
+        "schaechte_erkannt": typen.get("SCHACHT", 0),
+        "raeume_nische": typen.get("NISCHE", 0),
+        "aussen_ueberlagerung_kanon": len(kanon),
+        "aussen_ueberlagerung_kanon_liste": kanon,
         "kontext": {
             "raeume_ohne_polygon": len(raeume) - len(polys),
             "raeume_ohne_label": sum(b["ohne_label"] for b in bilder),
@@ -584,6 +627,21 @@ def _legende(ax, zaehl: Counter, hinweise: list[str]) -> None:
               title_fontproperties={"weight": "bold", "size": 10})
 
 
+def _titelzeilen(renderer, titel: str, max_px: float) -> tuple[list[str], float]:
+    """Einzeilig, wenn der Titel passt; sonst zweizeilig am ersten „ — “ (Kopf mit
+    Version/Datum/Commit/Slices | Plan …). Passt eine Zeile dann immer noch nicht,
+    wird die Schrift kleiner — abgeschnitten wird nichts."""
+    def breite(s: str, fs: float) -> float:
+        prop = FontProperties(size=fs, weight="bold")
+        return renderer.get_text_width_height_descent(s, prop, ismath=False)[0]
+    zeilen, fs = [titel], 11.0
+    if breite(titel, fs) > max_px:
+        zeilen = titel.split(" — ", 1)
+    while fs > 6.0 and max(breite(z, fs) for z in zeilen) > max_px:
+        fs -= 0.5
+    return zeilen, fs
+
+
 def _speichere(fig, ziel: Path) -> tuple[int, int]:
     """256-Farben-PNG (Datei ~4× kleiner), Signalfarben exakt in der Palette."""
     tmp = ziel.with_name("_voll.png")
@@ -632,10 +690,17 @@ def _zeichne_ausschnitt(cache: dict, ziel: Path, i: int, titel: str,
     h_px, w_px = img.shape[:2]
     plan_px = max(w_px, MIN_BREITE_PX)
     hoehe_px = h_px * plan_px / w_px
-    ges_w, ges_h = plan_px + LEGENDE_PX, hoehe_px + TITEL_PX
-    fig = plt.figure(figsize=(ges_w / DPI, ges_h / DPI), dpi=DPI)
+    ges_w = plan_px + LEGENDE_PX
+    fig = plt.figure(figsize=(ges_w / DPI, 1.0), dpi=DPI)
+    # Titel mittig über dem Plananteil → höchstens so breit wie der Plan.
+    titel_zeilen, titel_fs = _titelzeilen(
+        fig.canvas.get_renderer(), titel + (f" · Ausschnitt {i}/{n_aus}" if n_aus > 1 else ""),
+        plan_px * 0.96)
+    titel_px = TITEL_PX * len(titel_zeilen)
+    ges_h = hoehe_px + titel_px
+    fig.set_size_inches(ges_w / DPI, ges_h / DPI)
     fig.patch.set_facecolor("white")
-    links, unten = LEGENDE_PX / ges_w, TITEL_PX / ges_h
+    links, unten = LEGENDE_PX / ges_w, titel_px / ges_h
     ax = fig.add_axes([links, unten, 1 - links, 1 - unten])
     ax.set_axis_off()
     ax.imshow(img, extent=list(ex), interpolation="none", aspect="auto", zorder=0)
@@ -704,7 +769,10 @@ def _zeichne_ausschnitt(cache: dict, ziel: Path, i: int, titel: str,
             zeilen.append(("(" + " | ".join(
                 (s["name"] or "—") + (f" {s['flaeche_m2']:.1f} m²" if s["flaeche_m2"] else "")
                 for s in stmp) + ")", "#333333", False))
-        jobs.append((0 if unbek or rot_zahl else 1, cx, cy, zeilen, rot_zahl, ec))
+        nische = k == "nische"
+        if nische:
+            zeilen.append(("Hinweis: Nische", _KAT["nische"][2], True))
+        jobs.append((0 if unbek or rot_zahl or nische else 1, cx, cy, zeilen, rot_zahl, ec))
 
     # ── Wohnungen: dicker Umriss + ID über der Oberkante ───────────────────
     je_w: dict[str, list] = {}
@@ -775,9 +843,8 @@ def _zeichne_ausschnitt(cache: dict, ziel: Path, i: int, titel: str,
     axl = fig.add_axes([0, 0, links, 1])
     axl.set_axis_off()
     _legende(axl, zaehl, hinweise)
-    fig.text(links + (1 - links) / 2, unten * 0.45,
-             titel + (f" · Ausschnitt {i}/{n_aus}" if n_aus > 1 else ""),
-             ha="center", va="center", fontsize=11, fontweight="bold")
+    fig.text(links + (1 - links) / 2, unten * 0.45, "\n".join(titel_zeilen),
+             ha="center", va="center", fontsize=titel_fs, fontweight="bold")
     w, h = _speichere(fig, ziel / datei)
     plt.close(fig)
     return {"datei": datei, "px": [w, h], "raeume": im_bild, "ohne_label": zaehl["ohne_label"]}
@@ -789,25 +856,29 @@ def _zeichnen(cache: dict, ziel: Path, titel: str) -> list[dict]:
             for i in range(1, len(cache["ausschnitte"]) + 1)]
 
 
-def _titel(projekt: str, name: str, cache: dict, commit: str) -> str:
-    return (f"{projekt} / {name} — Raumerkennung, nur Räume · Geschoss "
-            f"{cache['geschoss'] or 'UNBEKANNT'} ({cache['geschoss_quelle']}) · Commit {commit}")
+def _titel(projekt: str, name: str, cache: dict, commit: str, meta: dict) -> str:
+    """``meta`` trägt ``version``, ``datum``, ``slices`` (kennzahlen.json oder Lauf)."""
+    kopf = " · ".join([f"{projekt} {meta.get('version') or ''}".strip(), meta.get("datum") or "?",
+                       f"Commit {commit}", f"Slices {_slices_text(meta.get('slices'))}"])
+    return (f"{kopf} — {name} — Raumerkennung, nur Räume · Geschoss "
+            f"{cache['geschoss'] or 'UNBEKANNT'} ({cache['geschoss_quelle']})")
 
 
 # ── Worker (eigener Prozess je Plan) ────────────────────────────────────────
 
-def _worker(dxf_s: str, ziel_s: str, projekt: str, name: str, commit: str, sha: str) -> None:
+def _worker(dxf_s: str, ziel_s: str, projekt: str, name: str, commit: str, sha: str,
+            meta: dict) -> None:
     dxf, ziel = Path(dxf_s), Path(ziel_s)
     ziel.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
     basis = {"plan": name, "projekt": projekt, "dxf": _rel(dxf), "sha256": sha,
-             "bytes": dxf.stat().st_size, "commit": commit}
+             "bytes": dxf.stat().st_size, "commit": commit, **meta}
     phase = "Erkennung"
     try:
         cache = _erkennen(dxf, ziel)
         phase = "Zeichnen"
         t1 = time.time()
-        bilder = _zeichnen(cache, ziel, _titel(projekt, name, cache, commit))
+        bilder = _zeichnen(cache, ziel, _titel(projekt, name, cache, commit, meta))
         d = {**basis, "status": "ok", **_kennzahlen(cache, bilder),
              "laufzeit_s": {"erkennung": cache["erkennung_s"],
                             "zeichnen": round(time.time() - t1, 1),
@@ -828,7 +899,7 @@ _GESTARTET = "Prozess gestartet, aber kein Ergebnis geschrieben"
 
 def _fehler_eintrag(a: dict, grund: str, t0: float) -> dict:
     return {"plan": a["name"], "projekt": a["projekt"], "dxf": _rel(a["dxf"]),
-            "sha256": a["sha"], "bytes": a["bytes"], "commit": a["commit"],
+            "sha256": a["sha"], "bytes": a["bytes"], "commit": a["commit"], **a["meta"],
             "status": "fehler", "grund": grund, "laufzeit_s": round(time.time() - t0, 1)}
 
 
@@ -838,7 +909,7 @@ def _lauf(auftraege: list[dict], out: Path, worker: int, timeout_min: float) -> 
     starten). Vor dem Start steht ein Platzhalter-Fehlereintrag im Zielordner —
     stirbt der Prozess hart, bleibt der sichtbar statt eines alten Ergebnisses."""
     warte = sorted(auftraege, key=lambda a: -a["bytes"])
-    offen_je_projekt = Counter(a["projekt"] for a in warte)
+    offen_je_projekt = Counter(a["ziel"].parent.name for a in warte)   # Versionsordner
     n, fertig = len(warte), 0
     aktiv: list[tuple[mp.Process, dict, float]] = []
 
@@ -852,7 +923,7 @@ def _lauf(auftraege: list[dict], out: Path, worker: int, timeout_min: float) -> 
             t0 = time.time()
             _schreibe(a["ziel"], _fehler_eintrag(a, _GESTARTET, t0))
             p = mp.Process(target=_worker, args=(str(a["dxf"]), str(a["ziel"]), a["projekt"],
-                                                 a["name"], a["commit"], a["sha"]))
+                                                 a["name"], a["commit"], a["sha"], a["meta"]))
             p.start()
             aktiv.append((p, a, t0))
             print(f"  start   {a['projekt']} / {a['name']} ({a['bytes'] / 1e6:.0f} MB)", flush=True)
@@ -877,9 +948,9 @@ def _lauf(auftraege: list[dict], out: Path, worker: int, timeout_min: float) -> 
             lz = lz.get("gesamt") if isinstance(lz, dict) else lz
             print(f"  [{fertig}/{n}] {a['projekt']} / {a['name']}: {d.get('status')}"
                   f" — {d.get('raeume_gesamt', '')} Räume, {lz} s", flush=True)
-            offen_je_projekt[a["projekt"]] -= 1
-            if offen_je_projekt[a["projekt"]] == 0:
-                print(f"  Index: {_index_projekt(out, a['projekt'])}", flush=True)
+            offen_je_projekt[a["ziel"].parent.name] -= 1
+            if offen_je_projekt[a["ziel"].parent.name] == 0:
+                print(f"  Index: {_index_projekt(out, a['ziel'].parent.name)}", flush=True)
 
 
 # ── Index ───────────────────────────────────────────────────────────────────
@@ -949,8 +1020,56 @@ def _owner_zeilen(d: dict) -> list[tuple[str, str, bool]]:
         ("Wohnungen", str(d["wohnungen"]), False),
         ("Räume je Wohnung", ", ".join(f"{k} {v}" for k, v in d["raeume_je_wohnung"].items()) or "—",
          False),
+        ("Schächte erkannt", str(d.get("schaechte_erkannt", "—")), False),
+        ("Außenbereich-Überlagerungen mit Kanon-Räumen (Soll 0)", _kanon_text(d),
+         bool(d.get("aussen_ueberlagerung_kanon"))),
+        ("NISCHE", str(d.get("raeume_nische", "—")), bool(d.get("raeume_nische"))),
         ("Laufzeit", f"{lz['gesamt']} s (Erkennung {lz['erkennung']} s, Bild {lz['zeichnen']} s)", False),
     ]
+
+
+def _kanon_text(d: dict) -> str:
+    n = d.get("aussen_ueberlagerung_kanon")
+    if not n:
+        return "—" if n is None else "0"
+    return f"{n}: " + "; ".join(
+        f"{e['id']} {e['typ']} {e['flaeche_m2']:.1f} m² (Schnitt offen {e['schnitt_offen_m2']:.2f} m²,"
+        f" Innenhof {e['schnitt_geschlossen_m2']:.2f} m²)" for e in d["aussen_ueberlagerung_kanon_liste"])
+
+
+def _ordner_meta(plaene: list[tuple[Path, dict]]) -> dict:
+    """Version, Datum, Slices, Commit eines Ordners aus seinen kennzahlen.json.
+    Commit = der häufigste im Ordner; nur dagegen wird „anderer Commit“ gewarnt."""
+    kz0 = next((kz for _, kz in plaene if "version" in kz), {})
+    commits = Counter(kz.get("commit", "?") for _, kz in plaene).most_common(1)
+    return {"version": kz0.get("version") or "—", "datum": kz0.get("datum") or "—",
+            "slices": _slices_text(kz0["slices"]) if "slices" in kz0 else "—",
+            "commit": commits[0][0] if commits else "?"}
+
+
+def _status_text(stat: Counter) -> str:
+    """Alle Status mit Zahl — auch 0, damit sichtbar ist, dass nichts übersprungen wurde."""
+    return " · ".join(f"{text} {stat.get(s, 0)}" for s, text in _STATUS_TEXT.items())
+
+
+_UEB_KOPF = ("Plan", "Status", "Räume", "UNBEKANNT", "mit Stempel", "Abw. > 10 %", "Wohnungen",
+             "Schächte", "Außen-Überlagerung Kanon")
+
+
+def _uebersicht(plaene: list[tuple[Path, dict]]) -> list[tuple[Path, dict, str, list]]:
+    """Eine Zeile je Plan (= Geschoss): (Ordner, Kennzahlen, Status, [(Wert, auffällig)])."""
+    rows = []
+    for d, kz in plaene:
+        if kz["status"] != "ok":
+            rows.append((d, kz, _STATUS_TEXT[kz["status"]], [("", False)] * 7))
+            continue
+        kanon = kz.get("aussen_ueberlagerung_kanon")
+        werte = [kz["raeume_gesamt"], kz["raeume_unbekannt"], kz["raeume_mit_stempel"],
+                 kz["stempel_abweichung_gt10"], kz["wohnungen"], kz.get("schaechte_erkannt", "—"),
+                 "—" if kanon is None else kanon]
+        rows.append((d, kz, _STATUS_TEXT["ok"],
+                     [(str(w), i == 6 and bool(kanon)) for i, w in enumerate(werte)]))
+    return rows
 
 
 def _hinweise(d: dict) -> list[str]:
@@ -991,13 +1110,23 @@ def _index_projekt(out: Path, projekt: str) -> Path:
     ordner = out / projekt
     plaene = _eintraege(ordner)
     stat = Counter(kz["status"] for _, kz in plaene)
-    aktuell = _commit()
+    meta = _ordner_meta(plaene)
+    aktuell = meta["commit"]
     teile = [_kopf(f"Raumerkennung — {projekt}"),
              f"<h1>{escape(projekt)} — Raumerkennung, nur Räume</h1>",
              (f"<div class='sub'><a href='../index.html'>← Gesamtübersicht</a> · "
-              f"{len(plaene)} Pläne · " + " · ".join(
-                  f"{_STATUS_TEXT[s]} {n}" for s, n in stat.items()) + "</div>"),
-             "<div class='nav'>"]
+              f"Version <b>{escape(meta['version'])}</b> · Datum {escape(meta['datum'])} · "
+              f"Commit <code>{escape(aktuell)}</code> · Slices {escape(meta['slices'])}<br>"
+              f"{len(plaene)} Pläne · {escape(_status_text(stat))}</div>"),
+             "<div class='tab'><table><tr>" + "".join(f"<th>{escape(k)}</th>" for k in _UEB_KOPF)
+             + "</tr>"]
+    for d, _kz, status, werte in _uebersicht(plaene):
+        teile.append(f"<tr><td><a href='#{quote(d.name)}'>{escape(d.name)}</a></td>"
+                     f"<td>{escape(status)}</td>" + "".join(
+                         "<td class='num'>" + (f"<span class='warn'>{escape(w)}</span>" if auff
+                                               else escape(w)) + "</td>" for w, auff in werte)
+                     + "</tr>")
+    teile.append("</table></div><div class='nav'>")
     for d, kz in plaene:
         mark = {"ok": "", "fehler": " ⚠", "nicht_erkannt": " ∅"}.get(kz["status"], " –")
         teile.append(f"<a href='#{quote(d.name)}'>{escape(d.name)}{mark}</a>")
@@ -1006,7 +1135,7 @@ def _index_projekt(out: Path, projekt: str) -> Path:
         s = kz["status"]
         c = kz.get("commit", "?")
         c_html = (f"<code>{escape(c)}</code>" if c == aktuell
-                  else f"<span class='warn'>Commit {escape(c)} ≠ aktuell {escape(aktuell)}</span>")
+                  else f"<span class='warn'>Commit {escape(c)} ≠ Ordner-Commit {escape(aktuell)}</span>")
         teile.append(f"<div class='plan' id='{quote(d.name)}'><h2>{escape(d.name)}</h2>"
                      f"<div class='pfad'>{escape(kz.get('dxf', ''))} · SHA-256 "
                      f"<code>{kz.get('sha256', '')[:12]}</code> · gerechnet auf {c_html}</div>")
@@ -1047,6 +1176,7 @@ def _index_gesamt(out: Path) -> Path:
     zeilen, summe, fremd = [], Counter(), 0
     for pr in projekte:
         plaene = _eintraege(pr)
+        ordner_commit = _ordner_meta(plaene)["commit"]
         ok = [kz for _, kz in plaene if kz["status"] == "ok"]
         z = Counter(Counter(kz["status"] for _, kz in plaene))
         z["plaene"] = len(plaene)
@@ -1056,36 +1186,42 @@ def _index_gesamt(out: Path) -> Path:
         z["abw"] = sum(k["stempel_abweichung_gt10"] for k in ok)
         z["wohnungen"] = sum(k["wohnungen"] for k in ok)
         z["laufzeit"] = round(sum(_lz(kz) for _, kz in plaene))
-        fremd += sum(1 for _, kz in plaene if kz.get("commit") != aktuell)
+        # Nur innerhalb des Ordners vergleichen — eine alte Version liegt zu Recht
+        # auf ihrem alten Commit, das ist keine Warnung wert.
+        fremd += sum(1 for _, kz in plaene if kz.get("commit", "?") != ordner_commit)
         summe.update(z)
-        zeilen.append((pr.name, z))
+        zeilen.append((pr.name, z, _ordner_version(pr.name), ordner_commit))
 
-    def zeile(name, z, link=True):
+    def zeile(name, z, version="", commit="", link=True):
         n = (f"<a href='{quote(name)}/index.html'>{escape(name)}</a>" if link
              else f"<b>{escape(name)}</b>")
         zellen = "".join(
             "<td class='num'>" + (f"<span class='warn'>{z[k]}</span>"
                                    if z[k] and k in _WARN_SPALTEN else f"{z[k]}") + "</td>"
             for k in _SPALTEN)
-        return f"<tr><td>{n}</td>{zellen}</tr>"
+        c = f"<code>{escape(commit)}</code>" if commit else ""
+        return f"<tr><td>{n}</td><td>{escape(version)}</td><td>{c}</td>{zellen}</tr>"
 
     stand = f"Stand <code>{escape(aktuell)}</code>"
     if fremd:
-        stand += f" · <span class='warn'>{fremd} Pläne auf anderem Commit gerechnet</span>"
+        stand += (f" · <span class='warn'>{fremd} Pläne auf anderem Commit gerechnet als der Rest "
+                  "ihres Ordners</span>")
     teile = [_kopf("Raumerkennung — Gesamtübersicht"),
              "<h1>Raumerkennung, nur Räume — Gesamtübersicht</h1>",
              (f"<div class='sub'>{stand} · {datetime.now().astimezone():%Y-%m-%d %H:%M} · "
               f"Eingang <code>{escape(_rel(EINGANG))}</code> · "
               f"{summe['plaene']} Pläne in {len(projekte)} Ordnern · "
-              "Bericht: <a href='BERICHT.md'>BERICHT.md</a><br>"
+              "Bericht: <a href='BERICHT.md'>BERICHT.md</a> · "
+              "Versionen: <a href='VERSIONEN.md'>VERSIONEN.md</a><br>"
               "Ehrlichkeit vor Schönheit: untypisiert magenta, Stempel außerhalb des "
               "zugeordneten Raums als Linie, Flächenabweichung &gt; 10 % rot, Räume ohne "
               "Platz für ein Label □.</div>"),
-             ("<div class='tab'><table><tr><th>Ordner</th><th>Pläne</th><th>ausgewertet</th>"
+             ("<div class='tab'><table><tr><th>Ordner</th><th>Version</th><th>Commit</th>"
+              "<th>Pläne</th><th>ausgewertet</th>"
               "<th>kein Grundriss (Name)</th><th>kein Grundriss erkannt</th><th>Dubletten</th>"
               "<th>Fehler</th><th>Räume</th><th>UNBEKANNT</th><th>mit Stempel</th>"
               "<th>Abw. &gt; 10 %</th><th>Wohnungen</th><th>Laufzeit s</th></tr>")]
-    teile += [zeile(n, z) for n, z in zeilen]
+    teile += [zeile(n, z, v, c) for n, z, v, c in zeilen]
     teile.append(zeile("gesamt", summe, link=False))
     teile.append("</table></div>")
     besonderes = [(pr.name, d.name, kz) for pr in projekte for d, kz in _eintraege(pr)
@@ -1127,19 +1263,21 @@ def _md(text) -> str:
 
 def _readme_projekt(out: Path, projekt: str, plaene: list[tuple[Path, dict]]) -> Path:
     bericht = " · [Bericht](../BERICHT.md)" if (out / "BERICHT.md").exists() else ""
+    meta = _ordner_meta(plaene)
     md = [f"# {projekt} — Raumerkennung, nur Räume", "",
           f"[← Gesamtübersicht](../README.md){bericht}", "",
+          (f"Version **{_md(meta['version'])}** · Datum {_md(meta['datum'])} · "
+           f"Commit `{meta['commit']}` · Slices {_md(meta['slices'])}"), "",
+          f"{len(plaene)} Pläne · {_status_text(Counter(kz['status'] for _, kz in plaene))}", "",
           ("Die Legende steht in jedem Bild; ein Klick aufs Bild öffnet es in voller Größe. "
            "Offline mit allen Details: `index.html` in diesem Ordner lokal im Browser öffnen."), "",
-          "| Plan | Status | Räume | UNBEKANNT | mit Stempel | Abw. > 10 % | Wohnungen |",
-          "|---|---|--:|--:|--:|--:|--:|"]
-    for d, kz in plaene:
-        if kz["status"] == "ok":
-            md.append(f"| [{_md(d.name)}]({quote(d.name)}/{kz['bilder'][0]['datei']}) | ausgewertet | "
-                      f"{kz['raeume_gesamt']} | {kz['raeume_unbekannt']} | {kz['raeume_mit_stempel']} | "
-                      f"{kz['stempel_abweichung_gt10']} | {kz['wohnungen']} |")
-        else:
-            md.append(f"| {_md(d.name)} | {_STATUS_TEXT[kz['status']]} | | | | | |")
+          "| " + " | ".join(_md(k) for k in _UEB_KOPF) + " |",
+          "|---|---|" + "--:|" * (len(_UEB_KOPF) - 2)]
+    for d, kz, status, werte in _uebersicht(plaene):
+        plan = (f"[{_md(d.name)}]({quote(d.name)}/{kz['bilder'][0]['datei']})"
+                if kz["status"] == "ok" else _md(d.name))
+        md.append(f"| {plan} | {status} | "
+                  + " | ".join(f"**{w}**" if auff else w for w, auff in werte) + " |")
     for d, kz in plaene:
         md += ["", f"## {d.name}", "",
                f"`{kz.get('dxf', '')}` · gerechnet auf Commit `{kz.get('commit', '?')}`", ""]
@@ -1164,20 +1302,22 @@ def _readme_projekt(out: Path, projekt: str, plaene: list[tuple[Path, dict]]) ->
 
 def _readme_gesamt(out: Path, aktuell: str, fremd: int, zeilen: list, summe: Counter,
                    besonderes: list) -> Path:
-    kopf = ["Ordner", "Pläne", "ausgewertet", "kein Grundriss (Name)", "kein Grundriss erkannt",
-            "Dubletten", "Fehler", "Räume", "UNBEKANNT", "mit Stempel", "Abw. > 10 %",
-            "Wohnungen", "Laufzeit s"]
-    stand = f"Stand `{aktuell}`" + (f" · **{fremd} Pläne auf anderem Commit gerechnet**" if fremd else "")
+    kopf = ["Ordner", "Version", "Commit", "Pläne", "ausgewertet", "kein Grundriss (Name)",
+            "kein Grundriss erkannt", "Dubletten", "Fehler", "Räume", "UNBEKANNT", "mit Stempel",
+            "Abw. > 10 %", "Wohnungen", "Laufzeit s"]
+    stand = f"Stand `{aktuell}`" + (
+        f" · **{fremd} Pläne auf anderem Commit gerechnet als der Rest ihres Ordners**" if fremd else "")
     bericht = " · [Bericht](BERICHT.md)" if (out / "BERICHT.md").exists() else ""
     md = ["# Raumerkennung, nur Räume — Gesamtübersicht", "",
           (f"{stand} · Eingang `{_rel(EINGANG)}` · {summe['plaene']} Pläne in {len(zeilen)} "
-           f"Ordnern{bericht}"), "",
+           f"Ordnern{bericht} · [Versionen](VERSIONEN.md)"), "",
           ("Ordner anklicken: Bilder mit Legende und Kennzahlen je Plan. Offline mit allen Details: "
            "`index.html` lokal im Browser öffnen."), "",
-          "| " + " | ".join(kopf) + " |", "|---|" + "--:|" * (len(kopf) - 1)]
-    md += [f"| [{_md(name)}]({quote(name)}/README.md) | " + " | ".join(str(z[k]) for k in _SPALTEN) + " |"
-           for name, z in zeilen]
-    md.append("| **gesamt** | " + " | ".join(str(summe[k]) for k in _SPALTEN) + " |")
+          "| " + " | ".join(kopf) + " |", "|---|---|---|" + "--:|" * (len(kopf) - 3)]
+    md += [f"| [{_md(name)}]({quote(name)}/README.md) | {version} | `{commit}` | "
+           + " | ".join(str(z[k]) for k in _SPALTEN) + " |"
+           for name, z, version, commit in zeilen]
+    md.append("| **gesamt** | | | " + " | ".join(str(summe[k]) for k in _SPALTEN) + " |")
     if besonderes:
         md += ["", "## Übersprungen / kein Grundriss erkannt / Fehler", "",
                "| Ordner | Plan | Status | Grund |", "|---|---|---|---|"]
@@ -1191,9 +1331,9 @@ def _readme_gesamt(out: Path, aktuell: str, fremd: int, zeilen: list, summe: Cou
 
 # ── main ────────────────────────────────────────────────────────────────────
 
-def _nachzeichnen(out: Path, worker: int) -> None:
-    """Stufe 2 für alle Pläne mit Cache neu — ohne neue Erkennung."""
-    jobs = [str(d) for d in out.rglob("_cache.pkl")]
+def _nachzeichnen(ordner: list[Path], worker: int) -> None:
+    """Stufe 2 für die Pläne mit Cache in diesen Ordnern neu — ohne neue Erkennung."""
+    jobs = [str(c) for o in ordner for c in o.rglob("_cache.pkl")]
     print(f"{len(jobs)} Pläne aus Cache neu zeichnen", flush=True)
     with mp.Pool(worker) as pool:
         for text in pool.imap_unordered(_nachzeichnen_einer, jobs):
@@ -1208,7 +1348,7 @@ def _nachzeichnen_einer(cache_s: str) -> str:
         cache = pickle.loads(Path(cache_s).read_bytes())
         t1 = time.time()
         bilder = _zeichnen(cache, ziel, _titel(d.get("projekt", "?"), d.get("plan", ziel.name),
-                                               cache, commit))
+                                               cache, commit, d))
         erkennung = (d.get("laufzeit_s") or {}).get("erkennung", cache["erkennung_s"]) \
             if isinstance(d.get("laufzeit_s"), dict) else cache["erkennung_s"]
         zeichnen = round(time.time() - t1, 1)
@@ -1226,7 +1366,7 @@ def _nachzeichnen_einer(cache_s: str) -> str:
     return f"{ergebnis}: {d.get('projekt')} / {d.get('plan')}"
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--eingang", default=str(EINGANG))
@@ -1234,48 +1374,72 @@ def main() -> int:
     ap.add_argument("--dxf", help="nur diesen einen Plan (Ausgabe unter <out>/_einzel/)")
     ap.add_argument("--ordner", action="append",
                     help="nur diesen Unterordner des Eingangs (mehrfach möglich), z. B. Rennweg")
+    ap.add_argument("--version", help="Versionsordner v<Zahl>, z. B. v2 → <out>/<Ordner>_v2/")
+    ap.add_argument("--slices", help='umgesetzte Slices als Kommaliste, z. B. "S1,S2,S5a" oder "keine"')
     ap.add_argument("--nur-index", action="store_true")
     ap.add_argument("--nur-zeichnen", action="store_true")
     ap.add_argument("--neu", action="store_true", help="auch fertige Pläne neu rechnen")
     ap.add_argument("--worker", type=int, default=WORKER)
     ap.add_argument("--timeout-min", type=float, default=TIMEOUT_MIN)
-    a = ap.parse_args()
+    a = ap.parse_args(argv)
+    if a.version is not None and not re.fullmatch(r"v\d+", a.version):
+        ap.error(f"--version {a.version!r}: erwartet v<Zahl>, z. B. v2")
+    slices = None if a.slices is None else [
+        s for s in (t.strip() for t in a.slices.split(",")) if s and s.lower() != "keine"]
+    meta = {"version": a.version, "datum": f"{datetime.now().astimezone():%Y-%m-%d}",
+            "slices": slices}
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     commit = _commit()
 
-    def alle_indizes():
-        for pr in sorted(p for p in out.iterdir() if p.is_dir() and not p.name.startswith("_")):
-            _index_projekt(out, pr.name)
-        if (out / "_einzel").is_dir():
-            _index_projekt(out, "_einzel")
+    def indizes(ordner: list[Path]) -> Path:
+        """Index + README nur für diese Ordner, dazu die Gesamtübersicht — ältere
+        Versionsordner (auch ``Rennweg/`` = v1) bleiben unberührt."""
+        for o in ordner:
+            _index_projekt(out, o.name)
         return _index_gesamt(out)
 
-    if a.nur_zeichnen:
-        _nachzeichnen(out, a.worker)
     if a.nur_index or a.nur_zeichnen:
-        print(f"Index: {alle_indizes()}")
+        adressiert = [out / f"{o}_{a.version}" for o in (a.ordner or [])] if a.version else []
+        adressiert = [o for o in adressiert if o.is_dir()]
+        if not adressiert:
+            print("Hinweis: kein vorhandener Versionsordner adressiert (--ordner und --version) — "
+                  "nur die Gesamtübersicht wird geschrieben.", flush=True)
+        if a.nur_zeichnen:
+            _nachzeichnen(adressiert, a.worker)
+        print(f"Index: {indizes(adressiert)}")
         return 0
 
     if a.dxf:
         dxf = Path(a.dxf)
         ziel = out / "_einzel" / dxf.stem
-        _worker(str(dxf), str(ziel), "_einzel", dxf.stem, commit, _sha256(dxf))
+        _worker(str(dxf), str(ziel), "_einzel", dxf.stem, commit, _sha256(dxf), meta)
         d = _lies(ziel) or {}
         print(json.dumps({k: v for k, v in d.items() if k != "grund"}, ensure_ascii=False, indent=1))
         if d.get("grund"):
             print(d["grund"])
-        print(f"Index: {alle_indizes()}")
+        print(f"Index: {indizes([out / '_einzel'])}")
         return 0
 
+    if not a.version:
+        print("Abbruch: --version fehlt — jede neue Ausgabe als eigener Versionsordner "
+              '(z. B. --version v2 --slices "S1,S2").', file=sys.stderr)
+        return 2
     eingang = Path(a.eingang)
-    print(f"Eingang: {eingang} · Commit {commit}", flush=True)
+    print(f"Eingang: {eingang} · Commit {commit} · Version {a.version} · "
+          f"Slices {_slices_text(slices)}", flush=True)
     print(f"entpackt: {_entpacken(eingang)} DXF", flush=True)
     alle = [(p, d) for p, d in _plaene(eingang) if not a.ordner or p in a.ordner]
     if not alle:
         print(f"Kein DXF im Eingang für Ordner {a.ordner}", file=sys.stderr)
         return 2
     print(f"{len(alle)} DXF in {len({p for p, _ in alle})} Ordnern", flush=True)
+    ordner_neu = sorted({out / f"{p}_{a.version}" for p, _ in alle})
+    gesperrt = [o.name for o in ordner_neu if any(o.rglob("kennzahlen.json"))]
+    if gesperrt:
+        print(f"Abbruch: {', '.join(gesperrt)} enthält schon kennzahlen.json — Versionen werden "
+              "nie überschrieben (auch nicht mit --neu); neue --version wählen.", file=sys.stderr)
+        return 2
 
     gesehen: dict[str, tuple[str, Path]] = {}
     belegt: dict[str, dict[str, Path]] = {}
@@ -1283,10 +1447,10 @@ def main() -> int:
     stat: Counter = Counter()
     for projekt, dxf in alle:
         name = _ausgabename(dxf, belegt.setdefault(projekt, {}))
-        ziel = out / projekt / name
+        ziel = out / f"{projekt}_{a.version}" / name
         sha = _sha256(dxf)
         basis = {"plan": name, "projekt": projekt, "dxf": _rel(dxf), "sha256": sha,
-                 "bytes": dxf.stat().st_size, "commit": commit, "laufzeit_s": 0.0}
+                 "bytes": dxf.stat().st_size, "commit": commit, **meta, "laufzeit_s": 0.0}
         if sha in gesehen:
             p0, d0 = gesehen[sha]
             _schreibe(ziel, {**basis, "status": "dublette",
@@ -1303,7 +1467,8 @@ def main() -> int:
                 and alt.get("status") in ("ok", "nicht_erkannt")):
             stat["uebernommen"] += 1
             continue
-        auftraege.append({**basis, "dxf": dxf, "sha": sha, "ziel": ziel, "name": name})
+        auftraege.append({**basis, "dxf": dxf, "sha": sha, "ziel": ziel, "name": name,
+                          "meta": meta})
         stat["rechnen"] += 1
     print(f"{stat['rechnen']} rechnen · {stat['uebernommen']} schon fertig · "
           f"{stat['dublette']} Dubletten · {stat['kein_grundriss']} kein Grundriss "
@@ -1312,7 +1477,7 @@ def main() -> int:
 
     t0 = time.time()
     _lauf(auftraege, out, a.worker, a.timeout_min)
-    print(f"\nLaufzeit {(time.time() - t0) / 60:.1f} min\nIndex: {alle_indizes()}")
+    print(f"\nLaufzeit {(time.time() - t0) / 60:.1f} min\nIndex: {indizes(ordner_neu)}")
     return 0
 
 
