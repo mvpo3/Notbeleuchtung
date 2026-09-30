@@ -10,7 +10,10 @@ derselbe Raum). Die Sehne kommt aus dem ``winkel_grad`` der nächsten Türöffnu
 (INSERT-Rotation bzw. ARC-Startwinkel), sonst aus der nächsten Raumkante.
 Seiten ohne Raum: ``AUSSEN`` (außerhalb der Gebäude-Außenkontur) oder
 ``KEIN_RAUM`` — letzteres wird als ``seite_fehlt`` gemeldet statt still
-hingenommen.
+hingenommen. Nachschritt ``andere_bogenrichtung`` (S4c Fassung A): bleibt an
+einer Bogentür eine Seite ``KEIN_RAUM``, wird die Sehne aus dem ENDwinkel
+probiert — übernommen nur, wenn dadurch ein sonst verbindungsloser Raum
+angeschlossen wird.
 
 Zusätzlich: Wandöffnungen ab 800 mm Nennmaß (gemessen ≥ 797 mm, s. Schwelle)
 zwischen zwei Räumen ohne Bogen/Block (``durchgaenge_ohne_tuerblatt``) werden
@@ -152,6 +155,31 @@ def _seite(xy: XY, normale: XY, sgn: float, polys, kontur, wand,
     return (AUSSEN if draussen else KEIN_RAUM), eigen_beruehrt
 
 
+def _prep(geom):
+    return prep(geom) if geom is not None and not geom.is_empty else None
+
+
+def _proben(t: Tuer, w: float, polys, kontur, wand) -> list[str]:
+    """Beide Seiten der Tür quer zur Sehnenrichtung ``w`` (rad) → [von, nach].
+
+    Rückfall auf den eigenen Raum: eine Seite, die bis zur letzten Stufe
+    keinen fremden Raum findet, gehört dem Raum, der den Türpunkt deckt.
+    HÖCHSTENS eine Seite — sonst stünde beidseits derselbe Raum. Vorrang hat
+    die Seite, deren Probe den eigenen Raum wirklich berührt hat; AUSSEN ist
+    ein Befund und fällt nicht zurück.
+    """
+    normale = (-math.sin(w), math.cos(w))   # Normale zur Sehne
+    eigen = _raum_an(t.xy_mm, polys)
+    proben = [_seite(t.xy_mm, normale, sgn, polys, kontur, wand, eigen)
+              for sgn in (1.0, -1.0)]
+    seiten = [p[0] for p in proben]
+    if eigen is not None:
+        for i in ((0, 1) if proben[0][1] else (1, 0)):
+            if seiten[i] == KEIN_RAUM and seiten[1 - i] != eigen.id:
+                seiten[i] = eigen.id
+    return seiten
+
+
 def ordne_tueren(tueren: list[Tuer], oeffnungen: list[TuerOeffnung],
                  raeume: list[Raum], aussenkontur, wand_union_geom=None,
                  fehlende_seiten: list | None = None) -> list[Tuer]:
@@ -168,28 +196,12 @@ def ordne_tueren(tueren: list[Tuer], oeffnungen: list[TuerOeffnung],
     daraus seinen Klartext (der Contract ``Tuer`` führt kein ``seite_fehlt``).
     """
     polys = _raum_polys(raeume)
-    kontur = (prep(aussenkontur)
-              if aussenkontur is not None and not aussenkontur.is_empty else None)
-    wand = (prep(wand_union_geom)
-            if wand_union_geom is not None and not wand_union_geom.is_empty else None)
+    kontur, wand = _prep(aussenkontur), _prep(wand_union_geom)
     for t in tueren:
         if t.von_raum is not None and t.nach_raum is not None:
             continue
-        w = _sehnen_richtung(t, oeffnungen, polys)
-        normale = (-math.sin(w), math.cos(w))   # Normale zur Sehne
-        eigen = _raum_an(t.xy_mm, polys)
-        proben = [_seite(t.xy_mm, normale, sgn, polys, kontur, wand, eigen)
-                  for sgn in (1.0, -1.0)]
-        seiten = [p[0] for p in proben]
-        # Rückfall auf den eigenen Raum: eine Seite, die bis zur letzten Stufe
-        # keinen fremden Raum findet, gehört dem Raum, der den Türpunkt deckt.
-        # HÖCHSTENS eine Seite — sonst stünde beidseits derselbe Raum. Vorrang
-        # hat die Seite, deren Probe den eigenen Raum wirklich berührt hat;
-        # AUSSEN ist ein Befund und fällt nicht zurück.
-        if eigen is not None:
-            for i in ((0, 1) if proben[0][1] else (1, 0)):
-                if seiten[i] == KEIN_RAUM and seiten[1 - i] != eigen.id:
-                    seiten[i] = eigen.id
+        seiten = _proben(t, _sehnen_richtung(t, oeffnungen, polys), polys,
+                         kontur, wand)
         if fehlende_seiten is not None:
             fehlende_seiten += [
                 (t, zeichen, _PROBE_STUFEN_MM[-1])
@@ -197,6 +209,56 @@ def ordne_tueren(tueren: list[Tuer], oeffnungen: list[TuerOeffnung],
                 if seite == KEIN_RAUM]
         t.von_raum, t.nach_raum = seiten[0], seiten[1]
     return tueren
+
+
+def andere_bogenrichtung(tueren: list[Tuer], oeffnungen: list[TuerOeffnung],
+                         raeume: list[Raum], aussenkontur,
+                         wand_union_geom=None) -> list[Tuer]:
+    """Nachschritt: die andere Bogenrichtung nur für verbindungslose Räume.
+
+    S4c Fassung A (Owner 2026-09-30, docs/GATE_TUERSTAPEL.md § 10c ``xsehne3``).
+    Die Sehne aus dem ARC-STARTwinkel zeigt bei manchen Bogentüren auf das
+    offene Blatt; die Normale läuft dann entlang der Wand und eine Seite bleibt
+    ``KEIN_RAUM`` (Barawitzka EG ``tuer_17`` vor dem ABSTELLRAUM 1,98, Gate
+    (10)). Für eine Tür mit GENAU einer zugeordneten Seite wird die Sehne aus
+    dem ENDwinkel (``blatt_enden[1]`` der nächsten Öffnung) geprobt und nur
+    übernommen, wenn die zugeordnete Seite bleibt und die neue Seite ein Raum
+    ist, der im ganzen Modell OHNE jede Verbindung wäre (keine Tür, kein
+    Durchgang, keine Außenöffnung). Nicht begehbare Räume (SCHACHT/LIFT,
+    Klasse KEIN_RAUM) und untypisierte ``rest``-Flächen sind keine Zielseite.
+    Läuft darum NACH den Durchgängen. Rückgabe: die umgehängten Türen.
+
+    ponytail: füllt nur Lücken, korrigiert die Sehne nicht allgemein — Türen
+    mit beiden Seiten ``KEIN_RAUM`` oder falschem Raumpaar bleiben (§ 10c
+    Grenzen), und bekommt der Zielraum anderswo eine Verbindung, gilt wieder
+    der Startwinkel. Ausbaupfad: Sehne aus dem geschlossenen Blatt (eigener
+    Slice mit Vorraum-Fehlklasse).
+    """
+    from .nutzungsklasse import nutzungsklasse_fuer
+    verbunden = {s for t in tueren for s in (t.von_raum, t.nach_raum)}
+    frei = {r.id for r in raeume if r.id not in verbunden
+            and nutzungsklasse_fuer(r.raum_typ) != KEIN_RAUM
+            and not (r.id.startswith("rest_") and not r.raum_typ)}
+    if not frei:
+        return []
+    polys = _raum_polys(raeume)
+    kontur, wand = _prep(aussenkontur), _prep(wand_union_geom)
+    out: list[Tuer] = []
+    for t in tueren:
+        alt = [s for s in (t.von_raum, t.nach_raum) if s != KEIN_RAUM]
+        if len(alt) != 1:
+            continue
+        o = _naechste_oeffnung(t, oeffnungen)
+        if o is None or o.blatt_enden is None:
+            continue
+        e = o.blatt_enden[1]
+        w = math.atan2(e[1] - o.xy_mm[1], e[0] - o.xy_mm[0])
+        seiten = _proben(t, w, polys, kontur, wand)
+        neu = [s for s in seiten if s != alt[0]]
+        if alt[0] in seiten and len(neu) == 1 and neu[0] in frei:
+            t.von_raum, t.nach_raum = seiten[0], seiten[1]
+            out.append(t)
+    return out
 
 
 def _sehnen_zonen(tueren: list[Tuer], oeffnungen: list[TuerOeffnung]):
