@@ -635,20 +635,23 @@ def test_widersprochener_raum_wird_allgemein_und_behaelt_notlicht():
     assert g.id not in wk.bestaetigt_privat(raeume, tueren)
 
 
-def test_nicht_auswertbarer_raum_wird_unbestimmt_und_behaelt_notlicht():
+def test_nicht_auswertbarer_raum_behaelt_notlicht():
     """E3: die 13 vom Stiegenhaus über KEINE Tür erreichbaren Räume — laut
     Owner ein Tür- oder Raumerkennungsloch (Messfall für S4c/S3b), kein
-    Klassifikationsproblem. Sie behalten Notlicht und werden mit Grund als
-    unbestimmt geführt."""
+    Klassifikationsproblem. Sie behalten Notlicht; die Iteration führt sie
+    mit Grund als unbestimmt. K4 (Owner 2026-09-30) gibt ihm danach die
+    Klasse aus dem Wohnungsumriss — g ist über die rohe Zimmertür Mitglied
+    der Wohnung des Zimmers → privat; die Ankerregel bestätigt das nicht,
+    Notlicht bleibt."""
     raeume, tueren = _nicht_kandidat(stiegenhaus_kette=False)
     warnungen: list[str] = []
     bilde_wohnungen(raeume, tueren, warnungen)
     g = raeume[0]
-    assert g.nutzungsklasse is None
+    assert g.nutzungsklasse == "WOHNUNG_PRIVAT"
     assert (g.ist_fluchtweg, g.ist_communal) == (True, True)
     assert g.id not in wk.bestaetigt_privat(raeume, tueren)
-    assert [w for w in warnungen if w.startswith("unbestimmt: g")
-            and "erreichbar" in w], warnungen
+    assert [w for w in warnungen if w.startswith("k4: g — privat")
+            and "vorher unbestimmt" in w and "erreichbar" in w], warnungen
 
 
 def test_v2_kandidat_ohne_ankerbestaetigung_behaelt_notlicht():
@@ -763,7 +766,14 @@ def test_ohne_fixpunkt_im_deckel_wird_alles_bewegte_unbestimmt(monkeypatch):
     mit Grund, und er behält sein Notlicht. Hier erzwungen mit ``DECKEL = 1``:
     V wechselt in Runde 1 von allgemein (Start, Board 4) auf privat. (Runde 8
     nahm ``_vorraum_am_keller``, dessen V beim Ankerurteil privat startete;
-    seit alle Nicht-Kandidaten allgemein starten, bewegt sich dort nichts.)"""
+    seit alle Nicht-Kandidaten allgemein starten, bewegt sich dort nichts.)
+
+    K4 (Owner 2026-09-30) überstimmt das „bleibt unbestimmt" danach: V ist
+    Mitglied seiner Wohnung → privat, und weil die Ankerregel V privat
+    bestätigt (nur hinter ``wv`` mit Blatt, Zimmer in der Wohnung), entzieht
+    ``bestaetigt_privat`` ihm das Notlicht — dasselbe Ergebnis wie ohne
+    Deckel. Auf den 23 Prüfgeschossen gibt es keinen solchen Fall
+    (docs/SLICES_K1_K4.md, K4)."""
     from notbeleuchtung.raumerkennung import wohnungen as W
 
     monkeypatch.setattr(W, "DECKEL", 1)
@@ -771,10 +781,10 @@ def test_ohne_fixpunkt_im_deckel_wird_alles_bewegte_unbestimmt(monkeypatch):
     warnungen: list[str] = []
     bilde_wohnungen(raeume, tueren, warnungen)
     v = next(x for x in raeume if x.id == "V")
-    assert v.nutzungsklasse is None
-    assert (v.ist_fluchtweg, v.ist_communal) == (True, True)
-    assert "V" not in wk.bestaetigt_privat(raeume, tueren)
-    assert [w for w in warnungen if w.startswith("unbestimmt: V ")
+    assert v.nutzungsklasse == "WOHNUNG_PRIVAT"
+    assert (v.ist_fluchtweg, v.ist_communal) == (False, False)
+    assert "V" in wk.bestaetigt_privat(raeume, tueren)
+    assert [w for w in warnungen if w.startswith("k4: V — privat")
             and "Schritt 3" in w and "keinen Fixpunkt" in w], warnungen
     monkeypatch.undo()
     raeume, tueren = _vorraum_hinter_blatt()
@@ -1057,7 +1067,9 @@ def test_e5_loch_paar_folgt_rohen_tueren():
     Wohnungseingänge (``d8``/``d5``) angebunden → Erschließung, allgemein.
     Runde 8/9 (E5 Satz 2, aufgehoben) machten beide allgemein und zerlegten
     die Wohnung in drei Einraum-Wohnungen. Über alle Reihenfolgen EIN
-    Ergebnis, jede Wohnung hat einen Eingang."""
+    Ergebnis, jede Wohnung hat einen Eingang. K4 (Owner 2026-09-30): v ist
+    Mitglied seiner Wohnung → Klasse privat statt offen, Flags bleiben 11
+    (Ankerregel „über keine Tür erreichbar" bestätigt nicht)."""
     ergebnisse = _alle_reihenfolgen(_loch_paar)
     assert len(ergebnisse) == 1, (
         f"{len(ergebnisse)} verschiedene Ergebnisse je nach Reihenfolge")
@@ -1065,9 +1077,10 @@ def test_e5_loch_paar_folgt_rohen_tueren():
     zustand = {rid: rest for rid, *rest in raeume}
     assert tuple(zustand["g"]) == ("ALLGEMEIN_ERSCHLIESSUNG", True, True, None)
     klasse, flucht, communal, whg = zustand["v"]
-    assert (klasse, flucht, communal) == (None, True, True)
+    assert (klasse, flucht, communal) == ("WOHNUNG_PRIVAT", True, True)
     assert whg == zustand["z2"][3] == zustand["z3"][3] is not None
-    assert [w for w in warnungen if w.startswith("unbestimmt: v — ")], warnungen
+    assert [w for w in warnungen if w.startswith("k4: v — privat")
+            and "vorher unbestimmt" in w], warnungen
     assert gruppen == [("v", "z2", "z3"), ("z1",)], gruppen
     raeume, tueren = _loch_paar()
     for w in bilde_wohnungen(raeume, tueren):
@@ -1098,12 +1111,13 @@ def test_e5_keine_wohnung_ohne_eingang_durch_offen_gelassene_raeume():
     rohen Zimmertüren ``d50``/``d52`` an Küche und Bad → gehört zu ihrer
     Wohnung, unbestimmt. Beide behalten Notlicht, jede Wohnung hat ihren
     Eingang (``t7``/``t99`` bzw. ``t3``). Runde 9 machte V allgemein
-    (E5 Satz 2, aufgehoben)."""
+    (E5 Satz 2, aufgehoben). K4 (Owner 2026-09-30): V ist Mitglied seiner
+    Wohnung → privat statt offen, Notlicht bleibt."""
     raeume, tueren = _muth_paar()
     wohnungen = bilde_wohnungen(raeume, tueren)
     by_id = {r.id: r for r in raeume}
     assert by_id["G"].nutzungsklasse == "ALLGEMEIN_ERSCHLIESSUNG"
-    assert by_id["V"].nutzungsklasse is None
+    assert by_id["V"].nutzungsklasse == "WOHNUNG_PRIVAT"
     for rid in ("G", "V"):
         assert (by_id[rid].ist_fluchtweg, by_id[rid].ist_communal) == (True, True)
     assert sorted((w.raum_ids, sorted(w.eingangs_tuer_ids)) for w in wohnungen) == [
@@ -1451,7 +1465,11 @@ def test_nicht_konvergenz_wird_unbestimmt_mit_grund(monkeypatch):
     """Was die Iteration intern weiter braucht (E7.5): Nicht-Konvergenz →
     unbestimmt mit Grund, Notlicht bleibt — gleich unter Deckel 9/10/11,
     über alle Reihenfolgen, idempotent. Der Grund behauptet nicht, die Regel
-    habe keinen Fixpunkt."""
+    habe keinen Fixpunkt. K4 (Owner 2026-09-30) danach: V ist Mitglied
+    seiner (Einraum-)Wohnung, die hat aber keinen Aufenthaltsraum →
+    Aufenthaltsraum-Sperre, V bleibt unbestimmt („G4: kein
+    Aufenthaltsraum"); G liegt in keiner Wohnung und ist nur blattlos
+    getrennt → bleibt unbestimmt mit K4-Grund."""
     from notbeleuchtung.raumerkennung import wohnungen as W
 
     ergebnisse = set()
@@ -1463,11 +1481,14 @@ def test_nicht_konvergenz_wird_unbestimmt_mit_grund(monkeypatch):
         eins = _vollzustand(raeume, tueren, w)
         w = bilde_wohnungen(raeume, tueren)
         assert _vollzustand(raeume, tueren, w) == eins, deckel
-        for rid in ("G", "V"):
+        assert [x for x in warnungen
+                if x.startswith("k4: V — offen: G4: kein Aufenthaltsraum")], warnungen
+        for rid, klasse, zeile in (("G", None, "unbestimmt: G "),
+                                   ("V", None, "unbestimmt: V ")):
             r = next(x for x in raeume if x.id == rid)
-            assert r.nutzungsklasse is None, (deckel, rid, r.nutzungsklasse)
+            assert r.nutzungsklasse == klasse, (deckel, rid, r.nutzungsklasse)
             assert (r.ist_fluchtweg, r.ist_communal) == (True, True), rid
-            grund = next(x for x in warnungen if x.startswith(f"unbestimmt: {rid} "))
+            grund = next(x for x in warnungen if x.startswith(zeile))
             assert "Schritt 3" in grund and "keinen Fixpunkt" in grund, grund
             assert "kein Fixpunkt" not in grund and "ohne Fixpunkt" not in grund
         ergebnisse.add(repr((eins, sorted(warnungen))))
@@ -1589,21 +1610,22 @@ def test_e5_loch_paar_haengt_nicht_am_etikett(typ_g, typ_v):
     Beide behalten Notlicht, jede Wohnung hat einen Eingang, und der
     Messfall S4c/S3b (vom Stiegenhaus über keine Tür erreichbar) steht
     weiter in den Warnungen. Runde 8/9: beide allgemein (E5 Satz 2,
-    aufgehoben)."""
+    aufgehoben). K4 (Owner 2026-09-30): v ist Mitglied seiner Wohnung →
+    privat statt offen, Notlicht bleibt; offen bleibt keiner."""
     raeume, tueren = _loch_paar_etikett(typ_g, typ_v)()
     warnungen: list[str] = []
     wohnungen = bilde_wohnungen(raeume, tueren, warnungen)
     by_id = {r.id: r for r in raeume}
     assert by_id["g"].nutzungsklasse == "ALLGEMEIN_ERSCHLIESSUNG"
     assert by_id["g"].wohnung_id is None
-    assert by_id["v"].nutzungsklasse is None
+    assert by_id["v"].nutzungsklasse == "WOHNUNG_PRIVAT"
     for rid in ("g", "v"):
         assert (by_id[rid].ist_fluchtweg, by_id[rid].ist_communal) == (True, True)
         assert [w for w in warnungen if w.startswith(f"loch: {rid} — ")
                 and "über keine Tür erreichbar" in w
                 and "Messfall S4c/S3b" in w], warnungen
-    assert [w for w in warnungen if w.startswith("unbestimmt:")] == [
-        w for w in warnungen if w.startswith("unbestimmt: v — ")], warnungen
+    assert not [w for w in warnungen if w.startswith("unbestimmt:")], warnungen
+    assert [w for w in warnungen if w.startswith("k4: v — privat")], warnungen
     assert sorted(w.raum_ids for w in wohnungen) == [["v", "z2", "z3"], ["z1"]]
     assert all(w.eingangs_tuer_ids for w in wohnungen)
 
@@ -1651,14 +1673,17 @@ def test_e5_loch_raum_ueber_zimmertuer_bleibt_in_seiner_wohnung():
     ihrer Wohnung {L, b, k, z} (``tb`` verbindet innen), unbestimmt, Flags 11,
     der Messfall S4c/S3b mit Grund in den Warnungen. Dass diese Wohnung
     keinen Eingang hat, ist ein Tür- oder Raumerkennungsloch (auf HEAD
-    genauso) — eine Mess-Abnahme, keine Regel im Code (G1.4)."""
+    genauso) — eine Mess-Abnahme, keine Regel im Code (G1.4). K4 (Owner
+    2026-09-30): L ist Mitglied dieser Wohnung → Klasse privat statt offen,
+    Flags bleiben 11."""
     raeume, tueren = _loch_in_wohnung()
     warnungen: list[str] = []
     wohnungen = bilde_wohnungen(raeume, tueren, warnungen)
     by_id = {r.id: r for r in raeume}
-    assert by_id["L"].nutzungsklasse is None
+    assert by_id["L"].nutzungsklasse == "WOHNUNG_PRIVAT"
     assert (by_id["L"].ist_fluchtweg, by_id["L"].ist_communal) == (True, True)
-    assert [w for w in warnungen if w.startswith("unbestimmt: L — ")], warnungen
+    assert [w for w in warnungen if w.startswith("k4: L — privat")
+            and "vorher unbestimmt" in w], warnungen
     loch = [w for w in warnungen if w.startswith("loch: L — ")]
     assert len(loch) == 1, warnungen
     assert "über keine Tür erreichbar" in loch[0] and "Messfall S4c/S3b" in loch[0]
@@ -1674,17 +1699,19 @@ def test_e5_loch_raum_bleibt_offen_wo_allgemein_keinen_eingang_schafft(bau):
     durch das Offenlassen keine Wohnung ohne Eingang; hätte der Rest auch mit
     L allgemein keinen, hilft „allgemein" nicht. In beiden Fällen bleibt L
     unbestimmt IN seiner Wohnung (Loch, Messfall S4c/S3b) und behält sein
-    Notlicht."""
+    Notlicht. K4 (Owner 2026-09-30): danach Klasse privat als Mitglied der
+    Wohnung, Notlicht bleibt."""
     raeume, tueren = bau()
     warnungen: list[str] = []
     wohnungen = bilde_wohnungen(raeume, tueren, warnungen)
     by_id = {r.id: r for r in raeume}
-    assert by_id["L"].nutzungsklasse is None
+    assert by_id["L"].nutzungsklasse == "WOHNUNG_PRIVAT"
     assert (by_id["L"].ist_fluchtweg, by_id["L"].ist_communal) == (True, True)
     gruppe = next(w for w in wohnungen if "L" in w.raum_ids)
     assert sorted(gruppe.raum_ids) == ["L", "b", "k", "z"]
-    assert [w for w in warnungen if w.startswith("unbestimmt: L — Ankerregel nicht "
-                                                 "auswertbar: vom Stiegenhaus über keine Tür")]
+    assert [w for w in warnungen if w.startswith("k4: L — privat")
+            and "vorher unbestimmt: Ankerregel nicht auswertbar: vom Stiegenhaus "
+                "über keine Tür" in w], warnungen
     assert [w for w in warnungen if w.startswith("loch: L — ")], warnungen
 
 
@@ -2057,7 +2084,7 @@ def _zufall(rnd):
     return raeume, tueren
 
 
-def test_e5_zwei_fixpunkte_zufallssuche():
+def test_e5_zwei_fixpunkte_zufallssuche(monkeypatch):
     """Board 4 und G2 (Owner 2026-09-22) als allgemeine Regel, gesetzte
     Zufallssuche (Generator und Seed der Reviewer-Suchen, 200 Topologien,
     alle Fixpunkte über 3^n Belegungen): ausgeliefert wird ein Fixpunkt —
@@ -2071,9 +2098,16 @@ def test_e5_zwei_fixpunkte_zufallssuche():
     Raum des Riegels (G3) ist privat. Erreicht die Iteration keinen Fixpunkt
     (Schritt 3), dann nur, wo es keinen gibt, und jeder unbestimmte Raum
     behält sein Notlicht. Bis Runde 9 prüfte die Suche „kleinster Entzug" —
-    der Beleg vor Tiebreak entzieht gewollt mehr (OG1 ``raum_4``/``raum_5``)."""
+    der Beleg vor Tiebreak entzieht gewollt mehr (OG1 ``raum_4``/``raum_5``).
+
+    Die Suche prüft die Klassen-Iteration; K4 (Owner 2026-09-30) läuft
+    danach, ist hier ausgeschaltet und hat seine eigene Suche über dieselben
+    Topologien (``test_k4_zufallssuche``)."""
     import random
 
+    from notbeleuchtung.raumerkennung import wohnungen as W
+
+    monkeypatch.setattr(W, "klasse_aus_umriss", lambda raeume, tueren: {})
     rnd = random.Random(20260921)
     verstoesse = []
     for i in range(200):
@@ -2117,6 +2151,52 @@ def test_e5_zwei_fixpunkte_zufallssuche():
                 verstoesse.append((i, "Beleg übersehen"))
         elif not any(belegt(geliefert, f) for f in tiebreak):
             verstoesse.append((i, "weder Tiebreak noch voller Beleg"))
+    assert not verstoesse, f"{len(verstoesse)} Verstöße, z. B. {verstoesse[:5]}"
+
+
+def test_k4_zufallssuche(monkeypatch):
+    """K4 (Owner 2026-09-30) über die 200 Topologien der Fixpunkt-Suche, je
+    mit und ohne K4: K4 setzt nur die Klasse von GANG/VORRAUM, die ohne K4
+    unbestimmt sind; die Wohnungen (b) sind dieselben; kein Raum des Riegels
+    wird privat; Notlicht ändert sich nur 11 → 00 und nur für Räume, die
+    ``bestaetigt_privat`` trägt; wer offen bleibt, behält Flags 11."""
+    import random
+
+    from notbeleuchtung.raumerkennung import wohnungen as W
+
+    def lauf(spec, mit_k4):
+        raeume, tueren = copy.deepcopy(spec)
+        if not mit_k4:
+            monkeypatch.setattr(W, "klasse_aus_umriss", lambda r, t: {})
+        bilde_wohnungen(raeume, tueren)
+        monkeypatch.undo()
+        return raeume, tueren
+
+    rnd = random.Random(20260921)
+    verstoesse = []
+    for i in range(200):
+        spec = _zufall(rnd)
+        ohne, _ = lauf(spec, False)
+        mit, tueren = lauf(spec, True)
+        vor = {r.id: r for r in ohne}
+        entzug = wk.bestaetigt_privat(mit, tueren)
+        riegel = wk.riegel_nie_privat(mit, tueren)
+        for r in mit:
+            v = vor[r.id]
+            if r.wohnung_id != v.wohnung_id:
+                verstoesse.append((i, "Wohnung", r.id))
+            if r.nutzungsklasse != v.nutzungsklasse and (
+                    r.raum_typ not in wk.SCOPE_TYPEN or v.nutzungsklasse is not None):
+                verstoesse.append((i, "Klasse außerhalb K4", r.id))
+            if r.id in riegel and r.nutzungsklasse == wk.PRIVAT:
+                verstoesse.append((i, "Riegel privat", r.id))
+            fl, fl_v = (r.ist_fluchtweg, r.ist_communal), (v.ist_fluchtweg, v.ist_communal)
+            if fl != fl_v and not (fl_v == (True, True) and fl == (False, False)
+                                   and r.id in entzug):
+                verstoesse.append((i, "Flags", r.id, fl_v, fl))
+            if (r.raum_typ in wk.SCOPE_TYPEN and r.nutzungsklasse is None
+                    and fl != (True, True)):
+                verstoesse.append((i, "offen ohne Notlicht", r.id))
     assert not verstoesse, f"{len(verstoesse)} Verstöße, z. B. {verstoesse[:5]}"
 
 
@@ -2290,16 +2370,19 @@ def test_r10_loch_raum_folgt_rohen_tueren(bau, loch, wohnung, erschliessung):
     zu dieser Wohnung (b) und bleibt für (a) unbestimmt, Flags 11; einer, der
     nur über rohe Wohnungseingänge angebunden ist, ist Erschließung — keine
     Wohnung, allgemein, Flags 11. Der Messfall S4c/S3b bleibt im Bericht.
-    Bis Runde 9 waren beide allgemein (E5 Satz 2, aufgehoben)."""
+    Bis Runde 9 waren beide allgemein (E5 Satz 2, aufgehoben). K4 (Owner
+    2026-09-30): der gebundene Loch-Raum ist Mitglied seiner Wohnung → Klasse
+    privat statt offen, Flags bleiben 11."""
     raeume, tueren = bau()
     warnungen: list[str] = []
     wohnungen = bilde_wohnungen(raeume, tueren, warnungen)
     by_id = {r.id: r for r in raeume}
     r = by_id[loch]
-    assert r.nutzungsklasse is None, r.nutzungsklasse
+    assert r.nutzungsklasse == wk.PRIVAT, r.nutzungsklasse
     assert (r.ist_fluchtweg, r.ist_communal) == (True, True)
     assert sorted(next(w for w in wohnungen if loch in w.raum_ids).raum_ids) == wohnung
-    assert [w for w in warnungen if w.startswith(f"unbestimmt: {loch} — ")], warnungen
+    assert [w for w in warnungen if w.startswith(f"k4: {loch} — privat")
+            and "vorher unbestimmt" in w], warnungen
     g = by_id[erschliessung]
     assert g.nutzungsklasse == wk.ALLGEMEIN, g.nutzungsklasse
     assert (g.ist_fluchtweg, g.ist_communal) == (True, True)
@@ -2525,19 +2608,21 @@ def test_r11_loch_gang_zu_einzelraeumen_bildet_eine_wohnung():
     bleibt für (a) unbestimmt mit Notlicht, Flags 11. Dass diese Wohnung
     keinen Eingang hat, ist das Türerkennungsloch ``t5`` — auf HEAD genauso.
     Bis Runde 10 war L Erschließung und die vier Räume wurden vier
-    Einraum-Wohnungen (Gate (3) OG3 0 → 4)."""
+    Einraum-Wohnungen (Gate (3) OG3 0 → 4). K4 (Owner 2026-09-30): L ist
+    Mitglied dieser Wohnung → Klasse privat statt offen, Notlicht bleibt."""
     raeume, tueren = _og3_loch_gang()
     warnungen: list[str] = []
     wohnungen = bilde_wohnungen(raeume, tueren, warnungen)
     by_id = {r.id: r for r in raeume}
-    assert by_id["L"].nutzungsklasse is None, by_id["L"].nutzungsklasse
+    assert by_id["L"].nutzungsklasse == wk.PRIVAT, by_id["L"].nutzungsklasse
     assert (by_id["L"].ist_fluchtweg, by_id["L"].ist_communal) == (True, True)
     assert "L" not in wk.bestaetigt_privat(raeume, tueren)
     assert sorted((sorted(w.raum_ids), sorted(w.eingangs_tuer_ids))
                   for w in wohnungen) == [(["L", "a", "b", "k", "z"], []),
                                           (["Y"], ["ty"])]
     assert by_id["L"].wohnung_id == by_id["k"].wohnung_id is not None
-    assert [w for w in warnungen if w.startswith("unbestimmt: L — ")], warnungen
+    assert [w for w in warnungen if w.startswith("k4: L — privat")
+            and "vorher unbestimmt" in w], warnungen
     loch = [w for w in warnungen if w.startswith("loch: L — ")]
     assert len(loch) == 1 and "Messfall S4c/S3b" in loch[0], warnungen
     assert "Einzelräume" in loch[0], loch[0]
@@ -2668,9 +2753,15 @@ def test_r14_ohne_fixpunkt_gilt_der_tiebreak_ohne_probelauf():
     warnungen: list[str] = []
     bilde_wohnungen(raeume, tueren, warnungen)
     by_id = {r.id: r for r in raeume}
-    # Kein Fixpunkt: K und V1 pendeln und werden unbestimmt (Schritt 3).
+    # Kein Fixpunkt: K und V1 pendeln und werden unbestimmt (Schritt 3). K4
+    # (Owner 2026-09-30): V1 ist Mitglied einer Wohnung ohne Aufenthaltsraum →
+    # Aufenthaltsraum-Sperre, bleibt offen; K liegt in keiner und bleibt offen.
     assert [by_id[r].nutzungsklasse for r in ("K", "V1")] == [None, None], \
         {r.id: r.nutzungsklasse for r in raeume}
+    assert [w for w in warnungen
+            if w.startswith("k4: V1 — offen: G4: kein Aufenthaltsraum")], warnungen
+    assert [w for w in warnungen if w.startswith("unbestimmt: V1 — ")
+            and "Schritt 3" in w], warnungen
     for rid in ("V2", "V3"):
         assert by_id[rid].nutzungsklasse == wk.ALLGEMEIN, rid
         zeile = [w for w in warnungen if w.startswith(f"tiebreak: {rid} — ")]
@@ -2852,7 +2943,10 @@ def test_r1ac_wohnungsflur_hinter_stiegenhaustuer_bildet_eine_wohnung():
     (a): L bleibt unbestimmt wie der Loch-Gang — Klasse ``None``, Flags 11,
     nicht entzogen —, mit eigenem Grund („Wohnungsflur hinter
     Stiegenhaustür"), nicht „Ankerregel nicht auswertbar"; dazu eine
-    ``r1:``-Zeile, die den Zugang nennt, und keine ``loch:``-Zeile."""
+    ``r1:``-Zeile, die den Zugang nennt, und keine ``loch:``-Zeile.
+
+    K4 (Owner 2026-09-30, R1-Aussetzung): K4 setzt für L keine Klasse, L
+    bleibt unbestimmt; die ``k4:``-Zeile nennt „R1-Flur, Owner 2026-09-30"."""
     raeume, tueren = _og3_flur()
     assert wk.ankerurteil(raeume, tueren)["L"][0] == wk.A_ALLGEMEIN, "Vorbedingung"
     assert "L" not in wk.loch_raeume(raeume, tueren), "Vorbedingung: kein Loch"
@@ -2866,6 +2960,8 @@ def test_r1ac_wohnungsflur_hinter_stiegenhaustuer_bildet_eine_wohnung():
     assert by_id["L"].nutzungsklasse is None, by_id["L"].nutzungsklasse
     assert (by_id["L"].ist_fluchtweg, by_id["L"].ist_communal) == (True, True)
     assert "L" not in wk.bestaetigt_privat(raeume, tueren)
+    assert [w for w in warnungen
+            if w.startswith("k4: L — offen: R1-Flur, Owner 2026-09-30")], warnungen
     offen = [w for w in warnungen if w.startswith("unbestimmt: L — ")]
     assert len(offen) == 1, warnungen
     assert "Wohnungsflur hinter Stiegenhaustür" in offen[0], offen[0]
@@ -2907,14 +3003,15 @@ def test_r1ac_loch_gang_bindet_ohne_a_und_c():
     nur Zimmern dahinter und rollenlosem ``t5`` nach KEIN_RAUM bindet wie bis
     jetzt (R1 vom 2026-09-22) — unbestimmt, Flags 11, ``loch:``-Zeile mit
     R1-Grund, keine ``r1:``-Zeile. ``_og3_loch_gang`` selbst hält Abschnitt (p)
-    fest (``test_r11_loch_gang_zu_einzelraeumen_bildet_eine_wohnung``)."""
+    fest (``test_r11_loch_gang_zu_einzelraeumen_bildet_eine_wohnung``). K4
+    (Owner 2026-09-30): danach Klasse privat als Mitglied, Flags 11."""
     raeume, tueren = _og3_loch_gang_nur_zimmer()
     assert "L" in wk.loch_raeume(raeume, tueren), "Vorbedingung: Loch"
     warnungen: list[str] = []
     wohnungen = bilde_wohnungen(raeume, tueren, warnungen)
     r = {x.id: x for x in raeume}["L"]
     assert _wohnungsstand(raeume, wohnungen)[0] == _R1AC_SOLL["_og3_loch_gang_nur_zimmer"]
-    assert r.nutzungsklasse is None, r.nutzungsklasse
+    assert r.nutzungsklasse == wk.PRIVAT, r.nutzungsklasse
     assert (r.ist_fluchtweg, r.ist_communal) == (True, True)
     loch = [w for w in warnungen if w.startswith("loch: L — ")]
     assert len(loch) == 1 and "Einzelräume" in loch[0], warnungen

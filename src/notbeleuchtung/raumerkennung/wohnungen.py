@@ -41,6 +41,7 @@ from .wohnungsklasse import (
     ankerurteil,
     erschliessung_erwiesen,
     kandidaten,
+    klasse_aus_umriss,
     loch_warnungen,
     riegel,
     riegel_nie_privat,
@@ -185,6 +186,10 @@ def bilde_wohnungen(raeume: list[Raum], tueren: list[Tuer],
     keiner offen bleibt, gilt er — gemessen Rennweg OG1 ``raum_4``/``raum_5``.
     Sonst gilt der allgemeine, und jeder solche Raum bekommt eine
     ``tiebreak:``-Zeile mit Grund.
+
+    **K4 (Owner 2026-09-30), nach den Wohnungen:** was danach noch unbestimmt
+    ist, bekommt die Klasse aus dem Wohnungsumriss
+    (``wohnungsklasse.klasse_aus_umriss``), je Raum eine ``k4:``-Zeile.
     """
     for r in raeume:
         if r.nutzungsklasse is None and r.raum_typ not in SCOPE_TYPEN:
@@ -342,11 +347,6 @@ def bilde_wohnungen(raeume: list[Raum], tueren: list[Tuer],
         "beim allgemeinen (Board 4: von mehreren Fixpunkten gilt der, der "
         "Notlicht behält), Notlicht bleibt"
         for rid in sorted(strittig - belegt) if stand[rid] == ALLGEMEIN]
-    if warnungen is not None:
-        warnungen.extend(warnungen_aus(
-            {rid: by_id[rid].nutzungsklasse for rid in scope}, gruende))
-        warnungen.extend(loch_warnungen(raeume, tueren, loch_in_wohnung, r1_gaenge))
-        warnungen.extend(tiebreak)
 
     # `wohnung_id` ZUERST leeren (Befund B1): wer keine Wohnung mehr hat,
     # behielt sonst still die des vorigen Laufs.
@@ -358,6 +358,27 @@ def bilde_wohnungen(raeume: list[Raum], tueren: list[Tuer],
         wohnungen.append(w)
         for rid in raum_ids:
             by_id[rid].wohnung_id = w.id
+    # K4 (Owner 2026-09-30): die danach noch UNBESTIMMTEN GANG/VORRAUM bekommen
+    # ihre Klasse aus dem Wohnungsumriss (b, eben gesetzt) und der Ankerregel
+    # (rohe Rollen). Nur die Klasse — Wohnungen stehen schon, und die Flags
+    # folgen unten aus ``bestaetigt_privat`` wie für jeden anderen Raum. Die
+    # Iteration oben sieht K4 nicht: keine Rückkopplung, kein zweiter Lauf.
+    # Frühere Festlegungen „Klasse bleibt offen" (Loch in Wohnung, Loch-GANG R1,
+    # blattlos getrennt) überstimmt die Owner-Regel ausdrücklich; der R1-Flur
+    # (Fassung A+C) und Wohnungen ohne Aufenthaltsraum bleiben offen (Owner
+    # 2026-09-30, ``klasse_aus_umriss``).
+    k4 = klasse_aus_umriss(raeume, tueren)
+    for rid, (k, _) in k4.items():
+        by_id[rid].nutzungsklasse = k
+    if warnungen is not None:
+        warnungen.extend(warnungen_aus(
+            {rid: by_id[rid].nutzungsklasse for rid in scope}, gruende))
+        warnungen.extend(loch_warnungen(raeume, tueren, loch_in_wohnung, r1_gaenge))
+        warnungen.extend(tiebreak)
+        warnungen.extend(
+            f"k4: {rid} — {_KURZ.get(k, k)}: {g}"
+            + ("" if k is None else f"; vorher unbestimmt: {gruende.get(rid, 'ohne Grund')}")
+            for rid, (k, g) in sorted(k4.items()))
     # R3 (§ 6f Punkt 3) zuletzt: erst jetzt stehen die Klassen endgültig.
     setze_wohnungsflags(raeume, tueren)
     return wohnungen
