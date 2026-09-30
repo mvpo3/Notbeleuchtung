@@ -101,6 +101,18 @@ def test_abstellraum_830er_bogentuer_ist_eine_eigene_tuer(rm):
     assert not any(q == "doppelfluegel" for _d, _i, q, _b in nah), nah
 
 
+def test_abstellraum_hat_eine_tuer(rm):
+    """S4c Fassung A (Gate § 10, Bedingung (10), Owner 2026-09-30): der
+    ABSTELLRAUM 1,98 m² hängt an mindestens einer Tür. Vor Fassung A stand
+    seine 830er Bogentür ``raum_12 | KEIN_RAUM`` — die Sehne aus dem
+    ARC-Startwinkel zeigt auf das offene Blatt (§ 10b)."""
+    (raum,) = [r for r in rm.raeume
+               if r.raum_typ == "ABSTELLRAUM" and abs(r.flaeche_m2 - 1.98) <= 0.05]
+    tueren = [(t.id, t.quelle, t.breite_mm, t.von_raum, t.nach_raum)
+              for t in rm.tueren if raum.id in (t.von_raum, t.nach_raum)]
+    assert len(tueren) >= 1, (raum.id, tueren)
+
+
 def test_soll_41_raeume_mit_stempel(rm):
     """Scharf seit Fachteil 2: LIFT-Erkennung + Gang-/Geometrie-Typisierung
     heben die typisierten Räume über die Soll-Schwelle 41 (XPASS-Kipp)."""
