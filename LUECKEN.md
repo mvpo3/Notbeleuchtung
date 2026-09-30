@@ -481,7 +481,7 @@ N-06 (Leonis) · O-01, O-02, O-08 (gemeinsam), O-07 · X-02.
 
 ---
 
-## 12. Punkt 2a — Warnung und Weiterlauf (erledigt mit dem Commit dieses Eintrags)
+## 12. Punkt 2a — Warnung und Weiterlauf (teilweise erledigt; **Review 1: Abbruch bei defekter Koordinate offen, § 15**)
 
 **Regel (Owner-Auftrag 2026-09-30):** ein leerer oder defekter Plan (keine Geometrie, keine Wand-Entities, kein
 Modelspace, defekte Entities, kein Raum) liefert ein `RaumModell` (ggf. ohne Räume) und eine Warnung im Bericht,
@@ -557,6 +557,8 @@ DG2 0 → 1** (Enis Board 3, unverändert); M17 18/18; Barawitzka ABSTELLRAUM 1 
 `pipeline.run` mit Default-Bundle (0 Räume, Ausgabe-DXF geschrieben).
 
 **Offen nach 2a:**
+- **Review 1 (§ 15, R1-01):** eine `nan`/`inf`- oder Phantom-Koordinate auf einem Wand-Layer bricht `parse` weiter ab
+  (`footprint.py:79`/`:80`) — 2a gilt für „defekte Entities" nicht. P0 · Selman.
 - O-04 Rest: `tuer_warnungen` (`seite_fehlt`) und `sanitaer_befund` stehen weiter nicht in `bericht.md`. P1 · Selman.
 - `wand_warnungen` erreichen weder `pipeline.run` noch die API: `_summary` warnt nur `if raum.raeume`
   (`hauptengine/pipeline.py:77`, `:86`), im Render-Pfad fehlt der Schlüssel `warnungen` ganz (Einmal-Lauf:
@@ -905,3 +907,95 @@ DG2 0 → 1** (Enis Board 3, unverändert); M17 18/18 BESTANDEN; OG3 0 Anker in 
 - Die 8 Rollen-Unterschiede gegen `f682c77`, die nicht aus K4 kommen (oben), sind nicht bewertet. P2 · Selman.
 - S4c unverändert (§ 6.1): Barawitzka `tuer_17`/`_23`/`_27` bleiben planwidrig `wohnungseingang`, die 2 Pins rot.
 - Naht: die Platzierung liest weiter die rohe Rolle (§ 6.4, N-04). P1 · Contract / Leonis.
+
+---
+
+## 15. Review 1 — Punkte 2a–2c (adversarial, Kopf `27de6a0`)
+
+Geprüft mit eigenem Code: eigener Runner (`provider.parse(dxf, "")`, je Plan allein), 17 eigene Defekt-DXF,
+Plan-Ausschnitte, Vergleich gegen die Basisläufe `0434392` (§ 7). Runner, DXF, JSON und Bilder liegen im
+Session-Scratch, nicht im Repo.
+
+**(1) Diff `0434392..27de6a0`:** `src/notbeleuchtung/raumerkennung/` (`ausgaenge`, `dxf_load`, `fluchtweg`,
+`provider`, `wohnungsklasse`), `scripts/plan_pruefen.py` (nur Warnungen in bericht.md), Tests, `tests/plaene.py`
+(+ `MOLLGASSE_DG`), `LUECKEN.md`. Kein Contract, kein fremdes Paket, kein Owner-Import, keine lokalen Pfade. Tests nur
+ergänzt (einzige geänderte Zeile: Import in `test_k4_klasse_gang_vorraum.py`); keine Schwelle, kein Soll, kein Marker
+gelockert; neu genau ein strict-xfail (S4g a, § 13). Je Punkt ein Commit (`b849dd0`, `2016268`, `27de6a0`) mit
+Rot-Nachweis im Eintrag; die zitierten Zeilennummern stimmen mit den Testdateien überein.
+
+**(2) 2a — eigene Defekt-DXF** (`parse(…, "EG")` je Plan in einem eigenen Prozess):
+
+| Fall | Ergebnis |
+|---|---|
+| leer; nur TEXT/MTEXT | 0 Räume, `keine_geometrie` + `keine_raeume` |
+| nur Linien auf Layer `0` | 0 Räume, `keine_wand_entities` + `keine_raeume` |
+| nur offene Wandlinien (`A-WALL`, 12 Stück) | 0 Räume, `keine_raeume` |
+| nur kaputte Polylinien (LWPOLYLINE mit 0/1 Punkt, geschlossen-degeneriert, POLYLINE ohne VERTEX) | 0 Räume, `keine_raeume` |
+| gültiger Raum + LWPOLYLINE 0/1 Punkt, POLYLINE ohne VERTEX, LWPOLYLINE-Zählerfehler (90 = 5, 2 Punkte), selbstschneidende Polylinie mit HATCH, degenerierter HATCH-Rand, ARC Radius 0 / Winkel 0, INSERT auf gelöschten Block | RaumModell mit Räumen, kein Abbruch, **keine Warnung** |
+| abgeschnittene Datei; Binärdaten | `DxfNichtLesbar` (gewollter Abbruch) |
+| **gültiger Raum + LWPOLYLINE mit `nan`/`inf`-Koordinate auf `A-WALL`** | **Abbruch** `OverflowError` `footprint.py:79` |
+| **gültiger Raum + LWPOLYLINE mit Phantom-Punkt (1e15, 1e15) auf `A-WALL`** | **Abbruch** `ValueError` `footprint.py:80` |
+
+Beleg (pytest-Lauf eines Scratch-Tests über die 11 Entity-Fälle, `--tb=line`, Kurzform):
+
+```
+footprint.py:79: OverflowError: cannot convert float infinity to integer                  [d14_raum_lwpoly_nan]
+footprint.py:80: ValueError: array is too big; `arr.size * arr.dtype.itemsize` is larger
+                 than the maximum possible size.                                          [d11_raum_riesenkoordinate]
+2 failed, 9 passed in 1.42s
+```
+
+Ursache: `bounds_mm` (`dxf_load.py:258-268`) nimmt min/max über alle Wand-Stützpunkte ohne Endlichkeits- oder
+Fern-Prüfung (der 500-m-Fern-Filter sitzt nur in `wandkoerper._ohne_fernkoerper`); `footprint.gebaeude_umriss`
+rastert diese Bounds mit 200 mm (`footprint.py:78-80`). Die Stelle ist älter als 2a. `plan_pruefen.plan_pruefen`
+auf vier der Pläne (leer, nur Linien Layer `0`, offene Wandlinien, nur kaputte Polylinien; Ausgabe über
+`PLAN_PRUEFEN_ERGEBNIS` in den Scratch): Lauf ohne Abbruch, bericht.md „## Warnungen" mit `keine_geometrie` bzw.
+`keine_wand_entities` und `keine_raeume` wie in § 12 behauptet.
+
+**Urteil 2a: teilweise widerlegt.** Leer, nur Text, nur Linien und degenerierte Polylinien laufen durch; eine
+nicht-endliche oder ferne Koordinate bricht weiter ab. Nicht behoben: die Abhilfe ist ein Entscheid (Entity mit
+nicht-endlicher Koordinate beim Laden verwerfen, oder Bounds/Raster mit Fern-Filter bzw. Raster-Reißleine); eine
+Bounds-Änderung verschiebt `footprint.hauptausgaenge` auch auf echten Plänen (Muthgasse E2 Bounds 503,8 × 275,9 m,
+§ 7). → R1-01.
+
+**(3) 2b:** Basis `0434392` gegen `27de6a0`, eigene Läufe auf 13 Plänen (12 Prüfpläne + Rennweg OG3 aus
+`_eingang`): **0 Ausgänge entfallen, 0 neu** (ID, Typ, Lage); kein Geschoss hat seinen Ausgang verloren.
+Mollgasse EG: `exit_tuer_67` `final_exit` (`AUSSEN`\|`raum_61` TERRASSE, `ist_notausgang`), `exit_tuer_68`
+`stair_exit`; `exit_1` … `exit_4` unverändert und an der Lage aus § 13 (`exit_2` 8 mm neben `raum_30` MÜLLRAUM,
+`exit_3` in `raum_51`, `exit_4` in `raum_41`). `markiere_windfang` setzt `ist_notausgang` ohne Blick auf die Rolle
+(`tuer_typisierung.py:276`) — die Begründung für b stimmt. Gate (11) DG1 grün (s. (5)). **Urteil 2b: bestätigt**
+(b und c erledigt, a offen wie § 13).
+
+**(4) 2c:** korrigierte Rollen Basis gegen `27de6a0` auf den 13 Plänen: 25 gekippt (Muthgasse E2 22, Barawitzka
+EG 3), alle `wohnungseingang` → `zimmertuer`. Alle 25 selbst beurteilt — die ganze Menge statt einer Stichprobe; einen
+„zu Recht"-Fall gibt es auf diesen Plänen nicht, zehn davon zu ziehen war darum nicht möglich:
+
+- beide Seiten dieselbe `wohnung_id`; Nachbar ZIMMER/KÜCHE/BAD/WC/ABSTELLRAUM mit Flags 00, Loch-Seite VORRAUM mit
+  Flags 11;
+- Muthgasse E2 `raum_48`, `raum_51`, `raum_57`, `raum_59` haben einen rohen Wohnungseingang zum
+  `ALLGEMEIN_ERSCHLIESSUNG`-GANG (`tuer_13`, `tuer_7`, `tuer_3`, `tuer_12` → `raum_46`/`raum_96`), der
+  `wohnungseingang` bleibt — die gekippten Türen liegen dahinter;
+- Plan angesehen: Muthgasse E2 `raum_54` trägt den Stempel „E2-5-01 Vorraum 11,56 m²"; seine sieben gekippten Türen
+  führen zu Räumen mit Stempeln „E2-5-…" (Bad, WC, AR, Zimmer, Wohnküche); der Zugang von außen ist `tuer_9` (Seite
+  `KEIN_RAUM`, Türtext „T-E2-5-07-1" daneben). Barawitzka `raum_9` trägt „02 VR 5,59 m²" (Text „TOP 02" bei der
+  Wohnküche `raum_25`), seine drei gekippten Türen führen zu Bad `raum_10`, WC `raum_17`, Wohnküche `raum_25`.
+
+→ **25 fälschlich, 0 zu Recht** — deckt sich mit § 14. Flags, `bestaetigt_privat`, Nutzungsklassen, `wohnung_id`,
+Polygone, Türen (roh), Ausgänge, Segmente, Anker: 13 von 13 Plänen gleich der Basis; Fluchtweg-Warnungen nur
+Barawitzka −3 (wie § 14). **Urteil 2c: bestätigt.**
+
+**(5) Gate** auf dem sauberen Kopf (`_arbeit/gate/messung_27de6a0.json`, 104,6 s), `pruefe_gate` gegen
+`nullmessung_f15d03f.json`: **nur (3) `M4.einraum` DG2 0 → 1**; M17 18/18 BESTANDEN; DG1 2 Ausgänge, 0 durch den
+Liftschacht; alle Messfelder außer `meta` gleich der 2c-Messung. `pytest -m gate tests/gate`: 3 passed, 1 xfailed.
+`test_provider.py`, `test_s4g_ausgang_tuerbezug.py`, `test_k4_klasse_umriss.py`, `test_k4_klasse_gang_vorraum.py`,
+`test_soll_mollgasse.py`: 53 passed, 1 skipped, 4 xfailed.
+
+**Offen aus Review 1:**
+- **R1-01 (P0: Abbruch; auf den 13 Plänen der Prüfstrecke nicht aufgetreten) · Selman:** eine `nan`/`inf`-Koordinate
+  auf einem Wand-Layer → `OverflowError` `footprint.py:79`; eine Phantom-Koordinate (1e15) → `ValueError`
+  `footprint.py:80` (Raster aus ungefilterten `bounds_mm`). 2a ist für „defekte Entities" damit nicht erfüllt.
+  Entscheid offen: Entity mit nicht-endlicher Koordinate beim Laden verwerfen (mit Warnung) und/oder Bounds und Raster
+  mit Fern-Filter bzw. Raster-Reißleine (vgl. `rest_komponenten`, § 6.7).
+- **R1-02 (P2) · Selman:** degenerierte Entities (Polylinie mit 0/1 Punkt, POLYLINE ohne VERTEX, degenerierter
+  HATCH-Rand, ARC Radius 0, INSERT auf fehlenden Block, LWPOLYLINE-Zählerfehler) laufen still durch — kein Abbruch,
+  aber auch keine Warnung im Bericht.
