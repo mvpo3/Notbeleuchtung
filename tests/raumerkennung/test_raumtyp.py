@@ -134,6 +134,22 @@ def test_fstz_ist_belag_hinweis_kein_raumtyp():
     assert belag_hinweis("Feinsteinzeugbelag") == "NASSRAUM/GANG"
 
 
+@pytest.mark.parametrize("label", ["Vorr.", "Vorr"])
+def test_vorr_abkuerzung_ist_vorraum(label):
+    # Muthgasse A-AREA-IDEN: „Vorr." (35 Räume E2–E9) wurde mangels Typ gar kein
+    # Stempel (Gruppe a Vokabular, Owner 2026-09-29).
+    assert raumtyp_flags(label) == ("VORRAUM", True, True)
+
+
+@pytest.mark.parametrize(
+    "label, heute",
+    [("Vorrat", None), ("Vorratsraum", None), ("Vorraum", ("VORRAUM", True, True))],
+)
+def test_vorr_kein_bleed(label, heute):
+    # Token-exakt: „vorrat"/„vorratsraum" ≠ „vorr" — bleiben wie heute.
+    assert raumtyp_flags(label) == heute
+
+
 @pytest.mark.parametrize(
     "label, erwartet",
     [("Wohnküche", "KÜCHE"), ("Gästezimmer", "ZIMMER"), ("Abstellkammer", "ABSTELLRAUM"),
