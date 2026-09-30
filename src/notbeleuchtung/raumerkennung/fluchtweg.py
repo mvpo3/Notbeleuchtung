@@ -81,7 +81,10 @@ def _effektive_farbe(e, plan: DxfPlan) -> int:
     farbe = int(e.dxf.get("color", 256) or 256)
     if 0 < farbe < 256:
         return farbe
-    layer = plan.doc.layers.get(e.dxf.layer)
+    # `layers.get` wirft bei einem Layer ohne Tabelleneintrag (Minimal-DXF,
+    # 2a) — der None-Zweig war dafür gedacht.
+    layers = plan.doc.layers
+    layer = layers.get(e.dxf.layer) if layers.has_entry(e.dxf.layer) else None
     return int(layer.color) if layer is not None else 0
 
 

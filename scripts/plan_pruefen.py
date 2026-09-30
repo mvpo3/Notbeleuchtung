@@ -1327,6 +1327,9 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
         modell_n, modell_m2 = None, None
     return {
         "md": md,
+        # Lade-/Wand-Warnungen des Providers (`keine_wand_entities`,
+        # `keine_geometrie`, `keine_raeume`) → bericht.md „Warnungen" (2a).
+        "wand_warnungen": list(getattr(bundle.raum, "wand_warnungen", [])),
         "modell_ueberlapper": modell_n,
         "modell_doppelt_m2": modell_m2,
         "tueren_typisiert": sum(1 for t in modell.tueren if t.tuer_detail),
@@ -1643,7 +1646,8 @@ def plan_pruefen(dxf: Path) -> dict:
              rot_vermerk, iou_zeilen, iou_mittel, laufzeit, len(raeume),
              material_block + f3["md"], quelle, kuerzel_hinweise,
              entfallen, bereinigt,
-             (f3.get("modell_ueberlapper"), f3.get("modell_doppelt_m2")))
+             (f3.get("modell_ueberlapper"), f3.get("modell_doppelt_m2")),
+             f3.get("wand_warnungen", ()))
     flags = sum(1 for z in zuordnungen if z.flag != "ok")
     # Zählung aus derselben Quelle wie raeume.json: Stempel-Einträge + Rest-Einträge.
     rest_n = sum(1 for e in eintraege if e["flag"] == "kein_stempel")
@@ -1806,7 +1810,8 @@ def _bericht(pfad: Path, name: str, zuordnungen: list[Zuordnung], rest,
              kuerzel_hinweise: list[str] | None = None,
              entfallen: list | None = None,
              ber: dict | None = None,
-             modell_ueberlapp: tuple | None = None) -> None:
+             modell_ueberlapp: tuple | None = None,
+             provider_warnungen=()) -> None:
     quelle = quelle or {}
     l = [f"# Prüfbericht {name}", "",
          f"Raum-Polygon-Quelle: `{raum_quelle}` — {rot_vermerk}", ""]
@@ -1837,8 +1842,9 @@ def _bericht(pfad: Path, name: str, zuordnungen: list[Zuordnung], rest,
         cx, cy = zentrum(r)
         l.append(f"- {r.id} [{quelle.get(r.id, '?')}] {r.raum_typ or '—'}: "
                  f"{r.flaeche_m2:.2f} m², Zentrum ({cx / 1000:.2f}, {cy / 1000:.2f}) m")
-    warn = [f"Stempel ohne Polygon: „{z.stempel.name}“"
-            for z in zuordnungen if z.polygon_index is None]
+    warn = list(provider_warnungen)
+    warn += [f"Stempel ohne Polygon: „{z.stempel.name}“"
+             for z in zuordnungen if z.polygon_index is None]
     warn += [f"Polygon ohne Stempel: {r.id} ({r.flaeche_m2:.2f} m²)" for r in rest]
     warn += [f"Abweichung > 10 % (Erkennung, roh): „{z.stempel.name}“ "
              f"({z.abweichung_prozent:+.1f} %)"

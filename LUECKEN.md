@@ -60,7 +60,7 @@ Prüfstrecken-Ausgabe außerhalb des Contracts (Attribute am Provider): `wand_wa
 
 | Nr. | Baustein | gebaut (Datei:Funktion:Zeile) | belegt durch | fehlt / Lücke | Prio | Lane |
 |---|---|---|---|---|---|---|
-| D-01 | DXF öffnen | `dxf_load.py:lade_dxf:232` (`ezdxf.readfile` :234) | `test_dxf_load.py::test_synth_bounds`, `::test_mollgasse_leer_ist_meter_kalibriert`; `::test_mollgasse_fertig_ist_mm` **skipped** (WHA_MOL_EG.dxf nicht im Repo, `docs/INTEGRATION_2026-09-30.md:125-127`) | Kaputte oder Nicht-DXF: `readfile` ohne Fang, Ausnahme läuft durch (API: 422, `api/main.py:315-316`; Prüfstrecke: siehe O-06). Kein Test mit defekter Datei. | P2 | Selman |
+| D-01 | DXF öffnen | `dxf_load.py:lade_dxf:232` (`ezdxf.readfile` :234) | `test_dxf_load.py::test_synth_bounds`, `::test_mollgasse_leer_ist_meter_kalibriert`; `::test_mollgasse_fertig_ist_mm` **skipped** (WHA_MOL_EG.dxf nicht im Repo, `docs/INTEGRATION_2026-09-30.md:125-127`) | Kaputte oder Nicht-DXF: `readfile` ohne Fang, Ausnahme läuft durch (API: 422, `api/main.py:315-316`; Prüfstrecke: siehe O-06). Kein Test mit defekter Datei. **→ 2a erledigt (§ 12):** `DxfNichtLesbar` mit Pfad in der Meldung, Test `test_provider.py::test_nicht_lesbare_datei_definierter_fehler`. | P2 | Selman |
 | D-02 | Architektur-Raum wählen (Direct/Wrapper) | `dxf_load.py:lade_dxf:237-243`, `_has_walls:184` | `test_wandkoerper.py::test_fischamender_bt1_eg_wandkoerper` | Wrapper-Wahl hängt an `WALL_PATTERN` (≥ 10 Treffer); ohne Treffer bleibt der Modelspace. Block-Raum „best-effort, ohne Transform" (Modul-Doc :9-10). | P2 | Selman |
 | D-03 | Wand-Layer-Erkennung | `dxf_load.py:WALL_PATTERN:31-35`, `_wall_layers:52` | `test_provider.py::test_ohne_wandlayer_hatch_waende_raeume_statt_valueerror`, `::test_naht_am_rain_og4_parse_ohne_abbruch`; `test_wandkoerper.py::test_ohne_wandlayer_doppellinien_auf_wand_hinweis_layer` | ARAI5 `Wand <Material> <Tragwirkung>` trifft kein Muster (`docs/INTEGRATION_2026-09-30.md:145-147`). Seit `ed292e1` kein Abbruch, aber `plan.wall_layers` leer → D-04 fällt auf `$INSUNITS`, X-01 wirft. **Owner offen:** zählt `Wand brüstungshoch` als raumbildend? (heute ja, `wandkoerper._WAND_LAYER:41-42` trifft `\bwand\b`). | P1 | Selman (Owner-Frage) |
 | D-04 | mm-Kalibrierung | `dxf_load.py:_calibrate_factor:163`, `_door_arc_factor:125`, `_raw_wall_span:107` | nur synthetisch + Mollgasse-Fixtures (`test_dxf_load.py::test_wand_im_block_kalibriert_nicht_ueber_insunits`, `::test_ausreisser_kippen_den_faktor_nicht`) | S-MST (`docs/OFFENE_FRAGEN.md`, § S-MST): Türprobe nur Tiebreak (:175-176); stiller Rückfall auf `$INSUNITS` (:180-181) — **ohne Wand-Linien immer** (`_raw_wall_span` liefert 0,0 → keine Kandidaten, :171-174). Gemessen (§ 7): **8 von 13** Prüfplänen laufen über `$INSUNITS` (Rennweg EG/OG3: Wand-Layer ohne Linien-Stützpunkte; Am Rain ×6: kein Wand-Layer), und auf 4 davon widerspricht die Türprobe (Rennweg EG, Am Rain OG4/OG3/EG: Faktor 10 statt 1); Faktor nirgends ausgewiesen (`plan_pruefen` nutzt `plan.factor` nur zum Zeichnen, :159/:203-210); kein Messfall gegen echte Pläne. `_door_arc_factor` sucht `DOOR` im Blocknamen (:140-141), die Türerkennung kennt `DOOR` nicht (F-01). Owner offen: Hard Stop oder Warnung. | P1 | Selman (Owner-Frage) |
@@ -140,7 +140,7 @@ Prüfstrecken-Ausgabe außerhalb des Contracts (Attribute am Provider): `wand_wa
 | O-01 | Render DXF-Blatt | `hauptengine/render/dxf_renderer.py:render_dxf:1327`, Maßstab-Fallback `pipeline.py:259-267` | `tests/render/test_render_dxf.py`, `test_layout_vorlage.py`; `tests/e2e/` | `VorlageEinheitenFehler` (`dxf_renderer.py:1367`) fängt die Pipeline nicht → Abbruch bei falscher Vorlage (API 422); kein Test (`grep`: 0). | P2 | gemeinsam |
 | O-02 | Blatt-Extents | `dxf_renderer.py:_geschoss_extents:338` | kein direkter Test (`grep` in `tests/`: 0) | schützt nur das Blatt, nicht die übrigen `bounds_mm`-Leser (D-05). | P2 | gemeinsam |
 | O-03 | PDF A0 1:50 | `pdf_export.py:dxf_zu_pdf:57` (ezdxf-Frontend + matplotlib, 300 dpi) | `tests/render/test_pdf_export.py` | RAM auf Am Rain nicht gemessen — derselbe Frontend-Weg wie `_figur` (O-05). | P1 | gemeinsam |
-| O-04 | Warnungen im Prüfbericht | `plan_pruefen.py:_geschoss_md:1136`, `_kreuzcheck_md:1153` | — | `wand_warnungen` (`keine_wand_entities`), `tuer_warnungen` (`seite_fehlt`) und `sanitaer_befund` erscheinen **nicht** in `bericht.md` (0 Treffer). Die Owner-Regel P0 („es bleibt eine Warnung") ist in der Prüfstrecke unsichtbar. | P1 | Selman |
+| O-04 | Warnungen im Prüfbericht | `plan_pruefen.py:_geschoss_md:1136`, `_kreuzcheck_md:1153` | — | `wand_warnungen` (`keine_wand_entities`), `tuer_warnungen` (`seite_fehlt`) und `sanitaer_befund` erscheinen **nicht** in `bericht.md` (0 Treffer). Die Owner-Regel P0 („es bleibt eine Warnung") ist in der Prüfstrecke unsichtbar. **→ 2a (§ 12): `wand_warnungen` stehen jetzt im Abschnitt „Warnungen"**; `tuer_warnungen` und `sanitaer_befund` weiter offen. | P1 | Selman |
 | O-05 | Plan-Render der Prüfstrecke (RAM) | `plan_pruefen.py:_figur:137`, 8 Aufrufstellen (:419/:491/:667/:740/:854/:1556/:1565/:1589) | — | Pflicht-Eintrag § 6.7. | P0 | Selman |
 | O-06 | Prüfstrecken-Schleife | `plan_pruefen.py:main:1984-2034` | — | Kein Fehler-Fang je Plan (:1990-1992): ein Fehler bricht alle folgenden Pläne ab, und `VERLAUF.md` wird nicht geschrieben (`_verlauf_schreiben` erst nach der Schleife, :2030-2032). | P1 | Selman |
 | O-07 | Maßstab im Bericht | — | — | Faktor und Beleg nicht ausgewiesen (D-04). | P2 | Selman |
@@ -353,10 +353,12 @@ Kein `raise` in `kaskade.py`, `waende.py`, `raumlayer.py`, `stempel_anker.py`, `
 | Nr. | Stelle | Bedingung | Aufrufer und Fang | Test | Befund | Prio |
 |---|---|---|---|---|---|---|
 | X-01 | `dxf_load.py:258` `bounds_mm` | keine Stützpunkte auf den erkannten Wand-Layern (`plan.wall_entities()` ohne LINE/LWPOLYLINE/POLYLINE/INSERT) | einziger Aufrufer `provider.py:133`, gefangen `except ValueError` `:134` → Bounds aus Wandkörpern bzw. allen Entities + Warnung `keine_wand_entities` | indirekt `test_provider.py::test_ohne_wandlayer_hatch_waende_raeume_statt_valueerror`, `::test_naht_am_rain_og4_parse_ohne_abbruch`; kein direkter Test | bricht nicht mehr ab | — |
-| X-02 | `provider.py:141` `parse` | X-01 warf **und** keine Wandkörper **und** kein Stützpunkt (`entity_points` kennt nur LINE, LWPOLYLINE, POLYLINE, INSERT) | nicht gefangen → Abbruch (Pipeline/API 422) | — | gewollter Abbruch „DXF ohne Geometrie". Randfall: ein Plan nur aus ARC/CIRCLE/SPLINE/TEXT ohne Wandkörper bricht ebenfalls ab. Kein Test. | P2 |
+| X-02 | `provider.py:141` `parse` | X-01 warf **und** keine Wandkörper **und** kein Stützpunkt (`entity_points` kennt nur LINE, LWPOLYLINE, POLYLINE, INSERT) | nicht gefangen → Abbruch (Pipeline/API 422) | — | gewollter Abbruch „DXF ohne Geometrie". Randfall: ein Plan nur aus ARC/CIRCLE/SPLINE/TEXT ohne Wandkörper bricht ebenfalls ab. Kein Test. **→ 2a erledigt (§ 12): kein `raise` mehr, Warnung `keine_geometrie`.** | P2 |
 | X-03 | `wandkoerper.py:296` `bounds_aus_wandkoerpern` | leere Wandkörper-Liste | alle 5 Aufrufer prüfen vorher: `kaskade.py:111`, `provider.py:136-137`, `:172-174`, `rest_komponenten.py:240-241`, `stempel_flutung.py:239-240` | `test_wandkoerper.py::test_bounds_aus_wandkoerpern_leer` | im Parse nicht erreichbar | — |
 
 **Abbruch ohne `raise`-Anweisung:** `dxf_load.py:234` `ezdxf.readfile` (Datei fehlt, defekt) — ungefangen (D-01).
+**→ 2a (§ 12):** `readfile` gefangen → `DxfNichtLesbar`; dazu gefunden und behoben: `fluchtweg.py:84`
+`doc.layers.get` warf `DXFTableEntryError` bei einem Layer ohne Tabelleneintrag.
 **Geschluckte Fehler (nur `print`, kein Bericht):** `kaskade.py:174-175` (Kürzel), `:179-181` (R-Stufe → Räume
 fehlen), `:194-195` (Bereinigung). `stempel_flutung.py:246-257` warnt statt zu werfen (R-04). Die übrigen
 `except Exception` (21 Stellen) überspringen einzelne kaputte Blöcke/Hatches/Texte. Nicht vollständig geprüft:
@@ -474,3 +476,91 @@ Planer. „Nach dem Merge" = Owner-Vermerk „kein Code vor dem Merge des Türst
 D-01, D-02, D-08, D-09, D-10, D-11 · R-04, R-06, R-07 (Enis), R-11, R-12, R-14 · F-02, F-07 (veraltete Zeilenangabe
 `provider.py:102`), F-10 / § 6.6 Durchleitung (additives Segment-Feld, **[2e-Kandidat]**), F-11, F-12, F-14 (Enis) ·
 N-06 (Leonis) · O-01, O-02, O-08 (gemeinsam), O-07 · X-02.
+
+---
+
+## 12. Punkt 2a — Warnung und Weiterlauf (erledigt mit dem Commit dieses Eintrags)
+
+**Regel (Owner-Auftrag 2026-09-30):** ein leerer oder defekter Plan (keine Geometrie, keine Wand-Entities, kein
+Modelspace, defekte Entities, kein Raum) liefert ein `RaumModell` (ggf. ohne Räume) und eine Warnung im Bericht,
+keinen Abbruch. Einzige Ausnahme: Datei nicht lesbar oder kein DXF.
+
+**Vorher gelistet** (Kopf `829e01a`, Code = `0434392`): `grep -n "raise\b"` über
+`src/notbeleuchtung/raumerkennung/*.py` ohne `_port/` → 3 Treffer (= § 8); `_port/parsers/room_faces.py` und
+`_port/models/room.py` → 0; kein `assert`. Dazu die zwei Abbrüche ohne `raise`-Anweisung, die die neuen Testfälle
+auslösen (X-04, X-05).
+
+| Nr. | Stelle (vorher → nachher) | Bedingung | Aufrufer / Fang vorher | Verhalten vorher | Verhalten nachher |
+|---|---|---|---|---|---|
+| X-01 | `dxf_load.py:258` → `:267` `bounds_mm` | keine Stützpunkte auf den erkannten Wand-Layern | einziger Aufrufer `provider.py:133` → `:137`, gefangen `except ValueError` `:134` → `:138` | Fallback-Bounds + `keine_wand_entities` | unverändert; die Warnung entfällt nur, wenn gar keine Geometrie da ist (dann `keine_geometrie`) |
+| X-02 | `provider.py:141` `parse` | X-01 warf, keine Wandkörper, kein Stützpunkt (LINE, LWPOLYLINE, POLYLINE, INSERT) | nicht gefangen | `ValueError` „DXF ohne Geometrie" → Pipeline/API 422, Prüfstrecke bricht ab (`plan_pruefen.py:1632` → alle folgenden Pläne, O-06) | **kein `raise` mehr:** Bounds (0, 0)–(0, 0) (`provider.py:148`), Warnung `keine_geometrie` (`:149-151`); `parse` läuft auf dem leeren Plan zu Ende |
+| X-03 | `wandkoerper.py:296` `bounds_aus_wandkoerpern` | leere Wandkörper-Liste | alle 5 Aufrufer prüfen vorher (§ 8) | im Parse nicht erreichbar | unverändert |
+| X-04 | `dxf_load.py:234` → `:241` `ezdxf.readfile` (ohne `raise`) | Datei fehlt (`FileNotFoundError`), kein DXF (`OSError` „… is not a DXF file."), Struktur defekt (`DXFStructureError`, z. B. „missing ENDSEC tag.") | ungefangen | rohe ezdxf-/OS-Ausnahme | **gewollter Abbruch** `DxfNichtLesbar(ValueError)` „DXF nicht lesbar: <Pfad> — <ezdxf-Grund>" (`dxf_load.py:232-243`) |
+| X-05 | `fluchtweg.py:84` `_effektive_farbe` (ohne `raise`) | Linie mit BYLAYER-Farbe auf einem Layer ohne Tabelleneintrag (Minimal-DXF ohne TABLES) | `explizite_linien` ← `provider.parse` | `DXFTableEntryError`, Abbruch | Layer ohne Eintrag → Farbe 0 (der vorhandene `None`-Zweig war dafür gedacht), kein Abbruch (`fluchtweg.py:84-88`) |
+
+Neu am Ende von `parse`: Warnung `keine_raeume`, wenn das Modell keinen Raum hat (`provider.py:333-336`).
+
+**Begründung der Ausnahme (X-04):** ohne gelesenes Dokument gibt es keinen Plan, an dem ein Modell oder eine
+Warnung hängen könnte. `DxfNichtLesbar` erbt von `ValueError` (derselbe Typ wie der alte Abbruch X-02) und nennt
+Pfad und ezdxf-Grund; die API gibt die Meldung als 422 weiter (`api/main.py:315-316` fängt `Exception`).
+„Kein Modelspace" ist kein eigener Fall: ezdxf legt den Modelspace auch für eine DXF nur aus einer
+ENTITIES-Sektion an (Testfall `ohne_tabellen`), eine DXF ohne Entities ist der Fall `ohne_geometrie`.
+
+**Warnungen gebündelt** in `provider.wand_warnungen` (Muster `tuer_warnungen`, kein Contract-Feld):
+`keine_wand_entities` (Text unverändert), `keine_geometrie`, `keine_raeume`. `scripts/plan_pruefen.py`, nur
+Berichtsausgabe: `_fachteil3` gibt sie zurück (`:1332`), `plan_pruefen` reicht sie an `_bericht` (`:1650`),
+`_bericht` stellt sie an den Anfang von „## Warnungen" (`:1814`, `:1845`).
+
+**Tests** (`tests/raumerkennung/test_provider.py`):
+`test_leerer_oder_defekter_plan_warnt_statt_abbruch[ohne_geometrie|nur_text|waende_ohne_raum|ohne_tabellen]`
+(RaumModell ohne Räume, Warnungen je Fall, Contract-Roundtrip), `test_nicht_lesbare_datei_definierter_fehler`
+(Nicht-DXF und fehlende Datei), `test_plan_pruefen_schreibt_wand_warnung_in_bericht` (Prüfstrecke end-to-end auf dem
+Hatch-Plan ohne Wand-Layer, `ERGEBNIS` nach `tmp_path`).
+
+**Rot vor dem Fix** (`pytest tests/raumerkennung/test_provider.py -k "leerer or nicht_lesbare or
+plan_pruefen_schreibt" --tb=line`, Kopf `829e01a`, Kurzform):
+
+```
+[ohne_geometrie]    src/.../raumerkennung/provider.py:141: ValueError: DXF ohne Geometrie — nichts zu erkennen.
+[nur_text]          src/.../raumerkennung/provider.py:141: ValueError: DXF ohne Geometrie — nichts zu erkennen.
+[waende_ohne_raum]  tests/raumerkennung/test_provider.py:201: AssertionError: []
+[ohne_tabellen]     ezdxf/sections/table.py:145: ezdxf.lldxf.const.DXFTableEntryError: A-WALL
+test_nicht_lesbare_datei_definierter_fehler         test_provider.py:206: ImportError: cannot import name 'DxfNichtLesbar'
+test_plan_pruefen_schreibt_wand_warnung_in_bericht  test_provider.py:229: AssertionError:  (2)
+6 failed, 6 deselected in 2.65s
+```
+
+**Grün nach dem Fix:** dieselbe Auswahl 6 passed; `test_provider.py` gesamt 11 passed, 1 skipped
+(`test_mollgasse_parse_valid`, WHA_MOL_EG.dxf nicht im Repo, wie vorher).
+
+**Blast** (Runner `ArchitekturRaumProvider().parse(dxf, "")` + Default-Platzierung, je Plan allein; Vergleich des
+kompletten JSON ohne Lauf-Metadaten: Räume mit Polygon/Fläche/Klasse/Wohnung/Flags, Türen, Ausgänge, Segmente,
+Anker, Stiegenhäuser, Bounds, korrigierte Rollen, bestätigt-privat, alle Provider-Warnungen, Leuchten je Lage und
+Klasse): **13 von 13 feldgleich zur Basis `0434392`** — Rennweg UG/EG/OG1/OG2/OG3/DG1/DG2/DD, Barawitzka EG,
+Mollgasse EG/1OG, Muthgasse E2, Am Rain OG4 (allein). Erwartet: alle geänderten Zweige greifen nur ohne jede
+Geometrie, ohne Raum, bei nicht lesbarer Datei oder bei Layern ohne Tabelleneintrag.
+
+**Volle Suite** (allein, 27 min 36 s): `6 failed, 2229 passed, 11 skipped, 6 deselected, 14 xfailed` — dieselben 6
+roten wie vorher (3 × `test_keine_leuchten_in_wohnung_privat` OG1/OG2/DG1 = Board 1 Leonis,
+`test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell`, die 2 S4c-Pins), 2229 = 2223 + 6 neue, 0 xpassed.
+
+**Gate:** `pytest -m gate tests/gate` 3 passed, 1 xfailed (wie vorher). `gate_messung` auf dem Arbeitsbaum dieses
+Commits (vor dem Commit, `_arbeit/gate/messung_829e01a-dirty-2a.json`), `pruefe_gate` gegen
+`nullmessung_f15d03f.json`: (0) unsauberer Arbeitsbaum (erwartet, vor dem Commit gemessen) und **(3) `M4.einraum`
+DG2 0 → 1** (Enis Board 3, unverändert); M17 18/18; Barawitzka ABSTELLRAUM 1 Verbindung, OG3 0 Anker in
+`WOHNUNG_PRIVAT`, DG1 2 Ausgänge / 0 durch den Liftschacht.
+
+**Einmal-Läufe (kein Test):** alle vier synthetischen Pläne laufen durch `plan_pruefen.plan_pruefen` (bericht.md
+„## Warnungen" mit `keine_geometrie`/`keine_raeume`); `ohne_geometrie` und `waende_ohne_raum` laufen durch
+`pipeline.run` mit Default-Bundle (0 Räume, Ausgabe-DXF geschrieben).
+
+**Offen nach 2a:**
+- O-04 Rest: `tuer_warnungen` (`seite_fehlt`) und `sanitaer_befund` stehen weiter nicht in `bericht.md`. P1 · Selman.
+- `wand_warnungen` erreichen weder `pipeline.run` noch die API: `_summary` warnt nur `if raum.raeume`
+  (`hauptengine/pipeline.py:77`, `:86`), im Render-Pfad fehlt der Schlüssel `warnungen` ganz (Einmal-Lauf:
+  `render_summary.get("warnungen")` = `None`). Ein leerer Plan kommt dort als Blatt ohne Leuchten und ohne Hinweis
+  zurück. Änderung läge in `hauptengine/` (gemeinsam) → nur gemeldet. P1 · gemeinsam.
+- Defekte Entities nur für „Layer ohne Tabelleneintrag" getestet; implizite Ausnahmen anderer defekter Entities
+  (KeyError, GEOS, kaputte HATCH-/INSERT-Referenzen) weiter nicht systematisch geprüft (§ 8). P2 · Selman.
+- `Projekte/_ergebnis/*/bericht.md` nicht neu erzeugt (Prüfstrecke mit Render nur nach 2f, RAM); die Am-Rain-
+  Berichte zeigen `keine_wand_entities` erst nach dem nächsten Lauf.

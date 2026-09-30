@@ -127,21 +127,29 @@ class ArchitekturRaumProvider:
         # das Erscheinungsbild (wandkoerper: HATCH beliebiger Layer, schmale
         # Polygone, Doppellinien; Fern-Körper fallen dort weg), und es bleibt
         # eine Warnung — Prüfstrecken-Ausgabe wie `tuer_warnungen`.
+        # Owner-Auftrag 2026-09-30 (2a): auch ein leerer oder defekter Plan
+        # (keine Geometrie, nur Text, kein Raum) bricht nicht ab — RaumModell
+        # plus Warnung hier (`keine_geometrie`, `keine_raeume`). Abbruch nur,
+        # wenn ezdxf die Datei nicht lesen kann (`dxf_load.DxfNichtLesbar`).
         self.wand_warnungen: list[str] = []
         k = raeume_aus_kaskade(plan)
         try:
             bounds = bounds_mm(plan)
         except ValueError:
             # Hatch-only-Pläne haben keine Wand-Linien, aber Wandkörper.
+            pts = [] if k.wandkoerper else [
+                p for e in plan.space for p in plan.entity_points(e)]
             if k.wandkoerper:
                 bounds = bounds_aus_wandkoerpern(k.wandkoerper)
-            else:
-                pts = [p for e in plan.space for p in plan.entity_points(e)]
-                if not pts:
-                    raise ValueError("DXF ohne Geometrie — nichts zu erkennen.") from None
+            elif pts:
                 xs, ys = zip(*pts, strict=True)
                 bounds = BBox(min_xy=(min(xs), min(ys)), max_xy=(max(xs), max(ys)))
-            if not plan.wall_layers or not k.wandkoerper:
+            else:
+                bounds = BBox(min_xy=(0.0, 0.0), max_xy=(0.0, 0.0))
+                self.wand_warnungen.append(
+                    "keine_geometrie: DXF ohne Stützpunkte (LINE, LWPOLYLINE, "
+                    "POLYLINE, INSERT) und ohne Wandkörper — Bounds (0, 0)")
+            if (pts or k.wandkoerper) and (not plan.wall_layers or not k.wandkoerper):
                 self.wand_warnungen.append(
                     "keine_wand_entities: kein Wand-Layer mit Wand-Linien — "
                     f"Weiterlauf über das Erscheinungsbild ({len(k.wandkoerper)} "
@@ -322,4 +330,8 @@ class ArchitekturRaumProvider:
         if aussen is not None and aussen.komponenten:
             kante = unary_union([p.exterior for p in aussen.komponenten])
         self.letzter_kreuzcheck = kreuzcheck(modell, kontur, kante)
+        if not modell.raeume:
+            self.wand_warnungen.append(
+                "keine_raeume: kein Raum erkannt (Kaskade und Wandzyklen leer) "
+                "— RaumModell ohne Räume")
         return modell

@@ -229,9 +229,18 @@ class DxfPlan:
         return []
 
 
+class DxfNichtLesbar(ValueError):
+    """Datei fehlt, ist kein DXF oder strukturell defekt (ezdxf-Fehler) — der
+    einzige gewollte Abbruch im Lade-Pfad (Owner-Auftrag 2026-09-30, 2a): ohne
+    gelesenes Dokument gibt es nichts, woran eine Warnung hängen könnte."""
+
+
 def lade_dxf(pfad: str | Path) -> DxfPlan:
     """Öffne die DXF, wähle den Architektur-Raum, kalibriere den mm-Faktor."""
-    doc = ezdxf.readfile(str(pfad))
+    try:
+        doc = ezdxf.readfile(str(pfad))
+    except (OSError, ezdxf.DXFError) as exc:
+        raise DxfNichtLesbar(f"DXF nicht lesbar: {pfad} — {exc}") from exc
     msp = doc.modelspace()
     space = msp
     if not _has_walls(msp):

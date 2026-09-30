@@ -132,3 +132,98 @@ def test_naht_am_rain_og4_parse_ohne_abbruch(tmp_path):
     assert len(rm.raeume) >= 1
     assert p.wand_warnungen
     RaumModell.model_validate(rm.model_dump(by_alias=True))
+
+
+# ── 2a: leerer oder defekter Plan → Warnung und RaumModell, kein Abbruch ──
+# Owner-Auftrag 2026-09-30 (LUECKEN.md X-02): keine Geometrie, nur Text, nur
+# Wände ohne geschlossenen Raum, Minimal-DXF ohne Tabellen (Entities auf
+# Layern, die keine Layer-Tabelle kennt) liefern ein RaumModell (hier ohne
+# Räume) und eine Warnung in `wand_warnungen`. Einzige Ausnahme: eine Datei,
+# die ezdxf nicht als DXF lesen kann → `DxfNichtLesbar` mit Pfad in der Meldung.
+def _leer_dxf(path):
+    import ezdxf
+
+    ezdxf.new().saveas(str(path))
+    return path
+
+
+def _nur_text_dxf(path):
+    import ezdxf
+
+    doc = ezdxf.new()
+    msp = doc.modelspace()
+    msp.add_text("Wohnzimmer", dxfattribs={"insert": (1000, 1000), "height": 250})
+    msp.add_text("Bad 4,50 m²", dxfattribs={"insert": (6000, 1000), "height": 250})
+    doc.saveas(str(path))
+    return path
+
+
+_OFFENE_WAENDE = (((0, 0), (10000, 0)), ((0, 200), (10000, 200)),
+                  ((0, 0), (0, 8000)), ((200, 200), (200, 8000)))
+
+
+def _offene_waende_dxf(path):
+    import ezdxf
+
+    doc = ezdxf.new()
+    doc.header["$INSUNITS"] = 4
+    doc.layers.add("A-WALL")
+    msp = doc.modelspace()
+    for a, b in _OFFENE_WAENDE:          # zwei Wandschenkel, kein Raum zu
+        msp.add_line(a, b, dxfattribs={"layer": "A-WALL"})
+    doc.saveas(str(path))
+    return path
+
+
+def _ohne_tabellen_dxf(path):
+    """Minimal-DXF nur mit ENTITIES-Sektion: keine Layer-Tabelle, kein
+    Block-Record für den Modelspace — LINEs auf nirgends definiertem Layer."""
+    zeilen = ["0", "SECTION", "2", "ENTITIES"]
+    for (x0, y0), (x1, y1) in _OFFENE_WAENDE:
+        zeilen += ["0", "LINE", "8", "A-WALL", "10", str(x0), "20", str(y0),
+                   "11", str(x1), "21", str(y1)]
+    zeilen += ["0", "ENDSEC", "0", "EOF"]
+    path.write_text("\n".join(zeilen) + "\n", encoding="ascii")
+    return path
+
+
+@pytest.mark.parametrize(("bau", "warnungen"), [
+    (_leer_dxf, ("keine_geometrie", "keine_raeume")),
+    (_nur_text_dxf, ("keine_geometrie", "keine_raeume")),
+    (_offene_waende_dxf, ("keine_raeume",)),
+    (_ohne_tabellen_dxf, ("keine_raeume",)),
+], ids=["ohne_geometrie", "nur_text", "waende_ohne_raum", "ohne_tabellen"])
+def test_leerer_oder_defekter_plan_warnt_statt_abbruch(tmp_path, bau, warnungen):
+    p = ArchitekturRaumProvider()
+    rm = p.parse(str(bau(tmp_path / "plan.dxf")), "EG")
+    assert rm.raeume == []
+    for w in warnungen:
+        assert any(x.startswith(f"{w}:") for x in p.wand_warnungen), p.wand_warnungen
+    RaumModell.model_validate(rm.model_dump(by_alias=True))
+
+
+def test_nicht_lesbare_datei_definierter_fehler(tmp_path):
+    from notbeleuchtung.raumerkennung.dxf_load import DxfNichtLesbar
+
+    kein_dxf = tmp_path / "kein.dxf"
+    kein_dxf.write_text("kein DXF\n", encoding="utf-8")
+    for pfad in (kein_dxf, tmp_path / "fehlt.dxf"):
+        with pytest.raises(DxfNichtLesbar, match=r"DXF nicht lesbar: .*\.dxf"):
+            ArchitekturRaumProvider().parse(str(pfad), "EG")
+
+
+def test_plan_pruefen_schreibt_wand_warnung_in_bericht(tmp_path, monkeypatch):
+    """O-04 (Teil): `wand_warnungen` stehen im bericht.md-Abschnitt
+    „Warnungen" — Prüfstrecke end-to-end auf einem Plan ohne Wand-Layer."""
+    import sys
+
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
+    import plan_pruefen as pp
+
+    monkeypatch.setattr(pp, "ERGEBNIS", tmp_path / "ergebnis")
+    dxf = _hatch_waende_dxf(tmp_path / "hatch_waende.dxf")
+    pp.plan_pruefen(dxf)
+    bericht = (tmp_path / "ergebnis" / "hatch_waende" / "bericht.md").read_text(
+        encoding="utf-8")
+    abschnitt = bericht.split("## Warnungen", 1)[1].split("\n## ", 1)[0]
+    assert "- keine_wand_entities: " in abschnitt, abschnitt
