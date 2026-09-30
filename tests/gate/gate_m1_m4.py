@@ -5,7 +5,7 @@ Die vier Skripte unter ``diagnose_skripte/`` sind der wortgetreue Quelltext aus
 nur aufgerufen und auf die Kopfzahlen der Tabellen in § 4 der Diagnose reduziert.
 Nichts an der Erkennung wird angefasst.
 
-„Wortgetreu" heißt: bis auf genau diese vier Abweichungen Byte für Byte der Anhang
+„Wortgetreu" heißt: bis auf genau diese fünf Abweichungen Byte für Byte der Anhang
 (jede Abweichung steht auch im Kopf des betroffenen Skripts):
   1. Kopfkommentar mit Herkunftsvermerk (Anhang, Commit, „programmatisch extrahiert").
   2. ``# ruff: noqa`` in Zeile 1 — der Anhang ist nicht auf die Lint-Regeln dieses
@@ -17,6 +17,8 @@ Nichts an der Erkennung wird angefasst.
      Diagnose vergleichbar bleibt; gültig ist der Code darunter.
   4. Bei A.2-A.4 zusätzlich ein ergänztes ``import os`` — diese drei Anhänge importieren
      ``os`` nicht, brauchen es aber für Abweichung 3. A.1 importiert ``os`` selbst.
+  5. Nur A.3 (M3), Gate-Definition nach Owner-Entscheid 2026-09-30 (K2, Option c): NISCHE
+     wird wie SCHACHT/LIFT nicht als Raum gezählt; als Stanzung zählt sie nicht.
 
 Herkunft jeder Kopfzahl im Skript-JSON (``p`` = Eintrag des Plans unter ``plaene``):
   M1.hauptwert                p.stiegenhaus.achsparallel_huelle_im_gedrehten.n
