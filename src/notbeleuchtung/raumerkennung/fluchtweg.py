@@ -7,13 +7,24 @@
     nicht nach Kataster/Grenze/Vermessung klingt (Barawitzka-Befund,
     docs/OFFENE_FRAGEN.md).
 (b) **GRAPH** — Raumgraph (Knoten Räume, Kanten Türen): von jeder
-    wohnungseingang-Tür und jedem ALLGEMEIN-Raum der kürzeste Weg über
+    wohnungseingang-Tür (KORRIGIERTE Rolle, ``wohnungsklasse.korrigierte_rollen``
+    — Einbahn E7: das Modell trägt die rohen Rollen, die korrigierten liest
+    nur der Fluchtweg) und jedem ALLGEMEIN-Raum der kürzeste Weg über
     ALLGEMEIN_ERSCHLIESSUNG-Räume zu einem stair_exit/final_exit; Polyline
     Tür-zu-Tür entlang des Raum-Skeletts (eigenes skimage-Skelett auf
     50-mm-Raster — NICHT ``platzierung/mittellinie`` importieren:
     Owner-Grenze).
-(c) **FALLBACK** — Mittelachse jedes GANG/STIEGENHAUS ohne Weg
-    (``richtung_unbekannt=True``).
+(c) **FALLBACK** — Mittelachse jedes COMMUNALEN GANG/STIEGENHAUS ohne Weg
+    (``richtung_unbekannt=True``; R4 aus docs/GATE_TUERSTAPEL.md § 6f).
+
+**Durchleitung** (§ 6g, Owner-Entscheid 2026-09-20): privat heißt keine
+Notbeleuchtung und keine eigene Zirkulation — aber kein Loch im Graph. Ein
+privat gewordener Erschließungsraum (``wohnungsklasse.durchleitung_raeume``)
+bleibt Knoten für Wege zwischen zwei communalen Räumen; er bekommt aber weder
+Segment-Stützpunkte (die Teilstrecke durch ihn ist die Direktlinie Tür→Tür,
+kein Skelettpfad) noch Anker noch Leuchten, und er ist nie Start- oder
+Zielraum eines Segments. Ein UNBESTIMMTER Raum (§ 6g Schritt 3) wird
+konservativ wie ein communaler behandelt: voller Knoten mit Stützpunkten.
 """
 from __future__ import annotations
 
@@ -41,8 +52,13 @@ from .geschoss import (
     geschoss_bekannt,
     ist_obergeschoss,
 )
-from .nutzungsklasse import nutzungsklasse_fuer
 from .tuer_zuordnung import AUSSEN, KEIN_RAUM
+from .wohnungsklasse import (
+    bestaetigt_privat,
+    durchleitung_raeume,
+    korrigierte_rollen,
+    volle_knoten,
+)
 from .zirkulation import WEG_PREFIX, _laenge, _reason
 
 XY = tuple[float, float]
@@ -161,7 +177,12 @@ def _skelett_pfad(poly: Polygon, a: XY, b: XY) -> list[XY]:
 
 # ── (b) Raumgraph + (c) Fallback ─────────────────────────────────────────────
 def _klasse(r: Raum) -> str | None:
-    return r.nutzungsklasse or nutzungsklasse_fuer(r.raum_typ)
+    # KEIN Rückfall auf `nutzungsklasse_fuer(raum_typ)`: § 6g nennt diese Zeile
+    # wörtlich als Stelle des Slices — der Default machte aus einem
+    # unbestimmten VORRAUM still WOHNUNG_PRIVAT, also genau die willkürliche
+    # Festlegung, die § 6g ausschließt. `bilde_wohnungen` setzt die statischen
+    # Defaults vorher; `None` heißt hier ausschließlich „unbestimmt".
+    return r.nutzungsklasse
 
 
 def _final_exit_fehlt_grund(tueren: list[Tuer]) -> str:
@@ -193,7 +214,8 @@ def _raum_der_tuer(t: Tuer, erschliessung: dict[str, Raum]) -> Raum | None:
 
 def fluchtwege(raeume: list[Raum], tueren: list[Tuer], ausgaenge: list[Ausgang],
                segmente_bisher: list[FluchtwegSegment], geschoss: str = "",
-               warnungen: list[str] | None = None) -> list[FluchtwegSegment]:
+               warnungen: list[str] | None = None,
+               durchleitung: list[str] | None = None) -> list[FluchtwegSegment]:
     """GRAPH- und FALLBACK-Segmente ERGÄNZEND zu den bestehenden Segmenten.
 
     Zielwahl nach Geschoss: **EG/UG** → jeder Weg endet an einem
@@ -210,14 +232,34 @@ def fluchtwege(raeume: list[Raum], tueren: list[Tuer], ausgaenge: list[Ausgang],
     Startpunkte, in deren Nähe schon eine explizite LINIE verläuft, werden
     übersprungen — der Plan hat dort selbst geplant. ``warnungen`` (optional,
     in-place): Starts im EG/UG ohne erreichbaren final_exit mit Endraum+Grund.
+    ``durchleitung`` (optional, in-place): je Segment, das durch einen privaten
+    Raum geleitet wurde, eine Berichtszeile (Board-Antrag statt Contract-Feld).
+
+    **Vorbedingung:** ``bilde_wohnungen`` muss vorher gelaufen sein. Seit der
+    Rückfall von ``_klasse`` auf ``nutzungsklasse_fuer(raum_typ)`` entfallen
+    ist, hat ein Raum ohne gesetzte ``nutzungsklasse`` keine Klasse — dann
+    fehlen STIEGENHAUS und die übrigen Erschließungstypen im Türgraph (nur
+    GANG/VORRAUM sind über ``volle_knoten`` auch ohne Klasse Knoten), und die
+    Wege brechen vor dem Stiegenhaus ab.
     """
     og = ist_obergeschoss(geschoss)
     bekannt = geschoss_bekannt(geschoss)
+    durch = durchleitung_raeume(raeume, tueren)
+    # Fail-Safe (Owner 2026-09-21): jeder Kandidat, dem die Ankerregel nichts
+    # nimmt, bleibt VOLLER Knoten mit eigenen Stützpunkten — unbestimmt wie
+    # „privat erst laut Schritt 2". Wer Notlicht behält, behält auch seine
+    # Zirkulation.
+    weich = volle_knoten(raeume, tueren)
     erschliessung = {r.id: r for r in raeume
-                     if _klasse(r) == "ALLGEMEIN_ERSCHLIESSUNG"
+                     if (_klasse(r) == "ALLGEMEIN_ERSCHLIESSUNG"
+                         or r.id in weich)
                      and len(r.polygon_mm) >= 3}
+    # Knoten = eigene Erschließung PLUS die durchgeleiteten privaten Räume.
+    knoten = dict(erschliessung)
+    knoten.update({r.id: r for r in raeume
+                   if r.id in durch and len(r.polygon_mm) >= 3})
     polys = {rid: Polygon(r.polygon_mm).buffer(0)
-             for rid, r in erschliessung.items()}
+             for rid, r in knoten.items()}
     linie_punkte = [p for s in segmente_bisher if s.quelle == "LINIE"
                     for p in s.polyline_mm]
 
@@ -254,8 +296,8 @@ def fluchtwege(raeume: list[Raum], tueren: list[Tuer], ausgaenge: list[Ausgang],
             if nah is not None and math.dist(nah.xy_mm, a.xy_mm) < 1500.0:
                 ziele.setdefault(nah.id, a)
 
-    # Türgraph: Kante zwischen zwei Türen desselben Erschließungsraums.
-    an_raum: dict[str, list[Tuer]] = {rid: [] for rid in erschliessung}
+    # Türgraph: Kante zwischen zwei Türen desselben Knoten-Raums.
+    an_raum: dict[str, list[Tuer]] = {rid: [] for rid in knoten}
     for t in tueren:
         for s in (t.von_raum, t.nach_raum):
             if s in an_raum:
@@ -284,15 +326,20 @@ def fluchtwege(raeume: list[Raum], tueren: list[Tuer], ausgaenge: list[Ausgang],
     # Stiegenhaustür → nächster final_exit, der Geschoss-Restweg).
     starts: list[Tuer] = []
     by_id = {r.id: r for r in raeume}
+    rollen = korrigierte_rollen(raeume, tueren)
     for t in tueren:
-        if t.tuer_detail == "wohnungseingang" or (
-                not og and t.tuer_detail == "stiegenhaustuer"):
+        if rollen[t.id] == "wohnungseingang" or (
+                not og and rollen[t.id] == "stiegenhaustuer"):
             starts.append(t)
             continue
         seiten_klassen = {(_klasse(by_id[s]) if s in by_id else None)
                           for s in (t.von_raum, t.nach_raum)}
+        # `knoten`, nicht `erschliessung`: ein ALLGEMEIN_NEBENRAUM, dessen Tür
+        # DIREKT in einen durchgeleiteten privaten Raum führt, bekäme sonst
+        # keine Starttür und damit keinen Weg — genau das Loch, das die
+        # Durchleitung verhindern soll (§ 6g: Rennweg UG KINDERWAGENRAUM).
         if "ALLGEMEIN_NEBENRAUM" in seiten_klassen and (
-                t.von_raum in erschliessung or t.nach_raum in erschliessung):
+                t.von_raum in knoten or t.nach_raum in knoten):
             starts.append(t)
 
     out: list[FluchtwegSegment] = []
@@ -321,7 +368,7 @@ def fluchtwege(raeume: list[Raum], tueren: list[Tuer], ausgaenge: list[Ausgang],
         if best is None or len(best) < 2:
             if warnungen is not None and not og and bekannt:
                 endraum = next((s for s in (start.von_raum, start.nach_raum)
-                                if s not in erschliessung), start.von_raum)
+                                if s not in knoten), start.von_raum)
                 grund = (_final_exit_fehlt_grund(tueren) if kein_finales_ziel
                          else "Türgraph endet vor dem Ausgang")
                 warnungen.append(
@@ -331,16 +378,35 @@ def fluchtwege(raeume: list[Raum], tueren: list[Tuer], ausgaenge: list[Ausgang],
         punkte: list[XY] = [tuer_by_id[best[0]].xy_mm]
         for a_id, b_id in pairwise(best):
             rid = g[a_id][b_id]["raum"]
-            teil = _skelett_pfad(polys[rid], tuer_by_id[a_id].xy_mm,
-                                 tuer_by_id[b_id].xy_mm)
+            a_xy, b_xy = tuer_by_id[a_id].xy_mm, tuer_by_id[b_id].xy_mm
+            # Durchleitung: im privaten Raum KEINE Stützpunkte — Direktlinie
+            # Tür zu Tür statt Skelettpfad. ABER nur, wenn das Raumpolygon die
+            # Strecke DECKT: bei einem nicht-konvexen Raum (L-Form) verlässt
+            # die Direktlinie das Polygon, und das GRAPH-Segment liefe durch
+            # eine Wand. Dann bleibt es beim Skelettpfad — lieber Stützpunkte
+            # in einem privaten Raum als ein Fluchtweg durch Mauerwerk.
+            if rid in durch and polys[rid].covers(LineString([a_xy, b_xy])):
+                teil = [a_xy, b_xy]
+                if durchleitung is not None:
+                    durchleitung.append(
+                        f"durchleitung: seg_graph_{start.id} führt durch den "
+                        f"privaten Raum {rid} (keine eigene Zirkulation, keine "
+                        "Anker, keine Leuchten)")
+            else:
+                if rid in durch and durchleitung is not None:
+                    durchleitung.append(
+                        f"durchleitung: seg_graph_{start.id} NICHT direkt durch "
+                        f"{rid} geleitet — die Direktlinie verlässt das "
+                        "Raumpolygon (nicht konvex); Skelettpfad statt Wand")
+                teil = _skelett_pfad(polys[rid], a_xy, b_xy)
             punkte.extend(teil[1:])
         ziel_tuer = best[-1]
         ausgang = ziele[ziel_tuer]
         zt = tuer_by_id[ziel_tuer]
         start_raum = next((s for s in (start.von_raum, start.nach_raum)
-                           if s not in erschliessung), start.von_raum)
+                           if s not in knoten), start.von_raum)
         ziel_raum = next((s for s in (zt.von_raum, zt.nach_raum)
-                          if s not in erschliessung), zt.nach_raum)
+                          if s not in knoten), zt.nach_raum)
         out.append(FluchtwegSegment(
             segment_id=f"seg_graph_{start.id}",
             polyline_mm=[(float(x), float(y)) for x, y in punkte],
@@ -348,10 +414,15 @@ def fluchtwege(raeume: list[Raum], tueren: list[Tuer], ausgaenge: list[Ausgang],
             start_raum=start_raum, ziel_raum=ziel_raum,
             ziel_ausgang=ausgang.id))
 
-    # (c) Fallback: GANG/STIEGENHAUS ohne jedes Segment → Mittelachse.
+    # (c) Fallback: COMMUNALER GANG/STIEGENHAUS ohne jedes Segment →
+    # Mittelachse. R4 (§ 6f) unter dem Fail-Safe-Riegel: nur auf einem
+    # ANKERBESTÄTIGT privaten Gang entsteht kein Fluchtweg-Segment mehr — er
+    # trägt nach R3 `ist_communal = False`.
+    bestaetigt = bestaetigt_privat(raeume, tueren)
     alle = segmente_bisher + out
     for r in raeume:
-        if r.raum_typ not in ("GANG", "STIEGENHAUS") or len(r.polygon_mm) < 3:
+        if (r.raum_typ not in ("GANG", "STIEGENHAUS") or r.id in bestaetigt
+                or len(r.polygon_mm) < 3):
             continue
         poly = Polygon(r.polygon_mm).buffer(0)
         if poly.is_empty:

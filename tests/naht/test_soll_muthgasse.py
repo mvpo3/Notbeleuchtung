@@ -176,21 +176,16 @@ Stands nach der Bereinigung, darum gelten die Punkte 1-7 unabhaengig davon.
 """
 import math
 import re
-from pathlib import Path
 
 import pytest
 
-PLAN = Path("Projekte/_eingang/Muthgasse_E2.dxf")
-
-
-def _skip_ohne_plan():
-    if not PLAN.exists():                        # pragma: no cover — CAD-Asset fehlt
-        pytest.skip(f"Architekturplan nicht vorhanden: {PLAN}")
+from plaene import MUTHGASSE_E2 as PLAN
+from plaene import plan as _pruefe_plan
 
 
 @pytest.fixture(scope="module")
 def plan():
-    _skip_ohne_plan()
+    _pruefe_plan(PLAN)
     from notbeleuchtung.raumerkennung.dxf_load import lade_dxf
 
     return lade_dxf(str(PLAN))
@@ -242,13 +237,20 @@ def test_soll_raeume_tueren_ausgaenge(rm):
     Nachtrag 2026-09-12: ``test_soll_tuerzahl_band`` ist entfernt, die Türzahl
     steht jetzt als Plan-Größe in ``test_soll_plan_tuerbloecke_im_modell``
     (Begründung im Modul-Docstring). Ohne Türzahl bleibt dieses Band aus
-    demselben Grund wie vorher."""
+    demselben Grund wie vorher.
+
+    **Slice S5c, Owner-Entscheid B2 (2026-09-28):** Stiegenhaus-Band ≥ 3.
+    Die 5 ist überholt: sie stammt aus einem Stand, in dem Liftschächte als
+    Stiegenhaus zählten (``stiegenhaus_1``/``_2``, Kabinenanteil 0,551/0,574,
+    seit S5c F1 SCHACHT). Schächte sind keine Stiegenhäuser. Die Absenkung
+    5 → 3 ist eine KORREKTUR, keine Bandabsenkung. Überholt, nicht gelöscht:
+    ``>= 5``."""
     assert len(rm.raeume) >= 98, f"nur {len(rm.raeume)} Räume (Ist 114)"
     assert len(rm.zirkulation.segmente) >= 100, (
         f"nur {len(rm.zirkulation.segmente)} Segmente (Ist 143)"
     )
-    assert len(rm.stiegenhaeuser) >= 5, (
-        f"nur {len(rm.stiegenhaeuser)} Stiegenhäuser (Ist 9)"
+    assert len(rm.stiegenhaeuser) >= 3, (  # >= 5 überholt (S5c, B2)
+        f"nur {len(rm.stiegenhaeuser)} Stiegenhäuser (Ist 3)"
     )
 
 

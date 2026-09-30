@@ -2,7 +2,10 @@
 Garagentor-Endausgang, untypisiert_grund."""
 from __future__ import annotations
 
+import math
+
 import ezdxf
+import pytest
 from shapely.geometry import box
 
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum, Tuer
@@ -14,6 +17,7 @@ from notbeleuchtung.raumerkennung.tueren import (
     TuerOeffnung,
     aussentor_tueren,
     text_tueren,
+    tuer_oeffnungen,
     tuer_texte,
     verschmelze_doppelfluegel,
 )
@@ -44,6 +48,63 @@ def test_gegenueberliegende_gangtueren_werden_nicht_verschmolzen():
     assert [x.id for x in t] == ["a", "b"]
 
 
+def _bogen(xy, r, zu, auf):
+    """Schwenkbogen am Drehpunkt ``xy``: Blatt geschlossen in Richtung ``zu``,
+    offen in Richtung ``auf`` (Grad) — die Endpunkte, die ``tuer_oeffnungen``
+    aus dem ARC liest."""
+    enden = tuple((xy[0] + r * math.cos(math.radians(w)),
+                   xy[1] + r * math.sin(math.radians(w))) for w in (zu, auf))
+    return TuerOeffnung(xy_mm=xy, breite_mm=r, winkel_grad=float(zu),
+                        quelle="arc", blatt_enden=enden)
+
+
+def test_echte_doppeltuer_mit_boegen_bleibt_eine_tuer():
+    """S4c: beide Blätter schließen zueinander (Drehpunkte an den Enden der
+    gemeinsamen Öffnung) → weiter EINE Tür."""
+    oeff = [_bogen((4000.0, 0.0), 900.0, 0, 90), _bogen((5800.0, 0.0), 900.0, 180, 90)]
+    t = verschmelze_doppelfluegel(
+        [_arc_tuer("a", (4000.0, 0.0), 900.0), _arc_tuer("b", (5800.0, 0.0), 900.0)],
+        [((0.0, 0.0), (10000.0, 0.0))], oeff)
+    assert [(x.quelle, x.breite_mm, x.xy_mm) for x in t] == [
+        ("doppelfluegel", 1800.0, (4900.0, 0.0))]
+
+
+def test_zwei_einzeltueren_nebeneinander_werden_nicht_verschmolzen():
+    """S4c, Barawitzka EG ``tuer_14``/``tuer_15`` (KINDERWAGENRAUM | ABSTELLRAUM
+    25,67): Abstand = Summe der Radien, Verbindung ∥ Wand — aber beide Blätter
+    schließen VONEINANDER WEG. Zwei Öffnungen, keine Doppeltür."""
+    oeff = [_bogen((4000.0, 0.0), 900.0, 180, 270), _bogen((5800.0, 0.0), 900.0, 0, 270)]
+    t = verschmelze_doppelfluegel(
+        [_arc_tuer("a", (4000.0, 0.0), 900.0), _arc_tuer("b", (5800.0, 0.0), 900.0)],
+        [((0.0, 0.0), (10000.0, 0.0))], oeff)
+    assert [x.id for x in t] == ["a", "b"]
+
+
+def test_gangtueren_gegenueber_an_der_laibung_werden_nicht_verschmolzen():
+    """S4c, Barawitzka EG ``tuer_17``/``tuer_22`` (ABSTELLRAUM 1,98 | ZIMMER
+    10,45 über den VORRAUM): die Drehpunkte sitzen an der Laibung, die nächste
+    Wandlinie ist die Laibungsfläche QUER zur Wand — sie steht parallel zur
+    Verbindung, die Wand-Kollinearität greift nicht. Das Blatt von ``b``
+    schließt nicht zu ``a`` hin → zwei Türen."""
+    oeff = [_bogen((0.0, 0.0), 830.0, 0, 270), _bogen((0.0, -1660.0), 830.0, 0, 270)]
+    laibungen = [((0.0, 0.0), (0.0, 250.0)), ((0.0, -1660.0), (0.0, -1910.0))]
+    tueren = [_arc_tuer("a", (0.0, 0.0), 830.0), _arc_tuer("b", (0.0, -1660.0), 830.0)]
+    # ohne Bogen-Endpunkte (alte Signatur) verschmilzt das Paar wie bisher
+    assert [x.quelle for x in verschmelze_doppelfluegel(list(tueren), laibungen)] == [
+        "doppelfluegel"]
+    assert [x.id for x in verschmelze_doppelfluegel(tueren, laibungen, oeff)] == ["a", "b"]
+
+
+def test_tuer_oeffnungen_tragen_die_bogen_endpunkte():
+    doc = ezdxf.new()
+    msp = doc.modelspace()
+    msp.add_arc(center=(1000.0, 0.0), radius=900.0, start_angle=0.0, end_angle=90.0)
+    (o,) = tuer_oeffnungen(DxfPlan(doc=doc, space=msp, factor=1.0))
+    assert o.quelle == "arc"
+    assert [tuple(round(v, 6) for v in p) for p in o.blatt_enden] == [
+        (1900.0, 0.0), (1000.0, 900.0)]
+
+
 # ── Türbögen an der AUSSEN-Grenze ────────────────────────────────────────────
 def test_aussentor_aus_bogen_an_der_kontur():
     kontur = box(0, 0, 10000, 10000)
@@ -62,14 +123,30 @@ def test_aussentor_aus_bogen_an_der_kontur():
 
 
 # ── (a) Öffnung in der Außenwand ─────────────────────────────────────────────
-def test_aussen_durchgang_allgemeinraum_ohne_tuerblatt():
-    # Gang 0..6000×0..2000, rundum 600er-Wand; oben eine 1340-mm-Lücke.
+def _gang_mit_wandluecke(nase_mm=300.0):
+    """Gang 0..6000×0..2000, rundum 600er-Wand; oben eine 1340-mm-Lücke, in
+    die der Gang ``nase_mm`` hineinragt (wie Raumpolygone, die in die
+    Türöffnung zurückgedehnt sind). S5c/F5: ohne Nase erreicht der freie Teil
+    in der 600er-Wand den Raum nicht (Zwischenstück, § 9d), mit 200 mm Nase
+    endet er an der Kontur ohne Außenanteil."""
     gang = Raum(id="g", raum_typ="GANG",
-                polygon_mm=[(0, 0), (6000, 0), (6000, 2000), (0, 2000)])
+                polygon_mm=[(0, 0), (6000, 0), (6000, 2000), (3340, 2000),
+                            (3340, 2000 + nase_mm), (2000, 2000 + nase_mm),
+                            (2000, 2000), (0, 2000)])
     wand = (box(-600, -600, 6600, 0)
             .union(box(-600, 0, 0, 2600)).union(box(6000, 0, 6600, 2600))
             .union(box(-600, 2000, 2000, 2600)).union(box(3340, 2000, 6600, 2600)))
-    kontur = box(-600, -600, 6600, 2600)
+    return gang, wand, box(-600, -600, 6600, 2600)
+
+
+def test_aussen_durchgang_allgemeinraum_ohne_tuerblatt():
+    """Die Signatur trägt KEIN Geschoss: die Geschossregel für Wandöffnungen
+    (»im Obergeschoss ist eine Fassadenlücke ein Fenster«) ist ein eigener
+    Concern — Diagnose Z.1271-1274 weist ``aussen_durchgaenge`` dem Slice S5c
+    zu. S5c (Owner-Entscheid F5, 2026-09-27) prüft statt eines Geschosses die
+    Querung: die Lücke zählt, weil der freie Teil am Gang anliegt und über die
+    Kontur hinausreicht (24 % außerhalb)."""
+    gang, wand, kontur = _gang_mit_wandluecke()
     neu = aussen_durchgaenge([gang], [], wand, kontur)
     assert len(neu) == 1
     t = neu[0]
@@ -81,6 +158,44 @@ def test_aussen_durchgang_allgemeinraum_ohne_tuerblatt():
               polygon_mm=[(0, 0), (6000, 0), (6000, 2000), (0, 2000)])
     assert aussen_durchgaenge([zi], [], wand, kontur) == []
 
+
+
+def _schmaler_gang(wand_mm, luecke):
+    """Gang 1600 × 2000, Seiten und Boden 600er-Wand, oben ``wand_mm``;
+    mit ``luecke`` eine 1000-mm-Öffnung mittig in der oberen Wand."""
+    oben = (box(0, 2000, 300, 2000 + wand_mm).union(box(1300, 2000, 1600, 2000 + wand_mm))
+            if luecke else box(0, 2000, 1600, 2000 + wand_mm))
+    wand = (box(-600, -600, 2200, 0).union(box(-600, 0, 0, 2000 + wand_mm))
+            .union(box(1600, 0, 2200, 2000 + wand_mm)).union(oben))
+    gang = Raum(id="g", raum_typ="GANG",
+                polygon_mm=[(0, 0), (1600, 0), (1600, 2000), (0, 2000)])
+    return gang, wand, box(-600, -600, 2200, 2000 + wand_mm)
+
+
+@pytest.mark.parametrize(("luecke", "anzahl"), [
+    (True, 1),     # durchgehend: am Raum, 30 % außerhalb der Kontur
+    (False, 0),    # geschlossen: Außenstreifen (300 mm vom Raum) + Innenstreifen (0 % außen)
+])
+def test_aussenoeffnung_quert_die_wand(luecke, anzahl):
+    """S5c, Owner-Entscheid F5 (P_A2 wie § 8a): Außenöffnung ist nur, was vom
+    Raum durch die Außenwand ins Freie reicht. Vor einer geschlossenen 300er-Wand
+    liegen zwei freie Teile — der Außenstreifen erreicht den Raum nicht, der
+    Innenstreifen die Außenkante nicht (vorher: der Außenstreifen war Öffnung)."""
+    gang, wand, kontur = _schmaler_gang(300, luecke)
+    assert len(aussen_durchgaenge([gang], [], wand, kontur)) == anzahl
+
+
+@pytest.mark.parametrize(("nase_mm", "anzahl"), [
+    (200.0, 0),    # endet an der Kontur, 0 % außerhalb (Muster MOLL_EG _10 / raum_51)
+    (230.0, 0),    # 7,9 % außerhalb
+    (250.0, 1),    # 13,0 % außerhalb
+])
+def test_aussenanteil_schwelle(nase_mm, anzahl):
+    """S5c, Owner-Entscheid F5: zusätzlich ≥ 10 % des freien Teils außerhalb der
+    gedeckten Kontur — ein Innenstreifen, der die Kante nur berührt, ist keine
+    Öffnung ins Freie."""
+    gang, wand, kontur = _gang_mit_wandluecke(nase_mm)
+    assert len(aussen_durchgaenge([gang], [], wand, kontur)) == anzahl
 
 # ── (b) Text-Türen + Text-Typisierung ────────────────────────────────────────
 def _text_plan(text: str, xy):

@@ -9,7 +9,7 @@ from shapely.geometry import Point, Polygon
 
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
 from notbeleuchtung.raumerkennung.dxf_load import lade_dxf
-from notbeleuchtung.raumerkennung.lift_erkennung import finde_lifte
+from notbeleuchtung.raumerkennung.lift_erkennung import finde_lifte, liftschacht_reste
 
 
 def _basis_doc():
@@ -115,3 +115,70 @@ def test_ausstanzen_aus_stiegenhaus(tmp_path):
     poly = Polygon(stgh.polygon_mm)
     assert not poly.contains(Point(5825, 5950)), "Lift nicht ausgestanzt"
     assert stgh.flaeche_m2 == pytest.approx(25.0 - 1.65 * 1.9, rel=0.05)
+
+
+def _lift_mit_text(msp):
+    """Kabine 1650 × 1900 mm (3,135 m²) mit Lift-Text, wie Rennweg (nur MTEXT)."""
+    _rect(msp, 5000, 5000, 6650, 6900)
+    msp.add_mtext("AUFZUG 8 PERS.").set_location((5900, 6000))
+
+
+def _rest(x1, typ="STIEGENHAUS"):
+    return Raum(id="rest_1", raum_typ=typ, ist_fluchtweg=True, ist_communal=True,
+                polygon_mm=[(5000, 5000), (x1, 5000), (x1, 6900), (5000, 6900)],
+                flaeche_m2=(x1 - 5000) * 1.9 / 1000)
+
+
+@pytest.mark.parametrize(("x1", "typ", "flags"), [
+    (8000, "SCHACHT", (False, False)),        # Kabinenanteil 1650/3000 = 0,55
+    (8667, "STIEGENHAUS", (True, True)),      # Kabinenanteil 1650/3667 = 0,45
+])
+def test_liftschacht_rest_ab_mehr_als_halber_kabine(tmp_path, x1, typ, flags):
+    """S5c, Owner-Entscheid F1 (K1_T): eine Stiegenhausfläche, die zu mehr als
+    der Hälfte Liftkabine ist, ist Liftschacht (Rennweg-Schachtreste 0,635–0,684,
+    Muthgasse 0,551/0,574; Stiegenhaus-Reste mit innenliegendem Lift ≤ 0,204)."""
+    doc, msp = _basis_doc()
+    _lift_mit_text(msp)
+    rest = _rest(x1)
+    ids = liftschacht_reste(_plan(tmp_path, doc), [rest])
+    assert (rest.raum_typ, (rest.ist_fluchtweg, rest.ist_communal)) == (typ, flags)
+    assert ids == (["rest_1"] if typ == "SCHACHT" else [])
+
+
+def test_liftschacht_nur_aus_stiegenhaus(tmp_path):
+    """Die Regel typisiert nur STIEGENHAUS um — ein Gang mit 0,55 bleibt Gang."""
+    doc, msp = _basis_doc()
+    _lift_mit_text(msp)
+    gang = _rest(8000, "GANG")
+    assert liftschacht_reste(_plan(tmp_path, doc), [gang]) == []
+    assert gang.raum_typ == "GANG"
+
+
+def test_liftschacht_rest_bleibt_ungestanzt_lift_bleibt(tmp_path):
+    """Nach K1_T findet ``finde_lifte`` die Kabine weiter (Text-Evidenz) und
+    stanzt den SCHACHT-Rest nicht aus — ausgestanzt wird nur STIEGENHAUS."""
+    doc, msp = _basis_doc()
+    _lift_mit_text(msp)
+    plan = _plan(tmp_path, doc)
+    rest = _rest(8000)
+    raeume = [rest]
+    liftschacht_reste(plan, raeume)
+    vorher = list(rest.polygon_mm)
+    assert len(finde_lifte(plan, raeume)) == 1
+    assert rest.polygon_mm == vorher and rest.bereinigung == []
+
+
+def test_marker_kabine_im_liftschacht_rest_bleibt_lift(tmp_path):
+    """Muthgasse E2 (gemessen, S5c r1): die Kabinen ``lift_4``/``lift_5`` sind
+    nur per Marker belegt, und Marker zählen nur in der Erschließung. Nach K1_T
+    ist ihr Rest SCHACHT — ohne die durchgereichten IDs fände ``finde_lifte``
+    die Kabine nicht mehr."""
+    doc, msp = _basis_doc()
+    _rect(msp, 5000, 5000, 6650, 6900)
+    msp.add_line((5000, 5000), (6650, 6900))
+    msp.add_line((6650, 5000), (5000, 6900))
+    plan = _plan(tmp_path, doc)
+    raeume = [_rest(8000)]
+    ids = liftschacht_reste(plan, raeume)
+    assert ids == ["rest_1"]
+    assert len(finde_lifte(plan, raeume, ids)) == 1

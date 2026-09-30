@@ -63,6 +63,7 @@ from notbeleuchtung.raumerkennung.stempel_anker import (
     zentrum,
 )
 from notbeleuchtung.raumerkennung.tuer_typisierung import _BRANDSCHUTZ_RE
+from notbeleuchtung.raumerkennung.wohnungsklasse import korrigierte_rollen
 
 EINGANG = REPO / "Projekte" / "_eingang"
 # Ausgabeordner überschreibbar (Sammelläufe über alle Repo-Grundrisse
@@ -710,6 +711,26 @@ def _bild_fluchtweg(plan: DxfPlan, zoom, modell, wpolys: dict,
     _speichern(fig, pfad, rot)
 
 
+def _raumflaeche_stil(r) -> dict:
+    """Füll-Stil einer Raumfläche in 06_platzierung.png.
+
+    Vier Fälle statt drei: § 6g Schritt 3 verlangt den UNBESTIMMTEN Raum
+    (GANG/VORRAUM ohne entschiedene Nutzungsklasse) eigens ausgewiesen —
+    magenta wie in den beiden anderen Darstellungen. Vorher fiel er in den
+    neutralen else-Zweig und war von einem entschieden allgemeinen Raum nicht
+    zu unterscheiden; das Bild behauptete eine Entscheidung, die niemand
+    getroffen hat (Befund B5).
+    """
+    if r.nutzungsklasse == "KEIN_RAUM":
+        return {"fc": "none", "ec": "#dd0000", "hatch": "////", "lw": 1.0}
+    if r.nutzungsklasse == "WOHNUNG_PRIVAT":
+        return {"fc": "#c8c8c8", "ec": "#909090", "alpha": 0.5, "lw": 0.8}
+    if r.raum_typ in ("GANG", "VORRAUM") and r.nutzungsklasse is None:
+        return {"fc": "#ff00ff", "ec": "#8b0060", "alpha": 0.35, "lw": 1.0,
+                "hatch": "xx"}
+    return {"fc": "white", "ec": "#909090", "alpha": 0.25, "lw": 0.8}
+
+
 def _bild_platzierung(plan: DxfPlan, zoom, modell, platz,
                       pfad: Path, rot: int) -> None:
     """06_platzierung.png: Räume nach Nutzungsklasse (privat grau, allgemein
@@ -723,17 +744,9 @@ def _bild_platzierung(plan: DxfPlan, zoom, modell, platz,
     for r in modell.raeume:
         if len(r.polygon_mm) < 3:
             continue
-        xs = [x / f for x, _ in r.polygon_mm]
-        ys = [y / f for _, y in r.polygon_mm]
-        if r.nutzungsklasse == "KEIN_RAUM":
-            ax.fill(xs, ys, fc="none", ec="#dd0000", hatch="////", lw=1.0,
-                    zorder=ztop)
-        elif r.nutzungsklasse == "WOHNUNG_PRIVAT":
-            ax.fill(xs, ys, fc="#c8c8c8", ec="#909090", alpha=0.5, lw=0.8,
-                    zorder=ztop)
-        else:
-            ax.fill(xs, ys, fc="white", ec="#909090", alpha=0.25, lw=0.8,
-                    zorder=ztop)
+        ax.fill([x / f for x, _ in r.polygon_mm],
+                [y / f for _, y in r.polygon_mm],
+                zorder=ztop, **_raumflaeche_stil(r))
     for sm in modell.stiegenhaeuser:
         for z in sm.verbotszonen_mm:
             if len(z) >= 3:
@@ -1138,8 +1151,12 @@ def _geschoss_md(befund, ausg_warnungen) -> list[str]:
 
 
 def _kreuzcheck_md(modell, kc, flw_warnungen: list[str],
-                   restweg: str | None) -> list[str]:
-    """Markdown-Block: Kreuzcheck + Fluchtweg-Warnungen + untypisierte Türen."""
+                   restweg: str | None,
+                   wk_warnungen: list[str] = ()) -> list[str]:
+    """Markdown-Block: Kreuzcheck + Fluchtweg-Warnungen + unbestimmte Räume
+    und Durchleitungen (``wk_warnungen`` = Provider-Attribut
+    ``wohnungsklasse_warnungen``, § 6g Punkt 3: „mit Grund, im Bericht
+    aufgelistet") + untypisierte Türen."""
     l = ["", "## Kreuzcheck Fluchtweglinien ↔ Endausgänge", ""]
     if restweg:
         l += [restweg, ""]
@@ -1164,6 +1181,29 @@ def _kreuzcheck_md(modell, kc, flw_warnungen: list[str],
     if flw_warnungen:
         l += ["", "### Fluchtweg-Warnungen", ""]
         l += [f"- ⚠ {w}" for w in flw_warnungen]
+    unbestimmt = [w for w in wk_warnungen if w.startswith("unbestimmt:")]
+    if unbestimmt:
+        l += ["", "### Unbestimmte Räume (§ 6g)", ""]
+        l += [f"- ⚠ {w}" for w in unbestimmt]
+    # Messfall S4c/S3b: vom Stiegenhaus über keine Tür erreichbar — auch dann,
+    # wenn der Raum als allgemein gilt (Erschließung nach rohen Türen; E5
+    # Satz 2 ist seit dem Owner-Grundsatz 2026-09-22 aufgehoben).
+    loch = [w for w in wk_warnungen if w.startswith("loch:")]
+    if loch:
+        l += ["", "### Tür- oder Raumerkennungslöcher (Messfall S4c/S3b)", ""]
+        l += [f"- ⚠ {w}" for w in loch]
+    # Owner 2026-09-22 (G2): wo die Beleg-Probe keinen voll ankerbestätigten
+    # Fixpunkt findet und es beim allgemeinen bleibt, steht eine Zeile mit
+    # Grund im Bericht. Ob daneben ein zweiter Fixpunkt besteht, prüft die
+    # Probe nicht (Reviewer Runde 10, Linse Naht, Hinweis 4).
+    tiebreak = [w for w in wk_warnungen if w.startswith("tiebreak:")]
+    if tiebreak:
+        l += ["", "### Tiebreak (Board 4): ankerprivater Raum bleibt allgemein", ""]
+        l += [f"- ⚠ {w}" for w in tiebreak]
+    durch = [w for w in wk_warnungen if w.startswith("durchleitung:")]
+    if durch:
+        l += ["", "### Durchleitung durch private Räume (§ 6g)", ""]
+        l += [f"- {w}" for w in durch]
     # Gründe-Tabelle untypisierte Türen (Fachteil „untypisierte Türen").
     gruende = Counter(t.untypisiert_grund for t in modell.tueren
                       if t.tuer_detail is None and t.untypisiert_grund)
@@ -1235,8 +1275,12 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
 
     segs = {s.segment_id: s for s in modell.zirkulation.segmente}
     wegl = []
+    # Fluchtweg-Auskunft: die KORRIGIERTEN Rollen (E7) — dieselben
+    # Wohnungseingänge, an denen ``fluchtwege`` die GRAPH-Segmente startet;
+    # das Modell selbst trägt die rohen Rollen.
+    rollen = korrigierte_rollen(modell.raeume, modell.tueren)
     for t in modell.tueren:
-        if t.tuer_detail != "wohnungseingang":
+        if rollen[t.id] != "wohnungseingang":
             continue
         s = segs.get(f"seg_graph_{t.id}")
         if s is not None:
@@ -1259,7 +1303,9 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     md = md + _aussen_md(ab, ueber, modell.ausgaenge)
     md = md + _geschoss_md(befund, ausg_warnungen)
     md = md + _kreuzcheck_md(modell, kc, flw_warnungen,
-                             _restweg_im_eg(dxf, geschoss))
+                             _restweg_im_eg(dxf, geschoss),
+                             list(getattr(bundle.raum,
+                                          "wohnungsklasse_warnungen", [])))
     refz = _referenzvergleich(dxf.stem, plan, zoom, modell, platz, ziel, rot)
     if refz is not None:
         md = md + refz["md"]

@@ -136,6 +136,15 @@ class TuerOeffnung:
     quelle: str
     #: Herkunft von ``breite_mm`` (Contract-Vokabular ``BreiteQuelle``, v1.4.0).
     breite_quelle: str = "UNBEKANNT"
+    #: Warum keine Breite gemessen werden konnte (nur bei ``UNBEKANNT``).
+    breite_grund: str | None = None
+    #: Name des umgebenden Wand-Blocks — nur bei Weltkoordinaten-Blöcken
+    #: gesetzt, deren Lage aus der Blockgeometrie stammt (s. ``_blockgeometrie``).
+    wand_block: str | None = None
+    #: Endpunkte des Schwenkbogens (Start, Ende) — nur bei ``quelle="arc"``,
+    #: im selben Rahmen wie ``xy_mm`` (Zentrum + Radius · Winkel). Einer ist das
+    #: geschlossene, einer das offene Blatt (S4c, ``verschmelze_doppelfluegel``).
+    blatt_enden: tuple[XY, XY] | None = None
 
 
 def _blattbreite_aus_block(insert, factor: float, tiefe: int = 0) -> float | None:
@@ -157,41 +166,165 @@ def _blattbreite_aus_block(insert, factor: float, tiefe: int = 0) -> float | Non
     return None
 
 
-def tuer_oeffnungen(plan: DxfPlan) -> list[TuerOeffnung]:
+#: Grund für ``breite_quelle="UNBEKANNT"`` bei einem Türblock ohne Schwenkbogen.
+_GRUND_OHNE_BOGEN = ("Tuerblock ohne Schwenkbogen (Schiebetuer): keine messbare "
+                     "Blattbreite")
+_SCHARNIER_TOL_MM = 150.0   # Blatt-/Öffnungslinie beginnt am Drehpunkt
+_BLATT_MIN, _BLATT_MAX = 0.75, 1.25   # Länge einer blattlangen Linie / Radius
+_SPITZE_TOL = 0.35          # Abstand zum ARC-Endpunkt / Radius
+
+
+def _skaliere(p, factor: float) -> XY:
+    return (float(p[0]) * factor, float(p[1]) * factor)
+
+
+def _block_geometrie_teile(insert, factor: float, tiefe: int = 0):
+    """(Segmente in mm, Türblatt-ARCs) der Blockgeometrie, rekursiv bis Tiefe 2."""
+    segs: list[tuple[XY, XY]] = []
+    arcs: list = []
+    try:
+        for v in insert.virtual_entities():
+            t = v.dxftype()
+            if t == "LINE":
+                segs.append((_skaliere(v.dxf.start, factor),
+                             _skaliere(v.dxf.end, factor)))
+            elif t == "LWPOLYLINE":
+                pts = [_skaliere(p, factor) for p in v.get_points("xy")]
+                segs += [(pts[i], pts[i + 1]) for i in range(len(pts) - 1)]
+            elif t == "ARC":
+                r = float(v.dxf.radius) * factor
+                sweep = (float(v.dxf.end_angle) - float(v.dxf.start_angle)) % 360.0
+                if _ARC_MIN_MM < r < _ARC_MAX_MM and _SWEEP_MIN <= sweep <= _SWEEP_MAX:
+                    arcs.append(v)
+            elif t == "INSERT" and tiefe < 2:
+                s2, a2 = _block_geometrie_teile(v, factor, tiefe + 1)
+                segs += s2
+                arcs += a2
+    except Exception:  # noqa: BLE001, S110 — kaputter Block liefert eben keine Geometrie
+        pass
+    return segs, arcs
+
+
+def _blockgeometrie(insert, factor: float) -> TuerOeffnung | None:
+    """Lage/Sehne/Breite eines Türblocks aus seiner GEOMETRIE (nicht dem INSERT).
+
+    ArchiCAD-Exporte (Rennweg) zeichnen Blockinhalte in Weltkoordinaten und
+    setzen ``base_point`` ≈ INSERT-Punkt; der INSERT-Punkt ist dann ein
+    gemeinsamer Anker weit außerhalb des Plans, die echte Türlage steckt nur
+    in der Geometrie.
+
+    Mit Schwenkbogen: Scharnier = ARC-Zentrum, Sehne = Scharnier → Wandseite,
+    ``xy`` = Sehnenmitte, Breite = Radius. Die Wandseite ist der ARC-Endpunkt
+    mit den MEISTEN blattlangen Linien am Scharnier: ArchiCAD zeichnet die
+    Öffnung als geschlossenes Blatt-Rechteck LÄNGS der Wand (≥ 2 Linien) und
+    die offene Blattstellung mit EINER Linie quer dazu (gemessen an allen 7
+    Zargentüren auf Rennweg OG1 — der Wand-Endpunkt liegt dort 28 mm, der
+    Blatt-Endpunkt 341–860 mm vom nächsten Wandkörper entfernt, und die Sehne
+    zeigt in die Längsrichtung des umgebenden ``Wall_*``-Blocks). Gleichstand
+    → start_angle-Endpunkt (Konvention des Ports).
+
+    Ohne Schwenkbogen (Schiebetür): ``xy`` = Mitte der Geometrie-Bbox, Winkel =
+    Richtung der längsten Kante, Breite None mit Grund — kein Standardwert.
+    """
+    segs, arcs = _block_geometrie_teile(insert, factor)
+    if arcs:
+        a = arcs[0]
+        c = _skaliere(a.dxf.center, factor)
+        r = float(a.dxf.radius) * factor
+        enden = [(c[0] + r * math.cos(math.radians(w)),
+                  c[1] + r * math.sin(math.radians(w)))
+                 for w in (float(a.dxf.start_angle), float(a.dxf.end_angle))]
+        treffer = [0, 0]
+        for s0, s1 in segs:
+            if not (_BLATT_MIN * r <= math.dist(s0, s1) <= _BLATT_MAX * r):
+                continue
+            for nah, fern in ((s0, s1), (s1, s0)):
+                if math.dist(nah, c) > _SCHARNIER_TOL_MM:
+                    continue
+                for i, ende in enumerate(enden):
+                    if math.dist(fern, ende) <= _SPITZE_TOL * r:
+                        treffer[i] += 1
+                        break
+        wand = enden[0] if treffer[0] >= treffer[1] else enden[1]
+        return TuerOeffnung(
+            xy_mm=((c[0] + wand[0]) / 2.0, (c[1] + wand[1]) / 2.0),
+            breite_mm=float(round(r)),
+            winkel_grad=math.degrees(math.atan2(wand[1] - c[1], wand[0] - c[0])) % 180.0,
+            quelle="block", breite_quelle="GEOMETRIE_SCHWENKRADIUS")
+    if not segs:
+        return None
+    xs = [p[0] for s in segs for p in s]
+    ys = [p[1] for s in segs for p in s]
+    a, b = max(segs, key=lambda s: math.dist(*s))
+    return TuerOeffnung(
+        xy_mm=((min(xs) + max(xs)) / 2.0, (min(ys) + max(ys)) / 2.0),
+        breite_mm=None,
+        winkel_grad=math.degrees(math.atan2(b[1] - a[1], b[0] - a[0])) % 180.0,
+        quelle="block", breite_quelle="UNBEKANNT", breite_grund=_GRUND_OHNE_BOGEN)
+
+
+def tuer_oeffnungen(plan: DxfPlan,
+                    planbereich: BBox | None = None) -> list[TuerOeffnung]:
     """Alle Türöffnungen — Tür-Blöcke UND Schwenkbogen-ARCs, auch INNERHALB von
     Blockdefinitionen (virtual_entities-Walk, Tiefe ≤3). In Tür-Blöcke wird
-    nicht hinein-rekursiert (deren ARC ist das Türblatt, keine zweite Tür)."""
+    nicht hinein-rekursiert (deren ARC ist das Türblatt, keine zweite Tür).
+
+    ``planbereich`` (Bounding-Box der Wandkörper): Liegt der INSERT-Punkt eines
+    Türblocks außerhalb, aber seine GEOMETRIE innerhalb, wird die Öffnung aus
+    der Geometrie gebaut (Weltkoordinaten-Blöcke, s. ``_blockgeometrie``) und
+    trägt den Namen des umgebenden Blocks als ``wand_block``. Ohne
+    ``planbereich`` — und für jeden Block, dessen INSERT-Punkt an der Tür sitzt
+    — bleibt alles wie bisher.
+    """
     out: list[TuerOeffnung] = []
 
-    def _walk(entities, tiefe: int = 0) -> None:
+    def _walk(entities, tiefe: int = 0, eltern: str | None = None) -> None:
         for e in entities:
             t = e.dxftype()
             if t == "INSERT":
                 name = str(e.dxf.name)
                 if _ist_tuer_block(name):
+                    xy = plan._scale(e.dxf.insert)
+                    geo = None
+                    if planbereich is not None and not _im_bereich(xy, planbereich):
+                        geo = _blockgeometrie(e, plan.factor)
+                        if geo is not None and not _im_bereich(geo.xy_mm, planbereich):
+                            geo = None
                     breite = _breite_mm(name)
-                    b_quelle = "BLOCKNAME"
-                    if breite is None:
-                        breite = _blattbreite_aus_block(e, plan.factor)
-                        b_quelle = ("GEOMETRIE_SCHWENKRADIUS" if breite is not None
-                                    else "UNBEKANNT")
-                    out.append(TuerOeffnung(
-                        xy_mm=plan._scale(e.dxf.insert), breite_mm=breite,
-                        winkel_grad=float(e.dxf.get("rotation", 0.0)),
-                        quelle="block", breite_quelle=b_quelle))
+                    if geo is not None:
+                        if breite is not None:      # Blockname schlägt Geometrie
+                            geo.breite_mm, geo.breite_quelle = breite, "BLOCKNAME"
+                            geo.breite_grund = None
+                        geo.wand_block = eltern
+                        out.append(geo)
+                    else:
+                        b_quelle = "BLOCKNAME"
+                        if breite is None:
+                            breite = _blattbreite_aus_block(e, plan.factor)
+                            b_quelle = ("GEOMETRIE_SCHWENKRADIUS" if breite is not None
+                                        else "UNBEKANNT")
+                        out.append(TuerOeffnung(
+                            xy_mm=xy, breite_mm=breite,
+                            winkel_grad=float(e.dxf.get("rotation", 0.0)),
+                            quelle="block", breite_quelle=b_quelle))
                 elif tiefe < 3:
                     try:
-                        _walk(e.virtual_entities(), tiefe + 1)
+                        _walk(e.virtual_entities(), tiefe + 1, name)
                     except Exception:  # noqa: BLE001, S110 — kaputter Block killt den Walk nicht
                         pass
             elif t == "ARC":
                 r = float(e.dxf.radius) * plan.factor
                 sweep = (float(e.dxf.end_angle) - float(e.dxf.start_angle)) % 360.0
                 if _ARC_MIN_MM < r < _ARC_MAX_MM and _SWEEP_MIN <= sweep <= _SWEEP_MAX:
+                    c = plan._scale(e.dxf.center)
+                    enden = tuple((c[0] + r * math.cos(math.radians(w)),
+                                   c[1] + r * math.sin(math.radians(w)))
+                                  for w in (float(e.dxf.start_angle),
+                                            float(e.dxf.end_angle)))
                     out.append(TuerOeffnung(
-                        xy_mm=plan._scale(e.dxf.center), breite_mm=float(round(r)),
+                        xy_mm=c, breite_mm=float(round(r)),
                         winkel_grad=float(e.dxf.start_angle), quelle="arc",
-                        breite_quelle="GEOMETRIE_SCHWENKRADIUS"))
+                        breite_quelle="GEOMETRIE_SCHWENKRADIUS", blatt_enden=enden))
 
     _walk(plan.space)
     return out
@@ -261,13 +394,49 @@ def _wandwinkel_bei(segs, xy: XY, max_mm: float = _WAND_NAH_MM) -> float | None:
     return best_w
 
 
-def verschmelze_doppelfluegel(tueren: list[Tuer], wand_segs) -> list[Tuer]:
+def _blatt_enden(t: Tuer, oeffnungen: list[TuerOeffnung] | None) -> tuple[XY, XY] | None:
+    """Bogen-Endpunkte der Öffnung, deren Zentrum der Drehpunkt der Tür ist."""
+    for o in oeffnungen or ():
+        if (o.blatt_enden is not None and o.breite_mm == t.breite_mm
+                and math.dist(o.xy_mm, t.xy_mm) < 1.0):
+            return o.blatt_enden
+    return None
+
+
+def _schliesst_zu(xy: XY, enden: tuple[XY, XY], ziel: XY) -> bool:
+    """Ein Bogen-Endpunkt liegt höchstens ``_PARALLEL_TOL_GRAD`` neben der
+    Richtung Drehpunkt → ``ziel``: das Blatt schließt zum Ziel hin."""
+    w_ziel = math.atan2(ziel[1] - xy[1], ziel[0] - xy[0])
+    return any(
+        abs((math.degrees(math.atan2(e[1] - xy[1], e[0] - xy[0]) - w_ziel) + 180.0)
+            % 360.0 - 180.0) <= _PARALLEL_TOL_GRAD
+        for e in enden)
+
+
+def verschmelze_doppelfluegel(tueren: list[Tuer], wand_segs,
+                              oeffnungen: list[TuerOeffnung] | None = None) -> list[Tuer]:
     """Doppelflügel-Türen: zwei Schwenkbögen an der GEMEINSAMEN Wand, deren
     Drehpunkt-Abstand ≈ Summe der Blattbreiten ist → EINE Tür mit Gesamtbreite.
 
     Die Wand-Kollinearität (Verbindungslinie ∥ Wand an beiden Drehpunkten)
     schließt gegenüberliegende Gangtüren aus (deren Verbindung steht senkrecht
     auf den Wänden). Nur ARC-Quellen — Block-Türen tragen ihre Breite selbst.
+
+    S4c: sie greift nicht, wenn der Drehpunkt an der Laibung sitzt — die
+    nächste Wandlinie ist dann die Laibungsfläche QUER zur Wand. Gemessen an
+    Barawitzka EG: ``tuer_38`` (1660) waren die Tür des ABSTELLRAUMS 1,98 und
+    die Zimmertür gegenüber (Wandwinkel 90°/90° gegen 79,1°), ``tuer_37``
+    (1863) zwei Außentüren nebeneinander, deren Blätter voneinander weg
+    schließen. Darum zusätzlich, wenn beide Bögen in ``oeffnungen`` stehen
+    (``blatt_enden``): jedes Blatt schließt zum anderen Drehpunkt hin
+    (``_schliesst_zu``) — die Drehpunkte sind die Enden EINER Öffnung. Ohne
+    Bogen-Endpunkte bleibt es bei der Prüfung oben.
+
+    ponytail: welcher Endpunkt das geschlossene Blatt ist, wissen die Bögen
+    allein nicht — zwei Gangtüren, deren OFFENE Blätter zueinander zeigen, sehen
+    aus wie eine um 90° gedrehte Doppeltür; die trennt weiter nur die
+    Wand-Kollinearität. Ausbaupfad: geschlossenes Blatt über den Wandkörper
+    bestimmen (Endpunkt an der Gegenlaibung).
     """
     arcs = [t for t in tueren if t.quelle in ("arc", "arc_aussen")
             and t.breite_mm is not None
@@ -291,6 +460,11 @@ def verschmelze_doppelfluegel(tueren: list[Tuer], wand_segs) -> list[Tuer]:
                 continue
             if any(min(abs(w_verb - w), 180.0 - abs(w_verb - w))
                    > _PARALLEL_TOL_GRAD for w in (w1, w2)):
+                continue
+            e1, e2 = _blatt_enden(t1, oeffnungen), _blatt_enden(t2, oeffnungen)
+            if e1 is not None and e2 is not None and not (
+                    _schliesst_zu(t1.xy_mm, e1, t2.xy_mm)
+                    and _schliesst_zu(t2.xy_mm, e2, t1.xy_mm)):
                 continue
             mitte = ((t1.xy_mm[0] + t2.xy_mm[0]) / 2,
                      (t1.xy_mm[1] + t2.xy_mm[1]) / 2)
@@ -357,17 +531,24 @@ def text_tueren(plan: DxfPlan, tueren: list[Tuer]) -> list[Tuer]:
 _RAND_MM = 2000.0
 
 
+def _im_bereich(xy: XY, bounds: BBox, rand_mm: float = _RAND_MM) -> bool:
+    (x0, y0), (x1, y1) = bounds.min_xy, bounds.max_xy
+    return (x0 - rand_mm <= xy[0] <= x1 + rand_mm
+            and y0 - rand_mm <= xy[1] <= y1 + rand_mm)
+
+
 def im_planbereich(elemente: list, bounds: BBox, rand_mm: float = _RAND_MM) -> list:
     """Nur Elemente mit ``xy_mm`` innerhalb ``bounds`` + Rand.
 
     ``bounds`` = Bounding-Box der Wandkörper (die filtern Duplikat-Etagen-
     Varianten schon über ``wandkoerper._varianten_prefix``). Damit fallen die
     Phantom-Türen weg, die sonst beidseits AUSSEN landen: Barawitzka trägt
-    dieselbe Etage 3× nebeneinander (Icon-Varianten, +32 m / +61 m versetzt),
-    Rennweg hat 11 Zargen-Inserts eines zweiten Plan-Clusters 300 m neben dem
-    Haus.
+    dieselbe Etage 3× nebeneinander (Icon-Varianten, +32 m / +61 m versetzt).
+
+    Rennwegs Zargen-INSERTs sind KEIN zweiter Plan-Cluster (so stand es hier
+    bis S4a): es sind Weltkoordinaten-Blöcke, die sich alle denselben
+    INSERT-Punkt weit außerhalb des Grundrisses teilen, während ihre Geometrie
+    mitten im Plan liegt. Ihre Öffnungen kommen seit S4a mit der Geometrie-Lage
+    aus ``tuer_oeffnungen`` und werden hier deshalb nicht mehr verworfen.
     """
-    (x0, y0), (x1, y1) = bounds.min_xy, bounds.max_xy
-    return [e for e in elemente
-            if x0 - rand_mm <= e.xy_mm[0] <= x1 + rand_mm
-            and y0 - rand_mm <= e.xy_mm[1] <= y1 + rand_mm]
+    return [e for e in elemente if _im_bereich(e.xy_mm, bounds, rand_mm)]
