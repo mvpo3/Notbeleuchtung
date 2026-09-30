@@ -280,3 +280,85 @@ def test_seite_fehlt_nur_am_fassaden_bogen(og1):
     assert len(provider.tuer_warnungen) == 1, provider.tuer_warnungen
     (t,) = [x for x in modell.tueren if x.id == provider.tuer_warnungen[0].split()[1]]
     assert (t.quelle, t.von_raum, t.nach_raum) == ("arc", AUSSEN, KEIN_RAUM)
+
+
+# ── S5b: Querungskriterium (Diagnose U13) ────────────────────────────────────
+
+# Von den Referenzen VERNEINTE Verbindungen (Bsp. 14 „Keine direkte Verbindung
+# aus bloßer Nachbarschaft", 07/08/09 Tabellen). Räume über Typ + Fläche.
+_VERNEINT = (
+    ("M17-02 / Bsp. 07, 08, 14", ("BAD", 11.76), ("BAD", 4.66)),
+    ("Bsp. 06, 14", ("ZIMMER", 17.04), ("GANG", 6.48)),
+    ("Bsp. 08, 09, 14", ("VORRAUM", 3.40), ("BAD", 4.66)),
+    ("Bsp. 08, 14", ("ZIMMER", 10.59), ("BAD", 4.66)),
+    ("Bsp. 09, 14", ("ZIMMER", 16.86), ("VORRAUM", 3.40)),
+    ("Bsp. 07, 14", ("BAD", 11.76), ("ZIMMER", 17.04)),
+)
+
+# Von den Referenzen GEFORDERTE offene Übergänge (Bsp. 06/09/14). O01/O02 gehen
+# über den Zwischenbereich E, der kein Raum ist — stellvertretend steht hier die
+# Verbindung Vorraum 10,94 ↔ Wohnküche 73,06 (Bsp. 14 „Zwischenbereich E").
+_GEFORDERT = (
+    ("O03", ("GANG", 6.48), ("", 73.06)),
+    ("O04", ("GANG", 6.48), ("ZIMMER", 10.59)),
+    ("O05", ("VORRAUM", 2.59), ("VORRAUM", 3.40)),
+    ("O01/O02 über E", ("VORRAUM", 10.94), ("", 73.06)),
+)
+
+
+def test_m17_02_b_keine_verbindung_zwischen_den_baedern(og1):
+    """M17-02-b: kleines und großes Bad sind NICHT verbunden.
+
+    Bis S5b standen dort drei Durchgänge (1380/1612/3069 mm): die Kontaktzone
+    ragt über die 100-mm-Trennwand hinaus, und die beidseits übrig bleibenden
+    Streifen berührten je nur EINEN der beiden Räume.
+
+    Zugleich die Gegenprobe zu M17-02-a: die Trennwand bleibt ein Wandkörper
+    (≈ 100 mm, an beiden Raumpolygonen anliegend) — der Durchgang verschwindet
+    über das Querungskriterium, nicht weil die Wand verschwunden wäre.
+    """
+    from shapely.geometry import Polygon
+
+    modell, _plan, k, _p = og1
+    gross, klein = _raum(modell, "BAD", 11.76), _raum(modell, "BAD", 4.66)
+    assert _verbindungen(modell, gross, klein) == []
+
+    pa, pb = (Polygon(r.polygon_mm).buffer(0) for r in (gross, klein))
+    anliegend = [(w.breite_mm, q.distance(pa), q.distance(pb))
+                 for w in k.wandkoerper if len(w.polygon_mm) >= 3
+                 and (q := Polygon(w.polygon_mm).buffer(0))
+                 and q.distance(pa) <= 1.0 and q.distance(pb) <= 1.0]
+    assert [b for b, _, _ in anliegend if b is not None and abs(b - 100.0) <= 5.0], (
+        f"kein ≈100-mm-Wandkörper zwischen den Bädern: {anliegend}")
+
+
+def test_verneinte_verbindungen_existieren_nicht(og1):
+    """Die sechs von den Referenzen verneinten Nachbarschaften tragen 0 Türen.
+
+    Alle sechs Paare grenzen über eine 100-mm-Wand aneinander; bis S5b entstand
+    je Paar mindestens ein Durchgang ohne Türblatt (1009…3069 mm).
+    """
+    modell, _plan, _k, _p = og1
+    schlecht = []
+    for referenz, (ta, fa), (tb, fb) in _VERNEINT:
+        a, b = _raum(modell, ta, fa), _raum(modell, tb, fb)
+        v = _verbindungen(modell, a, b)
+        if v:
+            schlecht.append((referenz, ta, fa, tb, fb,
+                             [(t.id, t.quelle, t.breite_mm) for t in v]))
+    assert not schlecht, schlecht
+
+
+def test_geforderte_offene_uebergaenge_bleiben(og1):
+    """Die offenen Übergänge der Referenz bleiben Verbindungen (Quelle egal).
+
+    Gegenprobe zum Querungskriterium: es darf keine geforderte Verbindung
+    löschen.
+    """
+    modell, _plan, _k, _p = og1
+    fehlend = []
+    for referenz, (ta, fa), (tb, fb) in _GEFORDERT:
+        a, b = _raum(modell, ta, fa), _raum(modell, tb, fb)
+        if not _verbindungen(modell, a, b):
+            fehlend.append((referenz, f"{ta or '(leer)'} {fa}", f"{tb or '(leer)'} {fb}"))
+    assert not fehlend, fehlend

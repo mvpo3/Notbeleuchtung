@@ -47,6 +47,7 @@ from .tueren import (
 from .waende import raeume_aus_waenden, wand_segmente
 from .wandkoerper import aussenkontur, bounds_aus_wandkoerpern, wand_union
 from .wohnungen import bilde_wohnungen
+from .wohnungsklasse import anker_aus_privat_ziehen, bestaetigt_privat
 from .zirkulation import zirkulation_aus_dxf
 
 
@@ -169,7 +170,12 @@ class ArchitekturRaumProvider:
                          tuer_texte(plan),
                          unary_union(aussen.geschlossen)
                          if aussen is not None and aussen.geschlossen else None)
-        bilde_wohnungen(raeume, tueren)
+        # Unbestimmt gebliebene Räume (§ 6g Schritt 3) und die Durchleitung
+        # privater Räume sind Prüfstrecken-Ausgabe wie `tuer_warnungen` —
+        # der Contract führt sie nicht (Board-Antrag: Segment-Feld
+        # `durchleitung`, docs/GATE_TUERSTAPEL.md § 6g).
+        self.wohnungsklasse_warnungen: list[str] = []
+        bilde_wohnungen(raeume, tueren, self.wohnungsklasse_warnungen)
         # Ausgangs-Warnungen (u.a. „Geschoss unbekannt, Endausgang nicht
         # bestimmbar") als Prüfstrecken-Output — kein Contract-Feld.
         neue, self.ausgangs_warnungen = leite_ausgaenge(
@@ -195,7 +201,8 @@ class ArchitekturRaumProvider:
         self.fluchtweg_warnungen = []
         zirkulation.segmente += fluchtwege(raeume, tueren, ausgaenge,
                                            zirkulation.segmente, geschoss,
-                                           self.fluchtweg_warnungen)
+                                           self.fluchtweg_warnungen,
+                                           self.wohnungsklasse_warnungen)
 
         # ── Fachteil 2: Lifte (LIFT/KEIN_RAUM, aus STIEGENHAUS ausgestanzt)
         # + Stiegenhaus-Modelle + Anker (Stiegenhaus + Gang). Anker liefern
@@ -203,6 +210,7 @@ class ArchitekturRaumProvider:
         lifte = finde_lifte(plan, raeume)
         stiegenhaeuser = []
         anker = []
+        wohnungsintern = bestaetigt_privat(raeume, tueren)
         for r in raeume:
             if len(r.polygon_mm) < 3:
                 continue
@@ -210,8 +218,15 @@ class ArchitekturRaumProvider:
                 modell, a = baue_stiegenhaus_modell(plan, r, lifte, tueren)
                 stiegenhaeuser.append(modell)
                 anker += a
-            elif r.raum_typ == "GANG":
+            elif r.raum_typ == "GANG" and r.id not in wohnungsintern:
+                # R4 (§ 6f) unter dem Fail-Safe-Riegel: Anker nur noch auf
+                # Gängen, denen die ANKERREGEL nicht privat bestätigt — ein so
+                # bestätigter Gang trägt nach R3 beide Flags False.
                 anker += anker_fuer_gang(r, tueren, zirkulation.segmente)
+        # B2: Der Türanker des Stiegenhauses liegt auf der Schwelle und kann
+        # geometrisch in den privat gewordenen Nachbarraum fallen. Er wird auf
+        # die Stiegenhaus-Seite gezogen, nicht gestrichen.
+        anker = anker_aus_privat_ziehen(anker, raeume, tueren)
         # Kein Anker im Liftschacht (Verbotszone — dort wird nichts montiert).
         if lifte:
             schaechte = [Polygon(lf.polygon_mm) for lf in lifte

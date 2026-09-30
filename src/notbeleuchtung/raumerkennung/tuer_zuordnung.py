@@ -12,11 +12,14 @@ Seiten ohne Raum: ``AUSSEN`` (außerhalb der Gebäude-Außenkontur) oder
 ``KEIN_RAUM`` — letzteres wird als ``seite_fehlt`` gemeldet statt still
 hingenommen.
 
-Zusätzlich: Wandöffnungen > 800 mm zwischen zwei Räumen ohne Bogen/Block
-(``durchgaenge_ohne_tuerblatt``) werden als ``Tuer(ohne_tuerblatt=True)``
-ergänzt — die Kontaktzone zweier Raumpolygone minus Wandflächen ist die
-Öffnung. Ein Streifen, der die Sehne einer Block-Tür desselben Raumpaars
-überlappt, ist die Öffnung DIESER Tür und entfällt (Dublette).
+Zusätzlich: Wandöffnungen ab 800 mm Nennmaß (gemessen ≥ 797 mm, s. Schwelle)
+zwischen zwei Räumen ohne Bogen/Block (``durchgaenge_ohne_tuerblatt``) werden
+als ``Tuer(ohne_tuerblatt=True)`` ergänzt — die Kontaktzone zweier Raumpolygone
+minus Wandflächen ist die Öffnung. Gewertet wird nur ein freier Streifen, der
+BEIDE Raumpolygone berührt (Querungskriterium, Slice S5b); die Breite ist die
+Länge der gemeinsamen Grenze, nicht die Rechtecklänge des Streifens. Ein
+Streifen, der die Sehne einer Block-Tür desselben Raumpaars überlappt, ist die
+Öffnung DIESER Tür und entfällt (Dublette).
 """
 from __future__ import annotations
 
@@ -43,6 +46,21 @@ _OEFFNUNG_SUCH_MM = 1500.0  # Türöffnung muss so nah an der Tür liegen
 _DURCHGANG_MIN_MM = 800.0
 _KONTAKT_MM = 250.0        # halbe Wanddicke für die Kontaktzone zweier Räume
 _TUER_NAH_MM = 600.0       # bestehende Tür „deckt" eine Öffnung in diesem Radius
+_KONTAKT_TOL_MM = 1.0      # „berührt den Raum" (Quellpräzision der Polygone)
+# Dünner als das quert ein Streifen nicht. Unterer Anker ist synthetisch: das
+# 2-mm-Band von ``test_splitter_quert_nicht``; die realen 2-mm-Bänder der
+# Diagnose U13 haben einen Wandkörper und scheitern schon am Kontaktkriterium.
+# 50,0 → 25,0 härtet nur die Reserve des geforderten Übergangs Rennweg OG1
+# O01/O02 (50,0-mm-Band, 60 000 mm² frei, 1198,06 mm breit): 0,16 % → 100,3 %;
+# über 11 gemessene Pläne dreht die Absenkung KEINE Entscheidung. Preis: die
+# Regel wirkt als Abstandsdeckel d ≤ 500 − _SPLITTER_MM, der von 450 auf 475 mm
+# wandert — fehlt zwischen zwei Räumen 451…475 mm der Wandkörper, entsteht
+# jetzt ein raumlanger Durchgang (synthetisch: 460 mm → mit 50,0 keiner, mit
+# 25,0 einer über 3998 mm; 476 mm → keiner); bei d ≤ 450 galt das schon immer.
+# ponytail: feste Kontaktzone der Dicke 2 · _KONTAKT_MM − d; Öffnungen in Wänden
+# dicker als 475 mm queren NIE. Ausbaupfad: Zone abstandsabhängig puffern.
+_SPLITTER_MM = 25.0
+_UEBERLAPPUNG_TOL_MM2 = 1.0  # darunter ist „Überlappung" Berührungsrauschen
 
 
 def _raum_polys(raeume: list[Raum]) -> list[tuple[Raum, Polygon, object]]:
@@ -213,14 +231,77 @@ def _sehnen_zonen(tueren: list[Tuer], oeffnungen: list[TuerOeffnung]):
     return zonen
 
 
+def _kontakt_grenze(abstand: float) -> float:
+    """Wie nah ein freier Teil an BEIDEN Raumpolygonen liegen muss.
+
+    Die Kontaktzone reicht je ``_KONTAKT_MM`` weit; bei Wänden bis 250 mm
+    überlappt sie beide Räume, ein querender Teil berührt sie also (1 mm
+    Quellpräzision). Bei dickeren Wänden bleibt die Zone ein Band MITTEN in der
+    Wand — dort heißt „quert", dass der Teil das Band ganz durchspannt, also bis
+    auf ``abstand − _KONTAKT_MM`` an beide Räume heranreicht. Ein fester 1-mm-
+    Wert wäre dort nie erfüllbar und löschte auch echte Öffnungen (Rennweg OG1:
+    Vorraum 10,94 ↔ Wohnküche 73,06 über 450 mm, Referenz O01/O02).
+    """
+    return max(0.0, abstand - _KONTAKT_MM) + _KONTAKT_TOL_MM
+
+
+def _grenz_breite(g, pa, pb, abstand: float, wand_puffer) -> float:
+    """Breite der Öffnung ENTLANG der gemeinsamen Grenze (max beider Seiten).
+
+    Gemessen wird der Rand des einen Raums, der vor dem freien Teil liegt und
+    NICHT am Wandkörper: das ist die offene Stelle der Wand. Die Rechtecklänge
+    des Teils taugt nicht — an einer dünnen Wand läuft der freie Teil die ganze
+    Wand entlang und maß deren Länge statt der Öffnung (Diagnose U13:
+    100/200/240-mm-Wand ohne jede Lücke → 4490/4458/4438 mm).
+
+    Abgezogen wird der um ``_KONTAKT_TOL_MM`` GEPUFFERTE Wandverbund, und der
+    Puffer ist die eigentliche Arbeit: ``difference`` entfernt den Raumrand nur,
+    wo er exakt auf der geschlossenen Wandfläche liegt. In echten Plänen liegt
+    er daneben — ungepuffert bleibt er stehen und die Funktion misst wieder die
+    Wandlänge (Rennweg OG1, eigener Lauf: O05 948 → 1774 mm, OG2 GANG 6,06 ↔
+    VORRAUM 4,92 1548 → 4055 mm; am UG werden zwei lückenlose 100-mm-Wände zu
+    Durchgängen von 1810 und 1552 mm).
+
+    Der 1-mm-Puffer deckt aber nur, was NÄHER als 1 mm liegt; eine gemessene
+    Obergrenze der Quellpräzision hat er nicht. Gemessene Decke (eigener
+    OG3-Lauf): beim Paar WC 1,51 ↔ ZIMMER 45,36 liegen 1667 der 1794 gezählten
+    mm 1–3 mm NEBEN dem Wandkörper und gelten weiter als Öffnungsbreite; mit
+    2-mm-Puffer blieben dort 278 mm und dieser (phantome) 1794-mm-Durchgang
+    entfiele. Der Puffer ist also kein Beweis, dass gezählte Breite = Öffnung.
+
+    Preis: wo die Öffnung an einer Wandflanke endet, fehlt je Ende 1 mm. Das
+    ist systematisch und wird an der Schwelle in ``durchgaenge_ohne_tuerblatt``
+    herausgerechnet, nicht hier — sonst fällt der Rauschschutz.
+    """
+    schatten = g.buffer(_kontakt_grenze(abstand))
+    return max(p.boundary.intersection(schatten).difference(wand_puffer).length
+               for p in (pa, pb))
+
+
 def durchgaenge_ohne_tuerblatt(
         raeume: list[Raum], tueren: list[Tuer], wand_union_geom,
         oeffnungen: list[TuerOeffnung] | None = None) -> list[Tuer]:
-    """Öffnungen > 800 mm zwischen zwei Räumen ohne Bogen/Block.
+    """Öffnungen ab 800 mm Nennmaß (gemessen ≥ 797 mm) ohne Bogen/Block.
 
-    Kontaktzone = Schnitt der um die halbe Wanddicke gepufferten Raumpolygone;
-    was davon NICHT von Wandkörpern gedeckt ist, ist eine Öffnung. Liegt dort
-    keine bekannte Tür, entsteht eine ``Tuer`` mit ``ohne_tuerblatt=True``.
+    Kontaktzone = Schnitt der um ``_KONTAKT_MM`` gepufferten Raumpolygone; was
+    davon NICHT von Wandkörpern gedeckt ist, ist ein freier Streifen. Ein
+    Streifen QUERT nur dann (Diagnose U13, Slice S5b), wenn er BEIDE Räume
+    erreicht (``_kontakt_grenze``); ein Streifen, der an genau einem Raum
+    anliegt und zur Gegenseite die Wanddicke entfernt bleibt, ist kein
+    Durchgang. Ebenso queren Splitter (Fläche < Breite · ``_SPLITTER_MM``) und
+    überlappende Raumpolygone nicht — überlappend heißt ECHT überlappend
+    (``_UEBERLAPPUNG_TOL_MM2``, Quellpräzision wie im Gate): gemessen auf vier
+    Plänen verloren 23 Raumpaare mit Überlappung > 0 ihren Durchgang, 22 davon
+    mit Slivern unter 0,2 mm² (21 unter 0,06 mm², größter 0,197 mm²) — das ist
+    Berührungsrauschen gestempelter Nachbarräume auf der Wandmitte, und 16 der
+    22 sind laut senkrechter Wandsonde Wandlücken ≥ 700 mm. Nur das 23. Paar
+    überlappt echt (Muthgasse E2: KÜCHE 2,55 m² liegt ganz in KÜCHE). Zurück
+    kehren über 11 gemessene Pläne 17 Durchgänge (alle Raumabstand 0,
+    Überlappung ≤ 0,197 mm²) — das ist der Stand VOR S5b; ob jeder davon eine
+    echte Innenöffnung ist, entscheidet die vorgelagerte Raumerkennung, nicht
+    diese Regel. Die Breite ist die Länge der gemeinsamen Grenze
+    (``_grenz_breite``), nicht die Rechtecklänge des Streifens. Erst ein
+    querender Streifen ergibt eine ``Tuer`` mit ``ohne_tuerblatt=True``.
 
     Zwei Regeln halten bekannte Türen frei. (a) Die alte: eine Tür < 600 mm vom
     Streifen-Schwerpunkt. (b) Die Dublette: überlappt der Streifen die Sehne
@@ -230,7 +311,7 @@ def durchgaenge_ohne_tuerblatt(
     dort nicht, (b) schon (Überlappung 70,7 % der Sehnenzone). Das Raumpaar
     gehört zur Bedingung: ein Streifen eines ANDEREN Paares streift dieselbe
     Sehnenzone am Rennweg OG1 zu 1,3 % und ist keine Dublette, sondern ein
-    eigener Durchgang (dort der Gang) — ob DER bleiben darf, entscheidet S5b.
+    eigener Durchgang (dort der Gang).
     """
     if wand_union_geom is None or wand_union_geom.is_empty:
         return []
@@ -242,24 +323,47 @@ def durchgaenge_ohne_tuerblatt(
              if nutzungsklasse_fuer(x[0].raum_typ) != KEIN_RAUM]
     tuer_punkte = [t.xy_mm for t in tueren]
     zonen = _sehnen_zonen(tueren, oeffnungen or [])
+    # ponytail: fester 1-mm-Wandpuffer. Raumrand, der weiter als 1 mm neben der
+    # Wandflanke liegt, zählt weiter als Öffnungsbreite (synthetisch gemessen:
+    # ab 1,1 mm Versatz wird eine 300-mm-Nische zum 3998-mm-Durchgang, s.
+    # test_raumkante_weiter_als_der_wandpuffer; real: OG3 WC ↔ ZIMMER, s.
+    # _grenz_breite). Upgrade-Pfad: Puffer aus der gemessenen Quellpräzision des
+    # Plans statt fest — pauschal größer nimmt echten Öffnungen Breite.
+    wand_puffer = wand_union_geom.buffer(_KONTAKT_TOL_MM)
     out: list[Tuer] = []
     for i, (ra, pa, _) in enumerate(polys):
         for rb, pb, _ in polys[i + 1:]:
-            if pa.distance(pb) > 2 * _KONTAKT_MM:
+            abstand = pa.distance(pb)
+            if abstand > 2 * _KONTAKT_MM:
                 continue
+            if pa.intersection(pb).area > _UEBERLAPPUNG_TOL_MM2:
+                continue      # Überlappung ist keine Öffnung (Muthgasse E2, 2,55 m²)
             zone = pa.buffer(_KONTAKT_MM).intersection(pb.buffer(_KONTAKT_MM))
             frei = zone.difference(wand_union_geom)
             if frei.is_empty:
                 continue
+            nah = _kontakt_grenze(abstand)
             teile = list(frei.geoms) if hasattr(frei, "geoms") else [frei]
             for g in teile:
-                mrr = g.minimum_rotated_rectangle
-                coords = list(getattr(mrr, "exterior", g).coords)[:4]
-                if len(coords) < 3:
+                if pa.distance(g) > nah or pb.distance(g) > nah:
                     continue
-                breite = max(math.dist(coords[0], coords[1]),
-                             math.dist(coords[1], coords[2]))
-                if breite < _DURCHGANG_MIN_MM:
+                breite = _grenz_breite(g, pa, pb, abstand, wand_puffer)
+                # −3 mm: der gepufferte Wandabzug kostet jede an Wandflanken
+                # endende Öffnung systematisch 2 · _KONTAKT_TOL_MM, dazu 1 mm
+                # Quellpräzision. Ohne das fiel Barawitzka EG KÜCHE 20,47 ↔
+                # VORRAUM 3,87 (echte 800-mm-Lücke ohne Türbogen, keine Tür am
+                # Paar, gemessen 798,0) aus der Wertung — über 11 gemessene
+                # Pläne der EINZIGE neue Durchgang der Absenkung. Folge: eine
+                # echte 800-mm-TÜRlücke hält die Breite nicht mehr auf, sie
+                # hängt allein an Regel (a)/(b) unten (gemessen: ohne Block-Tür
+                # MIT Breite bleibt sie als Dublette stehen —
+                # test_800er_tuerluecke_haengt_an_regel_a_b). Am Rennweg OG1
+                # hängt VORRAUM 2,59 ↔ BAD 4,66 (798,06 mm, die 800er-Türlücke
+                # einer Block-Tür OHNE Breite) jetzt allein an Regel (a), mit
+                # 284 mm Schwerpunktabstand.
+                if breite < _DURCHGANG_MIN_MM - 3 * _KONTAKT_TOL_MM:
+                    continue
+                if g.area < breite * _SPLITTER_MM:
                     continue
                 c = g.centroid
                 xy = (float(c.x), float(c.y))

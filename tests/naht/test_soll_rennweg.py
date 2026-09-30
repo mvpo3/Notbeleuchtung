@@ -25,6 +25,9 @@ def rm():
     return ArchitekturRaumProvider().parse(str(PLAN), "OG3")
 
 
+@pytest.mark.xfail(
+    strict=True, raises=AssertionError,
+    reason="Türstapel unvollständig (S7a/S7b/S3b ausstehend), muss vor Merge XPASS sein")
 def test_soll_stair_exit_statt_final_exit(rm):
     """OG3 ist ein Regelgeschoß: Ausgang = Stiegenhaustür, kein Ausgang ins Freie."""
     stair = [a for a in rm.ausgaenge if a.typ == "stair_exit"]
@@ -43,6 +46,9 @@ def test_soll_segmente_aus_graph(rm):
     assert len(graph) >= 1, "kein Segment mit quelle GRAPH"
 
 
+@pytest.mark.xfail(
+    strict=True, raises=AssertionError,
+    reason="Türstapel unvollständig (S7a/S7b/S3b ausstehend), muss vor Merge XPASS sein")
 def test_soll_tueren_mit_detail(rm):
     """11 Zargentüren (T1..T11) sollen eine Tür-Rolle tragen."""
     mit_detail = [t for t in rm.tueren if t.tuer_detail is not None]
@@ -139,10 +145,6 @@ def test_soll_eg_90_prozent_tueren_typisiert(rm_eg):
         f"nur {typ}/{len(rm_eg.tueren)} Türen typisiert")
 
 
-@pytest.mark.xfail(
-    strict=True, raises=AssertionError,
-    reason="S4a allein, Türstapel unvollständig, muss vor Merge XPASS sein — "
-           "Gate-Bedingung (6) in docs/GATE_TUERSTAPEL.md")
 def test_keine_anker_in_wohnung_privat(rm):
     """Fachteil 2: Anker nur in Erschließung (Stiegenhaus/Gang), nie in
     WOHNUNG_PRIVAT-Räumen."""

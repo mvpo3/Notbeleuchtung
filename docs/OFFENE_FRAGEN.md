@@ -1535,7 +1535,16 @@ regressieren (`docs/GATE_TUERSTAPEL.md`). Die Referenz selbst bleibt unveränder
 *anderswo* — außerhalb dieses Falls — als Türverbindung gelten kann. Das wird je Fall
 entschieden, nicht per Regel.
 
-## S4d — Balkontür T08 / „Rectangular Door Opening" (vorgemerkt, 2026-09-18)
+## S4f — ArchiCAD-Türblöcke mit englischen Namen / T08 (vorgemerkt 2026-09-18, umbenannt 2026-09-23)
+
+> **Die Nummer war doppelt vergeben.** Dieses Paket hieß bis 2026-09-23 **S4d**. Leonis
+> benutzt `S4d` für seine Balkontür-Folgeregel („`balkontuer` setzt `ist_notausgang=False`,
+> darf kein `final_exit` werden", `docs/HANDOFF_SELMAN_NICHT_IM_MERGE.md` auf
+> `leonis/demo-l-gebaeude` @ `8257ff9`). Owner-Entscheid 2026-09-23: **Leonis behält S4d**,
+> dieses Paket heißt ab jetzt **S4f**. Die beiden meinen verschiedene Dinge — S4f ist ein
+> Erkennungsloch VOR der Typisierung (`tueren.py::_ist_tuer_block` kennt nur deutsche
+> Wortstämme), S4d eine Folgeregel NACH der Typisierung (auf dieser Seite bereits gebaut,
+> `tuer_typisierung.py:179/187` + `ausgaenge.py:69`; Reste siehe S4g).
 
 OG1 trägt drei ArchiCAD-Blöcke `Rectangular Door Opening 27[6]`, `…27[11]` und
 `…27[12]` (in den Wandblöcken `Wall_13`, `Wall_23`, `Wall_63`). Sie liegen
@@ -1553,6 +1562,148 @@ mittleres Zimmer 10,59 m² ↔ Balkon 7,51 m²). Die beiden anderen liegen an
 Welcher Block welcher Fall ist, ist damit nicht am Namen entscheidbar — es
 braucht die Geometrie.
 
-**Entscheid Owner:** eigener Slice **S4d**, **nach S5c**. Das Tür-Vokabular wird
+**Entscheid Owner:** eigener Slice **S4f** (bis 2026-09-23 „S4d"), **nach S5c**. Das Tür-Vokabular wird
 **jetzt nicht** angefasst — eine Vokabel-Erweiterung mitten im Türstapel würde die
 Nullmessung und alle laufenden Gate-Zahlen verschieben, bevor der Stapel steht.
+
+## S4g — Restlöcher der Balkontür-/Ausgangsregel (vorgemerkt 2026-09-23, nach dem Merge)
+
+**Quelle:** Leonis, `docs/HANDOFF_SELMAN_NICHT_IM_MERGE.md` auf `leonis/demo-l-gebaeude`
+@ `8257ff9`, Abschnitt „2. Paket S4d — Balkontür"; nachgemessen und eingeordnet 2026-09-23.
+Leonis' Regel selbst ist auf dieser Seite gebaut; offen sind nur die drei Punkte unten.
+**Kein Code vor dem Merge des Türstapels.**
+
+a) **`footprint.hauptausgaenge` erzeugt `final_exit` ohne Raum-, Typ- und Geschossbezug**
+   (`src/notbeleuchtung/raumerkennung/provider.py:102`; Mollgasse `exit_1` bis `exit_4`,
+   4 von 19). Owner 2026-09-23: „Ein Ausgang ohne Türbezug ist kein Ausgang." Deckt sich
+   mit dem früheren Selman-Befund „4 von 19 `final_exit` ohne Türbezug".
+b) **`ausgaenge.py:69`** lässt `final_exit` nur bei `hauseingang`, bei `ist_notausgang`
+   mit Weg ins Freie oder bei Tor mit Fluchtweg-Ende durch; ein Türtext kann das nicht
+   zurückdrehen (`tuer_typisierung.py:221-227`). Diese Kette gehört in S4g mitgeprüft.
+c) **Die Freiflächen-Regel greift im EG bewusst nicht** (`tuer_typisierung.py:179`,
+   Bedingung `not eg`, Begründung `:159-172`): sonst stirbt Mollgasse `tuer_68`
+   (Südgarten-Tür, belegter Fluchtweg). **Diese Ausnahme bleibt, S4g muss sie erhalten.
+   Vor dem Bau ist dafür ein Messfall anzulegen** (Mollgasse EG: `tuer_68` behält seinen
+   `final_exit`, Fluchtweg-Start unverändert).
+
+## WOHNKÜCHE — Größenordnung für @EnisAMG (Stand 2026-09-23, noch nicht gemessen)
+
+Die vorhandenen Mess-Dumps tragen je Raum nur Typ, Klasse, Flags, Fläche und Wohnung,
+**keinen Stempel- oder Rohtext**. Eine Zählung „Räume mit Stempel Wohnküche" ist daraus
+nicht führbar. **Der Lauf mit Stempeltext über die 12 Pläne kommt nach dem Gate-Merge**,
+nicht vorher (Owner-Entscheid 2026-09-23).
+
+Bis dahin als **grober Anhalt, ausdrücklich keine Messung**:
+- typlose Räume je Plan 0 bis 11, in Summe **54** (12 Pläne);
+- ein belegter Fall: Rennweg OG1 `raum_10`, **73,06 m²**, im Modell ohne Raumtyp
+  (`tests/gate/gate_referenz.py:24-25`);
+- ein ausgeschriebener Stempel „Wohnküche" fällt heute über den Komposita-Kopf auf
+  **KÜCHE** (`tests/raumerkennung/test_raumtyp.py:139`) — im Rennweg-OG1 greift das nicht.
+
+## KINDERZIMMER — erledigt, kein Slice nötig (2026-09-23)
+
+Nachgeprüft: KINDERZIMMER ist Kanon **und** hat zwei Erkennungswege — den Volltext-Stempel
+(`_port/models/room.py:47`, bewusst vor dem generischen „zimmer" einsortiert) und das
+Kürzel `kz` (`raumtyp.py:70`), dazu `nutzungsklasse.py:17`, `lb_extraktion.yaml` und
+`regel_deckung.yaml`. Der vorgemerkte Kinderzimmer-Slice **entfällt** und ist aus der
+Folgeliste gestrichen.
+
+## S-KG — Kellergeschosse und Garage (vorgemerkt, 2026-09-20, nach dem Stapel-Merge)
+
+Owner-Ansage 2026-09-20 aus Leonis' Paket; Reihenfolge und Wortlaut in
+`docs/GATE_TUERSTAPEL.md` § 5a. **Kein Code vor dem Merge des Türstapels.** Offen sind:
+
+- **@mvpo3 — Unterlagen fehlen im Repo. ERLEDIGT am 2026-09-23:** sie liegen auf
+  `leonis/demo-l-gebaeude` @ `8257ff9`, nachgeprüft mit `git ls-tree`:
+  `scripts/analyse/mollgasse_gt_vergleich.py` (275 Z.), `tests/fixtures/mollgasse_gt/`
+  (1KG, 2KG, EG, 1OG–4OG, DG), `knowledge/notbeleuchtung/regeln.md` mit **NB-R13** (Z. 133)
+  und **NB-R17** (Z. 173, dazu `regeln.yaml`), `knowledge/notbeleuchtung/abgleich/{1KG,2KG}/`
+  (16 bzw. 38 Seiten-PNGs + `abgleich_*.md`) und `docs/COORDINATION.md` § S-KG (Z. 555–584).
+  **Auf `origin/main` (4b950d1) und auf diesem Branch fehlt `knowledge/notbeleuchtung/**`
+  vollständig** — die Abnahme von S-KG und Gate-Bedingung (9) sind erst messbar, wenn das
+  Material auf `main` ist (Merge von Leonis' Branch oder eigener Transport). Offen an @mvpo3:
+  wann kommt es nach `main`?
+- **Raumtyp KELLERABTEIL ist nicht im Kanon.** `docs/VOKABULAR.md` kennt ihn nicht;
+  `raumtyp.py` bildet den Text „kellerabteil" heute auf `KELLER` ab. Für die Abnahme
+  „KELLERABTEIL > 0" braucht es entweder einen neuen Kanon-Typ (Vorschlag über das Board,
+  betrifft Leonis' Platzierung und Enis' Regel-Deckung) oder die Abnahme zählt `KELLER`
+  mit ER-Stempel. Nicht entschieden.
+- **Gebäudehälften über Graph-Komponenten:** kein neues Contract-Feld vorgesehen. Ob die
+  Komponenten-Zuordnung für Leonis ohne Feld konsumierbar ist, ist mit ihm zu klären, bevor
+  gebaut wird.
+
+## S-MST — Maßstab-Kontrolle vor der Platzierung (vorgemerkt, 2026-09-20, nach dem Stapel-Merge)
+
+Owner-Ansage 2026-09-20: „Die Architektpläne — wenn man die Türen misst und die Tür ist 90/210,
+dann kommt beim Messen meistens 0.900 mm. Der Plan muss dann so skaliert werden, dass beim
+Messen zwischen den Türkanten 900 mm herauskommt. Der Architekt liefert die Pläne so, wir
+müssen das eigenständig machen. Die Software soll das kontrollieren, bevor sie Pläne generiert
+— kommt der Plan vom Kunden schon im richtigen Maßstab, passt das; wenn nicht, muss die
+Software ihn richtig skalieren, bevor die Platzierung erfolgt."
+
+**Ist-Stand (nachgelesen 2026-09-20, `dxf_load.py`): die Kalibrierung existiert bereits, die
+Kontrolle fehlt.**
+
+- `_calibrate_factor` (`dxf_load.py:163`) leitet den mm-Faktor aus der **Geometrie** ab, nicht
+  aus `$INSUNITS` — der Docstring dort sagt selbst: „das lügt oft: leere Pläne in Metern,
+  fertige in mm — beide mit gleichem Code". Die Geschoss-Ausdehnung (`_SPAN_MIN_MM` 15 m bis
+  `_SPAN_MAX_MM` 500 m) gibt die Kandidaten-Dekaden 1/10/100/1000/10000 vor.
+- `_door_arc_factor` (`:122`) ist genau die Türprobe des Owners: die Schwenkbogen-Radien der
+  Türblöcke müssen nach Skalierung zwischen `_DOOR_MIN_MM` 600 und `_DOOR_MAX_MM` 1300 liegen,
+  mindestens **drei** Türen müssen zustimmen.
+
+Vier Lücken, alle ohne Messung sichtbar im Code:
+
+1. **Die Türprobe läuft nur als Tiebreak.** Bleibt nach der Spannen-Regel genau ein Kandidat,
+   wird keine einzige Tür befragt (`:175-176`). Ein Plan mit untypischer Ausdehnung wird still
+   falsch skaliert, obwohl die Türen es widerlegen würden.
+2. **Stiller Rückfall auf `$INSUNITS`** (`:180-181`), wenn kein Kandidat in die Spanne passt —
+   also genau dort, wo die Geometrie nichts hergibt, entscheidet der Header, dem der Code
+   selbst nicht traut.
+3. **Der Faktor wird nirgends ausgewiesen.** Kein Contract-Feld, keine Provider-Warnung, kein
+   Eintrag im Prüfbericht; nur Analyse-Skripte lesen `plan.factor`. Nach einem Lauf ist nicht
+   nachvollziehbar, mit welchem Maßstab gerechnet wurde.
+4. **Kein Test gegen echte Pläne.** Die Kalibrierung wird nur über synthetische Fixtures
+   berührt; es gibt keinen Messfall „Plan X hat Faktor Y, belegt durch N Türen".
+
+**Zuschnitt (Vorschlag, nicht gebaut):**
+
+1. Türbreite wird **immer** gemessen, nicht nur bei Mehrdeutigkeit: gegen die Nennmaße
+   (700/800/900/1000/1100 mm), mit der Zahl der zustimmenden Türen als Beleg. Widerspricht die
+   Türprobe der Spannen-Regel, gewinnt die Tür — sie ist das schärfere Maß.
+2. Faktor, Beleg und Konfidenz werden ausgewiesen: Provider-Warnung wie `seite_fehlt` plus
+   Eintrag im Prüfbericht. **Kein Contract-Feld** — ein Feld auf `RaumModell` wäre eine
+   Contract-Änderung und bräuchte alle drei Owner.
+3. **Hard Stop vor der Platzierung**, wenn kein Faktor belegbar ist, statt stillem
+   Weiterrechnen. **Offen (Owner):** Stop oder nur Warnung? Ein Stop blockiert Pläne, die heute
+   durchlaufen — die Entscheidung gehört dem Owner, nicht dem Slice.
+4. Gate-Messfall je Prüfplan: erkannter Faktor und Zahl der zustimmenden Türen.
+
+**Warum nicht jetzt:** `dxf_load` sitzt ganz vorne in der Kaskade; jede Änderung dort verschiebt
+sämtliche Gate-Zahlen und die Nullmessung. Gleiche Begründung wie bei S4d. Reihenfolge deshalb
+nach dem Merge des Türstapels.
+
+**Direkt betroffen:** die Mollgasse-Pläne sind in Metern gezeichnet und tragen `$INSUNITS` mm —
+und Mollgasse 1OG ist die Abnahme von S7a+S7b (Bedingung (9)). Greift die Kalibrierung dort
+nicht, ist die Abnahme wertlos. Messung dazu liegt beim S7-Blast.
+---
+
+## Übergabe Leonis — die „nicht-im-Merge"-Pakete (eingetragen 2026-09-23, Selman)
+
+**Vermerk:** nach 12-Pläne-Gate-Merge, Quelle Leonis, HEAD `8257ff9`
+(`docs/HANDOFF_SELMAN_NICHT_IM_MERGE.md` auf `leonis/demo-l-gebaeude`).
+**Reihenfolge:** Der laufende Türstapel (S7a/b/c, dann S4e, S4c, S3b, S5c, Gate-Lauf, Merge) bleibt
+unverändert vorne. Die drei Pakete sind Folgeaufträge, sie werden jetzt nicht gebaut.
+
+Owner-Ansage im Wortlaut:
+
+> Reihenfolge der drei Pakete: S-KG → S4d → WOHNKÜCHE. Bei jedem gilt: nach meinem Stand pinge ich Leonis, er fährt Consumer- und Naht-Prüfung plus GT-Re-Run. Kein Contract-Touch nötig; falls doch, erst in docs/COORDINATION.md, 3-Owner.
+>
+> 1. S-KG (Kellergeschosse + Garage), größter Hebel für die GT-Quote. Soll: KELLERABTEIL erkennen (Stempel "ER"), Garage-Zirkulation (NB-R17: Motorrad durchquerbar, Doppelparker/PKW/Gruben nicht), Gebäudehälften zusammenhängend. Leonis' Engine-Vorlauf NB-R13 (UG flüchtet hinauf) steht, sobald ich liefere, platziert die Engine ohne weiteren Leonis-Bau. Abnahme: python scripts/analyse/mollgasse_gt_vergleich.py 1KG 2KG → KELLERABTEIL > 0, Zirk-Segmente zweistellig, "fehlt" im 2KG < 20. Material: docs/COORDINATION.md §S-KG, knowledge/notbeleuchtung/abgleich/{1KG,2KG}/, GT-Fixtures tests/fixtures/mollgasse_gt/{1KG,2KG}.json.
+> 2. S4d (Balkontür): Balkontüren dürfen nicht als final_exit zählen, Wurzel der dünnen Fluchtwege. Leonis' Consumer-Seite (ist_echte_tuer, R2) ist gebaut und freigegeben. Nach meinem Fix Leonis pingen, er re-testet Elektroplan v9+ und die E2E-Bänder.
+> 3. KINDERZIMMER/WOHNKÜCHE: KINDERZIMMER ist schon Kanon (falls es hakt, ist es ein Token). WOHNKÜCHE neu: ich lege RoomType.WOHNKUECHE plus Erkennungs-Token an, Alias mit Leonis gegenprüfen, Enis macht die Norm, gemeinsam mergen (test_lb_raumtyp_naht.py guardet beide Richtungen).
+
+**Planer-Vermerk 2026-09-23 zum Zitat oben (das Zitat selbst bleibt unverändert):** „S4d" im
+Zitat ist Leonis' Balkontür-Paket. Das gleichnamige Selman-Paket heißt ab 2026-09-23 **S4f**
+(ArchiCAD-Türblöcke), die Restlöcher von Leonis' Regel laufen als **S4g**. KINDERZIMMER ist
+erledigt (Kanon mit zwei Erkennungswegen), der Slice dafür entfällt.
