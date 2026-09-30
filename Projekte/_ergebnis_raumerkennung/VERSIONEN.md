@@ -43,3 +43,39 @@ Skript `scripts/analyse/raumerkennung_darstellung.py`.
 Zusätzlich gemergt, keine Änderung an der Erkennung: `selman/darstellung-versioniert` (`8699766`) —
 Versionsordner, Bildtitel mit Version/Datum/Commit/Slices, Kennzahlen Schächte und
 Außenbereich-Überlagerung mit Kanon-Räumen, NISCHE magenta mit Hinweis.
+
+## Integrationsstand 2026-09-30
+
+Keine neue Raumerkennungs-Ausgabe: kein Ordner `<Projekt>_vN/`, keine neue Bildausgabe. Dieser
+Abschnitt hält den Stand fest, auf dem Leonis die Platzierung testet.
+
+- **Stand:** `bc2ccf0` auf `selman/integration-2026-09-30`. Basis `origin/main` `acdacba`. Der Code-Stand
+  ist `ed292e1`, weil `bc2ccf0` nur `docs/` ändert (`src/` und `scripts/` sind baumgleich). Die Merge-Reihe und
+  die Konfliktauflösungen stehen in `docs/INTEGRATION_2026-09-30.md`.
+- **Slices:**
+  - S4a, S4b
+  - S5b + S7a + S7b
+  - S4c Fassung A (mit S7c, S3b, S5c)
+  - VOK-a
+  - K2 (M3-Regel NISCHE wie SCHACHT)
+  - K3
+  - K4 (R1-Aussetzung, Aufenthaltsraum-Sperre)
+  - Gate-Doku von `selman/uebernahme-enis-m17`
+  - P0 Am Rain: `a845ded` Test rot, `ed292e1` Fix, `bc2ccf0` Doku
+
+  Nicht enthalten ist der K1-Fix Sofa-Feld. Er existiert nicht.
+- **Gate:** `pytest -m gate tests/gate` ergibt 3 passed, 1 xfailed. Messung `messung_ed292e1` gegen
+  `nullmessung_f15d03f`: **1 Verstoß — (3) `M4.einraum` steigt in DG2 von 0 auf 1.** Er hängt an Enis'
+  Board 3 (Blatt-Semantik). M17: 18/18.
+- **Suite:** `pytest -rxXs tests/naht tests/raumerkennung tests/gate` ergibt 6 failed, 1216 passed,
+  8 skipped, 4 deselected, 14 xfailed, 0 xpassed. Die 6 roten sind bekannt: 3 × WOHNUNG_PRIVAT-Leuchten (Board 1),
+  Muthgasse-Türblöcke und die 2 S4c-Pins.
+- **Prüfstrecke:** 13 Pläne mit `scripts/plan_pruefen.py` nach `Projekte/_ergebnis/<Plan>/`, alle ohne
+  Traceback:
+  - die 5 Prüfpläne
+  - Mollgasse 1KG und 2KG
+  - Am Rain UG, EG, OG1–OG4
+
+  Am Rain UG, EG und OG1–OG3 liefen ohne Plan-Render, weil die Render-Stufe den Arbeitsspeicher
+  sprengt. Dort liegen nur `bericht.md` und `raeume.json`. Die Kennzahlen je Plan stehen in
+  `Projekte/_ergebnis/VERLAUF.md` im Eintrag „2026-09-30 · Integration selman/integration-2026-09-30 @ bc2ccf0“.
