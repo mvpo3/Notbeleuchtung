@@ -136,15 +136,28 @@ class ArchitekturRaumProvider:
         # zusammenfinden — verschmelze_doppelfluegel akzeptiert sie ausdrücklich.
         tueren = verschmelze_doppelfluegel(tueren, wand_segmente(plan))
         tueren += text_tueren(plan, tueren)
-        ordne_tueren(tueren, k.tueroeffnungen, raeume, kontur)
+        # Wand-Union EINMAL, schon hier: die Seitenprobe überspringt damit
+        # Probepunkte im Wandkörper (Slice S4b), die Durchgänge unten nutzen
+        # dieselbe Variable.
+        wu = wand_union(k.wandkoerper) if k.wandkoerper else None
+        fehlende_seiten: list = []
+        ordne_tueren(tueren, k.tueroeffnungen, raeume, kontur, wu, fehlende_seiten)
         # Eine Tür braucht mindestens einen Innenraum: beidseits AUSSEN ist
         # keine Tür des Gebäudes (Fassaden-Bögen, Rest-Phantome).
         tueren = [t for t in tueren if not (t.von_raum == t.nach_raum == AUSSEN)]
         for i, t in enumerate(tueren, start=1):   # lückenlose IDs nach dem Filtern
             t.id = f"tuer_{i}"
+        # Seiten, die bis 500 mm weder Raum noch AUSSEN fanden — Prüfstrecken-
+        # Ausgabe wie `ausgangs_warnungen`, kein Contract-Feld (`Tuer` kennt
+        # kein `seite_fehlt`). Erst NACH der Neunummerierung formatiert, sonst
+        # nennt der Text eine Tür-ID, die inzwischen einer anderen Tür gehört.
+        self.tuer_warnungen = [
+            f"seite_fehlt: {t.id} Seite {zeichen} bis {stufe:.0f} mm kein Raum "
+            "und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)"
+            for t, zeichen, stufe in fehlende_seiten]
         if k.wandkoerper:
-            wu = wand_union(k.wandkoerper)
-            tueren = tueren + durchgaenge_ohne_tuerblatt(raeume, tueren, wu)
+            tueren = tueren + durchgaenge_ohne_tuerblatt(raeume, tueren, wu,
+                                                         k.tueroeffnungen)
             tueren = tueren + aussen_durchgaenge(raeume, tueren, wu, kontur)
         for s in zirkulation.segmente:      # 09-WEG = explizite Linien
             s.quelle = "LINIE"

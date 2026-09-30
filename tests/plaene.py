@@ -26,6 +26,7 @@ MUTHGASSE_E2 = (REPO / "Projekte/Pläne 19., Muthgasse 109B - 2026-05-07_13-12"
                 / "Architekt" / "Ausführungsplan"
                 / "M109B_-Plan - AR-AF-A-GR-E2 100 - GRUNDRISS E2.dxf")
 RENNWEG_EG = REPO / "Projekte/Rennweg/EG - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf"
+RENNWEG_OG1 = REPO / "Projekte/Rennweg/OG1 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf"
 RENNWEG_OG3 = REPO / "Projekte/Rennweg/OG3 - Rennweg 15_1030 Wien_Ausfürung-2026-06-12.dxf"
 
 
