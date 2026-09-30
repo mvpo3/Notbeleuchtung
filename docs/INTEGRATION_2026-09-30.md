@@ -233,3 +233,66 @@ Die Zahlen sind gleich.
   Freiraum-Hatches `KFLD-04_…Moeblierung-Bank` und `…-Pergola` deshalb als Wandkörper.
 - Das UG ist als leerer Architekturplan abgelegt, enthält aber schon E-Planung
   (45 `SIMA_ET_SIBEL_Sicherheitsleuchte`).
+
+## Gegenprüfung auf `9f38f58` (unabhängig nachgemessen)
+
+Code-Stand `9f38f58` = `ed292e1` (`git diff ed292e1 9f38f58 -- src scripts tests` leer).
+Jeder Lauf allein, nichts parallel.
+
+**Inhalt.** `git merge-base --is-ancestor <sha> HEAD` ist für jeden Slice-Kopf wahr:
+`3e95974`, `1e5e5ac`, `1f3c8ff` (und `bface2b`), `e979957` (und `1eed916`), `4f85492`,
+`76de2be`, `aa05143`, `60c671a`, `c2d4e33` (und `381c033`, `de31621`), `f682c77`,
+`fac7118` (und `5bd4ff2`), `e5f6274`. K1 `558dee3` ist KEIN Vorfahr. Der Diff
+`origin/main..HEAD` über `hauptengine/`, `platzierung/` und `normwissen/` ist leer,
+`gen_schema.py --check` meldet „schema in sync“, `ruff check .` ist grün. Jeder Merge-Commit
+wurde gegen `git merge-tree --write-tree` seiner beiden Eltern verglichen: nur K3
+(`provider.py`, `docs/SLICES_K1_K4.md`) und K4 (`docs/SLICES_K1_K4.md`) weichen ab, genau die
+oben beschriebenen Konfliktauflösungen.
+
+**Volle Suite** (`pytest -rfxXs`, 27:34 min): `6 failed, 2223 passed, 11 skipped,
+6 deselected, 14 xfailed`, 0 xpassed. Das sind die 2219 von `b20b4e5` plus die 4 P0-Tests.
+Rot sind die 4 bekannten Tests und die 2 S4c-Pins. Beide Pins scheitern auf `e979957` allein
+mit derselben Ausgabe (`raum_29` zusätzlich, `seg_graph_tuer_27` zusätzlich). Die
+xfail- und skip-Listen sind dieselben wie oben. Die skip-Zeile `test_provider.py` steht jetzt
+bei `:25` statt `:21`, weil der P0-Commit dort Importe ergänzt.
+
+**Bänder.** In `tests/` stehen auf `origin/main` 14 xfail-Marker, auf HEAD 15. Neu ist nur
+der strict-Marker von `test_gate_tuerstapel_erfuellt`; kein Marker ist entfernt oder
+entschärft. Die einzige gesenkte Schwelle im Diff ist das Stiegenhaus-Band in
+`test_soll_muthgasse.py::test_soll_raeume_tueren_ausgaenge` (≥ 5 → ≥ 3). Es kommt aus S5c,
+nicht aus der Integration: Owner-Entscheid B2, `docs/GATE_TUERSTAPEL.md:2304`, im Test
+begründet. Die übrigen geänderten Zusicherungen folgen Owner-Regeln der Slices (K2 NISCHE
+statt SCHACHT, E7 rohe Rollen) und sind keine Schwellen.
+
+**Gate.** `pytest -m gate tests/gate` ergibt 3 passed und 1 xfailed. Die Messung
+`_arbeit/gate/messung_9f38f58.json` (Arbeitsbaum `src`/`scripts` sauber) ist ohne `meta`
+gleich `messung_b20b4e5.json`. `pruefe_gate` gegen die Nullmessung `f15d03f` meldet
+**1 Verstoß: (3) `M4.einraum` DG2 0 → 1** (Enis' Board 3). Einzelwerte:
+- M17 18/18
+- (10) `raum_28` 1 Tür (`tuer_17`, arc, 830 mm, zimmertuer)
+- (6) OG3 5 GRAPH-Segmente, 0 Anker in `WOHNUNG_PRIVAT`
+- (11) DG1 2 Ausgänge, 0 durch den Liftschacht; zur Information UG, EG und OG1 ebenfalls je 0
+- M3 DG2 4 Räume / 1,26 m²
+
+**Stichprobe Prüfstrecke.** Für Rennweg_OG3, Mollgasse_1KG, AmRain_OG4 und Barawitzka_EG
+wurde die Kennzahlen-Tabelle aus `raeume.json` und `bericht.md` nachgerechnet. Alle Werte
+stimmen: Räume mit Polygon, davon ohne Typ, Stempel ohne Polygon, Wohnungen, Türen,
+Ausgänge, Segmente, Leuchten-Summe, Warnungen und Laufzeit. Die Aufteilung rz/SL steht nicht
+in den Dateien. Geprüft ist dort nur die Summe.
+
+### Naht für Leonis: was am Code gilt
+
+Die Aussagen stammen aus dem Übergabe-Auftrag. Geprüft ist der Code auf `9f38f58`. Die
+„Probe“ ist ein `provider.parse` auf Rennweg UG/EG/OG1/OG2/OG3/DG1/DG2/DD und Mollgasse
+EG/1OG.
+
+| Aussage | Befund | Beleg |
+|---|---|---|
+| Nutzungsklassen WOHNUNG_PRIVAT, ALLGEMEIN_ERSCHLIESSUNG, ALLGEMEIN_NEBENRAUM, KEIN_RAUM, UNBESTIMMT | **gilt nicht wörtlich** | Der Contract kennt `WOHNUNG_PRIVAT`, `ALLGEMEIN_ERSCHLIESSUNG`, `ALLGEMEIN_NEBENRAUM`, `AUSSEN` und `KEIN_RAUM` (`raum_modell.py:22-25`). Einen Wert „UNBESTIMMT“ gibt es nicht: unbestimmt heißt `nutzungsklasse is None` (`raum_modell.py:124-125`, `wohnungsklasse.py:58`). `AUSSEN` (BALKON, TERRASSE, `nutzungsklasse.py:41-43`) fehlt in der Liste. |
+| `wohnung_id` | **gilt** | Die ID kommt nur aus rohen Türen, `top_1..n` nach der kleinsten Raum-ID (`wohnungen.py:3-6`, `:354-360`). Die Klasse ändert keine Wohnung. |
+| `tuer_detail` und korrigierte Türrollen, „277 kippen auf Wohnungseingang“ | **gilt nicht** | `tuer_detail` bleibt die ROHE Rolle (`wohnungsklasse.py:21`, `:698-705`). Die korrigierten Rollen stehen nicht im Modell. Nur `fluchtweg.py:329` und `plan_pruefen.py:1281` lesen sie. Die Platzierung liest `tuer_detail`, also die rohe Rolle (`platzierung/fachpraxis.py:400`, `:461`, `:524`). Die 277 ist überholt: nach dem K4-Nachzug sind es netto **270** gegen `f682c77` (`docs/SLICES_K1_K4.md:1345`, `:1358`). Das ist ein Delta der korrigierten Rollen, kein Modellfeld. Es kippt in beide Richtungen, Probe Mollgasse 1OG: 10 × zimmertuer → wohnungseingang, 9 × wohnungseingang → zimmertuer. |
+| LIFT und SCHACHT sind KEIN_RAUM, ausgestanzt, kein Ausgang durch den Liftschacht | **gilt**, mit zwei Zusätzen | LIFT ist `KEIN_RAUM` und wird aus STIEGENHAUS gestanzt (`lift_erkennung.py:187-222`). SCHACHT wird `KEIN_RAUM` (`nutzungsklasse.py:45-46`, `wohnungen.py:195-196`). In der Probe tragen alle LIFT/SCHACHT `KEIN_RAUM`. Gate (11) siehe oben. Die S5c-Liftschacht-Reste bleiben ungestanzt, sie sind eigene Räume (`lift_erkennung.py:242-244`). **Neu an der Naht (K2):** eine türlose Fläche < 3 m² ohne Schacht-Beleg ist jetzt `NISCHE` mit `nutzungsklasse None` und Flags 00, NICHT `KEIN_RAUM` (`rest_komponenten.py:216-223`; Rennweg DG2 `rest_5`, 1,42 m²). Auf der Konsumentenseite stehen im Lauf auf `bc2ccf0` noch Leuchten in LIFT/SCHACHT (VERLAUF: Muthgasse_E2 und Mollgasse_2KG je 1 in LIFT, AmRain_OG1 1 in SCHACHT). |
+| final_exit nur mit Türbezug und Geschoss, Balkontüren kein Ausgang | **teilweise** | **Geschoss gilt:** fail closed, kein final_exit im OG oder bei unbekanntem Geschoss (`ausgaenge.py:116-128`). **Türbezug gilt nicht:** `footprint.hauptausgaenge` erzeugt final_exit ohne Tür (`provider.py:175`, `footprint.py:123-135`), und die überleben im EG/UG. Beispiel: Mollgasse EG `exit_1` … `exit_4`, 4 von 8 final_exit. Das ist der offene Punkt S4g a (`docs/OFFENE_FRAGEN.md:1576-1579`). Ein final_exit kann auch an einer Tür ohne Rolle hängen, über `ist_notausgang` ins Freie (`ausgaenge.py:84-85`). Beispiel: Mollgasse EG `exit_tuer_67` (roh `None`, AUSSEN\|`raum_61`) ist die gewollte EG-Ausnahme Südgarten-Tür (`tuer_typisierung.py:179` `not eg`, S4g c). **Balkontür gilt:** `balkontuer` setzt `ist_notausgang=False`, und ein Türtext dreht das nicht zurück (`tuer_typisierung.py:179-189`, `:225-227`). In der Probe ist keine balkontuer ein Ausgang. **Zusatz:** Hat ein OG sonst keinen Ausgang, wird der rohe Wohnungseingang ins Stiegenhaus zum stair_exit (S5c F2, `ausgaenge.py:50-59`, `:91-92`). Beispiele: Rennweg DG1 `exit_durchgang_6`/`_7`, DG2 `exit_durchgang_4`/`_5`/`_6`. |
+| Fluchtweg-Segmente mit `durchleitung=True` durch private Räume | **gilt nicht** | `FluchtwegSegment` hat kein Feld `durchleitung` (`raum_modell.py:184-196`). Das Feld ist nur ein Board-Antrag (`provider.py:104-107`). Erkennbar ist eine Durchleitung so: ein GRAPH-Segment läuft durch einen `WOHNUNG_PRIVAT`-Raum mit Flags 00 als Direktlinie Tür → Tür, ohne Stützpunkt, und dieser Raum ist nie `start_raum` oder `ziel_raum` (`fluchtweg.py:20-27`, `:382-399`). Dazu schreibt die Prüfstrecke die Zeile `durchleitung: seg_graph_<tür> …` (`provider.wohnungsklasse_warnungen`, `bericht.md`). Gemessen gibt es 0 Durchleitungen: in allen 13 Berichten der Prüfstrecke und in der Probe. |
+| Private Vorräume zählen nicht als Erschließung, Mollgasse 1OG `raum_35` hat 9 statt 17 Start/Ziel-Segmente | **gilt** | Probe: `raum_35` ist STIEGENHAUS mit 9 Start/Ziel-Segmenten. `raum_2` und `raum_4` sind VORRAUM, `WOHNUNG_PRIVAT`, Flags 00. `test_messfall_i_stiegenhaus_raum_35` ist grün (`MESSFALL_I_MOLL = (2, 9)`, `tests/naht/test_s7_wohnungsklasse.py:322`). Begründung: die 8 inneren Türen der ankerbestätigt privaten Vorräume sind Zimmertüren, Owner Option A vom 2026-09-26 (`docs/GATE_TUERSTAPEL.md:1198`, `:1204-1210`). `raum_35` ist das Stiegenhaus, nicht der Vorraum. |
+| UNBESTIMMT-Räume behalten Notlicht (Flags 11) | **gilt mit Einschränkung** | Entzogen wird nur über `bestaetigt_privat` (`wohnungsklasse.py:406-435`). Unbestimmte GANG/VORRAUM tragen Flags 11 (`wohnungsklasse.py:945`). Probe: Rennweg OG3 `raum_10`, Mollgasse EG 2 VORRAUM und 1 GANG. **Unbestimmte Räume anderer Typen tragen Flags 00:** untypisierte Räume und NISCHE, in der Probe z.B. Rennweg UG 11, Mollgasse EG 11, Mollgasse 1OG 8. Ihr Notlicht behalten sie trotzdem, weil `flaechen_strategy.py:162-166` nur `WOHNUNG_PRIVAT` ohne Flags auslässt. Umgekehrt gibt es `WOHNUNG_PRIVAT` MIT Flags 11 (K4): Rennweg DG1 `raum_4`/`raum_8`, DG2 `raum_1`, Mollgasse 1OG 5 Räume. Die Platzierung muss also die Flags lesen, nicht nur die Klasse. |
