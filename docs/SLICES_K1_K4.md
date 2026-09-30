@@ -32,6 +32,14 @@ Branches; diese Datei beginnt auf dem K3-Branch mit K3.
 Notlicht-Wechsel. Branch `selman/fix-k3-sanitaer-bad` von `de31621`:
 `56fb690` Test (rot), `7f2dd0e` Fix, danach dieser Bericht.
 
+**Review (unabhängig nachgemessen):** Test rot auf `56fb690` (2 ImportError, naht
+7 failed), grün auf dem Fix (54 passed); Blast Radius 23/23 mit eigenem Diff
+bestätigt (Summen unten stimmen); eigene Gate-Messung: dieselben 2 Verstöße,
+ohne `meta` gleich der Bau-Messung, M17 18/18; Platzierung OG3 und Mollgasse
+2.OG identisch; Zensus-Plausibilität 184/84 und die 3 Kandidaten bestätigt.
+Korrigiert: „Vorlauf ohne Rückkopplung" war ungenau (einmalige Rückkante,
+Owner-Frage 9), Duschset-Kommentar (121 : 119).
+
 ### Owner-Befund (wörtlich)
 
 > OG3 „UNBEKANNT 6,6 m²" links hat zwei Waschbecken und WC-Symbole, liegt im
@@ -164,12 +172,14 @@ es nichts.
     `typisiere_tueren` → `bilde_wohnungen` steht unverändert in
     `_tueren_und_wohnungen`; die LINIE-Markierung der Zirkulation und
     `flw_enden` (türunabhängig) stehen davor.
-  * **Vorlauf ohne Rückkopplung:** gibt es Kandidaten, läuft
+  * **Einmaliger Vorlauf (Probe):** gibt es Kandidaten, läuft
     `_tueren_und_wohnungen` einmal als Probe auf `copy.deepcopy` von Räumen
     und Türen; `typisiere_sanitaer` prüft darin den Umriss und typisiert die
     echten Räume; danach läuft `_tueren_und_wohnungen` EINMAL regulär. Klasse
     (statisch `WOHNUNG_PRIVAT`) und Wohnung entstehen dort aus rohen Türen wie
-    für jeden gestempelten Raum. Keine Iteration, deterministisch. Ohne
+    für jeden gestempelten Raum. Keine Iteration, deterministisch — aber eine
+    einmalige Rückkante Probe-Klasse/-Wohnung → Typ → rohe Türrolle
+    (Owner-Frage 9). Ohne
     Kandidaten keine Probe (20 der 23 Geschosse); Mollgasse 3.OG läuft mit
     Probe, sein Kandidat bleibt UNBEKANNT, das Ergebnis ist unverändert.
   * Prüfstrecken-Ausgabe `sanitaer_befund` (wie `tuer_warnungen`, kein
@@ -385,3 +395,21 @@ OG1/OG2/DG1 (Board 1, Leonis) und `test_soll_muthgasse.py::test_soll_plan_tuerbl
 8. **Verschachtelte Blöcke** werden nicht gelesen (nur oberste Ebene):
    Muthgasse E2 hat 2 WC-Blöcke im eingebetteten Modell des Nachbarhauses
    (`Muth109A_RVT…`), gemessen außerhalb jedes Raums.
+9. **Einbahn (Board 7): ist die Probe zulässig?** (Nachtrag Review.) Die Probe
+   ist keine Iteration, aber eine einmalige Rückkante: `umschliessende_wohnung`
+   liest Klasse und `wohnung_id` der Probe-Nachbarn, entscheidet damit, ob der
+   Typ gesetzt wird, und der Typ geht in die rohen Türrollen des regulären
+   Laufs ein (`tuer_9`, `tuer_72` → `wohnungseingang`, `durchgang_4` →
+   `zimmertuer`). Board 7 sagt „rohe Rolle → Klasse → korrigierte Rolle →
+   Fluchtweg, nie zurück". Gemessen: die Probe selbst verändert nichts (Probe
+   mit wirkungslosem `typisiere_sanitaer` = Basis `de31621` in OG3 und
+   Mollgasse 2.OG, 0 Abweichungen); das ausgelieferte Modell ist ein Fixpunkt
+   (`bilde_wohnungen` auf dem Ergebnis nachgerechnet: 0 Klassen-, Wohnungs-,
+   Flag- oder Rollen-Abweichungen in OG3, Mollgasse 2.OG und 3.OG); die
+   Umriss-Kontrolle auf dem ausgelieferten Modell liefert dieselbe Wohnung wie
+   die Probe (`top_2`, `top_13`, 3.OG keine). Die Rückkante wirkt nur als
+   Sperre: sagt die Probe „nicht im Umriss", bleibt alles wie auf `de31621`.
+   Alternativen: (ii) Nachlauf (gemessen: neuer Gate-Verstoß (3)) oder eine
+   Umriss-Kontrolle ohne die Wohnungsbildung (z. B. Top-Symbole, Frage 7).
+   K4 sollte `umschliessende_wohnung` erst nach diesem Entscheid über eine
+   Probe nutzen.
