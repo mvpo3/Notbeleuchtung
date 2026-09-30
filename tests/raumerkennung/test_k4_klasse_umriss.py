@@ -121,6 +121,17 @@ def test_teilweise_im_umriss_bleibt_unbestimmt():
     assert "50 %" in grund and "top_1" in grund
 
 
+def test_riegel_g3_geht_vor():
+    """G3 (Owner 2026-09-22): „in keinem Schritt PRIVAT" — auch nicht in K4.
+    Ein Mitglied mit Tür ins Freie bleibt unbestimmt, Notlicht bleibt
+    (gefunden von ``test_k4_zufallssuche``, Topologie 136; auf den 23
+    Prüfgeschossen 4 Räume, z. B. Mollgasse 4.OG ``raum_10``)."""
+    raeume = _ring() + [_r("v", "VORRAUM", _q(0, 0, 3000, 3000), "top_1")]
+    k, grund = klasse_aus_umriss(raeume, [_t("ta", "v", "AUSSEN")])["v"]
+    assert k is None
+    assert "Riegel (G3)" in grund and "Notlicht bleibt" in grund
+
+
 def test_liest_keine_klasse_der_nachbarn():
     """Erreichbarkeit über rohe Rollen (Ankerregel), keine Klasse: andere
     Nachbarklassen ändern das Urteil nicht."""
