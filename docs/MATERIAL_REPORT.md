@@ -1,5 +1,418 @@
 <!-- generiert von scripts/plan_pruefen.py — nicht von Hand pflegen -->
 
+# Plan AmRain_EG
+
+Legendenabdeckung: 100.0 % · unbekannte Muster: 0
+
+## Material (Bauteil-Hatches)
+
+| Material | Anzahl | Fläche m² | mittl. Score |
+|---|--:|--:|--:|
+| STAHLBETON | 341 | 231.2 | via Layer |
+| ZIEGELMAUERWERK | 115 | 2.3 | 0.74 |
+| WAERMEDAEMMUNG | 12 | 2.1 | via Layer |
+| _nicht bewertet (Möbel/Plangrafik-SOLIDs)_ | 12340 | 3354.0 | — |
+
+Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Treffer, Layer-Hinweis oder Wand-Layer — übrige SOLIDs (Möbel/Treppen/Plangrafik) sind „nicht bewertet“ und gehen NICHT in die Legendenabdeckung ein.
+
+**Legendenabdeckung: 100.0 %** (bekannte Materialfläche / Bauteil-Schraffurfläche)
+
+## Markierungen
+
+- Brandabschnittslinien: 245
+- Fluchtweglinien: 0
+
+### Brandabschnitt-Linien
+
+- (40.79, 56.58) m → (35.55, 53.05) m
+- (13.50, 56.59) m → (10.51, 53.05) m
+- (70.74, 56.57) m → (64.65, 48.70) m
+- (101.78, 56.52) m → (92.39, 51.35) m
+- (124.68, 56.59) m → (115.29, 51.35) m
+- (151.75, 56.58) m → (145.72, 48.70) m
+- (13.50, 56.59) m → (40.79, 56.58) m
+- (40.79, 56.58) m → (70.74, 56.57) m
+- (70.74, 56.57) m → (101.78, 56.52) m
+- (101.78, 56.52) m → (124.68, 56.59) m
+- (124.68, 56.59) m → (151.75, 56.58) m
+- (151.75, 56.58) m → (164.93, 56.60) m
+- (164.93, 56.60) m → (166.54, 56.60) m
+- (39.58, -4.38) m → (20.95, 8.00) m
+- (71.72, -5.50) m → (60.67, -0.00) m
+- (120.42, -6.78) m → (117.83, 7.96) m
+- (150.06, -7.73) m → (142.05, 0.16) m
+- (164.00, -8.17) m → (158.01, 0.20) m
+- (166.54, -8.18) m → (164.00, -8.17) m
+- (164.00, -8.17) m → (150.06, -7.73) m
+- (150.06, -7.73) m → (120.42, -6.78) m
+- (120.42, -6.78) m → (82.44, -5.79) m
+- (71.72, -5.50) m → (39.58, -4.38) m
+- (82.44, -5.79) m → (71.72, -5.50) m
+- (8.71, 53.38) m → (8.38, 53.38) m
+- (8.71, 53.23) m → (8.38, 53.23) m
+- (4.65, 53.38) m → (4.32, 53.38) m
+- (4.65, 53.23) m → (4.32, 53.23) m
+- (12.03, 53.38) m → (11.69, 53.38) m
+- (12.03, 53.23) m → (11.69, 53.23) m
+- (1.46, 53.38) m → (1.12, 53.38) m
+- (1.46, 53.23) m → (1.12, 53.23) m
+- (18.51, 45.28) m → (18.27, 45.28) m
+- (18.51, 45.13) m → (18.27, 45.13) m
+- (7.21, 38.47) m → (6.77, 38.47) m
+- (7.21, 38.32) m → (6.77, 38.32) m
+- (17.02, 38.47) m → (16.78, 38.47) m
+- (17.02, 38.32) m → (16.78, 38.32) m
+- (16.00, 53.38) m → (15.67, 53.38) m
+- (16.00, 53.23) m → (15.67, 53.23) m
+- (13.80, 38.47) m → (13.56, 38.47) m
+- (13.80, 38.32) m → (13.56, 38.32) m
+- (91.15, 51.59) m → (90.82, 51.59) m
+- (91.15, 51.44) m → (90.82, 51.44) m
+- (95.58, 51.59) m → (95.25, 51.59) m
+- (95.58, 51.44) m → (95.25, 51.44) m
+- (100.29, 51.59) m → (99.95, 51.59) m
+- (100.29, 51.44) m → (99.95, 51.44) m
+- (104.78, 51.59) m → (104.45, 51.59) m
+- (104.78, 51.44) m → (104.45, 51.44) m
+- (91.10, 38.37) m → (90.86, 38.37) m
+- (91.10, 38.22) m → (90.86, 38.22) m
+- (95.08, 38.37) m → (94.84, 38.37) m
+- (95.08, 38.22) m → (94.84, 38.22) m
+- (100.24, 38.37) m → (100.00, 38.37) m
+- (100.24, 38.22) m → (100.00, 38.22) m
+- (104.23, 38.37) m → (103.99, 38.37) m
+- (104.23, 38.22) m → (103.99, 38.22) m
+- (114.05, 51.59) m → (113.72, 51.59) m
+- (114.05, 51.44) m → (113.72, 51.44) m
+- (118.48, 51.59) m → (118.15, 51.59) m
+- (118.48, 51.44) m → (118.15, 51.44) m
+- (123.19, 51.59) m → (122.85, 51.59) m
+- (123.19, 51.44) m → (122.85, 51.44) m
+- (127.68, 51.59) m → (127.35, 51.59) m
+- (127.68, 51.44) m → (127.35, 51.44) m
+- (114.00, 38.37) m → (113.76, 38.37) m
+- (114.00, 38.22) m → (113.76, 38.22) m
+- (117.98, 38.37) m → (117.74, 38.37) m
+- (117.98, 38.22) m → (117.74, 38.22) m
+- (123.14, 38.37) m → (122.90, 38.37) m
+- (123.14, 38.22) m → (122.90, 38.22) m
+- (127.13, 38.37) m → (126.89, 38.37) m
+- (127.13, 38.22) m → (126.89, 38.22) m
+- (75.58, 34.06) m → (75.34, 34.06) m
+- (75.58, 33.91) m → (75.34, 33.91) m
+- (71.82, 34.06) m → (71.58, 34.06) m
+- (71.82, 33.91) m → (71.58, 33.91) m
+- (78.49, 42.36) m → (78.25, 42.36) m
+- (78.49, 42.21) m → (78.25, 42.21) m
+- (55.56, 48.90) m → (55.23, 48.90) m
+- (55.56, 48.75) m → (55.23, 48.75) m
+- (59.58, 48.90) m → (59.25, 48.90) m
+- (59.58, 48.75) m → (59.25, 48.75) m
+- (68.58, 48.94) m → (68.25, 48.94) m
+- (68.58, 48.79) m → (68.25, 48.79) m
+- (71.44, 48.90) m → (71.11, 48.90) m
+- (71.44, 48.75) m → (71.11, 48.75) m
+- (75.29, 48.90) m → (74.96, 48.90) m
+- (75.29, 48.75) m → (74.96, 48.75) m
+- (54.00, 42.73) m → (53.76, 42.73) m
+- (54.00, 42.58) m → (53.76, 42.58) m
+- (54.04, 36.23) m → (53.61, 36.23) m
+- (54.04, 36.08) m → (53.61, 36.08) m
+- (49.38, 40.69) m → (48.94, 40.69) m
+- (49.38, 40.54) m → (48.94, 40.54) m
+- (23.55, 46.27) m → (23.31, 46.27) m
+- (23.55, 46.12) m → (23.31, 46.12) m
+- (134.45, 41.90) m → (134.21, 41.90) m
+- (134.45, 41.75) m → (134.21, 41.75) m
+- (160.03, 42.02) m → (159.79, 42.02) m
+- (160.03, 41.87) m → (159.79, 41.87) m
+- (160.23, 36.31) m → (159.80, 36.31) m
+- (160.23, 36.16) m → (159.80, 36.16) m
+- (140.99, 49.03) m → (140.65, 49.03) m
+- (140.99, 48.88) m → (140.65, 48.88) m
+- (140.53, 33.78) m → (140.29, 33.78) m
+- (140.53, 33.63) m → (140.29, 33.63) m
+- (136.78, 33.78) m → (136.54, 33.78) m
+- (136.78, 33.63) m → (136.54, 33.63) m
+- (136.87, 49.03) m → (136.54, 49.03) m
+- (136.87, 48.88) m → (136.54, 48.88) m
+- (147.17, 49.03) m → (146.84, 49.03) m
+- (147.17, 48.88) m → (146.84, 48.88) m
+- (152.49, 49.03) m → (152.16, 49.03) m
+- (152.49, 48.88) m → (152.16, 48.88) m
+- (156.38, 49.03) m → (156.05, 49.03) m
+- (156.38, 48.88) m → (156.05, 48.88) m
+- (144.06, 49.14) m → (143.73, 49.14) m
+- (144.06, 48.99) m → (143.73, 48.99) m
+- (48.88, 46.37) m → (48.64, 46.37) m
+- (48.88, 46.22) m → (48.64, 46.22) m
+- (27.12, 38.46) m → (26.88, 38.46) m
+- (27.12, 38.31) m → (26.88, 38.31) m
+- (30.86, 38.46) m → (30.62, 38.46) m
+- (30.86, 38.31) m → (30.62, 38.31) m
+- (60.18, 17.67) m → (59.85, 17.67) m
+- (60.18, 17.52) m → (59.85, 17.52) m
+- (76.34, 17.67) m → (76.01, 17.67) m
+- (76.34, 17.52) m → (76.01, 17.52) m
+- (69.90, 17.67) m → (69.57, 17.67) m
+- (69.90, 17.52) m → (69.57, 17.52) m
+- (47.37, 3.67) m → (47.04, 3.67) m
+- (47.37, 3.52) m → (47.04, 3.52) m
+- (47.21, 6.21) m → (46.97, 6.21) m
+- (47.20, 6.06) m → (46.97, 6.06) m
+- (39.15, 14.19) m → (38.91, 14.19) m
+- (39.15, 14.04) m → (38.91, 14.04) m
+- (78.97, 5.32) m → (78.64, 5.32) m
+- (78.97, 5.17) m → (78.64, 5.17) m
+- (26.74, 53.38) m → (26.41, 53.38) m
+- (26.74, 53.23) m → (26.41, 53.23) m
+- (30.63, 53.38) m → (30.30, 53.38) m
+- (30.63, 53.23) m → (30.30, 53.23) m
+- (37.26, 53.38) m → (36.92, 53.38) m
+- (37.26, 53.23) m → (36.92, 53.23) m
+- (42.59, 53.38) m → (42.26, 53.38) m
+- (42.59, 53.23) m → (42.26, 53.23) m
+- (46.46, 53.38) m → (46.13, 53.38) m
+- (46.46, 53.23) m → (46.13, 53.23) m
+- (33.97, 53.37) m → (33.64, 53.37) m
+- (33.97, 53.22) m → (33.64, 53.22) m
+- (66.42, 48.90) m → (66.09, 48.90) m
+- (66.42, 48.75) m → (66.09, 48.75) m
+- (164.93, 58.70) m → (166.54, 58.70) m
+- (166.54, -8.98) m → (82.43, -6.54) m
+- (164.93, 26.70) m → (82.43, -6.54) m
+- (-19.46, -1.05) m → (-16.80, 59.56) m
+- (0.69, 30.70) m → (1.01, 30.70) m
+- (0.85, 30.86) m → (0.85, 30.54) m
+- (87.07, 32.70) m → (87.39, 32.70) m
+- (87.23, 32.86) m → (87.23, 32.54) m
+- (103.27, 33.70) m → (103.59, 33.70) m
+- (103.43, 33.86) m → (103.43, 33.54) m
+- (126.27, 32.70) m → (126.59, 32.70) m
+- (126.43, 32.85) m → (126.43, 32.54) m
+- (103.27, 32.70) m → (103.59, 32.70) m
+- (103.43, 32.86) m → (103.43, 32.54) m
+- (43.21, 30.70) m → (43.53, 30.70) m
+- (43.37, 30.85) m → (43.37, 30.54) m
+- (30.32, 30.70) m → (30.64, 30.70) m
+- (30.48, 30.85) m → (30.48, 30.54) m
+- (15.99, 30.70) m → (16.31, 30.70) m
+- (16.15, 30.85) m → (16.15, 30.54) m
+- (46.71, 30.70) m → (47.03, 30.70) m
+- (46.87, 30.85) m → (46.87, 30.54) m
+- (52.81, 30.70) m → (53.13, 30.70) m
+- (52.97, 30.86) m → (52.97, 30.54) m
+- (58.70, 30.70) m → (59.02, 30.70) m
+- (58.86, 30.86) m → (58.86, 30.54) m
+- (89.57, 33.71) m → (89.89, 33.71) m
+- (89.73, 33.87) m → (89.73, 33.55) m
+- (89.57, 32.71) m → (89.89, 32.71) m
+- (89.73, 32.87) m → (89.73, 32.55) m
+- (105.77, 32.70) m → (106.09, 32.70) m
+- (105.93, 32.85) m → (105.93, 32.54) m
+- (128.75, 32.70) m → (129.07, 32.70) m
+- (128.91, 32.86) m → (128.91, 32.54) m
+- (150.55, 32.70) m → (150.87, 32.70) m
+- (150.71, 32.85) m → (150.71, 32.54) m
+- (19.89, 24.46) m → (19.56, 24.46) m
+- (19.89, 24.31) m → (19.56, 24.31) m
+- (23.48, 24.54) m → (23.15, 24.54) m
+- (23.48, 24.39) m → (23.15, 24.39) m
+- (34.85, 24.48) m → (34.52, 24.48) m
+- (34.85, 24.33) m → (34.52, 24.33) m
+- (31.39, 24.48) m → (31.06, 24.48) m
+- (31.39, 24.33) m → (31.06, 24.33) m
+- (65.54, -0.17) m → (65.21, -0.17) m
+- (65.54, -0.32) m → (65.21, -0.32) m
+- (70.20, -0.12) m → (69.86, -0.12) m
+- (70.20, -0.27) m → (69.86, -0.27) m
+- (76.86, -0.10) m → (76.52, -0.10) m
+- (76.86, -0.25) m → (76.52, -0.25) m
+- (73.44, -0.10) m → (73.10, -0.10) m
+- (73.44, -0.25) m → (73.10, -0.25) m
+- (34.29, 7.85) m → (33.95, 7.85) m
+- (34.29, 7.70) m → (33.95, 7.70) m
+- (37.19, 7.84) m → (36.86, 7.84) m
+- (37.19, 7.69) m → (36.86, 7.69) m
+- (32.18, 7.84) m → (31.85, 7.84) m
+- (32.18, 7.69) m → (31.85, 7.69) m
+- (28.66, 7.88) m → (28.33, 7.88) m
+- (28.66, 7.73) m → (28.33, 7.73) m
+- (22.85, 7.89) m → (22.51, 7.89) m
+- (22.85, 7.74) m → (22.51, 7.74) m
+- (25.80, 7.89) m → (25.47, 7.89) m
+- (25.80, 7.74) m → (25.47, 7.74) m
+- (18.50, 7.85) m → (18.17, 7.85) m
+- (18.50, 7.70) m → (18.17, 7.70) m
+- (15.72, 7.74) m → (15.39, 7.74) m
+- (15.72, 7.59) m → (15.39, 7.59) m
+- (11.94, -0.10) m → (11.60, -0.10) m
+- (11.94, -0.25) m → (11.60, -0.25) m
+- (7.66, -0.12) m → (7.33, -0.12) m
+- (7.66, -0.27) m → (7.33, -0.27) m
+- (3.99, -0.10) m → (3.66, -0.10) m
+- (3.99, -0.25) m → (3.66, -0.25) m
+- (-0.13, 3.07) m → (-0.46, 3.07) m
+- (-0.13, 2.92) m → (-0.46, 2.92) m
+- (-0.14, 5.62) m → (-0.47, 5.62) m
+- (-0.14, 5.47) m → (-0.47, 5.47) m
+- (0.01, 10.06) m → (-0.32, 10.06) m
+- (0.01, 9.91) m → (-0.32, 9.91) m
+- (50.52, -0.10) m → (50.19, -0.10) m
+- (50.52, -0.25) m → (50.19, -0.25) m
+- (53.92, -0.12) m → (53.59, -0.12) m
+- (53.92, -0.27) m → (53.59, -0.27) m
+- (56.29, -0.13) m → (55.96, -0.13) m
+- (56.29, -0.28) m → (55.96, -0.28) m
+- (62.80, -0.12) m → (62.47, -0.12) m
+- (62.80, -0.27) m → (62.47, -0.27) m
+- (59.36, -0.12) m → (59.03, -0.12) m
+- (59.36, -0.27) m → (59.03, -0.27) m
+- (82.43, -6.54) m → (164.93, 26.70) m
+
+# Plan AmRain_OG1
+
+Legendenabdeckung: 100.0 % · unbekannte Muster: 0
+
+## Material (Bauteil-Hatches)
+
+| Material | Anzahl | Fläche m² | mittl. Score |
+|---|--:|--:|--:|
+| STAHLBETON | 275 | 219.2 | via Layer |
+| ZIEGELMAUERWERK | 181 | 3.1 | 0.75 |
+| WAERMEDAEMMUNG | 3 | 1.4 | via Layer |
+| _nicht bewertet (Möbel/Plangrafik-SOLIDs)_ | 6527 | 210.6 | — |
+
+Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Treffer, Layer-Hinweis oder Wand-Layer — übrige SOLIDs (Möbel/Treppen/Plangrafik) sind „nicht bewertet“ und gehen NICHT in die Legendenabdeckung ein.
+
+**Legendenabdeckung: 100.0 %** (bekannte Materialfläche / Bauteil-Schraffurfläche)
+
+## Markierungen
+
+- Brandabschnittslinien: 0
+- Fluchtweglinien: 0
+
+# Plan AmRain_OG2
+
+Legendenabdeckung: 100.0 % · unbekannte Muster: 0
+
+## Material (Bauteil-Hatches)
+
+| Material | Anzahl | Fläche m² | mittl. Score |
+|---|--:|--:|--:|
+| STAHLBETON | 255 | 197.2 | via Layer |
+| ZIEGELMAUERWERK | 139 | 2.3 | 0.76 |
+| WAERMEDAEMMUNG | 3 | 1.4 | via Layer |
+| _nicht bewertet (Möbel/Plangrafik-SOLIDs)_ | 5472 | 178.8 | — |
+
+Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Treffer, Layer-Hinweis oder Wand-Layer — übrige SOLIDs (Möbel/Treppen/Plangrafik) sind „nicht bewertet“ und gehen NICHT in die Legendenabdeckung ein.
+
+**Legendenabdeckung: 100.0 %** (bekannte Materialfläche / Bauteil-Schraffurfläche)
+
+## Markierungen
+
+- Brandabschnittslinien: 0
+- Fluchtweglinien: 0
+
+# Plan AmRain_OG3
+
+Legendenabdeckung: 100.0 % · unbekannte Muster: 0
+
+## Material (Bauteil-Hatches)
+
+| Material | Anzahl | Fläche m² | mittl. Score |
+|---|--:|--:|--:|
+| STAHLBETON | 126 | 76.9 | via Layer |
+| ZIEGELMAUERWERK | 75 | 1.4 | 0.75 |
+| _nicht bewertet (Möbel/Plangrafik-SOLIDs)_ | 2529 | 108.4 | — |
+
+Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Treffer, Layer-Hinweis oder Wand-Layer — übrige SOLIDs (Möbel/Treppen/Plangrafik) sind „nicht bewertet“ und gehen NICHT in die Legendenabdeckung ein.
+
+**Legendenabdeckung: 100.0 %** (bekannte Materialfläche / Bauteil-Schraffurfläche)
+
+## Markierungen
+
+- Brandabschnittslinien: 0
+- Fluchtweglinien: 0
+
+# Plan AmRain_OG4
+
+Legendenabdeckung: 100.0 % · unbekannte Muster: 0
+
+## Material (Bauteil-Hatches)
+
+| Material | Anzahl | Fläche m² | mittl. Score |
+|---|--:|--:|--:|
+| STAHLBETON | 59 | 38.7 | via Layer |
+| ZIEGELMAUERWERK | 27 | 0.4 | 0.75 |
+| _nicht bewertet (Möbel/Plangrafik-SOLIDs)_ | 1186 | 80.7 | — |
+
+Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Treffer, Layer-Hinweis oder Wand-Layer — übrige SOLIDs (Möbel/Treppen/Plangrafik) sind „nicht bewertet“ und gehen NICHT in die Legendenabdeckung ein.
+
+**Legendenabdeckung: 100.0 %** (bekannte Materialfläche / Bauteil-Schraffurfläche)
+
+## Markierungen
+
+- Brandabschnittslinien: 0
+- Fluchtweglinien: 0
+
+# Plan AmRain_UG
+
+Legendenabdeckung: 100.0 % · unbekannte Muster: 0
+
+## Material (Bauteil-Hatches)
+
+| Material | Anzahl | Fläche m² | mittl. Score |
+|---|--:|--:|--:|
+| STAHLBETON | 595 | 480.9 | via Layer |
+| WAERMEDAEMMUNG | 39 | 14.9 | via Layer |
+| ZIEGELMAUERWERK | 20 | 2.2 | 0.71 |
+| _nicht bewertet (Möbel/Plangrafik-SOLIDs)_ | 1241 | 47.4 | — |
+
+Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Treffer, Layer-Hinweis oder Wand-Layer — übrige SOLIDs (Möbel/Treppen/Plangrafik) sind „nicht bewertet“ und gehen NICHT in die Legendenabdeckung ein.
+
+**Legendenabdeckung: 100.0 %** (bekannte Materialfläche / Bauteil-Schraffurfläche)
+
+## Markierungen
+
+- Brandabschnittslinien: 32
+- Fluchtweglinien: 0
+
+### Brandabschnitt-Linien
+
+- (40.73, 56.52) m → (35.49, 52.99) m
+- (13.44, 56.53) m → (10.45, 52.99) m
+- (70.68, 56.51) m → (64.59, 48.64) m
+- (101.72, 56.46) m → (92.33, 51.29) m
+- (124.62, 56.53) m → (115.23, 51.29) m
+- (151.69, 56.52) m → (145.66, 48.64) m
+- (13.44, 56.53) m → (40.73, 56.52) m
+- (40.73, 56.52) m → (70.68, 56.51) m
+- (70.68, 56.51) m → (101.72, 56.46) m
+- (101.72, 56.46) m → (124.62, 56.53) m
+- (124.62, 56.53) m → (151.69, 56.52) m
+- (151.69, 56.52) m → (164.87, 56.54) m
+- (164.87, 56.54) m → (166.36, 56.54) m
+- (39.52, -4.44) m → (20.89, 7.94) m
+- (71.66, -5.56) m → (60.61, -0.06) m
+- (120.36, -6.84) m → (117.77, 7.90) m
+- (150.00, -7.79) m → (141.99, 0.10) m
+- (163.94, -8.23) m → (157.95, 0.14) m
+- (166.46, -8.24) m → (163.94, -8.23) m
+- (163.94, -8.23) m → (150.00, -7.79) m
+- (150.00, -7.79) m → (120.36, -6.84) m
+- (120.36, -6.84) m → (82.38, -5.85) m
+- (71.66, -5.56) m → (39.52, -4.44) m
+- (82.38, -5.85) m → (71.66, -5.56) m
+- (10.45, 53.20) m → (10.45, 52.20) m
+- (35.49, 53.25) m → (35.49, 52.25) m
+- (64.59, 49.00) m → (64.59, 48.00) m
+- (92.33, 51.59) m → (92.33, 50.59) m
+- (115.23, 51.60) m → (115.23, 50.60) m
+- (145.66, 48.74) m → (145.66, 47.74) m
+- (60.61, -0.37) m → (60.61, 0.57) m
+- (20.89, 7.79) m → (20.89, 8.85) m
+
 # Plan Barawitzka_EG
 
 Legendenabdeckung: 90.3 % · unbekannte Muster: 3
@@ -101,6 +514,52 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 - (9.06, -0.96) m → (8.99, -0.96) m
 - (9.03, -0.92) m → (9.03, -1.00) m
 - (9.13, -0.96) m → (9.23, -0.96) m
+
+# Plan Mollgasse_1KG
+
+Legendenabdeckung: 100.0 % · unbekannte Muster: 0
+
+## Material (Bauteil-Hatches)
+
+| Material | Anzahl | Fläche m² | mittl. Score |
+|---|--:|--:|--:|
+| STAHLBETON | 105 | 135.8 | 0.88 |
+| GIPSKARTON_EI0 | 1 | 46.0 | 0.47 |
+| WAERMEDAEMMUNG | 8 | 12.6 | 0.70 |
+| ZIEGELMAUERWERK | 1 | 0.5 | 0.70 |
+| YTONG | 2 | 0.4 | 0.47 |
+
+Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Treffer, Layer-Hinweis oder Wand-Layer — übrige SOLIDs (Möbel/Treppen/Plangrafik) sind „nicht bewertet“ und gehen NICHT in die Legendenabdeckung ein.
+
+**Legendenabdeckung: 100.0 %** (bekannte Materialfläche / Bauteil-Schraffurfläche)
+
+## Markierungen
+
+- Brandabschnittslinien: 0
+- Fluchtweglinien: 0
+
+# Plan Mollgasse_2KG
+
+Legendenabdeckung: 100.0 % · unbekannte Muster: 0
+
+## Material (Bauteil-Hatches)
+
+| Material | Anzahl | Fläche m² | mittl. Score |
+|---|--:|--:|--:|
+| STAHLBETON | 140 | 123.6 | 0.87 |
+| GIPSKARTON_EI0 | 1 | 59.5 | 0.47 |
+| ZIEGELMAUERWERK | 16 | 12.0 | 0.70 |
+| YTONG | 1 | 0.5 | 0.62 |
+| WAERMEDAEMMUNG | 3 | 0.3 | 0.70 |
+
+Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Treffer, Layer-Hinweis oder Wand-Layer — übrige SOLIDs (Möbel/Treppen/Plangrafik) sind „nicht bewertet“ und gehen NICHT in die Legendenabdeckung ein.
+
+**Legendenabdeckung: 100.0 %** (bekannte Materialfläche / Bauteil-Schraffurfläche)
+
+## Markierungen
+
+- Brandabschnittslinien: 0
+- Fluchtweglinien: 0
 
 # Plan Mollgasse_EG
 

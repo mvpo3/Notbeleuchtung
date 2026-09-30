@@ -1,6 +1,6 @@
 # Prüfbericht Muthgasse_E2
 
-Raum-Polygon-Quelle: `kaskade L:80 H:1 F:16 R:0` — Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.
+Raum-Polygon-Quelle: `kaskade L:80 H:1 F:19 R:0` — Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.
 
 ## Räume
 
@@ -10,6 +10,7 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:16 R:0` — Rotation: Wände vertikal-d
 |---|---|---|--:|--:|--:|--:|---|
 | L | Wohnküche | KÜCHE | 24.79 | 24.79 | 24.79 | -0.0 | ok |
 | L | AR | ABSTELLRAUM | 3.79 | 3.79 | 3.79 | -0.0 | ok |
+| L | Vorr. | VORRAUM | 4.18 | 4.18 | 4.18 | -0.0 | ok |
 | L | Bad | BAD | 6.49 | 6.49 | 6.49 | -0.1 | ok |
 | L | Zimmer | ZIMMER | 15.10 | 15.10 | 15.10 | +0.0 | ok |
 | L | Zimmer | ZIMMER | 12.60 | 12.60 | 12.60 | +0.0 | ok |
@@ -20,10 +21,13 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:16 R:0` — Rotation: Wände vertikal-d
 | — | Wohnküche | KÜCHE | 51.32 | — | — | — | kein_polygon |
 | L | Zimmer | ZIMMER | 12.46 | 12.46 | 12.46 | +0.0 | ok |
 | L | Loggia | BALKON | 6.47 | 6.47 | 6.47 | -0.1 | ok |
+| L | Vorr. | VORRAUM | 11.91 | 11.91 | 11.91 | -0.0 | ok |
+| — | Vorr. | VORRAUM | 6.47 | — | — | — | kein_polygon |
 | — | Wohnküche | KÜCHE | 5.70 | — | — | — | kein_polygon |
 | L | Wohnküche | KÜCHE | 28.97 | 28.97 | 28.97 | -0.0 | ok |
 | L | AR | ABSTELLRAUM | 3.49 | 3.49 | 3.49 | +0.1 | ok |
 | L | Bad | BAD | 6.35 | 6.35 | 6.35 | -0.0 | ok |
+| L | Vorr. | VORRAUM | 10.92 | 10.92 | 10.92 | +0.0 | ok |
 | L | Gang | GANG | 28.52 | 28.52 | 28.52 | -0.0 | ok |
 | L | KIWA | KINDERWAGENRAUM | 15.77 | 15.77 | 15.77 | +0.0 | ok |
 | L | Loggia | BALKON | 5.72 | 5.72 | 5.72 | -0.0 | ok |
@@ -47,22 +51,24 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:16 R:0` — Rotation: Wände vertikal-d
 | F | Zimmer | ZIMMER | 13.56 | 3.61 | 3.61 | -73.3 | flutung_unsicher |
 | L | Wohnküche | KÜCHE | 29.92 | 29.92 | 29.92 | +0.0 | ok |
 | L | AR | ABSTELLRAUM | 2.69 | 2.69 | 2.69 | +0.0 | ok |
-| L | AR | ABSTELLRAUM | 7.06 | 7.06 | 7.06 | -0.0 | ok |
+| L | Vorr. | VORRAUM | 7.06 | 7.06 | 7.06 | -0.0 | ok |
 | L | Bad | BAD | 5.29 | 5.29 | 5.29 | -0.0 | ok |
+| L | Vorr. | VORRAUM | 3.60 | 3.60 | 3.60 | +0.0 | ok |
 | L | Schl. | — | 3.73 | 3.73 | 3.73 | -0.0 | ok |
 | F | Wohnküche | KÜCHE | 32.53 | 11.41 | 3.07 | -64.9 | flutung_unsicher |
 | — | Wohnküche | KÜCHE | 5.70 | — | — | — | kein_polygon |
-| F | Wohnküche | KÜCHE | 32.53 | 33.46 | 1.06 | +2.9 | ok |
+| F | Wohnküche | KÜCHE | 32.53 | 33.43 | 1.06 | +2.8 | ok |
 | — | Wohnküche | KÜCHE | 5.70 | — | — | — | kein_polygon |
 | — | Wohnküche | KÜCHE | 41.25 | — | — | — | kein_polygon |
 | — | Wohnküche | KÜCHE | 5.75 | — | — | — | kein_polygon |
 | L | Gang | GANG | 24.64 | 24.64 | 24.64 | +0.0 | ok |
+| — | Vorr. | VORRAUM | 54.35 | — | — | — | kein_polygon |
 | L | Zimmer | ZIMMER | 13.38 | 13.38 | 13.38 | +0.0 | ok |
 | L | Wohnküche | KÜCHE | 21.63 | 21.63 | 21.63 | -0.0 | ok |
 | L | Loggia | BALKON | 5.70 | 5.70 | 5.70 | +0.0 | ok |
 | L | Wohnküche | KÜCHE | 35.05 | 34.98 | 34.98 | -0.2 | ok |
-| L | Bad | BAD | 6.55 | 6.55 | 6.55 | -0.0 | ok |
-| L | Zimmer | ZIMMER | 11.97 | 13.10 | 13.10 | +9.4 | ok |
+| L | Vorr. | VORRAUM | 6.55 | 6.55 | 6.55 | -0.0 | ok |
+| F | Zimmer | ZIMMER | 11.97 | 28.15 | 14.86 | +135.2 | flutung_unsicher |
 | L | Loggia | BALKON | 8.96 | 8.96 | 8.96 | -0.0 | ok |
 | L | Wohnküche | KÜCHE | 16.52 | 16.52 | 16.52 | +0.0 | ok |
 | L | Zimmer | ZIMMER | 10.16 | 10.16 | 10.16 | -0.0 | ok |
@@ -76,8 +82,8 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:16 R:0` — Rotation: Wände vertikal-d
 | F | STGH | STIEGENHAUS | 39.70 | 20.67 | 3.82 | -47.9 | flutung_unsicher |
 | L | Zimmer | ZIMMER | 10.04 | 10.04 | 10.04 | -0.0 | ok |
 | L | Vorraum | VORRAUM | 9.07 | 9.07 | 9.07 | +0.0 | ok |
-| L | WC | WC | 4.40 | 4.18 | 4.18 | -5.0 | ok |
-| F | Bad | BAD | 4.15 | 4.19 | 4.17 | +0.9 | ok |
+| F | WC | WC | 4.40 | 4.38 | 4.37 | -0.5 | ok |
+| F | Bad | BAD | 4.15 | 4.17 | 4.16 | +0.6 | ok |
 | L | Zimmer | ZIMMER | 10.31 | 10.31 | 10.31 | +0.0 | ok |
 | L | WC | WC | 3.91 | 3.91 | 3.91 | +0.0 | ok |
 | L | Bad | BAD | 5.86 | 5.86 | 5.86 | +0.0 | ok |
@@ -89,14 +95,15 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:16 R:0` — Rotation: Wände vertikal-d
 | L | WC | WC | 3.76 | 3.76 | 3.76 | -0.0 | ok |
 | L | Zimmer | ZIMMER | 10.15 | 10.15 | 10.15 | +0.0 | ok |
 | L | AR | ABSTELLRAUM | 2.35 | 2.35 | 2.35 | -0.0 | ok |
+| L | Vorr. | VORRAUM | 13.10 | 13.10 | 13.10 | -0.0 | ok |
 | F | Wohnküche | KÜCHE | 32.19 | 2.55 | 2.55 | -92.1 | flutung_unsicher |
 | — | Wohnküche | KÜCHE | 5.70 | — | — | — | kein_polygon |
 | — | Wohnküche | KÜCHE | 84.72 | — | — | — | kein_polygon |
 | — | Wohnküche | KÜCHE | 5.74 | — | — | — | kein_polygon |
-| F | Gang | GANG | 31.25 | 18.10 | 16.48 | -42.1 | flutung_unsicher |
+| F | Gang | GANG | 31.25 | 18.11 | 16.48 | -42.1 | flutung_unsicher |
 | L | Balkon | BALKON | 7.37 | 7.37 | 7.37 | +0.0 | ok |
 | L | FW-Aufzug | LIFT | 4.05 | 4.04 | 4.04 | -0.2 | ok |
-| L | Bad | BAD | 4.73 | 4.73 | 4.73 | +0.0 | ok |
+| L | Vorr. | VORRAUM | 4.73 | 4.73 | 4.73 | +0.0 | ok |
 | F | Wohnküche | KÜCHE | 30.68 | 5.36 | 5.36 | -82.5 | flutung_unsicher |
 | — | Zimmer | ZIMMER | 10.10 | — | — | — | kein_polygon |
 | F | Zimmer | ZIMMER | 15.10 | 2.72 | 2.72 | -82.0 | flutung_unsicher |
@@ -107,38 +114,35 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:16 R:0` — Rotation: Wände vertikal-d
 | — | Technik | TECHNIK | 21.02 | — | — | — | kein_polygon |
 | F | Zimmer | ZIMMER | 10.10 | 7.70 | 7.70 | -23.8 | flutung_unsicher |
 | L | Bad | BAD | 4.79 | 5.17 | 5.17 | +7.8 | ok |
+| F | Vorr. | VORRAUM | 5.06 | 6.97 | 6.97 | +37.8 | flutung_unsicher |
 | F | Wohnküche | KÜCHE | 24.21 | 2.14 | 2.14 | -91.2 | flutung_unsicher |
 | F | Loggia | BALKON | 5.70 | 3.36 | 3.36 | -41.0 | flutung_unsicher |
-| L | raum_48 | — | — | 11.91 | 11.91 | — | kein_stempel |
 | L | raum_52 | — | — | 5.19 | 5.19 | — | kein_stempel |
-| L | raum_59 | — | — | 10.92 | 10.92 | — | kein_stempel |
 | L | raum_61 | — | — | 4.87 | 4.87 | — | kein_stempel |
-| L | raum_70 | — | — | 3.60 | 3.60 | — | kein_stempel |
 | L | raum_71 | — | — | 2.93 | 2.93 | — | kein_stempel |
 | L | raum_77 | — | — | 2.97 | 2.97 | — | kein_stempel |
 | L | raum_78 | — | — | 2.97 | 2.97 | — | kein_stempel |
 | H | raum_81 | ZIMMER | — | 1.17 | 1.17 | — | kein_stempel |
 
-## Restflächen ohne Stempel (9)
+## Restflächen ohne Stempel (6)
 
-- raum_48 [L] —: 11.91 m², Zentrum (317.64, 110.76) m
 - raum_52 [L] —: 5.19 m², Zentrum (333.29, 111.82) m
-- raum_59 [L] —: 10.92 m², Zentrum (317.82, 108.33) m
 - raum_61 [L] —: 4.87 m², Zentrum (313.78, 108.12) m
-- raum_70 [L] —: 3.60 m², Zentrum (321.23, 90.09) m
 - raum_71 [L] —: 2.93 m², Zentrum (325.11, 97.22) m
 - raum_77 [L] —: 2.97 m², Zentrum (330.65, 103.67) m
 - raum_78 [L] —: 2.97 m², Zentrum (331.67, 102.15) m
 - raum_81 [H] ZIMMER: 1.17 m², Zentrum (677.02, -137.03) m
 
-## Warnungen (36)
+## Warnungen (37)
 
 - Stempel ohne Polygon: „Wohnküche“
+- Stempel ohne Polygon: „Vorr.“
 - Stempel ohne Polygon: „Wohnküche“
 - Stempel ohne Polygon: „Wohnküche“
 - Stempel ohne Polygon: „Wohnküche“
 - Stempel ohne Polygon: „Wohnküche“
 - Stempel ohne Polygon: „Wohnküche“
+- Stempel ohne Polygon: „Vorr.“
 - Stempel ohne Polygon: „Wohnküche“
 - Stempel ohne Polygon: „Wohnküche“
 - Stempel ohne Polygon: „Wohnküche“
@@ -146,17 +150,15 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:16 R:0` — Rotation: Wände vertikal-d
 - Stempel ohne Polygon: „Zimmer“
 - Stempel ohne Polygon: „Wohnküche“
 - Stempel ohne Polygon: „Technik“
-- Polygon ohne Stempel: raum_48 (11.91 m²)
 - Polygon ohne Stempel: raum_52 (5.19 m²)
-- Polygon ohne Stempel: raum_59 (10.92 m²)
 - Polygon ohne Stempel: raum_61 (4.87 m²)
-- Polygon ohne Stempel: raum_70 (3.60 m²)
 - Polygon ohne Stempel: raum_71 (2.93 m²)
 - Polygon ohne Stempel: raum_77 (2.97 m²)
 - Polygon ohne Stempel: raum_78 (2.97 m²)
 - Polygon ohne Stempel: raum_81 (1.17 m²)
 - Abweichung > 10 % (Erkennung, roh): „Zimmer“ (-73.3 %)
 - Abweichung > 10 % (Erkennung, roh): „Wohnküche“ (-64.9 %)
+- Abweichung > 10 % (Erkennung, roh): „Zimmer“ (+135.2 %)
 - Abweichung > 10 % (Erkennung, roh): „Wohnküche“ (+63.4 %)
 - Abweichung > 10 % (Erkennung, roh): „STGH“ (-47.9 %)
 - Abweichung > 10 % (Erkennung, roh): „Zimmer“ (+37.0 %)
@@ -167,6 +169,7 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:16 R:0` — Rotation: Wände vertikal-d
 - Abweichung > 10 % (Erkennung, roh): „Wohnküche“ (-95.0 %)
 - Abweichung > 10 % (Erkennung, roh): „Technik“ (-63.3 %)
 - Abweichung > 10 % (Erkennung, roh): „Zimmer“ (-23.8 %)
+- Abweichung > 10 % (Erkennung, roh): „Vorr.“ (+37.8 %)
 - Abweichung > 10 % (Erkennung, roh): „Wohnküche“ (-91.2 %)
 - Abweichung > 10 % (Erkennung, roh): „Loggia“ (-41.0 %)
 
@@ -177,21 +180,23 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:16 R:0` — Rotation: Wände vertikal-d
 
 ## Raumbereinigung (ENIS_UEBERGABE_0908 § 14.6.1)
 
-Überlapper >5 % 37 → 2 · doppelbelegt 174.245 → 2.552357 m² (2552357.00 mm²) · geändert 11 (Tabelle unten: 7 überlebende) · entfallen 4 · Zerfall 8.214 m² · Schlitzverlust 0.0 mm² · Restkörper entfallener Räume 1.525 m² · Stempelschutz 1
+Überlapper >5 % 41 → 2 · doppelbelegt 187.171 → 2.552357 m² (2552357.00 mm²) · geändert 13 (Tabelle unten: 9 überlebende) · entfallen 4 · Zerfall 8.547 m² · Schlitzverlust 0.0 mm² · Restkörper entfallener Räume 1.525 m² · Stempelschutz 1
 
-Einträge je Regel: {'ENTFALL': 4, 'ENTHALTENSEIN': 2, 'LIFT_SCHACHT': 1, 'QUELLE_RANG': 36, 'STEMPEL_NAEHE': 3, 'ZERFALL': 9}
+Einträge je Regel: {'ENTFALL': 4, 'ENTHALTENSEIN': 3, 'LIFT_SCHACHT': 1, 'QUELLE_RANG': 39, 'STEMPEL_NAEHE': 4, 'ZERFALL': 10}
 
 Nicht destruktiv: `polygon_roh` hält den Ring vor der Bereinigung, jeder Abzug ist mit Regel und Gegenspieler gebucht. Invariante: Fläche(roh) − Fläche(bereinigt) == Σ der Buchungen.
 
 | id | Name | Quelle | Flag | m² Stempel | m² roh | m² bereinigt | Abw. roh % | Abw. ber. % | Regeln (Gegenspieler) |
 |---|---|---|---|--:|--:|--:|--:|--:|---|
 | raum_84 | Wohnküche | F | flutung_unsicher | 32.53 | 11.41 | 3.07 | -64.9 | -90.6 | QUELLE_RANG(raum_13), QUELLE_RANG(raum_16), QUELLE_RANG(raum_68), ZERFALL |
-| raum_85 | Wohnküche | F | ok | 32.53 | 33.46 | 1.06 | +2.9 | -96.7 | QUELLE_RANG(raum_22), QUELLE_RANG(raum_17), QUELLE_RANG(raum_23), QUELLE_RANG(raum_21), ZERFALL |
-| raum_87 | Wohnküche | F | flutung_unsicher | 24.20 | 39.55 | 24.62 | +63.4 | +1.7 | QUELLE_RANG(raum_31), QUELLE_RANG(raum_57), QUELLE_RANG(raum_56), QUELLE_RANG(raum_33), QUELLE_RANG(raum_28), ZERFALL |
-| raum_88 | STGH | F | flutung_unsicher | 39.70 | 20.67 | 3.82 | -47.9 | -90.4 | LIFT_SCHACHT(raum_79), ENTHALTENSEIN(raum_67), QUELLE_RANG(raum_68), STEMPEL_NAEHE(raum_86), ZERFALL |
-| raum_89 | Bad | F | ok | 4.15 | 4.19 | 4.17 | +0.9 | +0.5 | QUELLE_RANG(raum_51) |
-| raum_90 | Zimmer | F | flutung_unsicher | 13.83 | 18.95 | 3.99 | +37.0 | -71.1 | QUELLE_RANG(raum_54), QUELLE_RANG(raum_35), QUELLE_RANG(raum_36), QUELLE_RANG(raum_39), ZERFALL |
-| raum_94 | Gang | F | flutung_unsicher | 31.25 | 18.10 | 16.48 | -42.1 | -47.3 | QUELLE_RANG(raum_33), QUELLE_RANG(raum_51), QUELLE_RANG(raum_29), QUELLE_RANG(raum_57), QUELLE_RANG(raum_27) |
+| raum_85 | Wohnküche | F | ok | 32.53 | 33.43 | 1.06 | +2.8 | -96.7 | QUELLE_RANG(raum_22), QUELLE_RANG(raum_17), QUELLE_RANG(raum_23), QUELLE_RANG(raum_21), ZERFALL |
+| raum_87 | Zimmer | F | flutung_unsicher | 11.97 | 28.15 | 14.86 | +135.2 | +24.2 | ENTHALTENSEIN(raum_53), QUELLE_RANG(raum_41), QUELLE_RANG(raum_44), ZERFALL |
+| raum_88 | Wohnküche | F | flutung_unsicher | 24.20 | 39.55 | 24.62 | +63.4 | +1.7 | QUELLE_RANG(raum_31), QUELLE_RANG(raum_57), QUELLE_RANG(raum_56), QUELLE_RANG(raum_33), QUELLE_RANG(raum_28), ZERFALL |
+| raum_89 | STGH | F | flutung_unsicher | 39.70 | 20.67 | 3.82 | -47.9 | -90.4 | LIFT_SCHACHT(raum_79), ENTHALTENSEIN(raum_67), QUELLE_RANG(raum_68), STEMPEL_NAEHE(raum_86), ZERFALL |
+| raum_90 | WC | F | ok | 4.40 | 4.38 | 4.37 | -0.5 | -0.7 | QUELLE_RANG(raum_51) |
+| raum_91 | Bad | F | ok | 4.15 | 4.17 | 4.16 | +0.6 | +0.3 | QUELLE_RANG(raum_51) |
+| raum_92 | Zimmer | F | flutung_unsicher | 13.83 | 18.95 | 3.99 | +37.0 | -71.1 | QUELLE_RANG(raum_54), QUELLE_RANG(raum_35), QUELLE_RANG(raum_36), QUELLE_RANG(raum_39), ZERFALL |
+| raum_96 | Gang | F | flutung_unsicher | 31.25 | 18.11 | 16.48 | -42.1 | -47.3 | QUELLE_RANG(raum_33), QUELLE_RANG(raum_51), QUELLE_RANG(raum_29), QUELLE_RANG(raum_57), QUELLE_RANG(raum_27), STEMPEL_NAEHE(raum_90) |
 
 ### Entfallen durch Bereinigung (4)
 
@@ -199,27 +204,28 @@ Restkörper unter 1 m² — dasselbe Kriterium wie die degenerierte Flutung in `
 
 - raum_82 [F] „Wohnküche“ (KÜCHE): roh 19.88 m², Stempel 51.32 m², Restkörper 0.361 m² · QUELLE_RANG, QUELLE_RANG, ZERFALL, ENTFALL
 - raum_86 [F] „Wohnküche“ (KÜCHE): roh 43.66 m², Stempel 41.25 m², Restkörper 0.939 m² · ENTHALTENSEIN, QUELLE_RANG, QUELLE_RANG, QUELLE_RANG, QUELLE_RANG, QUELLE_RANG, ZERFALL, ENTFALL
-- raum_92 [F] „Wohnküche“ (KÜCHE): roh 20.73 m², Stempel 84.72 m², Restkörper 0.141 m² · QUELLE_RANG, QUELLE_RANG, QUELLE_RANG, QUELLE_RANG, STEMPEL_NAEHE, STEMPEL_NAEHE, ZERFALL, ENTFALL
-- raum_93 [F] „Wohnküche“ (KÜCHE): roh 8.04 m², Stempel 5.74 m², Restkörper 0.085 m² · QUELLE_RANG, QUELLE_RANG, ZERFALL, ENTFALL
+- raum_94 [F] „Wohnküche“ (KÜCHE): roh 20.73 m², Stempel 84.72 m², Restkörper 0.141 m² · QUELLE_RANG, QUELLE_RANG, QUELLE_RANG, QUELLE_RANG, STEMPEL_NAEHE, STEMPEL_NAEHE, ZERFALL, ENTFALL
+- raum_95 [F] „Wohnküche“ (KÜCHE): roh 8.04 m², Stempel 5.74 m², Restkörper 0.085 m² · QUELLE_RANG, QUELLE_RANG, ZERFALL, ENTFALL
 
 ### Stempelschutz — nicht ausgestanzt (1)
 
 Regel 3 (Enthaltensein) hat für diese Paare NICHT gegriffen: der äußere Raum wäre durch das Ausstanzen um mehr als 10 % von seinem Stempelwert abgewichen (Owner-Entscheid). Das Paar bleibt überlappend und wird ausdrücklich NICHT an Regel 4/5 weitergegeben — die Überlapper-Kennzahl oben enthält es.
 
-- raum_29 nicht ausgestanzt (enthaelt raum_91): Stempel 16.52 m2, Flaeche 16.52 m2 -> 13.97 m2 = -15.4 % Abweichung, ueber Stempelschutz 10 % -> Paar bleibt ueberlappend
+- raum_29 nicht ausgestanzt (enthaelt raum_93): Stempel 16.52 m2, Flaeche 16.52 m2 -> 13.97 m2 = -15.4 % Abweichung, ueber Stempelschutz 10 % -> Paar bleibt ueberlappend
 
-### Abweichung bereinigt > 5 % vom Stempel (5)
+### Abweichung bereinigt > 5 % vom Stempel (6)
 
-**war schon > 5 % (4)**
+**war schon > 5 % (5)**
 - raum_84 „Wohnküche“: Stempel 32.53 m², roh -64.9 % → bereinigt -90.6 %
-- raum_88 „STGH“: Stempel 39.70 m², roh -47.9 % → bereinigt -90.4 %
-- raum_90 „Zimmer“: Stempel 13.83 m², roh +37.0 % → bereinigt -71.1 %
-- raum_94 „Gang“: Stempel 31.25 m², roh -42.1 % → bereinigt -47.3 %
+- raum_87 „Zimmer“: Stempel 11.97 m², roh +135.2 % → bereinigt +24.2 %
+- raum_89 „STGH“: Stempel 39.70 m², roh -47.9 % → bereinigt -90.4 %
+- raum_92 „Zimmer“: Stempel 13.83 m², roh +37.0 % → bereinigt -71.1 %
+- raum_96 „Gang“: Stempel 31.25 m², roh -42.1 % → bereinigt -47.3 %
 
 **neu > 5 % (1)**
-- raum_85 „Wohnküche“: Stempel 32.53 m², roh +2.9 % → bereinigt -96.7 %
+- raum_85 „Wohnküche“: Stempel 32.53 m², roh +2.8 % → bereinigt -96.7 %
 
-**Rest-Überlappung im RaumModell: 13 Überlapper / 40.835 m².** Die Bereinigung greift am Kaskaden-Ende; `typisiere_geometrisch` und `finde_lifte` legen danach im Provider eigene Räume an (`stiegenhaus_*`, `lift_*`), die sie nicht sieht. `raeume.json` und `RaumModell` sind nur für die Kaskaden-Räume deckungsgleich — der Überlappungs-Riegel misst auf `raeume.json`.
+**Rest-Überlappung im RaumModell: 10 Überlapper / 15.426 m².** Die Bereinigung greift am Kaskaden-Ende; `typisiere_geometrisch` und `finde_lifte` legen danach im Provider eigene Räume an (`stiegenhaus_*`, `lift_*`), die sie nicht sieht. `raeume.json` und `RaumModell` sind nur für die Kaskaden-Räume deckungsgleich — der Überlappungs-Riegel misst auf `raeume.json`.
 
 **`lift_*` und SCHACHT:** `lift_erkennung.finde_lifte` überspringt eine Stelle nur, wenn dort ein Raum mit `raum_typ` „LIFT“ liegt — „SCHACHT“ ist nicht abgedeckt. Ein Regel-1-Gewinner mit `raum_typ` „SCHACHT“ kann danach von einem `lift_*`-Raum überdeckt werden, den die Bereinigung nicht mehr sieht. Eigener Arbeitsschritt.
 
@@ -534,304 +540,221 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 
 ## Türen (Fachteil 3)
 
-189 / 270 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
+113 / 193 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
 
 | ID | raum_a | raum_b | Typ | Breite mm | Breiten-Quelle | Notausgang | Quelle | Grund |
 |---|---|---|---|--:|---|---|---|---|
 | tuer_1 | raum_2 | raum_46 | wohnungseingang | 900 | BLOCKNAME | ja | block |  |
 | tuer_2 | KEIN_RAUM | raum_80 | — | 950 | BLOCKNAME | ja | block+text:T-E2-6-07-1 | kein_nachbarraum |
-| tuer_3 | raum_57 | KEIN_RAUM | — | 900 | BLOCKNAME | ja | block+text:T-E2-4-07-1 | kein_nachbarraum |
-| tuer_4 | KEIN_RAUM | raum_29 | — | 900 | BLOCKNAME | ja | block+text:T-E2-3-01-1 | kein_nachbarraum |
+| tuer_3 | raum_57 | raum_96 | wohnungseingang | 900 | BLOCKNAME | ja | block |  |
+| tuer_4 | raum_96 | raum_29 | wohnungseingang | 900 | BLOCKNAME | ja | block |  |
 | tuer_5 | raum_68 | raum_22 | wohnungseingang | 900 | BLOCKNAME | ja | block |  |
 | tuer_6 | raum_68 | raum_16 | wohnungseingang | 950 | BLOCKNAME | ja | block |  |
-| tuer_7 | raum_94 | raum_51 | wohnungseingang | 900 | BLOCKNAME | ja | block |  |
+| tuer_7 | raum_96 | raum_51 | wohnungseingang | 900 | BLOCKNAME | ja | block |  |
 | tuer_8 | raum_43 | raum_41 | balkontuer | — | UNBEKANNT (Blockname traegt kein Breitenmass (Oeffnungs-Marker oder kein cm/mm-Token)) | — | block |  |
 | tuer_9 | KEIN_RAUM | raum_54 | — | 950 | BLOCKNAME | ja | block+text:T-E2-5-07-1 | kein_nachbarraum |
 | tuer_10 | raum_68 | raum_12 | wohnungseingang | 900 | BLOCKNAME | ja | block |  |
-| tuer_11 | raum_68 | raum_70 | — | 900 | BLOCKNAME | ja | block+text:T-E2-12-07-1 | unbekannte_kombination |
-| tuer_12 | raum_46 | raum_59 | — | 950 | BLOCKNAME | ja | block+text:T-E2-10-07-1 | unbekannte_kombination |
-| tuer_13 | raum_46 | raum_48 | — | 950 | BLOCKNAME | ja | block+text:T-E2-9-07-1 | unbekannte_kombination |
+| tuer_11 | raum_68 | raum_70 | wohnungseingang | 900 | BLOCKNAME | ja | block |  |
+| tuer_12 | raum_46 | raum_59 | wohnungseingang | 950 | BLOCKNAME | ja | block |  |
+| tuer_13 | raum_46 | raum_48 | wohnungseingang | 950 | BLOCKNAME | ja | block |  |
 | tuer_14 | raum_69 | AUSSEN | balkontuer | 1000 | BLOCKNAME | — | block |  |
 | tuer_15 | raum_16 | AUSSEN | balkontuer | 1000 | BLOCKNAME | — | block |  |
 | tuer_16 | raum_13 | AUSSEN | balkontuer | 1000 | BLOCKNAME | — | block |  |
 | tuer_17 | AUSSEN | raum_50 | balkontuer | — | UNBEKANNT (Blockname traegt kein Breitenmass (Oeffnungs-Marker oder kein cm/mm-Token)) | — | block |  |
-| tuer_18 | raum_59 | raum_59 | — | 750 | BLOCKNAME | ja | block+text:T-E2-10-07-2 | beide_seiten_untypisiert |
-| tuer_19 | raum_70 | raum_70 | — | 750 | BLOCKNAME | ja | block+text:T-E2-12-07-2 | beide_seiten_untypisiert |
+| tuer_18 | raum_59 | KEIN_RAUM | — | 750 | BLOCKNAME | ja | block+text:T-E2-10-07-2 | kein_nachbarraum |
+| tuer_19 | raum_70 | KEIN_RAUM | — | 750 | BLOCKNAME | ja | block+text:T-E2-12-07-2 | kein_nachbarraum |
 | tuer_20 | AUSSEN | KEIN_RAUM | — | — | UNBEKANNT (Blockname traegt kein Breitenmass (Oeffnungs-Marker oder kein cm/mm-Token)) | — | block | kein_nachbarraum |
 | tuer_21 | KEIN_RAUM | raum_73 | — | — | UNBEKANNT (Blockname traegt kein Breitenmass (Oeffnungs-Marker oder kein cm/mm-Token)) | — | block | kein_nachbarraum |
 | tuer_22 | raum_76 | raum_68 | wohnungseingang | 900 | BLOCKNAME | ja | block |  |
-| tuer_23 | raum_5 | KEIN_RAUM | — | 800 | GEOMETRIE_SCHWENKRADIUS | ja | arc_aussen+text:T-E2-8-01-1 | kein_nachbarraum |
-| tuer_24 | raum_1 | raum_47 | balkontuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_25 | raum_63 | raum_60 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_26 | raum_11 | raum_59 | — | 800 | GEOMETRIE_SCHWENKRADIUS | ja | arc_aussen+text:T-E2-10-02-1 | unbekannte_kombination |
-| tuer_27 | raum_6 | raum_48 | — | 800 | GEOMETRIE_SCHWENKRADIUS | ja | arc_aussen+text:T-E2-9-02-1 | unbekannte_kombination |
-| tuer_28 | raum_57 | KEIN_RAUM | — | 800 | GEOMETRIE_SCHWENKRADIUS | ja | arc_aussen+text:T-E2-4-07-2 | kein_nachbarraum |
-| tuer_29 | raum_55 | raum_57 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_30 | raum_21 | raum_22 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_31 | raum_17 | raum_16 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_32 | raum_16 | raum_16 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_33 | raum_13 | raum_70 | — | 800 | GEOMETRIE_SCHWENKRADIUS | ja | arc_aussen+text:T-E2-12-07-1 | unbekannte_kombination |
-| tuer_34 | raum_83 | raum_12 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_35 | raum_49 | raum_49 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_36 | KEIN_RAUM | KEIN_RAUM | — | 800 | GEOMETRIE_SCHWENKRADIUS | ja | arc_aussen+text:T-E2-6-02-1 | tuer_ins_nichts |
-| tuer_37 | raum_50 | raum_49 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_38 | raum_69 | raum_15 | balkontuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_39 | raum_90 | raum_54 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_40 | raum_39 | raum_39 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_41 | raum_28 | raum_29 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_42 | AUSSEN | raum_45 | balkontuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_43 | raum_22 | raum_23 | balkontuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_44 | raum_16 | raum_18 | balkontuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_45 | raum_29 | raum_30 | balkontuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_46 | raum_54 | raum_37 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_47 | raum_56 | raum_57 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_48 | KEIN_RAUM | KEIN_RAUM | — | 800 | GEOMETRIE_SCHWENKRADIUS | ja | arc_aussen+text:T-E2-11-01-1 | tuer_ins_nichts |
-| tuer_49 | AUSSEN | raum_60 | balkontuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_50 | stiegenhaus_1 | raum_65 | stiegenhaustuer | 655 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
-| tuer_51 | raum_4 | raum_4 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-8-05 |  |
-| tuer_52 | raum_2 | raum_2 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-8-07 |  |
-| tuer_53 | raum_3 | raum_3 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-8-03 |  |
-| tuer_54 | raum_5 | raum_5 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-8-02 |  |
-| tuer_55 | raum_6 | raum_6 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-9-02 |  |
-| tuer_56 | raum_7 | raum_7 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-9-01 |  |
-| tuer_57 | KEIN_RAUM | raum_8 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-9-05 | kein_nachbarraum |
-| tuer_58 | raum_7 | raum_9 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-9-03 |  |
-| tuer_59 | raum_10 | raum_10 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-9-08 | unbekannte_kombination |
-| tuer_60 | raum_11 | raum_11 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-10-02 |  |
-| tuer_61 | raum_48 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-9-07 | kein_nachbarraum |
-| tuer_62 | raum_60 | raum_60 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-10-01 |  |
-| tuer_63 | raum_63 | raum_63 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-10-05 |  |
-| tuer_64 | raum_62 | raum_62 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-10-03 |  |
-| tuer_65 | raum_59 | raum_59 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-10-07 | beide_seiten_untypisiert |
-| tuer_66 | raum_61 | raum_61 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-10-06 | beide_seiten_untypisiert |
-| tuer_67 | raum_46 | raum_46 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-VF-13a | unbekannte_kombination |
-| tuer_68 | raum_66 | raum_66 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-NF-16 | unbekannte_kombination |
-| tuer_69 | raum_64 | raum_64 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-10-08 | unbekannte_kombination |
-| tuer_70 | raum_15 | raum_15 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-12-08 | unbekannte_kombination |
-| tuer_71 | raum_19 | raum_19 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-14-03 |  |
-| tuer_72 | raum_24 | raum_24 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-15-08 | unbekannte_kombination |
-| tuer_73 | raum_20 | raum_20 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-15-03 |  |
-| tuer_74 | raum_16 | raum_16 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-13-01 |  |
-| tuer_75 | raum_22 | raum_22 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-14-01 |  |
-| tuer_76 | KEIN_RAUM | raum_25 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-15-02 | kein_nachbarraum |
-| tuer_77 | raum_26 | raum_26 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-15-01 |  |
-| tuer_78 | raum_72 | raum_72 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-11-03 |  |
-| tuer_79 | raum_73 | raum_73 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-11-01 |  |
-| tuer_80 | raum_74 | raum_12 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-11-05 |  |
-| tuer_81 | raum_71 | raum_71 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-11-06 | beide_seiten_untypisiert |
-| tuer_82 | raum_14 | raum_14 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-12-03 |  |
-| tuer_83 | raum_67 | raum_67 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-VF-11b | beide_seiten_untypisiert |
-| tuer_84 | raum_44 | raum_44 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-7-08 | unbekannte_kombination |
-| tuer_85 | raum_41 | raum_41 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-6-01 |  |
-| tuer_86 | raum_42 | raum_42 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-6-03 |  |
-| tuer_87 | raum_29 | raum_29 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-3-01 |  |
-| tuer_88 | raum_87 | raum_87 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-4-01 |  |
-| tuer_89 | raum_31 | raum_31 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-4-08 | unbekannte_kombination |
-| tuer_90 | raum_38 | raum_38 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-5-01 |  |
-| tuer_91 | raum_65 | raum_65 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-VF-11a | unbekannte_kombination |
-| tuer_92 | raum_52 | raum_52 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-7-06 | beide_seiten_untypisiert |
-| tuer_93 | KEIN_RAUM | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-7-04 | tuer_ins_nichts |
-| tuer_94 | raum_89 | raum_89 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-7-03 |  |
-| tuer_95 | raum_53 | raum_53 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-6-06 |  |
-| tuer_96 | raum_36 | raum_54 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-5-04 |  |
-| tuer_97 | raum_37 | raum_37 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-5-03 |  |
-| tuer_98 | raum_54 | raum_54 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-5-07 |  |
-| tuer_99 | raum_35 | raum_35 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-5-05 |  |
-| tuer_100 | raum_56 | raum_56 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-4-02a |  |
-| tuer_101 | raum_34 | raum_34 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-4-04 |  |
-| tuer_102 | raum_55 | raum_55 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-4-02b |  |
-| tuer_103 | raum_87 | raum_33 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-4-05 |  |
-| tuer_104 | KEIN_RAUM | raum_94 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-VF-13b | kein_nachbarraum |
-| tuer_105 | raum_57 | raum_57 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-4-07-3 |  |
-| tuer_106 | raum_48 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-9-05-1 | kein_nachbarraum |
-| tuer_107 | raum_75 | raum_75 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-11B-09 | unbekannte_kombination |
-| tuer_108 | raum_25 | raum_25 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-15-02-1 |  |
-| tuer_109 | AUSSEN | raum_77 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-VF-12-6 | beide_seiten_untypisiert |
-| tuer_110 | AUSSEN | raum_78 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-VF-12-1 | beide_seiten_untypisiert |
-| tuer_111 | AUSSEN | raum_79 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-VF-12-2 | tuer_in_schacht |
-| tuer_112 | raum_87 | raum_87 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-4-01-1 |  |
-| tuer_113 | raum_26 | raum_26 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-15-07-3 |  |
-| tuer_114 | raum_88 | raum_67 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-VF-12-3 | unbekannte_kombination |
-| tuer_115 | raum_79 | raum_79 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-VF-15c | tuer_in_schacht |
-| tuer_116 | raum_68 | raum_68 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-VF-13c-2 | unbekannte_kombination |
-| tuer_117 | AUSSEN | stiegenhaus_3 | hauseingang | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-VF-12-4 |  |
-| tuer_118 | stiegenhaus_2 | stiegenhaus_2 | stiegenhaustuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-VF-13b-1 |  |
-| tuer_119 | raum_65 | raum_65 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-VF-11a-2 | unbekannte_kombination |
-| tuer_120 | KEIN_RAUM | raum_66 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-NF-16-2 | kein_nachbarraum |
-| tuer_121 | raum_98 | raum_98 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E1-2-45 | unbekannte_kombination |
-| durchgang_1 | raum_1 | raum_3 | zimmertuer | 2820 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_2 | raum_1 | raum_4 | zimmertuer | 1801 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_3 | raum_1 | raum_5 | zimmertuer | 2487 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_4 | raum_1 | raum_50 | zimmertuer | 1644 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_5 | raum_2 | raum_3 | zimmertuer | 2885 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_6 | raum_2 | raum_4 | zimmertuer | 2510 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_7 | raum_3 | raum_46 | wohnungseingang | 2051 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_8 | raum_4 | raum_50 | zimmertuer | 1211 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_9 | raum_4 | raum_52 | — | 1185 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-8-05-1 | unbekannte_kombination |
-| durchgang_10 | raum_5 | raum_6 | zimmertuer | 3508 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_11 | raum_5 | raum_46 | wohnungseingang | 3294 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_12 | raum_5 | raum_47 | balkontuer | 3341 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_13 | raum_5 | raum_48 | — | 1420 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
-| durchgang_14 | raum_6 | raum_7 | zimmertuer | 2510 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_15 | raum_6 | raum_48 | — | 2640 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-9-02-1 | unbekannte_kombination |
-| durchgang_16 | raum_7 | raum_8 | zimmertuer | 1573 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_17 | raum_7 | raum_9 | zimmertuer | 3299 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_18 | raum_7 | raum_9 | zimmertuer | 2556 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_19 | raum_7 | raum_10 | balkontuer | 3325 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_20 | raum_7 | raum_48 | — | 1580 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-9-05-1 | unbekannte_kombination |
-| durchgang_21 | raum_8 | raum_48 | — | 1750 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-9-05-1 | unbekannte_kombination |
-| durchgang_22 | raum_8 | raum_61 | — | 1563 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:E2-10-06 | unbekannte_kombination |
-| durchgang_23 | raum_9 | raum_48 | — | 2031 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-9-07-2 | unbekannte_kombination |
-| durchgang_24 | raum_9 | raum_48 | — | 1320 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-9-02-1 | unbekannte_kombination |
-| durchgang_25 | raum_11 | raum_59 | — | 1777 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-10-02-1 | unbekannte_kombination |
-| durchgang_26 | raum_11 | raum_60 | zimmertuer | 3790 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_27 | raum_11 | raum_61 | — | 2364 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-10-06-1 | unbekannte_kombination |
-| durchgang_28 | raum_12 | raum_71 | — | 1900 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:E2-11-06 | unbekannte_kombination |
-| durchgang_29 | raum_12 | raum_72 | zimmertuer | 2895 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_30 | raum_12 | raum_73 | zimmertuer | 2098 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_31 | raum_13 | raum_16 | zimmertuer | 2720 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_32 | raum_13 | raum_68 | wohnungseingang | 2092 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_33 | raum_13 | raum_69 | zimmertuer | 3150 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_34 | raum_13 | raum_70 | — | 2849 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-12-02-1 | unbekannte_kombination |
-| durchgang_35 | raum_13 | raum_84 | zimmertuer | 2765 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_36 | raum_14 | raum_70 | — | 2360 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-12-07-2 | unbekannte_kombination |
-| durchgang_37 | raum_15 | raum_69 | balkontuer | 3260 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_38 | raum_16 | raum_17 | zimmertuer | 2901 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_39 | raum_16 | raum_18 | balkontuer | 3279 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_40 | raum_16 | raum_84 | zimmertuer | 3472 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_41 | raum_17 | raum_22 | zimmertuer | 2550 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_42 | raum_17 | raum_58 | zimmertuer | 1940 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_43 | raum_17 | raum_85 | zimmertuer | 2588 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_44 | raum_19 | raum_21 | zimmertuer | 2372 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_45 | raum_19 | raum_68 | wohnungseingang | 3098 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_46 | raum_20 | raum_25 | zimmertuer | 2261 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_47 | raum_20 | raum_26 | zimmertuer | 1271 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_48 | raum_21 | raum_22 | zimmertuer | 2901 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_49 | raum_21 | raum_26 | zimmertuer | 2550 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_50 | raum_22 | raum_23 | balkontuer | 3160 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_51 | raum_23 | raum_85 | balkontuer | 1728 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_52 | raum_24 | raum_25 | balkontuer | 841 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_53 | raum_24 | raum_26 | balkontuer | 3284 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_54 | raum_25 | raum_26 | zimmertuer | 4586 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_55 | raum_26 | raum_68 | wohnungseingang | 1727 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_56 | raum_26 | raum_76 | zimmertuer | 2429 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_57 | raum_27 | raum_28 | zimmertuer | 2375 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_58 | raum_27 | raum_29 | zimmertuer | 2652 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_59 | raum_27 | raum_94 | wohnungseingang | 3178 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_60 | raum_28 | raum_29 | zimmertuer | 2891 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_61 | raum_28 | raum_30 | balkontuer | 870 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_62 | raum_28 | raum_87 | zimmertuer | 2550 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_63 | raum_29 | raum_30 | balkontuer | 3160 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_64 | raum_29 | raum_91 | zimmertuer | 2698 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_65 | raum_29 | stiegenhaus_2 | wohnungseingang | 1462 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_66 | raum_31 | raum_87 | balkontuer | 3214 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_67 | raum_32 | raum_55 | zimmertuer | 2490 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_68 | raum_33 | raum_57 | zimmertuer | 2660 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_69 | raum_33 | raum_57 | zimmertuer | 845 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_70 | raum_33 | raum_87 | zimmertuer | 1133 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_71 | raum_33 | raum_94 | wohnungseingang | 1869 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_72 | raum_34 | raum_56 | zimmertuer | 2270 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_73 | raum_34 | raum_57 | zimmertuer | 2486 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_74 | raum_34 | raum_57 | zimmertuer | 1010 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_75 | raum_35 | raum_54 | zimmertuer | 2310 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_76 | raum_35 | raum_90 | zimmertuer | 1134 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_77 | raum_36 | raum_37 | zimmertuer | 2775 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_78 | raum_36 | raum_41 | zimmertuer | 1065 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_79 | raum_36 | raum_54 | zimmertuer | 3179 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_80 | raum_37 | raum_38 | zimmertuer | 3060 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_81 | raum_37 | raum_41 | zimmertuer | 906 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_82 | raum_37 | raum_54 | zimmertuer | 2578 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_83 | raum_38 | raum_39 | zimmertuer | 2768 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_84 | raum_38 | raum_40 | balkontuer | 3248 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_85 | raum_38 | raum_54 | zimmertuer | 1700 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_86 | raum_39 | raum_90 | zimmertuer | 2709 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_87 | raum_41 | raum_42 | zimmertuer | 2586 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_88 | raum_41 | raum_54 | zimmertuer | 1457 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_89 | raum_41 | raum_80 | zimmertuer | 2795 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_90 | raum_42 | raum_53 | zimmertuer | 1570 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_91 | raum_42 | raum_80 | zimmertuer | 2735 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_92 | raum_44 | raum_45 | balkontuer | 3183 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_93 | raum_45 | raum_49 | zimmertuer | 3915 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_94 | raum_45 | raum_51 | wohnungseingang | 1700 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_95 | raum_45 | raum_53 | zimmertuer | 2075 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_96 | raum_46 | raum_48 | — | 1288 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
-| durchgang_97 | raum_46 | raum_52 | — | 1944 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
-| durchgang_98 | raum_46 | raum_63 | wohnungseingang | 1251 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_99 | raum_46 | raum_66 | — | 2041 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
-| durchgang_100 | raum_46 | raum_66 | — | 2353 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-NF-16-1 | unbekannte_kombination |
-| durchgang_101 | raum_48 | raum_59 | — | 4890 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:E2-10-07 | beide_seiten_untypisiert |
-| durchgang_102 | raum_50 | raum_89 | zimmertuer | 1085 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_103 | raum_51 | raum_89 | wohnungseingang | 2175 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_104 | raum_52 | raum_65 | — | 2196 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-VF-11a-2 | unbekannte_kombination |
-| durchgang_105 | raum_52 | raum_89 | — | 1513 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:E2-7-03 | unbekannte_kombination |
-| durchgang_106 | raum_54 | raum_80 | zimmertuer | 989 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_107 | raum_54 | raum_90 | zimmertuer | 2615 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_108 | raum_55 | raum_56 | zimmertuer | 2595 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_109 | raum_55 | raum_90 | zimmertuer | 2092 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_110 | raum_56 | raum_57 | zimmertuer | 1750 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_111 | raum_56 | raum_87 | zimmertuer | 3026 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_112 | raum_57 | raum_87 | zimmertuer | 2226 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_113 | raum_57 | raum_94 | wohnungseingang | 2526 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_114 | raum_59 | raum_60 | — | 3863 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-10-07-2 | unbekannte_kombination |
-| durchgang_115 | raum_59 | raum_61 | — | 2345 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:E2-10-06 | beide_seiten_untypisiert |
-| durchgang_116 | raum_59 | raum_62 | — | 2050 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-10-07-2 | unbekannte_kombination |
-| durchgang_117 | raum_60 | raum_62 | zimmertuer | 2436 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_118 | raum_60 | raum_63 | zimmertuer | 1975 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_119 | raum_60 | raum_64 | balkontuer | 3540 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_120 | raum_62 | raum_63 | zimmertuer | 1320 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_121 | raum_63 | raum_66 | — | 2756 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-NF-16-1 | unbekannte_kombination |
-| durchgang_122 | raum_65 | stiegenhaus_1 | stiegenhaustuer | 1126 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_123 | raum_65 | stiegenhaus_2 | stiegenhaustuer | 1513 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_124 | raum_65 | stiegenhaus_2 | stiegenhaustuer | 1515 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_125 | raum_66 | raum_73 | — | 2208 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:E2-11-01 | unbekannte_kombination |
-| durchgang_126 | raum_67 | raum_68 | — | 2223 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-VF-11b-1 | unbekannte_kombination |
-| durchgang_127 | raum_68 | raum_74 | wohnungseingang | 2665 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_128 | raum_68 | raum_74 | wohnungseingang | 1873 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_129 | raum_68 | raum_76 | wohnungseingang | 1520 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_130 | raum_69 | raum_70 | — | 1301 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:E2-12-07 | unbekannte_kombination |
-| durchgang_131 | raum_69 | raum_83 | zimmertuer | 1867 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_132 | raum_71 | raum_73 | — | 1770 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:E2-11-06 | unbekannte_kombination |
-| durchgang_133 | raum_71 | raum_83 | — | 1072 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-11-02-1 | unbekannte_kombination |
-| durchgang_134 | raum_72 | raum_83 | zimmertuer | 2023 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_135 | raum_73 | raum_74 | zimmertuer | 1659 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_136 | raum_73 | raum_75 | balkontuer | 3146 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_137 | raum_77 | raum_78 | — | 2033 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:E2-VF-15b | beide_seiten_untypisiert |
-| durchgang_138 | raum_78 | raum_79 | — | 1973 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:E2-VF-15c | tuer_in_schacht |
-| durchgang_139 | raum_79 | raum_88 | — | 904 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-VF-12-2 | tuer_in_schacht |
-| durchgang_140 | raum_81 | raum_96 | zimmertuer | 1668 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_141 | raum_87 | raum_94 | wohnungseingang | 2987 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_142 | raum_96 | raum_97 | zimmertuer | 2031 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_143 | raum_100 | raum_101 | balkontuer | 4478 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_144 | stiegenhaus_1 | stiegenhaus_2 | stiegenhaustuer | 3646 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_145 | stiegenhaus_1 | stiegenhaus_5 | stiegenhaustuer | 4762 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_146 | stiegenhaus_1 | stiegenhaus_8 | stiegenhaustuer | 968 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_147 | stiegenhaus_2 | stiegenhaus_3 | stiegenhaustuer | 837 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_148 | stiegenhaus_6 | stiegenhaus_7 | stiegenhaustuer | 2082 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| aussenoeffnung_1 | raum_66 | AUSSEN | — | 1704 | GEOMETRIE_OEFFNUNG | ja | oeffnung_aussenwand+text:E2-NF-16 | unbekannte_kombination |
+| tuer_23 | raum_1 | raum_47 | balkontuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
+| tuer_24 | raum_63 | raum_60 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
+| tuer_25 | raum_17 | raum_16 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
+| tuer_26 | raum_49 | KEIN_RAUM | — | 800 | GEOMETRIE_SCHWENKRADIUS | ja | arc_aussen+text:T-E2-7-02a-1 | kein_nachbarraum |
+| tuer_27 | raum_69 | raum_15 | balkontuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
+| tuer_28 | raum_39 | KEIN_RAUM | — | 800 | GEOMETRIE_SCHWENKRADIUS | ja | arc_aussen+text:T-E2-5-02b-1 | kein_nachbarraum |
+| tuer_29 | AUSSEN | raum_45 | balkontuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
+| tuer_30 | raum_22 | raum_23 | balkontuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
+| tuer_31 | raum_29 | raum_30 | balkontuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
+| tuer_32 | raum_54 | raum_37 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
+| tuer_33 | KEIN_RAUM | KEIN_RAUM | — | 800 | GEOMETRIE_SCHWENKRADIUS | ja | arc_aussen+text:T-E2-11-01-1 | tuer_ins_nichts |
+| tuer_34 | AUSSEN | raum_60 | balkontuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc_aussen |  |
+| tuer_35 | KEIN_RAUM | raum_65 | — | 655 | GEOMETRIE_SCHWENKRADIUS | ja | arc_aussen+text:E2-VF-12a | kein_nachbarraum |
+| tuer_36 | raum_1 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-8-01 | kein_nachbarraum |
+| tuer_37 | raum_2 | raum_4 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-8-05 |  |
+| tuer_38 | raum_2 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-8-07 | kein_nachbarraum |
+| tuer_39 | raum_3 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-8-03 | kein_nachbarraum |
+| tuer_40 | raum_5 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-8-02 | kein_nachbarraum |
+| tuer_41 | raum_6 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-9-02 | kein_nachbarraum |
+| tuer_42 | raum_7 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-9-01 | kein_nachbarraum |
+| tuer_43 | KEIN_RAUM | raum_8 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-9-05 | kein_nachbarraum |
+| tuer_44 | raum_7 | raum_9 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-9-03 |  |
+| tuer_45 | AUSSEN | raum_10 | balkontuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | — | text:E2-9-08 |  |
+| tuer_46 | raum_11 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-10-02 | kein_nachbarraum |
+| tuer_47 | raum_48 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-9-07 | kein_nachbarraum |
+| tuer_48 | raum_60 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-10-01 | kein_nachbarraum |
+| tuer_49 | raum_63 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-10-05 | kein_nachbarraum |
+| tuer_50 | raum_62 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-10-03 | kein_nachbarraum |
+| tuer_51 | raum_59 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-10-07 | kein_nachbarraum |
+| tuer_52 | raum_61 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-10-06 | kein_nachbarraum |
+| tuer_53 | raum_46 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-VF-13a | kein_nachbarraum |
+| tuer_54 | raum_66 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-NF-16 | kein_nachbarraum |
+| tuer_55 | raum_64 | KEIN_RAUM | balkontuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | — | text:E2-10-08 |  |
+| tuer_56 | AUSSEN | raum_15 | balkontuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | — | text:E2-12-08 |  |
+| tuer_57 | raum_18 | KEIN_RAUM | balkontuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | — | text:E2-13-08 |  |
+| tuer_58 | raum_58 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-13-03 | kein_nachbarraum |
+| tuer_59 | raum_19 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-14-03 | kein_nachbarraum |
+| tuer_60 | raum_24 | KEIN_RAUM | balkontuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | — | text:E2-15-08 |  |
+| tuer_61 | raum_20 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-15-03 | kein_nachbarraum |
+| tuer_62 | raum_16 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-13-01 | kein_nachbarraum |
+| tuer_63 | raum_21 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-14-02 | kein_nachbarraum |
+| tuer_64 | raum_22 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-14-01 | kein_nachbarraum |
+| tuer_65 | raum_26 | raum_25 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-15-02 |  |
+| tuer_66 | raum_26 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-15-01 | kein_nachbarraum |
+| tuer_67 | raum_72 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-11-03 | kein_nachbarraum |
+| tuer_68 | raum_73 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-11-01 | kein_nachbarraum |
+| tuer_69 | raum_74 | raum_12 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-11-05 |  |
+| tuer_70 | raum_71 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-11-06 | kein_nachbarraum |
+| tuer_71 | raum_12 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-11-07 | kein_nachbarraum |
+| tuer_72 | raum_69 | raum_14 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-12-03 |  |
+| tuer_73 | raum_67 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-VF-11b | kein_nachbarraum |
+| tuer_74 | raum_44 | KEIN_RAUM | balkontuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | — | text:E2-7-08 |  |
+| tuer_75 | raum_41 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-6-01 | kein_nachbarraum |
+| tuer_76 | raum_42 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-6-03 | kein_nachbarraum |
+| tuer_77 | raum_87 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-6-02 | kein_nachbarraum |
+| tuer_78 | raum_29 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-3-01 | kein_nachbarraum |
+| tuer_79 | raum_28 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-3-02 | kein_nachbarraum |
+| tuer_80 | raum_88 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-4-01 | kein_nachbarraum |
+| tuer_81 | raum_31 | KEIN_RAUM | balkontuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | — | text:E2-4-08 |  |
+| tuer_82 | raum_38 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-5-01 | kein_nachbarraum |
+| tuer_83 | raum_65 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-VF-11a | kein_nachbarraum |
+| tuer_84 | raum_49 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-7-02a | kein_nachbarraum |
+| tuer_85 | raum_52 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-7-06 | kein_nachbarraum |
+| tuer_86 | raum_90 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-7-04 | kein_nachbarraum |
+| tuer_87 | raum_91 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-7-03 | kein_nachbarraum |
+| tuer_88 | raum_87 | raum_53 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-6-06 |  |
+| tuer_89 | raum_36 | raum_54 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-5-04 |  |
+| tuer_90 | raum_37 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-5-03 | kein_nachbarraum |
+| tuer_91 | raum_54 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-5-07 | kein_nachbarraum |
+| tuer_92 | AUSSEN | raum_92 | balkontuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | — | text:E2-5-02a |  |
+| tuer_93 | raum_35 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-5-05 | kein_nachbarraum |
+| tuer_94 | raum_56 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-4-02a | kein_nachbarraum |
+| tuer_95 | raum_34 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-4-04 | kein_nachbarraum |
+| tuer_96 | raum_32 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-4-03 | kein_nachbarraum |
+| tuer_97 | raum_55 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-4-02b | kein_nachbarraum |
+| tuer_98 | raum_88 | raum_33 | zimmertuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-4-05 |  |
+| tuer_99 | raum_45 | raum_96 | wohnungseingang | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-VF-13b |  |
+| tuer_100 | raum_57 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-4-07-2 | kein_nachbarraum |
+| tuer_101 | raum_48 | raum_61 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-9-05-1 | unbekannte_kombination |
+| tuer_102 | raum_6 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-9-02-1 | kein_nachbarraum |
+| tuer_103 | raum_87 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-6-02-1 | kein_nachbarraum |
+| tuer_104 | raum_50 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-7-02b-1 | kein_nachbarraum |
+| tuer_105 | AUSSEN | raum_75 | balkontuer | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | — | text:E2-11B-09 |  |
+| tuer_106 | raum_25 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-15-02-1 | kein_nachbarraum |
+| tuer_107 | AUSSEN | raum_77 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-VF-12-6 | beide_seiten_untypisiert |
+| tuer_108 | AUSSEN | raum_78 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-VF-12-1 | beide_seiten_untypisiert |
+| tuer_109 | AUSSEN | raum_79 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-VF-12-2 | tuer_in_schacht |
+| tuer_110 | raum_88 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-4-01-1 | kein_nachbarraum |
+| tuer_111 | raum_26 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-15-07-3 | kein_nachbarraum |
+| tuer_112 | raum_16 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-13-01-3 | kein_nachbarraum |
+| tuer_113 | raum_89 | raum_67 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-VF-12-3 | unbekannte_kombination |
+| tuer_114 | raum_79 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E2-VF-15c | tuer_in_schacht |
+| tuer_115 | raum_68 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-VF-13c-2 | kein_nachbarraum |
+| tuer_116 | KEIN_RAUM | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-VF-13b-1 | tuer_ins_nichts |
+| tuer_117 | raum_65 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-VF-11a-2 | kein_nachbarraum |
+| tuer_118 | KEIN_RAUM | raum_66 | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:T-E2-NF-16-2 | kein_nachbarraum |
+| tuer_119 | raum_100 | KEIN_RAUM | — | — | UNBEKANNT (nur Text-Beleg, keine Geometrie) | ja | text:E1-2-45 | kein_nachbarraum |
+| durchgang_1 | raum_1 | raum_5 | zimmertuer | 1092 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_2 | raum_2 | raum_3 | zimmertuer | 2160 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_3 | raum_2 | raum_4 | zimmertuer | 1058 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_4 | raum_3 | raum_46 | wohnungseingang | 1823 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_5 | raum_5 | raum_47 | balkontuer | 3342 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_6 | raum_6 | raum_48 | zimmertuer | 1103 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_7 | raum_7 | raum_10 | balkontuer | 3108 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_8 | raum_7 | raum_48 | zimmertuer | 1336 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_9 | raum_8 | raum_48 | zimmertuer | 1326 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_10 | raum_11 | raum_59 | zimmertuer | 958 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_11 | raum_11 | raum_61 | — | 1238 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-10-06-1 | unbekannte_kombination |
+| durchgang_12 | raum_12 | raum_72 | zimmertuer | 2087 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_13 | raum_12 | raum_73 | zimmertuer | 1469 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_14 | raum_12 | raum_83 | zimmertuer | 1688 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_15 | raum_13 | raum_16 | zimmertuer | 2265 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_16 | raum_13 | raum_69 | zimmertuer | 1446 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_17 | raum_13 | raum_70 | zimmertuer | 1018 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_18 | raum_13 | raum_84 | zimmertuer | 4460 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_19 | raum_14 | raum_70 | zimmertuer | 1567 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_20 | raum_15 | raum_69 | balkontuer | 3163 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_21 | raum_16 | raum_17 | zimmertuer | 1108 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_22 | raum_16 | raum_18 | balkontuer | 3267 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_23 | raum_16 | raum_58 | zimmertuer | 1839 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_24 | raum_16 | raum_84 | zimmertuer | 3189 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_25 | raum_17 | raum_85 | zimmertuer | 3082 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_26 | raum_19 | raum_68 | wohnungseingang | 2662 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_27 | raum_21 | raum_22 | zimmertuer | 1108 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_28 | raum_22 | raum_23 | balkontuer | 3158 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_29 | raum_23 | raum_85 | balkontuer | 1675 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_30 | raum_24 | raum_26 | balkontuer | 3163 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_31 | raum_25 | raum_26 | zimmertuer | 897 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_32 | raum_26 | raum_76 | zimmertuer | 1631 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_33 | raum_27 | raum_29 | zimmertuer | 1889 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_34 | raum_27 | raum_96 | wohnungseingang | 3331 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_35 | raum_28 | raum_29 | zimmertuer | 1108 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_36 | raum_29 | raum_30 | balkontuer | 3093 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_37 | raum_31 | raum_88 | balkontuer | 5157 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_38 | raum_32 | raum_57 | zimmertuer | 1374 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_39 | raum_33 | raum_96 | wohnungseingang | 2282 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_40 | raum_34 | raum_57 | zimmertuer | 1008 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_41 | raum_35 | raum_54 | zimmertuer | 1611 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_42 | raum_36 | raum_54 | zimmertuer | 1793 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_43 | raum_37 | raum_54 | zimmertuer | 1236 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_44 | raum_38 | raum_40 | balkontuer | 3163 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_45 | raum_38 | raum_54 | zimmertuer | 1450 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_46 | raum_39 | raum_92 | zimmertuer | 2620 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_47 | raum_41 | raum_80 | zimmertuer | 1406 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_48 | raum_41 | raum_87 | zimmertuer | 6782 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_49 | raum_42 | raum_80 | zimmertuer | 2130 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_50 | raum_44 | raum_45 | balkontuer | 3108 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_51 | raum_44 | raum_87 | balkontuer | 2273 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_52 | raum_45 | raum_51 | zimmertuer | 1453 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_53 | raum_46 | raum_66 | — | 1038 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-NF-16-1 | unbekannte_kombination |
+| durchgang_54 | raum_51 | raum_90 | zimmertuer | 1883 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_55 | raum_51 | raum_91 | zimmertuer | 1916 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_56 | raum_53 | raum_87 | zimmertuer | 3264 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_57 | raum_54 | raum_92 | zimmertuer | 2595 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_58 | raum_55 | raum_57 | zimmertuer | 1108 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_59 | raum_56 | raum_57 | zimmertuer | 1083 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_60 | raum_56 | raum_88 | zimmertuer | 2325 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_61 | raum_57 | raum_88 | zimmertuer | 2074 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_62 | raum_59 | raum_60 | zimmertuer | 1243 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_63 | raum_59 | raum_62 | zimmertuer | 1777 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_64 | raum_60 | raum_63 | zimmertuer | 958 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_65 | raum_60 | raum_64 | balkontuer | 4070 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_66 | raum_67 | raum_68 | — | 1845 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-VF-11b-1 | unbekannte_kombination |
+| durchgang_67 | raum_69 | raum_70 | zimmertuer | 818 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_68 | raum_71 | raum_83 | — | 822 | GEOMETRIE_OEFFNUNG | ja | durchgang+text:T-E2-11-02-1 | unbekannte_kombination |
+| durchgang_69 | raum_73 | raum_75 | balkontuer | 2918 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_70 | raum_81 | raum_98 | zimmertuer | 1465 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_71 | raum_90 | raum_96 | wohnungseingang | 2953 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_72 | raum_98 | raum_99 | zimmertuer | 3244 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_73 | raum_103 | raum_104 | balkontuer | 4607 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_74 | stiegenhaus_6 | stiegenhaus_7 | stiegenhaustuer | 2562 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 
-## Ausgänge (11)
+## Ausgänge (1)
 
 | ID | Typ | x m | y m |
 |---|---|--:|--:|
-| exit_tuer_50 | stair_exit | 334.45 | 106.40 |
-| exit_tuer_109 | final_exit | 331.40 | 104.41 |
-| exit_tuer_110 | final_exit | 332.42 | 102.89 |
-| exit_tuer_111 | final_exit | 333.41 | 101.41 |
-| exit_tuer_117 | final_exit | 338.91 | 102.90 |
-| exit_tuer_118 | stair_exit | 337.96 | 106.71 |
-| exit_durchgang_123 | stair_exit | 336.29 | 107.11 |
-| exit_durchgang_144 | stair_exit | 336.45 | 104.86 |
-| exit_durchgang_147 | stair_exit | 338.92 | 104.59 |
-| exit_durchgang_148 | stair_exit | 291.60 | 108.60 |
-| exit_aussenoeffnung_1 | final_exit | 325.94 | 105.25 |
+| exit_durchgang_74 | stair_exit | 291.64 | 108.66 |
 
-### Kein Endausgang wegen Freifläche (0 Türen ins Freie an BALKON/TERRASSE)
+### Kein Endausgang wegen Freifläche (3 Türen ins Freie an BALKON/TERRASSE)
 
-keine — auf diesem Plan führt keine Tür an einem typisierten BALKON/TERRASSE-Raum vorbei.
+| Tür | Seiten | Breite mm | belegpflichtig |
+|---|---|--:|---|
+| tuer_45 | AUSSEN ↔ raum_10 | — | Beleg Geländeniveau heute nicht führbar |
+| tuer_56 | AUSSEN ↔ raum_15 | — | Beleg Geländeniveau heute nicht führbar |
+| tuer_105 | AUSSEN ↔ raum_75 | — | Beleg Geländeniveau heute nicht führbar |
 
-## Fluchtweg-Segmente (148)
+## Fluchtweg-Segmente (142)
 
-Quellen: FALLBACK: 3, GRAPH: 6, LINIE: 139
+Quellen: FALLBACK: 3, LINIE: 139
 
 | Segment | Quelle | Länge m | Grund | Ziel-Ausgang |
 |---|---|--:|---|---|
@@ -974,167 +897,141 @@ Quellen: FALLBACK: 3, GRAPH: 6, LINIE: 139
 | seg_137 | LINIE | 0.5 | direction_change | — |
 | seg_138 | LINIE | 1.3 | direction_change | — |
 | seg_139 | LINIE | 1.0 | direction_change | — |
-| seg_graph_tuer_50 | GRAPH | 9.7 | exit | exit_tuer_117 |
-| seg_graph_durchgang_122 | GRAPH | 9.4 | exit | exit_tuer_117 |
-| seg_graph_durchgang_144 | GRAPH | 6.9 | exit | exit_tuer_117 |
-| seg_graph_durchgang_145 | GRAPH | 8.0 | exit | exit_tuer_117 |
-| seg_graph_durchgang_146 | GRAPH | 8.9 | exit | exit_tuer_117 |
-| seg_graph_durchgang_147 | GRAPH | 4.3 | exit | exit_tuer_117 |
 | seg_fallback_raum_46 | FALLBACK | 4.4 | direction_change | — |
-| seg_fallback_raum_88 | FALLBACK | 2.0 | direction_change | — |
+| seg_fallback_raum_89 | FALLBACK | 2.0 | direction_change | — |
 | seg_fallback_stiegenhaus_6 | FALLBACK | 3.1 | direction_change | — |
 
-## Wohnungen (8)
+## Wohnungen (22)
 
-- top_1: 35 Räume (raum_1, raum_2, raum_27, raum_28, raum_29, raum_3, raum_32, raum_33, raum_34, raum_35, raum_36, raum_37, raum_38, raum_39, raum_4, raum_41, raum_42, raum_45, raum_49, raum_5, raum_50, raum_53, raum_54, raum_55, raum_56, raum_57, raum_6, raum_7, raum_8, raum_80, raum_87, raum_89, raum_9, raum_90, raum_91)
-- top_2: 1 Räume (raum_100)
-- top_3: 4 Räume (raum_11, raum_60, raum_62, raum_63)
-- top_4: 19 Räume (raum_12, raum_13, raum_16, raum_17, raum_19, raum_20, raum_21, raum_22, raum_25, raum_26, raum_58, raum_69, raum_72, raum_73, raum_74, raum_76, raum_83, raum_84, raum_85)
-- top_5: 1 Räume (raum_14)
-- top_6: 3 Räume (raum_81, raum_96, raum_97)
-- top_7: 1 Räume (raum_95)
-- top_8: 1 Räume (raum_99)
+- top_1: 2 Räume (raum_1, raum_5)
+- top_10: 2 Räume (raum_21, raum_22)
+- top_11: 3 Räume (raum_25, raum_26, raum_76)
+- top_12: 3 Räume (raum_27, raum_28, raum_29)
+- top_13: 7 Räume (raum_32, raum_33, raum_34, raum_55, raum_56, raum_57, raum_88)
+- top_14: 7 Räume (raum_35, raum_36, raum_37, raum_38, raum_39, raum_54, raum_92)
+- top_15: 5 Räume (raum_41, raum_42, raum_53, raum_80, raum_87)
+- top_16: 4 Räume (raum_45, raum_51, raum_90, raum_91)
+- top_17: 5 Räume (raum_48, raum_6, raum_7, raum_8, raum_9)
+- top_18: 1 Räume (raum_49)
+- top_19: 1 Räume (raum_50)
+- top_2: 1 Räume (raum_101)
+- top_20: 3 Räume (raum_81, raum_98, raum_99)
+- top_21: 1 Räume (raum_93)
+- top_22: 1 Räume (raum_97)
+- top_3: 1 Räume (raum_103)
+- top_4: 5 Räume (raum_11, raum_59, raum_60, raum_62, raum_63)
+- top_5: 5 Räume (raum_12, raum_72, raum_73, raum_74, raum_83)
+- top_6: 9 Räume (raum_13, raum_14, raum_16, raum_17, raum_58, raum_69, raum_70, raum_84, raum_85)
+- top_7: 1 Räume (raum_19)
+- top_8: 3 Räume (raum_2, raum_3, raum_4)
+- top_9: 1 Räume (raum_20)
 
 ## Weglänge je Wohnungseingang → nächster Ausgang
 
 | Tür | Weglänge m | Quelle | Ausgang |
 |---|--:|---|---|
-| tuer_1 | 6.4 | Luftlinie | exit_aussenoeffnung_1 |
-| tuer_5 | 11.8 | Luftlinie | exit_tuer_111 |
-| tuer_6 | 18.0 | Luftlinie | exit_tuer_111 |
-| tuer_7 | 5.2 | Luftlinie | exit_tuer_118 |
-| tuer_10 | 9.9 | Luftlinie | exit_tuer_111 |
-| tuer_22 | 5.9 | Luftlinie | exit_tuer_111 |
-| durchgang_7 | 5.9 | Luftlinie | exit_aussenoeffnung_1 |
-| durchgang_11 | 6.6 | Luftlinie | exit_aussenoeffnung_1 |
-| durchgang_32 | 17.8 | Luftlinie | exit_aussenoeffnung_1 |
-| durchgang_45 | 10.0 | Luftlinie | exit_tuer_111 |
-| durchgang_55 | 8.2 | Luftlinie | exit_tuer_111 |
-| durchgang_59 | 4.0 | Luftlinie | exit_tuer_118 |
-| durchgang_65 | 0.9 | Luftlinie | exit_durchgang_147 |
-| durchgang_71 | 9.6 | Luftlinie | exit_tuer_118 |
-| durchgang_94 | 7.7 | Luftlinie | exit_tuer_118 |
-| durchgang_98 | 4.1 | Luftlinie | exit_aussenoeffnung_1 |
-| durchgang_103 | 5.6 | Luftlinie | exit_durchgang_123 |
-| durchgang_113 | 10.5 | Luftlinie | exit_tuer_118 |
-| durchgang_127 | 8.0 | Luftlinie | exit_tuer_111 |
-| durchgang_128 | 7.5 | Luftlinie | exit_tuer_111 |
-| durchgang_129 | 7.1 | Luftlinie | exit_tuer_111 |
-| durchgang_141 | 7.2 | Luftlinie | exit_tuer_118 |
+| tuer_1 | 37.1 | Luftlinie | exit_durchgang_74 |
+| tuer_3 | 54.3 | Luftlinie | exit_durchgang_74 |
+| tuer_4 | 48.4 | Luftlinie | exit_durchgang_74 |
+| tuer_5 | 40.4 | Luftlinie | exit_durchgang_74 |
+| tuer_6 | 37.4 | Luftlinie | exit_durchgang_74 |
+| tuer_7 | 48.9 | Luftlinie | exit_durchgang_74 |
+| tuer_10 | 39.6 | Luftlinie | exit_durchgang_74 |
+| tuer_11 | 36.1 | Luftlinie | exit_durchgang_74 |
+| tuer_12 | 28.7 | Luftlinie | exit_durchgang_74 |
+| tuer_13 | 28.0 | Luftlinie | exit_durchgang_74 |
+| tuer_22 | 42.3 | Luftlinie | exit_durchgang_74 |
+| tuer_32 | 66.0 | Luftlinie | exit_durchgang_74 |
+| tuer_89 | 62.1 | Luftlinie | exit_durchgang_74 |
+| tuer_99 | 51.7 | Luftlinie | exit_durchgang_74 |
+| durchgang_4 | 35.2 | Luftlinie | exit_durchgang_74 |
+| durchgang_6 | 28.1 | Luftlinie | exit_durchgang_74 |
+| durchgang_8 | 23.3 | Luftlinie | exit_durchgang_74 |
+| durchgang_9 | 22.5 | Luftlinie | exit_durchgang_74 |
+| durchgang_10 | 24.2 | Luftlinie | exit_durchgang_74 |
+| durchgang_26 | 41.4 | Luftlinie | exit_durchgang_74 |
+| durchgang_34 | 49.5 | Luftlinie | exit_durchgang_74 |
+| durchgang_38 | 58.5 | Luftlinie | exit_durchgang_74 |
+| durchgang_39 | 53.4 | Luftlinie | exit_durchgang_74 |
+| durchgang_40 | 57.8 | Luftlinie | exit_durchgang_74 |
+| durchgang_41 | 61.8 | Luftlinie | exit_durchgang_74 |
+| durchgang_42 | 63.0 | Luftlinie | exit_durchgang_74 |
+| durchgang_43 | 65.4 | Luftlinie | exit_durchgang_74 |
+| durchgang_45 | 66.5 | Luftlinie | exit_durchgang_74 |
+| durchgang_47 | 58.4 | Luftlinie | exit_durchgang_74 |
+| durchgang_52 | 49.6 | Luftlinie | exit_durchgang_74 |
+| durchgang_54 | 47.6 | Luftlinie | exit_durchgang_74 |
+| durchgang_55 | 45.7 | Luftlinie | exit_durchgang_74 |
+| durchgang_57 | 63.5 | Luftlinie | exit_durchgang_74 |
+| durchgang_58 | 59.7 | Luftlinie | exit_durchgang_74 |
+| durchgang_59 | 59.6 | Luftlinie | exit_durchgang_74 |
+| durchgang_61 | 56.0 | Luftlinie | exit_durchgang_74 |
+| durchgang_62 | 27.9 | Luftlinie | exit_durchgang_74 |
+| durchgang_63 | 29.4 | Luftlinie | exit_durchgang_74 |
+| durchgang_71 | 47.7 | Luftlinie | exit_durchgang_74 |
 
 ## Leuchten je Nutzungsklasse
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 22 |
-| ALLGEMEIN_NEBENRAUM | 4 |
-| WOHNUNG_PRIVAT | 27 |
-| kein Raum | 39 |
-| unbestimmt | 1 |
-| _davon auf Treppenlauf/Verbotszone_ | 7 |
+| ALLGEMEIN_ERSCHLIESSUNG | 14 |
+| ALLGEMEIN_NEBENRAUM | 5 |
+| LIFT | 1 |
+| WOHNUNG_PRIVAT | 62 |
+| kein Raum | 57 |
+| _davon auf Treppenlauf/Verbotszone_ | 3 |
 
 **BEFUND (nur berichtet, Platzierung NICHT geändert):**
 
-- WOHNUNG_PRIVAT: 27 Leuchten (muss 0 sein)
-- Treppenlauf/Verbotszone: 7 Leuchten (muss 0 sein)
+- WOHNUNG_PRIVAT: 62 Leuchten (muss 0 sein)
+- LIFT: 1 Leuchten (muss 0 sein)
+- Treppenlauf/Verbotszone: 3 Leuchten (muss 0 sein)
 
 ## Rotationsprüfung RZ über Tür (Messung, ±2°)
 
 | Tür | RZ xy m | rotation° | Türwandwinkel° | Δ° | Befund |
 |---|---|--:|--:|--:|---|
-| tuer_118 | (337.38, 106.99) | 90.0 | 143.4 | 53.4 | abweichend |
-| tuer_118 | (337.69, 106.76) | 90.0 | 143.4 | 53.4 | abweichend |
-| durchgang_102 | (336.10, 112.73) | 0.0 | 53.4 | 53.4 | abweichend |
-| tuer_94 | (336.01, 111.06) | 180.0 | 143.4 | 36.6 | abweichend |
-| durchgang_78 | (351.49, 125.24) | 0.0 | 53.4 | 53.4 | abweichend |
-| durchgang_79 | (353.43, 123.80) | 0.0 | 143.4 | 36.6 | abweichend |
-| durchgang_91 | (347.24, 123.37) | 0.0 | 143.4 | 36.6 | abweichend |
-| tuer_103 | (345.73, 112.88) | 0.0 | 143.4 | 36.6 | abweichend |
-| durchgang_70 | (344.36, 112.67) | 90.0 | 143.4 | 53.4 | abweichend |
-| durchgang_70 | (343.93, 112.99) | 180.0 | 143.4 | 36.6 | abweichend |
-| durchgang_58 | (341.33, 106.86) | 270.0 | 143.4 | 53.4 | abweichend |
-| durchgang_47 | (334.18, 95.05) | 180.0 | 33.9 | 33.9 | abweichend |
-| tuer_78 | (326.02, 93.75) | 0.0 | 34.0 | 34.0 | abweichend |
-| durchgang_127 | (329.21, 93.98) | 270.0 | 123.9 | 33.9 | abweichend |
-| durchgang_31 | (321.46, 86.53) | 90.0 | 33.9 | 56.1 | abweichend |
-| durchgang_130 | (319.73, 90.31) | 90.0 | 33.9 | 56.1 | abweichend |
-| durchgang_130 | (321.19, 91.29) | 270.0 | 33.9 | 56.1 | abweichend |
-| durchgang_33 | (318.73, 90.66) | 90.0 | 33.9 | 56.1 | abweichend |
-| tuer_27 | (317.64, 112.72) | 90.0 | 0.0 | 90.0 | abweichend |
-| tuer_61 | (317.39, 111.18) | 0.0 | 0.0 | 0.0 | ok |
-| durchgang_120 | (324.02, 107.91) | 90.0 | 90.0 | 0.0 | ok |
-| durchgang_118 | (325.61, 106.32) | 90.0 | 180.0 | 90.0 | abweichend |
-| durchgang_120 | (323.56, 108.05) | 90.0 | 90.0 | 0.0 | ok |
-| durchgang_99 | (329.15, 107.64) | 90.0 | 123.9 | 33.9 | abweichend |
+| durchgang_55 | (337.36, 111.73) | 270.0 | 53.4 | 36.6 | abweichend |
+| tuer_87 | (336.14, 112.58) | 0.0 | 143.4 | 36.6 | abweichend |
+| durchgang_42 | (353.50, 123.93) | 180.0 | 143.4 | 36.6 | abweichend |
+| durchgang_49 | (347.21, 123.23) | 0.0 | 143.4 | 36.6 | abweichend |
+| tuer_98 | (345.77, 113.02) | 180.0 | 143.4 | 36.6 | abweichend |
+| durchgang_39 | (344.50, 112.63) | 90.0 | 53.4 | 36.6 | abweichend |
+| tuer_98 | (345.75, 112.61) | 0.0 | 143.4 | 36.6 | abweichend |
+| durchgang_33 | (341.22, 106.96) | 270.0 | 143.4 | 53.4 | abweichend |
+| tuer_61 | (334.13, 95.19) | 180.0 | 123.9 | 56.1 | abweichend |
+| tuer_67 | (325.95, 93.62) | 0.0 | 34.0 | 34.0 | abweichend |
+| durchgang_12 | (326.02, 94.04) | 180.0 | 123.9 | 56.1 | abweichend |
+| durchgang_23 | (323.23, 85.92) | 180.0 | 34.0 | 34.0 | abweichend |
+| durchgang_15 | (321.34, 86.43) | 270.0 | 33.9 | 56.1 | abweichend |
+| durchgang_16 | (319.58, 90.35) | 270.0 | 33.9 | 56.1 | abweichend |
+| durchgang_67 | (321.05, 91.24) | 270.0 | 33.9 | 56.1 | abweichend |
+| durchgang_67 | (321.25, 91.46) | 90.0 | 33.9 | 56.1 | abweichend |
+| durchgang_67 | (319.84, 90.42) | 90.0 | 33.9 | 56.1 | abweichend |
+| durchgang_16 | (318.73, 90.66) | 270.0 | 33.9 | 56.1 | abweichend |
+| tuer_47 | (317.31, 111.31) | 180.0 | 0.0 | 0.0 | ok |
+| durchgang_64 | (325.46, 106.29) | 270.0 | 180.0 | 90.0 | abweichend |
+| tuer_49 | (324.21, 108.13) | 90.0 | 0.0 | 90.0 | abweichend |
+| tuer_116 | (337.51, 106.93) | 90.0 | 143.4 | 53.4 | abweichend |
+| tuer_116 | (337.84, 106.73) | 90.0 | 143.4 | 53.4 | abweichend |
+| tuer_116 | (337.74, 107.06) | 180.0 | 143.4 | 36.6 | abweichend |
+| tuer_35 | (334.50, 106.55) | 180.0 | 33.9 | 33.9 | abweichend |
+| durchgang_53 | (326.83, 109.32) | 0.0 | 90.0 | 90.0 | abweichend |
+| tuer_109 | (333.31, 101.31) | 270.0 | 123.9 | 33.9 | abweichend |
 
-## Anker je Stiegenhaus (9 Stiegenhäuser)
+## Anker je Stiegenhaus (3 Stiegenhäuser)
 
-- **raum_88**: 1 Läufe, 1 Podeste, 1 Verbotszonen (größte 0.3 m², Summe 0.3 m²), 4 Anker
+- **raum_89**: 1 Läufe, 1 Podeste, 1 Verbotszonen (größte 0.3 m², Summe 0.3 m²), 3 Anker
   - PODEST (334.52, 99.32) m, Winkel 125°, Fluchtrichtung 139°
   - ANTRITT (333.24, 99.13) m, Fluchtrichtung 139°
   - AUSTRITT (334.07, 98.40) m, Fluchtrichtung 139°
-  - TUER (333.77, 100.63) m, Winkel 124°, Fluchtrichtung 139°
-- **stiegenhaus_1**: 5 Läufe, 2 Podeste, 7 Verbotszonen (größte 3.7 m², Summe 13.5 m²), 7 Anker
-  - PODEST (336.46, 106.08) m, Winkel 0°, Fluchtrichtung 145°
-  - PODEST (334.49, 103.89) m, Winkel 90°, Fluchtrichtung 280°
-  - ANTRITT (335.80, 105.98) m, Fluchtrichtung 145°
-  - ANTRITT (334.88, 104.12) m, Fluchtrichtung 280°
-  - AUSTRITT (334.44, 106.71) m, Fluchtrichtung 145°
-  - TUER (335.20, 106.40) m, Winkel 0°, Fluchtrichtung 145°
-  - RICHTUNGSWECHSEL (336.76, 106.29) m, Fluchtrichtung 265°
-- **stiegenhaus_2**: 5 Läufe, 1 Podeste, 7 Verbotszonen (größte 3.7 m², Summe 10.0 m²), 11 Anker
-  - PODEST (336.49, 106.25) m, Winkel 124°, Fluchtrichtung 188°
-  - ANTRITT (337.73, 106.59) m, Fluchtrichtung 265°
-  - AUSTRITT (337.75, 106.85) m, Fluchtrichtung 265°
-  - ANTRITT (335.42, 106.85) m, Fluchtrichtung 188°
-  - AUSTRITT (336.03, 106.94) m, Fluchtrichtung 188°
-  - ANTRITT (338.93, 104.42) m, Fluchtrichtung 80°
-  - TUER (338.89, 105.54) m, Winkel 90°, Fluchtrichtung 157°
-  - TUER (336.29, 107.11) m, Winkel 0°, Fluchtrichtung 188°
-  - RICHTUNGSWECHSEL (337.95, 106.47) m, Fluchtrichtung 265°
-  - RICHTUNGSWECHSEL (336.89, 106.89) m, Fluchtrichtung 265°
-  - RICHTUNGSWECHSEL (335.61, 106.41) m, Fluchtrichtung 188°
-- **stiegenhaus_3**: 6 Läufe, 1 Podeste, 8 Verbotszonen (größte 3.7 m², Summe 11.2 m²), 12 Anker
-  - PODEST (336.49, 106.25) m, Winkel 124°, Fluchtrichtung 188°
-  - ANTRITT (338.54, 106.20) m, Fluchtrichtung 86°
-  - AUSTRITT (337.75, 106.85) m, Fluchtrichtung 265°
-  - ANTRITT (335.42, 106.85) m, Fluchtrichtung 188°
-  - AUSTRITT (336.03, 106.94) m, Fluchtrichtung 188°
-  - ANTRITT (338.93, 104.42) m, Fluchtrichtung 80°
-  - TUER (336.29, 107.11) m, Winkel 0°, Fluchtrichtung 188°
-  - TUER (338.92, 104.59) m, Winkel 90°, Fluchtrichtung 80°
-  - RICHTUNGSWECHSEL (337.95, 106.47) m, Fluchtrichtung 265°
-  - RICHTUNGSWECHSEL (336.89, 106.89) m, Fluchtrichtung 265°
-  - RICHTUNGSWECHSEL (339.12, 105.14) m, Fluchtrichtung 80°
-  - RICHTUNGSWECHSEL (335.61, 106.41) m, Fluchtrichtung 188°
-- **stiegenhaus_4**: 6 Läufe, 1 Podeste, 8 Verbotszonen (größte 3.7 m², Summe 11.3 m²), 12 Anker
-  - PODEST (336.49, 106.25) m, Winkel 124°, Fluchtrichtung 188°
-  - ANTRITT (338.54, 106.20) m, Fluchtrichtung 86°
-  - AUSTRITT (337.75, 106.85) m, Fluchtrichtung 265°
-  - ANTRITT (335.42, 106.85) m, Fluchtrichtung 188°
-  - AUSTRITT (336.03, 106.94) m, Fluchtrichtung 188°
-  - ANTRITT (338.93, 104.42) m, Fluchtrichtung 80°
-  - TUER (336.29, 107.11) m, Winkel 0°, Fluchtrichtung 188°
-  - TUER (338.92, 104.59) m, Winkel 90°, Fluchtrichtung 80°
-  - RICHTUNGSWECHSEL (337.95, 106.47) m, Fluchtrichtung 265°
-  - RICHTUNGSWECHSEL (336.89, 106.89) m, Fluchtrichtung 265°
-  - RICHTUNGSWECHSEL (339.12, 105.14) m, Fluchtrichtung 80°
-  - RICHTUNGSWECHSEL (335.61, 106.41) m, Fluchtrichtung 188°
-- **stiegenhaus_5**: 5 Läufe, 2 Podeste, 7 Verbotszonen (größte 3.7 m², Summe 13.1 m²), 7 Anker
-  - PODEST (336.46, 106.08) m, Winkel 180°, Fluchtrichtung 147°
-  - PODEST (334.49, 103.89) m, Winkel 90°, Fluchtrichtung 280°
-  - ANTRITT (335.80, 105.98) m, Fluchtrichtung 147°
-  - ANTRITT (334.88, 104.12) m, Fluchtrichtung 280°
-  - AUSTRITT (334.44, 106.71) m, Fluchtrichtung 147°
-  - TUER (335.20, 106.40) m, Winkel 0°, Fluchtrichtung 147°
-  - RICHTUNGSWECHSEL (336.76, 106.29) m, Fluchtrichtung 265°
-- **stiegenhaus_6**: 3 Läufe, 0 Podeste, 3 Verbotszonen (größte 5.6 m², Summe 5.6 m²), 2 Anker
+- **stiegenhaus_6**: 2 Läufe, 0 Podeste, 2 Verbotszonen (größte 5.6 m², Summe 5.6 m²), 1 Anker
   - AUSTRITT (291.54, 105.68) m, Fluchtrichtung 90°
-  - ANTRITT (290.64, 105.68) m, Fluchtrichtung 90°
-- **stiegenhaus_7**: 3 Läufe, 0 Podeste, 3 Verbotszonen (größte 5.3 m², Summe 5.4 m²), 1 Anker
+- **stiegenhaus_7**: 3 Läufe, 0 Podeste, 3 Verbotszonen (größte 5.1 m², Summe 5.2 m²), 3 Anker
   - ANTRITT (291.52, 111.55) m, Fluchtrichtung 90°
-- **stiegenhaus_8**: 1 Läufe, 0 Podeste, 2 Verbotszonen (größte 3.7 m², Summe 3.9 m²), 0 Anker
-- Gang-Anker (außerhalb Stiegenhäuser): 46
+  - AUSTRITT (290.64, 110.08) m, Fluchtrichtung 90°
+  - TUER (291.64, 108.66) m, Winkel 0°, Fluchtrichtung 90°
+- Gang-Anker (außerhalb Stiegenhäuser): 33
 
 ## Brandschutz-Hinweise im Plan (2)
 
@@ -1144,30 +1041,47 @@ Quellen: FALLBACK: 3, GRAPH: 6, LINIE: 139
 ## Außenbereich
 
 - Gebäude-Komponenten: 13 (Flächen m²: 7.1, 5.4, 64.3, 10.1, 2.1, 4500.4, 712.9, 1.4, 1.1, 1.4, 1.1, 1.3, 13.5; Summe 5322.0)
-- offene AUSSEN-Flächen: 4 (25358.0 m²)
+- offene AUSSEN-Flächen: 60 (25015.8 m²)
 - geschlossene Höfe (AUSSEN_GESCHLOSSEN): 0 (0.0 m²)
 - Überdachungen über offener Außenfläche: 0 (0.0 m²)
 
+## Geschoss
+
+- Geschoss: **2OG** (Quelle `dateiname`)
+- Beleg: Dateiname 'Muthgasse_E2' → 'E2'
+
 ## Kreuzcheck Fluchtweglinien ↔ Endausgänge
+
+Restweg im EG: unbekannt (kein EG-Plan in Projekte/_eingang)
 
 0 Linien-Endpunkte an der Außenkante, davon 0 mit final_exit ≤ 1.5 m gedeckt.
 
-final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_tuer_109, exit_tuer_110, exit_tuer_111
+### Unbestimmte Räume (§ 6g)
 
-### Fluchtweg-Warnungen
+- ⚠ unbestimmt: raum_2 — Ankerregel nicht auswertbar: vom Stiegenhaus über keine Tür erreichbar — Tür- oder Raumerkennungsloch, kein Klassifikationsproblem; über eine rohe Zimmertür an seine Wohnung gebunden — die Wohnung folgt rohen Türen, die Klasse bleibt offen (Owner 2026-09-22)
 
-- ⚠ EG/UG: kein final_exit erreichbar von Tür tuer_1 (Endraum raum_2) — Türgraph endet vor dem Ausgang
-- ⚠ EG/UG: kein final_exit erreichbar von Tür durchgang_94 (Endraum raum_45) — Türgraph endet vor dem Ausgang
-- ⚠ EG/UG: kein final_exit erreichbar von Tür durchgang_129 (Endraum raum_76) — Türgraph endet vor dem Ausgang
+### Tür- oder Raumerkennungslöcher (Messfall S4c/S3b)
+
+- ⚠ loch: raum_102 — vom Stiegenhaus über keine Tür erreichbar — Tür- oder Raumerkennungsloch, kein Klassifikationsproblem (Messfall S4c/S3b); Klasse allgemein; weder über eine rohe Zimmertür an eine Wohnung gebunden noch ein Loch-GANG mit nur Einzelräumen hinter seinen rohen Wohnungseingängen (R1) → keine Wohnung, Erschließung (Wohnung folgt rohen Türen, Owner 2026-09-22), Notlicht bleibt
+- ⚠ loch: raum_2 — vom Stiegenhaus über keine Tür erreichbar — Tür- oder Raumerkennungsloch, kein Klassifikationsproblem (Messfall S4c/S3b); Klasse offen; über eine rohe Zimmertür an seine Wohnung gebunden → gehört zu ihr (Wohnung folgt rohen Türen, Owner 2026-09-22), Notlicht bleibt
+- ⚠ loch: raum_42 — vom Stiegenhaus über keine Tür erreichbar — Tür- oder Raumerkennungsloch, kein Klassifikationsproblem (Messfall S4c/S3b); Klasse privat; über eine rohe Zimmertür an seine Wohnung gebunden → gehört zu ihr (Wohnung folgt rohen Türen, Owner 2026-09-22), Notlicht bleibt
+- ⚠ loch: raum_46 — vom Stiegenhaus über keine Tür erreichbar — Tür- oder Raumerkennungsloch, kein Klassifikationsproblem (Messfall S4c/S3b); Klasse allgemein; weder über eine rohe Zimmertür an eine Wohnung gebunden noch ein Loch-GANG mit nur Einzelräumen hinter seinen rohen Wohnungseingängen (R1) → keine Wohnung, Erschließung (Wohnung folgt rohen Türen, Owner 2026-09-22), Notlicht bleibt
+- ⚠ loch: raum_48 — vom Stiegenhaus über keine Tür erreichbar — Tür- oder Raumerkennungsloch, kein Klassifikationsproblem (Messfall S4c/S3b); Klasse privat; über eine rohe Zimmertür an seine Wohnung gebunden → gehört zu ihr (Wohnung folgt rohen Türen, Owner 2026-09-22), Notlicht bleibt
+- ⚠ loch: raum_51 — vom Stiegenhaus über keine Tür erreichbar — Tür- oder Raumerkennungsloch, kein Klassifikationsproblem (Messfall S4c/S3b); Klasse privat; über eine rohe Zimmertür an seine Wohnung gebunden → gehört zu ihr (Wohnung folgt rohen Türen, Owner 2026-09-22), Notlicht bleibt
+- ⚠ loch: raum_54 — vom Stiegenhaus über keine Tür erreichbar — Tür- oder Raumerkennungsloch, kein Klassifikationsproblem (Messfall S4c/S3b); Klasse privat; über eine rohe Zimmertür an seine Wohnung gebunden → gehört zu ihr (Wohnung folgt rohen Türen, Owner 2026-09-22), Notlicht bleibt
+- ⚠ loch: raum_57 — vom Stiegenhaus über keine Tür erreichbar — Tür- oder Raumerkennungsloch, kein Klassifikationsproblem (Messfall S4c/S3b); Klasse privat; über eine rohe Zimmertür an seine Wohnung gebunden → gehört zu ihr (Wohnung folgt rohen Türen, Owner 2026-09-22), Notlicht bleibt
+- ⚠ loch: raum_59 — vom Stiegenhaus über keine Tür erreichbar — Tür- oder Raumerkennungsloch, kein Klassifikationsproblem (Messfall S4c/S3b); Klasse privat; über eine rohe Zimmertür an seine Wohnung gebunden → gehört zu ihr (Wohnung folgt rohen Türen, Owner 2026-09-22), Notlicht bleibt
+- ⚠ loch: raum_80 — vom Stiegenhaus über keine Tür erreichbar — Tür- oder Raumerkennungsloch, kein Klassifikationsproblem (Messfall S4c/S3b); Klasse privat; über eine rohe Zimmertür an seine Wohnung gebunden → gehört zu ihr (Wohnung folgt rohen Türen, Owner 2026-09-22), Notlicht bleibt
+- ⚠ loch: raum_96 — vom Stiegenhaus über keine Tür erreichbar — Tür- oder Raumerkennungsloch, kein Klassifikationsproblem (Messfall S4c/S3b); Klasse allgemein; weder über eine rohe Zimmertür an eine Wohnung gebunden noch ein Loch-GANG mit nur Einzelräumen hinter seinen rohen Wohnungseingängen (R1) → keine Wohnung, Erschließung (Wohnung folgt rohen Türen, Owner 2026-09-22), Notlicht bleibt
 
 ### Untypisierte Türen — Gründe
 
 | Grund | Anzahl |
 |---|--:|
-| unbekannte_kombination | 48 |
-| kein_nachbarraum | 14 |
-| beide_seiten_untypisiert | 12 |
-| tuer_in_schacht | 4 |
-| tuer_ins_nichts | 3 |
+| kein_nachbarraum | 68 |
+| unbekannte_kombination | 6 |
+| tuer_ins_nichts | 2 |
+| beide_seiten_untypisiert | 2 |
+| tuer_in_schacht | 2 |
 
-Laufzeit: 1832.8 s
+Laufzeit: 1886.1 s
