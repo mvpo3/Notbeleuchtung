@@ -16,7 +16,7 @@ from shapely.geometry import Point, Polygon
 from shapely.ops import unary_union
 
 from notbeleuchtung.hauptengine.contracts import RaumModell
-from notbeleuchtung.hauptengine.contracts.raum_modell import Tuer
+from notbeleuchtung.hauptengine.contracts.raum_modell import BBox, Tuer
 
 from .ausgaenge import leite_ausgaenge, ohne_unzulaessige_final_exits
 from .aussenbereich import erkenne_aussenbereiche, waehle_innen_zonen
@@ -122,18 +122,31 @@ class ArchitekturRaumProvider:
 
     def parse(self, dxf_path: str, floor: str) -> RaumModell:
         plan = lade_dxf(dxf_path)
-        # Greift kein Wand-Layer-Muster (Muthgasse-Familie), bleibt die Kaskade aus:
-        # ihr Raster wäre auf einem unerschlossenen Plan nur teuer, und `bounds_mm`
-        # bricht gleich darauf definiert ab (kein stilles Leer-Ergebnis).
-        hat_wand_entities = next(plan.wall_entities(), None) is not None
-        k = raeume_aus_kaskade(plan) if hat_wand_entities else KaskadeErgebnis()
+        # Owner-Regel P0 (2026-09-30, Am Rain ARAI5 `Wand <Material> …`): greift
+        # kein Wand-Layer-Muster, ist das KEIN Abbruch. Die Kaskade läuft über
+        # das Erscheinungsbild (wandkoerper: HATCH beliebiger Layer, schmale
+        # Polygone, Doppellinien; Fern-Körper fallen dort weg), und es bleibt
+        # eine Warnung — Prüfstrecken-Ausgabe wie `tuer_warnungen`.
+        self.wand_warnungen: list[str] = []
+        k = raeume_aus_kaskade(plan)
         try:
             bounds = bounds_mm(plan)
         except ValueError:
             # Hatch-only-Pläne haben keine Wand-Linien, aber Wandkörper.
-            if not k.wandkoerper:
-                raise
-            bounds = bounds_aus_wandkoerpern(k.wandkoerper)
+            if k.wandkoerper:
+                bounds = bounds_aus_wandkoerpern(k.wandkoerper)
+            else:
+                pts = [p for e in plan.space for p in plan.entity_points(e)]
+                if not pts:
+                    raise ValueError("DXF ohne Geometrie — nichts zu erkennen.") from None
+                xs, ys = zip(*pts, strict=True)
+                bounds = BBox(min_xy=(min(xs), min(ys)), max_xy=(max(xs), max(ys)))
+            if not plan.wall_layers or not k.wandkoerper:
+                self.wand_warnungen.append(
+                    "keine_wand_entities: kein Wand-Layer mit Wand-Linien — "
+                    f"Weiterlauf über das Erscheinungsbild ({len(k.wandkoerper)} "
+                    "Wandkörper), Bounds aus "
+                    + ("den Wandkörpern" if k.wandkoerper else "allen Entities"))
         raeume = k.alle_raeume
         if not raeume:
             raeume = beschrifte_raeume(plan, raeume_aus_waenden(plan))
