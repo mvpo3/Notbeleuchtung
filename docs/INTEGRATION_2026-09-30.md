@@ -130,3 +130,106 @@ skipped (11):
 
 - `ruff check .`: All checks passed.
 - `scripts/gen_schema.py --check`: schema in sync.
+
+## P0 Am Rain: „Keine Wand-Entities gefunden" (nach dem Endstand)
+
+**Befund (Leonis):** `provider.parse` bricht auf Am Rain (ARAI5-Dialekt) mit
+`ValueError: Keine Wand-Entities gefunden — Layer-Muster prüfen.` ab.
+
+**Leonis lief nicht auf einem alten Stand.** Der Abbruch ließ sich auf dem
+Integrationsstand nachstellen. `dxf_load.py`, der Provider-Guard und `wandkoerper.py`
+sind auf `origin/main` `acdacba`, auf allen Zweigen der Merge-Reihe und auf
+`origin/leonis/demo-l-gebaeude` `8257ff9` byte-gleich. OG4 bricht auf `acdacba` und auf
+`aa05143` gleich ab (5,0 s bzw. 5,2 s).
+
+**Ursache.** Die ARAI5-Layer heißen `Wand <Material> <Tragwirkung>` oder schlicht `Wand`.
+Keine Alternative von `WALL_PATTERN` trifft sie. Weil `provider.parse` die Kaskade nur bei
+erkannten Wand-Entities startete (Guard aus `336fb77`), blieb die Wandkörper-Liste leer, und
+der ValueError aus `bounds_mm` wurde erneut geworfen. Die Erscheinungsbild-Erkennung aus
+`bbfa734` hätte getragen, sie wurde nur nie aufgerufen. Hinter dem Guard lag eine zweite
+Falle: Weltkoordinaten-Blockkopien bei x≈34,6 km. Sie spannen die Wandkörper-Box auf
+34,7 km auf. Rechnerisch wären das 15,4 GiB je bool-Array in der Rest-Stufe, und die hat
+keine Reißleine.
+
+**Owner-Regel (2026-09-30):** Fehlende Wand-Entities führen zu keinem ValueError. Stattdessen
+gibt es eine Warnung, und die Erkennung läuft über das Erscheinungsbild weiter: HATCH
+beliebiger Layer, schmale Polygone, Doppellinien.
+
+| Commit | Inhalt |
+|--------|--------|
+| `a845ded` | Tests zuerst rot: synthetische DXF ohne Wand-Layer mit HATCH-Wänden und einem Fern-Körper (ValueError), Doppellinien auf `Wand Trockenbau` (0 == 1), Fern-Körper-Filter (6 == 5), Naht Am Rain OG4 aus dem getrackten Zip (ValueError) |
+| `ed292e1` | Fix, siehe unten |
+
+Was der Fix ändert:
+
+- **`provider.parse`:**
+  - Die Kaskade läuft immer.
+  - Die Bounds kommen aus den Wandkörpern. Gibt es keine, kommen sie aus allen Entities.
+  - Die Warnung `keine_wand_entities` landet in `wand_warnungen`. Wie `tuer_warnungen` ist das
+    kein Contract-Feld.
+  - Einen ValueError gibt es nur noch bei einer DXF ganz ohne Geometrie.
+- **`wandkoerper`:** Nur wenn kein Wand-Layer erkannt ist:
+  - Körper, deren Schwerpunkt mehr als 500 m (`_SPAN_MAX_MM`) vom Median-Schwerpunkt entfernt
+    liegt, fallen weg.
+  - Der Doppellinien-Fallback liest die Layer mit Wand-Hinweis.
+
+  Pläne mit Wand-Layer laufen unverändert.
+
+**Was der Fern-Filter auf Am Rain wegnimmt:** nur Blockkopien auf Layer `0` bei
+x 34,58–34,79 km, nichts aus dem Grundriss.
+- OG4: 20 von 198 (`*U25` 12, `*U26` 8)
+- UG: 294 von 1 015 (Leuchten-Blöcke `SIMA_ET_BELEUCHTUNG_*` der E-Planung)
+- EG: 116 von 6 259 (`*U60`, `*U52`, `*U45`)
+
+### Am Rain auf `ed292e1`, jeder Plan allein
+
+| Plan | Ergebnis | Räume | Türen | Ausgänge | wohnung_id | Stiegenhäuser | Wandkörper | Warnungen | parse | Peak Working Set |
+|------|----------|-------|-------|----------|------------|---------------|------------|-----------|-------|------------------|
+| OG4 | ok | 27 | 58 | 0 | 11 | 0 | 178 | `keine_wand_entities`; Ausgang: „kein Geschossausgang ableitbar"; 23 `seite_fehlt` | 21,8 s | 0,43 GB |
+| UG | ok | 82 | 295 | 6 (2 final_exit, 4 stair_exit) | 7 | 7 | 721 | `keine_wand_entities`; 10 Fluchtweg („kein final_exit erreichbar"); 159 `seite_fehlt` | 110,0 s | 3,91 GB |
+| EG | ok | 136 | 317 | 3 (2 final_exit, 1 stair_exit) | 50 | 3 | 6 143 | `keine_wand_entities`; 13 Fluchtweg („kein final_exit erreichbar"); 186 `seite_fehlt` | 485,8 s | 6,30 GB |
+
+Die UG- und EG-Läufe stammen vom Arbeitsbaum vor der letzten Textänderung der Warnung.
+Die Logik war für Pläne ohne Wand-Layer dieselbe. OG4 lief auf dem Endstand noch einmal:
+Die Zahlen sind gleich.
+
+**Noch nicht abnahmefähig:**
+- OG4 hat 0 Ausgänge und kein Stiegenhaus, obwohl der Plan die Layer `Treppe` und `Aufzug` trägt.
+- Die OG4-Bounds enden bei x 63,6 m. Die Wand-Linien reichen bis 78,1 m, und der Teil
+  dahinter hat keine Hatch-Wandkörper. Das ist nicht weiter untersucht.
+- EG braucht 8 min und 6,3 GB.
+- OG1–OG3 wurden nicht gemessen.
+
+### Prüfpläne und Gate auf `ed292e1`
+
+- **12 Prüfpläne feldgleich:** Rennweg UG/EG/OG1/OG2/OG3/DG1/DG2/DD, Barawitzka EG,
+  Mollgasse EG/1OG und Muthgasse E2. Jeder Plan hat 49/49 Schlüssel gleich (Räume, Türen,
+  Rollen, Wohnungen, Segmente, Ausgänge, Anker, Platzierung). Verglichen wurde vorher
+  `a845ded` gegen nachher. Muthgasse lief jeweils allein.
+- **`pytest tests/raumerkennung tests/contract`:** 867 passed, 6 skipped, 2 xfailed. Das
+  sind die 863 von `b20b4e5` plus 4 neue Tests.
+- **`pytest -m gate tests/gate`:** 3 passed, 1 xfailed.
+- **Messung `_arbeit/gate/messung_ed292e1.json`** (nicht versioniert, `src`/`scripts`
+  sauber), `pruefe_gate` gegen `nullmessung_f15d03f`: **1 Verstoß**, (3) `M4.einraum`
+  steigt in DG2 von 0 auf 1. M17 ist 18/18. Alle Abschnitte gleichen `messung_b20b4e5.json`.
+- `ruff check .`: All checks passed.
+
+### Am Rain in der Prüfstrecke
+
+- Die Quelle ist das getrackte Zip `Projekte/Am Rain.zip` mit 6 DXF:
+  `Am Rain/ARAI5_FE_XEL_ZZ_MOP_<Geschoss>_00NN_V_0N.dxf`.
+- Eine getrackte DXF-Kopie unter `Projekte/` gibt es nicht. Darum hat `tests/plaene.py`
+  keinen Eintrag. Die Naht `test_naht_am_rain_og4_parse_ohne_abbruch` entpackt OG4 aus dem Zip.
+- Arbeitskopien für Ad-hoc-Läufe liegen in `Projekte/_eingang/AmRain_<Geschoss>.dxf`
+  (UG, EG, OG1–OG4). Sie sind untracked und CRC-gleich mit dem Zip.
+- **Wichtig für Läufe:** Am-Rain-Läufe laufen einzeln, und nichts läuft parallel dazu
+  (EG 6,3 GB).
+
+### Offen (Owner)
+
+- Soll `Wand brüstungshoch` als raumbildende Wand zählen? Heute zählen ihre Hatches über den
+  Wand-Hinweis.
+- `_NEGATIV_LAYER` trifft „Moeblierung" und „Möblierung" nicht. Im EG zählen die
+  Freiraum-Hatches `KFLD-04_…Moeblierung-Bank` und `…-Pergola` deshalb als Wandkörper.
+- Das UG ist als leerer Architekturplan abgelegt, enthält aber schon E-Planung
+  (45 `SIMA_ET_SIBEL_Sicherheitsleuchte`).
