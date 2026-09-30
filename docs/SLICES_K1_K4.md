@@ -182,7 +182,7 @@ an einem STO-Kästchen, einem Schacht-Layer oder einer Schacht-Zone.
 
 ### Test
 
-* `tests/raumerkennung/test_rest_komponenten.py`: sechs K2-Fälle (ohne Beleg
+* `tests/raumerkennung/test_rest_komponenten.py`: sieben K2-Fälle (ohne Beleg
   NISCHE ohne Flags und ohne Klasse; Text 400 mm → SCHACHT, auch
   „Deckendurchbruch"; Text 700 mm → NISCHE; Keil im Kasten der Fläche →
   SCHACHT; Keil-Kasten streift nur 10 % → NISCHE; rote Kontur allein → NISCHE;
