@@ -334,25 +334,23 @@ Quellen: FALLBACK: 2, GRAPH: 1
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 9 |
-| ALLGEMEIN_NEBENRAUM | 3 |
-| LIFT | 1 |
+| ALLGEMEIN_ERSCHLIESSUNG | 11 |
+| ALLGEMEIN_NEBENRAUM | 2 |
 | _davon auf Treppenlauf/Verbotszone_ | 1 |
 
 **BEFUND (nur berichtet, Platzierung NICHT geändert):**
 
-- LIFT: 1 Leuchten (muss 0 sein)
 - Treppenlauf/Verbotszone: 1 Leuchten (muss 0 sein)
 
 ## Rotationsprüfung RZ über Tür (Messung, ±2°)
 
 | Tür | RZ xy m | rotation° | Türwandwinkel° | Δ° | Befund |
 |---|---|--:|--:|--:|---|
-| durchgang_8 | (2175.51, 1608.23) | 0.0 | 179.7 | 0.3 | ok |
-| tuer_5 | (2179.29, 1607.07) | 0.0 | 179.7 | 0.3 | ok |
-| tuer_5 | (2178.72, 1606.55) | 0.0 | 179.7 | 0.3 | ok |
-| tuer_4 | (2179.08, 1604.65) | 90.0 | 179.7 | 89.7 | abweichend |
-| tuer_11 | (2206.29, 1590.19) | 270.0 | 90.0 | 0.0 | ok |
+| durchgang_8 | (2175.70, 1609.18) | 180.0 | 179.7 | 0.3 | ok |
+| tuer_5 | (2179.35, 1607.07) | 0.0 | 179.7 | 0.3 | ok |
+| tuer_5 | (2178.74, 1606.70) | 0.0 | 179.7 | 0.3 | ok |
+| tuer_4 | (2178.93, 1604.69) | 90.0 | 179.7 | 89.7 | abweichend |
+| tuer_11 | (2206.44, 1590.17) | 270.0 | 90.0 | 0.0 | ok |
 
 ## Anker je Stiegenhaus (2 Stiegenhäuser)
 
@@ -413,4 +411,4 @@ Quellen: FALLBACK: 2, GRAPH: 1
 | unbekannte_kombination | 16 |
 | kein_nachbarraum | 9 |
 
-Laufzeit: 168.3 s
+Laufzeit: 158.4 s

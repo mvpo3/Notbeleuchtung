@@ -1025,16 +1025,16 @@ Quellen: FALLBACK: 15, GRAPH: 9
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 57 |
+| ALLGEMEIN_ERSCHLIESSUNG | 37 |
 | WOHNUNG_PRIVAT | 3 |
-| kein Raum | 12 |
-| unbestimmt | 3 |
-| _davon auf Treppenlauf/Verbotszone_ | 6 |
+| kein Raum | 28 |
+| unbestimmt | 2 |
+| _davon auf Treppenlauf/Verbotszone_ | 4 |
 
 **BEFUND (nur berichtet, Platzierung NICHT geändert):**
 
 - WOHNUNG_PRIVAT: 3 Leuchten (muss 0 sein)
-- Treppenlauf/Verbotszone: 6 Leuchten (muss 0 sein)
+- Treppenlauf/Verbotszone: 4 Leuchten (muss 0 sein)
 
 ## Rotationsprüfung RZ über Tür (Messung, ±2°)
 
@@ -1203,4 +1203,4 @@ Restweg im EG: unbekannt (AmRain_EG.dxf: kein Segment Stiegenhaustür→final_ex
 | tuer_ins_nichts | 8 |
 | beide_seiten_untypisiert | 2 |
 
-Laufzeit: 493.9 s
+Laufzeit: 1027.6 s

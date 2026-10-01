@@ -201,9 +201,9 @@ Quellen: FALLBACK: 2, GRAPH: 5
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 11 |
+| ALLGEMEIN_ERSCHLIESSUNG | 10 |
 | ALLGEMEIN_NEBENRAUM | 3 |
-| kein Raum | 3 |
+| kein Raum | 4 |
 | _davon auf Treppenlauf/Verbotszone_ | 0 |
 
 ## Rotationsprüfung RZ über Tür (Messung, ±2°)
@@ -287,4 +287,4 @@ Quellen: FALLBACK: 2, GRAPH: 5
 | kein_nachbarraum | 3 |
 | tuer_ins_nichts | 3 |
 
-Laufzeit: 49.2 s
+Laufzeit: 45.0 s

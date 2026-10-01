@@ -1084,16 +1084,16 @@ Quellen: FALLBACK: 24
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 66 |
-| ALLGEMEIN_NEBENRAUM | 3 |
+| ALLGEMEIN_ERSCHLIESSUNG | 47 |
 | WOHNUNG_PRIVAT | 2 |
-| kein Raum | 13 |
-| unbestimmt | 7 |
-| _davon auf Treppenlauf/Verbotszone_ | 0 |
+| kein Raum | 22 |
+| unbestimmt | 5 |
+| _davon auf Treppenlauf/Verbotszone_ | 1 |
 
 **BEFUND (nur berichtet, Platzierung NICHT geändert):**
 
 - WOHNUNG_PRIVAT: 2 Leuchten (muss 0 sein)
+- Treppenlauf/Verbotszone: 1 Leuchten (muss 0 sein)
 
 ## Rotationsprüfung RZ über Tür (Messung, ±2°)
 
@@ -1270,4 +1270,4 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_tuer_113, exit_tuer_15
 | beide_seiten_untypisiert | 17 |
 | tuer_ins_nichts | 7 |
 
-Laufzeit: 401.0 s
+Laufzeit: 402.3 s

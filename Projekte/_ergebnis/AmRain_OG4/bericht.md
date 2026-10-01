@@ -306,9 +306,9 @@ Quellen: FALLBACK: 4
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 9 |
+| ALLGEMEIN_ERSCHLIESSUNG | 5 |
 | kein Raum | 1 |
-| unbestimmt | 3 |
+| unbestimmt | 2 |
 | _davon auf Treppenlauf/Verbotszone_ | 0 |
 
 ## Rotationsprüfung RZ über Tür (Messung, ±2°)
@@ -367,4 +367,4 @@ Restweg im EG: unbekannt (AmRain_EG.dxf: kein Segment Stiegenhaustür→final_ex
 | beide_seiten_untypisiert | 2 |
 | tuer_ins_nichts | 2 |
 
-Laufzeit: 126.0 s
+Laufzeit: 429.6 s

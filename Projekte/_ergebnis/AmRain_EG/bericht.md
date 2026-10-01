@@ -1451,11 +1451,11 @@ Quellen: FALLBACK: 6, GRAPH: 1
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 12 |
+| ALLGEMEIN_ERSCHLIESSUNG | 10 |
 | ALLGEMEIN_NEBENRAUM | 7 |
 | WOHNUNG_PRIVAT | 3 |
-| kein Raum | 9 |
-| unbestimmt | 9 |
+| kein Raum | 13 |
+| unbestimmt | 7 |
 | _davon auf Treppenlauf/Verbotszone_ | 0 |
 
 **BEFUND (nur berichtet, Platzierung NICHT geändert):**
@@ -1582,4 +1582,4 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_tuer_231
 | tuer_ins_nichts | 32 |
 | beide_seiten_untypisiert | 13 |
 
-Laufzeit: 1038.5 s
+Laufzeit: 1217.3 s

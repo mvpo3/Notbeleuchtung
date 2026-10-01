@@ -270,7 +270,7 @@ Quellen: FALLBACK: 4
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 9 |
+| ALLGEMEIN_ERSCHLIESSUNG | 7 |
 | kein Raum | 4 |
 | unbestimmt | 1 |
 | _davon auf Treppenlauf/Verbotszone_ | 0 |
@@ -339,4 +339,4 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_aussenoeffnung_1
 | unbekannte_kombination | 8 |
 | kein_nachbarraum | 4 |
 
-Laufzeit: 98.1 s
+Laufzeit: 106.7 s

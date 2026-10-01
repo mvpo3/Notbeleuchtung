@@ -1030,50 +1030,42 @@ Quellen: FALLBACK: 3, LINIE: 139
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 14 |
-| ALLGEMEIN_NEBENRAUM | 5 |
-| LIFT | 1 |
-| WOHNUNG_PRIVAT | 62 |
-| kein Raum | 57 |
+| ALLGEMEIN_ERSCHLIESSUNG | 11 |
+| ALLGEMEIN_NEBENRAUM | 3 |
+| WOHNUNG_PRIVAT | 31 |
+| kein Raum | 48 |
 | _davon auf Treppenlauf/Verbotszone_ | 3 |
 
 **BEFUND (nur berichtet, Platzierung NICHT geändert):**
 
-- WOHNUNG_PRIVAT: 62 Leuchten (muss 0 sein)
-- LIFT: 1 Leuchten (muss 0 sein)
+- WOHNUNG_PRIVAT: 31 Leuchten (muss 0 sein)
 - Treppenlauf/Verbotszone: 3 Leuchten (muss 0 sein)
 
 ## Rotationsprüfung RZ über Tür (Messung, ±2°)
 
 | Tür | RZ xy m | rotation° | Türwandwinkel° | Δ° | Befund |
 |---|---|--:|--:|--:|---|
-| durchgang_55 | (337.36, 111.73) | 270.0 | 53.4 | 36.6 | abweichend |
-| tuer_87 | (336.14, 112.58) | 0.0 | 143.4 | 36.6 | abweichend |
-| durchgang_42 | (353.50, 123.93) | 180.0 | 143.4 | 36.6 | abweichend |
-| durchgang_49 | (347.21, 123.23) | 0.0 | 143.4 | 36.6 | abweichend |
-| tuer_98 | (345.77, 113.02) | 180.0 | 143.4 | 36.6 | abweichend |
-| durchgang_39 | (344.50, 112.63) | 90.0 | 53.4 | 36.6 | abweichend |
-| tuer_98 | (345.75, 112.61) | 0.0 | 143.4 | 36.6 | abweichend |
-| durchgang_33 | (341.22, 106.96) | 270.0 | 143.4 | 53.4 | abweichend |
-| tuer_61 | (334.13, 95.19) | 180.0 | 123.9 | 56.1 | abweichend |
-| tuer_67 | (325.95, 93.62) | 0.0 | 34.0 | 34.0 | abweichend |
-| durchgang_12 | (326.02, 94.04) | 180.0 | 123.9 | 56.1 | abweichend |
-| durchgang_23 | (323.23, 85.92) | 180.0 | 34.0 | 34.0 | abweichend |
-| durchgang_15 | (321.34, 86.43) | 270.0 | 33.9 | 56.1 | abweichend |
-| durchgang_16 | (319.58, 90.35) | 270.0 | 33.9 | 56.1 | abweichend |
-| durchgang_67 | (321.05, 91.24) | 270.0 | 33.9 | 56.1 | abweichend |
-| durchgang_67 | (321.25, 91.46) | 90.0 | 33.9 | 56.1 | abweichend |
-| durchgang_67 | (319.84, 90.42) | 90.0 | 33.9 | 56.1 | abweichend |
+| tuer_87 | (336.10, 112.73) | 0.0 | 143.4 | 36.6 | abweichend |
+| durchgang_55 | (337.30, 111.66) | 270.0 | 53.4 | 36.6 | abweichend |
+| tuer_87 | (336.01, 111.06) | 0.0 | 143.4 | 36.6 | abweichend |
+| durchgang_42 | (353.43, 123.80) | 180.0 | 143.4 | 36.6 | abweichend |
+| durchgang_49 | (347.24, 123.37) | 0.0 | 143.4 | 36.6 | abweichend |
+| durchgang_33 | (341.33, 106.86) | 270.0 | 143.4 | 53.4 | abweichend |
+| tuer_61 | (334.18, 95.05) | 180.0 | 123.9 | 56.1 | abweichend |
+| tuer_67 | (326.02, 93.75) | 0.0 | 34.0 | 34.0 | abweichend |
+| durchgang_23 | (323.16, 85.79) | 180.0 | 34.0 | 34.0 | abweichend |
+| durchgang_15 | (321.46, 86.53) | 270.0 | 33.9 | 56.1 | abweichend |
+| durchgang_67 | (321.19, 91.29) | 270.0 | 33.9 | 56.1 | abweichend |
 | durchgang_16 | (318.73, 90.66) | 270.0 | 33.9 | 56.1 | abweichend |
-| tuer_47 | (317.31, 111.31) | 180.0 | 0.0 | 0.0 | ok |
-| durchgang_64 | (325.46, 106.29) | 270.0 | 180.0 | 90.0 | abweichend |
-| tuer_49 | (324.21, 108.13) | 90.0 | 0.0 | 90.0 | abweichend |
-| tuer_116 | (337.51, 106.93) | 90.0 | 143.4 | 53.4 | abweichend |
-| tuer_116 | (337.84, 106.73) | 90.0 | 143.4 | 53.4 | abweichend |
-| tuer_116 | (337.74, 107.06) | 180.0 | 143.4 | 36.6 | abweichend |
-| tuer_35 | (334.50, 106.55) | 180.0 | 33.9 | 33.9 | abweichend |
-| durchgang_53 | (326.83, 109.32) | 0.0 | 90.0 | 90.0 | abweichend |
-| tuer_109 | (333.31, 101.31) | 270.0 | 123.9 | 33.9 | abweichend |
+| tuer_47 | (317.39, 111.18) | 180.0 | 0.0 | 0.0 | ok |
+| durchgang_64 | (325.61, 106.32) | 270.0 | 180.0 | 90.0 | abweichend |
+| tuer_116 | (337.38, 106.99) | 90.0 | 143.4 | 53.4 | abweichend |
+| tuer_116 | (337.69, 106.76) | 90.0 | 143.4 | 53.4 | abweichend |
+| tuer_98 | (345.73, 112.88) | 180.0 | 143.4 | 36.6 | abweichend |
+| durchgang_39 | (344.36, 112.67) | 90.0 | 53.4 | 36.6 | abweichend |
+| tuer_35 | (334.45, 106.40) | 180.0 | 33.9 | 33.9 | abweichend |
+| durchgang_53 | (326.78, 109.46) | 0.0 | 90.0 | 90.0 | abweichend |
+| tuer_109 | (333.41, 101.41) | 270.0 | 123.9 | 33.9 | abweichend |
 
 ## Anker je Stiegenhaus (3 Stiegenhäuser)
 
@@ -1140,4 +1132,4 @@ Restweg im EG: unbekannt (kein EG-Plan in Projekte/_eingang)
 | beide_seiten_untypisiert | 2 |
 | tuer_in_schacht | 2 |
 
-Laufzeit: 887.0 s
+Laufzeit: 1183.8 s

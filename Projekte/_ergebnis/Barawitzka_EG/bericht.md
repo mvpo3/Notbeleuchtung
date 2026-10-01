@@ -385,9 +385,9 @@ Quellen: FALLBACK: 1, GRAPH: 7
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 4 |
+| ALLGEMEIN_ERSCHLIESSUNG | 5 |
 | ALLGEMEIN_NEBENRAUM | 2 |
-| kein Raum | 5 |
+| kein Raum | 4 |
 | _davon auf Treppenlauf/Verbotszone_ | 0 |
 
 ## Rotationsprüfung RZ über Tür (Messung, ±2°)
@@ -395,8 +395,8 @@ Quellen: FALLBACK: 1, GRAPH: 7
 | Tür | RZ xy m | rotation° | Türwandwinkel° | Δ° | Befund |
 |---|---|--:|--:|--:|---|
 | tuer_31 | (14.90, -2.93) | 180.0 | 90.0 | 90.0 | abweichend |
-| tuer_28 | (13.10, -4.76) | 180.0 | 0.0 | 0.0 | ok |
-| tuer_34 | (7.09, -6.10) | 180.0 | 0.0 | 0.0 | ok |
+| tuer_28 | (13.19, -4.87) | 180.0 | 0.0 | 0.0 | ok |
+| tuer_34 | (7.66, -6.24) | 180.0 | 0.0 | 0.0 | ok |
 | tuer_33 | (11.84, -24.04) | 270.0 | 90.0 | 0.0 | ok |
 
 ## Anker je Stiegenhaus (2 Stiegenhäuser)
@@ -479,12 +479,11 @@ Quellen: FALLBACK: 1, GRAPH: 7
 
 ## Referenzvergleich Fachplaner (11 Referenz-Leuchten im Frame)
 
-- Treffer (≤1 m, Rotation ≤10°): **1/11 = 9 %**
-- überzählig (eigene ohne Referenz-Gegenstück): 10
+- Treffer (≤1 m, Rotation ≤10°): **2/11 = 18 %**
+- überzählig (eigene ohne Referenz-Gegenstück): 9
 
 | fehlende Referenz | xy m | rot° |
 |---|---|--:|
-| STANDARDMASK_RZ_PR Typ A | (8.14, -6.24) | 0 |
 | STANDARDMASK_RZ_PL Typ A | (15.22, -7.91) | 270 |
 | STANDARDMASK_RZ_PR Typ A | (8.45, -8.79) | 180 |
 | STANDARDMASK_SL Typ I | (14.33, -2.78) | 180 |
@@ -498,9 +497,8 @@ Quellen: FALLBACK: 1, GRAPH: 7
 | überzählige eigene | xy m | rot° |
 |---|---|--:|
 | rz | (12.34, -22.50) | 180 |
-| rz | (13.10, -4.76) | 180 |
+| rz | (13.19, -4.87) | 180 |
 | sicherheitsleuchte | (10.80, -2.09) | 0 |
-| rz | (7.09, -6.10) | 180 |
 | sicherheitsleuchte | (12.23, -7.16) | 0 |
 | sicherheitsleuchte | (11.44, -23.01) | 0 |
 | rz | (9.92, -6.77) | 0 |
@@ -508,4 +506,4 @@ Quellen: FALLBACK: 1, GRAPH: 7
 | sicherheitsleuchte | (14.90, -1.93) | 0 |
 | sicherheitsleuchte | (9.92, -6.27) | 0 |
 
-Laufzeit: 254.6 s
+Laufzeit: 166.2 s

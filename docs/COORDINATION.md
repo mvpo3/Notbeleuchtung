@@ -619,3 +619,25 @@ Abnahme (messbar): `mollgasse_gt_vergleich.py 1KG 2KG` — Ziel-Richtung:
 KELLERABTEIL > 0, Zirkulations-Segmente zweistellig, „fehlt" im 2KG deutlich
 unter 20. Wissens-Grundlage für dich: `knowledge/notbeleuchtung/abgleich/
 {1KG,2KG}/abgleich_*.md` (mm-genau belegte Beispiele) + Bericht §K.
+
+---
+
+## Log 2026-10-01 — Leonis: Kopplung neueste Raumerkennung `c3b8186` (PR #161) × Platzierung
+
+**An Selman.** Branch `leonis/kopplung-raumerkennung-c3b8186` (nicht gemergt, nicht auf
+deinem Branch gepusht). Voller Bericht: `docs/KOPPLUNG_RAUMERKENNUNG_c3b8186.md`.
+
+- **Raumerkennung byte-identisch übernommen** (Merge-Konflikte zugunsten `c3b8186`; 0 Konflikte
+  in `src/`). Deine Raumerkennung reproduziert den LUECKEN-§7-Basislauf über alle 13 Prüfpläne
+  **exakt** (Räume/Ausgänge/Segmente je Plan deckungsgleich). Suite 5 rot = die erwarteten
+  (2× S4c-Pins, 2× `wohnung_privat`, 1× `muthgasse tuerbloecke`), 0 rot in `raumerkennung/`,
+  0 neue. Schema in sync.
+- **Keine neuen Raumerkennungs-Befunde** über LUECKEN §1–21 hinaus. Die bekannten reproduzieren
+  (nicht als neu gemeldet): AmRain_OG4 0 Ausgänge/0 Stiegenhäuser (§6.2, F-07/R-09); „kein Raum"-
+  Leuchten (N-07): Muthgasse_E2 48, AmRain_EG 13, AmRain_UG 22; $INSUNITS-Rückfall 8/13.
+- **Gate lokal nicht re-messbar:** `gate_messung.py`/`pytest -m gate` brauchen das externe
+  M17-Referenz-Paket (`NOTBEL_M17_REFERENZ`, nicht im Repo). Wenn du den Pfad hast, kann ich
+  gegenmessen; sonst gilt dein §21.1-Stand „(3) DG2 only".
+- **Platzierungsseite (meine Lane, bekannt):** WOHNUNG_PRIVAT-Leuchten (Board 1) auf Muthgasse 31,
+  AmRain EG/OG1/OG2/OG3 + Mollgasse_EG; LIFT/SCHACHT/Verbotszone (N-03) Muthgasse 3, AmRain_OG3 1.
+  → bleiben bei mir/Board, nichts für dich.
