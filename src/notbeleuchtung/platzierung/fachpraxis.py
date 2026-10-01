@@ -42,7 +42,13 @@ from .bausteine import ist_echte_tuer as _ist_echte_tuer
 from .bausteine import rotation_piktogramm_in_raum as _rotation_piktogramm_in_raum
 from .bausteine import rotation_zur_tuer as _rotation_zur_tuer
 from .bausteine import select_key as _select_key
-from .geometry import _bbox, _bbox_area, find_center_visual, point_in_polygon
+from .geometry import (
+    _bbox,
+    _bbox_area,
+    _relocate_outside_exclusions,
+    find_center_visual,
+    point_in_polygon,
+)
 from .lux import lux_punkte, wartungsfaktor_aus_norm
 
 AUFHELLER_KEY = "sicherheitsleuchte_aufheller"
@@ -192,6 +198,16 @@ def aufheller_je_rz(
     deckt das vorhandene Licht ihn ab, entfällt der Aufheller (keine Überproduktion).
     Ohne `i_cd_fn` (keine LDT) bleibt es beim bedingungslosen Setzen — die konstante
     Lichtstärke-Annahme überschätzt die Deckung, ein stilles Weglassen wäre unsicher.
+
+    **D1 (Fischamend 2026-09-18, R-J):** zwei Inflations-Bremsen. (1) RZ in einem
+    KORRIDOR-Polygon bekommen KEINE B1-Leuchte — die Gang-Lux-Deckung besitzt
+    `deckung.verdichte_fluchtweg` (Lux-Reihe bzw. S4-Drossel: 1 Aufheller je
+    Längslücke), ein zusätzlicher Aufheller hinter jedem Gang-RZ konterkariert
+    genau dieses Owner-Muster (Ground truth EG: 1 Gang-Aufheller, nicht je RZ
+    einer; Befund: 8,3-m²-Gang mit 2 RZ + 2 Aufhellern, Quote 27–54 %/Geschoss).
+    (2) Gesetzte Aufheller zählen sofort als Lichtquelle für die folgenden RZ
+    (inkrementell) — sonst bekommt ein RZ-Cluster je Zeichen einen eigenen
+    Aufheller, obwohl der erste den Bereich schon deckt.
     """
     regeln = regeln or FachpraxisRegeln()
     quellen = [
@@ -199,9 +215,16 @@ def aufheller_je_rz(
         for q in platzierungen
         if q.kind in ("sicherheitsleuchte", "antipanik")
     ]
+    korridore = [
+        r for r in raum.raeume
+        if (r.raum_typ or "").upper() in _KORRIDOR_TYPEN and len(r.polygon_mm) >= 3
+    ]
     out: list[Platzierung] = []
     for p in platzierungen:
         if p.kind != "rz":
+            continue
+        # D1 (1): Korridor-RZ → Gang-Deckung ist deckung/Drossel-Sache, kein B1.
+        if any(point_in_polygon(p.xy_mm, k.polygon_mm) for k in korridore):
             continue
         # Owner-Entscheid 2026-09-09: das Tür-RZ der TECHNIK/MUELL/KINDERWAGEN-Regel
         # (`tuerleuchte_pflichtraeume`) bekommt KEINEN Aufheller — es sitzt direkt an der
@@ -244,6 +267,9 @@ def aufheller_je_rz(
                 norm_quelle=QUELLE_AUFHELLER,
             )
         )
+        # D1 (2): der frische Aufheller ist ab jetzt Lichtquelle fuer die
+        # folgenden RZ-Kandidaten (inkrementell, Listen-Reihenfolge).
+        quellen.append((xy[0], xy[1], 0.0))
     return out
 
 
@@ -587,11 +613,13 @@ def stiegenhaus_rz_nachpass(
             continue
         dx, dy = cx - ex.xy_mm[0], cy - ex.xy_mm[1]
         # Punkt 4: liefert die Erkennung Treppenläufe, ersetzt die ECHTE
-        # Flucht-Gehrichtung (R-H) die Zentrum-Näherung.
+        # Flucht-Gehrichtung (R-H) die Zentrum-Näherung. NB-R13: im
+        # Untergeschoss kehrt sich die Lauf-Interpretation um (Flucht HINAUF).
+        from .bausteine import ist_untergeschoss as _ist_ug
         from .stgh_strategy import fluchtvektor as _fluchtvektor
         sh = next((s_ for s_ in raum.stiegenhaeuser if s_.raum_id == stgh.id), None)
         if sh is not None:
-            fv = _fluchtvektor(sh)
+            fv = _fluchtvektor(sh, hinauf=_ist_ug(raum.floor))
             if fv is not None:
                 dx, dy = fv[0] * 1000.0, fv[1] * 1000.0   # Einheitsvektor → mm-Skala
         if math.hypot(dx, dy) < 50.0:
@@ -611,4 +639,54 @@ def stiegenhaus_rz_nachpass(
             "xy_mm": ziel,
             "rotation_deg": _rotation_zur_tuer(dx, dy),
         }))
+    return out
+
+
+#: D2 (BVH Fischamend 2026-09-13): Aufzugs-/Schacht-Polygone sind kein Montageort —
+#: die Kabinen-Notbeleuchtung regelt die Aufzugsnorm (EN 81-20), nicht dieser Plan.
+#: Real landete dort die STIEGENHAUS-Zentrum-SL (§4.1): der Liftschacht liegt im
+#: Kern des Stiegenhaus-Polygons, `find_center_visual` fällt hinein (BT2 EG lift_1).
+_SCHACHT_TYPEN = {"LIFT", "SCHACHT"}
+
+
+def entferne_schacht_leuchten(
+    platzierungen: list[Platzierung], raum: RaumModell
+) -> list[Platzierung]:
+    """D2-Guard: keine Platzierung im LIFT-/SCHACHT-Polygon.
+
+    Liegt der Punkt zugleich in einem umgebenden Wirts-Raum (Lift im Stiegenhaus-
+    Kern), wird er mit `_relocate_outside_exclusions` an den nächsten montierbaren
+    Punkt DIESES Raums geschoben — die Leuchte gehört dem Wirts-Raum, sie darf
+    nicht still verschwinden. Bei mehreren Wirten zählt der engste (kleinste
+    Fläche). Liegt der Punkt NUR im Schacht, fällt die Platzierung (dort ist
+    nichts montierbar). No-op ohne LIFT-/SCHACHT-Räume.
+    """
+    schaechte = [
+        r for r in raum.raeume
+        if (r.raum_typ or "").upper() in _SCHACHT_TYPEN and len(r.polygon_mm) >= 3
+    ]
+    if not schaechte:
+        return platzierungen
+    wirte = [
+        r for r in raum.raeume
+        if (r.raum_typ or "").upper() not in _SCHACHT_TYPEN and len(r.polygon_mm) >= 3
+    ]
+    out: list[Platzierung] = []
+    for p in platzierungen:
+        treffer = [s for s in schaechte if point_in_polygon(p.xy_mm, s.polygon_mm)]
+        if not treffer:
+            out.append(p)
+            continue
+        wirt = min(
+            (r for r in wirte if point_in_polygon(p.xy_mm, r.polygon_mm)),
+            key=lambda r: r.flaeche_m2 or _bbox_area(_bbox(r.polygon_mm)),
+            default=None,
+        )
+        if wirt is None:
+            continue                                   # nur im Schacht → entfällt
+        andere = [q.xy_mm for q in platzierungen if q is not p]
+        neu_xy = _relocate_outside_exclusions(
+            p.xy_mm, wirt.polygon_mm, [s.polygon_mm for s in treffer], existing=andere
+        )
+        out.append(p if neu_xy == p.xy_mm else p.model_copy(update={"xy_mm": neu_xy}))
     return out

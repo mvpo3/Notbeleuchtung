@@ -1,0 +1,245 @@
+{
+ "erreichbar_n": 10,
+ "erreichbar_gepaart": 4,
+ "erreichbar_typ_match": 1,
+ "erreichbar_fehlt": [
+  "852AF",
+  "852B7",
+  "852B8",
+  "852E4",
+  "85330",
+  "85344"
+ ],
+ "typ_match_n": 1,
+ "geschoss": "2OG",
+ "engine_n": 14,
+ "engine_by_kind": {
+  "rz": 10,
+  "sicherheitsleuchte": 4
+ },
+ "gt_n": 11,
+ "gt_by_klasse": {
+  "rz": 9,
+  "antipanik": 2
+ },
+ "gepaart": 4,
+ "fehlt_n": 7,
+ "ueberfluessig_n": 10,
+ "distanz_median_mm": 1292.2,
+ "distanz_max_mm": 1972.4,
+ "beidseitig_treffer": 0,
+ "beidseitig_gt_gesamt": 0,
+ "paare": [
+  {
+   "gt": "852B0",
+   "gt_typ": "rz",
+   "gt_richtung": "down",
+   "engine_key": "notlicht_ks_stiege_links",
+   "engine_richtung": "links",
+   "distanz_mm": 1972.4,
+   "rot_delta_deg": 89.8,
+   "typ_match": false,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  },
+  {
+   "gt": "852B6",
+   "gt_typ": "rz",
+   "gt_richtung": "down",
+   "engine_key": "notlicht_ks_stiege_unten",
+   "engine_richtung": "unten",
+   "distanz_mm": 283.3,
+   "rot_delta_deg": 89.9,
+   "typ_match": true,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  },
+  {
+   "gt": "852E3",
+   "gt_typ": "rz",
+   "gt_richtung": "down",
+   "engine_key": "notlicht_ks_stiege_rechts",
+   "engine_richtung": "rechts",
+   "distanz_mm": 773.7,
+   "rot_delta_deg": 179.8,
+   "typ_match": false,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  },
+  {
+   "gt": "8532D",
+   "gt_typ": "rz",
+   "gt_richtung": "right",
+   "engine_key": "notlicht_ks_stiege_unten",
+   "engine_richtung": "unten",
+   "distanz_mm": 1810.8,
+   "rot_delta_deg": 90.0,
+   "typ_match": false,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  }
+ ],
+ "fehlt": [
+  {
+   "handle": "852AF",
+   "typ": "rz",
+   "richtung": "right",
+   "xy": [
+    2737734.6,
+    1563819.8
+   ]
+  },
+  {
+   "handle": "852B7",
+   "typ": "antipanik",
+   "richtung": null,
+   "xy": [
+    2747279.8,
+    1567359.8
+   ]
+  },
+  {
+   "handle": "852B8",
+   "typ": "antipanik",
+   "richtung": null,
+   "xy": [
+    2753577.0,
+    1567358.8
+   ]
+  },
+  {
+   "handle": "852E4",
+   "typ": "rz",
+   "richtung": "left",
+   "xy": [
+    2778088.5,
+    1535916.1
+   ]
+  },
+  {
+   "handle": "8532F",
+   "typ": "rz",
+   "richtung": "down",
+   "xy": [
+    2801575.1,
+    1623642.9
+   ]
+  },
+  {
+   "handle": "85330",
+   "typ": "rz",
+   "richtung": "down",
+   "xy": [
+    2772278.9,
+    1537331.6
+   ]
+  },
+  {
+   "handle": "85344",
+   "typ": "rz",
+   "richtung": "left",
+   "xy": [
+    2744642.3,
+    1563829.4
+   ]
+  }
+ ],
+ "ueberfluessig": [
+  {
+   "key": "notlicht_ks_stiege_rechts",
+   "klasse": "rz",
+   "xy": [
+    2739143.4,
+    1566708.7
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_links",
+   "klasse": "rz",
+   "xy": [
+    2762952.3,
+    1565025.6
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege",
+   "klasse": "rz",
+   "xy": [
+    2764147.5,
+    1534325.6
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege",
+   "klasse": "rz",
+   "xy": [
+    2759958.7,
+    1539475.6
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege",
+   "klasse": "rz",
+   "xy": [
+    2776847.5,
+    1525402.3
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_links",
+   "klasse": "rz",
+   "xy": [
+    2775166.1,
+    1548869.2
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2743802.0,
+    1564605.3
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2771153.0,
+    1536775.7
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2750329.5,
+    1567208.0
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2777671.4,
+    1539214.3
+   ]
+  }
+ ],
+ "pair_radius_mm": 3000.0,
+ "transform": {
+  "n_namen": 58,
+  "n_inlier": 58,
+  "tx_mm": -2874006.3,
+  "ty_mm": -1562504.4
+ },
+ "engine_summary": {
+  "n_symbols": 14,
+  "by_kind": {
+   "rz": 10,
+   "sicherheitsleuchte": 4
+  },
+  "n_raeume": 97
+ },
+ "gt_lux_nachweis": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\Projekte\\_ergebnis\\Mollgasse_GT\\2OG\\gt_lux_nachweis.png"
+}

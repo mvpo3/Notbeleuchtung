@@ -28,29 +28,32 @@ from notbeleuchtung.hauptengine.contracts import (
 )
 
 from .bausteine import AGV_SV_F as _AGV_SV_F
+from .bausteine import MONTAGE_WAND as _MONTAGE_WAND
 from .bausteine import building_assigner as _building_assigner
+from .bausteine import ist_untergeschoss as _ist_untergeschoss
 from .bausteine import key_und_rotation as _key_und_rotation
 from .bausteine import richtung_und_rotation as _richtung_und_rotation
 from .geometry import point_in_polygon
 
 
-def fluchtvektor(sh) -> tuple[float, float] | None:
-    """Flucht-Gehrichtung (abwärts) im Geschoss aus den Treppenläufen — oder None.
+def fluchtvektor(sh, hinauf: bool = False) -> tuple[float, float] | None:
+    """Flucht-Gehrichtung im Geschoss aus den Treppenläufen — oder None.
 
-    `Treppenlauf.richtung` = Gehrichtung Antritt→Austritt: bei "ab" IST das die
-    Fluchtrichtung, bei "auf" ist Flucht die Gegenrichtung (Austritt→Antritt).
-    "unbekannt" trägt nichts bei; ohne verwertbaren Lauf None (fail-open)."""
+    `Treppenlauf.richtung` = Gehrichtung Antritt→Austritt. Obergeschosse
+    (`hinauf=False`): Flucht geht ABWÄRTS — bei "ab" ist Antritt→Austritt die
+    Fluchtrichtung, bei "auf" die Gegenrichtung. Untergeschosse (`hinauf=True`,
+    NB-R13 PDF S.43/54–55): Flucht geht HINAUF, die Interpretation kehrt sich
+    um ("auf"-Lauf = Fluchtrichtung). "unbekannt" trägt nichts bei; ohne
+    verwertbaren Lauf None (fail-open)."""
     summe = [0.0, 0.0]
     n = 0
     for lauf in sh.laeufe:
         ax, ay = lauf.antritt_mm
         ex, ey = lauf.austritt_mm
-        if lauf.richtung == "ab":
-            dx, dy = ex - ax, ey - ay
-        elif lauf.richtung == "auf":
-            dx, dy = ax - ex, ay - ey
-        else:
+        if lauf.richtung not in ("ab", "auf"):
             continue
+        vorwaerts = (lauf.richtung == "ab") != hinauf   # XOR: UG kehrt um
+        dx, dy = (ex - ax, ey - ay) if vorwaerts else (ax - ex, ay - ey)
         laenge = math.hypot(dx, dy)
         if laenge <= 0.0:
             continue
@@ -96,8 +99,9 @@ def plan_stiegenhaus_rz(raum: RaumModell, norm: NormProvider) -> list[Platzierun
                   if (r.raum_typ or "").upper() == "STIEGENHAUS" and len(r.polygon_mm) >= 3}
     out: list[Platzierung] = []
     assign_building = _building_assigner([a.xy_mm[0] for a in raum.ausgaenge] or [0.0])
+    hinauf = _ist_untergeschoss(raum.floor)            # NB-R13: UG flüchtet HINAUF
     for sh in raum.stiegenhaeuser:
-        flucht = fluchtvektor(sh)
+        flucht = fluchtvektor(sh, hinauf=hinauf)
         if flucht is None:
             continue                                   # Selman-Naht (c): keine Läufe
         poly = stgh_polys.get(sh.raum_id)
@@ -117,5 +121,6 @@ def plan_stiegenhaus_rz(raum: RaumModell, norm: NormProvider) -> list[Platzierun
             height_mm=float(anf.montagehoehe_mm), kind="rz", richtung=richtung,
             circuit_hint=f"AGV-{assign_building(pos[0])}-F{_AGV_SV_F}",
             covers_segment=[], norm_quelle=anf.quelle,
+            montage_art=_MONTAGE_WAND,             # NB-R14: Stiegen-RZ an die Wand
         ))
     return out

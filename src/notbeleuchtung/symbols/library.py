@@ -1,14 +1,17 @@
-"""library.py — Loader für CAD_Symbole/Notbeleuchtungssymbole.dxf (Port aus elektro-planer).
+"""library.py — Loader für CAD_Symbole/RIVO_NL_Symbole.dxf.
 
-Portiert aus elektro-planer backend/symbols/schrack_library.py (siehe
-docs/PORT_LOG.md). Liest die Schrack-Symbol-Library einmal und cacht sie;
-Helfer zum Layer-Sync und Block-Import in ein Output-DXF via
+Migration Rivoplan-Master (Owner 2026-09-20; Bibliotheks-Update 2026-09-21): die
+Rivoplan-Bibliothek `RIVO_NL_Symbole.dxf` ist die EINZIGE produktive Symbolquelle
+(RIVO_ARR_down/left/right + echter Beidseitig-Block RIVO_ARR_bothsided; right ist
+klein-nativ wie down/left). Ursprünglich portiert aus elektro-planer
+backend/symbols/schrack_library.py (docs/PORT_LOG.md). Liest die Library einmal
+und cacht sie; Helfer zum Layer-Sync und Block-Import in ein Output-DXF via
 ezdxf.addons.Importer. Der Importer ist per-output_doc und wird NICHT global
 gecacht — nur die geladene Library und das validierte Mapping.
 
-Divergenz zum Original: Pfad-Resolution ohne elektro-planer config.py —
-explizites Argument → env `NOTBELEUCHTUNG_SYMBOL_LIB` → Aufwärts-Suche nach
-`CAD_Symbole/Notbeleuchtungssymbole.dxf` ab dieser Datei (src-Layout: Repo-Root).
+Pfad-Resolution: explizites Argument → env `NOTBELEUCHTUNG_SYMBOL_LIB` →
+Aufwärts-Suche nach `CAD_Symbole/RIVO_NL_Symbole.dxf` ab dieser Datei
+(src-Layout: Repo-Root).
 """
 from __future__ import annotations
 
@@ -29,35 +32,21 @@ from notbeleuchtung.symbols import load_symbol_mapping
 
 log = logging.getLogger(__name__)
 
-# Kräftiges Schrack-Grün für die Leuchten-Geometrie-Ebene. Die Library führt
-# ACI=100, das auf weißem Hintergrund zu dunkel rendert. Ausgabe-Layer folgt dem
-# DIN_SIBEL-Schema (din_SIBEL_10_emergency_lighting, siehe dxf_renderer); der
-# physische Lib-Layer heißt weiter `E_Sicherheitsbeleuchtung` und wird beim Sync
-# auf den DIN_SIBEL-Namen umbenannt (Block-Geometrie liegt auf Layer '0', erbt
-# also den INSERT-Layer — kein Umschreiben der Block-Definitionen nötig).
-_SAFETY_GREEN_RGB = (30, 180, 80)
+# Notbeleuchtungs-Ausgabe-Layer = der Layer der Rivoplan-Planvorlage
+# (Vorlagen-Legende/Rivoplan_Notbeleuchtungs_Vorlage.dxf führt genau diesen
+# einen Notbeleuchtungs-Layer; „Symbole landen auf den Layern der Vorlage",
+# Owner 2026-09-18). Die RIVO-Blöcke tragen ihre Farben EXPLIZIT in der
+# Block-Geometrie (grünes Schild + schwarzes Piktogramm, grüner Aufheller) —
+# die Layer-Farbe ist Anzeige-Beiwerk, kein Farbgeber mehr.
+_SAFETY_GREEN_RGB = (30, 179, 80)   # true_color des Vorlagen-Layers (0x1EB350)
 _LIB_SAFETY_LAYER = "E_Sicherheitsbeleuchtung"
 SAFETY_LAYER = "din_SIBEL_10_emergency_lighting"
 
-# din-Konvention (Referenzplan din Planungsunterstützung V25, analysiert 2026-09-09):
-# Rettungszeichen liegen auf dem GRÜNEN Layer (SAFETY_LAYER), reine Sicherheits-/
-# Antipanikleuchten auf einem GELBEN Zwilling — grün = Zeichen, gelb = Ausleuchtung.
-# Optional (render_dxf: rz_sl_farbtrennung); Default ist weiter „alles grün" (Owner #102).
-_SAFETY_YELLOW_RGB = (230, 170, 0)
-SAFETY_LAYER_SL = "din_SIBEL_10_emergency_lighting_yellow"
-
-# Blaue Hardcode-Farben in Library-Blöcken (z.B. SL-Aufheller: SOLID-HATCH ACI 150).
-# Explizite Entity-Farben übergehen den Layer-Grün-Override → beim Import auf
-# BYLAYER stellen, damit Notlicht-Geometrie das Schrack-Grün erbt (Block liegt auf
-# Layer '0' und erbt den INSERT-Layer). Schwarz/Grün der RZ-Piktogramme bleibt.
-_BLAUE_ACI = {5} | set(range(130, 176))
-_BYLAYER = 256
-
 _ENV_VAR = "NOTBELEUCHTUNG_SYMBOL_LIB"
-# Kanonische Library (Owner-Entscheidung 2026-09-05): der kuratierte Notbeleuchtungs-
-# Extrakt — NUR diese Symbole werden verwendet. E-Symbole.dxf (Voll-Katalog) ist
-# abgelöst und dient nur noch als Herkunfts-Referenz.
-_LIB_RELPATH = Path("CAD_Symbole") / "Notbeleuchtungssymbole.dxf"
+# Kanonische Library (Migration Rivoplan-Master, Owner 2026-09-20): die
+# Rivoplan-Bibliothek. Vorgänger-Bibliotheken sind entfernt —
+# es gibt keinen Fallback (Git-Historie ist das Backup).
+_LIB_RELPATH = Path("CAD_Symbole") / "RIVO_NL_Symbole.dxf"
 
 # Pflichtfelder je Mapping-Eintrag (Vokabular kommt aus symbols/__init__.py,
 # die Block-Existenz-Validierung gegen die echte Library passiert hier).
@@ -91,13 +80,13 @@ def _resolve_library_path(path: Path | str | None = None) -> Path:
         if cand.is_file():
             return cand
     raise FileNotFoundError(
-        "Symbol-Library Notbeleuchtungssymbole.dxf nicht gefunden. Kandidaten:\n  - "
+        "Symbol-Library RIVO_NL_Symbole.dxf nicht gefunden. Kandidaten:\n  - "
         + "\n  - ".join(str(c) for c in candidates)
     )
 
 
 def load_library(path: Path | str | None = None) -> Drawing:
-    """Notbeleuchtungssymbole.dxf einmal lesen, cachen. Thread-safe.
+    """RIVO_NL_Symbole.dxf einmal lesen, cachen. Thread-safe.
 
     `path` wird nur beim ERSTEN Laden berücksichtigt (danach Cache;
     für Tests `reset_cache()`)."""
@@ -129,7 +118,9 @@ def load_mapping() -> dict[str, dict[str, Any]]:
             return _mapping
         raw = load_symbol_mapping()
         lib = load_library()
-        block_names = set(lib.blocks.block_names())
+        # DXF-Blocknamen sind case-insensitiv (ezdxf normalisiert auf lowercase);
+        # die Registry führt die Original-Schreibweise der Owner-Bibliothek.
+        block_names = {n.lower() for n in lib.blocks.block_names()}
         errors: list[str] = []
         for key, entry in raw.items():
             if not isinstance(entry, dict):
@@ -139,7 +130,7 @@ def load_mapping() -> dict[str, dict[str, Any]]:
                 if field not in entry:
                     errors.append(f"{key!r}: missing field {field!r}")
             block = entry.get("block_name")
-            if block and block not in block_names:
+            if block and block.lower() not in block_names:
                 errors.append(f"{key!r}: block {block!r} not present in library")
         if errors:
             raise ValueError(
@@ -164,19 +155,13 @@ def sync_layers(output_doc: Drawing) -> int:
     """
     lib = load_library()
     added = 0
-    # Ausgabe-Layer immer sicherstellen: die kuratierte Library führt keinen
-    # eigenen Safety-Layer mehr (Blöcke liegen auf '0', erben den INSERT-Layer).
+    # Ausgabe-Layer immer sicherstellen: die Library führt keinen eigenen
+    # Safety-Layer (Blöcke liegen auf '0', erben den INSERT-Layer). Der gelbe
+    # SL-Zwilling ist mit der neuen Bibliothek entfallen — die Vorlage kennt nur
+    # DIESEN Notbeleuchtungs-Layer, die Symbole tragen ihre Farben selbst.
     if SAFETY_LAYER not in output_doc.layers:
         new = output_doc.layers.add(SAFETY_LAYER)
         r, g, b = _SAFETY_GREEN_RGB
-        new.dxf.true_color = (r << 16) | (g << 8) | b
-        added += 1
-    # Gelber SL-Zwilling (din-Konvention grün=Zeichen / gelb=Leuchte) — immer
-    # angelegt, damit render_dxf ihn ohne weiteres Setup nutzen kann; leer, wenn
-    # die Farbtrennung aus ist.
-    if SAFETY_LAYER_SL not in output_doc.layers:
-        new = output_doc.layers.add(SAFETY_LAYER_SL)
-        r, g, b = _SAFETY_YELLOW_RGB
         new.dxf.true_color = (r << 16) | (g << 8) | b
         added += 1
     for layer in lib.layers:
@@ -213,7 +198,7 @@ def import_block(output_doc: Drawing, block_name: str) -> None:
         importer = Importer(lib, output_doc)
         importer.import_block(block_name)
         importer.finalize()
-    _normalize_block_origin_recursive(output_doc, block_name, visiting=set())
+    _normalize_block_origin(output_doc, block_name)
 
 
 def _normalized_blocks_for(output_doc: Drawing) -> set[str]:
@@ -221,37 +206,29 @@ def _normalized_blocks_for(output_doc: Drawing) -> set[str]:
     return _normalized_blocks_by_doc.setdefault(output_doc, set())
 
 
-def _normalize_block_origin_recursive(
-    output_doc: Drawing,
-    block_name: str,
-    *,
-    visiting: set[str],
-) -> None:
-    """Block-Geometrie verschieben, sodass das Bbox-Zentrum auf (0, 0) liegt."""
+def _normalize_block_origin(output_doc: Drawing, block_name: str) -> None:
+    """NUR die Top-Block-Geometrie verschieben, sodass das Bbox-Zentrum auf (0,0) liegt.
+
+    Migration Phase A (2026-09-18): die frühere REKURSIVE Kind-Zentrierung ist
+    weg — sie verschob bei den neuen RIVO-Schildern den verschachtelten
+    Läufer-/Pfeil-INSERT relativ zum Schild (Komposition zerrissen, Bbox ±8081
+    statt 17,7 units). Kind-Blockdefinitionen bleiben unangetastet (ihre
+    Basispunkte sind Teil der Parent-Komposition); `fast=False` löst nested
+    INSERTs für die Extents korrekt auf.
+
+    KEINE Farb-Umschreibung: die Blöcke tragen ihre Farben absichtlich selbst
+    (grünes Schild, schwarzes Piktogramm, grün-umrandeter Aufheller mit BYLAYER-
+    Füllung) — „Erscheinungsbild ist Wahrheit". Ein Farb-Rewrite würde die
+    bewusst gesetzten Owner-Farben zerstören.
+    """
     normalized = _normalized_blocks_for(output_doc)
     if block_name in normalized:
-        return
-    if block_name in visiting:
-        log.warning("Skipping cyclic Schrack block reference at %s", block_name)
         return
     if block_name not in output_doc.blocks:
         return
 
-    visiting.add(block_name)
     block = output_doc.blocks[block_name]
-
-    # Abhängigkeiten zuerst: Parents mit verschachtelten INSERTs werden erst
-    # zentriert, wenn ihre Kinder stabil sind (deterministisch).
-    for entity in list(block):
-        if entity.dxftype() != "INSERT":
-            continue
-        _normalize_block_origin_recursive(
-            output_doc,
-            entity.dxf.name,
-            visiting=visiting,
-        )
-
-    extents = ezbbox.extents(block, fast=True)
+    extents = ezbbox.extents(block, fast=False)
     if extents.has_data:
         center = extents.center
         if center.x or center.y or center.z:
@@ -259,14 +236,6 @@ def _normalize_block_origin_recursive(
             for entity in list(block):
                 entity.transform(matrix)
 
-    # Blaue Hardcode-Farben → BYLAYER (läuft wie die Zentrierung genau einmal
-    # je Block/Output-Dokument, daher hier statt in import_block).
-    for entity in list(block):
-        if getattr(entity.dxf, "color", None) in _BLAUE_ACI:
-            entity.dxf.color = _BYLAYER
-            entity.dxf.discard("true_color")
-
-    visiting.remove(block_name)
     normalized.add(block_name)
 
 

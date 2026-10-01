@@ -20,6 +20,13 @@ from notbeleuchtung.symbols.orientation import transformation as _transformation
 #: Stromkreis-Feeder der Sicherheitsversorgung (AGV-<Gebäude>-F<n>).
 AGV_SV_F = 13
 
+#: Montage-Art (`Platzierung.montage_art`, MountingMethod). NB-R14 (PDF S.56):
+#: „Notleuchten an Wänden hauptsächlich im Bereich von Stiegen; in normalen
+#: Gangbereichen grundsätzlich an der Decke." → Stiegen-/Tür-/Ausgangs-RZ = Wand,
+#: Gang-/Flächen-Leuchten (Aufheller/Antipanik) = Decke.
+MONTAGE_WAND = "WA"     # Wandaufbau
+MONTAGE_DECKE = "DA"    # Deckenaufbau
+
 # Zwei Bauteile annehmen, wenn die RZ-x-Spanne diese Lücke überschreitet.
 BUILDING_SPREAD_MM = 20000.0
 
@@ -48,10 +55,13 @@ def rotation_zur_tuer(dx: float, dy: float) -> float:
     return (round((math.degrees(math.atan2(dy, dx)) + 90.0) / 90.0) * 90.0) % 360.0
 
 
-#: R-C (Owner-Fachdoku v2, S.3/S.5): Tür-RZ sitzt raumseitig „über bzw. neben der
-#: Türöffnung" — Versatz von der Schwelle ins Rauminnere (Owner-Maß Runde 1, ~150 mm;
-#: Ground truth Nebenraum ~176 mm / Hauseingang ~420 mm = Wand-Offsets, kein Normmaß).
-RZ_INS_RAUM_MM = 150.0
+#: Owner-Regel 2026-09-18 (ersetzt R-C-Versatz ~150 mm): die Tür-Notleuchte sitzt
+#: „in einer Linie mit der Wand, wo sich die Tür befindet" — es gibt KEINEN fixen
+#: Sollwert-Versatz ins Rauminnere. Türposition (Selman) liegt auf der Wandachse
+#: → Versatz 0 = Symbol auf der Wandlinie. Konstante bleibt als der EINE Regelort
+#: (alle Tür-RZ-Sites konsumieren sie); Rotation Piktogramm-ins-Rauminnere (R-B)
+#: ist davon unberührt.
+RZ_INS_RAUM_MM = 0.0
 
 
 #: Obergrenze „das ist noch eine TÜR" (Selmans Nennmaß-Türbereich endet bei 130 cm,
@@ -192,3 +202,18 @@ def referenz_anforderung(norm: NormProvider, klassifikation: str):
         if anf.klassifikation == klassifikation and anf.symbol_katalog_keys:
             return anf
     return None
+
+
+# Untergeschoss-Label-Familien (NB-R13, PDF S.43/54-55): Personen fluechten
+# in UG-Geschossen HINAUF — die Stiegen-Fluchtrichtung kehrt sich gegenueber
+# den Obergeschossen um. Erkannt wird das am Geschoss-Label (KG/UG/Keller);
+# kein Projekt-Hardcode, nur das uebliche Label-Vokabular.
+_UG_MARKER = ("KG", "UG", "KELLER", "UNTERGESCH")
+
+
+def ist_untergeschoss(floor: str | None) -> bool:
+    """True fuer Untergeschoss-Labels ("1KG", "2.UG", "Kellergeschoss", ...)."""
+    if not floor:
+        return False
+    norm = floor.strip().upper()
+    return any(m in norm for m in _UG_MARKER)

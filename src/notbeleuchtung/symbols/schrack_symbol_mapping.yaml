@@ -1,103 +1,128 @@
-# Symbol-Mapping — catalog_key → Block in CAD_Symbole/Notbeleuchtungssymbole.dxf
+# Symbol-Registry — catalog_key → Block in CAD_Symbole/RIVO_NL_Symbole.dxf
 #
-# Owner-Entscheidung 2026-09-05: kanonische Library = der kuratierte Notbeleuchtungs-
-# Extrakt (5 Blöcke + Legende) — NUR diese Symbole. E-Symbole.dxf = Herkunfts-Referenz.
+# Migration Rivoplan-Master (Owner 2026-09-20, nach Phase A 2026-09-18): die
+# Rivoplan-Bibliothek ist die EINZIGE produktive Symbolquelle. Diese Datei ist
+# die zentrale Registry (Typ → Blockname → Skala); die lokalen Pfeilvektoren/
+# Basisorientierungen je Block liegen im Schwester-Modul symbols/orientation.py
+# (_BLOCK_BASE_DEG, gemessen) — zusammen bilden beide die EINE Symbolzuordnung.
+# Dokumentation: docs/SYMBOL_MIGRATION_2026-09-18.md.
 #
-# Kuratierte Notbeleuchtungs-Teilmenge (portiert aus elektro-planer
-# backend/symbols/schrack_symbol_mapping.yaml, siehe docs/PORT_LOG.md). NUR die
-# Notbeleuchtungs-Keys, die die Engine vergibt — nicht der volle 109-Block-Katalog.
-#
-# Kurations-Regel: nur Blocks mit „in-band"-Extents (max. Kantenlänge < 50 units)
-# aufnehmen — die Lib enthält korrupte/inkonsistent skalierte Blocks. Bekannt:
-#   • „richtungspfeil nach rechts" war korrupt (Extents 2606×2300); als sauberer
-#     X-Spiegel von „nach links" neu aufgebaut (3.13×1.57), jetzt direkt nutzbar.
-#   • „…SV_RETTUNGSZEICHEN" ist ein Legenden-Block (861×4945, 30 ATTDEF), KEIN
-#     platzierbares Punktsymbol.
-# Der Guard-Test tests/render/test_symbols_library.py erzwingt die In-Band-Regel.
+# Skalen-Kalibrierung (Owner 2026-09-18 „vergrößern, gut erkennbar, passend zum
+# Plan"): Soll = Papier-Größe der Owner-Legende in der Rivoplan-Planvorlage
+# (Vorlagen-Legende/Rivoplan_Notbeleuchtungs_Vorlage.dxf, Layout1) × Maßstab 50.
+# Die Legenden-INSERTs sind in Papier-mm gezeichnet — gemessen 2026-09-20
+# (Werte identisch zur Vorgänger-Vorlage):
+#   RZ-Schild  17,7 Papier-mm → 883 mm Welt (down/left/right nativ 17,665 → ×50;
+#              der frühere groß-native right-Block 463,6 → ×1,905 ist Geschichte,
+#              der Rivoplan-right ist klein-nativ wie down/left)
+#   beidseitig 17,7 Papier-mm breit → 883 mm Welt (nativ 17,665 × 17,665 → ×50)
+#   Antipanik  11,7 Papier-mm → 586 mm Welt (nativ 11,726 → ×50)
+#   Aufheller   3,8 Papier-mm → 192 mm Welt (RIVO_Aufheller nativ 3,845 → ×50;
+#              Bibliotheks-Update 2026-09-21: klein-nativ wie die RZ, kein ×104 mehr)
+#   Spot        3,8 Papier-mm → 192 mm Welt (RIVO_Aufheller_Variante nativ 3,837 → ×50)
+#   SV-Anlage  17,0 Papier-mm → 852 mm Welt (nativ 17,038 → ×50)
 #
 # Pflichtfelder je Eintrag: block_name, label, category
-# Optional: mirror_x (Horizontal-Spiegelung des Blocks), scale, notes
+# Optional: mirror_x (Horizontal-Spiegelung des Blocks), scale, scale_abs, notes
 #
 # Naht-Invariante (tests/contract): jede Platzierung.catalog_key muss ein Key
 # hier sein (Leonis ↔ Hauptengine/Render).
 
 # ── Notlicht / Rettungszeichen ────────────────────────────────
-# Richtungspfeil-Block. 'nach unten' (3.13 units, in-band) ist kanonisch; die
-# anderen Pfeil-Blöcke der Lib sind intern inkonsistent skaliert. Richtungswahl
-# = Rotation/mirror_x setzt der Platzierer je Fluchtweg-Geometrie.
+# RIVO-RZ-Schild „Pfeil nach unten" (grünes Schild, schwarzes Piktogramm,
+# Tür links / Pfeil mitte / Läufer rechts). Richtungswahl = Rotation setzt der
+# Platzierer je Fluchtweg-Geometrie (orientation.transformation).
 notlicht_ks_stiege:
-  block_name: "notbeleuchtung- richtungspfeil nach unten"
+  block_name: "RIVO_ARR_down"
   label: "Notlicht KS (Stiege/Gänge)"
   category: notlicht
+  scale_abs: 50.0
 
 # Down-Rettungszeichen (Pfeil „nach unten" = Ausgang erreicht / Treppe abwärts).
-# Eigener Notbeleuchtungs-Key (im elektro-planer-Mapping nicht vorhanden — dort
-# über GT-Subtype 'RZ UNTEN' auf notlicht_ks_stiege gemappt); hier explizit, weil
-# der generative Platzierer die Variante am Ausgangs-Segment selbst wählt.
 notlicht_ks_stiege_unten:
-  block_name: "notbeleuchtung- richtungspfeil nach unten"
+  block_name: "RIVO_ARR_down"
   label: "Notlicht KS Rettungszeichen unten (Ausgang)"
   category: notlicht
+  scale_abs: 50.0
 
-# Richtungs-Varianten — je ein eigener, sauberer Pfeil-Block (3.13×1.57 units).
-# 'nach rechts' als X-Spiegel von 'nach links' neu aufgebaut (war korrupt).
+# Richtungs-Varianten — eigene Blöcke der Rivoplan-Bibliothek, alle drei
+# klein-nativ (17,665 units) → dieselbe Weltbreite ~883 mm = Legenden-Soll.
 notlicht_ks_stiege_links:
-  block_name: "notbeleuchtung-richtungspfeil nach links"
+  block_name: "RIVO_ARR_left"
   label: "Notlicht KS Rettungszeichen links"
   category: notlicht
+  scale_abs: 50.0
 
 notlicht_ks_stiege_rechts:
-  block_name: "notbeleuchtung-richtungspfeil nach rechts"
+  block_name: "RIVO_ARR_right"
   label: "Notlicht KS Rettungszeichen rechts"
   category: notlicht
+  scale_abs: 50.0
+
+# Beidseitiges RZ (Wasserscheide / zwei Personenströme auf einer Achse) —
+# ECHTER Rivoplan-Block (zwei gegenläufige Schilder übereinander), ersetzt die
+# frühere 2-Block-Komposition links+rechts. rotation = Fluchtweg-Achse; bei
+# rotation=0 zeigen die Pfeile entlang ±x. Render-seitig konsumiert
+# (inserter richtung="gerade"), Platzierer emittieren weiterhin ihren RZ-Key.
+notlicht_ks_beidseitig:
+  block_name: "RIVO_ARR_bothsided"
+  label: "Notlicht KS Rettungszeichen beidseitig (Wasserscheide)"
+  category: notlicht
+  scale_abs: 50.0
 
 # Notlicht Garage/Nebenräume (Antipanik-nahe Sonderfälle).
 notlicht_kw_garage:
-  block_name: "notbeleuchtung- richtungspfeil nach unten"
+  block_name: "RIVO_ARR_down"
   label: "Notlicht KW (Garage/Nebenräume)"
   category: notlicht
+  scale_abs: 50.0
 
 # ── Sicherheitsleuchte ────────────────────────────────
-# Aufheller-Sicherheitsleuchte — KLEINE Variante (Owner-Feedback 2026-09-05: Aufheller
-# sind in der Praxis klein). Verschachtelter Block (alter 4.7er-Kreis @ Scale 0.394),
-# Extents 1.85×1.85 units = in-band.
+# Aufheller — Kreis mit grünem Rand (ACI 3) und BYLAYER-Füllung → rendert auf
+# dem Notlicht-Layer grün (Owner-Entscheid 2026-09-21 „grün ist ok"; der frühere
+# blaue Aufheller ACI 150 ist Geschichte). Library-Farben werden NICHT umgeschrieben.
+# Bibliotheks-Update 2026-09-21: Block heißt jetzt `RIVO_Aufheller` und ist
+# klein-nativ 3,845 units → scale_abs 50 = 192 mm (Legenden-Soll unverändert).
 sicherheitsleuchte_aufheller:
-  block_name: "aufheller notbeleuchtung"
+  block_name: "RIVO_Aufheller"
   label: "Sicherheitsleuchte (Aufheller)"
   category: sicherheitsleuchte
+  scale_abs: 50.0
 
-# Spot-Darstellung (din-Profi-Vorbild STANDARD_SPOT/Standardblock_Spot — 40× im
-# Referenzplan die HÄUFIGSTE SL-Darstellung; Produkte STRING 2 eco/power spot):
-# Kreis Ø330 mit Diagonal-X + zwei gefüllten Sektoren, din-geometrietreu in
-# Library-Skala nachgebaut (2026-09-06, 1.78 units = in-band). Rolle bleibt SL —
-# den Key vergibt erst die künftige Produktwahl-Logik (LB → Produkt → Symbol);
-# Render/Stückliste können ihn ab sofort.
+# Spot-Darstellung (din-Profi-Vorbild STANDARD_SPOT): Kreis mit Diagonal-X +
+# zwei gefüllten Sektoren. Rolle bleibt SL — den Key vergibt erst die künftige
+# Produktwahl-Logik (LB → Produkt → Symbol). Bibliotheks-Update 2026-09-21:
+# der frühere „Spot Notbeleuchtung"-Block entfällt; die Rivoplan-Bibliothek
+# führt die Spot-Optik als `RIVO_Aufheller_Variante` (Kreis + X + Sektoren,
+# 3,837 units → scale_abs 50 = 192 mm). Der Key wird derzeit NICHT platziert
+# (nur `sicherheitsleuchte_aufheller` wird emittiert), bleibt aber gültig.
 sicherheitsleuchte_spot:
-  block_name: "spot notbeleuchtung"
+  block_name: "RIVO_Aufheller_Variante"
   label: "Sicherheitsleuchte (Spot)"
   category: sicherheitsleuchte
+  scale_abs: 50.0
 
 # ── Antipanik ─────────────────────────────────────────
-# Zweckgebautes Antipanik-Piktogramm (44 LWPOLYLINE), Extents 5.64×1.59 units = in-band.
+# RIVO-Antipanik: grün umrandeter, gefüllter Balken (Füllung ByLayer).
 antipanik_leuchte:
-  block_name: "notbeleuchtung- antipanikleuchte"
+  block_name: "RIVO_Antipanik"
   label: "Antipanik-Leuchte"
   category: antipanik
+  scale_abs: 50.0
 
 # ── Anlage / Versorgung ───────────────────────────────
-# Gruppenbatterie-Anlage (din SU-Klasse, Profi-Plan STANDARD_SYSTEM). Halb grün
-# schraffiertes Rechteck, 8.19x4.46 units = in-band. Wird NICHT als Leuchten-
-# Platzierung gesetzt (kind-Literal bleibt unberührt) — der Render zeichnet sie,
-# wenn die LB einen system_typ deklariert (LB-explizit).
+# SV-Anlage: Gruppenbatterie-Verteiler-Block der Rivoplan-Bibliothek (Rechteck
+# mit Diagonale, beide Hälften gefüllt) — der Block der Vorlagen-Legende.
+# Wird NICHT als Leuchten-Platzierung gesetzt; der Render zeichnet ihn, wenn
+# die LB einen system_typ deklariert (LB-explizit).
 gruppenbatterie_anlage:
-  block_name: "gruppenbatterie"
-  label: "SV-Anlage (Gruppenbatterie)"
+  block_name: "RIVO_Gruppenbatterie_Verteiler"
+  label: "SV-Anlage (Gruppenbatterie-Verteiler)"
   category: anlage
+  scale_abs: 50.0
 
-# Plan-Vorlage (Owner 2026-09-05): kompletter Legenden-Rahmen (Beleuchtung /
-# Notbeleuchtung / Erdung / Verteiler / BMA / Kommunikation / Abkürzungen).
-# Kein Punktsymbol — wird vom Render als Ganzes rechts an den Plan gesetzt.
-vorlage_legende:
-  block_name: "vorlage_legende"
-  label: "Plan-Vorlage (Legenden-Rahmen)"
-  category: vorlage
+# HINWEIS Migration 2026-09-20: der frühere Key `vorlage_legende`
+# (Block "Vorlage_Legende" der Vorgänger-Bibliothek) ist gestrichen — die
+# Rivoplan-Bibliothek führt keinen Legenden-Rahmen-Block; die Legende kommt
+# im Blatt-Modus aus der Rivoplan-Planvorlage selbst, der Fallback-Modus
+# nutzt die Stücklisten-Box des Renderers.

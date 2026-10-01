@@ -38,7 +38,12 @@ def test_insert_fixture_platzierungen(ergebnis):
         assert ins.dxf.rotation == pytest.approx(p.rotation_deg)
         # Fixture-Keys ohne Mapping-mirror_x → effektive Spiegelung = Contract
         assert (ins.dxf.xscale < 0) == p.mirror_x
-        assert ins.dxf.yscale == pytest.approx(inserter.DE_GLOBAL_SCALE)
+        # Migration Phase A: Skala je Registry-Eintrag (scale_abs, kalibriert an
+        # den Owner-Erklärungsplänen) statt globalem DE-Faktor.
+        entry = mapping[p.catalog_key]
+        erwartet = float(entry.get(
+            "scale_abs", inserter.DE_GLOBAL_SCALE * float(entry.get("scale", 1.0))))
+        assert ins.dxf.yscale == pytest.approx(erwartet)
     inserts = doc.modelspace().query("INSERT")
     assert len(inserts) == 5
 
@@ -49,7 +54,7 @@ def test_xor_mirror_mapping_entry(monkeypatch):
     # (die Pfeil-Blöcke sind seit dem Rechts-Fix alle unge­spiegelt gemappt).
     fake = dict(library.load_mapping())
     fake["_mirror_probe"] = {
-        "block_name": "notbeleuchtung- richtungspfeil nach unten",
+        "block_name": "RIVO_ARR_down",
         "label": "probe",
         "category": "notlicht",
         "mirror_x": True,
@@ -78,9 +83,10 @@ def test_unbekannter_catalog_key_raises():
         inserter.insert_platzierung(doc, p)
 
 
-def test_gerade_zeichnet_beidseitigen_doppelpfeil():
-    # richtung="gerade" (beidseitiger RZ, Wasserscheide) → zwei horizontale Pfeile
-    # (links + rechts) am selben Punkt, gemeinsam rotiert. Zurück kommt der linke.
+def test_gerade_zeichnet_echten_beidseitig_block():
+    # richtung="gerade" (beidseitiger RZ, Wasserscheide) → EIN echter
+    # Rivoplan-Beidseitig-Block am Punkt, rotiert um die Fluchtweg-Achse
+    # (Rivoplan-Master 2026-09-20; ersetzt die links+rechts-Komposition).
     doc = ezdxf.new("R2018")
     mapping = library.load_mapping()
     p = Platzierung(
@@ -90,23 +96,17 @@ def test_gerade_zeichnet_beidseitigen_doppelpfeil():
     primary = inserter.insert_platzierung(doc, p)
 
     inserts = doc.modelspace().query("INSERT")
-    assert len(inserts) == 2
-    namen = {ins.dxf.name for ins in inserts}
-    assert namen == {
-        mapping["notlicht_ks_stiege_links"]["block_name"],
-        mapping["notlicht_ks_stiege_rechts"]["block_name"],
-    }
-    # beide teilen Punkt + Rotation (Fluchtweg-Achse)
-    for ins in inserts:
-        assert ins.dxf.insert.x == pytest.approx(1000.0)
-        assert ins.dxf.insert.y == pytest.approx(2000.0)
-        assert ins.dxf.rotation == pytest.approx(90.0)
-        assert ins.dxf.layer == library.SAFETY_LAYER
-    # primärer (zurückgegebener) Insert = linker Pfeil
-    assert primary.dxf.name == mapping["notlicht_ks_stiege_links"]["block_name"]
+    assert len(inserts) == 1
+    assert primary.dxf.name == mapping["notlicht_ks_beidseitig"]["block_name"]
+    assert primary.dxf.insert.x == pytest.approx(1000.0)
+    assert primary.dxf.insert.y == pytest.approx(2000.0)
+    assert primary.dxf.rotation == pytest.approx(90.0)
+    assert primary.dxf.layer == library.SAFETY_LAYER
+    assert primary.dxf.yscale == pytest.approx(
+        float(mapping["notlicht_ks_beidseitig"]["scale_abs"]))
 
 
-def test_gerade_xdata_nur_auf_primaerem_pfeil():
+def test_gerade_xdata_am_beidseitig_block():
     doc = ezdxf.new("R2018")
     p = Platzierung(
         xy_mm=(0.0, 0.0), catalog_key="notlicht_ks_stiege", kind="rz",
@@ -128,10 +128,10 @@ def test_gerade_xdata_nur_auf_primaerem_pfeil():
     "catalog_key,kind",
     [("sicherheitsleuchte_aufheller", "sicherheitsleuchte"), ("antipanik_leuchte", "antipanik")],
 )
-def test_gerade_nur_bei_rz_doppelpfeil(catalog_key, kind):
+def test_gerade_nur_bei_rz_beidseitig(catalog_key, kind):
     # Sicherheitsleuchte + Antipanik tragen ebenfalls richtung="gerade" (= keine
     # Richtung), sind aber KEINE Pfeil-Zeichen → EIN eigenes Katalog-Symbol, nicht
-    # zwei RZ-Richtungspfeile (Regression: Doppelpfeil-Gate darf nur für kind=="rz").
+    # der RZ-Beidseitig-Block (Regression: Beidseitig-Gate darf nur für kind=="rz").
     doc = ezdxf.new("R2018")
     mapping = library.load_mapping()
     p = Platzierung(xy_mm=(0.0, 0.0), catalog_key=catalog_key, kind=kind, richtung="gerade")
@@ -142,18 +142,19 @@ def test_gerade_nur_bei_rz_doppelpfeil(catalog_key, kind):
     assert ins.dxf.name == mapping[catalog_key]["block_name"]
 
 
-def test_sl_aufheller_kein_hardcode_blau():
-    # Der Lib-Block trägt einen SOLID-HATCH mit expliziter Farbe ACI 150 (blau),
-    # die den Layer-Grün-Override übergeht — Notlicht muss grün rendern. Import
-    # stellt blaue Hardcode-Farben auf BYLAYER (erbt Schrack-Grün des INSERT-Layers).
+def test_sl_aufheller_farbe_wie_owner_symbol():
+    """Bibliotheks-Update 2026-09-21 („Erscheinungsbild ist Wahrheit"): der
+    RIVO_Aufheller der neuen Owner-Bibliothek RIVO_NL_Symbole.dxf ist ein Kreis
+    mit grünem Rand (CIRCLE ACI 3) und BYLAYER-Füllung (SOLID-HATCH ACI 256) —
+    auf dem Notlicht-Layer rendert er grün. Owner-Entscheid 2026-09-21: „grün ist
+    ok" (der frühere Blau-Aufheller ACI 150 ist Geschichte). Die Library-Farben
+    werden beim Import NICHT umgeschrieben — der Block trägt seine Farbe selbst."""
     doc = ezdxf.new("R2018")
     library.sync_layers(doc)
     p = Platzierung(xy_mm=(0.0, 0.0), catalog_key="sicherheitsleuchte_aufheller",
                     kind="sicherheitsleuchte")
     ins = inserter.insert_platzierung(doc, p)
 
-    # Rekursiv über den Block-Baum (der kleine Aufheller verschachtelt den alten
-    # Kreis-Block @ Scale 0.394): nirgends darf eine blaue Hardcode-Farbe bleiben.
     def entities(name):
         for e in doc.blocks[name]:
             yield e
@@ -162,5 +163,5 @@ def test_sl_aufheller_kein_hardcode_blau():
 
     alle = list(entities(ins.dxf.name))
     farben = {e.dxftype(): e.dxf.color for e in alle}
-    assert farben["HATCH"] == 256  # BYLAYER statt ACI 150
-    assert not any(getattr(e.dxf, "color", None) in library._BLAUE_ACI for e in alle)
+    assert farben["HATCH"] == 256   # BYLAYER-Füllung → Notlicht-Layer (grün)
+    assert farben["CIRCLE"] == 3    # grüner Rand (Owner-Symbol)

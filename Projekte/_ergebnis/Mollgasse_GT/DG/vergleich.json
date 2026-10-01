@@ -1,0 +1,157 @@
+{
+ "erreichbar_n": 3,
+ "erreichbar_gepaart": 1,
+ "erreichbar_typ_match": 0,
+ "erreichbar_fehlt": [
+  "2083F",
+  "20864"
+ ],
+ "typ_match_n": 0,
+ "geschoss": "DG",
+ "engine_n": 8,
+ "engine_by_kind": {
+  "rz": 6,
+  "sicherheitsleuchte": 2
+ },
+ "gt_n": 6,
+ "gt_by_klasse": {
+  "rz": 6
+ },
+ "gepaart": 2,
+ "fehlt_n": 4,
+ "ueberfluessig_n": 6,
+ "distanz_median_mm": 1851.2,
+ "distanz_max_mm": 2770.6,
+ "beidseitig_treffer": 0,
+ "beidseitig_gt_gesamt": 0,
+ "paare": [
+  {
+   "gt": "206DC",
+   "gt_typ": "rz",
+   "gt_richtung": "right",
+   "engine_key": "notlicht_ks_stiege_unten",
+   "engine_richtung": "unten",
+   "distanz_mm": 931.9,
+   "rot_delta_deg": 0.1,
+   "typ_match": false,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  },
+  {
+   "gt": "20705",
+   "gt_typ": "rz",
+   "gt_richtung": "left",
+   "engine_key": "notlicht_ks_stiege_unten",
+   "engine_richtung": "unten",
+   "distanz_mm": 2770.6,
+   "rot_delta_deg": 0.6,
+   "typ_match": false,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  }
+ ],
+ "fehlt": [
+  {
+   "handle": "206D6",
+   "typ": "rz",
+   "richtung": "down",
+   "xy": [
+    2867059.9,
+    1702285.4
+   ]
+  },
+  {
+   "handle": "206DB",
+   "typ": "rz",
+   "richtung": "left",
+   "xy": [
+    2865922.3,
+    1700763.7
+   ]
+  },
+  {
+   "handle": "2083F",
+   "typ": "rz",
+   "richtung": "left",
+   "xy": [
+    2923409.5,
+    1672153.9
+   ]
+  },
+  {
+   "handle": "20864",
+   "typ": "rz",
+   "richtung": "down",
+   "xy": [
+    2920062.1,
+    1673811.9
+   ]
+  }
+ ],
+ "ueberfluessig": [
+  {
+   "key": "notlicht_ks_stiege_unten",
+   "klasse": "rz",
+   "xy": [
+    2884764.1,
+    1700635.6
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_links",
+   "klasse": "rz",
+   "xy": [
+    2922193.6,
+    1661820.8
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_rechts",
+   "klasse": "rz",
+   "xy": [
+    2924766.6,
+    1685145.8
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_unten",
+   "klasse": "rz",
+   "xy": [
+    2880477.4,
+    1698357.6
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2883851.7,
+    1700568.1
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2885079.8,
+    1703214.8
+   ]
+  }
+ ],
+ "pair_radius_mm": 3000.0,
+ "transform": {
+  "n_namen": 52,
+  "n_inlier": 52,
+  "tx_mm": -2883106.6,
+  "ty_mm": -1673871.2
+ },
+ "engine_summary": {
+  "n_symbols": 8,
+  "by_kind": {
+   "rz": 6,
+   "sicherheitsleuchte": 2
+  },
+  "n_raeume": 35
+ },
+ "gt_lux_nachweis": null
+}

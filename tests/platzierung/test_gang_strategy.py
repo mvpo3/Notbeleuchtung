@@ -41,13 +41,37 @@ def test_fallback_setzt_rz_entlang_gang():
     assert all(p.norm_quelle for p in out)
 
 
-def test_pfeil_zeigt_zum_ausgang():
-    # Ausgang rechts (x=30000) → Pfeile nach rechts.
+def _welt_pfeil_az(rotation_deg: float) -> float:
+    # Welt-Azimut des down-Blocks (Basis 270°) bei gegebener INSERT-Rotation.
+    return (270.0 + rotation_deg) % 360.0
+
+
+def test_gerader_gang_down_typ_entgegen_flucht():
+    # NB-R06: im GERADEN Gang sind die Zwischen-RZ down-Typ „geradeaus" und so
+    # gedreht, dass der Welt-Pfeil ENTGEGEN der Fluchtrichtung zeigt (Front schaut
+    # die ankommende Person an) — NICHT mehr ein Richtungspfeil zum Ausgang.
+    # Ausgang rechts (Ost) → Flucht Ost → Welt-Pfeil West (~180°).
     rechts = plan_rettungszeichen_gang(_gang_ohne_fluchtweglayer(30000.0), FakeNormProvider())
-    assert rechts and all(p.richtung == "rechts" for p in rechts)
-    # Ausgang links (x=0) → Pfeile nach links.
+    assert rechts and all(p.richtung == "unten" for p in rechts)
+    # Zwischenpunkte (nicht das Ziel-Ende) zeigen den Welt-Pfeil nach West.
+    innere = rechts[:-1] if len(rechts) > 1 else rechts
+    assert all(abs(_welt_pfeil_az(p.rotation_deg) - 180.0) < 5.0 for p in innere)
+    # Ausgang links (West) → Flucht West → Welt-Pfeil Ost (~0°).
     links = plan_rettungszeichen_gang(_gang_ohne_fluchtweglayer(0.0), FakeNormProvider())
-    assert links and all(p.richtung == "links" for p in links)
+    assert links and all(p.richtung == "unten" for p in links)
+    innere_l = links[:-1] if len(links) > 1 else links
+    assert all(_welt_pfeil_az(p.rotation_deg) < 5.0 or _welt_pfeil_az(p.rotation_deg) > 355.0
+               for p in innere_l)
+
+
+def test_ist_abzweig_trennt_gerade_von_ecke():
+    # NB-R07-Kern: 90°-Knick = Abzweig, kollineare Fortsetzung = geradeaus.
+    from notbeleuchtung.platzierung.gang_strategy import _ist_abzweig
+    assert _ist_abzweig(1000.0, 0.0, 0.0, 1000.0)          # Ost → Nord = Ecke
+    assert _ist_abzweig(0.0, 1000.0, 1000.0, 0.0)          # Nord → Ost = Ecke
+    assert not _ist_abzweig(1000.0, 0.0, 1000.0, 0.0)      # Ost → Ost = geradeaus
+    assert not _ist_abzweig(1000.0, 0.0, 900.0, 100.0)     # leichte Schwenkung < 45°
+    assert not _ist_abzweig(0.0, 0.0, 1000.0, 0.0)         # kein Einlauf → geradeaus
 
 
 def test_kein_gang_kein_rz():
@@ -71,3 +95,16 @@ def test_dispatcher_bevorzugt_segmente_wenn_vorhanden():
     rz = [p for p in erg.platzierungen if p.kind == "rz"]
     assert len(rz) == 5
     assert all(p.covers_segment for p in rz)  # Segment-RZ decken je 1 Segment
+
+
+def test_nb_r14_montage_art_wand_decke():
+    # NB-R14: jede Platzierung trägt montage_art; Stiegen-/Tür-/Ausgangs-RZ = Wand (WA),
+    # Gang-/Aufheller-/Antipanik-Leuchten = Decke (DA). Keine bleibt ohne Montage-Art.
+    data = json.loads((FIXTURES / "raum_modell_4og.json").read_text(encoding="utf-8"))
+    erg = NotlichtPlatzierer().place(RaumModell.model_validate(data), FakeNormProvider())
+    assert all(p.montage_art in ("WA", "DA") for p in erg.platzierungen)
+    # 4OG-Golden: 3 Tür-/Ausgangs-RZ an der Wand, Gang-RZ + Aufheller an der Decke.
+    wand = [p for p in erg.platzierungen if p.montage_art == "WA"]
+    assert wand and all(p.kind == "rz" for p in wand)
+    aufheller = [p for p in erg.platzierungen if p.kind == "sicherheitsleuchte"]
+    assert aufheller and all(p.montage_art == "DA" for p in aufheller)

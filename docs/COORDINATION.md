@@ -536,3 +536,86 @@ Naht-Invariante und steckt auch in `tests/fakes.py` und
   `selman/raumerkennung-dxf` (Git-Tangle) — Integration/Entwirrung offen.
 - <S0> F2 umgelenkt → Raumerkennung. Branch `selman/raumerkennung-dxf`, Scaffold + Test grün (69 passed).
 - <setup> F1 legt Worktree + dieses Board an. F2 startet mit (b) LDT.
+
+
+## 2026-09-18 â€” Leonis: Symbol-/Vorlagen-Migration (Phase A) + Notbeleuchtungs-Regelbasis (Phase B)
+
+- **Neue Symbolquelle (BINDEND): `CAD_Symbole/Notbeleuchtungssymbole_neu+.dxf`** â€” alte Bibliothek entfernt (Git-Historie = Backup), kein Fallback. Registry = `symbols/schrack_symbol_mapping.yaml` (RIVO-BlÃ¶cke + scale_abs, Owner-kalibriert: RZ ~636 mm, AP ~539, Aufheller/Spot ~97, SV-Anlage ~430) + `orientation._BLOCK_BASE_DEG` (down 270 / left 180 / right 0, gemessen). Guard-Test `tests/render/test_migration_guard.py` verbietet Alt-Referenzen in src/tests/scripts.
+- **Ein Notbeleuchtungs-Layer**: alles auf `din_SIBEL_10_emergency_lighting` (Vorlagen-Layer); gelber SL-Zwilling + `rz_sl_farbtrennung` GESTRICHEN. Library-Farb-Umschreibung entfernt (Owner-Aufheller bleibt blau). Neue Owner-Planvorlage (Paperspace-Layout1, RIVO-Legende) versioniert.
+- **FÃ¼r Selman/Enis**: kein Contract-Touch; Render-Ausgaben zeigen jetzt RIVO-Schilder. Wer eigene Werkzeuge auf die alten Blocknamen/den gelben Layer stÃ¼tzt: Migration `docs/SYMBOL_MIGRATION_2026-09-18.md`.
+- **Phase B**: belegte Regelbasis NB-R00..R12 in `knowledge/notbeleuchtung/` (regeln.md/yaml, beispiele.json, 38 Side-by-Sides, offene_fragen.md mit 26 Owner-Punkten inkl. 4 PDF-Textfehlern). Kein Pipeline-Code geÃ¤ndert; Integrations-VorschlÃ¤ge in regeln.md.
+- Suite nach allem: 1389 grÃ¼n (voll), ruff clean. Branch `leonis/demo-l-gebaeude` @ b04c80e gepusht.
+
+## 2026-09-18 SPÄT — Leonis → Selman: hohle Grüns BESTÄTIGT + S4a-Stapel ack
+
+- **Asset-Lücke bestätigt (Selman-Befund):** auch im Leonis-Haupt-Tree liegt in `Projekte/_eingang/` NUR `Mollgasse_EG.dxf` (selbst die gitignored). Lauf naht+e2e+raumerkennung mit `-rs`: **24 Skips wegen fehlender Assets** — `Rennweg_OG3.dxf` 12× (soll_rennweg 8, stempel_anker, stempel_flutung, wandkoerper 2, raumlayer_hatch, material_matching), `Barawitzka_EG.dxf` 9× (wandkoerper 3, raumlayer_hatch 3, stempel_anker, soll_barawitzka, soll_referenzvergleich), `Rennweg_EG.dxf` 3×. Nur die Mollgasse-Soll-Strecke lief je echt → frühere „grün"-Meldungen (auch Leonis' 1389) in der Naht-/Erkennungs-Familie teilweise hohl. **Umstellung auf versionierte Pfade (Selman) = richtig; Leonis baut KEINE eigene Kopier-Konvention daneben.** Nach der Umstellung: Re-Run bei Leonis, um zu klären, ob die „4 failed mit kopierten Assets" Platzierungs- oder Erkennungs-Lane sind.
+- **S4a-Stapel:** ack — S4a/S4b/S5b nur gemeinsam mergen, Leonis-Naht-Tests strict-xfail auf dem Branch (nicht abgesenkt) = korrekt. Leonis fährt sync-review über den GANZEN Stapel, sobald er steht.
+- Kontext Leonis heute (lokal, ungepusht `1cd754a..b2dfba4`): Fischamend v3 mit neuen Symbolen (Positionen 1:1 = v2), PDF-Textfehler alle vom Owner behoben, 2 neue Owner-Regeln gebaut: Symbolgrößen = Legenden-Soll der neuen Vorlage ×50 (RZ 883/AP 586/Aufheller+Spot 192/Anlage 852 mm) + Tür-RZ auf Wandlinie (`RZ_INS_RAUM_MM` 150→0, Golden 4og nachgezogen).
+
+
+## 2026-09-20 — Leonis → Selman: ZWEI Erkennungs-Pakete (Owner leitet weiter) — Wohnung-Fluchtweg + KG/Garage
+
+Kontext: Owner-Auftrag Mollgasse-Ground-Truth (Bericht:
+`docs/MOLLGASSE_RIVOPLAN_GT_BERICHT_2026-09-20.md`). Engine-Lauf auf den LEEREN
+Mollgasse-Plänen vs. Experten-Erklärungs-DXFs: 33/97 getroffen — die zwei
+dominanten Ursachen liegen in der Erkennung. Prompt-Text für Selman siehe unten
+(selbsterklärend, Owner gibt ihn weiter). Assets: leere Pläne
+`Projekte_Leere Architektpläne (Input)/Mollgasse/` (8 Geschosse; ACHTUNG: in
+METERN gezeichnet, INSUNITS behauptet mm — deine ×1000-Skalierung greift
+korrekt), GT-Messdaten `tests/fixtures/mollgasse_gt/<G>.json`, Vergleichs-Runner
+`scripts/analyse/mollgasse_gt_vergleich.py` (misst deinen Fortschritt je
+Geschoss reproduzierbar).
+
+### Paket S-W — Wohnung ≠ Fluchtweg (Wurzel „Notbeleuchtung in der Wohnung", seit 13.09. offen)
+
+Befund (Mollgasse 1OG, leerer Plan, live gemessen 2026-09-20):
+- Fluchtweg-ZIRKULATION läuft IN die Wohnungen: Segment-Stützpunkte in
+  VORRAUM (69 Punkte, communal=True!), ZIMMER (3), WC, BAD, ABSTELLRAUM.
+- 5 GANG-Räume, ALLE `ist_communal=True, ist_fluchtweg=True` — auch
+  wohnungsinterne Gänge/Vorräume. Die Platzierung filtert über genau diese
+  Flags (WOHNUNG_PRIVAT-Skip, R7-Vorraum-Filter) und darf nicht raten →
+  Symbole landen im Wohnungs-Gang.
+
+Soll (wie im Prompt vom 13.09., unverändert gültig):
+1. Wohnungen als Einheiten trennen (Wohnungs-Umrisse hast du bereits).
+2. Zirkulation an der WOHNUNGSEINGANGSTÜR stoppen — kein Segment hinter
+   die Wohnungstür.
+3. `ist_fluchtweg`/`ist_communal` differenzieren: wohnungsinterne
+   GANG/VORRAUM → communal=False, fluchtweg=False (oder eigener Raumtyp
+   WOHNUNG_PRIVAT-Zuordnung).
+4. Fluchtweg-Segmente sauber auf die communal-Gänge/STGH beschränken.
+
+Abnahme (messbar): `mollgasse_gt_vergleich.py 1OG` — Zirkulations-Punkte in
+ZIMMER/BAD/WC/privatem VORRAUM = 0; Platzierungs-Lauf setzt keine Symbole
+mehr in Wohnungs-Gängen (Owner-Sichtprüfung am PDF).
+
+### Paket S-KG — Kellergeschosse + Garage (neu, aus dem UG-Kapitel der Owner-PDF)
+
+Befund (leere Pläne 1KG/2KG, live gemessen):
+- 1KG: 31 Räume, **0 KELLERABTEILE** (real: ~50 Einlagerungsräume „ER"),
+  nur 4 Zirkulations-Segmente. 2KG: 30 Räume, 1 GARAGE (ein Riesen-Polygon),
+  5 Segmente, keine Fahr-/Gehwege.
+- Folge: von 29 Experten-Leuchten im 2KG verfehlt die Engine 20 komplett
+  (keine Räume/Wege an den Spots); alle 8 beidseitigen Experten-RZ
+  unerreichbar (die Wasserscheiden-Knoten existieren im Graph nicht).
+
+Soll:
+1. **Einlagerungsräume/Kellerabteile erkennen** (Stempel „ER"+Nummer;
+   1KG/2KG-Erklärungs-DXFs zeigen das Muster) → Raumtyp KELLERABTEIL.
+2. **Garage-Zirkulation**: begehbare Wege durch die Garage (Fahrgassen +
+   Gehbereiche). Referenz-Fachpraxis aus der Owner-PDF (NB-R17,
+   `knowledge/notbeleuchtung/regeln.md`): Motorrad-Stellflächen sind
+   durchquerbar, Doppelparker-/PKW-Flächen + Gruben NICHT — die Stempel
+   (MOTORRAD/DOPPELPARKER/Pflichtstellplatz) stehen in den Plänen.
+3. **Gebäudehälften** (Mollgasse/Anastasius-Grün-Gasse): die Zirkulation
+   sollte je Gebäudehälfte zusammenhängen (Trennung entlang der
+   Gebäudewand; EG ist die Referenz). KEIN neues Contract-Feld nötig,
+   solange die Graph-Komponenten die Trennung abbilden — falls du eines
+   brauchst: erst hier eintragen (3-Owner).
+4. STGH-Treppenläufe im KG lieferst du schon (1KG 2×4, 2KG 4/0/3 — ✓);
+   Leonis-seitig ist NB-R13 (UG flüchtet HINAUF) bereits gebaut.
+
+Abnahme (messbar): `mollgasse_gt_vergleich.py 1KG 2KG` — Ziel-Richtung:
+KELLERABTEIL > 0, Zirkulations-Segmente zweistellig, „fehlt" im 2KG deutlich
+unter 20. Wissens-Grundlage für dich: `knowledge/notbeleuchtung/abgleich/
+{1KG,2KG}/abgleich_*.md` (mm-genau belegte Beispiele) + Bericht §K.

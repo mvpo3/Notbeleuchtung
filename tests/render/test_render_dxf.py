@@ -69,15 +69,16 @@ def test_ohne_lb_keine_legende(rendered):
 
 
 def test_stueckliste_zaehlt_symbol_arten(rendered):
-    # Owner-Vorlage aktiv: die Symbol-Legende wird in `Vorlage_Legende` GEFÜLLT
-    # (Sektion „Legende Notbeleuchtung"), die separate Stücklisten-Box entfällt.
+    # Migration Rivoplan-Master (2026-09-20): der Legenden-Rahmen-Block der
+    # Vorgänger-Bibliothek ist gestrichen — im Fallback-Modus trägt die
+    # Stücklisten-Box die Symbol-Zählung (Blatt-Modus: Legende im Blatt).
     _, summary, doc = rendered
-    assert summary["vorlage_drawn"] is True
-    assert summary["vorlage_legende_gefuellt"] is True
-    assert summary["stueckliste_drawn"] is False
+    assert summary["vorlage_drawn"] is False
+    assert summary["vorlage_legende_gefuellt"] is False
+    assert summary["stueckliste_drawn"] is True
     texte = " ".join(m.text for m in
                      doc.modelspace().query("MTEXT[layer=='din_SIBEL_70_legend_green']"))
-    assert "5x Typ RZ" in texte and "Rettungszeichen" in texte
+    assert "STÜCKLISTE" in texte and "Rettungszeichen: 5" in texte
 
 
 def test_stromkreis_belegung_je_kreis(rendered):
@@ -328,28 +329,19 @@ def _erg_rz_und_sl():
     return PlatzierungsErgebnis(floor="T", platzierungen=[rz, sl]), raum
 
 
-def test_rz_sl_farbtrennung_gruen_gelb(tmp_path):
-    """din-Konvention (Referenzplan V25): RZ grün, Sicherheits-/Antipanikleuchte gelb.
-    Aus → alles grün (Owner-Fixierung #102). Der gelbe Layer trägt eine Gelb-Farbe."""
-    mapping = library.load_mapping()
-    rz_block = mapping["notlicht_ks_stiege_rechts"]["block_name"]
-    sl_block = mapping["sicherheitsleuchte_aufheller"]["block_name"]
+def test_alle_symbole_auf_vorlagen_layer(tmp_path):
+    """Migration Phase A (Owner 2026-09-18): ALLE Notbeleuchtungs-Symbole liegen
+    auf dem EINEN Notbeleuchtungs-Layer der Planvorlage — der frühere gelbe
+    SL-Zwilling war ein erfundener Layer; die neuen Blöcke tragen ihre Farben
+    selbst (blauer Aufheller, grünes Schild)."""
     erg, raum = _erg_rz_und_sl()
-
-    render_dxf(erg, raum, tmp_path / "an.dxf", rz_sl_farbtrennung=True)
-    doc = ezdxf.readfile(str(tmp_path / "an.dxf"))
-    lay = {e.dxf.name: e.dxf.layer for e in doc.modelspace().query("INSERT")
+    render_dxf(erg, raum, tmp_path / "a.dxf")
+    doc = ezdxf.readfile(str(tmp_path / "a.dxf"))
+    lay = {e.dxf.layer for e in doc.modelspace().query("INSERT")
            if e.has_xdata("NOTBELEUCHTUNG")}
-    assert lay[rz_block] == library.SAFETY_LAYER
-    assert lay[sl_block] == library.SAFETY_LAYER_SL
-    gelb = doc.layers.get(library.SAFETY_LAYER_SL)
-    assert gelb.dxf.hasattr("true_color")
-
-    render_dxf(erg, raum, tmp_path / "aus.dxf", rz_sl_farbtrennung=False)
-    doc2 = ezdxf.readfile(str(tmp_path / "aus.dxf"))
-    lay2 = {e.dxf.layer for e in doc2.modelspace().query("INSERT")
-            if e.has_xdata("NOTBELEUCHTUNG")}
-    assert lay2 == {library.SAFETY_LAYER}
+    assert lay == {library.SAFETY_LAYER}
+    gruen = doc.layers.get(library.SAFETY_LAYER)
+    assert gruen.dxf.hasattr("true_color")
 
 
 def test_fluchtweg_pfeile_zeigen_zum_ziel():
@@ -422,15 +414,15 @@ def test_stueckliste_mit_symbol_spalte(ohne_blatt):
         out = Path(tmp) / "legende.dxf"
         summary = render_dxf(plz, raum, out)
         doc = ezdxf.readfile(str(out))
-    # Symbol-Legende lebt jetzt IN der Owner-Vorlage (Stücklisten-Box entfällt).
-    assert summary["vorlage_legende_gefuellt"] is True
-    assert summary["stueckliste_drawn"] is False
+    # Migration Rivoplan-Master: die Stücklisten-Box trägt die Symbol-Spalte
+    # (der Legenden-Rahmen-Block der Vorgänger-Bibliothek ist gestrichen).
+    assert summary["vorlage_legende_gefuellt"] is False
+    assert summary["stueckliste_drawn"] is True
     max_x = raum.bounds_mm.max_xy[0]
     legenden_syms = [e for e in doc.modelspace().query("INSERT")
                      if e.dxf.insert.x > max_x + 1500
-                     and e.dxf.name != "vorlage_legende"
                      and not e.has_xdata("NOTBELEUCHTUNG")]
-    assert len(legenden_syms) >= 2   # Vorlagen- + Blatt-Legende bestücken beide
+    assert len(legenden_syms) >= 2   # je Typ-Zeile ein Katalog-Symbol
     texte = " ".join(m.text for m in doc.modelspace().query("MTEXT"))
     assert "Typ A" in texte and "Typ D" in texte and "Concept 2 AP3" in texte
 
@@ -466,8 +458,9 @@ def test_anlagen_symbol_nur_bei_lb_system_typ(ohne_blatt):
         ohne = render_dxf(plz, raum, Path(tmp) / "b.dxf", None)
     assert mit["anlage_drawn"] is True and ohne["anlage_drawn"] is False
     # Die ANLAGE steht im Technikraum (−50000..−45000) — Blatt-Legende liegt außerhalb.
+    anlagen_block = library.load_mapping()["gruppenbatterie_anlage"]["block_name"]
     syms = [e for e in doc.modelspace().query("INSERT")
-            if e.dxf.name == "gruppenbatterie" and -51000 < e.dxf.insert.x < -44000]
+            if e.dxf.name == anlagen_block and -51000 < e.dxf.insert.x < -44000]
     assert len(syms) == 1
     texte = " ".join(m.text for m in doc.modelspace().query("MTEXT"))
     assert "SV-Anlage 1" in texte and "UG Zählerraum" in texte
@@ -488,7 +481,8 @@ def test_blatt_modus_ersetzt_alle_boxen(contracts, tmp_path):
     msp = doc.modelspace()
     assert not msp.query("LWPOLYLINE[layer=='din_SIBEL_99_inspection']")
     assert not msp.query("LWPOLYLINE[layer=='din_SIBEL_11_system']")
-    assert not [e for e in msp.query("INSERT") if e.dxf.name == "vorlage_legende"]
+    # Kein separater Legenden-Rahmen-Block neben dem Blatt (Rivoplan-Master).
+    assert not [e for e in msp.query("INSERT") if "legende" in e.dxf.name.lower()]
     # Blatt-Rahmen + gefüllte Blatt-Legende existieren
     assert msp.query("LWPOLYLINE[layer=='din_SIBEL_99_titleblock']")
     blatt_syms = [e for e in msp.query("INSERT") if not e.has_xdata("NOTBELEUCHTUNG")]

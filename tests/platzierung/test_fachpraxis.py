@@ -19,6 +19,7 @@ from notbeleuchtung.platzierung.fachpraxis import (
     FachpraxisRegeln,
     aufheller_je_rz,
     aussen_tuer_rz,
+    entferne_schacht_leuchten,
     pfeil_durch_hauseingang,
     tuerleuchte_pflichtraeume,
 )
@@ -27,14 +28,17 @@ from notbeleuchtung.platzierung.geometry import point_in_polygon
 _GROSS = [(0.0, 0.0), (20000.0, 0.0), (20000.0, 20000.0), (0.0, 20000.0)]
 
 
-def _raum(poly=None) -> RaumModell:
+def _raum(poly=None, typ="ZIMMER") -> RaumModell:
+    # D1 (2026-09-18): Default ZIMMER, nicht GANG — Korridor-RZ bekommen keinen
+    # B1-Aufheller mehr (Gang-Deckung = deckung/Drossel-Lane), die B1-Grundregel
+    # wird deshalb an einem Nicht-Korridor-Raum getestet.
     poly = poly or _GROSS
     xs = [p[0] for p in poly]
     ys = [p[1] for p in poly]
     return RaumModell(
         floor="T",
         bounds_mm=BBox(min_xy=(min(xs), min(ys)), max_xy=(max(xs), max(ys))),
-        raeume=[Raum(id="r1", raum_typ="GANG", polygon_mm=poly, ist_fluchtweg=True)],
+        raeume=[Raum(id="r1", raum_typ=typ, polygon_mm=poly, ist_fluchtweg=True)],
         ausgaenge=[Ausgang(id="E", xy_mm=(max(xs), (min(ys) + max(ys)) / 2), typ="final_exit")],
     )
 
@@ -166,6 +170,27 @@ def test_aufheller_ohne_photometrie_bleibt_bedingungslos():
     # Ohne i_cd_fn (keine LDT) kein Gate — auch mit SL am Punkt wird gesetzt.
     out = aufheller_je_rz([_rz(), _sl((9500.0, 10000.0))], _raum(), FakeNormProvider())
     assert len(out) == 1
+
+
+# ── D1 (Fischamend 2026-09-18): Aufheller-Inflations-Bremsen ─────────────────
+def test_korridor_rz_bekommt_keinen_b1_aufheller():
+    """D1 (1): RZ im KORRIDOR-Polygon → kein B1-Aufheller. Die Gang-Lux-Deckung
+    besitzt deckung.verdichte_fluchtweg (Lux-Reihe/S4-Drossel: 1 Aufheller je
+    Laengsluecke) — je Gang-RZ ein weiterer Aufheller war die Fischamend-
+    Inflation (8,3-m²-Gang mit 2 RZ + 2 Aufhellern, Quote 27–54 %/Geschoss)."""
+    assert aufheller_je_rz([_rz()], _raum(typ="GANG")) == []
+    assert aufheller_je_rz([_rz()], _raum(typ="FLUR")) == []
+
+
+def test_aufheller_zaehlt_als_quelle_fuer_folgende_rz():
+    """D1 (2): der erste gesetzte Aufheller ist Lichtquelle fuer die folgenden
+    RZ-Kandidaten — ein RZ-Cluster bekommt nicht mehr je Zeichen einen eigenen
+    Aufheller (1,5 m Abstand, starke Photometrie: Punkt 2 ist gedeckt)."""
+    rz1 = _rz(xy=(10000.0, 10000.0))
+    rz2 = _rz(xy=(10000.0, 11500.0))
+    out = aufheller_je_rz([rz1, rz2], _raum(), FakeNormProvider(), i_cd_fn=_strong)
+    assert len(out) == 1
+    assert out[0].xy_mm == (9500.0, 10000.0)
 
 
 # ── Tür-Leuchte TECHNIK/MUELLRAUM (Owner-Regel 2026-09-07) ───────────────────
@@ -344,7 +369,9 @@ def test_exit_jenseits_der_tuer_fluchtachse_zeigt_raus():
     rz = [p for p in plan_rettungszeichen(rm, FakeNormProvider())
           if math.hypot(p.xy_mm[0] - 5000.0, p.xy_mm[1] - 5000.0) < 1000.0]
     assert len(rz) == 1
-    assert rz[0].xy_mm[1] < 5000.0          # raumseitig (südlich), NICHT draußen
+    # Owner 2026-09-18 (Wandlinien-Regel, RZ_INS_RAUM_MM=0): RZ darf exakt AUF der
+    # Wandlinie (y=5000) sitzen — der Guard richtet sich nur gegen „draußen" (>5000).
+    assert rz[0].xy_mm[1] <= 5000.0         # auf der Wandlinie, NICHT draußen
     assert rz[0].rotation_deg == 0.0        # Blick ins Rauminnere (−y)
 
 
@@ -374,7 +401,8 @@ def test_phantom_durchgang_ist_keine_tuer():
 
 def test_aussen_tuer_rz_am_muellraum_ausgang():
     """„Hier ist der Ausgang vom Müllraum": AUSSEN-Tür eines communal Raums traegt
-    ein RZ (EN 1838 §4.1.2 g) — Piktogramm blickt ins Rauminnere (R-B), ~150 mm im Raum."""
+    ein RZ (EN 1838 §4.1.2 g) — Piktogramm blickt ins Rauminnere (R-B), Symbol auf
+    der Wandlinie (Owner 2026-09-18: kein fixer Versatz, RZ_INS_RAUM_MM=0)."""
     out = aussen_tuer_rz(_raum_mit_aussentuer(), FakeNormProvider())
     assert len(out) == 1
     p = out[0]
@@ -384,7 +412,7 @@ def test_aussen_tuer_rz_am_muellraum_ausgang():
     # (nach oben) = rot 180 (R-B; Ground truth Müllraum-Südtür ~180°).
     assert p.rotation_deg == 180.0
     assert p.xy_mm[0] == pytest.approx(5000.0, abs=1.0)
-    assert p.xy_mm[1] == pytest.approx(150.0, abs=1.0)   # 150 mm im Raum-Inneren
+    assert p.xy_mm[1] == pytest.approx(0.0, abs=1.0)   # auf der Wandlinie (Tür-Achse)
     assert p.norm_quelle != QUELLE_TUERLEUCHTE           # echte Norm-Quelle (§4.1.2 g)
 
 
@@ -514,3 +542,55 @@ def test_stiegenhaus_rz_wandert_ins_stiegenhaus():
     # RZ fern vom stair_exit bleibt unangetastet:
     fern = rz.model_copy(update={"xy_mm": (9000.0, 7000.0)})
     assert stiegenhaus_rz_nachpass([fern], rm)[0].xy_mm == (9000.0, 7000.0)
+
+
+# ── D2-Guard: keine Leuchte im LIFT-/SCHACHT-Polygon (Fischamend 2026-09-18) ──
+
+
+def _stgh_mit_lift() -> RaumModell:
+    stgh = [(0.0, 0.0), (6000.0, 0.0), (6000.0, 6000.0), (0.0, 6000.0)]
+    lift = [(2000.0, 2000.0), (4000.0, 2000.0), (4000.0, 4000.0), (2000.0, 4000.0)]
+    return RaumModell(
+        floor="T", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(6000.0, 6000.0)),
+        raeume=[
+            Raum(id="stgh", raum_typ="STIEGENHAUS", polygon_mm=stgh,
+                 flaeche_m2=36.0, ist_fluchtweg=True, ist_communal=True),
+            Raum(id="lift", raum_typ="LIFT", polygon_mm=lift, flaeche_m2=4.0),
+        ],
+    )
+
+
+def _sl(xy):
+    return Platzierung(
+        xy_mm=xy, catalog_key=AUFHELLER_KEY, rotation_deg=0.0,
+        height_mm=2400.0, kind="sicherheitsleuchte", richtung="gerade",
+        circuit_hint="AGV-A-F13", covers_segment=[], norm_quelle="EN 1838",
+    )
+
+
+def test_schacht_leuchte_wird_in_den_wirtsraum_verschoben():
+    """BT2-EG-Befund: die Stiegenhaus-Zentrum-SL faellt in den innenliegenden
+    Liftschacht (find_center_visual des STGH-Polygons = Lift-Rechteck). Der Guard
+    schiebt sie an den naechsten montierbaren Punkt des Stiegenhauses: Lift-Bbox-
+    Rand 4000 plus clearance 150 = x 4150 (Gleichstand der Distanz, Tie-Break =
+    groesster Abstand zur bestehenden Leuchte bei (1000,1000)), y unveraendert."""
+    drin = _sl((3000.0, 3000.0))
+    aussen = _sl((1000.0, 1000.0))
+    out = entferne_schacht_leuchten([drin, aussen], _stgh_mit_lift())
+    assert len(out) == 2
+    assert out[0].xy_mm == (4150.0, 3000.0)
+    assert out[1].xy_mm == (1000.0, 1000.0)
+
+
+def test_leuchte_nur_im_schacht_ohne_wirt_entfaellt():
+    lift = [(2000.0, 2000.0), (4000.0, 2000.0), (4000.0, 4000.0), (2000.0, 4000.0)]
+    rm = RaumModell(
+        floor="T", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(6000.0, 6000.0)),
+        raeume=[Raum(id="lift", raum_typ="LIFT", polygon_mm=lift, flaeche_m2=4.0)],
+    )
+    assert entferne_schacht_leuchten([_sl((3000.0, 3000.0))], rm) == []
+
+
+def test_ohne_schacht_raeume_noop():
+    platzierungen = [_sl((3000.0, 3000.0))]
+    assert entferne_schacht_leuchten(platzierungen, _raum()) is platzierungen

@@ -113,10 +113,10 @@ def test_visual_golden_4og(tmp_path):
 
 def _platzierung_mix() -> PlatzierungsErgebnis:
     """Realistische Misch-Szene für die Sicht-Golden — deckt die Render-Pfade ab, die der
-    faithful-5-RZ-4og-Golden NICHT trägt und hinter denen C2 (Doppelpfeil) + der
-    Belegungs-Overflow versteckt waren: RZ mit `richtung="gerade"` (beidseitiger
-    Doppelpfeil), Sicherheitsleuchte + Antipanik als eigene Symbole, und eine
-    Belegungsliste mit BL-Schaltungsart über zwei Kreise."""
+    faithful-5-RZ-4og-Golden NICHT trägt und hinter denen C2 (beidseitig) + der
+    Belegungs-Overflow versteckt waren: RZ mit `richtung="gerade"` (echter
+    Rivoplan-Beidseitig-Block), Sicherheitsleuchte + Antipanik als eigene
+    Symbole, und eine Belegungsliste mit BL-Schaltungsart über zwei Kreise."""
     q = "ÖNORM EN 1838:2013 §4.2.1"
 
     def rz(xy, richtung, key, kreis):
@@ -133,7 +133,7 @@ def _platzierung_mix() -> PlatzierungsErgebnis:
                            richtung="gerade", height_mm=2400.0, circuit_hint=kreis, norm_quelle=q)
 
     plz = [
-        rz((-60000.0, 20000.0), "gerade", "notlicht_ks_stiege", "AGV-A-F13"),  # Doppelpfeil
+        rz((-60000.0, 20000.0), "gerade", "notlicht_ks_stiege", "AGV-A-F13"),  # beidseitig
         rz((-45000.0, 20000.0), "rechts", "notlicht_ks_stiege_rechts", "AGV-A-F13"),
         sl((-70000.0, 33000.0), "AGV-A-F13"),
         sl((-52000.0, 33000.0), "AGV-B-F13"),
@@ -155,8 +155,8 @@ def test_visual_golden_mix(tmp_path):
 
     # Selbst-validierend (kein blindes Golden): die Misch-Szene MUSS die Pfade wirklich
     # ausüben, sonst wacht der Pixel-Golden über nichts. 7 Platzierungen → 7 getaggte
-    # INSERTs (XDATA sitzt je Platzierung am Primär-Block; der Doppelpfeil-Zweitblock
-    # der „gerade"-RZ ist Deko derselben Platzierung, wie die Blatt-Legende ungetaggt).
+    # INSERTs (XDATA sitzt je Platzierung am Symbol-Block; der „gerade"-RZ ist seit
+    # der Rivoplan-Migration EIN Beidseitig-Block, die Blatt-Legende bleibt ungetaggt).
     doc = ezdxf.readfile(str(dxf))
     inserts = [e for e in doc.modelspace().query("INSERT")
                if e.has_xdata("NOTBELEUCHTUNG")]   # Plan-Symbole; Blatt-Deko trägt kein XDATA

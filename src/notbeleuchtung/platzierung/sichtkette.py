@@ -27,7 +27,12 @@ from __future__ import annotations
 import math
 from itertools import pairwise
 
-from notbeleuchtung.hauptengine.contracts import NormProvider, Platzierung, RaumModell
+from notbeleuchtung.hauptengine.contracts import (
+    FluchtwegSegment,
+    NormProvider,
+    Platzierung,
+    RaumModell,
+)
 
 from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
 from .bausteine import ist_abteil_tuer as _ist_abteil_tuer
@@ -36,6 +41,13 @@ from .graph import build_circulation_graph
 
 #: RZ näher als das an einem Ausgang/Kreuzungs-Knoten = Pflicht-RZ, geschützt.
 _SCHUTZ_RADIUS_MM = 2000.0
+#: D6 (Fischamend/S3-Befund raum_13): Mittellinien-RZ liegen bei Zacken-Polygonen
+#: knapp AUSSERHALB der Korridor-Kontur → galten als „nicht unsere Lane" und
+#: wurden nie ausgedünnt. Ein FLUCHTWEG-RZ (kanonische Quelle aus
+#: `fuer_fluchtweg_abschnitt`) zählt jetzt auch dann zum Gang, wenn es höchstens
+#: so weit von der Kontur entfernt ist. Der Puffer wirkt NUR auf die
+#: Zugehörigkeit — die Sichtstrahlen selbst bleiben strikt (Wand blockiert).
+_KONTUR_PUFFER_MM = 500.0
 #: Piktogramm-Default (0,15 m, hinterleuchtet) — gleiche Annahme wie die übrigen
 #: l=z·h-Konsumenten (gang_strategy._abstand_mm, platzierer._arm_gap_mm).
 _PIKTO_HOEHE_M = 0.15
@@ -52,6 +64,12 @@ def _segment_punkt_abstand(a, b, q) -> float:
         return math.hypot(q[0] - a[0], q[1] - a[1])
     t = max(0.0, min(1.0, ((q[0] - a[0]) * ex + (q[1] - a[1]) * ey) / l2))
     return math.hypot(q[0] - (a[0] + t * ex), q[1] - (a[1] + t * ey))
+
+
+def _kontur_abstand(xy: tuple[float, float], poly: list[tuple[float, float]]) -> float:
+    return min(
+        _segment_punkt_abstand(a, b, xy) for a, b in zip(poly, poly[1:] + poly[:1])
+    )
 
 
 def _sicht_frei(
@@ -123,10 +141,23 @@ def kette_ausduennen(
     def _nah(xy, punkte) -> bool:
         return any(math.hypot(xy[0] - p[0], xy[1] - p[1]) <= _SCHUTZ_RADIUS_MM for p in punkte)
 
+    # D6: kanonische Fluchtweg-Quelle vom Provider (kein String-Hardcode) — nur
+    # RZ MIT dieser Quelle dürfen über den Kontur-Puffer zum Gang zählen;
+    # Sonderstellen-/Raum-RZ hinter einer Wand bleiben fremde Lane.
+    fluchtweg_quelle = norm.fuer_fluchtweg_abschnitt(
+        FluchtwegSegment(segment_id="_sichtkette_probe", polyline_mm=[(0.0, 0.0)], reason="exit")
+    ).quelle
+
+    def _im_gang(xy: tuple[float, float]) -> bool:
+        return any(point_in_polygon(xy, poly) for poly in polys)
+
     def _geschuetzt(p: Platzierung) -> bool:
         if p.norm_quelle.startswith(("Referenz-Praxis:", "fachpraxis:")):
             return True                                    # Tür-RZ (R-B/R-C)
-        if not any(point_in_polygon(p.xy_mm, poly) for poly in polys):
+        if not _im_gang(p.xy_mm) and not (
+            p.norm_quelle == fluchtweg_quelle
+            and min(_kontur_abstand(p.xy_mm, poly) for poly in polys) <= _KONTUR_PUFFER_MM
+        ):
             return True                                    # kein Gang-RZ → nicht unsere Lane
         return _nah(p.xy_mm, ausgaenge) or _nah(p.xy_mm, kreuzungen)
 

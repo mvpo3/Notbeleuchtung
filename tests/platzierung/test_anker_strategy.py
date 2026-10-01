@@ -135,6 +135,52 @@ def test_kreuzung_ganz_ohne_ausgaenge_faellt_auf_unten():
     assert len(out) == 1 and out[0].richtung == "unten"
 
 
+def _wasserscheide(vertikal: bool = False) -> RaumModell:
+    # T-Kreuzung J zwischen ZWEI gleich weiten Ausgängen in Gegenrichtung + ein
+    # Raum-Zweig B. NB-R16: J ist die Wasserscheide → beidseitiges RZ.
+    if vertikal:
+        exits = [("EXIT_N", (0.0, 9000.0)), ("EXIT_S", (0.0, -9000.0))]
+        b = (5000.0, 0.0)
+    else:
+        exits = [("EXIT_L", (-9000.0, 0.0)), ("EXIT_R", (9000.0, 0.0))]
+        b = (0.0, 5000.0)
+    nodes = [Node(id="J", typ="junction", xy_mm=(0.0, 0.0)),
+             Node(id="B", typ="room", xy_mm=b)]
+    nodes += [Node(id=eid, typ="exit", xy_mm=xy) for eid, xy in exits]
+    edges = [Edge(**{"from": "J", "to": "B", "len_mm": 5000.0})]
+    edges += [Edge(**{"from": "J", "to": eid, "len_mm": 9000.0}) for eid, _ in exits]
+    return RaumModell(
+        floor="DEMO", bounds_mm=BBox(min_xy=(-9000.0, -9000.0), max_xy=(9000.0, 9000.0)),
+        ausgaenge=[Ausgang(id=eid, xy_mm=xy, typ="final_exit") for eid, xy in exits],
+        zirkulation=ZirkulationsGraph(nodes=nodes, edges=edges),
+    )
+
+
+def test_wasserscheide_setzt_beidseitiges_rz():
+    # NB-R16: Kreuzung gleich weit zu zwei Ausgängen in Gegenrichtung → richtung
+    # „gerade" (Render setzt den echten Bothsided-Block), Achse entlang Korridor.
+    out = plan_rettungszeichen_anker(_wasserscheide(), FakeNormProvider())
+    bei_j = next(p for p in out if p.xy_mm == (0.0, 0.0))
+    assert bei_j.richtung == "gerade"
+    assert bei_j.rotation_deg == 0.0            # horizontaler Korridor
+    # Die zwei Ausgänge behalten „unten" (Ausgang erreicht).
+    assert all(p.richtung == "unten" for p in out if p.xy_mm != (0.0, 0.0))
+
+
+def test_wasserscheide_achse_folgt_korridor():
+    out = plan_rettungszeichen_anker(_wasserscheide(vertikal=True), FakeNormProvider())
+    bei_j = next(p for p in out if p.xy_mm == (0.0, 0.0))
+    assert bei_j.richtung == "gerade"
+    assert bei_j.rotation_deg == 90.0           # vertikaler Korridor
+
+
+def test_kreuzung_zu_einem_ausgang_ist_keine_wasserscheide():
+    # Regression: nur EIN erreichbarer Ausgang → KEIN beidseitiges RZ (keine
+    # Über-Produktion von Bothsided; Owner: Alternativen nicht automatisieren).
+    out = plan_rettungszeichen_anker(_plus_korridor(), FakeNormProvider())
+    assert all(p.richtung != "gerade" for p in out)
+
+
 def test_duenner_graph_nur_ausgaenge():
     # 4OG-Fixture: 2 Stich-Kanten, keine Kreuzung → nur die 2 Ausgänge als Anker.
     data = json.loads((FIXTURES / "raum_modell_4og.json").read_text(encoding="utf-8"))

@@ -1,0 +1,954 @@
+[
+ {
+  "id": "RW-001",
+  "nb_ref": "NB-R01",
+  "thema": "tuer_rz",
+  "regel": "Raum bindet ueber eine Tuer an den Fluchtweg an und erhaelt ein Tuer-RZ → in der Tuerachse, raumseitig hinter der Schwelle",
+  "geometrische_bedingung": {
+   "rotation": "Welt-Pfeil in den Raum = entgegen Fluchtrichtung durch die Tuer = entgegen Tuer-Oeffnungsrichtung",
+   "parameter": {
+    "quer_zur_tuerachse_mm": {
+     "gemessen": [
+      3,
+      35
+     ],
+     "toleranz": 50
+    },
+    "raumseitiger_versatz_mm": {
+     "gemessen": [
+      735,
+      930
+     ],
+     "hinweis": "Gang-Trenntuer 1OG: 258 gangseitig der Wandachse"
+    }
+   }
+  },
+  "leuchtentyp": "notlicht_ks_stiege_unten",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 86,
+  "n_belege_dxf": 145
+ },
+ {
+  "id": "RW-002",
+  "nb_ref": "NB-R02",
+  "thema": "allgemeinbereiche",
+  "regel": "Raum ist Allgemeinbereich (fuer alle Bewohner zugaenglich; meist EG/UG): MUELLRAUM, FAHRRADRAUM(ABSTELLRAUM communal), KINDERWAGENRAUM, KELLERABTEIL, TECHNIK, SPIELRAUM, GESCHAEFTSLOKAL, Innenhof-Anbindung → bei der Tuer nach NB-R01; EIN RZ genuegt bei freier Sicht aus dem ganzen Raum",
+  "geometrische_bedingung": {
+   "rotation": "nach NB-R01",
+   "parameter": {
+    "sichtlinie_max_gemessen_mm": 9143
+   }
+  },
+  "leuchtentyp": "notlicht_ks_stiege_unten",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 7,
+  "n_belege_dxf": 13
+ },
+ {
+  "id": "RW-003",
+  "nb_ref": "NB-R03",
+  "thema": "haupteingang",
+  "regel": "Haupteingangs-/Hauptausgangstuer des Gebaeudes → ueber/vor der Tuer, mittig zur Tuerachse, raumseitig",
+  "geometrische_bedingung": {
+   "rotation": "Welt-Pfeil ins Rauminnere",
+   "parameter": {
+    "quer_mm": 26,
+    "raumseitig_mm": {
+     "gemessen": [
+      375,
+      840
+     ]
+    }
+   }
+  },
+  "leuchtentyp": "notlicht_ks_stiege_unten",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 9,
+  "n_belege_dxf": 19
+ },
+ {
+  "id": "RW-004",
+  "nb_ref": "NB-R04",
+  "thema": "stiegenhauspfeil",
+  "regel": "Stiegenhaus mit Architekten-Stiegenpfeil (Aufwaertsrichtung JE LAUF) → RZ so, dass Ankommende es beim Erreichen des Geschosses (Blick links/rechts) sofort sehen; je Personenstrom ggf. eigenes RZ",
+  "geometrische_bedingung": {
+   "rotation": "UG-Stroeme laufen IN Pfeilrichtung hinauf, OG/DG-Stroeme ENTGEGEN hinunter",
+   "parameter": {
+    "delta_bewegung_vs_pfeil_grad": {
+     "gemessen": [
+      168,
+      180
+     ]
+    }
+   }
+  },
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 29,
+  "n_belege_dxf": 63
+ },
+ {
+  "id": "RW-005",
+  "nb_ref": "NB-R05",
+  "thema": "vor_der_stiege",
+  "regel": "Richtungs-RZ fuehrt auf eine Stiege bzw. empfaengt Stiegen-Ankoemmlinge → 800-1122 mm vor der Antritts-/Austrittskante, auf der Laufachse; Wandmontage als Sichtbarkeits-Alternative",
+  "geometrische_bedingung": {
+   "rotation": "Welt-Pfeil exakt in Abstiegs-/Weiterrichtung des Laufs, NIE auf eine Wand",
+   "parameter": {
+    "abstand_vor_kante_mm": {
+     "gemessen": [
+      801,
+      1122
+     ]
+    },
+    "quer_zur_laufachse_mm": {
+     "gemessen": [
+      20,
+      130
+     ]
+    },
+    "pfeil_vs_laufrichtung_grad": {
+     "toleranz": 1.0
+    }
+   }
+  },
+  "leuchtentyp": "notlicht_ks_stiege_links|_rechts (nach NB-R07)",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 34,
+  "n_belege_dxf": 74
+ },
+ {
+  "id": "RW-006",
+  "nb_ref": "NB-R06",
+  "thema": "pfeil_unten_geradeaus",
+  "regel": "RZ im geraden Gangverlauf bedeutet 'geradeaus weiter' → mittig im Gang (Gangachse)",
+  "geometrische_bedingung": {
+   "rotation": "Welt-Pfeil ENTGEGEN der Fluchtrichtung (Vorderseite frontal zum ankommenden Strom)",
+   "parameter": {
+    "neben_gangachse_mm": {
+     "gemessen": [
+      6,
+      95
+     ]
+    },
+    "delta_pfeil_vs_fluss_grad": {
+     "gemessen": [
+      178.6,
+      180.0
+     ]
+    }
+   }
+  },
+  "leuchtentyp": "notlicht_ks_stiege_unten",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 36,
+  "n_belege_dxf": 126
+ },
+ {
+  "id": "RW-007",
+  "nb_ref": "NB-R07",
+  "thema": "frontalsicht_auswahl",
+  "regel": "Auswahl links/rechts/unten fuer ein Richtungs-RZ → Symbol-Laengsachse quer zum Betrachter-Korridor",
+  "geometrische_bedingung": {
+   "rotation": "Pfeil = Fluchtrichtung AUS SICHT der Person; Person muss die Vorderseite sehen",
+   "parameter": {
+    "erstleuchte_sichtwinkel_zur_normalen_grad": {
+     "gemessen": [
+      0.3,
+      45.5
+     ],
+     "falschvariante": 89
+    },
+    "folgeleuchte": "nur Sichtbarkeit noetig (bis ~47.5 Grad, Seitenansicht toleriert 86-90 Grad bei Tuer-RZ am Gangende)"
+   }
+  },
+  "leuchtentyp": "notlicht_ks_stiege_links|_rechts|_unten",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 63,
+  "n_belege_dxf": 156
+ },
+ {
+  "id": "RW-008",
+  "nb_ref": "NB-R08",
+  "thema": "erster_blick",
+  "regel": "Verlassen jeder Wohnung / jedes Raums → eine relevante Leuchte muss direkt sichtbar sein; bei zu grosser Entfernung ZUSATZ-Leuchte dazwischen; ein RZ darf mehrere Tueren bedienen",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {
+    "sichtlinien": "eine je Wohnungstuer, Start <=136 mm neben der Tuer, Laenge 882-12028 mm, 0 Wandschnitte",
+    "mehrfachbedienung": "bis 4 Wohnungstueren je RZ (1140-4275 mm)"
+   }
+  },
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 40,
+  "n_belege_dxf": 93
+ },
+ {
+  "id": "RW-009",
+  "nb_ref": "NB-R09",
+  "thema": "gang_mit_ohne_stgh_tuer",
+  "regel": "Gang muendet ins Stiegenhaus → MIT Trenntuer: Tuer-RZ an der Trenntuer (NB-R01) + 2 antipanik_leuchte auf der Gangmittellinie. OHNE Trenntuer: KEIN Tuer-RZ an der Muendung; Richtungs-RZ am Knick bzw. vor der Stiege (NB-R05)",
+  "geometrische_bedingung": {
+   "rotation": "nach NB-R01/NB-R06/NB-R07",
+   "parameter": {
+    "ap_teilung_12m_gang_mm": [
+     3090,
+     6297,
+     2579
+    ],
+    "ap_neben_fluchtlinie_mm": 55,
+    "alternativen_nur_text": "2 Aufheller | mittiges down-RZ | down-RZ + Aufheller (Wahl nach Situation, Lux-Nachweis entscheidet)"
+   }
+  },
+  "leuchtentyp": "siehe Faelle",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 6,
+  "n_belege_dxf": 52
+ },
+ {
+  "id": "RW-010",
+  "nb_ref": "NB-R10",
+  "thema": "antipanik_sichtblockade",
+  "regel": "Sicht der Person auf die Notleuchte ist blockiert (L-/U-Raumform, Wand dazwischen) ODER Lux-Nachweis im Gang scheitert → im abgeschatteten Bereich (gemessen 3211 mm vor der Person); rechteckige Raeume ohne Blockade: KEINE",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {
+    "lux_nachweis": "separater Nachweis (Lichtberechnung) — hier nur Flag lux_nachweis_erforderlich"
+   }
+  },
+  "leuchtentyp": "antipanik_leuchte",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 18,
+  "n_belege_dxf": 40
+ },
+ {
+  "id": "RW-011",
+  "nb_ref": "NB-R11",
+  "thema": "hindernis_versatz",
+  "regel": "Sollposition kollidiert mit Hindernis (z.B. Lichtkuppel, blau markiert) → quer versetzen bis frei (gemessen 142 mm Versatz, 292 mm Zentrum->Kuppelkante)",
+  "geometrische_bedingung": {
+   "rotation": "UNVERAENDERT beibehalten",
+   "parameter": {}
+  },
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 1,
+  "n_belege_dxf": 5
+ },
+ {
+  "id": "RW-012",
+  "nb_ref": "NB-R12",
+  "thema": "sichtkette_abstaende",
+  "regel": "Folge von RZ entlang des Fluchtwegs → lueckenlose Kette bis zum Ausgang; Wand-RZ mit Kante an Wandkante (15-101 mm)",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {
+    "folgeabstaende_mm": {
+     "gemessen": [
+      1975,
+      7749
+     ]
+    },
+    "sichtlinien_ende": "an der Symbol-KANTE, nicht am Zentrum"
+   }
+  },
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 31,
+  "n_belege_dxf": 85
+ },
+ {
+  "id": "RW-013",
+  "nb_ref": "NB-R13",
+  "thema": "ug_stiegenrichtung",
+  "regel": "Untergeschoss: Personen fluechten HINAUF ueber die Stiege → Leuchte vor/an der Stiege (NB-R05)",
+  "geometrische_bedingung": {
+   "rotation": "Welt-Pfeil = Aufwaertsrichtung des Laufs = IN Stiegenhauspfeilrichtung (OG: entgegen, NB-R04); Frontseite zum ankommenden UG-Strom",
+   "parameter": {}
+  },
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 9,
+  "n_belege_dxf": 28
+ },
+ {
+  "id": "RW-014",
+  "nb_ref": "NB-R14",
+  "thema": "montageort_wand_decke",
+  "regel": "Wahl Wand- vs. Deckenmontage → Stiegen-Leuchten = Wand; Gang-Leuchten = Decke, mittig",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {}
+  },
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 7,
+  "n_belege_dxf": 18
+ },
+ {
+  "id": "RW-015",
+  "nb_ref": "NB-R15",
+  "thema": "kabeltrasse_hindernis",
+  "regel": "Sollposition liegt auf/nahe einer Kabeltrasse (blaue Balken, KT300/KT400/KT500) → NIE auf der Trasse; seitlich versetzen, moeglichst >= 450 mm Abstand",
+  "geometrische_bedingung": {
+   "rotation": "nach Versatz erhalten: Sichtbarkeit, Pfeilrichtung, Frontseite, Fluchtwegbezug, Gebaeudehaelfte",
+   "parameter": {
+    "abstand_mm": {
+     "soll_min": 450,
+     "modalitaet": "moeglichst (Fachpraxis-SOLL)"
+    },
+    "versatz_gemessen_mm": [
+     507
+    ]
+   }
+  },
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 8,
+  "n_belege_dxf": 15
+ },
+ {
+  "id": "RW-016",
+  "nb_ref": "NB-R16",
+  "thema": "beidseitig",
+  "regel": "ZWEI Personenstroeme aus Gegenrichtungen nutzen denselben Fluchtweg-Knoten und brauchen beide die Frontseite → am gemeinsamen Knoten (GT: 2 gespiegelte Einzel-Bloecke, Abstand 264-318 mm; Engine: RIVO_ARR_bothsided)",
+  "geometrische_bedingung": {
+   "rotation": "Achse = Fluchtweg-Achse beider Stroeme",
+   "parameter": {
+    "alternative": "beidseitig am Richtungswechsel OHNE Gegenstrom = NUR-ALTERNATIVE (orange, 'muss nicht sein') — NICHT automatisieren"
+   }
+  },
+  "leuchtentyp": "notlicht_ks_beidseitig",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 67,
+  "n_belege_dxf": 99
+ },
+ {
+  "id": "RW-017",
+  "nb_ref": "NB-R17",
+  "thema": "garage_durchquerbarkeit",
+  "regel": "Fluchtwegfuehrung durch Garagenbereiche → Motorrad-Stellflaechen sind durchquerbar; Doppelparker-/PKW-Flaechen und Gruben NICHT",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {}
+  },
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 10,
+  "n_belege_dxf": 18
+ },
+ {
+  "id": "RW-018",
+  "nb_ref": "NB-R18",
+  "thema": "gebaeudehaelften",
+  "regel": "Projekt besteht aus zwei zusammengebauten Gebaeuden → Trennung entlang der weitergefuehrten Gebaeudewand; Zuordnung am EG-Grundriss verifizieren; je Haelfte eigene Fluchtwege/Ausgaenge/Label-Alphabete",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {
+    "prozessregel": "unklare Zuordnung NIEMALS raten -> offene Frage (PDF S.78, bindend)"
+   }
+  },
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 9,
+  "n_belege_dxf": 12
+ },
+ {
+  "id": "RW-019",
+  "nb_ref": "NB-R19",
+  "thema": "ug_nebenraum_tuerleuchte",
+  "regel": "UG-Nebenraum bindet an den Gang an → TECHNIK/NIEDERSPANNUNG/E-Raum: Tuer-Leuchte nach NB-R01 (mittig 3-26 mm, 711-779 mm zugangsseitig). Einzelne kleine ER/KELLERABTEIL/Medienraum: KEINE eigene Tuerleuchte, wenn nach Tuerdurchtritt sofort ein Gang-RZ sichtbar ist",
+  "geometrische_bedingung": {
+   "rotation": "nach NB-R01",
+   "parameter": {}
+  },
+  "leuchtentyp": "notlicht_ks_stiege_unten",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 21,
+  "n_belege_dxf": 73
+ },
+ {
+  "id": "RW-020",
+  "nb_ref": "NB-R20",
+  "thema": "tuerlose_gaenge_durchgaenge",
+  "regel": "tuerloser Gang / offener Durchgang im Fluchtweg → tuerloser zusammenhaengender Gang: KEINE Zwischen-RZ solange Sichtkette steht; kurzer Gang mit Direktsicht aller Tueren: genau EIN Tuer-RZ; offener Durchgang als Knoten: down-Typ MITTIG im Durchgang (gemessen 4 mm Mittigkeit bei 1250 mm)",
+  "geometrische_bedingung": {
+   "rotation": "down-Typ frontal zum ankommenden Strom (rechts/links/beidseitig am Durchgang im PDF explizit VERWORFEN)",
+   "parameter": {}
+  },
+  "leuchtentyp": "notlicht_ks_stiege_unten",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 10,
+  "n_belege_dxf": 9
+ },
+ {
+  "id": "RW-021",
+  "nb_ref": "NB-R21",
+  "thema": "sv_anlage",
+  "regel": "Projekt braucht Notbeleuchtungs-Stromversorgung → EIN System je Projekt ('meistens' auch bei zwei Gebaeudehaelften), Verteiler im Niederspannungsraum, NICHT an der E-Verteiler-Wand",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {}
+  },
+  "leuchtentyp": "gruppenbatterie_anlage",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 3,
+  "n_belege_dxf": 19
+ },
+ {
+  "id": "RW-022",
+  "nb_ref": "NB-R22",
+  "thema": "quellen_disziplin_fluchtplan",
+  "regel": "Quelle ist ein Flucht-/Rettungsplan (gruener Aushang), kein Notbeleuchtungsplan → belegt NUR Fluchtweg-Richtung/Tueren/Stiegenhaeuser/Ausgaenge; NICHT Leuchtenposition, Wand-/Deckenmontage, Frontseite, ein-/beidseitig, Typ, Hoehe, Lux, Anzahl",
+  "geometrische_bedingung": {
+   "rotation": "Blatt-Richtung != CAD-Richtung != Personen-Richtung; gedrehte Aushang-Blaetter",
+   "parameter": {
+    "standort_marke": "Aushang-Bezugspunkt, KEINE Leuchte",
+    "mehrere_blaetter": "gleiches Geschoss aus mehreren Aushaengen = EINE Referenz",
+    "raum_ohne_gruen": "bedeutet NICHT 'keine Notbeleuchtung noetig'"
+   }
+  },
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 14,
+  "n_belege_dxf": 2
+ },
+ {
+  "id": "RW-023",
+  "nb_ref": "NB-R23",
+  "thema": "schul_bildungscluster_fluchtweg",
+  "regel": "Schule, Cluster-/offene-Lernlandschaft-Typologie → offener 'Kommunikations- und Bewegungsbereich' traegt den Fluchtweg; Unterrichtsraeume oeffnen direkt darauf, OHNE 'Gang'-Label",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {}
+  },
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 4,
+  "n_belege_dxf": 3
+ },
+ {
+  "id": "RW-024",
+  "nb_ref": "NB-R24",
+  "thema": "mehrere_stiegenhaeuser_gerichtet",
+  "regel": "Gebaeude mit mehreren Fluchtstiegenhaeusern (TOMA: TH 2/3/4) → Cluster/Gebaeudeteile GEZIELT verschiedenen THs zuordnen; NICHT alle zum naechstgelegenen TH / einem Hauptausgang; mehrere dargestellte Richtungen erhalten",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {}
+  },
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 1,
+  "n_belege_dxf": 2
+ },
+ {
+  "id": "RW-025",
+  "nb_ref": "NB-R25",
+  "thema": "egress_je_ebene_zieltypen",
+  "regel": "Sockel-/Untergeschoss und Ziel-Typ-Bestimmung → Sockel-/UG kann direkte Aussenausgaenge auf eigener Ebene haben (Flucht nicht zwingend ueber EG). Ziel-Typen NIE gleichsetzen: Fluchtstiegenhaus / Ausgang ins Freie / Balkon-Terrasse-Loggia / vorlaeufige Evakuierungsstelle / Sammelstelle",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {}
+  },
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 12,
+  "n_belege_dxf": 19
+ },
+ {
+  "id": "RW-026",
+  "nb_ref": "NB-R26",
+  "thema": "ausfuehrungsplan_annotationen_anker",
+  "regel": "Architektur-Ausfuehrungsplan mit Brandschutz-/Flucht-Textannotation → EN 1125 (Panikstange) / EN 179 (Notausgangsbeschlag) = Ausgangstueren; FLn = Fluchtweg-Flaeche mit Soll-m2; EI 30/90/230-C + 'brandlastfreie Zone' + BA = Brandabschnitte; RWA = Rauchabzug; BMZ = Brandmeldezentrale",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {
+    "daten_fallen": "INSUNITS kann luegen (TOMA=6 Meter, real mm -> ueber Tuerbreiten/Wandstaerken verifizieren); Riesen-Koordinaten-Offset moeglich (TOMA SG ~-1.7e9 -> Healthcheck/Nullung vor Engine-Lauf)",
+    "messwerte_mm": {
+     "toma_eg_fl": [
+      72,
+      72,
+      33,
+      39
+     ],
+     "toma_og_fl": [
+      48
+     ]
+    }
+   }
+  },
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 1,
+  "n_belege_dxf": 0
+ },
+ {
+  "id": "RW-027",
+  "nb_ref": "NB-R27",
+  "thema": "aufzug_keine_fluchtverbindung",
+  "regel": "Aufzug im Gebaeude → Aufzug NIE als vertikale Flucht-Kante; Aufzugsvorbereich getrennt (kann Teil des Gangs sein)",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {}
+  },
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 3,
+  "n_belege_dxf": 40
+ },
+ {
+  "id": "RW-028",
+  "nb_ref": null,
+  "thema": "antipanik_laengsachse",
+  "regel": "Antipanikleuchte: Längsachse in Richtung des auszuleuchtenden (Gang-)Bereichs drehen; Position mittig im abgeschatteten Bereich.",
+  "geometrische_bedingung": {
+   "rotation": "Längsachse parallel zur Hauptachse des Zielbereichs",
+   "hinweis": "S.58: vertikal statt horizontal = bessere Ausleuchtung"
+  },
+  "leuchtentyp": "antipanik",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 1,
+  "n_belege_dxf": 2
+ },
+ {
+  "id": "RW-029",
+  "nb_ref": null,
+  "thema": "antipanik_position_diagonale",
+  "regel": "Antipanik-Position konstruieren über die Bereichs-Diagonale (Mauerkante→Gangecke) bzw. fluchtend in EINER Achse mit der nächsten Richtungs-Notleuchte UND mittig zum Bereich (gelbe Hilfslinien).",
+  "geometrische_bedingung": {
+   "position": "Schnitt/Mitte der Bereichs-Diagonale; Achse durch die nächste Fluchtweg-Leuchte"
+  },
+  "leuchtentyp": "antipanik",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 2,
+  "n_belege_dxf": 7
+ },
+ {
+  "id": "RW-030",
+  "nb_ref": null,
+  "thema": "antipanik_kann_fall",
+  "regel": "Optionale Antipanik zur Lux-Stützung: auch ohne Sichtblockade zulässig ('nicht zwingend, aber sinnvoll') — Kann-Fall zusätzlich zu NB-R10; Bestätigung durch Lichtberechnung.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "antipanik",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 1,
+  "n_belege_dxf": 2
+ },
+ {
+  "id": "RW-031",
+  "nb_ref": null,
+  "thema": "geraete_wahl_geschoss",
+  "regel": "Geräte-Wahl nach Geschoss: Antipanikleuchten meist in Untergeschossen, runde Aufheller meist EG–OG; Antipanik auch im EG bei Allgemeinräumen (Technik/KIWA/Spielraum/Fahrradraum). Endgültige Wahl bestätigt die Lichtberechnung.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "antipanik|aufheller",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 1,
+  "n_belege_dxf": 1
+ },
+ {
+  "id": "RW-032",
+  "nb_ref": null,
+  "thema": "stiegen_leuchte_decke_alternative",
+  "regel": "Deckenmontage mittig bei der Stiege ist zulässige Alternative zur Wandmontage (Regelfall NB-R14), solange die Frontal-Regel erfüllt bleibt; Alternativ-Position konstruierbar als Schnitt Mittellinie-Stiege × Mittellinie-Gang.",
+  "geometrische_bedingung": {
+   "position": "Schnittpunkt der Mittellinien Stiege × Gang",
+   "montage": "DA als Alternative zu WA"
+  },
+  "leuchtentyp": "notlicht_ks_stiege_links|_rechts",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 2,
+  "n_belege_dxf": 3
+ },
+ {
+  "id": "RW-033",
+  "nb_ref": null,
+  "thema": "og_sichtketten_ausnahme",
+  "regel": "OG-Ausnahme: In Obergeschoßen mit nur EINEM Stiegenhaus und einem eindeutig verlaufenden I-förmigen Gang wird meist keine zusätzliche Richtungsleuchte benötigt — Richtungs-RZ konzentrieren sich auf EG/UG.",
+  "geometrische_bedingung": {
+   "bedingung": "n_stiegenhaeuser==1 UND Gang ohne Verzweigung/Richtungswechsel"
+  },
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 1,
+  "n_belege_dxf": 3
+ },
+ {
+  "id": "RW-034",
+  "nb_ref": null,
+  "thema": "lichtberechnung_qa_pflicht",
+  "regel": "QA-Prozess: JEDES bearbeitete Geschoss vollständig mit der Lichtberechnung nachprüfen, unter Einbezug ALLER platzierten Elemente (RZ, Notleuchten, Antipanik, Aufheller) — zweite Prüfstufe nach der Platzierungslogik.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 1,
+  "n_belege_dxf": 2
+ },
+ {
+  "id": "RW-035",
+  "nb_ref": null,
+  "thema": "stiegenpfeil_farbe_stiege",
+  "regel": "Erkennungs-Heuristik (Selman-Naht): Der Architekten-Stiegenhauspfeil ist in derselben Farbe/Darstellung wie die Stiege selbst gezeichnet (Mollgasse: grau); rote Pfeile in Erklärbildern sind nachträgliche Markierung, keine Plan-Semantik.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "basis",
+  "n_quellen_pdf": 2,
+  "n_belege_dxf": 10
+ },
+ {
+  "id": "RW-101",
+  "nb_ref": null,
+  "thema": "knick_rz_stiegenlauf",
+  "regel": "Bei Richtungswechsel INNERHALB eines Stiegenlaufs (Zwischenpodest/abknickender Lauf) ein eigenes Richtungs-RZ am Knick zusätzlich zum Antritts-RZ (NB-R05); Pfeil = weitere Laufrichtung.",
+  "geometrische_bedingung": {
+   "position": "am Lauf-Knick",
+   "rotation": "Welt-Pfeil = Richtung des weiterführenden Laufs"
+  },
+  "leuchtentyp": "notlicht_ks_stiege_links|_rechts",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 2,
+  "n_belege_dxf": 12
+ },
+ {
+  "id": "RW-102",
+  "nb_ref": null,
+  "thema": "aufheller_stgh_vorbereich_knoten",
+  "regel": "Treffen im Stiegenhaus-Vorbereich Schleusen-/Gangzugang, Liftzugang und Weg zum Stiegenfuß zusammen, wird dort zusätzlich zu Tür-/Richtungs-RZ EIN runder Aufheller gesetzt (Knoten-Beleuchtung).",
+  "geometrische_bedingung": {
+   "bedingung": ">=3 zusammentreffende Wege am STGH-Vorbereich"
+  },
+  "leuchtentyp": "aufheller",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 1,
+  "n_belege_dxf": 2
+ },
+ {
+  "id": "RW-103",
+  "nb_ref": null,
+  "thema": "aussen_leuchte_letzter_ausgang",
+  "regel": "Unmittelbar AUSSEN vor dem letzten Ausgang eine beleuchtende Position (Antipanik-/SL-Typ, KEINE RZ-Front, keine Richtungsinfo) für Austritt + angrenzende Bodenfläche (EN 1838 §4.1.2 g); getrennt von Fassadenleuchten.",
+  "geometrische_bedingung": {
+   "position": "außen an der Ausgangstür"
+  },
+  "leuchtentyp": "antipanik|sicherheitsleuchte",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 4,
+  "n_belege_dxf": 11
+ },
+ {
+  "id": "RW-104",
+  "nb_ref": null,
+  "thema": "schulraum_muster",
+  "regel": "Schule: JEDER Unterrichts-/Bildungsraum erhält ein raumseitiges Tür-RZ (nach NB-R01, Front in den Raum) PLUS genau einen Aufheller/AP im Rauminneren; der Wohnbau-Skip (WOHNUNG_PRIVAT ohne Notlicht) gilt für Klassenräume NICHT. Aufheller wirkt nur im eigenen Raum.",
+  "geometrische_bedingung": {
+   "bedingung": "raum_typ == KLASSENRAUM/BILDUNGSRAUM (Selman-Naht)"
+  },
+  "leuchtentyp": "rz + aufheller|antipanik",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 6,
+  "n_belege_dxf": 10
+ },
+ {
+  "id": "RW-105",
+  "nb_ref": null,
+  "thema": "beidseitig_reihe_quer_ankuenfte",
+  "regel": "Eine REIHE beidseitiger RZ längs des Gangs bedient seitliche Raum-Ankünfte (Fronten quer zum Gang); lückenlose Frontalsicht für Längsläufer wird nicht gefordert — nuanciert NB-R07/NB-R16.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "rz beidseitig",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 1,
+  "n_belege_dxf": 5
+ },
+ {
+  "id": "RW-106",
+  "nb_ref": null,
+  "thema": "knoten_einseitig_plus_beidseitig",
+  "regel": "Knoten mit drei Ankunftsrichtungen: Kombination aus einseitigem RZ (frontal zur Längsankunft) und beidseitigem RZ (Fronten zu Querankünften) am SELBEN Knoten ist regulär — dicht benachbarte Zeichen funktional analysieren, nie als Dublette löschen.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "rz",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 1,
+  "n_belege_dxf": 2
+ },
+ {
+  "id": "RW-107",
+  "nb_ref": null,
+  "thema": "antipanik_flaechenbezogen",
+  "regel": "Offene Cluster-/MFU-/Saal-Flächen: Antipanik FLÄCHENBEZOGEN bewerten (freie Boden-Kernfläche nach EN 1838 4.3, 0,5-m-Randstreifen ausgenommen), nicht nur Weg unter der Leuchte; Großraum/Saal erhält flächige AP unabhängig von Sichtblockade.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "antipanik",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 2,
+  "n_belege_dxf": 3
+ },
+ {
+  "id": "RW-108",
+  "nb_ref": null,
+  "thema": "barrierefrei_wc_antipanik",
+  "regel": "Barrierefreies WC benötigt Antipanikbeleuchtung nach EN 1838 4.3.8 — eigener Trigger unabhängig von Sichtblockade und Fläche (keine 8-m²-/60-m²-Pauschale); nur echte Behinderten-Toiletten.",
+  "geometrische_bedingung": {
+   "bedingung": "raum_typ == WC_BARRIEREFREI"
+  },
+  "leuchtentyp": "antipanik",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 3,
+  "n_belege_dxf": 7
+ },
+ {
+  "id": "RW-109",
+  "nb_ref": null,
+  "thema": "sanitaer_schwellen",
+  "regel": "OVE E 8101 718.560.9.001.AT: Sanitärbereiche ≥8 m² nur bei ERHÖHTEN Anforderungen prüfen; die 60-m²-Ziffer gilt NUR für verkehrstechnische Einrichtungen — keine Schul-/Sanitär-Pauschale (Enis-Lane: Schwellenwerte in normwissen).",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 2,
+  "n_belege_dxf": 5
+ },
+ {
+  "id": "RW-110",
+  "nb_ref": null,
+  "thema": "mehrstufige_tuerfolgen",
+  "regel": "Mehrstufige Raum-/Türfolge (Raum→Raum→Gang): jede Tür der Folge erhält ihr eigenes Tür-RZ mit eigener Front; ein Aufheller im Zwischenraum ersetzt kein Tür-RZ; EN 1838 4.3.9 macht den Zwischenweg zum beleuchteten Rettungsweg.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "rz",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 2,
+  "n_belege_dxf": 7
+ },
+ {
+  "id": "RW-111",
+  "nb_ref": null,
+  "thema": "gang_aufheller_mehrfachbedienung",
+  "regel": "Ein gemeinsamer Gang-Aufheller darf mehrere benachbarte Türvorbereiche bedienen (SL-Analogie zu NB-R08); er deckt aber NIE Innenräume hinter Wänden/Kabinentrennungen und trägt keine Richtungsinformation.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "aufheller",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 2,
+  "n_belege_dxf": 1
+ },
+ {
+  "id": "RW-112",
+  "nb_ref": null,
+  "thema": "gefaehrdung_nur_beurteilung",
+  "regel": "Werk-/Küchenbereiche: Sicherheitsbeleuchtung für besondere Gefährdung (EN 1838 4.4: ≥10 % Wartungswert, ≥15 lx, Uo≥0,1, 0,5 s) NUR über Gefährdungsbeurteilung auslösen — nie automatisch aus dem Raumnamen.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 3,
+  "n_belege_dxf": 5
+ },
+ {
+  "id": "RW-113",
+  "nb_ref": null,
+  "thema": "schraeg_rotation_exakt",
+  "regel": "Rotation an schrägen Wänden/Bestand exakt erhalten: krumme Winkel (96°, 269.007°, 7°/97°/187°/277°-Familie) NIE auf 90°-Raster runden — kleine Winkelabweichungen tragen realen Gebäudebezug.",
+  "geometrische_bedingung": {
+   "rotation": "exakter Wand-/Bestandswinkel, kein Quantisieren"
+  },
+  "leuchtentyp": "rz",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 3,
+  "n_belege_dxf": 3
+ },
+ {
+  "id": "RW-114",
+  "nb_ref": null,
+  "thema": "rz_ersetzt_keine_stufen_sl",
+  "regel": "Eine RZ-Kette an einer Stiege deckt NICHT die Beleuchtungsaufgabe der Stufen (EN 1838 4.1.2 b); fehlende Stiegen-SL ist als offener Beleuchtungsnachweis auszuweisen, nicht durch RZ-Anrechnung zu heilen.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 1,
+  "n_belege_dxf": 2
+ },
+ {
+  "id": "RW-115",
+  "nb_ref": null,
+  "thema": "absturzsicherung_wegbarriere",
+  "regel": "Absturzsicherungen/Brüstungskanten sind beim Fluchtweg-Routing Wegbarrieren (Weg nie über die Schutzkante führen) — erweitert den Hindernisbegriff über Symbol-Kollision hinaus (Selman-Naht).",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 1,
+  "n_belege_dxf": 1
+ },
+ {
+  "id": "RW-116",
+  "nb_ref": null,
+  "thema": "rampe_kein_automatischer_fluchtweg",
+  "regel": "Garagen-/Fahrradrampe ist NICHT automatisch Fluchtweg oder sicherer Außenort: aus Rampengefälle keine Fluchtrichtung ableiten; erst nach belegter begehbarer Öffnung + Passage als Weg werten.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 2,
+  "n_belege_dxf": 22
+ },
+ {
+  "id": "RW-117",
+  "nb_ref": null,
+  "thema": "rz_instanzen_kein_merge",
+  "regel": "Benachbarte RZ-Instanzen (z.B. am STGH-Knoten) sind eigenständige Geräte: kein Merge, kein Löschen, getrennte Handles/Belege je Instanz — der Engine-SL<2m-Merge betrifft NUR Sicherheitsleuchten.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "rz",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 1,
+  "n_belege_dxf": 1
+ },
+ {
+  "id": "RW-118",
+  "nb_ref": null,
+  "thema": "geschoss_individualitaet",
+  "regel": "Geschoss-Konfigurationen NIE kopieren: dieselbe Grundriss-Stelle kann je Geschoss anderen Zeichentyp brauchen; vertikale Stiegenkern-Zuordnung nur über Stiegenbezeichnung+Lauf-/Liftkonfiguration+Schnittmarken/Höhen, nie über Koordinaten-Ähnlichkeit.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 3,
+  "n_belege_dxf": 4
+ },
+ {
+  "id": "RW-119",
+  "nb_ref": null,
+  "thema": "leuchten_kennzeichnung_ove",
+  "regel": "Jede Sicherheitsleuchte trägt sichtbar Verteiler-, Stromkreis- und Leuchtennummer an/nahe der Leuchte (OVE E 8101:2025-10 560.9.15) — deckt die Engine-Praxis der circuit_hint-/NODEID-Labels.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 1,
+  "n_belege_dxf": 0
+ },
+ {
+  "id": "RW-120",
+  "nb_ref": null,
+  "thema": "bestandsform_symbol_zuordnung",
+  "regel": "AG-CAD-Formregel Bestandskonvertierung: runde/quadratische Bestandsleuchten mit Mittelkreis → Aufheller-Symbol; rechteckige → Antipanik-Symbol. Reine Zeichensprache OHNE Lichtnachweis; Produktfunktion bleibt Attribut (Rolle ≠ Produkt).",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "aufheller|antipanik",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 4,
+  "n_belege_dxf": 28
+ },
+ {
+  "id": "RW-121",
+  "nb_ref": null,
+  "thema": "rotationserhalt_bestand",
+  "regel": "Beim Symboltausch Bestand→RIVO Position/Kennung/Rotation/Skalierung EXAKT übernehmen (auch 269.007° oder 0.482583); die alte Leuchtenachse ist Dokumentation, NIE Fluchtrichtungs- oder Photometrie-Aussage.",
+  "geometrische_bedingung": {
+   "rotation": "Zieldrehung = Bestandsdrehung, keine Normalisierung"
+  },
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 4,
+  "n_belege_dxf": 2
+ },
+ {
+  "id": "RW-122",
+  "nb_ref": null,
+  "thema": "attribut_grafik_widerspruch",
+  "regel": "Attribut/Grafik-Widerspruch (Produkttext vs. Symbolgrafik): Grafik-Rolle beibehalten, Widerspruch sichtbar als offenen Prüfpunkt führen — kein automatischer Symboltausch.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 1,
+  "n_belege_dxf": 2
+ },
+ {
+  "id": "RW-123",
+  "nb_ref": null,
+  "thema": "rolle_nicht_produkt_sl",
+  "regel": "SL-Bestand: 'AP'/'SL' im Produktnamen belegt keine Funktion; SL-Symbol ohne Pfeil trägt KEINE Richtungsinformation und ersetzt kein RZ; Funktionszuordnung (Wegbeleuchtung/Antipanik/Aufheller) braucht je Stelle eigenen Nachweis (EN 1838 4.1.2/4.3.1).",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 4,
+  "n_belege_dxf": 3
+ },
+ {
+  "id": "RW-124",
+  "nb_ref": null,
+  "thema": "quellen_disziplin_plananker",
+  "regel": "Architektur-Text (EINGANG/Adresse/SCHLEUSE/Türmarken) ist Plananker, KEIN Funktionsbeleg: keine Notausgangs-, Tür- oder Wegzuordnung aus Textnähe; Verbindungen nie aus Symbolnähe ableiten — Wand-/Türfolge muss geometrisch bestätigt sein.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 4,
+  "n_belege_dxf": 7
+ },
+ {
+  "id": "RW-125",
+  "nb_ref": null,
+  "thema": "sl_lichtnachweis_teilflaeche",
+  "regel": "Eine SL belegt nur ihre eigene Teilfläche: keine Lux-Deckung zwischen zwei Spots unterstellen, Treppenhaus-Nachweis deckt kein fernes Gangende, SL nahe Treppe ist kein Stufen-Nachweis — je Abschnitt eigene Lichtberechnung (EN 1838 4.2.7).",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 3,
+  "n_belege_dxf": 3
+ },
+ {
+  "id": "RW-126",
+  "nb_ref": null,
+  "thema": "aussenleuchten_kein_wegnachweis",
+  "regel": "Fassaden-/Außenleuchten entlang der Gebäudekontur belegen KEINEN begehbaren Außenfluchtweg (auch nicht um Ecken); der Außenweg vom letzten Ausgang bis zum sicheren Bereich ist gesondert festzulegen und nachzuweisen.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 3,
+  "n_belege_dxf": 9
+ },
+ {
+  "id": "RW-127",
+  "nb_ref": null,
+  "thema": "erfassungsrand_pruefrand",
+  "regel": "Erfassungsrand ≠ Prüfrand: das Ende der erfassten/ersetzten Leuchtenmenge beendet NICHT den nachzuweisenden Rettungsweg; angrenzende Bestandsflügel bleiben offene Prüfpflicht — im Bestand ohne belegte Zielobjektfolge keine Symbole erfinden.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 2,
+  "n_belege_dxf": 2
+ },
+ {
+  "id": "RW-128",
+  "nb_ref": null,
+  "thema": "sichtkette_erst_nach_passage",
+  "regel": "Eine RZ-Sichtkette (NB-R12) darf erst behauptet werden, wenn Tür-/Rampen-Durchgängigkeit belegt ist; Niveauwechsel im bestätigten Weg löst die §4.1.2-Prüfung aus.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 1,
+  "n_belege_dxf": 1
+ },
+ {
+  "id": "RW-129",
+  "nb_ref": null,
+  "thema": "keine_sonderregel_aus_raumlabel",
+  "regel": "Hochrisiko-/Sonderregel-Einstufung nie allein aus dem Raumnamen (HEIZZENTRALE/Technikraum): Nutzungs- und Lichtwirkungsprüfung erforderlich; anonyme *U-Blöcke und Fremdgewerk-Texte erst per Legende klären.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 3,
+  "n_belege_dxf": 2
+ },
+ {
+  "id": "RW-130",
+  "nb_ref": null,
+  "thema": "schul_einstufung_schwellen",
+  "regel": "Schul-Einstufung (Enis-Lane): 3.200-m²-NETTO-Grundflächen-Schwelle (OIB RL2/OVE R12-2) über die maßgebende GESAMTfläche inkl. Bestand; Betriebsdauer 3 h nur bei erhöhten Anforderungen (Fußnote c); ≤20 Leuchten je Endstromkreis; Normausgabe exakt zitieren (AC1:2020 ≠ 2025).",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 4,
+  "n_belege_dxf": 3
+ },
+ {
+  "id": "RW-131",
+  "nb_ref": null,
+  "thema": "endausgang_dreiklang",
+  "regel": "Endausgang-Dreiklang (EN 1838 4.1.2 g): RZ + tatsächliche Ausgangstür + beleuchteter Außenweg bis zum sicheren Bereich sind ZUSAMMEN nachzuweisen — eine Leuchte an der Tür allein belegt den Außenweg nicht.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "prioritaet": "ergaenzung",
+  "n_quellen_pdf": 2,
+  "n_belege_dxf": 5
+ }
+]

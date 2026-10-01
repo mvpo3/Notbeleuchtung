@@ -19,13 +19,20 @@ from notbeleuchtung.symbols import load_symbol_mapping
 # Ziel-Richtung → Winkel im Weltkoordinatensystem (rechts = +x = 0°, CCW).
 ZIEL_DEG: dict[str, float] = {"rechts": 0.0, "oben": 90.0, "links": 180.0, "unten": 270.0}
 
-# Basisorientierung je Library-Block bei rotation=0 (normalisierte, lowercase
-# Blocknamen — `block_names()` der Library normalisiert ebenso). Gemessen, nicht
-# geraten: reports/blocks/ (2026-09-07).
+# Basisorientierung je Library-Block bei rotation=0 (lowercase-Lookup).
+# Migration Rivoplan-Master (2026-09-20; Bibliotheks-Update 2026-09-21, Blöcke
+# umbenannt: NL-Präfix im Pfeil-Blocknamen entfällt → RIVO_ARR_down/left/right):
+# RIVO-Blöcke aus RIVO_NL_Symbole.dxf.
+# Geometrie byte-identisch zur Vorgänger-Bibliothek (17,665×8,833 units) →
+# Pfeil-Basis unverändert: down-Spitze (0,−1) = 270°, left-Spitze (−1,0) = 180°,
+# right-Spitze (+1,0) = 0° (right in NORMALEM OCS, Extrusion (0,0,+1)). Der
+# Beidseitig-Block (bothsided) ist hier bewusst NICHT gelistet: er trägt zwei
+# gegenläufige Schilder übereinander und wird über seine Achs-Rotation gestellt,
+# nicht über eine Pfeil-Basis.
 _BLOCK_BASE_DEG: dict[str, float] = {
-    "notbeleuchtung- richtungspfeil nach unten": 270.0,
-    "notbeleuchtung-richtungspfeil nach links": 180.0,
-    "notbeleuchtung-richtungspfeil nach rechts": 0.0,
+    "rivo_arr_down": 270.0,
+    "rivo_arr_left": 180.0,
+    "rivo_arr_right": 0.0,
 }
 
 
@@ -39,7 +46,7 @@ def transformation(catalog_key: str, richtung: str) -> tuple[float, bool]:
 
     Kennt der Key keinen Richtungs-Block (Kreis-Symbole, `gerade`/unbekannte
     Richtung), kommt (0, False) — das Symbol ist rotationsneutral bzw. der
-    Doppelpfeil-Pfad des Inserters übernimmt. Spiegelung ist nie nötig: die
+    Beidseitig-Pfad des Inserters übernimmt. Spiegelung ist nie nötig: die
     Library führt alle drei Basen (links/rechts/unten) als eigene Blöcke.
     """
     ziel = ZIEL_DEG.get(richtung)

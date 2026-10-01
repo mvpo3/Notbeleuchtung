@@ -1,0 +1,368 @@
+# Notbeleuchtungs-Regelbasis (maschinenlesbar) — Quelle: regeln.md (2026-09-18)
+# symboltyp = Registry-catalog_key (schrack_symbol_mapping.yaml). Winkel in Grad
+# (Welt, CCW, 0=+x), Laengen in mm. belege = Beispiel-IDs aus beispiele.json.
+# konfidenz: hoch|mittel|niedrig. Meta: Welt-Pfeil = Blockbasis + Rotation,
+# Toleranz +-1.5; Positionen ueber Bbox-Zentren messen.
+
+- id: NB-R01
+  thema: tuer_rz
+  bedingung: "Raum bindet ueber eine Tuer an den Fluchtweg an und erhaelt ein Tuer-RZ"
+  aktion:
+    symboltyp: notlicht_ks_stiege_unten
+    position: "in der Tuerachse, raumseitig hinter der Schwelle"
+    rotation: "Welt-Pfeil in den Raum = entgegen Fluchtrichtung durch die Tuer = entgegen Tuer-Oeffnungsrichtung"
+  parameter:
+    quer_zur_tuerachse_mm: {gemessen: [3, 35], toleranz: 50}
+    raumseitiger_versatz_mm: {gemessen: [735, 930], hinweis: "Gang-Trenntuer 1OG: 258 gangseitig der Wandachse"}
+  begruendung: "PDF S.1-4, 12, 14, 20 — Tuer muss bei Netzausfall auffindbar bleiben, Pfeil zeigt in den Raum"
+  belege: [EG-01, EG-02, EG-03, EG-04, EG-11, EG-12, EG-13, 1OG-01, 2OG-01, 2OG-03]
+  konfidenz: hoch
+
+- id: NB-R02
+  thema: allgemeinbereiche
+  bedingung: "Raum ist Allgemeinbereich (fuer alle Bewohner zugaenglich; meist EG/UG): MUELLRAUM, FAHRRADRAUM(ABSTELLRAUM communal), KINDERWAGENRAUM, KELLERABTEIL, TECHNIK, SPIELRAUM, GESCHAEFTSLOKAL, Innenhof-Anbindung"
+  aktion:
+    symboltyp: notlicht_ks_stiege_unten
+    position: "bei der Tuer nach NB-R01; EIN RZ genuegt bei freier Sicht aus dem ganzen Raum"
+    rotation: "nach NB-R01"
+  parameter:
+    sichtlinie_max_gemessen_mm: 9143
+  begruendung: "PDF S.2-4, 11-13 — Allgemeinbereichs-Regel"
+  belege: [EG-02, EG-03, EG-04, EG-08, EG-11, EG-12, EG-13]
+  konfidenz: hoch
+
+- id: NB-R03
+  thema: haupteingang
+  bedingung: "Haupteingangs-/Hauptausgangstuer des Gebaeudes"
+  aktion:
+    symboltyp: notlicht_ks_stiege_unten
+    position: "ueber/vor der Tuer, mittig zur Tuerachse, raumseitig"
+    rotation: "Welt-Pfeil ins Rauminnere"
+  parameter:
+    quer_mm: 26
+    raumseitig_mm: {gemessen: [375, 840]}
+  begruendung: "PDF S.1, 6, 8, 10 — Ziel der Sichtkette beider Personenstroeme"
+  belege: [EG-01, EG-07]
+  konfidenz: hoch
+
+- id: NB-R04
+  thema: stiegenhauspfeil
+  bedingung: "Stiegenhaus mit Architekten-Stiegenpfeil (Aufwaertsrichtung JE LAUF)"
+  aktion:
+    symboltyp: "-"
+    position: "RZ so, dass Ankommende es beim Erreichen des Geschosses (Blick links/rechts) sofort sehen; je Personenstrom ggf. eigenes RZ"
+    rotation: "UG-Stroeme laufen IN Pfeilrichtung hinauf, OG/DG-Stroeme ENTGEGEN hinunter"
+  parameter:
+    delta_bewegung_vs_pfeil_grad: {gemessen: [168, 180]}
+  begruendung: "PDF S.5-8, 15, 19, 25-28, 41"
+  belege: [EG-05, EG-06, 1OG-02, 1OG-05, 2OG-02, 2OG-05, 3OG-01, 3OG-02, 4OG-02, 4OG-07, DG-01, DG-02]
+  konfidenz: hoch
+
+- id: NB-R05
+  thema: vor_der_stiege
+  bedingung: "Richtungs-RZ fuehrt auf eine Stiege bzw. empfaengt Stiegen-Ankoemmlinge"
+  aktion:
+    symboltyp: "notlicht_ks_stiege_links|_rechts (nach NB-R07)"
+    position: "800-1122 mm vor der Antritts-/Austrittskante, auf der Laufachse; Wandmontage als Sichtbarkeits-Alternative"
+    rotation: "Welt-Pfeil exakt in Abstiegs-/Weiterrichtung des Laufs, NIE auf eine Wand"
+  parameter:
+    abstand_vor_kante_mm: {gemessen: [801, 1122]}
+    quer_zur_laufachse_mm: {gemessen: [20, 130]}
+    pfeil_vs_laufrichtung_grad: {toleranz: 1.0}
+  begruendung: "PDF S.16, 25, 30 ('vor der Stiege, sonst zeigt der Pfeil zur Wand'), 39-40"
+  belege: [1OG-02, 1OG-05, 2OG-02, 2OG-05, 3OG-01, 3OG-02, 4OG-04, DG-01, DG-02]
+  konfidenz: hoch
+
+- id: NB-R06
+  thema: pfeil_unten_geradeaus
+  bedingung: "RZ im geraden Gangverlauf bedeutet 'geradeaus weiter'"
+  aktion:
+    symboltyp: notlicht_ks_stiege_unten
+    position: "mittig im Gang (Gangachse)"
+    rotation: "Welt-Pfeil ENTGEGEN der Fluchtrichtung (Vorderseite frontal zum ankommenden Strom)"
+  parameter:
+    neben_gangachse_mm: {gemessen: [6, 95]}
+    delta_pfeil_vs_fluss_grad: {gemessen: [178.6, 180.0]}
+  begruendung: "PDF S.18, 33-34"
+  belege: [1OG-02, 1OG-04, 1OG-05, 2OG-01, 2OG-02, 2OG-05, 4OG-03, 4OG-07, DG-02]
+  konfidenz: hoch
+
+- id: NB-R07
+  thema: frontalsicht_auswahl
+  bedingung: "Auswahl links/rechts/unten fuer ein Richtungs-RZ"
+  aktion:
+    symboltyp: "notlicht_ks_stiege_links|_rechts|_unten"
+    position: "Symbol-Laengsachse quer zum Betrachter-Korridor"
+    rotation: "Pfeil = Fluchtrichtung AUS SICHT der Person; Person muss die Vorderseite sehen"
+  parameter:
+    erstleuchte_sichtwinkel_zur_normalen_grad: {gemessen: [0.3, 45.5], falschvariante: 89}
+    folgeleuchte: "nur Sichtbarkeit noetig (bis ~47.5 Grad, Seitenansicht toleriert 86-90 Grad bei Tuer-RZ am Gangende)"
+  begruendung: "PDF S.31-37 (Vergleichsbeispiele 'Pfeil unten statt links' = Seitenansicht = falsch)"
+  belege: [4OG-01, 4OG-02, 4OG-03, 4OG-04, 4OG-05, 4OG-06, 4OG-07, DG-01, DG-02]
+  konfidenz: hoch
+
+- id: NB-R08
+  thema: erster_blick
+  bedingung: "Verlassen jeder Wohnung / jedes Raums"
+  aktion:
+    symboltyp: "-"
+    position: "eine relevante Leuchte muss direkt sichtbar sein; bei zu grosser Entfernung ZUSATZ-Leuchte dazwischen; ein RZ darf mehrere Tueren bedienen"
+    rotation: "-"
+  parameter:
+    sichtlinien: "eine je Wohnungstuer, Start <=136 mm neben der Tuer, Laenge 882-12028 mm, 0 Wandschnitte"
+    mehrfachbedienung: "bis 4 Wohnungstueren je RZ (1140-4275 mm)"
+  begruendung: "PDF S.14, 17-18 (Zusatz-RZ wegen Distanz), 22, 27, 29-30, 39"
+  belege: [1OG-01, 1OG-03, 1OG-04, 2OG-01, 2OG-04, 3OG-02, EG-08]
+  konfidenz: hoch
+
+- id: NB-R09
+  thema: gang_mit_ohne_stgh_tuer
+  bedingung: "Gang muendet ins Stiegenhaus"
+  aktion:
+    symboltyp: "siehe Faelle"
+    position: "MIT Trenntuer: Tuer-RZ an der Trenntuer (NB-R01) + 2 antipanik_leuchte auf der Gangmittellinie. OHNE Trenntuer: KEIN Tuer-RZ an der Muendung; Richtungs-RZ am Knick bzw. vor der Stiege (NB-R05)"
+    rotation: "nach NB-R01/NB-R06/NB-R07"
+  parameter:
+    ap_teilung_12m_gang_mm: [3090, 6297, 2579]
+    ap_neben_fluchtlinie_mm: 55
+    alternativen_nur_text: "2 Aufheller | mittiges down-RZ | down-RZ + Aufheller (Wahl nach Situation, Lux-Nachweis entscheidet)"
+  begruendung: "PDF S.14, 19, 20-21, 29"
+  belege: [1OG-01, 1OG-05, 2OG-01, 3OG-02]
+  konfidenz: "hoch (gezeichnete Loesung); mittel (Text-Alternativen)"
+
+- id: NB-R10
+  thema: antipanik_sichtblockade
+  bedingung: "Sicht der Person auf die Notleuchte ist blockiert (L-/U-Raumform, Wand dazwischen) ODER Lux-Nachweis im Gang scheitert"
+  aktion:
+    symboltyp: antipanik_leuchte
+    position: "im abgeschatteten Bereich (gemessen 3211 mm vor der Person); rechteckige Raeume ohne Blockade: KEINE"
+    rotation: "-"
+  parameter:
+    lux_nachweis: "separater Nachweis (Lichtberechnung) — hier nur Flag lux_nachweis_erforderlich"
+  begruendung: "PDF S.2 (L-Form Muellraum), 10-12"
+  belege: [EG-10, EG-02, EG-12, 1OG-01, 2OG-01]
+  konfidenz: hoch
+
+- id: NB-R11
+  thema: hindernis_versatz
+  bedingung: "Sollposition kollidiert mit Hindernis (z.B. Lichtkuppel, blau markiert)"
+  aktion:
+    symboltyp: "-"
+    position: "quer versetzen bis frei (gemessen 142 mm Versatz, 292 mm Zentrum->Kuppelkante)"
+    rotation: "UNVERAENDERT beibehalten"
+  begruendung: "PDF S.40"
+  belege: [DG-02]
+  konfidenz: mittel
+
+- id: NB-R12
+  thema: sichtkette_abstaende
+  bedingung: "Folge von RZ entlang des Fluchtwegs"
+  aktion:
+    symboltyp: "-"
+    position: "lueckenlose Kette bis zum Ausgang; Wand-RZ mit Kante an Wandkante (15-101 mm)"
+    rotation: "-"
+  parameter:
+    folgeabstaende_mm: {gemessen: [1975, 7749]}
+    sichtlinien_ende: "an der Symbol-KANTE, nicht am Zentrum"
+  begruendung: "PDF S.5-9 (EG-Ketten)"
+  belege: [EG-05, EG-06, EG-07, EG-08, 4OG-02, DG-01]
+  konfidenz: mittel-hoch
+
+# ── Erweiterung 2026-09-20: UG-Kapitel (1KG S.41-56 / 2KG S.57-94) ──────────
+# Quellen: abgleich/1KG/abgleich_1KG.md + abgleich/2KG/abgleich_2KG.md,
+# GT-Messdaten tests/fixtures/mollgasse_gt/<G>.json.
+
+- id: NB-R13
+  thema: ug_stiegenrichtung
+  bedingung: "Untergeschoss: Personen fluechten HINAUF ueber die Stiege"
+  aktion:
+    symboltyp: "-"
+    position: "Leuchte vor/an der Stiege (NB-R05)"
+    rotation: "Welt-Pfeil = Aufwaertsrichtung des Laufs = IN Stiegenhauspfeilrichtung (OG: entgegen, NB-R04); Frontseite zum ankommenden UG-Strom"
+  begruendung: "PDF S.43, 54-55 — UG-Gegenstueck zu NB-R04"
+  belege: [1KG-03, 1KG-06, 2KG-18, 2KG-19]
+  konfidenz: hoch
+
+- id: NB-R14
+  thema: montageort_wand_decke
+  klassifikation: fachpraxis
+  bedingung: "Wahl Wand- vs. Deckenmontage"
+  aktion:
+    symboltyp: "-"
+    position: "Stiegen-Leuchten = Wand; Gang-Leuchten = Decke, mittig"
+    rotation: "-"
+  begruendung: "PDF S.56 woertlich: Notleuchten an Waenden hauptsaechlich bei Stiegen; alle 14 1KG-Platzierungen konsistent"
+  belege: [1KG-14]
+  konfidenz: hoch
+
+- id: NB-R15
+  thema: kabeltrasse_hindernis
+  klassifikation: fachpraxis    # ausdruecklich KEIN Normzitat
+  bedingung: "Sollposition liegt auf/nahe einer Kabeltrasse (blaue Balken, KT300/KT400/KT500)"
+  aktion:
+    symboltyp: "-"
+    position: "NIE auf der Trasse; seitlich versetzen, moeglichst >= 450 mm Abstand"
+    rotation: "nach Versatz erhalten: Sichtbarkeit, Pfeilrichtung, Frontseite, Fluchtwegbezug, Gebaeudehaelfte"
+  parameter:
+    abstand_mm: {soll_min: 450, modalitaet: "moeglichst (Fachpraxis-SOLL)"}
+    versatz_gemessen_mm: [507]
+  begruendung: "PDF S.63-64 woertlich; 2KG (A)-Ana 1C7D0 bleibt trotz Versatz auf der Anastasius-Seite. ACHTUNG: Rigole (Bodenrinnen-Schraffuren) sind KEINE Kabeltrassen"
+  belege: [2KG-05, 2KG-12]
+  konfidenz: hoch
+
+- id: NB-R16
+  thema: beidseitig
+  bedingung: "ZWEI Personenstroeme aus Gegenrichtungen nutzen denselben Fluchtweg-Knoten und brauchen beide die Frontseite"
+  aktion:
+    symboltyp: notlicht_ks_beidseitig
+    position: "am gemeinsamen Knoten (GT: 2 gespiegelte Einzel-Bloecke, Abstand 264-318 mm; Engine: RIVO_NL_ARR_bothsided)"
+    rotation: "Achse = Fluchtweg-Achse beider Stroeme"
+  parameter:
+    alternative: "beidseitig am Richtungswechsel OHNE Gegenstrom = NUR-ALTERNATIVE (orange, 'muss nicht sein') — NICHT automatisieren"
+  begruendung: "PDF S.65-83; Pflicht-Paare 2KG Gr.1-5 + 1KG (I) + EG-Paar; Gr.6 = einzige Alternative"
+  belege: [1KG-11, 2KG-06, 2KG-07, 2KG-10, 2KG-13, 2KG-16]
+  konfidenz: hoch
+
+- id: NB-R17
+  thema: garage_durchquerbarkeit
+  klassifikation: fachpraxis
+  bedingung: "Fluchtwegfuehrung durch Garagenbereiche"
+  aktion:
+    symboltyp: "-"
+    position: "Motorrad-Stellflaechen sind durchquerbar; Doppelparker-/PKW-Flaechen und Gruben NICHT"
+    rotation: "-"
+  begruendung: "PDF S.65-70; Personenreihe 1CBF6-1CBFC durch MOTORRAD-Stempel, 0 Fluchtwege durch DOPPELPARKER-Zonen. Durchquerbarkeit folgt aus freier Geometrie, nicht aus dem Raumlabel"
+  belege: [2KG-06, 2KG-08]
+  konfidenz: hoch
+
+- id: NB-R18
+  thema: gebaeudehaelften
+  klassifikation: projektspezifisches_muster
+  bedingung: "Projekt besteht aus zwei zusammengebauten Gebaeuden"
+  aktion:
+    symboltyp: "-"
+    position: "Trennung entlang der weitergefuehrten Gebaeudewand; Zuordnung am EG-Grundriss verifizieren; je Haelfte eigene Fluchtwege/Ausgaenge/Label-Alphabete"
+    rotation: "-"
+  parameter:
+    prozessregel: "unklare Zuordnung NIEMALS raten -> offene Frage (PDF S.78, bindend)"
+  begruendung: "PDF S.76-83; rote Trennlinie 1C7F4 (116 m) auf der Mollgasse-Gebaeudewand"
+  belege: [2KG-11, 2KG-12, 2KG-13, 2KG-16, 2KG-17]
+  konfidenz: hoch
+
+- id: NB-R19
+  thema: ug_nebenraum_tuerleuchte
+  bedingung: "UG-Nebenraum bindet an den Gang an"
+  aktion:
+    symboltyp: notlicht_ks_stiege_unten
+    position: "TECHNIK/NIEDERSPANNUNG/E-Raum: Tuer-Leuchte nach NB-R01 (mittig 3-26 mm, 711-779 mm zugangsseitig). Einzelne kleine ER/KELLERABTEIL/Medienraum: KEINE eigene Tuerleuchte, wenn nach Tuerdurchtritt sofort ein Gang-RZ sichtbar ist"
+    rotation: "nach NB-R01"
+  begruendung: "PDF S.51-53, 71-73, 93; 1KG-09 (D) + Merktext 'Stromversorgung aller Notleuchten'"
+  belege: [1KG-09, 1KG-10, 1KG-12, 2KG-09, 2KG-15]
+  konfidenz: hoch
+
+- id: NB-R20
+  thema: tuerlose_gaenge_durchgaenge
+  bedingung: "tuerloser Gang / offener Durchgang im Fluchtweg"
+  aktion:
+    symboltyp: notlicht_ks_stiege_unten
+    position: "tuerloser zusammenhaengender Gang: KEINE Zwischen-RZ solange Sichtkette steht; kurzer Gang mit Direktsicht aller Tueren: genau EIN Tuer-RZ; offener Durchgang als Knoten: down-Typ MITTIG im Durchgang (gemessen 4 mm Mittigkeit bei 1250 mm)"
+    rotation: "down-Typ frontal zum ankommenden Strom (rechts/links/beidseitig am Durchgang im PDF explizit VERWORFEN)"
+  begruendung: "PDF S.58-62, 73-74, 90-91 — S.73-74 sind dokumentierte Negativ-Beispiele"
+  belege: [2KG-04, 2KG-09, 2KG-15, 2KG-18]
+  konfidenz: hoch
+
+- id: NB-R21
+  thema: sv_anlage
+  bedingung: "Projekt braucht Notbeleuchtungs-Stromversorgung"
+  aktion:
+    symboltyp: gruppenbatterie_anlage
+    position: "EIN System je Projekt ('meistens' auch bei zwei Gebaeudehaelften), Verteiler im Niederspannungsraum, NICHT an der E-Verteiler-Wand"
+    rotation: "-"
+  begruendung: "PDF S.51, 71-72; 1KG 1CB68, 2KG 1D10E/1D10F"
+  belege: [1KG-09, 2KG-09]
+  konfidenz: mittel
+
+# ── Erweiterung 2026-09-20 (2): Schul-Typologie + Flucht-/Rettungsplan (TOMA 44) ──
+# ANDERE Dokumentklasse als NB-R00-R21 (Flucht-/Rettungsplan einer Schule +
+# Ausfuehrungs-DXFs, NICHT Platzierungs-Lehrplan). Betrifft Fluchtweg-STRUKTUR /
+# Typologie / Quellen-Disziplin (v.a. Selman-Naht) — KEINE Platzierungsregeln,
+# uebersteuern NB-R00-R21 NICHT. Quelle: abgleich/TOMA44/.
+
+- id: NB-R22
+  thema: quellen_disziplin_fluchtplan
+  klassifikation: quellen_prozessregel   # bindend
+  bedingung: "Quelle ist ein Flucht-/Rettungsplan (gruener Aushang), kein Notbeleuchtungsplan"
+  aktion:
+    symboltyp: "-"
+    position: "belegt NUR Fluchtweg-Richtung/Tueren/Stiegenhaeuser/Ausgaenge; NICHT Leuchtenposition, Wand-/Deckenmontage, Frontseite, ein-/beidseitig, Typ, Hoehe, Lux, Anzahl"
+    rotation: "Blatt-Richtung != CAD-Richtung != Personen-Richtung; gedrehte Aushang-Blaetter"
+  parameter:
+    standort_marke: "Aushang-Bezugspunkt, KEINE Leuchte"
+    mehrere_blaetter: "gleiches Geschoss aus mehreren Aushaengen = EINE Referenz"
+    raum_ohne_gruen: "bedeutet NICHT 'keine Notbeleuchtung noetig'"
+  begruendung: "TOMA S.1-10; Owner-Auftrag Quellen-Trennung A/B/C/D"
+  belege: [TOMA-alle]
+  konfidenz: hoch
+
+- id: NB-R23
+  thema: schul_bildungscluster_fluchtweg
+  klassifikation: referenzpraxis   # Schule
+  bedingung: "Schule, Cluster-/offene-Lernlandschaft-Typologie"
+  aktion:
+    symboltyp: "-"
+    position: "offener 'Kommunikations- und Bewegungsbereich' traegt den Fluchtweg; Unterrichtsraeume oeffnen direkt darauf, OHNE 'Gang'-Label"
+    rotation: "-"
+  begruendung: "TOMA OG-04: Unterrichtsraum 1-4 -> Kommunikations-/Bewegungsbereich -> TH 2. Generalisiert NB-R20 auf Cluster-Ebene"
+  belege: [TOMA-OG-04]
+  konfidenz: hoch
+
+- id: NB-R24
+  thema: mehrere_stiegenhaeuser_gerichtet
+  klassifikation: referenzpraxis
+  bedingung: "Gebaeude mit mehreren Fluchtstiegenhaeusern (TOMA: TH 2/3/4)"
+  aktion:
+    symboltyp: "-"
+    position: "Cluster/Gebaeudeteile GEZIELT verschiedenen THs zuordnen; NICHT alle zum naechstgelegenen TH / einem Hauptausgang; mehrere dargestellte Richtungen erhalten"
+    rotation: "-"
+  begruendung: "TOMA SG/EG/OG; = Variante der Mollgasse-Gebaeudehaelften NB-R18 (unklar -> nicht raten)"
+  belege: [TOMA-SG, TOMA-EG, TOMA-OG]
+  konfidenz: hoch
+
+- id: NB-R25
+  thema: egress_je_ebene_zieltypen
+  klassifikation: referenzpraxis
+  bedingung: "Sockel-/Untergeschoss und Ziel-Typ-Bestimmung"
+  aktion:
+    symboltyp: "-"
+    position: "Sockel-/UG kann direkte Aussenausgaenge auf eigener Ebene haben (Flucht nicht zwingend ueber EG). Ziel-Typen NIE gleichsetzen: Fluchtstiegenhaus / Ausgang ins Freie / Balkon-Terrasse-Loggia / vorlaeufige Evakuierungsstelle / Sammelstelle"
+    rotation: "-"
+  begruendung: "TOMA SG: viele EN-Tueren ins Freie auf Sockel-Ebene. Ergaenzt NB-R13"
+  belege: [TOMA-SG-06]
+  konfidenz: hoch
+
+- id: NB-R26
+  thema: ausfuehrungsplan_annotationen_anker
+  klassifikation: datenquelle   # Erkennungs-Eingang (Selman)
+  bedingung: "Architektur-Ausfuehrungsplan mit Brandschutz-/Flucht-Textannotation"
+  aktion:
+    symboltyp: "-"
+    position: "EN 1125 (Panikstange) / EN 179 (Notausgangsbeschlag) = Ausgangstueren; FLn = Fluchtweg-Flaeche mit Soll-m2; EI 30/90/230-C + 'brandlastfreie Zone' + BA = Brandabschnitte; RWA = Rauchabzug; BMZ = Brandmeldezentrale"
+    rotation: "-"
+  parameter:
+    daten_fallen: "INSUNITS kann luegen (TOMA=6 Meter, real mm -> ueber Tuerbreiten/Wandstaerken verifizieren); Riesen-Koordinaten-Offset moeglich (TOMA SG ~-1.7e9 -> Healthcheck/Nullung vor Engine-Lauf)"
+    messwerte_mm: {toma_eg_fl: [72, 72, 33, 39], toma_og_fl: [48]}
+  begruendung: "TOMA SG/EG/OG: EN/FL/EI/RWA/BMZ als Textannotation mit Koordinaten (inventar_*.json)"
+  belege: [TOMA-EG, TOMA-OG, TOMA-SG]
+  konfidenz: hoch
+
+- id: NB-R27
+  thema: aufzug_keine_fluchtverbindung
+  klassifikation: referenzpraxis   # bestaetigt Engine-Standard (LIFT-Guard)
+  bedingung: "Aufzug im Gebaeude"
+  aktion:
+    symboltyp: "-"
+    position: "Aufzug NIE als vertikale Flucht-Kante; Aufzugsvorbereich getrennt (kann Teil des Gangs sein)"
+    rotation: "-"
+  begruendung: "TOMA Brandfall-Hinweis 'Aufzug nicht benutzen'; deckt sich mit fachpraxis.entferne_schacht_leuchten"
+  belege: [TOMA-alle]
+  konfidenz: hoch

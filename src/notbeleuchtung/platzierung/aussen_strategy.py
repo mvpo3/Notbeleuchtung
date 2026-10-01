@@ -21,6 +21,7 @@ from __future__ import annotations
 from notbeleuchtung.hauptengine.contracts import NormProvider, Platzierung, RaumModell
 
 from .bausteine import AGV_SV_F as _AGV_SV_F
+from .bausteine import MONTAGE_WAND as _MONTAGE_WAND
 from .bausteine import building_assigner as _building_assigner
 from .bausteine import referenz_anforderung as _referenz
 
@@ -91,5 +92,6 @@ def plan_aussenleuchten(raum: RaumModell, norm: NormProvider) -> list[Platzierun
             circuit_hint=f"AGV-{assign_building(a.xy_mm[0])}-F{_AGV_SV_F}",
             covers_segment=[],
             norm_quelle=anf.quelle,
+            montage_art=_MONTAGE_WAND,          # NB-R14: Außenleuchte an der Fassaden-Wand
         ))
     return out

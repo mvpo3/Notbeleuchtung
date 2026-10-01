@@ -1,0 +1,611 @@
+{
+ "erreichbar_n": 15,
+ "erreichbar_gepaart": 4,
+ "erreichbar_typ_match": 2,
+ "erreichbar_fehlt": [
+  "20240",
+  "20286",
+  "202EF",
+  "20312",
+  "206C0",
+  "206C3",
+  "206E7",
+  "2070A",
+  "2072F",
+  "20752",
+  "21312"
+ ],
+ "typ_match_n": 3,
+ "geschoss": "EG",
+ "engine_n": 53,
+ "engine_by_kind": {
+  "rz": 26,
+  "sicherheitsleuchte": 27
+ },
+ "gt_n": 17,
+ "gt_by_klasse": {
+  "rz": 15,
+  "antipanik": 2
+ },
+ "gepaart": 5,
+ "fehlt_n": 12,
+ "ueberfluessig_n": 48,
+ "distanz_median_mm": 1240.2,
+ "distanz_max_mm": 2485.9,
+ "beidseitig_treffer": 0,
+ "beidseitig_gt_gesamt": 1,
+ "paare": [
+  {
+   "gt": "20263",
+   "gt_typ": "rz",
+   "gt_richtung": "left",
+   "engine_key": "notlicht_ks_stiege_unten",
+   "engine_richtung": "unten",
+   "distanz_mm": 2485.9,
+   "rot_delta_deg": 180.0,
+   "typ_match": false,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  },
+  {
+   "gt": "202A9",
+   "gt_typ": "rz",
+   "gt_richtung": "down",
+   "engine_key": "notlicht_ks_stiege_unten",
+   "engine_richtung": "unten",
+   "distanz_mm": 264.4,
+   "rot_delta_deg": 90.0,
+   "typ_match": true,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  },
+  {
+   "gt": "2070C",
+   "gt_typ": "rz",
+   "gt_richtung": "down",
+   "engine_key": "notlicht_ks_stiege_unten",
+   "engine_richtung": "unten",
+   "distanz_mm": 1708.8,
+   "rot_delta_deg": 90.0,
+   "typ_match": true,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  },
+  {
+   "gt": "21359",
+   "gt_typ": "rz",
+   "gt_richtung": "down",
+   "engine_key": "notlicht_ks_stiege_unten",
+   "engine_richtung": "unten",
+   "distanz_mm": 1240.2,
+   "rot_delta_deg": 180.0,
+   "typ_match": true,
+   "beidseitig_gt": false,
+   "beidseitig_engine": false
+  },
+  {
+   "gt": "202CC+2137C",
+   "gt_typ": "rz",
+   "gt_richtung": "beidseitig",
+   "engine_key": "notlicht_ks_stiege_unten",
+   "engine_richtung": "unten",
+   "distanz_mm": 698.7,
+   "rot_delta_deg": null,
+   "typ_match": false,
+   "beidseitig_gt": true,
+   "beidseitig_engine": false
+  }
+ ],
+ "fehlt": [
+  {
+   "handle": "20240",
+   "typ": "rz",
+   "richtung": "down",
+   "xy": [
+    2654796.3,
+    1542672.9
+   ]
+  },
+  {
+   "handle": "20286",
+   "typ": "rz",
+   "richtung": "down",
+   "xy": [
+    2653566.5,
+    1540516.2
+   ]
+  },
+  {
+   "handle": "202EF",
+   "typ": "rz",
+   "richtung": "left",
+   "xy": [
+    2659150.9,
+    1544178.7
+   ]
+  },
+  {
+   "handle": "20312",
+   "typ": "rz",
+   "richtung": "left",
+   "xy": [
+    2665600.9,
+    1542491.4
+   ]
+  },
+  {
+   "handle": "206C0",
+   "typ": "rz",
+   "richtung": "right",
+   "xy": [
+    2691470.8,
+    1517830.8
+   ]
+  },
+  {
+   "handle": "206C3",
+   "typ": "rz",
+   "richtung": "right",
+   "xy": [
+    2699219.4,
+    1517770.9
+   ]
+  },
+  {
+   "handle": "206E7",
+   "typ": "rz",
+   "richtung": "right",
+   "xy": [
+    2699187.1,
+    1521766.6
+   ]
+  },
+  {
+   "handle": "2070A",
+   "typ": "rz",
+   "richtung": "down",
+   "xy": [
+    2702953.8,
+    1521812.5
+   ]
+  },
+  {
+   "handle": "2072F",
+   "typ": "antipanik",
+   "richtung": null,
+   "xy": [
+    2694210.6,
+    1513853.1
+   ]
+  },
+  {
+   "handle": "20752",
+   "typ": "antipanik",
+   "richtung": null,
+   "xy": [
+    2697145.1,
+    1506186.3
+   ]
+  },
+  {
+   "handle": "20948",
+   "typ": "rz",
+   "richtung": "down",
+   "xy": [
+    2704216.7,
+    1527583.2
+   ]
+  },
+  {
+   "handle": "21312",
+   "typ": "rz",
+   "richtung": "down",
+   "xy": [
+    2703071.5,
+    1524657.6
+   ]
+  }
+ ],
+ "ueberfluessig": [
+  {
+   "key": "notlicht_ks_stiege_unten",
+   "klasse": "rz",
+   "xy": [
+    2692893.4,
+    1521442.5
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_unten",
+   "klasse": "rz",
+   "xy": [
+    2694039.9,
+    1522217.0
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_unten",
+   "klasse": "rz",
+   "xy": [
+    2655928.2,
+    1538462.0
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_unten",
+   "klasse": "rz",
+   "xy": [
+    2652188.4,
+    1535039.8
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_unten",
+   "klasse": "rz",
+   "xy": [
+    2653324.2,
+    1533156.8
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_unten",
+   "klasse": "rz",
+   "xy": [
+    2676401.0,
+    1550610.9
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_unten",
+   "klasse": "rz",
+   "xy": [
+    2688619.9,
+    1511087.0
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_unten",
+   "klasse": "rz",
+   "xy": [
+    2689361.4,
+    1524975.8
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_links",
+   "klasse": "rz",
+   "xy": [
+    2676100.0,
+    1534300.0
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_links",
+   "klasse": "rz",
+   "xy": [
+    2677100.0,
+    1534300.0
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_links",
+   "klasse": "rz",
+   "xy": [
+    2675100.0,
+    1537032.5
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege",
+   "klasse": "rz",
+   "xy": [
+    2666500.0,
+    1536300.0
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_rechts",
+   "klasse": "rz",
+   "xy": [
+    2681500.0,
+    1510200.0
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege",
+   "klasse": "rz",
+   "xy": [
+    2689400.0,
+    1509500.0
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_rechts",
+   "klasse": "rz",
+   "xy": [
+    2666300.0,
+    1549300.0
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_rechts",
+   "klasse": "rz",
+   "xy": [
+    2667200.0,
+    1549300.0
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_rechts",
+   "klasse": "rz",
+   "xy": [
+    2667300.0,
+    1548800.0
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_unten",
+   "klasse": "rz",
+   "xy": [
+    2667069.3,
+    1535078.8
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_unten",
+   "klasse": "rz",
+   "xy": [
+    2678756.7,
+    1535258.4
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2695155.6,
+    1525313.4
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2653495.1,
+    1538794.5
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2693144.4,
+    1521442.5
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege_unten",
+   "klasse": "rz",
+   "xy": [
+    2652500.0,
+    1546134.1
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2652941.5,
+    1544831.7
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2653681.1,
+    1548285.8
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2659743.1,
+    1545129.6
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2702303.4,
+    1515273.8
+   ]
+  },
+  {
+   "key": "notlicht_ks_stiege",
+   "klasse": "rz",
+   "xy": [
+    2662321.6,
+    1545765.3
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2704279.9,
+    1521765.1
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2704364.9,
+    1524040.2
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2690945.7,
+    1523965.4
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2665832.8,
+    1538216.2
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2675401.0,
+    1549959.2
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2689618.6,
+    1511034.5
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2651188.4,
+    1535044.9
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2653324.1,
+    1534156.8
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2671084.7,
+    1535866.7
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2683253.2,
+    1535970.0
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2671850.5,
+    1549959.2
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2682117.3,
+    1549959.2
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2673843.4,
+    1544032.5
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2684443.4,
+    1541982.5
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2681368.4,
+    1515982.5
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2657718.4,
+    1536032.5
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2660880.5,
+    1537032.5
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2671084.7,
+    1537032.5
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2666800.0,
+    1548800.0
+   ]
+  },
+  {
+   "key": "sicherheitsleuchte_aufheller",
+   "klasse": "sicherheitsleuchte",
+   "xy": [
+    2692989.5,
+    1521674.4
+   ]
+  }
+ ],
+ "pair_radius_mm": 3000.0,
+ "transform": {
+  "n_namen": 52,
+  "n_inlier": 52,
+  "tx_mm": -2643283.0,
+  "ty_mm": -1476073.7
+ },
+ "engine_summary": {
+  "n_symbols": 53,
+  "by_kind": {
+   "rz": 26,
+   "sicherheitsleuchte": 27
+  },
+  "n_raeume": 64
+ },
+ "gt_lux_nachweis": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\Projekte\\_ergebnis\\Mollgasse_GT\\EG\\gt_lux_nachweis.png"
+}

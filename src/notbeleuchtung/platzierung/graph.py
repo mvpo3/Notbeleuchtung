@@ -57,3 +57,23 @@ def distanz_zu_ausgang(raum: RaumModell, G: nx.Graph | None = None) -> dict[str,
     if not exits:
         return {}
     return nx.multi_source_dijkstra_path_length(G, exits, weight="len_mm")
+
+
+def distanz_je_ausgang(
+    raum: RaumModell, G: nx.Graph | None = None
+) -> dict[str, dict[str, float]]:
+    """Je Ausgang die Dijkstra-Weglänge (mm) ALLER erreichbaren Knoten zu DIESEM
+    Ausgang.
+
+    Anders als `distanz_zu_ausgang` (Multi-Source, nur die kleinste Distanz) trennt
+    dies nach Ausgang auf — Basis für die Wasserscheiden-Erkennung (NB-R16): ein
+    Knoten, der zu ZWEI verschiedenen Ausgängen etwa gleich weit ist, liegt zwischen
+    zwei Personenströmen. Rückgabe: `{ausgang_id: {node_id: dist_mm}}`.
+    """
+    if G is None:
+        G = build_circulation_graph(raum)
+    out: dict[str, dict[str, float]] = {}
+    for a in raum.ausgaenge:
+        if a.id in G:
+            out[a.id] = nx.single_source_dijkstra_path_length(G, a.id, weight="len_mm")
+    return out

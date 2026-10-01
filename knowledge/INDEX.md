@@ -89,16 +89,21 @@ aus dem Index zitieren — immer der autoritativen YAML/dem Contract folgen.**
 - [07 — Sichtprüfung & Verify (Wissensabgleich, Branch `leonis/wissensabgleich-engine`)](docs/audit/07_sichtpruefung.md) — Stand 2026-09-10, **vor Push** (STOP-Gate). Basis main `fd65839`.
 - [FIX_PLAN — leonis/wissensabgleich-engine](docs/audit/FIX_PLAN.md) — Reihenfolge-Logik (Vorgabe): **Korrektheit → Norm-Aktivierung → Lichtberechnung → Enis-Wissens-Integration.**
 - [HANDOFF B — an Enis (normwissen-Lane)](docs/audit/HANDOFF_B_ENIS.md) — **Protokoll, keine Freigabe-Anfrage.** Der Owner hat die Contract-/YAML-Berührungen für
+- [Quellenverarbeitung — Stand je Dokument und je Thema](docs/audit/QUELLENVERARBEITUNG.md) — **Fortführung von** [`QUELLENWIRKUNG_2026-09-07.md`](QUELLENWIRKUNG_2026-09-07.md)
 - [REPORT — Wissens-/Normabgleich + Engine-Audit (Branch leonis/wissensabgleich-engine)](docs/audit/REPORT.md) — Synthese aus A1 (Plan-Forensik P1) · A2 (Wissens-Coverage) · A3 (Engine-Ist + Lichtberechnung) ·
+- [Branch Protection für `main` — Anleitung für den Repo-Owner](docs/BRANCH_PROTECTION.md) — Diese Datei ist eine **Handlungsanweisung an den Kontoinhaber (@mvpo3)**. Wir
 - [Contracts — menschenlesbare Spezifikation](docs/CONTRACTS.md) — Code = Wahrheit (`src/notbeleuchtung/hauptengine/contracts/*.py`, Pydantic).
 - [COORDINATION — 2-Fenster-Parallelbetrieb](docs/COORDINATION.md) — **Zweck:** Zwei Claude-Code-Sessions arbeiten parallel in getrennten Worktrees. Diese
 - [DoD-Sichtprüfungs-Bericht — Mollgasse Notbeleuchtungsplan (8 Geschosse)](docs/DOD_GEBAEUDE_MOLLGASSE.md) — **NEIN — das Gebäude-Plan-Set ist nicht auslieferbar.** Kein einziges der 8 Geschosse ist abnahmefähig. Zwei strukturelle Ursachen dominier…
 - [DoD-Sichtprüfung — Real-Plan Mollgasse EG](docs/DOD_SICHTPRUEFUNG.md) — **Stand:** 2026-08-31 · **Prüfer:** Leonis (F1) · **Fall:** `Projekte/Mollgasse/Erdgeschoß.dxf`
+- [RaumModell 1.5.0 — eindeutig zugeordneter Stand](docs/ENIS_STAND_1_5_0.md) — **Für:** @EnisAMG · **Von:** Selman (`raumerkennung`) · **Erstellt:** 2026-09-12
 - [Normwissen-Übergabe 0908 — Ergebnisbericht](docs/ENIS_UEBERGABE_0908.md) — Empfänger: @EnisAMG (normwissen/), @mvpo3 (platzierung/), 3-Owner-Runde
 - [0001 — Raumerkennung: Sprache (Python bleibt) + ML-Strategie](docs/entscheidungen/0001-raumerkennung-sprache-python-und-ml.md) — **Status:** angenommen · **Datum:** 2026-08-30 · **Betrifft:** Selman
+- [Handoff — Selman / Raumerkennung · Arbeitsstand](docs/HANDOFF_SELMAN.md) — Stand: **2026-09-13** · Owner Selman (`raumerkennung`)
 - [Infrastruktur — Entscheidung (Stand 2026-08-27)](docs/INFRASTRUKTUR.md) — **Leitsatz:** Infra folgt der Phase, nicht dem Hype. Solange die Engine gebaut
 - [Hauptengine in eine eigene App integrieren](docs/INTEGRATION.md) — Für Host-/Demo-Apps, die die Notbeleuchtungs-Engine aufrufen wollen (Raumerkennung +
 - [Plan Barawitzka_EG](docs/MATERIAL_REPORT.md) — <!-- generiert von scripts/plan_pruefen.py — nicht von Hand pflegen -->
+- [Abschlussbericht — Mollgasse-Ground-Truth → Rivoplan-Hauptengine (2026-09-20)](docs/MOLLGASSE_RIVOPLAN_GT_BERICHT_2026-09-20.md) — Owner-Auftrag 2026-09-20 (PDF „Notbeleuchtungen zeichnen" + Rivoplan-Master-
 - [Normquellen-Status (Enis) — was liegt vor, was ist belegt, was fehlt](docs/NORMQUELLEN_AT.md) — **Stand:** 2026-08-30 · Bestandsaufnahme rein lesend aus `knowledge/`.
 - [Offene Fragen — Plan-Befunde & Regel-Lücken](docs/OFFENE_FRAGEN.md) — Sammelstelle für Befunde, die eine Owner-Entscheidung brauchen. Regel-Lücken
 - [OIB-Richtlinie 2 — Punkt 5.4 + Tabelle 6 (Erforderlichkeit Sicherheitsbeleuchtung)](docs/OIB_RL2_TABELLE6.md) — **Analysiert:** 2026-08-30 (Enis) · **rein lesend aus den Original-PDFs**, nichts aus
@@ -106,20 +111,25 @@ aus dem Index zitieren — immer der autoritativen YAML/dem Contract folgen.**
 - [Placement-Decision-Matrix — Notbeleuchtung](docs/PLACEMENT_DECISION_MATRIX.md) — Die Engine wusste bisher zwei Dinge:
 - [PORT_LOG — Herkunft der aus `elektro-planer` portierten Module](docs/PORT_LOG.md) — Quelle: `github.com/mvpo3/MVP-Planer` (lokal `../elektro-planer`), Branch `mvp-main`.
 - [Programm-Board „Notbeleuchtung" — lebender Status (Single Source of Truth)](docs/PROGRAMM_NOTBELEUCHTUNG.md) — **Start:** 2026-08-27 · Board gewinnt bei Drift gegen GitHub-Projects. Jeder Owner
+- [Arbeitsstätten-Pfad — belegte Entscheidungsregeln (AStV § 9, OVE-Fachinfo E08)](docs/proposals/ASTV_E08_ENTSCHEIDUNGSREGELN.md) — **2026-09-08 · Enis · Branch `enis/regel-deckung-abnahme-0907`**
 - [Blocker 2 — Scope-Gate der Flächen-Schwellen, je Schwelle getrennt](docs/proposals/BLOCKER2_FLAECHEN_SCOPE.md) — **Einzige Änderung 2019 → 2025 an dieser Stelle:** in Punkt 1) heißt es statt
+- [Contract-Vorschlag `raum_modell` 1.6.0 — `rolle` + `confidence` durch die Naht](docs/proposals/CONTRACT_1_6_0_ROLLE_CONFIDENCE.md) — `raum_modell` **1.5.0** (`Raum.polygon_roh`, `Raum.bereinigung[]`) liegt mit
+- [Entscheidungsvorlage: der Layer-Korpus trägt kein Label](docs/proposals/SLICE3B_LABEL_ENTSCHEIDUNG.md) — **An:** @mvpo3 · **Von:** Selman (`raumerkennung`) · **Stand:** `91ad7cc`,
 - [Vorschlag — Quellen-Naht für Sonderstellen (Umsetzung von SPEC §8)](docs/proposals/SONDERSTELLEN_QUELLEN_NAHT.md) — Eine Pflicht-Leuchte an einer Sonderstelle trägt heute die `quelle` der
 - [Wegbreite > 2 m und Randstreifen — Befund und Anschlussvorschlag](docs/proposals/WEGBREITE_RANDSTREIFEN.md) — Drei Punkte, die auseinandergehalten werden müssen:
 - [Referenz-Platzierung — Muster aus Fachplaner-Plan, Beispielbildern und Wissensquellen](docs/REFERENZ_PLATZIERUNG.md) — **Zweck:** Die beobachteten Platzierungs-MUSTER der Referenz-Praxis, als Vorbild für
 - [Spec — ProjektKontext + OibErgebnis (Enis → Leonis)](docs/SPEC_PROJEKTKONTEXT_OIB.md) — **Absender:** Enis (`src/notbeleuchtung/normwissen/`) · **Adressat:** Leonis (Owner
 - [Spec — Sonderstellen im `RaumModell` (Contract-Vorschlag)](docs/SPEC_SONDERSTELLEN_CONTRACT.md) — EN 1838 §4.1.2 verlangt, dass bestimmte **Stellen** hervorgehoben werden — jeder
 - [Stempel-Report — Projekte/_eingang](docs/STEMPEL_REPORT.md) — Erzeugt mit `scripts/stempel_report.py` am 2026-09-05.
+- [Symbol- und Vorlagen-Migration — Phase A (2026-09-18)](docs/SYMBOL_MIGRATION_2026-09-18.md) — Owner-Auftrag: die neue Symbolbibliothek `CAD_Symbole/Notbeleuchtungssymbole_neu+.dxf`
 - [Vokabular — kanonische Begriffe der 3-Owner-Naht](docs/VOKABULAR.md) — Antwort auf die offene COORDINATION-Frage *„Wo ist die Liste kanonisch?"*:
+- [Pruefung ZERFALL / SCHLITZ am Plan — jede Restflaeche einzeln](docs/ZERFALL_SCHLITZ_PRUEFUNG.md) — Stand `3d91a2c` (Branch `selman/extents-ausreisser`) · Owner-Rolle Selman (raumerkennung) · geschrieben fuer **Enis zum Nachpruefen**.
 
 ## Handoffs (Owner-Sessions)
 *Rollen, Packages, Contracts, Slice-Stände je Owner.*
 
 - [Handoff — Enis (Normwissen + LB)](Handoff/ENIS.md) — 1. **`origin/main` = `1092d77`.** (Der frühere Stand `5e4a46e` steht weiter unten
-- [Handoff — Leonis (Platzierung + Integration)](Handoff/LEONIS.md) — **Branch `leonis/demo-l-gebaeude` GEPUSHT, PR #156 OFFEN (3-Owner wegen norm_regelwerk 1.4.0).**
+- [Handoff — Leonis (Platzierung + Integration)](Handoff/LEONIS.md) — **Branch `leonis/demo-l-gebaeude` @ `d74f0e8`, 7 Commits UNGEPUSHT (`456057e..d74f0e8`,
 - [Handoff — Perfekter Start je Owner](Handoff/README.md) — Jeder von euch arbeitet in einer **eigenen Claude-Code-Session im Repo-Ordner**.
 - [Handoff — Selman (Raumerkennung)](Handoff/SELMAN.md) — Du bist ein Agent — **führe diese Schritte selbst aus**, frag nicht lang nach.
 - [SYNC — Stand nachziehen, ohne Arbeit zu verlieren](Handoff/SYNC.md) — **Auslöser:** Der Owner schreibt in seiner Session **„Sync"** (oder „GitHub wurde

@@ -4,6 +4,362 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-09-30 SPÄT) — Mollgasse-Analyse + Lichtberechnung validiert; M1 als Phantom gestoppt. HIER WEITER.
+
+**Branch `codex/Notbeleuchtungs_Platzierungslogik` = origin/leonis/demo-l-gebaeude-Tip `8257ff9`
+(alles gepusht, 43 vor main / 2 hinter = 2 Asset-ZIPs). Diese Woche NUR read-only-Analyse +
+Doku, KEIN Engine-Edit, nichts committet. Working-Tree-Anomalie (gelöschte CAD-Rohdateien +
+1 mod DWG) weiter UNANGETASTET.** Voller Kontext: Memory `session-2026-09-29-regelwerk-5-projekte.md`.
+
+**Diese Woche gemacht (alles read-only, Owner-Aufträge):**
+1. **Regelwerk aus 5 Projekten** (`knowledge/Pläne zeichnen Wissen/_Analyse_Regelwerk/`):
+   538 PDF-Seiten angesehen → RW-001–131 (66 Regeln, Beleg-Gate grün) + Engine-Einbau-
+   Vorarbeit (`platzierung/regelwerk.py` + data-JSON + Tests, 453 grün) + ENGINE_IST/VALIDIERUNG.
+2. **Mollgasse-Detail-Review** (`Mollgasse-Notbeleuchtungserklärung/_Analyse/`): ENGINE_WISSEN_IST
+   (32 Regeln+Konstanten mit Datei:Zeile), ANALYSE_PDF (95 S., 283 Warum-Regeln), 8× ANALYSE_DXF,
+   ABWEICHUNGEN (34, 0 Regel-Widersprüche), REGELWERK_Mollgasse, GEGENPRUEFUNG, REVIEW +
+   REVIEW_VISUELL.pdf. **Ultracode-Fallbeispiele** (90 Agenten): FALLBEISPIELE_REVIEW.md +
+   FALLBEISPIELE_VISUELL.pdf — 42 Fälle, 40 mm-bestätigt, Engine-Urteil je Fall.
+3. **Lichtberechnung validiert** (`knowledge/Lichtberechnung-Wissen/_Analyse/`): 3 DIALux-Reports
+   analysiert → LUX_GATE_VALIDIERUNG.md + validiere_lux_gate.py + §8 in LICHTBERECHNUNG_REFERENZ.md.
+   **KORREKTUR: Wartungsfaktor 0,80/0,57 ist VOLL AKTIV** (Contract 1.4.0, nicht „fehlt"). Gate
+   L1 BESTANDEN: max_leuchtenabstand 15,3 m ≈ Profi 9–18 m, konservativ (Repo-LDT 0,53× reale Φ).
+
+**GROSSE ERKENNTNISSE für die Engine-Arbeit:**
+- Engine kennt die Regeln gut (19/35 deckungsgleich, 0 harte Widersprüche), aber Leuchten-
+  Reproduktion 33/97: **31 Fälle = Zündkette reißt (Raumtyp/Tür/Zirkulation → Selman M4)**,
+  **5 Fälle = falscher Pfeiltyp (Frontalsicht statt Fluchtvektor → M3)**, 3 richtig.
+- **M3 = der echte, belegte, Selman-unabhängige Hebel** (5 mm-verifizierte Testfälle:
+  952E8/413A0/1C64B/41220 + S.20). Wurzel: `bausteine.richtung_und_rotation` +
+  `gang_strategy._ist_abzweig` (Vektor-Quantisierung statt Personen-Frontalsicht).
+- **M1 (Aufheller-Drossel) = PHANTOM, gestrichen.** Die „115 Überschüsse" = 57 RZ-Mismatches (M3)
+  + 57 SL, die nur „überflüssig" sind, weil die Erklär-DXFs RZ-only sind (kein Lichtplan). Gegen
+  die Erklär-DXF nicht beurteilbar; Gate ist konservativ. Drosseln würde Metrik schönrechnen +
+  Lux riskieren. `aufheller_je_rz` hat schon Lux-Gate + D1-Bremsen (`fachpraxis.py:174-273`).
+
+**RESUME (Owner-Weiche für morgen):**
+- **A) M3 angehen** (Typ-Wahl nach Frontalsicht der ankommenden Person) — EMPFOHLEN. Selman-
+  unabhängig, 5 Handle-Testfälle bereit. ⚠️ kippt 4OG-Rotations-Golden + Pfeil-Bänder → GO +
+  Freeze-Nachzug; Hausfeld 2DG (3/3) als Wächter in jeden Messlauf. Messung: `mollgasse_gt_vergleich.py`.
+- **B) Aufheller doch** — dann zuerst Mollgasse-DIALux-Lichtplan als Maßstab besorgen (sonst blind).
+- Offen daneben: Owner-Fragen aus REVIEW §4 (Tür-RZ-Versatz 0 vs 735–930 mm, S.57 B↔C-Fix,
+  beidseitig-Konvention, unerklärte Leuchten); Commit/Push-GO der ganzen 43-Commit-Strecke.
+
+## STAND (2026-09-20 NACHT, Session-Ende) — PDF-Regeln in Engine + Farb-/Größen-Fixes + TOMA-Referenz. [überholt, s. oben]
+
+**Branch `leonis/demo-l-gebaeude` @ `910ded7`, ALLES GEPUSHT (= origin, 0 offen). Volle
+Suite 1417 grün, ruff clean, kein Contract-Touch.** Diese Nacht-Session baut auf dem
+Rivoplan-/GT-Stand (unten) auf. Vollbericht bleibt `docs/MOLLGASSE_RIVOPLAN_GT_BERICHT_2026-09-20.md`.
+
+**Heute zusätzlich gemacht (chronologisch, alle gepusht):**
+1. **PDF-Regeln in die Engine** (Owner-GO „alles einbauen, allgemein gültige Regeln"):
+   - `f6c69d0` **NB-R16** beidseitig: Wasserscheide im aktiven Anker-Pfad
+     (`_wasserscheide_achse` + `graph.distanz_je_ausgang`) → Kreuzung gleich weit zu
+     2 Ausgängen in Gegenrichtung → `richtung="gerade"` → Bothsided-Block. Konservativ.
+   - `710b859` **NB-R06/R07**: gerade Gang-Zwischen-RZ = down-Typ, Welt-Pfeil ENTGEGEN
+     Flucht (Front zur ankommenden Person); Abzweige (`_ist_abzweig`>45°) behalten
+     Richtungspfeil. **Owner hat NB-R06 per Frage bestätigt** (Δ178,6–180° belegt).
+     Alter „Pfeil-zum-Ausgang"-Test + Gang-Fallback-Test begründet nachgezogen.
+   - `09db956` **NB-R14** Wand/Decke: `montage_art` (Feld war unbenutzt, KEIN Contract-
+     Change) — Stiege/Tür/Ausgang/Außen=WA, Gang/Aufheller/Antipanik=DA; Decke-Default-
+     Nachpass im platzierer. `e251fc8` Regelbasis-Status auf UMGESETZT.
+2. **Farb-Fixes (Owner-Befund: Symbol-Farben im PDF inkonsistent):**
+   - `f5686b0` `RIVO_NL_ARR_right` Tür+Balken BYLAYER→ACI 7 (war grün-auf-grün).
+   - `1c9ce71` Antipanik+Verteiler BYLAYER-Füllung→feste true_color 0x1EB350 (wurden auf
+     schwarz/weiß-Layern schwarz). `3eb3c6e` dieselben Fixes in der VORLAGE + right-Block.
+   - `910ded7` beidseitig-RZ in der Blatt-Legende volle Größe (Bothsided = 2 gestapelte
+     Schilder → doppelte Zielhöhe, sonst halb so groß). Je Schild jetzt = Einzel-RZ.
+   - **Grundprinzip gelernt:** BYLAYER-Symbol-Entities nehmen die LAYER-Farbe → auf
+     grünem Notlicht-Layer grün, auf Layer 0 schwarz. Symbol-Farben IMMER fest setzen.
+3. **TOMA 44 (Schul-Flucht-/Rettungsplan) — reiner REFERENZ-Auftrag, KEINE Commits/Engine:**
+   Artefakte `knowledge/notbeleuchtung/abgleich/TOMA44/` (quellen.md+SHA256, referenz_
+   {SG,EG,OG,DG}.md, inventar_*.json, vergleich_*.png, engine_anforderungen.md, S01-10.png).
+   Lehre in Regelbasis: **NB-R22–R27** (regeln.md/yaml, jetzt 27 Regeln) — eigene
+   Dokumentklasse (Flucht-/Rettungsplan ≠ Platzierungslehrplan). Befund: TOMA-DXFs =
+   Ausführungspläne (73-83MB), Fluchtdaten als Textannotation (EN1125/EN179/FLn/EI/RWA/BMZ);
+   INSUNITS lügt (6/mm); SG-Offset ~-1.7e9 → Healthcheck. Kein DG-DXF, kein Engine-Lauf.
+   **Diese TOMA-Artefakte sind UNTRACKED (nicht committet) — Owner-Auftrag „keine Commits".**
+4. **Selman-Pakete `6bdb402`** (docs/COORDINATION.md): S-W (Wohnung≠Fluchtweg, Zirkulation
+   an Wohnungstür stoppen) + S-KG (Kellerabteile/Garage/Gebäudehälften). Owner leitet weiter.
+
+**RESUME morgen (Prio):**
+1. **Selman-Pakete S-W/S-KG weitergeben** — größter Hebel für die GT-Quote (33/97), macht
+   die restlichen PDF-Regeln wirksam. Prompt-Text steht im Chat + COORDINATION.
+2. Restliche PDF-Regeln, die an Selman hängen: NB-R15 Kabeltrasse (keine Input-Daten),
+   NB-R17 Garage, NB-R18/R24 Gebäudehälften/Mehr-TH, NB-R23 Cluster-Fluchtweg.
+3. **Owner macht die Vorlage neu** — wenn die neue `Rivoplan_Notbeleuchtungs_Vorlage.dxf`
+   kommt: prüfen (Layout1/Viewport/Plankopf/Legende), verdrahten, Kontroll-Render.
+4. Owner-offene Fragen: PDF-Textfehler S.57 B↔C, KT-Label-Konvention, Skalen-Abnahme,
+   Tür-RZ Wandlinie vs. 711–930 mm (offene_fragen.md 27–34).
+5. TOMA: DG-DXF nachfordern, Schul-Vokabular (Selman), dann Engine-Lauf auf TOMA.
+6. Nach Selman-Erkennungs-Fix: GT-Re-Run (`mollgasse_gt_vergleich.py`) → Quote messen.
+
+**Fallen (neu heute):** Symbol-BYLAYER→Layer-Farbe (s.o.) · Master-DXFs (Symbole/Vorlage)
+werden von AutoCAD gelockt → vor Schreibzugriff schließen lassen · Owner bestätigt visuelle
+Regeln (NB-R06) am besten per gerendertem Vorher/Nachher · Foreground-Agenten sterben am
+Fable-Limit ohne Output → wichtige Analysen selbst zu Ende führen.
+
+---
+
+## STAND (2026-09-20) — RIVOPLAN-MASTER-MIGRATION + MOLLGASSE-GROUND-TRUTH-AUFTRAG (Basis).
+
+**Branch `leonis/demo-l-gebaeude` @ `d74f0e8`, 7 Commits UNGEPUSHT (`456057e..d74f0e8`,
+Owner-Auftrag „kein Push ohne GO"). Voller pytest 1411 grün/51 skip/5 xfail, ruff clean,
+kein Contract-Touch.** Vollbericht (Owner-Schema A–L):
+`docs/MOLLGASSE_RIVOPLAN_GT_BERICHT_2026-09-20.md` — DER Einstieg für die nächste Session.
+
+1. **Migration Rivoplan-Master (M1–M3):** `Rivoplan_Notbeleuchtungs_Symbole.dxf` =
+   einzige Symbolquelle (`RIVO_NL_ARR_*`, right klein-nativ ×50, Basen neu gemessen,
+   **echter Beidseitig-Block** via `notlicht_ks_beidseitig`/richtung=gerade statt
+   Doppel-Block) + `Rivoplan_Notbeleuchtungs_Vorlage.dxf` = einzige Blatt-Vorlage
+   (**Blatt-Anker werden GEMESSEN** — `_vorlage_anker` — statt hartkodiert;
+   `Vorlage_Legende`-Fallback-Rahmen gestrichen → Stücklisten-Box). Alte Lib+Vorlage
+   git-rm'd, physisch noch Windows-gelockt (AutoCAD?) → lokal löschen wenn frei.
+2. **Regelbasis-UG (W):** PDF jetzt 95 S.; 1KG/2KG abgeglichen (33 Beispiele, 28/4/1 —
+   der 1 Widerspruch = **PDF-Textfehler S.57 B↔C, an Owner melden**), **NB-R13–R21**
+   in regeln.md/yaml (Kabeltrasse 450 = FACHPRAXIS, beidseitig Pflicht-vs-Alternative,
+   Garage Motorrad-durchquerbar, Gebäudehälften-Prozessregel „nie raten"),
+   offene Fragen 27–34, beispiele.json 68.
+3. **Ground-Truth-Harness (G):** `mollgasse_gt_extract.py` → 8 GT-Fixtures
+   (`tests/fixtures/mollgasse_gt/`) + `mollgasse_gt_vergleich.py` (leerer Input →
+   pipeline vs. GT; Frame-Transform über Architektur-INSERT-Median). **Ergebnis:
+   gepaart 33/97, fehlt 64, überflüssig 115 (EG 48 = Aufheller-Lane), beidseitig 0/8**
+   → `Projekte/_ergebnis/Mollgasse_GT/`. Lux auf GT nur wo GT SL/AP trägt
+   (EG/1OG/2OG/2KG); 3OG/4OG/DG/1KG = nur RZ → ehrlich „nicht prüfbar".
+4. **E-Slices:** GEBAUT **E4/NB-R13** (`fluchtvektor(hinauf)` — UG flüchtet HINAUF,
+   `bausteine.ist_untergeschoss`, stgh+R8 floor-aware). Gaps mit Begründung (Bericht §K):
+   KG-Erkennung = größter Hebel (0 Kellerabteile, 4–5 Zirk-Segmente, Garage leer —
+   Selman!), beidseitig-Spots = Komplett-Misses mangels Zirkulation, KT-Daten fehlen
+   im leeren Input, Gebäudehälften/Stellplätze = Naht/3-Owner, D3-Front-Runde offen.
+5. **Endstrecke (V):** `scripts/demo/run_mollgasse.py` — 8 Geschosse leerer Input →
+   Rivoplan-DXF+PDF (`Projekte/_ergebnis/Mollgasse_GT/rivoplan_out/`, alle %%EOF;
+   Mollgasse-Extents → G6-Fallback Modelspace-Blatt wie gehabt). GT-Regression
+   `tests/naht/test_mollgasse_gt.py` (Kennzahlen exakt eingefroren).
+6. **Wichtige Befunde:** leere Mollgasse-Pläne sind in METERN (INSUNITS lügt mm) —
+   Selman skaliert korrekt ×1000 · Erklärungs-DXFs = Alt-Blocknamen = GT-BESTAND
+   (Guard-Ausnahme, kein Production-Pfad) · EG-Erklärung vom Owner 20.09. bereinigt
+   (18 Leuchten).
+
+**OFFEN / RESUME:** (a) **Push-GO für die 7 Commits einholen**; (b) Owner: PDF-Textfehler
+S.57, KT-Label-Konvention, FREIHEIT-Wortbedeutung, Tür-RZ Wandlinie vs. 711–930 mm,
+Skalen-Abnahme formal; (c) Selman-Prompt KG-Erkennung (Kellerabteile + Garage-Zirkulation
++ Gebäudehälften — Bericht §K.1 als Grundlage); (d) danach E1 beidseitig + GT-Re-Run;
+(e) Fischamend v4 nach Skalen-Abnahme (jetzt mit Rivoplan-Master rendern!);
+(f) Working-Tree-Anomalie (94 Löschungen) weiter unangetastet — Owner-Klärung.
+
+---
+
+## STAND (2026-09-18 NACHT) — v3, PDF-Fehler zu, Owner-Regeln Skalen+Wandlinie GEPUSHT. [erledigt, s. 2026-09-20]
+
+**Branch `leonis/demo-l-gebaeude` @ `719d6d8`, GEPUSHT (Owner-GO). Targeted Suite
+(platzierung+render+e2e+contract+naht) 515 grün, ruff (getrackt) clean, kein
+Contract-Touch.** 8 Commits `1cd754a..719d6d8`.
+
+1. **Fischamend v3 geliefert** (`notbeleuchtung_out/v3/`, 9 Geschosse A0 1:50):
+   Runner versioniert `scripts/demo/run_fischamend.py` (argv je Geschoss).
+   Verify: Positionen 1:1 = v2 (Roh-Diff war NUR der gestrichene Gelb-Layer),
+   nur Registry-Blöcke, 27× %%EOF ok, Stückzahlen exakt v2-Band. **ACHTUNG: v3
+   trägt noch die ALTEN Größen (636er) — nach Skalen-Abnahme als v4 re-rendern.**
+2. **Owner-PDF 20:09-Fassung: ALLE 4 Textfehler + S.10-Screenshot behoben** ✓
+   (`43d388e`). **Läufer-Trio war UNSER Abgleich-Fehler** (`51e048d`): Regel #8
+   (xs>0 → Blick=180°+rot) nicht angewandt — Blick 168,7° West = korrekt.
+   **LEKTION: Personen-Blickrichtung NIE aus roher rot ablesen.**
+3. **Owner-Regeln gebaut (aus Owner-Ansagen in-Session):**
+   - `95c6b82` **Symbolgrößen = Legenden-Soll der neuen Vorlage × Maßstab 50**
+     (Legenden-INSERTs sind Papier-mm): RZ 883 / AP 586 / Aufheller+Spot 192 /
+     Anlage 852 mm (Aufheller war 2 Papier-mm = unlesbar). Prinzip im YAML-Kopf.
+   - `e5ac91b` **Tür-RZ auf Wandlinie**: `RZ_INS_RAUM_MM` 150→0 (Owner: „in einer
+     Linie mit der Tür-Wand, KEIN fixer Sollwert"; ersetzt R-C-150). Golden 4og +
+     2 Tests begründet nachgezogen (Mollgasse EG: down−1/Aufheller+1, n=53 stabil).
+   - Vorlage-Fixierung `Notbeleuchtungspläne-Vorlage.dxf` war SCHON da
+     (`dxf_renderer.py:931`), Owner-Datei = committete Fassung.
+   - **Probe-PDF Mollgasse EG an Owner** (`Projekte/_ergebnis/Mollgasse_EG/
+     notbeleuchtung_owner_kalibrierung.pdf`) — **Abnahme vertagt („später")**.
+4. **Selman-Nachricht beantwortet** (`719d6d8` Board): (a) S4a-Stapel ack —
+   S4a/S4b/S5b nur GEMEINSAM mergen, meine Naht-Tests strict-xfail; sync-review
+   über ganzen Stapel wenn fertig. (b) **Hohle Grüns AUCH BEI MIR bestätigt:**
+   `Projekte/_eingang/` hat nur Mollgasse_EG.dxf (gitignored); 24 Asset-Skips
+   (Rennweg_OG3 12× / Barawitzka_EG 9× / Rennweg_EG 3×) — Soll-Tests Barawitzka/
+   Rennweg/Muthgasse/Baufeld liefen NIE echt. Selman stellt auf versionierte
+   Pfade um (seine Lane, NICHTS daneben bauen) → danach Re-Run: sind seine
+   „4 failed" Platzierung oder Erkennung?
+
+**OFFEN / RESUME:**
+1. **Skalen-Abnahme beim Owner einholen** (Mollgasse-Probe) → dann **Fischamend
+   v4** mit neuen Größen (`run_fischamend.py`, Batches ≤10 min Vordergrund).
+2. **UG-Kapitel + 1.UG/2.UG-DXFs** kommen vom Owner (er arbeitet dran) → Abgleich-
+   Strecke fahren, Regelbasis erweitern. Rest-Owner-TODOs: Kopier-Reste in DXFs
+   (alle noch da), offene_fragen-Rest (RZ-Zweitgröße 446, 4 unerklärte Leuchten,
+   FREIHEIT-Bedeutung, down-RZ-Regel als PDF-Satz).
+3. D3/D5/D4 = Owner-Diff-Runde auf v3/v4-PDFs · Regel-Integrations-Slices nach
+   Owner-GO (NB-R05/R06/R07 ↔ D3) · Selman-Prompt-Weitergabe offen.
+4. Nach Selmans Pfad-Umstellung: Soll-Tests re-runnen (Lücke aus Punkt 4b).
+5. **Working-Tree-Anomalie bleibt:** viele unversionierte Löschungen getrackter
+   CAD-Rohdateien (Barawitzkagasse etc.) + modifizierte din_support-DWG —
+   Owner-Klärung offen, NICHT committen/restoren ohne Ansage.
+
+---
+
+## STAND (2026-09-18 SPÄT) — Sync + Symbol-/Vorlagen-Migration (Phase A) + Regelbasis (Phase B).
+
+**Branch `leonis/demo-l-gebaeude` @ `b04c80e`+Board, GEPUSHT. Volle Suite 1389 grün, ruff clean,
+kein Contract-Touch.** Sync davor: main `2f610cc` (Selman #158 geschoss.py etc. + mein #157) gemergt.
+
+1. **Phase A `c77d5dc` — neue Symbole + neue Vorlage sind die EINZIGEN Quellen:**
+   `Notbeleuchtungssymbole_neu+.dxf` (alte git rm, .gitignore-Whitelist), Registry =
+   Mapping (RIVO-Blöcke + scale_abs aus Owner-Erklärungsplänen: RZ 636/AP 539/
+   Aufheller+Spot 97/Anlage 430 mm) + orientation (down 270/left 180/right 0 gemessen).
+   library: Farb-Umschreibung RAUS (Aufheller bleibt blau), Normalisierung NUR Top-Block
+   (Rekursion zerriss RIVO-Nesting), Mapping case-insensitiv. EIN Layer
+   din_SIBEL_10_emergency_lighting (SL-Gelb-Zwilling + rz_sl_farbtrennung gestrichen).
+   Renderer: _LEGENDE_BLOCKS neu, Anlagen-Maße aus Registry. Guard-Test
+   test_migration_guard.py. Golden neu. Prüfstrecke Mollgasse EG: 53 INSERTs nur neue
+   Blöcke, 0 alte, Blatt+Legende ok (Projekte/_ergebnis/Mollgasse_EG/notbeleuchtung_phaseA*).
+   Doku: docs/SYMBOL_MIGRATION_2026-09-18.md.
+2. **Phase B `b04c80e` — Regelbasis aus PDF (41 S.) + 6 Erklärungs-DXFs:** 35 Beispiele
+   (18 bestätigt/13 präzisiert/4 Widersprüche=PDF-Textfehler), Abdeckung 75 Leuchten
+   (49 zugeordnet/14 Legende/8 Kopier-Reste/4 offen). knowledge/notbeleuchtung/:
+   regeln.md+regeln.yaml (NB-R00–R12, mm-genau belegt), beispiele.json,
+   symbol_konvention.md, abgleich/<G>/ (38 Side-by-Sides), offene_fragen.md (26 Punkte).
+   KEIN Pipeline-Code (Phase-B-Grenze); Integrations-Vorschläge in regeln.md.
+3. **PDF-Korrektur-Runde (2026-09-18 Abend):** Owner hat 2 von 4 Textfehlern gefixt
+   (2OG S.23 „links" ✓, 4OG S.38 „rechts" ✓ — DXF-gegengeprüft `890f1d5`). PDF-Feedback
+   gegeben (Darstellung Menschen/Pfeile/Sichtlinien = sehr gut, beibehalten); Owner
+   fixt den Rest selbst.
+
+4. **OWNER-TODO PDF/DXF — BEIM NÄCHSTEN SESSIONSTART ERINNERN + danach re-checken:**
+   - [x] ~~PDF S.10 (D)/(E)→(G)/(H)~~ ERLEDIGT (PDF-Fassung 2026-09-18 20:09: Text (G)/(H) ✓ + Screenshot erneuert ✓).
+   - [x] ~~PDF S.19 Linie→(B)~~ ERLEDIGT (PDF 20:09: „zur Notleuchte (B)" ✓). **Damit alle 4 PDF-Textfehler + Screenshot behoben.**
+   - [x] ~~2OG-Läufer-Trio blickt Ost~~ ERLEDIGT 2026-09-18: KEIN DXF-Fehler — unser Abgleich hatte Regel #8 (xs>0 → Blick=180°+rot) nicht angewandt; Blick 168,7° = West = Fluchtrichtung ✓ (Owner-Hinweis, Doku korrigiert).
+   - [ ] Arbeits-/Kopier-Reste außerhalb der Grundrisse löschen: EG `2137C` (Duplikat), 1OG `9568D`, 3OG-Fragment A1 (`78D6A/78D6C/78D6D`), 4OG `41221`, DG `206D6`/`206DB`.
+   - [ ] **UG-Kapitel + 1.UG/2.UG-Erklärungs-DXFs liefern** (inkl. Kellerabteil-Gang) → dann Abgleich-Strecke erneut fahren, Regelbasis erweitern.
+   - [ ] Owner-Antworten offene_fragen.md (REST): RZ-Zweitgröße 446 mm (wann?), unerklärte Leuchten (`202CC`+`2137C`, `2072F`, `8532F`, `78DFD`-Szene), FREIHEIT/KEINE-FREIHEIT-Bedeutung, down-RZ-Rotationsregel als expliziten Satz in die PDF.
+   - [x] ~~Tür-RZ-Versatz~~ BEANTWORTET 2026-09-18: „in einer Linie mit der Tür-Wand, kein fixer Sollwert" → RZ_INS_RAUM_MM=0 gebaut (`e5ac91b`).
+   - [x] ~~AP-Skalen~~ BEANTWORTET via „vergrößern, passend zum Plan": Legenden-Soll ×50 (RZ 883/AP 586/Aufheller+Spot 192/Anlage 852) gebaut (`95c6b82`); Probe-PDF Mollgasse EG an Owner (Abnahme offen).
+
+5. **OFFEN / RESUME (Engine):** (a) Regel-Integration als eigene Slices NACH
+   Owner-GO (Kandidaten in regeln.md „Integration"; NB-R05/R06/R07 berühren die
+   D3-Runde). (b) ~~v2 re-rendern~~ **ERLEDIGT 2026-09-18 nachm.: v3 mit neuen
+   Symbolen gerendert + an Owner geliefert** (`notbeleuchtung_out/v3/`, Runner
+   jetzt versioniert `scripts/demo/run_fischamend.py` `1cd754a`; Verify:
+   Positionen 1:1 = v2 — der Roh-Diff war NUR der gestrichene Gelb-Zwilling-
+   Layer, SL/AP liegen jetzt auf dem EINEN din_SIBEL-Layer —, nur Registry-
+   Blöcke, 0 Alt-Blöcke, alle 27 PDFs %%EOF ok, Stückzahlen exakt v2-Band
+   30/18/18/12/47 · 21/17/14/16) → D3/D5-Rest = Owner-Diff-Runde auf v3.
+   (c) Selman-Prompt-Weitergabe offen. (d) **Working-Tree-Anomalie:** viele
+   unversionierte LÖSCHUNGEN getrackter CAD-Rohdateien (Barawitzkagasse komplett,
+   Dachdraufsichten, …) + modifizierte din_support-DWG — vermutlich Owner-
+   Aufräumen nach ZIP-Migration `3c640cb`, unbestätigt. NICHT committen und
+   NICHT restoren ohne Owner-Ansage.
+
+---
+
+## STAND (2026-09-18) — D1–D6-Bau: D2/D1/D6 GEBAUT, D5-Verdacht widerlegt, v2-Render geliefert. HIER WEITER.
+
+**Branch `leonis/demo-l-gebaeude`, GEPUSHT `78020cd..d22a38e` (Owner-GO in-Session):
+`0936461` D2 · `48cf6e2` D1 · `92b8018` D6 · `d22a38e` Handoff.** Volle relevante Suite
+(platzierung+e2e+contract+naht) 412 grün, ruff clean. Kein Contract-Touch.
+
+**Schritt-0-Verifikation (Handoff-Auflage, Befunde korrigieren die Diagnose):**
+1. **D2-Root-Cause NEU:** LIFT wird von der Erkennung inzwischen GETYPT (alle 9
+   Geschosse) — der Täter war die **STIEGENHAUS-Zentrum-SL (§4.1)**: der Liftschacht
+   liegt im Kern des STGH-Polygons, `find_center_visual` fällt hinein (BT2-EG
+   `lift_1`, 1,9 m²). Fix `fachpraxis.entferne_schacht_leuchten` (Muster
+   verbotszonen_nachpass): Punkt im LIFT-/SCHACHT-Polygon → relocate in den engsten
+   Wirts-Raum, ohne Wirt entfällt er; in `place()` nach verbotszonen_nachpass.
+2. **D5-Verdacht WIDERLEGT:** `anker_strategy._tuer_durchgangsrichtung` feuert auf
+   allen 9 Fischamend-Geschossen **0×** (instrumentiert), und alle Exit-Nodes liegen
+   **d=0 auf ihrer Tür**. Kein Blind-Bau. Rest-Hypothese: Tür-Insert=Angelpunkt statt
+   Öffnungsmitte (Selman-Naht) — am v2-Output visuell prüfen (Owner-Runde).
+3. **D1 belegt + gebaut:** 27–54 % aller Symbole waren Aufheller (Beleg BT1-EG
+   raum_51: 8,3-m²-Gang, 2 RZ + 2 Aufheller). Zwei Bremsen in `aufheller_je_rz`:
+   (a) Korridor-RZ bekommen KEINE B1-Leuchte (Gang-Deckung = deckung/S4-Drossel-
+   Lane), (b) gesetzte Aufheller zählen inkrementell als Quelle. Band nachgezogen:
+   wohnbau-EG SL (3,9)→(1,9), SL=2 → Richtung Owner-Soll 1.
+4. **D6 gebaut:** `sichtkette` Kontur-Puffer 500 mm NUR für die Zugehörigkeit —
+   Fluchtweg-RZ (kanonische Quelle via `norm.fuer_fluchtweg_abschnitt`, kein
+   Hardcode) knapp außerhalb der Zacken-Kontur (raum_13-Klasse) werden jetzt
+   ausgedünnt; Sichtstrahlen bleiben strikt.
+5. **D4-Annahme ÜBERHOLT:** Selmans Sync liefert jetzt **Treppenläufe auf allen 9
+   Geschossen** (2–5 je STGH) → `stgh_strategy`/R8 arbeiten mit echter Laufrichtung.
+   Kein Engine-Bau nötig; visuelle Abnahme in der Owner-Runde.
+
+**v2-Render geliefert** (`Projekte/BVH Fischamenderstraße/notbeleuchtung_out/v2/`,
+alle 9 Geschosse A0 1:50 Plan+Lux, %%EOF ok, an Owner gesendet): Platzierungen
+BT1 EG 33→30 · 1OG 25→18 · 2OG 24→18 · DG 16→12 · UG 47→47 (dort war nur 1
+B1-Aufheller; Rest = Türleuchten-Zusatz/Redundanz) · BT2 EG 22→21 · 1OG 24→17 ·
+2OG 20→14 · DG 21→16. **0 Symbole in LIFT/SCHACHT** (D2-Wirkung). Runner-Muster
+Batch-fähig via argv — **FALLE: Background-Prozesse werden in dieser Umgebung
+gekillt**, lange Läufe im Vordergrund in ≤10-min-Batches oder Owner-Terminal `!`.
+
+**OFFEN / RESUME:**
+1. **D3 (Rotation-Vorzeichen) + D5-Rest + D4-Abnahme = Owner-Feedback-Runde** auf
+   den v2-PDFs (AutoCAD-Diff wie gehabt); erst dann bauen.
+2. Selman-Prompt Wohnung-Fluchtweg weitergeben (Owner) · S4-Rest-Concerns ·
+   CLAUDE.md-Drift (Enis) — unverändert vom 13.09.
+
+---
+
+## STAND (2026-09-13 SEHR SPÄT) — S4-Drossel + Sync + Fischamend-Test + D1–D6-Diagnose. HIER WEITER.
+
+**Branch `leonis/demo-l-gebaeude`, HEAD `3c640cb`, alles GEPUSHT. Sync mit origin/main
+gemacht (`0329ae4`, 21 Commits konfliktfrei), Suite 1347 grün.** #150 wurde auf main
+gemergt (`27eb23a`); #131 (L1/L3-Fontfix-Review) geschlossen (überholt).
+
+**Gebaut/erledigt diese Session:**
+1. **S4-Gang-Deckungs-Drossel `f53cc6b`** (`deckung.verdichte_fluchtweg` + `platzierer`):
+   stützt ≥1 RZ (im Gang ODER `_DROSSEL_RANDNAH_MM`=2000 vom Rand = Nebenraum-Tür-RZ)
+   einen Gang → Lux-Reihe ersetzt durch 1 Aufheller je Längslücke > `_DROSSEL_LUECKE_MM`=8000
+   (2×_MIN_ABSTAND). EG Gang-Reihe 4→1. **Diagnose-Kern: MF 0,80 war NICHT der Faktor**
+   (0,80=1,0 identisch), sondern fehlende RZ-Stützung. 3 exakte Tests in `test_deckung.py`.
+2. **NetworkX voll analysiert + Hebel b VERWORFEN.** Messung: Anker-Pfad 0/7 tot, weil
+   `graph.build_circulation_graph` aus `zirkulation.nodes/edges` baut — die sind leer, nur
+   `segmente` gefüllt (Board-Notiz `9553f1c`). Hebel b (Segment-Graph noden, `graph.py`+
+   `anker_strategy.py`) technisch scharf, ABER kippte das abgenommene wohnbau-EG-Muster
+   (8+1→7+0, 1 Test rot) → **zurückgerollt**. Anker-Pfad ist inkompatibel mit der
+   kalibrierten Fallback-Logik. Additiver Weg (Dijkstra im Fallback) bleibt Option.
+3. **Sync `0329ae4`:** Selmans `breitenprofil.py` + Enis Türbreite/AStV + PR #150/#156 rein.
+   Board-Eintrag `80cd52d`.
+4. **Fischamend-Test (roh):** `pipeline._run_mit_quelle` auf BVH Fischamenderstraße BT1+BT2,
+   9 Geschosse, alle gerendert (44–79 Räume, 6× ok / 3× warnung, 0 Crash). Output
+   `Projekte/BVH Fischamenderstraße/notbeleuchtung_out/` (untracked). Runner-Muster: parse
+   → `_run_mit_quelle` mit `pdf_quelle=True` → `dxf_zu_pdf(modelspace-sibling)` → merge.
+5. **CAD-ZIPs `3c640cb`:** 2 Owner-Ordner ("Projekte mit Notbeleuchtung",
+   "Projekte_Leere Architektpläne (Input)") → 12 DXF-only-ZIPs je Projekt (<100 MB,
+   ~243 MB statt 2,2 GB roh). `.gitignore`: `*.bak` + Rohordner-Wildcards. FALLE:
+   Direkt-Push von 2,2 GB / Dateien >100 MB = GitHub-Reject; DXF komprimiert ~90 %.
+
+**OFFEN / RESUME (Prio):**
+1. **Defekt-Slice D1–D6 (BVH Fischamend) — Diagnose FERTIG, Bau wartet auf Owner-GO.**
+   Root Causes belegt (am Output verankert): **D1** Aufheller-Inflation = `aufheller_je_rz`
+   1:1 je RZ, Punkt-Lux-Gate greift nicht (i_cd_fn IST geladen, aber prüft nur SL/AP an
+   1 Punkt) → ~40–48 % aller Symbole Aufheller; verletzt R-J. **D2** Aufzug (LIFT in
+   `_TUERLEUCHTE_KEIN_COMMUNAL:75` ausgenommen → Track B: Erkennung typt LIFT nicht) +
+   Guard. **D3** Rotation-Call-Sites (Vorzeichen). **D4** STGH-Variante = fehlender
+   `Treppenlauf` (Track B) + R8-Fallback. **D5** Tür-Position seitlich (`anker_strategy.
+   _tuer_durchgangsrichtung:79`, Default `(0,-1)` nur bei gar-keiner-Wand). **D6** Gang-
+   Dichte (`_mittel_arm_rz`/`_tuer_luecken_rz`/`verdichte_fluchtweg` + Sichtkette-Ausdünnung
+   bei Zacken). **Reihenfolge:** D2→D5→D1→(D3+D4)→D6. **F2-Split:** S1=`anker_strategy`+
+   `fachpraxis` (D5/D2/D1), S2=`stgh`/`communal_stgh`/`bausteine`/`deckung`+Gang-`platzierer`
+   (D4/D3/D6); geteilt nur `place()` → D2-Guard als Funktion in `fachpraxis`, Merge S1→S2.
+   **VOR Bau:** Verifikations-`place()` für D2 (welcher raum_typ/Geschoss) + D5 (Türposition).
+2. **Selman-Prompt (Wohnung-Fluchtweg-Differenzierung) FERTIG erstellt** (generisch, S1–S4:
+   Wohnungen einzeln trennen, Zirkulation an Wohnungseingangstür STOPPEN, `ist_fluchtweg`
+   differenzieren, Fluchtwege sauberer zeichnen). **Das ist die WURZEL** von „Notbeleuchtung
+   in Wohnungen": Selmans Fluchtweg-Zirkulation läuft in die Wohnungen (an `uebersicht.png`
+   BT1 EG/OG1 belegt: EG 3 Wohnungen aber Zirkulation läuft rein; OG1 1 Riesen-Umriss statt
+   ~8; alle Gänge = ein Typ „GANG"). Selman hat Wohnungs-Umrisse NEU (gut), nutzt sie aber
+   noch nicht zum Fluchtweg-Stopp. Prompt liegt in dieser Session-Historie / Owner gibt ihn weiter.
+3. **S4-Rest-Concerns** (EG total SL 5→4, Owner will 1): Müllraum-Türleuchte
+   (`tuerleuchte_pflichtraeume`, Owner ersetzte durch RZ), raum_9-Redundanz-Min (EN 50172
+   Hard-Stop, norm-korrekt), Stiegenhaus-`aufheller_je_rz`-Nebeneffekt.
+4. **CLAUDE.md-Drift:** Enis führt origin/main-`b80df96` + meine `0d9756f`-Präzisierungen
+   zusammen (er übernimmt, ich arbeite nicht mehr dran).
+5. Karpathy-Repos bewertet: nichts direkt einbaubar; nur `lf-3` (sklearn RandomForest,
+   `micrograd` als Konzept). Kein Slice draus.
+
+---
+
 ## STAND (2026-09-13 ABEND) — Owner-Reihe 1–4 gebaut, PR-Hygiene, Am Rain. HIER WEITER.
 
 **Branch `leonis/demo-l-gebaeude`, alles GEPUSHT, PR #156 OFFEN+MERGEABLE** (main-Merge

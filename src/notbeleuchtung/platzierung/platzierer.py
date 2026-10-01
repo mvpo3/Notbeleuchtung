@@ -47,6 +47,7 @@ from . import (
 from .anker_strategy import plan_rettungszeichen_anker
 from .aussen_strategy import plan_aussenleuchten
 from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
+from .bausteine import MONTAGE_DECKE
 from .communal_stgh_strategy import plan_rettungszeichen
 from .deckung import garantiere_redundanz, verdichte_fluchtweg
 from .flaechen_strategy import plan_antipanik, plan_sicherheitsleuchten
@@ -319,6 +320,9 @@ class NotlichtPlatzierer:
         # montierbaren Punkt holen (Selman-BEFUND) — vor dem abstand_nachpass, damit
         # dieser eventuelle Verschiebungs-Kollisionen entzerrt.
         platzierungen = verbotszonen_nachpass.entferne_aus_verbotszonen(platzierungen, raum)
+        # D2 (Fischamend): LIFT/SCHACHT sind kein Montageort — die Stiegenhaus-
+        # Zentrum-SL fällt sonst in den innenliegenden Liftschacht (BT2 EG lift_1).
+        platzierungen = fachpraxis.entferne_schacht_leuchten(platzierungen, raum)
         # Owner-Korrektur 2026-09-10: RZ/Aufheller im Gang auf die Korridor-Mittelachse
         # snappen (Querachse zentrieren, Längsachse erhalten). VOR dem Entzerren, damit ein
         # Aufheller, der dabei auf sein RZ fällt, vom abstand_nachpass aufgelöst wird.
@@ -351,4 +355,11 @@ class NotlichtPlatzierer:
         # Stromkreise final vergeben: Dauer-/Bereitschaftslicht trennen + je Kreis deckeln
         # (statt alles grob auf AGV-{Gebäude}-F13 zu mischen). Läuft zuletzt, nach lb_override.
         platzierungen = circuit_zuordnung.zuordnen(platzierungen)
+        # NB-R14 (PDF S.56): Montage-Art vervollständigen. Wand-Fälle (Stiege/Tür/
+        # Ausgang/Außenleuchte) setzen die Strategien explizit; alles Übrige (Gang-,
+        # Aufheller-, Antipanik-, Flächen-Leuchten) ist „grundsätzlich an der Decke".
+        platzierungen = [
+            p if p.montage_art else p.model_copy(update={"montage_art": MONTAGE_DECKE})
+            for p in platzierungen
+        ]
         return PlatzierungsErgebnis(floor=raum.floor, platzierungen=platzierungen)

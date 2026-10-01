@@ -24,12 +24,14 @@ _APPID = "NOTBELEUCHTUNG"
 # per-Entry `scale_abs` und umgehen den Faktor.
 DE_GLOBAL_SCALE = 185.0
 
-# Wasserscheide-Doppelpfeil für richtung="gerade": ein beidseitiger RZ steht in der
-# Flur-Mitte zwischen zwei Ausgängen und weist in BEIDE Richtungen (Profi-Plan
-# RZ_PLPR, Referenz PROFI_DIN_PLAN_UND_VORSCHRIFTEN.md §1.1). Gerendert als zwei
-# horizontale Richtungspfeil-Blocks (links + rechts), gemeinsam um `rotation_deg`
-# gedreht — kein Contract-Feld, rein Render-seitig aus `richtung` abgeleitet.
-_DOPPELPFEIL_KEYS = ("notlicht_ks_stiege_links", "notlicht_ks_stiege_rechts")
+# Wasserscheide-Beidseitig-RZ für richtung="gerade": ein beidseitiger RZ steht in
+# der Flur-Mitte zwischen zwei Ausgängen und weist in BEIDE Richtungen (Profi-Plan
+# RZ_PLPR, Referenz PROFI_DIN_PLAN_UND_VORSCHRIFTEN.md §1.1). Seit der Rivoplan-
+# Master-Migration (2026-09-20; Bibliotheks-Update 2026-09-21) als EIN echter
+# Bibliotheks-Block gerendert (RIVO_ARR_bothsided) statt der früheren
+# links+rechts-Komposition — kein Contract-Feld, rein Render-seitig aus
+# `richtung` abgeleitet.
+_BEIDSEITIG_KEY = "notlicht_ks_beidseitig"
 
 
 def _ensure_appid(output_doc: Drawing) -> None:
@@ -85,11 +87,11 @@ def insert_platzierung(
 
     Output ist mm-Welt; `p.xy_mm` wird 1:1 geschrieben. Rotationen kommen
     unverändert aus dem Contract (359.7° etc. werden NICHT normalisiert). Bei einem
-    **Rettungszeichen** mit `richtung="gerade"` wird statt eines Einzelpfeils ein
-    **beidseitiger Doppelpfeil** (links+rechts, Wasserscheide) gezeichnet;
-    zurückgegeben wird der primäre (linke) Insert, der auch den Stromkreis-XDATA-Tag
-    trägt. Andere Leuchtenarten mit `richtung="gerade"` (Sicherheitsleuchte,
-    Antipanik = „keine Richtung") behalten ihr eigenes Katalog-Symbol.
+    **Rettungszeichen** mit `richtung="gerade"` wird statt eines Einzelpfeils der
+    **echte beidseitige Rivoplan-Block** (RIVO_ARR_bothsided, Wasserscheide)
+    gesetzt; er trägt auch den Stromkreis-XDATA-Tag. Andere Leuchtenarten mit
+    `richtung="gerade"` (Sicherheitsleuchte, Antipanik = „keine Richtung")
+    behalten ihr eigenes Katalog-Symbol.
 
     Raises
     ------
@@ -101,42 +103,18 @@ def insert_platzierung(
     if p.catalog_key not in mapping:
         raise KeyError(f"No Schrack mapping for catalog_key {p.catalog_key!r}")
 
-    # Doppelpfeil NUR für Rettungszeichen-Wasserscheiden. Sicherheitsleuchten und
+    # Beidseitig NUR für Rettungszeichen-Wasserscheiden. Sicherheitsleuchten und
     # Antipanik tragen ebenfalls richtung="gerade" (= keine Richtung), sind aber keine
     # Pfeil-Zeichen → sie behalten ihr eigenes Katalog-Symbol.
-    if p.richtung == "gerade" and p.kind == "rz":
-        insert = _insert_doppelpfeil(output_doc, p, mapping, layer)
-    else:
-        entry = mapping[p.catalog_key]
-        yscale, xscale = _skalen(entry, p)
-        insert = _insert_block(
-            output_doc, entry["block_name"], p.xy_mm, p.rotation_deg, xscale, yscale, layer
-        )
+    entry = (mapping[_BEIDSEITIG_KEY] if p.richtung == "gerade" and p.kind == "rz"
+             else mapping[p.catalog_key])
+    yscale, xscale = _skalen(entry, p)
+    insert = _insert_block(
+        output_doc, entry["block_name"], p.xy_mm, p.rotation_deg, xscale, yscale, layer
+    )
 
     if p.circuit_hint:
         _ensure_appid(output_doc)
         insert.set_xdata(_APPID, [(1000, f"stromkreis={p.circuit_hint}")])
 
     return insert
-
-
-def _insert_doppelpfeil(
-    output_doc: Drawing, p: Platzierung, mapping: dict, layer: str
-) -> Insert:
-    """Beidseitiger RZ: horizontaler Links- + Rechts-Pfeil am selben Punkt.
-
-    Beide Pfeile teilen `p.xy_mm` und `p.rotation_deg` (die Fluchtweg-Achse) und
-    zeigen so entlang derselben Achse in Gegenrichtung. Zurück kommt der linke
-    (primäre) Insert.
-    """
-    primary: Insert | None = None
-    for key in _DOPPELPFEIL_KEYS:
-        entry = mapping[key]
-        yscale, xscale = _skalen(entry, p)
-        insert = _insert_block(
-            output_doc, entry["block_name"], p.xy_mm, p.rotation_deg, xscale, yscale, layer
-        )
-        if primary is None:
-            primary = insert
-    assert primary is not None  # _DOPPELPFEIL_KEYS ist nie leer
-    return primary

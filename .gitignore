@@ -22,11 +22,15 @@ _arbeit/
 
 # Norm-PDFs für alle Owner (Repo ist privat — nicht public stellen!)
 !knowledge/**
+# Analyse-Caches der Regelwerk-Strecke (538 Seiten-PNGs + Crops) — lokal, nie tracken
+knowledge/Pläne zeichnen Wissen/_Analyse_Regelwerk/seiten/
 
 # DXF — nur die kanonische Symbol-Library ist getrackt
 *.dxf
 !assets/E-Symbole.dxf
-!CAD_Symbole/Notbeleuchtungssymbole.dxf
+# Kanonische Symbol-Library seit 2026-09-20 (Migration Rivoplan-Master;
+# Bibliotheks-Update 2026-09-21: umbenannt auf RIVO_NL_Symbole.dxf).
+!CAD_Symbole/RIVO_NL_Symbole.dxf
 # Vorlagen (Legende etc.) fürs ganze Team
 !Vorlagen-Legende/**
 # Wissens-Konvertate (z.B. Stromkreisnummer via ODA aus DWG) bleiben getrackt

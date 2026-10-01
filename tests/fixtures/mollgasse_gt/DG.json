@@ -1,0 +1,332 @@
+{
+ "geschoss": "DG",
+ "quelle": "knowledge\\Pläne zeichnen Wissen\\Mollgasse-Notbeleuchtungserklärung\\WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+ "n_leuchten": 6,
+ "n_beidseitig_gruppen": 0,
+ "leuchten": [
+  {
+   "handle": "206D6",
+   "block": "RIVO-SIBEL-ARR-down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    -16046.7,
+    28414.2
+   ],
+   "insert_xy_mm": [
+    -84939.4,
+    160466.1
+   ],
+   "rot_deg": 269.71,
+   "xscale": 35.6373,
+   "welt_pfeil_deg": 179.71,
+   "layer": "0"
+  },
+  {
+   "handle": "206DB",
+   "block": "RIVO-SIBEL-ARR-left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    -17184.3,
+    26892.5
+   ],
+   "insert_xy_mm": [
+    -150198.8,
+    -42239.5
+   ],
+   "rot_deg": 359.42,
+   "xscale": 36.0983,
+   "welt_pfeil_deg": 179.42,
+   "layer": "0"
+  },
+  {
+   "handle": "206DC",
+   "block": "RIVO-RZ-ARR_right",
+   "typ": "rz",
+   "richtung_block": "right",
+   "xy_mm": [
+    666.8,
+    26391.0
+   ],
+   "insert_xy_mm": [
+    -581314.0,
+    -108760.3
+   ],
+   "rot_deg": 359.87,
+   "xscale": 1.3724,
+   "welt_pfeil_deg": 359.87,
+   "layer": "0"
+  },
+  {
+   "handle": "20705",
+   "block": "RIVO-SIBEL-ARR-left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    4696.8,
+    28335.5
+   ],
+   "insert_xy_mm": [
+    -128317.7,
+    -40796.5
+   ],
+   "rot_deg": 359.42,
+   "xscale": 36.0983,
+   "welt_pfeil_deg": 179.42,
+   "layer": "0"
+  },
+  {
+   "handle": "2083F",
+   "block": "RIVO-SIBEL-ARR-left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    40302.9,
+    -1717.3
+   ],
+   "insert_xy_mm": [
+    -92711.5,
+    -70849.3
+   ],
+   "rot_deg": 359.42,
+   "xscale": 36.0983,
+   "welt_pfeil_deg": 179.42,
+   "layer": "0"
+  },
+  {
+   "handle": "20864",
+   "block": "RIVO-SIBEL-ARR-down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    36955.5,
+    -59.3
+   ],
+   "insert_xy_mm": [
+    -31937.1,
+    131992.6
+   ],
+   "rot_deg": 269.71,
+   "xscale": 35.6373,
+   "welt_pfeil_deg": 179.71,
+   "layer": "0"
+  }
+ ],
+ "personen": [
+  {
+   "handle": "206D8",
+   "xy_mm": [
+    634.4,
+    25540.3
+   ],
+   "rot_deg": 92.75,
+   "xscale": -4.0068,
+   "blick_deg": 92.75
+  },
+  {
+   "handle": "20780",
+   "xy_mm": [
+    2335.2,
+    26341.3
+   ],
+   "rot_deg": 2.75,
+   "xscale": -4.0068,
+   "blick_deg": 2.75
+  },
+  {
+   "handle": "207CB",
+   "xy_mm": [
+    4129.1,
+    27812.3
+   ],
+   "rot_deg": 356.98,
+   "xscale": 4.0068,
+   "blick_deg": 176.98
+  },
+  {
+   "handle": "2083C",
+   "xy_mm": [
+    40577.9,
+    -2545.1
+   ],
+   "rot_deg": 92.75,
+   "xscale": -4.0068,
+   "blick_deg": 92.75
+  },
+  {
+   "handle": "208D8",
+   "xy_mm": [
+    39030.3,
+    840.7
+   ],
+   "rot_deg": 272.75,
+   "xscale": -4.0068,
+   "blick_deg": 272.75
+  },
+  {
+   "handle": "208FE",
+   "xy_mm": [
+    39387.8,
+    -1747.1
+   ],
+   "rot_deg": 356.85,
+   "xscale": 4.0068,
+   "blick_deg": 176.85
+  },
+  {
+   "handle": "20900",
+   "xy_mm": [
+    36364.5,
+    -1703.8
+   ],
+   "rot_deg": 356.85,
+   "xscale": 4.0068,
+   "blick_deg": 176.85
+  },
+  {
+   "handle": "20902",
+   "xy_mm": [
+    38654.0,
+    -50.2
+   ],
+   "rot_deg": 2.89,
+   "xscale": -4.0068,
+   "blick_deg": 2.89
+  },
+  {
+   "handle": "20904",
+   "xy_mm": [
+    35560.6,
+    -41.6
+   ],
+   "rot_deg": 2.89,
+   "xscale": -4.0068,
+   "blick_deg": 2.89
+  }
+ ],
+ "labels": [
+  {
+   "text": "(A)",
+   "xy_mm": [
+    529.3,
+    26729.7
+   ],
+   "handle": "206D7"
+  },
+  {
+   "text": "(DG)",
+   "xy_mm": [
+    85.6,
+    25838.9
+   ],
+   "handle": "206D9"
+  },
+  {
+   "text": "(B)",
+   "xy_mm": [
+    -16754.7,
+    26956.9
+   ],
+   "handle": "206DA"
+  },
+  {
+   "text": "(D)",
+   "xy_mm": [
+    -16182.7,
+    28069.4
+   ],
+   "handle": "206DD"
+  },
+  {
+   "text": "(B)",
+   "xy_mm": [
+    5036.0,
+    28400.2
+   ],
+   "handle": "20704"
+  },
+  {
+   "text": "(DG)",
+   "xy_mm": [
+    2403.5,
+    26803.9
+   ],
+   "handle": "20781"
+  },
+  {
+   "text": "(DG/Podest)",
+   "xy_mm": [
+    4368.6,
+    28024.4
+   ],
+   "handle": "207EE"
+  },
+  {
+   "text": "(DG)",
+   "xy_mm": [
+    40029.1,
+    -2246.5
+   ],
+   "handle": "2083D"
+  },
+  {
+   "text": "(A)",
+   "xy_mm": [
+    40672.9,
+    -1648.3
+   ],
+   "handle": "20840"
+  },
+  {
+   "text": "(B)",
+   "xy_mm": [
+    36819.6,
+    -404.1
+   ],
+   "handle": "20865"
+  },
+  {
+   "text": "(DG)",
+   "xy_mm": [
+    39288.4,
+    660.9
+   ],
+   "handle": "208D9"
+  },
+  {
+   "text": "(DG)",
+   "xy_mm": [
+    39142.1,
+    -1218.0
+   ],
+   "handle": "208FF"
+  },
+  {
+   "text": "(DG)",
+   "xy_mm": [
+    36118.8,
+    -1174.7
+   ],
+   "handle": "20901"
+  },
+  {
+   "text": "(DG)",
+   "xy_mm": [
+    38295.8,
+    373.9
+   ],
+   "handle": "20903"
+  },
+  {
+   "text": "(DG)",
+   "xy_mm": [
+    35202.4,
+    382.5
+   ],
+   "handle": "20905"
+  }
+ ],
+ "n_fluchtweg_polylines": 6,
+ "n_sichtlinien": 20
+}

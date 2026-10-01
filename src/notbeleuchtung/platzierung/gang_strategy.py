@@ -24,6 +24,8 @@ from .bausteine import (
     AGV_SV_F as _AGV_SV_F,
 )
 from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
+from .bausteine import MONTAGE_DECKE as _MONTAGE_DECKE
+from .bausteine import MONTAGE_WAND as _MONTAGE_WAND
 from .bausteine import (
     building_assigner as _building_assigner,
 )
@@ -39,6 +41,20 @@ from .mittellinie import leuchten_auf_linie
 
 # RZ-Abstand, wenn die Norm keine Erkennungsweite liefert (defensiver Default).
 _DEFAULT_RZ_ABSTAND_MM = 15000.0
+
+# NB-R07: ab welchem Knickwinkel ein Gang-Punkt als Abzweig (Richtungswechsel)
+# gilt — darunter ist es „geradeaus" (NB-R06). 45° trennt L-Ecken sauber von
+# leichten Achsen-Verschwenkungen.
+_ABZWEIG_COS = 0.707   # cos(45°)
+
+
+def _ist_abzweig(in_dx: float, in_dy: float, out_dx: float, out_dy: float) -> bool:
+    """True, wenn sich die Laufrichtung am Punkt um > 45° ändert (Abzweig/Ecke)."""
+    li = math.hypot(in_dx, in_dy)
+    lo = math.hypot(out_dx, out_dy)
+    if li < 1.0 or lo < 1.0:
+        return False
+    return (in_dx * out_dx + in_dy * out_dy) / (li * lo) < _ABZWEIG_COS
 
 
 def _abstand_mm(erkennungsweite_m: float | None) -> float:
@@ -116,26 +132,39 @@ def plan_rettungszeichen_gang(raum: RaumModell, norm: NormProvider) -> list[Plat
         cx = (_bbox(r.polygon_mm)[0] + _bbox(r.polygon_mm)[2]) / 2
         building = assign_building(cx)
         for i, (px, py) in enumerate(pts):
-            # Pfeil zeigt zum nächsten Achsenpunkt Richtung Ausgang-Ende (pts[-1]);
-            # am Ausgang-Ende selbst die Richtung des letzten Schenkels beibehalten.
-            if len(pts) == 1:
-                # Einzel-RZ: zum nächsten Ausgang, sonst „unten" (Ausgang erreicht).
-                naechster = min(raum.ausgaenge, key=lambda a: (a.xy_mm[0] - px) ** 2 + (a.xy_mm[1] - py) ** 2,
-                                default=None) if raum.ausgaenge else None
-                if naechster is not None:
-                    richtung, _ = _richtung_und_rotation(naechster.xy_mm[0] - px, naechster.xy_mm[1] - py)
-                else:
-                    richtung = "unten"
-            elif i + 1 < len(pts):
-                richtung, _ = _richtung_und_rotation(pts[i + 1][0] - px, pts[i + 1][1] - py)
+            # Flucht-Richtung (zum Ausgang-Ende pts[-1]); am Ende der letzte Schenkel.
+            if i + 1 < len(pts):
+                out_dx, out_dy = pts[i + 1][0] - px, pts[i + 1][1] - py
+            elif len(pts) > 1:
+                out_dx, out_dy = px - pts[i - 1][0], py - pts[i - 1][1]
             else:
-                richtung, _ = _richtung_und_rotation(px - pts[i - 1][0], py - pts[i - 1][1])
-            # Normalfall: EIN Rotationsrahmen (Slice 3.1) — Block + Rotation + Spiegel.
-            catalog_key, rotation, mirror_x = _key_und_rotation(anf.symbol_katalog_keys, richtung)
+                naechster = min(raum.ausgaenge,
+                                key=lambda a: (a.xy_mm[0] - px) ** 2 + (a.xy_mm[1] - py) ** 2,
+                                default=None) if raum.ausgaenge else None
+                out_dx, out_dy = ((naechster.xy_mm[0] - px, naechster.xy_mm[1] - py)
+                                  if naechster is not None else (0.0, -1.0))
+            # NB-R07: Abzweig (Richtungswechsel gegenüber dem einlaufenden Schenkel) →
+            # Richtungspfeil zeigt den WEG (links/rechts). NB-R06: gerade Fortsetzung →
+            # down-Typ „geradeaus", so gedreht, dass der Welt-Pfeil ENTGEGEN der Flucht
+            # zeigt (Front schaut die ankommende Person an) — belegt Mollgasse 1OG/1KG/
+            # 2KG (Δ 178,6–180° an ≥6 Instanzen; abgleich/*/abgleich_*.md), identisch zur
+            # Tür-Regel R-B (`rotation_piktogramm_in_raum`).
+            abzweig = 0 < i < len(pts) - 1 and _ist_abzweig(
+                px - pts[i - 1][0], py - pts[i - 1][1], out_dx, out_dy)
+            if abzweig:
+                richtung, _ = _richtung_und_rotation(out_dx, out_dy)
+                catalog_key, rotation, mirror_x = _key_und_rotation(
+                    anf.symbol_katalog_keys, richtung)
+            else:
+                catalog_key, _, _ = _key_und_rotation(anf.symbol_katalog_keys, "unten")
+                rotation = _rotation_piktogramm_in_raum(out_dx, out_dy)
+                mirror_x = False
+                richtung = "unten"
             # Owner-Regel #111 (Pfeil-zur-Tür), Fallback-Ausprägung: das RZ am
             # Ziel-Ende zeigt mit dem UNTEN-Block physisch ZUR Ziel-Tür. rotation =
             # Winkel(RZ→Tür)+90° — identisch zum orientation-Rahmen (unten-Block-Basis
             # 270° → ziel−basis = A−270 ≡ A+90), auf 90° gerastert (wie im Anker-Pfad).
+            montage = _MONTAGE_DECKE          # NB-R14: Gang-Leuchten an die Decke
             if ziel_xy is not None and i == len(pts) - 1:
                 dx, dy = ziel_xy[0] - px, ziel_xy[1] - py
                 if math.hypot(dx, dy) > 50.0:
@@ -144,6 +173,7 @@ def plan_rettungszeichen_gang(raum: RaumModell, norm: NormProvider) -> list[Plat
                     rotation = _rotation_piktogramm_in_raum(dx, dy)
                     mirror_x = False
                     richtung = "unten"
+                    montage = _MONTAGE_WAND    # NB-R14: RZ an der Ziel-Tür = Wand
             out.append(
                 Platzierung(
                     xy_mm=(px, py),
@@ -156,6 +186,7 @@ def plan_rettungszeichen_gang(raum: RaumModell, norm: NormProvider) -> list[Plat
                     circuit_hint=f"AGV-{building}-F{_AGV_SV_F}",
                     covers_segment=[],
                     norm_quelle=anf.quelle,
+                    montage_art=montage,
                 )
             )
     return out
