@@ -6,8 +6,10 @@ In-Memory-``DxfPlan`` (factor 1.0 → Plan-Koordinaten sind mm).
 from __future__ import annotations
 
 import ezdxf
+import pytest
 from shapely.geometry import Point, Polygon
 
+from notbeleuchtung.raumerkennung import rest_komponenten as rk
 from notbeleuchtung.raumerkennung.dxf_load import XY, DxfPlan
 from notbeleuchtung.raumerkennung.rest_komponenten import komponenten_ohne_stempel
 from notbeleuchtung.raumerkennung.tueren import TuerOeffnung
@@ -364,3 +366,28 @@ def test_s3b_mindestflaeche_gilt_nach_der_rueckdehnung():
             and Polygon(r.polygon_mm).distance(Point(_TUER_KLEIN.xy_mm)) <= _ZELLE_MM]
     assert len(gang) == 1
     assert gang[0].intersection(_KLEINRAUM).area < 1e4
+
+
+# ── Punkt 2f / R-05 a: Raster-Obergrenze statt MemoryError ──────────────────
+# Die Grenzen werden für die Tests auf die 8×4-m-Box herabgesetzt (15 041 Zellen
+# bei 50 mm); echte Grenzen und der größte Plan des Korpus: LUECKEN.md § 18.
+
+def test_2f_zu_grosses_raster_rechnet_mit_groeberer_zelle(monkeypatch):
+    """Über ``_MAX_ZELLEN`` wird die Zelle ein Vielfaches von 50 mm (hier
+    100 mm) — mit Warnung, und der rechte Raum wird trotzdem gefunden."""
+    monkeypatch.setattr(rk, "_MAX_ZELLEN", 5000.0, raising=False)
+    with pytest.warns(RuntimeWarning, match="gröberem Raster.*50 → 100 mm"):
+        raeume = komponenten_ohne_stempel(None, _WAENDE, [_TUER], [_LINKS])
+    gross = max(raeume, key=lambda r: r.flaeche_m2)
+    assert 8.0 <= gross.flaeche_m2 <= 14.0
+    assert not Polygon(_LINKS).buffer(-200).intersects(Polygon(gross.polygon_mm))
+
+
+def test_2f_reissleine_ueberspringt_die_rest_stufe(monkeypatch):
+    """Bräuchte die Obergrenze eine Zelle über ``_MAX_RASTER_MM``, fällt die
+    R-Stufe mit Warnung weg (wie die Reißleine der Stempel-Flutung) — kein
+    Raster wird angelegt, der Parse läuft weiter."""
+    monkeypatch.setattr(rk, "_MAX_ZELLEN", 5000.0, raising=False)
+    monkeypatch.setattr(rk, "_MAX_RASTER_MM", 60.0, raising=False)
+    with pytest.warns(RuntimeWarning, match="Raster-Reißleine"):
+        assert komponenten_ohne_stempel(None, _WAENDE, [_TUER], [_LINKS]) == []

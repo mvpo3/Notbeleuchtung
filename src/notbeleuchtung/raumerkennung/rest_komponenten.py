@@ -22,11 +22,14 @@ Bauteil (Außenkontur = größte Union-Komponente).
 """
 from __future__ import annotations
 
+import math
 import re
+import warnings
 from collections.abc import Sequence
 from dataclasses import dataclass, field
 
 import numpy as np
+from scipy import ndimage
 from shapely.geometry import Point, Polygon
 from shapely.geometry.base import BaseGeometry
 from shapely.ops import unary_union
@@ -37,7 +40,7 @@ from skimage.segmentation import watershed
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
 
 from .dxf_load import XY, DxfPlan
-from .stempel_flutung import _fuelle, _Raster, _vektorisiere
+from .stempel_flutung import _fuelle, _rahmen, _Raster, _vektorisiere
 from .tueren import TuerOeffnung
 from .wandkoerper import (
     Wandkoerper,
@@ -54,6 +57,13 @@ _GANG_BREITE_MAX_MM = 2500.0
 _GANG_MIN_TUEREN = 3
 _TUER_RAND_MM = 600.0          # Tür zählt „am Rand“, wenn ≤ 0.6 m vom Polygon
 _BELEGT_PUFFER_MM = 100.0      # frisst 50-mm-Raster-Slivers zwischen Raum und Wand
+# Raster-Obergrenze (Punkt 2f, R-05 a): darüber wird die Zelle ein Vielfaches
+# von `raster_mm` (wie `fluchtweg._skelett_pfad`), über `_MAX_RASTER_MM` fällt
+# die Stufe weg (Reißleine wie `stempel_flutung._MAX_RASTER_ZELLEN`) — beides
+# mit RuntimeWarning statt MemoryError. Auf den 13 Plänen der Prüfstrecke und
+# den 12 Prüfplänen greift keine der beiden Grenzen (LUECKEN.md § 18).
+_MAX_ZELLEN = 1e8
+_MAX_RASTER_MM = 200.0
 
 # Treppen-/Lift-Blöcke (Mollgasse: 'STIEGE', 'LIFT') → Komponente = Stiegenhaus.
 _STIEGE_RX = re.compile(r"STIEGE|TREPPE|STAIR|LIFT|AUFZUG", re.IGNORECASE)
@@ -248,8 +258,25 @@ def komponenten_ohne_stempel(
     b = bounds_aus_wandkoerpern(wandkoerper)
     res = raster_mm
     pad = 4
-    h = int(np.ceil((b.max_xy[1] - b.min_xy[1]) / res)) + 2 * pad + 1
-    w = int(np.ceil((b.max_xy[0] - b.min_xy[0]) / res)) + 2 * pad + 1
+
+    def _form(res: float) -> tuple[int, int]:
+        return (int(np.ceil((b.max_xy[1] - b.min_xy[1]) / res)) + 2 * pad + 1,
+                int(np.ceil((b.max_xy[0] - b.min_xy[0]) / res)) + 2 * pad + 1)
+    h, w = _form(res)
+    if h * w > _MAX_ZELLEN:
+        res = raster_mm * math.ceil(math.sqrt(h * w / _MAX_ZELLEN))
+        ausdehnung = (f"Wand-Extents {(b.max_xy[0] - b.min_xy[0]) / 1000:.0f}x"
+                      f"{(b.max_xy[1] - b.min_xy[1]) / 1000:.0f} m, Raster {w}x{h} = "
+                      f"{h * w:.3g} Zellen über {_MAX_ZELLEN:.3g}")
+        if res > _MAX_RASTER_MM:
+            warnings.warn(f"Rest-Stufe übersprungen (Raster-Reißleine): {ausdehnung}, "
+                          f"Zelle {res:.0f} mm über {_MAX_RASTER_MM:.0f} mm — stempellose "
+                          "Restflächen fehlen (mm-Faktor oder Phantom-Geometrie prüfen).",
+                          RuntimeWarning, stacklevel=2)
+            return []
+        warnings.warn(f"Rest-Stufe mit gröberem Raster: {ausdehnung} — Zelle "
+                      f"{raster_mm:.0f} → {res:.0f} mm.", RuntimeWarning, stacklevel=2)
+        h, w = _form(res)
     raster = _Raster(x0=b.min_xy[0], y0=b.min_xy[1], res=res, pad=pad, shape=(h, w))
 
     innen = np.zeros((h, w), dtype=bool)
@@ -283,6 +310,17 @@ def komponenten_ohne_stempel(
     belege = _schacht_belege(plan)
     grenze = union.boundary if not union.is_empty else None
     frei = ~blockiert
+    siegel &= innen & ~wand & ~belegt
+    # Punkt 2f (RAM): Labeln, Rückdehnen und Vektorisieren nur im Rechteck der
+    # Außenkontur plus eine Zelle — `frei` und `siegel` liegen ganz darin. Das
+    # verschiebt nur um ganze Zellen (Label-Nummern, Watershed-Reihenfolge und
+    # Konturen bleiben zellgleich); Speicher und Laufzeit folgen dem Gebäude
+    # statt den Wand-Bounds (Muthgasse E2: Fremdcluster spannen 504 x 276 m).
+    box = ndimage.find_objects(innen.view(np.uint8))
+    if not box:
+        return []
+    fenster = _rahmen(box[0], innen.shape)
+    frei, siegel = frei[fenster], siegel[fenster]
     labels = label(frei)
     # Slice S3b (docs/GATE_TUERSTAPEL.md § 7): die Türscheiben geodätisch
     # zurückdehnen wie stempel_flutung.masken — nur Zellen, die allein die
@@ -293,18 +331,22 @@ def komponenten_ohne_stempel(
     # Keine Lochfüllung: `_vektorisiere` nimmt ohnehin die Außenkontur; die
     # Füllung wirkte nur an Diagonal-Engstellen und zog dort Wandzellen als
     # Brücke ein (Rennweg DG2: Schacht-Lappen 1,85 m² an `rest_1`).
-    siegel &= innen & ~wand & ~belegt
     if siegel.any() and labels.max():
         labels = watershed(np.zeros(labels.shape, dtype=np.uint8), markers=labels,
                            mask=frei | siegel)
     out: list[Raum] = []
-    for lbl in range(1, int(labels.max()) + 1):
-        m = labels == lbl
+    for lbl, box_l in enumerate(ndimage.find_objects(labels), start=1):
+        if box_l is None:
+            continue
+        rahmen = _rahmen(box_l, labels.shape)
+        m = labels[rahmen] == lbl
         # _MIN_M2 erst NACH der Rückdehnung (vorher fielen Kleinräume hinter
         # einer Tür weg, deren erodierter Kern < 1 m² war).
         if m.sum() * res * res < _MIN_M2 * 1e6:
             continue
-        shp = _vektorisiere(m, raster, grenze)
+        shp = _vektorisiere(m, raster, grenze,
+                            (fenster[0].start + rahmen[0].start,
+                             fenster[1].start + rahmen[1].start))
         if shp.is_empty or shp.area < _MIN_M2 * 1e6:
             continue
         typ, flucht, communal = _typisiere(shp, tueren, stiegen, sto, schacht_texte, belege)

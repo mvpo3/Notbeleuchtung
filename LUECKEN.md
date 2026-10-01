@@ -176,7 +176,8 @@ Prüfstrecken-Ausgabe außerhalb des Contracts (Attribute am Provider): `wand_wa
     Ursache gemessen: Treppe/Lift nur als lose Linien, Stiegenhaus-Erkennung liest nur Blocknamen (R-09).
   - Warnung nicht im Bericht (O-04, P1); im Basislauf auf allen 6 Geschossen gesetzt. Kalibrierung ohne
     Wand-Layer über `$INSUNITS` = 4 → Faktor 1; die Türprobe sagt auf OG4/OG3/EG 10 (D-04, P1).
-  - `rest_komponenten` ohne Raster-Reißleine (R-05 a, P1).
+  - `rest_komponenten` ohne Raster-Reißleine (R-05 a, P1). **→ 2f (§ 18):** gröbere Zelle über 1e8 Zellen,
+    Reißleine über 200 mm, je mit `RuntimeWarning`.
   - **RAM/Render** (§ 6.7, P0) und Parse-Last: EG 6,30 GB / 485,8 s (`docs/INTEGRATION_2026-09-30.md:190`),
     Basislauf EG 6,30 GB / 476,6 s.
   - **OG1–OG3 nur teilweise gemessen:** `docs/INTEGRATION_2026-09-30.md:201` („nicht gemessen"); Prüfstrecke
@@ -266,6 +267,9 @@ Prüfstrecken-Ausgabe außerhalb des Contracts (Attribute am Provider): `wand_wa
   **unbelegt (nur VERLAUF)**; der Auftrag nennt OG4 13,3 GB. UG/EG/OG1–OG3 liefen nur ohne Render.
 - PDF-Export der Pipeline nutzt denselben Frontend-Weg (O-03), auf Am Rain nicht gemessen.
 - Prio **P0** (Prüfstrecke bricht an der RAM-Grenze ab) · Lane Selman (`plan_pruefen`), PDF gemeinsam.
+- **→ 2f erledigt (§ 18):** gemessen je Phase; Treiber F-Stufe (Vollraster je Stempel und Stufe), Linientyp-Striche
+  im Render, Figuren erst mit dem Zyklen-GC frei, EG-Parse je OG. Gemeinsamer Lauf aller 13 Pläne mit Render:
+  Spitze 4,19 GB, 4 829 s. PDF-Export (O-03) bleibt offen.
 
 ### 6.8 Leuchten in `KEIN_RAUM` / `WOHNUNG_PRIVAT` (Leonis-Lane — gemeldet)
 
@@ -392,8 +396,8 @@ eigenen Lauf § 7; „geprüft (Code)" = am Code nachgelesen; sonst **unbelegt**
 | Modell-Restüberlappung Barawitzka 4 / 7,131 m², Muthgasse 10 / 15,426 m², 2KG 2 / 2,946 m², Rennweg EG 2 / 1,740 m² | geprüft (Basislauf) | gleich (Muthgasse 15,425 m², Rundung) |
 | Räume je Plan („Räume gesamt", „ohne Typ") | **nicht vergleichbar** | VERLAUF zählt die Kaskade, der Basislauf das Modell (z. B. Mollgasse 1KG 29 gegen 31, Am Rain UG 82 = 82) |
 | Mollgasse 1KG 22, 2KG 48 Stempel ohne Polygon | **unbelegt (nur VERLAUF)** | Stempel-Zuordnung nicht im Modell, nicht nachgezählt |
-| Laufzeiten und Peaks der Prüfstrecke (z. B. OG4 1 551,7 s / 13,28 GB, EG 856,5 s / 6,65 GB) | **unbelegt (nur VERLAUF)** | Basislauf misst Parse + Platzierung ohne Render (EG 476,6 s / 6,30 GB) |
-| UG-Normallauf nach 394 s bei 14,3 GB an der RAM-Reißleine abgebrochen; Render OG4 5,6 GB und 107 s je Bild; Kaskade allein 0,45 GB | **unbelegt (nur VERLAUF)** | Mechanismus am Code bestätigt (§ 6.7), Zahlen nicht nachgemessen |
+| Laufzeiten und Peaks der Prüfstrecke (z. B. OG4 1 551,7 s / 13,28 GB, EG 856,5 s / 6,65 GB) | **unbelegt (nur VERLAUF)** | Basislauf misst Parse + Platzierung ohne Render (EG 476,6 s / 6,30 GB); **2f (§ 18):** OG4 mit Render nachgemessen 1 601 s / 13,19 GB |
+| UG-Normallauf nach 394 s bei 14,3 GB an der RAM-Reißleine abgebrochen; Render OG4 5,6 GB und 107 s je Bild; Kaskade allein 0,45 GB | **unbelegt (nur VERLAUF)** | Mechanismus am Code bestätigt (§ 6.7), Zahlen nicht nachgemessen; **2f (§ 18):** Render OG4 nachgemessen 5,61 GB / 108 s je Bild, Kaskade 0,45 GB |
 | Gegenprobe OG4 ohne Render: `raeume.json` byte-gleich | **unbelegt (nur VERLAUF)** | nicht wiederholt |
 | Suite `6 failed, 1216 passed …` und Gate 1 Verstoß (Integration) | nicht in diesem Schritt nachgemessen | Quelle für diesen Stand ist `docs/INTEGRATION_2026-09-30.md` (Gegenprüfung auf `9f38f58`: 6 failed / 2223 passed; Gate 1 Verstoß) |
 | 2026-09-12 Einwand 5: Freiflächen-Regel nur außerhalb des EG, Südgarten-Tür bleibt `final_exit` | geprüft (Code, Test) | `tuer_typisierung.py:157-179` (`not eg`), `test_soll_mollgasse.py::test_soll_hofausgaenge_cluster_a_und_b`; Tür heißt heute `tuer_67` |
@@ -1258,3 +1262,153 @@ sind unverändert gegenüber `22cd85e`.
   (Türpunkt im Raum oder Polygon-Überlappung mit dem Erschließungsraum) ist nicht untersucht. P2 · Selman.
 - Leuchten in privaten GANG-Räumen (synthetisch 1 bis 5 je Fall) bleiben Board 1 (§ 6.8/6.9). Die Durchleitung
   ändert daran nichts. Leonis, nur gemeldet.
+
+## 18. Punkt 2f — RAM der Prüfstrecke (erledigt mit dem Commit dieses Eintrags: **Ziel erreicht**)
+
+**Auftrag (Owner 2026-09-30):** RAM-Spitze je Prüfplan messen und senken, bis Am Rain OG4 und die großen Pläne
+(Am Rain EG 74,5 MB, UG 46,6 MB, OG1 50,8 MB) mit den anderen in **einem** Prüfstrecken-Lauf (`scripts/plan_pruefen.py`
+ohne Argument, 13 Pläne nacheinander in einem Prozess) durchlaufen: Spitze je Plan ≤ 8 GB Working Set, keine
+Reißleine, kein `MemoryError`, mit Plan-Render. Ergebnisse auf den 12 Prüfplänen feldgleich, Gate unverändert.
+
+**Messung.** Je Plan ein eigener Prozess, allein auf dem Rechner, Wrapper um `plan_pruefen.plan_pruefen(dxf)` (Runner
+`_ram.py` im Session-Scratch). Er umhüllt die Phasen: Laden (`lade_dxf`), Kaskade (`_raum_kaskade` bzw.
+`raeume_aus_kaskade`, Wandkörper), F-Stufe (`flute_stempel`), R-Stufe (`komponenten_ohne_stempel`), Provider-Parse
+(Außenbereich, Freifläche, Fluchtweg), Platzierung, Render (`_figur` bis `_speichern`, je Bildfunktion) und den
+EG-Parse in `_restweg_im_eg`. Ein Sampler liest den Working Set alle 10 ms (`GetProcessMemoryInfo`), an jeder
+Phasengrenze zusätzlich den monotonen `PeakWorkingSetSize` — ein neuer Prozess-Peak gehört so genau der Phase, in der
+er entstand. Guard 14 GB (rund 16,7 GB frei). **Vorher** = Kopf `d63bc4c` (`git archive` von `scripts/`, `src/`,
+`CAD_Symbole/` und der Barawitzka-Referenz-DXF in den Scratch, gestartet im Worktree wegen `Projekte/_eingang`),
+**Nachher** = Arbeitsbaum dieses Commits. Ausgabe per `PLAN_PRUEFEN_ERGEBNIS` in den Scratch; die getrackten
+`Projekte/_ergebnis/` sind unverändert.
+
+**Ursachen (gemessen, nach Gewicht):**
+
+1. **Plan-Render — Linientypen in Einzelstriche zerlegt.** Das ezdxf-Frontend zeichnet jeden Strich eines
+   gestrichelten oder gepunkteten Linientyps als eigenes Segment. Am Rain OG4, ein `_figur` allein: **16,9 Mio.
+   Segmente** (Layer `Achsen` 3,99 Mio., `Elektro` 3,56 Mio.); eine 84-m-Achse (`LINE` 302D4, Linientyp `PUNKT2_S9`)
+   allein 372 677 Striche → **5,61 GB und 108 s je Bild**, Speichern 44 s. HATCH-Muster sind es nicht (7 Muster-Hatches,
+   24 Linien). Vorher reißen Am Rain UG, OG1, OG2 und EG den Guard schon im **ersten** Bild, OG3 im zweiten.
+2. **Geschlossene Figuren leben bis zum Zyklen-GC** (Referenzzyklen in matplotlib): OG4 nach `plt.close` 5,65 GB, nach
+   `gc.collect()` 0,95 GB. Die vorige Figur lebte so neben der neuen — OG4 ab dem ersten Bild auf einem Plateau von
+   11 GB, Spitze 13,19 GB im fünften Bild.
+3. **F-Stufe — ein Vollraster je Stempel und Versiegelungsstufe** (`stempel_flutung._Flutwerk.masken`, Cache über
+   5 Stufen; dazu das Distanzfeld der EDT, gerechnet nur für die Indizes). Muthgasse E2: Flutung der
+   Prüfstrecken-Kaskade **11,31 GB / 597 s**, die zweite Flutung im Provider-Parse lief in den Guard (**14,03 GB** nach
+   1 684 s). Am Rain, Flutung der Prüfstrecken-Kaskade vorher: EG 6,33 GB / 304 s, OG1 5,33, OG2 4,56, UG 3,94,
+   OG3 2,14 GB. Mollgasse 1KG/2KG/EG: Spitze jeweils in der Flutung. Runner (Parse + Platzierung, allein): Muthgasse
+   **631,6 s / 11,29 GB**.
+4. **Restweg im EG — je Obergeschoss ein voller EG-Parse** (`_restweg_im_eg`, Aufruf aus `_fachteil3`) neben dem OG im
+   Speicher: OG4 582 s, EG-Flutung dort 12,64 GB auf dem Render-Plateau. Im Lauf über alle Pläne viermal (Am Rain
+   OG1–OG4).
+5. **Keine Treiber (gemessen):** Laden der DXF (OG4 0,21 GB, Am Rain EG 0,58 GB Prozess nach dem ersten Laden); das
+   zweite Laden im Provider-Parse hebt die Spitze nicht über das Plateau (EG nachher 2,52 → 2,60 GB). Die R-Stufe
+   (Muthgasse vorher 0,82 GB Prozess, Am Rain EG 1,95 GB). Ein 50-mm-Raster über 34 km entsteht auf dem Kopf
+   nicht mehr — der Fern-Filter aus `ed292e1` hält es klein (OG4-Kaskade 0,45 GB).
+
+**Änderungen** (je danach Runner feldgleich):
+
+- `scripts/plan_pruefen.py` (Render, erlaubt für 2f): `_figur` zeichnet mit `Configuration(min_dash_length=50 mm)` —
+  Strich und Lücke mindestens 50 mm, auf 1 200 px höchstens 2 px (OG4: 16,9 Mio. → 45 264 Segmente, 5,61 → 0,41 GB,
+  108 → 12 s je Bild, Speichern 44 → 2,5 s) — und ruft `gc.collect()` vor jeder Figur; `main` ruft es nach jedem Plan.
+  `_restweg_im_eg` rechnet die Restweg-Zeile je EG-Plan einmal je Prozess (`_RESTWEG_EG`); der EG-Lauf legt seine Zeile
+  nach dem eigenen Parse ab, nur bei Geschoss „EG" — derselbe Aufruf `parse(…, "EG")`. Ohne Argument läuft der EG vor
+  seinen OG (Sortierung), dann parst kein OG mehr den EG.
+- `stempel_flutung.py`: Flutregionen als **Ausschnitt** um ihre Box plus eine Zelle (`_Maske`, `_rahmen`) statt als
+  Vollraster. Relief, Watershed, Rückdehnung, Lochfüllung und Konturen laufen auf dem Ausschnitt; er ist nur um ganze
+  Zellen verschoben, also zellgleich (`_vektorisiere(…, versatz)` verschiebt die Konturen vor der Flächenwahl). Die EDT
+  liefert nur noch die Indizes (`return_distances=False`).
+- `rest_komponenten.py`: Labeln, Watershed und Vektorisieren im Rechteck der Außenkontur plus eine Zelle, je Label nur
+  seine Box (`ndimage.find_objects`) statt `labels == lbl` über das Vollraster. **Raster-Obergrenze (R-05 a):** über
+  `_MAX_ZELLEN` = 1e8 Zellen wird die Zelle ein Vielfaches von 50 mm (wie `fluchtweg._skelett_pfad`); bräuchte das mehr
+  als `_MAX_RASTER_MM` = 200 mm, fällt die R-Stufe weg (Reißleine wie `stempel_flutung._MAX_RASTER_ZELLEN`) — beides mit
+  `RuntimeWarning` statt `MemoryError`. Auf den 13 Plänen der Prüfstrecke und den 12 Prüfplänen greift keine der beiden
+  Grenzen (keine Warnung im gemeinsamen Lauf und in der Runner-stderr).
+- Nicht geändert: HATCH-Darstellung, DPI, Bildausschnitt (OG4 zeigt weiter 38 km Weltausdehnung, D-05 — kein
+  RAM-Thema) und das doppelte Laden mit doppelter Kaskade (kein Treiber).
+
+**Tabelle je Plan** (Einzellauf = je Plan eigener Prozess, allein; Spitze = Working Set; „Grundlast" = keine Phase
+hebt sich ab; Guard = Abbruch bei 14 GB, die Spitze ist dann ≥):
+
+| Plan | DXF MB | vorher: Spitze GB · Phase · Laufzeit | nachher Einzellauf: Spitze GB · Phase · Laufzeit | gemeinsamer Lauf: Spitze GB · Laufzeit | wirksame Änderung |
+|---|--:|---|---|---|---|
+| Rennweg_EG | 4,0 | 0,48 · Grundlast · 59 s | 0,47 · Grundlast · 54 s | 1,38 · 50 s | — |
+| Rennweg_OG3 | 3,8 | 0,50 · Grundlast · 52 s | 0,48 · Grundlast · 53 s | 1,25 · 48 s | — |
+| Barawitzka_EG | 12,9 | 1,32 · Render (Kacheln) · 266 s | 1,13 · Grundlast · 266 s | 1,43 · 255 s | Render, GC |
+| Mollgasse_1KG | 4,1 | 0,89 · F-Stufe (Provider) · 120 s | 0,62 · F-Stufe (Provider) · 105 s | 1,27 · 99 s | F-Stufe |
+| Mollgasse_2KG | 7,8 | 1,27 · F-Stufe (Provider) · 207 s | 0,88 · F-Stufe (Provider) · 180 s | 1,32 · 168 s | F-Stufe |
+| Mollgasse_EG | 10,3 | 1,56 · F-Stufe (Provider) · 307 s | 1,07 · Grundlast · 264 s | 1,37 · 250 s | F-Stufe |
+| Muthgasse_E2 | 23,2 | **≥ 14,03 Guard** · F-Stufe (Provider; in der Prüfstrecken-Kaskade 11,31) · Abbruch nach 1 684 s | 3,48 · F-Stufe (Provider) · 929 s | 3,57 · 908 s | F-Stufe |
+| AmRain_OG4 | 12,9 | **13,19** · Render (Bild 05, Plateau 11 GB) · 1 601 s | 3,02 · EG-Parse (Außenbereich) · 444 s | 1,28 · 126 s | Render, GC, EG-Parse |
+| AmRain_OG3 | 28,1 | **≥ 14,00 Guard** · Render (Bild 02, nach 01 Plateau 12,41) · Abbruch nach 474 s | 3,51 · EG-Parse · 685 s | 1,61 · 361 s | Render, GC, EG-Parse |
+| AmRain_UG | 46,6 | **≥ 14,01 Guard** · Render (Bild 01) · Abbruch nach 383 s | 1,84 · Grundlast · 418 s | 1,92 · 401 s | Render, F-Stufe |
+| AmRain_OG2 | 38,5 | **≥ 14,00 Guard** · Render (Bild 01) · Abbruch nach 484 s | 3,57 · EG-Parse · 818 s | 1,83 · 492 s | Render, F-Stufe, EG-Parse |
+| AmRain_OG1 | 50,8 | **≥ 14,00 Guard** · Render (Bild 01) · Abbruch nach 516 s | 3,70 · EG-Parse · 901 s | 1,82 · 570 s | Render, F-Stufe, EG-Parse |
+| AmRain_EG | 74,5 | **≥ 14,00 Guard** · Render (Bild 01) · Abbruch nach 669 s | 4,19 · Außenbereich (Provider) · 1 057 s | **4,19** · 1 034 s | Render, F-Stufe |
+
+Vorher Muthgasse aus dem ersten Messlauf (Kopie ohne `CAD_Symbole/`; der Guard griff vor der Platzierung, die fehlende
+Photometrie wirkt dort nicht), alle anderen aus dem Lauf mit vollständiger Kopie. Die höhere Spitze kleiner Pläne im
+gemeinsamen Lauf ist die Grundlast des Prozesses aus den Plänen davor (Python-Heap).
+
+**Gemeinsamer Prüfstrecken-Lauf** (`scripts/plan_pruefen.py` ohne Argument, unverändert gestartet; 13 Pläne in einem
+Prozess, allein auf dem Rechner; Überwachung von außen alle 20 ms, Guard 26 GB; Runner `_gemeinsam.py` im Scratch):
+**Exit 0, kein Guard, 0 × `MemoryError`, 0 Warnungen** (Reißleine, gröberes Raster, „fehlgeschlagen"), Plan-Render
+für alle 13 Pläne, **4 829 s**, Prozess-Spitze **4,19 GB** (in Am Rain EG). **Ziel erreicht:** Spitze je Plan ≤ 4,19 GB
+gegen das Ziel ≤ 8 GB. Die Ausgaben des gemeinsamen Laufs (`raeume.json`, `bericht.md` ohne die Zeile „Laufzeit",
+`unbekannte_muster/*.json`) sind 13/13 gleich denen der Einzelläufe — auch die Restweg-Zeilen der vier Am-Rain-OG
+(aus dem EG-Lauf statt aus einem eigenen EG-Parse).
+
+**Feldgleich:**
+
+- **Runner, 12 Prüfpläne** (`tests/plaene.py`; `provider.parse` + Default-Platzierung; je Raum id, Typ, Polygon,
+  Fläche, Klasse, Wohnung, Flags; Türen, Ausgänge, Segmente, Anker, korrigierte Rollen, Warnungen, Leuchten): Kopf
+  `d63bc4c` gegen den Arbeitsbaum **12/12 gleich in allen 18 Feldern**. Muthgasse E2 Parse + Platzierung 631,6 s /
+  11,29 GB → 271,8 s / 1,79 GB.
+- **Runner, Am Rain alle 6 Geschosse** (zusätzlich, je Plan allein): **6/6 gleich in allen 18 Feldern**. Parse + Platzierung
+  EG 478,9 s / 6,30 GB → 307,5 s / 2,71 GB, OG1 254,6 / 5,31 → 102,8 / 0,67, OG2 219,2 / 4,54 → 88,5 / 0,63, UG 113,2 / 3,91 →
+  50,8 / 0,65, OG3 99,3 / 2,12 → 46,1 / 0,45, OG4 21,9 / 0,43 → 16,1 / 0,23.
+- **Prüfstrecke** (Einzellauf vorher gegen nachher, `raeume.json`, `bericht.md` ohne „Laufzeit", Muster-JSON):
+  **7/7 gleich**, wo der Vorher-Lauf durchkam (Rennweg EG/OG3, Barawitzka EG, Mollgasse 1KG/2KG/EG, Am Rain OG4).
+  Muthgasse und Am Rain EG/UG/OG1–OG3 haben vorher keine Ausgabe (Guard).
+- Plan-Bilder angesehen (Mollgasse EG `01_render.png` vorher/nachher, Am Rain EG `02_raeume.png`): gleich bis auf eine
+  gröbere Strichelung feiner Linientypen.
+
+**Tests** — rot vor dem Fix (`pytest tests/raumerkennung/test_stempel_flutung.py
+tests/raumerkennung/test_rest_komponenten.py -k 2f --tb=line`, Quelle als Kopie des Kopfs `d63bc4c` + Tests,
+Kurzform):
+
+```
+test_stempel_flutung.py:195: AssertionError: assert (435625 * 10) < 435625
+test_rest_komponenten.py:379: Failed: DID NOT WARN. No warnings of type (<class 'RuntimeWarning'>,) were emitted.
+test_rest_komponenten.py:392: Failed: DID NOT WARN. No warnings of type (<class 'RuntimeWarning'>,) were emitted.
+3 failed, 31 deselected in 2.08s
+```
+
+Grün: `test_stempel_flutung.py` + `test_rest_komponenten.py` 34 passed. Neu sind
+`test_stempel_flutung.py::test_2f_flutmasken_sind_ausschnitte` (Wandkörper 100 m daneben: Ergebnis gleich, jede Maske
+< 1/10 des Rasters), `test_rest_komponenten.py::test_2f_zu_grosses_raster_rechnet_mit_groeberer_zelle` und
+`::test_2f_reissleine_ueberspringt_die_rest_stufe` (Grenzen per `monkeypatch` auf die 8×4-m-Box herabgesetzt). Render
+und Restweg-Zeile bindet kein Test; Beleg sind Messung und Ausgabevergleich oben.
+
+**Volle Suite** (allein, nach den Messläufen, 17 min 32 s): `6 failed, 2245 passed, 11 skipped, 6 deselected,
+15 xfailed` — dieselben 6 roten wie nach 2d (3 × `test_keine_leuchten_in_wohnung_privat` OG1/OG2/DG1 = Board 1 Leonis,
+`test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell`, die 2 S4c-Pins), 2245 = 2242 + 3 neue. Kein Test
+umgestellt, keine Schwelle, kein Soll, kein Marker angefasst.
+
+**Gate:** `pytest -m gate tests/gate` 3 passed, 1 xfailed. `gate_messung` auf dem Arbeitsbaum dieses Commits
+(`_arbeit/gate/messung_d63bc4c-dirty-2f.json`, 62,9 s), `pruefe_gate` gegen `nullmessung_f15d03f.json`: (0) unsauberer
+Arbeitsbaum (erwartet) und **(3) `M4.einraum` DG2 0 → 1** (Enis Board 3, unverändert); M17 18/18 BESTANDEN; alle
+Messfelder außer `meta` gleich `messung_5f2f024-dirty-2d.json`.
+
+**Offen nach 2f:**
+
+- **PDF-Export** (`hauptengine/render/pdf_export.py:116`, O-03) zeichnet mit demselben Frontend ohne
+  `min_dash_length`; auf Am Rain ist dieselbe Strich-Zerlegung zu erwarten (300 dpi, A0). Nicht gemessen, nicht
+  geändert (gemeinsame Lane). P1 · gemeinsam.
+- Ein Einzellauf eines OG (`plan_pruefen.py AmRain_OG1.dxf`) parst den EG weiter selbst (Cache leer): nachher 3,70 GB,
+  +318 s. Unter dem Ziel; nur der Lauf ohne Argument spart den EG-Parse. P2 · Selman.
+- Nach der Prüfstrecken-Kaskade bleibt ein Plateau (Muthgasse rund 1,9 GB, Am Rain EG rund 2,5 GB), auf dem
+  Provider-Parse und Bilder aufsetzen. Ursache (Allokator oder gehaltene Objekte) nicht untersucht, unter dem Ziel.
+  P2 · Selman.
+- `Projekte/_ergebnis/` (getrackt) ist nicht neu geschrieben; der gemeinsame Lauf liegt im Scratch. Ein Lauf in das
+  getrackte Verzeichnis geht jetzt (rund 80 min, ≤ 4,2 GB) — als eigener Commit nach Owner-Entscheid. P2 · Selman.
+- Am Rain OG4 `01_render.png` zeigt weiter die 38-km-Weltausdehnung (D-05). P2 · Selman.

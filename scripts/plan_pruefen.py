@@ -12,6 +12,7 @@ schräg dominante Richtungen bleiben bei 0° und werden im Bericht vermerkt.
 """
 from __future__ import annotations
 
+import gc
 import itertools
 import json
 import math
@@ -36,6 +37,7 @@ import ezdxf
 import matplotlib.pyplot as plt
 import numpy as np
 from ezdxf.addons.drawing import Frontend, RenderContext
+from ezdxf.addons.drawing.config import Configuration
 from ezdxf.addons.drawing.matplotlib import MatplotlibBackend
 from ezdxf.addons.drawing.properties import LayoutProperties
 from shapely.geometry import Point, Polygon
@@ -72,6 +74,8 @@ ERGEBNIS = Path(os.environ.get("PLAN_PRUEFEN_ERGEBNIS",
                                REPO / "Projekte" / "_ergebnis"))
 
 _FARBEN = plt.cm.tab20.colors  # type: ignore[attr-defined]
+#: Mindestlänge von Strich und Lücke im Plan-Render (mm), s. `_figur` (2f).
+_MIN_STRICH_MM = 50.0
 
 
 def _git_hash() -> str:
@@ -142,12 +146,20 @@ def _figur(plan: DxfPlan, zoom=None) -> tuple[plt.Figure, plt.Axes]:
     doc = plan.doc
     if "Standard" in doc.styles:  # SHX-'txt' hat Glyph-Lücken im mpl-Backend
         doc.styles.get("Standard").dxf.font = "DejaVuSans.ttf"
+    # Punkt 2f (RAM): geschlossene Figuren hängen in Referenzzyklen und gehen
+    # erst mit dem Zyklen-GC — ohne das lebte die vorige Figur neben der neuen.
+    gc.collect()
     fig = plt.figure(figsize=(12, 12), dpi=100)
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_axis_off()
     lp = LayoutProperties.from_layout(doc.modelspace())
     lp.set_colors("#FFFFFF")
-    Frontend(RenderContext(doc), MatplotlibBackend(ax)).draw_layout(
+    # Punkt 2f (RAM): Strich und Lücke einer Linientyp-Linie mindestens
+    # `_MIN_STRICH_MM` — sonst zerlegt das Frontend z. B. eine 84-m-Achse mit
+    # Punkt-Linientyp in 372 677 Einzelstriche (Am Rain OG4: 16,9 Mio. Segmente,
+    # 5,6 GB und 108 s je Bild). 50 mm sind auf 1 200 px ≤ 2 px.
+    cfg = Configuration(min_dash_length=_MIN_STRICH_MM / plan.factor)
+    Frontend(RenderContext(doc), MatplotlibBackend(ax), config=cfg).draw_layout(
         plan.space, finalize=True, layout_properties=lp)
     ax.set_aspect("equal")
     x0, x1 = ax.get_xlim()
@@ -1108,6 +1120,27 @@ def _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz,
     return l
 
 
+#: Punkt 2f (RAM): Restweg-Zeile je EG-Plan einmal je Prozess. Ohne das parste
+#: der Lauf über alle Pläne den EG-Plan je Obergeschoss neu — neben dem OG im
+#: Speicher (Am Rain: 4 OG × EG-Parse). Der EG-Lauf selbst legt seine Zeile
+#: hier ab (`_fachteil3`, nur bei Geschoss „EG" = derselbe Parse-Aufruf).
+_RESTWEG_EG: dict[Path, str] = {}
+
+
+def _restweg_zeile(eg_dxf: Path, eg) -> str:
+    """Restweg-Zeile aus dem RaumModell des EG-Plans."""
+    stg = {f"seg_graph_{t.id}" for t in eg.tueren
+           if t.tuer_detail == "stiegenhaustuer"}
+    laengen = [s.laenge_mm for s in eg.zirkulation.segmente
+               if s.segment_id in stg]
+    if not laengen:
+        return (f"Restweg im EG: unbekannt ({eg_dxf.name}: kein Segment "
+                "Stiegenhaustür→final_exit)")
+    return (f"Restweg im EG ({eg_dxf.name}): "
+            f"{min(laengen) / 1000:.1f}–{max(laengen) / 1000:.1f} m "
+            "(Stiegenhaustür → nächster final_exit)")
+
+
 def _restweg_im_eg(dxf: Path, geschoss: str) -> str | None:
     """Für OG-Pläne: Restweg im EG (Stiegenhaustür → final_exit) aus dem
     EG-Plan derselben Projektfamilie in Projekte/_eingang; sonst 'unbekannt'.
@@ -1119,18 +1152,12 @@ def _restweg_im_eg(dxf: Path, geschoss: str) -> str | None:
     kandidaten = sorted(Path("Projekte/_eingang").glob(f"{familie}*EG*.dxf"))
     if not kandidaten:
         return "Restweg im EG: unbekannt (kein EG-Plan in Projekte/_eingang)"
-    from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
-    eg = ArchitekturRaumProvider().parse(str(kandidaten[0]), "EG")
-    stg = {f"seg_graph_{t.id}" for t in eg.tueren
-           if t.tuer_detail == "stiegenhaustuer"}
-    laengen = [s.laenge_mm for s in eg.zirkulation.segmente
-               if s.segment_id in stg]
-    if not laengen:
-        return (f"Restweg im EG: unbekannt ({kandidaten[0].name}: kein Segment "
-                "Stiegenhaustür→final_exit)")
-    return (f"Restweg im EG ({kandidaten[0].name}): "
-            f"{min(laengen) / 1000:.1f}–{max(laengen) / 1000:.1f} m "
-            "(Stiegenhaustür → nächster final_exit)")
+    schluessel = kandidaten[0].resolve()
+    if schluessel not in _RESTWEG_EG:
+        from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
+        eg = ArchitekturRaumProvider().parse(str(kandidaten[0]), "EG")
+        _RESTWEG_EG[schluessel] = _restweg_zeile(kandidaten[0], eg)
+    return _RESTWEG_EG[schluessel]
 
 
 def _geschoss_md(befund, ausg_warnungen) -> list[str]:
@@ -1263,6 +1290,8 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     geschoss = befund.geschoss
     bundle = build_default_bundle()
     modell = bundle.raum.parse(str(dxf), geschoss)
+    if geschoss == "EG":     # 2f: Restweg-Zeile für die OG derselben Familie
+        _RESTWEG_EG.setdefault(dxf.resolve(), _restweg_zeile(dxf, modell))
     platz = bundle.platzierer.place(modell, bundle.norm, None)
     kc = getattr(bundle.raum, "letzter_kreuzcheck", None)
     flw_warnungen = list(getattr(bundle.raum, "fluchtweg_warnungen", []))
@@ -2036,6 +2065,7 @@ def main() -> int:
                   f"{r['referenz_fehlend']} fehlend / {r['referenz_ueberzaehlig']} "
                   f"überzählig ({r['referenz_quote'] * 100:.0f} %)")
         ergebnisse.append(r)
+        gc.collect()   # 2f: Plan, Modell und Figuren des Plans vor dem nächsten freigeben
     if ergebnisse:
         _verlauf_schreiben(ergebnisse, commit)
         _material_report(ergebnisse)

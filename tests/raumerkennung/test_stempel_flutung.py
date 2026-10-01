@@ -5,6 +5,7 @@ die echte Rennweg-Probe läuft auf dem versionierten Plan (``tests/plaene.py``).
 """
 from __future__ import annotations
 
+import numpy as np
 import pytest
 from shapely.geometry import Polygon
 
@@ -166,3 +167,29 @@ def test_normale_extents_loesen_die_reissleine_nicht_aus():
     with warnings.catch_warnings():
         warnings.simplefilter("error", RuntimeWarning)   # jede Warnung = Fehler
         assert flute_stempel(None, [_stempel(2500, 2000, 20.0)], wk, [tuer])
+
+
+def test_2f_flutmasken_sind_ausschnitte(monkeypatch):
+    """Punkt 2f (RAM): die Flutregion je Stempel und Stufe liegt als Ausschnitt
+    um ihre Box vor, nicht als Vollraster — ein Wandkörper 100 m daneben
+    vergrößert das Raster, nicht die Masken (Muthgasse E2: vorher 11,3 GB in
+    der Flutung, Stempel × Stufen × Vollraster). Das Ergebnis bleibt gleich."""
+    from notbeleuchtung.raumerkennung import stempel_flutung as sf
+    gesehen = []
+    orig = sf._Flutwerk.masken
+
+    def spion(self, stufe):
+        out = orig(self, stufe)
+        gesehen.append((self.wand.size, out))
+        return out
+    monkeypatch.setattr(sf._Flutwerk, "masken", spion)
+    wk = _raum_mit_tuer(1500, 2500) + [_wand(100_000, 0, 100_200, 4000)]
+    tuer = TuerOeffnung(xy_mm=(5100, 2000), breite_mm=1000, winkel_grad=None,
+                        quelle="arc")
+    (fr,) = flute_stempel(None, [_stempel(2500, 2000, 20.0)], wk, [tuer])
+    assert fr.flag == "ok"
+    assert Polygon(fr.polygon_mm).area / 1e6 == pytest.approx(20.0, rel=0.1)
+    assert gesehen
+    for zellen, masken in gesehen:
+        for m in masken.values():
+            assert np.asarray(getattr(m, "feld", m)).size * 10 < zellen
