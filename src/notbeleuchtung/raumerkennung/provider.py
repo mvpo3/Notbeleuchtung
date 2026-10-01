@@ -133,6 +133,10 @@ class ArchitekturRaumProvider:
         # plus Warnung hier (`keine_geometrie`, `keine_raeume`). Abbruch nur,
         # wenn ezdxf die Datei nicht lesen kann (`dxf_load.DxfNichtLesbar`).
         self.wand_warnungen: list[str] = []
+        # 2g (D-04): ein mm-Faktor ohne geometrischen Beleg wird ausgewiesen.
+        if plan.faktor_quelle.startswith("$INSUNITS"):
+            self.wand_warnungen.append(
+                f"mm_faktor: {plan.factor:g} aus {plan.faktor_quelle}")
         k = raeume_aus_kaskade(plan)
         # 2g (R-05 a): was die Kaskade ohne Abbruch verliert, steht im Bericht.
         self.wand_warnungen += k.warnungen

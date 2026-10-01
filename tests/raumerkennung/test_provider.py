@@ -294,3 +294,46 @@ def test_rest_stufe_rastergrenze_steht_in_den_warnungen(tmp_path, monkeypatch,
         p.parse(str(_hatch_waende_dxf(tmp_path / "plan.dxf")), "EG")
     assert any(w.startswith("rest_stufe:") and text in w for w in p.wand_warnungen), \
         p.wand_warnungen
+
+
+# ── 2g / D-04: mm-Faktor aus $INSUNITS wird ausgewiesen ──────────────────────
+# Ohne messbare Wand-Spanne fällt `lade_dxf` still auf $INSUNITS zurück (8 von 13
+# Plänen der Prüfstrecke). Das steht jetzt als Warnung `mm_faktor: …` samt
+# Türprobe in `wand_warnungen` → bericht.md. Ob daraus ein Abbruch wird, ist
+# Owner-Frage (S-MST) und hier nicht gebaut.
+def _mit_tuerboegen(path, radius):
+    import ezdxf
+
+    doc = ezdxf.readfile(str(path))
+    for i in range(3):
+        doc.modelspace().add_arc((1000 + 3000 * i, 6000), radius, 0, 90)
+    doc.saveas(str(path))
+    return path
+
+
+def _raum_mit_wandlinien_dxf(path):
+    import ezdxf
+
+    doc = ezdxf.new()
+    doc.header["$INSUNITS"] = 4
+    doc.layers.add("A-WALL")
+    msp = doc.modelspace()
+    for a, b in (((0, 0), (20000, 0)), ((20000, 0), (20000, 12000)),
+                 ((20000, 12000), (0, 12000)), ((0, 12000), (0, 0))):
+        msp.add_line(a, b, dxfattribs={"layer": "A-WALL"})
+    doc.saveas(str(path))
+    return path
+
+
+@pytest.mark.parametrize(("bau", "erwartet"), [
+    (lambda p: _hatch_waende_dxf(p),
+     "mm_faktor: 1 aus $INSUNITS=4 (keine Wand-Spanne 15–500 m messbar), Türprobe: keine"),
+    (lambda p: _mit_tuerboegen(_hatch_waende_dxf(p), 90.0),
+     "mm_faktor: 1 aus $INSUNITS=4 (keine Wand-Spanne 15–500 m messbar), Türprobe: 10 — widerspricht"),
+    (lambda p: _raum_mit_wandlinien_dxf(p), None),
+], ids=["insunits", "insunits_tuerprobe_10", "wand_spanne"])
+def test_mm_faktor_aus_insunits_steht_in_den_warnungen(tmp_path, bau, erwartet):
+    p = ArchitekturRaumProvider()
+    p.parse(str(bau(tmp_path / "plan.dxf")), "EG")
+    faktor = [w for w in p.wand_warnungen if w.startswith("mm_faktor:")]
+    assert faktor == ([erwartet] if erwartet else []), p.wand_warnungen

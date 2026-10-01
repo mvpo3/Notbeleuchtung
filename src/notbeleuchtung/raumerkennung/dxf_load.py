@@ -160,25 +160,38 @@ def _door_arc_factor(space) -> float | None:
     return best if best_count >= 3 else None
 
 
-def _calibrate_factor(raw_span: float, space, doc: ezdxf.document.Drawing) -> float:
+def _calibrate_factor(raw_span: float, space,
+                      doc: ezdxf.document.Drawing) -> tuple[float, str]:
     """mm-Faktor aus der Geometrie ableiten, NICHT aus $INSUNITS (das lügt oft:
     leere Pläne in Metern, fertige in mm — beide mit gleichem Code).
 
     Die Geschoss-Ausdehnung (15–500 m) gibt die Kandidaten-Dekaden vor. Bleibt
     genau eine → nimm sie. Bleiben mehrere → Tür-Schwenkbogen-Radius (~0.9 m)
     als Tiebreak, sonst die kleinste (konservativ).
+
+    Liefert ``(Faktor, Quelle)``. Die Quelle beginnt mit ``$INSUNITS``, wenn
+    keine Wand-Spanne messbar war (2g, D-04): dann steht die Türprobe als Beleg
+    dabei — sie entscheidet hier nichts (S-MST, Owner-Frage), sie wird nur
+    ausgewiesen.
     """
     candidates = [
         f for f in (1.0, 10.0, 100.0, 1000.0, 10000.0)
         if raw_span > 0 and _SPAN_MIN_MM <= raw_span * f <= _SPAN_MAX_MM
     ]
     if len(candidates) == 1:
-        return candidates[0]
+        return candidates[0], "spanne"
     if candidates:
         by_door = _door_arc_factor(space)
-        return by_door if by_door in candidates else candidates[0]
+        if by_door in candidates:
+            return by_door, "spanne+tuerbogen"
+        return candidates[0], "spanne"
     code = int(doc.header.get("$INSUNITS", 0) or 0)
-    return _INSUNITS_TO_MM.get(code, 1.0)
+    factor = _INSUNITS_TO_MM.get(code, 1.0)
+    by_door = _door_arc_factor(space)
+    probe = ("keine" if by_door is None else f"{by_door:g}"
+             + ("" if by_door == factor else " — widerspricht"))
+    return factor, (f"$INSUNITS={code} (keine Wand-Spanne 15–500 m messbar), "
+                    f"Türprobe: {probe}")
 
 
 def _has_walls(space, min_count: int = 10) -> bool:
@@ -199,6 +212,7 @@ class DxfPlan:
     space: object          # Modelspace oder Block-Layout, das die Architektur trägt
     factor: float          # Multiplikator Quell-Einheit → mm
     wall_layers: frozenset[str] = frozenset()  # erkannte Wand-Layer
+    faktor_quelle: str = ""  # woher `factor` stammt (`_calibrate_factor`)
 
     def entities(self, prefixes: tuple[str, ...] | None = None):
         """Alle Entities des Architektur-Raums, optional nach Layer-Prefix gefiltert."""
@@ -251,8 +265,9 @@ def lade_dxf(pfad: str | Path) -> DxfPlan:
                 space = blk
                 break
     wall_layers = _wall_layers(space)
-    factor = _calibrate_factor(_raw_wall_span(space, wall_layers), space, doc)
-    return DxfPlan(doc=doc, space=space, factor=factor, wall_layers=wall_layers)
+    factor, quelle = _calibrate_factor(_raw_wall_span(space, wall_layers), space, doc)
+    return DxfPlan(doc=doc, space=space, factor=factor, wall_layers=wall_layers,
+                   faktor_quelle=quelle)
 
 
 def bounds_mm(plan: DxfPlan) -> BBox:

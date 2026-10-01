@@ -63,7 +63,7 @@ Prüfstrecken-Ausgabe außerhalb des Contracts (Attribute am Provider): `wand_wa
 | D-01 | DXF öffnen | `dxf_load.py:lade_dxf:232` (`ezdxf.readfile` :234) | `test_dxf_load.py::test_synth_bounds`, `::test_mollgasse_leer_ist_meter_kalibriert`; `::test_mollgasse_fertig_ist_mm` **skipped** (WHA_MOL_EG.dxf nicht im Repo, `docs/INTEGRATION_2026-09-30.md:125-127`) | Kaputte oder Nicht-DXF: `readfile` ohne Fang, Ausnahme läuft durch (API: 422, `api/main.py:315-316`; Prüfstrecke: siehe O-06). Kein Test mit defekter Datei. **→ 2a erledigt (§ 12):** `DxfNichtLesbar` mit Pfad in der Meldung, Test `test_provider.py::test_nicht_lesbare_datei_definierter_fehler`. | P2 | Selman |
 | D-02 | Architektur-Raum wählen (Direct/Wrapper) | `dxf_load.py:lade_dxf:237-243`, `_has_walls:184` | `test_wandkoerper.py::test_fischamender_bt1_eg_wandkoerper` | Wrapper-Wahl hängt an `WALL_PATTERN` (≥ 10 Treffer); ohne Treffer bleibt der Modelspace. Block-Raum „best-effort, ohne Transform" (Modul-Doc :9-10). | P2 | Selman |
 | D-03 | Wand-Layer-Erkennung | `dxf_load.py:WALL_PATTERN:31-35`, `_wall_layers:52` | `test_provider.py::test_ohne_wandlayer_hatch_waende_raeume_statt_valueerror`, `::test_naht_am_rain_og4_parse_ohne_abbruch`; `test_wandkoerper.py::test_ohne_wandlayer_doppellinien_auf_wand_hinweis_layer` | ARAI5 `Wand <Material> <Tragwirkung>` trifft kein Muster (`docs/INTEGRATION_2026-09-30.md:145-147`). Seit `ed292e1` kein Abbruch, aber `plan.wall_layers` leer → D-04 fällt auf `$INSUNITS`, X-01 wirft. **Owner offen:** zählt `Wand brüstungshoch` als raumbildend? (heute ja, `wandkoerper._WAND_LAYER:41-42` trifft `\bwand\b`). | P1 | Selman (Owner-Frage) |
-| D-04 | mm-Kalibrierung | `dxf_load.py:_calibrate_factor:163`, `_door_arc_factor:125`, `_raw_wall_span:107` | nur synthetisch + Mollgasse-Fixtures (`test_dxf_load.py::test_wand_im_block_kalibriert_nicht_ueber_insunits`, `::test_ausreisser_kippen_den_faktor_nicht`) | S-MST (`docs/OFFENE_FRAGEN.md`, § S-MST): Türprobe nur Tiebreak (:175-176); stiller Rückfall auf `$INSUNITS` (:180-181) — **ohne Wand-Linien immer** (`_raw_wall_span` liefert 0,0 → keine Kandidaten, :171-174). Gemessen (§ 7): **8 von 13** Prüfplänen laufen über `$INSUNITS` (Rennweg EG/OG3: Wand-Layer ohne Linien-Stützpunkte; Am Rain ×6: kein Wand-Layer), und auf 4 davon widerspricht die Türprobe (Rennweg EG, Am Rain OG4/OG3/EG: Faktor 10 statt 1); Faktor nirgends ausgewiesen (`plan_pruefen` nutzt `plan.factor` nur zum Zeichnen, :159/:203-210); kein Messfall gegen echte Pläne. `_door_arc_factor` sucht `DOOR` im Blocknamen (:140-141), die Türerkennung kennt `DOOR` nicht (F-01). Owner offen: Hard Stop oder Warnung. | P1 | Selman (Owner-Frage) |
+| D-04 | mm-Kalibrierung | `dxf_load.py:_calibrate_factor:163`, `_door_arc_factor:125`, `_raw_wall_span:107` | nur synthetisch + Mollgasse-Fixtures (`test_dxf_load.py::test_wand_im_block_kalibriert_nicht_ueber_insunits`, `::test_ausreisser_kippen_den_faktor_nicht`) | S-MST (`docs/OFFENE_FRAGEN.md`, § S-MST): Türprobe nur Tiebreak (:175-176); stiller Rückfall auf `$INSUNITS` (:180-181) — **ohne Wand-Linien immer** (`_raw_wall_span` liefert 0,0 → keine Kandidaten, :171-174). Gemessen (§ 7): **8 von 13** Prüfplänen laufen über `$INSUNITS` (Rennweg EG/OG3: Wand-Layer ohne Linien-Stützpunkte; Am Rain ×6: kein Wand-Layer), und auf 4 davon widerspricht die Türprobe (Rennweg EG, Am Rain OG4/OG3/EG: Faktor 10 statt 1); Faktor nirgends ausgewiesen (`plan_pruefen` nutzt `plan.factor` nur zum Zeichnen, :159/:203-210); kein Messfall gegen echte Pläne. `_door_arc_factor` sucht `DOOR` im Blocknamen (:140-141), die Türerkennung kennt `DOOR` nicht (F-01). Owner offen: Hard Stop oder Warnung. **→ 2g (§ 20.3): Rückfall auf `$INSUNITS` steht mit Türprobe als `mm_faktor: …` unter „Warnungen"; Hard Stop offen.** | P1 | Selman (Owner-Frage) |
 | D-05 | Bounds | `dxf_load.py:bounds_mm:249` (raise X-01), Fallback `provider.py:132-149`, `wandkoerper.py:bounds_aus_wandkoerpern:292` | `test_dxf_load.py::test_synth_bounds`; `test_provider.py::test_ohne_wandlayer_hatch_waende_raeume_statt_valueerror` (Bounds ohne Fern-Körper) | `entity_points` nimmt für INSERT nur den Einfügepunkt (`dxf_load.py:227-228`) → Extents-Ausreißer (S3c: Rennweg UG 319,9 × 1 391,2 m bei Wandkörper-Bounds 19,1 × 27,0 m, `docs/OFFENE_FRAGEN.md` § S3c). Am Rain OG4: Bounds enden bei x 63,6 m, Wand-Linien bis 78,1 m — nicht untersucht (`docs/INTEGRATION_2026-09-30.md:198-199`). Leser außerhalb: `aussen_strategy.py:73`, `bestand_leuchten.py:62`, `dxf_renderer.py:78/228/291/860/1238`, `lux_nachweis_bericht.py:165` (nur `_geschoss_extents` :338 schützt das Blatt). | P1 | Selman; Leser gemeinsam/Leonis |
 | D-06 | Wandkörper nach Erscheinungsbild | `wandkoerper.py:finde_wandkoerper:130`, `_NEGATIV_LAYER:45-49` | `test_wandkoerper.py` (Rennweg/Mollgasse/Barawitzka/BT1, 11 Tests); Gate M17 (18/18) | `_NEGATIV_LAYER` trifft `Moeblierung`/`Möblierung` nicht (Regex geprüft: `KFLD-04_Moeblierung-Bank` → kein Treffer) → Am Rain EG Freiraum-Hatches zählen als Wandkörper (`docs/INTEGRATION_2026-09-30.md:232-233`). Gartenmöbel als Wandkörper: 43 auf Muthgasse E7/E9 (K1, Owner-Frage 3, Branch `selman/fix-k1-moebel-keine-wand` `558dee3`). | P1 | Selman |
 | D-07 | Fern-Körper-Filter | `wandkoerper.py:_ohne_fernkoerper:185` (nur ohne Wand-Layer, Median ± 500 m) | `test_wandkoerper.py::test_ohne_wandlayer_fernkoerper_fallen_weg` | Pläne **mit** Wand-Layer ungefiltert, Räume nirgends nach Planbereich gefiltert (`raumlayer.raeume_aus_layer:98` ohne Filter). S3c, Owner-Entscheid 2026-09-26 (Fremdcluster > 100 m ohne Wandkörper verwerfen, mit Warnung): Rennweg EG 11 Räume / 15 Durchgänge im Cluster 1 365,8 m entfernt, erwartete Wirkung Platzierung 21 → 17; Muthgasse E2 Cluster 400,5 m **mit** 56 Wandkörpern → melden. ponytail-Grenze: mehrere Geschosse in einem Modelspace (:192-193). | P1 | Selman (Slice S3c, nach dem Merge) |
@@ -143,7 +143,7 @@ Prüfstrecken-Ausgabe außerhalb des Contracts (Attribute am Provider): `wand_wa
 | O-04 | Warnungen im Prüfbericht | `plan_pruefen.py:_geschoss_md:1136`, `_kreuzcheck_md:1153` | — | `wand_warnungen` (`keine_wand_entities`), `tuer_warnungen` (`seite_fehlt`) und `sanitaer_befund` erscheinen **nicht** in `bericht.md` (0 Treffer). Die Owner-Regel P0 („es bleibt eine Warnung") ist in der Prüfstrecke unsichtbar. **→ 2a (§ 12): `wand_warnungen` stehen jetzt im Abschnitt „Warnungen"**; `tuer_warnungen` und `sanitaer_befund` weiter offen. **→ 2g (§ 20.1): beide jetzt ebenfalls unter „Warnungen".** | P1 | Selman |
 | O-05 | Plan-Render der Prüfstrecke (RAM) | `plan_pruefen.py:_figur:137`, 8 Aufrufstellen (:419/:491/:667/:740/:854/:1556/:1565/:1589) | — | Pflicht-Eintrag § 6.7. | P0 | Selman |
 | O-06 | Prüfstrecken-Schleife | `plan_pruefen.py:main:1984-2034` | — | Kein Fehler-Fang je Plan (:1990-1992): ein Fehler bricht alle folgenden Pläne ab, und `VERLAUF.md` wird nicht geschrieben (`_verlauf_schreiben` erst nach der Schleife, :2030-2032). | P1 | Selman |
-| O-07 | Maßstab im Bericht | — | — | Faktor und Beleg nicht ausgewiesen (D-04). | P2 | Selman |
+| O-07 | Maßstab im Bericht | — | — | Faktor und Beleg nicht ausgewiesen (D-04). **→ 2g (§ 20.3): im `$INSUNITS`-Rückfall ausgewiesen (Warnung); ein Faktor aus der Spanne steht weiter nicht im Bericht.** | P2 | Selman |
 | O-08 | Lux-Nachweis | `render/lux_nachweis_bericht.py:schreibe_bericht:134` (additiv, Fehler gefangen `pipeline.py:268-281`) | `tests/hauptengine/test_fix_wissensabgleich.py`, `tests/e2e/test_wohnbau_durchstich.py` | Bounds-Leser `:165` (D-05). | P2 | gemeinsam |
 
 ---
@@ -454,7 +454,7 @@ Planer. „Nach dem Merge" = Owner-Vermerk „kein Code vor dem Merge des Türst
 5. R-05 a — Raster-Reißleine der R-Stufe, Verlust als Warnung statt `print` **→ erledigt (2f, § 20.2)**
 6. F-03 — Ausgänge an Türen `von_raum == nach_raum` (Barawitzka: einziger `final_exit`; `stair_exit` im Stiegenhaus)
 7. D-04 — mm-Faktor und Quelle ausweisen (8 von 13 über `$INSUNITS`, Türprobe widerspricht 4×); Hard Stop = Owner-Frage;
-   S-MST nach dem Merge
+   S-MST nach dem Merge **→ Ausweisen erledigt (§ 20.3), Hard Stop offen**
 8. N-07 — Leuchten in keinem Raumpolygon (Muthgasse 57): Ursache messen, Raumerkennung oder Platzierung
 9. F-09 — nur FALLBACK-Segmente (Am Rain UG, OG4, Mollgasse 1KG), „kein final_exit erreichbar"
 10. F-04 / F-05 — `seite_fehlt` (Am Rain EG 186, OG1 177, UG 159) und Türrollen-Quote (Am Rain UG 13/295)
@@ -1599,3 +1599,46 @@ alle Messfelder außer `meta` gleich `messung_27478ca_review2.json`. `pytest -m 
 **Bleibt offen:** die F-Stufe selbst (`flute_stempel`) steht nicht im Fehlerschutz — ein Fehler dort bricht den
 Parse weiter ab (am Code gelesen, `kaskade.py` Aufruf vor dem ersten `try`); auf den Prüfplänen nicht aufgetreten.
 P2 · Selman.
+
+### 20.3 D-04 — mm-Faktor aus `$INSUNITS` wird ausgewiesen (erledigt mit dem Commit dieses Eintrags; Hard Stop offen)
+
+**Lücke:** ohne messbare Wand-Spanne fällt `_calibrate_factor` still auf `$INSUNITS` zurück (§ 7: 8 von 13 Plänen
+der Prüfstrecke), die Türprobe wird dann nicht einmal gerechnet, und weder Faktor noch Quelle erscheinen irgendwo.
+Owner-Frage (S-MST): Hard Stop oder nur Warnung. Gebaut ist nur der gemeinsame Teil beider Antworten — das
+Ausweisen; der Faktor und die Kalibrierregel sind unverändert.
+
+**Rot vor dem Fix** (`pytest tests/raumerkennung/test_provider.py -k mm_faktor --tb=line`, Kopf `5779ef6`, Kurzform):
+
+```
+test_provider.py:339: AssertionError: ['keine_wand_entities: …']    [insunits]
+test_provider.py:339: AssertionError: ['keine_wand_entities: …']    [insunits_tuerprobe_10]
+2 failed, 1 passed, 18 deselected in 1.25s
+```
+
+(`[wand_spanne]` grün = Gegenprobe: mit messbarer Spanne keine Meldung, vorher wie nachher.)
+
+**Fix** (`raumerkennung/`): `_calibrate_factor` liefert `(Faktor, Quelle)`; `DxfPlan.faktor_quelle` (neu, Default
+`""`) = `spanne`, `spanne+tuerbogen` oder `$INSUNITS=<Code> (keine Wand-Spanne 15–500 m messbar), Türprobe: <keine |
+Faktor [— widerspricht]>`. Die Türprobe (`_door_arc_factor`) läuft im Rückfall nur noch zum Ausweisen mit, sie
+entscheidet nichts. `provider.parse` schreibt im Rückfall `mm_faktor: <Faktor> aus <Quelle>` in `wand_warnungen` →
+bericht.md „## Warnungen" (2a/20.1).
+
+**Test:** `test_provider.py::test_mm_faktor_aus_insunits_steht_in_den_warnungen[insunits|insunits_tuerprobe_10|
+wand_spanne]` (Hatch-Plan ohne Wand-Linien, derselbe mit drei Bögen r = 90 → Türprobe 10, Raum aus `A-WALL`-Linien
+20 × 12 m). Grün: `test_provider.py` + `test_dxf_load.py` 24 passed, 2 skipped (wie vorher die zwei fehlenden
+Fixtures).
+
+**Gemessen** (`lade_dxf`, je Plan allein): Rennweg EG, Am Rain OG4, OG3, EG `Türprobe: 10 — widerspricht`; Am Rain
+UG, OG1, OG2 `Türprobe: 1`; Rennweg OG3 `Türprobe: keine` — deckt sich mit § 7. Kosten der Türprobe je Plan < 0,1 s
+(Am Rain EG: Laden 24,5 s).
+
+**Blast:** 12 Prüfpläne gegen 20.2: **4/12 feldgleich** (Barawitzka EG, Mollgasse EG/1OG, Muthgasse E2 — Faktor aus
+der Spanne), **8/12 nur in `warnungen` verschieden**, und dort genau um eine neue Zeile `mm_faktor: …` (alle 8
+Rennweg-Geschosse; EG `Türprobe: 10 — widerspricht`, die übrigen 7 `Türprobe: keine`). Räume, Türen, Ausgänge,
+Segmente, Anker, Leuchten: alle 12 gleich. **Gate:** `_arbeit/gate/messung_5779ef6-dirty-2gD.json`, `pruefe_gate`
+gegen `nullmessung_f15d03f.json`: (0) unsauberer Arbeitsbaum (erwartet) und **(3) `M4.einraum` DG2 0 → 1**; M17
+18/18; alle Messfelder außer `meta` gleich `messung_27478ca_review2.json`. `pytest -m gate tests/gate`: 3 passed,
+1 xfailed.
+
+**Offen (Owner):** Hard Stop oder Warnung bei `$INSUNITS`-Rückfall, und ob die Türprobe im Rückfall entscheiden
+soll (4 × Widerspruch); S-MST nach dem Merge. P1 · Selman (Owner-Frage).
