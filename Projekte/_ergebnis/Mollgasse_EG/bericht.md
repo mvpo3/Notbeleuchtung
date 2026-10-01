@@ -600,31 +600,31 @@ Quellen: FALLBACK: 4, GRAPH: 19, LINIE: 103
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 34 |
+| ALLGEMEIN_ERSCHLIESSUNG | 25 |
 | ALLGEMEIN_NEBENRAUM | 11 |
-| WOHNUNG_PRIVAT | 7 |
-| kein Raum | 7 |
-| unbestimmt | 2 |
+| WOHNUNG_PRIVAT | 6 |
+| kein Raum | 8 |
+| unbestimmt | 3 |
 | _davon auf Treppenlauf/Verbotszone_ | 0 |
 
 **BEFUND (nur berichtet, Platzierung NICHT geändert):**
 
-- WOHNUNG_PRIVAT: 7 Leuchten (muss 0 sein)
+- WOHNUNG_PRIVAT: 6 Leuchten (muss 0 sein)
 
 ## Rotationsprüfung RZ über Tür (Messung, ±2°)
 
 | Tür | RZ xy m | rotation° | Türwandwinkel° | Δ° | Befund |
 |---|---|--:|--:|--:|---|
-| aussenoeffnung_3 | (2694.04, 1522.22) | 0.0 | 0.0 | 0.0 | ok |
-| aussenoeffnung_4 | (2655.93, 1538.46) | 90.0 | 89.7 | 0.3 | ok |
-| aussenoeffnung_5 | (2652.19, 1535.04) | 270.0 | 89.7 | 0.3 | ok |
-| aussenoeffnung_6 | (2653.32, 1533.16) | 0.0 | 0.0 | 0.0 | ok |
-| tuer_68 | (2688.62, 1511.09) | 270.0 | 0.0 | 90.0 | abweichend |
+| aussenoeffnung_3 | (2694.04, 1523.09) | 180.0 | 0.0 | 0.0 | ok |
+| aussenoeffnung_4 | (2655.78, 1538.46) | 270.0 | 89.7 | 0.3 | ok |
+| aussenoeffnung_5 | (2652.34, 1535.04) | 90.0 | 89.7 | 0.3 | ok |
+| aussenoeffnung_6 | (2653.32, 1533.31) | 180.0 | 0.0 | 0.0 | ok |
+| tuer_68 | (2688.77, 1511.08) | 90.0 | 0.0 | 90.0 | abweichend |
 | durchgang_30 | (2666.30, 1549.30) | 90.0 | 90.1 | 0.1 | ok |
 | durchgang_30 | (2667.20, 1549.30) | 90.0 | 90.1 | 0.1 | ok |
 | durchgang_30 | (2667.30, 1548.80) | 90.0 | 90.1 | 0.1 | ok |
-| durchgang_43 | (2692.88, 1524.89) | 270.0 | 90.0 | 0.0 | ok |
-| tuer_38 | (2652.50, 1546.13) | 180.0 | 179.7 | 0.3 | ok |
+| tuer_57 | (2654.22, 1540.73) | 0.0 | 89.7 | 89.7 | abweichend |
+| tuer_38 | (2652.55, 1545.99) | 0.0 | 179.7 | 0.3 | ok |
 
 ## Anker je Stiegenhaus (2 Stiegenhäuser)
 
@@ -691,6 +691,11 @@ Quellen: FALLBACK: 4, GRAPH: 19, LINIE: 103
 - offene AUSSEN-Flächen: 1 (910.1 m²)
 - geschlossene Höfe (AUSSEN_GESCHLOSSEN): 1 (73.0 m²)
 - Überdachungen über offener Außenfläche: 0 (0.0 m²)
+
+## Geschoss
+
+- Geschoss: **EG** (Quelle `dateiname`)
+- Beleg: Dateiname 'Mollgasse_EG' → 'EG'
 
 ## Kreuzcheck Fluchtweglinien ↔ Endausgänge
 
@@ -798,4 +803,4 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_1, exit_2, exit_aussen
 | beide_seiten_untypisiert | 2 |
 | tuer_ins_nichts | 1 |
 
-Laufzeit: 292.2 s
+Laufzeit: 249.5 s

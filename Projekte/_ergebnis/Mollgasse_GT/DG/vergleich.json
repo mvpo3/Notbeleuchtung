@@ -1,4 +1,12 @@
 {
+ "erreichbar_n": 3,
+ "erreichbar_gepaart": 1,
+ "erreichbar_typ_match": 0,
+ "erreichbar_fehlt": [
+  "2083F",
+  "20864"
+ ],
+ "typ_match_n": 0,
  "geschoss": "DG",
  "engine_n": 8,
  "engine_by_kind": {
@@ -25,6 +33,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 931.9,
    "rot_delta_deg": 0.1,
+   "typ_match": false,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -36,6 +45,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 2770.6,
    "rot_delta_deg": 0.6,
+   "typ_match": false,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   }

@@ -126,6 +126,51 @@ def _gt_einheiten(gt: dict, tx: float, ty: float) -> list[dict]:
     return einheiten
 
 
+def _punkt_in_polygon(x: float, y: float, poly: list) -> bool:
+    """Ray-Casting (eval-only, kein Engine-Import — Repo-Konvention Analyse)."""
+    innen = False
+    n = len(poly)
+    for i in range(n):
+        x1, y1 = poly[i][0], poly[i][1]
+        x2, y2 = poly[(i + 1) % n][0], poly[(i + 1) % n][1]
+        if (y1 > y) != (y2 > y):
+            xs = x1 + (y - y1) / (y2 - y1) * (x2 - x1)
+            if x < xs:
+                innen = not innen
+    return innen
+
+
+def _ist_erreichbar(g: dict, raum_modell) -> bool:
+    """„Erreichbar"-Messmodus (Auftrag Schritt 5.4): GT-Leuchte liegt in einem
+    ERKANNTEN Raum-/Zirkulationspolygon → die Platzierungslogik hätte dort
+    überhaupt arbeiten können. Misst die Platzierung fair, ohne Selman-
+    Erkennungs-Lücken (Kellerabteile/Garage/fehlende Zirkulation) als
+    Platzierungs-Fehler zu zählen."""
+    x, y = g["x"], g["y"]
+    for r in raum_modell.raeume:
+        if r.polygon_mm and _punkt_in_polygon(x, y, r.polygon_mm):
+            return True
+    # Zirkulation = Polylinien: erreichbar, wenn nahe an einem Segment
+    # (halbe typische Gangbreite; dokumentierter Mess-Parameter, keine Toleranz
+    # im Pass-Sinn — der Nenner wird transparent berichtet).
+    _NAH_MM = 1500.0
+    for s in raum_modell.zirkulation.segmente:
+        pts = s.polyline_mm
+        for i in range(len(pts) - 1):
+            (x1, y1), (x2, y2) = pts[i], pts[i + 1]
+            dx, dy = x2 - x1, y2 - y1
+            l2 = dx * dx + dy * dy
+            t = 0.0 if l2 == 0 else max(0.0, min(1.0, ((x - x1) * dx + (y - y1) * dy) / l2))
+            px, py = x1 + t * dx, y1 + t * dy
+            if math.dist((x, y), (px, py)) <= _NAH_MM:
+                return True
+    return False
+
+
+# GT-richtung_block ↔ Engine-richtung (Typ-Match; beidseitig separat).
+_RICHTUNG_MAP = {"down": "unten", "left": "links", "right": "rechts"}
+
+
 def _vergleiche(geschoss: str, output, gt_einheiten: list[dict]) -> dict:
     engine = [{"i": i, "klasse": p.kind, "x": p.xy_mm[0], "y": p.xy_mm[1],
                "rot": p.rotation_deg, "richtung": p.richtung,
@@ -151,15 +196,34 @@ def _vergleiche(geschoss: str, output, gt_einheiten: list[dict]) -> dict:
             # NICHT — wir vergleichen die INSERT-Rotationen direkt nur, wenn
             # beide down-Basis tragen; sonst nur Distanz (metrisch ehrlich).
             rot_delta = round(abs(((best["rot"] - g["rot_deg"]) + 180) % 360 - 180), 1)
+        # Typ-Match (RW-006/007/016): GT-Blockfamilie ↔ Engine-richtung;
+        # beidseitig zählt als Match, wenn beide Seiten beidseitig sind.
+        if g["beidseitig"] or best["beidseitig"]:
+            typ_match = g["beidseitig"] and best["beidseitig"]
+        elif g["klasse"] != "rz":
+            typ_match = True   # SL/AP: Klasse stimmt (kein Richtungs-Begriff)
+        else:
+            typ_match = _RICHTUNG_MAP.get(g["richtung_block"] or "") == best["richtung"]
         paare.append({
             "gt": g["handle"], "gt_typ": g["typ"], "gt_richtung": g["richtung_block"],
             "engine_key": best["key"], "engine_richtung": best["richtung"],
             "distanz_mm": round(d, 1), "rot_delta_deg": rot_delta,
+            "typ_match": typ_match,
             "beidseitig_gt": g["beidseitig"], "beidseitig_engine": best["beidseitig"],
         })
     ueberfluessig = [e for e in engine if e["i"] in frei]
     dists = [p["distanz_mm"] for p in paare]
+    # „Erreichbar"-Modus: Nenner = GT-Einheiten in erkannten Polygonen.
+    erreichbar = [g for g in gt_einheiten if _ist_erreichbar(g, output.raum)]
+    err_handles = {g["handle"] for g in erreichbar}
+    gepaart_handles = {p["gt"] for p in paare}
+    err_gepaart = [p for p in paare if p["gt"] in err_handles]
     return {
+        "erreichbar_n": len(erreichbar),
+        "erreichbar_gepaart": len(err_gepaart),
+        "erreichbar_typ_match": sum(1 for p in err_gepaart if p["typ_match"]),
+        "erreichbar_fehlt": sorted(err_handles - gepaart_handles),
+        "typ_match_n": sum(1 for p in paare if p["typ_match"]),
         "geschoss": geschoss,
         "engine_n": len(engine),
         "engine_by_kind": dict(Counter(e["klasse"] for e in engine)),
@@ -252,6 +316,9 @@ def lauf(geschoss: str) -> None:
          f" (beidseitig: {ergebnis['beidseitig_gt_gesamt']})"),
         (f"- gepaart: {ergebnis['gepaart']} (Median {ergebnis['distanz_median_mm']} mm,"
          f" Max {ergebnis['distanz_max_mm']} mm; Paarungs-Radius {int(_PAIR_RADIUS_MM)} mm)"),
+        f"- Typ-Match (Richtung/beidseitig/Klasse): {ergebnis['typ_match_n']}/{ergebnis['gepaart']}",
+        (f"- ERREICHBAR-Modus (GT in erkannten Polygonen): {ergebnis['erreichbar_gepaart']}/"
+         f"{ergebnis['erreichbar_n']} gepaart, davon {ergebnis['erreichbar_typ_match']} Typ-Match"),
         f"- fehlt (GT ohne Engine): {ergebnis['fehlt_n']}",
         f"- ueberfluessig (Engine ohne GT): {ergebnis['ueberfluessig_n']}",
         f"- beidseitig getroffen: {ergebnis['beidseitig_treffer']}/{ergebnis['beidseitig_gt_gesamt']}",
@@ -260,7 +327,9 @@ def lauf(geschoss: str) -> None:
         "Details: vergleich.json",
     ]
     (out_dir / "bericht.md").write_text("\n".join(zeilen), encoding="utf-8")
-    print(f"[{geschoss}] gepaart {ergebnis['gepaart']}/{ergebnis['gt_n']}, "
+    print(f"[{geschoss}] gepaart {ergebnis['gepaart']}/{ergebnis['gt_n']} "
+          f"(erreichbar {ergebnis['erreichbar_gepaart']}/{ergebnis['erreichbar_n']}, "
+          f"typ {ergebnis['typ_match_n']}), "
           f"fehlt {ergebnis['fehlt_n']}, ueberfluessig {ergebnis['ueberfluessig_n']}, "
           f"Median {ergebnis['distanz_median_mm']} mm -> {out_dir.relative_to(REPO)}")
 

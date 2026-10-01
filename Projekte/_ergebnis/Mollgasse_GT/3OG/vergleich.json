@@ -1,4 +1,11 @@
 {
+ "erreichbar_n": 2,
+ "erreichbar_gepaart": 1,
+ "erreichbar_typ_match": 1,
+ "erreichbar_fehlt": [
+  "78DDA"
+ ],
+ "typ_match_n": 1,
  "geschoss": "3OG",
  "engine_n": 9,
  "engine_by_kind": {
@@ -25,6 +32,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 1262.3,
    "rot_delta_deg": 90.3,
+   "typ_match": true,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   }

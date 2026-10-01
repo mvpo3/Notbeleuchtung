@@ -3,6 +3,8 @@
 - Engine: 14 Platzierungen {'rz': 10, 'sicherheitsleuchte': 4}
 - Ground Truth: 11 Einheiten {'rz': 9, 'antipanik': 2} (beidseitig: 0)
 - gepaart: 4 (Median 1292.2 mm, Max 1972.4 mm; Paarungs-Radius 3000 mm)
+- Typ-Match (Richtung/beidseitig/Klasse): 1/4
+- ERREICHBAR-Modus (GT in erkannten Polygonen): 4/10 gepaart, davon 1 Typ-Match
 - fehlt (GT ohne Engine): 7
 - ueberfluessig (Engine ohne GT): 10
 - beidseitig getroffen: 0/0

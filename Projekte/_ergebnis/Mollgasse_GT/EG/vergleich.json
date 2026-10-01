@@ -1,4 +1,21 @@
 {
+ "erreichbar_n": 15,
+ "erreichbar_gepaart": 4,
+ "erreichbar_typ_match": 2,
+ "erreichbar_fehlt": [
+  "20240",
+  "20286",
+  "202EF",
+  "20312",
+  "206C0",
+  "206C3",
+  "206E7",
+  "2070A",
+  "2072F",
+  "20752",
+  "21312"
+ ],
+ "typ_match_n": 3,
  "geschoss": "EG",
  "engine_n": 53,
  "engine_by_kind": {
@@ -26,6 +43,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 2485.9,
    "rot_delta_deg": 180.0,
+   "typ_match": false,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -37,6 +55,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 264.4,
    "rot_delta_deg": 90.0,
+   "typ_match": true,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -48,6 +67,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 1708.8,
    "rot_delta_deg": 90.0,
+   "typ_match": true,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -59,6 +79,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 1240.2,
    "rot_delta_deg": 180.0,
+   "typ_match": true,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -70,6 +91,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 698.7,
    "rot_delta_deg": null,
+   "typ_match": false,
    "beidseitig_gt": true,
    "beidseitig_engine": false
   }
@@ -322,7 +344,7 @@
    ]
   },
   {
-   "key": "notlicht_ks_stiege",
+   "key": "notlicht_ks_stiege_unten",
    "klasse": "rz",
    "xy": [
     2667069.3,
@@ -330,7 +352,7 @@
    ]
   },
   {
-   "key": "notlicht_ks_stiege_links",
+   "key": "notlicht_ks_stiege_unten",
    "klasse": "rz",
    "xy": [
     2678756.7,

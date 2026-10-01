@@ -103,6 +103,7 @@ aus dem Index zitieren — immer der autoritativen YAML/dem Contract folgen.**
 - [Infrastruktur — Entscheidung (Stand 2026-08-27)](docs/INFRASTRUKTUR.md) — **Leitsatz:** Infra folgt der Phase, nicht dem Hype. Solange die Engine gebaut
 - [Hauptengine in eine eigene App integrieren](docs/INTEGRATION.md) — Für Host-/Demo-Apps, die die Notbeleuchtungs-Engine aufrufen wollen (Raumerkennung +
 - [Plan Barawitzka_EG](docs/MATERIAL_REPORT.md) — <!-- generiert von scripts/plan_pruefen.py — nicht von Hand pflegen -->
+- [Abschlussbericht — Mollgasse-Ground-Truth → Rivoplan-Hauptengine (2026-09-20)](docs/MOLLGASSE_RIVOPLAN_GT_BERICHT_2026-09-20.md) — Owner-Auftrag 2026-09-20 (PDF „Notbeleuchtungen zeichnen" + Rivoplan-Master-
 - [Normquellen-Status (Enis) — was liegt vor, was ist belegt, was fehlt](docs/NORMQUELLEN_AT.md) — **Stand:** 2026-08-30 · Bestandsaufnahme rein lesend aus `knowledge/`.
 - [Offene Fragen — Plan-Befunde & Regel-Lücken](docs/OFFENE_FRAGEN.md) — Sammelstelle für Befunde, die eine Owner-Entscheidung brauchen. Regel-Lücken
 - [OIB-Richtlinie 2 — Punkt 5.4 + Tabelle 6 (Erforderlichkeit Sicherheitsbeleuchtung)](docs/OIB_RL2_TABELLE6.md) — **Analysiert:** 2026-08-30 (Enis) · **rein lesend aus den Original-PDFs**, nichts aus
@@ -128,7 +129,7 @@ aus dem Index zitieren — immer der autoritativen YAML/dem Contract folgen.**
 *Rollen, Packages, Contracts, Slice-Stände je Owner.*
 
 - [Handoff — Enis (Normwissen + LB)](Handoff/ENIS.md) — 1. **`origin/main` = `1092d77`.** (Der frühere Stand `5e4a46e` steht weiter unten
-- [Handoff — Leonis (Platzierung + Integration)](Handoff/LEONIS.md) — **Branch `leonis/demo-l-gebaeude` @ `719d6d8`, GEPUSHT (Owner-GO). Targeted Suite
+- [Handoff — Leonis (Platzierung + Integration)](Handoff/LEONIS.md) — **Branch `leonis/demo-l-gebaeude` @ `d74f0e8`, 7 Commits UNGEPUSHT (`456057e..d74f0e8`,
 - [Handoff — Perfekter Start je Owner](Handoff/README.md) — Jeder von euch arbeitet in einer **eigenen Claude-Code-Session im Repo-Ordner**.
 - [Handoff — Selman (Raumerkennung)](Handoff/SELMAN.md) — Du bist ein Agent — **führe diese Schritte selbst aus**, frag nicht lang nach.
 - [SYNC — Stand nachziehen, ohne Arbeit zu verlieren](Handoff/SYNC.md) — **Auslöser:** Der Owner schreibt in seiner Session **„Sync"** (oder „GitHub wurde

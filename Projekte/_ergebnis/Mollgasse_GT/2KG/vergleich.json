@@ -1,4 +1,29 @@
 {
+ "erreichbar_n": 28,
+ "erreichbar_gepaart": 9,
+ "erreichbar_typ_match": 5,
+ "erreichbar_fehlt": [
+  "1C644",
+  "1C66E+1C66F",
+  "1C698",
+  "1C706",
+  "1C707",
+  "1C7CB",
+  "1C7CC+1C7CE",
+  "1C7D0",
+  "1C7FB",
+  "1C861",
+  "1C885+1C886",
+  "1C8A9",
+  "1C8EF",
+  "1C936+1C937",
+  "1C97D",
+  "1C9A0",
+  "1C9BD",
+  "1D06D+1D06F",
+  "1D326+1D327"
+ ],
+ "typ_match_n": 5,
  "geschoss": "2KG",
  "engine_n": 24,
  "engine_by_kind": {
@@ -27,6 +52,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 259.6,
    "rot_delta_deg": 0.4,
+   "typ_match": true,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -38,6 +64,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 264.7,
    "rot_delta_deg": 90.4,
+   "typ_match": true,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -45,10 +72,11 @@
    "gt": "1C64B",
    "gt_typ": "rz",
    "gt_richtung": "down",
-   "engine_key": "notlicht_ks_stiege_rechts",
-   "engine_richtung": "rechts",
+   "engine_key": "notlicht_ks_stiege_links",
+   "engine_richtung": "links",
    "distanz_mm": 1598.2,
    "rot_delta_deg": 0.4,
+   "typ_match": false,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -60,6 +88,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 2023.6,
    "rot_delta_deg": 179.6,
+   "typ_match": true,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -71,6 +100,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 2032.1,
    "rot_delta_deg": 178.7,
+   "typ_match": false,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -82,6 +112,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 2825.5,
    "rot_delta_deg": 90.4,
+   "typ_match": true,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -89,10 +120,11 @@
    "gt": "1C8CC",
    "gt_typ": "rz",
    "gt_richtung": "down",
-   "engine_key": "notlicht_ks_stiege_links",
-   "engine_richtung": "links",
+   "engine_key": "notlicht_ks_stiege_rechts",
+   "engine_richtung": "rechts",
    "distanz_mm": 2031.0,
    "rot_delta_deg": 179.6,
+   "typ_match": false,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -104,6 +136,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 1924.3,
    "rot_delta_deg": 90.4,
+   "typ_match": true,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -115,6 +148,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 2686.3,
    "rot_delta_deg": 90.2,
+   "typ_match": false,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   }
@@ -311,7 +345,7 @@
    ]
   },
   {
-   "key": "notlicht_ks_stiege_links",
+   "key": "notlicht_ks_stiege_unten",
    "klasse": "rz",
    "xy": [
     2200404.5,

@@ -4,7 +4,48 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-20 NACHT, Session-Ende) — PDF-Regeln in Engine + Farb-/Größen-Fixes + TOMA-Referenz. HIER WEITER.
+## STAND (2026-09-30 SPÄT) — Mollgasse-Analyse + Lichtberechnung validiert; M1 als Phantom gestoppt. HIER WEITER.
+
+**Branch `codex/Notbeleuchtungs_Platzierungslogik` = origin/leonis/demo-l-gebaeude-Tip `8257ff9`
+(alles gepusht, 43 vor main / 2 hinter = 2 Asset-ZIPs). Diese Woche NUR read-only-Analyse +
+Doku, KEIN Engine-Edit, nichts committet. Working-Tree-Anomalie (gelöschte CAD-Rohdateien +
+1 mod DWG) weiter UNANGETASTET.** Voller Kontext: Memory `session-2026-09-29-regelwerk-5-projekte.md`.
+
+**Diese Woche gemacht (alles read-only, Owner-Aufträge):**
+1. **Regelwerk aus 5 Projekten** (`knowledge/Pläne zeichnen Wissen/_Analyse_Regelwerk/`):
+   538 PDF-Seiten angesehen → RW-001–131 (66 Regeln, Beleg-Gate grün) + Engine-Einbau-
+   Vorarbeit (`platzierung/regelwerk.py` + data-JSON + Tests, 453 grün) + ENGINE_IST/VALIDIERUNG.
+2. **Mollgasse-Detail-Review** (`Mollgasse-Notbeleuchtungserklärung/_Analyse/`): ENGINE_WISSEN_IST
+   (32 Regeln+Konstanten mit Datei:Zeile), ANALYSE_PDF (95 S., 283 Warum-Regeln), 8× ANALYSE_DXF,
+   ABWEICHUNGEN (34, 0 Regel-Widersprüche), REGELWERK_Mollgasse, GEGENPRUEFUNG, REVIEW +
+   REVIEW_VISUELL.pdf. **Ultracode-Fallbeispiele** (90 Agenten): FALLBEISPIELE_REVIEW.md +
+   FALLBEISPIELE_VISUELL.pdf — 42 Fälle, 40 mm-bestätigt, Engine-Urteil je Fall.
+3. **Lichtberechnung validiert** (`knowledge/Lichtberechnung-Wissen/_Analyse/`): 3 DIALux-Reports
+   analysiert → LUX_GATE_VALIDIERUNG.md + validiere_lux_gate.py + §8 in LICHTBERECHNUNG_REFERENZ.md.
+   **KORREKTUR: Wartungsfaktor 0,80/0,57 ist VOLL AKTIV** (Contract 1.4.0, nicht „fehlt"). Gate
+   L1 BESTANDEN: max_leuchtenabstand 15,3 m ≈ Profi 9–18 m, konservativ (Repo-LDT 0,53× reale Φ).
+
+**GROSSE ERKENNTNISSE für die Engine-Arbeit:**
+- Engine kennt die Regeln gut (19/35 deckungsgleich, 0 harte Widersprüche), aber Leuchten-
+  Reproduktion 33/97: **31 Fälle = Zündkette reißt (Raumtyp/Tür/Zirkulation → Selman M4)**,
+  **5 Fälle = falscher Pfeiltyp (Frontalsicht statt Fluchtvektor → M3)**, 3 richtig.
+- **M3 = der echte, belegte, Selman-unabhängige Hebel** (5 mm-verifizierte Testfälle:
+  952E8/413A0/1C64B/41220 + S.20). Wurzel: `bausteine.richtung_und_rotation` +
+  `gang_strategy._ist_abzweig` (Vektor-Quantisierung statt Personen-Frontalsicht).
+- **M1 (Aufheller-Drossel) = PHANTOM, gestrichen.** Die „115 Überschüsse" = 57 RZ-Mismatches (M3)
+  + 57 SL, die nur „überflüssig" sind, weil die Erklär-DXFs RZ-only sind (kein Lichtplan). Gegen
+  die Erklär-DXF nicht beurteilbar; Gate ist konservativ. Drosseln würde Metrik schönrechnen +
+  Lux riskieren. `aufheller_je_rz` hat schon Lux-Gate + D1-Bremsen (`fachpraxis.py:174-273`).
+
+**RESUME (Owner-Weiche für morgen):**
+- **A) M3 angehen** (Typ-Wahl nach Frontalsicht der ankommenden Person) — EMPFOHLEN. Selman-
+  unabhängig, 5 Handle-Testfälle bereit. ⚠️ kippt 4OG-Rotations-Golden + Pfeil-Bänder → GO +
+  Freeze-Nachzug; Hausfeld 2DG (3/3) als Wächter in jeden Messlauf. Messung: `mollgasse_gt_vergleich.py`.
+- **B) Aufheller doch** — dann zuerst Mollgasse-DIALux-Lichtplan als Maßstab besorgen (sonst blind).
+- Offen daneben: Owner-Fragen aus REVIEW §4 (Tür-RZ-Versatz 0 vs 735–930 mm, S.57 B↔C-Fix,
+  beidseitig-Konvention, unerklärte Leuchten); Commit/Push-GO der ganzen 43-Commit-Strecke.
+
+## STAND (2026-09-20 NACHT, Session-Ende) — PDF-Regeln in Engine + Farb-/Größen-Fixes + TOMA-Referenz. [überholt, s. oben]
 
 **Branch `leonis/demo-l-gebaeude` @ `910ded7`, ALLES GEPUSHT (= origin, 0 offen). Volle
 Suite 1417 grün, ruff clean, kein Contract-Touch.** Diese Nacht-Session baut auf dem

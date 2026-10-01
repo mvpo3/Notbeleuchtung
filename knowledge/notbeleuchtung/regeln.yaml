@@ -281,3 +281,88 @@
   begruendung: "PDF S.51, 71-72; 1KG 1CB68, 2KG 1D10E/1D10F"
   belege: [1KG-09, 2KG-09]
   konfidenz: mittel
+
+# ── Erweiterung 2026-09-20 (2): Schul-Typologie + Flucht-/Rettungsplan (TOMA 44) ──
+# ANDERE Dokumentklasse als NB-R00-R21 (Flucht-/Rettungsplan einer Schule +
+# Ausfuehrungs-DXFs, NICHT Platzierungs-Lehrplan). Betrifft Fluchtweg-STRUKTUR /
+# Typologie / Quellen-Disziplin (v.a. Selman-Naht) — KEINE Platzierungsregeln,
+# uebersteuern NB-R00-R21 NICHT. Quelle: abgleich/TOMA44/.
+
+- id: NB-R22
+  thema: quellen_disziplin_fluchtplan
+  klassifikation: quellen_prozessregel   # bindend
+  bedingung: "Quelle ist ein Flucht-/Rettungsplan (gruener Aushang), kein Notbeleuchtungsplan"
+  aktion:
+    symboltyp: "-"
+    position: "belegt NUR Fluchtweg-Richtung/Tueren/Stiegenhaeuser/Ausgaenge; NICHT Leuchtenposition, Wand-/Deckenmontage, Frontseite, ein-/beidseitig, Typ, Hoehe, Lux, Anzahl"
+    rotation: "Blatt-Richtung != CAD-Richtung != Personen-Richtung; gedrehte Aushang-Blaetter"
+  parameter:
+    standort_marke: "Aushang-Bezugspunkt, KEINE Leuchte"
+    mehrere_blaetter: "gleiches Geschoss aus mehreren Aushaengen = EINE Referenz"
+    raum_ohne_gruen: "bedeutet NICHT 'keine Notbeleuchtung noetig'"
+  begruendung: "TOMA S.1-10; Owner-Auftrag Quellen-Trennung A/B/C/D"
+  belege: [TOMA-alle]
+  konfidenz: hoch
+
+- id: NB-R23
+  thema: schul_bildungscluster_fluchtweg
+  klassifikation: referenzpraxis   # Schule
+  bedingung: "Schule, Cluster-/offene-Lernlandschaft-Typologie"
+  aktion:
+    symboltyp: "-"
+    position: "offener 'Kommunikations- und Bewegungsbereich' traegt den Fluchtweg; Unterrichtsraeume oeffnen direkt darauf, OHNE 'Gang'-Label"
+    rotation: "-"
+  begruendung: "TOMA OG-04: Unterrichtsraum 1-4 -> Kommunikations-/Bewegungsbereich -> TH 2. Generalisiert NB-R20 auf Cluster-Ebene"
+  belege: [TOMA-OG-04]
+  konfidenz: hoch
+
+- id: NB-R24
+  thema: mehrere_stiegenhaeuser_gerichtet
+  klassifikation: referenzpraxis
+  bedingung: "Gebaeude mit mehreren Fluchtstiegenhaeusern (TOMA: TH 2/3/4)"
+  aktion:
+    symboltyp: "-"
+    position: "Cluster/Gebaeudeteile GEZIELT verschiedenen THs zuordnen; NICHT alle zum naechstgelegenen TH / einem Hauptausgang; mehrere dargestellte Richtungen erhalten"
+    rotation: "-"
+  begruendung: "TOMA SG/EG/OG; = Variante der Mollgasse-Gebaeudehaelften NB-R18 (unklar -> nicht raten)"
+  belege: [TOMA-SG, TOMA-EG, TOMA-OG]
+  konfidenz: hoch
+
+- id: NB-R25
+  thema: egress_je_ebene_zieltypen
+  klassifikation: referenzpraxis
+  bedingung: "Sockel-/Untergeschoss und Ziel-Typ-Bestimmung"
+  aktion:
+    symboltyp: "-"
+    position: "Sockel-/UG kann direkte Aussenausgaenge auf eigener Ebene haben (Flucht nicht zwingend ueber EG). Ziel-Typen NIE gleichsetzen: Fluchtstiegenhaus / Ausgang ins Freie / Balkon-Terrasse-Loggia / vorlaeufige Evakuierungsstelle / Sammelstelle"
+    rotation: "-"
+  begruendung: "TOMA SG: viele EN-Tueren ins Freie auf Sockel-Ebene. Ergaenzt NB-R13"
+  belege: [TOMA-SG-06]
+  konfidenz: hoch
+
+- id: NB-R26
+  thema: ausfuehrungsplan_annotationen_anker
+  klassifikation: datenquelle   # Erkennungs-Eingang (Selman)
+  bedingung: "Architektur-Ausfuehrungsplan mit Brandschutz-/Flucht-Textannotation"
+  aktion:
+    symboltyp: "-"
+    position: "EN 1125 (Panikstange) / EN 179 (Notausgangsbeschlag) = Ausgangstueren; FLn = Fluchtweg-Flaeche mit Soll-m2; EI 30/90/230-C + 'brandlastfreie Zone' + BA = Brandabschnitte; RWA = Rauchabzug; BMZ = Brandmeldezentrale"
+    rotation: "-"
+  parameter:
+    daten_fallen: "INSUNITS kann luegen (TOMA=6 Meter, real mm -> ueber Tuerbreiten/Wandstaerken verifizieren); Riesen-Koordinaten-Offset moeglich (TOMA SG ~-1.7e9 -> Healthcheck/Nullung vor Engine-Lauf)"
+    messwerte_mm: {toma_eg_fl: [72, 72, 33, 39], toma_og_fl: [48]}
+  begruendung: "TOMA SG/EG/OG: EN/FL/EI/RWA/BMZ als Textannotation mit Koordinaten (inventar_*.json)"
+  belege: [TOMA-EG, TOMA-OG, TOMA-SG]
+  konfidenz: hoch
+
+- id: NB-R27
+  thema: aufzug_keine_fluchtverbindung
+  klassifikation: referenzpraxis   # bestaetigt Engine-Standard (LIFT-Guard)
+  bedingung: "Aufzug im Gebaeude"
+  aktion:
+    symboltyp: "-"
+    position: "Aufzug NIE als vertikale Flucht-Kante; Aufzugsvorbereich getrennt (kann Teil des Gangs sein)"
+    rotation: "-"
+  begruendung: "TOMA Brandfall-Hinweis 'Aufzug nicht benutzen'; deckt sich mit fachpraxis.entferne_schacht_leuchten"
+  belege: [TOMA-alle]
+  konfidenz: hoch

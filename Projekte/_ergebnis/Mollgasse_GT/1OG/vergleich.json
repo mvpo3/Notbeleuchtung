@@ -1,4 +1,16 @@
 {
+ "erreichbar_n": 10,
+ "erreichbar_gepaart": 4,
+ "erreichbar_typ_match": 2,
+ "erreichbar_fehlt": [
+  "94FE7",
+  "95042",
+  "95066",
+  "95067",
+  "952E9",
+  "956B0"
+ ],
+ "typ_match_n": 2,
  "geschoss": "1OG",
  "engine_n": 12,
  "engine_by_kind": {
@@ -26,6 +38,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 1059.7,
    "rot_delta_deg": 179.8,
+   "typ_match": true,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -37,6 +50,7 @@
    "engine_richtung": "links",
    "distanz_mm": 2155.9,
    "rot_delta_deg": 90.4,
+   "typ_match": true,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -48,6 +62,7 @@
    "engine_richtung": "rechts",
    "distanz_mm": 798.7,
    "rot_delta_deg": 179.8,
+   "typ_match": false,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -59,6 +74,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 1781.9,
    "rot_delta_deg": 90.0,
+   "typ_match": false,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   }

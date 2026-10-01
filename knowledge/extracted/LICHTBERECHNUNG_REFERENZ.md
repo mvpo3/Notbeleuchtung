@@ -160,3 +160,47 @@ Modul `platzierung/lux_nachweis.py` (F1-kollisionsfrei — reine Konsumption des
 `nachweis_summary` unter `render_summary["lux_nachweis"]` (wie `["pruefung"]`/`["oib"]`);
 Render kann daraus eine EN-1838-Nachweistabelle ins Blatt setzen. Wird koordiniert mit F1
 gemacht (COORDINATION 2026-09-08), da `pipeline.py`/Render F1-Lane sind.
+
+---
+
+## 8. Vierter Datensatz — 3 DIALux-Reports (Schrack, 17.–18.09.2026)
+
+`knowledge/Lichtberechnung-Wissen/` : **Brünner 247** (21 S.), **Hausfeld 116** (21 S.),
+**Wagramer 76** (27 S.) — alle DIALux, Schrack-Notbeleuchtung, EN-1838-Szene. **Bestätigen
+alle Parameter aus §1 ein viertes Mal** (MF 0,80, Nutzebene Boden 0,020 m / Hausfeld 0,200 m,
+Randzone 0,5 m Gang / 0,0 Fläche, Raster 128×16 Gang / 128×128 Fläche, MH 2,5 m Gang / 2,8 m
+Stiege). Analyse + Gate-Validierung: `knowledge/Lichtberechnung-Wissen/_Analyse/`.
+
+**Leuchten-Notbetrieb (neue Schrack-Modelle, ergänzen §3):**
+
+| Artikel | Rolle | Φ Leuchte | Φ Lampe | P |
+|---|---|---:|---:|---:|
+| `NLIL.L.29E` with corridor lens | Fluchtweg-Corridor | **317 lm** | 360 | 0 W* |
+| `NLKWID039E` opal without lens | Antipanik/Fläche opal | **332 lm** | 520 | 0 W* |
+| `NLKWIC433._1h_3h` +4 corridor lenses (cross) | Garage-Hochleistung | **387 lm** | 520 | 0 W* |
+| `NLKSC009ML` | SL Einzelbatterie | **172 lm** | 200 | 4,0 W |
+
+**Per-Raum (Nutzebene, MF 0,80):**
+
+| Report / Raum | Fläche | Leuchten | Em | Emin | Emax | Emax/Emin |
+|---|---:|---|---:|---:|---:|---:|
+| Wagramer Gang links | 26,4 m² | 1 Corridor | 4,93 | **1,62** | 7,49 | 4,6 |
+| Wagramer Gang rechts | 11,7 m² | 1 Corridor | 7,03 | 5,76 | 14 | 2,4 |
+| Wagramer Schleuse | 9,0 m² | 1 Corridor | 9,70 | 6,83 | 14 | 2,0 |
+| Wagramer **Garage** | 499 m² | 6 opal + 10 cross | 6,56 | **1,06** | 20 | 18,9 |
+| Brünner DG Gang | 22,1 m² | 1 Corr + 1 Akku | 5,13 | 1,92 | 7,72 | 4,0 |
+| Brünner Raum 3 (AP) | 233 m² | 3 opal + 6 cross | 6,00 | **0,89** | 19 | 21,3 |
+| Hausfeld Raum 3 (AP) | 305 m² | 5 opal (+cross) | 6,40 | **1,01** | 23 | 22,8 |
+
+**Lehren (bestätigt/neu):**
+- **Gänge: 1 Fluchtweg-Corridor-Leuchte deckt 9–18 m** bei Emin ≥ 1 lx (Corridor-Linse
+  wirft γ60°-Peak längs der Achse). Kein Aufheller-je-RZ. → empirischer Beleg gegen die
+  B1-Blanket-Regel (M1).
+- **Antipanik-Flächen: Raster ~5–8 m**, ausgelegt auf **Emin ≈ 1,0 lx** (nicht 0,5) —
+  durchgängige Planer-Sicherheitsmarge (Garage 16 Leuchten/499 m², Raum 3 9/233 m²).
+- **Uniformität** überall weit unter 40:1 (Gänge 2–5, Flächen 19–23).
+
+**Gate-Validierung (L1, `_Analyse/LUX_GATE_VALIDIERUNG.md`):** Engine `max_leuchtenabstand`
+= 15,3 m (Repo-LDT) / 16,7 m (reale Φ) ≈ Profi-Praxis → Gate **realistisch + konservativ**
+(Repo-Corridor-LDT ~168 lm = 0,53× der realen NLIL 317 lm → unterschätzt Licht, densifiziert
+eher zu dicht). **M1 kann sich auf das Gate verlassen.**

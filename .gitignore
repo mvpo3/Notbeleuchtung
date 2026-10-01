@@ -20,6 +20,8 @@ tests/failures/
 
 # Norm-PDFs für alle Owner (Repo ist privat — nicht public stellen!)
 !knowledge/**
+# Analyse-Caches der Regelwerk-Strecke (538 Seiten-PNGs + Crops) — lokal, nie tracken
+knowledge/Pläne zeichnen Wissen/_Analyse_Regelwerk/seiten/
 
 # DXF — nur die kanonische Symbol-Library ist getrackt
 *.dxf

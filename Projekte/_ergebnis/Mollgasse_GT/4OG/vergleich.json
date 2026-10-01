@@ -1,4 +1,11 @@
 {
+ "erreichbar_n": 5,
+ "erreichbar_gepaart": 4,
+ "erreichbar_typ_match": 1,
+ "erreichbar_fehlt": [
+  "41593"
+ ],
+ "typ_match_n": 1,
  "geschoss": "4OG",
  "engine_n": 14,
  "engine_by_kind": {
@@ -25,6 +32,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 932.6,
    "rot_delta_deg": 0.1,
+   "typ_match": false,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -36,6 +44,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 1186.9,
    "rot_delta_deg": 89.4,
+   "typ_match": false,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -47,6 +56,7 @@
    "engine_richtung": "rechts",
    "distanz_mm": 958.7,
    "rot_delta_deg": 179.7,
+   "typ_match": false,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -58,6 +68,7 @@
    "engine_richtung": "unten",
    "distanz_mm": 1812.4,
    "rot_delta_deg": 0.3,
+   "typ_match": true,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   },
@@ -69,6 +80,7 @@
    "engine_richtung": "links",
    "distanz_mm": 933.6,
    "rot_delta_deg": 89.9,
+   "typ_match": false,
    "beidseitig_gt": false,
    "beidseitig_engine": false
   }
