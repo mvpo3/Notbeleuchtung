@@ -76,8 +76,12 @@ Raum-Polygon-Quelle: `kaskade L:0 H:1 F:15 R:13` — Rotation: dominante Richtun
 - rest_12 [R] —: 7.07 m², Zentrum (2737.11, 1648.17) m
 - rest_13 [R] STIEGENHAUS: 38.08 m², Zentrum (2732.93, 1650.73) m
 
-## Warnungen (47)
+## Warnungen (51)
 
+- seite_fehlt: tuer_1 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_11 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_17 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_19 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
 - Stempel ohne Polygon: „AUFZUG 8 PERS.“
 - Stempel ohne Polygon: „ER 28“
 - Stempel ohne Polygon: „ER 34“
@@ -335,4 +339,4 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_aussenoeffnung_1
 | unbekannte_kombination | 8 |
 | kein_nachbarraum | 4 |
 
-Laufzeit: 110.9 s
+Laufzeit: 98.1 s

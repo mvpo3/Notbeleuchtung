@@ -39,8 +39,20 @@ Raum-Polygon-Quelle: `kaskade L:19 H:0 F:0 R:4` — Rotation: keine dominante Ka
 - rest_3 [R] —: 1.05 m², Zentrum (12548.72, 356227.30) m
 - rest_4 [R] —: 1.55 m², Zentrum (12550.12, 356230.70) m
 
-## Warnungen (4)
+## Warnungen (16)
 
+- mm_faktor: 1 aus $INSUNITS=4 (keine Wand-Spanne 15–500 m messbar), Türprobe: 10 — widerspricht
+- seite_fehlt: tuer_1 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_5 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_5 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_6 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_6 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_7 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_7 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_11 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_13 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_13 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_14 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
 - Polygon ohne Stempel: rest_1 (9.90 m²)
 - Polygon ohne Stempel: rest_2 (2.70 m²)
 - Polygon ohne Stempel: rest_3 (1.05 m²)
@@ -275,4 +287,4 @@ Quellen: FALLBACK: 2, GRAPH: 5
 | kein_nachbarraum | 3 |
 | tuer_ins_nichts | 3 |
 
-Laufzeit: 47.7 s
+Laufzeit: 49.2 s

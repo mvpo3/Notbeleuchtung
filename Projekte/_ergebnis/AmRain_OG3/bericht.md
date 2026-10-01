@@ -122,8 +122,63 @@ Raum-Polygon-Quelle: `kaskade L:0 H:0 F:42 R:11` — Rotation: keine dominante K
 - rest_10 [R] —: 1.70 m², Zentrum (8.62, 18.54) m
 - rest_11 [R] —: 1.27 m², Zentrum (20.93, 19.17) m
 
-## Warnungen (77)
+## Warnungen (132)
 
+- mm_faktor: 1 aus $INSUNITS=4 (keine Wand-Spanne 15–500 m messbar), Türprobe: 10 — widerspricht
+- keine_wand_entities: kein Wand-Layer mit Wand-Linien — Weiterlauf über das Erscheinungsbild (365 Wandkörper), Bounds aus den Wandkörpern
+- seite_fehlt: tuer_1 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_2 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_3 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_4 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_7 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_10 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_10 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_13 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_14 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_16 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_17 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_17 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_18 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_19 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_21 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_23 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_24 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_26 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_28 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_32 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_33 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_34 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_39 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_40 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_42 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_43 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_44 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_46 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_47 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_48 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_49 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_54 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_59 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_63 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_64 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_66 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_67 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_72 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_75 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_76 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_78 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_81 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_82 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_83 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_85 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_87 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_88 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_88 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_89 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_92 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_93 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_98 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- freiflaeche: 2.73 m² bei (61.1, 11.6) m → neuer Raum frei_1 UNBEKANNT, im Umriss top_14 (±250-mm-Umriss top_14); Tür mit Blatt trennt (tuer_84 raum_27|raum_30, tuer_86 raum_30|raum_35, tuer_98 raum_30|KEIN_RAUM), keine Öffnung ohne Türblatt
 - Stempel ohne Polygon: „WC“
 - Stempel ohne Polygon: „VR“
 - Stempel ohne Polygon: „VR“
@@ -587,4 +642,4 @@ Restweg im EG: unbekannt (AmRain_EG.dxf: kein Segment Stiegenhaustür→final_ex
 | tuer_ins_nichts | 3 |
 | beide_seiten_untypisiert | 2 |
 
-Laufzeit: 659.9 s
+Laufzeit: 360.2 s

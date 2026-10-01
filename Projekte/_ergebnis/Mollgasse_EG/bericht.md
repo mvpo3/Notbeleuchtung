@@ -99,8 +99,29 @@ Raum-Polygon-Quelle: `kaskade L:0 H:10 F:52 R:0` — Rotation: Wände vertikal-d
 - raum_3 [H] —: 13.93 m², Zentrum (2688.99, 1529.65) m
 - raum_10 [H] ABSTELLRAUM: 24.57 m², Zentrum (2696.97, 1509.70) m
 
-## Warnungen (39)
+## Warnungen (60)
 
+- seite_fehlt: tuer_17 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_30 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_36 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_37 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_40 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_42 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_43 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_44 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_45 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_46 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_47 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_49 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_51 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_52 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_53 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_57 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_58 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_62 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_64 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_65 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_66 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
 - Stempel ohne Polygon: „WOHNKÜCHE“
 - Stempel ohne Polygon: „WOHNKÜCHE“
 - Stempel ohne Polygon: „BAD“
@@ -758,4 +779,4 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_1, exit_2, exit_aussen
 | kein_nachbarraum | 21 |
 | beide_seiten_untypisiert | 2 |
 
-Laufzeit: 277.9 s
+Laufzeit: 245.5 s

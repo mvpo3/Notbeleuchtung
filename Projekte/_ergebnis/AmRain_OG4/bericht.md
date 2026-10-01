@@ -65,8 +65,34 @@ Raum-Polygon-Quelle: `kaskade L:0 H:0 F:21 R:6` — Rotation: keine dominante Ka
 - rest_5 [R] GANG: 4.38 m², Zentrum (11.10, 18.87) m
 - rest_6 [R] —: 1.70 m², Zentrum (8.62, 18.54) m
 
-## Warnungen (37)
+## Warnungen (63)
 
+- mm_faktor: 1 aus $INSUNITS=4 (keine Wand-Spanne 15–500 m messbar), Türprobe: 10 — widerspricht
+- keine_wand_entities: kein Wand-Layer mit Wand-Linien — Weiterlauf über das Erscheinungsbild (178 Wandkörper), Bounds aus den Wandkörpern
+- seite_fehlt: tuer_2 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_6 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_8 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_9 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_11 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_12 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_15 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_16 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_17 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_18 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_18 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_20 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_21 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_24 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_25 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_29 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_33 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_34 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_38 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_39 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_39 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_41 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_45 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- freiflaeche: 5.41 m² bei (56.9, 8.7) m → neuer Raum frei_1 UNBEKANNT, im Umriss top_5 (Nachbarn nur top_5); Tür mit Blatt trennt (tuer_45 KEIN_RAUM|AUSSEN), keine Öffnung ohne Türblatt
 - Stempel ohne Polygon: „GANG“
 - Stempel ohne Polygon: „VR“
 - Stempel ohne Polygon: „WC“
@@ -341,4 +367,4 @@ Restweg im EG: unbekannt (AmRain_EG.dxf: kein Segment Stiegenhaustür→final_ex
 | beide_seiten_untypisiert | 2 |
 | tuer_ins_nichts | 2 |
 
-Laufzeit: 1551.7 s
+Laufzeit: 126.0 s

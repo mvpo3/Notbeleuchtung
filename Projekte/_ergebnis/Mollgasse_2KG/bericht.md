@@ -95,8 +95,17 @@ Raum-Polygon-Quelle: `kaskade L:0 H:1 F:20 R:7` — Rotation: Wände vertikal-do
 - rest_6 [R] —: 22.67 m², Zentrum (2168.50, 1611.87) m
 - rest_7 [R] —: 39.81 m², Zentrum (2177.67, 1612.77) m
 
-## Warnungen (68)
+## Warnungen (77)
 
+- seite_fehlt: tuer_2 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_6 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_7 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_9 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_11 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_12 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_20 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_24 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_27 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
 - Stempel ohne Polygon: „AUFZUG 8 PERS.“
 - Stempel ohne Polygon: „SCHLEUSE“
 - Stempel ohne Polygon: „ER 12“
@@ -404,4 +413,4 @@ Quellen: FALLBACK: 2, GRAPH: 1
 | unbekannte_kombination | 16 |
 | kein_nachbarraum | 9 |
 
-Laufzeit: 190.0 s
+Laufzeit: 168.3 s

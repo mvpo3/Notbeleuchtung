@@ -34,8 +34,12 @@ Raum-Polygon-Quelle: `kaskade L:10 H:0 F:0 R:6` — Rotation: keine dominante Ka
 - rest_5 [R] GANG: 3.53 m², Zentrum (12545.83, 356219.59) m
 - rest_6 [R] —: 6.56 m², Zentrum (12543.79, 356220.70) m
 
-## Warnungen (6)
+## Warnungen (10)
 
+- mm_faktor: 1 aus $INSUNITS=4 (keine Wand-Spanne 15–500 m messbar), Türprobe: keine
+- seite_fehlt: tuer_3 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_3 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- sanitaer: rest_6: BAD aus Sanitärbeleg (DUSCHE 1, WASCHBECKEN 2, WC 1) im Umriss top_2 (Probe) — Nachbarn nur top_2: raum_2 ZIMMER top_2, raum_3 ZIMMER top_2, raum_5 BAD top_2, raum_8 WC top_2, rest_5 GANG top_2
 - Polygon ohne Stempel: rest_1 (1.16 m²)
 - Polygon ohne Stempel: rest_2 (1.15 m²)
 - Polygon ohne Stempel: rest_3 (8.53 m²)
@@ -224,4 +228,4 @@ Restweg im EG (Rennweg_EG.dxf): 4.4–9.9 m (Stiegenhaustür → nächster final
 |---|--:|
 | tuer_ins_nichts | 1 |
 
-Laufzeit: 48.3 s
+Laufzeit: 47.4 s

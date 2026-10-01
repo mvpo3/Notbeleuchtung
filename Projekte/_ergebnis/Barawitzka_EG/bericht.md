@@ -70,8 +70,32 @@ Raum-Polygon-Quelle: `kaskade L:2 H:40 F:1 R:3` — Rotation: Wände vertikal-do
 - rest_2 [R] —: 4.42 m², Zentrum (13.69, -15.76) m
 - rest_3 [R] NISCHE: 2.53 m², Zentrum (9.91, -5.01) m
 
-## Warnungen (13)
+## Warnungen (37)
 
+- seite_fehlt: tuer_1 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_1 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_2 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_3 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_3 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_4 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_4 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_5 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_5 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_8 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_9 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_10 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_10 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_11 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_14 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_25 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_30 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_31 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_31 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_33 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_33 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_37 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_38 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
+- seite_fehlt: tuer_38 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
 - Stempel ohne Polygon: „Terrasse“
 - Stempel ohne Polygon: „Loggia“
 - Polygon ohne Stempel: raum_1 (5.72 m²)
@@ -345,18 +369,15 @@ Quellen: FALLBACK: 1, GRAPH: 7
 |---|--:|---|---|
 | tuer_17 | 21.3 | Luftlinie | exit_tuer_31 |
 | tuer_18 | 21.2 | Luftlinie | exit_tuer_31 |
-| tuer_19 | 22.2 | Luftlinie | exit_tuer_31 |
 | tuer_20 | 21.8 | Luftlinie | exit_tuer_31 |
 | tuer_21 | 23.0 | Luftlinie | exit_tuer_31 |
 | tuer_23 | 10.9 | Luftlinie | exit_tuer_31 |
 | tuer_26 | 9.4 | Luftlinie | exit_tuer_31 |
 | tuer_27 | 20.3 | GRAPH | exit_tuer_31 |
-| tuer_29 | 23.8 | Luftlinie | exit_tuer_31 |
 | tuer_32 | 13.5 | GRAPH | exit_tuer_31 |
 | tuer_39 | 20.2 | GRAPH | exit_tuer_31 |
 | tuer_40 | 14.9 | GRAPH | exit_tuer_31 |
 | durchgang_8 | 16.5 | GRAPH | exit_tuer_31 |
-| durchgang_11 | 25.1 | Luftlinie | exit_tuer_31 |
 | durchgang_13 | 21.9 | Luftlinie | exit_tuer_31 |
 | durchgang_22 | 8.8 | Luftlinie | exit_tuer_31 |
 
@@ -436,13 +457,10 @@ Quellen: FALLBACK: 1, GRAPH: 7
 
 - ⚠ EG/UG: kein final_exit erreichbar von Tür tuer_17 (Endraum raum_28) — Türgraph endet vor dem Ausgang
 - ⚠ EG/UG: kein final_exit erreichbar von Tür tuer_18 (Endraum raum_3) — Türgraph endet vor dem Ausgang
-- ⚠ EG/UG: kein final_exit erreichbar von Tür tuer_19 (Endraum raum_17) — Türgraph endet vor dem Ausgang
 - ⚠ EG/UG: kein final_exit erreichbar von Tür tuer_20 (Endraum raum_11) — Türgraph endet vor dem Ausgang
 - ⚠ EG/UG: kein final_exit erreichbar von Tür tuer_21 (Endraum raum_24) — Türgraph endet vor dem Ausgang
 - ⚠ EG/UG: kein final_exit erreichbar von Tür tuer_23 (Endraum raum_22) — Türgraph endet vor dem Ausgang
 - ⚠ EG/UG: kein final_exit erreichbar von Tür tuer_26 (Endraum raum_21) — Türgraph endet vor dem Ausgang
-- ⚠ EG/UG: kein final_exit erreichbar von Tür tuer_29 (Endraum raum_10) — Türgraph endet vor dem Ausgang
-- ⚠ EG/UG: kein final_exit erreichbar von Tür durchgang_11 (Endraum raum_25) — Türgraph endet vor dem Ausgang
 - ⚠ EG/UG: kein final_exit erreichbar von Tür durchgang_13 (Endraum raum_13) — Türgraph endet vor dem Ausgang
 - ⚠ EG/UG: kein final_exit erreichbar von Tür durchgang_22 (Endraum raum_18) — Türgraph endet vor dem Ausgang
 
@@ -490,4 +508,4 @@ Quellen: FALLBACK: 1, GRAPH: 7
 | sicherheitsleuchte | (14.90, -1.93) | 0 |
 | sicherheitsleuchte | (9.92, -6.27) | 0 |
 
-Laufzeit: 250.5 s
+Laufzeit: 254.6 s
