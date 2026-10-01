@@ -6,7 +6,9 @@ die Engine-Pipeline (Leonis) exakt die Räume der Prüfstrecke bekommt.
 
 L: ``raeume_aus_layer`` · H: ``raeume_aus_hatch`` additiv (IoU-Dedup gegen L)
 · F: ``flute_stempel`` für Stempel ohne brauchbares Polygon · R:
-``komponenten_ohne_stempel`` für den stempellosen Rest.
+``komponenten_ohne_stempel`` für den stempellosen Rest. Danach liest
+``kuerzel_beleg.typisiere_kuerzel`` Kürzel ohne Flächenzeile in den noch
+untypisierten Polygonen (Owner-Entscheid 1, 2026-10-01).
 """
 from __future__ import annotations
 
@@ -20,10 +22,12 @@ from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
 
 from .bereinigung import bereinige_kaskade
 from .dxf_load import DxfPlan
+from .kuerzel_beleg import kuerzel_texte, typisiere_kuerzel
 from .kuerzel_entscheid import kandidat_kuerzel, loese_kuerzel
 from .raumlayer import raeume_aus_hatch, raeume_aus_layer
 from .raumtyp import raumtyp_flags
 from .rest_komponenten import komponenten_ohne_stempel
+from .sanitaer import sanitaerobjekte
 from .stempel_anker import Stempel, Zuordnung, finde_stempel, ordne_zu
 from .stempel_flutung import flute_stempel
 from .tueren import TuerOeffnung, im_planbereich, tuer_oeffnungen
@@ -206,6 +210,20 @@ def raeume_aus_kaskade(plan: DxfPlan,
         print(f"   bereinigung fehlgeschlagen: {exc}")
         warnungen.append(f"kaskade_fehler: Bereinigung {type(exc).__name__}: {exc} — "
                          "Überlappungen bleiben unbereinigt")
+    # Abschnitt 1 (Owner-Entscheid 1, 2026-10-01): ein Raumkürzel im Polygon ist
+    # Typbeleg, auch ohne Flächenzeile — NACH R-Stufe und Bereinigung, weil erst
+    # jetzt alle Polygone endgültig sind (Am Rain OG4: „STGH" in `rest_2`).
+    # Im Fehlerschutz wie die Stufen darüber: Zusatz-Typisierung, kein Abbruch.
+    try:
+        typisiere_kuerzel(kuerzel_texte(plan), raeume + rest_r,
+                          lambda: sanitaerobjekte(plan),
+                          hinweise=hinweise, warnungen=warnungen,
+                          stempel=[z.stempel for z in zuord if z.raum is None],
+                          gestempelt={z.raum.id for z in zuord if z.raum is not None})
+    except Exception as exc:  # noqa: BLE001 — Kürzel-Beleg darf den Lauf nie killen
+        print(f"   kuerzel_beleg fehlgeschlagen: {exc}")
+        warnungen.append(f"kaskade_fehler: Kürzel-Beleg {type(exc).__name__}: {exc} — "
+                         "Kürzel ohne Flächenzeile bleiben ungelesen")
     # Kette über die ÜBERLEBENDEN Räume (quelle behält die entfallenen ids für
     # den Bericht).
     n = Counter(quelle[r.id] for r in raeume + rest_r)

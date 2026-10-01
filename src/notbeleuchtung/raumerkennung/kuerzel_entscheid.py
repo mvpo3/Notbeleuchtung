@@ -39,6 +39,20 @@ if TYPE_CHECKING:  # nur fürs Typ-Bild — sonst Import-Zyklus über stempel_an
 # kommt 2× vor (beide in Muthgasse_E2 auf A-AREA-IDEN), Token `schleuse` 0×.
 KANDIDATEN: dict[str, str] = {"schl": "SCHLEUSE"}
 
+# Mehrdeutige Kürzel (Abschnitt 1, Owner 2026-10-01): kein Eintrag im Wörterbuch,
+# keine Entscheidung je Nummer — der Raum bleibt UNBESTIMMT mit Notlicht und
+# bekommt den Grund in den Bericht; die zweite Meinung (Abschnitt 3, Phase B)
+# entscheidet. Lesarten als Klartext, damit der Bericht sie nennt. Gemessen in
+# den 13 Prüfplänen (Inventur 2026-10-02): `sr` 4× (Barawitzka EG 1, Muthgasse
+# E2 3, davon 3 in untypisierten Räumen), `tr` 0×, `ka` ~110× als
+# Kellerabteil-Nummer „KA 101"/„KA401" (Am Rain UG; die Nummer steht oft im
+# Gang-Polygon, nicht im Abteil).
+MEHRDEUTIG: dict[str, str] = {
+    "sr": "Schlafraum (SCHLAFZIMMER) oder Schutzraum (kein Kanon-Typ)",
+    "tr": "Trockenraum (kein Kanon-Typ) oder Technikraum (TECHNIK)",
+    "ka": "Kellerabteil (KELLER) oder Abteil-Nummer im Gang-Polygon",
+}
+
 
 @dataclass(frozen=True)
 class Entscheidung:

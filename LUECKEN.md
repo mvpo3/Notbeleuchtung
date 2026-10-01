@@ -1664,6 +1664,10 @@ Entscheid keine Regel. Gemessen (OG4 allein, Kopf `6fe0bb8`; Skripte im Scratch)
 **Offen:** Owner-Entscheid „Raumkürzel ohne Fläche als Typbeleg" (Option Text). Die Option Layer `Treppe` ist auf OG4
 gemessen ohne Treffer im Kern. **P0** · Selman (Owner-Frage).
 
+**Nachtrag 2026-10-02:** Owner-Entscheid 1 (2026-10-01, Option Text) → gebaut in § 23: `rest_2` STIEGENHAUS, 2
+`stair_exit`, 1 Stiegenhaus, 20 Leuchten (= Gegenprobe). Korrektur zur Messung oben: neben „STGH" steht die
+Flächenzeile „32.44 m²" (0,4 m darunter); der Stempel existiert, fand nur kein Polygon (`kein_polygon`), § 23.2.
+
 ### 20.5 P1 F-03 — Ausgang an einer Tür mit `von_raum == nach_raum` (nicht gebaut: S4c-Gebiet)
 
 Barawitzka EG `tuer_31` (`arc+text:Eingang`, 950 mm, Rolle `hauseingang`) trägt den einzigen `final_exit`
@@ -1849,7 +1853,10 @@ Luftlinien-Zeilen der Weglängen-Tabelle Muthgasse −22, Barawitzka −3, Am Ra
 UNBEKANNT-Räume `frei_*` aus 2d (§ 16, alle Am Rain) zeigen — Tabelle mit Plan, Geschoss, Raum-ID, Fläche,
 Stempel/Kürzel im Polygon, Nachbarräumen und Türen; je Raum ein Ausschnittbild (Raum magenta, Stempeltext lesbar)
 unter `Projekte/_ergebnis/AmRain_<Geschoss>/unbekannt/`. **Typ vorher** = Stand dieses Kopfs (alle 12 ohne
-`raum_typ`, Klasse `None`, ohne Wohnung); **Typ nachher** wird in Abschnitt 1/2 gefüllt. **Kein Code geändert.**
+`raum_typ`, Klasse `None`, ohne Wohnung); **Typ nachher** nach Abschnitt 1 (§ 23, Runner `nachher` auf dem Arbeitsbaum
+des § 23-Commits, Am Rain UG/EG/OG1–OG4 je allein): **alle 12 unverändert UNBEKANNT** — die Kürzel-Regel läuft in der
+Kaskade, die `frei_*` entstehen erst danach im Provider (§ 16 „Einbau"); Abschnitt 2 füllt die Spalte. **Kein Code
+geändert** (Abschnitt 0).
 
 **Datenquelle.** `Projekte/_ergebnis/AmRain_*/raeume.json` trägt nur die Kaskaden-Räume (`scripts/plan_pruefen.py`
 schreibt sie aus `raeume_aus_kaskade`; die `frei_*` entstehen erst in `provider.parse` nach `_tueren_und_wohnungen`,
@@ -1877,18 +1884,18 @@ die Öffnung zum Schacht entschied), und `durchgang_*` ohne Blatt, wo einer an d
 
 | Plan | Geschoss | Raum-ID | Fläche m² | Lage (x, y) m | Stempel/Kürzel im Polygon — Layer `Raum-Beschriftung` (Rohtext, Lage m) | weitere Texte im Polygon (Rohtext, Layer) | Nachbarräume (ID, Typ, Abstand) | Türen (ID, Rolle, von→nach, Blatt) | Typ vorher | Typ nachher |
 |---|---|---|--:|---|---|---|---|---|---|---|
-| AmRain_EG | EG | `frei_1` | 16.57 | 37.0 / 21.7 | „12.78 m²“ (35.8 / 22.4); „VR“ (36.1 / 22.8) | „P_05“ (Fenster-Tür_NR); „EI“ (Beschriftung Brandschutz); „2“ (Beschriftung Brandschutz); „30“ (Beschriftung Brandschutz); „STUK=2,175 ü.FOK“ (Text 1_50); „Absturzsicherung H=102“ (Text 1_50); „OK= DUK“ (Text 1_50); „110“ (Beschriftung Fenster-Tür); „252“ (Beschriftung Fenster-Tür); „Handlauf H=90“ (Text 1_50); „Handlauf H=90“ (Text 1_50); „17 Stg“ (Beschriftung Stiege); „18,65/24“ (Beschriftung Stiege); „80“ (Beschriftung Fenster-Tür); „Parkett“ (Bodenfläche) | `raum_85` WC 0 mm; `frei_2` — 466 mm | `tuer_151` — KEIN_RAUM→AUSSEN Blatt ja; `tuer_172` — KEIN_RAUM→AUSSEN Blatt ja; `tuer_201` — KEIN_RAUM→KEIN_RAUM Blatt ja; `tuer_242` — KEIN_RAUM→raum_85 Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
-| AmRain_EG | EG | `frei_2` | 3.92 | 33.4 / 19.9 | „3.37 m²“ (32.8 / 19.5); „AR“ (33.0 / 19.8) | „210“ (Beschriftung Fenster-Tür); „80“ (Beschriftung Fenster-Tür); „ker.Belag“ (Bodenfläche); „H“ (Verteiler) | `raum_85` WC 100 mm; `frei_1` — 466 mm | `tuer_151` — KEIN_RAUM→AUSSEN Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
-| AmRain_EG | EG | `frei_3` | 2.36 | 23.4 / 13.1 | — | „210“ (Beschriftung Fenster-Tür); „80“ (Beschriftung Fenster-Tür); „80“ (Beschriftung Fenster-Tür) | `raum_74` WOHNZIMMER 0 mm; `raum_91` VORRAUM 0 mm; `raum_92` WC 0 mm; `frei_4` — 1 mm; `raum_86` BAD 324 mm | `durchgang_59` zimmertuer raum_74→raum_91 Blatt nein; `tuer_157` zimmertuer raum_92→raum_91 Blatt ja; `tuer_214` — KEIN_RAUM→raum_74 Blatt ja; `tuer_249` — KEIN_RAUM→KEIN_RAUM Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
-| AmRain_EG | EG | `frei_4` | 9.76 | 21.9 / 10.6 | „10.25 m²“ (21.7 / 11.3); „ZI 2“ (21.9 / 11.7) | „210“ (Beschriftung Fenster-Tür); „80“ (Beschriftung Fenster-Tür); „Parkett“ (Bodenfläche) | `raum_74` WOHNZIMMER 0 mm; `frei_3` — 1 mm | `tuer_214` — KEIN_RAUM→raum_74 Blatt ja; `tuer_216` — KEIN_RAUM→AUSSEN Blatt ja; `tuer_249` — KEIN_RAUM→KEIN_RAUM Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
-| AmRain_OG1 | 1OG | `frei_1` | 11.17 | 149.3 / 49.3 | „3.88 m²“ (148.4 / 49.8); „BALKON“ (148.4 / 50.2) | „221“ (Beschriftung Fenster-Tür); „223“ (Beschriftung Fenster-Tür); „Betonpl.“ (Bodenfläche); „TW raumhoch“ (Parapethöhe 1_100) | `raum_30` BALKON 0 mm; `raum_40` KÜCHE 0 mm | `tuer_51` — KEIN_RAUM→KEIN_RAUM Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
-| AmRain_OG1 | 1OG | `frei_2` | 6.75 | 95.8 / 44.9 | — | „Handlauf H=90“ (Beschriftung Stiege); „Handlauf H=90“ (Beschriftung Stiege); „17 STG 17/29“ (Beschriftung Stiege); „17 STG 17/29“ (Beschriftung Stiege); „210“ (Beschriftung Fenster-Tür) | `raum_4` GANG 0 mm | `tuer_13` wohnungseingang raum_4→raum_12 Blatt ja; `tuer_22` — KEIN_RAUM→KEIN_RAUM Blatt ja; `tuer_23` — KEIN_RAUM→raum_4 Blatt ja; `tuer_39` — raum_4→AUSSEN Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
-| AmRain_OG1 | 1OG | `frei_3` | 3.99 | 54.0 / 9.0 | „VR“ (53.6 / 7.6) | „STUK=2,175 ü.FOK“ (Text 1_1000) | `raum_81` BAD 0 mm; `raum_86` GANG 0 mm; `rest_10` SCHACHT 0 mm | `durchgang_35` wohnungseingang raum_81→raum_86 Blatt nein; `tuer_170` — KEIN_RAUM→KEIN_RAUM Blatt ja; `tuer_205` — KEIN_RAUM→raum_86 Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
-| AmRain_OG1 | 1OG | `frei_4` | 2.39 | 51.5 / -1.1 | „7.67 m²“ (51.2 / -0.8); „LOGGIA“ (51.2 / -0.4) | „Betonpl.“ (Bodenfläche) | `raum_66` WOHNZIMMER 272 mm | — | UNBEKANNT | _(Abschnitt 1/2)_ |
-| AmRain_OG1 | 1OG | `frei_5` | 18.19 | 12.7 / 44.7 | „5.35 m²“ (11.8 / 43.7); „BAD“ (11.9 / 44.1); „7.68 m²“ (13.3 / 45.4); „GANG“ (13.4 / 45.7); „5.34 m²“ (11.6 / 46.3); „KOCHNISCHE“ (11.2 / 46.6) | „210“ (Beschriftung Fenster-Tür); „E-Verteiler“ (Verteiler); „WM“ (Sanitär); „KS“ (Sanitär); „GS“ (Sanitär); „ker. Belag“ (Bodenfläche); „210“ (Beschriftung Fenster-Tür); „80“ (Beschriftung Fenster-Tür); „Parkett“ (Bodenfläche); „Parkett“ (Bodenfläche) | `raum_36` WC 0 mm | `tuer_103` — AUSSEN→KEIN_RAUM Blatt ja; `tuer_95` balkontuer raum_36→AUSSEN Blatt ja; `tuer_96` — KEIN_RAUM→KEIN_RAUM Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
-| AmRain_OG2 | 2OG | `frei_1` | 3.99 | 54.0 / 9.0 | „VR“ (53.6 / 7.6) | „STUK=2,175 ü.FOK“ (Text 1_1000) | `raum_51` BAD 0 mm; `raum_65` GANG 0 mm; `rest_9` SCHACHT 0 mm | `durchgang_30` wohnungseingang raum_51→raum_65 Blatt nein; `tuer_154` — KEIN_RAUM→KEIN_RAUM Blatt ja; `tuer_206` — KEIN_RAUM→raum_65 Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
-| AmRain_OG3 | 3OG | `frei_1` | 2.73 | 61.1 / 11.6 | „5.13 m²“ (60.9 / 11.8); „VR“ (61.1 / 12.2) | „E-Verteiler“ (Verteiler); „Parkett“ (Bodenfläche) | `raum_27` BAD 0 mm; `raum_30` WOHNZIMMER 0 mm; `raum_35` GANG 56 mm | `tuer_84` zimmertuer raum_27→raum_30 Blatt ja; `tuer_86` wohnungseingang raum_30→raum_35 Blatt ja; `tuer_98` — raum_30→KEIN_RAUM Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
-| AmRain_OG4 | 4OG | `frei_1` | 5.41 | 56.9 / 8.7 | — | „DDB 112/35“ (Deckendurchbruch_ Aussparung); „FDB 112/35“ (Fussbodendurchbruch); „S4-4“ (004-RAI_EN_GR_HKLS_EG_01_Grundriss HKLS EG$0$SIMA_HKLS_Schachtnummer); „Haltegriff“ (Text 1_50); „DACHAUSSTIEG“ (Beschriften); „über Leiter von OG3“ (Beschriften); „Luftraum“ (Beschriften); „Fuge mit“ (Beschriften); „eingespachtelten“ (Beschriften); „Fugenband schließen“ (Beschriften); „RA mind. 1m²“ (Beschriften); „Dachausstieg“ (Beschriften) | `raum_14` ABSTELLRAUM 265 mm | `tuer_45` — KEIN_RAUM→AUSSEN Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
+| AmRain_EG | EG | `frei_1` | 16.57 | 37.0 / 21.7 | „12.78 m²“ (35.8 / 22.4); „VR“ (36.1 / 22.8) | „P_05“ (Fenster-Tür_NR); „EI“ (Beschriftung Brandschutz); „2“ (Beschriftung Brandschutz); „30“ (Beschriftung Brandschutz); „STUK=2,175 ü.FOK“ (Text 1_50); „Absturzsicherung H=102“ (Text 1_50); „OK= DUK“ (Text 1_50); „110“ (Beschriftung Fenster-Tür); „252“ (Beschriftung Fenster-Tür); „Handlauf H=90“ (Text 1_50); „Handlauf H=90“ (Text 1_50); „17 Stg“ (Beschriftung Stiege); „18,65/24“ (Beschriftung Stiege); „80“ (Beschriftung Fenster-Tür); „Parkett“ (Bodenfläche) | `raum_85` WC 0 mm; `frei_2` — 466 mm | `tuer_151` — KEIN_RAUM→AUSSEN Blatt ja; `tuer_172` — KEIN_RAUM→AUSSEN Blatt ja; `tuer_201` — KEIN_RAUM→KEIN_RAUM Blatt ja; `tuer_242` — KEIN_RAUM→raum_85 Blatt ja | UNBEKANNT | UNBEKANNT nach Abschnitt 1 (§ 23: `frei_*` entstehen nach der Kaskade, die Kürzel-Regel erreicht sie nicht → Abschnitt 2) |
+| AmRain_EG | EG | `frei_2` | 3.92 | 33.4 / 19.9 | „3.37 m²“ (32.8 / 19.5); „AR“ (33.0 / 19.8) | „210“ (Beschriftung Fenster-Tür); „80“ (Beschriftung Fenster-Tür); „ker.Belag“ (Bodenfläche); „H“ (Verteiler) | `raum_85` WC 100 mm; `frei_1` — 466 mm | `tuer_151` — KEIN_RAUM→AUSSEN Blatt ja | UNBEKANNT | UNBEKANNT nach Abschnitt 1 (§ 23: `frei_*` entstehen nach der Kaskade, die Kürzel-Regel erreicht sie nicht → Abschnitt 2) |
+| AmRain_EG | EG | `frei_3` | 2.36 | 23.4 / 13.1 | — | „210“ (Beschriftung Fenster-Tür); „80“ (Beschriftung Fenster-Tür); „80“ (Beschriftung Fenster-Tür) | `raum_74` WOHNZIMMER 0 mm; `raum_91` VORRAUM 0 mm; `raum_92` WC 0 mm; `frei_4` — 1 mm; `raum_86` BAD 324 mm | `durchgang_59` zimmertuer raum_74→raum_91 Blatt nein; `tuer_157` zimmertuer raum_92→raum_91 Blatt ja; `tuer_214` — KEIN_RAUM→raum_74 Blatt ja; `tuer_249` — KEIN_RAUM→KEIN_RAUM Blatt ja | UNBEKANNT | UNBEKANNT nach Abschnitt 1 (§ 23: `frei_*` entstehen nach der Kaskade, die Kürzel-Regel erreicht sie nicht → Abschnitt 2) |
+| AmRain_EG | EG | `frei_4` | 9.76 | 21.9 / 10.6 | „10.25 m²“ (21.7 / 11.3); „ZI 2“ (21.9 / 11.7) | „210“ (Beschriftung Fenster-Tür); „80“ (Beschriftung Fenster-Tür); „Parkett“ (Bodenfläche) | `raum_74` WOHNZIMMER 0 mm; `frei_3` — 1 mm | `tuer_214` — KEIN_RAUM→raum_74 Blatt ja; `tuer_216` — KEIN_RAUM→AUSSEN Blatt ja; `tuer_249` — KEIN_RAUM→KEIN_RAUM Blatt ja | UNBEKANNT | UNBEKANNT nach Abschnitt 1 (§ 23: `frei_*` entstehen nach der Kaskade, die Kürzel-Regel erreicht sie nicht → Abschnitt 2) |
+| AmRain_OG1 | 1OG | `frei_1` | 11.17 | 149.3 / 49.3 | „3.88 m²“ (148.4 / 49.8); „BALKON“ (148.4 / 50.2) | „221“ (Beschriftung Fenster-Tür); „223“ (Beschriftung Fenster-Tür); „Betonpl.“ (Bodenfläche); „TW raumhoch“ (Parapethöhe 1_100) | `raum_30` BALKON 0 mm; `raum_40` KÜCHE 0 mm | `tuer_51` — KEIN_RAUM→KEIN_RAUM Blatt ja | UNBEKANNT | UNBEKANNT nach Abschnitt 1 (§ 23: `frei_*` entstehen nach der Kaskade, die Kürzel-Regel erreicht sie nicht → Abschnitt 2) |
+| AmRain_OG1 | 1OG | `frei_2` | 6.75 | 95.8 / 44.9 | — | „Handlauf H=90“ (Beschriftung Stiege); „Handlauf H=90“ (Beschriftung Stiege); „17 STG 17/29“ (Beschriftung Stiege); „17 STG 17/29“ (Beschriftung Stiege); „210“ (Beschriftung Fenster-Tür) | `raum_4` GANG 0 mm | `tuer_13` wohnungseingang raum_4→raum_12 Blatt ja; `tuer_22` — KEIN_RAUM→KEIN_RAUM Blatt ja; `tuer_23` — KEIN_RAUM→raum_4 Blatt ja; `tuer_39` — raum_4→AUSSEN Blatt ja | UNBEKANNT | UNBEKANNT nach Abschnitt 1 (§ 23: `frei_*` entstehen nach der Kaskade, die Kürzel-Regel erreicht sie nicht → Abschnitt 2) |
+| AmRain_OG1 | 1OG | `frei_3` | 3.99 | 54.0 / 9.0 | „VR“ (53.6 / 7.6) | „STUK=2,175 ü.FOK“ (Text 1_1000) | `raum_81` BAD 0 mm; `raum_86` GANG 0 mm; `rest_10` SCHACHT 0 mm | `durchgang_35` wohnungseingang raum_81→raum_86 Blatt nein; `tuer_170` — KEIN_RAUM→KEIN_RAUM Blatt ja; `tuer_205` — KEIN_RAUM→raum_86 Blatt ja | UNBEKANNT | UNBEKANNT nach Abschnitt 1 (§ 23: `frei_*` entstehen nach der Kaskade, die Kürzel-Regel erreicht sie nicht → Abschnitt 2) |
+| AmRain_OG1 | 1OG | `frei_4` | 2.39 | 51.5 / -1.1 | „7.67 m²“ (51.2 / -0.8); „LOGGIA“ (51.2 / -0.4) | „Betonpl.“ (Bodenfläche) | `raum_66` WOHNZIMMER 272 mm | — | UNBEKANNT | UNBEKANNT nach Abschnitt 1 (§ 23: `frei_*` entstehen nach der Kaskade, die Kürzel-Regel erreicht sie nicht → Abschnitt 2) |
+| AmRain_OG1 | 1OG | `frei_5` | 18.19 | 12.7 / 44.7 | „5.35 m²“ (11.8 / 43.7); „BAD“ (11.9 / 44.1); „7.68 m²“ (13.3 / 45.4); „GANG“ (13.4 / 45.7); „5.34 m²“ (11.6 / 46.3); „KOCHNISCHE“ (11.2 / 46.6) | „210“ (Beschriftung Fenster-Tür); „E-Verteiler“ (Verteiler); „WM“ (Sanitär); „KS“ (Sanitär); „GS“ (Sanitär); „ker. Belag“ (Bodenfläche); „210“ (Beschriftung Fenster-Tür); „80“ (Beschriftung Fenster-Tür); „Parkett“ (Bodenfläche); „Parkett“ (Bodenfläche) | `raum_36` WC 0 mm | `tuer_103` — AUSSEN→KEIN_RAUM Blatt ja; `tuer_95` balkontuer raum_36→AUSSEN Blatt ja; `tuer_96` — KEIN_RAUM→KEIN_RAUM Blatt ja | UNBEKANNT | UNBEKANNT nach Abschnitt 1 (§ 23: `frei_*` entstehen nach der Kaskade, die Kürzel-Regel erreicht sie nicht → Abschnitt 2) |
+| AmRain_OG2 | 2OG | `frei_1` | 3.99 | 54.0 / 9.0 | „VR“ (53.6 / 7.6) | „STUK=2,175 ü.FOK“ (Text 1_1000) | `raum_51` BAD 0 mm; `raum_65` GANG 0 mm; `rest_9` SCHACHT 0 mm | `durchgang_30` wohnungseingang raum_51→raum_65 Blatt nein; `tuer_154` — KEIN_RAUM→KEIN_RAUM Blatt ja; `tuer_206` — KEIN_RAUM→raum_65 Blatt ja | UNBEKANNT | UNBEKANNT nach Abschnitt 1 (§ 23: `frei_*` entstehen nach der Kaskade, die Kürzel-Regel erreicht sie nicht → Abschnitt 2) |
+| AmRain_OG3 | 3OG | `frei_1` | 2.73 | 61.1 / 11.6 | „5.13 m²“ (60.9 / 11.8); „VR“ (61.1 / 12.2) | „E-Verteiler“ (Verteiler); „Parkett“ (Bodenfläche) | `raum_27` BAD 0 mm; `raum_30` WOHNZIMMER 0 mm; `raum_35` GANG 56 mm | `tuer_84` zimmertuer raum_27→raum_30 Blatt ja; `tuer_86` wohnungseingang raum_30→raum_35 Blatt ja; `tuer_98` — raum_30→KEIN_RAUM Blatt ja | UNBEKANNT | UNBEKANNT nach Abschnitt 1 (§ 23: `frei_*` entstehen nach der Kaskade, die Kürzel-Regel erreicht sie nicht → Abschnitt 2) |
+| AmRain_OG4 | 4OG | `frei_1` | 5.41 | 56.9 / 8.7 | — | „DDB 112/35“ (Deckendurchbruch_ Aussparung); „FDB 112/35“ (Fussbodendurchbruch); „S4-4“ (004-RAI_EN_GR_HKLS_EG_01_Grundriss HKLS EG$0$SIMA_HKLS_Schachtnummer); „Haltegriff“ (Text 1_50); „DACHAUSSTIEG“ (Beschriften); „über Leiter von OG3“ (Beschriften); „Luftraum“ (Beschriften); „Fuge mit“ (Beschriften); „eingespachtelten“ (Beschriften); „Fugenband schließen“ (Beschriften); „RA mind. 1m²“ (Beschriften); „Dachausstieg“ (Beschriften) | `raum_14` ABSTELLRAUM 265 mm | `tuer_45` — KEIN_RAUM→AUSSEN Blatt ja | UNBEKANNT | UNBEKANNT nach Abschnitt 1 (§ 23: `frei_*` entstehen nach der Kaskade, die Kürzel-Regel erreicht sie nicht → Abschnitt 2) |
 
 **Bilder** (12, `Projekte/_ergebnis/AmRain_<Geschoss>/unbekannt/<raum_id>.png`, längste Seite 1 400 px, PNG mit
 Palette ≤ 256 Farben, 58–96 kB; Plan-Render des ganzen Geschosses über das ezdxf-Zeichen-Addon wie `plan_pruefen._figur`,
@@ -1947,5 +1954,240 @@ UNBESTIMMT mit Grund, bis die Fläche getrennt ist; (d) BALKON/LOGGIA typen zu B
 sich nicht; (e) die drei Räume ohne Text sind nur über das Erscheinungsbild (Stiege, Dachausstieg, Vorraum-Rest) oder
 die zweite Meinung (Abschnitt 3) zu typen.
 
-**Offen nach Abschnitt 0:** Spalte „Typ nachher“ (Abschnitt 1/2); die Polygonform der `frei_*` (Überlauf durch
-Wandlücken, drei Räume in einem Polygon) ist nicht Teil dieses Auftrags.
+**Offen nach Abschnitt 0:** Spalte „Typ nachher“ für Abschnitt 2 (nach Abschnitt 1 alle 12 UNBEKANNT, § 23); die
+Polygonform der `frei_*` (Überlauf durch Wandlücken, drei Räume in einem Polygon) ist nicht Teil dieses Auftrags.
+
+## 23. Abschnitt 1 — Kürzel sind Beleg (Entscheid 1; erledigt mit dem Commit dieses Eintrags)
+
+**Auftrag (Owner 2026-10-01, `docs/AUFTRAG_2026-10-01.md` § 1, Entscheid 1):** „Ein Raumkürzel gilt als Beleg für den
+Typ, auch ohne Flächenzeile. Bedingung: Der Text liegt innerhalb des Raumpolygons, nicht in Legende, Plankopf oder an
+Schnitt-/Achsmarken." Bestehende Tabelle erweitern, nicht neu erfinden; kein neuer RaumTyp; mehrdeutige Kürzel bleiben
+UNBESTIMMT mit Notlicht; Erscheinungsbild schlägt Kürzel; Test zuerst rot an Am Rain OG4 (`rest_2` „STGH" →
+STIEGENHAUS, Abnahme 1 Stiegenhaus, 2 `stair_exit`, 20 Leuchten = Gegenprobe § 20.4).
+
+### 23.1 Inventur (Runner `vorher`, Code `e0c820d` = `dad7bbd`, 13 Pläne der Prüfstrecke)
+
+Methode: je Plan `provider.parse` + Default-Platzierung im eigenen Prozess (Runner wie § 12/§ 20/§ 22, Scratch
+außerhalb des Repos); alle TEXT/MTEXT des Modellraums, deren Einfügepunkt in einem Raumpolygon des RaumModells liegt
+(kleinster deckender Raum), mit ≥ 2 Buchstaben, ohne m²-Muster, kein Belag, ≤ 40 Zeichen. Ergebnis: **5 106
+Text-in-Raum-Treffer, 1 335 Normtexte** (Rohtext, Layer, Häufigkeit, Plan, Raumtyp des deckenden Raums). Die drei
+Gruppen, die zählen:
+
+**(a) Kürzel mit Kanon-Typ** (Kürzel-Form, Wörterbuch-Treffer — alles schon in `raumtyp.py`; **kein neuer Eintrag
+nötig**, die Mindestmenge STGH/VR/AR/BAD stand bereits drin). Spalte „heute" = Typ des Raums, in dem der Text liegt
+(„—" = untypisiert → Kandidat für diese Regel):
+
+| Kürzel (Normtext) | Rohvarianten | → Kanon | n | Layer | Pläne (Treffer) | heute |
+|---|---|---|--:|---|---|---|
+| VR | VR | VORRAUM | 78 | Raum-Beschriftung, 0._EG PP_2_810 Raum | Am Rain EG 25, OG1 17, OG2 18, OG3 10, OG4 4, Barawitzka 4 | VORRAUM 28, KÜCHE 12, WOHNZIMMER 8, GANG 6, STIEGENHAUS 3, TERRASSE 2, — 19 |
+| BAD | BAD, Bad | BAD | 66 | Raum-Beschriftung, PP_2_810, A-AREA-IDEN | Am Rain 49, Barawitzka 3, Muthgasse 14 | BAD 59, GANG 2, VORRAUM 2, MUELLRAUM 1, WOHNZIMMER 1, — 1 |
+| WC | WC | WC | 61 | Raum-Beschriftung, PP_2_810, A-AREA-IDEN | Am Rain 55, Barawitzka 3, Muthgasse 3 | WC 46, — 10, je 1 KÜCHE/VORRAUM/STIEGENHAUS/BAD/SCHACHT |
+| BAD/WC | BAD/WC, Bad/WC | BAD | 58 | Raum-Beschriftung, PP_2_810 | Am Rain 57, Barawitzka 1 | BAD 57, — 1 |
+| LOGGIA | Loggia, LOGGIA | BALKON | 49 | Raum-Top-Beschriftung, Raum-Beschriftung, PP_2_810, A-AREA-IDEN | Am Rain 35, Barawitzka 2, Muthgasse 12 | BALKON 23, TERRASSE 10, KÜCHE 4, WOHNZIMMER 2, STIEGENHAUS 1, — 9 |
+| GANG | GANG, Gang | GANG | 46 | Raum-Beschriftung, A-AREA-IDEN | Am Rain 43, Muthgasse 3 | GANG 26, KÜCHE 4, VORRAUM 2, WOHNZIMMER 2, ABSTELLRAUM 1, — 11 |
+| WOHNKÜCHE | WOHNKÜCHE, Wohnküche | KÜCHE | 45 | Raum-Beschriftung, PP_2_810, A-AREA-IDEN | Am Rain 27, Barawitzka 4, Muthgasse 14 | KÜCHE 43, — 2 |
+| WOHNRAUM | WOHNRAUM | WOHNZIMMER | 45 | Raum-Beschriftung | Am Rain 45 | WOHNZIMMER 32, GANG 3, je 1 BALKON/KÜCHE/TERRASSE, — 7 |
+| AR | AR | ABSTELLRAUM | 45 | Raum-Beschriftung, PP_2_810, A-AREA-IDEN | Am Rain 37, Barawitzka 2, Muthgasse 6 | ABSTELLRAUM 37, WC 3, je 1 MUELLRAUM/WOHNZIMMER/VORRAUM, — 2 |
+| TERRASSE | TERRASSE, tERRASSE, Terrasse | TERRASSE | 28 | Raum-Beschriftung, PP_2_810 | Am Rain 24, Barawitzka 4 | TERRASSE 19, BALKON 4, — 5 |
+| BALKON | BALKON, Balkon | BALKON | 23 | Raum-Beschriftung, A-AREA-IDEN | Am Rain 22, Muthgasse 1 | BALKON 10, KÜCHE 3, WOHNZIMMER 2, GANG 2, — 6 |
+| ZIMMER | Zimmer | ZIMMER | 21 | PP_2_810, A-AREA-IDEN | Barawitzka 6, Muthgasse 15 | ZIMMER 21 |
+| STGH | STGH | STIEGENHAUS | 13 | Raum-Beschriftung | Am Rain EG 3, OG1 1, OG2 4, OG3 2, OG4 1, UG 2 | STIEGENHAUS 12, **— 1 (OG4 `rest_2`)** |
+| KÜCHE | KÜCHE | KÜCHE | 12 | Raum-Beschriftung | Am Rain 12 | KÜCHE 10, — 2 |
+| SCHLEUSE | Schleuse, SCHLEUSE | SCHLEUSE | 10 | Text 1_20, Raum-Beschriftung | Am Rain UG 10 | SCHLEUSE 8, — 2 |
+| VORR. | Vorr. | VORRAUM | 9 | A-AREA-IDEN | Muthgasse 9 | VORRAUM 8, BAD 1 |
+| RESTMÜLL | Restmüll, RESTMÜLL | MUELLRAUM | 8 | Muellgefaesse, 02-TXT, New_160 | Am Rain EG 1, Mollgasse EG 4, Rennweg EG 3 | MUELLRAUM 8 |
+| FAHRRADRAUM · FLUR · KIWA | — | ABSTELLRAUM · GANG · KINDERWAGENRAUM | 7 · 7 · 7 | Raum-Beschriftung, A-AREA-IDEN | Am Rain UG/EG, Muthgasse | ABSTELLRAUM 7 · GANG 7 · KINDERWAGENRAUM 6, SCHLEUSE 1 |
+| TREPPENHAUS, TREPPENHAUS 1/2 | — | STIEGENHAUS | 6 + 2 | Raum-Beschriftung, PP_2_810 | Am Rain UG 6, Barawitzka 2 | STIEGENHAUS 7, — 1 |
+| MÜLLRAUM · WC/DU · GARAGE 1/2 · ASR · GARD. · GARDEROBE · TEEKÜCHE · TECHNIK · FW-AUFZUG · WASCHKÜCHE | — | je Wörterbuch | 4 · 4 · 2 · 1 · 1 · 1 · 1 · 1 · 1 · 1 | div. | div. | GARAGE 1/2 (Layer E_Bauangaben, Am Rain UG) und GARDEROBE (Rennweg EG, Beschriftungslayer) liegen in untypisierten Räumen |
+
+**(b) Mehrdeutig / Kandidat** (typisieren nie, Grund in den Bericht): **SR** 4× (Barawitzka EG `raum_27` 4,51 m²
+„SR 4,51 m2", Muthgasse E2 3× — 3 davon in untypisierten Räumen) = Schlafraum oder Schutzraum; **TR** 0× (Auftrag:
+Trockenraum/Technikraum); **KA** als „KA 101"/„KA401" ~110× (Kellerabteil-Nummern Am Rain UG, oft im Gang-Polygon,
+nicht im Abteil) und „Zul.KA" 3× (Zuluft Kellerabteil — Lüftung); **Schl.** 2× (Muthgasse, `kuerzel_entscheid`,
+unverändert).
+
+**(c) Wörterbuch-Treffer ohne Kürzel-Form — zählen bewusst NICHT** (59 Normtexte; ohne Form-Regel würden sie Räume
+falsch typen): Stufen-Beschriftung „20 STG 19/29" (16×, **davon 8 in untypisierten Räumen** — wohnungsinterne
+Stiegen in Am Rain EG/UG → wären STIEGENHAUS geworden), „17 STG 17/29", „1 Stg 20/24", „15 STG" usw. (Token `stg` steht
+im Wörterbuch); Höhenkoten „STUK = 225 ü. FOK STGH = -0.70" (Mollgasse, 8×); Summenblock „Wohnfläche (inkl.Loggia)",
+„Terrasse/Balkon/Garten" (Raum-Top-Beschriftung, 54×, davon 15 in untypisierten Räumen → wären BALKON/TERRASSE);
+Fließtext „Luftraum Garage", „Gully Müll", „T KiWa", „Lüftung Schleuse", „KA STG1 (+1)", „RDUK Balkon = +1.58";
+Fragment „Schacht-" (+ „entlüftung" + „seitlich", Am Rain OG2/OG4, 5×).
+
+**(d) Kürzel-Form auf Raumlabel-Layern ohne Wörterbuch-Treffer** (bleiben untypisiert; Kandidaten für Wörterbuch
+oder Kanon — **Owner/Enis, hier nicht entschieden**): KOCHNISCHE 35× (Kanon-Kandidat KÜCHE), **ZI 1/2/3** 43× (Kanon
+ZIMMER — s. 23.5, gemessen und bewusst nicht aufgenommen), GARTEN 19× (kein Kanon-Typ; Abschnitt 5 nennt ihn als
+Außen-Beleg), ELEKTRO 11× (TECHNIK?), MECH.ENTL. 10×, ARBEITSNISCHE 8×, TOP 01/02 13× (Wohnungsnummer), SPEIS 2×
+(ABSTELLRAUM?), KELLERABTEILE 1/2 4× (KELLER? Kompositum ≠ `kellerabteil`), HAUSKELLER 1× (KELLER?), MAGAZIN n.m 7×
+(LAGER?), PROVIDERRAUM, WASSERZÄHLER, RAMPE, EIGENGARTEN, KLEINKINDERSPIELPLATZ, HAUS1–5, STIEGE (Muthgasse, in
+LIFT-Räumen), AUFZUG 1/2 und Schrankr./TV Raum/Geschäftslokal (Vokabular-Fälle Enis, unverändert).
+
+### 23.2 Regel und Einbau (`raumerkennung/kuerzel_beleg.py`, Aufruf `kaskade.py` nach R-Stufe und Bereinigung)
+
+- **Ausschlussregel (festgelegt):** (1) Der Einfügepunkt liegt in einem Raumpolygon — alles andere zählt nicht;
+  Legende und Plankopf liegen im Papierbereich (nie gelesen) oder außerhalb der Gebäudekontur (die R-Stufe baut nur in
+  der größten Wandkörper-Komponente); auf den 13 Plänen liegt **kein** Text mit `Legende|Plankopf|Schriftfeld` im
+  Modellraum in einem Raumpolygon (gemessen); zusätzlich zählt kein Text auf einem Layer `LEGEND|PLANKOPF|SCHRIFTFELD|
+  TITEL|TITLE`. (2) **Kürzel-Form:** ein Buchstabenwort (`.`, `/`, `-` erlaubt), optional eine ein- bis zweistellige
+  Zählnummer („ZI 2", „TREPPENHAUS 1"), jedes Buchstaben-Token ≥ 2 Zeichen, kein Trennstrich am Ende; bei `/` müssen
+  alle Teile im Wörterbuch stehen („BAD/WC" ja, „WC/DU", „Terrasse/Balkon/Garten" nein). Damit sind Achs-/Schnittmarken
+  („A", „1", „A-A"), Stufen, Höhenkoten, Summenblöcke und Fließtext ausgeschlossen (23.1 c). (3) Typ nur aus dem
+  bestehenden Wörterbuch (`raumtyp.raumtyp_flags`), kein neuer Typ. (4) **Mehrdeutig** (`kuerzel_entscheid.MEHRDEUTIG`
+  = `sr`, `tr`, `ka`, neu) und Kandidaten-Kürzel (`schl`) typisieren nie, nur als eigenes Wort gezählt („Zul.KA" ist
+  Lüftung) → Raum bleibt UNBESTIMMT mit Notlicht, Grund als `kuerzel:`-Warnung in bericht.md. (5) **Ein Raum mit
+  zugeordnetem Stempel wird nie umtypisiert**, auch wenn der Stempel keinen Kanon-Typ trägt — Rennweg EG `raum_12`
+  „GESCHÄFTLOKAL" 111 m² (Vokabular-Fall Enis) trägt die Möbelbeschriftung „Garderobe" (Wörterbuch: Vorraum); ohne
+  diese Regel wurde er VORRAUM, `tuer_8` von `hauseingang` zu `wohnungseingang`, der `final_exit` wanderte von
+  `exit_tuer_8` nach `exit_tuer_13` (gemessen, verworfen). (6) **Eindeutigkeit:** alle Kürzel im Polygon ergeben
+  denselben Typ; sonst gilt der **dominante Stempel** — der polygonlose Stempel (`kein_polygon`) mit der größten
+  Flächenzeile, wenn sie ≥ 50 % der Polygonfläche deckt (R-Stufe fasst Räume zusammen, deren Stempel kein Polygon
+  bekamen); ohne dominanten Stempel → UNBESTIMMT mit Grund. (7) **Erscheinungsbild schlägt Kürzel:** ≥ 2 Sanitärobjekte
+  (`sanitaer.sanitaerobjekte`) im Polygon → kein AR/ZIMMER/SCHLAFZIMMER/KINDERZIMMER/WOHNZIMMER per Kürzel, Warnung,
+  Typ offen (K3 im Provider kann BAD/WC setzen). Auf den 13 Plänen **0 Fälle**.
+- **Einbau:** `kaskade.raeume_aus_kaskade` nach `bereinige_kaskade` (alle Polygone endgültig) über `raeume + rest_r`
+  (L/H/F ohne Stempel und R), im Fehlerschutz (`kaskade_fehler: Kürzel-Beleg …`). Kein Stempel-Objekt, keine
+  Zuordnung, keine Flutung: ein loses Wort ohne Polygon hat keine Wirkung (`_stempel_aus_texten` unverändert — ein
+  Kürzel ohne m² als Stempel hätte über `_ein_polygon_ein_stempel` → `kein_polygon` → Flutung neue Räume aus
+  Legendenwörtern erzeugt). Typisierte Räume → `k.hinweise` (bericht.md „Hinweise Kürzel-Auflösung", mit Layer,
+  dominantem Stempel bzw. Flächenabweichung > 10 % gegen einen polygonlosen Stempel gleichen Typs); offene Räume →
+  `k.warnungen` (`kuerzel: …`, bericht.md „Warnungen", Runner `warnungen.wand`). `frei_*`-Räume entstehen erst im
+  Provider nach den Wohnungen (§ 16) und werden hier **nicht** erreicht — das ist Abschnitt 2.
+- **Am Rain OG4 am Plan:** § 20.4 sagte „keine Flächenzeile neben STGH" — gemessen steht „32.44 m²" 0,4 m unter
+  „STGH" (12,18 / 12,54 m), `finde_stempel` kennt den Stempel „STGH 32.44" (STIEGENHAUS) also; er fand nur kein
+  Polygon (Flutung < 1 m², `kein_polygon`), ebenso „VR 8.52" und „VR 6.87". Die R-Stufe baute über alle drei
+  **ein** Polygon `rest_2` 40,2 m² (OG4 hat keine L/H-Polygone: Kette F 26, R 5). Ohne Dominanz-Regel ist `rest_2`
+  „nicht eindeutig — STGH, VR, VR, Schacht- → SCHACHT, STIEGENHAUS, VORRAUM" (gemessen); mit ihr gewinnt „STGH 32.44"
+  (81 % der Polygonfläche) → STIEGENHAUS.
+
+**Tests:** `tests/naht/test_kuerzel_am_rain_og4.py` (OG4 aus `Projekte/Am Rain.zip`, byteidentisch zur
+Prüfstrecken-Kopie: Raum am STGH-Punkt ist `rest_*` STIEGENHAUS mit Flags 11, 1 Stiegenhaus, genau 2 `stair_exit`, keine
+Warnung „kein Geschossausgang"; 20 Leuchten, ≥ 1 im Kern) und `tests/raumerkennung/test_kuerzel_beleg.py` (Varianten
+Groß/klein/Punkt/Bindestrich/Zählnummer; Ausschluss Achsmarken, Stufen, Höhenkoten, Summenblock, Fließtext, Fragment,
+Legenden-Layer, Text außerhalb; mehrdeutig SR/TR/KA/Schl.; Stempelraum bleibt; zwei Typen → nicht eindeutig; gleicher
+Typ zweimal → eindeutig; dominanter Stempel 75 % entscheidet, 33 % nicht; Sanitär schlägt AR, nicht BAD; ein Objekt
+schlägt nicht).
+
+**Rot vor dem Fix** (`pytest tests/raumerkennung/test_kuerzel_beleg.py tests/naht/test_kuerzel_am_rain_og4.py
+--tb=line`, Kopf `dad7bbd` + Tests, Kurzform):
+
+```
+test_kuerzel_beleg.py: ModuleNotFoundError: No module named 'notbeleuchtung.raumerkennung.kuerzel_beleg'  (1 error in 1.66s)
+test_kuerzel_am_rain_og4.py:42: AssertionError: assert ('', False, False) == ('STIEGENHAUS', True, True)
+test_kuerzel_am_rain_og4.py:59: AssertionError: assert 13 == 20
+2 failed in 17.37s
+```
+
+**Grün nach dem Fix:** beide Dateien `69 passed in 17.92s` (67 Einheits- + 2 Naht-Tests). `pytest tests/raumerkennung
+tests/contract`: 954 passed, 6 skipped, 2 xfailed (Zwischenstand vor den letzten Testergänzungen). ruff: „All checks
+passed!".
+
+### 23.3 Am Rain OG4 vorher / nachher (Runner, je allein)
+
+| | vorher (`dad7bbd`) | nachher (Arbeitsbaum dieses Commits) |
+|---|---|---|
+| Räume / Typwechsel | 28, `rest_2` 40,2 m² ohne Typ | 28; **`rest_2` → STIEGENHAUS** (Flags 11, ALLGEMEIN_ERSCHLIESSUNG); `rest_6` 1,7 m² → WC (WOHNUNG_PRIVAT, `top_4`) |
+| Türen typisiert / gesamt | 22 / 58 | 30 / 59 (`tuer_27`, `tuer_28` → `stiegenhaustuer`; `tuer_3`, `tuer_42`, `durchgang_5`, `_11` → `wohnungseingang`; `durchgang_6`, `_9` → `zimmertuer`) |
+| Ausgänge | 0, Warnung „kein Geschossausgang ableitbar" | **2 `stair_exit`** (`exit_tuer_27`, `exit_tuer_28`), keine Ausgangs-Warnung |
+| Stiegenhäuser / Anker | 0 / 34 | **1** / 58 |
+| Segmente | FALLBACK 4 | GRAPH 6 + FALLBACK 3 |
+| Leuchten | 13 (rz 8, SL 5; 0 im Kern) | **20** (rz 12, SL 8; 5 im Kern `rest_2`) — Klassen: ALLGEMEIN_ERSCHLIESSUNG 9 → 13, unbestimmt 3 → 3, kein Raum 1 → 3, WOHNUNG_PRIVAT 0 → 1 (`rest_6` WC, Board 1 Leonis) |
+| Wohnungsklasse-Warnungen | 8 | 5 |
+
+= exakt die Werte der Speicher-Gegenprobe § 20.4 (2 `stair_exit` `exit_tuer_27`/`_28`, 1 Stiegenhaus, GRAPH 5–6 +
+FALLBACK 3, 20 Leuchten, 5 im Kern). Einziger Raum mit weniger Leuchten: `rest_1` GANG 3,6 m² 2 → 1 (Platzierung
+verschiebt entlang der neuen GRAPH-Wege; Leonis-Lane).
+
+### 23.4 Blast 13 Pläne (Runner `vorher` → `nachher`, je Plan allein, Am Rain und Muthgasse allein)
+
+Summe: **49 Typwechsel** (alle UNBEKANNT → Typ: WC 10, VORRAUM 10, GANG 9, BALKON 7, WOHNZIMMER 5, STIEGENHAUS 2,
+SCHLEUSE 2, KÜCHE 2, GARAGE 1, ABSTELLRAUM 1; Klassen danach WOHNUNG_PRIVAT 27, ALLGEMEIN_ERSCHLIESSUNG 13, AUSSEN 7,
+ALLGEMEIN_NEBENRAUM 1, offen 1), 48 `rest_*` auf Am Rain und ein L/H-Raum (Barawitzka `raum_41` „Loggia" 5,3 m² →
+BALKON); Rennweg, Mollgasse, Muthgasse **feldgleich** in Räumen, Typen, Türen, Ausgängen, Segmenten und Leuchten
+(Muthgasse/Barawitzka nur 1–2 neue `kuerzel:`-Warnungen). **3 davon über den dominanten Stempel:** OG4 `rest_2`
+(„STGH 32.44" 81 % gegen VR 8,52 / VR 6,87), UG `rest_23` 48,0 m² („TREPPENHAUS 29.8" 62 % gegen Text „Garage 1"),
+EG `rest_3` 7,2 m² („VR 7.27" 101 % gegen „BAD/WC 3.32"); alle übrigen 46 mit genau einem Kürzel-Typ im Polygon.
+Räume weg 0, neu 0; Polygone gleich bis auf Am Rain EG `rest_3` 7,2 → 11,3 m² (als VORRAUM nun im Umriss `top_20`,
+Zuwachs 4,14 m² = 2d-Zuschlag einer freien Fläche nach § 16, das alte Polygon liegt vollständig im neuen; der
+Freiflächen-Befund selbst steht nicht im Runner-JSON). **Leuchten 560 → 596**,
+`stair_exit` 23 → 39, `final_exit` 16 → 16; **kein Plan verliert Leuchten**, Räume mit weniger Leuchten nachher nur
+durch die verschobene Platzierung entlang neuer GRAPH-Wege (Leonis-Lane): Am Rain UG `rest_12` GANG 1,7 m² 1 → 0,
+`raum_38` GANG 24,7 m² 1 → 0, `rest_17` GANG 1,6 m² 2 → 1, `raum_29` STIEGENHAUS 3 → 2, `raum_13` SCHLEUSE 2 → 1; OG1
+`rest_24` GANG 3,2 m² 1 → 0, `raum_59` VORRAUM 4 → 2; OG4 `rest_1` GANG 2 → 1. `kuerzel:`-Warnungen 7: mehrdeutig 3
+(SR: Barawitzka `raum_27`, Muthgasse `raum_52`, `raum_71`), nicht eindeutig 4 (Am Rain EG `rest_11`, `rest_23`, `rest_29`
+— Gartenflächen mit Terrasse/Loggia/Garten-Stempeln mehrerer Tops; OG1 `rest_14` KOCHNISCHE + VR + WOHNRAUM), Sanitär 0.
+Fluchtweg-Warnungen „kein final_exit erreichbar … Türgraph endet vor dem Ausgang" steigen auf Am Rain UG 10 → 44 und
+EG 12 → 21: mehr Türen tragen eine Rolle (`wohnungseingang` 13 → 46 bzw. 78 → 114 typisierte Türen), also mehr
+GRAPH-Starts, die den `final_exit` nicht erreichen — Befund der Türzuordnung, kein Notlicht-Verlust (FALLBACK bleibt).
+
+| Plan | Typwechsel (Raum, m²: vorher → nachher; Klasse) | Wohnungen v → n (echte Mitgliedswechsel) | Türen typ. v → n | Ausgänge v → n | Segmente v → n | Leuchten v → n (Art) | Leuchten je Klasse v → n | `kuerzel:`-Warnungen (Kurzform: Raum bleibt UNBESTIMMT mit Notlicht) |
+|---|---|---|---|---|---|---|---|---|
+| Barawitzka_EG | `raum_41` 5.3: UNBEKANNT → **BALKON** (AUSSEN) (1) | 7 → 7 (—) | 33/71 → 35/71 | final_exit 1 | FALLBACK 1 GRAPH 7 | 11 → 11 (rz 6 sicherheitsleuchte 5) | ALLGEMEIN_ERSCHLIESSUNG 4 ALLGEMEIN_NEBENRAUM 2 kein Raum 5 | `raum_27` mehrdeutig »SR« |
+| Mollgasse_EG | — (0) | 21 → 21 (—) | 44/102 → 44/102 | final_exit 8 stair_exit 1 | FALLBACK 3 GRAPH 14 LINIE 103 | 51 → 51 (rz 24 sicherheitsleuchte 27) | ALLGEMEIN_ERSCHLIESSUNG 29 ALLGEMEIN_NEBENRAUM 7 WOHNUNG_PRIVAT 2 kein Raum 9 unbestimmt 4 | — |
+| Muthgasse_E2 | — (0) | 22 → 22 (—) | 113/193 → 113/193 | stair_exit 1 | FALLBACK 3 LINIE 139 | 139 → 139 (rz 86 sicherheitsleuchte 53) | ALLGEMEIN_ERSCHLIESSUNG 14 ALLGEMEIN_NEBENRAUM 5 LIFT 1 WOHNUNG_PRIVAT 62 kein Raum 57 | `raum_52` mehrdeutig »SR«; `raum_71` mehrdeutig »SR« |
+| Rennweg_EG | — (0) | 2 → 2 (—) | 20/40 → 20/40 | final_exit 2 stair_exit 3 | FALLBACK 2 GRAPH 5 | 17 → 17 (rz 9 sicherheitsleuchte 8) | ALLGEMEIN_ERSCHLIESSUNG 11 ALLGEMEIN_NEBENRAUM 3 kein Raum 3 | — |
+| Rennweg_OG3 | — (0) | 2 → 2 (—) | 17/18 → 17/18 | stair_exit 3 | FALLBACK 1 GRAPH 5 | 7 → 7 (rz 5 sicherheitsleuchte 2) | ALLGEMEIN_ERSCHLIESSUNG 6 kein Raum 1 | — |
+| Mollgasse_1KG | — (0) | 0 → 0 (—) | 0/28 → 0/28 | final_exit 1 | FALLBACK 4 | 14 → 14 (rz 7 sicherheitsleuchte 7) | ALLGEMEIN_ERSCHLIESSUNG 9 kein Raum 4 unbestimmt 1 | — |
+| Mollgasse_2KG | — (0) | 1 → 1 (—) | 2/46 → 2/46 | stair_exit 1 | FALLBACK 2 GRAPH 1 | 13 → 13 (antipanik 1 rz 8 sicherheitsleuchte 4) | ALLGEMEIN_ERSCHLIESSUNG 9 ALLGEMEIN_NEBENRAUM 3 LIFT 1 | — |
+| AmRain_OG4 | `rest_2` 40.2: UNBEKANNT → **STIEGENHAUS** (ALLGEMEIN_ERSCHLIESSUNG); `rest_6` 1.7: UNBEKANNT → **WC** (WOHNUNG_PRIVAT) (2) | 11 → 11 (top_4→top_4 +rest_6) | 22/58 → 30/59 | — → stair_exit 2 | FALLBACK 4 → FALLBACK 3 GRAPH 6 | 13 → 20 (rz 8 sicherheitsleuchte 5 → rz 12 sicherheitsleuchte 8) | ALLGEMEIN_ERSCHLIESSUNG 9 kein Raum 1 unbestimmt 3 → ALLGEMEIN_ERSCHLIESSUNG 13 WOHNUNG_PRIVAT 1 kein Raum 3 unbestimmt 3 | — |
+| AmRain_UG | `rest_3` 45.8: UNBEKANNT → **GANG** (ALLGEMEIN_ERSCHLIESSUNG); `rest_5` 56.8: UNBEKANNT → **GANG** (WOHNUNG_PRIVAT); `rest_6` 87.5: UNBEKANNT → **SCHLEUSE** (ALLGEMEIN_ERSCHLIESSUNG); `rest_7` 8.7: UNBEKANNT → **GARAGE** (ALLGEMEIN_NEBENRAUM); `rest_8` 152.5: UNBEKANNT → **GANG** (WOHNUNG_PRIVAT); `rest_18` 55.9: UNBEKANNT → **SCHLEUSE** (ALLGEMEIN_ERSCHLIESSUNG); `rest_23` 48.0: UNBEKANNT → **STIEGENHAUS** (ALLGEMEIN_ERSCHLIESSUNG); `rest_32` 90.0: UNBEKANNT → **GANG** (ALLGEMEIN_ERSCHLIESSUNG) (8) | 7 → 7 (top_2→top_2 + −raum_22) | 13/295 → 46/295 | final_exit 2 stair_exit 4 → final_exit 2 stair_exit 15 | FALLBACK 24 → FALLBACK 26 GRAPH 2 | 91 → 110 (rz 59 sicherheitsleuchte 32 → rz 69 sicherheitsleuchte 41) | ALLGEMEIN_ERSCHLIESSUNG 66 ALLGEMEIN_NEBENRAUM 3 WOHNUNG_PRIVAT 2 kein Raum 13 unbestimmt 7 → ALLGEMEIN_ERSCHLIESSUNG 78 ALLGEMEIN_NEBENRAUM 4 WOHNUNG_PRIVAT 8 kein Raum 16 unbestimmt 4 | — |
+| AmRain_EG (dazu `rest_3` 7,2 → 11,3 m²: UNBEKANNT → **VORRAUM** über dominanten Stempel, s. o.) | `rest_5` 9.3: UNBEKANNT → **KÜCHE** (WOHNUNG_PRIVAT); `rest_6` 9.3: UNBEKANNT → **KÜCHE** (WOHNUNG_PRIVAT); `rest_8` 1.6: UNBEKANNT → **WC** (WOHNUNG_PRIVAT); `rest_9` 1.7: UNBEKANNT → **WC** (WOHNUNG_PRIVAT); `rest_10` 1.9: UNBEKANNT → **WC** (WOHNUNG_PRIVAT); `rest_13` 1.2: UNBEKANNT → **GANG** (ALLGEMEIN_ERSCHLIESSUNG); `rest_14` 1.2: UNBEKANNT → **GANG** (ALLGEMEIN_ERSCHLIESSUNG); `rest_16` 5.1: UNBEKANNT → **GANG** (ALLGEMEIN_ERSCHLIESSUNG); `rest_17` 2.3: UNBEKANNT → **WC** (WOHNUNG_PRIVAT); `rest_18` 2.6: UNBEKANNT → **WC** (WOHNUNG_PRIVAT); `rest_20` 26.9: UNBEKANNT → **WOHNZIMMER** (WOHNUNG_PRIVAT); `rest_21` 26.9: UNBEKANNT → **WOHNZIMMER** (WOHNUNG_PRIVAT); `rest_22` 2.0: UNBEKANNT → **WC** (WOHNUNG_PRIVAT); `rest_24` 28.5: UNBEKANNT → **WOHNZIMMER** (WOHNUNG_PRIVAT); `rest_25` 28.0: UNBEKANNT → **WOHNZIMMER** (WOHNUNG_PRIVAT) (15) | 50 → 49 (top_3→top_3 +raum_41,rest_5,raum_23; top_6→top_6 +rest_22; top_7→top_7 +rest_6,raum_26,raum_29; top_8→top_8 +rest_21,rest_18; top_9→top_3 +raum_19,raum_12,rest_5; top_12→top_7 +raum_20,rest_6,raum_42; top_14→top_12 +rest_20,rest_17; top_16→top_14 +rest_25; top_17→top_15 +rest_24; top_20→top_18 +rest_9; top_22→top_20 +rest_3; top_30→top_28 +rest_8) | 78/317 → 114/317 | final_exit 2 stair_exit 1 | FALLBACK 6 GRAPH 1 → FALLBACK 9 GRAPH 1 | 40 → 46 (rz 27 sicherheitsleuchte 13 → rz 30 sicherheitsleuchte 16) | ALLGEMEIN_ERSCHLIESSUNG 12 ALLGEMEIN_NEBENRAUM 7 WOHNUNG_PRIVAT 3 kein Raum 9 unbestimmt 9 → ALLGEMEIN_ERSCHLIESSUNG 14 ALLGEMEIN_NEBENRAUM 7 WOHNUNG_PRIVAT 4 kein Raum 10 unbestimmt 11 | `rest_11` nicht eindeutig → BALKON, GANG, KÜCHE, TERRASSE, VORRAUM, WOHNZIMMER; `rest_23` nicht eindeutig → BALKON, TERRASSE; `rest_29` nicht eindeutig → BALKON, TERRASSE |
+| AmRain_OG1 | `rest_2` 5.0: UNBEKANNT → **VORRAUM** (WOHNUNG_PRIVAT); `rest_3` 4.9: UNBEKANNT → **VORRAUM** (WOHNUNG_PRIVAT); `rest_4` 3.4: UNBEKANNT → **BALKON** (AUSSEN); `rest_6` 41.2: UNBEKANNT → **WOHNZIMMER** (WOHNUNG_PRIVAT); `rest_7` 20.7: UNBEKANNT → **BALKON** (AUSSEN); `rest_8` 18.5: UNBEKANNT → **BALKON** (AUSSEN); `rest_11` 9.0: UNBEKANNT → **VORRAUM** (WOHNUNG_PRIVAT); `rest_15` 2.1: UNBEKANNT → **VORRAUM** (ALLGEMEIN_ERSCHLIESSUNG); `rest_17` 2.8: UNBEKANNT → **ABSTELLRAUM** (WOHNUNG_PRIVAT); `rest_19` 14.5: UNBEKANNT → **GANG** (WOHNUNG_PRIVAT); `rest_22` 3.3: UNBEKANNT → **GANG** (ALLGEMEIN_ERSCHLIESSUNG); `rest_23` 2.0: UNBEKANNT → **VORRAUM** (ALLGEMEIN_ERSCHLIESSUNG) (12) | 57 → 54 (top_35→top_35 +rest_19,raum_73,raum_84; top_38→top_49 +rest_6 −raum_61; top_39→top_38 +rest_17; top_45→top_35 +rest_19,raum_57,raum_84; top_51→top_35 +rest_19,raum_57,raum_73; top_56→top_54 +rest_2; top_57→top_3 +rest_3,raum_100; top_3→top_3 +rest_3,raum_99) | 103/300 → 138/300 | stair_exit 4 → stair_exit 7 | FALLBACK 17 GRAPH 6 → FALLBACK 16 GRAPH 12 | 69 → 73 (rz 47 sicherheitsleuchte 22 → rz 49 sicherheitsleuchte 24) | ALLGEMEIN_ERSCHLIESSUNG 43 ALLGEMEIN_NEBENRAUM 1 SCHACHT 1 WOHNUNG_PRIVAT 2 kein Raum 6 unbestimmt 16 → ALLGEMEIN_ERSCHLIESSUNG 47 ALLGEMEIN_NEBENRAUM 1 SCHACHT 1 WOHNUNG_PRIVAT 5 kein Raum 6 unbestimmt 13 | `rest_14` nicht eindeutig → VORRAUM, WOHNZIMMER |
+| AmRain_OG2 | `rest_6` 45.1: UNBEKANNT → **BALKON** (AUSSEN); `rest_11` 2.1: UNBEKANNT → **VORRAUM** (ALLGEMEIN_ERSCHLIESSUNG); `rest_16` 2.0: UNBEKANNT → **VORRAUM** (WOHNUNG_PRIVAT); `rest_22` 5.3: UNBEKANNT → **WC** (WOHNUNG_PRIVAT) (4) | 43 → 42 (top_14→top_14 +rest_16; top_15→top_15 +raum_73,rest_22; top_39→top_15 +raum_34,rest_22,raum_35) | 117/264 → 134/264 | stair_exit 2 | FALLBACK 15 GRAPH 9 | 75 → 75 (rz 52 sicherheitsleuchte 23) | ALLGEMEIN_ERSCHLIESSUNG 57 WOHNUNG_PRIVAT 3 kein Raum 12 unbestimmt 3 | — |
+| AmRain_OG3 | `rest_2` 29.9: UNBEKANNT → **BALKON** (AUSSEN); `rest_4` 9.3: UNBEKANNT → **VORRAUM** (WOHNUNG_PRIVAT); `rest_5` 17.4: UNBEKANNT → **WC** (WOHNUNG_PRIVAT); `rest_8` 25.0: UNBEKANNT → **BALKON** (AUSSEN); `rest_10` 1.7: UNBEKANNT → **WC** (WOHNUNG_PRIVAT); `rest_11` 1.3: UNBEKANNT → **VORRAUM** (WOHNUNG_PRIVAT) (6) | 23 → 21 (top_1→top_1 +raum_38,rest_10; top_3→top_2 +rest_5,raum_10; top_2→top_2 +rest_5,raum_9,raum_11; top_5→top_4 +rest_11; top_19→top_1 +raum_37,rest_10,raum_1,raum_2,raum_3) | 61/129 → 84/129 | stair_exit 3 | FALLBACK 2 GRAPH 10 → FALLBACK 2 GRAPH 15 | 20 → 20 (rz 9 sicherheitsleuchte 11) | ALLGEMEIN_ERSCHLIESSUNG 16 WOHNUNG_PRIVAT 3 kein Raum 1 | — |
+
+Jeder Typwechsel einzeln (Tabelle; EG `rest_3` steht dort wegen des geänderten Polygons nicht in der Spalte, sondern
+oben): alle 49 sind untypisierte Kaskaden-Räume, in deren Polygon genau ein Kanon-Kürzel oder ein dominanter
+polygonloser Stempel liegt. Auffällig und **im Bericht zu nennen** (Regel greift wie beschlossen, Polygon fasst mehr als den
+Stempelraum — R-Stufe, R-05 b): Am Rain UG `rest_8` 152,5 m² → GANG (Texte „GANG", „HAUSKELLER", „KELLERABTEILE 1",
+„ELEKTRO", Lüftung) und `rest_6` 87,5 m² → SCHLEUSE (Texte „Schleuse", „HAUS1"–„HAUS5", „KELLERABTEILE 1"), beide
+Erschließung mit Notlicht; `rest_5` 56,8 m² GANG und `rest_8` kommen als **WOHNUNG_PRIVAT** heraus (K4/S7-Klasse —
+Leuchten in WOHNUNG_PRIVAT UG 2 → 8, Board 1 Leonis); OG3 `rest_5` 17,4 m² → WC bei Stempel „WC 2.25 m²" (+673 %)
+und OG2 `rest_22` 5,3 m² → WC verbinden je zwei Wohnungen zu einer (OG3 23 → 21, OG2 43 → 42, EG 50 → 49, OG1
+57 → 54 Wohnungen; die echten Mitgliedswechsel stehen in der Tabelle) — die Wohnung folgt rohen Türen (Grundsatz (b)),
+der neue Typ macht die Tür zur `zimmertuer`. Kein Notlicht-Verlust ohne Regel: WOHNUNG_PRIVAT-Räume (WC/KÜCHE/
+VORRAUM/WOHNZIMMER in Wohnungen) hatten vorher als UNBESTIMMT Notlicht; die Summe je Plan sinkt nirgends, die
+Einzelräume mit weniger Leuchten sind oben genannt (Platzierung).
+
+### 23.5 Nicht gebaut, gemessen: „ZI" → ZIMMER im Wörterbuch
+
+§ 22 (a) nennt „ZI 1/ZI 2" als Wörterbuch-Eintrag (Kanon ZIMMER, 43 Vorkommen, Am Rain). Gebaut, gemessen,
+**zurückgenommen**: der Eintrag wirkt nicht nur hier, sondern in `stempel_anker._stempel_aus_texten` — alle 43 „ZI n"
+tragen eine Flächenzeile, werden damit **Stempel** und die F-Stufe flutet sie. Am Rain OG4 allein: Räume 28 → 32
+(neue F-Räume ZIMMER 12,0/22,5/13,5/13,9/17,1/18,9/14,6/19,6 m²), Türen 58 → 69, 11 Wohnungswechsel, **Leuchten
+20 → 9** gegenüber der Gegenprobe, `stair_exit` 2 → 1 (`tuer_28` 12 915/8 175 wird `raum_5` VORRAUM (nun
+WOHNUNG_PRIVAT) → `rest_2` = `wohnungseingang`, kein `stair_exit` mehr). Das ist eine Stempel-Vokabular-Änderung mit
+eigenem Blast auf allen sechs Am-Rain-Geschossen und verfehlt die Owner-Abnahme (20 Leuchten) — darum nicht in diesem
+Commit; **Owner-Entscheid** (zusammen mit KOCHNISCHE → KÜCHE und den Kandidaten aus 23.1 d), eigener Schritt mit
+eigenem Vorher/Nachher.
+
+### 23.6 Gate und Suite
+
+**Volle Suite** (`pytest -q -p no:cacheprovider -rxXs`, allein, nach dem Blast, 17 min 58 s): `6 failed, 2324 passed,
+11 skipped, 6 deselected, 15 xfailed, 3 warnings`, 0 xpassed — dieselben 6 roten wie § 21.1 (3 ×
+`test_keine_leuchten_in_wohnung_privat` OG1/OG2/DG1 = Board 1 Leonis, `test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell`,
+die 2 S4c-Pins), 2324 = 2255 + 69 neue; 15 xfailed und 11 skipped wie § 21.1; die 3 Warnungen sind die bekannten
+Starlette-/httpx-Hinweise der API-Tests. Kein Test umgestellt, keine Schwelle, kein Soll, kein Marker angefasst.
+
+**Gate:** `pytest -m gate tests/gate` 3 passed, 1 xfailed (`test_gate_tuerstapel_erfuellt`, wie vorher). `gate_messung` auf
+dem Arbeitsbaum dieses Commits (vor dem Commit, `_arbeit/gate/messung_dad7bbd-dirty-23.json`, 59,3 s), `pruefe_gate`
+gegen `nullmessung_f15d03f.json`: **(0)** unsauberer Arbeitsbaum (erwartet, vor dem Commit gemessen) und **(3)
+`M4.einraum` DG2 0 → 1** (Enis Board 3, unverändert); M17 **18/18 BESTANDEN**; OG1 a==b 0, Einraum 1; OG3 5
+GRAPH-Segmente, 0 Anker in WOHNUNG_PRIVAT; DG1 2 Ausgänge, 0 durch den Liftschacht; **alle Messfelder außer `meta`
+gleich `messung_e0c820d.json`** (Barawitzka `raum_41` → BALKON berührt die gemessene Verbindung nicht; Rennweg EG
+`raum_12` bleibt dank Regel (5)).
+
+### 23.7 Offen nach Abschnitt 1
+
+- **„ZI" → ZIMMER, KOCHNISCHE → KÜCHE, GARTEN, ELEKTRO, SPEIS, KELLERABTEILE, HAUSKELLER, MAGAZIN** (23.1 d, 23.5):
+  Wörterbuch-/Kanon-Kandidaten, je mit F-Stufen-Blast — Owner/Enis. P1 · Selman (Owner).
+- **Mehrdeutig SR/TR/KA** (`MEHRDEUTIG`): 3 Räume bleiben UNBESTIMMT mit Notlicht (Barawitzka `raum_27`, Muthgasse
+  `raum_52`/`raum_71`); Entscheid über die zweite Meinung (Abschnitt 3, Phase B). P2.
+- **Polygon fasst mehr als den Stempelraum** (23.4: UG `rest_8` 152,5 m², `rest_6` 87,5 m², OG3 `rest_5` +673 %):
+  Ursache R-Stufe/Wandlücken auf Am Rain (R-05 b, § 16 „Polygonform"), nicht die Typregel; die Hinweise in bericht.md
+  nennen die Abweichung. P1 · Selman.
+- **GANG als WOHNUNG_PRIVAT** (UG `rest_5`, `rest_8`) und Leuchten in WOHNUNG_PRIVAT (UG 2 → 8, OG1 2 → 5, OG4 0 → 1):
+  Board 1, Leonis (gemeldet).
+- **Platzierung verschiebt** entlang neuer GRAPH-Wege (UG `raum_38` GANG 24,7 m² ohne Leuchte nachher): Leonis-Lane,
+  gemeldet.
+- `frei_*` (§ 22) bleiben alle 12 UNBEKANNT — Abschnitt 2 (Stempel/Kürzel vor UNBEKANNT in `freiflaeche`).
+- `Projekte/_ergebnis/` nicht neu erzeugt (Verifikation über den Runner; Prüfstrecke am Abschluss).
