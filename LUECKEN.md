@@ -1842,3 +1842,110 @@ Luftlinien-Zeilen der Weglängen-Tabelle Muthgasse −22, Barawitzka −3, Am Ra
   `docs/GATE_TUERSTAPEL.md:903-907` (§ 17). R1-02, R2-02, R2-03 (§ 15, § 19). Am Rain OG4 `01_render.png` mit
   38-km-Weltausdehnung (D-05). Einzellauf eines OG parst den EG weiter selbst (§ 18). Erledigt aus § 20.8:
   „`Projekte/_ergebnis/` nicht neu geschrieben" (21.2).
+
+## 22. Abschnitt 0 — die 12 UNBEKANNT-Räume (Typ vorher)
+
+**Auftrag (Owner 2026-10-01, `docs/AUFTRAG_2026-10-01.md` § 0, Freigabe „Option 3, erweitert“):** die 12 neuen
+UNBEKANNT-Räume `frei_*` aus 2d (§ 16, alle Am Rain) zeigen — Tabelle mit Plan, Geschoss, Raum-ID, Fläche,
+Stempel/Kürzel im Polygon, Nachbarräumen und Türen; je Raum ein Ausschnittbild (Raum magenta, Stempeltext lesbar)
+unter `Projekte/_ergebnis/AmRain_<Geschoss>/unbekannt/`. **Typ vorher** = Stand dieses Kopfs (alle 12 ohne
+`raum_typ`, Klasse `None`, ohne Wohnung); **Typ nachher** wird in Abschnitt 1/2 gefüllt. **Kein Code geändert.**
+
+**Datenquelle.** `Projekte/_ergebnis/AmRain_*/raeume.json` trägt nur die Kaskaden-Räume (`scripts/plan_pruefen.py`
+schreibt sie aus `raeume_aus_kaskade`; die `frei_*` entstehen erst in `provider.parse` nach `_tueren_und_wohnungen`,
+§ 16 „Einbau“) — dort stehen sie also nicht. Darum ein eigener Parse auf diesem Kopf (`provider.parse(dxf, "")` +
+Default-Platzierung, Runner wie § 12/§ 20, Am Rain UG/EG/OG1–OG4, je Plan ein Prozess; der Runner wickelt `lade_dxf`
+nur im eigenen Prozess, um TEXT/MTEXT und `finde_stempel` desselben `DxfPlan` mitzuschreiben — kein Repo-Code).
+Kennzahlen gegen die Prüfstrecke § 21.2 **6/6 gleich** (Türen typisiert/gesamt UG 13/295, EG 78/317, OG1 103/300,
+OG2 117/264, OG3 61/129, OG4 22/58; Ausgänge UG stair 4 + final 2, EG final 2 + stair 1, OG1 stair 4, OG2 stair 2,
+OG3 stair 3, OG4 0; Leuchten rz/SL UG 59/32, EG 27/13, OG1 47/22, OG2 52/23, OG3 9/11, OG4 8/5); Räume ohne Typ im
+RaumModell = § 21.2 „ohne Typ“ + Anzahl `frei_*` (EG 24 + 4, OG1 21 + 5, OG2 12 + 1, OG3 8 + 1, OG4 3 + 1, UG 31 + 0).
+Die 12 `frei_*` mit Fläche und Lage sind dieselben wie in § 16. Laufzeit und RAM dieses Laufs sind nicht belastbar
+(zwei Runner-Ketten liefen versehentlich überlappend) und werden hier nicht ausgewiesen; die Felder sind
+deterministisch (Kennzahlen oben).
+
+**Spalten.** Lage = `representative_point` in m (Planeinheiten = mm, `mm_faktor 1 aus $INSUNITS=4`, § 20.3).
+Stempel/Kürzel = jeder TEXT/MTEXT auf dem Layer `Raum-Beschriftung` (Am-Rain-Konvention: Kürzel-Zeile + Flächenzeile
++ Belag auf `Bodenfläche`), dessen Einfügepunkt im Polygon liegt — Rohtext nach Whitespace-Normierung. Weitere
+Texte = alle anderen TEXT/MTEXT im Polygon (Rohtext, Layer). Nachbar = Raum mit Polygon ≤ 500 mm am
+`frei_*`-Polygon (Schwelle wie `wohnungsumriss.umschliessende_wohnung`, hier **ohne** Neutral-Filter — Schacht/Rest
+stehen mit). Tür = Türpunkt ≤ Breite/2 + 300 mm an der Grenze (ohne Breite 800 mm) — dieselbe Schwelle wie die
+Trenner-Regel in § 16; Rolle = `tuer_detail` (— = unbestimmt), von→nach = `von_raum`→`nach_raum` (KEIN_RAUM = None),
+Blatt ja = nicht `ohne_tuerblatt`. Die Türlisten enthalten alle Trenner-Türen aus § 16; dazu stehen hier Türen
+innerhalb der Schwelle, die § 16 nicht nannte (EG `frei_1` `tuer_151`; OG1 `frei_3` und OG2 `frei_1`, wo § 16 über
+die Öffnung zum Schacht entschied), und `durchgang_*` ohne Blatt, wo einer an der Grenze liegt.
+
+| Plan | Geschoss | Raum-ID | Fläche m² | Lage (x, y) m | Stempel/Kürzel im Polygon — Layer `Raum-Beschriftung` (Rohtext, Lage m) | weitere Texte im Polygon (Rohtext, Layer) | Nachbarräume (ID, Typ, Abstand) | Türen (ID, Rolle, von→nach, Blatt) | Typ vorher | Typ nachher |
+|---|---|---|--:|---|---|---|---|---|---|---|
+| AmRain_EG | EG | `frei_1` | 16.57 | 37.0 / 21.7 | „12.78 m²“ (35.8 / 22.4); „VR“ (36.1 / 22.8) | „P_05“ (Fenster-Tür_NR); „EI“ (Beschriftung Brandschutz); „2“ (Beschriftung Brandschutz); „30“ (Beschriftung Brandschutz); „STUK=2,175 ü.FOK“ (Text 1_50); „Absturzsicherung H=102“ (Text 1_50); „OK= DUK“ (Text 1_50); „110“ (Beschriftung Fenster-Tür); „252“ (Beschriftung Fenster-Tür); „Handlauf H=90“ (Text 1_50); „Handlauf H=90“ (Text 1_50); „17 Stg“ (Beschriftung Stiege); „18,65/24“ (Beschriftung Stiege); „80“ (Beschriftung Fenster-Tür); „Parkett“ (Bodenfläche) | `raum_85` WC 0 mm; `frei_2` — 466 mm | `tuer_151` — KEIN_RAUM→AUSSEN Blatt ja; `tuer_172` — KEIN_RAUM→AUSSEN Blatt ja; `tuer_201` — KEIN_RAUM→KEIN_RAUM Blatt ja; `tuer_242` — KEIN_RAUM→raum_85 Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
+| AmRain_EG | EG | `frei_2` | 3.92 | 33.4 / 19.9 | „3.37 m²“ (32.8 / 19.5); „AR“ (33.0 / 19.8) | „210“ (Beschriftung Fenster-Tür); „80“ (Beschriftung Fenster-Tür); „ker.Belag“ (Bodenfläche); „H“ (Verteiler) | `raum_85` WC 100 mm; `frei_1` — 466 mm | `tuer_151` — KEIN_RAUM→AUSSEN Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
+| AmRain_EG | EG | `frei_3` | 2.36 | 23.4 / 13.1 | — | „210“ (Beschriftung Fenster-Tür); „80“ (Beschriftung Fenster-Tür); „80“ (Beschriftung Fenster-Tür) | `raum_74` WOHNZIMMER 0 mm; `raum_91` VORRAUM 0 mm; `raum_92` WC 0 mm; `frei_4` — 1 mm; `raum_86` BAD 324 mm | `durchgang_59` zimmertuer raum_74→raum_91 Blatt nein; `tuer_157` zimmertuer raum_92→raum_91 Blatt ja; `tuer_214` — KEIN_RAUM→raum_74 Blatt ja; `tuer_249` — KEIN_RAUM→KEIN_RAUM Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
+| AmRain_EG | EG | `frei_4` | 9.76 | 21.9 / 10.6 | „10.25 m²“ (21.7 / 11.3); „ZI 2“ (21.9 / 11.7) | „210“ (Beschriftung Fenster-Tür); „80“ (Beschriftung Fenster-Tür); „Parkett“ (Bodenfläche) | `raum_74` WOHNZIMMER 0 mm; `frei_3` — 1 mm | `tuer_214` — KEIN_RAUM→raum_74 Blatt ja; `tuer_216` — KEIN_RAUM→AUSSEN Blatt ja; `tuer_249` — KEIN_RAUM→KEIN_RAUM Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
+| AmRain_OG1 | 1OG | `frei_1` | 11.17 | 149.3 / 49.3 | „3.88 m²“ (148.4 / 49.8); „BALKON“ (148.4 / 50.2) | „221“ (Beschriftung Fenster-Tür); „223“ (Beschriftung Fenster-Tür); „Betonpl.“ (Bodenfläche); „TW raumhoch“ (Parapethöhe 1_100) | `raum_30` BALKON 0 mm; `raum_40` KÜCHE 0 mm | `tuer_51` — KEIN_RAUM→KEIN_RAUM Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
+| AmRain_OG1 | 1OG | `frei_2` | 6.75 | 95.8 / 44.9 | — | „Handlauf H=90“ (Beschriftung Stiege); „Handlauf H=90“ (Beschriftung Stiege); „17 STG 17/29“ (Beschriftung Stiege); „17 STG 17/29“ (Beschriftung Stiege); „210“ (Beschriftung Fenster-Tür) | `raum_4` GANG 0 mm | `tuer_13` wohnungseingang raum_4→raum_12 Blatt ja; `tuer_22` — KEIN_RAUM→KEIN_RAUM Blatt ja; `tuer_23` — KEIN_RAUM→raum_4 Blatt ja; `tuer_39` — raum_4→AUSSEN Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
+| AmRain_OG1 | 1OG | `frei_3` | 3.99 | 54.0 / 9.0 | „VR“ (53.6 / 7.6) | „STUK=2,175 ü.FOK“ (Text 1_1000) | `raum_81` BAD 0 mm; `raum_86` GANG 0 mm; `rest_10` SCHACHT 0 mm | `durchgang_35` wohnungseingang raum_81→raum_86 Blatt nein; `tuer_170` — KEIN_RAUM→KEIN_RAUM Blatt ja; `tuer_205` — KEIN_RAUM→raum_86 Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
+| AmRain_OG1 | 1OG | `frei_4` | 2.39 | 51.5 / -1.1 | „7.67 m²“ (51.2 / -0.8); „LOGGIA“ (51.2 / -0.4) | „Betonpl.“ (Bodenfläche) | `raum_66` WOHNZIMMER 272 mm | — | UNBEKANNT | _(Abschnitt 1/2)_ |
+| AmRain_OG1 | 1OG | `frei_5` | 18.19 | 12.7 / 44.7 | „5.35 m²“ (11.8 / 43.7); „BAD“ (11.9 / 44.1); „7.68 m²“ (13.3 / 45.4); „GANG“ (13.4 / 45.7); „5.34 m²“ (11.6 / 46.3); „KOCHNISCHE“ (11.2 / 46.6) | „210“ (Beschriftung Fenster-Tür); „E-Verteiler“ (Verteiler); „WM“ (Sanitär); „KS“ (Sanitär); „GS“ (Sanitär); „ker. Belag“ (Bodenfläche); „210“ (Beschriftung Fenster-Tür); „80“ (Beschriftung Fenster-Tür); „Parkett“ (Bodenfläche); „Parkett“ (Bodenfläche) | `raum_36` WC 0 mm | `tuer_103` — AUSSEN→KEIN_RAUM Blatt ja; `tuer_95` balkontuer raum_36→AUSSEN Blatt ja; `tuer_96` — KEIN_RAUM→KEIN_RAUM Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
+| AmRain_OG2 | 2OG | `frei_1` | 3.99 | 54.0 / 9.0 | „VR“ (53.6 / 7.6) | „STUK=2,175 ü.FOK“ (Text 1_1000) | `raum_51` BAD 0 mm; `raum_65` GANG 0 mm; `rest_9` SCHACHT 0 mm | `durchgang_30` wohnungseingang raum_51→raum_65 Blatt nein; `tuer_154` — KEIN_RAUM→KEIN_RAUM Blatt ja; `tuer_206` — KEIN_RAUM→raum_65 Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
+| AmRain_OG3 | 3OG | `frei_1` | 2.73 | 61.1 / 11.6 | „5.13 m²“ (60.9 / 11.8); „VR“ (61.1 / 12.2) | „E-Verteiler“ (Verteiler); „Parkett“ (Bodenfläche) | `raum_27` BAD 0 mm; `raum_30` WOHNZIMMER 0 mm; `raum_35` GANG 56 mm | `tuer_84` zimmertuer raum_27→raum_30 Blatt ja; `tuer_86` wohnungseingang raum_30→raum_35 Blatt ja; `tuer_98` — raum_30→KEIN_RAUM Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
+| AmRain_OG4 | 4OG | `frei_1` | 5.41 | 56.9 / 8.7 | — | „DDB 112/35“ (Deckendurchbruch_ Aussparung); „FDB 112/35“ (Fussbodendurchbruch); „S4-4“ (004-RAI_EN_GR_HKLS_EG_01_Grundriss HKLS EG$0$SIMA_HKLS_Schachtnummer); „Haltegriff“ (Text 1_50); „DACHAUSSTIEG“ (Beschriften); „über Leiter von OG3“ (Beschriften); „Luftraum“ (Beschriften); „Fuge mit“ (Beschriften); „eingespachtelten“ (Beschriften); „Fugenband schließen“ (Beschriften); „RA mind. 1m²“ (Beschriften); „Dachausstieg“ (Beschriften) | `raum_14` ABSTELLRAUM 265 mm | `tuer_45` — KEIN_RAUM→AUSSEN Blatt ja | UNBEKANNT | _(Abschnitt 1/2)_ |
+
+**Bilder** (12, `Projekte/_ergebnis/AmRain_<Geschoss>/unbekannt/<raum_id>.png`, längste Seite 1 400 px, PNG mit
+Palette ≤ 256 Farben, 58–96 kB; Plan-Render des ganzen Geschosses über das ezdxf-Zeichen-Addon wie `plan_pruefen._figur`,
+Ausschnitt = Polygon-Box + max(2,5 m, 40 %), Raum magenta, Nachbarn hellblau mit ID/Typ, Türen der Tabelle rot
+markiert, 1-m-Balken unten links, Titel mit Raum-ID, Fläche, Typ vorher und den `Raum-Beschriftung`-Texten im
+Polygon). Alle 12 selbst angesehen; Stempeltext ist auf jedem Bild lesbar, auf dem einer liegt.
+
+**Befund je Raum (am Bild, kein Entscheid):**
+
+- **EG `frei_1`** (VR 12,78): Vorraum einer Maisonette-Wohnung (Stiege „17 Stg 18,65/24“ mit Handlauf im Polygon,
+  Absturzsicherung) — das Polygon greift über das VR hinaus: Dreiecke nach Norden über die Fassade (Fenstertür
+  `P_05`, Pfeil 2_06) und nach Süden bis zum Eingang 2_06. 16,57 m² gegen 12,78 m² Stempel.
+- **EG `frei_2`** (AR 3,37): Abstellraum mit WC-Nachbar; ein Zipfel ragt durch die Wandlücke neben `tuer_151` in
+  „ZI 1 9,32 m²“ (ZI 1 hat selbst kein Polygon). 3,92 gegen 3,37 m².
+- **EG `frei_3`** (kein Stempel): Stich des Vorraums zwischen `raum_91` VORRAUM, WC `raum_92` und den Türen zu ZI 1 /
+  ZI 2 (`tuer_214`, `tuer_249`) — ein Vorraum-Rest, kein eigener Raum im Plan.
+- **EG `frei_4`** (ZI 2 10,25): vollständiges Zimmer (Bett, Schrank, Fenstertür `tuer_216` zur Terrasse). 9,76 gegen
+  10,25 m². Der Stempel ist für `finde_stempel` **kein Stempel**, weil `raumtyp_flags("ZI 2")` = None („ZI“ fehlt im
+  Wörterbuch); darum stand er in § 16 nicht.
+- **OG1 `frei_1`** (BALKON 3,88): Balkon samt angrenzenden Loggia-Streifen entlang der Fassade — Außenfläche;
+  11,17 gegen 3,88 m² (das Polygon nimmt die Nachbar-Loggien mit).
+- **OG1 `frei_2`** (kein Stempel): **wohnungsinterne Stiege** („17 STG 17/29“ ×2, Handlauf, Absturzsicherung) neben
+  dem Gang `raum_4`, mit `tuer_22`/`tuer_23` im Stiegenauge; kein Stiegenhaus (liegt in der Wohnung, R-09 nicht
+  betroffen).
+- **OG1 `frei_3`** (VR, Flächenzeile außerhalb): Teil des Vorraums „VR 9,62 m²“ an der Wohnungstür 4_05 vom STGH
+  (`tuer_205`); der Einfügepunkt der Flächenzeile „9.62 m²“ liegt im 1,4-m²-Schachtpolygon `rest_10` SCHACHT
+  (E-Verteiler, FDB/DDB 75/40) direkt unter dem Kürzel, der übrige VR-Teil hat kein Polygon. `raum_86` GANG
+  (20,07 m², Wohnung `top_50`) grenzt von oben an.
+- **OG1 `frei_4`** (LOGGIA 7,67): Loggia (Außenfläche), Polygon deckt 2,39 von 7,67 m²; `raumtyp_flags("LOGGIA")` =
+  BALKON (im Wörterbuch, Kanon-Typ).
+- **OG1 `frei_5`** (BAD 5,35 + GANG 7,68 + KOCHNISCHE 5,34): **drei Räume in einem Polygon** (Wände zwischen
+  Kochnische, Bad und Gang nicht als Wandkörper erkannt), Summe 18,37 ≈ 18,19 m². Ein Typ aus dem Stempel ist hier
+  nicht eindeutig; „KOCHNISCHE“ fehlt zudem im Wörterbuch (`raumtyp_flags` = None).
+- **OG2 `frei_1`** (VR, Flächenzeile außerhalb): dieselbe Lage wie OG1 `frei_3` ein Geschoss höher, Wohnungstür
+  4_11; Flächenzeile „9.86 m²“ wieder im Schachtpolygon `rest_9` SCHACHT (1,4 m²), Gang `raum_65` (20,07 m²,
+  `top_24`) grenzt von oben an.
+- **OG3 `frei_1`** (VR 5,13): Vorraum an der Wohnungstür 4_23 (`tuer_86` wohnungseingang), Polygon 2,73 von 5,13 m²;
+  Nachbar `raum_30` WOHNZIMMER ist großflächig ausgelaufen (deckt ZI 1 und Kochnische mit).
+- **OG4 `frei_1`** (kein Stempel): **Dachausstieg/Luftraum** („DACHAUSSTIEG über Leiter von OG3“, „Luftraum“,
+  „Haltegriff“, „RA mind. 1m²“, Deckendurchbrüche) neben einer Lift-Überfahrt („LIFT-ÜBERFAHRT“ im Bild), Nachbar
+  nur `raum_14` ABSTELLRAUM (265 mm), `tuer_45` KEIN_RAUM→AUSSEN. Kein begehbarer Raum des Geschosses. Zum
+  STGH-Kern `rest_2` aus § 20.4 (Text „STGH“ bei 12,3 / 12,9 m) sind es 33,5 m — ein anderer Kern; die Lesart in
+  § 16 („liegt am Treppen-/Liftkern“) meint diesen Lift, nicht das Stiegenhaus von R-09.
+
+**Abgleich mit § 16.** Dort „Stempel in der Fläche“ in 6 der 12 Räume; nach dem Rohtext hier **9**: zusätzlich EG
+`frei_4` („ZI 2 / 10.25 m²“ — kein Wörterbuch-Treffer, deshalb kein `Stempel`-Objekt), OG1 `frei_3` und OG2 `frei_1`
+(„VR“ ohne Flächenzeile im Polygon). Ohne jeden `Raum-Beschriftung`-Text bleiben 3: EG `frei_3` (Vorraum-Stich), OG1
+`frei_2` (Stiege in der Wohnung), OG4 `frei_1` (Dachausstieg). Davon hat OG1 `frei_5` drei Stempel, die anderen
+8 genau einen.
+
+**Für Abschnitt 1/2 (Hinweise, keine Entscheide):** (a) Kürzel ohne Wörterbuch-Treffer in den 12 Räumen: „ZI“ /
+„ZI 2“ (Kanon ZIMMER — Wörterbuch-Eintrag, kein neuer Typ), „KOCHNISCHE“ (Kanon-Kandidat KÜCHE — Owner); (b) „VR“ als
+Kürzel **ohne** Flächenzeile im Polygon (OG1 `frei_3`, OG2 `frei_1`) ist der Fall „Kürzel ist Beleg auch ohne
+Flächenzeile“ aus § 1 des Auftrags; (c) ein Polygon mit mehreren Stempeln (OG1 `frei_5`) ist nicht eindeutig →
+UNBESTIMMT mit Grund, bis die Fläche getrennt ist; (d) BALKON/LOGGIA typen zu BALKON (Kanon), eine AUSSEN-Frage stellt
+sich nicht; (e) die drei Räume ohne Text sind nur über das Erscheinungsbild (Stiege, Dachausstieg, Vorraum-Rest) oder
+die zweite Meinung (Abschnitt 3) zu typen.
+
+**Offen nach Abschnitt 0:** Spalte „Typ nachher“ (Abschnitt 1/2); die Polygonform der `frei_*` (Überlauf durch
+Wandlücken, drei Räume in einem Polygon) ist nicht Teil dieses Auftrags.
