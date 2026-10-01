@@ -94,7 +94,7 @@ Prüfstrecken-Ausgabe außerhalb des Contracts (Attribute am Provider): `wand_wa
 | R-14 | Außenanalyse, Innen-Zonen | `aussenbereich.py:erkenne_aussenbereiche:340`, `waehle_innen_zonen:307` | `test_aussenbereich.py`; `test_soll_mollgasse.py::test_soll_hofausgaenge_cluster_a_und_b` | Laubengänge ohne lichtes Polygon (bewusste Grenze, `docs/OFFENE_FRAGEN.md` § Laubengänge); Mollgasse EG `raum_51`/`raum_55` siehe F-13. | P2 | Selman |
 | R-15 | Wohnungen (`wohnung_id` nur aus rohen Türen) | `wohnungen.py:bilde_wohnungen:153` | `test_wohnungen.py`; Gate (3) M4, (5) | **Gate (3):** `M4.einraum` DG2 0 → 1 (`raum_5` bildet Einraum `top_2`), hängt an Board 3 (Blatt-Semantik, Enis) — einziger Gate-Verstoß, Merge-Blocker (`docs/INTEGRATION_2026-09-30.md:92-95`). | P1 | Enis (Board 3), Selman |
 | R-16 | Nutzungsklasse, Klassifikation, Flags | `wohnungsklasse.py:klassifiziere:384`, `bestaetigt_privat:406`, `klasse_aus_umriss:818` (K4), `setze_wohnungsflags:928`; `nutzungsklasse.py:nutzungsklasse_fuer:59` | `test_wohnungsklasse.py`, `test_k4_klasse_umriss.py`, `tests/naht/test_k4_klasse_gang_vorraum.py`, `tests/naht/test_s7_wohnungsklasse.py`; Gate (5), (6), (9) | **S4c-Pins rot** (Pflicht-Eintrag § 6.1). 11 unbestimmte GANG/VORRAUM offen mit Grund, Flags 11 (1 R1-Flur, 6 G4, 4 G3; `docs/SLICES_K1_K4.md:1370-1377`). K4-Fragen 2–6 offen (`:1405-1407`). Gate (9) nicht verdrahtet: Skript `mollgasse_gt_vergleich.py`, Fixtures `tests/fixtures/mollgasse_gt/` und `knowledge/notbeleuchtung/` fehlen im Baum (`tests/gate/gate_regel.py:64`, `ls` geprüft). | P1 | Selman |
-| R-17 | Freie Flächen (K1-Diagnose) | — (R-Stufe R-05 b) | — | Pflicht-Eintrag § 6.5. | P1 | Selman (Owner-Frage) |
+| R-17 | Freie Flächen (K1-Diagnose) | — (R-Stufe R-05 b); **2d:** `freiflaeche.py:fuelle_freie_flaechen`, Aufruf `provider.py` nach `_tueren_und_wohnungen` | `test_freiflaeche.py` (4), `tests/naht/test_freiflaeche_wohnung.py::test_dg1_sofa_feld_geht_ins_wohnzimmer` | Pflicht-Eintrag § 6.5. **→ 2d erledigt im Wohnungsumriss (§ 16):** 16 Flächen > 2 m² auf 24 Plänen, 4 → Raum, 12 → neuer Raum UNBEKANNT; Flächen außerhalb eines Wohnungsumrisses bleiben frei (R-05 b). | P1 | Selman (Owner-Frage) |
 
 ---
 
@@ -234,6 +234,8 @@ Prüfstrecken-Ausgabe außerhalb des Contracts (Attribute am Provider): `wand_wa
 - Quelle: Bericht K1 auf Branch `selman/fix-k1-moebel-keine-wand` `558dee3` (`docs/SLICES_K1_K4.md` dort, Owner-
   Fragen 1–2), nicht auf diesem Branch. Kein Test.
 - Prio **P1** (Owner-Frage; im Beispiel private Wohnfläche, kein Notlicht-Fehler belegt) · Lane Selman.
+- **→ 2d erledigt (§ 16):** Owner-Regel „im Wohnungsumriss keine freie Fläche ohne Raum“; das Feld geht über die
+  offene Grenze ins Wohnzimmer (73,95 → 90,89 m²), Test `test_freiflaeche_wohnung.py`.
 
 ### 6.6 Durchleitung
 
@@ -999,3 +1001,147 @@ Liftschacht; alle Messfelder außer `meta` gleich der 2c-Messung. `pytest -m gat
 - **R1-02 (P2) · Selman:** degenerierte Entities (Polylinie mit 0/1 Punkt, POLYLINE ohne VERTEX, degenerierter
   HATCH-Rand, ARC Radius 0, INSERT auf fehlenden Block, LWPOLYLINE-Zählerfehler) laufen still durch — kein Abbruch,
   aber auch keine Warnung im Bericht.
+
+---
+
+## 16. Punkt 2d — Freie Flächen in Wohnungen (erledigt mit dem Commit dieses Eintrags)
+
+**Auftrag (Owner 2026-09-30):** „Innerhalb eines Wohnungsumrisses gibt es keine freie Fläche ohne Raum." Jede freie
+Fläche > 2 m² im Wohnungsumriss: Öffnung zum Nachbarraum ohne Türblatt = kein Trenner → die Fläche geht in diesen Raum
+(mehrere: die breiteste entscheidet; nicht eindeutig → eigener Raum UNBEKANNT mit Grund); Tür mit Blatt = Trenner →
+eigener Raum UNBEKANNT. Grundsatz (b): die Fläche erbt die Wohnung nur über den aufnehmenden Raum, ein neuer Raum
+bekommt keine `wohnung_id`.
+
+**Definition (festgelegt):**
+
+- **Freie Fläche** = gedeckte Kontur − alle Räume − Wandkörper, je Zusammenhangskomponente > 2 m²
+  (`freiflaeche.py:freie_flaechen`). Gedeckte Kontur = `kontur` im Provider (`aussen.gedeckt()`, sonst
+  `aussenkontur`) — dieselbe Fläche, die die Türzuordnung als „nicht AUSSEN" liest. Wandkörper = `wand_union`.
+  Vorher morphologisch geöffnet um ±150 mm (Streifen < 300 mm sind Raster-Splitter zwischen Raum und Wand; F-/R-Räume
+  liegen auf 50 mm, die R-Stufe frisst 100 mm), danach die Zähne der Rasterränder bis 100 mm wieder angefügt.
+  Begründung: die **Deckenplatte** gibt es nur in der Rennweg-Familie (`New_035 Decken`, Block `Slab_1`); auf DG1
+  237,0 m² gegen 234,1 m² gedeckte Kontur, beide decken das Feld zu 100 %, das Feld nach beiden Bezügen 16,91 bzw.
+  16,94 m² (symmetrische Differenz 0,05 m²). Der **±250-mm-Wohnungsumriss** allein deckt das Feld zu 0 % (Kerbe am
+  Rand von `top_1`, unten Fassade mit Fensterlücken), `aussenkontur(d=1000)` zu 3,7 %.
+- **Im Wohnungsumriss** (`_wohnung`): `umschliessende_wohnung` (alle Nachbarräume bis 500 mm in einer Wohnung;
+  Schacht/Lift/Freiflächen zählen nicht — gebaut für genau diese Fassadenkerben, `wohnungsumriss.py` Modul-Doc) oder
+  ≥ 98 % (`VOLL`) im ±250-mm-Umriss genau einer Wohnung. Alles andere bleibt frei.
+- **Öffnung** (`_grenzen`): Rand der Fläche bis 100 mm am Nachbarraum minus Wandkörper (±1 mm), Länge
+  ≥ 0,797 m = `_DURCHGANG_MIN_MM` (800) − 3 mm — dieselbe Mindestbreite und Toleranz wie der Durchgang ohne
+  Türblatt (`tuer_zuordnung.durchgaenge_ohne_tuerblatt`). Die Länge zählt an einem offenen Ende bis 0,1 m mit.
+- **Tür mit Blatt** an der Grenze zu einem Raum (Türpunkt bis halbe Türbreite + 300 mm an der Grenze; ohne Breite
+  1 m) macht die **ganze** Grenze zu diesem Raum zum Trenner. Eigener Entscheid, gemessen: auf Am Rain liegen neben
+  Türen Wandlücken (nicht erkannte Wand) — ohne diese Regel ginge Am Rain EG „VR 12,78" über die wandlose Grenze zum
+  WC `raum_85` (3,06 m, `tuer_242` darin) in das WC (1,77 → 18,33 m²), OG1 über 5,70 m (`tuer_22`/`tuer_23` darin)
+  in den Gang `raum_4`. Im Zweifel eigener Raum statt Zuschlag.
+- **Nicht eindeutig**: die zwei breitesten Öffnungen zu verschiedenen Räumen liegen < 100 mm auseinander (je Ende
+  eine 50-mm-Rasterzelle). **Breiteste Öffnung zu einem Raum außerhalb der Wohnung** (Balkon, Schacht,
+  Erschließung) → eigener Raum.
+- **Zuschlag**: Raum ∪ Fläche (um 1 mm geschlossen, sonst bleibt die Gleitkomma-Fuge), Löcher als 1-mm-Schlitz
+  (`bereinigung._schlitz`); `polygon_roh` wird mitgeführt, die Bilanz roh − mm bleibt (DG1 `raum_1`: 100,87 − 90,89 =
+  9,98 = Abzug AR). **Neuer Raum** `frei_<n>`: `raum_typ` leer (UNBEKANNT — magenta in `gesamtdarstellung` und
+  `raumerkennung_darstellung`), Klasse `None`, ohne Wohnung, Flags 00. Türen bleiben unverändert.
+- **Einbau** (`provider.py:252-260`): nach `_tueren_und_wohnungen` (der Umriss liest `wohnung_id` aus rohen Türen),
+  vor Ausgängen und Fluchtwegen; im Fehlerschutz. Befund je Fläche in `freiflaeche_befund` → `bericht.md`
+  „Warnungen" (`scripts/plan_pruefen.py:1333-1334`).
+
+**Rennweg DG1 am Plan geprüft** (Bild und Koordinaten im Session-Scratch): Grenze Feld | Wohnzimmer von
+(12 544 517 / 356 218 318) bis (12 542 250 / 356 213 068) mm, 5,92 m (Rand bis 100 mm am Wohnzimmer); Wandkörper darauf
+0,20 m = 3,4 % (±1 mm) bzw. 5,1 % (±50 mm) — K1: 5,79 m, 3 %. Keine Tür an der Grenze; die nächste Tür mit Blatt ist
+`tuer_3` (WC → Gang) 0,62 m vom Feld. Im Feld Sofas, TV, Schrank (`New_065 Möbel Einrichtung`), kein Stempel.
+**Entscheidung: Öffnung ohne Türblatt 5,72 m → Wohnzimmer `raum_1` 73,95 → 90,89 m².** Prüfstrecke
+(`plan_pruefen` DG1 in den Scratch): `bericht.md` Warnungen „freiflaeche: 16.94 m² … → raum_1 WOHNZIMMER 73.95 →
+90.89 m² …", `06_platzierung.png` zeigt das Feld grau (privat) im Wohnzimmer.
+
+**Tests:** `tests/naht/test_freiflaeche_wohnung.py::test_dg1_sofa_feld_geht_ins_wohnzimmer` (echter Parse: TV-Punkt im
+Wohnzimmer, 90,85 ± 0,25 m² — 90,85 = 73,95 + 16,90 aus K1; Toleranz = 14 mm Randversatz auf dem Feldumfang 18,1 m,
+gemessen +0,04; Wohnung `top_1`, `WOHNUNG_PRIVAT`, Flags 00, kein `frei_*`, Befund-Zeile) und
+`tests/raumerkennung/test_freiflaeche.py` (synthetisch: Öffnung → Zuschlag; Tür mit Blatt → `frei_1` ohne Wohnung,
+Klasse, Flags; zwei gleich breite Öffnungen → nicht eindeutig; Nachbar Erschließung → nicht im Umriss, nichts geändert).
+
+**Rot vor dem Fix** (`pytest tests/raumerkennung/test_freiflaeche.py tests/naht/test_freiflaeche_wohnung.py
+--tb=line`, Kopf `5f2f024` + Tests, Quelle als Kopie des Kopfs, Kurzform):
+
+```
+test_freiflaeche_wohnung.py:33 → :22: AssertionError: []   (TV-Punkt im Sofa-Feld liegt in keinem Raum)
+test_freiflaeche.py: ModuleNotFoundError: No module named 'notbeleuchtung.raumerkennung.freiflaeche'
+1 failed, 1 error in 3.32s
+```
+
+**Grün nach dem Fix:** dieselben 5 Tests passed (3,3 s).
+
+**Messung** (eigener Runner je Plan allein; Vorher = Nachher 2c, Nachher = Arbeitsbaum dieses Commits; 24 Pläne:
+Rennweg UG/EG/OG1/OG2/OG3/DG1/DG2/DD, Barawitzka EG, Mollgasse 1KG/2KG/EG/1.OG/2.OG/3.OG/4.OG/DG, Muthgasse E2, Am Rain
+UG/EG/OG1/OG2/OG3/OG4; Am Rain und Muthgasse allein). Freie Flächen > 2 m² gesamt **125**, davon **16 im
+Wohnungsumriss**, 109 außerhalb (Erschließung, Höfe, Außenflächen in der gedeckten Kontur, unerkannte Bereiche —
+bleiben frei). Je Plan gesamt / im Umriss: Rennweg DG1 1/1, übrige Rennweg 0/0; Barawitzka EG 4/0; Mollgasse 1KG 0,
+2KG 0, EG 5/0, 1.OG 5/1, 2.OG 5/1, 3.OG 2/0, 4.OG 5/1, DG 0; Muthgasse E2 5/0; Am Rain UG 4/0, EG 31/4, OG1 27/5,
+OG2 21/1, OG3 7/1, OG4 3/1.
+
+**Entscheidungen: 4 → Raum, 12 → neuer Raum UNBEKANNT, 0 nicht eindeutig, 0 ohne Entscheidung.** Jede Fläche einzeln
+(Lage = `representative_point` in m, Planeinheiten; „Stempel" = Raumstempel, der IN der Fläche liegt):
+
+| Plan | Geschoss | Fläche m² | Lage (x, y) | Wohnung (Beleg) | Entscheidung | Grund | Stempel in der Fläche |
+|---|---|--:|---|---|---|---|---|
+| Rennweg DG1 | DG | 16,94 | 12 542,2 / 356 216,6 | `top_1` (Nachbarn) | → `raum_1` WOHNZIMMER 73,95 → 90,89 | Öffnung 5,72 m, keine Tür | — (Sofas, TV) |
+| Mollgasse 1.OG | 1OG | 6,45 | 2 841,2 / 1 687,1 | `top_1` (Nachbarn) | → `raum_31` ZIMMER 6,02 → 12,47 | Öffnung 6,41 m, keine Tür | ZIMMER 12,26 |
+| Mollgasse 2.OG | 2OG | 5,93 | 2 730,6 / 1 554,0 | `top_4` (Nachbarn) | → `raum_35` ZIMMER 7,13 → 13,07 | Öffnung 6,01 m, keine Tür | ZIMMER 12,68 |
+| Mollgasse 4.OG | 4OG | 7,34 | 2 828,3 / 1 745,6 | `top_3` (Nachbarn) | → `raum_2` ZIMMER 6,01 → 13,35 | Öffnung 6,95 m, keine Tür | ZIMMER 12,98 |
+| Am Rain EG | EG | 16,57 | 37,0 / 21,7 | `top_42` (Nachbarn) | neuer Raum `frei_1` UNBEKANNT | Tür mit Blatt `tuer_172`, `tuer_201`, `tuer_242` (zum WC `raum_85`), keine Öffnung | VR 12,78 |
+| Am Rain EG | EG | 3,92 | 33,4 / 19,9 | `top_42` (Nachbarn) | neuer Raum `frei_2` UNBEKANNT | Tür mit Blatt `tuer_151`, keine Öffnung | AR 3,37 |
+| Am Rain EG | EG | 2,36 | 23,4 / 13,1 | `top_34` (Nachbarn) | neuer Raum `frei_3` UNBEKANNT | Tür mit Blatt `tuer_157` (zum VORRAUM `raum_91`), `tuer_214`/`tuer_249` (zum Wohnzimmer `raum_74`) | — |
+| Am Rain EG | EG | 9,76 | 21,8 / 10,6 | `top_34` (Nachbarn) | neuer Raum `frei_4` UNBEKANNT | Tür mit Blatt `tuer_214`, `tuer_216`, `tuer_249`, keine Öffnung | — |
+| Am Rain OG1 | 1OG | 11,17 | 149,3 / 49,3 | `top_12` (Nachbarn) | neuer Raum `frei_1` UNBEKANNT | Tür mit Blatt `tuer_51` an der Grenze zu BALKON `raum_30` und KÜCHE `raum_40` | BALKON 3,88 |
+| Am Rain OG1 | 1OG | 6,75 | 95,8 / 44,9 | `top_10` (Nachbarn) | neuer Raum `frei_2` UNBEKANNT | 4 Türen mit Blatt an der Grenze zum Gang `raum_4` (Grenze ohne Wandkörper 5,70 m) | — |
+| Am Rain OG1 | 1OG | 3,99 | 54,0 / 9,0 | `top_50` (Nachbarn) | neuer Raum `frei_3` UNBEKANNT | breiteste Öffnung 2,27 m zu `rest_10` SCHACHT (KEIN_RAUM) | — |
+| Am Rain OG1 | 1OG | 2,39 | 51,5 / −1,1 | `top_42` (Nachbarn) | neuer Raum `frei_4` UNBEKANNT | keine Öffnung ≥ 0,80 m, keine Tür | LOGGIA 7,67 |
+| Am Rain OG1 | 1OG | 18,19 | 12,7 / 44,7 | `top_26` (Nachbarn) | neuer Raum `frei_5` UNBEKANNT | Tür mit Blatt `tuer_95` (zum WC `raum_36`), `tuer_96`, `tuer_103` | BAD 5,35 · GANG 7,68 |
+| Am Rain OG2 | 2OG | 3,99 | 54,0 / 9,0 | `top_24` (Nachbarn) | neuer Raum `frei_1` UNBEKANNT | breiteste Öffnung 2,27 m zu `rest_9` SCHACHT (KEIN_RAUM) | — |
+| Am Rain OG3 | 3OG | 2,73 | 61,1 / 11,6 | `top_14` (±250-mm-Umriss) | neuer Raum `frei_1` UNBEKANNT | Tür mit Blatt `tuer_84`, `tuer_86`, `tuer_98` an der Grenze zum Wohnzimmer `raum_30` (Grenze ohne Wandkörper 4,23 m) | VR 5,13 |
+| Am Rain OG4 | 4OG | 5,41 | 56,9 / 8,7 | `top_5` (Nachbarn: nur ABSTELLRAUM `raum_14`) | neuer Raum `frei_1` UNBEKANNT | Tür mit Blatt `tuer_45` (KEIN_RAUM\|AUSSEN), kein Nachbarraum an der Fläche | — |
+
+Plan angesehen (Bilder je Fläche im Scratch): die drei Mollgasse-Zimmer sind je ein Raum zwischen vier Wänden (Fenster
+links), dessen Polygon nur die rechte Hälfte deckte (runde Aussparung); der Stempel liegt in der freien Hälfte, nach dem
+Zuschlag +1,7 / +3,1 / +2,8 % gegen den Stempel. Am Rain: in 6 der 12 neuen Räume liegt ein Stempel (VR, AR, BALKON,
+LOGGIA, BAD + GANG) — dort ist ein echter Raum, dessen Stempel kein Polygon bekam; nach der Regel UNBEKANNT ohne Typ
+(Typ aus dem Stempel wäre ein neuer Entscheid, s. offen).
+
+**Blast Radius** (Runner-JSON 2c gegen 2d, 24 Pläne): **0 Verstöße.** Räume weg 0; Typ-, Klassen-, Wohnungs- oder
+Flag-Wechsel 0; Fläche geändert nur an den 4 aufnehmenden Räumen (die alte Fläche bleibt enthalten bis auf
+0,0002 m² an DG1 `raum_1` — 1-mm-Schließung an spitzen Ecken); 12 neue Räume `frei_*` (Typ leer, Klasse `None`, ohne
+Wohnung, Flags 00); Zuwachs über Wandkörpern höchstens 0,0001 m² (Gleitkomma-Kontakt, keine Wand geschluckt); Türen,
+Ausgänge, Segmente, Anker, korrigierte Rollen, `bestaetigt_privat`, Stiegenhäuser, Bounds und alle übrigen Warnungen
+24/24 gleich (Wohnungen und Einraum damit unverändert). **Leuchten** (Default-Platzierung) 23/24 gleich; Am Rain OG1:
+eine Sicherheitsleuchte neu in `frei_2`, eine RZ liegt statt in „kein Raum" jetzt in `frei_2` (unbestimmt) — kein
+Notlicht-Verlust. Parse-Laufzeit und Spitze unverändert (Muthgasse E2 645,6 s / 11,29 GB, Am Rain EG 481,7 s /
+6,30 GB). Ein Überlappungsschutz in `freie_flaechen` (zwei Flächen an einem Hals < 0,2 m, gefunden auf Am Rain OG1
+außerhalb jedes Umrisses, 0,02 m²) kam nach den Läufen dazu; auf allen 24 gesicherten Ständen ergebnisgleich
+(Befund-Zeilen und Flächen) nachgerechnet.
+
+**Volle Suite** (allein, 29 min 41 s, vor dem Überlappungsschutz): `6 failed, 2242 passed, 11 skipped, 6 deselected,
+15 xfailed` — dieselben 6 roten wie nach 2c (3 × `test_keine_leuchten_in_wohnung_privat` OG1/OG2/DG1 = Board 1
+Leonis, `test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell`, die 2 S4c-Pins), 2242 = 2237 + 5 neue. Nach
+dem Schutz: `test_freiflaeche.py`, `test_freiflaeche_wohnung.py`, `test_wohnungsumriss.py`, `test_provider.py`,
+`test_rest_komponenten.py` 48 passed, 1 skipped. Kein Test umgestellt, keine Schwelle, kein Soll, kein Marker angefasst.
+
+**Gate:** `pytest -m gate tests/gate` 3 passed, 1 xfailed. `gate_messung` auf dem Arbeitsbaum dieses Commits (vor dem
+Commit, `_arbeit/gate/messung_5f2f024-dirty-2d.json`, 102,2 s), `pruefe_gate` gegen `nullmessung_f15d03f.json`:
+(0) unsauberer Arbeitsbaum (erwartet) und **(3) `M4.einraum` DG2 0 → 1** (Enis Board 3, unverändert); M17 18/18
+BESTANDEN; alle Messfelder außer `meta` gleich der Review-1-Messung `messung_27de6a0.json`.
+
+**Offen nach 2d:**
+- **Owner-Bestätigung** der Definition (gedeckte Kontur statt Deckenplatte; Umriss = Nachbarn oder ±250 mm), der
+  Mindestbreite 0,80 m und der Regel „Tür mit Blatt an der Grenze → ganze Grenze Trenner" (Am Rain EG `frei_1`, OG1
+  `frei_2`, OG3 `frei_1` hängen daran). P1 · Selman (Owner).
+- **Stempel in neuen UNBEKANNT-Räumen** (Am Rain EG VR 12,78 / AR 3,37, OG1 BALKON 3,88 / LOGGIA 7,67 / BAD 5,35 +
+  GANG 7,68, OG3 VR 5,13): echte Räume, deren Stempel kein Polygon bekam (F-Stufe/Zuordnung auf Am Rain). Typ aus dem
+  Stempel übernehmen wäre ein neuer Entscheid (BALKON/LOGGIA → AUSSEN). P1 · Selman.
+- **Türseiten an neuen Räumen** bleiben `KEIN_RAUM` (z. B. Am Rain EG `tuer_242` KEIN_RAUM\|`raum_85` an `frei_1`):
+  die Türzuordnung läuft vor 2d; neu zuordnen hieße Wohnungen und Fluchtwege nachziehen. P2 · Selman.
+- **Darstellung:** `plan_pruefen._raumflaeche_stil` (`06_platzierung.png`) zeichnet einen Raum ohne Typ weiß, magenta
+  nur GANG/VORRAUM ohne Klasse; `gesamtdarstellung`/`raumerkennung_darstellung` zeigen ihn magenta („UNBEKANNT").
+  Änderung außerhalb der Grenze dieses Auftrags. P2 · Selman.
+- **Am Rain OG4 `frei_1`** liegt am Treppen-/Liftkern ohne Stiegenhaus (R-09); „im Umriss `top_5`" stützt sich auf einen
+  Nachbarn (ABSTELLRAUM `raum_14`). P1 · Selman (mit R-09).
+- **Freie Flächen außerhalb jedes Wohnungsumrisses** (109 auf 24 Plänen) bleiben frei — nicht Teil der Owner-Regel;
+  R-05 b gilt für sie weiter.

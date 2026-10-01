@@ -1328,8 +1328,10 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     return {
         "md": md,
         # Lade-/Wand-Warnungen des Providers (`keine_wand_entities`,
-        # `keine_geometrie`, `keine_raeume`) → bericht.md „Warnungen" (2a).
-        "wand_warnungen": list(getattr(bundle.raum, "wand_warnungen", [])),
+        # `keine_geometrie`, `keine_raeume`) → bericht.md „Warnungen" (2a),
+        # dazu je freie Fläche im Wohnungsumriss die Entscheidung (2d).
+        "wand_warnungen": list(getattr(bundle.raum, "wand_warnungen", []))
+        + list(getattr(bundle.raum, "freiflaeche_befund", [])),
         "modell_ueberlapper": modell_n,
         "modell_doppelt_m2": modell_m2,
         "tueren_typisiert": sum(1 for t in modell.tueren if t.tuer_detail),

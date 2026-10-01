@@ -23,6 +23,7 @@ from .aussenbereich import erkenne_aussenbereiche, waehle_innen_zonen
 from .dxf_load import bounds_mm, lade_dxf
 from .fluchtweg import explizite_linien, fluchtwege, linien_segmente
 from .footprint import hauptausgaenge
+from .freiflaeche import fuelle_freie_flaechen
 from .gang_anker import anker_fuer_gang
 from .geometrie_typ import typisiere_geometrisch
 from .geschoss import geschoss_befund
@@ -248,6 +249,15 @@ class ArchitekturRaumProvider:
         (tueren, self.tuer_warnungen, schacht_reste,
          self.wohnungsklasse_warnungen) = _tueren_und_wohnungen(
             plan, k, raeume, tueren, kontur, wu, aussen, geschoss, flw_enden)
+        # Punkt 2d (Owner 2026-09-30): im Wohnungsumriss keine freie Fläche
+        # ohne Raum. NACH den Wohnungen (der Umriss liest `wohnung_id` aus
+        # rohen Türen), VOR Ausgängen und Fluchtwegen (die sehen die fertigen
+        # Polygone). Setzt nie Wohnung, Klasse, Typ oder Flags; Türen bleiben.
+        # Befund je Fläche = Prüfstrecken-Ausgabe wie `wand_warnungen`.
+        try:
+            self.freiflaeche_befund = fuelle_freie_flaechen(raeume, tueren, kontur, wu)
+        except Exception as exc:  # noqa: BLE001 — Zusatzstufe darf den Parse nie killen
+            self.freiflaeche_befund = [f"freiflaeche_fehler: {exc}"]
         # Ausgangs-Warnungen (u.a. „Geschoss unbekannt, Endausgang nicht
         # bestimmbar") als Prüfstrecken-Output — kein Contract-Feld.
         neue, self.ausgangs_warnungen = leite_ausgaenge(
