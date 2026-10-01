@@ -1412,3 +1412,96 @@ Messfelder außer `meta` gleich `messung_5f2f024-dirty-2d.json`.
 - `Projekte/_ergebnis/` (getrackt) ist nicht neu geschrieben; der gemeinsame Lauf liegt im Scratch. Ein Lauf in das
   getrackte Verzeichnis geht jetzt (rund 80 min, ≤ 4,2 GB) — als eigener Commit nach Owner-Entscheid. P2 · Selman.
 - Am Rain OG4 `01_render.png` zeigt weiter die 38-km-Weltausdehnung (D-05). P2 · Selman.
+
+## 19. Review 2 — Punkte 2d–2f (adversarial, Kopf `27478ca`)
+
+Geprüft mit eigenem Code: eigener Runner (`provider.parse(dxf, "")` + Default-Platzierung, je Plan ein Prozess). Der
+Dump enthält das ganze `RaumModell` und `PlatzierungsErgebnis` (`model_dump`), korrigierte Rollen,
+`bestaetigt_privat`, alle Provider-Warnungen und Befunde und die Zahl der Wandkörper der Kaskade. Verglichen wird
+exakt, ohne Rundung. Stände: `5f2f024` (vor 2d), `d63bc4c` (vor 2f, Code = `22cd85e`), `27478ca`. Runner, Dumps und
+Ausgaben liegen im Session-Scratch.
+
+**(1) Diff `5f2f024..27478ca`:** geändert sind `src/notbeleuchtung/raumerkennung/` (`freiflaeche` neu, `provider`,
+`rest_komponenten`, `stempel_flutung`), `scripts/plan_pruefen.py` (2d: Befund-Zeilen unter „Warnungen"; 2f:
+Mindest-Strichlänge im Render, `gc.collect`, Restweg-Zeile je EG einmal je Prozess), Tests und Doku. Tests sind nur
+ergänzt (2 neue Dateien, 3 angehängte Tests, keine Zeile entfernt); keine Schwelle, kein Soll, kein Marker gelockert.
+Kein Contract (2e = B: kein Feld, kein Bump, Schema unberührt), kein fremdes Paket, keine lokalen Pfade. Je Punkt ein
+Commit. Rot-Nachweise: 2d § 16 — im eigenen Lauf auf `5f2f024` liegt der TV-Punkt des Sofa-Felds in keinem Raum, auf
+`27478ca` in `raum_1`; 2f § 18 — selbst nachgefahren, die drei `-k 2f`-Tests auf der Quelle `d63bc4c`:
+`3 failed` (`test_stempel_flutung.py:195` Größen-Assert, `test_rest_komponenten.py:379`/`:392` `DID NOT WARN`), auf
+`27478ca` grün. 2e ist reine Doku ohne Test. Umfang: der 2f-Commit trägt zusätzlich R-05 a (Raster-Obergrenze und
+Reißleine der R-Stufe, § 11 Punkt 5) und in `plan_pruefen` den Restweg-Cache (RAM, nicht Render); beides ist
+ergebnisgleich (s. (4)), die Reißleine greift auf keinem gemessenen Plan.
+
+**(2) 2d:**
+
+- 12 Prüfpläne `5f2f024` gegen `27478ca`: **10/12 in allen Feldern gleich** (Leuchten eingeschlossen). Rennweg DG1
+  und Mollgasse 1OG unterscheiden sich nur im aufnehmenden Raum (`raum_1` bzw. `raum_31`: Polygon, Fläche, bei DG1
+  auch `polygon_roh`) und im Befund. Wandkörper je Plan gleich, **12/12** (z. B. DG1 194, Barawitzka 1 243,
+  Muthgasse 737).
+- **Rennweg DG1:** Wohnzimmer `raum_1` 73,95 → **90,89 m²**, weiter WOHNZIMMER, `top_1`, `WOHNUNG_PRIVAT`, Flags 00;
+  die alte Fläche ist ganz enthalten, Zuwachs über Wandkörpern 0,0000 m². Die 14 anderen Räume sind in Typ, Klasse,
+  Wohnung, Flags und Polygon unverändert; Leuchten 6/6 gleich. Grenze Feld | Wohnzimmer selbst gemessen 5,92 m, davon
+  5,72 m ohne Wandkörper.
+- **Stichprobe freie Flächen**, selbst nachgemessen (Kontur − Räume − Wandkörper aus den Eingaben der Stufe; Nachbarn,
+  Grenzlängen ohne Wand und Türen mit eigenem Code):
+  - Mollgasse 1.OG, 6,40 m²: einziger Nachbar `raum_31` ZIMMER `top_1`, Grenze 5,79 m, davon 5,66 m ohne Wand, keine
+    Tür → Zuschlag 6,02 → 12,47 m². Stimmt.
+  - Mollgasse 4.OG, 7,36 m²: einziger Nachbar `raum_2` ZIMMER `top_3`, Grenze 6,28 m, davon 6,13 m ohne Wand →
+    Zuschlag 6,01 → 13,35 m². Stimmt (zusätzlich Mollgasse 2.OG 5,89 m² → `raum_35` 7,13 → 13,07 m², stimmt).
+  - Am Rain OG3, 2,73 m²: Nachbarn `raum_27` BAD und `raum_30` WOHNZIMMER (`top_14`) und GANG `raum_35`
+    (Erschließung) → im Umriss nur über ±250 mm; Türen mit Blatt an der Grenze → `frei_1`. Stimmt nach der Regel, s.
+    R2-01.
+  - Am Rain OG4, 5,41 m²: kein Raum bis 100 mm, bis 500 mm nur Räume von `top_5`; `tuer_45` (KEIN_RAUM|AUSSEN) →
+    `frei_1`. Stimmt nach der Regel.
+  - Muthgasse E2, 13,73 m² (Nachbarn bis 500 mm in `top_13` … `top_16` und GANG ohne Wohnung) und 5,06 m² (`top_12`,
+    `top_16`, `top_21`, SCHLEUSE/GANG ohne Wohnung): nicht im Umriss, bleiben frei. Stimmt; keine der 5
+    Muthgasse-Flächen liegt im Umriss.
+- **Am Rain OG1** `5f2f024` gegen `27478ca`: 5 neue `frei_*` (Typ leer, Klasse und Wohnung `None`, Flags 00, kein
+  Wandkörper darin, keine Überlappung > 0,01 m² mit einem anderen Raum). Leuchten 68 → 69: alle 68 an derselben
+  Stelle (14 nur mit neuer `luminaire_id`), neu 1 Sicherheitsleuchte in `frei_2` — kein Notlicht-Verlust.
+
+**Urteil 2d: bestätigt.**
+
+**(3) 2e:** In `platzierung/` gibt es 0 Treffer für `durchleit`, `start_raum`, `ziel_raum`; alle `.quelle`-Treffer
+sind `anf.quelle`, `schwellen.quelle`, `eff.quelle` (Norm), keiner liest ein Segment. `flaechen_strategy.py:162-166`,
+`deckung.py:234-236`, `platzierer.py:200-204` und `fluchtweg.py:409-410` sagen, was § 17 zitiert. Der Antrag steht in
+`5ac3e0f` (Selman, 2026-09-20), damals `docs/GATE_TUERSTAPEL.md:602`; alle Commits mit „durchleit" sind von Selman.
+Regel (a) gegen `kandidaten ∩ bestaetigt_privat` auf 14 eigenen Dumps (12 Prüfpläne + Mollgasse 2.OG/4.OG): 14/14
+gleich (Knoten Mollgasse 1.OG 4, 2.OG 3, 4.OG 3, Rennweg OG2 1). Regel (b) auf denselben Dumps: 0 Paare bei 0
+Notizzeilen, 52 GRAPH-Segmente auf den 12 Prüfplänen. Board-Antrag in `docs/COORDINATION.md` geschlossen,
+Naht-Aussage in `docs/INTEGRATION_2026-09-30.md` korrigiert. **Urteil 2e: bestätigt.** Die Restaussagen in
+`fluchtweg.py:24-26`, `provider.py:105-108` und `docs/GATE_TUERSTAPEL.md:903` bleiben offen wie in § 17.
+
+**(4) 2f:** 12 Prüfpläne `d63bc4c` gegen `27478ca`: **12/12 in allen Feldern gleich** (RaumModell, Leuchten, Rollen,
+Warnungen, Wandkörper); Muthgasse E2 im Runner 615,7 s / 11,29 GB → 256,1 s / 1,79 GB. Prüfstrecke
+`scripts/plan_pruefen.py <dxf>` einzeln und allein, Spitze = `PeakWorkingSetSize` des Prozesses: **Am Rain OG4**
+Exit 0, 431 s, **3,04 GB** (§ 18: 3,02 GB / 444 s); **Am Rain EG** Exit 0, 1 025 s, **4,19 GB** (§ 18: 4,19 GB /
+1 057 s). Je 6 Bilder, 0 RuntimeWarnings; der OG4-Bericht hat die Restweg-Zeile und die Freiflächen-Zeile.
+**Urteil 2f: bestätigt.**
+
+**(5) Gate und Suite:** `gate_messung` auf dem sauberen Kopf (`_arbeit/gate/messung_27478ca_review2.json`, 56,7 s),
+`pruefe_gate` gegen `nullmessung_f15d03f.json`: **nur (3) `M4.einraum` DG2 0 → 1**, M17 18/18 BESTANDEN; alle
+Messfelder außer `meta` gleich `messung_d63bc4c-dirty-2f.json`. `pytest -m gate tests/gate`: 3 passed, 1 xfailed.
+`pytest tests/raumerkennung tests/contract tests/gate`: **965 passed, 6 skipped, 2 xfailed, 0 failed**.
+`tests/naht/test_s7_wohnungsklasse.py`, `test_soll_muthgasse.py`, `test_freiflaeche_wohnung.py`: 6 failed = genau die
+6 bekannten (3 × `test_keine_leuchten_in_wohnung_privat` OG1/OG2/DG1, `test_soll_plan_tuerbloecke_im_modell`, die 2
+S4c-Pins), 239 passed, 4 xfailed.
+
+**Offen aus Review 2** (Beobachtungen, keine Widerlegung):
+
+- **R2-01 (P1, gehört zur Owner-Bestätigung in § 16) · Selman:** „Tür mit Blatt an der Grenze" ist ein
+  Abstandskriterium (Türpunkt bis halbe Türbreite + 300 mm an der Grenze), kein Türbezug. Am Rain OG3 `frei_1`: die
+  auslösenden Türen `tuer_84` (`raum_27`|`raum_30`) und `tuer_86` (`raum_30`|`raum_35`) verbinden laut Modell andere
+  Räume; die Grenze zum Wohnzimmer `raum_30` ist auf 4,3 m wandlos (eigene Messung ±1 mm). Das Ergebnis geht in die
+  fail-safe Richtung (eigener Raum mit Notlicht statt Zuschlag in einen privaten Raum).
+- **R2-02 (P2) · Selman:** Mollgasse 4.OG, freie Fläche 7,62 m² bei (2 826,7 / 1 751,5) m, 508 mm vom ZIMMER `raum_2`
+  (`top_3`) — knapp über `NACHBAR_MM` = 500 und 0 % im ±250-mm-Umriss, bleibt darum frei („kein Nachbarraum bis
+  500 mm"). Rand zu 59 % Wandkörper, kein TEXT/MTEXT im Modellbereich darin. Grenzfall der Definition, steckt in den
+  109 Flächen außerhalb (§ 16).
+- **R2-03 (P2) · Selman:** DG1 nach 2d 90,89 m² gegen den Stempel „Wohnzimmer 83,93" (= 73,95 + 9,98 AR, § 6.5).
+  Anders als bei den drei Mollgasse-Zimmern bestätigt der Stempel den Zuschlag hier nicht; die Entscheidung trägt
+  allein die Owner-Regel.
+- **R2-04 (P2) · Selman:** Die Raster-Obergrenze und die Reißleine der R-Stufe (2f, R-05 a) melden sich nur als
+  `RuntimeWarning` auf stderr, nicht in `bericht.md` und nicht in den Provider-Warnungen. Der Verlust stempelloser
+  Restflächen wäre im Bericht nicht sichtbar.
