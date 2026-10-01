@@ -111,7 +111,7 @@ Prüfstrecken-Ausgabe außerhalb des Contracts (Attribute am Provider): `wand_wa
 | F-07 | Geschossausgänge aus Türen | `ausgaenge.py:leite_ausgaenge:62`, S5c F2 `:50-59`/`:91-92`, `ohne_unzulaessige_final_exits:116` | `test_ausgaenge.py` (5); `test_geschoss_befund.py::test_fail_closed_*`; Gate (11) | **Am Rain OG4: 0 Ausgänge** (Pflicht-Eintrag § 6.2). Rennweg DD: 0 Ausgänge (Owner-Frage: Dachdraufsicht aus der Bewertung nehmen oder Regel „Freifläche am Stiegenhaus im OG", `docs/OFFENE_FRAGEN.md` § Rennweg DD). Rennweg UG: kein `final_exit`, nur 2 `stair_exit` (`docs/COORDINATION.md` Log 2026-09-30 Punkt 5). Veraltete Zeilenangabe `provider.py:102` in `ausgaenge.py:122` und `tuer_typisierung.py:154` (heute `:175`). | P0 (OG4) · P1 (DD, UG) · P2 (Doku) | Selman |
 | F-08 | `final_exit` aus dem Footprint | `footprint.py:hauptausgaenge:123-135`, Aufruf `provider.py:175`, Zusammenlegung `:247-253` | `test_footprint.py::test_mollgasse_leer_hauptausgaenge` (sichert 1–6 `final_exit` aus dem Footprint); `test_soll_mollgasse.py::test_soll_hofausgaenge_cluster_a_und_b` | Pflicht-Eintrag § 6.3 (S4g). **→ 2b (§ 13): offen, STOPP** — ohne die Footprint-Ausgänge fallen auf Mollgasse EG 10 von 14 GRAPH-Wegen weg und Cluster A wird rot; Naht als strict-xfail `test_s4g_ausgang_tuerbezug.py::test_soll_mollgasse_eg_kein_ausgang_ohne_tuerbezug`. | P1 | Selman |
 | F-09 | Fluchtweg-Segmente | `fluchtweg.py:fluchtwege:215` (GRAPH), `explizite_linien:88`/`linien_segmente:110` (LINIE), FALLBACK; `zirkulation.py:zirkulation_aus_dxf:61` | `test_fluchtweg.py`; `test_zirkulation.py::test_synth_fluchtweg` (`::test_mollgasse_fluchtweg` skipped); Gate (6) | Pläne nur mit FALLBACK-Segmenten (`richtung_unbekannt`), „kein final_exit erreichbar"-Warnungen: Zahlen Basislauf § 7. | P1 | Selman |
-| F-10 | Durchleitung durch private Räume | `wohnungsklasse.py:durchleitung_raeume:921`, `fluchtweg.py:382-399` | `test_wohnungsklasse.py::test_durchleitung_zerreisst_den_weg_nicht`, `::test_durchleitung_wird_als_warnung_ausgewiesen`, `::test_durchleitung_fuehrt_nicht_durch_die_wand` | Pflicht-Eintrag § 6.6. | P2 | Contract (3 Owner) |
+| F-10 | Durchleitung durch private Räume | `wohnungsklasse.py:durchleitung_raeume:921`, `fluchtweg.py:382-399` | `test_wohnungsklasse.py::test_durchleitung_zerreisst_den_weg_nicht`, `::test_durchleitung_wird_als_warnung_ausgewiesen`, `::test_durchleitung_fuehrt_nicht_durch_die_wand` | Pflicht-Eintrag § 6.6. **→ 2e (§ 17): entschieden B — kein Contract-Feld, Board-Antrag geschlossen.** | P2 | Contract (3 Owner) |
 | F-11 | Kreuzcheck Linien ↔ `final_exit` | `kreuzcheck.py:kreuzcheck:57`, Aufruf `provider.py:321-324` | `test_kreuzcheck.py`; `test_soll_mollgasse.py::test_kreuzcheck_findet_endpunkte_an_der_aussenkante`; xfail `::test_soll_jeder_endpunkt_an_der_kante_hat_final_exit`, `::test_soll_final_exit_anzahl_gleich_endpunkte_an_der_kante` | Soll (jeder Kanten-Endpunkt hat einen `final_exit`) nicht erreicht. | P2 | Selman |
 | F-12 | Stiegenhaus-Modell, Anker | `stiegenhaus.py:baue_stiegenhaus_modell:263`, `gang_anker.py:anker_fuer_gang:102`, `wohnungsklasse.py:anker_aus_privat_ziehen:958` | `test_stiegenhaus.py`, `test_gang_anker.py`; Gate (6); `test_soll_mollgasse.py::test_keine_anker_in_liftpolygonen` | Laufrichtung ohne Nummern/Gehlinie bleibt `unbekannt`; AUFZUGSVORPLATZ nicht automatisch (§ Fachteil 2). 18 Anker in `WOHNUNG_PRIVAT` sind eigene Anker K4-privater Gänge, nach Grundsatz (a) gewollt (`docs/SLICES_K1_K4.md:1362-1366`). | P2 | Selman |
 | F-13 | Außenöffnungen Mollgasse EG | `tuer_zuordnung.py:aussen_durchgaenge:456` | — | `raum_55`: Hauseingang `aussenoeffnung_8` ist ein Streifen zwischen zwei Wandkörpern; `raum_51` (Außenanlage 122,43 m²) braucht ggf. eigenen Filter (`docs/OFFENE_FRAGEN.md` § Außenöffnungen). **Befund 2b (§ 13):** `raum_51` fasst Stiegenhaus und Hof, die Hof-Türen `tuer_52`/`tuer_68` bekommen keine `AUSSEN`-Seite — blockiert S4g a (Cluster A). | P1 | Selman |
@@ -247,6 +247,9 @@ Prüfstrecken-Ausgabe außerhalb des Contracts (Attribute am Provider): `wand_wa
 - Gemessen 0 Durchleitungen (`docs/COORDINATION.md` Log 2026-09-30 Punkt 6); Basislauf: 0 `durchleitung:`-Zeilen
   auf allen 13 Plänen.
 - Prio **P2** (0 Fälle) · Lane Contract (3 Owner).
+- **→ 2e (§ 17): entschieden B** (kein Feld, Board-Antrag geschlossen). Die Aussage „nie `start_raum`/`ziel_raum`"
+  oben gilt nicht (synthetisch `start_raum` = durchgeleiteter Raum, § 17), ebenso wenig „immer Direktlinie" (nicht
+  konvex → Skelettpfad, `fluchtweg.py:391-404`).
 
 ### 6.7 RAM
 
@@ -1145,3 +1148,113 @@ BESTANDEN; alle Messfelder außer `meta` gleich der Review-1-Messung `messung_27
   Nachbarn (ABSTELLRAUM `raum_14`). P1 · Selman (mit R-09).
 - **Freie Flächen außerhalb jedes Wohnungsumrisses** (109 auf 24 Plänen) bleiben frei — nicht Teil der Owner-Regel;
   R-05 b gilt für sie weiter.
+
+## 17. Punkt 2e — Kennzeichen `durchleitung` (entschieden: **B**, nichts gebaut, Board-Antrag geschlossen)
+
+**Klärung 1 — wer, wann, wofür.** Beantragt hat das Feld **Selman selbst**, mit dem Owner-Entscheid vom 2026-09-20
+(Commit `5ac3e0f`, „Stapel mit S4c, Verfahren für S7a+S7b"). In der Fassung dieses Commits steht in
+`docs/GATE_TUERSTAPEL.md:602`: „**Board-Antrag (offen, blockiert den Slice nicht):** der Owner will durchgeleitete
+Segmente mit `durchleitung=True` markiert sehen". Heute steht es in `docs/GATE_TUERSTAPEL.md:903-907` („Board-Antrag
+weiter offen … durchgeleitete Segmente sollen `durchleitung=True` tragen … Der Slice baut die **Wirkung** und weist
+die Durchleitung als Prüfstrecken-Warnung aus") und `:620-623`. Im Code verweisen `provider.py:105-108` und
+`fluchtweg.py:238-239` darauf. Der Zweck war ein **Ausweis**: `FluchtwegSegment.quelle` kennt nur
+LINIE/GRAPH/FALLBACK (`hauptengine/contracts/raum_modell.py:192`), daher sollten durchgeleitete Segmente erkennbar sein.
+Beantragt war ein **Segment**-Feld. Eine Anforderung von Leonis findet sich nicht: Alle Commits aller Refs mit
+„durchleit" in der Nachricht sind von Selman (`git log --all -i --grep`), und `Handoff/` hat 0 Treffer. Als eigener
+Antrag stand es nie im Board:
+`docs/COORDINATION.md` erwähnt die Durchleitung nur in der Naht-Aussage (Log 2026-09-30, Punkt 6) und im Hinweis zu
+Option B vom 2026-09-26. In `docs/OFFENE_FRAGEN.md` gibt es 0 Treffer für „durchleit".
+
+**Klärung 2 — was Leonis' Code liest** (gelesen, in `platzierung/` nichts geändert). Er liest keine Durchleitung:
+Für `durchleit`, `start_raum`, `ziel_raum` und `.quelle` an Segmenten gibt es in `src/notbeleuchtung/platzierung/`
+**0 Treffer**. Die Segment-Leser:
+
+- `deckung.py:124-151` `garantiere_redundanz`: je Segment-Polylinie mindestens 2 Leuchten im Radius l = z·h.
+  Fehlt eine, setzt die Funktion Zusatz-SL bogenverteilt **auf die Polylinie**, ohne Raum- und Klassenprüfung.
+- `deckungs_zuordnung.py:85-99`: füllt nur `covers_segment`, setzt nichts.
+- `sichtkette.py:145-157`: macht Segmentpunkte in Korridor-Polygonen zu Einzugspunkten. Die Korridore wählt sie nach
+  `raum_typ` (`:92-95`).
+- `communal_stgh_strategy.py:62-81`: setzt 1 RZ am Segment-Endpunkt `polyline[-1]`, nur wenn es keinen
+  Kreuzungsanker gibt (`platzierer.py:239-243`).
+- Graph und Anker: `graph.py:30-36`, `anker_strategy.py:50` und `sichtkette.py:119` lesen `zirkulation.nodes/edges`.
+  Die füllt nur 09-WEG (`raumerkennung/zirkulation.py:61-96`). GRAPH-Segmente stehen nur in `segmente`
+  (`provider.py:284-287`). Eine Durchleitung erzeugt also keinen Anker.
+- Klasse und Flags liest nur `flaechen_strategy.py:162-166`: `WOHNUNG_PRIVAT` ohne Flags bekommt kein Flächenlicht.
+  Nach dem Typ ohne Klasse arbeiten `deckung.verdichte_fluchtweg` (`deckung.py:234-236`) und
+  `platzierer._sichtlinien_garantie` (`platzierer.py:200-204`). Das ist Board 1, § 6.8/6.9.
+
+**Synthetischer Fall** (die Prüfstrecke hat 0 Durchleitungen). Topologie wie
+`tests/raumerkennung/test_wohnungsklasse.py::_durchleitung_plan` bzw. `::_durchleitung_l_form`: KELLER → GANG `g1` →
+privater Raum `v` (Wohnungseingang `tw` zum Stiegenhaus, ZIMMER dahinter) → GANG `g2` → Hauseingang. Die echte Kette
+läuft so: `bilde_wohnungen`, dann `fluchtwege(…, durchleitung=notiz)`, dann der echte `NotlichtPlatzierer` aus
+`build_default_bundle()`. Jeder Fall wird zweimal platziert: **mit** den GRAPH-Segmenten durch `v` und **ohne** sie
+(Klassen und Flags unverändert). Runner `_durchleitung_platzierung.py` liegt im Session-Scratch. In allen Fällen ist
+`v` `WOHNUNG_PRIVAT`, Flags 00, `top_1`.
+
+| Fall | Segmente durch `v` (Provider-Notiz) | Leuchten gesamt mit/ohne | in `v` mit/ohne | alle Platzierungen gleich | Herkunft der Leuchten in `v` |
+|---|---|--:|--:|---|---|
+| GANG 5 × 4 m | `seg_graph_tk`, `_ta`, `_tw` | 5 / 5 | 1 / 1 | ja | SL (11 800, 2 000) aus `verdichte_fluchtweg` |
+| VORRAUM 5 × 4 m | dieselben | 4 / 4 | 0 / 0 | ja | — |
+| GANG L-Form (nicht konvex, Skelettpfad) | `seg_graph_tk`, `_tb`, `_tw` | 6 / 6 | 2 / 2 | ja | RZ (1 800, 8 000) aus `_sichtlinien_garantie`, Aufheller 500 mm |
+| VORRAUM 40 × 4 m | `seg_graph_tk`, `_ta`, `_tw` | 4 / 4 | 0 / 0 | ja | — (`garantiere_redundanz` setzt keine SL in `v`) |
+| GANG 40 × 4 m | dieselben | 8 / 8 | 5 / 5 | ja | 2 RZ, 2 SL (§ 4.2.1, ohne `covers_segment`), 1 Aufheller 500 mm |
+
+Zuordnung der Herkunft einzeln aufgerufen: `plan_sicherheitsleuchten` setzt in `v` 0 Leuchten,
+`verdichte_fluchtweg` (GANG 5 m) 1 SL, `_plan_rettungszeichen` (L-Form) 1 RZ. **Ergebnis:** Die Platzierung
+reagiert nicht auf die Durchleitung. Mit und ohne durchgeleitetes Segment liegen dieselben Leuchten an denselben
+Stellen. Nur `covers_segment` ändert sich (GANG 40 m: das RZ bei 11 800 deckt `seg_graph_tk`/`_ta`). Leuchten in
+einem privaten GANG kommen aus den typbasierten Strategien (Board 1), und das gilt auch ohne Weg hindurch. Ein
+privater VORRAUM bekommt 0 Leuchten.
+
+**Korrektur der Naht-Aussage** (`docs/INTEGRATION_2026-09-30.md` „Naht für Leonis", `docs/COORDINATION.md` Log
+2026-09-30, Punkt 6, § 6.6 hier):
+
+- „der durchgeleitete Raum ist nie `start_raum`/`ziel_raum`" **gilt nicht.** Synthetisch tragen `seg_graph_tw` und
+  `seg_graph_tb` als `start_raum` den privaten Raum `v`. Grund: Sind beide Türseiten Graph-Knoten, fällt
+  `start_raum` auf `von_raum` zurück (`fluchtweg.py:409-410`). `seg_graph_tw` läuft dabei durch `v`.
+- „Direktlinie Tür → Tür, ohne Stützpunkt" gilt nur, wenn das Raumpolygon die Strecke deckt. Sonst wird es ein
+  Skelettpfad mit Stützpunkten (`fluchtweg.py:391-404`, L-Form oben).
+
+**Ableitung aus bestehenden Feldern** (so liest Leonis die Durchleitung, falls er sie braucht):
+
+- (a) **Knoten-Menge** = `wohnungsklasse.durchleitung_raeume`: `raum_typ` ∈ {GANG, VORRAUM} ∧
+  `nutzungsklasse == "WOHNUNG_PRIVAT"` ∧ `not ist_fluchtweg` ∧ `not ist_communal` ∧ eine Tür (`von_raum`/`nach_raum`)
+  zu einem STIEGENHAUS. Beleg im Code: `wohnungsklasse.py:124-135` (`kandidaten`), `:927-931`, und `:951`
+  (Flags 00 genau für bestätigt private GANG/VORRAUM). Gemessen auf den 24 Mess-Dumps „Nachher 2d“ (Session-Scratch
+  `lk/2d`): Feld-Regel und `kandidaten ∩ bestaetigt_privat` stimmen **24/24** überein, zusammen 13 Räume
+  (Mollgasse 1.OG 4, 2.OG 3, 3.OG 1, 4.OG 3, Am Rain OG3 1, Rennweg OG2 1).
+- (b) **tatsächlich durchgeleitet** = ein Raum aus (a), dessen Polygon, um 100 mm nach innen versetzt, eine Polylinie
+  mit `quelle == "GRAPH"` schneidet. Synthetisch stimmen die Paare (Segment, Raum) in 5/5 Fällen genau mit der
+  Provider-Notiz überein. Auf den 12 Prüfplänen (`tests/plaene.py`, echter `provider.parse` auf `22cd85e`, je Plan
+  allein, Muthgasse 633 s) ergibt die Regel **0** Paare bei 0 Notizzeilen. Gezählt wurden 52 GRAPH-Segmente,
+  232 Räume `WOHNUNG_PRIVAT`/00 und 5 Knoten-Räume (Rennweg OG2 1, Mollgasse 1OG 4).
+- **Warum (a) und der Innenpuffer nötig sind:** Prüft man nur Klasse und Flags ohne Versatz, schneiden 26
+  Polylinien einen privaten Raum (0,5 bis 847,5 mm). 24 davon sind der Startraum an der Starttür, 2 sind
+  Knoten-Räume (Mollgasse 1OG `raum_2` 43,7 mm, `raum_4` 13,4 mm, keine Notiz). Mit 100 mm Versatz bleibt 1 Treffer:
+  Mollgasse EG `seg_graph_tuer_50` läuft 847,5 mm durch das ZIMMER `raum_38`, seinen Startraum. Den nimmt (a)
+  heraus.
+
+**Entscheidung B (Owner-Entscheid Selman 2026-09-30):**
+
+- Leonis' Code braucht die Information nicht. Er liest sie nirgends, seine Platzierung ist mit und ohne Durchleitung
+  gleich, und für das Notlicht genügt Klasse plus Flags: jeder Raum aus (a) fällt unter `flaechen_strategy.py:162-166`.
+- Die Information ist aus bestehenden Feldern eindeutig ableitbar, siehe (a) und (b).
+- Der Ausweis, für den das Feld beantragt war, existiert bereits als Prüfstrecken-Zeile
+  (`scripts/plan_pruefen.py:1203-1206`, Abschnitt „Durchleitung durch private Räume" in `bericht.md`).
+
+Darum gibt es kein Contract-Feld, keinen `contract_version`-Bump und keine Schema-Regenerierung. `hauptengine/contracts/**`
+und `platzierung/` sind unverändert. Den Board-Antrag schließt `docs/COORDINATION.md` (Log 2026-09-30, 2e), die
+Naht-Aussage korrigiert `docs/INTEGRATION_2026-09-30.md`. Dieser Commit ist reine Doku und hat keinen Test, also gibt
+es keinen roten Zustand zu belegen. Weder Suite noch Gate wurden neu gefahren, denn `src/`, `tests/` und `scripts/`
+sind unverändert gegenüber `22cd85e`.
+
+**Offen nach 2e:**
+- `fluchtweg.py:24-26` (Modul-Doc) sagt weiter „Direktlinie Tür→Tür … und er ist nie Start- oder Zielraum eines
+  Segments", `provider.py:105-108` und `docs/GATE_TUERSTAPEL.md:903-907` nennen den Antrag noch offen. Nicht geändert,
+  weil B „nichts bauen" heißt. Nachziehen beim nächsten Code-Commit in `raumerkennung/`. P2 · Selman.
+- Die Ableitungsregel (a)+(b) bindet kein Test. Ein Naht-Test, der sie synthetisch gegen `durchleitung_raeume` und die
+  Provider-Notiz prüft, würde die Zusage an Leonis absichern. Nicht gebaut (B). P2 · Selman.
+- Mollgasse EG `seg_graph_tuer_50` läuft 847,5 mm durch das private ZIMMER `raum_38` (Startraum). Die Ursache
+  (Türpunkt im Raum oder Polygon-Überlappung mit dem Erschließungsraum) ist nicht untersucht. P2 · Selman.
+- Leuchten in privaten GANG-Räumen (synthetisch 1 bis 5 je Fall) bleiben Board 1 (§ 6.8/6.9). Die Durchleitung
+  ändert daran nichts. Leonis, nur gemeldet.
