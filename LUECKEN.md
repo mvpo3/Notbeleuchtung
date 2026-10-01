@@ -445,14 +445,15 @@ Planer. „Nach dem Merge" = Owner-Vermerk „kein Code vor dem Merge des Türst
 
 1. R-09 + F-07 — Am Rain OG4 ohne Stiegenhaus und ohne Ausgang (Treppe/Lift nur als lose Linien, Erkennung liest nur
    Blocknamen). Owner-Frage vor dem Bau: welcher Beleg genügt (Layer `Treppe`, Text „STGH")? · Selman
-2. O-05 / § 6.7 — Render-RAM der Prüfstrecke (8 Render-Aufrufe, doppelte Kaskade) **[2f]** · Selman
+   **→ 2g (§ 20.4): gemessen, offen (Owner-Frage)**
+2. O-05 / § 6.7 — Render-RAM der Prüfstrecke (8 Render-Aufrufe, doppelte Kaskade) **[2f]** · Selman **→ erledigt (§ 18)**
 3. N-03 / § 6.8 — Leuchten in LIFT/SCHACHT · Leonis, **nur melden**
 
 **P1 — eigene Lane (Selman), nach Hebel**
 
 4. O-04 — `keine_wand_entities`, `seite_fehlt`, `sanitaer_befund` in `bericht.md` (erlaubte `plan_pruefen`-Änderung) **→ erledigt (2a, § 20.1)**
 5. R-05 a — Raster-Reißleine der R-Stufe, Verlust als Warnung statt `print` **→ erledigt (2f, § 20.2)**
-6. F-03 — Ausgänge an Türen `von_raum == nach_raum` (Barawitzka: einziger `final_exit`; `stair_exit` im Stiegenhaus)
+6. F-03 — Ausgänge an Türen `von_raum == nach_raum` (Barawitzka: einziger `final_exit`; `stair_exit` im Stiegenhaus) **→ diagnostiziert, offen: S4c-Gebiet (§ 20.5)**
 7. D-04 — mm-Faktor und Quelle ausweisen (8 von 13 über `$INSUNITS`, Türprobe widerspricht 4×); Hard Stop = Owner-Frage;
    S-MST nach dem Merge **→ Ausweisen erledigt (§ 20.3), Hard Stop offen**
 8. N-07 — Leuchten in keinem Raumpolygon (Muthgasse 57): Ursache messen, Raumerkennung oder Platzierung
@@ -1642,3 +1643,104 @@ gegen `nullmessung_f15d03f.json`: (0) unsauberer Arbeitsbaum (erwartet) und **(3
 
 **Offen (Owner):** Hard Stop oder Warnung bei `$INSUNITS`-Rückfall, und ob die Türprobe im Rückfall entscheiden
 soll (4 × Widerspruch); S-MST nach dem Merge. P1 · Selman (Owner-Frage).
+
+### 20.4 P0 R-09/F-07 — Am Rain OG4 ohne Stiegenhaus und Ausgang (nicht gebaut: Owner-Frage; Messung als Grundlage)
+
+Owner-Frage aus § 11: welcher Beleg genügt für das Stiegenhaus, der Layer `Treppe` oder der Text „STGH"? Ohne
+Entscheid keine Regel. Gemessen (OG4 allein, Kopf `6fe0bb8`; Skripte im Scratch):
+
+- Text „STGH" (Layer `Raum-Beschriftung`) bei (12 320 / 12 909) mm liegt in `rest_2` — R-Stufe, ohne Typ, 40,17 m²,
+  10 Türen. `raumtyp_flags("STGH")` = `STIEGENHAUS` (das Kürzel ist im Vokabular; auf Muthgasse typt ein
+  „STGH"-Stempel so). Auf OG4 steht keine Flächenzeile daneben, darum ist der Text kein Stempel.
+- Layer `Aufzug`: 325 Stützpunkte in einer Box 1,80 × 1,65 m, davon 311 in `rest_2`.
+- Layer `Treppe`: 301 Stützpunkte über eine Box 46,0 × 20,8 m; **0 in `rest_2`**, 61 in `raum_19` (KÜCHE, `top_7`,
+  `WOHNUNG_PRIVAT`), 240 in keinem Raum. Als Raumbeleg trifft der Layer auf OG4 den Kern nicht.
+- Heute: 0 Ausgänge, 0 Stiegenhäuser, Segmente nur FALLBACK (4), Ausgangs-Warnung „kein Geschossausgang ableitbar",
+  13 Leuchten, **davon 0 in `rest_2`** (der Kern mit „STGH" und Aufzug bekommt kein Notlicht).
+- Gegenprobe in-memory (nicht gebaut, nicht committet: untypisierter Raum mit Text „STGH" → `STIEGENHAUS`):
+  2 `stair_exit` (`exit_tuer_27`, `exit_tuer_28`), 1 Stiegenhaus, Segmente GRAPH 5 + FALLBACK 3, keine
+  Ausgangs-Warnung, 20 Leuchten, davon 5 in `rest_2`.
+
+**Offen:** Owner-Entscheid „Raumkürzel ohne Fläche als Typbeleg" (Option Text). Die Option Layer `Treppe` ist auf OG4
+gemessen ohne Treffer im Kern. **P0** · Selman (Owner-Frage).
+
+### 20.5 P1 F-03 — Ausgang an einer Tür mit `von_raum == nach_raum` (nicht gebaut: S4c-Gebiet)
+
+Barawitzka EG `tuer_31` (`arc+text:Eingang`, 950 mm, Rolle `hauseingang`) trägt den einzigen `final_exit`
+`exit_tuer_31`; alle 7 GRAPH-Wege enden dort. Diagnose (Parse allein, Spion auf `ordne_tueren`):
+
+- Bogen-Startwinkel 90° → Sehne senkrecht, Normale waagrecht. Seite +: bis 1 200 mm in der gedeckten Kontur, kein
+  Raum. Seite −: 100–500 mm Wandkörper, bei 800/1 200 mm gedeckt, kein Raum. Ergebnis `KEIN_RAUM`|`KEIN_RAUM`. Nächster
+  Raum `raum_35` STIEGENHAUS in 180 mm.
+- Sehne aus dem Endwinkel (`blatt_enden[1]`): `raum_35`|`KEIN_RAUM` — die Außenseite bleibt gedeckte Fläche ohne Raum,
+  nicht `AUSSEN`.
+
+Nicht gebaut: (i) „Ausgang braucht eine Raumseite" nähme Barawitzka den einzigen Ausgang (STOPP, § 13); (ii) die
+Sehnen-Korrektur für Türen mit **beiden** Seiten `KEIN_RAUM` ist die dokumentierte Grenze von S4c Fassung A
+(`tuer_zuordnung.andere_bogenrichtung`, Docstring „Türen mit beiden Seiten KEIN_RAUM … bleiben", Ausbaupfad „Sehne aus
+dem geschlossenen Blatt") — S4c bleibt unangetastet (Owner 2026-09-30). Die drei `stair_exit` im selben STIEGENHAUS
+(Mollgasse EG `exit_tuer_68` in `raum_51`, F-13/S4g a; Am Rain UG `exit_tuer_186`, OG3 `exit_tuer_29`) sind nicht
+diagnostiziert. **P1** · Selman, nach dem S4c-Entscheid.
+
+### 20.6 P2 — VERLAUF-Befund „5 Restflächen / 9,47 m² entfallen" (geprüft, Messung ohne Code)
+
+`docs/ZERFALL_SCHLITZ_PRUEFUNG.md` gelesen: § 4.1 führt 5 Stücke der Klasse (c) „echte Nutzfläche, darf nicht
+entfallen", zusammen 9,471117 m², Stand `3d91a2c`. Die DXF dort sind dieselben wie in den heutigen Prüfplänen
+(SHA-256 Barawitzka `76ed8b45…`, Mollgasse EG `4a0b6608…`, Muthgasse E2 `d840674b…`, gleich im Runner).
+Probe: je Stück der Punkt aus dem Dokument (Schwerpunkt, bei `raum_90` der dort genannte „Punkt IM Stück") gegen
+alle Modell-Räume des Runners nach 20.3:
+
+| Stück (Dokument) | m² | heute |
+|---|--:|---|
+| Barawitzka `raum_43` „Terrasse" ZERFALL | 2,995052 | in `lift_3` (LIFT, `KEIN_RAUM`, 4,03 m², aus `finde_lifte`, 2,0 × 2,0 m) |
+| Mollgasse EG `raum_25` ZIMMER ZERFALL | 1,938377 | in keinem Raum (nächster `raum_9` GANG 623 mm) |
+| Muthgasse E2 `raum_88` „STGH" ZERFALL | 1,895620 | in keinem Raum (nächster `raum_67` 126 mm) |
+| Muthgasse E2 `raum_90` Zimmer ZERFALL | 1,507416 | in keinem Raum (nächster `raum_54` VORRAUM 202 mm) |
+| Mollgasse EG `raum_18` ZIMMER ZERFALL | 1,134652 | in keinem Raum (nächster `raum_56` GANG 423 mm) |
+
+**Befund:** 4 von 5 Stücken (6,476 m²) liegen weiter in keinem Raum — für sie gilt der VERLAUF-Befund auch heute.
+Das Barawitzka-Stück liegt heute in einem Liftpolygon; ob die Klasse (c) dort stimmt, ist offen (ein Liftschacht ist
+keine Nutzfläche). Grenze der Probe: ein Punkt je Stück, keine Flächenbilanz (die Stück-Polygone liegen nicht im
+Repo). **Offen:** der Zuschlag der (c)-Flächen wäre eine Änderung an den Bereinigungsregeln (§ 14.6.1,
+`docs/ENIS_UEBERGABE_0908.md`) — nicht gebaut. P2 · Selman (Owner-Regel).
+
+### 20.7 Übrige Listenpunkte ohne Bau
+
+- **P0 [2f] Render-RAM:** erledigt in § 18 und von Review 2 bestätigt (§ 19 (4)); die VERLAUF-Zahlen sind dort
+  nachgemessen (Render OG4 5,61 GB / 108 s je Bild, Spitze vorher 13,19 GB, nachher 3,02 GB).
+- **P0 fremd, LIFT/SCHACHT-Leuchten (N-03, Leonis):** weiter nur gemeldet. Neu gesehen auf den 12 Prüfplänen (Runner,
+  Zählweise `plan_pruefen._leuchten_je_klasse`, seit dem Basislauf unverändert): **Rennweg DG1 1 Rettungszeichen-
+  leuchte (`rz`) in `rest_3` SCHACHT (2,30 m²)**, dazu Muthgasse E2 1 in LIFT (bekannt, § 6.8). Kein Code in
+  `platzierung/`.
+- **P1 S4g a–c, S4f, S3c, S-KG:** nach dem Merge des Türstapels (PR #160 offen) — nicht angefasst.
+- **P1 S4c-Pins:** rot, nicht angefasst (§ 6.1).
+- **Abgrenzung 2a–2d:** 2a–2f sind in § 12–19 geführt. Von den 2e-Kandidaten ist F-10 (Durchleitung) mit B entschieden
+  (§ 17); F-06 (korrigierte Rolle an der Naht) bleibt Contract-Frage (§ 6.4).
+- **P2 `docs/ZERFALL_SCHLITZ_PRUEFUNG.md`:** gelesen und geprüft (§ 20.6).
+
+### 20.8 Stand nach 2g und Offenes nach Priorität
+
+Gebaut: 3 Punkte (20.1 O-04, 20.2 R-05 a, 20.3 D-04), je ein Commit (`755e06c`, `5779ef6`, `6fe0bb8`). Gemessen ohne
+Code: 3 Punkte (20.4 OG4, 20.5 F-03, 20.6 ZERFALL). Kein Prüfplan verliert Raum, Tür, Ausgang oder Leuchte (Blast je
+Punkt, 12/12 gleich bis auf die neuen Warnungszeilen in 20.3).
+
+**Volle Suite** (allein, Kopf `6fe0bb8`, 17 min 45 s): `6 failed, 2255 passed, 11 skipped, 6 deselected,
+15 xfailed` — dieselben 6 roten wie nach 2f (3 × `test_keine_leuchten_in_wohnung_privat` OG1/OG2/DG1 = Board 1
+Leonis, `test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell`, die 2 S4c-Pins), 2255 = 2245 + 10 neue
+(20.1: 1, 20.2: 6, 20.3: 3), 0 xpassed; kein Test umgestellt, keine Schwelle, kein Soll, kein Marker angefasst.
+**Gate auf dem sauberen Kopf** `6fe0bb8` (`_arbeit/gate/messung_6fe0bb8.json`, 105,8 s), `pruefe_gate` gegen
+`nullmessung_f15d03f.json`: **nur (3) `M4.einraum` DG2 0 → 1** (Enis Board 3); M17 18/18; alle Messfelder außer
+`meta` gleich `messung_27478ca_review2.json`.
+
+**Offen, nach Priorität** (Zeilen-Nr. aus § 1–5 und § 11; eigene Lane, sofern nicht anders genannt):
+
+- **P0:** R-09/F-07 Am Rain OG4 (Owner-Frage, § 20.4). R1-01 Abbruch bei `nan`/`inf`- oder Phantom-Koordinate auf
+  einem Wand-Layer (`footprint.py:79/80`, Entscheid offen, § 15; nicht in der 2g-Liste). N-03 LIFT/SCHACHT-Leuchten
+  (Leonis, gemeldet; neu Rennweg DG1 SCHACHT, § 20.7).
+- **P1:** F-03 Ausgang an `tuer_31` (S4c-Gebiet, § 20.5). D-04 Hard Stop bei `$INSUNITS`-Rückfall (Owner, § 20.3).
+  S4g a–c, S4f, S3c, S-KG (nach dem Merge). S4c-Pins (nicht anfassen). Aus § 11 unverändert offen: 8 N-07, 9 F-09,
+  10 F-04/F-05, 13 D-05/D-07/R-02 (S3c), 14 R-05 b, 15 D-06/D-03, 16 F-13, 17 F-07 DD/UG, 18 R-10, 19 O-06 (außerhalb
+  der Änderungsgrenze), 21 R-16, 23 F-06; fremd 24–29. `wand_warnungen` erreichen `pipeline.run`/API nicht (§ 12,
+  gemeinsam).
+- **P2:** F-Stufe ohne Fehlerschutz (§ 20.2). Zuschlag der ZERFALL-(c)-Flächen (§ 20.6). Faktor aus der Spanne steht
+  nicht im Bericht (O-07, § 20.3). `Projekte/_ergebnis/` nicht neu geschrieben (wie 2a–2f). Übrige P2 aus § 11.
