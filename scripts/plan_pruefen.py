@@ -1358,8 +1358,11 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
         "md": md,
         # Lade-/Wand-Warnungen des Providers (`keine_wand_entities`,
         # `keine_geometrie`, `keine_raeume`) → bericht.md „Warnungen" (2a),
-        # dazu je freie Fläche im Wohnungsumriss die Entscheidung (2d).
+        # dazu je freie Fläche im Wohnungsumriss die Entscheidung (2d), die
+        # Tür-Warnungen (`seite_fehlt`) und der K3-Sanitärbefund (2g, O-04).
         "wand_warnungen": list(getattr(bundle.raum, "wand_warnungen", []))
+        + list(getattr(bundle.raum, "tuer_warnungen", []))
+        + [f"sanitaer: {b}" for b in getattr(bundle.raum, "sanitaer_befund", [])]
         + list(getattr(bundle.raum, "freiflaeche_befund", [])),
         "modell_ueberlapper": modell_n,
         "modell_doppelt_m2": modell_m2,

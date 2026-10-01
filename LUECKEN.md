@@ -140,7 +140,7 @@ Prüfstrecken-Ausgabe außerhalb des Contracts (Attribute am Provider): `wand_wa
 | O-01 | Render DXF-Blatt | `hauptengine/render/dxf_renderer.py:render_dxf:1327`, Maßstab-Fallback `pipeline.py:259-267` | `tests/render/test_render_dxf.py`, `test_layout_vorlage.py`; `tests/e2e/` | `VorlageEinheitenFehler` (`dxf_renderer.py:1367`) fängt die Pipeline nicht → Abbruch bei falscher Vorlage (API 422); kein Test (`grep`: 0). | P2 | gemeinsam |
 | O-02 | Blatt-Extents | `dxf_renderer.py:_geschoss_extents:338` | kein direkter Test (`grep` in `tests/`: 0) | schützt nur das Blatt, nicht die übrigen `bounds_mm`-Leser (D-05). | P2 | gemeinsam |
 | O-03 | PDF A0 1:50 | `pdf_export.py:dxf_zu_pdf:57` (ezdxf-Frontend + matplotlib, 300 dpi) | `tests/render/test_pdf_export.py` | RAM auf Am Rain nicht gemessen — derselbe Frontend-Weg wie `_figur` (O-05). | P1 | gemeinsam |
-| O-04 | Warnungen im Prüfbericht | `plan_pruefen.py:_geschoss_md:1136`, `_kreuzcheck_md:1153` | — | `wand_warnungen` (`keine_wand_entities`), `tuer_warnungen` (`seite_fehlt`) und `sanitaer_befund` erscheinen **nicht** in `bericht.md` (0 Treffer). Die Owner-Regel P0 („es bleibt eine Warnung") ist in der Prüfstrecke unsichtbar. **→ 2a (§ 12): `wand_warnungen` stehen jetzt im Abschnitt „Warnungen"**; `tuer_warnungen` und `sanitaer_befund` weiter offen. | P1 | Selman |
+| O-04 | Warnungen im Prüfbericht | `plan_pruefen.py:_geschoss_md:1136`, `_kreuzcheck_md:1153` | — | `wand_warnungen` (`keine_wand_entities`), `tuer_warnungen` (`seite_fehlt`) und `sanitaer_befund` erscheinen **nicht** in `bericht.md` (0 Treffer). Die Owner-Regel P0 („es bleibt eine Warnung") ist in der Prüfstrecke unsichtbar. **→ 2a (§ 12): `wand_warnungen` stehen jetzt im Abschnitt „Warnungen"**; `tuer_warnungen` und `sanitaer_befund` weiter offen. **→ 2g (§ 20.1): beide jetzt ebenfalls unter „Warnungen".** | P1 | Selman |
 | O-05 | Plan-Render der Prüfstrecke (RAM) | `plan_pruefen.py:_figur:137`, 8 Aufrufstellen (:419/:491/:667/:740/:854/:1556/:1565/:1589) | — | Pflicht-Eintrag § 6.7. | P0 | Selman |
 | O-06 | Prüfstrecken-Schleife | `plan_pruefen.py:main:1984-2034` | — | Kein Fehler-Fang je Plan (:1990-1992): ein Fehler bricht alle folgenden Pläne ab, und `VERLAUF.md` wird nicht geschrieben (`_verlauf_schreiben` erst nach der Schleife, :2030-2032). | P1 | Selman |
 | O-07 | Maßstab im Bericht | — | — | Faktor und Beleg nicht ausgewiesen (D-04). | P2 | Selman |
@@ -450,7 +450,7 @@ Planer. „Nach dem Merge" = Owner-Vermerk „kein Code vor dem Merge des Türst
 
 **P1 — eigene Lane (Selman), nach Hebel**
 
-4. O-04 — `keine_wand_entities`, `seite_fehlt`, `sanitaer_befund` in `bericht.md` (erlaubte `plan_pruefen`-Änderung)
+4. O-04 — `keine_wand_entities`, `seite_fehlt`, `sanitaer_befund` in `bericht.md` (erlaubte `plan_pruefen`-Änderung) **→ erledigt (2a, § 20.1)**
 5. R-05 a — Raster-Reißleine der R-Stufe, Verlust als Warnung statt `print`
 6. F-03 — Ausgänge an Türen `von_raum == nach_raum` (Barawitzka: einziger `final_exit`; `stair_exit` im Stiegenhaus)
 7. D-04 — mm-Faktor und Quelle ausweisen (8 von 13 über `$INSUNITS`, Türprobe widerspricht 4×); Hard Stop = Owner-Frage;
@@ -1505,3 +1505,52 @@ S4c-Pins), 239 passed, 4 xfailed.
 - **R2-04 (P2) · Selman:** Die Raster-Obergrenze und die Reißleine der R-Stufe (2f, R-05 a) melden sich nur als
   `RuntimeWarning` auf stderr, nicht in `bericht.md` und nicht in den Provider-Warnungen. Der Verlust stempelloser
   Restflächen wäre im Bericht nicht sichtbar.
+
+---
+
+## 20. Punkt 2g — übrige P0/P1 aus der Bestandsaufnahme, danach P2
+
+**Auftrag (Owner 2026-09-30):** die Liste „Reihenfolge für Schritt 2g" (§ 11) in der Reihenfolge P0 → P1 → P2
+abarbeiten, höchstens 6 Punkte; je Punkt nur innerhalb der Änderungsgrenze (Test zuerst rot, Fix, 12 Prüfpläne
+über den Runner, Gate, Eintrag hier, ein Commit), fremde Lane nur melden; S4c bleibt unangetastet; keine Änderung,
+die einen Prüfplan schlechter macht. Kopf zu Beginn `21e78b6` (Code = `27478ca`).
+
+**Vorher** für alle Punkte = die Runner-Läufe nach 2f (Arbeitsbaum des 2f-Commits, 12 Prüfpläne aus
+`tests/plaene.py`); Review 2 (§ 19) hat sie auf `27478ca` feldgleich bestätigt, `21e78b6` ändert nur Doku. Runner
+wie § 12 (`provider.parse(dxf, "")` + Default-Platzierung, je Plan ein Prozess, allein), Vergleich des kompletten
+JSON ohne Lauf-Metadaten (18 Felder). Runner, JSON und Logs liegen im Session-Scratch, nicht im Repo.
+
+### 20.1 O-04 — `seite_fehlt` und Sanitärbefund im Bericht (erledigt mit dem Commit dieses Eintrags)
+
+**Lücke:** `provider.tuer_warnungen` (`seite_fehlt`) und `provider.sanitaer_befund` (K3) standen nur am Provider,
+`bericht.md` zeigte sie nicht (§ 5 O-04; `wand_warnungen` seit 2a).
+
+**Rot vor dem Fix** (`pytest tests/raumerkennung/test_provider.py -k tuer_und_sanitaer --tb=line`, Kopf `21e78b6`,
+Kurzform):
+
+```
+tests/raumerkennung/test_provider.py:257: AssertionError:  (3)
+1 failed, 12 deselected in 2.96s
+```
+
+(Abschnitt „Warnungen (3)" enthielt nur `keine_wand_entities` und zwei „Polygon ohne Stempel".)
+
+**Fix** (`scripts/plan_pruefen.py`, nur Berichtsausgabe): `_fachteil3` reicht zusätzlich `tuer_warnungen`
+unverändert und `sanitaer_befund` mit Vorsatz `sanitaer: ` an „## Warnungen" (dieselbe Liste wie 2a/2d).
+
+**Test:** `test_provider.py::test_plan_pruefen_schreibt_tuer_und_sanitaer_warnungen_in_bericht` (Prüfstrecke
+end-to-end auf dem Hatch-Plan; der Parse setzt beide Listen fest, der Test bindet die Berichtsausgabe). Grün:
+`test_provider.py` 12 passed, 1 skipped (`test_mollgasse_parse_valid`, wie vorher).
+
+**Einmal-Lauf** `scripts/plan_pruefen.py` auf Rennweg OG3 (Ausgabe per `PLAN_PRUEFEN_ERGEBNIS` in den Scratch):
+„## Warnungen (9)" mit `seite_fehlt: tuer_3 Seite +` und `Seite -` und `sanitaer: rest_6: BAD aus Sanitärbeleg
+(DUSCHE 1, WASCHBECKEN 2, WC 1) im Umriss top_2 (Probe) …` — dieselben 2 + 1 Einträge, die der Runner am Provider
+liest. Auf Am Rain kommen damit 23 (OG4) bis 186 (EG) `seite_fehlt`-Zeilen in den Bericht.
+
+**Blast:** 12 Prüfpläne **12/12 feldgleich** zum Vorher (erwartet: der Runner liest den Provider, geändert ist nur
+die Prüfstrecke). **Gate:** `gate_messung` auf dem Arbeitsbaum (`_arbeit/gate/messung_21e78b6-dirty-2gA.json`),
+`pruefe_gate` gegen `nullmessung_f15d03f.json`: (0) unsauberer Arbeitsbaum (erwartet) und **(3) `M4.einraum` DG2
+0 → 1** (Enis Board 3, unverändert); M17 18/18; alle Messfelder außer `meta` gleich `messung_27478ca_review2.json`.
+`pytest -m gate tests/gate`: 3 passed, 1 xfailed.
+
+`Projekte/_ergebnis/` nicht neu geschrieben (wie 2a–2f).

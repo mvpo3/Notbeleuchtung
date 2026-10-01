@@ -227,3 +227,33 @@ def test_plan_pruefen_schreibt_wand_warnung_in_bericht(tmp_path, monkeypatch):
         encoding="utf-8")
     abschnitt = bericht.split("## Warnungen", 1)[1].split("\n## ", 1)[0]
     assert "- keine_wand_entities: " in abschnitt, abschnitt
+
+
+def test_plan_pruefen_schreibt_tuer_und_sanitaer_warnungen_in_bericht(tmp_path, monkeypatch):
+    """O-04 (Rest, 2g): `tuer_warnungen` (`seite_fehlt`) und `sanitaer_befund`
+    des Providers stehen im bericht.md-Abschnitt „Warnungen" wie die
+    `wand_warnungen` (2a). Der Parse setzt beide Listen hier fest, damit der
+    Test die Berichtsausgabe der Prüfstrecke bindet, nicht die Erkennung."""
+    import sys
+
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
+    import plan_pruefen as pp
+
+    echt = ArchitekturRaumProvider.parse
+
+    def parse(self, dxf_path, floor):
+        modell = echt(self, dxf_path, floor)
+        self.tuer_warnungen = ["seite_fehlt: tuer_9 Seite + bis 500 mm kein Raum"]
+        self.sanitaer_befund = ["rest_9: BAD aus Sanitärbeleg (WC 1) im Umriss top_1"]
+        return modell
+
+    monkeypatch.setattr(ArchitekturRaumProvider, "parse", parse)
+    monkeypatch.setattr(pp, "ERGEBNIS", tmp_path / "ergebnis")
+    dxf = _hatch_waende_dxf(tmp_path / "hatch_waende.dxf")
+    pp.plan_pruefen(dxf)
+    bericht = (tmp_path / "ergebnis" / "hatch_waende" / "bericht.md").read_text(
+        encoding="utf-8")
+    abschnitt = bericht.split("## Warnungen", 1)[1].split("\n## ", 1)[0]
+    assert "- seite_fehlt: tuer_9 Seite + bis 500 mm kein Raum" in abschnitt, abschnitt
+    assert "- sanitaer: rest_9: BAD aus Sanitärbeleg (WC 1) im Umriss top_1" in abschnitt, \
+        abschnitt
