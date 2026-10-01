@@ -1744,3 +1744,101 @@ Leonis, `test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell`, die 2 S4
   gemeinsam).
 - **P2:** F-Stufe ohne Fehlerschutz (§ 20.2). Zuschlag der ZERFALL-(c)-Flächen (§ 20.6). Faktor aus der Spanne steht
   nicht im Bericht (O-07, § 20.3). `Projekte/_ergebnis/` nicht neu geschrieben (wie 2a–2f). Übrige P2 aus § 11.
+
+---
+
+## 21. Abschluss (Kopf `e0c820d`, Prüfstrecke `8080655`)
+
+**Auftrag (Owner 2026-09-30, Abschluss):** volle Suite, Gate, Schema-Check und ruff auf dem sauberen Kopf; die
+Prüfstrecke über alle 13 Pläne (5 Prüfpläne, Mollgasse 1KG/2KG, Am Rain alle 6) in **einem** Lauf; Sammeleintrag in
+`Projekte/_ergebnis/VERLAUF.md` und Abschnitt „Lückenstand 2026-09-30" in
+`Projekte/_ergebnis_raumerkennung/VERSIONEN.md`; danach Sync mit `origin/main`, Push und PR (kein Merge).
+
+### 21.1 Prüfung auf dem sauberen Kopf `e0c820d`
+
+- **Volle Suite** (`pytest -q -p no:cacheprovider -rxXs`, allein, 17 min 48 s): `6 failed, 2255 passed, 11 skipped,
+  6 deselected, 15 xfailed`, 0 xpassed — gleich § 20.8. Die 6 roten, alle erwartet:
+  - `tests/naht/test_s7_wohnungsklasse.py::test_keine_leuchten_in_wohnung_privat[pfad0-OG1]`, `[pfad1-OG2]`,
+    `[pfad3-DG1]` (`:1096`) — Board 1, Leonis;
+  - `tests/naht/test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell` (`:423`, 30 von 72 gegen Band ≥ 40);
+  - die S4c-Pins `tests/naht/test_s7_wohnungsklasse.py::test_bara_raum_19_behaelt_klasse_und_zirkulation` (`:937`) und
+    `::test_bara_raum_30_wird_nicht_von_der_auswertungsreihenfolge_entschieden` (`:1055`) — S4c nicht angefasst (§ 6.1).
+
+  Kein anderer roter Test, nichts zu untersuchen. 15 xfailed = die 14 aus § 10 und
+  `test_s4g_ausgang_tuerbezug.py::test_soll_mollgasse_eg_kein_ausgang_ohne_tuerbezug` (S4g a, § 13). 11 skipped wie
+  § 10 (Baufeld nicht entpackt, pyarrow fehlt, ODA-Konverter fehlt, `WHA_MOL_EG.dxf` fehlt, Herrenholz).
+- **Gate:** `pytest -m gate tests/gate` 3 passed, 1 xfailed (`test_gate_tuerstapel_erfuellt`). `gate_messung` →
+  `_arbeit/gate/messung_e0c820d.json` (59,6 s, Arbeitsbaum sauber), `pruefe_gate` gegen `nullmessung_f15d03f.json`:
+  **nur (3) `M4.einraum` DG2 0 → 1** (Enis Board 3); M17 18/18 BESTANDEN; alle Messfelder außer `meta` gleich
+  `messung_6fe0bb8.json`.
+- **Schema:** `scripts/gen_schema.py --check` → „schema in sync" (kein Contract geändert). **ruff:** `ruff check .` →
+  „All checks passed!".
+
+### 21.2 Prüfstrecke: 13 Pläne in einem Lauf mit Plan-Render
+
+`scripts/plan_pruefen.py` ohne Argument (13 DXF aus `Projekte/_eingang/` nach `Projekte/_ergebnis/`), ein Prozess,
+allein auf dem Rechner, von außen alle 20 ms überwacht (Guard 26 GB, Runner im Session-Scratch wie § 18): **Exit 0,
+kein Guard, 0 Traceback, 0 `MemoryError`, 0 `RuntimeWarning`**, 4 808,2 s, Prozess-Spitze **4,18 GB** (in Am Rain EG).
+Im Log nur ezdxf-Kopierhinweise und 6 matplotlib-Hinweise „Ignoring fixed x/y limits". Alle 13 Pläne mit Bildern;
+Am Rain UG, EG und OG1–OG3 erstmals (vorher nur `bericht.md` und `raeume.json`). **Das RAM-Ziel aus 2f ist erreicht**
+(Spitze je Plan ≤ 8 GB, ein Lauf mit Render); der gemeinsame Lauf in § 18 hatte 4 829 s / 4,19 GB.
+
+Kennzahlen je Plan (Räume = Kaskade gesamt; ohne Typ = Raum mit Polygon ohne `raum_typ`; Warnungen = Abschnitt
+„Warnungen" in `bericht.md` = Provider-Warnungen (`keine_wand_entities`, `mm_faktor`, `seite_fehlt`, `sanitaer`,
+`freiflaeche`) + Stempel/Polygon; RAM = höchster Working Set während des Plans, kleine Pläne tragen die Grundlast der
+Pläne davor):
+
+| Plan | Räume (ohne Typ) | Wohnungen | Türen typ./ges. | Ausgänge | Segmente | Leuchten | Warnungen gesamt = Provider + Stempel/Polygon | davon Wand/Lade (`keine_wand_entities`, `mm_faktor`) | Fluchtweg-Warn. | Laufzeit s | RAM GB |
+|---|---|--:|---|---|---|---|---|---|--:|--:|--:|
+| Barawitzka_EG | 46 (7) | 7 | 33/71 | final_exit 1 | GRAPH 7 FALLBACK 1 | rz 6 sicherheitsleuchte 5 | 37 = 24 + 13 | — | 8 | 254,6 | 1,44 |
+| Mollgasse_EG | 62 (19) | 21 | 44/102 | final_exit 8 stair_exit 1 | LINIE 103 GRAPH 14 FALLBACK 3 | sicherheitsleuchte 27 rz 24 (2 in WOHNUNG_PRIVAT) | 60 = 21 + 39 | — | 8 | 245,5 | 1,37 |
+| Muthgasse_E2 | 100 (6) | 22 | 113/193 | stair_exit 1 | LINIE 139 FALLBACK 3 | rz 86 sicherheitsleuchte 53 (62 in WOHNUNG_PRIVAT, 1 in LIFT) | 115 = 78 + 37 | — | 0 | 887,0 | 3,59 |
+| Rennweg_EG | 23 (7) | 2 | 20/40 | stair_exit 3 final_exit 2 | GRAPH 5 FALLBACK 2 | rz 9 sicherheitsleuchte 8 | 16 = 12 + 4 | mm_faktor 1 | 8 | 49,2 | 1,38 |
+| Rennweg_OG3 | 16 (1) | 2 | 17/18 | stair_exit 3 | GRAPH 5 FALLBACK 1 | rz 5 sicherheitsleuchte 2 | 10 = 4 + 6 | mm_faktor 1 | 0 | 47,4 | 1,27 |
+| Mollgasse_1KG | 29 (24) | 0 | 0/28 | final_exit 1 | FALLBACK 4 | rz 7 sicherheitsleuchte 7 | 51 = 4 + 47 | — | 0 | 98,1 | 1,28 |
+| Mollgasse_2KG | 28 (19) | 1 | 2/46 | stair_exit 1 | FALLBACK 2 GRAPH 1 | rz 8 sicherheitsleuchte 4 antipanik 1 (1 in LIFT) | 77 = 9 + 68 | — | 2 | 168,3 | 1,32 |
+| AmRain_OG4 | 27 (3) | 11 | 22/58 | 0 | FALLBACK 4 | rz 8 sicherheitsleuchte 5 | 63 = 26 + 37 | keine_wand_entities 1, mm_faktor 1 | 0 | 126,0 | 1,26 |
+| AmRain_UG | 82 (31) | 7 | 13/295 | stair_exit 4 final_exit 2 | FALLBACK 24 | rz 59 sicherheitsleuchte 32 (2 in WOHNUNG_PRIVAT) | 346 = 161 + 185 | keine_wand_entities 1, mm_faktor 1 | 10 | 401,0 | 1,93 |
+| AmRain_EG | 135 (24) | 50 | 78/317 | final_exit 2 stair_exit 1 | FALLBACK 6 GRAPH 1 | rz 27 sicherheitsleuchte 13 (3 in WOHNUNG_PRIVAT) | 382 = 192 + 190 | keine_wand_entities 1, mm_faktor 1 | 12 | 1 038,5 | 4,16 |
+| AmRain_OG1 | 134 (21) | 57 | 103/300 | stair_exit 4 | FALLBACK 17 GRAPH 6 | rz 47 sicherheitsleuchte 22 (2 in WOHNUNG_PRIVAT, 1 in SCHACHT) | 351 = 184 + 167 | keine_wand_entities 1, mm_faktor 1 | 0 | 570,3 | 1,83 |
+| AmRain_OG2 | 102 (12) | 43 | 117/264 | stair_exit 2 | FALLBACK 15 GRAPH 9 | rz 52 sicherheitsleuchte 23 (3 in WOHNUNG_PRIVAT) | 279 = 122 + 157 | keine_wand_entities 1, mm_faktor 1 | 0 | 493,9 | 1,83 |
+| AmRain_OG3 | 53 (8) | 23 | 61/129 | stair_exit 3 | GRAPH 10 FALLBACK 2 | sicherheitsleuchte 11 rz 9 (3 in WOHNUNG_PRIVAT) | 132 = 55 + 77 | keine_wand_entities 1, mm_faktor 1 | 0 | 360,2 | 1,60 |
+
+**Gegen den Integrationsstand `bc2ccf0`** (`Projekte/_ergebnis/VERLAUF.md`, Eintrag „Integration"): Räume, ohne Typ,
+Wohnungen, Türen typisiert, Ausgänge und Segmente 13/13 gleich; `raeume.json` 13/13 und `docs/MATERIAL_REPORT.md`
+unverändert. Leuchten-Zahl je Art 12/13 gleich, Am Rain OG1 Sicherheitsleuchten 21 → 22 (`frei_2`, 2d, § 19 (2)). Neu
+im Bericht die Provider-Warnungen (2a, 2d, 2g); Fluchtweg-Warnungen Barawitzka 11 → 8, Am Rain EG 13 → 12 und
+Luftlinien-Zeilen der Weglängen-Tabelle Muthgasse −22, Barawitzka −3, Am Rain EG −2, OG2 −2 (2c, § 14). Jede
+`bericht.md`-Änderung gegen `bc2ccf0` ist damit einem Punkt zugeordnet; die übrigen Zeilen sind die Laufzeit.
+
+### 21.3 Gesamtstand — gebaut
+
+| Punkt | Commit | vorher → nachher (Beleg) | Stand |
+|---|---|---|---|
+| 2a | `b849dd0` | leerer/defekter Plan: `ValueError` „DXF ohne Geometrie" bzw. `DXFTableEntryError` → RaumModell + Warnung (`keine_geometrie`, `keine_wand_entities`, `keine_raeume`); nicht lesbare Datei → `DxfNichtLesbar` (§ 12, 6 Tests rot → grün) | teilweise: R1-01 offen (§ 15) |
+| 2b | `2016268` | Balkontür nie `final_exit` (0 Fälle auf 17 Plänen), Messfall Südgarten `exit_tuer_67`/`68` gepinnt; 17/17 feldgleich (§ 13) | b/c erledigt, **a offen** (STOPP: −10 von 14 GRAPH-Wegen, Leuchten 51 → 47) |
+| 2c | `27de6a0` | fälschlich gekippte korrigierte Rollen 277 → 0 auf 31 Plänen, Leuchten 31/31 gleich, Fluchtweg-Warnungen −4 (§ 14) | erledigt |
+| 2d | `22cd85e` | freie Flächen > 2 m² im Wohnungsumriss 16: 4 Zuschläge (Rennweg DG1 Wohnzimmer 73,95 → 90,89 m²), 12 neue Räume UNBEKANNT; 0 Verstöße im Blast (§ 16) | erledigt, Owner-Bestätigung der Definition offen (R2-01) |
+| 2e | `d63bc4c` | Entscheidung B: kein Feld `durchleitung`, Board-Antrag geschlossen; Leonis liest keine Durchleitung, Platzierung synthetisch 5/5 gleich, ableitbar aus Klasse/Flags/GRAPH (§ 17) | entschieden, nichts gebaut |
+| 2f | `27478ca` | Am Rain OG4 13,19 → 3,02 GB; Am Rain UG/EG/OG1–OG3 und Muthgasse vorher Guard ≥ 14 GB → ≤ 4,19 GB; 12 Prüfpläne feldgleich (§ 18, § 19) | erledigt, hier bestätigt (4,18 GB) |
+| 2g | `755e06c`, `5779ef6`, `6fe0bb8`, `e0c820d` | O-04, R-05 a, D-04 als Warnung im Bericht (je rot → grün); Am Rain OG4, F-03, ZERFALL gemessen (§ 20) | 3 gebaut, 3 offen |
+| Prüfstrecke | `8080655` | 13 Pläne in einem Lauf mit Render, Ergebnisse getrackt (21.2) | erledigt |
+
+### 21.4 Gesamtstand — offen, nach Priorität
+
+- **P0:** R-09/F-07 Am Rain OG4 ohne Stiegenhaus und Ausgang (Owner-Frage „STGH" als Typbeleg, § 20.4). R1-01 Abbruch
+  bei `nan`/`inf`- oder Phantom-Koordinate auf einem Wand-Layer (§ 15). N-03 Leuchten in LIFT/SCHACHT (Leonis,
+  gemeldet; Prüfstrecke: Muthgasse E2 1 LIFT, Mollgasse 2KG 1 LIFT, Am Rain OG1 1 SCHACHT).
+- **P1:** S4c — 2 Pins rot, Owner-Entscheid (§ 6.1). S4g a — `footprint.hauptausgaenge` Mollgasse EG `exit_1` …
+  `exit_4` ohne Tür (§ 13). F-03 Barawitzka `tuer_31` (§ 20.5). D-04 Hard Stop bei `$INSUNITS`-Rückfall (§ 20.3;
+  8 von 13 Plänen der Prüfstrecke, 4 × „widerspricht"). Owner-Bestätigung 2d (R2-01) und Stempel in neuen
+  UNBEKANNT-Räumen (§ 16). S4f, S3c, S-KG nach dem Merge. Gate (3) DG2 — Enis Board 3. Board 1 — Leuchten in
+  `WOHNUNG_PRIVAT` (Leonis; Prüfstrecke: Muthgasse 62, Am Rain EG/OG2/OG3 je 3, Mollgasse EG, Am Rain UG/OG1 je 2).
+  `wand_warnungen` erreichen `pipeline.run`/API nicht (§ 12, gemeinsam). PDF-Export ohne Mindeststrich (§ 18, O-03,
+  gemeinsam). Aus § 11 unverändert: 8 N-07, 9 F-09, 10 F-04/F-05, 13 D-05/D-07/R-02, 14 R-05 b, 15 D-06/D-03, 16 F-13,
+  17 F-07 DD/UG, 18 R-10, 19 O-06, 21 R-16, 23 F-06; fremd 24–29.
+- **P2:** F-Stufe ohne Fehlerschutz (§ 20.2). Zuschlag der ZERFALL-(c)-Flächen (§ 20.6). O-07 Faktor aus der Spanne
+  nicht im Bericht (§ 20.3). Restaussagen zur Durchleitung in `fluchtweg.py:24-26`, `provider.py:105-108`,
+  `docs/GATE_TUERSTAPEL.md:903-907` (§ 17). R1-02, R2-02, R2-03 (§ 15, § 19). Am Rain OG4 `01_render.png` mit
+  38-km-Weltausdehnung (D-05). Einzellauf eines OG parst den EG weiter selbst (§ 18). Erledigt aus § 20.8:
+  „`Projekte/_ergebnis/` nicht neu geschrieben" (21.2).

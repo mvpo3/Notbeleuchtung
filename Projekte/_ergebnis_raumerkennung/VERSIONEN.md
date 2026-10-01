@@ -79,3 +79,33 @@ Abschnitt hält den Stand fest, auf dem Leonis die Platzierung testet.
   Am Rain UG, EG und OG1–OG3 liefen ohne Plan-Render, weil die Render-Stufe den Arbeitsspeicher
   sprengt. Dort liegen nur `bericht.md` und `raeume.json`. Die Kennzahlen je Plan stehen in
   `Projekte/_ergebnis/VERLAUF.md` im Eintrag „2026-09-30 · Integration selman/integration-2026-09-30 @ bc2ccf0“.
+
+## Lückenstand 2026-09-30
+
+Keine neue Raumerkennungs-Ausgabe: kein Ordner `<Projekt>_vN/`, keine neue Darstellung mit
+`scripts/analyse/raumerkennung_darstellung.py`. Dieser Abschnitt hält den Stand fest, auf dem die Lücken aus
+`LUECKEN.md` geschlossen bzw. offen geführt sind.
+
+- **Stand:** Branch `luecken-2026-09-30` von `selman/integration-2026-09-30` @ `0434392` (PR #160 offen). Kopf der
+  Messung `e0c820d`; der Code-Stand ist `6fe0bb8`, weil `e0c820d` nur `LUECKEN.md` ändert. Die Prüfstrecken-Ergebnisse
+  stehen in Commit `8080655`.
+- **Punkte** (je ein Commit mit Test, Fix und `LUECKEN.md`-Eintrag; Doku-Punkte ohne Test):
+  - 2a `b849dd0`: leerer oder defekter Plan → Warnung und Weiterlauf statt Abbruch (offen: R1-01, `nan`/`inf`- oder
+    Phantom-Koordinate)
+  - 2b `2016268`: S4g b/c, Balkontür nie `final_exit`, Messfall Südgarten Mollgasse EG; S4g a offen (STOPP)
+  - 2c `27de6a0`: K4-privater Loch-Raum zählt für korrigierte Rollen privat, 277 fälschlich gekippte Rollen → 0
+  - 2d `22cd85e`: freie Fläche im Wohnungsumriss bekommt einen Raum (4 Zuschläge, 12 neue Räume UNBEKANNT)
+  - 2e `d63bc4c`: Entscheidung B, kein Contract-Feld `durchleitung`, Board-Antrag geschlossen (nur Doku)
+  - 2f `27478ca`: RAM der Prüfstrecke (Flutmasken als Ausschnitt, Raster-Obergrenze der R-Stufe, Render mit
+    Mindeststrich und GC, EG-Restweg einmal je Lauf)
+  - 2g `755e06c` (O-04), `5779ef6` (R-05 a), `6fe0bb8` (D-04): Warnungen im Bericht; `e0c820d` Am Rain OG4, F-03 und
+    ZERFALL gemessen und offen
+- **Gate:** `pytest -m gate tests/gate` ergibt 3 passed, 1 xfailed. Messung `messung_e0c820d` gegen
+  `nullmessung_f15d03f`: **1 Verstoß — (3) `M4.einraum` steigt in DG2 von 0 auf 1** (Enis' Board 3). M17: 18/18.
+- **Suite:** `pytest -q -rxXs` (voll) ergibt 6 failed, 2255 passed, 11 skipped, 6 deselected, 15 xfailed, 0 xpassed. Die
+  6 roten sind bekannt: 3 × WOHNUNG_PRIVAT-Leuchten (Board 1), Muthgasse-Türblöcke und die 2 S4c-Pins (S4c nicht
+  angefasst).
+- **Prüfstrecke:** 13 Pläne mit `scripts/plan_pruefen.py` in **einem** Lauf mit Plan-Render nach
+  `Projekte/_ergebnis/<Plan>/`, Exit 0, Prozess-Spitze 4,18 GB, 4 808 s. Am Rain UG, EG und OG1–OG3 haben damit
+  erstmals Bilder. Die Kennzahlen je Plan stehen in `Projekte/_ergebnis/VERLAUF.md` im Eintrag
+  „2026-09-30 · Lücken luecken-2026-09-30 @ e0c820d“.
