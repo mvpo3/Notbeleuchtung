@@ -286,11 +286,13 @@ def flute_stempel(
     wandkoerper: list[Wandkoerper],
     tueren: list[TuerOeffnung],
     raster_mm: float = 50.0,
+    warnungen: list[str] | None = None,
 ) -> list[FlutRaum]:
     """Je Stempel ohne Polygon einen Raum aus den Wandkörpern fluten (s. Modul-Doc).
 
     ``plan`` wird nicht gelesen (Koordinaten sind bereits mm) — er hält die
-    Kaskaden-Signatur (plan_pruefen._raeume) stabil.
+    Kaskaden-Signatur (plan_pruefen._raeume) stabil. ``warnungen`` (optional)
+    bekommt die Reißleine zusätzlich als Text (``flutung: …``, 2g).
     """
     del plan
     if not stempel_ohne_polygon or not wandkoerper:
@@ -306,13 +308,14 @@ def flute_stempel(
     # Speichers auf (Baufeld 4OG vor dem dxf_load-Fix: 1.7e6 x 1.6e6 = 2.56 TiB).
     # Lieber ohne geflutete Räume weiterrechnen als den ganzen Parse verlieren.
     if h * w > _MAX_RASTER_ZELLEN:
-        warnings.warn(
-            f"Stempel-Flutung übersprungen: Raster {w}x{h} = {h * w:.3g} Zellen "
-            f"über dem Limit {_MAX_RASTER_ZELLEN:.3g} — Wand-Extents "
-            f"{(b.max_xy[0] - b.min_xy[0]) / 1000:.0f}x"
-            f"{(b.max_xy[1] - b.min_xy[1]) / 1000:.0f} m sind für ein Geschoss "
-            "unplausibel (mm-Faktor oder Phantom-Geometrie prüfen).",
-            RuntimeWarning, stacklevel=2)
+        text = (f"Stempel-Flutung übersprungen: Raster {w}x{h} = {h * w:.3g} Zellen "
+                f"über dem Limit {_MAX_RASTER_ZELLEN:.3g} — Wand-Extents "
+                f"{(b.max_xy[0] - b.min_xy[0]) / 1000:.0f}x"
+                f"{(b.max_xy[1] - b.min_xy[1]) / 1000:.0f} m sind für ein Geschoss "
+                "unplausibel (mm-Faktor oder Phantom-Geometrie prüfen).")
+        warnings.warn(text, RuntimeWarning, stacklevel=2)
+        if warnungen is not None:
+            warnungen.append(f"flutung: {text}")
         return []
     raster = _Raster(x0=b.min_xy[0], y0=b.min_xy[1], res=res, pad=pad, shape=(h, w))
 

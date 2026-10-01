@@ -63,6 +63,11 @@ class KaskadeErgebnis:
     # seinem Stempelwert abgewichen wäre. KEIN Contract-Feld — nur der
     # Prüfbericht und die VERLAUF-Zeile lesen sie.
     bereinigung_warnungen: list[str] = field(default_factory=list)
+    # Was die Kaskade an Räumen verliert, ohne abzubrechen (2g, LUECKEN R-05 a,
+    # R-04): Fehler einer Stufe im Fehlerschutz (`kaskade_fehler: …`) und die
+    # Raster-Grenzen der F-/R-Stufe (`flutung: …`, `rest_stufe: …`). KEIN
+    # Contract-Feld — der Provider hängt sie an `wand_warnungen` → bericht.md.
+    warnungen: list[str] = field(default_factory=list)
 
     @property
     def alle_raeume(self) -> list[Raum]:
@@ -125,8 +130,10 @@ def raeume_aus_kaskade(plan: DxfPlan,
             and not Polygon(z.raum.polygon_mm).buffer(0).covers(
                 Point(z.stempel.position_mm)))
     ]
+    warnungen: list[str] = []
     if flut_i and wk:
-        fluts = flute_stempel(plan, [zuord[k].stempel for k in flut_i], wk, oeff)
+        fluts = flute_stempel(plan, [zuord[k].stempel for k in flut_i], wk, oeff,
+                              warnungen=warnungen)
         for k, fr in zip(flut_i, fluts):
             # Degenerierte Flutungen (<1 m², z.B. Stempel in Wandtasche) blocken
             # sonst die Rest-Stufe — dort typt sie der STIEGE-/LIFT-Marker besser.
@@ -173,11 +180,15 @@ def raeume_aus_kaskade(plan: DxfPlan,
         hinweise = loese_kuerzel(plan, kand, raeume)
     except Exception as exc:  # noqa: BLE001 — Kürzel-Auflösung darf den Lauf nie killen
         print(f"   kuerzel_entscheid fehlgeschlagen: {exc}")
+        warnungen.append(f"kaskade_fehler: Kürzel-Auflösung {type(exc).__name__}: {exc} "
+                         "— mehrdeutige Kürzel bleiben untypisiert")
     belegte = [r.polygon_mm for r in raeume if len(r.polygon_mm) >= 3]
     try:
-        rest_r = komponenten_ohne_stempel(plan, wk, oeff, belegte)
+        rest_r = komponenten_ohne_stempel(plan, wk, oeff, belegte, warnungen=warnungen)
     except Exception as exc:  # noqa: BLE001 — Rest-Stufe darf den Lauf nie killen
         print(f"   rest_komponenten fehlgeschlagen: {exc}")
+        warnungen.append(f"kaskade_fehler: R-Stufe {type(exc).__name__}: {exc} — "
+                         "stempellose Restflächen (Stiegenhauskerne, Gänge) fehlen")
         rest_r = []
     for r in rest_r:
         quelle[r.id] = "R"
@@ -193,6 +204,8 @@ def raeume_aus_kaskade(plan: DxfPlan,
                                       warnungen=ber_warnungen)
     except Exception as exc:  # noqa: BLE001 — Bereinigung darf den Lauf nie killen
         print(f"   bereinigung fehlgeschlagen: {exc}")
+        warnungen.append(f"kaskade_fehler: Bereinigung {type(exc).__name__}: {exc} — "
+                         "Überlappungen bleiben unbereinigt")
     # Kette über die ÜBERLEBENDEN Räume (quelle behält die entfallenen ids für
     # den Bericht).
     n = Counter(quelle[r.id] for r in raeume + rest_r)
@@ -202,4 +215,5 @@ def raeume_aus_kaskade(plan: DxfPlan,
                            quelle=quelle, kette=kette, wandkoerper=wk,
                            tueroeffnungen=oeff, hinweise=hinweise,
                            entfallen=entfallen,
-                           bereinigung_warnungen=ber_warnungen)
+                           bereinigung_warnungen=ber_warnungen,
+                           warnungen=warnungen)

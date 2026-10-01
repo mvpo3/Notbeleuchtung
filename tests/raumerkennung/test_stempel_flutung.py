@@ -193,3 +193,16 @@ def test_2f_flutmasken_sind_ausschnitte(monkeypatch):
     for zellen, masken in gesehen:
         for m in masken.values():
             assert np.asarray(getattr(m, "feld", m)).size * 10 < zellen
+
+
+def test_2g_reissleine_steht_in_der_warnungsliste():
+    """2g (R-04): die Reißleine meldet sich auch in der übergebenen Liste — die
+    Kaskade reicht sie an ``provider.wand_warnungen`` → bericht.md weiter."""
+    wk = [_wand(0, 0, 200, 4000),
+          _wand(90_000_000, 90_000_000, 90_000_200, 90_004_000)]
+    warnungen: list[str] = []
+    with pytest.warns(RuntimeWarning, match="Stempel-Flutung übersprungen"):
+        assert flute_stempel(None, [_stempel(100, 2000, 20.0)], wk, [],
+                             warnungen=warnungen) == []
+    assert len(warnungen) == 1, warnungen
+    assert warnungen[0].startswith("flutung: Stempel-Flutung übersprungen"), warnungen

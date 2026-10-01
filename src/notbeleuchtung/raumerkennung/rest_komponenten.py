@@ -241,11 +241,14 @@ def komponenten_ohne_stempel(
     tueren: list[TuerOeffnung],
     bereits_belegte_polygone: list[list[XY]],
     raster_mm: float = 50.0,
+    warnungen: list[str] | None = None,
 ) -> list[Raum]:
     """Restflächen (Außenkontur − Wände − belegte Räume) als Räume, Quelle 'REST'.
 
     ``plan`` liefert nur die Typ-Marker (Stiegen-/Lift-Blöcke, STO-Kästchen,
     Schacht-Texte) — ``None`` ist erlaubt, dann typt nur die Geometrie-Regel.
+    ``warnungen`` (optional) bekommt die Raster-Grenzen zusätzlich als Text
+    (``rest_stufe: …``) — die Kaskade reicht sie an den Prüfbericht (2g).
     """
     if not wandkoerper:
         return []
@@ -269,13 +272,17 @@ def komponenten_ohne_stempel(
                       f"{(b.max_xy[1] - b.min_xy[1]) / 1000:.0f} m, Raster {w}x{h} = "
                       f"{h * w:.3g} Zellen über {_MAX_ZELLEN:.3g}")
         if res > _MAX_RASTER_MM:
-            warnings.warn(f"Rest-Stufe übersprungen (Raster-Reißleine): {ausdehnung}, "
-                          f"Zelle {res:.0f} mm über {_MAX_RASTER_MM:.0f} mm — stempellose "
-                          "Restflächen fehlen (mm-Faktor oder Phantom-Geometrie prüfen).",
-                          RuntimeWarning, stacklevel=2)
+            text = (f"Rest-Stufe übersprungen (Raster-Reißleine): {ausdehnung}, "
+                    f"Zelle {res:.0f} mm über {_MAX_RASTER_MM:.0f} mm — stempellose "
+                    "Restflächen fehlen (mm-Faktor oder Phantom-Geometrie prüfen).")
+        else:
+            text = (f"Rest-Stufe mit gröberem Raster: {ausdehnung} — Zelle "
+                    f"{raster_mm:.0f} → {res:.0f} mm.")
+        warnings.warn(text, RuntimeWarning, stacklevel=2)
+        if warnungen is not None:
+            warnungen.append(f"rest_stufe: {text}")
+        if res > _MAX_RASTER_MM:
             return []
-        warnings.warn(f"Rest-Stufe mit gröberem Raster: {ausdehnung} — Zelle "
-                      f"{raster_mm:.0f} → {res:.0f} mm.", RuntimeWarning, stacklevel=2)
         h, w = _form(res)
     raster = _Raster(x0=b.min_xy[0], y0=b.min_xy[1], res=res, pad=pad, shape=(h, w))
 

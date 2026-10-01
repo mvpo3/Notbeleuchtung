@@ -134,6 +134,8 @@ class ArchitekturRaumProvider:
         # wenn ezdxf die Datei nicht lesen kann (`dxf_load.DxfNichtLesbar`).
         self.wand_warnungen: list[str] = []
         k = raeume_aus_kaskade(plan)
+        # 2g (R-05 a): was die Kaskade ohne Abbruch verliert, steht im Bericht.
+        self.wand_warnungen += k.warnungen
         try:
             bounds = bounds_mm(plan)
         except ValueError:

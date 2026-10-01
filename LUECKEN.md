@@ -81,8 +81,8 @@ Prüfstrecken-Ausgabe außerhalb des Contracts (Attribute am Provider): `wand_wa
 | R-01 | Stempel finden und zuordnen | `stempel_anker.py:finde_stempel:242`, `ordne_zu:274`; `kaskade.py:_ein_polygon_ein_stempel:72` | `test_stempel_anker.py`; `test_kaskade.py` (Rennweg/Barawitzka/Mollgasse) | Stempel ohne Polygon bleiben ohne Raum: Mollgasse 1KG 22, 2KG 48 — **unbelegt (nur VERLAUF)**, im Basislauf nicht gezählt (Stempel-Zuordnung liegt nicht im Modell). Nicht zugeordneter Stempel „BAD 4,71 m²" Mollgasse 2.OG/3.OG, Raum erst aus der R-Stufe (`docs/SLICES_K1_K4.md` K3 Frage 3). Namenswahl „oberster statt nächster Text" (`stempel_anker.py:218/:230-231`, `docs/COORDINATION.md` Log 2026-09-29). | P1 | Selman (S-KG) |
 | R-02 | L-Stufe (Raum-Layer) | `raumlayer.py:raeume_aus_layer:98` | `test_raumlayer.py` | kein Planbereichs-Filter → Fremdcluster (D-07). | P1 | Selman (S3c) |
 | R-03 | H-Stufe (Raum-Hatches) | `raumlayer.py:raeume_aus_hatch:206`, IoU-Dedup `kaskade.py:104-109` | `test_raumlayer_hatch.py` | — | — | Selman |
-| R-04 | F-Stufe (Stempel-Flutung) | `stempel_flutung.py:flute_stempel:227`, Reißleine `:246-257` | `test_stempel_flutung.py` | Reißleine liefert `[]` mit `RuntimeWarning` — alle Flut-Räume weg, im Bericht nicht sichtbar. | P2 | Selman |
-| R-05 | R-Stufe (stempellose Restflächen) | `rest_komponenten.py:komponenten_ohne_stempel:228`, `_typisiere:200` | `test_rest_komponenten.py` (22 Tests, u. a. K2 und S3b) | (a) **keine Raster-Reißleine** (`:248-255`, anders als R-04); ein `MemoryError` wird in `kaskade.py:177-181` gefangen → nur `print`, R-Stufe leer, stempellose Stiegenhauskerne/Gänge fehlen still. (b) Sucht nur in der **größten** Komponente der Außenkontur (`aussenkontur:278-289`, `d_mm=1000` :245; Modul-Doc :20-21) — freie Flächen außerhalb werden kein Raum (Pflicht-Eintrag „freie Flächen"). Ob ein Mehr-Trakt-Plan des Korpus (Barawitzka 2 Trakte) dadurch Räume verliert: nicht gemessen. | P1 | Selman |
+| R-04 | F-Stufe (Stempel-Flutung) | `stempel_flutung.py:flute_stempel:227`, Reißleine `:246-257` | `test_stempel_flutung.py` | Reißleine liefert `[]` mit `RuntimeWarning` — alle Flut-Räume weg, im Bericht nicht sichtbar. **→ 2g (§ 20.2): steht jetzt als `flutung: …` unter „Warnungen".** | P2 | Selman |
+| R-05 | R-Stufe (stempellose Restflächen) | `rest_komponenten.py:komponenten_ohne_stempel:228`, `_typisiere:200` | `test_rest_komponenten.py` (22 Tests, u. a. K2 und S3b) | (a) **keine Raster-Reißleine** (`:248-255`, anders als R-04); ein `MemoryError` wird in `kaskade.py:177-181` gefangen → nur `print`, R-Stufe leer, stempellose Stiegenhauskerne/Gänge fehlen still. (b) Sucht nur in der **größten** Komponente der Außenkontur (`aussenkontur:278-289`, `d_mm=1000` :245; Modul-Doc :20-21) — freie Flächen außerhalb werden kein Raum (Pflicht-Eintrag „freie Flächen"). Ob ein Mehr-Trakt-Plan des Korpus (Barawitzka 2 Trakte) dadurch Räume verliert: nicht gemessen. **→ (a) 2f (§ 18) Raster-Obergrenze, 2g (§ 20.2) Fehler und Grenzen als Warnung im Bericht; (b) offen.** | P1 | Selman |
 | R-06 | Bereinigung (Überlappung) | `bereinigung.py:bereinige_kaskade:505`; im Fehlerschutz `kaskade.py:191-195` | `test_bereinigung.py` | Provider-eigene Räume nach der Kaskade (`typisiere_geometrisch`, `finde_lifte`, Liftschacht-Reste) sieht die Bereinigung nicht (`plan_pruefen.py:1314-1319`) → Rest-Überlappung im Modell, Zahlen siehe Basislauf § 7. Fehler der Bereinigung nur `print`. | P2 | Selman |
 | R-07 | Kürzel-Auflösung | `kuerzel_entscheid.py:loese_kuerzel`, Aufruf `kaskade.py:168-175` (Fehler nur `print`) | `test_kuerzel_entscheid.py` | Vokabular `Schl.`, `SR`, `Aufzug`, `Schrankr.`, Geschäftslokal, Wohnkche, Wohnbereich, TV Raum, Personalräume liegt bei Enis — **nicht anfassen** (Owner-Regel). | P2 | Enis |
 | R-08 | Raumtyp aus Stempel/Layer | `raumtyp.py:raumtyp_flags:162`, `_port/models/room.py:classify_room` | `test_raumtyp.py`; `tests/contract/test_lb_raumtyp_naht.py`, `test_vokabular_doku.py` | Typlose Räume behalten Notlicht (fail-safe), aber die Leuchten-Art ist nicht ableitbar (`pipeline.py:77-85` warnt). WOHNKÜCHE, KELLERABTEIL, „Dachterrasse" nicht im Kanon (`docs/OFFENE_FRAGEN.md` § WOHNKÜCHE, § S-KG, § Rennweg DD). Zahlen je Plan: Basislauf § 7. | P1 | Enis (Kanon), Selman (Tokens) |
@@ -371,7 +371,7 @@ Kein `raise` in `kaskade.py`, `waende.py`, `raumlayer.py`, `stempel_anker.py`, `
 **→ 2a (§ 12):** `readfile` gefangen → `DxfNichtLesbar`; dazu gefunden und behoben: `fluchtweg.py:84`
 `doc.layers.get` warf `DXFTableEntryError` bei einem Layer ohne Tabelleneintrag.
 **Geschluckte Fehler (nur `print`, kein Bericht):** `kaskade.py:174-175` (Kürzel), `:179-181` (R-Stufe → Räume
-fehlen), `:194-195` (Bereinigung). `stempel_flutung.py:246-257` warnt statt zu werfen (R-04). Die übrigen
+fehlen), `:194-195` (Bereinigung). **→ 2g (§ 20.2): alle drei zusätzlich als `kaskade_fehler: …` im Bericht.** `stempel_flutung.py:246-257` warnt statt zu werfen (R-04). Die übrigen
 `except Exception` (21 Stellen) überspringen einzelne kaputte Blöcke/Hatches/Texte. Nicht vollständig geprüft:
 implizite Ausnahmen (KeyError, StopIteration, GEOS) ohne `raise`-Anweisung.
 
@@ -451,7 +451,7 @@ Planer. „Nach dem Merge" = Owner-Vermerk „kein Code vor dem Merge des Türst
 **P1 — eigene Lane (Selman), nach Hebel**
 
 4. O-04 — `keine_wand_entities`, `seite_fehlt`, `sanitaer_befund` in `bericht.md` (erlaubte `plan_pruefen`-Änderung) **→ erledigt (2a, § 20.1)**
-5. R-05 a — Raster-Reißleine der R-Stufe, Verlust als Warnung statt `print`
+5. R-05 a — Raster-Reißleine der R-Stufe, Verlust als Warnung statt `print` **→ erledigt (2f, § 20.2)**
 6. F-03 — Ausgänge an Türen `von_raum == nach_raum` (Barawitzka: einziger `final_exit`; `stair_exit` im Stiegenhaus)
 7. D-04 — mm-Faktor und Quelle ausweisen (8 von 13 über `$INSUNITS`, Türprobe widerspricht 4×); Hard Stop = Owner-Frage;
    S-MST nach dem Merge
@@ -1554,3 +1554,48 @@ die Prüfstrecke). **Gate:** `gate_messung` auf dem Arbeitsbaum (`_arbeit/gate/m
 `pytest -m gate tests/gate`: 3 passed, 1 xfailed.
 
 `Projekte/_ergebnis/` nicht neu geschrieben (wie 2a–2f).
+
+### 20.2 R-05 a — Verluste der Kaskade als Warnung statt nur `print` (erledigt mit dem Commit dieses Eintrags)
+
+**Lücke:** die Raster-Obergrenze der R-Stufe ist seit 2f gebaut (§ 18), aber ein Fehler der R-Stufe (z. B.
+`MemoryError`) wurde in `kaskade.py` gefangen und nur per `print` gemeldet; die R-Stufe war dann leer, stempellose
+Stiegenhauskerne und Gänge fehlten still. Ebenso still: Fehler der Kürzel-Auflösung und der Bereinigung (§ 8
+„Geschluckte Fehler"), die Raster-Grenzen der R-Stufe und die Reißleine der F-Stufe (nur `RuntimeWarning` auf
+stderr; R2-04, R-04).
+
+**Rot vor dem Fix** (`pytest tests/raumerkennung/test_provider.py tests/raumerkennung/test_stempel_flutung.py -k
+"kaskade_fehler or rastergrenze or 2g_reissleine" --tb=line`, Kopf `755e06c`, Kurzform):
+
+```
+test_provider.py:277: AssertionError: ['keine_wand_entities: …']                      [loese_kuerzel]
+test_provider.py:277: AssertionError: ['keine_wand_entities: …', 'keine_raeume: …']   [komponenten_ohne_stempel]
+test_provider.py:277: AssertionError: ['keine_wand_entities: …']                      [bereinige_kaskade]
+test_provider.py:295: AssertionError: ['keine_wand_entities: …', 'keine_raeume: …']   [reissleine]
+test_provider.py:295: AssertionError: ['keine_wand_entities: …']                      [groeber]
+test_stempel_flutung.py:204: Failed: DID NOT WARN (TypeError: flute_stempel() got an unexpected keyword argument 'warnungen')
+6 failed, 23 deselected in 1.32s
+```
+
+Der Fall `komponenten_ohne_stempel` zeigt die Lücke direkt: der Plan verliert alle Räume, im Bericht stünde nur
+`keine_raeume`, nicht warum.
+
+**Fix** (`raumerkennung/`): `KaskadeErgebnis.warnungen` (neu, kein Contract-Feld). Die drei Fehlerschutz-Zweige in
+`raeume_aus_kaskade` schreiben zusätzlich zum `print` `kaskade_fehler: <Stufe> <Ausnahme>: <Text> — <Folge>`;
+`komponenten_ohne_stempel` und `flute_stempel` nehmen optional `warnungen` und hängen ihre Raster-Meldung als
+`rest_stufe: …` bzw. `flutung: …` an (die `RuntimeWarning` bleibt). `provider.parse` hängt `k.warnungen` an
+`wand_warnungen` — damit stehen sie über 2a/20.1 in bericht.md „## Warnungen".
+
+**Tests:** `test_provider.py::test_kaskade_fehler_steht_in_den_warnungen[loese_kuerzel|komponenten_ohne_stempel|
+bereinige_kaskade]` (Stufe per `monkeypatch` mit `MemoryError`, Parse läuft durch, Contract-Roundtrip),
+`::test_rest_stufe_rastergrenze_steht_in_den_warnungen[reissleine|groeber]` (Grenzen wie 2f per `monkeypatch`),
+`test_stempel_flutung.py::test_2g_reissleine_steht_in_der_warnungsliste`. Grün: `test_provider.py`,
+`test_stempel_flutung.py`, `test_rest_komponenten.py`, `test_kaskade.py` 55 passed, 1 skipped.
+
+**Blast:** 12 Prüfpläne **12/12 feldgleich** zu 20.1 (auch `warnungen`: keine Grenze und kein Fehler greift, wie in
+2f gemessen). **Gate:** `_arbeit/gate/messung_755e06c-dirty-2gB.json`, `pruefe_gate` gegen
+`nullmessung_f15d03f.json`: (0) unsauberer Arbeitsbaum (erwartet) und **(3) `M4.einraum` DG2 0 → 1**; M17 18/18;
+alle Messfelder außer `meta` gleich `messung_27478ca_review2.json`. `pytest -m gate tests/gate`: 3 passed, 1 xfailed.
+
+**Bleibt offen:** die F-Stufe selbst (`flute_stempel`) steht nicht im Fehlerschutz — ein Fehler dort bricht den
+Parse weiter ab (am Code gelesen, `kaskade.py` Aufruf vor dem ersten `try`); auf den Prüfplänen nicht aufgetreten.
+P2 · Selman.

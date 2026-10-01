@@ -257,3 +257,40 @@ def test_plan_pruefen_schreibt_tuer_und_sanitaer_warnungen_in_bericht(tmp_path, 
     assert "- seite_fehlt: tuer_9 Seite + bis 500 mm kein Raum" in abschnitt, abschnitt
     assert "- sanitaer: rest_9: BAD aus Sanitärbeleg (WC 1) im Umriss top_1" in abschnitt, \
         abschnitt
+
+
+# ── 2g / R-05 a: Verluste der Kaskade als Warnung statt nur `print` ──────────
+# Ein Fehler in Kürzel-Auflösung, R-Stufe oder Bereinigung (z. B. MemoryError)
+# und die Raster-Grenzen der R-Stufe (2f) waren nur `print` bzw. RuntimeWarning
+# auf stderr. Jetzt stehen sie in `wand_warnungen` → bericht.md „Warnungen".
+@pytest.mark.parametrize("stufe", ["loese_kuerzel", "komponenten_ohne_stempel",
+                                   "bereinige_kaskade"])
+def test_kaskade_fehler_steht_in_den_warnungen(tmp_path, monkeypatch, stufe):
+    from notbeleuchtung.raumerkennung import kaskade
+
+    def kaputt(*_a, **_k):
+        raise MemoryError("Testfall")
+
+    monkeypatch.setattr(kaskade, stufe, kaputt)
+    p = ArchitekturRaumProvider()
+    rm = p.parse(str(_hatch_waende_dxf(tmp_path / "plan.dxf")), "EG")
+    assert any(w.startswith("kaskade_fehler:") and "MemoryError: Testfall" in w
+               for w in p.wand_warnungen), p.wand_warnungen
+    RaumModell.model_validate(rm.model_dump(by_alias=True))
+
+
+@pytest.mark.parametrize(("max_zellen", "max_mm", "text"), [
+    (5000.0, 60.0, "Raster-Reißleine"),        # Zelle 250 mm > 60 mm → R-Stufe fällt weg
+    (30000.0, 200.0, "gröberem Raster"),       # Zelle 100 mm ≤ 200 mm → gröber gerechnet
+], ids=["reissleine", "groeber"])
+def test_rest_stufe_rastergrenze_steht_in_den_warnungen(tmp_path, monkeypatch,
+                                                        max_zellen, max_mm, text):
+    from notbeleuchtung.raumerkennung import rest_komponenten as rk
+
+    monkeypatch.setattr(rk, "_MAX_ZELLEN", max_zellen)
+    monkeypatch.setattr(rk, "_MAX_RASTER_MM", max_mm)
+    p = ArchitekturRaumProvider()
+    with pytest.warns(RuntimeWarning, match=text):
+        p.parse(str(_hatch_waende_dxf(tmp_path / "plan.dxf")), "EG")
+    assert any(w.startswith("rest_stufe:") and text in w for w in p.wand_warnungen), \
+        p.wand_warnungen
