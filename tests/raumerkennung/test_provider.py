@@ -355,16 +355,18 @@ def test_rest_stufe_rastergrenze_steht_in_den_warnungen(tmp_path, monkeypatch,
 
 
 # ── 2g / D-04: mm-Faktor aus $INSUNITS wird ausgewiesen ──────────────────────
-# Ohne messbare Wand-Spanne fällt `lade_dxf` still auf $INSUNITS zurück (8 von 13
-# Plänen der Prüfstrecke). Das steht jetzt als Warnung `mm_faktor: …` samt
-# Türprobe in `wand_warnungen` → bericht.md. Ob daraus ein Abbruch wird, ist
-# Owner-Frage (S-MST) und hier nicht gebaut.
-def _mit_tuerboegen(path, radius):
+# Ohne messbare Wand-Spanne fällt `lade_dxf` auf $INSUNITS zurück (8 von 13
+# Plänen der Prüfstrecke). Das steht als Warnung `mm_faktor: …` in
+# `wand_warnungen` → bericht.md. Seit Entscheid 7 (Abschnitt 6, LUECKEN § 28)
+# kalibriert der Rückfall über die Türbögen mit Tür-Beleg; ohne plausiblen Faktor
+# bleibt $INSUNITS, der Plan ist „Maßstab unsicher" (Flag am Provider, kein Abbruch).
+def _mit_tuerboegen(path, radius, layer="0"):
     import ezdxf
 
     doc = ezdxf.readfile(str(path))
     for i in range(3):
-        doc.modelspace().add_arc((1000 + 3000 * i, 6000), radius, 0, 90)
+        doc.modelspace().add_arc((1000 + 3000 * i, 6000), radius, 0, 90,
+                                 dxfattribs={"layer": layer})
     doc.saveas(str(path))
     return path
 
@@ -383,15 +385,59 @@ def _raum_mit_wandlinien_dxf(path):
     return path
 
 
-@pytest.mark.parametrize(("bau", "erwartet"), [
-    (lambda p: _hatch_waende_dxf(p),
-     "mm_faktor: 1 aus $INSUNITS=4 (keine Wand-Spanne 15–500 m messbar), Türprobe: keine"),
-    (lambda p: _mit_tuerboegen(_hatch_waende_dxf(p), 90.0),
-     "mm_faktor: 1 aus $INSUNITS=4 (keine Wand-Spanne 15–500 m messbar), Türprobe: 10 — widerspricht"),
-    (lambda p: _raum_mit_wandlinien_dxf(p), None),
-], ids=["insunits", "insunits_tuerprobe_10", "wand_spanne"])
-def test_mm_faktor_aus_insunits_steht_in_den_warnungen(tmp_path, bau, erwartet):
+_UNSICHER = ("mm_faktor: 1 aus $INSUNITS=4 (keine Wand-Spanne 15–500 m messbar), "
+             "Türkalibrierung: zu wenige Türbögen (0 < 3) — Maßstab unsicher")
+
+
+@pytest.mark.parametrize(("bau", "erwartet", "unsicher"), [
+    (lambda p: _hatch_waende_dxf(p), _UNSICHER, True),
+    # Bögen ohne Tür-Beleg (Layer „0", kein Tür-Block) zählen nicht — so lagen die
+    # Möbel-Bögen, die auf Rennweg EG / Am Rain OG4/OG3/EG „Türprobe: 10" ergaben.
+    (lambda p: _mit_tuerboegen(_hatch_waende_dxf(p), 90.0), _UNSICHER, True),
+    (lambda p: _mit_tuerboegen(_hatch_waende_dxf(p), 90.0, layer="Türen"),
+     ("mm_faktor: 10 aus Türkalibrierung (3 Türbögen, Median 900 mm, MAD 0 %, "
+      "Spanne 900–900 mm) — $INSUNITS=4 (keine Wand-Spanne 15–500 m messbar) "
+      "widerlegt (Faktor 1)"), False),
+    (lambda p: _mit_tuerboegen(_hatch_waende_dxf(p), 900.0, layer="Türen"),
+     ("mm_faktor: 1 aus Türkalibrierung (3 Türbögen, Median 900 mm, MAD 0 %, "
+      "Spanne 900–900 mm) — $INSUNITS=4 (keine Wand-Spanne 15–500 m messbar) "
+      "bestätigt"), False),
+    (lambda p: _raum_mit_wandlinien_dxf(p), None, False),
+], ids=["insunits", "boegen_ohne_tuerbeleg", "tuerkalibrierung_10",
+        "tuerkalibrierung_1", "wand_spanne"])
+def test_mm_faktor_aus_insunits_steht_in_den_warnungen(tmp_path, bau, erwartet, unsicher):
     p = ArchitekturRaumProvider()
-    p.parse(str(bau(tmp_path / "plan.dxf")), "EG")
+    rm = p.parse(str(bau(tmp_path / "plan.dxf")), "EG")
     faktor = [w for w in p.wand_warnungen if w.startswith("mm_faktor:")]
     assert faktor == ([erwartet] if erwartet else []), p.wand_warnungen
+    assert p.massstab_unsicher is unsicher
+    RaumModell.model_validate(rm.model_dump(by_alias=True))
+
+
+def test_plan_pruefen_massstab_unsicher_ohne_leuchten(tmp_path, monkeypatch):
+    """Entscheid 7: „Maßstab unsicher" → die Prüfstrecke gibt für den Plan keine
+    Leuchten aus (Platzierung übersprungen, Hinweis im Bericht), bricht aber nicht ab."""
+    import sys
+
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
+    import plan_pruefen as pp
+    from notbeleuchtung.hauptengine.registry import build_default_bundle
+
+    gerufen: list = []
+    echt = build_default_bundle
+
+    def bundle_mit_spion():
+        b = echt()
+        orig = b.platzierer.place
+        b.platzierer.place = lambda *a, **k: gerufen.append(1) or orig(*a, **k)
+        return b
+
+    monkeypatch.setattr("notbeleuchtung.hauptengine.registry.build_default_bundle",
+                        bundle_mit_spion)
+    monkeypatch.setattr(pp, "ERGEBNIS", tmp_path / "ergebnis")
+    pp.plan_pruefen(_hatch_waende_dxf(tmp_path / "unsicher.dxf"))
+    bericht = (tmp_path / "ergebnis" / "unsicher" / "bericht.md").read_text(encoding="utf-8")
+    assert gerufen == [], "Platzierung trotz Maßstab unsicher gelaufen"
+    assert "Maßstab unsicher — keine Leuchten ausgegeben" in bericht
+    warn = bericht.split("## Warnungen", 1)[1].split("\n## ", 1)[0]
+    assert f"- {_UNSICHER}" in warn, warn

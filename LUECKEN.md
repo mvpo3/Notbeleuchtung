@@ -1648,6 +1648,10 @@ gegen `nullmessung_f15d03f.json`: (0) unsauberer Arbeitsbaum (erwartet) und **(3
 **Offen (Owner):** Hard Stop oder Warnung bei `$INSUNITS`-Rückfall, und ob die Türprobe im Rückfall entscheiden
 soll (4 × Widerspruch); S-MST nach dem Merge. P1 · Selman (Owner-Frage).
 
+**Nachtrag 2026-10-02:** Owner-Entscheid 7 (2026-10-01: kein Hard Stop, Kalibrierung über die Tür) → gebaut in
+§ 28. Die „Türprobe: 10 — widerspricht" auf Rennweg EG, Am Rain OG4/OG3/EG zählte Möbel-/Sanitär-Bögen und
+Nummernkreise; die Türkalibrierung über Türbögen mit Tür-Beleg bestätigt dort Faktor 1 (kein Faktor ändert sich).
+
 ### 20.4 P0 R-09/F-07 — Am Rain OG4 ohne Stiegenhaus und Ausgang (nicht gebaut: Owner-Frage; Messung als Grundlage)
 
 Owner-Frage aus § 11: welcher Beleg genügt für das Stiegenhaus, der Layer `Treppe` oder der Text „STGH"? Ohne
@@ -3364,3 +3368,271 @@ Keine Schwelle, kein Soll, kein Marker gelockert; kein Contract-Feld, kein neuer
   `Mollgasse_EG/ausgaenge/` mit den vier Bildern), Prüfstrecke am Abschluss der Phase A.
 - **Vorbestehend rot, nicht aus diesem Commit:** `tests/normwissen/test_quellenblock_e07_rl4.py::test_kein_contract_wert_und_kein_konsument`
   (`ki_backends.py:58`, § 26.4) — Abschnitt 3, Phase B.
+
+---
+
+## 28. Abschnitt 6 — Maßstab über die Tür (D-04; Entscheid 7; erledigt mit dem Commit dieses Eintrags)
+
+**Auftrag (Owner 2026-10-01, `docs/AUFTRAG_2026-10-01.md` § 6, Entscheid 7):** „Greift der $INSUNITS-Rückfall oder
+widerspricht die Türprobe dem Maßstab, wird der Plan nach Leonis' Türregel kalibriert … Der Faktor wird so gesetzt,
+dass die gemessenen Wohnungstüren dieser Breite entsprechen. Der ganze Plan skaliert mit. Ergebnis mit Warnung im
+Bericht: Faktor, Anzahl der vermessenen Türen, Streuung. Ergibt die Türkalibrierung keinen plausiblen Faktor (zu
+wenige Türen, zu große Streuung): Plan als ‚Maßstab unsicher' markieren, keine Leuchten-Ausgabe für diesen Plan,
+Warnung, kein Abbruch der Prüfstrecke. Kein Hard Stop allein wegen des Rückfalls." Stand vorher `54ba4b3`
+(Abschnitt 5). Agent: claude-opus-5-5 / xhigh (Fallback, Fable 5.1 am Limit).
+
+### 28.1 Leonis' Türregel — Fundstelle und Wortlaut
+
+Auf diesem Branch und auf `origin/main` gibt es `knowledge/notbeleuchtung/` nicht. Die Regelbasis liegt auf
+`origin/leonis/demo-l-gebaeude` (`8257ff9`, gleicher Text auf `origin/leonis/kopplung-raumerkennung-c3b8186`);
+grep über alle Refs nach Türbreite/Wohnungstür/Maßstab/INSUNITS in `*.md|*.yaml|*.py|*.json` findet als Regel nur
+diese (sonst nur Selmans eigene Diagnose-Notiz „Wohnungseingangstür 90/2,20" auf Rennweg OG1,
+`docs/DIAGNOSE_RENNWEG_RAUMERKENNUNG.md:775`, keine Regel):
+
+> `knowledge/notbeleuchtung/regeln.md:282-285` (NB-R26 „Ausführungsplan-Annotationen als Erkennungs-Anker
+> (Datenquelle)"): „⚠️ Daten-Fallen: INSUNITS kann LÜGEN (TOMA INSUNITS=6 Meter, real mm — Einheit über
+> Türbreiten/Wandstärken verifizieren); DXF kann einen Riesen-Koordinaten-Offset tragen (TOMA SG ~−1,7e9 →
+> Healthcheck/Nullung vor jedem Engine-Lauf)."
+>
+> `regeln.md:347-349` (Integration): „**NB-R26** → Selman-Erkennungs-Eingänge: … Einheiten-Verify (INSUNITS lügt) +
+> Offset-Healing als Healthcheck-Vorstufe."
+>
+> `regeln.yaml:352` (`origin/leonis/kopplung-raumerkennung-c3b8186`): `daten_fallen: "INSUNITS kann luegen (TOMA=6
+> Meter, real mm -> ueber Tuerbreiten/Wandstaerken verifizieren); …"`
+
+**Eine Zahl für die Wohnungstür steht in Leonis' Regelbasis nicht.** Die einzigen Türmaße dort sind Messungen:
+`abgleich/1OG/abgleich_1OG.md:27-28` „Türbreite 960 mm" und „Schwenk-ARC h=93DAC (…, r=900, 180°–270°)" (Tür
+Gang↔STGH, keine Wohnungstür). Daneben gelesen, nicht geändert: Enis' `normwissen/data/oib_rl4_fluchtwegbreiten.yaml`
+(`tueren.nutzbare_breite_min_m: 0.80`, Mindestmaß der lichten Durchgangsbreite, ausdrücklich keine Blattbreite) und
+Leonis' `platzierung/bausteine.py:56-60` `TUER_MAX_BREITE_MM = 1300.0` („Selmans Nennmaß-Türbereich endet bei 130 cm,
+raumerkennung/tueren.py::_breite_mm 60–130"); `docs/VOKABULAR.md` nennt keine Türbreite. **Festgelegt:** Regelbreite
+= der bestehende Kalibrier-Anker `dxf_load._DOOR_MM` = 900 mm (deckt sich mit Leonis' gemessenem r = 900),
+Toleranz = der Nennmaß-Türbereich 600–1300 mm (`tueren._ARC_MIN_MM/_ARC_MAX_MM`, Leonis' `TUER_MAX_BREITE_MM`). Für
+die Dekadenwahl ist die genaue Zahl unerheblich: jede Regelbreite in 600–1300 mm ergibt auf allen 18 Plänen mit Türen
+dieselbe Dekade (das Band ist schmaler als eine Dekade). **Offen:** Leonis bestätigt die Regelbreite oder nennt
+seine Zahl (Board-Antrag Phase B, 28.8).
+
+### 28.2 Warum die alte Türprobe „10" sagte (gemessen, `lade_dxf` je Plan allein)
+
+`_door_arc_factor` zählte ARC-Radien je Dekade in 600–1300 mm (Tür-Blöcke nur über `DOOR`/`TUER`/`TÜR` im
+INSERT-Namen/-Layer, sonst **alle** Modelspace-Bögen) und nahm die Dekade mit den meisten Treffern:
+
+| Plan | Faktor 1: Bögen 600–1300 mm (Schwenk 60–120°) | Faktor 10: Bögen 600–1300 mm (Schwenk 60–120°) |
+|---|---|---|
+| Rennweg EG | 0 (die Türbögen stecken in `Zargentür_1_Fl 10[…]`-Blöcken, verschachtelt in Wand-Blöcken; die alte Probe sah nur INSERTs der obersten Ebene) | 24 (24), alle `New_065 Möbel Einrichtung_Pen_No__1` |
+| Am Rain OG4 | 53 (52: `Türen` 26, `Wand Beton tragend` 24, `Fenster` 2) | 174 (114: `Möblierung` 70, `Einbaumöblierung` 40, `Sanitär` 4) |
+| Am Rain OG3 | 119 (117: `Türen` 65, `Wand Beton tragend` 47, `Fenster` 5) | 163 (109: `Einbaumöblierung` 109) |
+| Am Rain EG | 309 (283: `Türen` 141, `Wand Mauerwerk tragend` 80, `Treppe` 16, Zaun 13) | 333 (48: `Sanitär` 24, `_Steppi-A-Bauangaben…` 24; dazu 278 Halbkreise auf `Fenster-Tür_NR` — Nummernkreise der Tür-/Fensterbeschriftung) |
+| Am Rain OG1 (Gegenprobe, Türprobe 1) | 319 (265: `Türen` 167 …) | 34 (28: `Sanitär` 28) |
+
+Die „Türen" der Dekade 10 sind Möbel-, Einbaumöbel- und Sanitär-Bögen von 60–130 mm, auf Am Rain EG dazu die
+Halbkreise der Tür-/Fensternummern (der Layer heißt `Fenster-Tür_NR` — darum zählt der Tür-Layer nur zusammen
+mit dem Schwenk 60–120°). Die Pläne sind in mm: bei Faktor 1 liegen die Raumflächen beim Stempel
+(Prüfstrecke `8080655`, `raeume.json`, Rohfläche/Stempel-m² im Median: Rennweg EG 1,00 (8 Räume mit Stempel, alle
+± 10 %), Am Rain OG4 1,03 (21), OG3 1,04 (42), EG 1,05 (103); Am Rain OG4 `rest_2` STGH 40,17 m² neben der
+Flächenzeile „32.44 m²"), die Türblätter bei 800–940 mm. Faktor 10 hätte jede Fläche
+verhundertfacht (OG4 `rest_2` 4 017 m²) und jede Tür auf 8–9 m gezogen.
+
+### 28.3 Regel und Einbau (`raumerkennung/dxf_load.py`, Lade-Pfad; `provider.py` reicht durch)
+
+- **Türbögen mit Tür-Beleg** (`_tuerboegen`): ARC mit Schwenk 60–120° (`tueren._SWEEP_MIN/_MAX`), der in einem
+  Tür-Block steckt (`tueren._ist_tuer_block` — dieselbe Definition wie die Türerkennung, Blöcke auch verschachtelt bis
+  Tiefe 3, Marker/Fahnen über `_DOOR_EXCLUDE` vorab draußen) oder auf einem Tür-Layer liegt (`T(Ü|UE)R|DOOR`), in
+  Quell-Einheiten, **vor** jedem Faktor. Der Beleg ersetzt die Radius-Klasse: eine Klasse „600–1300 mm" setzt den
+  Faktor voraus, den sie bestimmen soll — bei jeder Dekade landet der Median der Klasse im Band, gewählt wurde darum
+  nach der Zahl, und Möbel sind zahlreicher als Türen.
+- **Wohnungstüren statt aller Türen — begründet nicht getrennt:** die Rolle `wohnungseingang` entsteht in
+  `tuer_typisierung` nach Raumerkennung und Wohnungsumriss, also erst mit mm-Geometrie; der Faktor muss vorher stehen
+  (Kreis). Ein zweiter Parse mit neuem Faktor verdoppelte die Laufzeit (Am Rain EG ≈ 300 s) und hinge selbst am
+  Faktor. Gegenprobe nach dem Parse (Runner, Türen mit Rolle `wohnungseingang` und gemessenem Blatt `arc`/`block`):
+  28.5.
+- **Faktor** (`_tuerkalibrierung`): die Dekade 1/10/100/1000, die den Median der Radien der Regelbreite 900 mm am
+  nächsten legt (log-Abstand). **Eine Dekade, kein stetiger Faktor:** der Fehler, gegen den NB-R26 schützt, ist die
+  Einheit (mm/cm/m); ein stetiger Faktor 900/Median zöge einen richtigen mm-Plan mit 80-cm-Türen (Am Rain, Median
+  800 mm) um 12,5 % auseinander.
+- **Plausibel** nur mit **≥ 3 Türbögen** (wie die alte Probe; Auftrag), **Median im Band 600–1300 mm** und
+  **MAD/Median ≤ 25 %**. Schwelle begründet: auf allen 18 Prüfplänen mit Türbögen ist MAD/Median ≤ 0,056 (Rennweg
+  EG, 840/940-mm-Mix), meist 0 — echte Türen streuen kaum. Bei 25 % liegt die Hälfte der Bögen mehr als ein Viertel
+  neben dem Median; ab da ist die Menge keine Türfamilie mehr (z. B. Türen und Möbel einer anderen Dekade gemischt),
+  > 4-facher Abstand zum gemessenen Maximum. Ausgewiesen werden MAD und Spanne (min–max).
+- **Wann die Tür entscheidet** (`_calibrate_factor`): (i) **Rückfall** (keine Wand-Spanne 15–500 m): plausibel →
+  Türfaktor, Quelle `Türkalibrierung (<n> Türbögen, Median <m> mm, MAD <x> %, Spanne <a>–<b> mm) — $INSUNITS=<c>
+  (keine Wand-Spanne 15–500 m messbar) bestätigt | widerlegt (Faktor <f>)`; unplausibel → **$INSUNITS bleibt**,
+  `DxfPlan.massstab_unsicher = True`, Quelle `$INSUNITS=<c> (…), Türkalibrierung: <Grund> — Maßstab unsicher` (Grund:
+  `zu wenige Türbögen (n < 3)` | `…; Median <m> mm außerhalb 600–1300 mm` | `…; Streuung MAD <x> % > 25 %`). Kein
+  Abbruch, kein Hard Stop. (ii) **Spanne vorhanden, Türfaktor plausibel und anders** (Widerspruch): die Tür
+  entscheidet, Quelle `Türkalibrierung (…) — widerspricht Spanne (Faktor <f>)`. (iii) Mehrere Spannen-Kandidaten:
+  Türfaktor als Tiebreak wie bisher (`spanne+tuerbogen`). Ohne Türfaktor bleibt die Spanne (`spanne`), wie bisher.
+  `_door_arc_factor` entfällt (eine Türprobe statt zwei).
+- **Provider:** jede Quelle außer `spanne…` steht als `mm_faktor: <Faktor> aus <Quelle>` in `wand_warnungen` →
+  bericht.md „## Warnungen" (Weg aus 2a/2g); `ArchitekturRaumProvider.massstab_unsicher` (Flag, kein Contract-Feld).
+- **Prüfstrecke** (`scripts/plan_pruefen.py._fachteil3`): `massstab_unsicher` → Platzierung übersprungen (leeres
+  `PlatzierungsErgebnis`), Abschnitt „## Maßstab unsicher — keine Leuchten ausgegeben (Entscheid 7)" im Bericht,
+  Lauf geht weiter.
+
+### 28.4 Tests, rot vor dem Fix
+
+- **neu `tests/naht/test_massstab_tuerkalibrierung.py`** (4): `test_widersprechende_tuerprobe_kalibriert_ueber_tueren
+  [Rennweg_EG|AmRain_OG4|AmRain_OG3|AmRain_EG]` — die vier Pläne mit „Türprobe: 10 — widerspricht" (Rennweg EG =
+  getrackter Gate-Plan `Projekte/Rennweg/EG …`, SHA gleich `_eingang/Rennweg_EG.dxf`; Am Rain aus dem getrackten
+  `Projekte/Am Rain.zip`): `lade_dxf` → Faktor 1, nicht unsicher, Quelle `Türkalibrierung (…) — $INSUNITS=4 (…)
+  bestätigt`; **Türbreiten danach**: `tuer_oeffnungen` (Blätter mit Schwenkradius/Blockname, in mm) ≥ 3, Median im
+  Band 600–1300 mm. Nur Laden + Türöffnungen, kein Parse (Am Rain EG ≈ 35 s).
+- **`tests/raumerkennung/test_dxf_load.py`** (+12): `test_tuerkalibrierung_setzt_die_dekade[mm_mit_moebeln|cm|m|
+  a_door]` (synthetisch, ohne Wände → Rückfall; `mm_mit_moebeln` = 3 Türbögen 840/900/900 mm auf `Türen` plus 20
+  Möbel-Bögen 60–117 Einheiten auf `Möblierung` — die Lage der vier Pläne: Faktor 1, nicht 10),
+  `test_tuerkalibrierung_aus_tuerbloecken` (Bogen nur im Block `TÜR-90`, Layer „0"),
+  `test_ohne_plausible_tueren_massstab_unsicher[zwei_tueren|nur_moebel|halbkreise|streuung|median_ausserhalb]`
+  (**synthetischer Plan ohne messbare Türen → „Maßstab unsicher"**, Faktor bleibt $INSUNITS, kein Abbruch),
+  `test_tuerkalibrierung_widerspricht_spanne` (Spanne 100 m → eindeutig 1, drei Türbögen r 90 → 10, ausgewiesen),
+  `test_spanne_und_tueren_einig_bleibt_spanne` (Gegenprobe: Quelle bleibt `spanne`).
+- **`tests/raumerkennung/test_provider.py`:** `test_mm_faktor_aus_insunits_steht_in_den_warnungen` **nachgeführt** —
+  der Pin der 2g-Fassung (§ 20.3: „Türprobe: keine" / „Türprobe: 10 — widerspricht", Faktor 1 trotz Probe) ist genau
+  das Verhalten, das Entscheid 7 ersetzt. Neu 5 Fälle: `insunits` (Hatch-Plan ohne Türen → unsicher),
+  `boegen_ohne_tuerbeleg` (die alten drei Bögen r 90 auf Layer „0" → zählen nicht → unsicher),
+  `tuerkalibrierung_10` (dieselben Bögen auf `Türen` → Faktor 10, `$INSUNITS … widerlegt (Faktor 1)`),
+  `tuerkalibrierung_1` (r 900 → `bestätigt`), `wand_spanne` (unverändert keine Zeile); dazu je Fall das Flag
+  `massstab_unsicher` und der Contract-Roundtrip. Neu `test_plan_pruefen_massstab_unsicher_ohne_leuchten`:
+  Prüfstrecke auf dem Hatch-Plan — Platzierer nicht gerufen (Spion auf `build_default_bundle`), Abschnitt „Maßstab
+  unsicher — keine Leuchten ausgegeben", die `mm_faktor`-Zeile unter „Warnungen", kein Abbruch.
+
+**Rot vor dem Fix** (`pytest tests/raumerkennung/test_dxf_load.py tests/raumerkennung/test_provider.py
+tests/naht/test_massstab_tuerkalibrierung.py -k "tuerkalibrierung or massstab or mm_faktor or spanne" --tb=line`,
+Kopf `54ba4b3` + Tests, Kurzform):
+
+```
+naht/test_massstab_tuerkalibrierung.py:49: AttributeError: 'DxfPlan' object has no attribute 'massstab_unsicher'   (4×)
+raumerkennung/test_dxf_load.py:109: AssertionError: assert 1.0 == 10.0                                             [cm]
+raumerkennung/test_dxf_load.py:109: AssertionError: assert 1.0 == 1000.0                                           [m]
+raumerkennung/test_dxf_load.py:110/119/132/154/172: AttributeError: 'DxfPlan' object has no attribute 'massstab_unsicher'   (10×)
+raumerkennung/test_provider.py:412: AssertionError: ['mm_faktor: 1 aus $INSUNITS=4 (…), Türprobe: keine', …]       [insunits]
+raumerkennung/test_provider.py:412: AssertionError: ['mm_faktor: 1 aus $INSUNITS=4 (…), Türprobe: 10 — widerspricht', …]   (2×)
+raumerkennung/test_provider.py:412: AssertionError: ['mm_faktor: 1 aus $INSUNITS=4 (…), Türprobe: 1', …]           [tuerkalibrierung_1]
+raumerkennung/test_provider.py:413: AttributeError: 'ArchitekturRaumProvider' object has no attribute 'massstab_unsicher'   [wand_spanne]
+raumerkennung/test_provider.py:441: AssertionError: Platzierung trotz Maßstab unsicher gelaufen
+22 failed, 25 deselected in 45.94s
+```
+
+**Grün nach dem Fix:** dieselbe Auswahl `22 passed, 25 deselected in 81.84s`; `tests/raumerkennung tests/contract`
+`1040 passed, 7 skipped, 2 xfailed in 161.57s`; ruff „All checks passed!".
+
+### 28.5 Blast — 13 Pläne der Prüfstrecke + 7 Rennweg-/Mollgasse-Prüfpläne (Runner `vorher6` → `nachher6`)
+
+Runner wie § 27.6 (`provider.parse(dxf, "")` + Default-Platzierung, JSON je Raum/Tür/Ausgang/Segment/Anker/Leuchte,
+alle Provider-Warnungen), neu je Plan Faktor, Faktor-Quelle und Flag (der geladene `DxfPlan` wird im Provider
+abgegriffen). Seriell, Am Rain und Muthgasse allein, kein pytest parallel, Umgebung ohne `NOTBEL_KI*`. **Vorher** =
+`git archive 54ba4b3` (`src/` + `CAD_Symbole/` außerhalb des Repos), **nachher** = Arbeitsbaum dieses Commits. DXF-SHA
+je Plan gleich; stderr beider Läufe nur die bekannten ezdxf-Zeilen, kein Traceback.
+
+**Ergebnis: auf allen 20 Plänen Faktor unverändert; Räume (Typ, Polygon, Fläche, Klasse, Wohnung, Flags), Türen,
+Ausgänge, Segmente, Anker, Stiegenhäuser, Bounds, korrigierte Rollen, bestätigt privat, Außen-Messfelder und Leuchten
+(je Art, Klasse, Stück und Lage) 20/20 gleich.** Abweichend nur die `mm_faktor`-Zeile in `warnungen.wand` (14
+Rückfall-Pläne; die übrigen Warnungen je Plan gleich) und die neuen Felder.
+
+| Plan | Faktor vorher → nachher | Quelle vorher | Türkalibrierung nachher: Türbögen, Median, MAD, Spanne | Urteil | Kennzahlen vorher = nachher (R / m² / T / A / S / L) |
+|---|---|---|---|---|---|
+| **Rennweg_EG** (Gate) | 1 → 1 | `$INSUNITS=4`, Türprobe: **10 — widerspricht** | 4 (Blöcke `Zargentür_1_Fl 10[…]`), 890 mm, 6 %, 840–940 mm | `$INSUNITS` bestätigt | 24 / 411,0 / 40 / 5 / 7 / 17 |
+| **AmRain_OG4** | 1 → 1 | `$INSUNITS=4`, Türprobe: **10 — widerspricht** | 27 (`Türen`), 800 mm, 0 %, 560–900 mm | bestätigt | 28 / 322,8 / 59 / 2 / 9 / 20 |
+| **AmRain_OG3** | 1 → 1 | `$INSUNITS=4`, Türprobe: **10 — widerspricht** | 68 (`Türen`), 800 mm, 0 %, 560–940 mm | bestätigt | 60 / 883,8 / 129 / 3 / 17 / 20 |
+| **AmRain_EG** | 1 → 1 | `$INSUNITS=4`, Türprobe: **10 — widerspricht** | 147 (`Türen`), 800 mm, 0 %, 560–940 mm | bestätigt | 140 / 2 730,0 / 317 / 3 / 10 / 46 |
+| AmRain_UG | 1 → 1 | `$INSUNITS=4`, Türprobe: 1 | 255 (`Türen` 254, `Beschriftung Fenster-Tür` 1), 800 mm, 0 %, 460–1 000 mm | bestätigt | 82 / 2 692,0 / 295 / 17 / 28 / 110 |
+| AmRain_OG1 | 1 → 1 | `$INSUNITS=4`, Türprobe: 1 | 172 (`Türen`), 800 mm, 0 %, 560–900 mm | bestätigt | 139 / 1 464,8 / 300 / 7 / 28 / 73 |
+| AmRain_OG2 | 1 → 1 | `$INSUNITS=4`, Türprobe: 1 | 137 (`Türen`), 800 mm, 0 %, 560–930 mm | bestätigt | 103 / 1 778,6 / 264 / 2 / 24 / 75 |
+| Rennweg_OG3 | 1 → 1 | `$INSUNITS=4`, Türprobe: keine | 11 (Blöcke), 840 mm, 0 %, 840–940 mm | bestätigt | 17 / 196,2 / 18 / 3 / 6 / 7 |
+| Barawitzka_EG | 1000 → 1000 | `spanne` | (0 Türbögen mit Beleg — Spanne entscheidet, keine Zeile) | — | 49 / 509,5 / 71 / 1 / 8 / 11 |
+| Mollgasse_EG | 1000 → 1000 | `spanne` | (41 Blöcke `TÜR-80…`, 828 mm → Dekade 1000, einig) | — | 64 / 1 061,4 / 102 / 7 / 120 / 48 |
+| Mollgasse_1KG | 1000 → 1000 | `spanne` | (3 Blöcke `TÜR-BLOCKZARGE-90`, 964 mm, einig) | — | 31 / 1 110,7 / 28 / 1 / 4 / 14 |
+| Mollgasse_2KG | 1000 → 1000 | `spanne` | (11 Blöcke, 964 mm, einig) | — | 30 / 1 151,6 / 46 / 1 / 3 / 13 |
+| Muthgasse_E2 | 10 → 10 | `spanne+tuerbogen` | (72: `A-DOOR-OPNG` 49, `A-DOOR` 10, `WET`-Blöcke 13; 800 mm, Tiebreak 10 wie bisher) | — | 108 / 955,2 / 193 / 1 / 142 / 139 |
+| Rennweg UG | 1 → 1 | `$INSUNITS=4`, Türprobe: keine | 17 (Blöcke 15, `New_Archicad Doors…` 2), 840 mm, 2 %, 820–940 mm | bestätigt | 24 / 178,2 / 21 / 2 / 7 / 12 |
+| Rennweg OG1 | 1 → 1 | `$INSUNITS=4`, Türprobe: keine | 7 (Blöcke), 840 mm, 0 %, 840–940 mm | bestätigt | 18 / 214,6 / 18 / 2 / 4 / 7 |
+| Rennweg OG2 | 1 → 1 | `$INSUNITS=4`, Türprobe: keine | 9 (Blöcke), 840 mm, 0 %, 840–940 mm | bestätigt | 18 / 220,4 / 22 / 1 / 1 / 5 |
+| Rennweg DG1 | 1 → 1 | `$INSUNITS=4`, Türprobe: keine | 5 (Blöcke), 840 mm, 0 %, 840–840 mm | bestätigt | 15 / 207,4 / 14 / 2 / 3 / 6 |
+| Rennweg DG2 | 1 → 1 | `$INSUNITS=4`, Türprobe: keine | 4 (Blöcke), 840 mm, 0 %, 840–840 mm | bestätigt | 13 / 172,4 / 11 / 3 / 4 / 7 |
+| **Rennweg DD** | 1 → 1 | `$INSUNITS=4`, Türprobe: keine | **0 Türbögen → „Maßstab unsicher"** | unsicher | 3 / 66,2 / 2 / 0 / 1 / 3 |
+| Mollgasse 1OG | 1000 → 1000 | `spanne` | (77 Blöcke, 828 mm, einig) | — | 93 / 833,8 / 112 / 1 / 12 / 14 |
+
+(Werte in Klammern: Messung derselben Funktion, nicht im Bericht — bei `spanne` ohne Widerspruch steht keine Zeile.)
+
+- **Die vier Pläne mit widersprechender Türprobe:** Faktor 1 → 1. Die Türkalibrierung **bestätigt** `$INSUNITS=4`
+  (mm) — die „10" der alten Probe waren Möbel-/Sanitär-Bögen und Nummernkreise (28.2). Darum ändert sich auf
+  den vier Plänen **nichts** außer der Warnungszeile: keine Fläche, kein Raum, keine Tür, kein Ausgang, keine
+  Leuchte. Der befürchtete Faktor-10-Blast tritt nicht ein. **Plausibilität:** Raumflächen in m² sinnvoll
+  (Modell, Median / größter Raum: Rennweg EG 10,4 / 111,0 m² („GESCHÄFTLOKAL" 111,03 m² laut Stempel), Am Rain
+  OG4 5,3 / 52,1 m², OG3 5,2 / 59,6 m², EG 6,0 / 293,5 m²; Stempel-m² gegen Rohfläche im Median 1,00 / 1,03 / 1,04 / 1,05,
+  28.2); Türbreiten danach
+  (Naht-Test 28.4: `tuer_oeffnungen`, Median im Band); Wohnungseingänge nach dem Parse (Rolle `wohnungseingang`,
+  gemessenes Blatt `arc`/`block`): Rennweg EG 1 Tür 840 mm, Am Rain OG4 3 × 800 mm, OG3 15 (7 × 800, 8 × 900, Median
+  900 mm), EG 7 (3 × 800, 3 × 900, 1 × 940, Median 900 mm) — dieselbe Klasse wie alle Türbögen, die Kalibrierung über
+  alle Türbögen trifft also die Wohnungstür.
+- **Die 9 anderen Pläne der Prüfstrecke:** Barawitzka EG, Mollgasse EG/1KG/2KG, Muthgasse E2 **feldgleich** (auch die
+  Warnungen); Rennweg OG3, Am Rain UG/OG1/OG2 sind ebenfalls Rückfall-Pläne — bei ihnen ändert sich **nur** die
+  `mm_faktor`-Zeile („Türprobe: 1 | keine" → „Türkalibrierung (…) bestätigt"), sonst feldgleich.
+- **Rennweg DD** (Dachdraufsicht, nicht in der Prüfstrecke und nicht im Gate): keine Wand-Spanne, kein Türbogen →
+  **„Maßstab unsicher"**; in der Prüfstrecke gäbe der Plan keine Leuchten mehr aus (heute 3: rz 2, SL 1, Runner ohne
+  diese Sperre). Befund für den Owner, kein Abbruch.
+- **Kosten:** der Block-Abstieg der Türkalibrierung (Tiefe ≤ 3) kostet auf Am Rain EG ≈ 10 s je Laden (Runner
+  304,9 → 314,6 s, OG1 102,7 → 111,4 s; in `plan_pruefen` wird zweimal geladen), Spitze unverändert (2,71 GB);
+  übrige Pläne ≤ 3 s.
+
+### 28.6 Gate und Suite
+
+**Gate:** `pytest -m gate tests/gate` **3 passed, 1 xfailed** (`test_gate_tuerstapel_erfuellt`, wie vorher; 107,6 s).
+`gate_messung` auf dem Arbeitsbaum dieses Commits (vor dem Commit, `_arbeit/gate/messung_54ba4b3-dirty-28.json`,
+62,0 s), `pruefe_gate` gegen `nullmessung_f15d03f.json`: **(0)** unsauberer Arbeitsbaum (erwartet, vor dem Commit
+gemessen) und **(3) `M4.einraum` DG2 0 → 1** (Enis Board 3, unverändert); M17 **18/18 BESTANDEN**; (11) DG1 2
+Ausgänge, 0 durch den Liftschacht (UG 2, EG 5, OG1 2 — je 0); **alle 8 Messfelder außer `meta` gleich
+`messung_fd5dedb-dirty-27o.json`** (Abschnitt 5). Rennweg EG ist Gate-Plan: dort bleibt der Faktor 1, im Blast
+feldgleich bis auf die `mm_faktor`-Zeile — keine Änderung an einer Gate-Größe, kein neuer Verstoß.
+
+**Suite:** `pytest tests/raumerkennung tests/contract` **1040 passed, 7 skipped, 2 xfailed in 161.57s** (1025 + 15 neu).
+**Volle Suite** (`pytest -q -p no:cacheprovider -rxXs`, allein, nach Blast und Gate): `7 failed, 2412 passed,
+12 skipped, 6 deselected, 15 xfailed, 3 warnings in 1324.76s (0:22:04)`, 0 xpassed — dieselben 7 roten wie § 27.7: 3 ×
+`test_keine_leuchten_in_wohnung_privat` OG1/OG2/DG1 (Board 1 Leonis),
+`test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell`, die 2 S4c-Pins `test_bara_raum_19`/`test_bara_raum_30`,
+und vorbestehend `tests/normwissen/test_quellenblock_e07_rl4.py::test_kein_contract_wert_und_kein_konsument`
+(`ki_backends.py:58`, Abschnitt 3). 2412 = 2393 + 19 neu (Naht 4, `test_dxf_load.py` 12, `test_provider.py` 3: zwei
+neue Fälle im nachgeführten D-04-Test, ein Prüfstrecken-Test); 12 skipped und 15 xfailed wie vorher.
+`gen_schema.py --check` „schema in sync", `ruff check .` „All checks passed!".
+Keine Schwelle, kein Soll, kein Marker gelockert; der eine nachgeführte Test (D-04-Pin, 28.4) pinnt das von Entscheid 7
+ersetzte Verhalten. Kein Contract-Feld, kein neuer RaumTyp, kein fremdes Paket (`platzierung/bausteine.py`,
+`normwissen/data/oib_rl4_fluchtwegbreiten.yaml`, `docs/VOKABULAR.md` nur gelesen); `scripts/plan_pruefen.py` nur die
+Leuchten-Sperre mit Hinweis im Bericht (Auftrag).
+
+### 28.7 Offen nach Abschnitt 6
+
+- **Regelbreite (P1 · Leonis/Owner):** NB-R26 schreibt das Verfahren vor („Einheit über Türbreiten/Wandstärken
+  verifizieren"), aber keine Zahl. Gebaut mit 900 mm (bestehender Anker, Leonis' Messung r = 900, Rennweg-Beschriftung
+  „Wohnungseingangstür 90/2,20" in `docs/DIAGNOSE_RENNWEG_RAUMERKENNUNG.md:775`) und Band 600–1300 mm. Board-Antrag an
+  Leonis (28.8). Ändert er die Zahl innerhalb 600–1300 mm, ändert sich auf den 20 Plänen nichts (28.1).
+- **„Maßstab unsicher" erreicht `pipeline.run`/API nicht (P1 · gemeinsam):** das Flag hängt am Provider (kein
+  Contract-Feld), wie `wand_warnungen` (§ 12). Nur die Prüfstrecke unterdrückt die Leuchten; `pipeline.run` und `POST
+  /plan` platzieren weiter. Braucht ein Contract-Feld (z. B. `RaumModell.massstab_unsicher` oder Warnungen am Modell)
+  → Board-Antrag an alle drei Owner (28.8), nicht still eingeführt.
+- **Rennweg DD „Maßstab unsicher" (P2 · Owner):** Dachdraufsicht ohne Wand-Spanne und ohne Türbogen; in der
+  Prüfstrecke keine Leuchten (heute 3). Wenn ein Dachplan Notlicht braucht, braucht er einen anderen Maßstabsbeleg
+  (Wandstärken — der zweite Teil von NB-R26 — nicht gebaut).
+- **Wandstärken als zweiter Beleg (P3 · Selman):** NB-R26 nennt „Türbreiten/Wandstärken"; gebaut ist nur die Tür
+  (Owner-Entscheid 7). Ein Plan ohne Türbögen mit Tür-Beleg (Barawitzka EG: die Türbögen liegen auf den Wand-Layern
+  `… 110 Wand Aussen`/`… 130 Wand Innen`, 0 gezählt) hätte im Rückfall keinen Türfaktor — Barawitzka hat eine
+  Wand-Spanne; im Rückfall betrifft es heute nur DD.
+- **Zoll/Fuß** (`$INSUNITS` 1/2): Faktorwahl nur über Dekaden; ein Zoll-Plan landete mit dem Türmedian außerhalb des
+  Bandes → „Maßstab unsicher" (sicher, kein Faktor geraten). Kein Prüfplan betroffen. P3.
+- **Laufzeit:** Block-Abstieg ≈ 10 s je Laden auf Am Rain EG (28.5); Staffelung (erst Modelspace, Blöcke nur bei
+  < 3 Bögen) wäre möglich, nicht gebaut. P3.
+
+### 28.8 Board-Anträge (Phase B, vorformuliert — NICHT eingetragen)
+
+> **Selman → Leonis (Regelbreite NB-R26, Owner-Entscheid 7 vom 2026-10-01):** Die Raumerkennung kalibriert den
+> Maßstab jetzt nach deiner NB-R26 („INSUNITS kann LÜGEN … Einheit über Türbreiten/Wandstärken verifizieren"), wenn
+> `$INSUNITS` der einzige Beleg ist oder die Türprobe widerspricht: Dekade so, dass der Median der Türschwenkbögen
+> (Tür-Layer oder Tür-Block, Schwenk 60–120°) bei 900 mm liegt, plausibel bei ≥ 3 Bögen, Median 600–1300 mm, MAD ≤ 25 %;
+> sonst „Maßstab unsicher" und die Prüfstrecke gibt keine Leuchten aus. Deine Regelbasis nennt keine Zahl für die
+> Wohnungstür — bitte 900 mm / 600–1300 mm bestätigen oder deine Zahl nennen. Ergebnis auf den 20 Prüfplänen: kein
+> Faktor ändert sich (Rennweg EG, Am Rain OG4/OG3/EG: Türprobe „10" waren Möbel-Bögen, 1 bestätigt); Rennweg DD wird
+> „Maßstab unsicher". Stand `luecken-2026-09-30`, `LUECKEN.md` § 28.
+>
+> **Selman → alle drei Owner (Contract-Antrag):** „Maßstab unsicher" (und die übrigen Lade-Warnungen) erreichen
+> `pipeline.run`/API nicht — die Leuchten-Sperre greift nur in der Prüfstrecke. Vorschlag: ein Feld am `RaumModell`
+> (z. B. `massstab_unsicher: bool` oder eine Warnungsliste), das die Hauptengine vor der Platzierung prüft. Bis zum
+> Entscheid bleibt es ein Provider-Attribut.

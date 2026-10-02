@@ -1324,7 +1324,14 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     modell = bundle.raum.parse(str(dxf), geschoss)
     if geschoss == "EG":     # 2f: Restweg-Zeile für die OG derselben Familie
         _RESTWEG_EG.setdefault(dxf.resolve(), _restweg_zeile(dxf, modell))
-    platz = bundle.platzierer.place(modell, bundle.norm, None)
+    # Entscheid 7 (Abschnitt 6): ohne plausiblen Maßstab keine Leuchten für den
+    # Plan — Platzierung übersprungen, Hinweis im Bericht, kein Abbruch.
+    unsicher = getattr(bundle.raum, "massstab_unsicher", False)
+    if unsicher:
+        from notbeleuchtung.hauptengine.contracts import PlatzierungsErgebnis
+        platz = PlatzierungsErgebnis(floor=modell.floor)
+    else:
+        platz = bundle.platzierer.place(modell, bundle.norm, None)
     kc = getattr(bundle.raum, "letzter_kreuzcheck", None)
     flw_warnungen = list(getattr(bundle.raum, "fluchtweg_warnungen", []))
     ausg_warnungen = list(getattr(bundle.raum, "ausgangs_warnungen", []))
@@ -1355,6 +1362,10 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     rotz = _rotations_pruefung(plan, modell, platz)
     bst_texte = _brandschutz_texte(plan)
     md = _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz, bst_texte)
+    if unsicher:
+        md = ["", "## Maßstab unsicher — keine Leuchten ausgegeben (Entscheid 7)", "",
+              ("Die Türkalibrierung ergab keinen plausiblen mm-Faktor (Zeile `mm_faktor` "
+               "unter „Warnungen“); die Platzierung ist für diesen Plan übersprungen.")] + md
     ab = getattr(bundle.raum, "letzte_aussenbereiche", None)
     # Vordach-Signal: Prüfstrecken-Output, als Attribut am Provider abgelegt
     # (wie letzte_aussenbereiche) — KEIN Contract-Feld am Ausgang.

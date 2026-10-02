@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import math
 import re
+import statistics
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -119,80 +120,125 @@ def _raw_wall_span(space, wall_layers: frozenset[str]) -> float:
                _perzentil(ys, hi) - _perzentil(ys, lo))
 
 
-_DOOR_MM = 900.0         # Tür-Blattbreite ≈ Schwenkbogen-Radius (Kalibrier-Anker)
+# Entscheid 7 (Owner 2026-10-01, D-04): Maßstab über die Tür. Leonis' Regelbasis
+# NB-R26 (`knowledge/notbeleuchtung/regeln.md`, Branch leonis/demo-l-gebaeude):
+# „INSUNITS kann LÜGEN (TOMA INSUNITS=6 Meter, real mm — Einheit über
+# Türbreiten/Wandstärken verifizieren)". Eine Zahl für die Wohnungstür legt die
+# Regelbasis nicht fest → Regelbreite = der bestehende Kalibrier-Anker `_DOOR_MM`,
+# Toleranz = der Nennmaß-Türbereich 600–1300 mm (`tueren._ARC_MIN/_MAX_MM`, auch
+# Leonis' `platzierung.bausteine.TUER_MAX_BREITE_MM`). LUECKEN § 28.
+_DOOR_MM = 900.0         # Regelbreite Türblatt ≈ Schwenkbogen-Radius (Kalibrier-Anker)
 _DOOR_MIN_MM, _DOOR_MAX_MM = 600.0, 1300.0
+_TUER_LAYER = re.compile(r"T(?:Ü|UE)R|DOOR", re.IGNORECASE)
+_TUER_MIN_N = 3          # weniger Türbögen → kein Maßstab aus Türen
+_TUER_MAD_MAX = 0.25     # MAD/Median: gemessen ≤ 0,056 auf 18 Prüfplänen mit Türen
 
 
-def _door_arc_factor(space) -> float | None:
-    """mm-Faktor aus Tür-Schwenkbögen: wähle die Zehnerpotenz, die die MEISTEN
-    ARC-Radien in den Tür-Blattbreiten-Bereich (600–1300 mm) legt.
+def _tuerboegen(space) -> list[float]:
+    """Radien (Quell-Einheiten) der Türschwenkbögen mit Tür-Beleg.
 
-    Robuster als die Geschoss-Ausdehnung (die ist zwischen 8 m und 80 m
-    mehrdeutig); eine Tür ist immer ~0.9 m breit.
+    Ein Türbogen schwenkt 60–120° (`tueren._SWEEP_MIN/_MAX`) und liegt in einem
+    Tür-Block (`tueren._ist_tuer_block`, auch verschachtelt bis Tiefe 3) oder auf
+    einem Tür-Layer. Der Beleg ersetzt die Radius-Klasse der alten Türprobe: die
+    fing auf Rennweg EG und Am Rain OG4/OG3/EG Möbel-Bögen (60–130 Einheiten auf
+    `Möblierung`/`Möbel Einrichtung`, mehr als Türen) und sagte darum Faktor 10.
+    Die Rolle `wohnungseingang` gibt es vor der Typisierung nicht (der Faktor muss
+    vor jeder mm-Geometrie feststehen), darum zählen alle Türbögen. Kurvenwände
+    (Muthgasse, 600–1300 Einheiten) liegen auf Wand-Layern und zählen nicht.
     """
-    # Tür-Bögen stecken oft NUR in Tür-Blöcken (Muthgasse: A-DOOR-INSERTs;
-    # die Modelspace-ARCs dort sind Kurvenwände mit 600–1300 Quell-Einheiten —
-    # als Türen gelesen kalibrierten sie den Faktor eine Dekade zu klein).
-    # Block-Bögen sind definitiv Türen → wenn vorhanden, zählen NUR sie.
-    door_block_radii: list[float] = []
-    for ins in space:
-        if ins.dxftype() != "INSERT":
-            continue
-        kennung = f"{ins.dxf.name or ''} {ins.dxf.layer or ''}".upper()
-        if "DOOR" not in kennung and "TUER" not in kennung and "TÜR" not in kennung:
-            continue
-        try:
-            door_block_radii += [
-                v.dxf.radius for v in ins.virtual_entities()
-                if v.dxftype() == "ARC" and v.dxf.radius > 0
-            ]
-        except Exception:  # noqa: BLE001, S112 — korrupte Block-Referenzen überspringen
-            continue
-    radii = door_block_radii or [
-        e.dxf.radius for e in space if e.dxftype() == "ARC" and e.dxf.radius > 0
-    ]
-    if not radii:
-        return None
-    best, best_count = None, 0
-    for factor in (1.0, 10.0, 100.0, 1000.0):
-        count = sum(1 for r in radii if _DOOR_MIN_MM <= r * factor <= _DOOR_MAX_MM)
-        if count > best_count:
-            best, best_count = factor, count
-    return best if best_count >= 3 else None
+    from . import tueren as tu  # zur Laufzeit: tueren importiert dxf_load
+
+    radien: list[float] = []
+
+    def walk(ents, tiefe: int, im_tuerblock: bool) -> None:
+        for e in ents:
+            t = e.dxftype()
+            if t == "INSERT" and tiefe < 3:
+                name = str(e.dxf.name)
+                tuer = im_tuerblock or (not tu._DOOR_EXCLUDE.search(name)
+                                        and tu._ist_tuer_block(name))
+                try:
+                    walk(e.virtual_entities(), tiefe + 1, tuer)
+                except Exception:  # noqa: BLE001, S112 — kaputte Block-Referenz überspringen
+                    continue
+            elif t == "ARC" and (im_tuerblock or _TUER_LAYER.search(e.dxf.layer or "")):
+                r = float(e.dxf.radius)
+                sweep = (float(e.dxf.end_angle) - float(e.dxf.start_angle)) % 360.0
+                if r > 0 and tu._SWEEP_MIN <= sweep <= tu._SWEEP_MAX:
+                    radien.append(r)
+
+    walk(space, 0, False)
+    return radien
+
+
+@dataclass
+class TuerKalibrierung:
+    """Ergebnis der Türkalibrierung: ``faktor`` None = kein plausibler Maßstab."""
+
+    n: int
+    faktor: float | None = None
+    grund: str = ""          # Messung (plausibel) bzw. warum unplausibel
+
+
+def _tuerkalibrierung(space) -> TuerKalibrierung:
+    """Dekade (1/10/100/1000), die den Median der Türbögen der Regelbreite am
+    nächsten legt. Plausibel nur mit ≥ 3 Bögen, Median im Band 600–1300 mm und
+    MAD/Median ≤ 25 %. Eine Dekade, kein stetiger Faktor: der Einheitenfehler,
+    gegen den die Regel schützt, ist mm/cm/m — ein stetiger Faktor zöge einen
+    richtigen mm-Plan mit 80-cm-Türen um 12,5 % auseinander."""
+    r = _tuerboegen(space)
+    if len(r) < _TUER_MIN_N:
+        return TuerKalibrierung(len(r), grund=f"zu wenige Türbögen ({len(r)} < {_TUER_MIN_N})")
+    med = statistics.median(r)
+    mad = statistics.median(abs(x - med) for x in r) / med
+    f = min((1.0, 10.0, 100.0, 1000.0), key=lambda d: abs(math.log10(med * d / _DOOR_MM)))
+    messung = (f"{len(r)} Türbögen, Median {med * f:.0f} mm, MAD {mad * 100:.0f} %, "
+               f"Spanne {min(r) * f:.0f}–{max(r) * f:.0f} mm")
+    if not _DOOR_MIN_MM <= med * f <= _DOOR_MAX_MM:
+        return TuerKalibrierung(len(r), grund=f"{messung}; Median {med * f:.0f} mm "
+                                f"außerhalb {_DOOR_MIN_MM:.0f}–{_DOOR_MAX_MM:.0f} mm")
+    if mad > _TUER_MAD_MAX:
+        return TuerKalibrierung(len(r), grund=f"{messung}; Streuung MAD {mad * 100:.0f} % "
+                                f"> {_TUER_MAD_MAX * 100:.0f} %")
+    return TuerKalibrierung(len(r), faktor=f, grund=messung)
 
 
 def _calibrate_factor(raw_span: float, space,
-                      doc: ezdxf.document.Drawing) -> tuple[float, str]:
+                      doc: ezdxf.document.Drawing) -> tuple[float, str, bool]:
     """mm-Faktor aus der Geometrie ableiten, NICHT aus $INSUNITS (das lügt oft:
     leere Pläne in Metern, fertige in mm — beide mit gleichem Code).
 
     Die Geschoss-Ausdehnung (15–500 m) gibt die Kandidaten-Dekaden vor. Bleibt
-    genau eine → nimm sie. Bleiben mehrere → Tür-Schwenkbogen-Radius (~0.9 m)
-    als Tiebreak, sonst die kleinste (konservativ).
+    genau eine → nimm sie. Bleiben mehrere → die Türkalibrierung als Tiebreak,
+    sonst die kleinste (konservativ).
 
-    Liefert ``(Faktor, Quelle)``. Die Quelle beginnt mit ``$INSUNITS``, wenn
-    keine Wand-Spanne messbar war (2g, D-04): dann steht die Türprobe als Beleg
-    dabei — sie entscheidet hier nichts (S-MST, Owner-Frage), sie wird nur
-    ausgewiesen.
+    Entscheid 7: greift der $INSUNITS-Rückfall (keine Wand-Spanne) oder
+    widerspricht die Türkalibrierung der Spanne, entscheidet die Tür
+    (`_tuerkalibrierung`). Ohne plausiblen Türfaktor bleibt im Rückfall $INSUNITS
+    und der Plan ist „Maßstab unsicher" — kein Abbruch.
+
+    Liefert ``(Faktor, Quelle, Maßstab unsicher)``; die Quelle ist ``spanne``
+    oder ``spanne+tuerbogen``, wenn nichts auszuweisen ist.
     """
+    tk = _tuerkalibrierung(space)
     candidates = [
         f for f in (1.0, 10.0, 100.0, 1000.0, 10000.0)
         if raw_span > 0 and _SPAN_MIN_MM <= raw_span * f <= _SPAN_MAX_MM
     ]
-    if len(candidates) == 1:
-        return candidates[0], "spanne"
     if candidates:
-        by_door = _door_arc_factor(space)
-        if by_door in candidates:
-            return by_door, "spanne+tuerbogen"
-        return candidates[0], "spanne"
+        if len(candidates) > 1 and tk.faktor in candidates:
+            return tk.faktor, "spanne+tuerbogen", False
+        if tk.faktor is None or tk.faktor == candidates[0]:
+            return candidates[0], "spanne", False
+        return tk.faktor, (f"Türkalibrierung ({tk.grund}) — widerspricht Spanne "
+                           f"(Faktor {candidates[0]:g})"), False
     code = int(doc.header.get("$INSUNITS", 0) or 0)
     factor = _INSUNITS_TO_MM.get(code, 1.0)
-    by_door = _door_arc_factor(space)
-    probe = ("keine" if by_door is None else f"{by_door:g}"
-             + ("" if by_door == factor else " — widerspricht"))
-    return factor, (f"$INSUNITS={code} (keine Wand-Spanne 15–500 m messbar), "
-                    f"Türprobe: {probe}")
+    rueckfall = f"$INSUNITS={code} (keine Wand-Spanne 15–500 m messbar)"
+    if tk.faktor is None:
+        return factor, f"{rueckfall}, Türkalibrierung: {tk.grund} — Maßstab unsicher", True
+    urteil = "bestätigt" if tk.faktor == factor else f"widerlegt (Faktor {factor:g})"
+    return tk.faktor, f"Türkalibrierung ({tk.grund}) — {rueckfall} {urteil}", False
 
 
 # Entscheid 4 (Owner 2026-10-01, R1-01): eine Koordinate, die nicht endlich ist
@@ -258,6 +304,7 @@ class DxfPlan:
     wall_layers: frozenset[str] = frozenset()  # erkannte Wand-Layer
     faktor_quelle: str = ""  # woher `factor` stammt (`_calibrate_factor`)
     warnungen: list[str] = field(default_factory=list)  # Lade-Warnungen (`entity_verworfen`)
+    massstab_unsicher: bool = False  # Entscheid 7: kein plausibler Faktor (Rückfall, Türen)
 
     def entities(self, prefixes: tuple[str, ...] | None = None):
         """Alle Entities des Architektur-Raums, optional nach Layer-Prefix gefiltert."""
@@ -313,10 +360,11 @@ def lade_dxf(pfad: str | Path) -> DxfPlan:
     # 1e9-mm-Grenze danach in Quell-Einheiten (Entscheid 4).
     warnungen = _verwerfe_defekte(space, math.inf)
     wall_layers = _wall_layers(space)
-    factor, quelle = _calibrate_factor(_raw_wall_span(space, wall_layers), space, doc)
+    factor, quelle, unsicher = _calibrate_factor(_raw_wall_span(space, wall_layers),
+                                                 space, doc)
     warnungen += _verwerfe_defekte(space, _KOORD_MAX_MM / factor)
     return DxfPlan(doc=doc, space=space, factor=factor, wall_layers=wall_layers,
-                   faktor_quelle=quelle, warnungen=warnungen)
+                   faktor_quelle=quelle, warnungen=warnungen, massstab_unsicher=unsicher)
 
 
 def bounds_mm(plan: DxfPlan) -> BBox:

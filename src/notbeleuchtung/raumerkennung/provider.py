@@ -153,10 +153,14 @@ class ArchitekturRaumProvider:
         # Entscheid 4 (R1-01): beim Laden verworfene Entities (nan/inf/Phantom-
         # Koordinate) stehen mit Layer und Handle im Bericht.
         self.wand_warnungen: list[str] = list(plan.warnungen)
-        # 2g (D-04): ein mm-Faktor ohne geometrischen Beleg wird ausgewiesen.
-        if plan.faktor_quelle.startswith("$INSUNITS"):
+        # 2g (D-04): ein mm-Faktor ohne Beleg aus der Wand-Spanne wird ausgewiesen;
+        # Entscheid 7: mit Türkalibrierung (Türzahl, Median, MAD, Spanne) bzw. als
+        # „Maßstab unsicher" — dann Flag am Provider, die Prüfstrecke gibt für den
+        # Plan keine Leuchten aus (kein Abbruch).
+        if plan.faktor_quelle and not plan.faktor_quelle.startswith("spanne"):
             self.wand_warnungen.append(
                 f"mm_faktor: {plan.factor:g} aus {plan.faktor_quelle}")
+        self.massstab_unsicher = plan.massstab_unsicher
         k = raeume_aus_kaskade(plan)
         # 2g (R-05 a): was die Kaskade ohne Abbruch verliert, steht im Bericht.
         self.wand_warnungen += k.warnungen
