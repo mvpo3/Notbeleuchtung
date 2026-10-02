@@ -641,3 +641,18 @@ deinem Branch gepusht). Voller Bericht: `docs/KOPPLUNG_RAUMERKENNUNG_c3b8186.md`
 - **Platzierungsseite (meine Lane, bekannt):** WOHNUNG_PRIVAT-Leuchten (Board 1) auf Muthgasse 31,
   AmRain EG/OG1/OG2/OG3 + Mollgasse_EG; LIFT/SCHACHT/Verbotszone (N-03) Muthgasse 3, AmRain_OG3 1.
   → bleiben bei mir/Board, nichts für dich.
+
+## Log 2026-10-02 — Leonis: Codex-Review-Workflow festgelegt (projektweit, Doku-only)
+
+**An alle 3 Owner.** Neuer verbindlicher Prozess in `CLAUDE.md` → Sektion „Codex-Review-Workflow
+(BINDEND)": **Claude implementiert → Codex prüft → Claude verifiziert → Claude fixt** für jede
+substanzielle Code-Änderung. Commit `bce2922` auf `leonis/kopplung-raumerkennung-c3b8186`
+(dazu Sync-Merge `4cb8846` von origin/main = Enis' ENIS-NOTLEUCHTEN/-Bücher, rein additiv).
+
+- Route = Shell `codex review` (`--uncommitted`/`--commit <sha>`/`--base <branch>`), Modell
+  pro Aufruf `-c model="gpt-5.5"` (`~/.codex/config.toml` NICHT ändern), ChatGPT-Auth → keine
+  API-Kosten. Codex ist **beratend**; die Regelquellen (CLAUDE.md, docs, Norm-YAML/regelwerk,
+  Contracts) schlagen Codex-Rat.
+- Kein Produktivcode, kein Contract-Touch. Suite = Baseline (5 rot bekannt, 0 neu).
+- **Offen:** echter Probelauf quota-vertagt (ChatGPT-Codex-Usage-Limit, Reset 03.10. ~19:10) —
+  wird nachgereicht.

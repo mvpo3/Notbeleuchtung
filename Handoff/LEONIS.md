@@ -4,7 +4,110 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-30 SPÄT) — Mollgasse-Analyse + Lichtberechnung validiert; M1 als Phantom gestoppt. HIER WEITER.
+## STAND (2026-10-02 SPÄT) — Codex-Review-Workflow FESTGELEGT + gepusht. Probelauf nur quota-vertagt. M3 bleibt Resume.
+
+**Branch `leonis/kopplung-raumerkennung-c3b8186`, GEPUSHT. Neu: Merge `4cb8846` (origin/main
+Sync, 4 Enis-Commits ENIS-NOTLEUCHTEN/ Buch2/Buch3 — rein additiv, 0 src/contracts) +
+`bce2922` „docs — Codex-Review-Workflow festgelegt". Suite 5 failed/2333 passed = Baseline
+(5 Fails `tests/naht/s7_wohnungsklasse`+`soll_muthgasse`, bekannt/Selman-Naht, 0 neu). CAD-Lösch-
+Anomalie + GT-`vergleich.json`-Overwrites weiter UNANGETASTET (nie committen/restoren).**
+
+**Codex-Blocker (Handoff-Vorsession) GELÖST:** Modell-Cache war am 01.10 frisch geholt
+(`base_instructions` wieder da). Route B läuft mechanisch: `codex review --commit <sha>
+-c model="gpt-5.5"` → Modell akzeptiert, ChatGPT-Auth greift, **kein HTTP 400 mehr**.
+`config.toml` unberührt (pinnt weiter `gpt-5.4-codex` — nur per-call `gpt-5.5` überschreiben;
+verfügbare Modelle laut Cache: `gpt-5.5` + `codex-auto-review`). Kein `codex update` gemacht
+(Owner-Wahl). Kein API-Key → keine Kosten.
+
+**AUSSTEHEND — Probelauf:** ChatGPT-Codex-**Usage-Limit** erreicht beim Validierungslauf
+→ „try again at Oct 3rd, 2026 7:10 PM". Voller `codex review`-Probelauf mit Findings erst
+NACH Quota-Reset (ab 03.10. ~19:10). Owner: jetzt committen/pushen, Probelauf nachreichen.
+**RESUME-TODO:** nach 19:10 `codex review --commit bce2922 -c model="gpt-5.5"` (bzw. HEAD)
+laufen lassen, Findings sichten, ggf. im Verlauf/COORDINATION vermerken.
+
+**Doku-Ort der Regel:** `CLAUDE.md` Sektion „Codex-Review-Workflow (BINDEND)" (nach
+Arbeitsweise) + Verlauf `docs/CHANGELOG_Platzierungslogik.md` (Eintrag 2026-10-02).
+
+**M3 Frontalsicht bleibt der größte Platzierungs-Hebel (Resume A, s. Block unten).**
+
+## STAND (2026-10-02) — NEUER Owner-Auftrag „Codex-Review-Workflow" (Schritt 1 geprüft, BLOCKIERT am Codex-Modell-Cache). M3-Planung pausiert. [ERLEDIGT, s. oben]
+
+**Plan-Mode war aktiv; NICHTS geschrieben/committet/gepusht. Branch `leonis/kopplung-raumerkennung-c3b8186` @ `883a95b` unverändert. Keine Codex-Config/Auth angefasst. Working-Tree-Anomalie (gelöschte CAD-Rohdateien) weiter UNANGETASTET.**
+
+**Owner-Pivot:** Statt M3 kam neuer Auftrag — verbindlichen, projektweiten Workflow „Claude implementiert → Codex prüft → Claude verifiziert → Claude fixt" im Repo festschreiben (CLAUDE.md-Sektion + Verlauf-Eintrag + Commit „docs: Codex-Review-Workflow festgelegt" + Push). KEIN Produktivcode. Voller Auftragstext inkl. exaktem CLAUDE.md-Block mit Platzhaltern liegt in der Chat-Historie 2026-10-01/02.
+
+**Schritt 1 (read-only) GEMACHT — Befund:**
+- Prereqs grün: `codex-cli 0.141.0`; `codex login status` = „Logged in using ChatGPT"; `OPENAI_API_KEY` nicht gesetzt + `~/.codex/auth.json` Feld `OPENAI_API_KEY`=null → **keine API-Kosten**. Review-Gate NICHT aktiv (keine Hooks in `~/.claude/settings*.json`, kein Projekt-`.claude/`).
+- **Route A** (`/codex:review` als Claude-Plugin): nicht verfügbar — Plugin nicht installiert (`~/.claude/plugins` nur `data/`).
+- **Route B** (Shell `codex`): mechanisch da (startet, ChatGPT-Auth greift), ABER **BLOCKER**: Modell-Metadaten-Cache kaputt (`codex_models_manager::cache: failed to load models cache: missing field 'base_instructions'`) → JEDES Modell (`gpt-5.4-codex`=config-Default · `gpt-5-codex` · `gpt-5`) → HTTP 400 „model not supported when using Codex with a ChatGPT account". `codex doctor`: v0.141.0, **Update auf v0.160.0 verfügbar**, DBs integer. **Probelauf lieferte KEINE Findings** (an Modellschranke abgebrochen).
+- **Wahrscheinlicher Fix:** `codex update` (→0.160), ggf. danach `codex login`-Refresh. NICHT ausgeführt (Owner-Entscheidung; nichts an `~/.codex` ändern).
+
+**Funktionierende Codex-Befehle (für nächste Session, sobald Route gefixt):** `codex review --uncommitted` (= working-tree-Scope) · `codex review --commit <sha>` / `--base <branch>` · synchron, KEIN `--wait` nötig · Modell pro Aufruf per `-c model="<unterstützt>"` überschreiben (Config.toml unberührt lassen). Alternativ `codex exec review`.
+
+**Platzhalter für den CLAUDE.md-Block (ermittelt):**
+- Aufrufroute = Route B (Shell `codex review`), sobald Modell-Cache gefixt.
+- Regelquellen (Vorrang vor Codex): `CLAUDE.md` · `docs/{PROGRAMM_NOTBELEUCHTUNG,COORDINATION,VOKABULAR,CONTRACTS}.md` + `docs/adr/` · Norm: `src/notbeleuchtung/normwissen/data/*.yaml`, `platzierung/regelwerk.py` (+`data/notbeleuchtung_regeln.json`), `knowledge/notbeleuchtung/regeln.{yaml,md}` · Verträge: `hauptengine/contracts/*.py` (+`schema/`), `symbols/schrack_symbol_mapping.yaml` · Verifikationsstrecke (NICHT Demo): `scripts/plan_pruefen.py`, `dxf_healthcheck.py`, `projekt_batch_worker.py`, `tests/{contract,naht,e2e,platzierung}/` · Verlaufsdatei = `docs/CHANGELOG_Platzierungslogik.md` (daneben auto `Projekte/_ergebnis/VERLAUF.md`).
+
+**OFFENE Owner-Weiche (unbeantwortet):** (1) Codex-Fix: ich `codex update` / du per `! codex update` / Doc trotzdem schreiben? (2) „sync" = vorher GitHub-Stand nachziehen (Handoff/SYNC.md) ja/nein?
+
+**RESUME:**
+1. **Codex-Route fixen** (`codex update` → re-validieren mit Mini-Review `codex review --uncommitted -c model="<unterstützt>"`), DANN Schritt 2/3 des Auftrags: CLAUDE.md-Block einfügen (Platzhalter oben), Probelauf auf letzten Commit, Verlauf-Eintrag, Commit „docs: Codex-Review-Workflow festgelegt", Push.
+2. **M3 Frontalsicht** bleibt der größte Platzierungs-Hebel (pausiert, nicht erledigt). Design komplett verstanden: `bausteine.richtung_und_rotation(dx,dy)` wählt Pfeiltyp rein aus Fluchtvektor (dominante Achse) → soll nach **Ankunfts-Frontalsicht** wählen (gerade-weiter = down-Typ/Pfeil ENTGEGEN Person; echter Abzweig = links/rechts zum Ziel NUR wenn Vorderseite sichtbar, sonst down-Fallback). Logik existiert schon in `gang_strategy` (710b859/NB-R06), fehlt in `anker_strategy`/`communal_stgh` → ~20/33 Typ-Miss. **8 Call-Sites** von `richtung_und_rotation`: `gang_strategy.py:155`, `communal_stgh_strategy.py:127/136`, `anker_strategy.py:216/224/341`, `stgh_strategy.py:114`, `richtungsfeld.py:57`. Kippt `tests/fixtures/platzierung_4og.json` + Pfeil-Bänder (`test_wohnbau_durchstich` unten==8/links==1 · `test_platzierer` · `test_rotation_konvention` · Visual-Golden) → braucht GO + Freeze-Nachzug; Messung `scripts/analyse/mollgasse_gt_vergleich.py`; **Hausfeld 2DG (3/3) als Wächter** in jeden Lauf. 5 Handles: 952E8/413A0/41220/41593/S.20. Design: REVIEW.md §M3 in `knowledge/Pläne zeichnen Wissen/Mollgasse-Notbeleuchtungserklärung/_Analyse/`.
+
+---
+
+## STAND (2026-10-01) — Raumerkennungs-Sync c3b8186 gekoppelt + 13-Plan-Prüfstrecke + Mollgasse-GT re-gemessen. HIER WEITER.
+
+**Branch `leonis/kopplung-raumerkennung-c3b8186` (GEPUSHT @ `883a95b`, NICHT gemergt, NICHT auf
+Selmans Branch).** Von `c3b8186` (= PR #161/#160, Selmans neueste Raumerkennung) + Merge meiner
+43 Platzierungs-Commits (ex `codex/Notbeleuchtungs_Platzierungslogik`). `raumerkennung/**`
+byte-identisch zu c3b8186; `contracts/`+`normwissen/` unberührt. Eigene Woche-Analyse vorher
+gesichert in `9885e8d` (CAD-Lösch-Anomalie + große Binaries weiter UNANGETASTET).
+
+**Gemacht (Owner-Aufträge):**
+1. **Kopplung + 13-Plan-Prüfstrecke** (`scripts/plan_pruefen.py`, einzeln wegen RAM — 16,8 GB
+   gesamt, 1–4 GB frei, Muthgasse/AmRain im Swap). Alle 13 laufen end-to-end, kein Absturz.
+   Suite `5 failed/2333 passed` = erwartet (0 in raumerkennung, 0 neue); Schema in sync;
+   Gate lokal nicht re-messbar (externes `NOTBEL_M17_REFERENZ` fehlt). Bericht
+   `docs/KOPPLUNG_RAUMERKENNUNG_c3b8186.md`, Board `docs/COORDINATION.md` Log 2026-10-01.
+   Befund: Platzierung senkt redundante SL/Aufheller (ges. 459→419), rz konstant.
+2. **Mollgasse-PDF neu eingearbeitet** (alle 95 S. frisch, 100 Regeln/83 Fälle) → `ANALYSE_PDF.md`
+   bestätigt vollständig/autoritativ, keine fehlende Regel. Kernlehre: „Pfeil unten/links/rechts"
+   = Block-Variante + Personen-Frontalsicht, NICHT Weltrichtung (= M3). Fallstrick PDF S.58 B↔C.
+3. **Mollgasse-GT re-gemessen** (neue Raumerkennung, gleiche Platzierung) — Report
+   `knowledge/Pläne zeichnen Wissen/Mollgasse-Notbeleuchtungserklärung/_Analyse/SYNC_c3b8186_GT_REPRODUKTION.md`.
+
+**KERNBEFUND — Sync macht GT NICHT besser:** gepaart **33→31** (−2), typ_match **13→14** (+1).
+Kein Leuchten-Verlust im Plan, sondern **Paarungs-Reshuffle** der Nearest-Neighbor-Metrik (3 m):
+- **2KG −2:** neue RE verschiebt Räume/Segmente + meine Überschuss-Drossel (überfl 15→6) nimmt
+  4 danebenliegende Engine-Punkte weg (GT verliert 1C64B/1C695/1C83E/1C95A), 2 finden neuen
+  Partner (1C644/1C861) → netto −2. Reshuffle, kein Sicherheits-Verlust.
+- **DG −1:** echter Einzelverlust 20705 (rz left), Engine-Punkt driftet >3 m ab.
+- **Echte Gewinne gehen unter:** 4OG `41593` (der in M3 „komplett fehlende" Fall!) jetzt erreicht
+  (RE-Verbesserung, typ +1), 3OG `78DDA` neu gepaart.
+- Echte Hebel bleiben **sync-unabhängig**, priorisiert: (1) **M3 Pfeiltyp-Frontalsicht (Leonis,
+  ~20/33 Typ-Miss)** — `richtung_und_rotation`/`communal_stgh`, Pfeil nach Ankunfts-Frontalsicht
+  statt Fluchtvektor; (2) KG-/Zündketten-Erkennung (Selman); (3) Antipanik-vs-Aufheller-Schwelle
+  `_ANTIPANIK_AB_M2=60` (`fachpraxis.py:100`, normwissen+Leonis); (4) beidseitig nur EG.
+
+**UNCOMMITTED (Owner: so lassen):** GT-Lauf hat die committeten ALT-`vergleich.json` in
+`Projekte/_ergebnis/Mollgasse_GT/*/` mit NEU überschrieben. **ALT-Baseline (33/97) bleibt
+jederzeit aus git `883a95b` holbar** (`git show 883a95b:Projekte/_ergebnis/Mollgasse_GT/<G>/vergleich.json`)
+— der Scratchpad-Backup `…/scratchpad/gt_alt/` ist nur flüchtig. NEU = aktueller Working-Tree
+(uncommitted). `docs/KOPPLUNG_RAUMERKENNUNG_c3b8186.md` + COORDINATION-Log sind in `883a95b`;
+`_Analyse/SYNC_c3b8186_GT_REPRODUKTION.md` liegt uncommitted auf Disk (untracked knowledge-Dir).
+Dieser Handoff-Eintrag (uncommitted). 13 Prüf-Inputs in `Projekte/_eingang/` (gitignored).
+**Re-Messen morgen:** `bash …/scratchpad/run_gt.sh` bzw. `python scripts/analyse/mollgasse_gt_vergleich.py <G>`.
+
+**RESUME:** A) **M3 Frontalsicht bauen** (größter, sync-unabhängiger Hebel; Design steht in
+`.../Mollgasse-Notbeleuchtungserklärung/_Analyse/REVIEW.md` §M3, 5 Handles 952E8/413A0/41220 +
+jetzt 41593) → kippt 4OG-Golden + Pfeil-Bänder (GO + Freeze-Nachzug), Hausfeld 2DG als Wächter.
+B) 2KG/DG-Regression als Naht-Test fixieren. C) Owner-Weiche: Branch nach Gate-DG2-Klärung
+Richtung main.
+
+---
+
+## STAND (2026-09-30 SPÄT) — Mollgasse-Analyse + Lichtberechnung validiert; M1 als Phantom gestoppt.
 
 **Branch `codex/Notbeleuchtungs_Platzierungslogik` = origin/leonis/demo-l-gebaeude-Tip `8257ff9`
 (alles gepusht, 43 vor main / 2 hinter = 2 Asset-ZIPs). Diese Woche NUR read-only-Analyse +
