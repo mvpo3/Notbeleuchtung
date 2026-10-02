@@ -3879,3 +3879,213 @@ offen für Block-Inhalte (a). Abschnitt 5 bestätigt in Regel, Tests, Blast, Gat
 `raum_51`; für `exit_1` sprechen die Planbelege gegen „Innenhof" (b, Owner). Abschnitt 6 bestätigt (Zitat, Faktoren,
 Türzahlen, Medianen, Plausibilität, Blast, Gate), offen (c). Keine Bänder gesenkt, Gate nur (3) DG2. Nichts am Code
 geändert (a–c sind Regelentscheide).
+
+## 30. Phase A Abschluss (Kopf `d39a3cf`, Vergleichsbasis `7727d60`)
+
+**Auftrag (Planer 2026-10-02, Phase-A-Abschluss nach `docs/AUFTRAG_2026-10-01.md`, Freigabe „Option 3, erweitert"):**
+volle Suite, Gate, Schema-Check und ruff auf dem sauberen Kopf; Prüfstrecke über alle 13 Pläne mit **KI aus** in
+**einem** Lauf nach `Projekte/_ergebnis/` (getrackt); Kennzahlen je Plan und Vergleich zu `c3b8186` (letzte
+Prüfstrecke `8080655`, Dateien per `git show c3b8186:Projekte/_ergebnis/…`); Ergebnisse als Vergleichsbasis für
+Phase B committen. Kein Push, keine Board-Einträge, kein PR-Text (Phase B). Die Nummer § 29 trägt schon Review 3,
+darum steht der Abschluss hier als § 30.
+
+### 30.1 Suite, Gate, Schema, ruff (sauberer Kopf `d39a3cf`, vor der Prüfstrecke)
+
+- **Volle Suite** (`pytest -q -p no:cacheprovider -rxXs`, allein, 22 min 16 s): `7 failed, 2424 passed, 12 skipped,
+  6 deselected, 15 xfailed, 3 warnings`, 0 xpassed — gleich § 25d.4. Die 7 roten:
+  - erwartet (Auftrag): 3 × `tests/naht/test_s7_wohnungsklasse.py::test_keine_leuchten_in_wohnung_privat` OG1/OG2/DG1
+    (`:1098`, Board 1 Leonis), `tests/naht/test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell` (`:423`, 30 von
+    72 gegen Band ≥ 40), die S4c-Pins `test_bara_raum_19_behaelt_klasse_und_zirkulation` (`:939`) und
+    `test_bara_raum_30_wird_nicht_von_der_auswertungsreihenfolge_entschieden` (`:1057`) — nicht angefasst;
+  - **nicht auf der Liste, bekannt seit § 26.4, untersucht, nicht behoben:**
+    `tests/normwissen/test_quellenblock_e07_rl4.py::test_kein_contract_wert_und_kein_konsument` (`:354`) meldet
+    `raumerkennung/ki_backends.py:69 -> Path(basis, "OpenAI", "Codex", "bin").glob("*/codex.exe")`. **Ursache
+    (hier mit den Helfern des Wächters selbst gemessen):** `_daten_namen` führt `basis` und `kandidaten` als
+    Datenpfad-Namen, weil die Zuweisung `basis = os.environ.get("LOCALAPPDATA")` ein String-Literal mit dem Teilstring
+    `data` trägt (`"LOCALAPPDATA".lower()` enthält `data`); der Glob über die Codex-Binärablage ist damit ein
+    Fehlalarm des Teilstring-Vergleichs, kein Zugriff auf `normwissen/data`. Nicht behoben, weil jede Umschreibung,
+    die den Teilstring nur versteckt, den Wächter umgeht (seine dokumentierte Grenze „zur Laufzeit gebildete Namen"),
+    und das Entfernen der Binärsuche den Phase-B-Aufruf ändert (`codex` ist nicht im PATH, Befund 2026-10-01).
+    Entscheid vor dem Push in Phase B: feste Pfadangabe über `KiKonfig`/Umgebung statt Glob (Owner) oder
+    Wächter-Ausnahme mit Enis. **P1 · Selman.**
+- 15 xfailed = die 14 aus § 10 und `test_s4g_ausgang_tuerbezug.py::test_soll_mollgasse_eg_kein_ausgang_ohne_tuerbezug`
+  (S4g a, Grundtext § 27). 12 skipped = die 11 aus § 21.1 und `test_ki_zweitmeinung.py:635` (`codex exec` nur mit
+  `NOTBEL_KI_LIVE=1`). Kein Test, kein Marker, keine Schwelle angefasst.
+- **Gate:** `pytest -m gate tests/gate` **3 passed, 1 xfailed** (`test_gate_tuerstapel_erfuellt`, 106 s).
+  `gate_messung` → `_arbeit/gate/messung_d39a3cf.json` (`commit_head d39a3cf`, `arbeitsbaum_src_scripts_sauber true`,
+  61,9 s), `pruefe_gate` gegen `nullmessung_f15d03f.json`: **nur (3) `M4.einraum` DG2 0 → 1** (Enis Board 3); M17
+  **18/18 BESTANDEN**; (11) DG1 2 Ausgänge, 0 durch den Liftschacht (UG 2, EG 5, OG1 2 — je 0); alle 8 Messfelder außer `meta`
+  gleich `messung_57b013f-dirty-25d.json` und `messung_9f727a5-review3.json`.
+- **Schema:** `scripts/gen_schema.py --check` → „schema in sync" (kein Contract geändert). **ruff:** `ruff check .` →
+  „All checks passed!".
+
+### 30.2 Prüfstrecke: 13 Pläne, KI aus, ein Lauf (Commit `7727d60`)
+
+`scripts/plan_pruefen.py` ohne Argument auf dem sauberen Kopf `d39a3cf` (13 DXF aus `Projekte/_eingang/` nach
+`Projekte/_ergebnis/`), ein Prozess, allein auf dem Rechner, Umgebung ohne `NOTBEL_KI*`, von außen alle 20 ms
+überwacht (Guard 26 GB, Überwacher im Session-Scratch wie § 21.2): **Exit 0, kein Guard, 0 Traceback, 0
+`MemoryError`, 0 `RuntimeWarning`**, 4 806,1 s, Prozess-Spitze **4,18 GB** (in Am Rain EG). Im Log nur
+ezdxf-Kopier-/Zeitstempel-Hinweise und 6 matplotlib-Hinweise „Ignoring fixed x/y limits" (wie § 21.2). Jeder
+`bericht.md` trägt „KI aus; Fragen 0 (Geschoss/Quadranten), Anfragen 0 (echte Aufrufe), Cache-Treffer 0" — **keine
+Live-Aufrufe**. Kein Plan „Maßstab unsicher". `docs/MATERIAL_REPORT.md` unverändert; geändert nur
+`Projekte/_ergebnis/` (86 Dateien: `bericht.md` 13, `raeume.json` 7, PNG, `unbekannte_muster/*.json`, der automatische
+VERLAUF-Laufblock „2026-10-02 16:16 · d39a3cf"). Die Bilder aus Abschnitt 0 (`AmRain_*/unbekannt/`) und 5
+(`Mollgasse_EG/ausgaenge/`) schreibt `plan_pruefen` nicht und sind unverändert.
+
+Kennzahlen je Plan (Räume Kaskade = `raeume.json` mit Polygon, ohne Typ = ohne `raum_typ`, wie § 21.2; Modell-Räume
+= alle Räume des `RaumModell` inkl. `frei_*`/`stiegenhaus_*`/`lift_*`, aus dem Runner, = Zeilen der Herkunfts-Tabelle;
+Warnungen = Abschnitt „Warnungen" in `bericht.md`, Provider = `seite_fehlt`, `mm_faktor`, `keine_wand_entities`,
+`freiflaeche`, `sanitaer`, `kuerzel`; Raumtyp-Herkunft = Abschnitt „Raumtyp-Herkunft" — mit KI aus ist jeder Raum
+„Engine", bestätigt/strittig/KI 0; „ohne Beleg" = Raum ohne Typ und ohne Stempel; Maßstab-Faktor = mm je
+Zeichnungseinheit mit Quelle aus der `mm_faktor`-Zeile bzw. dem Ladebefund; RAM = höchster Working Set während des
+Plans):
+
+| Plan | Räume Kaskade (ohne Typ) | Modell-Räume (ohne Typ) | Wohnungen | Türen typ./ges. | Ausgänge | Segmente | Leuchten | Warnungen = Provider + Stempel/Polygon | Raumtyp-Herkunft (Beleg) | Maßstab-Faktor mm/Einheit (Quelle) | Laufzeit s | RAM GB |
+|---|---|---|--:|---|---|---|---|---|---|---|--:|--:|
+| Barawitzka_EG | 46 (6) | 49 (6) | 7 | 35/71 | final_exit 1 | GRAPH 7 FALLBACK 1 | rz 6 + SL 5 = 11 | 38 = 25 + 13 | Engine 49: stempel 36, geometrie 6, kuerzel 1, ohne Beleg 6 | 1000 (Wand-Spanne) | 250,2 | 1,45 |
+| Mollgasse_EG | 62 (19) | 64 (11) | 21 | 44/102 | final_exit 6 stair_exit 1 | LINIE 103 GRAPH 14 FALLBACK 3 | SL 25 + rz 23 = 48 | 60 = 21 + 39 | Engine 64: stempel 60, geometrie 3, ohne Beleg 1 | 1000 (Wand-Spanne) | 244,7 | 1,39 |
+| Muthgasse_E2 | 100 (6) | 108 (6) | 22 | 113/193 | stair_exit 1 | LINIE 139 FALLBACK 3 | rz 86 + SL 53 = 139 | 117 = 80 + 37 | Engine 108: stempel 94, geometrie 9, ohne Beleg 5 | 10 (Wand-Spanne + Türbogen) | 895,0 | 3,59 |
+| Rennweg_EG | 23 (7) | 24 (7) | 2 | 20/40 | final_exit 2 stair_exit 3 | GRAPH 5 FALLBACK 2 | rz 9 + SL 8 = 17 | 16 = 12 + 4 | Engine 24: stempel 19, geometrie 3, ohne Beleg 2 | 1 (Türkalibrierung 4 Bögen, Median 890 mm, MAD 6 % — $INSUNITS bestätigt) | 49,8 | 1,38 |
+| Rennweg_OG3 | 16 (1) | 17 (0) | 2 | 17/18 | stair_exit 3 | GRAPH 5 FALLBACK 1 | rz 5 + SL 2 = 7 | 10 = 4 + 6 | Engine 17: stempel 10, geometrie 6, erscheinungsbild 1 | 1 (Türkalibrierung 11 Bögen, Median 840 mm, MAD 0 % — $INSUNITS bestätigt) | 47,6 | 1,29 |
+| Mollgasse_1KG | 29 (24) | 31 (24) | 0 | 0/28 | final_exit 1 | FALLBACK 4 | rz 7 + SL 7 = 14 | 51 = 4 + 47 | Engine 31: stempel 16, geometrie 3, ohne Beleg 12 | 1000 (Wand-Spanne) | 97,3 | 1,29 |
+| Mollgasse_2KG | 28 (19) | 30 (19) | 1 | 2/46 | stair_exit 1 | FALLBACK 2 GRAPH 1 | rz 8 + SL 4 + antipanik 1 = 13 | 77 = 9 + 68 | Engine 30: stempel 22, geometrie 3, ohne Beleg 5 | 1000 (Wand-Spanne) | 165,9 | 1,33 |
+| AmRain_OG4 | 27 (1) | 28 (2) | 11 | 30/59 | stair_exit 2 | GRAPH 6 FALLBACK 3 | rz 12 + SL 8 = 20 | 63 = 26 + 37 | Engine 28: stempel 21, geometrie 3, kuerzel 2, ohne Beleg 2 | 1 (Türkalibrierung 27 Bögen, Median 800 mm, MAD 0 % — $INSUNITS bestätigt) | 127,3 | 1,27 |
+| AmRain_UG | 82 (23) | 82 (23) | 7 | 46/295 | final_exit 2 stair_exit 15 | FALLBACK 26 GRAPH 2 | rz 69 + SL 41 = 110 | 346 = 161 + 185 | Engine 82: stempel 40, geometrie 11, kuerzel 8, ohne Beleg 23 | 1 (Türkalibrierung 255 Bögen, Median 800 mm, MAD 0 % — $INSUNITS bestätigt) | 398,1 | 1,92 |
+| AmRain_EG | 135 (8) | 140 (10) | 49 | 114/317 | final_exit 2 stair_exit 1 | FALLBACK 9 GRAPH 1 | rz 30 + SL 16 = 46 | 386 = 196 + 190 | Engine 140: stempel 103, kuerzel 18, geometrie 9, ohne Beleg 10 | 1 (Türkalibrierung 147 Bögen, Median 800 mm, MAD 0 % — $INSUNITS bestätigt) | 1 030,3 | 4,16 |
+| AmRain_OG1 | 134 (9) | 139 (11) | 54 | 138/300 | stair_exit 7 | FALLBACK 16 GRAPH 12 | rz 49 + SL 24 = 73 | 353 = 186 + 167 | Engine 139: stempel 107, kuerzel 15, geometrie 6, ohne Beleg 11 | 1 (Türkalibrierung 172 Bögen, Median 800 mm, MAD 0 % — $INSUNITS bestätigt) | 576,3 | 1,89 |
+| AmRain_OG2 | 102 (8) | 103 (8) | 42 | 134/264 | stair_exit 2 | FALLBACK 15 GRAPH 9 | rz 52 + SL 23 = 75 | 279 = 122 + 157 | Engine 103: stempel 80, geometrie 10, kuerzel 5, ohne Beleg 8 | 1 (Türkalibrierung 137 Bögen, Median 800 mm, MAD 0 % — $INSUNITS bestätigt) | 495,9 | 1,83 |
+| AmRain_OG3 | 53 (2) | 60 (2) | 21 | 84/129 | stair_exit 3 | GRAPH 15 FALLBACK 2 | SL 11 + rz 9 = 20 | 132 = 55 + 77 | Engine 60: stempel 42, geometrie 9, kuerzel 7, ohne Beleg 2 | 1 (Türkalibrierung 68 Bögen, Median 800 mm, MAD 0 % — $INSUNITS bestätigt) | 360,1 | 1,6 |
+
+**Gegen § 21.2 (`8080655` = `c3b8186`):** Räume Kaskade 13/13 gleich; ohne Typ (Kaskade) Barawitzka 7 → 6, Am Rain OG4
+3 → 1, UG 31 → 23, EG 24 → 8, OG1 21 → 9, OG2 12 → 8, OG3 8 → 2; Wohnungen Am Rain EG 50 → 49, OG1 57 → 54, OG2
+43 → 42, OG3 23 → 21 (§ 23.4: der neue Typ macht die Tür zur `zimmertuer`, Wohnung folgt rohen Türen); Türen typisiert
+Barawitzka 33 → 35, OG4 22/58 → 30/59, UG 13 → 46, EG 78 → 114, OG1 103 → 138, OG2 117 → 134, OG3 61 → 84; Segmente
+OG4 FALLBACK 4 → GRAPH 6 FALLBACK 3, UG FALLBACK 24 → 26 + GRAPH 2, EG FALLBACK 6 → 9, OG1 FALLBACK 17/GRAPH 6 →
+16/12, OG3 GRAPH 10 → 15; Warnungen Barawitzka 37 → 38, Muthgasse 115 → 117, EG 382 → 386, OG1 351 → 353 (je die
+neuen `kuerzel:`-Zeilen, EG dazu der `freiflaeche`-Zuschlag an `rest_3`); Mollgasse EG (außer Ausgängen und
+Leuchten, 30.3), Muthgasse, Rennweg EG/OG3, Mollgasse 1KG/2KG sonst gleich; Laufzeit je Plan ±2 % (Muthgasse
+887,0 → 895,0 s), RAM je Plan höchstens +0,06 GB (Am Rain OG1 1,83 → 1,89). Die `mm_faktor`-Zeile
+wechselt auf den 8 Plänen mit `$INSUNITS`-Rückfall von „Türprobe: … widerspricht/1/keine" auf „Türkalibrierung (…)
+bestätigt" — **kein Faktor ändert sich** (Rennweg EG/OG3, Am Rain alle 6: 1; Barawitzka, Mollgasse EG/1KG/2KG: 1000
+aus der Wand-Spanne; Muthgasse 10 aus Spanne + Türbogen).
+
+### 30.3 Δ zu `c3b8186` je Plan — raum_typ, Ausgänge, Leuchten
+
+Quellen: Prüfstrecken-Dateien `c3b8186` gegen `7727d60` (`raeume.json` Kaskaden-Typ, Ausgangs-Tabelle und Leuchten je
+Klasse aus `bericht.md`) und für alle Modell-Räume und Leuchten-Positionen ein eigener Runner (`provider.parse(dxf, "")`
++ Default-Platzierung, je Plan allein, seriell, nach der Prüfstrecke, ohne `NOTBEL_KI*`; Code = `git archive c3b8186`
+bzw. `git archive d39a3cf` von `src/` + `CAD_Symbole/` außerhalb des Repos; Runner und JSON im Session-Scratch).
+**Gegenprobe Runner ↔ Prüfstrecke, 13/13 auf beiden Ständen:** Ausgangs-IDs gleich, Leuchten je Klasse gleich,
+Kaskaden-Typen gleich bis auf die Räume, die der Provider nach der Kaskade typisiert (Mollgasse EG 8 Räume GANG/
+STIEGENHAUS, Rennweg EG und Mollgasse 2KG `rest_2` SCHACHT, Rennweg OG3 `rest_6` BAD) — diese Abweichung ist auf
+`c3b8186` und `d39a3cf` identisch. Die Herkunfts-Tabelle in `bericht.md` nennt je Raum denselben Typ wie der Runner
+(13/13).
+
+**Summe:** 56 Typwechsel, **alle von ohne Typ zu einem Kanon-Typ** (49 aus Abschnitt 1 = § 23.4, 7 `frei_*` aus
+Abschnitt 2 = § 24.5), kein Raum verliert oder wechselt einen Typ, kein Raum entsteht oder entfällt; Ausgänge
+`final_exit` 16 → 14, `stair_exit` 23 → 39; **Leuchten 560 → 593**; auf 8 Plänen jede Leuchte an derselben Position.
+Kein Plan verliert seinen letzten Ausgang; Leuchten sinken nur auf Mollgasse EG (Abschnitt 5, = § 27.6/§ 29 (3)).
+
+| Plan | Δ raum_typ (alle Modell-Räume; jeweils von ohne Typ) | Δ Ausgänge (IDs) | Leuchten Σ (Art) c3b8186 → neu | Leuchten-Positionen weg / neu (Raum) |
+|---|---|---|---|---|
+| Barawitzka_EG | 1: `raum_41` → BALKON | — | 11 gleich (rz 6 + SL 5) | — |
+| Mollgasse_EG | — | weg `exit_1`, `exit_2` (final_exit) | 51 → 48 (SL 27 + rz 24 → SL 25 + rz 23) | 3 (kein Raum ×2, `raum_51`) / 0 |
+| Muthgasse_E2 | — | — | 139 gleich (rz 86 + SL 53) | — |
+| Rennweg_EG | — | — | 17 gleich (rz 9 + SL 8) | — |
+| Rennweg_OG3 | — | — | 7 gleich (rz 5 + SL 2) | — |
+| Mollgasse_1KG | — | — | 14 gleich (rz 7 + SL 7) | — |
+| Mollgasse_2KG | — | — | 13 gleich (rz 8 + SL 4 + antipanik 1) | — |
+| AmRain_OG4 | 2: `rest_2` → STIEGENHAUS, `rest_6` → WC | neu 2 stair_exit: `exit_tuer_27`, `exit_tuer_28` | 13 → 20 (rz 8 + SL 5 → rz 12 + SL 8) | 4 (`raum_20`, `rest_1`, `rest_5` ×2) / 11 (kein Raum ×2, `raum_1`, `raum_20`, `rest_2` ×5, `rest_5` ×2) |
+| AmRain_UG | 8: `rest_18` → SCHLEUSE, `rest_23` → STIEGENHAUS, `rest_32` → GANG, `rest_3` → GANG, `rest_5` → GANG, `rest_6` → SCHLEUSE, `rest_7` → GARAGE, `rest_8` → GANG | neu 11 stair_exit: `exit_durchgang_3`, `exit_durchgang_5`, `exit_durchgang_6`, `exit_durchgang_20`, `exit_tuer_48`, `exit_tuer_50`, `exit_tuer_92`, `exit_tuer_125`, `exit_tuer_140`, `exit_tuer_143`, `exit_tuer_167` | 91 → 110 (rz 59 + SL 32 → rz 69 + SL 41) | 8 (`raum_10`, `raum_13`, `raum_22` ×2, `raum_29`, `raum_38`, `rest_12`, `rest_17`) / 27 (kein Raum ×3, `raum_1`, `raum_10` ×2, `raum_12`, `raum_22` ×4, `raum_9` ×2, `rest_18` ×2, `rest_19`, `rest_23` ×2, `rest_3`, `rest_32` ×2, `rest_5` ×2, `rest_6`, `rest_7`, `rest_8` ×2) |
+| AmRain_EG | 18: `frei_1` → VORRAUM, `frei_2` → ABSTELLRAUM, `rest_10` → WC, `rest_13` → GANG, `rest_14` → GANG, `rest_16` → GANG, `rest_17` → WC, `rest_18` → WC, `rest_20` → WOHNZIMMER, `rest_21` → WOHNZIMMER, `rest_22` → WC, `rest_24` → WOHNZIMMER, `rest_25` → WOHNZIMMER, `rest_3` → VORRAUM, `rest_5` → KÜCHE, `rest_6` → KÜCHE, `rest_8` → WC, `rest_9` → WC | — | 40 → 46 (rz 27 + SL 13 → rz 30 + SL 16) | 0 / 6 (kein Raum, `raum_12`, `raum_25`, `raum_29`, `rest_13`, `rest_14`) |
+| AmRain_OG1 | 15: `frei_1` → BALKON, `frei_3` → VORRAUM, `frei_4` → BALKON, `rest_11` → VORRAUM, `rest_15` → VORRAUM, `rest_17` → ABSTELLRAUM, `rest_19` → GANG, `rest_22` → GANG, `rest_23` → VORRAUM, `rest_2` → VORRAUM, `rest_3` → VORRAUM, `rest_4` → BALKON, `rest_6` → WOHNZIMMER, `rest_7` → BALKON, `rest_8` → BALKON | neu 3 stair_exit: `exit_durchgang_56`, `exit_tuer_209`, `exit_tuer_210` | 69 → 73 (rz 47 + SL 22 → rz 49 + SL 24) | 5 (`raum_103`, `raum_59` ×2, `rest_24`, `rest_27`) / 9 (`raum_103` ×4, `raum_61`, `rest_11`, `rest_22`, `rest_23`, `rest_27`) |
+| AmRain_OG2 | 5: `frei_1` → VORRAUM, `rest_11` → VORRAUM, `rest_16` → VORRAUM, `rest_22` → WC, `rest_6` → BALKON | — | 75 gleich (rz 52 + SL 23) | — |
+| AmRain_OG3 | 7: `frei_1` → VORRAUM, `rest_10` → WC, `rest_11` → VORRAUM, `rest_2` → BALKON, `rest_4` → VORRAUM, `rest_5` → WC, `rest_8` → BALKON | — | 20 gleich (SL 11 + rz 9) | — |
+
+Zuordnung zu den Abschnitten: Barawitzka `raum_41` „Loggia" und alle Am-Rain-`rest_*` = Abschnitt 1 (Kürzel, § 23.4;
+darunter UG `rest_7` GARAGE, nach § 25.6 a falsch — offen); `frei_*` = Abschnitt 2 (§ 24.5); Mollgasse EG `exit_1`/
+`exit_2` = Abschnitt 5 (§ 27.6; `exit_1` nach § 29.1 b offen); die 16 neuen `stair_exit` liegen alle an Türen zu neu
+typisierten Räumen (Türtabelle `bericht.md`: OG4 `rest_2`; UG `rest_3`, `rest_5`, `rest_6`, `rest_8`, `rest_18`,
+`rest_23`, `rest_32`; OG1 `rest_11`, `rest_23`). Gemerkt: OG4 `exit_tuer_27` sitzt an `tuer_27` `rest_2`|`rest_2`
+(beide Seiten derselbe Raum — Klasse F-03, § 20.5, S4c-Gebiet; die Abnahme § 23.3 bleibt). Die
+Räume mit weniger Leuchten haben alle keinen Typwechsel (UG `raum_38` GANG 1 → 0, `rest_12` GANG 1 → 0, `rest_17`
+GANG 2 → 1, `raum_29` STIEGENHAUS 3 → 2, `raum_13` SCHLEUSE 2 → 1; OG1 `rest_24` GANG 1 → 0, `raum_59` VORRAUM 4 → 2;
+OG4 `rest_1` GANG 2 → 1 — gleich § 23.4) und folgen der Platzierung entlang neuer GRAPH-Wege — Leonis-Lane, gemeldet
+(§ 23.4, § 25.6 e). Abschnitte 3, 4, 6
+und die Abo-Regel ändern auf den 13 Plänen kein Feld (KI aus; 0 verworfene Entities; kein Faktor).
+
+### 30.4 Vergleichsbasis für Phase B
+
+Commit **`7727d60`** („ergebnis — Prüfstrecke Phase A (KI aus) als Vergleichsbasis für Phase B") hält den Stand fest,
+gegen den Phase B die Prüfstrecke mit KI an misst: je Plan `bericht.md` (mit Herkunfts-Tabelle „Engine" je Raum),
+`raeume.json`, Bilder 01–06 (Barawitzka 07) und der VERLAUF-Laufblock. Code-Stand = `d39a3cf` (`7727d60` ändert nur
+`Projekte/_ergebnis/`). Für Phase B gilt: jede Abweichung gegen `7727d60` bei KI an ist eine Wirkung der zweiten
+Meinung (Herkunft bestätigt/strittig/KI) oder einer späteren Code-Änderung.
+
+
+### 30.5 Phase A — gebaut (Commits auf `luecken-2026-09-30` nach `c3b8186`, nichts gepusht)
+
+| Abschnitt | Commit | Inhalt | LUECKEN |
+|---|---|---|---|
+| Auftrag | `cadb537` | Wortlaut, Entscheide 1–7, Voraussetzungsbefund, Freigabe „Option 3, erweitert", Ablaufplan | — |
+| 0 | `dad7bbd` | die 12 `frei_*` aus 2d: Tabelle und Ausschnittbilder (`Projekte/_ergebnis/AmRain_*/unbekannt/`) | § 22 |
+| 1 | `8748e24` | Kürzel im Raumpolygon sind Typbeleg; Am Rain OG4 `rest_2` „STGH" → STIEGENHAUS (1 Stiegenhaus, 2 `stair_exit`, 20 Leuchten) | § 23 |
+| 2 | `5f15955` | Stempel vor UNBEKANNT: 7 der 12 `frei_*` typisiert | § 24 |
+| Review 1 | `b61cb4d` | Abschnitte 0–2 bestätigt; UG `rest_7` „Garage 1" widerlegt (offen) | § 25 |
+| 3 Teil A | `be9cc57` | KI-Zweitmeinung: Schnittstelle, Backends `codex_abo`/`openai_api`, Konfiguration, Cache | § 25a |
+| 3 Teil B | `ccd3f96` | Anfrage je Geschoss/Quadrant, Entscheidungsregeln, Herkunfts-Ausweis, Verdrahtung | § 25b |
+| Review 2 | `7ea3024` | Korrekturen zu Teil A/B (K3-Regel, Eichung, Suite-Wächter) | § 25c |
+| 4 | `fd5dedb` | `nan`/`inf`/`> 1e9 mm` beim Laden verwerfen, Warnung mit Layer und Handle | § 26 |
+| 5 | `54ba4b3` | Ausgang ohne Tür nur ins Freie, nie in den Innenhof (Mollgasse EG `exit_1`/`exit_2` entfallen) | § 27 |
+| 6 | `9f727a5` | Maßstab über die Tür, sonst „Maßstab unsicher" ohne Leuchten | § 28 |
+| Review 3 | `57b013f` | Abschnitte 4–6 bestätigt; offen (a) Block-Phantom, (b) `exit_1`, (c) Türfaktor gegen Spanne | § 29 |
+| Abo-Regel | `d39a3cf` | KI nur über das ChatGPT-Abo (`nur_abo` fest, Login-Status vor dem Aufruf, Limit → warten) | § 25d |
+| Abschluss A | `7727d60` + Doku-Commit dieses Abschnitts | Prüfstrecke 13 Pläne, KI aus, als Vergleichsbasis für Phase B; Suite, Gate, Schema, VERLAUF, VERSIONEN, Ablaufplan | § 30 |
+
+Phase-A-Grenzen eingehalten: keine Live-Aufrufe der KI (alle KI-Tests mit Mock/Fixture, `NOTBEL_KI*` in den Läufen
+entfernt, Bericht „KI aus; Fragen 0, Anfragen 0, Cache-Treffer 0"), kein Push, keine Board-Einträge, `c3b8186` nicht
+umgeschrieben (Vorfahr von `HEAD`).
+
+### 30.6 Offen nach Phase A (nach Priorität)
+
+- **Vor dem Push (Phase B):** der siebte rote Test (30.1, `ki_backends.py:69`, Fehlalarm über `LOCALAPPDATA`) —
+  P1 · Selman/Enis. Block-Phantom bricht die Prüfstrecke ab (§ 29.1 a) — P1 · Selman. Board-Text an Enis (§ 27.8)
+  nennt `exit_1` als Innenhof-Beispiel; nach § 29.1 b vor dem Eintrag anpassen.
+- **Owner-Entscheide (P1):** `exit_1` Mollgasse EG wahrscheinlich Durchfahrt ins Freie (`01-ANS`-Streifen,
+  § 27.9/§ 29.1 b) — die Vergleichsbasis führt ihn als Innenhof. Am Rain UG `rest_7` GARAGE aus Elektro-Beschriftung
+  „Garage 1" (§ 25.6 a) — die Vergleichsbasis trägt den Fehler mit. Regelbreite 900 mm / Band 600–1300 mm (Leonis,
+  § 28.7). „Maßstab unsicher" und Lade-Warnungen erreichen `pipeline.run`/API nicht (Contract-Antrag, § 28.8).
+  S4c (2 Pins). F-03 Barawitzka `tuer_31` (§ 20.5). Wörterbuch-/Kanon-Kandidaten „ZI", KOCHNISCHE, GARTEN, ELEKTRO,
+  SPEIS, KELLERABTEILE, HAUSKELLER, MAGAZIN (§ 23.7). Polygone größer als der Stempelraum (R-05 b, § 23.7, § 24.7).
+- **Phase B (ab 2026-10-03 19:10):** Live-Prüfung `codex exec` und `codex login status` (§ 25a.7, § 25d.5),
+  `--ignore-user-config` vor dem ersten Live-Lauf (§ 25c.3, § 25d.5), Eichung und Freigabeliste (§ 25b.9), Prüfstrecke
+  mit KI an gegen diese Basis, Prüfer-Durchgang, Lern-Kandidaten, VERLAUF/VERSIONEN, Board-Einträge an Leonis (Δ zu
+  `c3b8186` aus 30.3, Board 1) und Enis (§ 27.8), Sync, Push, Bericht.
+- **P2/P3:** Türfaktor gegen Spanne (§ 29.1 c), Summenblock-Zeilen (§ 25.6 b), K4 für `frei_*` (§ 25.6 c), Türseiten an
+  `frei_*` (§ 24.7), Loch/Zaun und Räume in Höfen (§ 27.9), Durchfahrten > 2,6 m (§ 27.9), Rennweg DD und Wandstärken
+  (§ 28.7), HATCH-Kantenpfade (§ 26.5), Nischen-Eingang (§ 29.1 e), Cache-Schlüssel ohne Raum-Fingerabdruck
+  (§ 25c.3). Unverändert aus § 21.4: Gate (3) DG2 (Enis Board 3), Board 1 Leuchten in `WOHNUNG_PRIVAT`/LIFT/SCHACHT
+  (Leonis), S4f/S3c/S-KG nach dem Merge von #160.
+
+### 30.7 Modell und Denkstufe der Phase-A-Agenten (wörtlich aus den Rückgaben)
+
+| Agent | Schritt | Modell / Stufe |
+|---|---|---|
+| a0 | Abschnitt 0 (`dad7bbd`) | „claude-fable-5-1 (Fable 5.1); Denkstufe nicht aus der Sitzung ablesbar — so gestartet wie vom Aufrufer gesetzt (Soll xhigh)" |
+| a1 | Abschnitt 1 (`8748e24`) | „claude-fable-5-1 (Denkstufe vom Agenten nicht einsehbar; laut Auftrag/Start xhigh)" |
+| a2 | Abschnitt 2 (`5f15955`) | „claude-fable-5-1 (Modell-ID aus der Umgebung); Denkstufe im Agenten nicht auslesbar — laut Auftrag xhigh, falls so gestartet. Keine KI-Live-Aufrufe (Phase A)." |
+| r1 | Review 1 (`b61cb4d`) | „claude-fable-5-1 (Fable 5.1); Denkstufe vom Agenten nicht auslesbar — xhigh, sofern so gestartet. Keine KI-Engine-Aufrufe (Phase A, keine Live-Aufrufe)." |
+| a3a | Abschnitt 3 Teil A (`be9cc57`) | „claude-fable-5-1 (Stufe laut Auftrag xhigh; vom Agenten selbst nicht prüfbar)" |
+| a3b | Abschnitt 3 Teil B (`ccd3f96`) | „claude-fable-5-1 (Stufe laut Auftrag xhigh; vom Agenten selbst nicht prüfbar)" |
+| r2 | Review 2 (`7ea3024`) | „claude-fable-5-1 (Stufe laut Auftrag xhigh; vom Agenten selbst nicht prüfbar)" |
+| a4 | Abschnitt 4 (`fd5dedb`) | „claude-fable-5-1 (Modell-ID laut Systemkontext); Denkstufe vom Agenten selbst nicht prüfbar — laut Auftrag xhigh, falls so gestartet" |
+| a5 | Abschnitt 5 (`54ba4b3`) | „claude-opus-5-5 / xhigh (Fallback, weil Fable 5.1 am Limit war). Der abgebrochene Teilstand stammte von claude-fable-5-1." |
+| a6 | Abschnitt 6 (`9f727a5`) | „claude-opus-5-5 / xhigh (Fallback, Fable 5.1 am Limit)" |
+| r3 | Review 3 (`57b013f`) | „claude-opus-5-5 / xhigh (Fallback für Fable 5.1; der Kopf meldet als exakte Modell-ID claude-opus-5-5, Stufe xhigh laut Start-Auftrag)" |
+| abo | Abo-Regel (`d39a3cf`) | „claude-opus-5-5 / xhigh (laut Auftrag Fallback für Fable 5.1, das am Limit ist; die Stufe kann der Agent nicht selbst prüfen)" |
+| basis | Abschluss Phase A (dieser Abschnitt) | claude-opus-5-5 / xhigh (Fallback für Fable 5.1 laut Auftrag; Modell-ID aus dem Systemkontext, die Stufe kann der Agent nicht selbst prüfen) |
+
+**Vermerk:** a5 brach unter claude-fable-5-1 am Fable-Limit ab; a5 bis basis liefen als Fallback claude-opus-5-5 /
+xhigh (Auftrag: „Ist Fable 5.1 nicht verfügbar oder am Limit: claude-opus-5-5 mit xhigh"). Die Engine-KI (codex exec)
+lief in Phase A nie (keine Live-Aufrufe, Kontingent bis 2026-10-03 19:10 erschöpft); Modell und Stufe der Engine
+stehen erst nach Phase B fest.

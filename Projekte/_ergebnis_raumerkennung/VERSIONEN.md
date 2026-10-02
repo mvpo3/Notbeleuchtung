@@ -109,3 +109,34 @@ Keine neue Raumerkennungs-Ausgabe: kein Ordner `<Projekt>_vN/`, keine neue Darst
   `Projekte/_ergebnis/<Plan>/`, Exit 0, Prozess-Spitze 4,18 GB, 4 808 s. Am Rain UG, EG und OG1–OG3 haben damit
   erstmals Bilder. Die Kennzahlen je Plan stehen in `Projekte/_ergebnis/VERLAUF.md` im Eintrag
   „2026-09-30 · Lücken luecken-2026-09-30 @ e0c820d“.
+
+## Phase A 2026-10-01
+
+Keine neue Raumerkennungs-Ausgabe: kein Ordner `<Projekt>_vN/`, keine neue Darstellung mit
+`scripts/analyse/raumerkennung_darstellung.py`. Dieser Abschnitt hält den Stand fest, gegen den Phase B (KI an) des
+Owner-Auftrags 2026-10-01 (`docs/AUFTRAG_2026-10-01.md`) gemessen wird.
+
+- **Stand:** Branch `luecken-2026-09-30`, Code-Stand `d39a3cf` (Kopf der Phase A). Die Prüfstrecken-Ergebnisse mit
+  KI aus stehen in Commit `7727d60` (Vergleichsbasis für Phase B). Leonis testet weiter auf `c3b8186`; der Commit ist
+  nicht umgeschrieben. Nichts gepusht.
+- **Punkte** (je ein Commit mit Test, Fix und `LUECKEN.md`-Eintrag; Doku-Punkte ohne Test):
+  - Abschnitt 0 `dad7bbd`: die 12 `frei_*` aus 2d mit Tabelle und Ausschnittbildern
+  - Abschnitt 1 `8748e24`: Kürzel im Raumpolygon sind Typbeleg; Am Rain OG4 `rest_2` „STGH“ → STIEGENHAUS
+  - Abschnitt 2 `5f15955`: Stempel vor UNBEKANNT (7 der 12 `frei_*` typisiert)
+  - Abschnitt 3 `be9cc57` (Teil A) und `ccd3f96` (Teil B): KI-Zweitmeinung ohne Live-Aufrufe — Schnittstelle, Backends
+    `codex_abo`/`openai_api`, Konfiguration, Cache, Entscheidungsregeln, Herkunfts-Ausweis im Bericht
+  - Abschnitt 4 `fd5dedb`: Entities mit `nan`/`inf`/> 1e9 mm beim Laden verwerfen, Warnung mit Layer und Handle
+  - Abschnitt 5 `54ba4b3`: Ausgang ohne Tür nur, wenn er ins Freie mündet, nie in den Innenhof
+  - Abschnitt 6 `9f727a5`: Maßstab über die Tür kalibriert, sonst „Maßstab unsicher“ ohne Leuchten
+  - Abo-Regel `d39a3cf`: KI nur über das ChatGPT-Abo
+  - Reviews `b61cb4d` (0–2), `7ea3024` (3), `57b013f` (4–6)
+- **Gate:** `pytest -m gate tests/gate` ergibt 3 passed, 1 xfailed. Messung `messung_d39a3cf` gegen
+  `nullmessung_f15d03f`: **1 Verstoß — (3) `M4.einraum` steigt in DG2 von 0 auf 1** (Enis' Board 3). M17: 18/18.
+- **Suite:** `pytest -q -rxXs` (voll) ergibt 7 failed, 2424 passed, 12 skipped, 6 deselected, 15 xfailed, 0 xpassed. Die
+  6 erwarteten roten (3 × WOHNUNG_PRIVAT-Leuchten, Muthgasse-Türblöcke, 2 S4c-Pins) und der seit `LUECKEN.md` § 26.4
+  bekannte Wächter-Fehlalarm `test_kein_contract_wert_und_kein_konsument` (Codex-Binärsuche, vor dem Push in Phase B).
+- **Prüfstrecke:** 13 Pläne mit `scripts/plan_pruefen.py` in **einem** Lauf mit Plan-Render und KI aus nach
+  `Projekte/_ergebnis/<Plan>/`, Exit 0, Prozess-Spitze 4,18 GB, 4 806 s. Gegen `c3b8186`: 56 Typwechsel (alle von ohne
+  Typ), Ausgänge `final_exit` 16 → 14 und `stair_exit` 23 → 39, Leuchten 560 → 593, kein Maßstab-Faktor geändert.
+  Die Kennzahlen je Plan stehen in `Projekte/_ergebnis/VERLAUF.md` im Eintrag
+  „2026-10-02 · Phase A Auftrag 2026-10-01 @ 7727d60“, die Liste je Raum, Ausgang und Leuchte in `LUECKEN.md` § 30.
