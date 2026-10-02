@@ -232,7 +232,16 @@ def verdichte_fluchtweg(
     if i_cd_fn is None and kontext is not None:
         i_cd_fn = kontext.i_cd_fn
     korridore = [
-        r for r in raum.raeume if r.raum_typ.upper() in _KORRIDOR_TYPEN and len(r.polygon_mm) >= 3
+        r for r in raum.raeume
+        if r.raum_typ.upper() in _KORRIDOR_TYPEN and len(r.polygon_mm) >= 3
+        # S2 (wie flaechen_strategy): das Wohnungsinnere ist kein Fluchtweg — ein GANG
+        # der Nutzungsklasse WOHNUNG_PRIVAT, durch den WEDER Fluchtweg NOCH Allgemein-
+        # bereich führt, bekommt keine Korridor-Aufheller. Behebt den Leak „Notleuchten
+        # in Wohnungs-Gängen" (Mollgasse 2OG: 4 Aufheller in privaten GANG-Räumen, die
+        # Selman korrekt als WOHNUNG_PRIVAT/fw=False/comm=False liefert). Ohne
+        # nutzungsklasse (None) unverändert → bestehende Pläne bit-identisch.
+        and not (r.nutzungsklasse == "WOHNUNG_PRIVAT"
+                 and not r.ist_fluchtweg and not r.ist_communal)
     ]
     if not korridore:
         return []
