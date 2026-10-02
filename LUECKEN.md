@@ -2364,3 +2364,120 @@ dieselben 6 roten wie § 21.1/§ 23.6 (3 × `test_keine_leuchten_in_wohnung_priv
 - **Platzierungs-Rückfall ohne `CAD_Symbole/photometrie` ist stumm** (24.4): `build_default_bundle` fällt ohne Katalog auf
   isotrop zurück, ohne Warnung in `bericht.md`. Leonis/gemeinsam (registry), gemeldet.
 - `Projekte/_ergebnis/` nicht neu erzeugt (Verifikation über den Runner; Prüfstrecke am Abschluss).
+
+## 25. Review 1 — Abschnitte 0–2 (adversarial, Kopf `5f15955`)
+
+Geprüft mit eigenem Code (eigene Runner-Kopie `provider.parse(dxf, "")` + Default-Platzierung je Plan allein,
+seriell, Am Rain und Muthgasse allein; Vorher = `git archive dad7bbd` von `src/` mit `CAD_Symbole/photometrie`
+daneben, Nachher = Arbeitsbaum `5f15955`; eigener Vergleich je Raum/Tür/Ausgang/Segment/Leuchte, eigene
+Kürzel-Stichprobe über alle TEXT/MTEXT des Modellraums, direkter ezdxf-Scan von Modell-, Papierbereich und
+Blöcken). Runner, JSON und Skripte liegen im Session-Scratch, nicht im Repo.
+
+**(1) Diff `cadb537..5f15955`:** `raumerkennung/` (`freiflaeche`, `kaskade`, `kuerzel_beleg` neu, `kuerzel_entscheid`,
+`provider`), Tests (nur ergänzt: 0 gelöschte Zeilen unter `tests/`), `LUECKEN.md`, 12 PNG unter
+`Projekte/_ergebnis/AmRain_*/unbekannt/`. Kein Contract, kein fremdes Paket, kein Owner-Import, keine lokalen Pfade
+(Diff und Commit-Texte durchsucht). **Kein neuer RaumTyp:** `raumtyp.py` unverändert, jedes Label kommt aus
+`raumtyp_flags` (alle 13 `RoomType` des Ports stehen in `_TYP_MAP`, der `text.upper()`-Rückfall kann nicht greifen);
+`MEHRDEUTIG` und `_TROCKEN` nennen nur bestehende Kanon-Namen. Keine Schwelle, kein Soll, kein xfail/skip angefasst. Je
+Punkt ein Commit (`dad7bbd` nur Doku/Bilder, `8748e24`, `5f15955`) mit zitiertem Rot-Lauf; letzte Zeile
+`Co-Authored-By` wie gefordert. Zusätzlich nachgesehen: die vier neuen Testdateien **80 passed in 167.87s**, ruff
+„All checks passed!".
+
+**(2) Am Rain OG4 allein (Kopf `5f15955`, DXF sha256 `f3d31546…` = Zip-Kopie):** 28 Räume, `rest_2` 40,2 m²
+**STIEGENHAUS** (Flags 11, ALLGEMEIN_ERSCHLIESSUNG; im Polygon die polygonlosen Stempel VR 8,52 / VR 6,87 /
+STGH 32,44), **1 Stiegenhaus, 2 `stair_exit`** (`exit_tuer_27`, `exit_tuer_28`), **20 Leuchten** (rz 12, SL 8, 5 in
+`rest_2`), GRAPH 6 + FALLBACK 3, Türen 30/59, keine Ausgangs-Warnung, `rest_6` 1,7 m² WC. Vorher (`dad7bbd`): 13
+Leuchten, 0 Ausgänge, 0 Stiegenhäuser, FALLBACK 4. = § 23.3 und Gegenprobe § 20.4. Bestätigt.
+
+**(3) Kürzel-Stichprobe** (Einfügepunkt gegen die Nachher-Polygone; 46 Normtexte mit Wörterbuch-Treffer, 1 222
+Vorkommen auf 13 Plänen):
+
+| Kürzel | Fundstelle | zählt? | Beleg |
+|---|---|---|---|
+| STGH | Am Rain OG4, `Raum-Beschriftung`, Handle `31ED7`, (12 320 / 12 909) | ja | in `rest_2` → STIEGENHAUS (oben) |
+| VR, AR, BAD, WC | Am Rain OG4 je 4× `Raum-Beschriftung` | ja | alle 16 in Räumen (VORRAUM/ABSTELLRAUM/BAD/WC) |
+| LOGGIA (Stempel) | Am Rain OG1 `frei_4`, OG1 `rest_4` | ja | → BALKON (Kanon, Wörterbuch `loggia`) |
+| TREPPENHAUS | Am Rain UG `rest_23` (Stempel 29,8 m², dominant 62 %) | ja | → STIEGENHAUS gegen „Garage 2" |
+| SCHLEUSE | Am Rain UG `rest_18` | ja | → SCHLEUSE |
+| KIWA | Am Rain EG 3× in Räumen | ja | → KINDERWAGENRAUM (unverändert, Räume schon typisiert) |
+| **Plankopf: „Erdgeschoss-STG4/5/6"** | Am Rain EG, **Papierbereich** `Layout2`, Layer `ET_LEGENDE - Wohnung$0$800_AL_ALLG_L` (Viewport-Titel) | **nein** | `kuerzel_typ` → STIEGENHAUS, aber nur der Modellraum wird geladen; zusätzlich trifft der Layer `_ZONEN_LAYER` (`LEGEND`). Papierbereiche aller 13 Pläne: nur diese 6 Treffer |
+| **Legende: „AR", „VR", „Stiegenhaus"** | Rennweg EG, Archicad-Zonenstempel-Legende als INSERT-ATTRIB (Handles `1D2`, `22A`, `240`) bei (11 814 197 / 355 053 689), ≈ 0,7 km westlich / 1,2 km südlich der Plan-Bounds | **nein** | ATTRIB wird von `kuerzel_texte` nicht gelesen, Punkt in keinem Polygon; Rennweg EG/OG3 feldgleich |
+| **Summenblöcke neben dem Gebäude** | Am Rain, `Raum-Top-Beschriftung`: „Loggia" 105×, „Terrasse/Balkon" 89× außerhalb jedes Polygons | **nein** | nur über das Polygon-Kriterium — **nicht** über die Form-Regel (25.6 b) |
+| HT (Elektro) | Am Rain OG3/OG4, `E_Beschriftung`, 112× | nein | → TECHNIK, alle bei x ≈ 34 600 m (Elektro-Overlay in anderem Koordinatensystem), in keinem Polygon |
+
+**(4) Blast 13 Pläne (`dad7bbd` → `5f15955`, je Plan allein):** **56 Typwechsel** (= 49 aus § 23.4 + 7 `frei_*` aus
+§ 24.4; alle UNBEKANNT → Typ, kein typisierter Raum verliert seinen Typ), **Leuchten 560 → 596**, `stair_exit`
+23 → 39, `final_exit` 16 = 16, Stiegenhäuser 42 → 44, Räume weg/neu 0; Rennweg EG/OG3, Mollgasse EG/1KG/2KG,
+Muthgasse E2 feldgleich (nur die `kuerzel:`-SR-Warnungen Barawitzka `raum_27`, Muthgasse `raum_52`/`raum_71`);
+Laufzeit/Spitze wie § 24.5 (EG 319 s / 2,71 GB, Muthgasse 251 s / 1,79 GB). Jeden Typwechsel mit den Kürzel-Texten und
+polygonlosen Stempeln im Polygon selbst nachgesehen: 55 plausibel, **1 widerlegt (UG `rest_7` → GARAGE, 25.6 a)**.
+Regelkonform, aber im Bericht zu nennen (Polygon fasst mehr, R-05 b): UG `rest_3` 45,8 / `rest_5` 56,8 / `rest_8`
+152,5 / `rest_32` 90,0 m² GANG enthalten je den Stempel „ELEKTRO" (Kanon-Kandidat § 23.1 d) — die Elektroräume laufen
+als GANG mit; UG `rest_6` 87,5 m² SCHLEUSE enthält HAUS1–5 und KELLERABTEILE 1; OG1 `rest_19` 14,5 m² GANG (Stempel
+GANG 3,06 m² + KOCHNISCHE). Alle in fail-safe-Richtung (Erschließung mit Notlicht). **Leuchten-Verluste je Raum:** 8
+Räume, keiner mit Typwechsel — Platzierung entlang neuer GRAPH-Wege (UG `raum_29` STIEGENHAUS 3 → 2, `rest_12` GANG
+1 → 0, `rest_17` GANG 2 → 1, `raum_13` SCHLEUSE 2 → 1, `raum_38` GANG 24,7 m² 1 → 0; OG1 `raum_59` VORRAUM 4 → 2,
+`rest_24` GANG 3,2 m² 1 → 0; OG4 `rest_1` GANG 2 → 1): von keiner Raumerkennungs-Regel gedeckt, sondern Leonis-Lane
+(§ 23.7 gemeldet); drei Fluchtweg-Räume enden ohne Leuchte. **Zwei Klassen-/Wohnungswechsel ohne Typwechsel:** OG1
+`raum_61` GANG 21,7 m² (top_38 → keine Wohnung, Klasse None → ALLGEMEIN_ERSCHLIESSUNG, Leuchten 1 → 2) und UG `raum_22`
+GANG 16,5 m² (top_2 → keine, Leuchten 2 → 4) — Folge neuer Türrollen (`wohnungseingang`) an frisch typisierten
+Nachbarn (OG1 `rest_6` WOHNZIMMER, UG `rest_5`/`rest_8`); in § 23.4 als Mitgliedswechsel geführt, fail-safe
+(Notlicht-Gewinn), aber ein Wohnungs-Gang wird zur Erschließung → Board 1 Leonis. Fluchtweg-Warnungen UG 10 → 44, EG
+12 → 21 wie § 23.4.
+
+**(5) Die 6 Stempel-Räume und die 12 Bilder:** eigener Lauf bestätigt § 24.4 Zeile für Zeile (EG `frei_1` VORRAUM,
+`frei_2` ABSTELLRAUM, OG1 `frei_1`/`frei_4` BALKON, OG1 `frei_5` UNBESTIMMT mit `kuerzel:`-Warnung „nicht eindeutig
+— »BAD«, »GANG« … kein dominanter Stempel", OG3 `frei_1` VORRAUM; dazu OG1 `frei_3`, OG2 `frei_1` VORRAUM ohne
+Flächenzeile; EG `frei_3`/`frei_4`, OG1 `frei_2`, OG4 `frei_1` UNBEKANNT; alle ohne Wohnung, Leuchten 0 → 0). Alle 12
+PNG angesehen: Raum magenta, Stempeltext lesbar, wo einer liegt; Nachbarn/Türen wie in der Tabelle § 22. Am Bild OG1
+`frei_5`: die Wände zwischen Kochnische, Bad und Gang sind gezeichnet (Wandlayer), nur nicht als Wandkörper erkannt —
+Polygonform, nicht Typregel (§ 24.7).
+
+**(6) Gate:** `pytest -m gate tests/gate` **3 passed, 1 xfailed** (105 s). `gate_messung` auf dem sauberen Kopf
+(`messung_5f15955_review1.json`, `commit_head 5f15955`, `arbeitsbaum_src_scripts_sauber true`, 59,4 s), `pruefe_gate`
+gegen `nullmessung_f15d03f.json`: **nur (3) `M4.einraum` DG2 0 → 1**; M17 **18/18 BESTANDEN**; alle Messfelder außer
+`meta` gleich `messung_e0c820d`, `messung_dad7bbd-dirty-23` und `messung_8748e24-dirty-24`.
+
+### 25.6 Befunde (Widerlegung und Offenes)
+
+- **(a) Am Rain UG `rest_7` 8,7 m² → GARAGE ist falsch (widerlegt, offen).** Das Polygon ist der Elektroraum:
+  Raum-Beschriftung „9.56 m²" liegt im Polygon, der Stempel „ELEKTRO" 0,1 m außerhalb, Nachbarn `raum_31` STIEGENHAUS
+  42,3 m² und `raum_36` ABSTELLRAUM (Fahrradraum) 101,9 m², Türen `tuer_194`/`durchgang_28` zu `raum_36`. Im Polygon
+  liegen sonst nur Elektro-Beschriftungen auf Layer `E_Bauangaben` (ZP-15 ×2, Trennkasten, Allgemein, Sibel 2, Sibel 5,
+  **„Garage 1"** — Stromkreis-/Verteilerbeschriftung). Die Kürzel-Regel liest „Garage 1" als Raumkürzel →
+  GARAGE (ALLGEMEIN_NEBENRAUM, Flags 01), 1 Sicherheitsleuchte neu (0 → 1). Kein Notlicht-Verlust, aber falscher Typ
+  (LB-Regel `notlicht_kw_garage` adressiert GARAGE; der Elektroraum hat keinen Kanon-Typ und bliebe nach § 23.1 d
+  UNBESTIMMT). § 23.4 führt den Wechsel unkommentiert; § 23.1 (a) nennt „GARAGE 1/2 (Layer E_Bauangaben)" in
+  untypisierten Räumen ohne Folge. Ursache: der Owner-Ausschluss (Legende, Plankopf, Schnitt-/Achsmarken) deckt
+  Elektro-/Verteilerbeschriftung nicht, `_ZONEN_LAYER` kennt keine Elektro-Layer. **Nicht korrigiert — Regelentscheid
+  Owner:** Option A Layer-Ausschluss für Elektro-Beschriftung (`E_Bauangaben`, `E_Beschriftung`; Wirkung auf den 13
+  Plänen: genau `rest_7` → UNBEKANNT, „HT" 112× liegt ohnehin außerhalb, „Garage 2" in `rest_23` unterliegt dem
+  dominanten TREPPENHAUS), Option B Positivliste der Raumlabel-Layer je Plan-Dialekt. Die 13 getrackten Ergebnisse der
+  Prüfstrecke (Phase A, Vergleichsbasis) tragen den Fehler mit, solange er offen ist. **P1 · Selman (Owner).**
+- **(b) Summenblock-Zeilen passieren die Form-Regel — § 23.1 (c) ist in diesem Punkt falsch (offen).** „Loggia" (ein
+  Wort) und „Terrasse/Balkon" (zwei Teile, beide im Wörterbuch) sind der Form nach Kürzel (`kuerzel_typ` → BALKON bzw.
+  TERRASSE); ausgeschlossen sind nur „Wohnfläche (inkl.Loggia)" und „Terrasse/Balkon/Garten". Gemessen (13 Pläne):
+  „Loggia" auf `Raum-Top-Beschriftung` 124×, davon **5 in untypisierten Räumen** (EG `rest_11` ×3, `rest_23`, `rest_29`
+  — dort machen sie die Räume zusammen mit den „TERRASSE"-Stempeln „nicht eindeutig" → UNBESTIMMT statt TERRASSE; § 23.4
+  nennt dafür „Terrasse/Loggia/Garten-Stempel mehrerer Tops", tatsächlich ist „Loggia" dort die Summenzeile), 10 in
+  TERRASSE-, 3 in BALKON-, 1 in STIEGENHAUS-Räumen (alle gestempelt, keine Wirkung), 105 außerhalb; „Terrasse/Balkon"
+  90×, 89 außerhalb, 1 in OG3 `raum_41` STIEGENHAUS (gestempelt). Auf den 13 Plänen also **kein falscher Typ**, aber ein
+  Summenblock mit nur einer „Loggia"-Zeile in einem untypisierten Polygon würde BALKON (AUSSEN, ohne Notlicht) typen.
+  Ebenso der Form nach Kürzel: „Zul.Müll" (Lüftung) → MUELLRAUM (1×, in keinem Raum). Owner (Form-Regel oder Layer).
+  **P2 · Selman.**
+- **(c) Statische Klasse der `frei_*` umgeht K4/S7 (Abschnitt 2, offen).** `frei_*` VORRAUM bekommen WOHNUNG_PRIVAT
+  statisch (`nutzungsklasse_fuer`); Kaskaden-VORRAUMs in gleicher Lage (keine Türanbindung, kein Aufenthaltsraum in
+  der Wohnung) bleiben nach K4 „Klasse offen, Notlicht bleibt" — EG `rest_3` VORRAUM (`top_20`, Klasse None, Warnung
+  „k4: … G4: kein Aufenthaltsraum in top_20") und 6 weitere VORRAUM auf EG. Gemessen ohne Leuchten-Folge (596 = 596),
+  aber Fluchtweg-Räume (Flags 11) mit KEIN_RAUM-Türen erhalten die private Klasse ohne die K4-Sicherung (G4).
+  Owner-Frage: K4 auch für `frei_*`? **P2 · Selman.**
+- **(d) ATTRIB-Kürzel ungelesen (gemerkt).** `kuerzel_texte` liest nur TEXT/MTEXT des Modellraums; Zonenstempel als
+  INSERT-ATTRIB (Rennweg, Mollgasse `01-SQM`) kommen nur über `finde_stempel` (mit Flächenzeile). Ein ATTRIB-Kürzel
+  ohne Flächenzeile bliebe unsichtbar — auf den 13 Plänen kein Fall (alle ATTRIB-Stempel tragen AREA). P3.
+- **(e) Platzierung:** 3 Fluchtweg-Räume ohne Leuchte nachher (UG `rest_12` GANG 1,7 m², `raum_38` GANG 24,7 m², OG1
+  `rest_24` GANG 3,2 m²) und 2 Wohnungs-Gänge, die Erschließung werden (OG1 `raum_61`, UG `raum_22`) — Leonis, Board 1
+  (§ 23.7).
+
+**Fazit Review 1:** Abschnitt 0 und Abschnitt 2 bestätigt; Abschnitt 1 bestätigt in Regel, Abnahme (OG4), Gate und
+Blast-Zahlen, **widerlegt in einem Typwechsel** (UG `rest_7`, a) und in einer Doku-Aussage (Summenblock, b). Keine
+Bänder gesenkt, Gate wie erwartet. Nichts am Code geändert (a–c sind Regelentscheide des Owners).
