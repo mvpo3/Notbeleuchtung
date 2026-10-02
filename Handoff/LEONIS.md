@@ -25,6 +25,12 @@ NACH Quota-Reset (ab 03.10. ~19:10). Owner: jetzt committen/pushen, Probelauf na
 **RESUME-TODO:** nach 19:10 `codex review --commit bce2922 -c model="gpt-5.5"` (bzw. HEAD)
 laufen lassen, Findings sichten, ggf. im Verlauf/COORDINATION vermerken.
 
+**Konto/Login (zur Klarstellung, Owner-Frage):** NICHT neu eingeloggt, nichts an `~/.codex`
+geändert. Bestehender Login von früher = `codex login status` → „Logged in using ChatGPT".
+Codex läuft über das **ChatGPT-Abo-Kontingent** (nicht pay-per-token-API: `OPENAI_API_KEY`
+ist `unset`) → **0 € API-Kosten**; der eine Validierungs-Aufruf zehrte vom Abo-Kontingent,
+das schon am Limit war → daher der Stopp. Kein `codex login`, kein `codex update` gemacht.
+
 **Doku-Ort der Regel:** `CLAUDE.md` Sektion „Codex-Review-Workflow (BINDEND)" (nach
 Arbeitsweise) + Verlauf `docs/CHANGELOG_Platzierungslogik.md` (Eintrag 2026-10-02).
 
