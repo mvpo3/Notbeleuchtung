@@ -3346,7 +3346,8 @@ Keine Schwelle, kein Soll, kein Marker gelockert; kein Contract-Feld, kein neuer
   „EI2 30-C" mit Feuerwehrtableau ins Freie und ist der Hauptausgang des Osttrakts — dann gehört der Streifen aus den
   Wandkörpern (Layer-Regel, Blast über alle Pläne) und `exit_1` kommt zurück. Bis dahin: Innenhof, kein Ausgang
   (Owner: konservativ, Geometrie entscheidet). Weg fielen dadurch nur Leuchten an der Tür selbst (27.6), kein Weg.
-  Dazu die Türerkennung: die Doppeltür hat kein Tür-Objekt (§ 13 (iii)).
+  Dazu die Türerkennung: die Doppeltür hat kein Tür-Objekt (§ 13 (iii)). **Review 3 (§ 29.1 b):** die Planbelege
+  sprechen für eine Durchfahrt ins Freie (RIGOL auf dem Streifen, EIN-/AUSFAHRT, Gehsteigüberfahrt, Stützen zum OG).
 - **Loch mit Außen-Indiz an der Hülle ist `offen` (P2 · Selman, Owner-Frage „zählt ein Zaun zur Gebäudekontur?"):**
   27.1 — ein Innenhof hinter einer dünnen Wand an der Straßenkante würde seine Türen AUSSEN machen (synthetisch
   gemessen); die einfache Bedingung `not ist_loch` träfe heute nur die eingezäunten Gärten von Am Rain EG (4 Türen,
@@ -3636,3 +3637,143 @@ Leuchten-Sperre mit Hinweis im Bericht (Auftrag).
 > `pipeline.run`/API nicht — die Leuchten-Sperre greift nur in der Prüfstrecke. Vorschlag: ein Feld am `RaumModell`
 > (z. B. `massstab_unsicher: bool` oder eine Warnungsliste), das die Hauptengine vor der Platzierung prüft. Bis zum
 > Entscheid bleibt es ein Provider-Attribut.
+
+---
+
+## 29. Review 3 — Abschnitte 4–6 (adversarial, Kopf `9f727a5`)
+
+Geprüft mit eigenem Code (Agent claude-opus-5-5 / xhigh, Fallback für Fable 5.1). Eigene Runner-Kopie
+(`provider.parse(dxf, "")` + Default-Platzierung, je Plan allein, seriell, Am Rain und Muthgasse allein, Umgebung ohne
+`NOTBEL_KI*`; der geladene `DxfPlan` wird im Provider abgegriffen: Faktor, Quelle, Flag). Vorher = `git archive
+7ea3024`, Nachher = `git archive 9f727a5` (je `src/` + `CAD_Symbole/` außerhalb des Repos) — ein Vergleich über alle
+drei Abschnitte. Dazu eigene Defekt-DXF, eigene Kontur-/Loch-Rechnung (runde Puffer, ohne Vereinfachung), eigener
+Türbogen-Zähler direkt über ezdxf (eigene Regex, eigene Block-Rekursion), eigener Stempel-Abgleich. Skripte und JSON
+im Session-Scratch, nicht im Repo.
+
+**(1) Diff `7ea3024..9f727a5`** (`fd5dedb`, `54ba4b3`, `9f727a5`; Arbeitsbaum sauber, nicht gepusht, 11 Commits vor
+`origin/luecken-2026-09-30`, `c3b8186` Vorfahr): `raumerkennung/` (`dxf_load`, `ausgaenge`, `provider`),
+`scripts/plan_pruefen.py` (nur Leuchten-Sperre und Hinweis bei „Maßstab unsicher", Entscheid 7), Tests, `LUECKEN.md`,
+4 PNG unter `Projekte/_ergebnis/Mollgasse_EG/ausgaenge/`. Kein Contract, kein fremdes Paket, kein neuer RaumTyp, keine
+lokalen Pfade (Diff und Commit-Texte durchsucht); `gen_schema.py --check` „schema in sync", `ruff check .` „All checks
+passed!". Je Abschnitt ein Commit mit zitiertem Rot-Lauf (§ 26.2, § 27.5, § 28.4), letzte Zeile `Co-Authored-By` wie
+gefordert (`fd5dedb` Fable 5.1, `54ba4b3`/`9f727a5` Opus 5.5). **Bänder:** der strict-xfail S4g a ist unverändert
+(nur der Grundtext; bleibt xfail, kein XPASS — also kein Marker zu entfernen); neu sind nur die Schwellen der neuen
+Türkalibrierung (≥ 3 Bögen und Band 600–1300 mm wie die alte Probe, MAD ≤ 25 % neu); geändert sind zwei Pins, deren
+Verhalten die Entscheide ersetzen (D-04-Pin `test_mm_faktor_aus_insunits_steht_in_den_warnungen`, Spion im Harness
+`test_s7_wohnungsklasse._eingabe` hinter `nur_ins_freie`) — keine Lockerung.
+
+**(2) Abschnitt 4 — eigene Defekt-DXF** (Gebäude 20 × 15 m auf `A-WALL`, zehn defekte Entities): LWPOLYLINE `nan`,
+LINE `inf`, LWPOLYLINE 1e15, LINE −1e15, ARC mit `inf`-Mittelpunkt (alle `A-WALL`), HATCH-Polylinienpfad mit `nan`,
+HATCH-Kantenpfad mit `nan` (beide `A-WALL`), INSERT mit `nan`-Einfügepunkt (`A-FURN`), TEXT `nan` (`A-ANNO`), CIRCLE
+Radius 1e15 (`A-FURN`). `parse` und `plan_pruefen` laufen durch (2 Räume, Bounds (0, 0)–(20 000, 15 000)); **9 von 10**
+stehen in bericht.md unter „## Warnungen" als `- entity_verworfen: <Typ> Handle <h> Layer <l> — Koordinate <w>` (je
+Handle und Layer geprüft). Der HATCH-Kantenpfad bleibt ohne Warnung im Plan, ohne Abbruch (bekannt, § 26.5 P3). Blast:
+**0 verworfene Entities auf allen 20 Plänen**. Befund (a) unten.
+
+**(3) Abschnitt 5 — Mollgasse EG selbst geparst (Kopf `9f727a5`).** Eigene Kontur: 5 Komponenten 364,5 / 168,4 /
+42,1 / 21,8 / 1,2 m² (Engine 364,6 / 168,8 / 43,1 / 22,4 / 1,2), Löcher ≥ 5 m² mit runden Puffern 9 (73,0 / 20,3 /
+19,8 / 19,1 / 15,4 / 13,6 / 7,9 / 6,7 / 5,9; die Engine mit Gehrungs-Puffern 11) — **Loch 0 = 73,0 m² in beiden**.
+`raum_51` STIEGENHAUS 122,4 m², davon 69,6 m² in Loch 0 (95,3 % des Lochs), 29,4 m² außerhalb der Kontur, 10,4 m² in
+`offen` — = § 27.2. Die vier Ausgänge (Bilder angesehen):
+
+| Ausgang | eigene Messung | Freie im Umkreis 500 mm (Engine- / eigene Kontur) | Urteil Review 3 |
+|---|---|---|---|
+| `exit_1` | in Loch 0, 1 920 mm innerhalb der Kontur, in `raum_51` | nein / nein | Regel richtig angewandt; **Lochgrenze fraglich → Befund (b)** |
+| `exit_2` | in der Kontur, in keinem Loch und keinem Raum, 1 835 mm | nein / nein | bestätigt: kein Durchgang (Flügel von `exit_1` + Müllraumtür) |
+| `exit_3` | 930 mm außerhalb, 357 mm neben `offen`, in `raum_51` | ja / ja | bestätigt: Garten-Nische, bleibt `final_exit` |
+| `exit_4` | außerhalb (912 mm, Engine-Kontur 978), in `offen`, in `raum_41` | ja / ja | bestätigt: Garten, bleibt `final_exit` |
+
+`raum_51` ist nicht der Innenhof (F-13 wie § 27.2 entschieden). **Rennweg DG1 (11):** 2 Ausgänge
+(`exit_durchgang_6`, `_7`), 0 durch den Liftschacht. **Blast 20 Pläne `7ea3024 → 9f727a5`:** DXF-SHA je Plan gleich;
+Räume, Türen, Segmente, Anker, Stiegenhäuser, Bounds, korrigierte Rollen 20/20 gleich; Ausgänge und Leuchten nur auf
+Mollgasse EG anders: `final_exit` 8 → 6 (`exit_1`, `exit_2`), `stair_exit` 1 (`exit_tuer_68`), Wege LINIE 103 /
+GRAPH 14 / FALLBACK 3 gleich, **Leuchten 51 → 48** (rz 24 → 23, SL 27 → 25; weg: rz in `raum_51` (2 703 600 /
+1 512 233), SL (2 704 280 / 1 521 765) vor `exit_1`, SL (2 704 365 / 1 524 040) vor `exit_2`), zwei Ausgangs-Warnungen
+„mündet nicht ins Freie". Kein Plan verliert alle Ausgänge (Mollgasse EG behält 6 `final_exit`). = § 27.6.
+
+**(4) Abschnitt 6.** **Regelzitat an der Quelle:** `origin/leonis/demo-l-gebaeude` (`8257ff9`)
+`knowledge/notbeleuchtung/regeln.md:282-285` und `:347-349`, `origin/leonis/kopplung-raumerkennung-c3b8186`
+`regeln.yaml:352` — wörtlich wie § 28.1. Eigene Suche über alle `origin/leonis/*`-Refs (`knowledge/notbeleuchtung/`,
+`platzierung/`) nach Wohnungstür/Türbreite: **keine Zahl für die Wohnungstür**, einzige Türbreiten-Konstante
+`platzierung/bausteine.py TUER_MAX_BREITE_MM = 1300.0`. **Türbögen unabhängig gezählt** (Regex `T(Ü|UE)R|DOOR` auf Layer
+oder Blockkette, Tiefe ≤ 3, Schwenk 60–120°):
+
+| Plan | Türbögen | Median | MAD/Median | Spanne | alte Probe, Bögen im Band bei Faktor 1 / 10 (Dekade 10 aus) | Faktor nachher |
+|---|---|---|---|---|---|---|
+| Rennweg EG (Gate) | 4 (Layer `New_Archicad Doors…` in Blöcken) | 890 mm | 5,6 % | 840–940 | 0 / 24 (`New_065 Möbel Einrichtung` 24) | 1 |
+| Am Rain OG4 | 27 (`Türen`) | 800 mm | 0 | 560–900 | 53 / 174 (Möblierung 112, Einbaumöblierung 57) | 1 |
+| Am Rain OG3 | 68 (`Türen`) | 800 mm | 0 | 560–940 | 119 / 163 (Einbaumöblierung 161) | 1 |
+| Am Rain EG | 147 (`Türen`) | 800 mm | 0 | 560–940 | 309 / 333 (`Fenster-Tür_NR` 278) | 1 |
+
+**Plausibilität:** Rennweg EG 8 Stempel (`111,03 m2` GESCHÄFTLOKAL, `12,92 m2` MÜLLRAUM …) — Raumfläche/Stempel je
+Raum 1,000 (8/8); Am Rain (alle m²-Texte des Modellbereichs, Summenzeilen eingeschlossen, darum grob) Median
+Raum/Stempel 1,09 / 1,39 / 1,22 — bei Faktor 10 läge er um 100; Raumflächen Median/Max OG4 5,3 / 52,1, OG3 5,2 / 59,6,
+EG 6,0 / 293,5 m². Wohnungseingänge mit Blatt ≤ 1 300 mm: Rennweg EG 840; OG4 3 × 800; OG3 7 × 800 + 8 × 900; EG
+3 × 800, 3 × 900, 940 — = § 28.5. **Die 9 anderen Pläne der Prüfstrecke:** Barawitzka, Mollgasse EG/1KG/2KG, Muthgasse
+Faktor und Quelle gleich (`spanne`, `spanne+tuerbogen`), Rennweg OG3 und Am Rain UG/OG1/OG2 nur die `mm_faktor`-Zeile
+(„Türprobe: 1 | keine" → „Türkalibrierung (…) bestätigt"), sonst feldgleich. Rennweg DD → „Maßstab unsicher" (0
+Türbögen), wie § 28.5. Befund (c) unten.
+
+**(5) Gate** (sauberer Kopf `9f727a5`): `pytest -m gate tests/gate` **3 passed, 1 xfailed** (106 s); `gate_messung`
+(`_arbeit/gate/messung_9f727a5-review3.json`, `commit_head 9f727a5`, `arbeitsbaum_src_scripts_sauber true`, 62,2 s),
+`pruefe_gate` gegen `nullmessung_f15d03f.json`: **nur (3) `M4.einraum` DG2 0 → 1**; M17 **18/18 BESTANDEN**; (11) DG1
+2 Ausgänge, 0 durch den Liftschacht (UG 2, EG 5, OG1 2 — je 0); alle 8 Messfelder außer `meta` gleich
+`messung_54ba4b3-dirty-28.json` und gleich `messung_ccd3f96-dirty-25c.json` (Review 2) — die drei Abschnitte ändern
+keine Gate-Größe.
+
+**(6) Volle Suite** (sauberer Kopf, allein, nach Blast und Gate): `pytest -q -p no:cacheprovider -rfxXs` **7 failed, 2412 passed, 12 skipped,
+6 deselected, 15 xfailed, 3 warnings in 1333.72s (0:22:13)**, 0 xpassed — rot genau 3 × `test_keine_leuchten_in_wohnung_privat`
+OG1/OG2/DG1, `test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell`, die 2 S4c-Pins `test_bara_raum_19`/`_30`
+und `tests/normwissen/test_quellenblock_e07_rl4.py::test_kein_contract_wert_und_kein_konsument` (d); S4g a unter den
+15 xfailed. = § 28.6.
+
+### 29.1 Befunde
+
+- **(a) Abschnitt 4: Phantom-Koordinate in einer Blockdefinition bricht die Prüfstrecke ab (neu, offen).** INSERT auf
+  `A-WALL` mit gültigem Einfügepunkt, in der Blockdefinition eine LINE bis x = 1e15: `lade_dxf` prüft nur den
+  Architektur-Raum (§ 26.1), die LINE bleibt; `parse` läuft (Bounds richtig), aber `plan_pruefen` bricht beim Plan-Bild
+  ab: `plan_pruefen.py:1644 → _speichern:248 → ValueError: cannot write empty image` (`01_render.png`). `nan` in der
+  Blockdefinition bricht nicht ab. § 26.5 führt Block-Inhalte als P2 ohne diese Folge. Entscheid 4 („Entities mit nan,
+  inf oder einer Koordinate über 1e9 mm beim Laden verwerfen") ist für Block-Inhalte damit nicht erfüllt. **Nicht
+  korrigiert:** die Grenze in Block-Einheiten ist ein Regelentscheid (Block-Koordinaten sind lokal, die Einfügung kann
+  skalieren — `1e9 / factor` wie im Raum oder fest `1e9` in Block-Einheiten), dazu Blast über alle Pläne. Vorschlag:
+  `_verwerfe_defekte` zusätzlich über alle Blockdefinitionen außer dem gewählten Raum, Grenze `nan`/`inf` und
+  `|Koordinate| > 1e9` in Block-Einheiten, Warnung mit Blockname. **P1 · Selman.**
+- **(b) Abschnitt 5: `exit_1` ist nach den Planbelegen eher eine Durchfahrt ins Freie als ein Innenhof (offen,
+  Owner-Frage § 27.9 mit neuen Belegen).** Loch 0 schließt nach Osten nur eine geschlossene LWPOLYLINE 200 × 15 760 mm
+  auf `01-ANS-G00-LEG-M0` (x 2 705,00–2 705,20 m, y 1 509,79–1 525,55 m) — genau zwischen den Enden der STB- und
+  LILA-Schraffuren des Nord- und Südtrakts (`02-FIL-*`, beide enden bei x 2 705,0 / 2 705,2). Ohne die `01-ANS`-Körper
+  verschwindet Loch 0 (dazu die Löcher 19,8 / 15,4 / 6,7 m²), `exit_1` liegt dann 1 137 mm **außerhalb** der Kontur.
+  Belege im Plan: auf dem Streifen die Beschriftung „RIGOL" (x 2 705,10 m, Layer `01-SYM`), 0,7 m östlich
+  „EIN-/AUSFAHRT", bei x 2 709 m „GEHSTEIGAUF-/ÜBERFAHRT"; in Loch 0 „GEFÄLLE 2%" und zweimal „STB SÄULE THERMISCH
+  GETRENNT ZU OG 01" (überbaute Fläche auf Stützen); das „GARAGENTOR" (`durchgang_30`, `raum_51`\|`raum_62`) ist nur
+  über Loch 0 erreichbar; an der Doppeltür „BLITZLICHT DBA FEUERWEHRTABLEAU DRUCKKNOPFMELDER". Die `ANS`-Layer tragen
+  Außenanlagen (`01-ANS`: 73 LWPOLYLINE, 6 HATCH ANSI31, INSERT `mülltonne_1100l`, kein Text; `02-ANS-…-Rigol`; das
+  Zauntor `tuer_68` auf `02-ANS`). Nach Entscheid 6 („Ein offener Durchgang im Gebäudeumriss (Durchfahrt, offene
+  Passage) ist ein Ausgang, wenn er ins Freie führt") wäre `exit_1` dann `final_exit`; heute fehlen dort 2 SL und 1 rz
+  (3). Die Regel `nur_ins_freie` selbst ist richtig; falsch ist wahrscheinlich die Lochgrenze. **Nicht korrigiert:**
+  Wandkörper-Layer-Regel (`*-ANS-*` kein Wandkörper) mit Blast über alle Pläne = Owner-Entscheid (§ 27.9). Bis dahin:
+  der Naht-Test `test_mollgasse_eg_innenhof_doppeltuer_ist_kein_ausgang` pinnt `exit_1` als Innenhof, und der
+  vorformulierte Board-Text an Enis (§ 27.8) nennt die Doppeltür „EI2 30-C" als Innenhof-Beispiel — **vor dem Eintrag
+  in Phase B anpassen**. **P1 · Selman (Owner).**
+- **(c) Abschnitt 6: Widerspruch Spanne ↔ Tür ohne Probe der Gebäudegröße (offen).** Liefert die Wand-Spanne genau
+  eine Dekade, entscheidet eine andere Türdekade auch dann, wenn das Gebäude damit aus 15–500 m fällt —
+  `test_tuerkalibrierung_widerspricht_spanne` pinnt 100 m Spanne + drei Türbögen r 90 → Faktor 10 → ein 1-km-Gebäude.
+  Auf den 20 Plänen kein Fall (kein Faktor ändert sich). Entscheid 7 nennt als unplausibel nur „zu wenige Türen, zu
+  große Streuung". Vorschlag: führt der Türfaktor die Spanne aus 15–500 m, dann „Maßstab unsicher" statt Türfaktor.
+  **P2 · Selman (Owner).**
+- **(d) Vorbestehend, nicht aus 4–6:** `tests/normwissen/test_quellenblock_e07_rl4.py::test_kein_contract_wert_und_kein_konsument`
+  (`raumerkennung/ki_backends.py:58`, `be9cc57`) ist rot und steht **nicht** auf der Liste der bekannt roten Tests des
+  Auftrags (4 + 2 S4c-Pins) — vor dem Push in Phase B beheben (Glob durch feste Pfadliste) oder mit Enis abstimmen
+  (§ 26.4). **P1 · Selman.**
+- **(e) Gemerkt, kein Befund gegen 4–6:** eine Doppeltür am Grund einer 2 m breiten, 1,5 m tiefen Eingangsnische
+  (synthetisch, 500-mm-Wände) ist auf `7ea3024` wie auf `9f727a5` kein Ausgang und ohne Warnung: der Raster-Umriss legt
+  sie nicht an den Rand, die 1 200-mm-Schließung füllt die Nische (Türmitte 874 mm innerhalb der Komponente — auch
+  `nur_ins_freie` ließe sie nicht durch), die Tür bekommt keine AUSSEN-Seite. Ein Nischen-Eingang ins Freie hat so
+  keinen Ausgang. Auf den 20 Plänen nicht gesucht. P2 · Selman.
+
+**Fazit Review 3:** Abschnitt 4 bestätigt (kein Abbruch durch Modellbereich-Defekte, Warnung mit Handle und Layer),
+offen für Block-Inhalte (a). Abschnitt 5 bestätigt in Regel, Tests, Blast, Gate und für `exit_2`/`exit_3`/`exit_4` und
+`raum_51`; für `exit_1` sprechen die Planbelege gegen „Innenhof" (b, Owner). Abschnitt 6 bestätigt (Zitat, Faktoren,
+Türzahlen, Medianen, Plausibilität, Blast, Gate), offen (c). Keine Bänder gesenkt, Gate nur (3) DG2. Nichts am Code
+geändert (a–c sind Regelentscheide).
