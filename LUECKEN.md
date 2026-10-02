@@ -2481,3 +2481,151 @@ gegen `nullmessung_f15d03f.json`: **nur (3) `M4.einraum` DG2 0 → 1**; M17 **18
 **Fazit Review 1:** Abschnitt 0 und Abschnitt 2 bestätigt; Abschnitt 1 bestätigt in Regel, Abnahme (OG4), Gate und
 Blast-Zahlen, **widerlegt in einem Typwechsel** (UG `rest_7`, a) und in einer Doku-Aussage (Summenblock, b). Keine
 Bänder gesenkt, Gate wie erwartet. Nichts am Code geändert (a–c sind Regelentscheide des Owners).
+
+## 25a. Abschnitt 3 Teil A — KI-Zweitmeinung offline: Schnittstelle, Backends, Konfiguration, Cache (Entscheid 3; erledigt mit dem Commit dieses Eintrags)
+
+**Auftrag (Owner 2026-10-01, `docs/AUFTRAG_2026-10-01.md` § 3, Freigabe „Option 3, erweitert“):** „Modul mit
+Schnittstelle und beiden Backends, Konfiguration, Cache, … alle Tests mit synthetischen oder gespeicherten Antworten,
+Backend-Test mit der Limit-Meldung als Fall ‚Warnung, kein Abbruch‘." Phase A: **keine Live-Aufrufe** (Kontingent bis
+2026-10-03 19:10 erschöpft), kein Push. Teil A = das Modul ohne Verdrahtung in `provider.parse`; Herkunfts-Ausweis im
+Bericht, die Entscheidungsregeln „Erscheinungsbild ist Wahrheit" und die drei synthetischen Entscheidungs-Tests
+(Kürzel vs. KI, Notlicht-Verlust, die 6 Räume ohne Stempel) sind Teil B. Stand vorher `b61cb4d` (Review 1).
+
+### 25a.1 Voraussetzung nachgeprüft (ohne Aufruf)
+
+`codex exec --help` der installierten codex-cli 0.159.2 (Desktop-App-Bundle, nicht im PATH): Prompt `[PROMPT]` oder
+`-` = **stdin** („If not provided as an argument (or if `-` is used), instructions are read from stdin"); Bilder
+`-i, --image <FILE>...` (Mehrfachwert — deshalb je Bild `--image=<Datei>` als EIN Argument, sonst schluckt das Flag
+das folgende `-`); Antwortform `--output-schema <FILE>`; letzte Nachricht `-o, --output-last-message <FILE>`;
+`-s read-only`, `--ephemeral`, `--skip-git-repo-check`, `--json` (JSONL-Events), `-m <MODEL>`, `-c key=value`.
+Kein Live-Aufruf; die Limit-Antwort vom 2026-10-01 liegt als Fixture `tests/fixtures/ki/codex_limit.jsonl`
+(4 JSONL-Zeilen `thread.started` / `turn.started` / `error` / `turn.failed`, `thread_id` anonymisiert, PowerShell-
+Rauschen entfernt).
+
+### 25a.2 Modulaufbau (`raumerkennung/`, zwei Dateien, nichts Bestehendes geändert)
+
+- **`ki_zweitmeinung.py`** (anbieterneutral): `KiKonfig` · `RaumAnfrage` / `GeschossAnfrage` (Plan-Datei, Geschoss,
+  Quadrant, Bilder, Räume mit `engine_typ`, `beleg`, `merkmale`) · `RaumAntwort` (`raum_id`, `raum_typ` ∈ Kanon ∪
+  {UNBESTIMMT}, `sicherheit` 0–1, `bestaetigt`, `begruendung`) · `KiFehler` (`art` ∈ timeout | limit | login | format
+  | sonstig, `meldung`) · `Antwort` (Räume, `verworfen`, Fehler, `roh`, Modell, Quelle backend | cache | aus) ·
+  Protocol `ZweitmeinungBackend.frage(anfrage, modell=None) → Antwort` (runtime-checkable) · `kanon_typen()` =
+  `_TYP_MAP ∪ _EXTRA_DIRECT ∪ _EXTRA_OVERRIDE` aus `raumtyp.py` (dieselbe Maschinen-Quelle wie `docs/VOKABULAR.md` § 1
+  und `tests/contract/test_vokabular_doku.py`; **kein neuer RaumTyp**, UNBESTIMMT ist keiner, nur die erlaubte
+  Enthaltung) · `ANTWORT_SCHEMA` (JSON-Schema für `--output-schema`) · `parse_antwort(text, raum_ids)` (Code-Fence und
+  nackte Liste toleriert; je Raum verworfen bei fehlendem/falsch typisiertem Feld, Typ außerhalb Kanon, unbekannter
+  `raum_id`, `sicherheit` ∉ [0, 1], Dublette; kein JSON → `format`) · `baue_prompt(anfrage)` (Rolle, Geschoss/Quadrant,
+  Kanon-Liste, Ausgangs-Definition aus Abschnitt 5 wörtlich, Räume als JSON, Antwortform; **keine lokalen Pfade**;
+  `PROMPT_VERSION = "1"`) · `KiCache` · `Zweitmeinung` (Cache → Backend → Cache; Zähler `anfragen`, `treffer`;
+  `warnungen` als `ki: <art> — <meldung> …; Engine-Ergebnis bleibt unverändert, Räume ohne Typ bleiben UNBESTIMMT mit
+  Notlicht`; Backend-Ausnahme → `sonstig`; Fallback-Modell einmal bei `sonstig`/`format`/`timeout`, **nicht** bei
+  `limit`/`login` — die gelten kontoweit).
+- **`ki_backends.py`:** `CodexAboBackend` (`codex exec --json --ephemeral --skip-git-repo-check -s read-only -m
+  <modell> -c model_reasoning_effort=<effort> --output-schema <tmp> -o <tmp> --image=<Bild>… -`; Prompt über stdin;
+  `subprocess.run` mit **Argumentliste**, nie Shell-String; `cwd` = Temp-Ordner; Zeitlimit `zeitlimit_s` →
+  `TimeoutExpired` = `timeout`; Kindprozess-Umgebung ohne `OPENAI_API_KEY`/`ANTHROPIC_API_KEY`; JSONL-Parser liest
+  `error`/`turn.failed` → Fehlerart per Muster („usage limit|rate limit|quota|429" → limit, „logged in|login|auth|
+  401|403" → login, sonst sonstig) und `item.completed`/`agent_message` → Text, Rückfall auf die `-o`-Datei; fehlendes
+  Bild oder fehlendes Binary → `sonstig` ohne Aufruf) · `finde_codex(konfig_pfad)` = Konfiguration → `PATH` →
+  `%LOCALAPPDATA%/OpenAI/Codex/bin/*/codex.exe` (jüngstes zuerst) · `OpenaiApiBackend` = Gerüst (Klasse,
+  Konfiguration, liefert `KiFehler sonstig` „nicht freigeschaltet", kein Key im Repo, liest keinen) · Registry
+  `BACKENDS = {codex_abo, openai_api}` + `backend_aus_konfig(konfig)`; ein späteres `claude_abo` ist genau ein
+  weiterer Eintrag (Test hängt eine Dummy-Klasse ein, ohne Engine-Änderung).
+- Modell/Stufe immer explizit: `-m` und `-c model_reasoning_effort=…` stehen in jedem Aufruf, auch beim Fallback;
+  `KiKonfig` lehnt `effort` außerhalb low | medium | high ab (**nie xhigh für die Engine**).
+
+### 25a.3 Konfiguration (`KiKonfig`, Dataclass im Repo + Umgebung; kein Key, keine Login-Daten)
+
+| Schlüssel | Standard | Umgebung |
+|---|---|---|
+| `an` | **aus** (`False`) | `NOTBEL_KI=an` (auch `1`/`true`/`ja`; alles andere = aus) |
+| `backend` | `codex_abo` | `NOTBEL_KI_BACKEND` |
+| `modell` | `gpt-6-astra` | `NOTBEL_KI_MODELL` |
+| `effort` | `high` | — (nie xhigh, `ValueError`) |
+| `fallback_modell` | `gpt-5.6-sol` (`""` = keiner) | — |
+| `zeitlimit_s` | 300 | — |
+| `cache_pfad` | `knowledge/ki_cache/` (Repo-Wurzel) | — |
+| `prompt_version` | `"1"` (= `PROMPT_VERSION`) | — |
+| `codex_binary` | `None` → PATH → App-Bundle | `NOTBEL_KI_CODEX` |
+
+**Ohne KI läuft alles wie bisher — 0 Verhaltensänderung, belegt durch den Diff:** `git diff --stat b61cb4d` leer
+(keine bestehende Datei geändert; nur neue Dateien `ki_zweitmeinung.py`, `ki_backends.py`, Test, Fixture,
+`knowledge/ki_cache/README.md`), `grep ki_zweitmeinung|ki_backends` in `src/` und `scripts/` außerhalb der beiden
+Module **0 Treffer** — kein Pfad der Engine importiert das Modul, ein Blast kann hier nur identische Zahlen liefern.
+Der Blast „KI aus" wird in Teil B gefahren, wenn `provider.parse` das Modul kennt (dann ist er ein Beleg).
+
+### 25a.4 Cache (`knowledge/ki_cache/`, Ort begründet)
+
+Die Engine liest den Cache zur **Laufzeit**, nicht nur die Tests — also weder `tests/fixtures/` (Testmaterial) noch
+im Paket `src/` (getrackte JSON im Code). `knowledge/` ist der getrackte Ort für Wissensdaten außerhalb des Codes;
+`scripts/wissen_index.py` indiziert dort nur `extracted/**/*.md`, der Cache stört `knowledge/INDEX.md` nicht.
+Schlüssel = Pfad `<plan>_<sha16>/<geschoss>_<quadrant|ganz>_<backend>_<modell>_v<prompt_version>.json` (Plan-Datei
+als SHA-256 des Inhalts, 16 Hex, je Lauf memoisiert über Größe + mtime; Namen über `[^A-Za-z0-9_.-]` → `_`
+bereinigt, kein lokaler Pfad im Schlüssel, nur der Dateiname). Inhalt: `schluessel`, `gespeichert` (UTC), `raeume`,
+`verworfen`, `roh`; beim Lesen wird `roh` neu durch `parse_antwort` geprüft (strengerer Kanon wirkt ohne Aufruf).
+**Treffer → kein Aufruf**; **Fehler werden nie gecacht**. Zähler `anfragen` (echte Aufrufe) und `treffer` je
+`Zweitmeinung`-Instanz = je Lauf, für „Anzahl Anfragen je Lauf" im Bericht (Teil B). Der Ordner trägt heute nur
+`README.md` (Format, Ort, Regeln) — Einträge entstehen erst mit den ersten Aufrufen in Phase B.
+
+### 25a.5 Tests (`tests/raumerkennung/test_ki_zweitmeinung.py`, 26 + 1 skip; nie live)
+
+Kanon = `raumtyp`-Kanon ohne UNBESTIMMT/UNBEKANNT · Mock, codex_abo, openai_api erfüllen das Protocol ·
+Parsing gültig / Code-Fence + Liste + Kleinschreibung / kein JSON und Objekt ohne `raeume` → `format` / 7 Verwerfungen
+(außerhalb Kanon „BÜRO", unbekannte `raum_id`, `sicherheit` 1,5, `bestaetigt` „ja", leere Begründung, Felder fehlen,
+kein Objekt) / Dublette zählt einmal · Konfig Standard aus, `xhigh` → `ValueError`, `aus_umgebung` an/aus/Backend/
+Modell · Cache-Schlüssel mit allen Teilen, anderer Dateiinhalt → anderer SHA, andere Prompt-Version → anderer Pfad ·
+**Cache-Treffer verhindert Aufruf** (Mock zählt: 1 Aufruf bei 3 Fragen über zwei Instanzen, 2. Quadrant → 2. Aufruf,
+2 Dateien, kein `\`/`:` im Schlüssel) · Fehler nicht gecacht, kein Abbruch, Warnung „Engine-Ergebnis bleibt" ·
+Fallback bei `sonstig`, keiner bei `limit` · Backend-Ausnahme → `sonstig` · KI aus → kein Aufruf, kein Cache-Ordner
+· Registry: beide Backends, `claude_abo` als Dummy-Klasse eingehängt, unbekannt → `ValueError` · openai_api Gerüst
+liest keinen Key (`OPENAI_API_KEY` gesetzt, Meldung ohne Key, Quelltext ohne `sk-`) · **codex_abo mit gemocktem
+`subprocess.run`:** Argumentliste (`exec`, `--json`, `--ephemeral`, `--skip-git-repo-check`, `-s read-only`, `-m
+gpt-6-astra`, `-c model_reasoning_effort=high`, `--output-schema`, `-o`, `--image=<Pfad mit Leerzeichen>` als ein
+Element, `-` zuletzt), kein `shell`, Prompt in `input` ohne lokale Pfade, `timeout` = Konfig, `cwd` ≠ Plan-Ordner,
+**`env` ohne `OPENAI_API_KEY`/`ANTHROPIC_API_KEY`** bei erhaltenem `PATH`, Schema-Datei mit `raeume` + 5
+Pflichtfeldern, Fallback-Aufruf mit `-m gpt-5.6-sol` und Effort · **Limit-Fixture → `art=limit`, über `Zweitmeinung`
+eine `ki:`-Warnung mit „UNBESTIMMT", kein Fallback, keine Ausnahme** · Login-fehlt (synthetisches JSONL — die echte
+Meldung ohne Login ist nicht aufgezeichnet) → `login` · `TimeoutExpired` → `timeout`; Prosa statt JSON und leeres
+stdout → `format` · `-o`-Datei als Rückfall ohne `agent_message` · ungültige Räume aus JSONL verworfen ·
+Binary-Suche Konfig / PATH (gemocktes `shutil.which`) / App-Bundle-Glob (`LOCALAPPDATA` auf tmp) / nichts → `sonstig`
+ohne Aufruf · fehlendes Bild → `sonstig` ohne Aufruf · Prompt trägt Kanon, Ausgangs-Definition („Innenhof", „ins
+Freie"), Raum-IDs, Geschoss, Quadrant, Antwortfelder, keine Pfade · `test_codex_live_minimal` nur mit
+`NOTBEL_KI_LIVE=1` (Standard **skip**).
+
+**Rot vor dem Fix** (`pytest tests/raumerkennung/test_ki_zweitmeinung.py --tb=line`, Kopf `b61cb4d` + Test + Fixture):
+
+```
+test_ki_zweitmeinung.py:15: ImportError: cannot import name 'ki_backends' from 'notbeleuchtung.raumerkennung'
+1 error in 1.40s
+```
+
+**Grün nach dem Fix:** `26 passed, 1 skipped in 1.26s` (skip = Live-Test). `pytest tests/raumerkennung
+tests/contract`: **990 passed, 7 skipped, 2 xfailed in 147.51s** (davon 26 neu, 1 neuer skip). ruff: „All checks
+passed!" (FURB167/ISC004/UP017/BLE001/RUF059 aus dem ersten Lauf behoben, `# noqa: BLE001` wie `pipeline.py:280`).
+
+### 25a.6 Gate
+
+`pytest -m gate tests/gate` **3 passed, 1 xfailed** (`test_gate_tuerstapel_erfuellt`, 109 s). `gate_messung` auf
+dem Arbeitsbaum vor dem Commit (`_arbeit/gate/messung_b61cb4d-dirty-25a.json`, 59,3 s), `pruefe_gate` gegen
+`nullmessung_f15d03f.json`: **(0)** unsauberer Arbeitsbaum (erwartet, vor dem Commit) und **(3) `M4.einraum` DG2
+0 → 1** (Enis Board 3, unverändert); M17 **18/18 BESTANDEN**; **alle Messfelder außer `meta` gleich
+`messung_8748e24-dirty-24.json`** (Abschnitt 2) — erwartet, kein Gate-Plan erreicht das Modul.
+
+### 25a.7 Offen nach Teil A (Teil B / Phase B)
+
+- **Teil B (Phase A, offline):** Verdrahtung in `provider.parse` nach Kürzel-Regel und bestehenden Regeln (ein
+  Aufruf je Geschoss, Quadranten wie Vision-Audit, gerendertes Bild mit Raum-IDs, Merkmale je Raum: Texte, Fläche,
+  Möbel-/Sanitärblöcke, Fenster, Türen, Treppen/Lift, Lage zur Wohnungstür, Nachbarn); Entscheidungsregeln
+  (übereinstimmend → bestätigt; Widerspruch bei Stempel/Kürzel/Erscheinungsbild → Engine-Typ bleibt, strittig;
+  unbelegt → KI-Typ ab 0,8 ohne Geometrie-Widerspruch; Notlicht-Verlust nur mit bestätigender Regel, sonst UNBESTIMMT
+  mit Notlicht); Herkunft je Raum (Engine | KI | bestätigt | strittig) und `ki:`-Warnungen + Anzahl Anfragen in
+  `bericht.md` (`scripts/plan_pruefen.py`, kein Contract-Feld); die drei synthetischen Entscheidungs-Tests und der
+  Test der 6 Räume ohne Stempel mit gespeicherten Antworten; **Blast „KI aus" 13 Pläne feldgleich** als Beleg der
+  0-Verhaltensänderung nach der Verdrahtung; Prüfstrecke KI aus als Vergleichsbasis.
+- **Phase B (ab 2026-10-03 19:10, live):** Format-Annahme des Erfolgsfalls (`item.completed` mit `item.type =
+  agent_message` und `text`) ist **nicht live geprüft** — dafür der `-o`-Rückfall; erster Aufruf mit
+  `NOTBEL_KI_LIVE=1 pytest -k codex_live` prüft Binary, Login, Schema-Flag und Antwortform. Echte Login-fehlt-Meldung
+  aufzeichnen und die synthetische Fixture ersetzen. Eichung (Stempel abgedeckt, Trefferquote je Typ ≥ 95 %, kein
+  Fehler bei Notlicht-Verlust-Typen), Prüfer-Durchgang, Lern-Kandidaten, Cache-Einträge ins Repo.
+- Fallback-Semantik (einmal `gpt-5.6-sol` bei `sonstig`/`format`/`timeout`, nie bei `limit`/`login`) ist hier
+  festgelegt, nicht vom Owner — bei Bedarf ändern. **Modell dieses Agenten: claude-fable-5-1 (Stufe laut Auftrag xhigh;
+  vom Agenten selbst nicht prüfbar).**
