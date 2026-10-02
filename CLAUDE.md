@@ -113,6 +113,41 @@ Enis:   NormProvider ─► NormRegelwerk┘     └─► Leonis: Platzierer(Ra
 - Atomare Slices, ein Concern pro Commit, em-dash in der Message.
 - Irreversibel (Merge/Push/GitHub-Repo) = explizites User-GO.
 
+## Codex-Review-Workflow (BINDEND)
+
+Jede substanzielle Code-Änderung läuft durch die Schleife **Claude implementiert →
+Codex prüft → Claude verifiziert → Claude fixt**. Triviales (Tippfehler, reine
+Doku, Umbenennungen) ist ausgenommen. Codex ist ein **beratendes** Zweit-Augenpaar,
+kein Entscheider — die Regelquellen unten schlagen Codex immer.
+
+1. **Implementieren** — Claude baut den Slice fertig (inkl. Tests).
+2. **Prüfen (Codex)** — Shell-Route `codex review`:
+   - `codex review --uncommitted` — Working-Tree (Default-Scope für den frischen Slice)
+   - `codex review --commit <sha>` — ein einzelner Commit
+   - `codex review --base <branch>` — Diff gegen einen Branch
+   - Synchron, **kein** `--wait` nötig. Modell **pro Aufruf** überschreiben:
+     `codex review --uncommitted -c model="gpt-5.5"` — die `~/.codex/config.toml`
+     NICHT ändern. Läuft über ChatGPT-Auth (kein `OPENAI_API_KEY` gesetzt) → **keine
+     API-Kosten**. (Fallback, falls ein Modell für `review` abgelehnt wird: ohne `-c`
+     aufrufen, dann wählt Codex das dedizierte `codex-auto-review`.)
+3. **Verifizieren** — Claude prüft **jedes** Codex-Finding gegen Code + Regelquellen,
+   übernimmt nichts blind. Ein Finding, das eine Regelquelle verletzt, wird mit
+   Begründung verworfen.
+4. **Fixen** — bestätigte Findings werden behoben, dann Re-Review bis sauber.
+
+**Vorrang vor Codex (Regelquellen, Codex-Rat dagegen = verworfen):** `CLAUDE.md` ·
+`docs/{PROGRAMM_NOTBELEUCHTUNG,COORDINATION,VOKABULAR,CONTRACTS}.md` + `docs/adr/` ·
+Norm (`src/notbeleuchtung/normwissen/data/*.yaml`, `platzierung/regelwerk.py` +
+`platzierung/data/notbeleuchtung_regeln.json`, `knowledge/notbeleuchtung/regeln.{yaml,md}`) ·
+Verträge (`hauptengine/contracts/*.py` + `schema/`, `symbols/schrack_symbol_mapping.yaml`).
+
+**Verifikationsstrecke (NICHT Demo-Render):** `scripts/plan_pruefen.py` ·
+`scripts/dxf_healthcheck.py` · `scripts/projekt_batch_worker.py` ·
+`tests/{contract,naht,e2e,platzierung}/`.
+
+**Verlaufsdatei:** `docs/CHANGELOG_Platzierungslogik.md` (daneben auto
+`Projekte/_ergebnis/VERLAUF.md`).
+
 ## Architektur-Landkarte
 
 - **Provider-Verdrahtung:** `hauptengine/registry.py` = der EINE Ort, wo echte

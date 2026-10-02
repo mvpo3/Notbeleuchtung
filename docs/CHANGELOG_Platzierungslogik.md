@@ -39,3 +39,13 @@ gelistet und brauchen Owner-GO.
 `pytest tests/platzierung tests/contract tests/naht`: **453 passed / 34 skipped /
 3 xfailed** (identisch zur Vorher-Basis + 40 neue Regelwerk-Tests) · `ruff check
 src tests scripts` + `_Analyse_Regelwerk/scripts`: clean · kein Contract-Touch.
+
+## 2026-10-02 — Codex-Review-Workflow festgelegt (Doku-only)
+
+Verbindlicher, projektweiter Prozess „Claude implementiert → Codex prüft → Claude
+verifiziert → Claude fixt" in `CLAUDE.md` (Sektion **Codex-Review-Workflow (BINDEND)**).
+Kein Produktiv-/Verhaltens-Code, kein Contract-Touch. Aufrufroute = Shell
+`codex review` (`--uncommitted` / `--commit <sha>` / `--base <branch>`), Modell pro
+Aufruf `-c model="gpt-5.5"` (config.toml unberührt, ChatGPT-Auth → keine API-Kosten;
+Fallback `codex-auto-review`). Codex ist beratend; die Regelquellen (CLAUDE.md, docs,
+Norm-YAML/regelwerk, Contracts) schlagen Codex. Verlauf = diese Datei.
