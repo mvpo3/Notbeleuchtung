@@ -4,6 +4,45 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-10-02 SEHR SPÄT) — M3 Frontalsicht GEBAUT (stgh down-frontal), typ 14→19. UNCOMMITTED, Push-GO + Codex-Review offen.
+
+**Branch `leonis/kopplung-raumerkennung-c3b8186`. M3-Slice gebaut, NICHT committet/gepusht
+(Owner-GO offen). CAD-Lösch-Anomalie weiter UNANGETASTET.** Plan-Datei:
+`~/.claude/plans/handoff-leonis-floofy-gadget.md`.
+
+**Gebaut (Owner-GO „M3 jetzt bauen, Umfang Stiegen+Anker"):**
+- `bausteine.py`: neuer **`frontalsicht_block(in_vec,out_vec,keys)`** = EINE Quelle der
+  NB-R06/R07-Regel (gerade→down-frontal / Abzweig>45°→gerichtet); `ist_abzweig`/
+  `ABZWEIG_COS` von gang hierher geteilt.
+- `gang_strategy.py`: auf `frontalsicht_block` umgestellt, **byte-identisch** (Referenz).
+- `stgh_strategy.py`: Podest-RZ = `frontalsicht_block((0,0),flucht)` = **down-frontal**.
+- Tests: neu `test_frontalsicht.py` (5 Szenarien); `test_stgh_strategy.py` 2 Tests auf
+  M3-Soll (UG/OG jetzt via Rotation); `test_gang_strategy.py` Import-Umzug.
+
+**MESSUNG (`mollgasse_gt_vergleich.py`, alle 8):** Typ-Match **14→19/33** (+5, +36 %),
+gepaart 31→30 (−1 = benigne 1OG-Dedup 546 mm, Stelle gedeckt). Baseline in
+`scratchpad/m3_baseline.md`. Suite: platzierung/render/contract **506 passed**;
+naht/e2e **366 passed, 5 failed = Baseline (0 neu)**, 13 xfailed; ruff clean; kein
+Contract-Touch; Visual-Golden unverändert (4OG-Fake ohne Stiegenhaus).
+
+**BEFUND (wichtig, korrigiert Plan-Annahme):** Die 5 „Handles" liegen NICHT alle in
+stgh+anker. **anker** produziert KEINEN der Mollgasse-Paar-Misses (auf diesen Geschossen
+leer) → übersprungen (kein Messnutzen, Risiko). **communal**-Misses sind das GEGENteil
+(Soll=directional, eng=down → communal schon zu down-lastig) → NICHT geändert. Die
+Rest-Misses **41220/41593/1BCBB** (Soll=links/rechts) folgen der **Gebäude-Ausgangsachse,
+nicht der Stiegen-Laufrichtung** → brauchen den Dijkstra-/Exit-Gradient-Hebel (eigener,
+größerer Slice; nicht geraten). Darum >25/33 hier NICHT erreichbar — das war die
+optimistische REVIEW.md-Zahl für das VOLLE M3 inkl. Exit-Richtung.
+
+**RESUME:**
+1. **Push-GO einholen** für den M3-Slice (3 src + 3 test-Dateien, kein Contract).
+2. **Codex-Review** (BINDEND, quota bis 03.10. ~19:10): `codex review --uncommitted -c
+   model="gpt-5.5"`, Findings gegen Regelquellen prüfen, fixen.
+3. **Hausfeld-2DG-Sichtcheck** (kein automat. Harness im Repo; nur Stiegen-Podest-RZ-Typ
+   betroffen).
+4. **M3-Teil 2 (Exit-Gradient)** für 41220/41593/1BCBB + evtl. −1-gepaart-1OG via
+   sichtkette-Schutz der Stiegen-RZ (optional, braucht naht-Re-Run).
+
 ## STAND (2026-10-02 SPÄT) — Codex-Review-Workflow FESTGELEGT + gepusht. Probelauf nur quota-vertagt. M3 bleibt Resume.
 
 **Branch `leonis/kopplung-raumerkennung-c3b8186`, GEPUSHT. Neu: Merge `4cb8846` (origin/main

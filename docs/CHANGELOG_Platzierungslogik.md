@@ -49,3 +49,35 @@ Kein Produktiv-/Verhaltens-Code, kein Contract-Touch. Aufrufroute = Shell
 Aufruf `-c model="gpt-5.5"` (config.toml unberührt, ChatGPT-Auth → keine API-Kosten;
 Fallback `codex-auto-review`). Codex ist beratend; die Regelquellen (CLAUDE.md, docs,
 Norm-YAML/regelwerk, Contracts) schlagen Codex. Verlauf = diese Datei.
+
+## 2026-10-02 — M3 Frontalsicht: Pfeiltyp nach Ankunfts-Frontalsicht (verhaltensändernd)
+
+RW-006/007 (Mollgasse-PDF): das Rettungszeichen-Symbol (links/rechts/down) wird nach
+der **Frontalsicht der ankommenden Person** gewählt, nicht mehr rein aus dem
+quantisierten Fluchtvektor.
+
+| Datei | Funktion/Inhalt | rule_id |
+|---|---|---|
+| `platzierung/bausteine.py` | **Neu** `frontalsicht_block(in_vec, out_vec, keys) → (key, rot, mirror, richtung)`: gerade Fortsetzung (Ankunft ≤45°) → down-Typ, Pfeil ENTGEGEN der Person (`rotation_piktogramm_in_raum`); echter Abzweig (>45°) → gerichteter Block. `ist_abzweig`/`ABZWEIG_COS` von `gang_strategy` hierher geteilt (EINE Quelle). | RW-006/007 |
+| `platzierung/gang_strategy.py` | Inline-Regel (NB-R06/R07) auf `frontalsicht_block` umgestellt — **byte-identisch** (Referenz, Gang-Band unverändert). | RW-006/007 |
+| `platzierung/stgh_strategy.py` | Podest-RZ auf `frontalsicht_block((0,0), flucht)` = **down-Frontal** (die Person läuft gerade auf die Stiege; kein seitlicher Anlauf). Ersetzt die laufrichtungs-quantisierte Richtungswahl, die den Owner-Plan nicht traf. | RW-006/007 |
+| `tests/platzierung/test_frontalsicht.py` | **Neu** Baustein-Tests (5 Frontalsicht-Szenarien). | RW-006/007 |
+| `tests/platzierung/test_stgh_strategy.py` | 2 Tests auf M3-Soll nachgezogen (Richtungs-RZ→down; UG↔OG-Unterscheidung lebt jetzt in der **Rotation**, nicht im Block-Typ). | RW-006/007 |
+| `tests/platzierung/test_gang_strategy.py` | `_ist_abzweig`-Import auf `bausteine` umgezogen (geteilte Quelle). | — |
+
+**Messung (`scripts/analyse/mollgasse_gt_vergleich.py`, alle 8 Geschosse):** Typ-Match
+**14→19 / 33** (+5: 413A0/952E8/852E3/852B0/1C8CC/1CD8C von „directional" auf das
+Owner-Soll „unten" geflippt). Gepaart 31→30 (−1, 1OG: zwei deckungsgleiche „unten"-RZ
+546 mm auseinander → `sichtkette` dünnt eins aus; Stelle bleibt gedeckt). `communal`
+(Soll=directional, eng=down — anderes Problem) und `anker` (0 der Mollgasse-Paar-Misses)
+bewusst unberührt. Rest-Misses 41220/41593/1BCBB (Soll=directional) folgen der
+Gebäude-Ausgangsachse, nicht der Stiegen-Laufrichtung → eigener Dijkstra-Hebel, hier
+nicht geraten.
+
+**Suite:** `pytest tests/platzierung tests/render tests/contract` 506 passed · `tests/naht
+tests/e2e` 366 passed / **5 failed = Baseline** (s7_wohnungsklasse + soll_muthgasse,
+Selman-Naht, 0 neu) / 13 xfailed · `ruff` clean · kein Contract-Touch. Visual-Golden
+(`-m visual`) unverändert (4OG-Fake-Modell hat keine Stiegenhäuser → kein Render-Diff).
+**Hausfeld-2DG-Wächter: nicht automatisiert lauffähig** (kein leerer Architektur-Input
+im Repo) → Owner-Sicht-Check empfohlen; betroffen nur Stiegen-Podest-RZ-Typ, Gang/Tür/
+Ausgang unberührt. **Codex-Review ausstehend** (Quota bis 2026-10-03 ~19:10).

@@ -178,6 +178,57 @@ def key_und_rotation(
     return key, rotation, mirror_x
 
 
+# NB-R07: ab welchem Knickwinkel ein Fluchtweg-Punkt als Abzweig (Richtungs-
+# wechsel) gilt — darunter ist es „geradeaus" (NB-R06). 45° trennt L-Ecken sauber
+# von leichten Achsen-Verschwenkungen. Das IST zugleich das RW-007-Kriterium
+# „Vorderseite sichtbar ≤ 45° zur Normalen": bei gerader Fortsetzung (≤45°)
+# schaut die Vorderseite des down-Blocks die ankommende Person an; erst ein
+# echter Abzweig (>45°) rechtfertigt den gerichteten links/rechts-Block.
+ABZWEIG_COS = 0.707   # cos(45°)
+
+
+def ist_abzweig(in_dx: float, in_dy: float, out_dx: float, out_dy: float) -> bool:
+    """True, wenn sich die Laufrichtung am Punkt um > 45° ändert (Abzweig/Ecke).
+
+    Einzige Quelle (Slice M3 2026-10-02): vorher privat in gang_strategy; jetzt
+    geteilt, weil stgh_/anker_/communal_stgh dieselbe Frontalsicht-Regel brauchen.
+    """
+    li = math.hypot(in_dx, in_dy)
+    lo = math.hypot(out_dx, out_dy)
+    if li < 1.0 or lo < 1.0:
+        return False
+    return (in_dx * out_dx + in_dy * out_dy) / (li * lo) < ABZWEIG_COS
+
+
+def frontalsicht_block(
+    in_vec: tuple[float, float],
+    out_vec: tuple[float, float],
+    symbol_katalog_keys: list[str],
+) -> tuple[str, float, bool, str]:
+    """M3 / RW-007 (Mollgasse-PDF): Pfeiltyp nach der **Frontalsicht der ankommenden
+    Person**, nicht nach dem reinen Fluchtvektor. `(catalog_key, rotation_deg,
+    mirror_x, richtung)`.
+
+    - **Gerade Fortsetzung** (Ankunft ≤45° zur Achse, `ist_abzweig`=False): down-Typ,
+      Pfeil ENTGEGEN der Flucht (`rotation_piktogramm_in_raum`) → die Vorderseite
+      schaut die ankommende Person an. richtung="unten".
+    - **Echter Abzweig** (>45°): gerichteter links/rechts-Block, der den Weg zeigt
+      (`richtung_und_rotation(out)` → `key_und_rotation`).
+
+    `in_vec` = Ankunftsrichtung (von wo die Person kommt → zum Punkt), `out_vec` =
+    Fluchtrichtung (Punkt → nächstes Ziel/Ausgang). Ist `in_vec` nicht ableitbar
+    (|in|<1), fällt `ist_abzweig` auf False → sicherer down-Fallback. Wortgleich zur
+    abgenommenen gang_strategy-Regel (NB-R06/R07, 710b859), damit beide EINE Quelle
+    teilen; Guard: gang-Band + tests/platzierung/test_frontalsicht.py."""
+    out_dx, out_dy = out_vec
+    if ist_abzweig(in_vec[0], in_vec[1], out_dx, out_dy):
+        richtung, _ = richtung_und_rotation(out_dx, out_dy)
+        catalog_key, rotation, mirror_x = key_und_rotation(symbol_katalog_keys, richtung)
+        return catalog_key, rotation, mirror_x, richtung
+    catalog_key, _, _ = key_und_rotation(symbol_katalog_keys, "unten")
+    return catalog_key, rotation_piktogramm_in_raum(out_dx, out_dy), False, "unten"
+
+
 def building_assigner(x_coords: list[float]):
     """Cluster-Regel A|B aus der x-Verteilung der RZ (Original 2.46.3).
     A = westlich (kleineres x), B = östlich. Ein Cluster → alles A."""

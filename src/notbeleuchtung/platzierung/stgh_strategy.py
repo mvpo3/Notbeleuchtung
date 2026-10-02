@@ -30,9 +30,8 @@ from notbeleuchtung.hauptengine.contracts import (
 from .bausteine import AGV_SV_F as _AGV_SV_F
 from .bausteine import MONTAGE_WAND as _MONTAGE_WAND
 from .bausteine import building_assigner as _building_assigner
+from .bausteine import frontalsicht_block as _frontalsicht_block
 from .bausteine import ist_untergeschoss as _ist_untergeschoss
-from .bausteine import key_und_rotation as _key_und_rotation
-from .bausteine import richtung_und_rotation as _richtung_und_rotation
 from .geometry import point_in_polygon
 
 
@@ -111,11 +110,20 @@ def plan_stiegenhaus_rz(raum: RaumModell, norm: NormProvider) -> list[Platzierun
         pos = _podest_position(sh, flucht)
         if pos is None:
             continue
-        richtung, _ = _richtung_und_rotation(flucht[0], flucht[1])
         seg = FluchtwegSegment(segment_id=f"stgh_{sh.raum_id}", polyline_mm=[pos],
                                reason="direction_change")
         anf = norm.fuer_fluchtweg_abschnitt(seg)
-        key, rot, mirror = _key_und_rotation(anf.symbol_katalog_keys, richtung)
+        # M3/RW-007 (NB-R06): das Podest-RZ führt die Person vom Geschoss GERADE auf
+        # die abwärts führende Stiege — es gibt keinen seitlichen Anlauf (in_vec=0),
+        # also down-Typ mit Pfeil ENTGEGEN der Flucht (Vorderseite schaut die
+        # ankommende Person an), statt den Fluchtvektor auf eine Kardinalachse zu
+        # quantisieren. Belegt Mollgasse (GT: 6/9 Podest-RZ sind „unten"; 413A0/952E8/
+        # 852E3/852B0/1C8CC/1CD8C). Die rein laufrichtungs-gerichtete Alt-Variante
+        # traf den Owner-Plan nicht (die Richtungs-Soll-Fälle 41220/41593/1BCBB
+        # folgen der Gebäude-Ausgangsachse, nicht der Stiegen-Laufrichtung — eigener,
+        # Dijkstra-basierter Hebel, hier bewusst nicht geraten).
+        key, rot, mirror, richtung = _frontalsicht_block(
+            (0.0, 0.0), (flucht[0], flucht[1]), anf.symbol_katalog_keys)
         out.append(Platzierung(
             xy_mm=pos, catalog_key=key, rotation_deg=rot, mirror_x=mirror,
             height_mm=float(anf.montagehoehe_mm), kind="rz", richtung=richtung,

@@ -48,7 +48,12 @@ def test_auf_lauf_flucht_ist_gegenrichtung():
                        richtung="auf")                     # Gehen +x = aufwärts
     assert fluchtvektor(StiegenhausModell(raum_id="s", laeufe=[lauf])) == (-1.0, 0.0)
     out = plan_stiegenhaus_rz(_modell([lauf]), FakeNormProvider())
-    assert len(out) == 1 and out[0].richtung == "links"    # Flucht −x
+    # M3/RW-007 (2026-10-02): das Podest-RZ führt GERADE auf die Stiege → down-Typ,
+    # Pfeil ENTGEGEN der Flucht (Frontalsicht), nicht mehr auf die Kardinalachse
+    # quantisiert. Die Fluchtrichtung bleibt die Rotations-Quelle: Flucht −x →
+    # Pfeil −x (rotation_zur_tuer(+x)=90°). Belegt Mollgasse-GT (6/9 Podest = unten).
+    assert len(out) == 1 and out[0].richtung == "unten"
+    assert out[0].catalog_key.endswith("_unten") and out[0].rotation_deg == 90.0
 
 
 def test_ug_flucht_ist_hinauf():
@@ -59,11 +64,13 @@ def test_ug_flucht_ist_hinauf():
     sh = StiegenhausModell(raum_id="s", laeufe=[lauf])
     assert fluchtvektor(sh, hinauf=True) == (1.0, 0.0)     # UG: Flucht = +x
     assert fluchtvektor(sh, hinauf=False) == (-1.0, 0.0)   # OG: unveraendert
+    # M3: Typ immer down-Frontal; die NB-R13-Richtungsunterscheidung UG↔OG lebt
+    # jetzt in der ROTATION (Pfeil entgegen Flucht): UG Flucht +x → Pfeil +x → 270°,
+    # OG Flucht −x → Pfeil −x → 90°. Beide „unten", aber gegengerichtet.
     out = plan_stiegenhaus_rz(_modell([lauf], floor="1KG"), FakeNormProvider())
-    assert len(out) == 1 and out[0].richtung == "rechts"   # Flucht +x
-    # Derselbe Lauf im OG bleibt "links" (Regression NB-R04-Seite).
+    assert len(out) == 1 and out[0].richtung == "unten" and out[0].rotation_deg == 270.0
     out_og = plan_stiegenhaus_rz(_modell([lauf], floor="1OG"), FakeNormProvider())
-    assert len(out_og) == 1 and out_og[0].richtung == "links"
+    assert len(out_og) == 1 and out_og[0].richtung == "unten" and out_og[0].rotation_deg == 90.0
 
 
 def test_ist_untergeschoss_label_familien():

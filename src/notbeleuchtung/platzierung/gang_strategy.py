@@ -30,10 +30,10 @@ from .bausteine import (
     building_assigner as _building_assigner,
 )
 from .bausteine import (
-    key_und_rotation as _key_und_rotation,
+    frontalsicht_block as _frontalsicht_block,
 )
 from .bausteine import (
-    richtung_und_rotation as _richtung_und_rotation,
+    key_und_rotation as _key_und_rotation,
 )
 from .bausteine import rotation_piktogramm_in_raum as _rotation_piktogramm_in_raum
 from .geometry import _bbox
@@ -41,20 +41,6 @@ from .mittellinie import leuchten_auf_linie
 
 # RZ-Abstand, wenn die Norm keine Erkennungsweite liefert (defensiver Default).
 _DEFAULT_RZ_ABSTAND_MM = 15000.0
-
-# NB-R07: ab welchem Knickwinkel ein Gang-Punkt als Abzweig (Richtungswechsel)
-# gilt — darunter ist es „geradeaus" (NB-R06). 45° trennt L-Ecken sauber von
-# leichten Achsen-Verschwenkungen.
-_ABZWEIG_COS = 0.707   # cos(45°)
-
-
-def _ist_abzweig(in_dx: float, in_dy: float, out_dx: float, out_dy: float) -> bool:
-    """True, wenn sich die Laufrichtung am Punkt um > 45° ändert (Abzweig/Ecke)."""
-    li = math.hypot(in_dx, in_dy)
-    lo = math.hypot(out_dx, out_dy)
-    if li < 1.0 or lo < 1.0:
-        return False
-    return (in_dx * out_dx + in_dy * out_dy) / (li * lo) < _ABZWEIG_COS
 
 
 def _abstand_mm(erkennungsweite_m: float | None) -> float:
@@ -143,23 +129,16 @@ def plan_rettungszeichen_gang(raum: RaumModell, norm: NormProvider) -> list[Plat
                                 default=None) if raum.ausgaenge else None
                 out_dx, out_dy = ((naechster.xy_mm[0] - px, naechster.xy_mm[1] - py)
                                   if naechster is not None else (0.0, -1.0))
-            # NB-R07: Abzweig (Richtungswechsel gegenüber dem einlaufenden Schenkel) →
-            # Richtungspfeil zeigt den WEG (links/rechts). NB-R06: gerade Fortsetzung →
-            # down-Typ „geradeaus", so gedreht, dass der Welt-Pfeil ENTGEGEN der Flucht
-            # zeigt (Front schaut die ankommende Person an) — belegt Mollgasse 1OG/1KG/
-            # 2KG (Δ 178,6–180° an ≥6 Instanzen; abgleich/*/abgleich_*.md), identisch zur
-            # Tür-Regel R-B (`rotation_piktogramm_in_raum`).
-            abzweig = 0 < i < len(pts) - 1 and _ist_abzweig(
-                px - pts[i - 1][0], py - pts[i - 1][1], out_dx, out_dy)
-            if abzweig:
-                richtung, _ = _richtung_und_rotation(out_dx, out_dy)
-                catalog_key, rotation, mirror_x = _key_und_rotation(
-                    anf.symbol_katalog_keys, richtung)
-            else:
-                catalog_key, _, _ = _key_und_rotation(anf.symbol_katalog_keys, "unten")
-                rotation = _rotation_piktogramm_in_raum(out_dx, out_dy)
-                mirror_x = False
-                richtung = "unten"
+            # NB-R06/R07 (M3/RW-007): Pfeiltyp nach Frontalsicht der ankommenden
+            # Person — gerade Fortsetzung → down-Typ „geradeaus", Pfeil ENTGEGEN der
+            # Flucht (Front schaut die Person an); echter Abzweig → Richtungspfeil zeigt
+            # den WEG. Belegt Mollgasse 1OG/1KG/2KG (Δ 178,6–180° an ≥6 Instanzen).
+            # Einlaufender Schenkel nur an Zwischenpunkten; an Enden kein in_vec →
+            # down-Fallback (wie bisher, `frontalsicht_block` kippt bei |in|<1 auf unten).
+            in_vec = ((px - pts[i - 1][0], py - pts[i - 1][1])
+                      if 0 < i < len(pts) - 1 else (0.0, 0.0))
+            catalog_key, rotation, mirror_x, richtung = _frontalsicht_block(
+                in_vec, (out_dx, out_dy), anf.symbol_katalog_keys)
             # Owner-Regel #111 (Pfeil-zur-Tür), Fallback-Ausprägung: das RZ am
             # Ziel-Ende zeigt mit dem UNTEN-Block physisch ZUR Ziel-Tür. rotation =
             # Winkel(RZ→Tür)+90° — identisch zum orientation-Rahmen (unten-Block-Basis

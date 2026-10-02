@@ -66,7 +66,8 @@ def test_gerader_gang_down_typ_entgegen_flucht():
 
 def test_ist_abzweig_trennt_gerade_von_ecke():
     # NB-R07-Kern: 90°-Knick = Abzweig, kollineare Fortsetzung = geradeaus.
-    from notbeleuchtung.platzierung.gang_strategy import _ist_abzweig
+    # M3 (2026-10-02): von gang_strategy nach bausteine geteilt.
+    from notbeleuchtung.platzierung.bausteine import ist_abzweig as _ist_abzweig
     assert _ist_abzweig(1000.0, 0.0, 0.0, 1000.0)          # Ost → Nord = Ecke
     assert _ist_abzweig(0.0, 1000.0, 1000.0, 0.0)          # Nord → Ost = Ecke
     assert not _ist_abzweig(1000.0, 0.0, 1000.0, 0.0)      # Ost → Ost = geradeaus
