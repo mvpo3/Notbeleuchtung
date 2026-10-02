@@ -4,7 +4,71 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-10-02 SEHR SPÄT) — M3 Frontalsicht GEBAUT (stgh down-frontal), typ 14→19. UNCOMMITTED, Push-GO + Codex-Review offen.
+## STAND (2026-10-03 NACHT) — M3 + Wohnungsgang-Fix COMMITTET (lokal, 2 Commits, UNGEPUSHT). Stiegen-Richtung = Erkennungs-Decke. Morgen weiter.
+
+**Branch `leonis/kopplung-raumerkennung-c3b8186`. ZWEI lokale Commits, NICHT gepusht:**
+- **`bd9f070`** feat(platzierung) — M3 Frontalsicht (stgh Podest = down-frontal; shared
+  `frontalsicht_block` in bausteine; gang no-op). Mollgasse typ 14→19.
+- **`4d84cfa`** fix(platzierung) — Wohnungsgang-Aufheller-Sperre in
+  `deckung.verdichte_fluchtweg` (WOHNUNG_PRIVAT/fw=False/comm=False → keine Korridor-
+  Aufheller). **Repariert Naht-Test `test_keine_leuchten_in_wohnung_privat[pfad1-OG2]`**
+  (Naht 5→4 failed, 0 neu). Mollgasse typ bleibt 19.
+
+**CAD-Lösch-Anomalie + GT-`vergleich.json`-Overwrites weiter UNANGETASTET (nie committen/restoren).**
+GT-vergleich.json im Working-Tree = aktueller committeter Stand (typ 19, gepaart 30).
+
+**Suite-Stand:** platzierung 355 ✓, render/contract 506 ✓, naht/e2e 367 passed / **4 failed =
+Baseline** (bara_raum_19/30, pfad3-DG1, soll_muthgasse — Selman-Naht, 0 neu), 13 xfailed;
+ruff clean; kein Contract-Touch.
+
+**Owner-Aufträge heute — 3 Platzierungs-Richtungs-Ansätze, 2 verworfen, 1 gefixt:**
+1. **Exit-Gradient (Stiegen-Richtung nach Ausgangsachse): VERWORFEN** (Recon-Workflow +
+   Probe). Knotengraph `zirkulation.nodes/edges` ist auf Mollgasse LEER (nur `segmente`
+   gefüllt; `anker` liefert 0 RZ) → nur Luftlinie → bricht die down-Mehrheit. Netto −1.
+2. **Ankunfts-Vektor-Frontalsicht (in_vec aus Stiegenhaus-Zugangstür): VERWORFEN.**
+   Produziert die links an der `stgh`-Quelle KORREKT (Hausfeld 2DG 2/3), ABER
+   `sichtkette`/Dedup ersetzt sie downstream durch deckungsgleiche communal-`unten` →
+   erreicht den Plan nicht; auf Mollgasse überleben die arrival-Richtungen und
+   regressieren (852B0/1C8CC down→links/rechts, netto −1). stgh wieder auf M3-down
+   (`git checkout`). Probes: `scratchpad/probe_arrival*.py`, `probe_gradient.py`.
+3. **Wohnungsgang-Leak: GEFIXT** (s.o., `4d84cfa`) — war MEIN Bug (deckung), NICHT Selman.
+   Selman flaggt die Wohnungs-Gänge korrekt (empirisch: 2OG raum_2/18/46/53 =
+   WOHNUNG_PRIVAT/fw=False/comm=False).
+
+**HAUSFELD-ANALYSE (Owner-Auftrag):** 3 Erklärungs-DXFs (EG/OG/2DG/1DG/UG) + 83-S.-PDF
+gelesen. **Hausfeld ist NICHT down-dominant** (anders als Mollgasse/Tomaschek): 2DG=3×left,
+1OG/1DG left/right-lastig, nur UG down (19). PDF S.4 bestätigt down-Konvention
+(„entgegen Gehbewegung, Weißbalken zur Ankunft" = Frontalsicht). 2DG-left = Richtungswechsel
+AUF die Stiege (S.61–63). **M3-blanket-down bricht Hausfeld-2DG** — un-fixbar per
+Heuristik (s. Ansatz 2). RZ-Blockzahlen je Geschoss in `scratchpad/` + Chat.
+
+**KERN-ERKENNTNIS:** Die Stiegen-Podest-Pfeilrichtung ist NICHT robust in der Platzierung
+lösbar — sie hängt an (a) echter Zirkulation (Selman), (b) Strategie-Ownership am
+Stiegenhaus (stgh vs. communal), (c) Dedup, der gerichtete RZ bewahrt. Jedes Heuristik-
+Pflaster tauscht Projekte gegeneinander (Mollgasse down ↔ Hausfeld left).
+
+**VISUELLER OUTPUT (alle lokal, `Projekte/_ergebnis/`, gitignored):**
+- `Mollgasse_GT/rivoplan_out/{EG,1OG,2OG,3OG,4OG,DG,1KG,2KG}.pdf` — kompletter 8-Geschoss-Satz,
+  frisch mit committetem Stand (A0 1:50, Plan+Lux). EG+1KG Status WARNUNG, Rest ok.
+- `M3_demo/` — Vorher/Nachher 4OG, Hausfeld-Erklärung-Render, stand_*.png-Vorschauen.
+- Befund KG: großer Kellerabteil-/Garagen-Riegel leer = Selman-KG-Erkennungsengpass.
+
+**RESUME (morgen, Owner-Weiche):**
+1. **Push-GO** für die 2 Commits (`bd9f070`+`4d84cfa`, kein Contract). DANN
+2. **Codex-Review** (BINDEND, Quota ab 03.10. ~19:10): `codex review --commit bd9f070`
+   + `--commit 4d84cfa` (oder `--base main`), `-c model="gpt-5.5"`, Findings gegen
+   Regelquellen prüfen/fixen.
+3. **pfad3-DG1** (2. Wohnungs-Leak-Pfad, DG-spezifisch, andere Strategie als deckung) —
+   schneller Folge-Fix-Kandidat, gleiche Lane.
+4. **EG + 1KG Prüf-WARNUNG** aufschlüsseln (welche EN-1838-Regel).
+5. **Selman-Paket** (echter Hebel für Stiegen-Richtung + KG-Deckung): Zirkulations-
+   Knotengraph (nodes/edges statt nur segmente) + Kellerabteil-/Garage-Erkennung +
+   Dedup-Preference stgh>communal am Stiegenhaus. Design-Grundlage: dieser STAND + Recon-
+   Workflow-Ergebnis (`tasks/wvvvioli3.output`).
+
+---
+
+## STAND (2026-10-02 SEHR SPÄT) — M3 Frontalsicht GEBAUT (stgh down-frontal), typ 14→19. [committet als bd9f070, s. oben]
 
 **Branch `leonis/kopplung-raumerkennung-c3b8186`. M3-Slice gebaut, NICHT committet/gepusht
 (Owner-GO offen). CAD-Lösch-Anomalie weiter UNANGETASTET.** Plan-Datei:
