@@ -29,10 +29,25 @@ Steht an der Grenze zu einem Raum eine Tür mit Blatt, ist die ganze Grenze
 Trenner — die Wandlücken daneben sind nicht erkannte Wand (Am Rain).
 
 Grundsatz (b): die Fläche erbt die Wohnung nur über den aufnehmenden Raum;
-``wohnung_id``, Klasse, Typ und Flags werden nie gesetzt. Ein neuer Raum hat
-keine Wohnung und keine Klasse. Türen bleiben unverändert.
+``wohnung_id`` wird nie gesetzt, am aufnehmenden Raum ändern sich weder Klasse,
+Typ noch Flags. Türen bleiben unverändert.
+
+**Stempel vor UNBEKANNT** (Owner-Entscheid 2, 2026-10-01, Abschnitt 2): bevor
+ein neuer Raum ``frei_n`` UNBEKANNT wird, werden Kürzel/Stempel in seinem
+Polygon gelesen und nach Abschnitt 1 typisiert (``kuerzel_beleg.
+typisiere_kuerzel`` — dieselbe Regel wie in der Kaskade: Kürzel-Form,
+Wörterbuch, mehrdeutig → nie, Doppelstempel → dominanter Stempel ≥ 50 % der
+Polygonfläche, sonst UNBESTIMMT mit Grund; Sanitär schlägt AR/Zimmer). Ein so
+typisierter Raum bekommt die statische Klasse seines Typs
+(``nutzungsklasse_fuer``); ``wohnung_id`` bleibt leer — die kommt nur aus rohen
+Türen (Grundsatz (b)), und die Türen an diesen Räumen tragen KEIN_RAUM-Seiten.
+Am Rain: in 6 der 12 ``frei_*`` liegt ein Raumstempel, dessen Stempel kein
+Polygon bekam (LUECKEN.md § 22); ohne diese Stufe blieben echte VR/AR/Balkone
+UNBEKANNT.
 """
 from __future__ import annotations
+
+from collections.abc import Callable, Sequence
 
 from shapely import BufferJoinStyle
 from shapely.geometry import Point, Polygon
@@ -41,6 +56,9 @@ from shapely.ops import linemerge, unary_union
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum, Tuer
 
 from .bereinigung import _groesste, _ring, _schlitz
+from .kuerzel_beleg import Text, typisiere_kuerzel
+from .nutzungsklasse import nutzungsklasse_fuer
+from .stempel_anker import Stempel
 from .tuer_zuordnung import _DURCHGANG_MIN_MM, _KONTAKT_TOL_MM, _TUER_NAH_MM
 from .wohnungsumriss import VOLL, umschliessende_wohnung, wohnungsumrisse
 
@@ -163,10 +181,19 @@ def _vereinige(a: Polygon, b: Polygon):
                         b.buffer(e, join_style=_MITRE)]).buffer(-e, join_style=_MITRE)
 
 
-def fuelle_freie_flaechen(raeume: list[Raum], tueren: list[Tuer], kontur, wu) -> list[str]:
+def fuelle_freie_flaechen(raeume: list[Raum], tueren: list[Tuer], kontur, wu, *,
+                          texte: Sequence[Text] = (), stempel: Sequence[Stempel] = (),
+                          sanitaer_quelle: Callable[[], list] = list) -> list[str]:
     """Freie Flächen im Wohnungsumriss zuschlagen oder als eigenen Raum
     anlegen — in place auf ``raeume``. Liefert je Fläche eine Befund-Zeile
-    (Prüfstrecken-Ausgabe, kein Contract-Feld)."""
+    (Prüfstrecken-Ausgabe, kein Contract-Feld), dazu je offen gebliebenem
+    Kürzel-Fall eine ``kuerzel:``-Warnung.
+
+    ``texte`` = Kürzel-Texte des Plans (``kuerzel_beleg.kuerzel_texte``),
+    ``stempel`` = Raumstempel ohne eigenes Polygon (Dominanz-Regel),
+    ``sanitaer_quelle`` = Sanitärobjekte für „Erscheinungsbild schlägt Kürzel"
+    — Entscheid 2: Stempel vor UNBEKANNT für jeden neuen Raum ``frei_n``.
+    """
     flaechen = freie_flaechen(raeume, kontur, wu)
     if not flaechen:
         return []
@@ -180,8 +207,8 @@ def fuelle_freie_flaechen(raeume: list[Raum], tueren: list[Tuer], kontur, wu) ->
               and Point(t.xy_mm).distance(f) <= _TUER_NAH_MM]
         ziel, grund = _entscheid(_grenzen(f, raeume, an, wu), an, wid)
         plan.append((f, ziel, f"im Umriss {wid} ({wo}); {grund}"))
-    befund: list[str] = []
-    n = 0
+    zeilen: list[str | tuple[str, Raum, str]] = []
+    neue: list[Raum] = []
     for f, ziel, grund in plan:
         c = f.representative_point()
         kopf = (f"freiflaeche: {f.area / 1e6:.2f} m² bei ({c.x / 1000:.1f}, "
@@ -196,13 +223,34 @@ def fuelle_freie_flaechen(raeume: list[Raum], tueren: list[Tuer], kontur, wu) ->
                         Polygon(ziel.polygon_roh).buffer(0), f)))
                 ziel.polygon_mm = _ring(neu)
                 ziel.flaeche_m2 = neu.area / 1e6
-                befund.append(f"{kopf} → {ziel.id} {ziel.raum_typ or '—'} "
+                zeilen.append(f"{kopf} → {ziel.id} {ziel.raum_typ or '—'} "
                               f"{vorher.area / 1e6:.2f} → {ziel.flaeche_m2:.2f} m², {grund}")
                 continue
             grund += "; Zuschlag nicht zusammenhängend"
-        n += 1
         p, _, _ = _schlitz(f)
-        raeume.append(Raum(id=f"frei_{n}", raum_typ="", polygon_mm=_ring(p),
-                           flaeche_m2=p.area / 1e6))
-        befund.append(f"{kopf} → neuer Raum frei_{n} UNBEKANNT, {grund}")
-    return befund
+        raum = Raum(id=f"frei_{len(neue) + 1}", raum_typ="", polygon_mm=_ring(p),
+                    flaeche_m2=p.area / 1e6)
+        raeume.append(raum)
+        neue.append(raum)
+        zeilen.append((kopf, raum, grund))
+    # Entscheid 2: Stempel/Kürzel im Polygon lesen, bevor der Raum UNBEKANNT wird.
+    # Nur die neuen Räume stehen zur Wahl; Klasse statisch nach Typ, keine Wohnung.
+    hinweise: list[str] = []
+    warnungen: list[str] = []
+    if neue and texte:
+        typisiere_kuerzel(list(texte), neue, sanitaer_quelle,
+                          hinweise=hinweise, warnungen=warnungen, stempel=list(stempel))
+        for r in neue:
+            if r.raum_typ:
+                r.nutzungsklasse = nutzungsklasse_fuer(r.raum_typ)
+    beleg = {h.split(":", 1)[0]: h.split(":", 1)[1].strip() for h in hinweise}
+    befund: list[str] = []
+    for z in zeilen:
+        if isinstance(z, str):
+            befund.append(z)
+            continue
+        kopf, raum, grund = z
+        befund.append(f"{kopf} → neuer Raum {raum.id} {raum.raum_typ or 'UNBEKANNT'}, {grund}"
+                      + (f"; {beleg[raum.id]} (Entscheid 2: Stempel vor UNBEKANNT)"
+                         if raum.id in beleg else ""))
+    return befund + warnungen

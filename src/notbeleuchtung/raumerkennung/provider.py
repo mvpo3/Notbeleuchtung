@@ -29,6 +29,7 @@ from .geometrie_typ import typisiere_geometrisch
 from .geschoss import geschoss_befund
 from .kaskade import KaskadeErgebnis, raeume_aus_kaskade
 from .kreuzcheck import kreuzcheck
+from .kuerzel_beleg import kuerzel_texte
 from .lift_erkennung import finde_lifte, liftschacht_reste
 from .raumtyp import beschrifte_raeume
 from .sanitaer import kandidaten as sanitaer_kandidaten
@@ -258,10 +259,16 @@ class ArchitekturRaumProvider:
         # Punkt 2d (Owner 2026-09-30): im Wohnungsumriss keine freie Fläche
         # ohne Raum. NACH den Wohnungen (der Umriss liest `wohnung_id` aus
         # rohen Türen), VOR Ausgängen und Fluchtwegen (die sehen die fertigen
-        # Polygone). Setzt nie Wohnung, Klasse, Typ oder Flags; Türen bleiben.
-        # Befund je Fläche = Prüfstrecken-Ausgabe wie `wand_warnungen`.
+        # Polygone). Setzt nie eine Wohnung; Türen bleiben. Abschnitt 2
+        # (Owner-Entscheid 2, 2026-10-01): ein neuer Raum liest erst die
+        # Kürzel/Stempel in seinem Polygon (Regel Abschnitt 1, Klasse statisch
+        # nach Typ), bevor er UNBEKANNT wird. Befund je Fläche =
+        # Prüfstrecken-Ausgabe wie `wand_warnungen`.
         try:
-            self.freiflaeche_befund = fuelle_freie_flaechen(raeume, tueren, kontur, wu)
+            self.freiflaeche_befund = fuelle_freie_flaechen(
+                raeume, tueren, kontur, wu, texte=kuerzel_texte(plan),
+                stempel=[z.stempel for z in k.zuordnungen if z.raum is None],
+                sanitaer_quelle=lambda: sanitaerobjekte(plan))
         except Exception as exc:  # noqa: BLE001 — Zusatzstufe darf den Parse nie killen
             self.freiflaeche_befund = [f"freiflaeche_fehler: {exc}"]
         # Ausgangs-Warnungen (u.a. „Geschoss unbekannt, Endausgang nicht
