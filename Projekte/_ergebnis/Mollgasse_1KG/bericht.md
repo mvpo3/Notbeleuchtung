@@ -339,4 +339,43 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_aussenoeffnung_1
 | unbekannte_kombination | 8 |
 | kein_nachbarraum | 4 |
 
-Laufzeit: 98.1 s
+## Raumtyp-Herkunft (Abschnitt 3 — Erscheinungsbild ist Wahrheit, KI ist zweite Meinung)
+
+- KI aus; Fragen 0 (Geschoss/Quadranten), Anfragen 0 (echte Aufrufe), Cache-Treffer 0
+- je Raum: Engine 31
+
+| Raum | Typ | Herkunft | Beleg | KI-Typ (Sicherheit) | Begründung |
+|---|---|---|---|---|---|
+| raum_1 | GANG | Engine | stempel | — | KI aus |
+| raum_2 | — | Engine | stempel | — | KI aus |
+| raum_3 | — | Engine | stempel | — | KI aus |
+| raum_4 | — | Engine | stempel | — | KI aus |
+| raum_5 | STIEGENHAUS | Engine | stempel | — | KI aus |
+| raum_6 | GANG | Engine | stempel | — | KI aus |
+| raum_7 | — | Engine | stempel | — | KI aus |
+| raum_8 | — | Engine | stempel | — | KI aus |
+| raum_9 | — | Engine | stempel | — | KI aus |
+| raum_10 | — | Engine | stempel | — | KI aus |
+| raum_11 | — | Engine | stempel | — | KI aus |
+| raum_12 | — | Engine | stempel | — | KI aus |
+| raum_13 | — | Engine | stempel | — | KI aus |
+| raum_14 | GARAGE | Engine | stempel | — | KI aus |
+| raum_15 | — | Engine | stempel | — | KI aus |
+| raum_16 | — | Engine | stempel | — | KI aus |
+| rest_1 | — | Engine | — | — | KI aus |
+| rest_2 | — | Engine | — | — | KI aus |
+| rest_3 | — | Engine | — | — | KI aus |
+| rest_4 | — | Engine | — | — | KI aus |
+| rest_5 | — | Engine | — | — | KI aus |
+| rest_6 | — | Engine | — | — | KI aus |
+| rest_7 | — | Engine | — | — | KI aus |
+| rest_8 | — | Engine | — | — | KI aus |
+| rest_9 | — | Engine | — | — | KI aus |
+| rest_10 | — | Engine | — | — | KI aus |
+| rest_11 | — | Engine | — | — | KI aus |
+| rest_12 | — | Engine | — | — | KI aus |
+| rest_13 | STIEGENHAUS | Engine | geometrie | — | KI aus |
+| lift_1 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+| lift_2 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+
+Laufzeit: 97.3 s

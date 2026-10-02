@@ -413,4 +413,42 @@ Quellen: FALLBACK: 2, GRAPH: 1
 | unbekannte_kombination | 16 |
 | kein_nachbarraum | 9 |
 
-Laufzeit: 168.3 s
+## Raumtyp-Herkunft (Abschnitt 3 — Erscheinungsbild ist Wahrheit, KI ist zweite Meinung)
+
+- KI aus; Fragen 0 (Geschoss/Quadranten), Anfragen 0 (echte Aufrufe), Cache-Treffer 0
+- je Raum: Engine 30
+
+| Raum | Typ | Herkunft | Beleg | KI-Typ (Sicherheit) | Begründung |
+|---|---|---|---|---|---|
+| raum_1 | GANG | Engine | stempel | — | KI aus |
+| raum_2 | SCHLEUSE | Engine | stempel | — | KI aus |
+| raum_3 | — | Engine | stempel | — | KI aus |
+| raum_4 | GARAGE | Engine | stempel | — | KI aus |
+| raum_5 | STIEGENHAUS | Engine | stempel | — | KI aus |
+| raum_6 | ABSTELLRAUM | Engine | stempel | — | KI aus |
+| raum_7 | GANG | Engine | stempel | — | KI aus |
+| raum_8 | — | Engine | stempel | — | KI aus |
+| raum_9 | — | Engine | stempel | — | KI aus |
+| raum_10 | — | Engine | stempel | — | KI aus |
+| raum_11 | — | Engine | stempel | — | KI aus |
+| raum_12 | — | Engine | stempel | — | KI aus |
+| raum_13 | TECHNIK | Engine | stempel | — | KI aus |
+| raum_14 | — | Engine | stempel | — | KI aus |
+| raum_15 | — | Engine | stempel | — | KI aus |
+| raum_16 | — | Engine | stempel | — | KI aus |
+| raum_17 | — | Engine | stempel | — | KI aus |
+| raum_18 | — | Engine | stempel | — | KI aus |
+| raum_19 | — | Engine | stempel | — | KI aus |
+| raum_20 | — | Engine | stempel | — | KI aus |
+| raum_21 | — | Engine | stempel | — | KI aus |
+| rest_1 | — | Engine | — | — | KI aus |
+| rest_2 | SCHACHT | Engine | geometrie | — | KI aus |
+| rest_3 | — | Engine | — | — | KI aus |
+| rest_4 | — | Engine | — | — | KI aus |
+| rest_5 | STIEGENHAUS | Engine | stempel | — | KI aus |
+| rest_6 | — | Engine | — | — | KI aus |
+| rest_7 | — | Engine | — | — | KI aus |
+| lift_1 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+| lift_2 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+
+Laufzeit: 165.9 s

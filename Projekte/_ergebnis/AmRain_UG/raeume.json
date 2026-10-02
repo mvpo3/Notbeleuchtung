@@ -31943,7 +31943,7 @@
     },
     {
       "id": "rest_3",
-      "typ": null,
+      "typ": "GANG",
       "name": null,
       "polygon_mm": [
         [
@@ -32997,7 +32997,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "GANG",
       "polygon_roh": [
         [
           11839.990234375,
@@ -34623,7 +34623,7 @@
     },
     {
       "id": "rest_5",
-      "typ": null,
+      "typ": "GANG",
       "name": null,
       "polygon_mm": [
         [
@@ -35293,7 +35293,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "GANG",
       "polygon_roh": [],
       "flaeche_roh": 56.84086854408581,
       "abweichung_bereinigt_prozent": null,
@@ -35301,7 +35301,7 @@
     },
     {
       "id": "rest_6",
-      "typ": null,
+      "typ": "SCHLEUSE",
       "name": null,
       "polygon_mm": [
         [
@@ -35559,7 +35559,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "SCHLEUSE",
       "polygon_roh": [],
       "flaeche_roh": 87.48615464651212,
       "abweichung_bereinigt_prozent": null,
@@ -35567,7 +35567,7 @@
     },
     {
       "id": "rest_7",
-      "typ": null,
+      "typ": "GARAGE",
       "name": null,
       "polygon_mm": [
         [
@@ -36377,7 +36377,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "GARAGE",
       "polygon_roh": [],
       "flaeche_roh": 8.744052788827634,
       "abweichung_bereinigt_prozent": null,
@@ -36385,7 +36385,7 @@
     },
     {
       "id": "rest_8",
-      "typ": null,
+      "typ": "GANG",
       "name": null,
       "polygon_mm": [
         [
@@ -37479,7 +37479,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "GANG",
       "polygon_roh": [
         [
           93354.99267578124,
@@ -41806,7 +41806,7 @@
     },
     {
       "id": "rest_18",
-      "typ": null,
+      "typ": "SCHLEUSE",
       "name": null,
       "polygon_mm": [
         [
@@ -42124,7 +42124,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "SCHLEUSE",
       "polygon_roh": [
         [
           97239.990234375,
@@ -43272,7 +43272,7 @@
     },
     {
       "id": "rest_23",
-      "typ": null,
+      "typ": "STIEGENHAUS",
       "name": null,
       "polygon_mm": [
         [
@@ -44866,7 +44866,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "STIEGENHAUS",
       "polygon_roh": [],
       "flaeche_roh": 47.9618741398113,
       "abweichung_bereinigt_prozent": null,
@@ -48018,7 +48018,7 @@
     },
     {
       "id": "rest_32",
-      "typ": null,
+      "typ": "GANG",
       "name": null,
       "polygon_mm": [
         [
@@ -49628,7 +49628,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "GANG",
       "polygon_roh": [],
       "flaeche_roh": 90.02473223951135,
       "abweichung_bereinigt_prozent": null,

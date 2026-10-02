@@ -36,7 +36,7 @@ Raum-Polygon-Quelle: `kaskade L:10 H:0 F:0 R:6` — Rotation: keine dominante Ka
 
 ## Warnungen (10)
 
-- mm_faktor: 1 aus $INSUNITS=4 (keine Wand-Spanne 15–500 m messbar), Türprobe: keine
+- mm_faktor: 1 aus Türkalibrierung (11 Türbögen, Median 840 mm, MAD 0 %, Spanne 840–940 mm) — $INSUNITS=4 (keine Wand-Spanne 15–500 m messbar) bestätigt
 - seite_fehlt: tuer_3 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
 - seite_fehlt: tuer_3 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
 - sanitaer: rest_6: BAD aus Sanitärbeleg (DUSCHE 1, WASCHBECKEN 2, WC 1) im Umriss top_2 (Probe) — Nachbarn nur top_2: raum_2 ZIMMER top_2, raum_3 ZIMMER top_2, raum_5 BAD top_2, raum_8 WC top_2, rest_5 GANG top_2
@@ -228,4 +228,29 @@ Restweg im EG (Rennweg_EG.dxf): 4.4–9.9 m (Stiegenhaustür → nächster final
 |---|--:|
 | tuer_ins_nichts | 1 |
 
-Laufzeit: 47.4 s
+## Raumtyp-Herkunft (Abschnitt 3 — Erscheinungsbild ist Wahrheit, KI ist zweite Meinung)
+
+- KI aus; Fragen 0 (Geschoss/Quadranten), Anfragen 0 (echte Aufrufe), Cache-Treffer 0
+- je Raum: Engine 17
+
+| Raum | Typ | Herkunft | Beleg | KI-Typ (Sicherheit) | Begründung |
+|---|---|---|---|---|---|
+| raum_1 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_2 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_3 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_4 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_5 | BAD | Engine | stempel | — | KI aus |
+| raum_6 | BAD | Engine | stempel | — | KI aus |
+| raum_7 | ABSTELLRAUM | Engine | stempel | — | KI aus |
+| raum_8 | WC | Engine | stempel | — | KI aus |
+| raum_9 | BALKON | Engine | stempel | — | KI aus |
+| raum_10 | GANG | Engine | stempel | — | KI aus |
+| rest_1 | SCHACHT | Engine | geometrie | — | KI aus |
+| rest_2 | SCHACHT | Engine | geometrie | — | KI aus |
+| rest_3 | STIEGENHAUS | Engine | geometrie | — | KI aus |
+| rest_4 | STIEGENHAUS | Engine | geometrie | — | KI aus |
+| rest_5 | GANG | Engine | geometrie | — | KI aus |
+| rest_6 | BAD | Engine | erscheinungsbild | — | KI aus |
+| lift_1 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+
+Laufzeit: 47.6 s

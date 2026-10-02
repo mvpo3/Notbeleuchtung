@@ -97,34 +97,34 @@ Raum-Polygon-Quelle: `kaskade L:0 H:0 F:42 R:11` — Rotation: keine dominante K
 | — | LOGGIA | BALKON | 5.32 | — | — | — | kein_polygon |
 | — | BALKON | BALKON | 19.37 | — | — | — | kein_polygon |
 | R | rest_1 | GANG | — | 3.89 | 3.89 | — | kein_stempel |
-| R | rest_2 | — | — | 29.89 | 29.89 | — | kein_stempel |
+| R | rest_2 | BALKON | — | 29.89 | 29.89 | — | kein_stempel |
 | R | rest_3 | — | — | 4.59 | 4.59 | — | kein_stempel |
-| R | rest_4 | — | — | 9.29 | 9.29 | — | kein_stempel |
-| R | rest_5 | — | — | 17.35 | 17.35 | — | kein_stempel |
+| R | rest_4 | VORRAUM | — | 9.29 | 9.29 | — | kein_stempel |
+| R | rest_5 | WC | — | 17.35 | 17.35 | — | kein_stempel |
 | R | rest_6 | — | — | 3.87 | 3.87 | — | kein_stempel |
 | R | rest_7 | GANG | — | 1.49 | 1.49 | — | kein_stempel |
-| R | rest_8 | — | — | 24.97 | 24.97 | — | kein_stempel |
+| R | rest_8 | BALKON | — | 24.97 | 24.97 | — | kein_stempel |
 | R | rest_9 | GANG | — | 4.82 | 4.82 | — | kein_stempel |
-| R | rest_10 | — | — | 1.70 | 1.70 | — | kein_stempel |
-| R | rest_11 | — | — | 1.27 | 1.27 | — | kein_stempel |
+| R | rest_10 | WC | — | 1.70 | 1.70 | — | kein_stempel |
+| R | rest_11 | VORRAUM | — | 1.27 | 1.27 | — | kein_stempel |
 
 ## Restflächen ohne Stempel (11)
 
 - rest_1 [R] GANG: 3.89 m², Zentrum (9.49, 3.99) m
-- rest_2 [R] —: 29.89 m², Zentrum (21.21, 8.30) m
+- rest_2 [R] BALKON: 29.89 m², Zentrum (21.21, 8.30) m
 - rest_3 [R] —: 4.59 m², Zentrum (37.01, 7.19) m
-- rest_4 [R] —: 9.29 m², Zentrum (10.25, 8.89) m
-- rest_5 [R] —: 17.35 m², Zentrum (24.77, 10.99) m
+- rest_4 [R] VORRAUM: 9.29 m², Zentrum (10.25, 8.89) m
+- rest_5 [R] WC: 17.35 m², Zentrum (24.77, 10.99) m
 - rest_6 [R] —: 3.87 m², Zentrum (8.73, 9.96) m
 - rest_7 [R] GANG: 1.49 m², Zentrum (8.68, 13.41) m
-- rest_8 [R] —: 24.97 m², Zentrum (1.17, 16.05) m
+- rest_8 [R] BALKON: 24.97 m², Zentrum (1.17, 16.05) m
 - rest_9 [R] GANG: 4.82 m², Zentrum (29.76, 14.97) m
-- rest_10 [R] —: 1.70 m², Zentrum (8.62, 18.54) m
-- rest_11 [R] —: 1.27 m², Zentrum (20.93, 19.17) m
+- rest_10 [R] WC: 1.70 m², Zentrum (8.62, 18.54) m
+- rest_11 [R] VORRAUM: 1.27 m², Zentrum (20.93, 19.17) m
 
 ## Warnungen (132)
 
-- mm_faktor: 1 aus $INSUNITS=4 (keine Wand-Spanne 15–500 m messbar), Türprobe: 10 — widerspricht
+- mm_faktor: 1 aus Türkalibrierung (68 Türbögen, Median 800 mm, MAD 0 %, Spanne 560–940 mm) — $INSUNITS=4 (keine Wand-Spanne 15–500 m messbar) bestätigt
 - keine_wand_entities: kein Wand-Layer mit Wand-Linien — Weiterlauf über das Erscheinungsbild (365 Wandkörper), Bounds aus den Wandkörpern
 - seite_fehlt: tuer_1 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
 - seite_fehlt: tuer_2 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
@@ -178,7 +178,7 @@ Raum-Polygon-Quelle: `kaskade L:0 H:0 F:42 R:11` — Rotation: keine dominante K
 - seite_fehlt: tuer_92 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
 - seite_fehlt: tuer_93 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
 - seite_fehlt: tuer_98 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
-- freiflaeche: 2.73 m² bei (61.1, 11.6) m → neuer Raum frei_1 UNBEKANNT, im Umriss top_14 (±250-mm-Umriss top_14); Tür mit Blatt trennt (tuer_84 raum_27|raum_30, tuer_86 raum_30|raum_35, tuer_98 raum_30|KEIN_RAUM), keine Öffnung ohne Türblatt
+- freiflaeche: 2.73 m² bei (61.1, 11.6) m → neuer Raum frei_1 VORRAUM, im Umriss top_13 (±250-mm-Umriss top_13); Tür mit Blatt trennt (tuer_84 raum_27|raum_30, tuer_86 raum_30|raum_35, tuer_98 raum_30|KEIN_RAUM), keine Öffnung ohne Türblatt; Kürzel »VR« im Polygon (Typbeleg ohne eigene Zuordnung); Polygon 2.73 m² gegen Stempel »VR 5.13 m²« (-47 %) (Layer Raum-Beschriftung) -> VORRAUM (Entscheid 1, Owner 2026-10-01) (Entscheid 2: Stempel vor UNBEKANNT)
 - Stempel ohne Polygon: „WC“
 - Stempel ohne Polygon: „VR“
 - Stempel ohne Polygon: „VR“
@@ -256,6 +256,15 @@ Raum-Polygon-Quelle: `kaskade L:0 H:0 F:42 R:11` — Rotation: keine dominante K
 - Abweichung > 10 % (Erkennung, roh): „WOHNRAUM“ (+47.2 %)
 - Abweichung > 10 % (Erkennung, roh): „STGH“ (+70.6 %)
 - Abweichung > 10 % (Erkennung, roh): „STGH“ (+39.3 %)
+
+## Hinweise Kürzel-Auflösung (6)
+
+- rest_2: Kürzel »BALKON« im Polygon (Typbeleg ohne eigene Zuordnung); Polygon 29.89 m² gegen Stempel »BALKON 18.86 m²« (+59 %, Polygon fasst mehr als den Stempelraum) (Layer Raum-Beschriftung) -> BALKON (Entscheid 1, Owner 2026-10-01)
+- rest_4: Kürzel »VR« im Polygon (Typbeleg ohne eigene Zuordnung) (Layer Raum-Beschriftung) -> VORRAUM (Entscheid 1, Owner 2026-10-01)
+- rest_5: Kürzel »WC« im Polygon (Typbeleg ohne eigene Zuordnung); Polygon 17.35 m² gegen Stempel »WC 2.25 m²« (+671 %, Polygon fasst mehr als den Stempelraum) (Layer Raum-Beschriftung) -> WC (Entscheid 1, Owner 2026-10-01)
+- rest_8: Kürzel »LOGGIA«, »BALKON« im Polygon (Typbeleg ohne eigene Zuordnung); Polygon 24.97 m² gegen Stempel »LOGGIA 8.13 m²« (+207 %, Polygon fasst mehr als den Stempelraum) (Layer Raum-Beschriftung) -> BALKON (Entscheid 1, Owner 2026-10-01)
+- rest_10: Kürzel »WC« im Polygon (Typbeleg ohne eigene Zuordnung) (Layer Raum-Beschriftung) -> WC (Entscheid 1, Owner 2026-10-01)
+- rest_11: Kürzel »VR« im Polygon (Typbeleg ohne eigene Zuordnung) (Layer Raum-Beschriftung) -> VORRAUM (Entscheid 1, Owner 2026-10-01)
 
 ## Raumbereinigung (ENIS_UEBERGABE_0908 § 14.6.1)
 
@@ -335,7 +344,7 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 
 ## Türen (Fachteil 3)
 
-61 / 129 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
+84 / 129 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
 
 | ID | raum_a | raum_b | Typ | Breite mm | Breiten-Quelle | Notausgang | Quelle | Grund |
 |---|---|---|---|--:|---|---|---|---|
@@ -350,10 +359,10 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | tuer_9 | AUSSEN | raum_18 | balkontuer | 980 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_10 | KEIN_RAUM | KEIN_RAUM | — | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc | tuer_ins_nichts |
 | tuer_11 | raum_41 | raum_39 | wohnungseingang | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
-| tuer_12 | raum_7 | rest_4 | — | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc | unbekannte_kombination |
+| tuer_12 | raum_7 | rest_4 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_13 | raum_15 | KEIN_RAUM | — | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
 | tuer_14 | rest_5 | KEIN_RAUM | — | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
-| tuer_15 | rest_2 | raum_9 | — | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc | unbekannte_kombination |
+| tuer_15 | rest_2 | raum_9 | balkontuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_16 | KEIN_RAUM | rest_9 | — | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
 | tuer_17 | KEIN_RAUM | KEIN_RAUM | — | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc | tuer_ins_nichts |
 | tuer_18 | raum_18 | KEIN_RAUM | — | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
@@ -369,18 +378,18 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | tuer_28 | raum_34 | KEIN_RAUM | brandschutztuer | 840 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_29 | raum_41 | raum_41 | stiegenhaustuer | 940 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_30 | raum_15 | AUSSEN | balkontuer | 980 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
-| tuer_31 | raum_1 | rest_8 | — | 940 | GEOMETRIE_SCHWENKRADIUS | — | arc | unbekannte_kombination |
+| tuer_31 | raum_1 | rest_8 | balkontuer | 940 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_32 | raum_1 | KEIN_RAUM | — | 980 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
 | tuer_33 | raum_39 | KEIN_RAUM | — | 980 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
 | tuer_34 | raum_4 | KEIN_RAUM | — | 980 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
-| tuer_35 | raum_9 | rest_2 | — | 980 | GEOMETRIE_SCHWENKRADIUS | — | arc | unbekannte_kombination |
+| tuer_35 | raum_9 | rest_2 | balkontuer | 980 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_36 | raum_14 | AUSSEN | balkontuer | 980 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_37 | raum_20 | AUSSEN | balkontuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_38 | raum_34 | raum_14 | balkontuer | 940 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_39 | raum_14 | KEIN_RAUM | balkontuer | 980 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_40 | raum_30 | KEIN_RAUM | — | 980 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
-| tuer_41 | raum_9 | rest_2 | — | 960 | GEOMETRIE_SCHWENKRADIUS | — | arc | unbekannte_kombination |
-| tuer_42 | rest_2 | KEIN_RAUM | — | 980 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
+| tuer_41 | raum_9 | rest_2 | balkontuer | 960 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
+| tuer_42 | rest_2 | KEIN_RAUM | balkontuer | 980 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_43 | raum_32 | KEIN_RAUM | — | 940 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
 | tuer_44 | AUSSEN | KEIN_RAUM | — | 980 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
 | tuer_45 | raum_35 | raum_42 | stiegenhaustuer | 669 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
@@ -388,7 +397,7 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | tuer_47 | KEIN_RAUM | raum_39 | — | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
 | tuer_48 | raum_4 | KEIN_RAUM | — | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
 | tuer_49 | raum_10 | KEIN_RAUM | — | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
-| tuer_50 | rest_5 | raum_11 | — | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc | unbekannte_kombination |
+| tuer_50 | rest_5 | raum_11 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_51 | rest_9 | raum_13 | wohnungseingang | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_52 | rest_9 | raum_12 | wohnungseingang | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_53 | raum_29 | raum_25 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
@@ -396,11 +405,11 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | tuer_55 | raum_1 | raum_2 | wohnungseingang | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_56 | raum_2 | raum_37 | wohnungseingang | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_57 | raum_31 | raum_35 | wohnungseingang | 900 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
-| tuer_58 | rest_11 | raum_34 | — | 900 | GEOMETRIE_SCHWENKRADIUS | — | arc | unbekannte_kombination |
+| tuer_58 | rest_11 | raum_34 | wohnungseingang | 900 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_59 | KEIN_RAUM | raum_34 | — | 900 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
 | tuer_60 | raum_11 | raum_34 | wohnungseingang | 900 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
-| tuer_61 | raum_41 | rest_4 | — | 900 | GEOMETRIE_SCHWENKRADIUS | — | arc | unbekannte_kombination |
-| tuer_62 | rest_4 | rest_4 | — | 900 | GEOMETRIE_SCHWENKRADIUS | — | arc | beide_seiten_untypisiert |
+| tuer_61 | raum_41 | rest_4 | wohnungseingang | 900 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
+| tuer_62 | rest_4 | rest_4 | zimmertuer | 900 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_63 | raum_41 | KEIN_RAUM | — | 900 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
 | tuer_64 | KEIN_RAUM | raum_28 | — | 900 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
 | tuer_65 | raum_29 | raum_35 | wohnungseingang | 900 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
@@ -415,12 +424,12 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | tuer_74 | AUSSEN | raum_21 | balkontuer | 940 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_75 | KEIN_RAUM | raum_8 | — | 940 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
 | tuer_76 | raum_1 | KEIN_RAUM | — | 940 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
-| tuer_77 | rest_5 | rest_2 | — | 940 | GEOMETRIE_SCHWENKRADIUS | — | arc | beide_seiten_untypisiert |
+| tuer_77 | rest_5 | rest_2 | balkontuer | 940 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_78 | raum_14 | KEIN_RAUM | balkontuer | 940 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_79 | AUSSEN | raum_32 | balkontuer | 940 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_80 | raum_33 | AUSSEN | balkontuer | 640 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_81 | KEIN_RAUM | AUSSEN | — | 940 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
-| tuer_82 | rest_8 | KEIN_RAUM | — | 940 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
+| tuer_82 | rest_8 | KEIN_RAUM | balkontuer | 940 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_83 | raum_23 | KEIN_RAUM | — | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
 | tuer_84 | raum_27 | raum_30 | zimmertuer | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc |  |
 | tuer_85 | raum_24 | KEIN_RAUM | — | 900 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
@@ -439,20 +448,20 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | tuer_98 | raum_30 | KEIN_RAUM | — | 800 | GEOMETRIE_SCHWENKRADIUS | — | arc | kein_nachbarraum |
 | durchgang_1 | raum_1 | raum_2 | wohnungseingang | 1706 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_2 | raum_1 | raum_3 | zimmertuer | 1115 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_3 | raum_1 | rest_8 | — | 1445 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
+| durchgang_3 | raum_1 | rest_8 | balkontuer | 1445 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_4 | raum_2 | raum_37 | wohnungseingang | 1939 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_5 | raum_3 | rest_10 | — | 1840 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
-| durchgang_6 | raum_7 | rest_4 | — | 2410 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
+| durchgang_5 | raum_3 | rest_10 | zimmertuer | 1840 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_6 | raum_7 | rest_4 | zimmertuer | 2410 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_7 | raum_8 | rest_1 | wohnungseingang | 1472 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_8 | raum_9 | raum_11 | zimmertuer | 3171 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_9 | raum_9 | rest_2 | — | 7171 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
-| durchgang_10 | raum_9 | rest_2 | — | 6380 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
-| durchgang_11 | raum_10 | rest_5 | — | 2291 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
+| durchgang_9 | raum_9 | rest_2 | balkontuer | 7171 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_10 | raum_9 | rest_2 | balkontuer | 6380 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_11 | raum_10 | rest_5 | zimmertuer | 2291 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_12 | raum_12 | raum_13 | zimmertuer | 1010 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_13 | raum_14 | raum_34 | balkontuer | 8567 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_14 | raum_14 | rest_9 | balkontuer | 2037 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_15 | raum_15 | raum_16 | zimmertuer | 4820 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_16 | raum_15 | rest_11 | — | 2611 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
+| durchgang_16 | raum_15 | rest_11 | zimmertuer | 2611 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_17 | raum_18 | raum_19 | zimmertuer | 4750 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_18 | raum_23 | raum_24 | zimmertuer | 1488 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_19 | raum_24 | raum_35 | wohnungseingang | 6741 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
@@ -461,12 +470,12 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | durchgang_22 | raum_34 | rest_9 | — | 1880 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
 | durchgang_23 | raum_35 | raum_42 | stiegenhaustuer | 2002 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_24 | raum_36 | raum_40 | zimmertuer | 2686 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_25 | raum_38 | rest_10 | — | 1910 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
+| durchgang_25 | raum_38 | rest_10 | zimmertuer | 1910 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_26 | raum_39 | raum_40 | zimmertuer | 1422 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_27 | raum_39 | rest_7 | wohnungseingang | 2930 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_28 | raum_39 | rest_8 | — | 1506 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
-| durchgang_29 | raum_39 | rest_8 | — | 1821 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
-| durchgang_30 | raum_41 | rest_4 | — | 3139 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
+| durchgang_28 | raum_39 | rest_8 | balkontuer | 1506 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_29 | raum_39 | rest_8 | balkontuer | 1821 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
+| durchgang_30 | raum_41 | rest_4 | wohnungseingang | 3139 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | aussenoeffnung_1 | rest_1 | AUSSEN | — | 2327 | GEOMETRIE_OEFFNUNG | ja | oeffnung_aussenwand+windfang | unbekannte_kombination |
 
 ## Ausgänge (3)
@@ -483,67 +492,75 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 |---|---|--:|---|
 | tuer_36 | raum_14 ↔ AUSSEN | 980 | Beleg Geländeniveau heute nicht führbar |
 
-## Fluchtweg-Segmente (12)
+## Fluchtweg-Segmente (17)
 
-Quellen: FALLBACK: 2, GRAPH: 10
+Quellen: FALLBACK: 2, GRAPH: 15
 
 | Segment | Quelle | Länge m | Grund | Ziel-Ausgang |
 |---|---|--:|---|---|
 | seg_graph_tuer_11 | GRAPH | 9.1 | exit | exit_tuer_27 |
+| seg_graph_tuer_12 | GRAPH | 13.1 | exit | exit_tuer_27 |
 | seg_graph_tuer_51 | GRAPH | 18.8 | exit | exit_tuer_27 |
 | seg_graph_tuer_52 | GRAPH | 20.0 | exit | exit_tuer_27 |
 | seg_graph_tuer_57 | GRAPH | 11.8 | exit | exit_tuer_45 |
+| seg_graph_tuer_58 | GRAPH | 7.2 | exit | exit_tuer_27 |
 | seg_graph_tuer_60 | GRAPH | 10.5 | exit | exit_tuer_27 |
+| seg_graph_tuer_61 | GRAPH | 11.5 | exit | exit_tuer_27 |
 | seg_graph_tuer_65 | GRAPH | 4.2 | exit | exit_tuer_45 |
 | seg_graph_tuer_68 | GRAPH | 15.5 | exit | exit_tuer_27 |
 | seg_graph_tuer_69 | GRAPH | 4.6 | exit | exit_tuer_27 |
 | seg_graph_tuer_86 | GRAPH | 4.7 | exit | exit_tuer_45 |
+| seg_graph_durchgang_6 | GRAPH | 14.0 | exit | exit_tuer_27 |
 | seg_graph_durchgang_19 | GRAPH | 16.8 | exit | exit_tuer_45 |
+| seg_graph_durchgang_30 | GRAPH | 11.2 | exit | exit_tuer_27 |
 | seg_fallback_raum_42 | FALLBACK | 6.7 | long_run | — |
 | seg_fallback_rest_1 | FALLBACK | 3.2 | direction_change | — |
 
-## Wohnungen (23)
+## Wohnungen (21)
 
-- top_1: 4 Räume (raum_1, raum_2, raum_3, raum_37)
-- top_10: 1 Räume (raum_22)
-- top_11: 2 Räume (raum_23, raum_24)
-- top_12: 2 Räume (raum_25, raum_29)
-- top_13: 2 Räume (raum_26, raum_33)
-- top_14: 2 Räume (raum_27, raum_30)
-- top_15: 1 Räume (raum_28)
-- top_16: 1 Räume (raum_31)
-- top_17: 1 Räume (raum_32)
-- top_18: 4 Räume (raum_36, raum_39, raum_40, rest_7)
-- top_19: 1 Räume (raum_38)
-- top_2: 1 Räume (raum_10)
-- top_20: 1 Räume (raum_4)
-- top_21: 2 Räume (raum_5, raum_8)
-- top_22: 1 Räume (raum_6)
-- top_23: 1 Räume (raum_7)
-- top_3: 2 Räume (raum_11, raum_9)
-- top_4: 2 Räume (raum_12, raum_13)
-- top_5: 2 Räume (raum_15, raum_16)
-- top_6: 1 Räume (raum_17)
-- top_7: 2 Räume (raum_18, raum_19)
-- top_8: 1 Räume (raum_20)
-- top_9: 1 Räume (raum_21)
+- top_1: 6 Räume (raum_1, raum_2, raum_3, raum_37, raum_38, rest_10)
+- top_10: 2 Räume (raum_23, raum_24)
+- top_11: 2 Räume (raum_25, raum_29)
+- top_12: 2 Räume (raum_26, raum_33)
+- top_13: 2 Räume (raum_27, raum_30)
+- top_14: 1 Räume (raum_28)
+- top_15: 1 Räume (raum_31)
+- top_16: 1 Räume (raum_32)
+- top_17: 4 Räume (raum_36, raum_39, raum_40, rest_7)
+- top_18: 1 Räume (raum_4)
+- top_19: 2 Räume (raum_5, raum_8)
+- top_2: 4 Räume (raum_10, raum_11, raum_9, rest_5)
+- top_20: 1 Räume (raum_6)
+- top_21: 1 Räume (raum_7)
+- top_3: 2 Räume (raum_12, raum_13)
+- top_4: 3 Räume (raum_15, raum_16, rest_11)
+- top_5: 1 Räume (raum_17)
+- top_6: 2 Räume (raum_18, raum_19)
+- top_7: 1 Räume (raum_20)
+- top_8: 1 Räume (raum_21)
+- top_9: 1 Räume (raum_22)
 
 ## Weglänge je Wohnungseingang → nächster Ausgang
 
 | Tür | Weglänge m | Quelle | Ausgang |
 |---|--:|---|---|
 | tuer_11 | 9.1 | GRAPH | exit_tuer_27 |
+| tuer_12 | 13.1 | GRAPH | exit_tuer_27 |
 | tuer_51 | 18.8 | GRAPH | exit_tuer_27 |
 | tuer_52 | 20.0 | GRAPH | exit_tuer_27 |
 | tuer_57 | 11.8 | GRAPH | exit_tuer_45 |
+| tuer_58 | 7.2 | GRAPH | exit_tuer_27 |
 | tuer_60 | 10.5 | GRAPH | exit_tuer_27 |
+| tuer_61 | 11.5 | GRAPH | exit_tuer_27 |
 | tuer_65 | 4.2 | GRAPH | exit_tuer_45 |
 | tuer_68 | 15.5 | GRAPH | exit_tuer_27 |
 | tuer_69 | 4.6 | GRAPH | exit_tuer_27 |
 | tuer_71 | 15.1 | Luftlinie | exit_tuer_27 |
 | tuer_86 | 4.7 | GRAPH | exit_tuer_45 |
+| durchgang_6 | 14.0 | GRAPH | exit_tuer_27 |
 | durchgang_7 | 16.0 | Luftlinie | exit_tuer_27 |
 | durchgang_19 | 16.8 | GRAPH | exit_tuer_45 |
+| durchgang_30 | 11.2 | GRAPH | exit_tuer_27 |
 
 ## Leuchten je Nutzungsklasse
 
@@ -637,9 +654,76 @@ Restweg im EG: unbekannt (AmRain_EG.dxf: kein Segment Stiegenhaustür→final_ex
 
 | Grund | Anzahl |
 |---|--:|
-| kein_nachbarraum | 42 |
-| unbekannte_kombination | 21 |
+| kein_nachbarraum | 40 |
 | tuer_ins_nichts | 3 |
-| beide_seiten_untypisiert | 2 |
+| unbekannte_kombination | 2 |
 
-Laufzeit: 360.2 s
+## Raumtyp-Herkunft (Abschnitt 3 — Erscheinungsbild ist Wahrheit, KI ist zweite Meinung)
+
+- KI aus; Fragen 0 (Geschoss/Quadranten), Anfragen 0 (echte Aufrufe), Cache-Treffer 0
+- je Raum: Engine 60
+
+| Raum | Typ | Herkunft | Beleg | KI-Typ (Sicherheit) | Begründung |
+|---|---|---|---|---|---|
+| raum_1 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_2 | GANG | Engine | stempel | — | KI aus |
+| raum_3 | BAD | Engine | stempel | — | KI aus |
+| raum_4 | WOHNZIMMER | Engine | stempel | — | KI aus |
+| raum_5 | BAD | Engine | stempel | — | KI aus |
+| raum_6 | WC | Engine | stempel | — | KI aus |
+| raum_7 | BAD | Engine | stempel | — | KI aus |
+| raum_8 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_9 | WOHNZIMMER | Engine | stempel | — | KI aus |
+| raum_10 | BAD | Engine | stempel | — | KI aus |
+| raum_11 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_12 | WC | Engine | stempel | — | KI aus |
+| raum_13 | BAD | Engine | stempel | — | KI aus |
+| raum_14 | TERRASSE | Engine | stempel | — | KI aus |
+| raum_15 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_16 | WC | Engine | stempel | — | KI aus |
+| raum_17 | BAD | Engine | stempel | — | KI aus |
+| raum_18 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_19 | WC | Engine | stempel | — | KI aus |
+| raum_20 | BAD | Engine | stempel | — | KI aus |
+| raum_21 | BAD | Engine | stempel | — | KI aus |
+| raum_22 | ABSTELLRAUM | Engine | stempel | — | KI aus |
+| raum_23 | BAD | Engine | stempel | — | KI aus |
+| raum_24 | WOHNZIMMER | Engine | stempel | — | KI aus |
+| raum_25 | BAD | Engine | stempel | — | KI aus |
+| raum_26 | WC | Engine | stempel | — | KI aus |
+| raum_27 | BAD | Engine | stempel | — | KI aus |
+| raum_28 | BAD | Engine | stempel | — | KI aus |
+| raum_29 | WOHNZIMMER | Engine | stempel | — | KI aus |
+| raum_30 | WOHNZIMMER | Engine | stempel | — | KI aus |
+| raum_31 | BAD | Engine | stempel | — | KI aus |
+| raum_32 | WOHNZIMMER | Engine | stempel | — | KI aus |
+| raum_33 | WOHNZIMMER | Engine | stempel | — | KI aus |
+| raum_34 | GANG | Engine | stempel | — | KI aus |
+| raum_35 | GANG | Engine | stempel | — | KI aus |
+| raum_36 | WC | Engine | stempel | — | KI aus |
+| raum_37 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_38 | WC | Engine | stempel | — | KI aus |
+| raum_39 | WOHNZIMMER | Engine | stempel | — | KI aus |
+| raum_40 | BAD | Engine | stempel | — | KI aus |
+| raum_41 | STIEGENHAUS | Engine | stempel | — | KI aus |
+| raum_42 | STIEGENHAUS | Engine | stempel | — | KI aus |
+| rest_1 | GANG | Engine | geometrie | — | KI aus |
+| rest_2 | BALKON | Engine | kuerzel | — | KI aus |
+| rest_3 | — | Engine | — | — | KI aus |
+| rest_4 | VORRAUM | Engine | kuerzel | — | KI aus |
+| rest_5 | WC | Engine | kuerzel | — | KI aus |
+| rest_6 | — | Engine | — | — | KI aus |
+| rest_7 | GANG | Engine | geometrie | — | KI aus |
+| rest_8 | BALKON | Engine | kuerzel | — | KI aus |
+| rest_9 | GANG | Engine | geometrie | — | KI aus |
+| rest_10 | WC | Engine | kuerzel | — | KI aus |
+| rest_11 | VORRAUM | Engine | kuerzel | — | KI aus |
+| frei_1 | VORRAUM | Engine | kuerzel | — | KI aus |
+| lift_1 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+| lift_2 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+| lift_3 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+| lift_4 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+| lift_5 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+| lift_6 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+
+Laufzeit: 360.1 s

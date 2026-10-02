@@ -186741,7 +186741,7 @@
     },
     {
       "id": "rest_3",
-      "typ": null,
+      "typ": "VORRAUM",
       "name": null,
       "polygon_mm": [
         [
@@ -187159,7 +187159,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "VORRAUM",
       "polygon_roh": [],
       "flaeche_roh": 7.19964980439636,
       "abweichung_bereinigt_prozent": null,
@@ -187477,7 +187477,7 @@
     },
     {
       "id": "rest_5",
-      "typ": null,
+      "typ": "KÜCHE",
       "name": null,
       "polygon_mm": [
         [
@@ -187843,7 +187843,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "KÜCHE",
       "polygon_roh": [],
       "flaeche_roh": 9.261154824818123,
       "abweichung_bereinigt_prozent": null,
@@ -187851,7 +187851,7 @@
     },
     {
       "id": "rest_6",
-      "typ": null,
+      "typ": "KÜCHE",
       "name": null,
       "polygon_mm": [
         [
@@ -188217,7 +188217,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "KÜCHE",
       "polygon_roh": [],
       "flaeche_roh": 9.268654824818363,
       "abweichung_bereinigt_prozent": null,
@@ -188447,7 +188447,7 @@
     },
     {
       "id": "rest_8",
-      "typ": null,
+      "typ": "WC",
       "name": null,
       "polygon_mm": [
         [
@@ -188673,7 +188673,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "WC",
       "polygon_roh": [],
       "flaeche_roh": 1.5951204918190673,
       "abweichung_bereinigt_prozent": null,
@@ -188681,7 +188681,7 @@
     },
     {
       "id": "rest_9",
-      "typ": null,
+      "typ": "WC",
       "name": null,
       "polygon_mm": [
         [
@@ -188807,7 +188807,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "WC",
       "polygon_roh": [],
       "flaeche_roh": 1.6731908571670486,
       "abweichung_bereinigt_prozent": null,
@@ -188815,7 +188815,7 @@
     },
     {
       "id": "rest_10",
-      "typ": null,
+      "typ": "WC",
       "name": null,
       "polygon_mm": [
         [
@@ -189073,7 +189073,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "WC",
       "polygon_roh": [],
       "flaeche_roh": 1.8583034135296719,
       "abweichung_bereinigt_prozent": null,
@@ -192133,7 +192133,7 @@
     },
     {
       "id": "rest_13",
-      "typ": null,
+      "typ": "GANG",
       "name": null,
       "polygon_mm": [
         [
@@ -192199,7 +192199,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "GANG",
       "polygon_roh": [],
       "flaeche_roh": 1.23,
       "abweichung_bereinigt_prozent": null,
@@ -192207,7 +192207,7 @@
     },
     {
       "id": "rest_14",
-      "typ": null,
+      "typ": "GANG",
       "name": null,
       "polygon_mm": [
         [
@@ -192273,7 +192273,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "GANG",
       "polygon_roh": [],
       "flaeche_roh": 1.23375,
       "abweichung_bereinigt_prozent": null,
@@ -192483,7 +192483,7 @@
     },
     {
       "id": "rest_16",
-      "typ": null,
+      "typ": "GANG",
       "name": null,
       "polygon_mm": [
         [
@@ -192657,7 +192657,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "GANG",
       "polygon_roh": [],
       "flaeche_roh": 5.074649435080224,
       "abweichung_bereinigt_prozent": null,
@@ -192665,7 +192665,7 @@
     },
     {
       "id": "rest_17",
-      "typ": null,
+      "typ": "WC",
       "name": null,
       "polygon_mm": [
         [
@@ -192767,7 +192767,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "WC",
       "polygon_roh": [],
       "flaeche_roh": 2.262014820198695,
       "abweichung_bereinigt_prozent": null,
@@ -192775,7 +192775,7 @@
     },
     {
       "id": "rest_18",
-      "typ": null,
+      "typ": "WC",
       "name": null,
       "polygon_mm": [
         [
@@ -192981,7 +192981,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "WC",
       "polygon_roh": [],
       "flaeche_roh": 2.628878343382267,
       "abweichung_bereinigt_prozent": null,
@@ -193119,7 +193119,7 @@
     },
     {
       "id": "rest_20",
-      "typ": null,
+      "typ": "WOHNZIMMER",
       "name": null,
       "polygon_mm": [
         [
@@ -193545,7 +193545,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "WOHNZIMMER",
       "polygon_roh": [],
       "flaeche_roh": 26.917916774322695,
       "abweichung_bereinigt_prozent": null,
@@ -193553,7 +193553,7 @@
     },
     {
       "id": "rest_21",
-      "typ": null,
+      "typ": "WOHNZIMMER",
       "name": null,
       "polygon_mm": [
         [
@@ -193991,7 +193991,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "WOHNZIMMER",
       "polygon_roh": [],
       "flaeche_roh": 26.924648380911858,
       "abweichung_bereinigt_prozent": null,
@@ -193999,7 +193999,7 @@
     },
     {
       "id": "rest_22",
-      "typ": null,
+      "typ": "WC",
       "name": null,
       "polygon_mm": [
         [
@@ -194101,7 +194101,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "WC",
       "polygon_roh": [],
       "flaeche_roh": 2.030703479866701,
       "abweichung_bereinigt_prozent": null,
@@ -202655,7 +202655,7 @@
     },
     {
       "id": "rest_24",
-      "typ": null,
+      "typ": "WOHNZIMMER",
       "name": null,
       "polygon_mm": [
         [
@@ -203113,7 +203113,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "WOHNZIMMER",
       "polygon_roh": [],
       "flaeche_roh": 28.473593969786055,
       "abweichung_bereinigt_prozent": null,
@@ -203121,7 +203121,7 @@
     },
     {
       "id": "rest_25",
-      "typ": null,
+      "typ": "WOHNZIMMER",
       "name": null,
       "polygon_mm": [
         [
@@ -203539,7 +203539,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "WOHNZIMMER",
       "polygon_roh": [],
       "flaeche_roh": 27.955479412562664,
       "abweichung_bereinigt_prozent": null,

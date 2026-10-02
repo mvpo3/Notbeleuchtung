@@ -4158,7 +4158,7 @@
     },
     {
       "id": "raum_41",
-      "typ": null,
+      "typ": "BALKON",
       "name": null,
       "polygon_mm": [
         [
@@ -4188,7 +4188,7 @@
       "flag": "kein_stempel",
       "quelle": "H",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "BALKON",
       "polygon_roh": [],
       "flaeche_roh": 5.3081766002020485,
       "abweichung_bereinigt_prozent": null,

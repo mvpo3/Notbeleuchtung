@@ -52,7 +52,7 @@ Raum-Polygon-Quelle: `kaskade L:2 H:40 F:1 R:3` — Rotation: Wände vertikal-do
 | H | raum_15 | TERRASSE | — | 14.26 | 14.26 | — | kein_stempel |
 | H | raum_27 | — | — | 4.51 | 4.51 | — | kein_stempel |
 | H | raum_36 | — | — | 29.87 | 29.87 | — | kein_stempel |
-| H | raum_41 | — | — | 5.31 | 5.31 | — | kein_stempel |
+| H | raum_41 | BALKON | — | 5.31 | 5.31 | — | kein_stempel |
 | R | rest_1 | — | — | 2.78 | 2.78 | — | kein_stempel |
 | R | rest_2 | — | — | 4.42 | 4.42 | — | kein_stempel |
 | R | rest_3 | NISCHE | — | 2.53 | 2.53 | — | kein_stempel |
@@ -65,13 +65,14 @@ Raum-Polygon-Quelle: `kaskade L:2 H:40 F:1 R:3` — Rotation: Wände vertikal-do
 - raum_15 [H] TERRASSE: 14.26 m², Zentrum (9.58, -18.15) m
 - raum_27 [H] —: 4.51 m², Zentrum (6.44, -25.04) m
 - raum_36 [H] —: 29.87 m², Zentrum (16.97, -7.89) m
-- raum_41 [H] —: 5.31 m², Zentrum (15.46, -30.63) m
+- raum_41 [H] BALKON: 5.31 m², Zentrum (15.46, -30.63) m
 - rest_1 [R] —: 2.78 m², Zentrum (12.87, -20.34) m
 - rest_2 [R] —: 4.42 m², Zentrum (13.69, -15.76) m
 - rest_3 [R] NISCHE: 2.53 m², Zentrum (9.91, -5.01) m
 
-## Warnungen (37)
+## Warnungen (38)
 
+- kuerzel: raum_27 bleibt UNBESTIMMT (Notlicht): Kürzel mehrdeutig — »SR« = Schlafraum (SCHLAFZIMMER) oder Schutzraum (kein Kanon-Typ); zweite Meinung (Abschnitt 3) entscheidet
 - seite_fehlt: tuer_1 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
 - seite_fehlt: tuer_1 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
 - seite_fehlt: tuer_2 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
@@ -109,6 +110,10 @@ Raum-Polygon-Quelle: `kaskade L:2 H:40 F:1 R:3` — Rotation: Wände vertikal-do
 - Polygon ohne Stempel: rest_2 (4.42 m²)
 - Polygon ohne Stempel: rest_3 (2.53 m²)
 - Abweichung > 10 % (Erkennung, roh): „Terrasse“ (+544.4 %)
+
+## Hinweise Kürzel-Auflösung (1)
+
+- raum_41: Kürzel »Loggia« im Polygon (Typbeleg ohne eigene Zuordnung) (Layer 0._EG PP_2_810 Raum) -> BALKON (Entscheid 1, Owner 2026-10-01)
 
 ## Bekannte Grenze: ausgebrochene Flutungen
 
@@ -252,7 +257,7 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 
 ## Türen (Fachteil 3)
 
-33 / 71 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
+35 / 71 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
 
 | ID | raum_a | raum_b | Typ | Breite mm | Breiten-Quelle | Notausgang | Quelle | Grund |
 |---|---|---|---|--:|---|---|---|---|
@@ -309,7 +314,7 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 | durchgang_11 | raum_9 | raum_25 | zimmertuer | 1253 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_12 | raum_9 | raum_27 | — | 1847 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
 | durchgang_13 | raum_12 | raum_13 | zimmertuer | 1378 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_14 | raum_13 | raum_41 | — | 2148 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
+| durchgang_14 | raum_13 | raum_41 | balkontuer | 2148 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_15 | raum_14 | raum_15 | — | 3092 | GEOMETRIE_OEFFNUNG | ja | durchgang | unbekannte_kombination |
 | durchgang_16 | raum_14 | raum_16 | balkontuer | 1877 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_17 | raum_14 | raum_38 | — | 7132 | GEOMETRIE_OEFFNUNG | ja | durchgang | unbekannte_kombination |
@@ -320,7 +325,7 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 | durchgang_22 | raum_18 | raum_31 | zimmertuer | 798 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_23 | raum_18 | raum_39 | balkontuer | 2141 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_24 | raum_19 | raum_30 | zimmertuer | 1308 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
-| durchgang_25 | raum_23 | raum_41 | — | 1641 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
+| durchgang_25 | raum_23 | raum_41 | balkontuer | 1641 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_26 | raum_25 | raum_42 | balkontuer | 2141 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_27 | raum_26 | raum_42 | balkontuer | 1641 | GEOMETRIE_OEFFNUNG | — | durchgang |  |
 | durchgang_28 | raum_35 | rest_2 | — | 1449 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
@@ -472,10 +477,67 @@ Quellen: FALLBACK: 1, GRAPH: 7
 
 | Grund | Anzahl |
 |---|--:|
-| unbekannte_kombination | 21 |
+| unbekannte_kombination | 19 |
 | kein_nachbarraum | 8 |
 | tuer_ins_nichts | 7 |
 | beide_seiten_untypisiert | 2 |
+
+## Raumtyp-Herkunft (Abschnitt 3 — Erscheinungsbild ist Wahrheit, KI ist zweite Meinung)
+
+- KI aus; Fragen 0 (Geschoss/Quadranten), Anfragen 0 (echte Aufrufe), Cache-Treffer 0
+- je Raum: Engine 49
+
+| Raum | Typ | Herkunft | Beleg | KI-Typ (Sicherheit) | Begründung |
+|---|---|---|---|---|---|
+| raum_1 | — | Engine | — | — | KI aus |
+| raum_2 | TERRASSE | Engine | stempel | — | KI aus |
+| raum_3 | BAD | Engine | stempel | — | KI aus |
+| raum_4 | — | Engine | — | — | KI aus |
+| raum_5 | BAD | Engine | stempel | — | KI aus |
+| raum_6 | BALKON | Engine | stempel | — | KI aus |
+| raum_7 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_8 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_9 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_10 | BAD | Engine | stempel | — | KI aus |
+| raum_11 | WC | Engine | stempel | — | KI aus |
+| raum_12 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_13 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_14 | TERRASSE | Engine | geometrie | — | KI aus |
+| raum_15 | TERRASSE | Engine | geometrie | — | KI aus |
+| raum_16 | WC | Engine | stempel | — | KI aus |
+| raum_17 | WC | Engine | stempel | — | KI aus |
+| raum_18 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_19 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_20 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_21 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_22 | BAD | Engine | stempel | — | KI aus |
+| raum_23 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_24 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_25 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_26 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_27 | — | Engine | — | — | KI aus |
+| raum_28 | ABSTELLRAUM | Engine | stempel | — | KI aus |
+| raum_29 | WC | Engine | stempel | — | KI aus |
+| raum_30 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_31 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_32 | ABSTELLRAUM | Engine | stempel | — | KI aus |
+| raum_33 | KINDERWAGENRAUM | Engine | stempel | — | KI aus |
+| raum_34 | WASCHKÜCHE | Engine | stempel | — | KI aus |
+| raum_35 | STIEGENHAUS | Engine | stempel | — | KI aus |
+| raum_36 | — | Engine | — | — | KI aus |
+| raum_37 | STIEGENHAUS | Engine | stempel | — | KI aus |
+| raum_38 | TERRASSE | Engine | stempel | — | KI aus |
+| raum_39 | TERRASSE | Engine | stempel | — | KI aus |
+| raum_40 | ABSTELLRAUM | Engine | stempel | — | KI aus |
+| raum_41 | BALKON | Engine | kuerzel | — | KI aus |
+| raum_42 | BALKON | Engine | stempel | — | KI aus |
+| raum_43 | TERRASSE | Engine | stempel | — | KI aus |
+| rest_1 | — | Engine | — | — | KI aus |
+| rest_2 | — | Engine | — | — | KI aus |
+| rest_3 | NISCHE | Engine | geometrie | — | KI aus |
+| lift_1 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+| lift_2 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+| lift_3 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
 
 ## Referenzvergleich Fachplaner (11 Referenz-Leuchten im Frame)
 
@@ -508,4 +570,4 @@ Quellen: FALLBACK: 1, GRAPH: 7
 | sicherheitsleuchte | (14.90, -1.93) | 0 |
 | sicherheitsleuchte | (9.92, -6.27) | 0 |
 
-Laufzeit: 254.6 s
+Laufzeit: 250.2 s

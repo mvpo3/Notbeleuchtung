@@ -133,8 +133,10 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:19 R:0` — Rotation: Wände vertikal-d
 - raum_78 [L] —: 2.97 m², Zentrum (331.67, 102.15) m
 - raum_81 [H] ZIMMER: 1.17 m², Zentrum (677.02, -137.03) m
 
-## Warnungen (115)
+## Warnungen (117)
 
+- kuerzel: raum_52 bleibt UNBESTIMMT (Notlicht): Kürzel mehrdeutig — »SR« = Schlafraum (SCHLAFZIMMER) oder Schutzraum (kein Kanon-Typ); zweite Meinung (Abschnitt 3) entscheidet
+- kuerzel: raum_71 bleibt UNBESTIMMT (Notlicht): Kürzel mehrdeutig — »SR« = Schlafraum (SCHLAFZIMMER) oder Schutzraum (kein Kanon-Typ); zweite Meinung (Abschnitt 3) entscheidet
 - seite_fehlt: tuer_2 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
 - seite_fehlt: tuer_9 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
 - seite_fehlt: tuer_18 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
@@ -1140,4 +1142,120 @@ Restweg im EG: unbekannt (kein EG-Plan in Projekte/_eingang)
 | beide_seiten_untypisiert | 2 |
 | tuer_in_schacht | 2 |
 
-Laufzeit: 887.0 s
+## Raumtyp-Herkunft (Abschnitt 3 — Erscheinungsbild ist Wahrheit, KI ist zweite Meinung)
+
+- KI aus; Fragen 0 (Geschoss/Quadranten), Anfragen 0 (echte Aufrufe), Cache-Treffer 0
+- je Raum: Engine 108
+
+| Raum | Typ | Herkunft | Beleg | KI-Typ (Sicherheit) | Begründung |
+|---|---|---|---|---|---|
+| raum_1 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_2 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_3 | BAD | Engine | stempel | — | KI aus |
+| raum_4 | ABSTELLRAUM | Engine | stempel | — | KI aus |
+| raum_5 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_6 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_7 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_8 | ABSTELLRAUM | Engine | stempel | — | KI aus |
+| raum_9 | BAD | Engine | stempel | — | KI aus |
+| raum_10 | BALKON | Engine | stempel | — | KI aus |
+| raum_11 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_12 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_13 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_14 | BAD | Engine | stempel | — | KI aus |
+| raum_15 | BALKON | Engine | stempel | — | KI aus |
+| raum_16 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_17 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_18 | BALKON | Engine | stempel | — | KI aus |
+| raum_19 | BAD | Engine | stempel | — | KI aus |
+| raum_20 | BAD | Engine | stempel | — | KI aus |
+| raum_21 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_22 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_23 | BALKON | Engine | stempel | — | KI aus |
+| raum_24 | BALKON | Engine | stempel | — | KI aus |
+| raum_25 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_26 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_27 | BAD | Engine | stempel | — | KI aus |
+| raum_28 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_29 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_30 | BALKON | Engine | stempel | — | KI aus |
+| raum_31 | BALKON | Engine | stempel | — | KI aus |
+| raum_32 | WC | Engine | stempel | — | KI aus |
+| raum_33 | ABSTELLRAUM | Engine | stempel | — | KI aus |
+| raum_34 | BAD | Engine | stempel | — | KI aus |
+| raum_35 | ABSTELLRAUM | Engine | stempel | — | KI aus |
+| raum_36 | WC | Engine | stempel | — | KI aus |
+| raum_37 | BAD | Engine | stempel | — | KI aus |
+| raum_38 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_39 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_40 | BALKON | Engine | stempel | — | KI aus |
+| raum_41 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_42 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_43 | BALKON | Engine | stempel | — | KI aus |
+| raum_44 | BALKON | Engine | stempel | — | KI aus |
+| raum_45 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_46 | GANG | Engine | stempel | — | KI aus |
+| raum_47 | BALKON | Engine | stempel | — | KI aus |
+| raum_48 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_49 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_50 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_51 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_52 | — | Engine | — | — | KI aus |
+| raum_53 | BAD | Engine | stempel | — | KI aus |
+| raum_54 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_55 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_56 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_57 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_58 | BAD | Engine | stempel | — | KI aus |
+| raum_59 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_60 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_61 | — | Engine | — | — | KI aus |
+| raum_62 | BAD | Engine | stempel | — | KI aus |
+| raum_63 | ABSTELLRAUM | Engine | stempel | — | KI aus |
+| raum_64 | BALKON | Engine | stempel | — | KI aus |
+| raum_65 | SCHLEUSE | Engine | stempel | — | KI aus |
+| raum_66 | KINDERWAGENRAUM | Engine | stempel | — | KI aus |
+| raum_67 | — | Engine | stempel | — | KI aus |
+| raum_68 | GANG | Engine | stempel | — | KI aus |
+| raum_69 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_70 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_71 | — | Engine | — | — | KI aus |
+| raum_72 | BAD | Engine | stempel | — | KI aus |
+| raum_73 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_74 | ABSTELLRAUM | Engine | stempel | — | KI aus |
+| raum_75 | BALKON | Engine | stempel | — | KI aus |
+| raum_76 | BAD | Engine | stempel | — | KI aus |
+| raum_77 | — | Engine | — | — | KI aus |
+| raum_78 | — | Engine | — | — | KI aus |
+| raum_79 | LIFT | Engine | stempel | — | KI aus |
+| raum_80 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_81 | ZIMMER | Engine | geometrie | — | KI aus |
+| raum_83 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_84 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_85 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_87 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_88 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_89 | STIEGENHAUS | Engine | stempel | — | KI aus |
+| raum_90 | WC | Engine | stempel | — | KI aus |
+| raum_91 | BAD | Engine | stempel | — | KI aus |
+| raum_92 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_93 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_96 | GANG | Engine | stempel | — | KI aus |
+| raum_97 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_98 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_99 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_100 | TECHNIK | Engine | stempel | — | KI aus |
+| raum_101 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_102 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_103 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_104 | BALKON | Engine | stempel | — | KI aus |
+| stiegenhaus_1 | SCHACHT | Engine | geometrie | — | KI aus |
+| stiegenhaus_2 | SCHACHT | Engine | geometrie | — | KI aus |
+| stiegenhaus_6 | STIEGENHAUS | Engine | geometrie | — | KI aus |
+| stiegenhaus_7 | STIEGENHAUS | Engine | geometrie | — | KI aus |
+| lift_1 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+| lift_2 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+| lift_4 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+| lift_5 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+
+Laufzeit: 895.0 s

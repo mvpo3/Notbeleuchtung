@@ -369,12 +369,10 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | durchgang_31 | raum_52 | raum_56 | — | 1304 | GEOMETRIE_OEFFNUNG | — | durchgang | unbekannte_kombination |
 | aussenoeffnung_1 | raum_50 | AUSSEN | garagentor | 2483 | GEOMETRIE_OEFFNUNG | — | oeffnung_aussenwand |  |
 
-## Ausgänge (9)
+## Ausgänge (7)
 
 | ID | Typ | x m | y m |
 |---|---|--:|--:|
-| exit_1 | final_exit | 2703.28 | 1521.77 |
-| exit_2 | final_exit | 2703.36 | 1524.05 |
 | exit_3 | final_exit | 2689.95 | 1523.97 |
 | exit_4 | final_exit | 2665.83 | 1537.22 |
 | exit_tuer_16 | final_exit | 2681.03 | 1515.24 |
@@ -581,10 +579,10 @@ Quellen: FALLBACK: 3, GRAPH: 14, LINIE: 103
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 29 |
+| ALLGEMEIN_ERSCHLIESSUNG | 28 |
 | ALLGEMEIN_NEBENRAUM | 7 |
 | WOHNUNG_PRIVAT | 2 |
-| kein Raum | 9 |
+| kein Raum | 7 |
 | unbestimmt | 4 |
 | _davon auf Treppenlauf/Verbotszone_ | 0 |
 
@@ -672,6 +670,10 @@ Quellen: FALLBACK: 3, GRAPH: 14, LINIE: 103
 
 - Geschoss: **EG** (Quelle `dateiname`)
 - Beleg: Dateiname 'Mollgasse_EG' → 'EG'
+- ⚠ exit_1 bei (2703.3, 1521.8) m mündet nicht ins Freie (Innenhof oder Gebäude) — kein Ausgang (Owner-Entscheid 6)
+  - Freie im Umkreis 500 mm: keine Fläche außerhalb der äußeren Gebäudekontur und eines geschlossenen Hofs
+- ⚠ exit_2 bei (2703.4, 1524.1) m mündet nicht ins Freie (Innenhof oder Gebäude) — kein Ausgang (Owner-Entscheid 6)
+  - Freie im Umkreis 500 mm: keine Fläche außerhalb der äußeren Gebäudekontur und eines geschlossenen Hofs
 
 ## Kreuzcheck Fluchtweglinien ↔ Endausgänge
 
@@ -744,7 +746,7 @@ Kandidaten (typ notausgang_kandidat — Prüf-Output, KEINE Ausgänge; gestriche
 - (2676.80, 1537.45) Tür — — keine Öffnung in der Außenwand ≤ 3 m gefunden
 - (2687.75, 1537.48) Tür — — keine Öffnung in der Außenwand ≤ 3 m gefunden
 
-final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_1, exit_2, exit_aussenoeffnung_1
+final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_aussenoeffnung_1
 
 ### Fluchtweg-Warnungen
 
@@ -779,4 +781,76 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_1, exit_2, exit_aussen
 | kein_nachbarraum | 21 |
 | beide_seiten_untypisiert | 2 |
 
-Laufzeit: 245.5 s
+## Raumtyp-Herkunft (Abschnitt 3 — Erscheinungsbild ist Wahrheit, KI ist zweite Meinung)
+
+- KI aus; Fragen 0 (Geschoss/Quadranten), Anfragen 0 (echte Aufrufe), Cache-Treffer 0
+- je Raum: Engine 64
+
+| Raum | Typ | Herkunft | Beleg | KI-Typ (Sicherheit) | Begründung |
+|---|---|---|---|---|---|
+| raum_1 | — | Engine | stempel | — | KI aus |
+| raum_2 | GANG | Engine | stempel | — | KI aus |
+| raum_3 | — | Engine | — | — | KI aus |
+| raum_4 | GANG | Engine | stempel | — | KI aus |
+| raum_5 | — | Engine | stempel | — | KI aus |
+| raum_6 | — | Engine | stempel | — | KI aus |
+| raum_7 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_8 | — | Engine | stempel | — | KI aus |
+| raum_9 | GANG | Engine | stempel | — | KI aus |
+| raum_10 | ABSTELLRAUM | Engine | geometrie | — | KI aus |
+| raum_11 | WC | Engine | stempel | — | KI aus |
+| raum_12 | BAD | Engine | stempel | — | KI aus |
+| raum_13 | STIEGENHAUS | Engine | stempel | — | KI aus |
+| raum_14 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_15 | WC | Engine | stempel | — | KI aus |
+| raum_16 | BAD | Engine | stempel | — | KI aus |
+| raum_17 | ABSTELLRAUM | Engine | stempel | — | KI aus |
+| raum_18 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_19 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_20 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_21 | BAD | Engine | stempel | — | KI aus |
+| raum_22 | GANG | Engine | stempel | — | KI aus |
+| raum_23 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_24 | ABSTELLRAUM | Engine | stempel | — | KI aus |
+| raum_25 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_26 | WC | Engine | stempel | — | KI aus |
+| raum_27 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_28 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_29 | GANG | Engine | stempel | — | KI aus |
+| raum_30 | MUELLRAUM | Engine | stempel | — | KI aus |
+| raum_31 | WC | Engine | stempel | — | KI aus |
+| raum_32 | BAD | Engine | stempel | — | KI aus |
+| raum_33 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_34 | GANG | Engine | stempel | — | KI aus |
+| raum_35 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_36 | BAD | Engine | stempel | — | KI aus |
+| raum_37 | ABSTELLRAUM | Engine | stempel | — | KI aus |
+| raum_38 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_39 | GANG | Engine | stempel | — | KI aus |
+| raum_40 | ABSTELLRAUM | Engine | stempel | — | KI aus |
+| raum_41 | GANG | Engine | stempel | — | KI aus |
+| raum_42 | — | Engine | stempel | — | KI aus |
+| raum_43 | — | Engine | stempel | — | KI aus |
+| raum_44 | MUELLRAUM | Engine | stempel | — | KI aus |
+| raum_45 | BAD | Engine | stempel | — | KI aus |
+| raum_46 | — | Engine | stempel | — | KI aus |
+| raum_47 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_48 | WC | Engine | stempel | — | KI aus |
+| raum_49 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_50 | GARAGE | Engine | stempel | — | KI aus |
+| raum_51 | STIEGENHAUS | Engine | stempel | — | KI aus |
+| raum_52 | — | Engine | stempel | — | KI aus |
+| raum_53 | KINDERWAGENRAUM | Engine | stempel | — | KI aus |
+| raum_54 | TECHNIK | Engine | stempel | — | KI aus |
+| raum_55 | GANG | Engine | stempel | — | KI aus |
+| raum_56 | GANG | Engine | stempel | — | KI aus |
+| raum_57 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_58 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_59 | KINDERWAGENRAUM | Engine | stempel | — | KI aus |
+| raum_60 | — | Engine | stempel | — | KI aus |
+| raum_61 | TERRASSE | Engine | stempel | — | KI aus |
+| raum_62 | — | Engine | stempel | — | KI aus |
+| lift_1 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+| lift_2 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+
+Laufzeit: 244.7 s

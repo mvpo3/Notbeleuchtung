@@ -41,7 +41,7 @@ Raum-Polygon-Quelle: `kaskade L:19 H:0 F:0 R:4` — Rotation: keine dominante Ka
 
 ## Warnungen (16)
 
-- mm_faktor: 1 aus $INSUNITS=4 (keine Wand-Spanne 15–500 m messbar), Türprobe: 10 — widerspricht
+- mm_faktor: 1 aus Türkalibrierung (4 Türbögen, Median 890 mm, MAD 6 %, Spanne 840–940 mm) — $INSUNITS=4 (keine Wand-Spanne 15–500 m messbar) bestätigt
 - seite_fehlt: tuer_1 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
 - seite_fehlt: tuer_5 Seite + bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
 - seite_fehlt: tuer_5 Seite - bis 500 mm kein Raum und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)
@@ -287,4 +287,36 @@ Quellen: FALLBACK: 2, GRAPH: 5
 | kein_nachbarraum | 3 |
 | tuer_ins_nichts | 3 |
 
-Laufzeit: 49.2 s
+## Raumtyp-Herkunft (Abschnitt 3 — Erscheinungsbild ist Wahrheit, KI ist zweite Meinung)
+
+- KI aus; Fragen 0 (Geschoss/Quadranten), Anfragen 0 (echte Aufrufe), Cache-Treffer 0
+- je Raum: Engine 24
+
+| Raum | Typ | Herkunft | Beleg | KI-Typ (Sicherheit) | Begründung |
+|---|---|---|---|---|---|
+| raum_1 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_2 | ABSTELLRAUM | Engine | stempel | — | KI aus |
+| raum_3 | BAD | Engine | stempel | — | KI aus |
+| raum_4 | ZIMMER | Engine | stempel | — | KI aus |
+| raum_5 | GARAGE | Engine | stempel | — | KI aus |
+| raum_6 | VORRAUM | Engine | stempel | — | KI aus |
+| raum_7 | STIEGENHAUS | Engine | stempel | — | KI aus |
+| raum_8 | TERRASSE | Engine | stempel | — | KI aus |
+| raum_9 | — | Engine | stempel | — | KI aus |
+| raum_10 | — | Engine | stempel | — | KI aus |
+| raum_11 | KÜCHE | Engine | stempel | — | KI aus |
+| raum_12 | — | Engine | stempel | — | KI aus |
+| raum_13 | MUELLRAUM | Engine | stempel | — | KI aus |
+| raum_14 | STIEGENHAUS | Engine | stempel | — | KI aus |
+| raum_15 | STIEGENHAUS | Engine | stempel | — | KI aus |
+| raum_16 | GANG | Engine | stempel | — | KI aus |
+| raum_17 | TERRASSE | Engine | stempel | — | KI aus |
+| raum_18 | — | Engine | stempel | — | KI aus |
+| raum_19 | — | Engine | stempel | — | KI aus |
+| rest_1 | STIEGENHAUS | Engine | geometrie | — | KI aus |
+| rest_2 | SCHACHT | Engine | geometrie | — | KI aus |
+| rest_3 | — | Engine | — | — | KI aus |
+| rest_4 | — | Engine | — | — | KI aus |
+| lift_1 | LIFT | Engine | geometrie | — | nach der zweiten Meinung entstanden (ohne KI-Anfrage) |
+
+Laufzeit: 49.8 s

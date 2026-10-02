@@ -30386,7 +30386,7 @@
     },
     {
       "id": "rest_2",
-      "typ": null,
+      "typ": "BALKON",
       "name": null,
       "polygon_mm": [
         [
@@ -31156,7 +31156,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "BALKON",
       "polygon_roh": [],
       "flaeche_roh": 29.894810413788377,
       "abweichung_bereinigt_prozent": null,
@@ -31482,7 +31482,7 @@
     },
     {
       "id": "rest_4",
-      "typ": null,
+      "typ": "VORRAUM",
       "name": null,
       "polygon_mm": [
         [
@@ -31832,7 +31832,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "VORRAUM",
       "polygon_roh": [],
       "flaeche_roh": 9.28984968886157,
       "abweichung_bereinigt_prozent": null,
@@ -31840,7 +31840,7 @@
     },
     {
       "id": "rest_5",
-      "typ": null,
+      "typ": "WC",
       "name": null,
       "polygon_mm": [
         [
@@ -32290,7 +32290,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "WC",
       "polygon_roh": [],
       "flaeche_roh": 17.35403143939591,
       "abweichung_bereinigt_prozent": null,
@@ -32586,7 +32586,7 @@
     },
     {
       "id": "rest_8",
-      "typ": null,
+      "typ": "BALKON",
       "name": null,
       "polygon_mm": [
         [
@@ -33108,7 +33108,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "BALKON",
       "polygon_roh": [],
       "flaeche_roh": 24.971883078445586,
       "abweichung_bereinigt_prozent": null,
@@ -33362,7 +33362,7 @@
     },
     {
       "id": "rest_10",
-      "typ": null,
+      "typ": "WC",
       "name": null,
       "polygon_mm": [
         [
@@ -33400,7 +33400,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "WC",
       "polygon_roh": [],
       "flaeche_roh": 1.6991665971407022,
       "abweichung_bereinigt_prozent": null,
@@ -33408,7 +33408,7 @@
     },
     {
       "id": "rest_11",
-      "typ": null,
+      "typ": "VORRAUM",
       "name": null,
       "polygon_mm": [
         [
@@ -33542,7 +33542,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "VORRAUM",
       "polygon_roh": [],
       "flaeche_roh": 1.2729383378266208,
       "abweichung_bereinigt_prozent": null,

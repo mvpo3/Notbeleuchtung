@@ -9490,7 +9490,7 @@
     },
     {
       "id": "rest_2",
-      "typ": null,
+      "typ": "STIEGENHAUS",
       "name": null,
       "polygon_mm": [
         [
@@ -11096,7 +11096,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "STIEGENHAUS",
       "polygon_roh": [
         [
           11899.591064453125,
@@ -13386,7 +13386,7 @@
     },
     {
       "id": "rest_6",
-      "typ": null,
+      "typ": "WC",
       "name": null,
       "polygon_mm": [
         [
@@ -13424,7 +13424,7 @@
       "flag": "kein_stempel",
       "quelle": "R",
       "stempel_quelle": null,
-      "raum_typ": null,
+      "raum_typ": "WC",
       "polygon_roh": [],
       "flaeche_roh": 1.6995039324176018,
       "abweichung_bereinigt_prozent": null,
