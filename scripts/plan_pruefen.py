@@ -1241,14 +1241,21 @@ def _kreuzcheck_md(modell, kc, flw_warnungen: list[str],
     return l
 
 
-def _ki_md(ki) -> list[str]:
+def _ki_md(ki, raeume=()) -> list[str]:
     """Markdown-Block „Raumtyp-Herkunft" (Abschnitt 3, Entscheid 3): je Raum Engine | KI |
     bestätigt | strittig mit Beleg und Begründung, dazu KI an/aus, Backend/Modell, Anzahl
     Fragen, echte Anfragen und Cache-Treffer. Provider-Attribut `ki_ergebnis`, kein
-    Contract-Feld."""
+    Contract-Feld. Räume des Modells ohne Herkunftszeile (entstanden erst nach der zweiten
+    Meinung, z. B. LIFT aus `finde_lifte`) werden als „Engine" nachgeführt."""
     if ki is None:
         return []
-    zaehl = Counter(h.herkunft for h in ki.herkunft)
+    from notbeleuchtung.raumerkennung.ki_zweitmeinung import Herkunft
+    gesehen = {h.raum_id for h in ki.herkunft}
+    herkunft = list(ki.herkunft) + [
+        Herkunft(r.id, "Engine", r.raum_typ or "", "geometrie" if r.raum_typ else "",
+                 grund="nach der zweiten Meinung entstanden (ohne KI-Anfrage)")
+        for r in raeume if r.id not in gesehen]
+    zaehl = Counter(h.herkunft for h in herkunft)
     kopf = (f"KI an — Backend `{ki.backend}`, Modell `{ki.modell}`" if ki.an else "KI aus")
     l = ["", "## Raumtyp-Herkunft (Abschnitt 3 — Erscheinungsbild ist Wahrheit, KI ist zweite Meinung)",
          "",
@@ -1258,7 +1265,7 @@ def _ki_md(ki) -> list[str]:
                                    if zaehl.get(k)) if zaehl else "- keine Räume",
          "", "| Raum | Typ | Herkunft | Beleg | KI-Typ (Sicherheit) | Begründung |",
          "|---|---|---|---|---|---|"]
-    for h in ki.herkunft:
+    for h in herkunft:
         ki_typ = (f"{h.ki_typ} ({h.sicherheit:.2f})" if h.ki_typ and h.sicherheit is not None
                   else h.ki_typ or "—")
         l.append(f"| {h.raum_id} | {h.engine_typ or '—'} | {h.herkunft} | {h.beleg or '—'} | "
@@ -1362,7 +1369,7 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
                                           "wohnungsklasse_warnungen", [])))
     # Abschnitt 3: Herkunft je Raumtyp + Anzahl Anfragen/Cache-Treffer (Entscheid 3).
     ki = getattr(bundle.raum, "ki_ergebnis", None)
-    md = md + _ki_md(ki)
+    md = md + _ki_md(ki, modell.raeume)
     refz = _referenzvergleich(dxf.stem, plan, zoom, modell, platz, ziel, rot)
     if refz is not None:
         md = md + refz["md"]

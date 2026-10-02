@@ -2809,3 +2809,143 @@ Contract-Feld, kein neuer RaumTyp, kein fremdes Paket geändert (`platzierung/fl
   die KI die Möbel nur aus dem Bild.
 - `PROMPT_VERSION` bleibt „1“ (nie live gesendet, kein Cache-Eintrag); jede weitere Prompt-Änderung in Phase B wird „2“.
 - **Modell dieses Agenten: claude-fable-5-1 (Stufe laut Auftrag xhigh; vom Agenten selbst nicht prüfbar).**
+
+## 25c. Review 2 — KI-Zweitmeinung Abschnitt 3 Teil A + B (adversarial, Kopf `ccd3f96`; Korrekturen mit dem Commit dieses Eintrags)
+
+Geprüft mit eigenem Code (Scratch außerhalb des Repos: Mock-Läufe gegen `CodexAboBackend`/`Zweitmeinung`/`provider.parse`,
+Umgehungsversuche an `zweitmeinung_anwenden`, eigene Runner-Kopie Vorher/Nachher über die 13 Pläne, `scripts/plan_pruefen.py`
+mit umgeleitetem Ausgabeordner). Auftragstext § 3 Zeile für Zeile gegen `ki_zweitmeinung.py`, `ki_backends.py`, `ki_anfrage.py`,
+`provider.py`, `sanitaer.py`, `scripts/plan_pruefen.py` und die 51 Tests (50 + Live-Skip) gelesen; `codex exec --help` der installierten
+codex-cli 0.159.2 nur als Hilfe aufgerufen (kein Aufruf, kein Kontingent).
+
+### 25c.1 Bestätigt
+
+- **(1) Kein Key, kein Token, keine Login-Daten.** `git diff b61cb4d ccd3f96` und `git grep` über den getrackten Baum auf
+  `sk-…`, `api_key`, `Bearer`, JWT-Muster, `auth.json`, `access_token`: nur die Test-Attrappen `sk-test-nie-benutzen`,
+  `sk-geheim`, `sk-ant-geheim` (gesetzt, um zu belegen, dass sie NICHT weitergegeben werden). Keine lokalen Pfade im Diff
+  (Laufwerksbuchstaben, Nutzername: 0 — „selman/vision-audit“ ist ein Branch-Name, `chatgpt.com/codex/settings/usage` die URL der
+  Limit-Meldung), kein Import von `platzierung`/`normwissen` in den fünf Dateien. **Argumentliste** im eigenen Mock-Lauf
+  (Binary- und Bildpfad mit Leerzeichen, `OPENAI_API_KEY`/`ANTHROPIC_API_KEY` gesetzt): `<exe> exec --json --ephemeral
+  --skip-git-repo-check -s read-only -m <modell> -c model_reasoning_effort=<effort> --output-schema <tmp> -o <tmp>
+  --image=<Bild> -`, Python-Liste (kein `shell`, `list2cmdline` quotet den Leerzeichen-Pfad selbst), Prompt über `input`
+  ohne Plan- oder Bildpfad, `env` ohne die beiden Keys bei erhaltenem `PATH`, `timeout` = Konfig. Alle Flags stehen in
+  `codex exec --help` (`-i, --image <FILE>...` ist Mehrfachwert, daher `--image=<Datei>` je Bild als EIN Argument;
+  `[PROMPT]`/`-` = stdin). `finde_codex` liest nur das Binary (Konfig → PATH → App-Bundle), nie `auth.json`.
+- **(2) Suite ruft nie live auf.** Einziger echter `subprocess.run` ist der Default-Parameter `run=subprocess.run` von
+  `CodexAboBackend`; jeder Test mit `codex_abo` übergibt einen Mock; `test_codex_live_minimal` nur mit `NOTBEL_KI_LIVE=1`.
+  Eigener Lauf `provider.parse` mit `NOTBEL_KI=an` und (a) Dummy-Binary als Textdatei → `OSError 193` →
+  `ki: sonstig`-Warnung (Hauptmodell + Fallback = 2 Anfragen, 1 Frage), Herkunft „Engine“ je Raum, `model_dump` identisch
+  zum Lauf ohne KI, nichts gecacht; (b) fehlendes Binary → `sonstig` ohne Aufruf (0). `pytest test_provider test_ki_entscheid
+  test_freiflaeche` mit `NOTBEL_KI=an` + Dummy: 53 passed. **Lücke (c) unten:** kein Wächter gegen `NOTBEL_KI=an` aus der
+  Umgebung.
+- **(3) Entscheidungsregeln gegen Auftrag § 3.** bestätigt (Typgleichheit) · Widerspruch bei gesetztem Engine-Typ → Engine
+  bleibt, strittig (der Auftrag zählt als „ohne belegten Engine-Typ“ nur UNBEKANNT/UNBESTIMMT/mehrdeutiges Kürzel — geometrisch
+  typisierte Räume bleiben damit richtig bei der Engine) · unbelegt → ab 0,8 (einschließlich), Flächen-Plausibilität,
+  KEIN_RAUM-Evidenz, Freigabeliste (= Eichung ≥ 95 %), Notlicht-Verlust nur mit Regel · Fehler/Limit/Timeout → Engine
+  unverändert, Warnung, kein Abbruch · `verliert_notlicht` = exakt `flaechen_strategy.py:162-167` (Klasse WOHNUNG_PRIVAT ∧
+  Flags 00) → ABSTELLRAUM, BAD, KINDERZIMMER, KÜCHE, SCHLAFZIMMER, WC, WOHNZIMMER, ZIMMER. **Umgehungsversuche** an einem
+  UNBESTIMMT-Gang 14 m² (je mit leerer und voller Verlust-Freigabe, ohne Regel und mit verneinender Regel): `BAD` mit
+  Sicherheit 1,0 + `bestaetigt: true`, `" bad "`, Sicherheit als `int 1`, Typ ohne Flächenband (SCHLAFZIMMER), KÜCHE, Dublette
+  BAD 0,99 + BAD 1,0 → **alle bleiben UNBESTIMMT, Herkunft Engine**; `NaN`/`Infinity`/`-Infinity` als Sicherheit (JSON-Literale,
+  die `json.loads` annimmt) → verworfen; belegter GANG vs KI ABSTELLRAUM mit Freigabe und bejahender Regel → GANG bleibt,
+  strittig. Übernahme nur mit Freigabe UND Regel (dann `wohnung_id` None). **Lücke (a) unten:** die „bestehende Regel“ war
+  nur die halbe K3.
+- **(5) Cache-Schlüssel.** `CacheSchluessel(backend, modell, plan, plan_sha16, geschoss, quadrant, prompt_version)` → Pfad
+  `Plan_Mit_Leerzeichen_<sha16>/OG3_NW_codex_abo_gpt-6-astra_v1.json`; jede Zutat ändert den Pfad (eigener Test), anderer
+  Dateiinhalt → anderer SHA, kein `:`/Leerzeichen im Pfad. **5 Fragen mit gleichem Schlüssel über 5 Instanzen → 1 Aufruf**
+  (Mock-Zähler). **Lücke (b) unten:** die Eichung (`stempel_abdecken`) hatte denselben Schlüssel.
+- **(6) Bericht.** `PLAN_PRUEFEN_ERGEBNIS=<Scratch> scripts/plan_pruefen.py Projekte/_eingang/Rennweg_OG3.dxf` (Repo-
+  `_ergebnis`/`VERLAUF.md` unberührt, `git status` leer): Abschnitt „Raumtyp-Herkunft“ mit „KI aus; Fragen 0, Anfragen 0,
+  Cache-Treffer 0“, „je Raum: Engine 16“ und 16 Zeilen `Raum | Typ | Herkunft | Beleg | KI-Typ | Begründung` (10× stempel,
+  5× geometrie, `rest_6` BAD erscheinungsbild), keine `ki:`-Warnung. **Lücke (d) unten:** das Modell hat 17 Räume — `lift_1`
+  LIFT (nach der zweiten Meinung aus `finde_lifte`) fehlte in der Tabelle.
+
+### 25c.2 Befunde und Korrekturen (je Punkt Test zuerst rot)
+
+- **(a) Bestätigende Regel war nur die halbe K3 — korrigiert.** `ki_anfrage._sanitaer_regel` prüfte nur `sanitaer_typ`
+  (Objekte im Polygon); die Owner-Regel K3 (`sanitaer.py`) verlangt zusätzlich „der Raum muss innerhalb eines
+  Wohnungsumrisses liegen, sonst bleibt UNBEKANNT“. Folge: ein Raum AUSSERHALB jeder Wohnung (Gemeinschafts-WC, Sanitär im
+  Geschäftslokal — genau die Fälle, die K3 absichtlich nicht typt) hätte über KI + Freigabe BAD/WC bekommen und sein Notlicht
+  verloren; der Teil-B-Test `test_provider_freigabe_gang_uebernimmt_bad_nur_mit_sanitaerregel` schrieb das sogar fest
+  („K3 greift nicht: kein Wohnungsumriss“ → BAD). Jetzt: `_sanitaer_regel(plan, raeume, tueren)` = `sanitaer_typ` == Typ
+  **und** `umschliessende_wohnung(raum, raeume, tueren)` am echten Modell (die zweite Meinung läuft nach den Wohnungen, braucht
+  keine Probe). Grundsatz (a) fail-safe. Rot vorher: `AssertionError: ohne Wohnungsumriss kein BAD — assert ('BAD' == ''`
+  (`test_provider_freigabe_bad_sanitaerregel_nur_im_wohnungsumriss`) und `TypeError: _sanitaer_regel() takes 1 positional
+  argument but 3 were given` (`test_sanitaerregel_bestaetigt_nur_objekte_und_wohnungsumriss`: ohne Wohnung nein, Nachbarn in
+  `top_1` → ja, WC bei 3 Objekten nein, Übernahme über `zweitmeinung_anwenden` → BAD).
+- **(b) Eichung las den Cache des Normallaufs — korrigiert.** Der Schlüssel kannte `stempel_abdecken` nicht: ein Eichungs-
+  Lauf (Stempel abgedeckt, Auftrag „eigene Eichungs-Aufrufe“) hätte die gespeicherte Antwort MIT Stempeln getroffen (oder
+  umgekehrt der Normallauf die stempelfreie) — Trefferquote ohne Aussage. Jetzt `Zweitmeinung._prompt_kennung()` =
+  `prompt_version + "-eichung"` bei `stempel_abdecken` → eigener Eintrag `…_v1-eichung.json`, `im_cache` und `frage` nutzen ihn.
+  Rot vorher: `test_ki_zweitmeinung.py:224: AssertionError: assert (1 == 1 and not True)` (`im_cache` der Eichung traf den
+  Normal-Eintrag). Eigener Lauf: 5 Normalfragen → 1 Aufruf, 3 Eichungsfragen → +1 Aufruf, zwei Dateien.
+- **(c) Kein Wächter gegen `NOTBEL_KI=an` aus der Umgebung — korrigiert.** `provider.parse` liest ohne Konfig
+  `KiKonfig.aus_umgebung()`; ein für die Prüfstrecke gesetztes `NOTBEL_KI=an` hätte in `pytest` (Provider-, Naht-, Gate-Tests)
+  je `parse` einen echten `codex exec` ausgelöst — gegen „Suite und Gate rufen die KI nie live auf“ (Auftrag § 3) und mit
+  gefüllter Freigabeliste auch gegen deterministische Tests. Neu `tests/conftest.py`: Session-Fixture (autouse) nimmt alle
+  `NOTBEL_KI*` aus `os.environ`, außer `NOTBEL_KI_LIVE=1` ist ausdrücklich gesetzt; Tests mit KI geben `KiKonfig`/Backend
+  weiter selbst mit. Rot vorher (`NOTBEL_KI=an pytest -k nie_mit_ki`): `test_ki_zweitmeinung.py:242: AssertionError: assert
+  ('NOTBEL_KI' not in environ(…))`. Danach `NOTBEL_KI=an NOTBEL_KI_CODEX=<fehlendes Dummy-Binary> pytest test_ki_zweitmeinung.py`: 28
+  passed, 1 skipped.
+- **(d) LIFT ohne Herkunftszeile — korrigiert (nur Berichtsausgabe).** `plan_pruefen._ki_md(ki, modell.raeume)` führt Räume
+  ohne Herkunft (entstanden nach der zweiten Meinung, `finde_lifte`) als „Engine | geometrie | nach der zweiten Meinung
+  entstanden (ohne KI-Anfrage)“ nach und zählt sie mit. Rot vorher: `TypeError: _ki_md() takes 1 positional argument but 2
+  were given` (`test_ki_md_fuehrt_raeume_nach_der_zweiten_meinung_mit`). Rennweg OG3 jetzt 17 Zeilen.
+- **(e) Eichungs-Modus gab den Stempel über die Hintertür mit — korrigiert.** `baue_anfragen(stempel_abdecken=True)` ließ
+  nur `texte` weg; `engine_typ` und `beleg` (aus dem Stempel abgeleitet), die Typen in `nachbarn` und `klasse` gingen weiter an
+  die KI — die Trefferquote hätte gemessen, ob die KI abschreiben kann. Jetzt trägt die Anfrage in der Eichung
+  `engine_typ ""`, `beleg ""`, Nachbarn nur als IDs, keine `klasse`; `zweitmeinung_anwenden(…, belege=)` bekommt die echten
+  Belege getrennt, vergleicht gegen den echten Engine-Typ (Rückfall `raum.raum_typ` → bestätigt/strittig = Treffer/Fehler der
+  Eichung) und hält den Stempel-Schutz (Vokabular-Fall) und `Herkunft.beleg`. Rot vorher (Code `ccd3f96`, neue Tests):
+  `test_ki_entscheid.py:426: assert False` (`klasse`/Engine-Typ in der Eichungs-Anfrage) und `TypeError:
+  zweitmeinung_anwenden() got an unexpected keyword argument 'belege'`.
+
+### 25c.3 Nicht korrigiert (Owner/Planer, Phase B)
+
+- **Cache-Schlüssel ohne Raum-Fingerabdruck (Auftragstreu, aber Drift-Risiko).** Der Schlüssel folgt wörtlich dem Auftrag
+  (Backend, Modell, Plan-Datei, Geschoss, Quadrant, Prompt-Version); die Raumliste der Frage ist nicht darin. Ändert eine
+  spätere Engine-Änderung die Raum-IDs/-Polygone desselben Plans, wird eine gespeicherte Antwort auf ANDERE Räume gleicher ID
+  angewendet (`lies` verwirft nur IDs, die es nicht mehr gibt). Gewollt ist das Gegenteil (Suite/Gate laufen mit dem Cache
+  über Engine-Änderungen hinweg) — Abwägung des Owners: Fingerabdruck der Raumliste in den Schlüssel (mehr Live-Aufrufe) oder
+  so lassen und Phase B nach jeder Raum-Änderung die betroffenen Einträge neu fragen. P2.
+- **Fallback-Aufruf auch bei Binary-/OS-Fehler.** `OSError` beim Start (kaputtes Binary) ist `sonstig` → zweiter Aufruf mit
+  dem Fallback-Modell, der genauso scheitert (2 Anfragen je Frage). Unschädlich (kein Kontingent), aber im Bericht stünden
+  doppelte Anfragen. Fallback-Semantik ist ohnehin vom Agenten festgelegt (§ 25a.7). P3.
+- **`_jsonl`: ein `error`-Event schlägt eine gültige Antwort.** Liefert Codex ein `error`-Event (z. B. Wiederverbindung) und
+  danach trotzdem `agent_message`, gilt die Frage als Fehler (fail-safe, Engine bleibt). Erst live prüfbar. P3.
+- **Korrupter Cache-Eintrag** (kein JSON) wirft in `KiCache.lies` → `ki: sonstig` für das ganze Geschoss (alle Quadranten
+  der Schleife), nicht nur für die eine Frage. Warnung statt Abbruch bleibt gewahrt. P3.
+- **Härtung des Aufrufs:** `-s read-only` begrenzt die Shell des Modells auf Lesen (die CLI kennt keinen Modus ohne Shell);
+  `--ignore-user-config`/`--ignore-rules` würden zusätzlich verhindern, dass `~/.codex/config.toml` (MCP-Server, Hooks,
+  execpolicy) in den Engine-Aufruf hineinwirkt. Nicht vom Auftrag verlangt — Vorschlag für Phase B vor dem ersten Live-Lauf.
+- **`effort` nicht im Cache-Schlüssel** (Owner hat `high` fest vorgegeben; ein Wechsel bräuchte eine neue Prompt-Version). P3.
+
+### 25c.4 Blast „KI aus“ — 13 Pläne gegen `b61cb4d` (eigener Runner)
+
+Vorher = `git archive b61cb4d` von `src/` mit `CAD_Symbole/photometrie` daneben (außerhalb des Repos), Nachher = Arbeitsbaum
+dieses Eintrags (`ccd3f96-dirty`, Umgebung ohne `NOTBEL_KI*`); Runner `provider.parse(dxf, "")` + Default-Platzierung, JSON je
+Raum/Tür/Ausgang/Segment/Anker/Leuchte, seriell, Am Rain und Muthgasse allein, kein pytest parallel. Ergebnis:
+**13 gleich, 0 abweichend** über alle 18 Felder je Plan (Räume mit Typ/Polygon/Klasse/Wohnung/Flags, Türen, Ausgänge, Segmente, Anker, Stiegenhäuser, Bounds, korrigierte Rollen, bestätigt privat, alle Warnungen, Leuchten je Kind/Klasse/Stück) — Rennweg EG R24 T40 A5 L17, OG3 R17 T18 A3 L7, Barawitzka EG R49 T71 A1 L11, Mollgasse EG R64 T102 A9 L51, 1KG R31 T28 A1 L14, 2KG R30 T46 A1 L13, Am Rain OG4 R28 T59 A2 L20, OG3 R60 T129 A3 L20, OG2 R103 T264 A2 L75, OG1 R139 T300 A7 L73, UG R82 T295 A17 L110, EG R140 T317 A3 L46, Muthgasse E2 R108 T193 A1 L139; DXF-SHA je Plan gleich; Vorher 325 s / 2,71 GB (Am Rain EG), 255 s / 1,79 GB (Muthgasse), stderr ohne Traceback. Querprobe: mein Vorher gegen den Teil-B-Stand `be9cc57-dirty` (Scratch des Bauers, anderes Runner-Format)
+in allen gemeinsamen Feldern gleich (nur die dort zusätzlichen Schlüssel `factor`/`faktor_quelle`/`stempel`/`texte` und die
+andere `warnungen`-Struktur weichen ab). Mit KI aus kommt also auch nach den Korrekturen nichts als der Herkunfts-Ausweis dazu.
+
+### 25c.5 Suite, Gate, Lint
+
+- `pytest tests/raumerkennung/test_ki_zweitmeinung.py tests/raumerkennung/test_ki_entscheid.py`: **55 passed, 1 skipped in 3,5 s**
+  (28 + 27; neu: `test_cache_eichung_stempel_abgedeckt_ist_eigene_frage`, `test_suite_laeuft_nie_mit_ki_aus_der_umgebung`,
+  `test_sanitaerregel_bestaetigt_nur_objekte_und_wohnungsumriss`, `test_eichung_belege_bleiben_fuer_herkunft_und_stempelschutz`,
+  `test_ki_md_fuehrt_raeume_nach_der_zweiten_meinung_mit`; geändert: `test_provider_freigabe_bad_sanitaerregel_nur_im_wohnungsumriss`
+  (vorher `…_gang_uebernimmt_bad_nur_mit_sanitaerregel`), `test_anfrage_traegt_merkmale_je_raum_und_quadranten`).
+- `pytest tests/raumerkennung tests/contract`: **1019 passed, 7 skipped, 2 xfailed in 150.47s (1014 + 5 neu)**.
+- Gate: `pytest -m gate tests/gate` **3 passed, 1 xfailed (`test_gate_tuerstapel_erfuellt`, 112 s)**; `gate_messung` auf dem Arbeitsbaum vor dem Commit
+  (`_arbeit/gate/messung_ccd3f96-dirty-25c.json`), `pruefe_gate` gegen `nullmessung_f15d03f.json`: **nur (0) unsauberer Arbeitsbaum (erwartet, vor dem Commit) und (3) `M4.einraum` DG2 0 → 1 (Enis Board 3, unverändert)**;
+  M17 **18/18 BESTANDEN**; Messfelder außer `meta` gegen `messung_be9cc57-dirty-25b.json`: **8 Felder, abweichend keine**.
+- ruff: „All checks passed!“. Kein Contract-Feld, kein neuer RaumTyp, kein fremdes Paket (`platzierung/flaechen_strategy.py`
+  nur gelesen), keine Schwelle/Soll-Zahl/xfail/skip gelockert; die Korrekturen (a) und (e) machen die Übernahme strenger,
+  (b) und (c) verhindern Fehl-Treffer bzw. Live-Aufrufe, (d) ist Berichtsausgabe.
+
+**Fazit Review 2:** Schnittstelle, Backends, Konfiguration, Cache, Entscheidungsregeln, Herkunfts-Ausweis und Verdrahtung
+bestätigt; keine Keys, keine lokalen Pfade, keine Live-Aufrufe in Suite und Gate, Blast KI aus feldgleich. **Fünf Befunde
+korrigiert** (K3-Umriss-Kontrolle in der bestätigenden Regel, Eichungs-Cache, Eichungs-Anfrage ohne abgeleitete Typen,
+Suite-Wächter, LIFT-Zeile), fünf Punkte als Owner-/Phase-B-Entscheide offen (25c.3). Modell dieses Agenten:
+claude-fable-5-1 (Stufe laut Auftrag xhigh; vom Agenten selbst nicht prüfbar).

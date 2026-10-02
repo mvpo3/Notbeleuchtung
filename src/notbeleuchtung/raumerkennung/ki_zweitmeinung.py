@@ -418,17 +418,21 @@ def zweitmeinung_anwenden(raeume: list[Raum], anfrage: GeschossAnfrage, antwort:
                           freigabe: frozenset[str] | None = None,
                           regel_bestaetigt: Callable[[Raum, str], bool] | None = None,
                           evidenz: Callable[[Raum, str], str] | None = None,
+                          belege: dict[str, str] | None = None,
                           ) -> list[Herkunft]:
     """Antwort auf die Räume der Anfrage anwenden — in place auf ``raeume`` (nur unbelegte
     Räume können einen Typ bekommen). Liefert je Raum der Anfrage eine ``Herkunft``.
 
     ``freigabe`` = Eichungs-Freigabeliste (Standard ``FREIGABE``, heute leer).
     ``regel_bestaetigt(raum, typ)`` = bestehende Regel, die einen Notlicht-Verlust-Typ
-    bestätigt (Provider: K3-Sanitärbeleg); None = keine Regel → nie übernommen.
+    bestätigt (Provider: K3-Sanitärbeleg vollständig); None = keine Regel → nie übernommen.
     ``evidenz(raum, typ)`` = Lift-/Schacht-Evidenz für KEIN_RAUM-Typen: leer = belegt,
     sonst der Grund; None = keine Evidenz prüfbar → nie übernommen.
+    ``belege`` = die echten Belege je Raum, falls die Anfrage sie nicht trägt (Eichung mit
+    ``stempel_abdecken``: die KI sieht keinen Beleg, Herkunft und Stempel-Schutz brauchen ihn).
     """
     freigabe = FREIGABE if freigabe is None else freigabe
+    belege = belege or {}
     je_raum = {r.id: r for r in raeume}
     ki = {a.raum_id: a for a in antwort.raeume}
     verworfen = {v.split(":", 1)[0]: v for v in antwort.verworfen}
@@ -437,7 +441,7 @@ def zweitmeinung_anwenden(raeume: list[Raum], anfrage: GeschossAnfrage, antwort:
         raum = je_raum.get(ra.raum_id)
         if raum is None:
             continue
-        typ_e, beleg = ra.engine_typ or raum.raum_typ or "", ra.beleg
+        typ_e, beleg = ra.engine_typ or raum.raum_typ or "", belege.get(ra.raum_id, ra.beleg)
         basis = {"raum_id": raum.id, "engine_typ": typ_e, "beleg": beleg}
         if antwort.fehler is not None:
             out.append(Herkunft(**basis, herkunft="Engine",
@@ -603,19 +607,25 @@ class Zweitmeinung:
             if self.konfig.fallback_modell and self.konfig.fallback_modell != self.konfig.modell
             else [])
 
+    def _prompt_kennung(self) -> str:
+        """Prompt-Version im Cache-Schlüssel; die Eichung (Stempel abgedeckt: ohne ``texte``,
+        Bild ohne Schrift) ist eine andere Frage als der Normallauf und bekommt einen eigenen
+        Eintrag — sonst läse die Eichung die Antwort MIT Stempeln (Review 2)."""
+        return self.konfig.prompt_version + ("-eichung" if self.konfig.stempel_abdecken else "")
+
     def im_cache(self, anfrage: GeschossAnfrage) -> bool:
         """True, wenn die Frage ohne Aufruf beantwortet wird — dann braucht sie kein Bild."""
         if not self.konfig.an or self.backend is None:
             return False
         return any(self.cache.pfad(self.cache.schluessel(
-            self.backend.name, m, anfrage, self.konfig.prompt_version)).is_file()
+            self.backend.name, m, anfrage, self._prompt_kennung())).is_file()
             for m in self._modelle())
 
     def frage(self, anfrage: GeschossAnfrage) -> Antwort:
         if not self.konfig.an or self.backend is None:
             return Antwort(quelle="aus")
         modelle = self._modelle()
-        schluessel = [self.cache.schluessel(self.backend.name, m, anfrage, self.konfig.prompt_version)
+        schluessel = [self.cache.schluessel(self.backend.name, m, anfrage, self._prompt_kennung())
                       for m in modelle]
         for s in schluessel:
             treffer = self.cache.lies(s, anfrage.raum_ids)

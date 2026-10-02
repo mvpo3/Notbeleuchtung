@@ -212,6 +212,36 @@ def test_cache_treffer_verhindert_aufruf(tmp_path):
     assert "\\" not in inhalt["schluessel"]["plan"] and ":" not in inhalt["schluessel"]["plan"]
 
 
+def test_cache_eichung_stempel_abgedeckt_ist_eigene_frage(tmp_path):
+    """Review 2: die Eichung (Stempel abgedeckt, Auftrag § 3 „eigene Eichungs-Aufrufe") stellt
+    eine andere Frage als der Normallauf — anderer Cache-Eintrag, kein Treffer über Kreuz."""
+    backend = ZaehlBackend()
+    a = _anfrage(tmp_path)
+    normal = Zweitmeinung(KiKonfig(an=True, cache_pfad=tmp_path / "c"), backend=backend)
+    eichung = Zweitmeinung(KiKonfig(an=True, cache_pfad=tmp_path / "c", stempel_abdecken=True),
+                           backend=backend)
+    normal.frage(a)
+    assert len(backend.aufrufe) == 1 and not eichung.im_cache(a)
+    eichung.frage(a)
+    assert len(backend.aufrufe) == 2, "Eichung darf die Normal-Antwort (mit Stempeln) nicht lesen"
+    assert eichung.treffer == 0 and eichung.anfragen == 1
+    dateien = sorted(p.name for p in (tmp_path / "c").rglob("*.json"))
+    assert len(dateien) == 2 and sum("eichung" in n for n in dateien) == 1, dateien
+    # zweiter Eichungslauf trifft seinen eigenen Eintrag, der Normallauf seinen
+    assert Zweitmeinung(eichung.konfig, backend=backend).frage(a).quelle == "cache"
+    assert Zweitmeinung(normal.konfig, backend=backend).frage(a).quelle == "cache"
+    assert len(backend.aufrufe) == 2
+
+
+def test_suite_laeuft_nie_mit_ki_aus_der_umgebung():
+    """Review 2: „Suite und Gate rufen die KI nie live auf" (Auftrag § 3) — ein in der Umgebung
+    gesetztes NOTBEL_KI=an darf pytest nicht einschalten (tests/conftest.py), außer mit dem
+    ausdrücklichen NOTBEL_KI_LIVE=1."""
+    if os.environ.get("NOTBEL_KI_LIVE") == "1":
+        pytest.skip("Live ausdrücklich freigegeben")
+    assert "NOTBEL_KI" not in os.environ and KiKonfig.aus_umgebung().an is False
+
+
 def test_fehler_wird_nicht_gecacht_und_bricht_nicht_ab(tmp_path):
     backend = ZaehlBackend(Antwort(fehler=KiFehler("limit", "You’ve hit your usage limit.")))
     zm = Zweitmeinung(KiKonfig(an=True, cache_pfad=tmp_path / "c"), backend=backend)

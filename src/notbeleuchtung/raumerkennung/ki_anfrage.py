@@ -58,7 +58,7 @@ from .sanitaer import moebelobjekte, sanitaer_typ, sanitaerobjekte
 from .stempel_anker import Zuordnung, _block_texte, flaeche_aus_text
 from .tuer_zuordnung import AUSSEN, KEIN_RAUM
 from .wohnungsklasse import korrigierte_rollen
-from .wohnungsumriss import NACHBAR_MM
+from .wohnungsumriss import NACHBAR_MM, umschliessende_wohnung
 
 #: Ab dieser längsten Seite der Raum-Hülle wird das Geschoss in vier Quadranten gefragt
 #: (Vision-Audit: Stempel und Möbel bleiben lesbar).
@@ -279,11 +279,19 @@ def baue_anfragen(plan: DxfPlan, dxf_path: str | Path, geschoss: str, raeume: Se
             "tueren": tj,
             "wohnung": r.wohnung_id,
             "wohnungseingang_am_raum": any(t["rolle"] == "wohnungseingang" for t in tj),
-            "klasse": r.nutzungsklasse,
             "nachbarn": nachbarn.get(r.id, []),
         }
-        je_quadrant.setdefault(_quadrant_von(p, quadr), []).append(
-            RaumAnfrage(r.id, r.raum_typ or "", belege.get(r.id, ""), m))
+        if stempel_abdecken:
+            # Eichung (Review 2): alles, was aus dem Stempel abgeleitet ist, bleibt weg —
+            # Engine-Typ und Beleg des Raums, die Typen der Nachbarn, die Nutzungsklasse.
+            # Sonst misst die Trefferquote nur, ob die KI abschreibt. `zweitmeinung_anwenden`
+            # vergleicht trotzdem mit dem echten Engine-Typ (Rückfall auf `raum.raum_typ`).
+            m["nachbarn"] = [n.split(" ", 1)[0] for n in m["nachbarn"]]
+            anfrage = RaumAnfrage(r.id, "", "", m)
+        else:
+            m["klasse"] = r.nutzungsklasse
+            anfrage = RaumAnfrage(r.id, r.raum_typ or "", belege.get(r.id, ""), m)
+        je_quadrant.setdefault(_quadrant_von(p, quadr), []).append(anfrage)
     bilder = bilder or {}
     return [GeschossAnfrage(plan_datei=Path(dxf_path), geschoss=geschoss, quadrant=q,
                             raeume=tuple(je_quadrant[q]),
@@ -368,9 +376,12 @@ class KiErgebnis:
     treffer: int = 0       # Cache-Treffer
 
 
-def _sanitaer_regel(plan: DxfPlan):
-    """Bestehende Regel K3 als Bestätigung eines Notlicht-Verlust-Typs: die Sanitärobjekte im
-    Polygon ergeben nach ``sanitaer_typ`` genau diesen Typ (BAD/WC)."""
+def _sanitaer_regel(plan: DxfPlan, raeume: Sequence[Raum], tueren: Sequence[Tuer]):
+    """Bestehende Regel K3 VOLLSTÄNDIG als Bestätigung eines Notlicht-Verlust-Typs: die
+    Sanitärobjekte im Polygon ergeben nach ``sanitaer_typ`` genau diesen Typ (BAD/WC) UND der
+    Raum liegt im Umriss einer Wohnung (``umschliessende_wohnung`` — Owner-Regel K3: „der Raum
+    muss innerhalb eines Wohnungsumrisses liegen, sonst bleibt UNBEKANNT"). Die zweite Meinung
+    läuft nach den Wohnungen, also am echten Modell statt an der K3-Probe (Review 2)."""
     objekte: list[tuple[str, XY]] | None = None
 
     def regel(raum: Raum, typ: str) -> bool:
@@ -378,7 +389,9 @@ def _sanitaer_regel(plan: DxfPlan):
         if objekte is None:
             objekte = sanitaerobjekte(plan)
         g = Polygon(raum.polygon_mm).buffer(0)
-        return sanitaer_typ(Counter(a for a, xy in objekte if g.contains(Point(xy)))) == typ
+        if sanitaer_typ(Counter(a for a, xy in objekte if g.contains(Point(xy)))) != typ:
+            return False
+        return umschliessende_wohnung(raum, list(raeume), list(tueren))[0] is not None
     return regel
 
 
@@ -424,7 +437,7 @@ def zweite_meinung(plan: DxfPlan, dxf_path: str | Path, geschoss: str, raeume: l
                                  quadr=quadr)
         erg.fragen = len(anfragen)
         offen = {a.quadrant for a in anfragen if not zm.im_cache(a)}
-        regel, evidenz = _sanitaer_regel(plan), _kein_raum_evidenz(plan)
+        regel, evidenz = _sanitaer_regel(plan, raeume, tueren), _kein_raum_evidenz(plan)
         with tempfile.TemporaryDirectory(prefix="nb_ki_bild_") as td:
             if offen:
                 bilder = rendere_bilder(plan, raeume, Path(td), [q for q in quadr if q[0] in offen],
@@ -435,7 +448,7 @@ def zweite_meinung(plan: DxfPlan, dxf_path: str | Path, geschoss: str, raeume: l
                 antwort = zm.frage(a)
                 erg.herkunft += zweitmeinung_anwenden(
                     raeume, a, antwort, freigabe=konfig.freigabe, regel_bestaetigt=regel,
-                    evidenz=evidenz)
+                    evidenz=evidenz, belege=belege)
                 gesehen |= a.raum_ids
         erg.warnungen, erg.anfragen, erg.treffer = list(zm.warnungen), zm.anfragen, zm.treffer
     except Exception as exc:  # noqa: BLE001 — zweite Meinung darf den Parse nie killen (Auftrag § 3)

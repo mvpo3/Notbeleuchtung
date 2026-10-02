@@ -219,6 +219,24 @@ def test_stempel_ohne_kanon_typ_wird_nie_umtypisiert(tmp_path):
     assert r.raum_typ == "" and herkunft[0].herkunft == "Engine" and "Stempel" in herkunft[0].grund
 
 
+def test_eichung_belege_bleiben_fuer_herkunft_und_stempelschutz(tmp_path):
+    """Review 2: in der Eichung (``stempel_abdecken``) trägt die Anfrage keinen Beleg — die
+    echten Belege kommen über ``belege`` mit: Herkunft zeigt sie, der Stempel-Schutz greift,
+    der Vergleich läuft gegen den echten Engine-Typ (Rückfall ``raum.raum_typ``)."""
+    vok = _raum("raum_7", "", 40.0)                 # Stempel „GESCHÄFTSLOKAL" (Vokabular)
+    st = _raum("raum_1", "STIEGENHAUS", 30.0)
+    anfrage = GeschossAnfrage(plan_datei=tmp_path / "p.dxf", geschoss="EG", raeume=(
+        RaumAnfrage("raum_7", "", "", {}), RaumAnfrage("raum_1", "", "", {})))   # wie Eichung
+    herkunft = zweitmeinung_anwenden(
+        [vok, st], anfrage,
+        _antwort(("raum_7", "LAGER", 0.95, False, "Regale"), ("raum_1", "GANG", 0.9, False, "lang")),
+        freigabe=frozenset({"LAGER", "GANG"}), belege={"raum_7": "stempel", "raum_1": "stempel"})
+    assert vok.raum_typ == "" and st.raum_typ == "STIEGENHAUS"
+    assert [(h.herkunft, h.beleg, h.engine_typ) for h in herkunft] == [
+        ("Engine", "stempel", ""), ("strittig", "stempel", "STIEGENHAUS")]
+    assert "Stempel" in herkunft[0].grund
+
+
 def test_fehler_oder_verworfen_laesst_alles_unveraendert(tmp_path):
     a, b = _raum("a", "GANG", 12.0), _raum("b", "", 5.0)
     anfrage = _anfrage(tmp_path, [a, b])
@@ -401,9 +419,14 @@ def test_anfrage_traegt_merkmale_je_raum_und_quadranten(tmp_path):
     assert {"flaeche_m2", "texte", "objekte", "fenster", "stiegen", "lift", "tueren", "wohnung",
             "wohnungseingang_am_raum", "klasse", "nachbarn"} <= set(st.merkmale)
     assert any(n.startswith(mitte.raum_id) for n in st.merkmale["nachbarn"])
-    # Eichung: Stempel abdecken → keine Texte in den Textdaten
+    # Eichung: Stempel abdecken → keine Texte in den Textdaten; Review 2: auch kein aus dem
+    # Stempel abgeleiteter Engine-Typ/Beleg, keine Nachbar-Typen, keine Klasse — sonst misst
+    # die Eichung nur, ob die KI abschreiben kann
     ohne = baue_anfragen(plan, dxf, "EG", raeume, [], belege, stempel_abdecken=True)
-    assert all("texte" not in r.merkmale for r in ohne[0].raeume)
+    assert all("texte" not in r.merkmale and "klasse" not in r.merkmale for r in ohne[0].raeume)
+    assert all(r.engine_typ == "" and r.beleg == "" for r in ohne[0].raeume)
+    assert all(" " not in n for r in ohne[0].raeume for n in r.merkmale["nachbarn"]), "nur IDs"
+    assert {r.raum_id for r in ohne[0].raeume} == set(je)
     # Quadranten wie beim Vision-Audit: ab QUADRANT_AB_MM längster Seite, 1 m Überlappung
     polys = [Polygon(r.polygon_mm) for r in raeume if len(r.polygon_mm) >= 3]
     assert [q for q, _ in quadranten(polys)] == [""]
@@ -489,7 +512,11 @@ def test_provider_mit_ki_mock_bild_merkmale_herkunft_und_null_aenderung(tmp_path
     assert len(mock.anfragen) == 1 and prov2.ki_ergebnis.treffer == 1 and prov2.ki_ergebnis.anfragen == 0
 
 
-def test_provider_freigabe_gang_uebernimmt_bad_nur_mit_sanitaerregel(tmp_path):
+def test_provider_freigabe_bad_sanitaerregel_nur_im_wohnungsumriss(tmp_path):
+    """Review 2: die bestätigende Regel ist K3 VOLLSTÄNDIG — Sanitärobjekte UND Umriss einer
+    Wohnung (Owner-Regel sanitaer.py: „der Raum muss innerhalb eines Wohnungsumrisses liegen,
+    sonst bleibt UNBEKANNT"). Die 3-Raum-DXF hat keine Wohnung → KI-BAD mit 3 Sanitärblöcken
+    bleibt UNBESTIMMT mit Notlicht (Grundsatz (a))."""
     dxf = _drei_raeume_dxf(tmp_path / "drei.dxf", sanitaer_in_mitte=True)
     _, ohne = _parse(dxf, KiKonfig(an=False, cache_pfad=tmp_path / "c0"))
     mitte = next(r for r in ohne.raeume if r.raum_typ == "")   # K3 greift nicht: kein Wohnungsumriss
@@ -498,10 +525,11 @@ def test_provider_freigabe_gang_uebernimmt_bad_nur_mit_sanitaerregel(tmp_path):
     prov, mit = _parse(dxf, KiKonfig(an=True, cache_pfad=tmp_path / "c1",
                                      freigabe=frozenset({"BAD"})), mock)
     neu = next(r for r in mit.raeume if r.id == mitte.id)
-    assert neu.raum_typ == "BAD" and neu.nutzungsklasse == "WOHNUNG_PRIVAT" and neu.wohnung_id is None
+    assert neu.raum_typ == "" and neu.nutzungsklasse is None, "ohne Wohnungsumriss kein BAD"
+    assert mit.model_dump(by_alias=True) == ohne.model_dump(by_alias=True)
     h = next(h for h in prov.ki_ergebnis.herkunft if h.raum_id == mitte.id)
-    assert h.herkunft == "KI" and "Sanitär" in h.grund
-    # dieselbe Antwort ohne Sanitärobjekte: Notlicht-Verlust ohne Regel → UNBESTIMMT mit Notlicht
+    assert h.herkunft == "Engine" and h.ki_typ == "BAD" and "Notlicht" in h.grund
+    # dieselbe Antwort ohne Sanitärobjekte: ebenso UNBESTIMMT mit Notlicht
     dxf2 = _drei_raeume_dxf(tmp_path / "drei2.dxf")
     mock2 = _Mock(Antwort(raeume=[RaumAntwort(mitte.id, "BAD", 0.9, False, "sieht nach Bad aus")],
                           roh="{}"))
@@ -510,6 +538,30 @@ def test_provider_freigabe_gang_uebernimmt_bad_nur_mit_sanitaerregel(tmp_path):
     assert next(r for r in mit2.raeume if r.id == mitte.id).raum_typ == ""
     h2 = next(h for h in prov2.ki_ergebnis.herkunft if h.raum_id == mitte.id)
     assert h2.herkunft == "Engine" and "Notlicht" in h2.grund
+
+
+def test_sanitaerregel_bestaetigt_nur_objekte_und_wohnungsumriss(tmp_path):
+    """Die Regel selbst: Objekte im Polygon ergeben den Typ UND der Raum liegt im Umriss einer
+    Wohnung (Nachbarn bis 500 mm alle in einer Wohnung, keine Tür hinaus) → bestätigt; ohne
+    Wohnung oder mit anderem Typ → nicht."""
+    from notbeleuchtung.raumerkennung.dxf_load import lade_dxf
+    from notbeleuchtung.raumerkennung.ki_anfrage import _sanitaer_regel
+
+    plan = lade_dxf(_drei_raeume_dxf(tmp_path / "drei.dxf", sanitaer_in_mitte=True))
+    raeume = _raeume_aus_plan(plan)
+    mitte = next(r for r in raeume if r.raum_typ == "")
+    regel = _sanitaer_regel(plan, raeume, [])
+    assert not regel(mitte, "BAD"), "Nachbarn ohne Wohnung → K3-Kontrolle verneint"
+    for r in raeume:
+        if r.id != mitte.id:
+            r.wohnung_id, r.nutzungsklasse = "top_1", "WOHNUNG_PRIVAT"
+    assert regel(mitte, "BAD")
+    assert not regel(mitte, "WC"), "3 Objekte sind BAD, nicht WC"
+    herkunft = zweitmeinung_anwenden(
+        raeume, _anfrage(tmp_path, [mitte]),
+        _antwort((mitte.id, "BAD", 0.9, False, "Wanne, WC, Waschbecken")),
+        freigabe=frozenset({"BAD"}), regel_bestaetigt=regel)
+    assert mitte.raum_typ == "BAD" and herkunft[0].herkunft == "KI"
 
 
 # --- (iv) Backend codex_abo mit gespeicherten Antworten -----------------------------------
@@ -579,3 +631,20 @@ def test_plan_pruefen_schreibt_raumtyp_herkunft_in_bericht(tmp_path, monkeypatch
     assert "KI aus" in abschnitt and "Anfragen 0" in abschnitt and "Cache-Treffer 0" in abschnitt
     assert "| STIEGENHAUS | Engine | stempel |" in abschnitt
     assert "| ABSTELLRAUM | Engine | stempel |" in abschnitt
+
+
+def test_ki_md_fuehrt_raeume_nach_der_zweiten_meinung_mit(tmp_path):
+    """Review 2: Räume, die erst nach der zweiten Meinung entstehen (LIFT aus `finde_lifte`,
+    Rennweg OG3 `lift_1`), bekommen eine Herkunftszeile „Engine" — Herkunft je Raum heißt
+    jeder Raum des Modells."""
+    from notbeleuchtung.raumerkennung.ki_anfrage import KiErgebnis
+
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
+    import plan_pruefen as pp
+
+    ki = KiErgebnis(herkunft=[Herkunft("raum_1", "Engine", "STIEGENHAUS", "stempel", grund="KI aus")])
+    lift = _raum("lift_1", "LIFT", 3.0)
+    md = "\n".join(pp._ki_md(ki, [_raum("raum_1", "STIEGENHAUS", 30.0), lift]))
+    assert "| raum_1 | STIEGENHAUS | Engine | stempel |" in md
+    assert "| lift_1 | LIFT | Engine | geometrie |" in md and "nach der zweiten Meinung" in md
+    assert "Engine 2" in md
