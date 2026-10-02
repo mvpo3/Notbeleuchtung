@@ -146,7 +146,9 @@ class ArchitekturRaumProvider:
         # (keine Geometrie, nur Text, kein Raum) bricht nicht ab — RaumModell
         # plus Warnung hier (`keine_geometrie`, `keine_raeume`). Abbruch nur,
         # wenn ezdxf die Datei nicht lesen kann (`dxf_load.DxfNichtLesbar`).
-        self.wand_warnungen: list[str] = []
+        # Entscheid 4 (R1-01): beim Laden verworfene Entities (nan/inf/Phantom-
+        # Koordinate) stehen mit Layer und Handle im Bericht.
+        self.wand_warnungen: list[str] = list(plan.warnungen)
         # 2g (D-04): ein mm-Faktor ohne geometrischen Beleg wird ausgewiesen.
         if plan.faktor_quelle.startswith("$INSUNITS"):
             self.wand_warnungen.append(

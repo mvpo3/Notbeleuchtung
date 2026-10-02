@@ -259,6 +259,64 @@ def test_plan_pruefen_schreibt_tuer_und_sanitaer_warnungen_in_bericht(tmp_path, 
         abschnitt
 
 
+# ── Abschnitt 4 (Entscheid 4, R1-01): nan/inf/Phantom-Koordinate → Entity weg ──
+# Review 1 (§ 15): eine LWPOLYLINE mit `nan`/`inf` auf einem Wand-Layer brach
+# `parse` mit OverflowError, ein Phantom-Punkt (1e15) mit ValueError — beide aus
+# dem Raster in `footprint.gebaeude_umriss` über ungefilterte Bounds. Jetzt
+# verwirft `lade_dxf` solche Entities (nicht endlich oder |Koordinate| > 1e9 mm)
+# mit Warnung (Typ, Handle, Layer, Wert) in `wand_warnungen` → bericht.md.
+def _raum_mit_defekten_koordinaten_dxf(path):
+    """Gültiger Doppelwand-Raum auf `A-WALL` (12 × 9 m, Innenwand-Stich) plus
+    drei LWPOLYLINEs auf demselben Layer mit nan, inf und 1e15 (Vorbild
+    Review 1, Fälle d14/d11). Liefert Pfad und die drei Handles."""
+    import ezdxf
+
+    doc = ezdxf.new()
+    doc.header["$INSUNITS"] = 4
+    doc.layers.add("A-WALL")
+    msp = doc.modelspace()
+    for x0, y0, x1, y1 in ((0, 0, 12000, 9000), (200, 200, 11800, 8800)):
+        pts = [(x0, y0), (x1, y0), (x1, y1), (x0, y1)]
+        for a, b in zip(pts, pts[1:] + pts[:1], strict=True):
+            msp.add_line(a, b, dxfattribs={"layer": "A-WALL"})
+    for x in (6000, 6200):
+        msp.add_line((x, 200), (x, 8800), dxfattribs={"layer": "A-WALL"})
+    handles = [
+        msp.add_lwpolyline([(1000.0, 1000.0), p], dxfattribs={"layer": "A-WALL"}).dxf.handle
+        for p in ((float("nan"), 2000.0), (3000.0, float("inf")), (1e15, 1e15))
+    ]
+    doc.saveas(str(path))
+    return path, handles
+
+
+def test_nan_inf_phantom_koordinate_verworfen_statt_abbruch(tmp_path):
+    dxf, handles = _raum_mit_defekten_koordinaten_dxf(tmp_path / "plan.dxf")
+    p = ArchitekturRaumProvider()
+    rm = p.parse(str(dxf), "EG")
+    assert len(rm.raeume) >= 1                      # Räume aus den gültigen Wänden
+    verworfen = [w for w in p.wand_warnungen if w.startswith("entity_verworfen: ")]
+    assert len(verworfen) == 3, p.wand_warnungen
+    for h in handles:
+        assert any(f"Handle {h} " in w and "Layer A-WALL" in w for w in verworfen), verworfen
+    # Bounds aus den gültigen Wänden, nicht aus dem Phantom-Punkt.
+    assert rm.bounds_mm.max_xy[0] <= 12000.0 and rm.bounds_mm.max_xy[1] <= 9000.0
+    RaumModell.model_validate(rm.model_dump(by_alias=True))
+
+
+def test_plan_pruefen_schreibt_verworfene_entities_in_bericht(tmp_path, monkeypatch):
+    import sys
+
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
+    import plan_pruefen as pp
+
+    monkeypatch.setattr(pp, "ERGEBNIS", tmp_path / "ergebnis")
+    dxf, _ = _raum_mit_defekten_koordinaten_dxf(tmp_path / "defekt.dxf")
+    pp.plan_pruefen(dxf)
+    bericht = (tmp_path / "ergebnis" / "defekt" / "bericht.md").read_text(encoding="utf-8")
+    abschnitt = bericht.split("## Warnungen", 1)[1].split("\n## ", 1)[0]
+    assert abschnitt.count("- entity_verworfen: LWPOLYLINE Handle ") == 3, abschnitt
+
+
 # ── 2g / R-05 a: Verluste der Kaskade als Warnung statt nur `print` ──────────
 # Ein Fehler in Kürzel-Auflösung, R-Stufe oder Bereinigung (z. B. MemoryError)
 # und die Raster-Grenzen der R-Stufe (2f) waren nur `print` bzw. RuntimeWarning

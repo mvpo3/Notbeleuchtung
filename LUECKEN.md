@@ -2949,3 +2949,121 @@ bestätigt; keine Keys, keine lokalen Pfade, keine Live-Aufrufe in Suite und Gat
 korrigiert** (K3-Umriss-Kontrolle in der bestätigenden Regel, Eichungs-Cache, Eichungs-Anfrage ohne abgeleitete Typen,
 Suite-Wächter, LIFT-Zeile), fünf Punkte als Owner-/Phase-B-Entscheide offen (25c.3). Modell dieses Agenten:
 claude-fable-5-1 (Stufe laut Auftrag xhigh; vom Agenten selbst nicht prüfbar).
+
+## 26. Abschnitt 4 — nan/inf-Abbruch R1-01 (Entscheid 4; erledigt mit dem Commit dieses Eintrags)
+
+**Auftrag (Owner 2026-10-01, `docs/AUFTRAG_2026-10-01.md` § 4, Entscheid 4):** „Entities mit nan, inf oder einer
+Koordinate über 1e9 mm beim Laden verwerfen. Warnung mit Layer und Handle in bericht.md unter ‚Warnungen‘. Test zuerst
+rot: synthetischer Plan mit nan, inf und 1e15 auf einem Wandlayer läuft durch, footprint.py:79/80 bricht nicht mehr ab."
+Befund dazu: Review 1 § 15 (2a), Fälle d14 (`nan`/`inf`) und d11 (Phantom 1e15) — `OverflowError footprint.py:79`
+bzw. `ValueError footprint.py:80`, Ursache ungefilterte `bounds_mm` im 200-mm-Raster von `gebaeude_umriss`; auf den
+13 Plänen der Prüfstrecke nie aufgetreten. Stand vorher `7ea3024` (Review 2).
+
+### 26.1 Regel und Einbau (`raumerkennung/dxf_load.py`, Lade-Pfad; Provider reicht nur durch)
+
+- **Wo:** in `lade_dxf`, nachdem der Architektur-Raum (`space`) gewählt ist — der einzige Ort, durch den jeder
+  Konsument geht (`provider.parse`, `scripts/plan_pruefen.py`, Analyse-Skripte laden alle über `lade_dxf`). Zwei
+  Durchgänge über die Entities des gewählten Raums: **(1)** vor der mm-Kalibrierung alle Entities mit einer nicht
+  endlichen Koordinate (`nan`, `±inf`) löschen — ein `nan` im Perzentil-Fenster von `_raw_wall_span` (sortiert
+  undefiniert) oder ein `inf` am 98-%-Rand könnte sonst die Faktorwahl auf den `$INSUNITS`-Rückfall werfen; **(2)**
+  nach der Kalibrierung alle Entities mit `|Koordinate| · factor > 1e9 mm` löschen (Grenze in Quell-Einheiten
+  `1e9 / factor`, damit „1e9 mm" auch für cm-/m-Pläne gilt).
+- **Welche Koordinaten:** `_koordinaten(e)` liefert x/y der bekannten Typen — LINE (Start/Ende), LWPOLYLINE und
+  POLYLINE (alle Stützpunkte), INSERT/TEXT/MTEXT (Einfügepunkt), ARC/CIRCLE (Mittelpunkt + Radius), HATCH
+  (Stützpunkte der Polylinien-Pfade). Unbekannte Typen und Kanten-Pfade (HATCH `EdgePath`) liefern nichts → Entity
+  bleibt. Eine Entity, deren Koordinaten nicht lesbar sind, bleibt ebenfalls (wie bisher, kein neuer Abbruchpfad).
+- **Löschen:** `space.delete_entity(e)` (Modelspace oder Block-Layout im Wrapper-Mode) — danach sieht kein Modul die
+  Entity mehr: nicht `bounds_mm`, nicht die Kaskade, nicht Stempel/Türen/Zirkulation.
+- **Warnung:** je Entity `entity_verworfen: <TYP> Handle <handle> Layer <layer> — Koordinate <wert>` in
+  `DxfPlan.warnungen` (neues Feld, Default leer); `provider.parse` startet `wand_warnungen` damit → bericht.md
+  „Warnungen" über den bestehenden Weg (2a). Kein Contract-Feld, `scripts/plan_pruefen.py` unverändert.
+- **Nicht angefasst:** `bounds_mm`, `footprint.gebaeude_umriss`, `wandkoerper._ohne_fernkoerper` (500-m-Filter bleibt
+  die Regel für ferne, aber endliche Plankopf-Geometrie unter 1e9 mm — eine Bounds-Änderung hätte `hauptausgaenge`
+  auf echten Plänen verschoben, Review 1 § 15).
+
+### 26.2 Tests, rot vor dem Fix (`tests/raumerkennung/test_provider.py`, +2)
+
+Synthetischer Plan `_raum_mit_defekten_koordinaten_dxf`: Doppelwand-Raum 12 × 9 m auf `A-WALL` (Vorbild Review 1
+`neu(True)`) plus **drei LWPOLYLINEs auf demselben Wand-Layer** mit `(nan, 2000)`, `(3000, inf)` und `(1e15, 1e15)` —
+ezdxf 1.4.4 schreibt und liest `nan`/`inf` unverändert, darum kein Roh-Text nötig; die Handles der drei Entities bleiben
+über den Roundtrip erhalten und werden im Test gegen die Warnungen geprüft.
+
+- `test_nan_inf_phantom_koordinate_verworfen_statt_abbruch`: `parse` läuft durch, ≥ 1 Raum aus den gültigen Wänden,
+  genau 3 `entity_verworfen:`-Warnungen mit `Handle <h>` und `Layer A-WALL`, Bounds ≤ 12 000 × 9 000 mm (nicht aus dem
+  Phantom), Contract-Roundtrip.
+- `test_plan_pruefen_schreibt_verworfene_entities_in_bericht`: Prüfstrecke `plan_pruefen` auf demselben Plan,
+  bericht.md „## Warnungen" enthält drei Zeilen `- entity_verworfen: LWPOLYLINE Handle …`.
+
+**Rot vor dem Fix** (`pytest tests/raumerkennung/test_provider.py -k verworfen --tb=line`, Arbeitsbaum `7ea3024` + Tests):
+
+```
+footprint.py:79: OverflowError: cannot convert float infinity to integer      [test_nan_inf_phantom_koordinate_verworfen_statt_abbruch]
+scripts/plan_pruefen.py:103: ValueError: cannot convert float NaN to integer   [test_plan_pruefen_schreibt_verworfene_entities_in_bericht]
+2 failed, 21 deselected in 1.50s
+```
+
+(Die Prüfstrecke bricht noch vor dem Provider in `_dominanter_winkel` — gleiche Ursache, gleicher Lade-Pfad.)
+**Grün nach dem Fix:** `-k verworfen` **2 passed in 2.18s**; `test_provider.py` + `test_dxf_load.py` **26 passed,
+2 skipped in 39.63s** (der Baufeld-Ausreißer-Test `test_ausreisser_kippen_den_faktor_nicht` mit 4e8 < 1e9 bleibt, wie
+gewollt, unberührt). Ergebnis des synthetischen Plans: 2 Räume (`rest_1` 49,9 m², `rest_2` 48,2 m²), Bounds
+(0, 0)–(12 000, 9 000), Warnungen `entity_verworfen: LWPOLYLINE Handle 3A Layer A-WALL — Koordinate nan`, `… 3B …
+inf`, `… 3C … 1e+15` (dazu `mm_faktor` wegen der 12-m-Spanne unter 15 m — Eigenschaft des Mini-Plans). ruff: „All
+checks passed!".
+
+### 26.3 Blast 13 Pläne (`vorher4` = `git archive 7ea3024` von `src/` außerhalb des Repos, `nachher4` = Arbeitsbaum dieses Commits)
+
+Runner wie § 25c.4 (`provider.parse(dxf, "")` + Default-Platzierung, JSON je Raum/Tür/Ausgang/Segment/Anker/Leuchte,
+alle Provider-Warnungen; seriell, Am Rain und Muthgasse allein, kein pytest parallel, Umgebung ohne `NOTBEL_KI*`).
+Die Vorher-Basis wurde neu gemessen (nicht aus § 25c.4 übernommen) und ist gegen den dortigen Nachher-Lauf
+(`ccd3f96-dirty`) 13/13 feldgleich — `7ea3024` ist also wirklich der Stand, gegen den hier verglichen wird.
+
+**Ergebnis: 13 gleich, 0 abweichend** über alle 18 Felder je Plan (Räume mit Typ/Polygon/Klasse/Wohnung/Flags, Türen,
+Ausgänge, Segmente, Anker, Stiegenhäuser, Bounds, korrigierte Rollen, bestätigt privat, alle Warnungen, Leuchten je
+Kind/Klasse/Stück) — Rennweg EG R24 T40 A5 L17, OG3 R17 T18 A3 L7, Barawitzka EG R49 T71 A1 L11, Mollgasse EG R64 T102
+A9 L51, 1KG R31 T28 A1 L14, 2KG R30 T46 A1 L13, Am Rain OG4 R28 T59 A2 L20, OG3 R60 T129 A3 L20, OG2 R103 T264 A2 L75,
+OG1 R139 T300 A7 L73, UG R82 T295 A17 L110, EG R140 T317 A3 L46, Muthgasse E2 R108 T193 A1 L139; DXF-SHA je Plan gleich.
+
+**Zähler verworfener Entities je Plan (`entity_verworfen:` in `wand_warnungen`, Nachher): 13 × 0** — Rennweg EG 0,
+OG3 0, Barawitzka EG 0, Mollgasse EG 0, 1KG 0, 2KG 0, Am Rain UG 0, EG 0, OG1 0, OG2 0, OG3 0, OG4 0, Muthgasse E2 0.
+Kein echter Plan der Prüfstrecke trägt eine nicht-endliche oder > 1e9-mm-Koordinate; die übrigen `wand_warnungen`
+(Am Rain EG 5, OG1 3, OG2/OG3/OG4/UG 2, Muthgasse 2, Rennweg EG/OG3 und Barawitzka 1, Mollgasse 0) sind vorher wie
+nachher dieselben. Laufzeit/RAM unverändert (Am Rain EG 309 → 308 s, 2,71 GB; Muthgasse 254 → 252 s, 1,79 GB; die
+zwei zusätzlichen Durchgänge über die Entities kosten nichts Messbares); stderr beider Läufe nur die bekannten
+ezdxf-Zeilen „copy process ignored ACDB_BLOCKREPRESENTATION_DATA", kein Traceback.
+
+### 26.4 Gate und Suite
+
+**Gate:** `pytest -m gate tests/gate` **3 passed, 1 xfailed** (`test_gate_tuerstapel_erfuellt`, wie vorher; 108 s).
+`gate_messung` auf dem Arbeitsbaum dieses Commits (vor dem Commit, `_arbeit/gate/messung_7ea3024-dirty-26.json`,
+59,4 s), `pruefe_gate` gegen `nullmessung_f15d03f.json`: **(0)** unsauberer Arbeitsbaum (erwartet, vor dem Commit
+gemessen) und **(3) `M4.einraum` DG2 0 → 1** (Enis Board 3, unverändert); M17 **18/18 BESTANDEN**; **alle Messfelder
+außer `meta` gleich `messung_ccd3f96-dirty-25c.json`** (Review 2).
+
+**Suite:** `pytest tests/raumerkennung tests/contract` **1021 passed, 7 skipped, 2 xfailed in 152.34s** (1019 + 2 neu).
+**Volle Suite** (`pytest -q -p no:cacheprovider -rxXs`, allein, nach dem Blast): `7 failed, 2387 passed, 12 skipped,
+6 deselected, 15 xfailed, 3 warnings in 1226.77s (0:20:26)`, 0 xpassed — die 6 bekannten roten wie § 24.6 (3 ×
+`test_keine_leuchten_in_wohnung_privat` OG1/OG2/DG1 = Board 1 Leonis, `test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell`,
+die 2 S4c-Pins `test_bara_raum_19`/`raum_30`) **plus ein siebter, nicht aus diesem Commit:**
+`tests/normwissen/test_quellenblock_e07_rl4.py::test_kein_contract_wert_und_kein_konsument` — Enis' AST-Wächter
+meldet eine Verzeichnis-Aufzählung im Produktivcode, `raumerkennung/ki_backends.py:58 -> Path(basis, "OpenAI",
+"Codex", "bin").glob("*/codex.exe")` (Codex-Binary-Suche aus Abschnitt 3 Teil A, `be9cc57`; dort lief nur
+`tests/raumerkennung tests/contract`, § 25a.5/25b.8/25c.5). Die Datei ist in diesem Commit unberührt (Diff:
+`dxf_load.py`, `provider.py`, `test_provider.py`). Der Wächter zielt auf `normwissen/data`-Verbraucher; der
+`%LOCALAPPDATA%`-Glob ist keiner, trägt aber keinen `data`-fremden Marker, den der Wächter ausnimmt → Abschnitt 3,
+Phase B (Glob durch eine feste Pfadliste ersetzen oder Wächter-Ausnahme mit Enis abstimmen), hier offen geführt
+(26.5). Zählung: 2387 = 2331 (§ 24.6) + 55 aus Abschnitt 3 (26 Teil A, 24 Teil B, 5 Review 2) + 2 neu − 1 (der
+siebte rote war vorher grün); 12 skipped = 11 + 1 (`test_codex_abo_live_nur_mit_konto`, § 25a.5); 15 xfailed und die
+3 Warnungen wie § 24.6.
+Kein Test umgestellt, keine Schwelle, kein Soll, kein Marker angefasst; kein Contract-Feld, kein neuer RaumTyp, kein
+fremdes Paket (`footprint.py`, `scripts/plan_pruefen.py` nur gelesen).
+
+### 26.5 Offen nach Abschnitt 4
+
+- **Block-Inhalte** werden nicht geprüft: von einem INSERT zählt nur der Einfügepunkt; eine `nan`-Koordinate in einer
+  Blockdefinition (Rennweg-Türöffnungen, Wrapper-Pläne, `_wand_punkte` steigt in Blöcke ab) bliebe im Block. Auf den 13
+  Plänen nicht aufgetreten (Blast feldgleich, 0 verworfen). P2 · Selman — Entscheid, ob Block-Layouts mitgeprüft werden.
+- **HATCH-Kanten-Pfade** (`EdgePath`) und Typen außerhalb der Liste (SPLINE, ELLIPSE, DIMENSION …) laufen ungeprüft durch;
+  ihre Koordinaten gehen nicht in `bounds_mm` ein. P3.
+- **R1-02 (P2, § 15):** degenerierte Entities (0/1 Stützpunkt, ARC Radius 0, INSERT auf fehlenden Block) laufen weiter
+  still durch — anderer Befund, nicht Teil von Entscheid 4.
+- `Projekte/_ergebnis/` nicht neu erzeugt (Verifikation über den Runner; Prüfstrecke am Abschluss der Phase A).

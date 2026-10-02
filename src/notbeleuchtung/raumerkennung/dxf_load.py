@@ -11,8 +11,9 @@ Zwei Layouts (auto-erkannt):
 """
 from __future__ import annotations
 
+import math
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import ezdxf
@@ -194,6 +195,49 @@ def _calibrate_factor(raw_span: float, space,
                     f"Türprobe: {probe}")
 
 
+# Entscheid 4 (Owner 2026-10-01, R1-01): eine Koordinate, die nicht endlich ist
+# oder jenseits von 1e9 mm liegt, ist kein Planinhalt. Die Entity fliegt beim
+# Laden raus — sonst rastert `footprint.gebaeude_umriss` die ungefilterten
+# Bounds ins Unendliche (OverflowError/ValueError, Review 1 § 15).
+_KOORD_MAX_MM = 1e9
+
+
+def _koordinaten(e) -> list[float]:
+    """x/y-Werte (und Radius) einer Entity in Quell-Einheiten; unbekannter Typ → leer."""
+    t = e.dxftype()
+    if t == "LINE":
+        return [e.dxf.start[0], e.dxf.start[1], e.dxf.end[0], e.dxf.end[1]]
+    if t == "LWPOLYLINE":
+        return [c for p in e.get_points("xy") for c in p]
+    if t == "POLYLINE":
+        return [c for v in e.vertices for c in (v.dxf.location[0], v.dxf.location[1])]
+    if t in ("INSERT", "TEXT", "MTEXT"):
+        return [e.dxf.insert[0], e.dxf.insert[1]]
+    if t in ("ARC", "CIRCLE"):
+        return [e.dxf.center[0], e.dxf.center[1], e.dxf.radius]
+    if t == "HATCH":
+        return [c for p in e.paths for v in getattr(p, "vertices", ()) for c in (v[0], v[1])]
+    return []
+
+
+def _verwerfe_defekte(space, grenze: float) -> list[str]:
+    """Entities mit nicht-endlicher oder |Koordinate| > ``grenze`` (Quell-Einheiten)
+    aus ``space`` löschen; je Entity eine Warnung mit Typ, Handle, Layer, Wert."""
+    warnungen: list[str] = []
+    for e in list(space):
+        try:
+            schlecht = next((c for c in _koordinaten(e)
+                             if not math.isfinite(c) or abs(c) > grenze), None)
+        except Exception:  # noqa: BLE001, S112 — unlesbare Entity bleibt, wie bisher
+            continue
+        if schlecht is None:
+            continue
+        warnungen.append(f"entity_verworfen: {e.dxftype()} Handle {e.dxf.handle} "
+                         f"Layer {e.dxf.layer} — Koordinate {float(schlecht):g}")
+        space.delete_entity(e)
+    return warnungen
+
+
 def _has_walls(space, min_count: int = 10) -> bool:
     n = 0
     for e in space:
@@ -213,6 +257,7 @@ class DxfPlan:
     factor: float          # Multiplikator Quell-Einheit → mm
     wall_layers: frozenset[str] = frozenset()  # erkannte Wand-Layer
     faktor_quelle: str = ""  # woher `factor` stammt (`_calibrate_factor`)
+    warnungen: list[str] = field(default_factory=list)  # Lade-Warnungen (`entity_verworfen`)
 
     def entities(self, prefixes: tuple[str, ...] | None = None):
         """Alle Entities des Architektur-Raums, optional nach Layer-Prefix gefiltert."""
@@ -264,10 +309,14 @@ def lade_dxf(pfad: str | Path) -> DxfPlan:
             if blk is not None and _has_walls(blk):
                 space = blk
                 break
+    # nan/inf vor der Kalibrierung (sonst kippt das Perzentil-Fenster), die
+    # 1e9-mm-Grenze danach in Quell-Einheiten (Entscheid 4).
+    warnungen = _verwerfe_defekte(space, math.inf)
     wall_layers = _wall_layers(space)
     factor, quelle = _calibrate_factor(_raw_wall_span(space, wall_layers), space, doc)
+    warnungen += _verwerfe_defekte(space, _KOORD_MAX_MM / factor)
     return DxfPlan(doc=doc, space=space, factor=factor, wall_layers=wall_layers,
-                   faktor_quelle=quelle)
+                   faktor_quelle=quelle, warnungen=warnungen)
 
 
 def bounds_mm(plan: DxfPlan) -> BBox:
