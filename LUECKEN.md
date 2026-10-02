@@ -2957,6 +2957,108 @@ korrigiert** (K3-Umriss-Kontrolle in der bestätigenden Regel, Eichungs-Cache, E
 Suite-Wächter, LIFT-Zeile), fünf Punkte als Owner-/Phase-B-Entscheide offen (25c.3). Modell dieses Agenten:
 claude-fable-5-1 (Stufe laut Auftrag xhigh; vom Agenten selbst nicht prüfbar).
 
+## 25d. Abo-Regel (Owner 2026-10-01) — KI nur über das ChatGPT-Abo (erledigt mit dem Commit dieses Eintrags)
+
+**Wortlaut (Owner 2026-10-01, zweite Freigabe-Nachricht):** „Verbindlich: Die KI läuft ausschließlich über das
+ChatGPT-Abo. Keine Credits, keine API-Keys, kein Aufladen, jetzt nicht und später nicht. Ist das Abo-Kontingent
+erschöpft, wird gewartet, nichts anderes. Diese Regel in die Konfiguration und in LUECKEN.md aufnehmen.“ Ebenso
+wörtlich in `docs/AUFTRAG_2026-10-01.md`, Abschnitt „Freigabe“. Stand vorher `57b013f`. Phase A: kein Live-Aufruf,
+auch `codex login status` lief nur gegen den Mock; kein Push, kein Board-Eintrag.
+
+### 25d.1 Key-Variablen der codex-cli 0.159.2 (nur `--help` gelesen, kein Aufruf gegen das Netz)
+
+`codex --help`, `codex exec --help`, `codex login --help`, `codex login status --help` des App-Bundles: `login
+--with-api-key` „Read the API key from stdin (e.g. `printenv OPENAI_API_KEY | codex login --with-api-key`)“ →
+**OPENAI_API_KEY**; `login --with-access-token` „(e.g. `printenv CODEX_ACCESS_TOKEN | codex login
+--with-access-token`)“ → **CODEX_ACCESS_TOKEN**; `--remote-auth-token-env <ENV_VAR>` nur für die TUI gegen einen
+entfernten App-Server (Name wird übergeben — die Engine übergibt keinen); `exec --help` nennt keine Key-Variable
+(`--ignore-user-config`: „auth still uses `CODEX_HOME`“). **CODEX_API_KEY** steht in keiner Hilfe — aus dem Auftrag
+übernommen; **ANTHROPIC_API_KEY** aus Auftrag § 3. Entfernt werden diese vier und zusätzlich jede Variable
+`*_API_KEY` (Groß-/Kleinschreibung egal), für `login status` und `exec` gleich.
+
+### 25d.2 Umsetzung (Fundstellen im Stand dieses Commits; nur `raumerkennung/`)
+
+| Regelteil | Fundstelle | Umsetzung |
+|---|---|---|
+| Konfiguration | `ki_zweitmeinung.py:153-159`, `:162-163` | fester Schlüssel `KiKonfig.nur_abo = True`, Kommentar mit dem Wortlaut; `KiKonfig(nur_abo=False)` → `ValueError` „nur_abo ist fest True — nur ChatGPT-Abo erlaubt“; `aus_umgebung` liest ihn nicht (`NOTBEL_KI_NUR_ABO=aus` → bleibt True) |
+| Wortlaut, Meldung | `ki_zweitmeinung.py:90-93`, Modul-Docstring `:43-44` | `NUR_ABO = "nur ChatGPT-Abo erlaubt"` |
+| Backend-Wahl | `ki_backends.py:218-223`, `:189-197` | unter `nur_abo` aktiv nur `codex_abo`; jedes andere registrierte Backend (`openai_api`, ein späteres `claude_abo`) → `GesperrtesBackend`: `KiFehler sonstig` „Backend <name> gesperrt — nur ChatGPT-Abo erlaubt (Owner-Regel 2026-10-01)“, kein Aufruf, Warnung, kein Abbruch; unbekannter Name → `ValueError` wie bisher |
+| `openai_api` | `ki_backends.py:200-208` | Gerüst bleibt, erbt `GesperrtesBackend` — auch direkt erzeugt nur der Fehler; liest keinen Key |
+| Kindprozess-Umgebung | `ki_backends.py:49-53`, `:105-107`, `:118-119` | `_KEYS_RAUS` (die vier aus 25d.1) und jedes `*_API_KEY` fallen weg; kein Code in `raumerkennung/` liest eine Key-/Token-Variable (Wächter-Test, `getenv`/`environ[…KEY|TOKEN]` 0 Treffer) |
+| Login-Art | `ki_backends.py:121-141`, `:161-162` | `codex login status` einmal je Lauf (= je Backend-Instanz; ohne übergebenes Backend je `provider.parse`) vor dem ersten `exec`, nach Binary- und Bild-Prüfung; stdout und stderr werden nur auf „API key“ (→ Fehler) und „ChatGPT“ bei Exit 0 (→ angemeldet) ausgewertet, die Ausgabe geht in keine Meldung; alles andere, Timeout, `OSError` → `KiFehler login` „… — nur ChatGPT-Abo erlaubt, kein Aufruf“, für den Lauf gemerkt; `auth.json` wird nie geöffnet; kein `--with-api-key`/`--with-access-token`, kein `login`-Aufruf außer `status` |
+| Limit | `ki_zweitmeinung.py:89`, `:661-669` | Fallback-Modell (`gpt-5.6-sol`) nur bei `sonstig`/`format`/`timeout` (`_FALLBACK_BEI`, Positivliste statt Ausschluss) und über dasselbe Backend (= dasselbe Abo); `limit`/`login` → Ende der Schleife; Warnung „ki: Abo-Kontingent erschöpft — warten (Owner-Regel nur Abo) — <Meldung> (Backend, Modell, Geschoss); Engine-Ergebnis bleibt unverändert, Räume ohne Typ bleiben UNBESTIMMT mit Notlicht“; `Zweitmeinung` hat genau ein Backend, einen Wechsel auf ein anderes gibt es nicht |
+
+KI aus: `Zweitmeinung` baut ohne `an` kein Backend (`ki_zweitmeinung.py:614`) und fragt nicht (`:636`, `:643`) —
+weder Registry noch `login status` laufen; mit KI aus kommt nur das Feld `nur_abo` in `KiKonfig.aus_umgebung()` dazu.
+
+### 25d.3 Tests, rot vor dem Fix (`tests/raumerkennung/test_ki_zweitmeinung.py`, `test_ki_entscheid.py`; nie live)
+
+Neu: `test_nur_abo_fest_gesetzt_und_nicht_abschaltbar`, `test_openai_api_nicht_aktivierbar` (Registry, direkt, über
+`Zweitmeinung`: Warnung, nichts gecacht), `test_login_status_api_key_ist_fehler_login_ohne_exec` (auch über
+`Zweitmeinung`: 2 Fragen → 0 `exec`, 1 Status, kein Fallback, Ausgabe mit maskiertem Key nicht in der Meldung),
+`test_login_status_chatgpt_einmal_je_lauf_sonst_kein_exec` (2 Fragen → 1 Status + 2 `exec`; „Not logged in“, Exit ≠ 0,
+Timeout, `OSError` → `login` ohne `exec`; kein `--with-api-key`/`--with-access-token`/`--api-key` in einem Aufruf),
+`test_kindprozess_ohne_alle_key_variablen` (die vier + `AZURE_OPENAI_API_KEY` gesetzt → in `status`- und
+`exec`-Umgebung keiner, `PATH` erhalten), `test_kein_code_liest_key_variablen` (Wächter),
+`test_limit_abo_kontingent_warten_kein_zweiter_aufruf` (Limit-Fixture: 1 `exec`, 1 Anfrage, Wortlaut der Warnung,
+nichts gecacht), `test_fallback_modell_nur_bei_sonstig_format_timeout_ueber_dasselbe_backend` (5 Fälle). Nachgeführt:
+die `_Lauf`-Mocks beider Dateien beantworten `login status` getrennt (`status`), `aufrufe` zählt weiter nur `exec` —
+alle bisherigen Zählungen unverändert; der Registry-Test prüft `claude_abo` weiter als einhängbare Klasse (Protocol),
+die Registry aktiviert es unter `nur_abo` aber nicht mehr (vorher `isinstance(b, ClaudeAbo)`); `test_ki_entscheid.py:619`
+verlangt statt „ki: limit“ den Wortlaut der Abo-Warnung (strenger) und genau einen Status-Aufruf.
+
+**Rot vor dem Fix** (`pytest test_ki_zweitmeinung.py test_ki_entscheid.py --tb=line`, Code `57b013f` + Tests):
+`8 failed, 59 passed, 1 skipped in 3.90s` —
+
+```
+test_ki_zweitmeinung.py:319: AssertionError: assert (True and not True)        # Registry aktivierte claude_abo
+test_ki_zweitmeinung.py:512: AttributeError: 'KiKonfig' object has no attribute 'nur_abo'
+test_ki_zweitmeinung.py:525: AssertionError: assert 'nur ChatGPT-Abo erlaubt' in 'Backend openai_api ist nicht
+    freigeschaltet (Gerüst; Key käme nur aus der Umgebung des Nutzers, nie aus Repo oder Konfiguration)'
+test_ki_zweitmeinung.py:543: assert (None is not None)                          # exec lief trotz API-Key-Login
+test_ki_zweitmeinung.py:561: assert (0 == 1)                                    # kein login status
+test_ki_zweitmeinung.py:581: assert (0 == 1)                                    # kein login status
+test_ki_zweitmeinung.py:605: AssertionError: assert False                       # Warnung „ki: limit — You’ve hit …“
+test_ki_entscheid.py:619: AssertionError: assert False                          # dto. über provider.parse
+```
+
+Grün schon vorher (Wächter, belegen den Ist-Stand): `test_kein_code_liest_key_variablen` und die 5 Fallback-Fälle.
+**Grün nach dem Fix:** `67 passed, 1 skipped in 3.67s` (skip = Live-Test); `pytest tests/raumerkennung tests/contract`
+**1052 passed, 7 skipped, 2 xfailed in 161.07s** (1040 + 12 neu); ruff „All checks passed!“.
+
+### 25d.4 Gate (KI aus: feldgleich) und Suite
+
+`pytest -m gate tests/gate` **3 passed, 1 xfailed** (`test_gate_tuerstapel_erfuellt`, 110,7 s). `gate_messung` auf dem
+Arbeitsbaum vor dem Commit (`_arbeit/gate/messung_57b013f-dirty-25d.json`, 64,1 s), `pruefe_gate` gegen
+`nullmessung_f15d03f.json`: **(0)** unsauberer Arbeitsbaum (erwartet, vor dem Commit) und **(3) `M4.einraum` DG2
+0 → 1** (Enis Board 3, unverändert); M17 **18/18 BESTANDEN**; (11) DG1 2 Ausgänge, 0 durch den Liftschacht; **alle 8
+Messfelder außer `meta` gleich `messung_9f727a5-review3.json`**.
+**Volle Suite** (`pytest -q -p no:cacheprovider -rfxXs`, allein, nach dem Gate): `7 failed, 2424 passed, 12 skipped,
+6 deselected, 15 xfailed, 3 warnings in 1332.00s (0:22:12)`, 0 xpassed — dieselben 7 roten wie § 28.6/§ 29: 3 ×
+`test_keine_leuchten_in_wohnung_privat` OG1/OG2/DG1, `test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell`, die
+2 S4c-Pins `test_bara_raum_19`/`test_bara_raum_30` und vorbestehend
+`tests/normwissen/test_quellenblock_e07_rl4.py::test_kein_contract_wert_und_kein_konsument` (derselbe Glob der
+Binary-Suche, durch die neuen Zeilen jetzt `ki_backends.py:69` statt `:58`; § 26.4, Phase B). 2424 = 2412 + 12 neu.
+`ruff check .` „All checks passed!“.
+
+Kein Contract-Feld, kein neuer RaumTyp, kein fremdes Paket, keine Schwelle/Soll-Zahl/xfail/skip gelockert; keine
+Datei außerhalb `raumerkennung/`, `tests/raumerkennung/`, `LUECKEN.md`, `docs/AUFTRAG_2026-10-01.md`.
+
+### 25d.5 Offen
+
+- **Live-Format von `codex login status`** (Stream, genauer Text) nicht geprüft — Phase A ohne Kontoaufruf; der Befund
+  2026-10-01 nennt „Logged in using ChatGPT“. Beide Streams werden gelesen; jeder andere Text → `login`, kein Aufruf
+  (fail-safe). Erster Phase-B-Lauf (`NOTBEL_KI_LIVE=1 pytest -k codex_live`) bestätigt den Text.
+- **Benutzer-Konfiguration der CLI:** `~/.codex/config.toml` kann einen anderen Modell-Anbieter mit eigener
+  Key-Variable setzen; der Status zeigt dann weiter „ChatGPT“. `exec --ignore-user-config` (Hilfe: „auth still uses
+  `CODEX_HOME`“) schlösse das aus — schon in 25c.3 vorgeschlagen; Planer/Owner vor dem ersten Live-Lauf.
+- **Per Code übergebenes Backend** (`ArchitekturRaumProvider(ki_backend=…)`, `Zweitmeinung(backend=…)`) geht nicht
+  durch die Registry — Weg der Tests (Mocks); keine Konfiguration und keine Umgebung erreicht ihn.
+- **Zähler `anfragen`** zählt auch gesperrte und am Login abgewiesene Fragen (kein echter Aufruf) — „Anfragen“ im
+  Bericht ≠ Kontoaufrufe. P3.
+- **Modell dieses Agenten:** claude-opus-5-5 / xhigh (Fallback laut Auftrag, Fable 5.1 am Limit; Stufe vom Agenten
+  selbst nicht prüfbar).
+
 ## 26. Abschnitt 4 — nan/inf-Abbruch R1-01 (Entscheid 4; erledigt mit dem Commit dieses Eintrags)
 
 **Auftrag (Owner 2026-10-01, `docs/AUFTRAG_2026-10-01.md` § 4, Entscheid 4):** „Entities mit nan, inf oder einer

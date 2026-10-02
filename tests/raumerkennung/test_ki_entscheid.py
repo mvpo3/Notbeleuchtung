@@ -567,10 +567,15 @@ def test_sanitaerregel_bestaetigt_nur_objekte_und_wohnungsumriss(tmp_path):
 # --- (iv) Backend codex_abo mit gespeicherten Antworten -----------------------------------
 
 class _Lauf:
+    """``aufrufe`` = nur ``codex exec``; ``codex login status`` (Abo-Regel) → ``status``."""
+
     def __init__(self, stdout: str, returncode: int = 0):
-        self.stdout, self.returncode, self.aufrufe = stdout, returncode, []
+        self.stdout, self.returncode, self.aufrufe, self.status = stdout, returncode, [], []
 
     def __call__(self, args, **kw):
+        if list(args[1:3]) == ["login", "status"]:
+            self.status.append((list(args), kw))
+            return subprocess.CompletedProcess(args, 0, "", "Logged in using ChatGPT\n")
         self.aufrufe.append((list(args), kw))
         return subprocess.CompletedProcess(args, self.returncode, self.stdout, "")
 
@@ -610,9 +615,11 @@ def test_codex_limit_fixture_warnung_kein_abbruch_raeume_unveraendert(tmp_path):
     prov, mit = _parse(dxf, konfig, backend)
     assert mit.model_dump(by_alias=True) == ohne.model_dump(by_alias=True)
     ki = prov.ki_ergebnis
-    assert len(ki.warnungen) == 1 and ki.warnungen[0].startswith("ki: limit")
+    assert len(ki.warnungen) == 1
+    assert ki.warnungen[0].startswith("ki: Abo-Kontingent erschöpft — warten (Owner-Regel nur Abo)")
     assert "Engine-Ergebnis bleibt unverändert" in ki.warnungen[0]
     assert len(lauf.aufrufe) == 1, "Limit gilt kontoweit: kein Fallback-Aufruf"
+    assert len(lauf.status) == 1, "Login-Status einmal vor dem ersten exec"
     assert all(h.herkunft == "Engine" and "limit" in h.grund for h in ki.herkunft)
     assert not list((tmp_path / "cache").rglob("*.json")), "Fehler werden nie gecacht"
 

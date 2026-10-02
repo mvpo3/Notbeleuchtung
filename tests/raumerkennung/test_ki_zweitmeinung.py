@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import subprocess
 from pathlib import Path
 
@@ -295,23 +296,30 @@ def test_ki_aus_kein_aufruf_kein_cache(tmp_path):
 
 # --- Registry -----------------------------------------------------------------------------
 
-def test_registry_kennt_beide_backends_und_nimmt_claude_abo_als_klasse(monkeypatch):
+def test_registry_kennt_beide_backends_und_nimmt_claude_abo_als_klasse(monkeypatch, tmp_path):
+    """Einhängbar bleibt ein weiteres Backend als Klasse (Auftrag § 3); aktiv wird unter der
+    Abo-Regel (Owner 2026-10-01, ``nur_abo``) ausschließlich codex_abo."""
     assert set(BACKENDS) == {"codex_abo", "openai_api"}
     assert isinstance(backend_aus_konfig(KiKonfig(backend="codex_abo")), CodexAboBackend)
-    assert isinstance(backend_aus_konfig(KiKonfig(backend="openai_api")), OpenaiApiBackend)
 
     class ClaudeAbo:
         name = "claude_abo"
+        aufrufe = 0
 
         def __init__(self, konfig):
             self.konfig = konfig
 
         def frage(self, anfrage, modell=None):
+            ClaudeAbo.aufrufe += 1
             return Antwort()
 
     monkeypatch.setitem(BACKENDS, "claude_abo", ClaudeAbo)
+    assert isinstance(ClaudeAbo(KiKonfig()), ZweitmeinungBackend)
     b = backend_aus_konfig(KiKonfig(backend="claude_abo"))
-    assert isinstance(b, ClaudeAbo) and isinstance(b, ZweitmeinungBackend)
+    assert isinstance(b, ZweitmeinungBackend) and not isinstance(b, ClaudeAbo)
+    antwort = b.frage(_anfrage(tmp_path))
+    assert antwort.fehler is not None and antwort.fehler.art == "sonstig"
+    assert "nur ChatGPT-Abo erlaubt" in antwort.fehler.meldung and ClaudeAbo.aufrufe == 0
     with pytest.raises(ValueError, match="unbekannt"):
         backend_aus_konfig(KiKonfig(backend="gibt_es_nicht"))
 
@@ -328,15 +336,29 @@ def test_openai_api_ist_geruest_und_liest_keinen_key(monkeypatch, tmp_path):
 # --- Backend codex_abo (subprocess gemockt) -----------------------------------------------
 
 class _Lauf:
-    """Mock für subprocess.run: merkt sich Argumentliste und kwargs, liefert feste Ausgabe."""
+    """Mock für subprocess.run: merkt sich Argumentliste und kwargs, liefert feste Ausgabe.
+
+    ``codex login status`` (Abo-Regel: einmal je Lauf vor dem ersten ``exec``) landet in
+    ``status`` und antwortet mit ``login`` = (stdout, stderr, Exit) oder wirft ``login``;
+    ``aufrufe`` zählt nur die ``exec``-Aufrufe.
+    """
 
     def __init__(self, stdout: str = "", returncode: int = 0, ausnahme: Exception | None = None,
-                 letzte_nachricht: str | None = None):
+                 letzte_nachricht: str | None = None,
+                 login: tuple[str, str, int] | Exception = ("", "Logged in using ChatGPT\n", 0)):
         self.stdout, self.returncode, self.ausnahme = stdout, returncode, ausnahme
         self.letzte_nachricht = letzte_nachricht
+        self.login = login
         self.aufrufe: list[tuple[list[str], dict]] = []
+        self.status: list[tuple[list[str], dict]] = []
 
     def __call__(self, args, **kw):
+        if list(args[1:3]) == ["login", "status"]:
+            self.status.append((list(args), kw))
+            if isinstance(self.login, Exception):
+                raise self.login
+            out, err, rc = self.login
+            return subprocess.CompletedProcess(args, rc, out, err)
         self.aufrufe.append((list(args), kw))
         if self.ausnahme is not None:
             raise self.ausnahme
@@ -476,6 +498,125 @@ def test_codex_fehlendes_bild_ist_fehler_kein_aufruf(tmp_path):
     lauf = _Lauf(stdout=_jsonl_agent(_gueltig(R_OK)))
     antwort = _codex(tmp_path, lauf).frage(_anfrage(tmp_path, bilder=(tmp_path / "fehlt.png",)))
     assert antwort.fehler is not None and antwort.fehler.art == "sonstig" and lauf.aufrufe == []
+
+
+# --- Abo-Regel (Owner 2026-10-01): „Die KI läuft ausschließlich über das ChatGPT-Abo." -------
+
+#: Key-/Token-Variablen, über die codex-cli 0.159.2 laut ``--help`` (``login --with-api-key``:
+#: OPENAI_API_KEY, ``login --with-access-token``: CODEX_ACCESS_TOKEN) bzw. Auftrag (CODEX_API_KEY,
+#: ANTHROPIC_API_KEY) an Credits/Keys käme — keine davon erreicht den Kindprozess.
+KEY_VARIABLEN = ("OPENAI_API_KEY", "CODEX_API_KEY", "CODEX_ACCESS_TOKEN", "ANTHROPIC_API_KEY")
+
+
+def test_nur_abo_fest_gesetzt_und_nicht_abschaltbar(monkeypatch):
+    assert KiKonfig().nur_abo is True
+    with pytest.raises(ValueError, match="nur ChatGPT-Abo"):
+        KiKonfig(nur_abo=False)
+    for wert in ("aus", "0", "false", "nein"):
+        monkeypatch.setenv("NOTBEL_KI_NUR_ABO", wert)
+        assert KiKonfig.aus_umgebung().nur_abo is True
+
+
+def test_openai_api_nicht_aktivierbar(tmp_path, monkeypatch):
+    monkeypatch.setenv("OPENAI_API_KEY", "sk-test-nie-benutzen")
+    b = backend_aus_konfig(KiKonfig(an=True, backend="openai_api"))
+    antwort = b.frage(_anfrage(tmp_path))
+    assert antwort.fehler is not None and antwort.fehler.art == "sonstig"
+    assert "nur ChatGPT-Abo erlaubt" in antwort.fehler.meldung
+    assert "sk-test" not in antwort.fehler.meldung
+    direkt = OpenaiApiBackend(KiKonfig(backend="openai_api")).frage(_anfrage(tmp_path))
+    assert direkt.fehler is not None and direkt.fehler.art == "sonstig"
+    assert "nur ChatGPT-Abo erlaubt" in direkt.fehler.meldung
+    # über die Orchestrierung: Warnung, kein Abbruch, nichts gecacht
+    zm = Zweitmeinung(KiKonfig(an=True, backend="openai_api", cache_pfad=tmp_path / "c"))
+    erg = zm.frage(_anfrage(tmp_path))
+    assert erg.fehler is not None and erg.fehler.art == "sonstig"
+    assert len(zm.warnungen) == 1 and "nur ChatGPT-Abo erlaubt" in zm.warnungen[0]
+    assert not (tmp_path / "c").exists()
+
+
+def test_login_status_api_key_ist_fehler_login_ohne_exec(tmp_path):
+    lauf = _Lauf(stdout=_jsonl_agent(_gueltig(R_OK, R_UNB)),
+                 login=("Logged in using an API key - sk-proj-***ABCD\n", "", 0))
+    backend = _codex(tmp_path, lauf)
+    antwort = backend.frage(_anfrage(tmp_path))
+    assert antwort.fehler is not None and antwort.fehler.art == "login"
+    assert "nur ChatGPT-Abo erlaubt" in antwort.fehler.meldung
+    assert "sk-" not in antwort.fehler.meldung, "Status-Ausgabe nur ausgewertet, nie weitergegeben"
+    assert lauf.aufrufe == [] and len(lauf.status) == 1
+    # über die Orchestrierung: kein Fallback-Modell, kein exec, Status einmal je Lauf
+    zm = Zweitmeinung(KiKonfig(an=True, cache_pfad=tmp_path / "c"), backend=backend)
+    zm.frage(_anfrage(tmp_path))
+    zm.frage(_anfrage(tmp_path, quadrant="SO"))
+    assert lauf.aufrufe == [] and len(lauf.status) == 1 and zm.anfragen == 2
+    assert len(zm.warnungen) == 2 and all(w.startswith("ki: login") for w in zm.warnungen)
+    assert not list((tmp_path / "c").rglob("*.json"))
+
+
+def test_login_status_chatgpt_einmal_je_lauf_sonst_kein_exec(tmp_path):
+    lauf = _Lauf(stdout=_jsonl_agent(_gueltig(R_OK, R_UNB)))   # „Logged in using ChatGPT"
+    backend = _codex(tmp_path, lauf)
+    assert backend.frage(_anfrage(tmp_path)).fehler is None
+    assert backend.frage(_anfrage(tmp_path, quadrant="SO")).fehler is None
+    assert len(lauf.status) == 1 and len(lauf.aufrufe) == 2
+    args, kw = lauf.status[0]
+    assert args[1:] == ["login", "status"] and kw.get("shell", False) is False
+    for a, _ in lauf.status + lauf.aufrufe:
+        assert not any(x.startswith(("--with-api-key", "--with-access-token", "--api-key"))
+                       for x in a), "kein Weg, der Keys/Credits auslöst"
+    # nicht angemeldet, Status nicht prüfbar (Timeout, kaputtes Binary) → login, kein exec
+    for login in (("", "Not logged in\n", 1), ("Logged in using ChatGPT\n", "", 1),
+                  subprocess.TimeoutExpired(cmd="codex", timeout=1), OSError("kaputt")):
+        nicht = _Lauf(stdout=_jsonl_agent(_gueltig(R_OK)), login=login)
+        a = _codex(tmp_path, nicht).frage(_anfrage(tmp_path))
+        assert a.fehler is not None and a.fehler.art == "login", login
+        assert "nur ChatGPT-Abo erlaubt" in a.fehler.meldung and nicht.aufrufe == []
+
+
+def test_kindprozess_ohne_alle_key_variablen(tmp_path, monkeypatch):
+    for v in (*KEY_VARIABLEN, "AZURE_OPENAI_API_KEY"):
+        monkeypatch.setenv(v, "geheim-" + v)
+    lauf = _Lauf(stdout=_jsonl_agent(_gueltig(R_OK)))
+    assert _codex(tmp_path, lauf).frage(_anfrage(tmp_path)).fehler is None
+    assert len(lauf.status) == 1 and len(lauf.aufrufe) == 1
+    for _args, kw in lauf.status + lauf.aufrufe:
+        env = kw["env"]
+        assert not [k for k in env if k.upper() in KEY_VARIABLEN or k.upper().endswith("_API_KEY")]
+        assert not any(w.startswith("geheim-") for w in env.values())
+        assert env.get("PATH") == os.environ.get("PATH")
+
+
+def test_kein_code_liest_key_variablen():
+    """Wächter: in ``raumerkennung/`` liest nichts eine Key-/Token-Variable aus der Umgebung —
+    die Namen stehen nur in der Entfern-Liste des Kindprozesses."""
+    for datei in Path(ki_backends.__file__).parent.glob("*.py"):
+        quelle = datei.read_text(encoding="utf-8")
+        assert "getenv" not in quelle, datei.name
+        assert not re.search(r"environ(\.get)?\s*[\[(]\s*['\"][A-Z_]*(KEY|TOKEN)", quelle), datei.name
+
+
+def test_limit_abo_kontingent_warten_kein_zweiter_aufruf(tmp_path):
+    lauf = _Lauf(stdout=LIMIT_JSONL, returncode=1)
+    zm = Zweitmeinung(KiKonfig(an=True, cache_pfad=tmp_path / "c"), backend=_codex(tmp_path, lauf))
+    erg = zm.frage(_anfrage(tmp_path))
+    assert erg.fehler is not None and erg.fehler.art == "limit"
+    assert len(lauf.aufrufe) == 1 and zm.anfragen == 1, "kein Fallback-Modell, kein anderes Backend"
+    assert len(zm.warnungen) == 1
+    assert zm.warnungen[0].startswith("ki: Abo-Kontingent erschöpft — warten (Owner-Regel nur Abo)")
+    assert "Engine-Ergebnis bleibt unverändert" in zm.warnungen[0]
+    assert not list((tmp_path / "c").rglob("*.json"))
+
+
+@pytest.mark.parametrize(("art", "modelle"), [
+    ("limit", ["gpt-6-astra"]), ("login", ["gpt-6-astra"]),
+    ("sonstig", ["gpt-6-astra", "gpt-5.6-sol"]), ("format", ["gpt-6-astra", "gpt-5.6-sol"]),
+    ("timeout", ["gpt-6-astra", "gpt-5.6-sol"])])
+def test_fallback_modell_nur_bei_sonstig_format_timeout_ueber_dasselbe_backend(tmp_path, art,
+                                                                                modelle):
+    b = ZaehlBackend(Antwort(fehler=KiFehler(art, "x")))
+    zm = Zweitmeinung(KiKonfig(an=True, cache_pfad=tmp_path / "c"), backend=b)
+    zm.frage(_anfrage(tmp_path))
+    assert [m for _, m in b.aufrufe] == modelle and zm.backend is b
 
 
 # --- Prompt -------------------------------------------------------------------------------

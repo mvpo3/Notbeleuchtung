@@ -40,6 +40,8 @@ Grundsätze (Auftrag § 3):
 
 - KI per Konfiguration an/aus (``KiKonfig.an``, Standard aus; Umgebung
   ``NOTBEL_KI=an``). Ohne KI läuft alles wie bisher.
+- Abo-Regel (Owner 2026-10-01): nur über das ChatGPT-Abo, keine Credits, keine API-Keys,
+  kein Aufladen; Kontingent erschöpft → warten (``KiKonfig.nur_abo``, fest True).
 - Antwort je Raum: ``raum_id``, ``raum_typ`` (nur Kanon aus ``raumtyp.py`` =
   ``docs/VOKABULAR.md`` § 1, oder ``UNBESTIMMT``), ``sicherheit`` 0–1,
   ``bestaetigt``, ``begruendung``. Außerhalb des Kanons, unbekannte ``raum_id``
@@ -82,6 +84,13 @@ _REPO = Path(__file__).resolve().parents[3]
 UNBESTIMMT = "UNBESTIMMT"
 PROMPT_VERSION = "1"
 FEHLER_ARTEN = ("timeout", "limit", "login", "format", "sonstig")
+#: Fallback-Modell nur bei diesen Fehlern und nur über dasselbe Backend (= dasselbe Abo);
+#: ``limit``/``login`` gelten kontoweit — dann wird gewartet, nie umgestiegen (Abo-Regel).
+_FALLBACK_BEI = ("sonstig", "format", "timeout")
+#: Abo-Regel (Owner 2026-10-01, wörtlich): „Verbindlich: Die KI läuft ausschließlich über das
+#: ChatGPT-Abo. Keine Credits, keine API-Keys, kein Aufladen, jetzt nicht und später nicht. Ist
+#: das Abo-Kontingent erschöpft, wird gewartet, nichts anderes."
+NUR_ABO = "nur ChatGPT-Abo erlaubt"
 _EFFORTS = ("low", "medium", "high")  # nie xhigh für die Engine (Auftrag „Modell und Denkstufe")
 #: Ab dieser Sicherheit darf ein KI-Typ einen unbelegten Raum typisieren (Auftrag § 3: 0,8).
 SICHERHEIT_MIN = 0.8
@@ -141,8 +150,17 @@ class KiKonfig:
     codex_binary: str | None = None        # None → PATH → App-Bundle (ki_backends.finde_codex)
     freigabe: frozenset[str] = FREIGABE    # Eichungs-Freigabeliste (heute leer)
     stempel_abdecken: bool = False         # Eichung: Stempeltexte weder im Bild noch im Text
+    # Abo-Regel (Owner 2026-10-01): „Die KI läuft ausschließlich über das ChatGPT-Abo. Keine
+    # Credits, keine API-Keys, kein Aufladen, jetzt nicht und später nicht. Ist das
+    # Abo-Kontingent erschöpft, wird gewartet, nichts anderes." Fest True: weder per Umgebung
+    # (``aus_umgebung`` liest es nicht) noch per Argument abschaltbar. Folgen: aktiv ist nur
+    # codex_abo (``ki_backends.backend_aus_konfig``), Login nur ChatGPT (``codex login status``),
+    # Limit → warten, kein Fallback auf ein anderes Backend.
+    nur_abo: bool = True
 
     def __post_init__(self) -> None:
+        if self.nur_abo is not True:
+            raise ValueError(f"nur_abo ist fest True — {NUR_ABO} (Owner-Regel 2026-10-01)")
         if self.effort not in _EFFORTS:
             raise ValueError(f"effort {self.effort!r} — erlaubt {_EFFORTS}, nie xhigh für die Engine")
         if self.zeitlimit_s <= 0:
@@ -640,11 +658,13 @@ class Zweitmeinung:
             if antwort.fehler is None:
                 self.cache.schreibe(s, antwort)
                 return antwort
-            if antwort.fehler.art in ("limit", "login"):
-                break  # gilt kontoweit — ein zweites Modell hilft nicht
+            if antwort.fehler.art not in _FALLBACK_BEI:
+                break  # limit/login gelten kontoweit — warten, kein Fallback (Abo-Regel)
         f = antwort.fehler
+        kopf = ("Abo-Kontingent erschöpft — warten (Owner-Regel nur Abo)" if f.art == "limit"
+                else f.art)
         self.warnungen.append(
-            f"ki: {f.art} — {f.meldung} (Backend {self.backend.name}, Modell {antwort.modell}, "
+            f"ki: {kopf} — {f.meldung} (Backend {self.backend.name}, Modell {antwort.modell}, "
             f"{anfrage.geschoss}{' ' + anfrage.quadrant if anfrage.quadrant else ''}); "
             "Engine-Ergebnis bleibt unverändert, Räume ohne Typ bleiben UNBESTIMMT mit Notlicht")
         return antwort
