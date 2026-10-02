@@ -1,0 +1,4 @@
+{"type": "thread.started", "thread_id": "00000000-0000-0000-0000-000000000000"}
+{"type": "turn.started"}
+{"type": "item.completed", "item": {"id": "item_0", "type": "agent_message", "text": "{\"raeume\": [{\"raum_id\": \"raum_1\", \"raum_typ\": \"STIEGENHAUS\", \"sicherheit\": 0.95, \"bestaetigt\": true, \"begruendung\": \"Stempel STIEGENHAUS, Treppenlauf mit Handlauf sichtbar, Tür zum Nachbarraum\"}, {\"raum_id\": \"raum_2\", \"raum_typ\": \"GANG\", \"sicherheit\": 0.9, \"bestaetigt\": false, \"begruendung\": \"schmaler Raum zwischen Stiegenhaus und Abstellraum, zwei Türen, keine Möbel, kein Stempel\"}, {\"raum_id\": \"raum_3\", \"raum_typ\": \"WC\", \"sicherheit\": 0.9, \"bestaetigt\": false, \"begruendung\": \"Kürzel AR gelesen, aber WC-Symbol und Waschbecken gezeichnet\"}]}"}}
+{"type": "turn.completed", "usage": {"input_tokens": 2400, "cached_input_tokens": 0, "output_tokens": 180}}

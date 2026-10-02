@@ -2629,3 +2629,183 @@ dem Arbeitsbaum vor dem Commit (`_arbeit/gate/messung_b61cb4d-dirty-25a.json`, 5
 - Fallback-Semantik (einmal `gpt-5.6-sol` bei `sonstig`/`format`/`timeout`, nie bei `limit`/`login`) ist hier
   festgelegt, nicht vom Owner — bei Bedarf ändern. **Modell dieses Agenten: claude-fable-5-1 (Stufe laut Auftrag xhigh;
   vom Agenten selbst nicht prüfbar).**
+
+## 25b. Abschnitt 3 Teil B — KI-Zweitmeinung: Anfrage-Aufbau, Entscheidungsregeln, Herkunfts-Ausweis, Verdrahtung (Entscheid 3; erledigt mit dem Commit dieses Eintrags)
+
+**Auftrag (Owner 2026-10-01, `docs/AUFTRAG_2026-10-01.md` § 3, Freigabe „Option 3, erweitert“):** zweite Meinung je
+Geschoss nach Kürzel-Regel und bestehenden Regeln; die KI bekommt das gerenderte Geschoss mit Raum-IDs, je Raum Typ +
+Beleg, Texte, Fläche, Möbel-/Sanitärblöcke, Fenster, Türen, Treppen/Lift, Lage zur Wohnungstür, Nachbarn, Kanon und
+Ausgangs-Definition; „Erscheinungsbild ist Wahrheit, KI ist zweite Meinung“; Herkunft je Raum im Bericht; Fehler →
+Warnung, kein Abbruch. Phase A: **keine Live-Aufrufe**, alle Tests mit synthetischen/gespeicherten Antworten. Stand
+vorher `be9cc57` (Teil A, § 25a).
+
+### 25b.1 Rot vor dem Fix
+
+`pytest tests/raumerkennung/test_ki_entscheid.py --tb=line -q` auf `be9cc57` + neuer Test + Fixtures:
+
+```
+E   ModuleNotFoundError: No module named 'notbeleuchtung.raumerkennung.ki_anfrage'
+1 error in 1.52s
+```
+
+### 25b.2 Anfrage-Aufbau (`raumerkennung/ki_anfrage.py`, neu)
+
+- **Belege je Raum** (`belege_je_raum`): `stempel` = Raum mit zugeordnetem Kaskaden-Stempel (`k.zuordnungen`, auch
+  ohne Kanon-Typ — Vokabular-Fälle wie „GESCHÄFTSLOKAL“) bzw. im Wandzyklen-Pfad ohne Wandkörper ein Wörterbuch-Text
+  von `raumtyp.beschrifte_raeume` im Polygon; `kuerzel` = Entscheid 1 (`k.hinweise` „`<id>: Kürzel …`“) oder
+  Entscheid 2 (`freiflaeche_befund` „neuer Raum `frei_n` … Entscheid 2“); `erscheinungsbild` = K3-Sanitärbeleg
+  (`sanitaer_befund` „`<id>: BAD|WC aus Sanitärbeleg`“); `geometrie` = jeder andere Typ (Treppen-/Schacht-/Gang-Regeln,
+  `typisiere_geometrisch`, `rest_komponenten`); leer = ohne Typ und ohne Stempel (UNBEKANNT/UNBESTIMMT, mehrdeutiges
+  Kürzel). Nur aus Strings und Zuordnungen, kein Parse — läuft auch mit KI aus (Herkunfts-Ausweis).
+- **Merkmale je Raum** (nur mit KI an): `flaeche_m2`; `texte` = TEXT/MTEXT **und** ATTRIB/Blocktexte der INSERTs im
+  Polygon (Rennweg-Stempel sind Blöcke — ohne Blocktexte fehlte „Wohnküche 38,35 m²“; Stempel-artige Texte zuerst,
+  gekappt auf 16); `objekte` = Möbel-/Sanitärblöcke nach Blockname (**`sanitaer.moebelklasse`/`moebelobjekte`,
+  neu**: Owner-Liste Bett, Herd, Spüle, Sofa, Esstisch, Waschmaschine, Auto zusätzlich zur K3-Liste WC, Waschbecken,
+  Dusche, Wanne, Bidet; Layer `M.BEL|EINBAU|SAN|FURN|MOB|EINRICHT|GENM|PKW|STELLPL|PARK`; Blocknamen der 13 Prüfpläne aus
+  der Inventur 2026-10-02 im Test; Am Rain zeichnet Möbel als Linien → dort leer; **die K3-Regel liest weiter nur
+  `objektklasse`/`sanitaerobjekte`, unverändert**); `fenster` = `fenster_signatur.finde_rahmenfenster(wandsegmente,
+  Wand-Union des Providers)` bis 400 mm am Polygon; `stiegen` = Treppenläufe aus `objekt_stiege.finde_stiegen`, die das
+  Polygon schneiden; `lift` = Lift-Text (`lift_erkennung._LIFT_TEXT`) oder Lift-Block im Polygon; `tueren` = Türen des
+  Raums mit **korrigierter Rolle** (`wohnungsklasse.korrigierte_rollen`, E7), `blatt`, `zu` (Gegenraum, AUSSEN, null =
+  KEIN_RAUM); `wohnung`, `wohnungseingang_am_raum`, `klasse`, `nachbarn` (Polygone ≤ `wohnungsumriss.NACHBAR_MM` =
+  500 mm, mit Typ).
+- **Quadranten wie beim Vision-Audit** (`audit_render` auf `selman/vision-audit`, nur als Vorbild gelesen): längste
+  Seite der Raum-Hülle > `QUADRANT_AB_MM` = 40 m → vier Ausschnitte NW/NO/SW/SO mit 1 m Überlappung, sonst ein
+  Ausschnitt `ganz`; ein Raum gehört zum Quadranten seines `representative_point`; Quadranten ohne Raum werden nicht
+  gefragt. Ein Aufruf je Ausschnitt; der Cache-Schlüssel trägt den Quadranten (§ 25a.4).
+- **Bild** (`rendere_bilder`): derselbe Weg wie `plan_pruefen._figur` (ezdxf-Zeichen-Addon → matplotlib, weißer
+  Grund, `min_dash_length` 50 mm gegen Punkt-Linientypen, Standard-Font DejaVuSans), **einmal** gezeichnet, dann je
+  Quadrant Ausschnitt + 1 m Rand, längste Seite 1 600 px, Räume halbtransparent (untypisiert magenta), Label = Raum-ID +
+  Engine-Typ (`?` ohne Typ) am `representative_point`. matplotlib bleibt optionale Abhängigkeit (`render`/`dev`): Import
+  erst im Rendern, ohne KI wird nichts gerendert. Bilder leben in einem Temp-Ordner nur während der Frage; **gerendert
+  wird nur für Fragen ohne Cache-Treffer** (`Zweitmeinung.im_cache`, neu) — Suite und Gate mit Cache brauchen kein Bild.
+- **Eichungs-Option `stempel_abdecken`** (`KiKonfig.stempel_abdecken`, Standard aus): ein `Frontend`-Nachfahre lässt
+  TEXT/MTEXT/ATTRIB weg — auch in Blöcken; die `filter_func` des Addons sieht nur Top-Level-Entities — und `texte`
+  fehlt in den Merkmalen. Der Test misst weniger Tinte im Bild bei stehenden Raum-Labels.
+- **Probe ohne Aufruf** (Scratch-Backend zeichnet nur auf, nicht im Repo): Rennweg_OG3 9,3 s gesamt (Parse vorher
+  2,4 s), 1 Frage `ganz`, 16 Räume, Prompt 13 384 Zeichen, Bild 1 300 × 1 600 px — Stempel, Möbel und Raum-IDs lesbar
+  (angesehen); Am Rain OG4 41,5 s (vorher 16,8 s), 4 Quadranten mit 12/1/8/7 Räumen, Prompts 2,7–11,5 k Zeichen
+  (Quadrant NW angesehen: Stempel „ZI 2 10.53 m²“, Sanitär, Raum-IDs, magenta `rest_3` lesbar); Mollgasse EG 52,6 s
+  (vorher 15,2 s), 3 Quadranten (SW ohne Raum) mit 25/15/22 Räumen, Prompts 14–25 k Zeichen. Der Mehraufwand
+  (Fenster-Signatur O(n²), Treppenläufe, Render) fällt nur mit KI an.
+
+### 25b.3 Entscheidungsregeln (`ki_zweitmeinung.zweitmeinung_anwenden`, neu; anbieterneutral, ohne Plan)
+
+| Fall | Regel (Auftrag § 3) | Umsetzung |
+|---|---|---|
+| Engine-Typ = KI-Typ | bestätigt | Herkunft **bestätigt**, Grund = KI-Begründung + Sicherheit (Typgleichheit zählt, nicht das Feld `bestaetigt`) |
+| Engine-Typ belegt, KI widerspricht | Engine bleibt, strittig | Herkunft **strittig**, beide Begründungen (Beleg der Engine; KI-Typ, Sicherheit, Begründung); belegt = jeder gesetzte Typ (stempel, kuerzel, erscheinungsbild, geometrie) |
+| Engine-Typ, KI UNBESTIMMT | — | Herkunft **Engine** „KI enthält sich“ |
+| ohne Typ, KI-Typ | KI-Typ ab 0,8 ohne Geometrie-Widerspruch | nacheinander: Sicherheit < `SICHERHEIT_MIN` 0,8 → nein; `geometrie_widerspruch` (Fläche außerhalb `FLAECHE_PLAUSIBEL_M2`: WC 0,8–8, BAD 1,5–25, ABSTELLRAUM 0,5–30, VORRAUM 1–40, KÜCHE 2–40, LIFT 0,8–12, SCHACHT 0,05–8, STIEGENHAUS 4–200, GANG 1,5–500, GARAGE ≥ 10, BALKON 0,5–80, TERRASSE 1–500 m²; andere Typen frei — **hier festgelegt, Owner änderbar**) → nein; LIFT/SCHACHT (`KEIN_RAUM_TYPEN`) nur mit Lift-/Schacht-Evidenz im Polygon (Lift-Text/-Block, Schacht-Text SCHACHT/DDB/BDB aus `rest_komponenten`) → sonst nein; Typ nicht in der **Freigabeliste** (`FREIGABE`/`KiKonfig.freigabe`, **heute leer**) → nein, Herkunft Engine „KI-Vorschlag …, nicht freigegeben (Eichungs-Freigabeliste, Phase B)“; sonst übernommen → Herkunft **KI** |
+| Typ mit Notlicht-Verlust | nur mit bestätigender bestehender Regel, sonst UNBESTIMMT mit Notlicht | `verliert_notlicht(typ)` = Nutzungsklasse WOHNUNG_PRIVAT **und** Flags 00 aus `raumtyp.py` — genau die Bedingung in `platzierung/flaechen_strategy.py` (S2; nur gelesen): ZIMMER, SCHLAFZIMMER, KINDERZIMMER, WOHNZIMMER, KÜCHE, BAD, WC, ABSTELLRAUM; VORRAUM (Flags 11) nicht. Bestätigende Regel = `regel_bestaetigt(raum, typ)`, im Provider die K3-Sanitärregel (`sanitaer_typ` der Objekte im Polygon = KI-Typ); ohne Bestätigung bleibt `raum_typ` leer, Klasse None → Notlicht (Grundsatz (a)) |
+| Stempel ohne Kanon-Typ (Vokabular, Enis) | — | nie umtypisiert, KI-Vorschlag nur Hinweis (wie `kuerzel_beleg`: „sein Stempel ist sein Name“) |
+| Fehler/Timeout/Limit/verworfen | Engine unverändert, Warnung, kein Abbruch | Herkunft **Engine** mit Fehlerart bzw. Verwerfungsgrund; `ki:`-Warnung aus `Zweitmeinung` (§ 25a) |
+
+Übernahme setzt `raum_typ`, `ist_fluchtweg`/`ist_communal` (Kanon-Flags) und die **statische** Nutzungsklasse
+(`nutzungsklasse_fuer`) — wie Abschnitt 2 an den `frei_*`; `wohnung_id` nie (Grundsatz (b)). Kein neuer RaumTyp:
+`kanon_typen()`/`kanon_flags()` lesen `raumtyp.py`; UNBESTIMMT ist keine Übernahme. Der Prompt nennt jetzt die
+Merkmal-Legende und die Beleg-Werte; `PROMPT_VERSION` bleibt „1“ — Version 1 wurde nie live gesendet, es gibt keinen
+Cache-Eintrag dazu.
+
+### 25b.4 Herkunfts-Ausweis
+
+- Provider-Attribut `ArchitekturRaumProvider.ki_ergebnis` (`ki_anfrage.KiErgebnis`: `an`, `backend`, `modell`,
+  `herkunft` je Raum = `Herkunft(raum_id, herkunft, engine_typ, beleg, ki_typ, sicherheit, grund)`, `warnungen`
+  (`ki: …`), `fragen`, `anfragen` = echte Aufrufe, `treffer` = Cache-Treffer) — **kein Contract-Feld**, kein
+  Board-Antrag nötig.
+- `bericht.md` (`scripts/plan_pruefen.py`, nur Berichtsausgabe): neuer Abschnitt **„Raumtyp-Herkunft (Abschnitt 3 …)“**
+  mit KI an/aus + Backend/Modell, Fragen/Anfragen/Cache-Treffer, Zähler je Herkunft und Tabelle `Raum | Typ | Herkunft
+  | Beleg | KI-Typ (Sicherheit) | Begründung` für jeden Raum; die `ki:`-Warnungen stehen zusätzlich unter „Warnungen“.
+  Mit KI aus heißt jede Zeile „Engine“ mit Beleg — das ist die Vergleichsbasis für Phase B.
+
+### 25b.5 Verdrahtung (`provider.parse`)
+
+`ArchitekturRaumProvider(ki_konfig=None, ki_backend=None)` — None = `KiKonfig.aus_umgebung()` (Standard aus) und
+Backend aus der Registry; `build_default_bundle()` ruft weiter `ArchitekturRaumProvider()`. Die zweite Meinung läuft
+**nach** `fuelle_freie_flaechen` (Kürzel-Regel Entscheid 1/2, Sanitärregel, Wohnungen sind durch) und **vor**
+`leite_ausgaenge`/`fluchtwege` — dieselbe Stelle wie Abschnitt 2: ein übernommener Typ wirkt auf Ausgänge, Fluchtwege
+und Anker, nicht auf die rohen Türrollen und Wohnungen (die kommen aus rohen Türen, Grundsatz (b)). `zweite_meinung`
+wirft nie (jede Ausnahme → `ki: sonstig`-Warnung). **Ohne KI:** nur Belege + Herkunft „Engine“ je Raum, kein Render,
+keine Fenster-/Treppen-Suche, kein Cache-Ordner (Test). Räume, die erst nach dieser Stelle entstehen (LIFT aus
+`finde_lifte`), tragen keine Herkunftszeile.
+
+### 25b.6 Tests (`tests/raumerkennung/test_ki_entscheid.py`, 24, nie live; Fixtures `tests/fixtures/ki/`)
+
+- **(i) die 6 Räume ohne Stempel aus § 22** (`amrain_6_ohne_stempel.json`: EG `frei_3`/`frei_4`, OG1 `frei_2`/
+  `frei_3`, OG2 `frei_1`, OG4 `frei_1` mit Fläche, Texten, Nachbarn, Türen aus § 22 und **synthetischer** Antwort):
+  Freigabeliste leer → **kein Raum verändert**; EG `frei_3` (KI VORRAUM 0,85) und EG `frei_4` (KI ZIMMER 0,92) Herkunft
+  Engine „nicht freigegeben“, OG1 `frei_2` (KI STIEGENHAUS 0,70) Engine, OG1 `frei_3`/OG2 `frei_1` (Kürzel VR, KI
+  VORRAUM) **bestätigt**, OG4 `frei_1` KI UNBESTIMMT („Dachausstieg“) Engine. Mit Freigabe {VORRAUM, ZIMMER,
+  STIEGENHAUS}: EG `frei_3` → **VORRAUM** (Flags 11, kein Notlicht-Verlust, Klasse WOHNUNG_PRIVAT, ohne Wohnung); EG
+  `frei_4` ZIMMER verliert Notlicht, keine Regel → bleibt UNBESTIMMT mit Notlicht; OG1 `frei_2` 0,70 < 0,80 → bleibt.
+- **(ii)** Raum mit Kürzel AR, KI WC 0,95 (freigegeben) → ABSTELLRAUM bleibt, strittig, beide Begründungen; dasselbe für
+  Stempel STIEGENHAUS vs GANG und Sanitärbeleg BAD vs ABSTELLRAUM.
+- **(iii)** UNBESTIMMT-Raum, KI SCHLAFZIMMER 0,95 (freigegeben), keine Regel → bleibt ohne Typ, Klasse None (Notlicht);
+  mit bestätigender Regel (BAD) → übernommen, `wohnung_id` bleibt None. `verliert_notlicht` für die 8 Typen ja, VORRAUM/
+  GANG/STIEGENHAUS/BALKON/SCHACHT nein.
+- weitere Regeln: Freigabeliste heute leer (`FREIGABE == frozenset()`, `SICHERHEIT_MIN == 0.8`); 0,79 → nein; 60-m²-WC
+  → Geometrie-Widerspruch; SCHACHT nur mit Evidenz; Stempel ohne Kanon-Typ nie umtypisiert; Fehler/verworfen → alles
+  unverändert.
+- Anfrage-Aufbau: Belege aus Zuordnung/Hinweisen/Befunden; `moebelklasse` an 19 Blocknamen der Prüfpläne (inkl.
+  Negativfälle Schreibtisch, Bewegungsfläche `2D_barrierefrei_WC`, Raumstempel-Block `Bad_WC__3`, Schrank); Merkmale
+  je Raum auf einer synthetischen 3-Raum-DXF (Stempel STIEGENHAUS / ohne Text / Kürzel »AR«, 3 Sanitärblöcke in der
+  Mitte → `objekte {DUSCHE 1, WASCHBECKEN 1, WC 1}`), `stempel_abdecken` ohne `texte`; Quadranten `ganz` bzw. 4 mit
+  1 000 mm Überlappung; Bild: PNG ≥ 1 200 px, weniger Tinte ohne Stempeltexte, noch weniger ohne Raum-Labels.
+- Verdrahtung: KI aus → Typen {STIEGENHAUS, —, ABSTELLRAUM} wie vorher, Herkunft Engine je Raum mit Belegen, kein
+  Cache-Ordner; KI an mit Mock (Freigabe leer) → **Modell `model_dump` identisch** zum Lauf ohne KI, 1 Anfrage mit
+  PNG, Herkunft bestätigt/Engine „nicht freigegeben“/strittig; zweiter Lauf → Cache-Treffer, kein Aufruf; Freigabe
+  {BAD}: Mittelraum mit 3 Sanitärblöcken, den K3 nicht typt (kein Wohnungsumriss) → **BAD** aus KI + Sanitärregel;
+  ohne Sanitärblöcke → bleibt ohne Typ (Notlicht).
+- **(iv) Backend codex_abo mit gespeicherten Antworten** (`subprocess.run` gemockt): `codex_antwort_synth.jsonl`
+  (synthetisches `agent_message`-JSONL für die 3-Raum-DXF) über den **Provider** → Argumentliste mit `--image=`,
+  Kindprozess ohne `OPENAI_API_KEY`, Herkunft bestätigt/strittig/„nicht freigegeben“, Antwort gecacht;
+  `codex_limit.jsonl` (echte Limit-Meldung vom 2026-10-01) → **Modell identisch** zum Lauf ohne KI, genau eine
+  `ki: limit`-Warnung „Engine-Ergebnis bleibt unverändert“, ein Aufruf (kein Fallback), nichts gecacht, Herkunft Engine
+  mit „limit“.
+- Prüfstrecke: `plan_pruefen.plan_pruefen` auf der 3-Raum-DXF (Ausgabe nach tmp) schreibt „Raumtyp-Herkunft“ mit „KI
+  aus“, „Anfragen 0“, „Cache-Treffer 0“ und die Zeilen `| STIEGENHAUS | Engine | stempel |`, `| ABSTELLRAUM | Engine |
+  stempel |` (Wandzyklen-Pfad: jeder Wörterbuch-Text ist dort Stempel von `beschrifte_raeume`).
+
+**Grün nach dem Fix:** `24 passed in 3.38s`; mit `test_ki_zweitmeinung`, `test_sanitaer`, `test_provider`,
+`test_freiflaeche`, `test_kuerzel_beleg`: `183 passed, 2 skipped in 38.49s`; ruff „All checks passed!“.
+
+### 25b.7 Blast „KI aus“ — 13 Pläne feldgleich (Beleg der 0-Verhaltensänderung nach der Verdrahtung)
+
+Runner wie § 12/§ 20 (eigene Kopie außerhalb des Repos: `provider.parse(dxf, "")` + Default-Platzierung, JSON je Raum/
+Tür/Ausgang/Segment/Anker/Leuchte, dazu Texte und Stempel des Plans), seriell über die 13 DXF der Prüfstrecke auf dem
+Arbeitsbaum dieses Eintrags (`be9cc57-dirty`, Umgebung ohne `NOTBEL_KI*`), Am Rain und Muthgasse allein, kein pytest
+parallel. Vergleich gegen den Stand von Abschnitt 2 (`8748e24-dirty-24` = Inhalt `5f15955`; `b61cb4d` und `be9cc57`
+änderten keine bestehende Datei, § 25a.3): **13 gleich, 0 abweichend** über alle 22 Felder je Plan (Räume, Türen,
+Ausgänge, Segmente, Anker, Stiegenhäuser, Bounds, korrigierte Rollen, bestätigt privat, alle Warnungen, Texte, Stempel,
+Faktor, Leuchten je Kind/Klasse/Stück) — Rennweg EG R24 T40 A5 L17, OG3 R17 T18 A3 L7, Barawitzka EG R49 T71 A1 L11,
+Mollgasse EG R64 T102 A9 L51, 1KG R31 T28 A1 L14, 2KG R30 T46 A1 L13, Am Rain OG4 R28 T59 A2 L20, OG3 R60 T129 A3 L20,
+OG2 R103 T264 A2 L75, OG1 R139 T300 A7 L73, UG R82 T295 A17 L110, EG R140 T317 A3 L46, Muthgasse E2 R108 T193 A1 L139;
+DXF-SHA je Plan gleich. Laufzeit/RAM wie Abschnitt 2 (Am Rain EG 312 s, 2,71 GB; Muthgasse 254 s, 1,79 GB), stderr
+ohne Traceback. Die Prüfstrecke `scripts/plan_pruefen.py` über alle 13 Pläne (VERLAUF.md, `Projekte/_ergebnis/`) läuft
+im Abschluss der Phase A mit KI aus — dann mit dem neuen Abschnitt „Raumtyp-Herkunft“ als Vergleichsbasis.
+
+### 25b.8 Gate
+
+`pytest -m gate tests/gate` **3 passed, 1 xfailed** (`test_gate_tuerstapel_erfuellt`, 108 s). `gate_messung` auf dem
+Arbeitsbaum vor dem Commit (`_arbeit/gate/messung_be9cc57-dirty-25b.json`, 59,3 s), `pruefe_gate` gegen
+`nullmessung_f15d03f.json`: **(0)** unsauberer Arbeitsbaum (erwartet, vor dem Commit) und **(3) `M4.einraum` DG2
+0 → 1** (Enis Board 3, unverändert); M17 **18/18 BESTANDEN**; **alle Messfelder außer `meta` gleich
+`messung_b61cb4d-dirty-25a.json`** (Teil A). Suite `pytest tests/raumerkennung tests/contract`: **1014 passed, 7 skipped,
+2 xfailed in 150.66s** (990 + 24 neu). Bekannt rote Tests (4 + 2 S4c-Pins) unberührt, kein Band abgesenkt, kein
+Contract-Feld, kein neuer RaumTyp, kein fremdes Paket geändert (`platzierung/flaechen_strategy.py` nur gelesen).
+
+### 25b.9 Offen nach Teil B (Phase B ab 2026-10-03 19:10)
+
+- **Freigabeliste füllen** aus der Eichung (Stempel abgedeckt: `KiKonfig(stempel_abdecken=True)`, Trefferquote je Typ
+  ≥ 95 %, Notlicht-Verlust-Typen ohne einen Fehler) — bis dahin übernimmt die KI nichts; die 6 Räume ohne Stempel (§ 22)
+  bleiben UNBEKANNT/UNBESTIMMT mit Herkunft „KI-Vorschlag, nicht freigegeben“.
+- **Erfolgsformat live prüfen** (`item.completed`/`agent_message`, `--output-schema`, `--image=`), erste echte
+  Antworten in `knowledge/ki_cache/`; Prüfstrecke mit KI an, Prüfer-Durchgang, Lern-Kandidaten.
+- **Lage der zweiten Meinung** vor Ausgängen/Fluchtwegen, aber nach Türrollen/Wohnungen: ein übernommener Typ ändert
+  heute keine rohe Türrolle und keine Wohnung. Soll er das (z. B. KI-VORRAUM → Wohnungseingang wandert), braucht es
+  denselben Probelauf wie K3 (`_tueren_und_wohnungen` auf Kopien) — Owner-Entscheid, nicht hier gebaut.
+- **Flächen-Plausibilität** (`FLAECHE_PLAUSIBEL_M2`) und **KEIN_RAUM-Evidenz** (Lift-Text/-Block, Schacht-Text) sind
+  hier festgelegt; die Eichung kann sie belegen oder ändern. Am Rain liefert keine Möbelblöcke (Linien) — dort trägt
+  die KI die Möbel nur aus dem Bild.
+- `PROMPT_VERSION` bleibt „1“ (nie live gesendet, kein Cache-Eintrag); jede weitere Prompt-Änderung in Phase B wird „2“.
+- **Modell dieses Agenten: claude-fable-5-1 (Stufe laut Auftrag xhigh; vom Agenten selbst nicht prüfbar).**

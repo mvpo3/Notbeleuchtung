@@ -8,8 +8,33 @@ Backend (``ki_backends``) bekommt eine ``GeschossAnfrage`` und liefert eine
 ``Antwort`` — mehr muss die Engine nicht wissen.
 
 Teil A (Phase A, ohne Live-Aufrufe): Schnittstelle, Konfiguration, Cache,
-Antwort-Parsing. Die Verdrahtung in ``provider.parse`` (Herkunft je Raum im
-Bericht, Entscheidungsregeln „Erscheinungsbild ist Wahrheit") ist Teil B.
+Antwort-Parsing. Teil B: die Entscheidungsregeln „Erscheinungsbild ist Wahrheit"
+(``zweitmeinung_anwenden``) und die Herkunft je Raum (``Herkunft``); den
+Anfrage-Aufbau aus dem Plan (Merkmale, Quadranten, Bild) macht ``ki_anfrage``,
+die Verdrahtung ``provider.parse``.
+
+Wie die Antwort zählt (Auftrag § 3, wörtlich umgesetzt in ``zweitmeinung_anwenden``):
+
+- Engine und KI stimmen überein → **bestätigt**.
+- Widerspruch bei belegtem Engine-Typ (Stempel, Kürzel, Erscheinungsbild, Geometrie)
+  → Engine-Typ bleibt, Raum ist **strittig**, beide Begründungen in den Bericht.
+- Raum ohne belegten Engine-Typ (UNBEKANNT/UNBESTIMMT/mehrdeutiges Kürzel = leerer
+  ``raum_typ``) → **KI**-Typ ab ``SICHERHEIT_MIN`` (0,8), ohne Geometrie-Widerspruch
+  (``geometrie_widerspruch``: Flächen-Plausibilität je Typ; KEIN_RAUM-Typen LIFT/SCHACHT
+  nur mit Lift-/Schacht-Evidenz aus dem Plan) UND nur, wenn der Typ in der
+  Eichungs-Freigabeliste steht (``FREIGABE`` — Phase B füllt sie aus der Trefferquote
+  ≥ 95 % je Typ; **heute leer → heute übernimmt die KI nichts**, Herkunft „KI-Vorschlag,
+  nicht freigegeben").
+- Ein Typ, durch den der Raum sein Notlicht verliert (``verliert_notlicht``: Klasse
+  WOHNUNG_PRIVAT UND Flags 00 — genau die Bedingung in
+  ``platzierung/flaechen_strategy.py``), wird nur übernommen, wenn eine bestehende Regel
+  ihn bestätigt (``regel_bestaetigt``, im Provider die K3-Sanitärregel). Sonst bleibt
+  der Raum UNBESTIMMT mit Notlicht (Grundsatz (a)).
+- Ein Raum mit Stempel ohne Kanon-Typ (Vokabular-Fall, Enis) wird nie umtypisiert.
+- Fehler, Zeitüberschreitung, Limit oder verworfene Antwort → Engine unverändert,
+  Herkunft „Engine" mit dem Grund, Warnung, kein Abbruch.
+- Übernahme setzt nur ``raum_typ``, Flags und die statische Nutzungsklasse
+  (``nutzungsklasse_fuer``); ``wohnung_id`` nie (Grundsatz (b): nur aus rohen Türen).
 
 Grundsätze (Auftrag § 3):
 
@@ -40,12 +65,17 @@ import hashlib
 import json
 import os
 import re
+from collections.abc import Callable
 from dataclasses import asdict, dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Protocol, runtime_checkable
+from typing import TYPE_CHECKING, Protocol, runtime_checkable
 
 from . import raumtyp
+from .nutzungsklasse import nutzungsklasse_fuer
+
+if TYPE_CHECKING:
+    from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
 
 _REPO = Path(__file__).resolve().parents[3]
 
@@ -53,14 +83,45 @@ UNBESTIMMT = "UNBESTIMMT"
 PROMPT_VERSION = "1"
 FEHLER_ARTEN = ("timeout", "limit", "login", "format", "sonstig")
 _EFFORTS = ("low", "medium", "high")  # nie xhigh für die Engine (Auftrag „Modell und Denkstufe")
+#: Ab dieser Sicherheit darf ein KI-Typ einen unbelegten Raum typisieren (Auftrag § 3: 0,8).
+SICHERHEIT_MIN = 0.8
+#: Eichungs-Freigabeliste (Auftrag § 3 „Eichung"): KI-Typen für unbelegte Räume werden nur
+#: übernommen, wo die KI für diesen Typ ≥ 95 % trifft (Notlicht-Verlust-Typen: kein Fehler).
+#: Phase B füllt sie aus der Eichung; HEUTE LEER → die KI übernimmt nichts, ihre Vorschläge
+#: stehen als Herkunft „KI-Vorschlag, nicht freigegeben" im Bericht.
+FREIGABE: frozenset[str] = frozenset()
+#: Typen, die kein begehbarer Raum sind — nur mit Lift-/Schacht-Evidenz aus dem Plan.
+KEIN_RAUM_TYPEN = frozenset({"LIFT", "SCHACHT"})
+#: Flächen-Plausibilität (m², min/max) je Typ für den Geometrie-Widerspruch — hier festgelegt
+#: (Planer 2026-10-02, Wohnbau-Erfahrungswerte), vom Owner änderbar; Typen ohne Eintrag
+#: sind nicht flächenbeschränkt.
+FLAECHE_PLAUSIBEL_M2: dict[str, tuple[float, float]] = {
+    "WC": (0.8, 8.0), "BAD": (1.5, 25.0), "ABSTELLRAUM": (0.5, 30.0), "VORRAUM": (1.0, 40.0),
+    "KÜCHE": (2.0, 40.0), "LIFT": (0.8, 12.0), "SCHACHT": (0.05, 8.0), "STIEGENHAUS": (4.0, 200.0),
+    "GANG": (1.5, 500.0), "GARAGE": (10.0, 1e9), "BALKON": (0.5, 80.0), "TERRASSE": (1.0, 500.0),
+}
 
 
 def kanon_typen() -> frozenset[str]:
     """Die kanonischen Raumtypen — dieselbe Maschinen-Quelle wie ``docs/VOKABULAR.md`` § 1."""
-    return frozenset(
-        v[0] for d in (raumtyp._TYP_MAP, raumtyp._EXTRA_DIRECT, raumtyp._EXTRA_OVERRIDE)
-        for v in d.values()
-    )
+    return frozenset(kanon_flags())
+
+
+def kanon_flags() -> dict[str, tuple[bool, bool]]:
+    """Kanon-Typ → (ist_fluchtweg, ist_communal) aus ``raumtyp.py`` — eine Quelle."""
+    out: dict[str, tuple[bool, bool]] = {}
+    for d in (raumtyp._TYP_MAP, raumtyp._EXTRA_DIRECT, raumtyp._EXTRA_OVERRIDE):
+        for label, flucht, communal in d.values():
+            out.setdefault(label, (flucht, communal))
+    return out
+
+
+def verliert_notlicht(typ: str) -> bool:
+    """True, wenn ein Raum dieses Typs keine Flächen-Leuchte mehr bekäme: Nutzungsklasse
+    WOHNUNG_PRIVAT und beide Flags False (``platzierung/flaechen_strategy.py``, S2)."""
+    flags = kanon_flags().get(typ)
+    return (nutzungsklasse_fuer(typ) == "WOHNUNG_PRIVAT" and flags is not None
+            and flags == (False, False))
 
 
 # --- Konfiguration ------------------------------------------------------------------------
@@ -78,6 +139,8 @@ class KiKonfig:
     cache_pfad: Path = _REPO / "knowledge" / "ki_cache"
     prompt_version: str = PROMPT_VERSION
     codex_binary: str | None = None        # None → PATH → App-Bundle (ki_backends.finde_codex)
+    freigabe: frozenset[str] = FREIGABE    # Eichungs-Freigabeliste (heute leer)
+    stempel_abdecken: bool = False         # Eichung: Stempeltexte weder im Bild noch im Text
 
     def __post_init__(self) -> None:
         if self.effort not in _EFFORTS:
@@ -293,15 +356,151 @@ def baue_prompt(anfrage: GeschossAnfrage, kanon: frozenset[str] | None = None) -
         "Erlaubte Raumtypen (Kanon) — genau einer davon oder UNBESTIMMT, wenn du es nicht sicher "
         f"erkennst: {', '.join(sorted(kanon))}."
     )
+    merkmale = (
+        "Merkmale je Raum, von der Engine gemessen: flaeche_m2; texte = Texte/Stempel im "
+        "Raumpolygon; objekte = erkannte Möbel-/Sanitärblöcke (BETT, HERD, SPUELE, SOFA, "
+        "ESSTISCH, WASCHMASCHINE, WC, WASCHBECKEN, DUSCHE, BADEWANNE, BIDET, AUTO) mit Anzahl; "
+        "fenster = Fensteröffnungen in den Raumwänden; stiegen = Treppenläufe im Raum; lift = "
+        "Lift-Text oder -Block im Raum; tueren = Türen des Raums (rolle, blatt = mit Türblatt, "
+        "zu = Raum auf der anderen Seite, AUSSEN = ins Freie); wohnung = Wohnungs-ID aus den "
+        "Türen; wohnungseingang_am_raum = eine Wohnungseingangstür liegt am Raum; klasse = "
+        "Nutzungsklasse; nachbarn = angrenzende Räume mit Typ."
+    )
     return "\n".join((
         rolle,
         f"Geschoss: {wo}. Das angehängte Bild zeigt das Geschoss mit den Raum-IDs.",
         erlaubt,
         AUSGANGS_DEFINITION,
-        "Räume (engine_typ null = die Engine hat keinen Typ; beleg = woher ihr Typ kommt):",
+        merkmale,
+        ("Räume (engine_typ null = die Engine hat keinen Typ; beleg = woher ihr Typ kommt: "
+         "stempel, kuerzel, erscheinungsbild, geometrie):"),
         json.dumps(raeume, ensure_ascii=False, indent=1),
         form,
     ))
+
+
+# --- Entscheidungsregeln: Erscheinungsbild ist Wahrheit, KI ist zweite Meinung --------------
+
+@dataclass(frozen=True)
+class Herkunft:
+    """Herkunft des Raumtyps je Raum — Prüfstrecken-Ausgabe (bericht.md), kein Contract-Feld."""
+
+    raum_id: str
+    herkunft: str              # Engine | KI | bestätigt | strittig
+    engine_typ: str            # Typ der Engine vor der zweiten Meinung ("" = ohne Typ)
+    beleg: str                 # stempel | kuerzel | erscheinungsbild | geometrie | ""
+    ki_typ: str = ""           # Typ der KI ("" = keine Antwort für diesen Raum)
+    sicherheit: float | None = None
+    grund: str = ""            # Begründung(en) für den Bericht
+
+
+def geometrie_widerspruch(raum: Raum, typ: str) -> str:
+    """Leer, wenn der KI-Typ zur gemessenen Geometrie passt; sonst der Grund.
+
+    Heute nur die Flächen-Plausibilität ``FLAECHE_PLAUSIBEL_M2``; die Lift-/Schacht-Evidenz
+    für KEIN_RAUM-Typen prüft der Aufrufer mit dem Plan (``evidenz``-Rückruf).
+    """
+    grenzen = FLAECHE_PLAUSIBEL_M2.get(typ)
+    if grenzen is None:
+        return ""
+    lo, hi = grenzen
+    if not lo <= raum.flaeche_m2 <= hi:
+        return (f"Geometrie-Widerspruch: Fläche {raum.flaeche_m2:.1f} m² außerhalb "
+                f"{lo:g}–{hi:g} m² für {typ}")
+    return ""
+
+
+def _s(x: float) -> str:
+    return f"{x:.2f}".replace(".", ",")
+
+
+def zweitmeinung_anwenden(raeume: list[Raum], anfrage: GeschossAnfrage, antwort: Antwort, *,
+                          freigabe: frozenset[str] | None = None,
+                          regel_bestaetigt: Callable[[Raum, str], bool] | None = None,
+                          evidenz: Callable[[Raum, str], str] | None = None,
+                          ) -> list[Herkunft]:
+    """Antwort auf die Räume der Anfrage anwenden — in place auf ``raeume`` (nur unbelegte
+    Räume können einen Typ bekommen). Liefert je Raum der Anfrage eine ``Herkunft``.
+
+    ``freigabe`` = Eichungs-Freigabeliste (Standard ``FREIGABE``, heute leer).
+    ``regel_bestaetigt(raum, typ)`` = bestehende Regel, die einen Notlicht-Verlust-Typ
+    bestätigt (Provider: K3-Sanitärbeleg); None = keine Regel → nie übernommen.
+    ``evidenz(raum, typ)`` = Lift-/Schacht-Evidenz für KEIN_RAUM-Typen: leer = belegt,
+    sonst der Grund; None = keine Evidenz prüfbar → nie übernommen.
+    """
+    freigabe = FREIGABE if freigabe is None else freigabe
+    je_raum = {r.id: r for r in raeume}
+    ki = {a.raum_id: a for a in antwort.raeume}
+    verworfen = {v.split(":", 1)[0]: v for v in antwort.verworfen}
+    out: list[Herkunft] = []
+    for ra in anfrage.raeume:
+        raum = je_raum.get(ra.raum_id)
+        if raum is None:
+            continue
+        typ_e, beleg = ra.engine_typ or raum.raum_typ or "", ra.beleg
+        basis = {"raum_id": raum.id, "engine_typ": typ_e, "beleg": beleg}
+        if antwort.fehler is not None:
+            out.append(Herkunft(**basis, herkunft="Engine",
+                                grund=f"KI {antwort.fehler.art}: {antwort.fehler.meldung[:120]}"
+                                      " — Engine-Ergebnis unverändert"))
+            continue
+        a = ki.get(raum.id)
+        if a is None:
+            grund = ("KI-Antwort verworfen: " + verworfen[raum.id]
+                     if raum.id in verworfen else "keine KI-Antwort für diesen Raum")
+            out.append(Herkunft(**basis, herkunft="Engine", grund=grund))
+            continue
+        basis |= {"ki_typ": a.raum_typ, "sicherheit": a.sicherheit}
+        if typ_e:
+            if a.raum_typ == typ_e:
+                out.append(Herkunft(**basis, herkunft="bestätigt",
+                                    grund=f"KI ({_s(a.sicherheit)}): {a.begruendung}"))
+            elif a.raum_typ == UNBESTIMMT:
+                out.append(Herkunft(**basis, herkunft="Engine",
+                                    grund=f"KI enthält sich (UNBESTIMMT, {_s(a.sicherheit)}): "
+                                          f"{a.begruendung}"))
+            else:
+                out.append(Herkunft(**basis, herkunft="strittig", grund=(
+                    f"Engine {typ_e} belegt durch {beleg or 'geometrie'} bleibt; "
+                    f"KI widerspricht mit {a.raum_typ} ({_s(a.sicherheit)}): {a.begruendung}")))
+            continue
+        # --- unbelegter Raum (UNBEKANNT / UNBESTIMMT / mehrdeutiges Kürzel) ---
+        if beleg == "stempel":
+            out.append(Herkunft(**basis, herkunft="Engine", grund=(
+                "Stempel ohne Kanon-Typ (Vokabular-Fall) wird nie umtypisiert; "
+                f"KI-Vorschlag {a.raum_typ} ({_s(a.sicherheit)}) nur Hinweis: {a.begruendung}")))
+            continue
+        if a.raum_typ == UNBESTIMMT:
+            out.append(Herkunft(**basis, herkunft="Engine", grund=(
+                f"KI UNBESTIMMT ({_s(a.sicherheit)}): {a.begruendung} — bleibt ohne Typ "
+                "(Notlicht)")))
+            continue
+        vorschlag = f"KI-Vorschlag {a.raum_typ} ({_s(a.sicherheit)}): {a.begruendung}"
+        if a.sicherheit < SICHERHEIT_MIN:
+            grund = f"{vorschlag} — Sicherheit unter {_s(SICHERHEIT_MIN)}, nicht übernommen"
+        elif (w := geometrie_widerspruch(raum, a.raum_typ)):
+            grund = f"{vorschlag} — {w}, nicht übernommen"
+        elif a.raum_typ in KEIN_RAUM_TYPEN and (evidenz is None or evidenz(raum, a.raum_typ)):
+            grund = (f"{vorschlag} — KEIN_RAUM-Typ nur mit Lift-/Schacht-Evidenz"
+                     + (f" ({evidenz(raum, a.raum_typ)})" if evidenz else "")
+                     + ", nicht übernommen")
+        elif a.raum_typ not in freigabe:
+            grund = f"{vorschlag} — nicht freigegeben (Eichungs-Freigabeliste, Phase B)"
+        elif verliert_notlicht(a.raum_typ) and not (regel_bestaetigt
+                                                     and regel_bestaetigt(raum, a.raum_typ)):
+            grund = (f"{vorschlag} — Typ verliert Notlicht (WOHNUNG_PRIVAT, Flags 00), keine "
+                     "bestehende Regel bestätigt → bleibt UNBESTIMMT mit Notlicht")
+        else:
+            flucht, communal = kanon_flags()[a.raum_typ]
+            raum.raum_typ = a.raum_typ
+            raum.ist_fluchtweg, raum.ist_communal = flucht, communal
+            raum.nutzungsklasse = nutzungsklasse_fuer(a.raum_typ)   # wohnung_id bleibt (b)
+            zusatz = (" — bestätigt durch bestehende Regel (Sanitärbeleg)"
+                      if verliert_notlicht(a.raum_typ) else "")
+            out.append(Herkunft(**basis, herkunft="KI", grund=f"{vorschlag}{zusatz}"))
+            continue
+        out.append(Herkunft(**basis, herkunft="Engine", grund=grund))
+    return out
 
 
 # --- Cache --------------------------------------------------------------------------------
@@ -398,13 +597,24 @@ class Zweitmeinung:
         self.treffer = 0
         self.warnungen: list[str] = []
 
-    def frage(self, anfrage: GeschossAnfrage) -> Antwort:
-        if not self.konfig.an or self.backend is None:
-            return Antwort(quelle="aus")
-        modelle = [self.konfig.modell] + (
+    def _modelle(self) -> list[str]:
+        return [self.konfig.modell] + (
             [self.konfig.fallback_modell]
             if self.konfig.fallback_modell and self.konfig.fallback_modell != self.konfig.modell
             else [])
+
+    def im_cache(self, anfrage: GeschossAnfrage) -> bool:
+        """True, wenn die Frage ohne Aufruf beantwortet wird — dann braucht sie kein Bild."""
+        if not self.konfig.an or self.backend is None:
+            return False
+        return any(self.cache.pfad(self.cache.schluessel(
+            self.backend.name, m, anfrage, self.konfig.prompt_version)).is_file()
+            for m in self._modelle())
+
+    def frage(self, anfrage: GeschossAnfrage) -> Antwort:
+        if not self.konfig.an or self.backend is None:
+            return Antwort(quelle="aus")
+        modelle = self._modelle()
         schluessel = [self.cache.schluessel(self.backend.name, m, anfrage, self.konfig.prompt_version)
                       for m in modelle]
         for s in schluessel:

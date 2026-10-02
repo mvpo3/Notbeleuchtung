@@ -1241,6 +1241,31 @@ def _kreuzcheck_md(modell, kc, flw_warnungen: list[str],
     return l
 
 
+def _ki_md(ki) -> list[str]:
+    """Markdown-Block „Raumtyp-Herkunft" (Abschnitt 3, Entscheid 3): je Raum Engine | KI |
+    bestätigt | strittig mit Beleg und Begründung, dazu KI an/aus, Backend/Modell, Anzahl
+    Fragen, echte Anfragen und Cache-Treffer. Provider-Attribut `ki_ergebnis`, kein
+    Contract-Feld."""
+    if ki is None:
+        return []
+    zaehl = Counter(h.herkunft for h in ki.herkunft)
+    kopf = (f"KI an — Backend `{ki.backend}`, Modell `{ki.modell}`" if ki.an else "KI aus")
+    l = ["", "## Raumtyp-Herkunft (Abschnitt 3 — Erscheinungsbild ist Wahrheit, KI ist zweite Meinung)",
+         "",
+         (f"- {kopf}; Fragen {ki.fragen} (Geschoss/Quadranten), Anfragen {ki.anfragen} "
+          f"(echte Aufrufe), Cache-Treffer {ki.treffer}"),
+         "- je Raum: " + ", ".join(f"{k} {zaehl[k]}" for k in ("Engine", "bestätigt", "strittig", "KI")
+                                   if zaehl.get(k)) if zaehl else "- keine Räume",
+         "", "| Raum | Typ | Herkunft | Beleg | KI-Typ (Sicherheit) | Begründung |",
+         "|---|---|---|---|---|---|"]
+    for h in ki.herkunft:
+        ki_typ = (f"{h.ki_typ} ({h.sicherheit:.2f})" if h.ki_typ and h.sicherheit is not None
+                  else h.ki_typ or "—")
+        l.append(f"| {h.raum_id} | {h.engine_typ or '—'} | {h.herkunft} | {h.beleg or '—'} | "
+                 f"{ki_typ} | {h.grund.replace('|', '/')} |")
+    return l
+
+
 def _aussen_md(ab, ueber=(), exits=()) -> list[str]:
     """Markdown-Abschnitt „Außenbereich" (Spec 2) aus ``AussenBereiche``.
 
@@ -1335,6 +1360,9 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
                              _restweg_im_eg(dxf, geschoss),
                              list(getattr(bundle.raum,
                                           "wohnungsklasse_warnungen", [])))
+    # Abschnitt 3: Herkunft je Raumtyp + Anzahl Anfragen/Cache-Treffer (Entscheid 3).
+    ki = getattr(bundle.raum, "ki_ergebnis", None)
+    md = md + _ki_md(ki)
     refz = _referenzvergleich(dxf.stem, plan, zoom, modell, platz, ziel, rot)
     if refz is not None:
         md = md + refz["md"]
@@ -1359,11 +1387,14 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
         # Lade-/Wand-Warnungen des Providers (`keine_wand_entities`,
         # `keine_geometrie`, `keine_raeume`) → bericht.md „Warnungen" (2a),
         # dazu je freie Fläche im Wohnungsumriss die Entscheidung (2d), die
-        # Tür-Warnungen (`seite_fehlt`) und der K3-Sanitärbefund (2g, O-04).
+        # Tür-Warnungen (`seite_fehlt`), der K3-Sanitärbefund (2g, O-04) und
+        # die `ki:`-Warnungen der zweiten Meinung (Abschnitt 3: Fehler, Limit,
+        # Zeitüberschreitung → Warnung, kein Abbruch).
         "wand_warnungen": list(getattr(bundle.raum, "wand_warnungen", []))
         + list(getattr(bundle.raum, "tuer_warnungen", []))
         + [f"sanitaer: {b}" for b in getattr(bundle.raum, "sanitaer_befund", [])]
-        + list(getattr(bundle.raum, "freiflaeche_befund", [])),
+        + list(getattr(bundle.raum, "freiflaeche_befund", []))
+        + list(ki.warnungen if ki is not None else []),
         "modell_ueberlapper": modell_n,
         "modell_doppelt_m2": modell_m2,
         "tueren_typisiert": sum(1 for t in modell.tueren if t.tuer_detail),

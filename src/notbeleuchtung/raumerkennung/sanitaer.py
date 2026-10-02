@@ -80,6 +80,63 @@ def objektklasse(blockname: str, layer: str) -> str | None:
     return next((art for art, rx in _ART if rx.search(blockname)), None)
 
 
+# --- Möbel- und Sanitärblöcke als MERKMAL für die zweite Meinung (Abschnitt 3) ---------------
+# Owner-Liste (Auftrag 2026-10-01 § 3): Bett, Herd, Spüle, Sofa, Esstisch, Waschmaschine,
+# WC, Wanne, Dusche, Auto — Blockname-Klassifikation. KEINE Typregel: die K3-Regel oben
+# liest weiterhin nur `objektklasse`/`sanitaerobjekte`; hier kommt nur dazu, was die KI im
+# Prompt als „erkannte Möbel-/Sanitärblöcke" bekommt. Gemessene Blocknamen der 13 Prüfpläne
+# (Inventur 2026-10-02): Mollgasse `BETT_90`, `kochfeld`, `Spüle`, `ECKSOFA_240`, `07-WM`,
+# `07_Doppelparker_…` (Layer `02-PKW-…`); Muthgasse `Doppelbett …`, `Sofaecke …`,
+# `tisch-4sessel_eng …`, `Waschmaschine …` (Layer `A-GENM`), `Küche-Zeile … Kochfelder`;
+# Rennweg `Bett Gruppe`, `2D_sofa_…`, `Dining Table 01`, `Tisch_180x80`. Am Rain zeichnet
+# Möbel als Linien ohne Block — dort bleibt die Liste leer.
+BETT, HERD, SPUELE, SOFA, ESSTISCH, WASCHMASCHINE, AUTO = (
+    "BETT", "HERD", "SPUELE", "SOFA", "ESSTISCH", "WASCHMASCHINE", "AUTO")
+_MOEBEL_ART = tuple((art, re.compile(muster, re.IGNORECASE)) for art, muster in (
+    (WASCHMASCHINE, r"WASCHMASCHINE|(?<![A-Z])WM(?![A-Z])"),
+    (BETT, r"BETT|(?<![A-Z])BED(?![A-Z])"),
+    (HERD, r"HERD|KOCHF|COOKTOP|STOVE"),
+    (SPUELE, r"SP(?:Ü|UE?)LE|(?<![A-Z])SINK(?![A-Z])"),
+    (SOFA, r"SOFA|COUCH|FAUTEUIL"),
+    (ESSTISCH, r"ESSTISCH|DINING|(?<!SCHREIB)TISCH|(?<![A-Z])TABLE(?![A-Z])"),
+    (AUTO, r"(?<![A-Z])PKW(?![A-Z])|(?<![A-Z])AUTO(?![A-Z])|(?<![A-Z])CAR(?![A-Z])|PARKER|STELLPLATZ"),
+))
+#: Möbel-/Einrichtungs-/Stellplatz-Layer zusätzlich zu `_EINBAU_LAYER` (Muthgasse `I-FURN`,
+#: `A-GENM`; Mollgasse `07_MOB-…`, `02-PKW-…`; Rennweg `… Möbel Einrichtung`).
+_MOEBEL_LAYER = re.compile(
+    r"M.{1,2}BEL|EINBAU|SAN|FURN|(?<![A-Z])MOB(?![A-Z])|EINRICHT|GENM|PKW|STELLPL|PARK",
+    re.IGNORECASE)
+
+
+def moebelklasse(blockname: str, layer: str) -> str | None:
+    """Sanitär- (Owner-Liste K3, wie `objektklasse`) oder Möbelart eines Blocks — Merkmal
+    für die zweite Meinung, keine Typregel. None, wenn nichts aus der Liste passt."""
+    art = objektklasse(blockname, layer)
+    if art is not None:
+        return art
+    if not _MOEBEL_LAYER.search(layer):
+        return None
+    return next((art for art, rx in _MOEBEL_ART if rx.search(blockname)), None)
+
+
+def moebelobjekte(plan: DxfPlan) -> list[tuple[str, XY]]:
+    """(Art, Bbox-Mitte in mm) aller Möbel- und Sanitärblöcke im Architektur-Raum."""
+    out: list[tuple[str, XY]] = []
+    for e in plan.space:
+        if e.dxftype() != "INSERT":
+            continue
+        art = moebelklasse(str(e.dxf.name), str(e.dxf.layer))
+        if art is None:
+            continue
+        try:
+            box = bbox.extents([e], fast=True)
+        except Exception:  # noqa: BLE001, S112 — kaputte Block-Referenz überspringen
+            continue
+        if box.has_data:
+            out.append((art, plan._scale(box.center)))
+    return out
+
+
 def sanitaerobjekte(plan: DxfPlan) -> list[tuple[str, XY]]:
     """(Art, Bbox-Mitte in mm) aller Sanitärobjekte im Architektur-Raum."""
     out: list[tuple[str, XY]] = []

@@ -28,6 +28,8 @@ from .gang_anker import anker_fuer_gang
 from .geometrie_typ import typisiere_geometrisch
 from .geschoss import geschoss_befund
 from .kaskade import KaskadeErgebnis, raeume_aus_kaskade
+from .ki_anfrage import KiErgebnis, zweite_meinung
+from .ki_zweitmeinung import KiKonfig, ZweitmeinungBackend
 from .kreuzcheck import kreuzcheck
 from .kuerzel_beleg import kuerzel_texte
 from .lift_erkennung import finde_lifte, liftschacht_reste
@@ -120,7 +122,18 @@ class ArchitekturRaumProvider:
 
     Räume kommen aus der Kaskade L→H→F→R (``kaskade.raeume_aus_kaskade``) —
     derselben Orchestrierung wie in der Prüfstrecke ``scripts/plan_pruefen.py``.
+
+    ``ki_konfig``/``ki_backend`` (Abschnitt 3, Entscheid 3): Konfiguration der
+    zweiten Meinung; None = ``KiKonfig.aus_umgebung()`` (Standard aus — ohne KI
+    läuft alles wie bisher) und das Backend aus der Registry. Tests hängen hier
+    ein Backend mit gespeicherten Antworten ein; die Suite ruft nie live auf.
     """
+
+    def __init__(self, ki_konfig: KiKonfig | None = None,
+                 ki_backend: ZweitmeinungBackend | None = None):
+        self.ki_konfig = ki_konfig
+        self.ki_backend = ki_backend
+        self.ki_ergebnis = KiErgebnis()
 
     def parse(self, dxf_path: str, floor: str) -> RaumModell:
         plan = lade_dxf(dxf_path)
@@ -271,6 +284,21 @@ class ArchitekturRaumProvider:
                 sanitaer_quelle=lambda: sanitaerobjekte(plan))
         except Exception as exc:  # noqa: BLE001 — Zusatzstufe darf den Parse nie killen
             self.freiflaeche_befund = [f"freiflaeche_fehler: {exc}"]
+        # Abschnitt 3 (Owner-Entscheid 3, 2026-10-01): zweite Meinung je
+        # Geschoss, NACHDEM Kürzel-Regel (Entscheid 1/2), Sanitärregel und
+        # Wohnungen gelaufen sind, VOR Ausgängen und Fluchtwegen — wie die
+        # freien Flächen: ein übernommener Typ trägt die statische Klasse,
+        # `wohnung_id` kommt nur aus rohen Türen (Grundsatz (b)). Ohne KI
+        # (Standard) ändert sich nichts; mit KI entscheidet
+        # `ki_zweitmeinung.zweitmeinung_anwenden` (Erscheinungsbild ist
+        # Wahrheit; Freigabeliste heute leer). Herkunft je Raum, `ki:`-
+        # Warnungen und Anzahl Anfragen/Cache-Treffer = Prüfstrecken-Ausgabe
+        # (`ki_ergebnis`), kein Contract-Feld. Wirft nie.
+        self.ki_ergebnis = zweite_meinung(
+            plan, dxf_path, geschoss, raeume, tueren, zuordnungen=k.zuordnungen,
+            hinweise=k.hinweise, sanitaer_befund=self.sanitaer_befund,
+            freiflaeche_befund=self.freiflaeche_befund, wandflaeche=wu,
+            konfig=self.ki_konfig, backend=self.ki_backend)
         # Ausgangs-Warnungen (u.a. „Geschoss unbekannt, Endausgang nicht
         # bestimmbar") als Prüfstrecken-Output — kein Contract-Feld.
         neue, self.ausgangs_warnungen = leite_ausgaenge(

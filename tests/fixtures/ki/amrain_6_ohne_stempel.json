@@ -1,0 +1,81 @@
+{
+ "_quelle": "LUECKEN.md § 22 (Abschnitt 0) — die 6 der 12 frei_*-Räume ohne erkannten Stempel (§ 16), Engine-Stand nach Abschnitt 2 (§ 24). Antworten SYNTHETISCH (kein Live-Aufruf, Kontingent bis 2026-10-03 19:10); Fläche, Texte, Nachbarn und Türen aus der Tabelle § 22.",
+ "faelle": [
+  {
+   "plan": "AmRain_EG", "geschoss": "EG",
+   "raeume": [
+    {"raum_id": "frei_3", "engine_typ": "", "beleg": "", "flaeche_m2": 2.36,
+     "merkmale": {"texte": ["210", "80", "80"],
+                  "nachbarn": ["raum_74 WOHNZIMMER", "raum_91 VORRAUM", "raum_92 WC", "frei_4 —", "raum_86 BAD"],
+                  "tueren": [{"id": "durchgang_59", "rolle": "zimmertuer", "blatt": false, "zu": "raum_91"},
+                             {"id": "tuer_157", "rolle": "zimmertuer", "blatt": true, "zu": "raum_92"},
+                             {"id": "tuer_214", "rolle": null, "blatt": true, "zu": "raum_74"},
+                             {"id": "tuer_249", "rolle": null, "blatt": true, "zu": null}]}},
+    {"raum_id": "frei_4", "engine_typ": "", "beleg": "", "flaeche_m2": 9.76,
+     "merkmale": {"texte": ["10.25 m²", "ZI 2", "210", "80", "Parkett"],
+                  "nachbarn": ["raum_74 WOHNZIMMER", "frei_3 —"],
+                  "tueren": [{"id": "tuer_214", "rolle": null, "blatt": true, "zu": "raum_74"},
+                             {"id": "tuer_216", "rolle": null, "blatt": true, "zu": "AUSSEN"},
+                             {"id": "tuer_249", "rolle": null, "blatt": true, "zu": null}]}}
+   ],
+   "antwort": {"raeume": [
+    {"raum_id": "frei_3", "raum_typ": "VORRAUM", "sicherheit": 0.85, "bestaetigt": false,
+     "begruendung": "Stich des Vorraums zwischen VR raum_91, WC raum_92 und den Zimmertüren tuer_214/tuer_249; kein eigener Raum im Plan"},
+    {"raum_id": "frei_4", "raum_typ": "ZIMMER", "sicherheit": 0.92, "bestaetigt": false,
+     "begruendung": "Stempel »ZI 2 / 10.25 m²«, Bett und Schrank gezeichnet, Fenstertür tuer_216 zur Terrasse"}
+   ]}
+  },
+  {
+   "plan": "AmRain_OG1", "geschoss": "1OG",
+   "raeume": [
+    {"raum_id": "frei_2", "engine_typ": "", "beleg": "", "flaeche_m2": 6.75,
+     "merkmale": {"texte": ["Handlauf H=90", "Handlauf H=90", "17 STG 17/29", "17 STG 17/29", "210"],
+                  "nachbarn": ["raum_4 GANG"],
+                  "tueren": [{"id": "tuer_13", "rolle": "wohnungseingang", "blatt": true, "zu": "raum_12"},
+                             {"id": "tuer_22", "rolle": null, "blatt": true, "zu": null},
+                             {"id": "tuer_23", "rolle": null, "blatt": true, "zu": "raum_4"},
+                             {"id": "tuer_39", "rolle": null, "blatt": true, "zu": "AUSSEN"}]}},
+    {"raum_id": "frei_3", "engine_typ": "VORRAUM", "beleg": "kuerzel", "flaeche_m2": 3.99,
+     "merkmale": {"texte": ["VR", "STUK=2,175 ü.FOK"],
+                  "nachbarn": ["raum_81 BAD", "raum_86 GANG", "rest_10 SCHACHT"],
+                  "tueren": [{"id": "durchgang_35", "rolle": "wohnungseingang", "blatt": false, "zu": "raum_86"},
+                             {"id": "tuer_170", "rolle": null, "blatt": true, "zu": null},
+                             {"id": "tuer_205", "rolle": null, "blatt": true, "zu": "raum_86"}]}}
+   ],
+   "antwort": {"raeume": [
+    {"raum_id": "frei_2", "raum_typ": "STIEGENHAUS", "sicherheit": 0.7, "bestaetigt": false,
+     "begruendung": "Treppenlauf »17 STG 17/29« mit Handlauf, liegt aber in der Wohnung (Maisonette) neben Gang raum_4 — kein allgemeines Stiegenhaus"},
+    {"raum_id": "frei_3", "raum_typ": "VORRAUM", "sicherheit": 0.9, "bestaetigt": true,
+     "begruendung": "Kürzel VR an der Wohnungstür 4_05 vom Stiegenhaus, Bad raum_81 daneben"}
+   ]}
+  },
+  {
+   "plan": "AmRain_OG2", "geschoss": "2OG",
+   "raeume": [
+    {"raum_id": "frei_1", "engine_typ": "VORRAUM", "beleg": "kuerzel", "flaeche_m2": 3.99,
+     "merkmale": {"texte": ["VR", "STUK=2,175 ü.FOK"],
+                  "nachbarn": ["raum_51 BAD", "raum_65 GANG", "rest_9 SCHACHT"],
+                  "tueren": [{"id": "durchgang_30", "rolle": "wohnungseingang", "blatt": false, "zu": "raum_65"},
+                             {"id": "tuer_154", "rolle": null, "blatt": true, "zu": null},
+                             {"id": "tuer_206", "rolle": null, "blatt": true, "zu": "raum_65"}]}}
+   ],
+   "antwort": {"raeume": [
+    {"raum_id": "frei_1", "raum_typ": "VORRAUM", "sicherheit": 0.9, "bestaetigt": true,
+     "begruendung": "Kürzel VR an der Wohnungstür 4_11, Lage wie OG1 frei_3"}
+   ]}
+  },
+  {
+   "plan": "AmRain_OG4", "geschoss": "4OG",
+   "raeume": [
+    {"raum_id": "frei_1", "engine_typ": "", "beleg": "", "flaeche_m2": 5.41,
+     "merkmale": {"texte": ["DDB 112/35", "FDB 112/35", "Haltegriff", "DACHAUSSTIEG", "über Leiter von OG3", "Luftraum", "RA mind. 1m²"],
+                  "nachbarn": ["raum_14 ABSTELLRAUM"],
+                  "tueren": [{"id": "tuer_45", "rolle": null, "blatt": true, "zu": "AUSSEN"}]}}
+   ],
+   "antwort": {"raeume": [
+    {"raum_id": "frei_1", "raum_typ": "UNBESTIMMT", "sicherheit": 0.4, "bestaetigt": false,
+     "begruendung": "Dachausstieg über Leiter, Luftraum mit Deckendurchbrüchen neben der Lift-Überfahrt — kein begehbarer Raum des Geschosses"}
+   ]}
+  }
+ ]
+}
