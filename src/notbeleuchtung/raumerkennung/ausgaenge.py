@@ -21,6 +21,10 @@ from __future__ import annotations
 
 import math
 from dataclasses import dataclass, field
+from typing import TYPE_CHECKING
+
+from shapely.geometry import Point
+from shapely.ops import unary_union
 
 from notbeleuchtung.hauptengine.contracts.raum_modell import Ausgang, Raum, Tuer
 
@@ -29,9 +33,17 @@ from .geschoss import (
     geschoss_bekannt,
     ist_obergeschoss,
 )
-from .tuer_zuordnung import AUSSEN
+from .tuer_zuordnung import _PROBE_STUFEN_MM, AUSSEN
+
+if TYPE_CHECKING:
+    from .aussenbereich import AussenBereiche
 
 _GARAGENTOR_FLW_NAH_MM = 2000.0
+# Owner-Entscheid 6 (2026-10-01, docs/AUFTRAG_2026-10-01.md § 5): Reichweite,
+# in der um einen Ausgang ohne Tür Freie liegen muss = letzte Probestufe der
+# Türseite (`tuer_zuordnung._seite`) — ein Ausgang ohne Tür zählt wie eine Tür,
+# deren Seitenprobe AUSSEN findet.
+_FREIE_REICHWEITE_MM = _PROBE_STUFEN_MM[-1]
 
 
 @dataclass
@@ -130,3 +142,38 @@ def ohne_unzulaessige_final_exits(ausgaenge: list[Ausgang],
     if geschoss_bekannt(geschoss) and not ist_obergeschoss(geschoss):
         return list(ausgaenge)
     return [a for a in ausgaenge if a.typ != "final_exit"]
+
+
+def nur_ins_freie(ausgaenge: list[Ausgang], aussen: AussenBereiche | None,
+                  geschoss: str) -> tuple[list[Ausgang], list[AusgangsWarnung]]:
+    """Owner-Entscheid 6 (Abschnitt 5, S4g a): „Ausgang = Übergang ins Freie,
+    mit oder ohne Tür. Innenhof ist kein Ausgang." Für die Ausgänge OHNE Tür
+    (``footprint.hauptausgaenge``: Doppeltür-Bogenpaar am Raster-Rand).
+
+    Freie = außerhalb der äußeren Gebäudekontur (Komponenten der Außen-Analyse,
+    Löcher gefüllt — ein Loch ist Innenhof oder Raum) und außerhalb jedes
+    geschlossenen Hofs (kein Weg zur Straßenkante). Ein Ausgang bleibt, wenn im
+    Umkreis ``_FREIE_REICHWEITE_MM`` Freie liegt; sonst mündet er in einen
+    Innenhof oder ins Gebäude — kein Ausgang, kein Fluchtziel, Befund als
+    ``AusgangsWarnung`` (bericht.md). Ohne Außen-Analyse (kein Wandkörper)
+    bleibt alles, wie es ist: es gibt keine Kontur, gegen die geprüft würde.
+    """
+    if aussen is None or not aussen.komponenten:
+        return list(ausgaenge), []
+    gebaeude = unary_union([*aussen.komponenten, *aussen.geschlossen])
+    bleiben: list[Ausgang] = []
+    warnungen: list[AusgangsWarnung] = []
+    for a in ausgaenge:
+        if not gebaeude.covers(Point(a.xy_mm).buffer(_FREIE_REICHWEITE_MM)):
+            bleiben.append(a)
+            continue
+        warnungen.append(AusgangsWarnung(
+            geschoss=geschoss,
+            grund=(f"{a.id} bei ({a.xy_mm[0] / 1000:.1f}, {a.xy_mm[1] / 1000:.1f}) m "
+                   "mündet nicht ins Freie (Innenhof oder Gebäude) — kein Ausgang "
+                   "(Owner-Entscheid 6)"),
+            gescheiterte_regeln=[
+                (f"Freie im Umkreis {_FREIE_REICHWEITE_MM:.0f} mm: keine Fläche "
+                 "außerhalb der äußeren Gebäudekontur und eines geschlossenen Hofs"),
+            ]))
+    return bleiben, warnungen

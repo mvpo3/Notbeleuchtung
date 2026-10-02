@@ -18,7 +18,11 @@ from shapely.ops import unary_union
 from notbeleuchtung.hauptengine.contracts import RaumModell
 from notbeleuchtung.hauptengine.contracts.raum_modell import BBox, Tuer
 
-from .ausgaenge import leite_ausgaenge, ohne_unzulaessige_final_exits
+from .ausgaenge import (
+    leite_ausgaenge,
+    nur_ins_freie,
+    ohne_unzulaessige_final_exits,
+)
 from .aussenbereich import erkenne_aussenbereiche, waehle_innen_zonen
 from .dxf_load import bounds_mm, lade_dxf
 from .fluchtweg import explizite_linien, fluchtwege, linien_segmente
@@ -227,6 +231,14 @@ class ArchitekturRaumProvider:
             aussen = erkenne_aussenbereiche(
                 plan, k.wandkoerper, waehle_innen_zonen(plan, raeume, k.zuordnungen))
         self.letzte_aussenbereiche = aussen   # Prüfstrecken-Output (Bericht)
+        # Abschnitt 5 (Owner-Entscheid 6, 2026-10-01; S4g a): ein footprint-
+        # Ausgang (Doppeltür-Bogenpaar am Raster-Rand, ohne Tür) bleibt nur,
+        # wenn er ins Freie mündet — nicht in einen Innenhof (Loch der
+        # Außenkontur) und nicht ins Gebäude. Mollgasse EG: exit_1 (Doppeltür
+        # in Loch 0) und exit_2 (zwei fremde Bögen im Gebäude) entfallen,
+        # exit_3/exit_4 (Garten) bleiben (LUECKEN.md § 27). Befund je
+        # entfallenem Ausgang → Ausgangs-Warnungen (bericht.md).
+        ausgaenge, freie_warnungen = nur_ins_freie(ausgaenge, aussen, geschoss)
         if aussen is not None and aussen.komponenten:
             kontur = aussen.gedeckt()
         else:
@@ -305,6 +317,7 @@ class ArchitekturRaumProvider:
         # bestimmbar") als Prüfstrecken-Output — kein Contract-Feld.
         neue, self.ausgangs_warnungen = leite_ausgaenge(
             tueren, raeume, geschoss, flw_enden)
+        self.ausgangs_warnungen += freie_warnungen
         vorhandene = list(ausgaenge)
         for a in neue:
             if not any(a.typ == v.typ

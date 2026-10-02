@@ -114,7 +114,7 @@ Prüfstrecken-Ausgabe außerhalb des Contracts (Attribute am Provider): `wand_wa
 | F-10 | Durchleitung durch private Räume | `wohnungsklasse.py:durchleitung_raeume:921`, `fluchtweg.py:382-399` | `test_wohnungsklasse.py::test_durchleitung_zerreisst_den_weg_nicht`, `::test_durchleitung_wird_als_warnung_ausgewiesen`, `::test_durchleitung_fuehrt_nicht_durch_die_wand` | Pflicht-Eintrag § 6.6. **→ 2e (§ 17): entschieden B — kein Contract-Feld, Board-Antrag geschlossen.** | P2 | Contract (3 Owner) |
 | F-11 | Kreuzcheck Linien ↔ `final_exit` | `kreuzcheck.py:kreuzcheck:57`, Aufruf `provider.py:321-324` | `test_kreuzcheck.py`; `test_soll_mollgasse.py::test_kreuzcheck_findet_endpunkte_an_der_aussenkante`; xfail `::test_soll_jeder_endpunkt_an_der_kante_hat_final_exit`, `::test_soll_final_exit_anzahl_gleich_endpunkte_an_der_kante` | Soll (jeder Kanten-Endpunkt hat einen `final_exit`) nicht erreicht. | P2 | Selman |
 | F-12 | Stiegenhaus-Modell, Anker | `stiegenhaus.py:baue_stiegenhaus_modell:263`, `gang_anker.py:anker_fuer_gang:102`, `wohnungsklasse.py:anker_aus_privat_ziehen:958` | `test_stiegenhaus.py`, `test_gang_anker.py`; Gate (6); `test_soll_mollgasse.py::test_keine_anker_in_liftpolygonen` | Laufrichtung ohne Nummern/Gehlinie bleibt `unbekannt`; AUFZUGSVORPLATZ nicht automatisch (§ Fachteil 2). 18 Anker in `WOHNUNG_PRIVAT` sind eigene Anker K4-privater Gänge, nach Grundsatz (a) gewollt (`docs/SLICES_K1_K4.md:1362-1366`). | P2 | Selman |
-| F-13 | Außenöffnungen Mollgasse EG | `tuer_zuordnung.py:aussen_durchgaenge:456` | — | `raum_55`: Hauseingang `aussenoeffnung_8` ist ein Streifen zwischen zwei Wandkörpern; `raum_51` (Außenanlage 122,43 m²) braucht ggf. eigenen Filter (`docs/OFFENE_FRAGEN.md` § Außenöffnungen). **Befund 2b (§ 13):** `raum_51` fasst Stiegenhaus und Hof, die Hof-Türen `tuer_52`/`tuer_68` bekommen keine `AUSSEN`-Seite — blockiert S4g a (Cluster A). | P1 | Selman |
+| F-13 | Außenöffnungen Mollgasse EG | `tuer_zuordnung.py:aussen_durchgaenge:456` | — | `raum_55`: Hauseingang `aussenoeffnung_8` ist ein Streifen zwischen zwei Wandkörpern; `raum_51` (Außenanlage 122,43 m²) braucht ggf. eigenen Filter (`docs/OFFENE_FRAGEN.md` § Außenöffnungen). **Befund 2b (§ 13):** `raum_51` fasst Stiegenhaus und Hof, die Hof-Türen `tuer_52`/`tuer_68` bekommen keine `AUSSEN`-Seite — blockiert S4g a (Cluster A). **→ Abschnitt 5 (§ 27): entschieden** — `raum_51` ist nicht der Innenhof, sondern eine Flutung (Stempel PODEST 11 → 122 m²) über Stiegenhaus, Loch 0 der Außenkontur und die Garten-Nische; bleibt Raum. `tuer_52`/`tuer_68` führen in die Garten-Nische (Freie), nicht in einen Innenhof; ihre Außenseite deckt die Flutung, `exit_3` vertritt den Übergang. Ursache (F-Stufe) offen. | P1 | Selman |
 | F-14 | Balkontür kein Ausgang (Leonis' S4d) | `tuer_typisierung.py:179-189`, Text dreht nicht zurück `:221-227` | `test_tuer_typisierung.py`, `test_ausgang_freiflaeche.py`; xfail `::test_soll_sentinel_aussen_ist_entscheidbar` | EG-Fenstertür AUSSEN × WOHNUNG_PRIVAT immer `balkontuer` (Norm-Frage an Enis, § Fachteil 1). **→ 2b (§ 13):** `leite_ausgaenge` macht keine `balkontuer` mehr zum `final_exit`, auch mit gesetztem `ist_notausgang` (`ausgaenge.py:83-89`). | P2 | Enis (Norm) |
 
 ---
@@ -208,6 +208,9 @@ Prüfstrecken-Ausgabe außerhalb des Contracts (Attribute am Provider): `wand_wa
 - Prio **P1** (Owner-Satz, Notlicht-Wirkung nicht gemessen) · Lane Selman · Reihenfolge: nach dem Merge des
   Türstapels (Owner-Vermerk).
 - **→ 2b (§ 13):** b und c erledigt, a offen (STOPP; Messung und Einzelbefund `exit_1` … `exit_4` dort).
+- **→ Abschnitt 5 (§ 27, Owner-Entscheid 6):** a entschieden — `exit_1` (Doppeltür in Loch 0) und `exit_2`
+  (fremde Bögen) münden nicht ins Freie und entfallen; `exit_3`/`exit_4` münden ins Freie und bleiben
+  (Ausgang mit oder ohne Tür). Der strict-xfail bleibt (zwei Ausgänge ohne Tür-Objekt).
 
 ### 6.4 Türrollen (roh vs. korrigiert)
 
@@ -581,7 +584,7 @@ DG2 0 → 1** (Enis Board 3, unverändert); M17 18/18; Barawitzka ABSTELLRAUM 1 
 
 ---
 
-## 13. Punkt 2b — S4g: Balkonkonturen sind kein Ausgang (b und c erledigt, **a offen: STOPP**)
+## 13. Punkt 2b — S4g: Balkonkonturen sind kein Ausgang (b und c erledigt, **a offen: STOPP** → Abschnitt 5, § 27: `exit_1`/`exit_2` entfallen, `exit_3`/`exit_4` bleiben)
 
 **Regel (Owner-Auftrag 2026-09-30):** ein `final_exit` braucht einen Türbezug (Tür/Öffnung mit Raumseite, Rolle ≠
 `balkontuer`) und einen Geschossbezug (EG oder belegter Ausgang ins Freie); eine Balkon-/Terrassen-/Loggia-Kontur
@@ -3067,3 +3070,297 @@ fremdes Paket (`footprint.py`, `scripts/plan_pruefen.py` nur gelesen).
 - **R1-02 (P2, § 15):** degenerierte Entities (0/1 Stützpunkt, ARC Radius 0, INSERT auf fehlenden Block) laufen weiter
   still durch — anderer Befund, nicht Teil von Entscheid 4.
 - `Projekte/_ergebnis/` nicht neu erzeugt (Verifikation über den Runner; Prüfstrecke am Abschluss der Phase A).
+
+---
+
+## 27. Abschnitt 5 — Ausgänge ins Freie, nicht in den Innenhof (S4g a, F-13; Entscheid 6; erledigt mit dem Commit dieses Eintrags)
+
+**Auftrag (Owner 2026-10-01, `docs/AUFTRAG_2026-10-01.md` § 5, Entscheid 6):** „Ausgang = Übergang ins Freie, mit
+oder ohne Tür. Innenhof ist kein Ausgang. Keine Tür-in-1,5-m-Regel." Freie = außerhalb der äußeren Gebäudekontur,
+Innenhof = Loch in dieser Kontur; Stempel (HOF, INNENHOF, GARTEN, TERRASSE) nur Zusatzbeleg, die Geometrie
+entscheidet; Innenhof-Flächen sind keine Räume; `raum_51` in Mollgasse prüfen (F-13); die vier türlosen
+Footprint-Ausgänge Mollgasse EG einzeln mit Bild entscheiden; verliert ein Bereich seinen einzigen Ausgang, ist das ein
+Befund, keine Regel zum Biegen. Stand vorher `fd5dedb` (Abschnitt 4). Agent: claude-opus-5-5 / xhigh (Fallback,
+Fable 5.1 am Limit).
+
+**Teilstand übernommen/verworfen.** Ein erster Agent (Fable) brach am Modell-Limit ab und ließ unversionierte
+Änderungen zurück (gesichert als Patch und Dateikopie im Session-Scratch, nicht im Repo). **Verworfen:** (i) die ganze
+footprint-Ausgangsbasis aus dem Provider zu nehmen — das ist mehr als Entscheid 6 verlangt („mit oder ohne Tür"; ein
+Durchgang ins Freie bleibt) und nahm Mollgasse EG 10 von 14 GRAPH-Wegen, `exit_3`/`exit_4` münden aber ins Freie
+(27.3); seine eigene volle Suite zeigte dazu 3 neue rote (`test_soll_hofausgaenge_cluster_a_und_b`,
+`test_moll_eg_raum_23_behaelt_seine_wege`, `test_unbestimmter_raum_behaelt_seine_stuetzpunkt_segmente[moll_eg]`);
+(ii) die Regel „stempellose Restfläche ≥ 90 % in AUSSEN entfällt" — sie traf auf 20 Plänen nur Am Rain EG `rest_23`,
+einen Garten in der **offenen** Außenfläche (kein Innenhof), und drehte dort drei Zauntüren und eine Balkontür;
+(iii) den zugehörigen `innenhof_befund` in `scripts/plan_pruefen.py`. **Übernommen und nachgeprüft:** die Diagnose von
+`raum_51` und `exit_1` … `exit_4` (eigener Diagnose-Lauf auf `git archive fd5dedb`, Zahlen gleich) und das
+Bild-Skript (neue Titel mit dieser Entscheidung, dazu der 500-mm-Probekreis); der synthetische Plan ist neu
+aufgebaut (Fables Bogenpaar lag frei vor der Fassade, also in der Freie — nach Entscheid 6 ein Ausgang).
+
+### 27.1 Was „geschlossen" heute heißt — gegen die Owner-Definition
+
+Die Außen-Analyse (`aussenbereich.erkenne_aussenbereiche`) liefert **Komponenten** = je Trakt der äußere Ring der um
+1 200 mm morphologisch geschlossenen Wandkörper-Union, Löcher gefüllt (= die äußere Gebäudekontur), und zwei Arten
+freier Teilflächen ≥ 5 m² mit Außen-Indiz (GRÜN/KIES/GARTEN/PLATTE/BAUM-Layer) oder Kontakt zum Bezugsrand
+(Grundstücksgrenze, sonst konvexe Hülle; ein Loch berührt den Rand nie, F7): **offen** (AUSSEN), wenn die Fläche nach
+dem Engstellen-Test (Hals 400 mm) bis 250 mm an die Straßenkante reicht, sonst **geschlossen** (AUSSEN_GESCHLOSSEN).
+Für die Türseiten gilt „gedeckt" = Komponenten ∪ geschlossen ∪ Innen-Zonen − offen; AUSSEN wird eine Seite nur
+außerhalb davon (`tuer_zuordnung._seite`, Probe bis 500 mm).
+
+Gegen die Owner-Definition:
+- **Loch ohne Außen-Indiz** bleibt ungeklassifiziert und zählt über die gefüllte Komponente als gedeckt — eine Tür
+  dorthin wird nie AUSSEN, also nie `final_exit`. Die Geometrie allein unterscheidet ein Hof-Loch nicht von einem Raum:
+  Mollgasse EG hat 11 Löcher ≥ 5 m² (73,0 / 20,4 / 19,8 / 18,7 / 16,5 / 13,2 / 7,4 / 6,7 / 6,3 / 5,7 / 5,1 m²), alle
+  ohne Indiz; Loch 0 ist Stiegenhaus + Vorplatz (27.2), Loch 1 ein Schacht, die übrigen liegen nach dem ersten Agenten
+  in Zimmern, Bädern und Müllräumen (nicht einzeln nachgeprüft). Das entspricht „Innenhof = Loch → kein Ausgang".
+- **Loch mit Außen-Indiz** ist `geschlossen` — **außer** nur eine dünne Wand (< 250 mm samt Hals-Puffer) trennt es
+  von der Straßenkante (ohne Straßen-Indiz: vom ganzen Bezugsrand): dann fragt `weg_ins_freie` nicht nach `ist_loch`,
+  das Loch wird `offen`, seine Türen AUSSEN. Gemessen am synthetischen Plan 27.5 mit GRÜN-Schraffur im Hof: Hof
+  `offen` 96,5 m², die Hof-Doppeltür AUSSEN\|Gang → `hauseingang` → `final_exit` in den Innenhof. **Nicht
+  korrigiert:** die naheliegende Bedingung `not ist_loch` (gebaut, gemessen, zurückgenommen) kippt auf den 20 Plänen
+  nur Am Rain EG — dort sind die drei Löcher (415,5 / 253,8 / 206,0 m² + Splitter) die **eingezäunten Nordgärten**
+  der EG-Wohnungen am Planrand (Zaunpfosten als schmale Wandkörper schließen sie; keine Grundstücksgrenze, Bezug =
+  Hülle), mit Zauntüren nach außen (`tuer_19`/`_59`/`_181` bleiben `rest_23`\|AUSSEN). Das sind keine Flächen „vom
+  Gebäude umschlossen". Die Bedingung nähme vier Türen die AUSSEN-Seite (`tuer_10`, `_41`, `_93`, `_142`), zwei davon
+  `balkontuer`, und eine rz in `raum_12` (unbestimmt) — Grundsatz (a), ohne Ausgangs-Gewinn (Ausgänge, Wege, Räume
+  gleich; Bild im Session-Scratch, angesehen). Auf den 20 Plänen führt heute **keine** Tür aus einem solchen Loch zu
+  einem `final_exit` → offen geführt (27.9, Owner-Frage: zählt ein Zaun zur Gebäudekontur?).
+- **Hof zwischen Trakten ohne Straßenkontakt** (Barawitzka 190,2 m², 2,55 m von der Straßenkante) ist `geschlossen`,
+  obwohl er außerhalb beider Komponenten liegt — kein Loch, aber „von Gebäuden umschlossen, man kann nicht weg"
+  (Owner-Satz zu „Freie"). Die neue Freie-Probe für Ausgänge ohne Tür zählt ihn darum **nicht** als Freie
+  (konservativ, wie `kein_weg_ins_freie` in `tuer_typisierung.py:183-186`).
+- **Ausgänge ohne Tür** (`footprint.hauptausgaenge`) hatten bisher **keine** solche Prüfung: sie entstehen am Rand des
+  Raster-Umrisses aus den Wand-**Linien** (`wand_segmente`, Wand-Layer per Muster), die Außen-Analyse rechnet mit
+  Wand-**Körpern** (auch schmale Schraffuren). Mollgasse `exit_1` liegt am Rand des Raster-Umrisses (`ist_am_rand`),
+  aber 1 920 mm innerhalb der Wandkörper-Kontur, in Loch 0 — der Unterschied ist der 200-mm-Ziegelstreifen auf
+  `01-ANS` (27.2).
+
+### 27.2 Ist `raum_51` der Innenhof? — Nein (F-13 entschieden)
+
+Diagnose-Lauf auf `git archive fd5dedb` (Session-Scratch), Mollgasse EG: 5 Komponenten (364,6 / 168,8 / 43,1 / 22,4 /
+1,2 m²), `offen` 76 Teile 635,6 m² (Hauptteil 633,7 m² = Garten mit Weg zur Straße), `geschlossen` 0.
+
+`raum_51` ist der Stempel „PODEST" 11,02 m², geflutet auf 122,4 m² (Typ STIEGENHAUS aus `typisiere_geometrisch`):
+69,6 m² (57 %) liegen in **Loch 0** der Außenkontur (73,0 m², davon 95 % von `raum_51` bedeckt), 29,5 m² außerhalb der
+Kontur (Garten-Nische nördlich der Stiegenhaus-Nordwand, Text „ZAUN, H = 1.00 m", davon 10,4 m² in `offen`), der Rest im
+Gebäude (Podest, Lift-/Kinderwagen-Lobby). Loch 0 trägt **kein** Außen-Indiz; darin stehen die Stiegenhaus-Kote „STUK =
+225 ü. FOK STGH", „GELÄNDER, H = 1.01 m" (2 ×), „GEFÄLLE 2%", Schacht-Texte, „STB SÄULE THERMISCH GETRENNT ZU OG 01"
+(2 ×) und „BLITZLICHT DBA FEUERWEHRTABLEAU". Nach Osten schließt es **einzig** ein Wandkörper auf Layer
+`01-ANS-G00-LEG-M0`: Ziegelmauerwerk, 200 mm, x 2 705,00–2 705,20 m, y 1 509,79–1 525,55 m (15,8 m), ohne Wand-Linie
+(alle übrigen Wandkörper liegen auf `02-FIL-*`); östlich davon der Text „EIN-/AUSFAHRT".
+
+**Antwort:** `raum_51` ist nicht der Innenhof, sondern eine Flutung über drei Dinge — Stiegenhaus/Podest (Raum), den
+Großteil von Loch 0 (Stiegenhaus-Osttrakt und Vorplatz — ein Loch, also trennt sie kein Wandkörper; dazwischen nur
+die Doppeltür-Bögen und Säulen „… ZU OG 01") und die
+Garten-Nische (Freie). Er bleibt Raum: Loch 0 trägt den Stiegenhaus-Stempel, ein Herausschneiden nähme dem Osttrakt
+sein Notlicht (Grundsatz (a)). Die „Hoftüren" sind **keine Innenhof-Türen**: `tuer_52` („EI2 30-C - FTS", 05-SYM
+r 1 000) sitzt in der Stiegenhaus-Nordwand und öffnet in die Garten-Nische **außerhalb** der Kontur (230 mm neben
+`offen`), `tuer_68` (02-ANS r 800) ist das Tor im 1-m-Zaun dieser Nische. Beide bekommen keine AUSSEN-Seite, weil die
+Flutung beide Probeseiten deckt (`tuer_52` `raum_51`\|`KEIN_RAUM`; `tuer_68` `raum_51`\|`raum_51` →
+`stiegenhaustuer` → `stair_exit` `exit_tuer_68`, Artefakt). Für sie vertritt `exit_3` den Übergang ins Freie (27.3).
+**F-13 ist damit entschieden:** kein Innenhof-Raum; die Ursache ist der Flutungs-Durchschlag der F-Stufe (Bogen-
+Öffnungen ohne Blattlinie sind keine Barriere) — offen (27.9).
+
+Eine Türseite „AUSSEN-Innenhof" (Planer-Vorschlag) ist **nicht** eingeführt: neuer Sentinel-Wert an der Naht
+`von_raum`/`nach_raum` (Contract-Semantik, 3 Owner) → bei Bedarf Board-Antrag. Eine Tür in ein Loch bleibt `KEIN_RAUM`
+(Bericht: `seite_fehlt`).
+
+**„Innenhof-Flächen sind keine Räume"** — gemessen statt gebaut (Runner-Feld `aussen_deckung`, 20 Pläne, nachher):
+Räume, die zu ≥ 90 % in einem **Loch mit Außen-Indiz** liegen (`geschlossen`, ≤ 10 % außerhalb der Kontur): nur Am
+Rain EG `raum_4`/`raum_5`/`raum_7` (TERRASSE, in den eingezäunten Nordgärten, 27.1 — Freiflächen des Kanons, kein
+Innenhof „vom Gebäude umschlossen"). Räume ≥ 90 % in einem **geschlossenen Hof außerhalb der Kontur**: Barawitzka EG 8
+(5 TERRASSE, `raum_1`/`raum_4`/`raum_36` ohne Typ; kein Loch, also nach der Owner-Definition kein Innenhof), Mollgasse
+1OG `raum_84` BALKON. Mollgasse EG, Rennweg, Muthgasse, Am Rain UG/OG: 0. Kein Fall auf den 20 Plänen ist
+eindeutig Innenhof **und** Raum → keine Regel gebaut (27.9).
+
+### 27.3 Die vier türlosen Footprint-Ausgänge Mollgasse EG (Bilder `Projekte/_ergebnis/Mollgasse_EG/ausgaenge/<exit_id>.png`, angesehen)
+
+Je Bild: Ausschnitt mit Außenkontur (schwarz), Löchern (rot schraffiert), `offen` (hellblau), `raum_51`/`raum_41`
+(magenta), Türen, dem Ausgang (Stern, Stand `fd5dedb`) und dem 500-mm-Probekreis (grün gestrichelt).
+
+| Ausgang | Lage (mm) | Geometrie | Entscheidung |
+|---|---|---|---|
+| `exit_1` | (2 703 280 / 1 521 765), in `raum_51`, **in Loch 0**, 1 920 mm innerhalb der Kontur | echte Doppeltür „EI2 30-C" (zwei Bögen r 1 000, 2 m) aus dem Stiegenhaus-Osttrakt nach Osten, daneben „BLITZLICHT DBA FEUERWEHRTABLEAU"; mündet in den Ostteil von Loch 0 (Vorplatz unter dem OG, „GEFÄLLE 2%", „RIGOL"), der nur durch den `01-ANS`-Streifen geschlossen ist; kein Tür-Objekt im Modell (§ 13 (iii)) | **Innenhof → kein Ausgang** (Geometrie entscheidet). Befund: wahrscheinlich der Hauptzugang des Osttrakts — ist der `01-ANS`-Streifen keine Wand, mündet er ins Freie (Owner-Frage 27.9) |
+| `exit_2` | (2 703 365 / 1 524 050), in keinem Raum, 1 835 mm innerhalb der Kontur, 130 mm neben Loch 1 (Schacht 6,3 m²) | oberer Flügel der Doppeltür von `exit_1` + Einzeltür des Müllraums (r 900), 2 576 mm — zwei fremde Bögen, keine Öffnung | **kein Ausgang** (kein Durchgang, im Gebäude) |
+| `exit_3` | (2 689 946 / 1 523 965), in `raum_51` (Garten-Nische), **930 mm außerhalb** der Kontur, 357 mm neben `offen` | Mitte von `tuer_52` (Stiegenhaus-Nordwand) und `tuer_68` (Zauntor), 2 334 mm — kein Doppeltürpaar, steht aber für den Übergang Stiegenhaus → Garten | **ins Freie → bleibt `final_exit`** (Entscheid 6: mit oder ohne Tür). Einziger `final_exit` an Cluster A; trägt 1 GRAPH-Weg (`seg_graph_tuer_35`) |
+| `exit_4` | (2 665 833 / 1 537 216), in `raum_41` (GANG, Laubengang-Flutung), **978 mm außerhalb** der Kontur, in `offen` | `tuer_55` (r 900) + Bogen auf `09-WEG` (`tuer_64`, r 1 002), 2 185 mm — kein Doppeltürpaar; die Fläche ist Garten südlich des Laubengangs | **ins Freie → bleibt `final_exit`**. Trägt 9 GRAPH-Wege (`tuer_5`, `_9`, `_11`, `_20`, `_21`, `_24`, `_25`, `_26`, `_50`); die Übergänge `tuer_64`/`tuer_65` haben keine AUSSEN-Seite, weil die Flutung `raum_41` sie deckt |
+
+Keine Tür-in-1,5-m-Regel (die nicht gemessene Option aus § 13 ist nicht gebaut). Ein Bereich, der seinen einzigen
+Ausgang verliert, entsteht nicht: auf `exit_1`/`exit_2` endete kein Fluchtweg (§ 13: 0 GRAPH-Wege), die 14 GRAPH-Wege
+bleiben (27.6). Der strict-xfail `test_soll_mollgasse_eg_kein_ausgang_ohne_tuerbezug` (§ 13) **bleibt**: `exit_3`/
+`exit_4` sind weiter Ausgänge ohne Tür-Objekt (Grund im Marker nachgeführt, Marker und Assert unverändert).
+
+### 27.4 Regel und Einbau (`raumerkennung/`; kein Contract-Feld, kein RaumTyp, kein fremdes Paket)
+
+- **`ausgaenge.nur_ins_freie(ausgaenge, aussen, geschoss)`** (neu): ein Ausgang ohne Tür bleibt, wenn im Umkreis von
+  500 mm Freie liegt — Fläche außerhalb der Komponenten (Löcher gefüllt) **und** außerhalb jedes geschlossenen Hofs.
+  500 mm = letzte Probestufe der Türseite (`tuer_zuordnung._PROBE_STUFEN_MM[-1]`): ein Ausgang ohne Tür zählt wie eine
+  Tür, deren Seitenprobe AUSSEN findet; eine echte Doppeltür in der Fassade liegt mit ihrer Mitte in der Wandebene,
+  Freie ≤ halbe Wanddicke entfernt (synthetischer Plan 27.5). Entfällt einer, steht je Ausgang eine
+  `AusgangsWarnung` „`<id>` bei (x, y) m mündet nicht ins Freie (Innenhof oder Gebäude) — kein Ausgang
+  (Owner-Entscheid 6)" in `provider.ausgangs_warnungen` → bericht.md „## Geschoss" (bestehender Weg,
+  `scripts/plan_pruefen.py` unverändert). Ohne Außen-Analyse (kein Wandkörper) bleibt alles wie bisher. Aufruf in
+  `provider.parse` direkt nach der Außen-Analyse; die IDs der bleibenden Ausgänge ändern sich nicht (`exit_3`,
+  `exit_4`), die Dedup-Schleife und `ohne_unzulaessige_final_exits` danach sind unverändert.
+- `aussenbereich.py`, `footprint.py`, `tuer_zuordnung.py`, `tuer_typisierung.py` unverändert (die `ist_loch`-Bedingung
+  ist gemessen und verworfen, 27.1); offene Passagen ins Freie liefert weiter
+  `tuer_zuordnung.aussen_durchgaenge` (Öffnung 0,80–2,60 m, Gegenseite AUSSEN → `hauseingang` bzw. `garagentor` mit
+  Fluchtweg-Ende; Mollgasse `exit_aussenoeffnung_1`).
+
+### 27.5 Tests, rot vor dem Fix
+
+- **neu `tests/raumerkennung/test_ausgang_innenhof.py`** (4): synthetischer Plan „Loch in der Kontur" — 30 × 20 m,
+  500-mm-HATCH-Wände mit Linien, an der Ostseite ein Hof 9,5 × 10 m zwischen zwei Flügeln, ohne Außen-Indiz wie
+  Loch 0, nach Osten nur durch einen 200-mm-Streifen **ohne** Linien auf `01-ANS-G00-LEG-M0` geschlossen (die Figur
+  von `exit_1`); Doppeltür Gang → Hof (Bogenpaar r 750, 1,5 m), Doppeltür in der Südfassade, Einzeltüren Gang → Straße und
+  Gang → Hof (r 1 100). `test_doppeltuer_in_den_innenhof_ist_kein_ausgang` (kein `final_exit` ≤ 1,5 m, kein Weg mit
+  diesem Ziel, Warnung im Bericht), `test_doppeltuer_ins_freie_bleibt_final_exit`, `test_strassentuer_ist_final_exit_hoftuer_nicht`
+  (Hoftür ohne AUSSEN-Seite, kein Ausgang, kein Ziel; Hof von der Komponente gedeckt, nicht `offen`),
+  `test_nur_ins_freie_regel` (Regel
+  ohne Plan: Fassaden-Rand bleibt, Loch/Gebäude und geschlossener Hof entfallen, ohne Außen-Analyse unverändert).
+  Wanddicke 500 mm, weil die Wand-Union mit 8-Eck-Puffern geschlossen wird: eine 1,5-m-Öffnung in einer 300-mm-Wand
+  bleibt ein Schlitz und das Loch wäre keines (gemessen: Brücke 0 mm, bei 500 mm 61 mm).
+- **`tests/naht/test_s4g_ausgang_tuerbezug.py`** (+2): `test_mollgasse_eg_innenhof_doppeltuer_ist_kein_ausgang`
+  (kein `final_exit` ≤ 1,5 m an `exit_1`/`exit_2`, kein Weg mit diesem Ziel) und
+  `test_mollgasse_eg_durchgang_ins_freie_bleibt_final_exit` (`exit_3`/`exit_4` an ihrer Stelle `final_exit`,
+  `exit_aussenoeffnung_1` Öffnung ohne Türblatt mit AUSSEN-Seite); `test_rennweg_eg_behaelt_seine_zwei_final_exit`
+  unverändert.
+- **Geändert, ohne Band:** im strict-xfail `test_soll_mollgasse_eg_kein_ausgang_ohne_tuerbezug` nur der Grundtext
+  (welche Ausgänge ohne Tür bleiben und warum); Marker, `strict=True` und Assert unverändert. Harness
+  `test_s7_wohnungsklasse._eingabe`: der Spion greift die Dedup-Basis jetzt hinter `nur_ins_freie` ab statt hinter
+  `hauptausgaenge` — sonst rechnete `_lauf` („wörtlich die Schleife aus `provider.py`") für Mollgasse EG mit
+  `exit_1`/`exit_2`, die die Produktion nicht mehr hat; Felder, Permutationen und Erwartungen unverändert.
+
+**Rot vor dem Fix** (`pytest tests/raumerkennung/test_ausgang_innenhof.py tests/naht/test_s4g_ausgang_tuerbezug.py
+--tb=line -o pythonpath="<git archive fd5dedb>/src tests"`, Tests aus dem Arbeitsbaum, Kurzform):
+
+```
+test_ausgang_innenhof.py:105: AssertionError: assert ['exit_2'] == []
+test_ausgang_innenhof.py:146: ImportError: cannot import name 'nur_ins_freie' from 'notbeleuchtung.raumerkennung.ausgaenge'
+test_s4g_ausgang_tuerbezug.py:79: AssertionError: {'exit_1': [(2703279.928073096, 1521765.0620949925)], 'exit_2': [(2703364.9280727683, 1524050.0620954765)]}
+3 failed, 6 passed, 1 xfailed in 19.53s
+```
+
+Grün waren schon vorher die Wächter (Doppeltür ins Freie, Straßentür/Hoftür, `exit_3`/`exit_4`/
+`exit_aussenoeffnung_1`, Messfall Südgarten, Rennweg EG, Balkontür). **Grün nach dem Fix:** dieselben Dateien
+`9 passed, 1 xfailed in 19.88s`.
+
+### 27.6 Blast — 13 Pläne der Prüfstrecke + 7 Rennweg-/Mollgasse-Prüfpläne
+
+Runner wie § 26.3 (`provider.parse(dxf, "")` + Default-Platzierung, JSON je Raum/Tür/Ausgang/Segment/Anker/Leuchte,
+alle Provider-Warnungen, dazu je Raum der Anteil in `offen`/`geschlossen`/außerhalb der Kontur; seriell, Am Rain und
+Muthgasse allein, kein pytest parallel, Umgebung ohne `NOTBEL_KI*`). **Vorher** = Lauf des ersten Agenten auf `git
+archive fd5dedb` (`src/` + `CAD_Symbole/` außerhalb des Repos; gegen § 26 `nachher4` in allen 13 Plänen feldgleich bis
+auf das neue Messfeld). **Nachher** = Arbeitsbaum dieses Commits. Zwischendurch lief ein Nachher mit der verworfenen
+`ist_loch`-Bedingung (27.1: Am Rain EG 4 Türen, 1 rz anders; Mollgasse 1OG nur Messfeld) — die Tabelle ist der Lauf
+des Commit-Stands.
+
+**Ergebnis: 19 gleich, 1 abweichend** über 20 Pläne (alle 20 Felder: Räume mit Typ/Polygon/Klasse/Wohnung/Flags,
+Türen, Ausgänge, Segmente, Anker, Stiegenhäuser, Bounds, korrigierte Rollen, bestätigt privat, alle Warnungen,
+Leuchten je Kind/Klasse/Stück, Außen-Messfeld); DXF-SHA je Plan gleich; stderr nur die bekannten ezdxf-Zeilen
+„copy process ignored ACDB_BLOCKREPRESENTATION_DATA", kein Traceback.
+
+| Plan | Geschoss | final_exit vorher → nachher | stair_exit vorher → nachher | Segmente vorher → nachher | Leuchten vorher → nachher | Räume v → n | nicht ins Freie (nachher) |
+|---|---|---|---|---|---|---|---|
+| Rennweg_EG | EG | 2: `exit_tuer_18`, `exit_tuer_8` → gleich | 3: `exit_durchgang_18`, `exit_durchgang_19`, `exit_durchgang_20` → gleich | GRAPH 5 FALLBACK 2 → gleich | 17 (rz 9, SL 8) → gleich | 24 → 24 | 0 |
+| Rennweg_OG3 | 3OG | 0: — → gleich | 3: `exit_tuer_12`, `exit_tuer_5`, `exit_tuer_6` → gleich | GRAPH 5 FALLBACK 1 → gleich | 7 (rz 5, SL 2) → gleich | 17 → 17 | 0 |
+| Barawitzka_EG | EG | 1: `exit_tuer_31` → gleich | 0: — → gleich | GRAPH 7 FALLBACK 1 → gleich | 11 (rz 6, SL 5) → gleich | 49 → 49 | 0 |
+| Mollgasse_EG | EG | 8: `exit_1`, `exit_2`, `exit_3`, `exit_4`, `exit_aussenoeffnung_1`, `exit_tuer_16`, `exit_tuer_60`, `exit_tuer_67` → 6: `exit_3`, `exit_4`, `exit_aussenoeffnung_1`, `exit_tuer_16`, `exit_tuer_60`, `exit_tuer_67` | 1: `exit_tuer_68` → gleich | LINIE 103 GRAPH 14 FALLBACK 3 → gleich | 51 (rz 24, SL 27) → 48 (rz 23, SL 25) | 64 → 64 | 2: exit_1; exit_2 |
+| Mollgasse_1KG | KG | 1: `exit_aussenoeffnung_1` → gleich | 0: — → gleich | FALLBACK 4 → gleich | 14 (rz 7, SL 7) → gleich | 31 → 31 | 0 |
+| Mollgasse_2KG | KG | 0: — → gleich | 1: `exit_durchgang_8` → gleich | GRAPH 1 FALLBACK 2 → gleich | 13 (rz 8, SL 4, AP 1) → gleich | 30 → 30 | 0 |
+| AmRain_OG4 | 4OG | 0: — → gleich | 2: `exit_tuer_27`, `exit_tuer_28` → gleich | GRAPH 6 FALLBACK 3 → gleich | 20 (rz 12, SL 8) → gleich | 28 → 28 | 0 |
+| AmRain_OG3 | 3OG | 0: — → gleich | 3: `exit_tuer_27`, `exit_tuer_29`, `exit_tuer_45` → gleich | GRAPH 15 FALLBACK 2 → gleich | 20 (rz 9, SL 11) → gleich | 60 → 60 | 0 |
+| AmRain_OG2 | 2OG | 0: — → gleich | 2: `exit_durchgang_49`, `exit_durchgang_50` → gleich | GRAPH 9 FALLBACK 15 → gleich | 75 (rz 52, SL 23) → gleich | 103 → 103 | 0 |
+| AmRain_OG1 | 1OG | 0: — → gleich | 7: `exit_durchgang_19`, `exit_durchgang_50`, `exit_durchgang_56`, `exit_tuer_105`, `exit_tuer_150`, `exit_tuer_209`, `exit_tuer_210` → gleich | GRAPH 12 FALLBACK 16 → gleich | 73 (rz 49, SL 24) → gleich | 139 → 139 | 0 |
+| AmRain_UG | UG | 2: `exit_tuer_113`, `exit_tuer_150` → gleich | 15: `exit_durchgang_20`, `exit_durchgang_22`, `exit_durchgang_3`, `exit_durchgang_4`, `exit_durchgang_5`, `exit_durchgang_6`, `exit_tuer_125`, `exit_tuer_140`, `exit_tuer_143`, `exit_tuer_160`, `exit_tuer_167`, `exit_tuer_186`, `exit_tuer_48`, `exit_tuer_50`, `exit_tuer_92` → gleich | GRAPH 2 FALLBACK 26 → gleich | 110 (rz 69, SL 41) → gleich | 82 → 82 | 0 |
+| AmRain_EG | EG | 2: `exit_tuer_231`, `exit_tuer_68` → gleich | 1: `exit_tuer_155` → gleich | GRAPH 1 FALLBACK 9 → gleich | 46 (rz 30, SL 16) → gleich | 140 → 140 | 0 |
+| Muthgasse_E2 | 2OG | 0: — → gleich | 1: `exit_durchgang_74` → gleich | LINIE 139 FALLBACK 3 → gleich | 139 (rz 86, SL 53) → gleich | 108 → 108 | 0 |
+| Mollgasse_1OG | 1OG | 0: — → gleich | 1: `exit_durchgang_10` → gleich | GRAPH 9 FALLBACK 3 → gleich | 14 (rz 6, SL 8) → gleich | 93 → 93 | 0 |
+| Rennweg_DD |  | 0: — → gleich | 0: — → gleich | FALLBACK 1 → gleich | 3 (rz 2, SL 1) → gleich | 3 → 3 | 0 |
+| Rennweg_DG1 | DG | 0: — → gleich | 2: `exit_durchgang_6`, `exit_durchgang_7` → gleich | GRAPH 1 FALLBACK 2 → gleich | 6 (rz 4, SL 2) → gleich | 15 → 15 | 0 |
+| Rennweg_DG2 | DG | 0: — → gleich | 3: `exit_durchgang_4`, `exit_durchgang_5`, `exit_durchgang_6` → gleich | GRAPH 3 FALLBACK 1 → gleich | 7 (rz 4, SL 3) → gleich | 13 → 13 | 0 |
+| Rennweg_OG1 | 1OG | 0: — → gleich | 2: `exit_durchgang_6`, `exit_durchgang_7` → gleich | GRAPH 3 FALLBACK 1 → gleich | 7 (rz 3, SL 4) → gleich | 18 → 18 | 0 |
+| Rennweg_OG2 | 2OG | 0: — → gleich | 1: `exit_tuer_1` → gleich | FALLBACK 1 → gleich | 5 (rz 2, SL 3) → gleich | 18 → 18 | 0 |
+| Rennweg_UG | UG | 0: — → gleich | 2: `exit_durchgang_2`, `exit_tuer_7` → gleich | GRAPH 5 FALLBACK 2 → gleich | 12 (rz 8, SL 4) → gleich | 24 → 24 | 0 |
+
+- **Mollgasse EG** (einziger abweichender Plan): `final_exit` 8 → 6 (`exit_1`, `exit_2` weg), `stair_exit` 1 gleich;
+  Segmente **gleich** (LINIE 103, GRAPH 14, FALLBACK 3 — auf `exit_1`/`exit_2` endete kein Weg), Türen, Räume,
+  Wohnungen, Anker, korrigierte Rollen gleich; zwei neue Ausgangs-Warnungen „`exit_1` bei (2703.3, 1521.8) m mündet
+  nicht ins Freie (Innenhof oder Gebäude) — kein Ausgang (Owner-Entscheid 6)", ebenso `exit_2`. **Leuchten 51 → 48**
+  (rz 24 → 23, SL 27 → 25; je Klasse ERSCHLIESSUNG 29 → 28, kein Raum 9 → 7): weg die zwei Sicherheitsleuchten
+  1 000 mm vor `exit_1`/`exit_2` (2 704 280 / 1 521 765 und 2 704 365 / 1 524 040, kein Raum — Leuchte am Ausgang)
+  und eine rz in `raum_51` bei (2 703 600 / 1 512 233). **Befund:** kein Bereich verliert seinen einzigen Ausgang
+  (alle Wege bleiben); der Osttrakt verliert mit `exit_1` seinen mutmaßlichen Hauptzugang als Ausgang (27.9).
+- Laufzeit/Spitze unverändert (Am Rain EG 308,6 → 314,9 s, 2,71 GB; Muthgasse 253,6 → 256,1 s, 1,79 GB; Mollgasse EG
+  16,4 → 16,1 s).
+
+### 27.7 Gate und Suite
+
+**Gate:** `pytest -m gate tests/gate` **3 passed, 1 xfailed** (`test_gate_tuerstapel_erfuellt`, wie vorher; 112 s).
+`gate_messung` auf dem Arbeitsbaum dieses Commits (vor dem Commit, `_arbeit/gate/messung_fd5dedb-dirty-27o.json`,
+60,9 s), `pruefe_gate` gegen `nullmessung_f15d03f.json`: **(0)** unsauberer Arbeitsbaum (erwartet, vor dem Commit
+gemessen) und **(3) `M4.einraum` DG2 0 → 1** (Enis Board 3, unverändert); M17 **18/18 BESTANDEN**; **(11) DG1 grün:**
+2 Ausgänge (`exit_durchgang_6`, `_7`), 0 durch den Liftschacht (UG 2, EG 5, OG1 2 — je 0); **alle 8 Messfelder außer
+`meta` gleich `messung_7ea3024-dirty-26.json`** (Abschnitt 4). Die Gate-Pläne sind Rennweg — im Blast feldgleich.
+
+**Suite:** `pytest tests/raumerkennung tests/contract tests/naht/test_soll_mollgasse.py tests/naht/test_soll_barawitzka.py`
+(Zwischenstand, vor dem Verwerfen der `ist_loch`-Bedingung) `1039 passed, 7 skipped, 8 xfailed in 203.41s`.
+**Volle Suite** (`pytest -q -p no:cacheprovider -rxXs`, allein, nach dem Blast, Commit-Stand): `7 failed, 2393 passed,
+12 skipped, 6 deselected, 15 xfailed, 3 warnings in 1270.87s (0:21:10)`, 0 xpassed — dieselben 7 roten wie § 26.4: 3 ×
+`test_keine_leuchten_in_wohnung_privat` OG1/OG2/DG1 (Board 1 Leonis), `test_soll_muthgasse.py::test_soll_plan_tuerbloecke_im_modell`,
+die 2 S4c-Pins `test_bara_raum_19`/`test_bara_raum_30`, und vorbestehend `tests/normwissen/test_quellenblock_e07_rl4.py::test_kein_contract_wert_und_kein_konsument`
+(`ki_backends.py:58`, Abschnitt 3). 2393 = 2387 + 6 neu; 15 xfailed wie vorher (der strict-xfail S4g a bleibt xfail).
+`gen_schema.py --check` „schema in sync", `ruff check .` „All checks passed!".
+Keine Schwelle, kein Soll, kein Marker gelockert; kein Contract-Feld, kein neuer RaumTyp, kein fremdes Paket
+(`scripts/plan_pruefen.py`, `footprint.py`, `aussenbereich.py` unverändert).
+
+### 27.8 Board-Eintrag an Enis (Phase B, vorformuliert — NICHT eingetragen)
+
+> **Selman → Enis, zur Kenntnis (Ausgangs-Definition, Owner-Entscheid 6 vom 2026-10-01):** Die Raumerkennung setzt
+> `final_exit` nur an einen Übergang aus dem Gebäude ins Freie — eine Tür, eine Öffnung ohne Türblatt (0,80–2,60 m)
+> oder ein Durchgang ohne Tür-Objekt, dessen Außenseite außerhalb der äußeren Gebäudekontur liegt und nicht in einem
+> Hof ohne Weg zur Straßenkante. Ins Freie heißt: Straße oder eine Fläche, die nicht von Gebäuden umschlossen ist und
+> von der man weg kann. Ein Innenhof (geometrisch ein Loch in der äußeren Gebäudekontur) ist kein Ausgang und kein
+> Fluchtziel — man kann hinaus, aber nicht flüchten. Eine Tür ist für einen Ausgang nicht nötig; es gibt keine
+> Tür-in-1,5-m-Regel. Eine Wohnungstür ins Stiegenhaus oder in den Gang ist kein Ausgang ins Freie. Die Definition ist
+> bewusst konservativ: verliert ein Bereich dadurch seinen einzigen Ausgang, steht das als Befund im Bericht, nicht als
+> gebogene Regel. Konkret Mollgasse EG: die Doppeltür „EI2 30-C" des Osttrakts (Feuerwehrtableau) mündet in ein Loch
+> der Kontur, das nach Osten nur ein 200-mm-Ziegelstreifen schließt — sie ist darum kein Ausgang. Du kannst die
+> Definition fachlich einwenden (EN 1838 / OIB-RL 4: Gilt ein ummauerter Hof mit Tor oder Durchfahrt als sicherer
+> Bereich im Freien? Zählt ein überdachter Vorplatz unter dem OG als Freie?). Stand: `luecken-2026-09-30`,
+> `LUECKEN.md` § 27.
+
+### 27.9 Offen nach Abschnitt 5
+
+- **F-13 / Flutungs-Durchschlag (P1 · Selman, Owner-Entscheid):** die F-Stufe nimmt Bogen-Öffnungen ohne Blattlinie
+  nicht als Barriere; `raum_51` (PODEST 11 → 122 m²) und `raum_41` (Laubengang) decken darum die Garten-Nische bzw.
+  den Garten südlich des Laubengangs und nehmen `tuer_52` (Stiegenhaus → Garten) sowie `tuer_64`/`tuer_65` (09-WEG,
+  Laubengang → Garten) die AUSSEN-Seite. Folge: `exit_3`/`exit_4` (Ausgänge ohne Tür-Objekt) tragen 10 der 14
+  GRAPH-Wege; der strict-xfail S4g a bleibt, bis ein türgebundener Ersatz steht. Ein Schnitt an einer Türsehne reicht
+  nicht (vom ersten Agenten gemessen: der Garten-Streifen hängt auch über `tuer_51`/`tuer_53` am Rest).
+- **`exit_1` / Layer `01-ANS-G00-LEG-M0` Mollgasse (P1 · Owner-Frage):** ist der 200-mm-Ziegelstreifen an der
+  Ostfassade (15,8 m, ohne Wand-Linie, östlich „EIN-/AUSFAHRT") eine Wand? Wenn nein, mündet die Doppeltür
+  „EI2 30-C" mit Feuerwehrtableau ins Freie und ist der Hauptausgang des Osttrakts — dann gehört der Streifen aus den
+  Wandkörpern (Layer-Regel, Blast über alle Pläne) und `exit_1` kommt zurück. Bis dahin: Innenhof, kein Ausgang
+  (Owner: konservativ, Geometrie entscheidet). Weg fielen dadurch nur Leuchten an der Tür selbst (27.6), kein Weg.
+  Dazu die Türerkennung: die Doppeltür hat kein Tür-Objekt (§ 13 (iii)).
+- **Loch mit Außen-Indiz an der Hülle ist `offen` (P2 · Selman, Owner-Frage „zählt ein Zaun zur Gebäudekontur?"):**
+  27.1 — ein Innenhof hinter einer dünnen Wand an der Straßenkante würde seine Türen AUSSEN machen (synthetisch
+  gemessen); die einfache Bedingung `not ist_loch` träfe heute nur die eingezäunten Gärten von Am Rain EG (4 Türen,
+  1 rz) und ist darum verworfen. Auf den 20 Plänen kein `final_exit` aus einem solchen Loch. Lösung erst mit einer
+  Unterscheidung Gebäude-Wand gegen Zaun in der Kontur.
+- **Räume in Höfen** (27.2): Barawitzka EG 8 Räume ≥ 90 % im geschlossenen Hof zwischen den Trakten (5 TERRASSE,
+  `raum_1`/`raum_4`/`raum_36` ohne Typ) — nach der Owner-Definition kein Loch, also kein Innenhof, aber auch nicht
+  Freie; Am Rain EG `raum_4`/`raum_5`/`raum_7` TERRASSE in den eingezäunten Gärten. „Innenhof-Flächen sind keine
+  Räume" ist nicht gebaut (kein Fall auf den 20 Plänen, der eindeutig Innenhof und Raum ist). P2 · Owner; Kandidat
+  für die KI-Zweitmeinung (Phase B: „Hof/Garten?").
+- **`hauseingang` per Türtext ohne AUSSEN-Seite** (`tuer_typisierung.py:218-220`) bleibt `final_exit`: Barawitzka
+  `tuer_31` `KEIN_RAUM`\|`KEIN_RAUM`, einziger Ausgang des Geschosses (F-03, § 20.5) — nicht angefasst, Türzuordnung
+  zuerst (S4c-Gebiet). P1 · Owner.
+- **Durchfahrten breiter als 2,6 m** (`_AUSSEN_DURCHGANG_MAX_MM`) ohne Türblatt werden keine Öffnung und darum kein
+  Ausgang („breiter = Fassaden-Artefakt"); der Owner-Satz „Durchfahrt ist Ausgang" gilt dort nicht. Auf den 20 Plänen
+  nicht gemessen. P2 · Selman.
+- **Türseite „AUSSEN-Innenhof"** nicht eingeführt (Contract-Naht, 27.2) — bei Bedarf Board-Antrag.
+- **Board-Eintrag an Enis** (27.8) erst in Phase B; `Projekte/_ergebnis/` nicht neu erzeugt (nur der neue Ordner
+  `Mollgasse_EG/ausgaenge/` mit den vier Bildern), Prüfstrecke am Abschluss der Phase A.
+- **Vorbestehend rot, nicht aus diesem Commit:** `tests/normwissen/test_quellenblock_e07_rl4.py::test_kein_contract_wert_und_kein_konsument`
+  (`ki_backends.py:58`, § 26.4) — Abschnitt 3, Phase B.

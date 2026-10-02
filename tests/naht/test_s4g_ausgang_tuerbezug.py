@@ -4,7 +4,15 @@ Owner 2026-09-23: „Ein Ausgang ohne Türbezug ist kein Ausgang." Owner-Auftrag
 2026-09-30, Punkt 2b: Türbezug = Tür/Öffnung mit Raumseite und Rolle ≠
 ``balkontuer``; die EG-Ausnahme der Freiflächen-Regel (Mollgasse Südgarten-Tür,
 S4g c) bleibt erhalten. Messung und Stand: ``LUECKEN.md`` § 13.
+
+Abschnitt 5 (Owner-Entscheid 6, 2026-10-01, ``docs/AUFTRAG_2026-10-01.md`` § 5):
+Ausgang = Übergang ins Freie, mit oder ohne Tür; Innenhof (Loch der äußeren
+Gebäudekontur) ist kein Ausgang und kein Fluchtziel; keine Tür-in-1,5-m-Regel.
+Die vier Ausgänge ohne Tür (``footprint.hauptausgaenge``) einzeln entschieden:
+``LUECKEN.md`` § 27.
 """
+import math
+
 import pytest
 
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum, Tuer
@@ -32,15 +40,59 @@ def moll():
 
 
 @pytest.mark.xfail(strict=True, reason=(
-    "S4g a offen (LUECKEN.md § 13): footprint.hauptausgaenge liefert exit_1 … exit_4 "
-    "ohne Tür. Ohne sie (gemessen) fallen 10 von 14 GRAPH-Wegen weg (exit_4 9, exit_3 1: "
-    "‚kein final_exit erreichbar‘), Leuchten 51 → 47, und "
-    "test_soll_mollgasse::test_soll_hofausgaenge_cluster_a_und_b wird rot (Cluster A "
-    "hängt nur an exit_3; die Hof-Türen tuer_52/tuer_68 haben beidseits raum_51, F-13)."))
+    "S4g a teilweise (LUECKEN.md § 27, Abschnitt 5): exit_1/exit_2 münden nicht ins Freie "
+    "und entfallen; exit_3/exit_4 bleiben ohne Tür, weil sie ins Freie münden (Owner-"
+    "Entscheid 6: Ausgang mit oder ohne Tür). Ein türgebundener Ersatz fehlt: tuer_52 "
+    "(Stiegenhaus → Garten) und tuer_64/tuer_65 (Laubengang → Garten) haben keine "
+    "AUSSEN-Seite, weil die Flutungen raum_51/raum_41 ihre Außenseite decken (F-13). Ohne "
+    "exit_3/exit_4 (gemessen § 13) fallen 10 von 14 GRAPH-Wegen weg (exit_4 9, exit_3 1), "
+    "und test_soll_mollgasse::test_soll_hofausgaenge_cluster_a_und_b wird rot."))
 def test_soll_mollgasse_eg_kein_ausgang_ohne_tuerbezug(moll):
-    """Naht S4g a: ``footprint.hauptausgaenge`` erzeugt ``exit_1`` … ``exit_4``
-    ohne Tür (Bogenpaar an der Außenkante)."""
+    """Naht S4g a: ``footprint.hauptausgaenge`` erzeugt Ausgänge ohne Tür
+    (Bogenpaar an der Außenkante); seit Abschnitt 5 nur noch ``exit_3`` und
+    ``exit_4``."""
     assert _ohne_tuer(moll) == []
+
+
+# Die vier footprint-Ausgänge des Stands fd5dedb, einzeln entschieden
+# (LUECKEN.md § 27.3, je ein Bild unter Projekte/_ergebnis/Mollgasse_EG/ausgaenge/).
+# Münden nicht ins Freie → kein Ausgang:
+_NICHT_INS_FREIE = {
+    "exit_1": (2703279.9, 1521765.1),   # Doppeltür EI2 30-C in Loch 0 der Außenkontur
+    "exit_2": (2703364.9, 1524050.1),   # zwei fremde Bögen, im Gebäude
+}
+# Münden in den Garten außerhalb der Außenkontur → bleiben final_exit:
+_INS_FREIE = {
+    "exit_3": (2689945.7, 1523965.4),
+    "exit_4": (2665832.8, 1537216.2),
+}
+
+
+def test_mollgasse_eg_innenhof_doppeltuer_ist_kein_ausgang(moll):
+    """Owner-Entscheid 6: der Innenhof ist kein Ausgang und kein Fluchtziel.
+    ``exit_1`` (Doppeltür aus dem Osttrakt in Loch 0 der Außenkontur) und
+    ``exit_2`` (zwei fremde Bögen im Gebäude) münden nicht ins Freie: kein
+    ``final_exit`` in 1,5 m, kein Fluchtweg mit diesem Ziel."""
+    final = [a.xy_mm for a in moll.ausgaenge if a.typ == "final_exit"]
+    nah = {k: [p for p in final if math.dist(p, xy) < 1500.0]
+           for k, xy in _NICHT_INS_FREIE.items()}
+    assert not any(nah.values()), nah
+    ziele = {s.ziel_ausgang for s in moll.zirkulation.segmente}
+    assert not ziele & set(_NICHT_INS_FREIE), ziele
+
+
+def test_mollgasse_eg_durchgang_ins_freie_bleibt_final_exit(moll):
+    """Owner-Entscheid 6: ein Ausgang braucht keine Tür. ``exit_3``/``exit_4``
+    münden in den Garten außerhalb der Außenkontur und bleiben ``final_exit``;
+    ebenso die Öffnung ohne Türblatt ``aussenoeffnung_1`` (AUSSEN-Seite)."""
+    aus = {a.id: a for a in moll.ausgaenge}
+    for k, xy in _INS_FREIE.items():
+        assert k in aus and aus[k].typ == "final_exit", (k, sorted(aus))
+        assert math.dist(aus[k].xy_mm, xy) < 1.0, (k, aus[k].xy_mm)
+    assert aus["exit_aussenoeffnung_1"].typ == "final_exit"
+    t = next(t for t in moll.tueren if t.id == "aussenoeffnung_1")
+    assert t.ohne_tuerblatt is True
+    assert AUSSEN in (t.von_raum, t.nach_raum)
 
 
 def test_mollgasse_eg_messfall_suedgarten_und_hoftuer(moll):

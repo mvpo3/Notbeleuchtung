@@ -57,18 +57,20 @@ def _eingabe(pfad, floor):
     Konstruktion gegen jede Reihenfolgewirkung aus ``leite_ausgaenge``
     geschützt und das grüne Feld „segmente" belegte keine Segment-Invarianz
     des Produktionspfads. Jetzt läuft die ganze Kette permutiert; dazu
-    gehören ``hauptausgaenge`` (die Basis des Dedups) und ``flw_enden``."""
+    gehören die footprint-Ausgänge (die Basis des Dedups) und ``flw_enden``.
+    Abgegriffen wird die Basis seit Abschnitt 5 (LUECKEN.md § 27) hinter
+    ``nur_ins_freie`` — so, wie ``provider.py`` sie in die Dedup-Schleife gibt."""
     plan(pfad)
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
     from notbeleuchtung.raumerkennung import provider as P
 
     eingabe: dict = {}
     echt = {n: getattr(P, n) for n in
-            ("hauptausgaenge", "bilde_wohnungen", "leite_ausgaenge", "fluchtwege")}
+            ("nur_ins_freie", "bilde_wohnungen", "leite_ausgaenge", "fluchtwege")}
 
-    def spion_ha(plan_, bounds):
-        aus = echt["hauptausgaenge"](plan_, bounds)
-        eingabe["ausgaenge_basis"] = copy.deepcopy(aus)
+    def spion_nf(ausgaenge, aussen, geschoss):
+        aus = echt["nur_ins_freie"](ausgaenge, aussen, geschoss)
+        eingabe["ausgaenge_basis"] = copy.deepcopy(aus[0])
         return aus
 
     def spion_bw(raeume, tueren, warnungen=None):
@@ -89,7 +91,7 @@ def _eingabe(pfad, floor):
         return echt["fluchtwege"](raeume, tueren, ausgaenge, bisher, geschoss,
                                   warnungen, durchleitung)
 
-    P.hauptausgaenge, P.bilde_wohnungen = spion_ha, spion_bw
+    P.nur_ins_freie, P.bilde_wohnungen = spion_nf, spion_bw
     P.leite_ausgaenge, P.fluchtwege = spion_la, spion_fw
     try:
         prov = ArchitekturRaumProvider()
