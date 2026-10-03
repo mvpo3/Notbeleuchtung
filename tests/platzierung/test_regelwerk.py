@@ -47,6 +47,18 @@ def test_jede_basis_regel_hat_umsetzung_oder_begruendung():
     assert not doppelt, f"Regeln doppelt gemappt: {doppelt}"
 
 
+def test_jede_ergaenzungsregel_ist_klassifiziert():
+    """Review 2026-10-03: auch die Ergänzungsregeln (RW-101..131) sind vollständig
+    als UMSETZUNG (gebaut) oder NICHT_UMSETZBAR (Grund/Lane) klassifiziert — die
+    „dokumentiert vs. umgesetzt"-Lücke endete vorher bei RW-035. Wächst das
+    Regelwerk, fällt der Test auf, bis die neue Regel eingeordnet ist."""
+    ergaenzung = [r for r in regelwerk.alle().values() if not r.ist_basis]
+    assert ergaenzung, "keine Ergänzungsregeln geladen"
+    for r in ergaenzung:
+        ok = r.id in regelwerk.UMSETZUNG or r.id in regelwerk.NICHT_UMSETZBAR
+        assert ok, f"{r.id} ({r.thema}): weder UMSETZUNG noch NICHT_UMSETZBAR"
+
+
 def test_quelle_string_traegt_praxis_praefix():
     q = regelwerk.quelle("RW-006")
     assert q.startswith(regelwerk.PRAXIS_PREFIX)

@@ -71,6 +71,12 @@ UMSETZUNG: dict[str, str] = {
     "RW-031": "flaechen_strategy + fachpraxis (Antipanik in UG-/Allgemeinräumen, AP3-Referenz-Praxis; Lichtberechnung bestätigt)",
     "RW-032": "dokumentiert (Decke mittig = zulässige Alternative; Regelfall Wand = NB-R14/RW-014 gebaut)",
     "RW-034": "pipeline.run → render/lux_nachweis_bericht.schreibe_bericht (automatisch je Geschoss-Lauf)",
+    # Ergänzungsregeln (RW-101..131), die eine schon gebaute Engine-Praxis belegen
+    # (Review 2026-10-03, docs/REVIEW_Plaene_zeichnen_Wissen_2026-10-03.md). Code
+    # im Checkout verifiziert — kein norm_quelle-/Verhaltens-Change, reine Nachweisung.
+    "RW-103": "aussen_strategy.plan_aussenleuchten (SL außerhalb Schlussausgang, EN 1838 §4.1.2 b) + platzierer",
+    "RW-117": "abstand_nachpass (_DUBLETTEN_ABSTAND_MM={sicherheitsleuchte:2000}; RZ-Merge nur RZ↔RZ im Pfad via _MIN_RZ_MERGE_MM, kein Knoten-Merge)",
+    "RW-119": "render/dxf_renderer (NODEID LAYER_NODEID 'din_SIBEL_63_luminaire_ID' + circuit_hint-Stromkreis-Label; OVE E 8101 560.9.15)",
 }
 
 # Regeln ohne Engine-Umsetzung mit dokumentiertem Grund (Naht/Input fehlt bzw.
@@ -88,6 +94,37 @@ NICHT_UMSETZBAR: dict[str, str] = {
     "RW-028": "AP-Längsachsen-Rotation: Antipanik wird derzeit rotationslos gesetzt — Achs-Rotation = Folge-Slice (Golden-Shift, Owner-GO)",
     "RW-033": "OG-I-Gang-Ausnahme: sichtkette dünnt bereits aus; explizite Ausnahme-Regel = Folge-Slice (verändert Mollgasse-Bänder)",
     "RW-035": "Stiegenpfeil-Farb-Heuristik = Erkennungs-Lane (Selman)",
+    # Ergänzungsregeln RW-101..131 (nachrangig, greifen nur ohne Basis-Regel) —
+    # klassifiziert im Review 2026-10-03. Grund + Lane je Regel; die drei schon
+    # gebauten (RW-103/117/119) stehen in UMSETZUNG.
+    "RW-101": "Knick-RZ im Stiegenlauf (Zwischenpodest): stgh plant nur Antritt/Austritt — baubarer Folge-Slice (Leonis), braucht Zwischenpodest-Erkennung + Golden-Nachzug",
+    "RW-102": "Aufheller am STGH-Vorbereich-Knoten (Schleuse/Lift/Stiegenfuß): braucht Knoten-Erkennung — Folge-Slice (Leonis)",
+    "RW-104": "Schulraum-Muster (Unterrichtsraum = Innen-Notlicht): braucht Bildungsraum-Nutzungsklasse — 3-Owner-Contract (T2, docs/REVIEW_Plaene_zeichnen_Wissen_2026-10-03.md)",
+    "RW-105": "Beidseitig-Reihe quer zu Gang-Ankünften: braucht seitliche Raum-Ankunftserkennung (Selman-Naht) — Folge-Slice",
+    "RW-106": "Knoten einseitig+beidseitig kombiniert: braucht 3-Richtungs-Knotenerkennung — Folge-Slice (Leonis/Selman)",
+    "RW-107": "Antipanik flächenbezogen (Saal/Cluster, EN 1838 4.3): braucht offene-Fläche-Zirkulation (Selman) + Schul-Typ (T2)",
+    "RW-108": "Barrierefrei-WC-Antipanik (EN 1838 4.3.8): Norm-Trigger (Enis) + BF-WC-Erkennung (Selman)",
+    "RW-109": "Sanitär-Schwellen (OVE E 8101 718.560.9.001.AT): Norm-/LB-Lane (Enis)",
+    "RW-110": "Mehrstufige Tür-Folgen (Raum→Raum→Gang, EN 1838 4.3.9): je Tür eigenes Tür-RZ — baubarer Folge-Slice (Leonis), braucht Türketten-Zirkulation (Selman)",
+    "RW-111": "Gang-Aufheller-Mehrfachbedienung (SL-Analogie NB-R08): baubarer Folge-Slice (Leonis)",
+    "RW-112": "Gefährdungs-SL (EN 1838 4.4) nur über Gefährdungsbeurteilung, nie aus Raumname: LB-/Norm-Lane (Enis)",
+    "RW-113": "Schräg-Rotations-Erhalt Bestand: Erklärungs-DXF-/Migrations-Tooling, kein Platzierer-Concern",
+    "RW-114": "RZ ersetzt keine Stufen-SL (EN 1838 4.1.2 b): Nachweis-/Validierungs-Lane (Enis/validierung)",
+    "RW-115": "Absturzkanten als Wegbarriere: Fluchtweg-Routing/Hinderniserkennung (Selman-Naht)",
+    "RW-116": "Rampe kein automatischer Fluchtweg: Erkennungs-Klassifikation (Selman)",
+    "RW-118": "Geschoss-Individualität (nie kopieren; vertikale Stiegenkern-Zuordnung): Erkennungs-/Prozessregel (Selman)",
+    "RW-120": "Bestandsform→Symbol-Zuordnung: Erklärungs-DXF-/Migrations-Tooling (symbols/library), kein Platzierer-Concern",
+    "RW-121": "Rotations-/Skalierungs-Erhalt Bestand→RIVO: Migrations-Tooling-Regel, kein Platzierer-Concern",
+    "RW-122": "Attribut/Grafik-Widerspruch sichtbar führen: Analyse-/Prüf-Prozessregel",
+    "RW-123": "Rolle≠Produkt bei SL-Bestand: Quellen-Disziplin/Analyse-Prozessregel (vgl. QUELLE_TUERLEUCHTE)",
+    "RW-124": "Plananker-Text ≠ Funktionsbeleg: Eingabe-/Erkennungs-Disziplin (Selman + scripts/dxf_healthcheck)",
+    "RW-125": "SL belegt nur eigene Teilfläche (keine Lux-Deckung zwischen Spots): Lux-Nachweis-Lane (Enis/lux)",
+    "RW-126": "Außenleuchten kein begehbarer Wegnachweis: Außenweg-Nachweis-Lane (Enis/validierung)",
+    "RW-127": "Erfassungsrand ≠ Prüfrand: Analyse-/Prüf-Prozessregel",
+    "RW-128": "Sichtkette erst nach belegter Tür-/Rampen-Passage: Erkennungs-/Nachweis-Disziplin (Selman + §4.1.2-Prüfung)",
+    "RW-129": "Keine Sonderregel aus Raumlabel (HEIZZENTRALE/Technik): Erkennungs-/Norm-Disziplin (Selman/Enis)",
+    "RW-130": "Schul-Einstufung 3.200-m²-Netto / 3 h (OIB RL2, OVE R12-2): Norm-/Projektkontext-Lane (Enis)",
+    "RW-131": "Endausgang-Dreiklang RZ+Tür+Außenweg (EN 1838 4.1.2 g): RZ-Teil = validierung Regel #5; voller Dreiklang = Nachweis-Lane (Enis/validierung)",
 }
 
 
