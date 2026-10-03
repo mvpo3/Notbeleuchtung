@@ -64,6 +64,11 @@ def _stempel(plan: DxfPlan) -> list[tuple[str, tuple[float, float]]]:
 # fremden Wörtern. So typt „VR"/„AR"/„TRH BT1 EG" korrekt, „Garten" bleibt UNKNOWN.
 _EXTRA_LABELS: dict[str, RoomType] = {
     "vr": RoomType.ENTRANCE_HALL,    # Vorraum
+    # „Vorr." = Vorraum: Muthgasse-Raumstempel auf A-AREA-IDEN (E2–E9, 49 MTEXT,
+    # je mit m²-Nachbar). OFFENE_FRAGEN Frage 2, Teil „Vorr.", vom Owner
+    # 2026-09-29 selbst entschieden; „Schrankr." bleibt bei Enis. Token-exakt:
+    # „Vorrat"/„Vorratsraum" bleiben UNKNOWN.
+    "vorr": RoomType.ENTRANCE_HALL,
     "ar": RoomType.STORAGE,          # Abstellraum
     "asr": RoomType.STORAGE,         # Abstellraum (Barawitzka-Kürzel)
     "sz": RoomType.BEDROOM,          # Schlafzimmer

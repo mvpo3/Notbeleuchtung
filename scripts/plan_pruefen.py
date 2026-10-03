@@ -12,6 +12,7 @@ schräg dominante Richtungen bleiben bei 0° und werden im Bericht vermerkt.
 """
 from __future__ import annotations
 
+import gc
 import itertools
 import json
 import math
@@ -36,6 +37,7 @@ import ezdxf
 import matplotlib.pyplot as plt
 import numpy as np
 from ezdxf.addons.drawing import Frontend, RenderContext
+from ezdxf.addons.drawing.config import Configuration
 from ezdxf.addons.drawing.matplotlib import MatplotlibBackend
 from ezdxf.addons.drawing.properties import LayoutProperties
 from shapely.geometry import Point, Polygon
@@ -63,6 +65,7 @@ from notbeleuchtung.raumerkennung.stempel_anker import (
     zentrum,
 )
 from notbeleuchtung.raumerkennung.tuer_typisierung import _BRANDSCHUTZ_RE
+from notbeleuchtung.raumerkennung.wohnungsklasse import korrigierte_rollen
 
 EINGANG = REPO / "Projekte" / "_eingang"
 # Ausgabeordner überschreibbar (Sammelläufe über alle Repo-Grundrisse
@@ -71,6 +74,8 @@ ERGEBNIS = Path(os.environ.get("PLAN_PRUEFEN_ERGEBNIS",
                                REPO / "Projekte" / "_ergebnis"))
 
 _FARBEN = plt.cm.tab20.colors  # type: ignore[attr-defined]
+#: Mindestlänge von Strich und Lücke im Plan-Render (mm), s. `_figur` (2f).
+_MIN_STRICH_MM = 50.0
 
 
 def _git_hash() -> str:
@@ -141,12 +146,20 @@ def _figur(plan: DxfPlan, zoom=None) -> tuple[plt.Figure, plt.Axes]:
     doc = plan.doc
     if "Standard" in doc.styles:  # SHX-'txt' hat Glyph-Lücken im mpl-Backend
         doc.styles.get("Standard").dxf.font = "DejaVuSans.ttf"
+    # Punkt 2f (RAM): geschlossene Figuren hängen in Referenzzyklen und gehen
+    # erst mit dem Zyklen-GC — ohne das lebte die vorige Figur neben der neuen.
+    gc.collect()
     fig = plt.figure(figsize=(12, 12), dpi=100)
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_axis_off()
     lp = LayoutProperties.from_layout(doc.modelspace())
     lp.set_colors("#FFFFFF")
-    Frontend(RenderContext(doc), MatplotlibBackend(ax)).draw_layout(
+    # Punkt 2f (RAM): Strich und Lücke einer Linientyp-Linie mindestens
+    # `_MIN_STRICH_MM` — sonst zerlegt das Frontend z. B. eine 84-m-Achse mit
+    # Punkt-Linientyp in 372 677 Einzelstriche (Am Rain OG4: 16,9 Mio. Segmente,
+    # 5,6 GB und 108 s je Bild). 50 mm sind auf 1 200 px ≤ 2 px.
+    cfg = Configuration(min_dash_length=_MIN_STRICH_MM / plan.factor)
+    Frontend(RenderContext(doc), MatplotlibBackend(ax), config=cfg).draw_layout(
         plan.space, finalize=True, layout_properties=lp)
     ax.set_aspect("equal")
     x0, x1 = ax.get_xlim()
@@ -710,6 +723,26 @@ def _bild_fluchtweg(plan: DxfPlan, zoom, modell, wpolys: dict,
     _speichern(fig, pfad, rot)
 
 
+def _raumflaeche_stil(r) -> dict:
+    """Füll-Stil einer Raumfläche in 06_platzierung.png.
+
+    Vier Fälle statt drei: § 6g Schritt 3 verlangt den UNBESTIMMTEN Raum
+    (GANG/VORRAUM ohne entschiedene Nutzungsklasse) eigens ausgewiesen —
+    magenta wie in den beiden anderen Darstellungen. Vorher fiel er in den
+    neutralen else-Zweig und war von einem entschieden allgemeinen Raum nicht
+    zu unterscheiden; das Bild behauptete eine Entscheidung, die niemand
+    getroffen hat (Befund B5).
+    """
+    if r.nutzungsklasse == "KEIN_RAUM":
+        return {"fc": "none", "ec": "#dd0000", "hatch": "////", "lw": 1.0}
+    if r.nutzungsklasse == "WOHNUNG_PRIVAT":
+        return {"fc": "#c8c8c8", "ec": "#909090", "alpha": 0.5, "lw": 0.8}
+    if r.raum_typ in ("GANG", "VORRAUM") and r.nutzungsklasse is None:
+        return {"fc": "#ff00ff", "ec": "#8b0060", "alpha": 0.35, "lw": 1.0,
+                "hatch": "xx"}
+    return {"fc": "white", "ec": "#909090", "alpha": 0.25, "lw": 0.8}
+
+
 def _bild_platzierung(plan: DxfPlan, zoom, modell, platz,
                       pfad: Path, rot: int) -> None:
     """06_platzierung.png: Räume nach Nutzungsklasse (privat grau, allgemein
@@ -723,17 +756,9 @@ def _bild_platzierung(plan: DxfPlan, zoom, modell, platz,
     for r in modell.raeume:
         if len(r.polygon_mm) < 3:
             continue
-        xs = [x / f for x, _ in r.polygon_mm]
-        ys = [y / f for _, y in r.polygon_mm]
-        if r.nutzungsklasse == "KEIN_RAUM":
-            ax.fill(xs, ys, fc="none", ec="#dd0000", hatch="////", lw=1.0,
-                    zorder=ztop)
-        elif r.nutzungsklasse == "WOHNUNG_PRIVAT":
-            ax.fill(xs, ys, fc="#c8c8c8", ec="#909090", alpha=0.5, lw=0.8,
-                    zorder=ztop)
-        else:
-            ax.fill(xs, ys, fc="white", ec="#909090", alpha=0.25, lw=0.8,
-                    zorder=ztop)
+        ax.fill([x / f for x, _ in r.polygon_mm],
+                [y / f for _, y in r.polygon_mm],
+                zorder=ztop, **_raumflaeche_stil(r))
     for sm in modell.stiegenhaeuser:
         for z in sm.verbotszonen_mm:
             if len(z) >= 3:
@@ -1095,6 +1120,27 @@ def _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz,
     return l
 
 
+#: Punkt 2f (RAM): Restweg-Zeile je EG-Plan einmal je Prozess. Ohne das parste
+#: der Lauf über alle Pläne den EG-Plan je Obergeschoss neu — neben dem OG im
+#: Speicher (Am Rain: 4 OG × EG-Parse). Der EG-Lauf selbst legt seine Zeile
+#: hier ab (`_fachteil3`, nur bei Geschoss „EG" = derselbe Parse-Aufruf).
+_RESTWEG_EG: dict[Path, str] = {}
+
+
+def _restweg_zeile(eg_dxf: Path, eg) -> str:
+    """Restweg-Zeile aus dem RaumModell des EG-Plans."""
+    stg = {f"seg_graph_{t.id}" for t in eg.tueren
+           if t.tuer_detail == "stiegenhaustuer"}
+    laengen = [s.laenge_mm for s in eg.zirkulation.segmente
+               if s.segment_id in stg]
+    if not laengen:
+        return (f"Restweg im EG: unbekannt ({eg_dxf.name}: kein Segment "
+                "Stiegenhaustür→final_exit)")
+    return (f"Restweg im EG ({eg_dxf.name}): "
+            f"{min(laengen) / 1000:.1f}–{max(laengen) / 1000:.1f} m "
+            "(Stiegenhaustür → nächster final_exit)")
+
+
 def _restweg_im_eg(dxf: Path, geschoss: str) -> str | None:
     """Für OG-Pläne: Restweg im EG (Stiegenhaustür → final_exit) aus dem
     EG-Plan derselben Projektfamilie in Projekte/_eingang; sonst 'unbekannt'.
@@ -1106,18 +1152,12 @@ def _restweg_im_eg(dxf: Path, geschoss: str) -> str | None:
     kandidaten = sorted(Path("Projekte/_eingang").glob(f"{familie}*EG*.dxf"))
     if not kandidaten:
         return "Restweg im EG: unbekannt (kein EG-Plan in Projekte/_eingang)"
-    from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
-    eg = ArchitekturRaumProvider().parse(str(kandidaten[0]), "EG")
-    stg = {f"seg_graph_{t.id}" for t in eg.tueren
-           if t.tuer_detail == "stiegenhaustuer"}
-    laengen = [s.laenge_mm for s in eg.zirkulation.segmente
-               if s.segment_id in stg]
-    if not laengen:
-        return (f"Restweg im EG: unbekannt ({kandidaten[0].name}: kein Segment "
-                "Stiegenhaustür→final_exit)")
-    return (f"Restweg im EG ({kandidaten[0].name}): "
-            f"{min(laengen) / 1000:.1f}–{max(laengen) / 1000:.1f} m "
-            "(Stiegenhaustür → nächster final_exit)")
+    schluessel = kandidaten[0].resolve()
+    if schluessel not in _RESTWEG_EG:
+        from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
+        eg = ArchitekturRaumProvider().parse(str(kandidaten[0]), "EG")
+        _RESTWEG_EG[schluessel] = _restweg_zeile(kandidaten[0], eg)
+    return _RESTWEG_EG[schluessel]
 
 
 def _geschoss_md(befund, ausg_warnungen) -> list[str]:
@@ -1138,8 +1178,12 @@ def _geschoss_md(befund, ausg_warnungen) -> list[str]:
 
 
 def _kreuzcheck_md(modell, kc, flw_warnungen: list[str],
-                   restweg: str | None) -> list[str]:
-    """Markdown-Block: Kreuzcheck + Fluchtweg-Warnungen + untypisierte Türen."""
+                   restweg: str | None,
+                   wk_warnungen: list[str] = ()) -> list[str]:
+    """Markdown-Block: Kreuzcheck + Fluchtweg-Warnungen + unbestimmte Räume
+    und Durchleitungen (``wk_warnungen`` = Provider-Attribut
+    ``wohnungsklasse_warnungen``, § 6g Punkt 3: „mit Grund, im Bericht
+    aufgelistet") + untypisierte Türen."""
     l = ["", "## Kreuzcheck Fluchtweglinien ↔ Endausgänge", ""]
     if restweg:
         l += [restweg, ""]
@@ -1164,6 +1208,29 @@ def _kreuzcheck_md(modell, kc, flw_warnungen: list[str],
     if flw_warnungen:
         l += ["", "### Fluchtweg-Warnungen", ""]
         l += [f"- ⚠ {w}" for w in flw_warnungen]
+    unbestimmt = [w for w in wk_warnungen if w.startswith("unbestimmt:")]
+    if unbestimmt:
+        l += ["", "### Unbestimmte Räume (§ 6g)", ""]
+        l += [f"- ⚠ {w}" for w in unbestimmt]
+    # Messfall S4c/S3b: vom Stiegenhaus über keine Tür erreichbar — auch dann,
+    # wenn der Raum als allgemein gilt (Erschließung nach rohen Türen; E5
+    # Satz 2 ist seit dem Owner-Grundsatz 2026-09-22 aufgehoben).
+    loch = [w for w in wk_warnungen if w.startswith("loch:")]
+    if loch:
+        l += ["", "### Tür- oder Raumerkennungslöcher (Messfall S4c/S3b)", ""]
+        l += [f"- ⚠ {w}" for w in loch]
+    # Owner 2026-09-22 (G2): wo die Beleg-Probe keinen voll ankerbestätigten
+    # Fixpunkt findet und es beim allgemeinen bleibt, steht eine Zeile mit
+    # Grund im Bericht. Ob daneben ein zweiter Fixpunkt besteht, prüft die
+    # Probe nicht (Reviewer Runde 10, Linse Naht, Hinweis 4).
+    tiebreak = [w for w in wk_warnungen if w.startswith("tiebreak:")]
+    if tiebreak:
+        l += ["", "### Tiebreak (Board 4): ankerprivater Raum bleibt allgemein", ""]
+        l += [f"- ⚠ {w}" for w in tiebreak]
+    durch = [w for w in wk_warnungen if w.startswith("durchleitung:")]
+    if durch:
+        l += ["", "### Durchleitung durch private Räume (§ 6g)", ""]
+        l += [f"- {w}" for w in durch]
     # Gründe-Tabelle untypisierte Türen (Fachteil „untypisierte Türen").
     gruende = Counter(t.untypisiert_grund for t in modell.tueren
                       if t.tuer_detail is None and t.untypisiert_grund)
@@ -1223,6 +1290,8 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     geschoss = befund.geschoss
     bundle = build_default_bundle()
     modell = bundle.raum.parse(str(dxf), geschoss)
+    if geschoss == "EG":     # 2f: Restweg-Zeile für die OG derselben Familie
+        _RESTWEG_EG.setdefault(dxf.resolve(), _restweg_zeile(dxf, modell))
     platz = bundle.platzierer.place(modell, bundle.norm, None)
     kc = getattr(bundle.raum, "letzter_kreuzcheck", None)
     flw_warnungen = list(getattr(bundle.raum, "fluchtweg_warnungen", []))
@@ -1235,8 +1304,12 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
 
     segs = {s.segment_id: s for s in modell.zirkulation.segmente}
     wegl = []
+    # Fluchtweg-Auskunft: die KORRIGIERTEN Rollen (E7) — dieselben
+    # Wohnungseingänge, an denen ``fluchtwege`` die GRAPH-Segmente startet;
+    # das Modell selbst trägt die rohen Rollen.
+    rollen = korrigierte_rollen(modell.raeume, modell.tueren)
     for t in modell.tueren:
-        if t.tuer_detail != "wohnungseingang":
+        if rollen[t.id] != "wohnungseingang":
             continue
         s = segs.get(f"seg_graph_{t.id}")
         if s is not None:
@@ -1259,7 +1332,9 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     md = md + _aussen_md(ab, ueber, modell.ausgaenge)
     md = md + _geschoss_md(befund, ausg_warnungen)
     md = md + _kreuzcheck_md(modell, kc, flw_warnungen,
-                             _restweg_im_eg(dxf, geschoss))
+                             _restweg_im_eg(dxf, geschoss),
+                             list(getattr(bundle.raum,
+                                          "wohnungsklasse_warnungen", [])))
     refz = _referenzvergleich(dxf.stem, plan, zoom, modell, platz, ziel, rot)
     if refz is not None:
         md = md + refz["md"]
@@ -1281,6 +1356,14 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
         modell_n, modell_m2 = None, None
     return {
         "md": md,
+        # Lade-/Wand-Warnungen des Providers (`keine_wand_entities`,
+        # `keine_geometrie`, `keine_raeume`) → bericht.md „Warnungen" (2a),
+        # dazu je freie Fläche im Wohnungsumriss die Entscheidung (2d), die
+        # Tür-Warnungen (`seite_fehlt`) und der K3-Sanitärbefund (2g, O-04).
+        "wand_warnungen": list(getattr(bundle.raum, "wand_warnungen", []))
+        + list(getattr(bundle.raum, "tuer_warnungen", []))
+        + [f"sanitaer: {b}" for b in getattr(bundle.raum, "sanitaer_befund", [])]
+        + list(getattr(bundle.raum, "freiflaeche_befund", [])),
         "modell_ueberlapper": modell_n,
         "modell_doppelt_m2": modell_m2,
         "tueren_typisiert": sum(1 for t in modell.tueren if t.tuer_detail),
@@ -1597,7 +1680,8 @@ def plan_pruefen(dxf: Path) -> dict:
              rot_vermerk, iou_zeilen, iou_mittel, laufzeit, len(raeume),
              material_block + f3["md"], quelle, kuerzel_hinweise,
              entfallen, bereinigt,
-             (f3.get("modell_ueberlapper"), f3.get("modell_doppelt_m2")))
+             (f3.get("modell_ueberlapper"), f3.get("modell_doppelt_m2")),
+             f3.get("wand_warnungen", ()))
     flags = sum(1 for z in zuordnungen if z.flag != "ok")
     # Zählung aus derselben Quelle wie raeume.json: Stempel-Einträge + Rest-Einträge.
     rest_n = sum(1 for e in eintraege if e["flag"] == "kein_stempel")
@@ -1760,7 +1844,8 @@ def _bericht(pfad: Path, name: str, zuordnungen: list[Zuordnung], rest,
              kuerzel_hinweise: list[str] | None = None,
              entfallen: list | None = None,
              ber: dict | None = None,
-             modell_ueberlapp: tuple | None = None) -> None:
+             modell_ueberlapp: tuple | None = None,
+             provider_warnungen=()) -> None:
     quelle = quelle or {}
     l = [f"# Prüfbericht {name}", "",
          f"Raum-Polygon-Quelle: `{raum_quelle}` — {rot_vermerk}", ""]
@@ -1791,8 +1876,9 @@ def _bericht(pfad: Path, name: str, zuordnungen: list[Zuordnung], rest,
         cx, cy = zentrum(r)
         l.append(f"- {r.id} [{quelle.get(r.id, '?')}] {r.raum_typ or '—'}: "
                  f"{r.flaeche_m2:.2f} m², Zentrum ({cx / 1000:.2f}, {cy / 1000:.2f}) m")
-    warn = [f"Stempel ohne Polygon: „{z.stempel.name}“"
-            for z in zuordnungen if z.polygon_index is None]
+    warn = list(provider_warnungen)
+    warn += [f"Stempel ohne Polygon: „{z.stempel.name}“"
+             for z in zuordnungen if z.polygon_index is None]
     warn += [f"Polygon ohne Stempel: {r.id} ({r.flaeche_m2:.2f} m²)" for r in rest]
     warn += [f"Abweichung > 10 % (Erkennung, roh): „{z.stempel.name}“ "
              f"({z.abweichung_prozent:+.1f} %)"
@@ -1982,6 +2068,7 @@ def main() -> int:
                   f"{r['referenz_fehlend']} fehlend / {r['referenz_ueberzaehlig']} "
                   f"überzählig ({r['referenz_quote'] * 100:.0f} %)")
         ergebnisse.append(r)
+        gc.collect()   # 2f: Plan, Modell und Figuren des Plans vor dem nächsten freigeben
     if ergebnisse:
         _verlauf_schreiben(ergebnisse, commit)
         _material_report(ergebnisse)

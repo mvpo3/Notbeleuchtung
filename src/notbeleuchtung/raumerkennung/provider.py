@@ -10,28 +10,35 @@ sauberen, self-contained Port-Helfer (``._port.parsers.room_faces``,
 """
 from __future__ import annotations
 
+import copy
+
 from shapely.geometry import Point, Polygon
 from shapely.ops import unary_union
 
 from notbeleuchtung.hauptengine.contracts import RaumModell
-from notbeleuchtung.hauptengine.contracts.raum_modell import Tuer
+from notbeleuchtung.hauptengine.contracts.raum_modell import BBox, Tuer
 
 from .ausgaenge import leite_ausgaenge, ohne_unzulaessige_final_exits
-from .aussenbereich import erkenne_aussenbereiche
+from .aussenbereich import erkenne_aussenbereiche, waehle_innen_zonen
 from .dxf_load import bounds_mm, lade_dxf
 from .fluchtweg import explizite_linien, fluchtwege, linien_segmente
 from .footprint import hauptausgaenge
+from .freiflaeche import fuelle_freie_flaechen
 from .gang_anker import anker_fuer_gang
 from .geometrie_typ import typisiere_geometrisch
 from .geschoss import geschoss_befund
 from .kaskade import KaskadeErgebnis, raeume_aus_kaskade
 from .kreuzcheck import kreuzcheck
-from .lift_erkennung import finde_lifte
+from .lift_erkennung import finde_lifte, liftschacht_reste
 from .raumtyp import beschrifte_raeume
+from .sanitaer import kandidaten as sanitaer_kandidaten
+from .sanitaer import sanitaerobjekte, typisiere_sanitaer
 from .stiegenhaus import baue_stiegenhaus_modell
 from .tuer_typisierung import brandschutz_hinweise_aus_dxf, typisiere_tueren
 from .tuer_zuordnung import (
     AUSSEN,
+    KEIN_RAUM,
+    andere_bogenrichtung,
     aussen_durchgaenge,
     durchgaenge_ohne_tuerblatt,
     ordne_tueren,
@@ -47,7 +54,61 @@ from .tueren import (
 from .waende import raeume_aus_waenden, wand_segmente
 from .wandkoerper import aussenkontur, bounds_aus_wandkoerpern, wand_union
 from .wohnungen import bilde_wohnungen
+from .wohnungsklasse import anker_aus_privat_ziehen, bestaetigt_privat
 from .zirkulation import zirkulation_aus_dxf
+
+
+def _tueren_und_wohnungen(plan, k: KaskadeErgebnis, raeume: list, tueren: list[Tuer],
+                          kontur, wu, aussen, geschoss: str, flw_enden: list
+                          ) -> tuple[list[Tuer], list[str], list[str], list[str]]:
+    """Türzuordnung → Liftschacht-Reste → Durchgänge → rohe Türrollen →
+    Wohnungen, in place auf ``raeume``/``tueren``. Liefert ``(tueren,
+    tuer_warnungen, schacht_reste, wohnungsklasse_warnungen)``. Läuft einmal
+    regulär und — nur mit K3-Kandidaten — vorher einmal als Probe auf Kopien."""
+    fehlende_seiten: list = []
+    ordne_tueren(tueren, k.tueroeffnungen, raeume, kontur, wu, fehlende_seiten)
+    # Eine Tür braucht mindestens einen Innenraum: beidseits AUSSEN ist
+    # keine Tür des Gebäudes (Fassaden-Bögen, Rest-Phantome).
+    tueren = [t for t in tueren if not (t.von_raum == t.nach_raum == AUSSEN)]
+    for i, t in enumerate(tueren, start=1):   # lückenlose IDs nach dem Filtern
+        t.id = f"tuer_{i}"
+    # S5c, Owner-Entscheid F1 (K1_T): eine Stiegenhausfläche, die zu mehr
+    # als der Hälfte Liftkabine ist, ist Liftschacht — VOR den Durchgängen
+    # und der Türtypisierung, damit der S5a-Guard an ihr keine blattlose
+    # Öffnung bildet (Liftkern-Phantom VA-5, Lifttür-Ausgänge). Erst nach
+    # der Außenanalyse: die liest die Raumtypen für die Innen-Zonen.
+    schacht_reste = liftschacht_reste(plan, raeume)
+    if k.wandkoerper:
+        tueren = tueren + durchgaenge_ohne_tuerblatt(raeume, tueren, wu,
+                                                     k.tueroeffnungen)
+        tueren = tueren + aussen_durchgaenge(raeume, tueren, wu, kontur)
+    # S4c Fassung A (Owner 2026-09-30): bleibt an einer Bogentür eine Seite
+    # KEIN_RAUM und wäre der Raum hinter ihr sonst ohne jede Verbindung,
+    # gilt die Sehne aus dem ARC-Endwinkel. Nach den Durchgängen, damit
+    # „ohne jede Verbindung" auch Durchgänge und Außenöffnungen zählt.
+    andere_bogenrichtung(tueren, k.tueroeffnungen, raeume, kontur, wu)
+    # Seiten, die bis 500 mm weder Raum noch AUSSEN fanden — Prüfstrecken-
+    # Ausgabe wie `ausgangs_warnungen`, kein Contract-Feld (`Tuer` kennt
+    # kein `seite_fehlt`). Erst NACH der Neunummerierung formatiert, sonst
+    # nennt der Text eine Tür-ID, die inzwischen einer anderen Tür gehört;
+    # erst NACH dem Nachschritt, der eine fehlende Seite füllen kann.
+    tuer_warnungen = [
+        f"seite_fehlt: {t.id} Seite {zeichen} bis {stufe:.0f} mm kein Raum "
+        "und kein AUSSEN (nur Wandkörper oder gedeckte Freifläche)"
+        for t, zeichen, stufe in fehlende_seiten
+        if KEIN_RAUM in (t.von_raum, t.nach_raum)]
+    typisiere_tueren(tueren, raeume, geschoss,
+                     brandschutz_hinweise_aus_dxf(plan), flw_enden,
+                     tuer_texte(plan),
+                     unary_union(aussen.geschlossen)
+                     if aussen is not None and aussen.geschlossen else None)
+    # Unbestimmt gebliebene Räume (§ 6g Schritt 3) und die Durchleitung
+    # privater Räume sind Prüfstrecken-Ausgabe wie `tuer_warnungen` —
+    # der Contract führt sie nicht (Board-Antrag: Segment-Feld
+    # `durchleitung`, docs/GATE_TUERSTAPEL.md § 6g).
+    wohnungsklasse_warnungen: list[str] = []
+    bilde_wohnungen(raeume, tueren, wohnungsklasse_warnungen)
+    return tueren, tuer_warnungen, schacht_reste, wohnungsklasse_warnungen
 
 
 class ArchitekturRaumProvider:
@@ -62,18 +123,45 @@ class ArchitekturRaumProvider:
 
     def parse(self, dxf_path: str, floor: str) -> RaumModell:
         plan = lade_dxf(dxf_path)
-        # Greift kein Wand-Layer-Muster (Muthgasse-Familie), bleibt die Kaskade aus:
-        # ihr Raster wäre auf einem unerschlossenen Plan nur teuer, und `bounds_mm`
-        # bricht gleich darauf definiert ab (kein stilles Leer-Ergebnis).
-        hat_wand_entities = next(plan.wall_entities(), None) is not None
-        k = raeume_aus_kaskade(plan) if hat_wand_entities else KaskadeErgebnis()
+        # Owner-Regel P0 (2026-09-30, Am Rain ARAI5 `Wand <Material> …`): greift
+        # kein Wand-Layer-Muster, ist das KEIN Abbruch. Die Kaskade läuft über
+        # das Erscheinungsbild (wandkoerper: HATCH beliebiger Layer, schmale
+        # Polygone, Doppellinien; Fern-Körper fallen dort weg), und es bleibt
+        # eine Warnung — Prüfstrecken-Ausgabe wie `tuer_warnungen`.
+        # Owner-Auftrag 2026-09-30 (2a): auch ein leerer oder defekter Plan
+        # (keine Geometrie, nur Text, kein Raum) bricht nicht ab — RaumModell
+        # plus Warnung hier (`keine_geometrie`, `keine_raeume`). Abbruch nur,
+        # wenn ezdxf die Datei nicht lesen kann (`dxf_load.DxfNichtLesbar`).
+        self.wand_warnungen: list[str] = []
+        # 2g (D-04): ein mm-Faktor ohne geometrischen Beleg wird ausgewiesen.
+        if plan.faktor_quelle.startswith("$INSUNITS"):
+            self.wand_warnungen.append(
+                f"mm_faktor: {plan.factor:g} aus {plan.faktor_quelle}")
+        k = raeume_aus_kaskade(plan)
+        # 2g (R-05 a): was die Kaskade ohne Abbruch verliert, steht im Bericht.
+        self.wand_warnungen += k.warnungen
         try:
             bounds = bounds_mm(plan)
         except ValueError:
             # Hatch-only-Pläne haben keine Wand-Linien, aber Wandkörper.
-            if not k.wandkoerper:
-                raise
-            bounds = bounds_aus_wandkoerpern(k.wandkoerper)
+            pts = [] if k.wandkoerper else [
+                p for e in plan.space for p in plan.entity_points(e)]
+            if k.wandkoerper:
+                bounds = bounds_aus_wandkoerpern(k.wandkoerper)
+            elif pts:
+                xs, ys = zip(*pts, strict=True)
+                bounds = BBox(min_xy=(min(xs), min(ys)), max_xy=(max(xs), max(ys)))
+            else:
+                bounds = BBox(min_xy=(0.0, 0.0), max_xy=(0.0, 0.0))
+                self.wand_warnungen.append(
+                    "keine_geometrie: DXF ohne Stützpunkte (LINE, LWPOLYLINE, "
+                    "POLYLINE, INSERT) und ohne Wandkörper — Bounds (0, 0)")
+            if (pts or k.wandkoerper) and (not plan.wall_layers or not k.wandkoerper):
+                self.wand_warnungen.append(
+                    "keine_wand_entities: kein Wand-Layer mit Wand-Linien — "
+                    f"Weiterlauf über das Erscheinungsbild ({len(k.wandkoerper)} "
+                    "Wandkörper), Bounds aus "
+                    + ("den Wandkörpern" if k.wandkoerper else "allen Entities"))
         raeume = k.alle_raeume
         if not raeume:
             raeume = beschrifte_raeume(plan, raeume_aus_waenden(plan))
@@ -84,11 +172,15 @@ class ArchitekturRaumProvider:
         if not tueren:
             # Rennweg: keine benannten Tür-Blöcke im Modelspace, aber Öffnungen
             # in den Blockdefinitionen — die Kaskade hat sie bereits gesucht.
+            # Diagnose U12/S4a: den spezifischen Grund der Öffnung durchreichen
+            # (Schiebetür: ``tueren._GRUND_OHNE_BOGEN``), sonst bleibt nur der
+            # allgemeine Satz.
             tueren = [
                 Tuer(id=f"tuer_{i}", xy_mm=o.xy_mm, breite_mm=o.breite_mm,
                      breite_quelle=o.breite_quelle,
-                     breite_grund=(None if o.breite_mm is not None
-                                   else "Tueroeffnung ohne messbare Breite"),
+                     breite_grund=(None if o.breite_mm is not None else
+                                   (o.breite_grund
+                                    or "Tueroeffnung ohne messbare Breite")),
                      ist_notausgang=False, quelle=o.quelle)
                 for i, o in enumerate(k.tueroeffnungen, start=1)
             ]
@@ -111,7 +203,13 @@ class ArchitekturRaumProvider:
         # Außen-Analyse je Gebäude-Komponente (Barawitzka: 2 Trakte) + Hof-
         # Erkennung (Mollgasse: Hof mit Weg ins Freie = AUSSEN → Hoftüren
         # werden Endausgänge). Fallback = alte Ein-Konturen-Heuristik.
-        aussen = erkenne_aussenbereiche(plan, k.wandkoerper) if k.wandkoerper else None
+        # Innen-Zonen mitgeben (Diagnose U8, Slice S2, Owner-Entscheid F6
+        # Option 4): Räume und Stempel liegen längst vor — ohne sie legt die
+        # Außenanalyse Wohn-/Bad-Zonen hinter dünnen Fassaden ins Freie.
+        aussen = None
+        if k.wandkoerper:
+            aussen = erkenne_aussenbereiche(
+                plan, k.wandkoerper, waehle_innen_zonen(plan, raeume, k.zuordnungen))
         self.letzte_aussenbereiche = aussen   # Prüfstrecken-Output (Bericht)
         if aussen is not None and aussen.komponenten:
             kontur = aussen.gedeckt()
@@ -124,29 +222,48 @@ class ArchitekturRaumProvider:
         # Verschmelzen NACH aussentor_tueren: nur so sieht es auch die
         # 'arc_aussen'-Türen (Hoftüren), deren Doppelflügel-Paare sonst nie
         # zusammenfinden — verschmelze_doppelfluegel akzeptiert sie ausdrücklich.
-        tueren = verschmelze_doppelfluegel(tueren, wand_segmente(plan))
+        tueren = verschmelze_doppelfluegel(tueren, wand_segmente(plan), k.tueroeffnungen)
         tueren += text_tueren(plan, tueren)
-        ordne_tueren(tueren, k.tueroeffnungen, raeume, kontur)
-        # Eine Tür braucht mindestens einen Innenraum: beidseits AUSSEN ist
-        # keine Tür des Gebäudes (Fassaden-Bögen, Rest-Phantome).
-        tueren = [t for t in tueren if not (t.von_raum == t.nach_raum == AUSSEN)]
-        for i, t in enumerate(tueren, start=1):   # lückenlose IDs nach dem Filtern
-            t.id = f"tuer_{i}"
-        if k.wandkoerper:
-            wu = wand_union(k.wandkoerper)
-            tueren = tueren + durchgaenge_ohne_tuerblatt(raeume, tueren, wu)
-            tueren = tueren + aussen_durchgaenge(raeume, tueren, wu, kontur)
+        # Wand-Union EINMAL, schon hier: die Seitenprobe überspringt damit
+        # Probepunkte im Wandkörper (Slice S4b), die Durchgänge unten nutzen
+        # dieselbe Variable.
+        wu = wand_union(k.wandkoerper) if k.wandkoerper else None
         for s in zirkulation.segmente:      # 09-WEG = explizite Linien
             s.quelle = "LINIE"
         flw_enden = [p for s in zirkulation.segmente
                      for p in (s.polyline_mm[0], s.polyline_mm[-1])
                      if s.polyline_mm]
-        typisiere_tueren(tueren, raeume, geschoss,
-                         brandschutz_hinweise_aus_dxf(plan), flw_enden,
-                         tuer_texte(plan),
-                         unary_union(aussen.geschlossen)
-                         if aussen is not None and aussen.geschlossen else None)
-        bilde_wohnungen(raeume, tueren)
+        # K3 (Enis Referenz 07): ein stempelloser Raum mit Sanitärbeleg im
+        # Umriss einer Wohnung wird BAD/WC. Der Umriss steht erst nach der
+        # Wohnungsbildung fest, die Türrollen brauchen den Typ vorher — darum
+        # ein einmaliger Vorlauf: Türen und Wohnungen einmal als Probe auf
+        # Kopien, dann setzt `typisiere_sanitaer` am echten Raum nur Typ und
+        # Flags (wie ein Stempel), und es folgt EIN regulärer Durchlauf.
+        # Klasse und Wohnung entstehen dort aus rohen Türen (Grundsatz (b)).
+        # Einmalige Rückkante Probe-Klasse/-Wohnung → Typ → rohe Türrolle,
+        # keine Iteration (Owner-Frage zu Board 7, docs/SLICES_K1_K4.md).
+        # Ohne Kandidaten keine Probe — der Lauf ist dann derselbe wie vorher.
+        kand = sanitaer_kandidaten(
+            raeume, sanitaerobjekte(plan),
+            {z.raum.id for z in k.zuordnungen if z.raum is not None})
+        self.sanitaer_befund: list[str] = []   # Prüfstrecken-Ausgabe
+        if kand:
+            probe_r, probe_t = copy.deepcopy(raeume), copy.deepcopy(tueren)
+            probe_t = _tueren_und_wohnungen(plan, k, probe_r, probe_t, kontur, wu,
+                                            aussen, geschoss, flw_enden)[0]
+            self.sanitaer_befund = typisiere_sanitaer(raeume, kand, probe_r, probe_t)
+        (tueren, self.tuer_warnungen, schacht_reste,
+         self.wohnungsklasse_warnungen) = _tueren_und_wohnungen(
+            plan, k, raeume, tueren, kontur, wu, aussen, geschoss, flw_enden)
+        # Punkt 2d (Owner 2026-09-30): im Wohnungsumriss keine freie Fläche
+        # ohne Raum. NACH den Wohnungen (der Umriss liest `wohnung_id` aus
+        # rohen Türen), VOR Ausgängen und Fluchtwegen (die sehen die fertigen
+        # Polygone). Setzt nie Wohnung, Klasse, Typ oder Flags; Türen bleiben.
+        # Befund je Fläche = Prüfstrecken-Ausgabe wie `wand_warnungen`.
+        try:
+            self.freiflaeche_befund = fuelle_freie_flaechen(raeume, tueren, kontur, wu)
+        except Exception as exc:  # noqa: BLE001 — Zusatzstufe darf den Parse nie killen
+            self.freiflaeche_befund = [f"freiflaeche_fehler: {exc}"]
         # Ausgangs-Warnungen (u.a. „Geschoss unbekannt, Endausgang nicht
         # bestimmbar") als Prüfstrecken-Output — kein Contract-Feld.
         neue, self.ausgangs_warnungen = leite_ausgaenge(
@@ -172,14 +289,16 @@ class ArchitekturRaumProvider:
         self.fluchtweg_warnungen = []
         zirkulation.segmente += fluchtwege(raeume, tueren, ausgaenge,
                                            zirkulation.segmente, geschoss,
-                                           self.fluchtweg_warnungen)
+                                           self.fluchtweg_warnungen,
+                                           self.wohnungsklasse_warnungen)
 
         # ── Fachteil 2: Lifte (LIFT/KEIN_RAUM, aus STIEGENHAUS ausgestanzt)
         # + Stiegenhaus-Modelle + Anker (Stiegenhaus + Gang). Anker liefern
         # nur Azimute (ADR-0006) — Platzierung bleibt Leonis.
-        lifte = finde_lifte(plan, raeume)
+        lifte = finde_lifte(plan, raeume, schacht_reste)
         stiegenhaeuser = []
         anker = []
+        wohnungsintern = bestaetigt_privat(raeume, tueren)
         for r in raeume:
             if len(r.polygon_mm) < 3:
                 continue
@@ -187,8 +306,15 @@ class ArchitekturRaumProvider:
                 modell, a = baue_stiegenhaus_modell(plan, r, lifte, tueren)
                 stiegenhaeuser.append(modell)
                 anker += a
-            elif r.raum_typ == "GANG":
+            elif r.raum_typ == "GANG" and r.id not in wohnungsintern:
+                # R4 (§ 6f) unter dem Fail-Safe-Riegel: Anker nur noch auf
+                # Gängen, denen die ANKERREGEL nicht privat bestätigt — ein so
+                # bestätigter Gang trägt nach R3 beide Flags False.
                 anker += anker_fuer_gang(r, tueren, zirkulation.segmente)
+        # B2: Der Türanker des Stiegenhauses liegt auf der Schwelle und kann
+        # geometrisch in den privat gewordenen Nachbarraum fallen. Er wird auf
+        # die Stiegenhaus-Seite gezogen, nicht gestrichen.
+        anker = anker_aus_privat_ziehen(anker, raeume, tueren)
         # Kein Anker im Liftschacht (Verbotszone — dort wird nichts montiert).
         if lifte:
             schaechte = [Polygon(lf.polygon_mm) for lf in lifte
@@ -220,4 +346,8 @@ class ArchitekturRaumProvider:
         if aussen is not None and aussen.komponenten:
             kante = unary_union([p.exterior for p in aussen.komponenten])
         self.letzter_kreuzcheck = kreuzcheck(modell, kontur, kante)
+        if not modell.raeume:
+            self.wand_warnungen.append(
+                "keine_raeume: kein Raum erkannt (Kaskade und Wandzyklen leer) "
+                "— RaumModell ohne Räume")
         return modell

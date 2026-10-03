@@ -9,7 +9,9 @@
   ``stiegenhaustuer``) sowie eine Brandschutztür an der Stiege (Tür über die
   Brandabschnittsgrenze). Wohnungseingänge direkt ins Stiegenhaus sind KEINE
   Geschossausgänge — sie sind die Start-, nicht die Zielseite des Fluchtwegs
-  (sonst produziert jede Wohnungstür einen Pfeil, Mollgasse-Befund).
+  (sonst produziert jede Wohnungstür einen Pfeil, Mollgasse-Befund). Einzige
+  Ausnahme (S5c, Owner-Entscheid F2): ein Obergeschoss ohne jeden anderen
+  Ausgang — dort ist der Wohnungseingang ins Stiegenhaus der Geschossausgang.
 
 Referenz über die ID-Konvention ``exit_<tuer_id>``. Findet sich kein
 Geschossausgang, kommt ein ``AusgangsWarnung``-Objekt mit den gescheiterten
@@ -45,6 +47,18 @@ def _stiegen_seite(t: Tuer, by_id: dict[str, Raum]) -> bool:
                for s in (t.von_raum, t.nach_raum))
 
 
+def _wohnungseingaenge_ins_stiegenhaus(tueren: list[Tuer],
+                                       by_id: dict[str, Raum]) -> list[Ausgang]:
+    """S5c, Owner-Entscheid F2 (2026-09-27, K1_TE, docs/GATE_TUERSTAPEL.md § 9e):
+    „Obergeschoss ohne Stiegenhaus-Ausgang: ein Wohnungseingang ins Stiegenhaus
+    ist Geschossausgang." Anlass Rennweg DG1: die Wohnung öffnet direkt ins
+    Stiegenhaus, einziger Ausgang war der Liftkern-Phantom (VA-5, Gate (11)).
+    Hängt an der rohen Rolle; nur aufgerufen, wenn sonst kein Ausgang besteht."""
+    return [Ausgang(id=f"exit_{t.id}", xy_mm=t.xy_mm, typ="stair_exit")
+            for t in tueren
+            if t.tuer_detail == "wohnungseingang" and _stiegen_seite(t, by_id)]
+
+
 def leite_ausgaenge(tueren: list[Tuer], raeume: list[Raum], geschoss: str,
                     fluchtweg_enden: list = (),
                     ) -> tuple[list[Ausgang], list[AusgangsWarnung]]:
@@ -66,14 +80,20 @@ def leite_ausgaenge(tueren: list[Tuer], raeume: list[Raum], geschoss: str,
             t.tuer_detail == "garagentor" and ins_freie
             and any(math.dist(t.xy_mm, p) < _GARAGENTOR_FLW_NAH_MM
                     for p in fluchtweg_enden))
+        # S4g b: eine balkontuer ist nie Ausgang — auch wenn ein späterer
+        # Schritt das Notausgang-Flag wieder setzt (markiere_windfang fragt
+        # nicht nach der Rolle).
         if eg_oder_ug and (
                 t.tuer_detail == "hauseingang"
-                or (t.ist_notausgang and ins_freie)
+                or (t.ist_notausgang and ins_freie
+                    and t.tuer_detail != "balkontuer")
                 or tor_mit_flw_ende):
             out.append(Ausgang(id=f"exit_{t.id}", xy_mm=t.xy_mm, typ="final_exit"))
         elif (_stiegen_seite(t, by_id)
               and t.tuer_detail in ("stiegenhaustuer", "brandschutztuer")):
             out.append(Ausgang(id=f"exit_{t.id}", xy_mm=t.xy_mm, typ="stair_exit"))
+    if not out and ist_obergeschoss(geschoss):
+        out = _wohnungseingaenge_ins_stiegenhaus(tueren, by_id)
     warnungen: list[AusgangsWarnung] = []
     if not bekannt:
         # Wortlaut aus der Owner-Entscheidung. Unabhängig davon, ob Ausgänge

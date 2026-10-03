@@ -26,6 +26,12 @@ from notbeleuchtung.raumerkennung.geschoss import (
     geschoss_bekannt,
 )
 from notbeleuchtung.raumerkennung.tuer_zuordnung import AUSSEN
+from plaene import BARAWITZKA_EG, MUTHGASSE_E2, REPO
+
+# Die versionierten Pläne repo-relativ als STRING — hier ist der DATEINAME die
+# Messgröße, die Datei selbst wird nicht gelesen.
+BARAWITZKA = BARAWITZKA_EG.relative_to(REPO).as_posix()
+MUTHGASSE = MUTHGASSE_E2.relative_to(REPO).as_posix()
 
 
 def _plan(*modelspace_texte: str, layout: str | None = None) -> DxfPlan:
@@ -45,7 +51,7 @@ def _plan(*modelspace_texte: str, layout: str | None = None) -> DxfPlan:
 def test_stufe_dateiname_kuerzel():
     """(a) Die Kürzel von vorher — unverändert, inkl. Owner-Muster BT1-EG."""
     for pfad, erwartet in [
-        ("Projekte/_eingang/Barawitzka_EG.dxf", "EG"),
+        (BARAWITZKA, "EG"),
         ("Projekte/OG3 - Rennweg 15.dxf", "3OG"),
         ("Projekte/UG - Rennweg 15.dxf", "UG"),
         ("Projekte/20230228_po_1og_V.dxf", "1OG"),
@@ -81,11 +87,11 @@ def test_dachdraufsicht_ist_kein_geschoss():
 
 
 def test_stufe_dateiname_etage_e2_ist_der_leerstring_fall():
-    """(c) Muthgasse_E2 — der Fall, der vorher "" ergab.
+    """(c) Muthgasse E2 — der Fall, der vorher "" ergab.
 
     ``docs/ENIS_STAND_1_5_0.md:51``: „Geschoss E2 = 2. Obergeschoss".
     """
-    b = geschoss_befund(None, "Projekte/_eingang/Muthgasse_E2.dxf")
+    b = geschoss_befund(None, MUTHGASSE)
     assert (b.geschoss, b.quelle) == ("2OG", "dateiname")
     assert "E2" in b.beleg
     # Auch der lange Dateiname der Ausführungsplan-Familie:
@@ -102,7 +108,7 @@ def test_echtes_kuerzel_gewinnt_gegen_projektname_e2():
 
 def test_stufe_floor_geht_nicht_mehr_verloren():
     """Vorher gemessen: floor="E2" + Dateiname ohne Kürzel ergab ""."""
-    b = geschoss_befund("E2", "Projekte/_eingang/Muthgasse_E2.dxf")
+    b = geschoss_befund("E2", MUTHGASSE)
     assert (b.geschoss, b.quelle) == ("2OG", "floor")
     assert geschoss_befund("OG3", "<fake>").quelle == "floor"
 
@@ -252,7 +258,7 @@ def test_geschoss_aus_huelle_bleibt_fuer_bestandsaufrufer():
     assert geschoss_aus(None, "Projekte/OG3 - Rennweg 15.dxf") == "3OG"
     assert geschoss_aus(None, "Erdgeschoss_EG.dxf") == "EG"
     assert geschoss_aus(None, None) == ""
-    assert geschoss_aus("E2", "Projekte/_eingang/Muthgasse_E2.dxf") == "2OG"
+    assert geschoss_aus("E2", MUTHGASSE) == "2OG"
 
 
 # ── Blocker 1: freier Plankopf-Text erfindet kein Geschoss ──────────────
@@ -363,5 +369,5 @@ def test_eine_kanonische_schreibweise_ziffer_vorn():
     assert geschoss_aus(None, "Projekte/OG3 - Rennweg 15.dxf") == "3OG"
     assert geschoss_aus(None, "Projekte/20230228_po_1og_V.dxf") == "1OG"
     assert geschoss_aus(None, "Projekte/1.Obergeschoß.dxf") == "1OG"
-    assert geschoss_aus(None, "Projekte/_eingang/Muthgasse_E2.dxf") == "2OG"
+    assert geschoss_aus(None, MUTHGASSE) == "2OG"
     assert geschoss_aus(None, "Projekte/2.Kellergeschoß.dxf") == "2KG"

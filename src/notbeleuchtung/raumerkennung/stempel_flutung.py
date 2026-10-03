@@ -111,6 +111,25 @@ def _fuelle(mask: np.ndarray, geom, raster: _Raster) -> None:
     mask[gemalt == 2] = False
 
 
+@dataclass(frozen=True)
+class _Maske:
+    """Flutregion als Ausschnitt des Vollrasters (Punkt 2f): ``feld`` deckt die
+    Zellen ``rahmen`` (Box + 1 Zelle) — außerhalb ist die Region leer."""
+
+    rahmen: tuple[slice, slice]
+    feld: np.ndarray
+
+    def any(self) -> bool:
+        return bool(self.feld.any())
+
+    @property
+    def versatz(self) -> tuple[int, int]:
+        return self.rahmen[0].start, self.rahmen[1].start
+
+
+_LEER = _Maske((slice(0, 0), slice(0, 0)), np.zeros((0, 0), dtype=bool))
+
+
 @dataclass
 class _Flutwerk:
     """Gerasterte Wand-/Innen-Masken + stufenweise Segmentierung (Cache)."""
@@ -119,7 +138,7 @@ class _Flutwerk:
     wand: np.ndarray                   # True = Wand (inkl. außerhalb Außenkontur)
     tueren: list[TuerOeffnung]
     stempel: list[Stempel]
-    _cache: dict[int, dict[int, np.ndarray]] = field(default_factory=dict)
+    _cache: dict[int, dict[int, _Maske]] = field(default_factory=dict)
 
     def _blockiert(self, stufe: int) -> np.ndarray:
         b = self.wand.copy()
@@ -135,19 +154,26 @@ class _Flutwerk:
             b |= closing(b, disk(round(_CLOSING_MM / self.raster.res)))
         return b
 
-    def masken(self, stufe: int) -> dict[int, np.ndarray]:
+    def masken(self, stufe: int) -> dict[int, _Maske]:
         """Je Stempel-Index seine Flutregion bei dieser Versiegelungsstufe.
 
         Stempel auf Wand/Versiegelung starten am nächsten freien Pixel (EDT).
         Teilen sich mehrere Stempel eine Region, trennt Watershed
         (Marker = Stempelpunkte, Distanz-Transform als Relief).
+
+        Punkt 2f (RAM): jede Region liegt als Ausschnitt um ihre Box (+1 Zelle)
+        vor statt als Vollraster je Stempel und Stufe (Muthgasse E2: Stempel ×
+        5 Stufen × 4,6e7 Zellen). Ausschnitte sind nur um ganze Zellen
+        verschoben — Relief, Watershed, Lochfüllung und Konturen bleiben zellgleich.
         """
         if stufe in self._cache:
             return self._cache[stufe]
         blockiert = self._blockiert(stufe)
         frei = ~blockiert
-        # EDT auf 'blockiert': für jedes Pixel Index des nächsten FREIEN Pixels.
-        _, (ir, ic) = ndimage.distance_transform_edt(blockiert, return_indices=True)
+        # EDT auf 'blockiert': für jedes Pixel Index des nächsten FREIEN Pixels
+        # (nur die Indizes — das Distanzfeld braucht hier niemand).
+        ir, ic = ndimage.distance_transform_edt(blockiert, return_distances=False,
+                                                return_indices=True)
         labels = label(frei)
         starts: dict[int, tuple[int, int]] = {}
         gruppen: dict[int, list[int]] = {}
@@ -158,19 +184,23 @@ class _Flutwerk:
             starts[i] = (r, c)
             if lbl:
                 gruppen.setdefault(lbl, []).append(i)
-        out: dict[int, np.ndarray] = {i: np.zeros_like(frei) for i in range(len(self.stempel))}
+        del ir, ic
+        boxen = ndimage.find_objects(labels)
+        out: dict[int, _Maske] = {i: _LEER for i in range(len(self.stempel))}
         for lbl, idx in gruppen.items():
-            region = labels == lbl
+            rahmen = _rahmen(boxen[lbl - 1], labels.shape)
+            region = labels[rahmen] == lbl
             if len(idx) == 1:
-                out[idx[0]] = region
+                out[idx[0]] = _Maske(rahmen, region)
                 continue
             relief = ndimage.distance_transform_edt(region)
             marker = np.zeros(region.shape, dtype=np.int32)
             for i in idx:
-                marker[starts[i]] = i + 1
+                marker[starts[i][0] - rahmen[0].start, starts[i][1] - rahmen[1].start] = i + 1
             ws = watershed(-relief, markers=marker, mask=region)
             for i in idx:
-                out[i] = ws == i + 1
+                out[i] = _Maske(rahmen, ws == i + 1)
+        del labels
         # Geodätisch zur Wand zurückdehnen: die VERSIEGELTEN Zellen (blockiert ∧
         # ¬wand) den nächstliegenden Regionen zuschlagen (geodätischer Watershed
         # auf konstantem Relief) — Nachbarregionen konkurrieren mit, damit ein
@@ -180,17 +210,26 @@ class _Flutwerk:
             marker = np.zeros(frei.shape, dtype=np.int32)
             rest = frei.copy()
             for i, m in out.items():
-                marker[m] = i + 1
-                rest &= ~m
+                if m.any():
+                    marker[m.rahmen][m.feld] = i + 1
+                    rest[m.rahmen] &= ~m.feld
             marker[rest] = len(self.stempel) + 1
+            del rest
             ws = watershed(np.zeros(frei.shape, dtype=np.uint8), markers=marker,
                            mask=frei | siegel)
+            del marker
+            boxen = ndimage.find_objects(ws)
             for i, m in out.items():
                 if m.any():
-                    out[i] = ws == i + 1
+                    box = boxen[i] if i < len(boxen) else None
+                    if box is None:
+                        out[i] = _LEER
+                        continue
+                    rahmen = _rahmen(box, ws.shape)
+                    out[i] = _Maske(rahmen, ws[rahmen] == i + 1)
         for i, m in out.items():
             if m.any():
-                out[i] = ndimage.binary_fill_holes(m)
+                out[i] = _Maske(m.rahmen, ndimage.binary_fill_holes(m.feld))
         self._cache[stufe] = out
         return out
 
@@ -199,11 +238,28 @@ def _shoelace(pts: list[tuple[float, float]]) -> float:
     return 0.5 * abs(sum(a[0] * b[1] - b[0] * a[1] for a, b in zip(pts, pts[1:] + pts[:1])))
 
 
-def _vektorisiere(mask: np.ndarray, raster: _Raster, wand_grenze) -> Polygon:
-    """Maske → größte Kontur → simplify(25 mm) → Snap an Wandkanten (50 mm)."""
+def _rahmen(box: tuple[slice, ...], form: tuple[int, ...]) -> tuple[slice, ...]:
+    """``box`` um eine Zelle erweitert, am Rasterrand gekappt (Punkt 2f).
+
+    Ein Ausschnitt mit diesem Rand sieht für ``find_contours``,
+    ``binary_fill_holes``, Distanz-Transform und Watershed dasselbe wie das
+    Vollraster — nur um ganze Zellen verschoben."""
+    return tuple(slice(max(s.start - 1, 0), min(s.stop + 1, n))
+                 for s, n in zip(box, form, strict=True))
+
+
+def _vektorisiere(mask: np.ndarray, raster: _Raster, wand_grenze,
+                  versatz: tuple[int, int] = (0, 0)) -> Polygon:
+    """Maske → größte Kontur → simplify(25 mm) → Snap an Wandkanten (50 mm).
+
+    ``versatz``: Zeile/Spalte der Masken-Ecke im Vollraster, wenn ``mask`` ein
+    Ausschnitt ist (Punkt 2f) — die Konturen werden vor allem anderen dorthin
+    verschoben (ganzzahlig, also exakt)."""
     konturen = find_contours(mask.astype(np.uint8), 0.5)
     if not konturen:
         return Polygon()
+    if versatz != (0, 0):
+        konturen = [k + versatz for k in konturen]
     beste = max(konturen, key=lambda k: _shoelace([(r, c) for r, c in k]))
     pts = [raster.mm(r, c) for r, c in beste]
     poly = Polygon(pts).buffer(0)
@@ -230,11 +286,13 @@ def flute_stempel(
     wandkoerper: list[Wandkoerper],
     tueren: list[TuerOeffnung],
     raster_mm: float = 50.0,
+    warnungen: list[str] | None = None,
 ) -> list[FlutRaum]:
     """Je Stempel ohne Polygon einen Raum aus den Wandkörpern fluten (s. Modul-Doc).
 
     ``plan`` wird nicht gelesen (Koordinaten sind bereits mm) — er hält die
-    Kaskaden-Signatur (plan_pruefen._raeume) stabil.
+    Kaskaden-Signatur (plan_pruefen._raeume) stabil. ``warnungen`` (optional)
+    bekommt die Reißleine zusätzlich als Text (``flutung: …``, 2g).
     """
     del plan
     if not stempel_ohne_polygon or not wandkoerper:
@@ -250,13 +308,14 @@ def flute_stempel(
     # Speichers auf (Baufeld 4OG vor dem dxf_load-Fix: 1.7e6 x 1.6e6 = 2.56 TiB).
     # Lieber ohne geflutete Räume weiterrechnen als den ganzen Parse verlieren.
     if h * w > _MAX_RASTER_ZELLEN:
-        warnings.warn(
-            f"Stempel-Flutung übersprungen: Raster {w}x{h} = {h * w:.3g} Zellen "
-            f"über dem Limit {_MAX_RASTER_ZELLEN:.3g} — Wand-Extents "
-            f"{(b.max_xy[0] - b.min_xy[0]) / 1000:.0f}x"
-            f"{(b.max_xy[1] - b.min_xy[1]) / 1000:.0f} m sind für ein Geschoss "
-            "unplausibel (mm-Faktor oder Phantom-Geometrie prüfen).",
-            RuntimeWarning, stacklevel=2)
+        text = (f"Stempel-Flutung übersprungen: Raster {w}x{h} = {h * w:.3g} Zellen "
+                f"über dem Limit {_MAX_RASTER_ZELLEN:.3g} — Wand-Extents "
+                f"{(b.max_xy[0] - b.min_xy[0]) / 1000:.0f}x"
+                f"{(b.max_xy[1] - b.min_xy[1]) / 1000:.0f} m sind für ein Geschoss "
+                "unplausibel (mm-Faktor oder Phantom-Geometrie prüfen).")
+        warnings.warn(text, RuntimeWarning, stacklevel=2)
+        if warnungen is not None:
+            warnungen.append(f"flutung: {text}")
         return []
     raster = _Raster(x0=b.min_xy[0], y0=b.min_xy[1], res=res, pad=pad, shape=(h, w))
 
@@ -278,7 +337,7 @@ def flute_stempel(
             m = werk.masken(stufe)[i]
             if not m.any():
                 continue
-            poly = _vektorisiere(m, raster, grenze)
+            poly = _vektorisiere(m.feld, raster, grenze, m.versatz)
             if poly.is_empty:
                 continue
             if not st.flaeche_m2:

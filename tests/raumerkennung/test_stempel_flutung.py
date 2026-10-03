@@ -1,12 +1,11 @@
 """Tests für stempel_flutung (Raster-Flutung vom Stempelpunkt).
 
 Synthetische Mini-Pläne direkt aus Wandkoerper-Objekten (kein DXF nötig);
-die echte Rennweg-Probe skippt, wenn der Plan fehlt (Gate-Muster wie conftest).
+die echte Rennweg-Probe läuft auf dem versionierten Plan (``tests/plaene.py``).
 """
 from __future__ import annotations
 
-from pathlib import Path
-
+import numpy as np
 import pytest
 from shapely.geometry import Polygon
 
@@ -14,9 +13,8 @@ from notbeleuchtung.raumerkennung.stempel_anker import Stempel
 from notbeleuchtung.raumerkennung.stempel_flutung import FlutRaum, flute_stempel
 from notbeleuchtung.raumerkennung.tueren import TuerOeffnung
 from notbeleuchtung.raumerkennung.wandkoerper import Wandkoerper
-
-REPO_ROOT = Path(__file__).resolve().parents[2]
-EINGANG = REPO_ROOT / "Projekte" / "_eingang"
+from plaene import RENNWEG_OG3
+from plaene import plan as pruefe_plan
 
 
 def _wand(x0: float, y0: float, x1: float, y1: float) -> Wandkoerper:
@@ -130,9 +128,7 @@ def test_leere_inputs():
 
 # ── echte Rennweg-Probe (skip-Gate) ─────────────────────────────────────────
 def test_rennweg_mindestens_ein_raum_flutbar():
-    pfad = EINGANG / "Rennweg_OG3.dxf"
-    if not pfad.exists():
-        pytest.skip(f"Plan fehlt: {pfad}")
+    pfad = pruefe_plan(RENNWEG_OG3)
     from notbeleuchtung.raumerkennung.dxf_load import lade_dxf
     from notbeleuchtung.raumerkennung.stempel_anker import finde_stempel
     from notbeleuchtung.raumerkennung.tueren import tuer_oeffnungen
@@ -171,3 +167,42 @@ def test_normale_extents_loesen_die_reissleine_nicht_aus():
     with warnings.catch_warnings():
         warnings.simplefilter("error", RuntimeWarning)   # jede Warnung = Fehler
         assert flute_stempel(None, [_stempel(2500, 2000, 20.0)], wk, [tuer])
+
+
+def test_2f_flutmasken_sind_ausschnitte(monkeypatch):
+    """Punkt 2f (RAM): die Flutregion je Stempel und Stufe liegt als Ausschnitt
+    um ihre Box vor, nicht als Vollraster — ein Wandkörper 100 m daneben
+    vergrößert das Raster, nicht die Masken (Muthgasse E2: vorher 11,3 GB in
+    der Flutung, Stempel × Stufen × Vollraster). Das Ergebnis bleibt gleich."""
+    from notbeleuchtung.raumerkennung import stempel_flutung as sf
+    gesehen = []
+    orig = sf._Flutwerk.masken
+
+    def spion(self, stufe):
+        out = orig(self, stufe)
+        gesehen.append((self.wand.size, out))
+        return out
+    monkeypatch.setattr(sf._Flutwerk, "masken", spion)
+    wk = _raum_mit_tuer(1500, 2500) + [_wand(100_000, 0, 100_200, 4000)]
+    tuer = TuerOeffnung(xy_mm=(5100, 2000), breite_mm=1000, winkel_grad=None,
+                        quelle="arc")
+    (fr,) = flute_stempel(None, [_stempel(2500, 2000, 20.0)], wk, [tuer])
+    assert fr.flag == "ok"
+    assert Polygon(fr.polygon_mm).area / 1e6 == pytest.approx(20.0, rel=0.1)
+    assert gesehen
+    for zellen, masken in gesehen:
+        for m in masken.values():
+            assert np.asarray(getattr(m, "feld", m)).size * 10 < zellen
+
+
+def test_2g_reissleine_steht_in_der_warnungsliste():
+    """2g (R-04): die Reißleine meldet sich auch in der übergebenen Liste — die
+    Kaskade reicht sie an ``provider.wand_warnungen`` → bericht.md weiter."""
+    wk = [_wand(0, 0, 200, 4000),
+          _wand(90_000_000, 90_000_000, 90_000_200, 90_004_000)]
+    warnungen: list[str] = []
+    with pytest.warns(RuntimeWarning, match="Stempel-Flutung übersprungen"):
+        assert flute_stempel(None, [_stempel(100, 2000, 20.0)], wk, [],
+                             warnungen=warnungen) == []
+    assert len(warnungen) == 1, warnungen
+    assert warnungen[0].startswith("flutung: Stempel-Flutung übersprungen"), warnungen
