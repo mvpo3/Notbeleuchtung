@@ -31,6 +31,62 @@ Weitere fertige Referenzen (im selben `knowledge/Pläne zeichnen Wissen/`):
 - Tomaschek (Schule, eigene Raumtypen), Am Rain (Bestands-/Quellen-Disziplin),
   Baufeld-E2-UG (Lehrlayer-GT, Flucht hinauf).
 
+## Der Plan-Output = NUR die Notbeleuchtungs-SYMBOLE (WICHTIGSTE Abgrenzung)
+
+Das SOLL, das die Engine reproduziert, sind **ausschließlich die Notbeleuchtungs-
+SYMBOLE** — die Leuchten selbst:
+
+- **Rettungszeichen (RZ / „Notleuchten")** — die Pfeil-Piktogramme (`kind="rz"`,
+  Blöcke `RIVO_ARR_down/left/right/bothsided`). Zählen: Position, **Pfeilrichtung/
+  Rotation**, Typ (down/left/right/beidseitig), Montageart (Wand/Decke).
+- **Sicherheitsleuchten (SL)** inkl. **Aufheller** (`kind="sicherheitsleuchte"`) —
+  Wegbeleuchtung/Aufhellung.
+- **Antipanikleuchten** (`kind="antipanik"`) — Flächen/Sichtblockade.
+
+Je Symbol: Position, Typ, Pfeil/Rotation, Montageart, Stromkreis (getrennter
+SV-Kreis), Montagehöhe. Der GT-Vergleich (`mollgasse_gt_vergleich`) paart **nur
+diese Symbolklassen** (rz / sicherheitsleuchte / antipanik).
+
+**NICHT Teil des Outputs — reine ERKLÄRUNGS-OVERLAYS** (nur für die Erklärungs-
+PDFs/-DXFs; NICHT als Soll werten, NICHT reproduzieren, kein Mangel wenn sie im
+Engine-Output fehlen):
+
+- grüne **Fluchtweg-Linien** (Fluchtweg-Achse; Layer `Fluchtlinien_*`),
+- türkise **Sichtlinien** (ACI 4 „was die Person sieht"; Layer `*WEG_*INTERPRETATION`),
+- grüne **Menschensymbole** / Läufer + deren Blickrichtungen (Layer `LEHR_MENSCH_*`,
+  `LEHRPERSON_*`),
+- Kennungen (A)/(B)/…, rote Bestands-Raumlabels, gelbe Konstruktions-Hilfslinien.
+
+Diese erklären WARUM ein Symbol so sitzt (Didaktik). Ein Review darf sie **nie** als
+Ziel-Output oder als fehlendes Engine-Element behandeln.
+
+## Wie ein korrekter Notbeleuchtungsplan aussieht — Punkte zu beachten
+
+Prüf-Kriterien für die Symbol-Platzierung (Norm/Referenz-Praxis; Beleg je Punkt in
+`REGELWERK_Mollgasse.md`/`notbeleuchtung_regeln.json`/`validierung.py`):
+
+1. **RZ an jedem Notausgang** (final_exit/stair_exit) — EN 1838 §4.1.2 g.
+2. **Tür-RZ mittig auf der Tür**, Pfeil ins Rauminnere bzw. zum Fluchtweg (RW-001);
+   KEIN fixer Raum-Versatz (Owner 2026-10-03).
+3. **RZ-Pfeiltyp = Frontalsicht der ankommenden Person**, NICHT Weltrichtung
+   (RW-006/007 = „M3"): weißer Balken zur Person, Pfeil kann entgegen der
+   Gehrichtung zeigen. Block-Variante (links/rechts/unten) ≠ Weltrichtung.
+4. **Erster-Blick-Regel**: beim Verlassen jedes Raums/jeder Wohnung muss ≥1 Leuchte
+   sichtbar sein; **Sichtkette** — jede Leuchte sieht die nächste (RW-008/NB-R12).
+5. **Stiegen-RZ** in Lauf-/Abstiegsrichtung; **UG flüchtet HINAUF** (RW-004/005/013).
+6. **Antipanik** bei Sichtblockade (L-/U-Form) bzw. Flächen (EN 1838 §4.3), nicht
+   pauschal nach m²; Position = Diagonalen-Mitte (RW-029).
+7. **beidseitig** nur an echten Wasserscheiden — **EIN Block** `RIVO_ARR_bothsided`
+   (RW-016, Owner 2026-10-03), nicht zwei Einzel-RZ.
+8. **Keine Leuchten in privaten Wohnräumen** (`WOHNUNG_PRIVAT`); Wohnungs-Gänge ohne
+   Fluchtweg/Communal bekommen keine Korridor-Aufheller.
+9. **Getrennter Sicherheitskreis** (F13-Kennung je Symbol), **Montagehöhe ≥ 2 m**,
+   **2-Leuchten-Redundanz** je Fluchtweg-Abschnitt (EN 50172).
+10. **Keine Symbole in Lift/Schacht**; Außenleuchte am letzten Ausgang (§4.1.2 b).
+
+Ziel ist, dass die Symbol-Platzierung der Engine die der fertigen Experten-Pläne
+trifft (Position/Typ/Pfeil) — gemessen über gepaart / typ_match / Distanz.
+
 ## Der gemessene Ist↔Soll-Abstand (so weißt du, wo wir stehen)
 
 Harness `scripts/analyse/mollgasse_gt_vergleich.py <G>` → leerer Plan → Engine
