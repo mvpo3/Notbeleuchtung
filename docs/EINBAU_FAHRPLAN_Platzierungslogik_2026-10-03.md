@@ -40,7 +40,7 @@ billig durch **Audit-Kopplung** statt Rewrite:
 | B | Frage | Owner-Antwort 2026-10-03 | Folge |
 |---|---|---|---|
 | B1 | Aufheller 500 mm je RZ drosseln? | **500 mm = MINDESTabstand; darüber unschädlich/nicht falsch → NICHT drosseln** | S-B nicht mehr „Überschuss-Drossel"; die 115 Überschüsse sind großteils RZ-only-DXF-Artefakt (M1-Phantom), kein Fehler |
-| B2 | Tür-RZ-Versatz 0 mm (Wandlinie) oder 735–930 mm raumseitig? | **offen** — Herkunft erläutert: gemessener raumseitiger Versatz im Mollgasse-Erklär-DXF (`REGELWERK_Mollgasse.md:14`, RW-001; RW-003 375–840, UG 711–779). Steht gegen Ansage 18.09. „Wandlinie, 0 mm" | RW-001-Feinschliff wartet weiter auf Entscheid |
+| B2 | Tür-RZ-Versatz 0 mm (Wandlinie) oder 735–930 mm raumseitig? | **GELÖST: kein fixes Maß.** RZ sitzt **mittig auf der Tür** (Türöffnungs-Mitte, hier das 140/200-Maß). Der raumseitige Versatz 735–930 mm ist DESKRIPTIV (Folge der jeweiligen Türlage), nicht präskriptiv — NICHT als Konstante einbauen. (Beleg-Crop `scratchpad/beleg_tuer_rz_913mm.png`) | `RZ_INS_RAUM_MM = 0` bleibt (Engine schon korrekt: RZ auf Türmitte, mittig dx 3–26 mm). **RW-001-Feinschliff entfällt** |
 | B3 | beidseitig: 2 Einzel-RZ oder 1 Block? | **1 Block** (`RIVO_ARR_bothsided` in `CAD_Symbole/RIVO_NL_Symbole.dxf`) | ✅ Engine schon korrekt (`dxf_renderer.py:1183/1205`) — KEIN Umbau; GT-„2 Einzel" = nur Mess-Nuance |
 | B4 | S-AUDIT (regelwerk.quelle → norm_quelle) bauen? | **ja** | ⚠️ Naht: `test_naht_norm_quelle_in_regelwerk` erzwingt norm_quelle ∈ `NormRegelwerk.quellen` → Enis muss „Referenz-Praxis: RW-xxx" registrieren (Präzedenz `fachpraxis.py:91`). **Leonis+Enis-Naht, nicht solo** |
 
@@ -97,14 +97,14 @@ ausdrückbar. Braucht Owner-GO + Selman (Erkennung) + Enis (Norm) + Contract-Fre
 
 ## Empfohlene Reihenfolge (netto)
 
-1. **Blocker:** B1 ✅ (kein Drossel), B3 ✅ (Engine korrekt), B4 ✅ (ja, aber Enis-Naht). **Nur B2 bleibt offen** (0 mm vs 735–930 mm).
+1. **Blocker:** B1 ✅ (kein Drossel), B2 ✅ (kein Maß, RZ mittig auf Tür, `RZ_INS_RAUM_MM=0` bleibt), B3 ✅ (Engine korrekt), B4 ✅ (ja, aber Enis-Naht). **Alle 4 geklärt.**
 2. **S-A + S-C** (Leonis-pur, Golden-Risiko beherrschbar, direkter Typ/Position-Gewinn).
 3. **S-B** — Aufheller-Mehrfachbedienung (Platzierungs-Treue, kein Drossel).
 4. **S-AUDIT** anstoßen = Leonis+Enis-Naht (Enis registriert „Referenz-Praxis: RW-xxx" in `quellen`).
 5. **Selman-Paket anstoßen** (Knotengraph + KG + Ausgang-in-Raum) — entsperrt den
    eigentlichen gepaart-Hebel.
 6. **Phase 2 (S-E…S-I)** sobald Selman liefert.
-7. **Enis-/Contract-Pakete** parallel (eigene Lanes); RW-001-Feinschliff nach B2.
+7. **Enis-/Contract-Pakete** parallel (eigene Lanes).
 
 **Kurz:** Leonis kann den **Typ-Match** jetzt weiter heben (M3-Rest, S-A/C),
 aber die **gepaart-Quote** (34 %) ist zu ~¾ Selman-gegated. Der Fahrplan baut

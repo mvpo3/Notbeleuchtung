@@ -78,8 +78,10 @@ Leonis' Lane und läuft bereits.
 
 ### Owner-offene Fragen (blockieren saubere Engine-Verbesserung)
 
-1. **Tür-RZ-Versatz widersprüchlich:** Ansage 18.09. „Wandlinie, kein Sollwert"
-   (`RZ_INS_RAUM_MM=0`) ↔ PDF-Vermessung 735–930 mm raumseitig. Welcher gilt?
+1. ~~**Tür-RZ-Versatz widersprüchlich**~~ **GELÖST 2026-10-03:** kein fixes Maß —
+   RZ **mittig auf der Tür** (Türöffnungs-Mitte); 735–930 mm sind deskriptiv, nicht
+   präskriptiv. `RZ_INS_RAUM_MM=0` bleibt (Engine schon korrekt). Beleg-Crop
+   `scratchpad/beleg_tuer_rz_913mm.png`.
 2. **B1-Aufheller 500 mm je RZ:** kein Mollgasse-PDF-Beleg, aber Haupttreiber der
    115 Überschuss-Leuchten (EG allein 48). Drosseln oder behalten?
 3. **S.57/58 B↔C:** PDF-Textfehler (Positionen stimmen, Labels vertauscht), seit
