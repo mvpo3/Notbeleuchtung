@@ -611,17 +611,21 @@ def stiegenhaus_rz_nachpass(
         if math.hypot(cx - ex.xy_mm[0], cy - ex.xy_mm[1]) > _STGH_EXIT_RADIUS_MM * 2:
             out.append(p)
             continue
-        dx, dy = cx - ex.xy_mm[0], cy - ex.xy_mm[1]
-        # Punkt 4: liefert die Erkennung Treppenläufe, ersetzt die ECHTE
-        # Flucht-Gehrichtung (R-H) die Zentrum-Näherung. NB-R13: im
-        # Untergeschoss kehrt sich die Lauf-Interpretation um (Flucht HINAUF).
+        # M3-Besitz (Codex-Review 2026-10-03, Finding 2): hat das Stiegenhaus
+        # verwertbare Läufe, hat `plan_stiegenhaus_rz` das Podest-RZ bereits aus der
+        # ECHTEN Lauf-Geometrie platziert (Position + Frontalsicht-Rotation, RW-006/007).
+        # Diese R8-Approximation ist laut Modul-/stgh_strategy-Docstring NUR der Fallback
+        # für Stiegenhäuser OHNE Läufe. Ohne diesen Riegel behandelt sie das frische
+        # M3-RZ wie ein Alt-Tür-RZ, verschiebt es Richtung Zentrum und überschreibt die
+        # Frontalsicht-Rotation mit `_rotation_zur_tuer(flucht)` → M3 überlebt die
+        # Pipeline nicht (real auf Mollgasse 1OG/2OG/4OG/DG, 546–1302 mm zum stair_exit).
         from .bausteine import ist_untergeschoss as _ist_ug
         from .stgh_strategy import fluchtvektor as _fluchtvektor
         sh = next((s_ for s_ in raum.stiegenhaeuser if s_.raum_id == stgh.id), None)
-        if sh is not None:
-            fv = _fluchtvektor(sh, hinauf=_ist_ug(raum.floor))
-            if fv is not None:
-                dx, dy = fv[0] * 1000.0, fv[1] * 1000.0   # Einheitsvektor → mm-Skala
+        if sh is not None and _fluchtvektor(sh, hinauf=_ist_ug(raum.floor)) is not None:
+            out.append(p)                        # M3 besitzt dieses Stiegenhaus
+            continue
+        dx, dy = cx - ex.xy_mm[0], cy - ex.xy_mm[1]   # Fallback: Zentrum-Näherung
         if math.hypot(dx, dy) < 50.0:
             out.append(p)
             continue

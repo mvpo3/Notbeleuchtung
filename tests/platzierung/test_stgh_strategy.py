@@ -94,8 +94,10 @@ def test_eg_mit_final_exit_im_stgh_no_op():
     assert plan_stiegenhaus_rz(_modell([lauf], ausgaenge=[ausg]), FakeNormProvider()) == []
 
 
-def test_r8_nutzt_echte_laufrichtung():
-    # R8-Nachpass: mit Läufen folgt die Rotation dem Fluchtvektor, nicht dem Zentrum.
+def test_r8_ueberlaesst_laeufe_stgh_dem_m3():
+    # Codex-Review 2026-10-03 (Finding 2): hat das Stiegenhaus Läufe, BESITZT M3
+    # (plan_stiegenhaus_rz) das Podest-RZ bereits — die R8-Approximation lässt es
+    # UNANGETASTET (sonst überschriebe sie die Frontalsicht-Rotation).
     from notbeleuchtung.hauptengine.contracts import Platzierung
     from notbeleuchtung.platzierung.fachpraxis import stiegenhaus_rz_nachpass
 
@@ -107,7 +109,20 @@ def test_r8_nutzt_echte_laufrichtung():
                      richtung="unten", circuit_hint="AGV-A-F13", covers_segment=[],
                      norm_quelle="ÖNORM EN 1838:2013")
     out = stiegenhaus_rz_nachpass([rz], rm)
-    # Flucht −y → Piktogramm-Achse folgt dem Fluchtvektor (rotation_zur_tuer(0,−1)=0).
-    assert out[0].rotation_deg == 0.0
+    assert out[0].xy_mm == (300.0, 3000.0) and out[0].rotation_deg == 90.0   # unverändert
+
+
+def test_r8_approximiert_ohne_laeufe():
+    # Fallback-Pfad (OHNE Läufe): die R8-Zentrum-Näherung rückt das Tür-RZ ins
+    # Stiegenhaus und dreht den Pfeil in die Zugangsrichtung.
+    from notbeleuchtung.hauptengine.contracts import Platzierung
+    from notbeleuchtung.platzierung.fachpraxis import stiegenhaus_rz_nachpass
+
+    rm = _modell([], ausgaenge=[Ausgang(id="X", xy_mm=(200.0, 3000.0), typ="stair_exit")])
+    rz = Platzierung(xy_mm=(300.0, 3000.0), catalog_key="notlicht_ks_stiege",
+                     rotation_deg=90.0, mirror_x=False, height_mm=2400.0, kind="rz",
+                     richtung="unten", circuit_hint="AGV-A-F13", covers_segment=[],
+                     norm_quelle="ÖNORM EN 1838:2013")
+    out = stiegenhaus_rz_nachpass([rz], rm)
     d = math.hypot(out[0].xy_mm[0] - 300.0, out[0].xy_mm[1] - 3000.0)
     assert d > 0.0                                        # ins STGH gerückt
