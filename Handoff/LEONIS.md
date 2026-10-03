@@ -4,6 +4,50 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-10-03 SEHR SPÄT) — Codex-Loop (Findings 2/A/B gefixt) + Review-Tools + Brünnerstraße-Output + GitHub-Historie von Copyright-Material bereinigt. Cloud-ready.
+
+**Branch `leonis/kopplung-raumerkennung-c3b8186` — diese Session sauber auf die
+BEREINIGTE Remote-Historie gesetzt (cherry-pick, kein Force).** Für Cloud-Arbeit: dieser
+GitHub-Branch IST der aktuelle Stand (lokaler Maschinen-Klon ist auf alte Historie
+divergiert; Backup-Bundle `scratchpad/NOTBELEUCHTUNG_BACKUP_vor_filter.bundle`).
+
+**⚠️ GITHUB-HISTORIE WURDE UMGESCHRIEBEN (Copyright):** `ENIS-NOTLEUCHTEN/` (lizenzierte
+digi4school-Bücher + OIB-PDFs + „Wissen vom Internet" + Schulpläne) war versehentlich
+im öffentlichen Repo. Bereinigung: `git filter-repo --invert-paths --path
+ENIS-NOTLEUCHTEN/` + `git push --force --mirror` über ALLE Branches+main (0 ENIS mehr).
+Repo auf PRIVAT gestellt. **Jeder alte Klon ist veraltet → Selman/Enis MÜSSEN neu klonen**
+(sonst kommen die Bücher beim Push zurück). Rest: PR-Refs (`refs/pull/*`) tragen noch
+alte Commits (GitHub lässt sie nicht force-pushen) → GitHub-Support „Remove sensitive
+data" offen (nur Gründlichkeit, Repo ist privat).
+
+**Diese Session gebaut (alle gegen Regelquellen verifiziert, 0 Regress):**
+- **Codex-Review-Loop etabliert** (ziel-gerichtet): `docs/CODEX_REVIEW_BRIEF.md` + `AGENTS.md`
+  = Vision für Codex (Output = NUR Notbeleuchtungs-Symbole; grüne/türkise Linien +
+  Menschen = Erklärungs-Overlay, kein Ziel). Codex liest das automatisch (AGENTS.md-Route).
+- **3 Codex-Findings gefixt + re-reviewed:** (2) `fachpraxis.stiegenhaus_rz_nachpass`
+  überlässt Läufe-Stiegenhäuser dem M3 (Pfeil 179°→0° wiederhergestellt); (A)
+  `anker_strategy` keine RZ im Inneren privater Räume (`shapely.contains`); (B)
+  `mollgasse_gt_vergleich` misst Pfeilfehler im Welt-Rahmen (basis_deg+rot, nicht roh).
+  Finding 1 (Hausfeld down-frontal) = Selman-gegated (Slice S-E), dokumentiert.
+- **Zwei Render-Tools:** `scripts/analyse/review_visuell.py` (Regel-Review-Bild: rot=harter
+  Verstoß, orange=Unterdeckung) + `scripts/analyse/render_grundriss.py` (HQ-Grundriss-PDF).
+- **Fahrplan** `docs/EINBAU_FAHRPLAN_Platzierungslogik_2026-10-03.md` (26/66 Regeln live,
+  40 offen; Owner-Entscheide B1 kein Drossel / B2 Tür-RZ mittig kein Maß / B3 beidseitig=1
+  Block / B4 Audit-Kopplung=Enis-Naht; S-C RW-005 empirisch verworfen = Selman-gegated).
+- **Review** `docs/REVIEW_Plaene_zeichnen_Wissen_2026-10-03.md` (6-Agenten-Review des
+  Wissens-Korpus) + RW-101–131 im Regelwerk-Mapping klassifiziert.
+
+**Brünnerstraße-Durchlauf** (`Test-Projekte/Brünnerstraße/`, 6 Geschosse, Healthcheck GO):
+Engine → Output-DXF in `_output/` + Grundriss-PDF + Regel-Review-PDF (scratchpad). Befund:
+Wohnungen korrekt dunkel, aber dünne Zirkulation + Ausgänge-ohne-RZ je Geschoss (Selman +
+Exit-RZ-Fallback S-D). KEIN Experten-GT (nur Mollgasse hat Soll).
+
+**RESUME (Cloud):** Codex-Session-Review (`tasks/bpltyf3v9`) sichten · Exit-RZ-Fallback (S-D)
+oder Selman-Paket (Knotengraph+KG) als nächste gezielte, gemessene Slices · Loop:
+Engine → review_visuell → Fix → mollgasse_gt_vergleich → Codex.
+
+---
+
 ## STAND (2026-10-03 später) — 3 Commits GEPUSHT. EG+1KG-WARNUNG aufgeschlüsselt = Regel #5 (RZ an Notausgängen), Lane = Erkennung/Selman. Codex-Review offen (Quota ~19:10).
 
 **Branch `leonis/kopplung-raumerkennung-c3b8186` GEPUSHT (`ee29f8d..171195e`, 0 ungepusht).**
