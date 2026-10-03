@@ -1,0 +1,48 @@
+{
+ "projekt": "Tomaschek",
+ "geschoss": "EG",
+ "input": "SH21-TOM44-AR0-AP-EG-01-1 Erdgeschoss.dxf",
+ "engine_n": 24,
+ "gt_n": 52,
+ "gt_by_klasse": {
+  "rz": 30,
+  "sicherheitsleuchte": 21,
+  "antipanik": 1
+ },
+ "gepaart": 4,
+ "typ_match_n": 2,
+ "fehlt_n": 48,
+ "ueberfluessig_n": 20,
+ "erreichbar_n": 21,
+ "erreichbar_gepaart": 4,
+ "distanz_median_mm": 2065.8,
+ "transform": {
+  "n_namen": 1393,
+  "n_inlier": 9,
+  "tx_mm": 26809.6,
+  "ty_mm": 70386.3
+ },
+ "paare": [
+  {
+   "gt": "2060E",
+   "distanz_mm": 2376.2,
+   "typ_match": false
+  },
+  {
+   "gt": "207E1",
+   "distanz_mm": 2244.6,
+   "typ_match": true
+  },
+  {
+   "gt": "20815",
+   "distanz_mm": 1887.0,
+   "typ_match": true
+  },
+  {
+   "gt": "43561",
+   "distanz_mm": 1338.4,
+   "typ_match": false
+  }
+ ],
+ "engine_status": null
+}

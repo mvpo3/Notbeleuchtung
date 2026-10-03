@@ -1,0 +1,46 @@
+{
+ "projekt": "Hausfeld",
+ "geschoss": "1DG",
+ "input": "4.Elektromontageplan 1DG_Index A.dxf",
+ "engine_n": 12,
+ "gt_n": 7,
+ "gt_by_klasse": {
+  "rz": 7
+ },
+ "gepaart": 4,
+ "typ_match_n": 2,
+ "fehlt_n": 3,
+ "ueberfluessig_n": 8,
+ "erreichbar_n": 7,
+ "erreichbar_gepaart": 4,
+ "distanz_median_mm": 547.0,
+ "transform": {
+  "n_namen": 1145,
+  "n_inlier": 1145,
+  "tx_mm": 0.0,
+  "ty_mm": 0.0
+ },
+ "paare": [
+  {
+   "gt": "22731",
+   "distanz_mm": 965.5,
+   "typ_match": false
+  },
+  {
+   "gt": "22751",
+   "distanz_mm": 417.5,
+   "typ_match": false
+  },
+  {
+   "gt": "22771",
+   "distanz_mm": 676.4,
+   "typ_match": true
+  },
+  {
+   "gt": "22791",
+   "distanz_mm": 152.5,
+   "typ_match": true
+  }
+ ],
+ "engine_status": null
+}

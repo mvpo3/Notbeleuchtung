@@ -1,0 +1,41 @@
+{
+ "projekt": "Hausfeld",
+ "geschoss": "2DG",
+ "input": "5.Elektromontageplan 2DG_Index A.dxf",
+ "engine_n": 9,
+ "gt_n": 3,
+ "gt_by_klasse": {
+  "rz": 3
+ },
+ "gepaart": 3,
+ "typ_match_n": 1,
+ "fehlt_n": 0,
+ "ueberfluessig_n": 6,
+ "erreichbar_n": 3,
+ "erreichbar_gepaart": 3,
+ "distanz_median_mm": 1098.6,
+ "transform": {
+  "n_namen": 820,
+  "n_inlier": 820,
+  "tx_mm": 0.0,
+  "ty_mm": 0.0
+ },
+ "paare": [
+  {
+   "gt": "35282",
+   "distanz_mm": 1230.7,
+   "typ_match": false
+  },
+  {
+   "gt": "352A2",
+   "distanz_mm": 1098.6,
+   "typ_match": false
+  },
+  {
+   "gt": "352C2",
+   "distanz_mm": 632.8,
+   "typ_match": true
+  }
+ ],
+ "engine_status": null
+}

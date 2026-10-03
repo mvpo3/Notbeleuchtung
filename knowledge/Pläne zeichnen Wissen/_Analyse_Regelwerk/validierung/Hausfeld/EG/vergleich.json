@@ -1,0 +1,58 @@
+{
+ "projekt": "Hausfeld",
+ "geschoss": "EG",
+ "input": "2.Elektromontageplan EG_Index A.dxf",
+ "engine_n": 17,
+ "gt_n": 13,
+ "gt_by_klasse": {
+  "rz": 9,
+  "sicherheitsleuchte": 2,
+  "antipanik": 2
+ },
+ "gepaart": 6,
+ "typ_match_n": 5,
+ "fehlt_n": 7,
+ "ueberfluessig_n": 11,
+ "erreichbar_n": 10,
+ "erreichbar_gepaart": 5,
+ "distanz_median_mm": 2295.3,
+ "transform": {
+  "n_namen": 1877,
+  "n_inlier": 1877,
+  "tx_mm": 0.0,
+  "ty_mm": 0.0
+ },
+ "paare": [
+  {
+   "gt": "9ED64",
+   "distanz_mm": 2846.0,
+   "typ_match": true
+  },
+  {
+   "gt": "9EDA4",
+   "distanz_mm": 815.3,
+   "typ_match": false
+  },
+  {
+   "gt": "9EDE4",
+   "distanz_mm": 2494.7,
+   "typ_match": true
+  },
+  {
+   "gt": "9EDE6",
+   "distanz_mm": 1517.9,
+   "typ_match": true
+  },
+  {
+   "gt": "9EE06",
+   "distanz_mm": 2095.9,
+   "typ_match": true
+  },
+  {
+   "gt": "9EE08",
+   "distanz_mm": 2784.5,
+   "typ_match": true
+  }
+ ],
+ "engine_status": null
+}

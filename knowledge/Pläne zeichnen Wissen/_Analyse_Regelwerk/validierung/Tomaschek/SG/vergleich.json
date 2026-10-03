@@ -1,0 +1,63 @@
+{
+ "projekt": "Tomaschek",
+ "geschoss": "SG",
+ "input": "SH21-TOM44-AR0-AP-SG-01-1 Sockelgeschoss.dxf",
+ "engine_n": 47,
+ "gt_n": 74,
+ "gt_by_klasse": {
+  "rz": 39,
+  "sicherheitsleuchte": 19,
+  "antipanik": 16
+ },
+ "gepaart": 7,
+ "typ_match_n": 5,
+ "fehlt_n": 67,
+ "ueberfluessig_n": 40,
+ "erreichbar_n": 27,
+ "erreichbar_gepaart": 6,
+ "distanz_median_mm": 2432.2,
+ "transform": {
+  "n_namen": 1143,
+  "n_inlier": 20,
+  "tx_mm": -31463.7,
+  "ty_mm": 10302.8
+ },
+ "paare": [
+  {
+   "gt": "34BFE",
+   "distanz_mm": 2833.0,
+   "typ_match": true
+  },
+  {
+   "gt": "34CA7",
+   "distanz_mm": 1684.9,
+   "typ_match": true
+  },
+  {
+   "gt": "34D15",
+   "distanz_mm": 2234.7,
+   "typ_match": true
+  },
+  {
+   "gt": "34D6F",
+   "distanz_mm": 997.4,
+   "typ_match": true
+  },
+  {
+   "gt": "34F14",
+   "distanz_mm": 2597.3,
+   "typ_match": false
+  },
+  {
+   "gt": "34F50",
+   "distanz_mm": 2847.1,
+   "typ_match": false
+  },
+  {
+   "gt": "34F6E",
+   "distanz_mm": 2432.2,
+   "typ_match": true
+  }
+ ],
+ "engine_status": null
+}

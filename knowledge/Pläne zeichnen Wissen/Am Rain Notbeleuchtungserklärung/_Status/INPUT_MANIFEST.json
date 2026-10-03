@@ -1,0 +1,124 @@
+{
+  "generated_utc": "2026-09-23T16:37:21.256080+00:00",
+  "extended_with_local_norm_originals_utc": "2026-09-23T19:49:00+00:00",
+  "extended_with_mollgasse_cad_person_utc": "2026-09-23T20:00:00+00:00",
+  "extended_with_other_mollgasse_cad_inspection_utc": "2026-09-23T20:01:00+00:00",
+  "hash_algorithm": "SHA-256",
+  "files": [
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Am Rain Notbeleuchtungserklärung\\ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02.dxf",
+      "size_bytes": 76561698,
+      "sha256": "655fff231175329c09a40f8feb53dd8c78176a88580c16f5fc05f3b1f239005d"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Am Rain Notbeleuchtungserklärung\\ARAI5_FE_XEL_ZZ_MOP_OG1_0012_V_01.dxf",
+      "size_bytes": 51250456,
+      "sha256": "b48faca63dd343d523f7b26738efbaa31266eaa09784e5efc8c78a03229983be"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Am Rain Notbeleuchtungserklärung\\ARAI5_FE_XEL_ZZ_MOP_OG2_0013_V_01.dxf",
+      "size_bytes": 39209493,
+      "sha256": "9639f426cf8fcd3584105cd369326e418ae7f17fd4394788df5e3e76e29d957b"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Am Rain Notbeleuchtungserklärung\\ARAI5_FE_XEL_ZZ_MOP_OG3_0014_V_01.dxf",
+      "size_bytes": 28419966,
+      "sha256": "daa524bf74b524e9b2bead03c87027cf679e9de6c4a8a09bf4c5b414189eb4a9"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Am Rain Notbeleuchtungserklärung\\ARAI5_FE_XEL_ZZ_MOP_OG4_0015_V_01.dxf",
+      "size_bytes": 13024964,
+      "sha256": "9561c14701cf7ec3a97746a87d3e7716475832f4133d438a7f43fe3eafd8647c"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Am Rain Notbeleuchtungserklärung\\ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02.dxf",
+      "size_bytes": 55758662,
+      "sha256": "ce69f67601357c408654e96001b62af096ebbebdfee209d5233f5f65cbed9907"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\CAD_Symbole\\RIVO_NL_Symbole.dxf",
+      "size_bytes": 309239,
+      "sha256": "f70ae878381e066f116e5a7dc3eed7724755efe70e16e4385169c4191b545998"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Notbeleuchtungen zeichnen.pdf",
+      "size_bytes": 6290305,
+      "sha256": "c9931052f9e992188bf285f551ba7fb22d3e04875e9159f4ee9cfcd475247bcc"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Mollgasse-Notbeleuchtungserklärung\\WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+      "size_bytes": 14430337,
+      "sha256": "40471f1b7d264c2928f288129e9def64ceb198f1d444d088a741f0d30011ff82"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Mollgasse-Notbeleuchtungserklärung\\WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+      "size_bytes": 14323988,
+      "sha256": "2efc66ed087db1177401ed15cede568fa86fac040060762a4486c0366280baf7"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Mollgasse-Notbeleuchtungserklärung\\WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+      "size_bytes": 17645354,
+      "sha256": "b58e47a60ec6a7635ac8cb3b93357d32da44bebe10e1c6388df2160110489b37"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Mollgasse-Notbeleuchtungserklärung\\WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+      "size_bytes": 17317570,
+      "sha256": "d2c88ef024f8fa2dc699fc210f6b95c369ec524613d38e1a8fa3e6df9905c8a9"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Mollgasse-Notbeleuchtungserklärung\\WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+      "size_bytes": 23653027,
+      "sha256": "81504a69b70bbed99d4ab6d24c4b4211d9cecb77cc320ee96e06d9db65acc067"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Mollgasse-Notbeleuchtungserklärung\\WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+      "size_bytes": 12457075,
+      "sha256": "f47f6a5b003a10ebb50760074f36e8dbc3e5e2e4e2a02f2aae5cb873d3a474bf"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Mollgasse-Notbeleuchtungserklärung\\WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+      "size_bytes": 12807911,
+      "sha256": "785197a63dcc3d16fa87fdd356a0c9e791e94a3bd405e69ab824482026b79b9f"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Mollgasse-Notbeleuchtungserklärung\\WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+      "size_bytes": 10548558,
+      "sha256": "bd03a6c08f6b2865adb6f23a1729cb0882c196c99d6a822e7a4500c77e361fbc"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\EN 1838 - Notbeleuchtung 2019 (1).pdf",
+      "size_bytes": 1359358,
+      "sha256": "8ae7fbe1e745c44e623ebabcb33949fc31ce1b3f990c751b1eec48288ccde71a"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\OVE E 8101_2019 (1).pdf",
+      "size_bytes": 23855142,
+      "sha256": "637cfb241f167c057f3e151cc2740f21ddfef4cd311eb09a176c5a8bfa3b7548"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\OVE E8101_2025 (1).pdf",
+      "size_bytes": 26657232,
+      "sha256": "2c284e0cef659e2bcccacdaa066309d7f1b11bf47f3749881cf6847ee4a4d3db"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\OIB-Richtlinien\\OIB-Richtlinie 2 Brandschutz\\oib-rl_2_ausgabe_mai_2023.pdf",
+      "size_bytes": 1975942,
+      "sha256": "80c174ce27a0332aeb5850eaebbf99445382e098b55b8b252ead7ba72588ea33"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\OIB-Richtlinien\\OIB Richtlinie 2.2 Branschutz bei Garagen, überdachten Stellplätzen und Parkdeks\\oib-richtlinie_2.2_ausgabe_mai_2023.pdf",
+      "size_bytes": 1176858,
+      "sha256": "319b8767742123a4c6e99e465261b60679f320ac4a2a5124493d3bb058d1df3e"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Fachinfo_E-08_Sicherheitsbeleuchtung_Arbeitsstaetten_2021-04.pdf",
+      "size_bytes": 202915,
+      "sha256": "73b9c6a56f1b2d22daff7107541b1d3e3236ed3f40763f1cf954ebb65b2c8ea2"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\OVE-Richtlinie R 12-2 AC 2019-07-01.pdf",
+      "size_bytes": 564597,
+      "sha256": "aae65df13e6bc7024038f808c0f87a1d1419e62883e15e2b45ad8a2d8ed9d262"
+    }
+  ]
+}

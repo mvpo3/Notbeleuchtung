@@ -1,0 +1,6 @@
+{
+ "projekt": "Hausfeld",
+ "geschoss": "UG",
+ "input": "1.Elektromontageplan UG_Index A.dxf",
+ "fehler": "RuntimeError: keine gemeinsamen Architektur-INSERTs — Frame nicht auflösbar"
+}

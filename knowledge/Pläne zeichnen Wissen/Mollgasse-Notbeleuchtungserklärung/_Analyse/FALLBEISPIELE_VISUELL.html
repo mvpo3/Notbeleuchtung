@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Fallbeispiele-Review — Engine vs. deine Lehrbeispiele</title>
+<style>
+  :root{--gruen:#1EB350;--rot:#d94545;--orange:#e8912d;--blau:#2d6fe8;--grau:#6b7280;}
+  *{box-sizing:border-box}
+  body{font-family:"Segoe UI",system-ui,sans-serif;margin:0;background:#fff;color:#1a2333;line-height:1.5;font-size:13.5px}
+  .wrap{max-width:1040px;margin:0 auto;padding:26px 26px 60px}
+  h1{font-size:27px;margin:4px 0 4px} h2{font-size:20px;margin:26px 0 10px;border-bottom:3px solid #e4e7ec;padding-bottom:5px}
+  h3{font-size:15px;margin:14px 0 6px}
+  .sub{color:var(--grau);font-size:13px;margin-bottom:14px}
+  .karte{background:#fff;border:1px solid #dfe3ea;border-radius:12px;padding:14px 16px;box-shadow:0 1px 3px rgba(16,24,40,.06)}
+  .gruen{color:var(--gruen)} .rot{color:var(--rot)} .orange{color:var(--orange)} .blau{color:var(--blau)}
+  .zwei{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+  .drei{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+  .balken{display:flex;height:30px;border-radius:7px;overflow:hidden;font-size:12.5px;color:#fff;font-weight:700}
+  .balken div{display:flex;align-items:center;justify-content:center;white-space:nowrap}
+  .b-g{background:var(--gruen)} .b-o{background:var(--orange)} .b-r{background:var(--rot)} .b-x{background:#aeb6c2}
+  .legende{font-size:12px;color:var(--grau);margin-top:5px}
+  figure{margin:8px 0} figure img{width:100%;border:1px solid #d8dde6;border-radius:8px}
+  figcaption{font-size:11.8px;color:var(--grau);margin-top:4px}
+  .hinweis{border-left:4px solid var(--blau);background:#eef4ff;padding:9px 13px;border-radius:0 8px 8px 0}
+  .gut{border-left-color:var(--gruen);background:#ecfaf1} .schlecht{border-left-color:var(--rot);background:#fdefef}
+  .warn{border-left-color:var(--orange);background:#fff6ea}
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  th,td{border:1px solid #e4e7ec;padding:6px 8px;text-align:left;vertical-align:top}
+  th{background:#eef1f5}
+  .mono{font-family:Consolas,monospace;font-size:11.5px;background:#f1f3f7;padding:1px 4px;border-radius:4px}
+  .fall{break-before:page;padding-top:6px}
+  .fallkopf{display:flex;align-items:center;gap:12px;margin:8px 0 10px}
+  .fallnr{flex:0 0 52px;height:52px;border-radius:12px;background:var(--rot);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:19px}
+  .fallnr.ok{background:var(--gruen)}
+  .fallkopf h2{border:0;margin:0;padding:0}
+  .tag{display:inline-block;padding:2px 10px;border-radius:999px;font-size:11.5px;font-weight:700;color:#fff;margin-left:8px;vertical-align:middle}
+  .t-r{background:var(--rot)} .t-g{background:var(--gruen)} .t-o{background:var(--orange)}
+  svg text{font-family:"Segoe UI",sans-serif}
+  .titel{break-after:avoid}
+  @page{margin:14mm 11mm}
+</style>
+</head>
+<body><div class="wrap">
+
+<!-- ============ KOPF ============ -->
+<div class="titel">
+<h1>Fallbeispiele-Review: Versteht die Engine dein „Warum"?</h1>
+<div class="sub">Ultracode-Tiefenprüfung 30.09.2026 · 90 Agenten in 3 Stufen: <b>Finden</b> (alle 95 PDF-Seiten als Bild) → <b>adversarial Verifizieren</b> (jeder Fall gegen die DXF-Geometrie, Auftrag „widerlege es!") → <b>Engine-Richten</b> (echter Validierungslauf je Referenzleuchte). Rohdaten: evidenz/fallbeispiele.json · Volltext: FALLBEISPIELE_REVIEW.md</div>
+
+<div class="drei">
+  <div class="karte" style="text-align:center"><div style="font-size:36px;font-weight:800">42</div><div class="legende">Fallbeispiele „richtig vs. falsch"<br>in deiner PDF gefunden</div></div>
+  <div class="karte" style="text-align:center"><div style="font-size:36px;font-weight:800" class="gruen">40</div><div class="legende">davon im DXF <b>mm-genau bestätigt</b><br>(2 Finder-Fehler aussortiert — deine Pläne selbst: 0 Fehler)</div></div>
+  <div class="karte" style="text-align:center"><div style="font-size:36px;font-weight:800" class="rot">5</div><div class="legende">Fälle, in denen die Engine heute<br><b>aktiv die FALSCH-Variante</b> wählt</div></div>
+</div>
+
+<div class="karte" style="margin-top:12px">
+  <h3 style="margin-top:0">Engine-Urteil über die 40 bestätigten Fälle</h3>
+  <div class="balken">
+    <div class="b-g" style="width:7.5%">3 ✓</div>
+    <div class="b-o" style="width:2.5%">1</div>
+    <div class="b-r" style="width:12.5%">5 falsch</div>
+    <div class="b-x" style="width:77.5%">31× setzt die Engine dort GAR NICHTS</div>
+  </div>
+  <div class="legende">grün = wählt richtig (inkl. deiner Mach/Lass-Abwägungen!) · orange = richtiger Typ, Position 2 m daneben · rot = wählt genau die Variante, die deine PDF als falsch lehrt · grau = keine Leuchte an der Lehr-Stelle</div>
+  <div class="hinweis" style="margin-top:10px"><b>Die zentrale Erkenntnis:</b> Die Engine tappt fast nie in die Fallen, vor denen deine PDF warnt (5 von 40). Ihr Hauptproblem ist ein anderes: <b>an 31 der 40 Lehr-Stellen entsteht überhaupt keine Leuchte</b> — nicht weil das Regel-Wissen fehlt, sondern weil die „Zündkette" davor reißt (nächste Seite).</div>
+</div>
+</div>
+
+<!-- ============ ZÜNDKETTE ============ -->
+<div class="fall">
+<h2>⬜ Problem-Klasse 1 (31 Fälle): Die gerissene Zündkette</h2>
+<div class="karte">
+<svg viewBox="0 0 980 250" width="100%">
+  <defs><marker id="pf2" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#6b7280"/></marker></defs>
+  <rect x="0" y="0" width="980" height="250" fill="#fbfcfe"/>
+  <!-- Kettenglieder -->
+  <g font-size="13">
+    <rect x="20"  y="60" width="170" height="64" rx="10" fill="#ecfaf1" stroke="#1EB350" stroke-width="2"/>
+    <text x="105" y="86" text-anchor="middle" font-weight="700">1 · Erkennung</text>
+    <text x="105" y="106" text-anchor="middle" fill="#6b7280" font-size="11.5">Raum-Polygon da?</text>
+    <rect x="235" y="60" width="170" height="64" rx="10" fill="#fdefef" stroke="#d94545" stroke-width="3"/>
+    <text x="320" y="86" text-anchor="middle" font-weight="700">2 · Typisierung</text>
+    <text x="320" y="106" text-anchor="middle" fill="#6b7280" font-size="11.5">MUELLRAUM? Tür bekannt?</text>
+    <rect x="450" y="60" width="170" height="64" rx="10" fill="#fdefef" stroke="#d94545" stroke-width="3"/>
+    <text x="535" y="86" text-anchor="middle" font-weight="700">3 · Zirkulation</text>
+    <text x="535" y="106" text-anchor="middle" fill="#6b7280" font-size="11.5">Fluchtweg-Pfad am Ort?</text>
+    <rect x="665" y="60" width="150" height="64" rx="10" fill="#ecfaf1" stroke="#1EB350" stroke-width="2"/>
+    <text x="740" y="86" text-anchor="middle" font-weight="700">4 · Regel</text>
+    <text x="740" y="106" text-anchor="middle" fill="#6b7280" font-size="11.5">existiert &amp; ist korrekt</text>
+    <rect x="850" y="60" width="110" height="64" rx="10" fill="#f1f3f7" stroke="#9aa4b2" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="905" y="86" text-anchor="middle" font-weight="700" fill="#6b7280">5 · Leuchte</text>
+    <text x="905" y="106" text-anchor="middle" fill="#6b7280" font-size="11.5">entsteht NICHT</text>
+    <line x1="190" y1="92" x2="228" y2="92" stroke="#6b7280" stroke-width="2.5" marker-end="url(#pf2)"/>
+    <line x1="405" y1="92" x2="443" y2="92" stroke="#6b7280" stroke-width="2.5" marker-end="url(#pf2)"/>
+    <line x1="620" y1="92" x2="658" y2="92" stroke="#6b7280" stroke-width="2.5" marker-end="url(#pf2)"/>
+    <line x1="815" y1="92" x2="843" y2="92" stroke="#6b7280" stroke-width="2.5" marker-end="url(#pf2)"/>
+    <text x="320" y="45" text-anchor="middle" fill="#d94545" font-weight="800" font-size="14">⚡ HIER reißt es meistens</text>
+  </g>
+  <text x="20" y="165" font-size="12.5" fill="#1a2333" font-weight="700">Beispiel Müllraum (S.2, Fall 1):</text>
+  <text x="20" y="185" font-size="12.5" fill="#6b7280">Die Engine-Regel ist komplett — Tür-RZ für MUELLRAUM inkl. deines L-Form-Vorbehalts (Konvexitäts-Schwelle 0,85 = exakt deine Antipanik-Ausnahme).</text>
+  <text x="20" y="203" font-size="12.5" fill="#6b7280">Aber der Lauf zeigt: Handle 20286 steht unter „fehlt" — weil die Erkennung den Raum nicht als MUELLRAUM mit bestimmbarer Tür geliefert hat.</text>
+  <text x="20" y="221" font-size="12.5" fill="#6b7280">Regeln sind fail-closed (lieber nichts als falsch) → Wissen vorhanden, Zündkette gerissen, Leuchte fehlt.</text>
+</svg>
+</div>
+<div class="zwei" style="margin-top:12px">
+  <figure><img src="bilder/S002.png" alt="S.2"><figcaption><b>S.2 — dein Lehrbeispiel:</b> Müllraum-Standardfall („zu 99 % immer gleich"), Tür-RZ allein genügt; L-Form würde Antipanik erzwingen. Im DXF mm-bestätigt (Handle 20286, 98 mm neben der Türachse, Welt-Pfeil in den Raum).</figcaption></figure>
+  <div>
+    <div class="hinweis warn"><b>Was das bedeutet:</b> 31 der 40 Lehr-Stellen scheitern VOR der Platzierungslogik. Die Treiber: Raumtyp-/Tür-Zuordnung (Selman-Naht), fehlende KG-Zirkulation (Kellerabteil-Gänge, Garage — Paket S-KG, bereits übergeben), Kabeltrassen-Daten gar nicht im leeren Plan.</div>
+    <div class="hinweis" style="margin-top:10px"><b>Warum das GUTE Nachricht ist:</b> fail-closed heißt: die Engine rät nicht. Sie setzt lieber nichts als das Falsche — exakt deine Prozessregel „Zuordnung nie raten" (S.78). Repariert wird die Kette (M4/Selman), nicht das Regelwissen.</div>
+  </div>
+</div>
+</div>
+
+<!-- ============ PROBLEMKLASSE 2 KOPF ============ -->
+<div class="fall">
+<h2>❌ Problem-Klasse 2 (5 Fälle): Die Engine wählt aktiv die Falsch-Variante</h2>
+<div class="karte">
+<p style="margin-top:0"><b>Alle 5 Fälle haben dieselbe Wurzel:</b> Die Engine wählt den Pfeiltyp nach dem <i>Fluchtweg-Vektor</i> („wohin läuft der Weg?"), du wählst ihn nach der <i>Frontalsicht der ankommenden Person</i> („was sieht sie — und erkennt sie die Vorderseite?"). Bei Türen und geraden Gängen fällt beides zusammen (darum stimmen dort die Treffer) — an <b>Sammelpunkten, Podesten und Zwischen-RZ</b> fällt es auseinander.</p>
+<svg viewBox="0 0 980 230" width="100%">
+  <rect x="0" y="0" width="980" height="230" fill="#fbfcfe"/>
+  <rect x="40" y="70" width="900" height="90" fill="#eef1f5" stroke="#9aa4b2"/>
+  <circle cx="120" cy="115" r="11" fill="#1EB350"/><line x1="120" y1="126" x2="120" y2="148" stroke="#1EB350" stroke-width="4"/>
+  <text x="78" y="180" font-size="12" fill="#1EB350" font-weight="700">ankommende Person</text>
+  <defs><marker id="pfg" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1EB350"/></marker></defs>
+  <line x1="138" y1="115" x2="240" y2="115" stroke="#1EB350" stroke-width="2.5" marker-end="url(#pfg)"/>
+  <!-- richtiges Schild: down frontal -->
+  <g>
+    <rect x="430" y="78" width="14" height="74" fill="#1EB350" rx="2"/>
+    <text x="392" y="62" font-size="13.5" fill="#1EB350" font-weight="800">DU: down-RZ, Front zur Person</text>
+    <text x="400" y="196" font-size="11.5" fill="#1EB350">Vorderseite voll sichtbar → Richtung sofort erkennbar</text>
+  </g>
+  <!-- falsches Schild -->
+  <g>
+    <rect x="700" y="108" width="74" height="14" fill="#d94545" rx="2"/>
+    <text x="662" y="62" font-size="13.5" fill="#d94545" font-weight="800">ENGINE: rechts/links-RZ in Wegrichtung</text>
+    <text x="668" y="196" font-size="11.5" fill="#d94545">Person sieht die SCHMALSEITE — dein dokumentierter Fehlerfall (S.31–36)</text>
+  </g>
+</svg>
+</div>
+</div>
+
+<!-- ============ FALL A ============ -->
+<div class="fall">
+<div class="fallkopf"><div class="fallnr">A</div><h2>S.33/34 · 4OG · Gang Top 23/24 — der Lehrbuch-Treffer ins Schwarze<span class="tag t-r">Engine wählt deine Falsch-Variante</span></h2></div>
+<div class="zwei">
+  <figure><img src="bilder/S033.png" alt="S.33"><figcaption><b>Deine Lehre:</b> Fluchtweg geradeaus → Pfeil-unten-RZ FRONTAL zur Blickrichtung. Der Seitenpfeil ist auf diesen Seiten dein explizit gezeichnetes Falsch-Beispiel.</figcaption></figure>
+  <div>
+    <div class="hinweis schlecht"><b>Engine heute (echter Lauf):</b> paart GT <span class="mono">413A0</span> (down, frontal) mit <span class="mono">notlicht_ks_stiege_rechts</span> — <b>rot_delta 179,7°, Typ ✗</b>. Sie erzeugt exakt die Variante, die deine PDF durchstreicht: Seitenpfeil in Wegrichtung.</div>
+    <div class="hinweis" style="margin-top:10px"><b>Wurzel:</b> <span class="mono">gang_strategy._ist_abzweig</span> + <span class="mono">bausteine.richtung_und_rotation</span> — Vektor-Quantisierung statt Frontalsicht-Prüfung (Winkel ≤ 45° zur Blicknormalen).<br><b>Fix:</b> Fahrplan-Phase M3. Testfall liegt ab jetzt mm-genau fest.</div>
+  </div>
+</div>
+</div>
+
+<!-- ============ FALL B ============ -->
+<div class="fall">
+<div class="fallkopf"><div class="fallnr">B</div><h2>S.73/74 · 2KG · Sammelpunkt vor dem Stiegenhaus<span class="tag t-r">Engine wählt deine Falsch-Variante</span></h2></div>
+<div class="zwei">
+  <figure><img src="bilder/S073.png" alt="S.73"><figcaption><b>Deine Lehre:</b> Auf den Sammelpunkt laufen Menschen aus mehreren Räumen/Richtungen zu → down-RZ mittig im Durchgang; „Pfeil links/rechts in Fluchtrichtung gedreht" ist deine Falsch-Variante 1.</figcaption></figure>
+  <div>
+    <div class="hinweis schlecht"><b>Engine heute:</b> GT <span class="mono">1C64B</span> gepaart (1598 mm), aber als <span class="mono">notlicht_ks_stiege_links</span> in Fluchtrichtung = <b>exakt Falsch-Variante 1, Typ ✗</b>.</div>
+    <div class="hinweis" style="margin-top:10px"><b>Wurzel:</b> <span class="mono">bausteine.richtung_und_rotation</span> (Pfeil = Segment-Laufrichtung zum Ausgang). Ein Sammelpunkt braucht die Mehr-Ankunfts-Prüfung: mehrere Zuströme → down frontal (bzw. beidseitig bei Gegenströmen, dein S.65/88-Prinzip).<br><b>Fix:</b> M3 (Ankunftsrichtungs-Analyse am Knoten).</div>
+  </div>
+</div>
+</div>
+
+<!-- ============ FALL C ============ -->
+<div class="fall">
+<div class="fallkopf"><div class="fallnr">C</div><h2>S.18 · 1OG · Zwischen-RZ bei Top 4/5<span class="tag t-r">Engine wählt deine Falsch-Variante</span></h2></div>
+<div class="zwei">
+  <figure><img src="bilder/S018.png" alt="S.18"><figcaption><b>Deine Lehre:</b> Nächste Richtungs-RZ zu weit weg → zusätzliche <b>Pfeil-unten-RZ mittig im Gang</b>, Front zu den Ankommenden (Doppelnutzen: Orientierung + Licht).</figcaption></figure>
+  <div>
+    <div class="hinweis schlecht"><b>Engine heute:</b> setzt dort eine Leuchte (Position gut: 799 mm!) — aber als <span class="mono">notlicht_ks_stiege_rechts</span> statt down-frontal (GT <span class="mono">952E8</span>, Typ ✗).</div>
+    <div class="hinweis" style="margin-top:10px"><b>Halbe gute Nachricht:</b> Die Distanz-Logik (WANN ein Zwischen-RZ nötig ist) stimmt — nur die Typ-Wahl nicht. Gleiche Wurzel, gleicher M3-Fix wie Fall A/B.</div>
+  </div>
+</div>
+</div>
+
+<!-- ============ FALL D ============ -->
+<div class="fall">
+<div class="fallkopf"><div class="fallnr">D</div><h2>S.32 · 4OG · Podest-Position: Wand schlägt Mitte<span class="tag t-r">zulässig, aber die unterlegene Variante</span></h2></div>
+<div class="zwei">
+  <figure><img src="bilder/S032.png" alt="S.32"><figcaption><b>Deine Lehre:</b> Wand-Position UND Stiegen-Mitte sind zulässig — gewählt wird die mit der besten Sichtbarkeit im Bewegungsfluss (hier: Wand + left-Pfeil).</figcaption></figure>
+  <div>
+    <div class="hinweis warn"><b>Engine heute:</b> GT <span class="mono">41220</span> gepaart, aber down-mittig am Podest-Zentrum (1187 mm, rot_delta 89°) — die im PDF als „zulässig, aber schlechter" beschriebene Alternative.</div>
+    <div class="hinweis" style="margin-top:10px"><b>Wurzel:</b> <span class="mono">stgh_strategy</span> kennt nur das Podest-Zentrum, keine Sichtbarkeits-Abwägung zwischen zulässigen Positionen.<br><b>Fix:</b> M2 (Positions-Rezepte: 800–1122-mm-Band + Wand-Präferenz bei besserer Frontalsicht).</div>
+  </div>
+</div>
+</div>
+
+<!-- ============ FALL E ============ -->
+<div class="fall">
+<div class="fallkopf"><div class="fallnr">E</div><h2>S.20/21 · 2OG · Die „fünfte Variante", die es nicht gibt<span class="tag t-r">keine der 4 zulässigen Varianten</span></h2></div>
+<div class="zwei">
+  <figure><img src="bilder/S020.png" alt="S.20"><figcaption><b>Deine Lehre:</b> Für die zusätzliche Gang-Beleuchtung gibt es genau VIER gleichwertige Varianten (2 Antipanik / 2 Aufheller / mittige down-RZ / down-RZ an der Trenntür) — Nachweis über die Lichtberechnung.</figcaption></figure>
+  <div>
+    <div class="hinweis schlecht"><b>Engine heute:</b> Tür-RZ (D) perfekt (283 mm, Typ ✓) — aber statt der zwei Antipanikleuchten (<span class="mono">852B7/852B8</span>, beide „fehlt") EINEN Aufheller mittig: eine fünfte Variante außerhalb deines Katalogs.</div>
+    <div class="hinweis" style="margin-top:10px"><b>Wurzel:</b> Flächen-Heuristik (<span class="mono">_ANTIPANIK_AB_M2=60</span> → Raum &lt; 60 m² = 1 Aufheller) statt deines Varianten-Katalogs mit Lux-Nachweis.<br><b>Fix:</b> M1 (Aufheller-Drossel) + M2 (Varianten-Katalog lichtberechnungs-getrieben; RW-030/031).</div>
+  </div>
+</div>
+</div>
+
+<!-- ============ POSITIVES ============ -->
+<div class="fall">
+<h2>✅ Wo die Engine dein „Warum" schon versteht (3 Volltreffer + 1 Fast-Treffer)</h2>
+<div class="zwei">
+  <figure><img src="bilder/S069.png" alt="S.69"><figcaption><b>S.69 (2KG, Doppelparkergrube):</b> Direkte Sichtverbindung auf das Tür-RZ → KEINE Zwischen-Leuchte. Die Engine tut exakt das: Tür-RZ <span class="mono">1C649</span> gepaart mit <b>264 mm</b> Präzision und Typ ✓ — und die Sichtketten-Ausdünnung verzichtet korrekt auf die Zusatzleuchte.</figcaption></figure>
+  <div>
+    <div class="hinweis gut"><b>S.15/16 (1OG):</b> Ankunfts-RZ für die vom 2.OG Herabflüchtenden — Engine wählt den <b>left-Pfeil richtig</b> (GT <span class="mono">95019</span>, Typ ✓); Wand-oder-Mitte deckt deine Gleichwertigkeits-Lehre.</div>
+    <div class="hinweis gut" style="margin-top:8px"><b>S.92/93 (2KG, Medienraum):</b> Deine Mach/Lass-Abwägung („eigene Leuchte möglich, aber nicht zwingend — Gang-Leuchte direkt vor der Tür genügt") — die Engine reproduziert sie: führende down-RZ <span class="mono">1C912</span> gepaart, Typ ✓, keine überflüssige Extra-Leuchte.</div>
+    <div class="hinweis warn" style="margin-top:8px"><b>S.61 (2KG):</b> Prinzip getroffen (kein Zwischen-RZ im zusammenhängenden Gang, richtiger down-Typ an (A) <span class="mono">1C695</span>) — nur die Position sitzt 2 m daneben. Klassischer M2-Fall.</div>
+  </div>
+</div>
+</div>
+
+<!-- ============ FAZIT ============ -->
+<div class="fall">
+<h2>Fazit &amp; was als Nächstes passiert</h2>
+<div class="karte">
+  <table>
+    <tr><th style="width:110px">Befund</th><th>Bedeutung</th><th style="width:170px">Gegenmaßnahme</th></tr>
+    <tr><td><b class="gruen">40/40 bestätigt</b></td><td>Deine Lehrbeispiele sind geometrisch wasserdicht — jeder adversariale Widerlegungs-Versuch scheiterte an den DXF-Messwerten. (2 aussortierte Fälle waren Fehler unserer Finder, nicht deiner Pläne.)</td><td>— (Qualität der Referenz belegt)</td></tr>
+    <tr><td><b>31× nichts</b></td><td>Zündkette reißt VOR der Platzierung (Raumtyp/Tür/Zirkulation). Das Regel-Wissen dahinter ist da — inkl. deiner Vorbehalte (L-Form-Guard!). Die Engine rät nicht (fail-closed = deine „nie raten"-Regel).</td><td>Phase <b>M4</b> / Selman S-KG (übergeben) + Naht-Fixes</td></tr>
+    <tr><td><b class="rot">5× Falsch-Variante</b></td><td>EINE gemeinsame Wurzel: Typ-/Positionswahl nach Weg-Vektor statt nach Frontalsicht der Person. Genau die Fehlerklasse, die deine S.31–36 als Lehrstück durchdekliniert.</td><td>Phase <b>M3</b> (+ M2 Podest) — jetzt mit 5 mm-genauen Handle-Testfällen: <span class="mono">413A0 · 1C64B · 952E8 · 41220 · 852B7/8</span></td></tr>
+    <tr><td><b class="gruen">3× richtig</b></td><td>Wo die Ketten durchgehen, trifft die Engine sogar deine ABWÄGUNGEN (Verzicht bei Sichtverbindung, Mach/Lass am Medienraum, Wand-oder-Mitte).</td><td>als Regressions-Anker einfrieren</td></tr>
+  </table>
+  <div class="hinweis" style="margin-top:12px"><b>Kurz:</b> Die Engine kennt deine Regeln und tappt kaum in deine dokumentierten Fallen — sie muss (a) an den Stellen überhaupt ankommen (Zündketten/M4) und (b) den Pfeiltyp mit deinen Augen wählen (Frontalsicht/M3). Beides ist jetzt mit exakten, handle-verifizierten Testfällen hinterlegt — der Einbau wird direkt an deinen Lehrbeispielen gemessen.</div>
+</div>
+<div class="legende" style="margin-top:14px">Erstellt 30.09.2026 · 90-Agenten-Workflow (Finden → adversarial Verifizieren → Engine-Richten) · alle Zahlen aus echten Läufen und DXF-Messungen, nichts geschätzt · Quellen: FALLBEISPIELE_REVIEW.md (42 Fälle im Volltext) · evidenz/fallbeispiele.json · Projekte/_ergebnis/Mollgasse_GT/&lt;G&gt;/vergleich.json</div>
+</div>
+
+</div></body></html>

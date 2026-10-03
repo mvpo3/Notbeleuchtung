@@ -1,0 +1,2852 @@
+{
+ "projekt": "Hausfeld",
+ "geschoss": "2DG",
+ "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+ "quelle": "Hausfeldstraße Notbeleuchtung zeichnen\\Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+ "n_leuchten": 3,
+ "n_beidseitig_gruppen": 0,
+ "n_personen": 7,
+ "n_sichtlinien": 43,
+ "n_fluchtwege": 97,
+ "n_kennungen": 12,
+ "n_gelb_marker": 0,
+ "leuchten": [
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "35282",
+   "block": "RIVO_ARR_left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    -4465.2,
+    13221.8
+   ],
+   "insert_xy_mm": [
+    -84926.5,
+    -32815.3
+   ],
+   "rot_deg": 356.71,
+   "xscale": 31.114,
+   "welt_pfeil_deg": 176.71,
+   "layer": "E_Sicherheitsbeleuchtung"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "352A2",
+   "block": "RIVO_ARR_left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    22015.3,
+    10626.6
+   ],
+   "insert_xy_mm": [
+    -55347.8,
+    -40393.5
+   ],
+   "rot_deg": 0.33,
+   "xscale": 31.114,
+   "welt_pfeil_deg": 180.33,
+   "layer": "E_Sicherheitsbeleuchtung"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "352C2",
+   "block": "RIVO_ARR_left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    -7878.3,
+    12899.7
+   ],
+   "insert_xy_mm": [
+    38158.8,
+    -67561.6
+   ],
+   "rot_deg": 86.71,
+   "xscale": 31.114,
+   "welt_pfeil_deg": 266.71,
+   "layer": "E_Sicherheitsbeleuchtung"
+  }
+ ],
+ "personen": [
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36143",
+   "block": "750298750",
+   "xy_mm": [
+    -4650.0,
+    10100.0
+   ],
+   "rot_deg": 270.0,
+   "xscale": 3.4493,
+   "layer": "HF_LEHR_HF-2DG-S01_MENSCHEN",
+   "szene": 1,
+   "kategorie": "MENSCHEN",
+   "blick_deg": 90.0
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36146",
+   "block": "750298750",
+   "xy_mm": [
+    -4550.0,
+    12700.0
+   ],
+   "rot_deg": 270.0,
+   "xscale": 3.4493,
+   "layer": "HF_LEHR_HF-2DG-S01_MENSCHEN",
+   "szene": 1,
+   "kategorie": "MENSCHEN",
+   "blick_deg": 90.0
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36149",
+   "block": "750298750",
+   "xy_mm": [
+    -4600.0,
+    14800.0
+   ],
+   "rot_deg": 90.0,
+   "xscale": 3.4493,
+   "layer": "HF_LEHR_HF-2DG-S01_MENSCHEN",
+   "szene": 1,
+   "kategorie": "MENSCHEN",
+   "blick_deg": 270.0
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3614C",
+   "block": "750298750",
+   "xy_mm": [
+    -6800.0,
+    13600.0
+   ],
+   "rot_deg": 0.0,
+   "xscale": 3.4493,
+   "layer": "HF_LEHR_HF-2DG-S01_MENSCHEN",
+   "szene": 1,
+   "kategorie": "MENSCHEN",
+   "blick_deg": 180.0
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36198",
+   "block": "750298750",
+   "xy_mm": [
+    22550.0,
+    8200.0
+   ],
+   "rot_deg": 270.0,
+   "xscale": 3.4324,
+   "layer": "HF_LEHR_HF-2DG-S02_MENSCHEN",
+   "szene": 2,
+   "kategorie": "MENSCHEN",
+   "blick_deg": 90.0
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3619B",
+   "block": "750298750",
+   "xy_mm": [
+    22450.0,
+    10000.0
+   ],
+   "rot_deg": 270.0,
+   "xscale": 3.4324,
+   "layer": "HF_LEHR_HF-2DG-S02_MENSCHEN",
+   "szene": 2,
+   "kategorie": "MENSCHEN",
+   "blick_deg": 90.0
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3619E",
+   "block": "750298750",
+   "xy_mm": [
+    22550.0,
+    12450.0
+   ],
+   "rot_deg": 90.0,
+   "xscale": 3.4324,
+   "layer": "HF_LEHR_HF-2DG-S02_MENSCHEN",
+   "szene": 2,
+   "kategorie": "MENSCHEN",
+   "blick_deg": 270.0
+  }
+ ],
+ "sichtlinien": [
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36125",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4550.0,
+     12700.0
+    ],
+    [
+     -4546.0,
+     12746.8
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36126",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4543.4,
+     12776.7
+    ],
+    [
+     -4539.4,
+     12823.5
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36127",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4536.8,
+     12853.5
+    ],
+    [
+     -4532.8,
+     12900.3
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36128",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4530.3,
+     12930.2
+    ],
+    [
+     -4526.2,
+     12977.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36129",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4523.7,
+     13007.0
+    ],
+    [
+     -4519.7,
+     13053.8
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3612A",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4517.1,
+     13083.7
+    ],
+    [
+     -4513.1,
+     13130.5
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3612B",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4510.5,
+     13160.5
+    ],
+    [
+     -4506.5,
+     13207.3
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3612C",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4503.9,
+     13237.2
+    ],
+    [
+     -4499.9,
+     13284.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3612D",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4497.3,
+     13314.0
+    ],
+    [
+     -4493.3,
+     13360.8
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3612E",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4490.8,
+     13390.7
+    ],
+    [
+     -4486.7,
+     13437.5
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3612F",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4484.2,
+     13467.5
+    ],
+    [
+     -4484.0,
+     13470.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36130",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -6800.0,
+     13600.0
+    ],
+    [
+     -6842.8,
+     13580.6
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36131",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -6870.2,
+     13568.2
+    ],
+    [
+     -6912.9,
+     13548.8
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36132",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -6940.3,
+     13536.4
+    ],
+    [
+     -6983.1,
+     13517.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36133",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7010.5,
+     13504.6
+    ],
+    [
+     -7053.3,
+     13485.2
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36134",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7080.6,
+     13472.8
+    ],
+    [
+     -7123.4,
+     13453.4
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36135",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7150.8,
+     13441.0
+    ],
+    [
+     -7193.6,
+     13421.6
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36136",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7221.0,
+     13409.2
+    ],
+    [
+     -7263.7,
+     13389.8
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36137",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7291.1,
+     13377.4
+    ],
+    [
+     -7333.9,
+     13358.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36138",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7361.3,
+     13345.6
+    ],
+    [
+     -7404.1,
+     13326.2
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36139",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7431.4,
+     13313.8
+    ],
+    [
+     -7474.2,
+     13294.4
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3613A",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7501.6,
+     13282.0
+    ],
+    [
+     -7544.4,
+     13262.6
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3613B",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7571.8,
+     13250.2
+    ],
+    [
+     -7614.5,
+     13230.8
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3613C",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7641.9,
+     13218.4
+    ],
+    [
+     -7684.7,
+     13199.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3613D",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7712.1,
+     13186.6
+    ],
+    [
+     -7754.9,
+     13167.2
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3613E",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7782.2,
+     13154.8
+    ],
+    [
+     -7825.0,
+     13135.4
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3613F",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7852.4,
+     13123.0
+    ],
+    [
+     -7895.2,
+     13103.6
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36140",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7922.6,
+     13091.2
+    ],
+    [
+     -7965.3,
+     13071.8
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36141",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7992.7,
+     13059.4
+    ],
+    [
+     -8035.5,
+     13040.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36142",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -8062.9,
+     13027.6
+    ],
+    [
+     -8105.7,
+     13008.2
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_SICHT",
+   "szene": 1,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3618B",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22450.0,
+     10000.0
+    ],
+    [
+     22432.8,
+     10043.5
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_SICHT",
+   "szene": 2,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3618C",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22421.8,
+     10071.3
+    ],
+    [
+     22404.7,
+     10114.8
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_SICHT",
+   "szene": 2,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3618D",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22393.7,
+     10142.6
+    ],
+    [
+     22376.5,
+     10186.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_SICHT",
+   "szene": 2,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3618E",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22365.5,
+     10213.9
+    ],
+    [
+     22348.3,
+     10257.3
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_SICHT",
+   "szene": 2,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3618F",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22337.3,
+     10285.1
+    ],
+    [
+     22320.1,
+     10328.6
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_SICHT",
+   "szene": 2,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36190",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22309.1,
+     10356.4
+    ],
+    [
+     22292.0,
+     10399.9
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_SICHT",
+   "szene": 2,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36191",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22281.0,
+     10427.7
+    ],
+    [
+     22263.8,
+     10471.2
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_SICHT",
+   "szene": 2,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36192",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22252.8,
+     10499.0
+    ],
+    [
+     22235.6,
+     10542.5
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_SICHT",
+   "szene": 2,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36193",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22224.6,
+     10570.3
+    ],
+    [
+     22207.4,
+     10613.8
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_SICHT",
+   "szene": 2,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36194",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22196.5,
+     10641.6
+    ],
+    [
+     22179.3,
+     10685.1
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_SICHT",
+   "szene": 2,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36195",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22168.3,
+     10712.9
+    ],
+    [
+     22151.1,
+     10756.3
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_SICHT",
+   "szene": 2,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36196",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22140.1,
+     10784.2
+    ],
+    [
+     22122.9,
+     10827.6
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_SICHT",
+   "szene": 2,
+   "kategorie": "SICHT"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36197",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22111.9,
+     10855.4
+    ],
+    [
+     22096.1,
+     10895.4
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_SICHT",
+   "szene": 2,
+   "kategorie": "SICHT"
+  }
+ ],
+ "fluchtwege": [
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "360EF",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4650.0,
+     10100.0
+    ],
+    [
+     -4650.0,
+     10217.4
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "360F0",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4650.0,
+     10292.6
+    ],
+    [
+     -4650.0,
+     10410.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "360F1",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4650.0,
+     10485.2
+    ],
+    [
+     -4650.0,
+     10602.6
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "360F2",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4650.0,
+     10677.7
+    ],
+    [
+     -4650.0,
+     10750.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "360F3",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4650.0,
+     10750.0
+    ],
+    [
+     -4647.7,
+     10795.1
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "360F4",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4643.8,
+     10870.1
+    ],
+    [
+     -4637.8,
+     10987.4
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "360F5",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4634.0,
+     11062.5
+    ],
+    [
+     -4628.0,
+     11179.7
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "360F6",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4624.1,
+     11254.8
+    ],
+    [
+     -4618.1,
+     11372.1
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "360F7",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4614.3,
+     11447.1
+    ],
+    [
+     -4608.2,
+     11564.4
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "360F8",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4604.4,
+     11639.4
+    ],
+    [
+     -4598.4,
+     11756.7
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "360F9",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4594.5,
+     11831.8
+    ],
+    [
+     -4588.5,
+     11949.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "360FA",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4584.7,
+     12024.1
+    ],
+    [
+     -4578.6,
+     12141.4
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "360FB",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4574.8,
+     12216.4
+    ],
+    [
+     -4568.8,
+     12333.7
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "360FC",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4564.9,
+     12408.7
+    ],
+    [
+     -4558.9,
+     12526.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "360FD",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4555.1,
+     12601.1
+    ],
+    [
+     -4550.0,
+     12700.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "360FE",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4550.0,
+     12700.0
+    ],
+    [
+     -4550.0,
+     12718.3
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "360FF",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4550.0,
+     12793.5
+    ],
+    [
+     -4550.0,
+     12910.9
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36100",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4550.0,
+     12986.1
+    ],
+    [
+     -4550.0,
+     13103.5
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36101",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4550.0,
+     13178.6
+    ],
+    [
+     -4550.0,
+     13296.1
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36102",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4571.1,
+     13352.5
+    ],
+    [
+     -4687.7,
+     13366.5
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36103",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4762.3,
+     13375.5
+    ],
+    [
+     -4878.9,
+     13389.5
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36104",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4953.5,
+     13398.4
+    ],
+    [
+     -5070.1,
+     13412.4
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36105",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -5144.7,
+     13421.4
+    ],
+    [
+     -5261.3,
+     13435.4
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36106",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -5335.9,
+     13444.3
+    ],
+    [
+     -5452.5,
+     13458.3
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36107",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -5527.1,
+     13467.3
+    ],
+    [
+     -5643.7,
+     13481.2
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36108",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -5718.3,
+     13490.2
+    ],
+    [
+     -5800.0,
+     13500.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36109",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -5800.0,
+     13500.0
+    ],
+    [
+     -5835.0,
+     13503.5
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3610A",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -5909.7,
+     13511.0
+    ],
+    [
+     -6026.6,
+     13522.7
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3610B",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -6101.4,
+     13530.1
+    ],
+    [
+     -6218.2,
+     13541.8
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3610C",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -6293.0,
+     13549.3
+    ],
+    [
+     -6409.8,
+     13561.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3610D",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -6484.6,
+     13568.5
+    ],
+    [
+     -6601.4,
+     13580.1
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3610E",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -6676.2,
+     13587.6
+    ],
+    [
+     -6793.1,
+     13599.3
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3610F",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -6868.2,
+     13600.0
+    ],
+    [
+     -6985.6,
+     13600.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36110",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7060.8,
+     13600.0
+    ],
+    [
+     -7178.2,
+     13600.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36111",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7253.3,
+     13600.0
+    ],
+    [
+     -7370.8,
+     13600.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36112",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7445.9,
+     13600.0
+    ],
+    [
+     -7563.3,
+     13600.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36113",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7638.5,
+     13600.0
+    ],
+    [
+     -7755.9,
+     13600.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36114",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7831.1,
+     13600.0
+    ],
+    [
+     -7948.5,
+     13600.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36115",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7959.1,
+     13526.9
+    ],
+    [
+     -7973.7,
+     13410.4
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36116",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -7983.0,
+     13335.8
+    ],
+    [
+     -7997.6,
+     13219.3
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36117",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -8006.9,
+     13144.8
+    ],
+    [
+     -8021.5,
+     13028.2
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36118",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -8030.8,
+     12953.7
+    ],
+    [
+     -8045.4,
+     12837.2
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36119",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -8054.7,
+     12762.6
+    ],
+    [
+     -8069.2,
+     12646.1
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3611A",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -8078.6,
+     12571.5
+    ],
+    [
+     -8093.1,
+     12455.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3611B",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -8102.4,
+     12380.4
+    ],
+    [
+     -8117.0,
+     12263.9
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3611C",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -8126.3,
+     12189.3
+    ],
+    [
+     -8140.9,
+     12072.8
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3611E",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4600.0,
+     14800.0
+    ],
+    [
+     -4591.6,
+     14682.9
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3611F",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4586.3,
+     14607.9
+    ],
+    [
+     -4577.9,
+     14490.8
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36120",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4572.6,
+     14415.8
+    ],
+    [
+     -4564.2,
+     14298.7
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36121",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4558.8,
+     14223.7
+    ],
+    [
+     -4550.5,
+     14106.6
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36122",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4550.0,
+     14031.5
+    ],
+    [
+     -4550.0,
+     13914.1
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36123",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -4550.0,
+     13453.8
+    ],
+    [
+     -4550.0,
+     13350.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_WEGE",
+   "szene": 1,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3615C",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22550.0,
+     8200.0
+    ],
+    [
+     22550.0,
+     8316.8
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3615D",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22550.0,
+     8391.6
+    ],
+    [
+     22550.0,
+     8508.5
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3615E",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22550.0,
+     8583.3
+    ],
+    [
+     22550.0,
+     8700.1
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3615F",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22550.0,
+     8774.9
+    ],
+    [
+     22550.0,
+     8800.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36160",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22550.0,
+     8800.0
+    ],
+    [
+     22542.4,
+     8891.4
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36161",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22536.2,
+     8965.9
+    ],
+    [
+     22526.5,
+     9082.4
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36162",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22520.3,
+     9156.9
+    ],
+    [
+     22510.6,
+     9273.4
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36163",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22504.3,
+     9347.9
+    ],
+    [
+     22494.6,
+     9464.3
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36164",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22488.4,
+     9538.9
+    ],
+    [
+     22478.7,
+     9655.3
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36165",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22472.5,
+     9729.8
+    ],
+    [
+     22462.8,
+     9846.3
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36166",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22456.6,
+     9920.8
+    ],
+    [
+     22450.0,
+     10000.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36167",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22450.0,
+     10000.0
+    ],
+    [
+     22450.0,
+     10037.4
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36168",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22450.0,
+     10112.1
+    ],
+    [
+     22450.0,
+     10229.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36169",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22450.0,
+     10303.8
+    ],
+    [
+     22450.0,
+     10420.6
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3616A",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22450.0,
+     10495.4
+    ],
+    [
+     22450.0,
+     10612.3
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3616B",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22450.0,
+     10687.0
+    ],
+    [
+     22450.0,
+     10750.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3616C",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22450.0,
+     10750.0
+    ],
+    [
+     22396.1,
+     10751.5
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3616D",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22321.4,
+     10753.5
+    ],
+    [
+     22204.6,
+     10756.6
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3616E",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22129.8,
+     10758.7
+    ],
+    [
+     22013.0,
+     10761.8
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3616F",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     21938.3,
+     10763.8
+    ],
+    [
+     21821.5,
+     10767.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36170",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     21746.7,
+     10769.0
+    ],
+    [
+     21629.9,
+     10772.2
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36171",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     21555.1,
+     10774.2
+    ],
+    [
+     21438.3,
+     10777.3
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36172",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     21363.6,
+     10779.4
+    ],
+    [
+     21246.8,
+     10782.5
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36173",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     21172.0,
+     10784.5
+    ],
+    [
+     21055.2,
+     10787.7
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36174",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     20980.5,
+     10789.7
+    ],
+    [
+     20863.7,
+     10792.9
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36175",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     20788.9,
+     10794.9
+    ],
+    [
+     20672.1,
+     10798.1
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36176",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     20597.3,
+     10800.0
+    ],
+    [
+     20480.5,
+     10800.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36177",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     20405.7,
+     10800.0
+    ],
+    [
+     20288.9,
+     10800.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36178",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     20214.1,
+     10800.0
+    ],
+    [
+     20097.2,
+     10800.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36179",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     20022.4,
+     10800.0
+    ],
+    [
+     19905.6,
+     10800.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3617A",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     19830.8,
+     10800.0
+    ],
+    [
+     19714.0,
+     10800.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3617B",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     19639.2,
+     10800.0
+    ],
+    [
+     19522.3,
+     10800.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3617C",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     19447.6,
+     10800.0
+    ],
+    [
+     19330.7,
+     10800.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3617D",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     19255.9,
+     10800.0
+    ],
+    [
+     19139.1,
+     10800.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3617E",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     19064.3,
+     10800.0
+    ],
+    [
+     19000.0,
+     10800.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36180",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22550.0,
+     12450.0
+    ],
+    [
+     22550.0,
+     12333.2
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36181",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22550.0,
+     12258.4
+    ],
+    [
+     22550.0,
+     12141.5
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36182",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22550.0,
+     12066.7
+    ],
+    [
+     22550.0,
+     11949.9
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36183",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22550.0,
+     11875.1
+    ],
+    [
+     22550.0,
+     11758.3
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36184",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22550.0,
+     11683.5
+    ],
+    [
+     22550.0,
+     11600.0
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36185",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22550.0,
+     11600.0
+    ],
+    [
+     22546.1,
+     11566.9
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36186",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22537.4,
+     11492.6
+    ],
+    [
+     22523.7,
+     11376.5
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36187",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22515.0,
+     11302.3
+    ],
+    [
+     22501.3,
+     11186.2
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36188",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22492.6,
+     11112.0
+    ],
+    [
+     22478.9,
+     10995.9
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36189",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22470.2,
+     10921.6
+    ],
+    [
+     22456.5,
+     10805.6
+    ]
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_WEGE",
+   "szene": 2,
+   "kategorie": "WEGE"
+  }
+ ],
+ "kennungen": [
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36145",
+   "text": "P1a",
+   "xy_mm": [
+    -4452.7,
+    10348.9
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_KENNUNGEN",
+   "szene": 1,
+   "kategorie": "KENNUNGEN"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36148",
+   "text": "P1b",
+   "xy_mm": [
+    -4352.7,
+    12948.9
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_KENNUNGEN",
+   "szene": 1,
+   "kategorie": "KENNUNGEN"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3614B",
+   "text": "P2a",
+   "xy_mm": [
+    -4402.7,
+    15048.9
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_KENNUNGEN",
+   "szene": 1,
+   "kategorie": "KENNUNGEN"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3614E",
+   "text": "P1c",
+   "xy_mm": [
+    -6602.7,
+    13848.9
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_KENNUNGEN",
+   "szene": 1,
+   "kategorie": "KENNUNGEN"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36150",
+   "text": "A",
+   "xy_mm": [
+    -4277.3,
+    13876.6
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_KENNUNGEN",
+   "szene": 1,
+   "kategorie": "KENNUNGEN"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36152",
+   "text": "B",
+   "xy_mm": [
+    -8157.2,
+    13087.5
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_KENNUNGEN",
+   "szene": 1,
+   "kategorie": "KENNUNGEN"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "36155",
+   "text": "?",
+   "xy_mm": [
+    -8032.6,
+    12093.9
+   ],
+   "layer": "HF_LEHR_HF-2DG-S01_HINWEISE",
+   "szene": 1,
+   "kategorie": "HINWEISE"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3619A",
+   "text": "P1a",
+   "xy_mm": [
+    22746.3,
+    8447.7
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_KENNUNGEN",
+   "szene": 2,
+   "kategorie": "KENNUNGEN"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "3619D",
+   "text": "P1b",
+   "xy_mm": [
+    22646.3,
+    10247.7
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_KENNUNGEN",
+   "szene": 2,
+   "kategorie": "KENNUNGEN"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "361A0",
+   "text": "P2a",
+   "xy_mm": [
+    22746.3,
+    12697.7
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_KENNUNGEN",
+   "szene": 2,
+   "kategorie": "KENNUNGEN"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "361A2",
+   "text": "A",
+   "xy_mm": [
+    22202.3,
+    11286.8
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_KENNUNGEN",
+   "szene": 2,
+   "kategorie": "KENNUNGEN"
+  },
+  {
+   "datei": "Hausfeldstraße_2DG_Notbeleuchtung_RIVO.dxf",
+   "handle": "361A5",
+   "text": "?",
+   "xy_mm": [
+    19116.8,
+    10893.5
+   ],
+   "layer": "HF_LEHR_HF-2DG-S02_HINWEISE",
+   "szene": 2,
+   "kategorie": "HINWEISE"
+  }
+ ],
+ "gelb_marker": [],
+ "hinweise": [],
+ "dauer_s": 3.1
+}

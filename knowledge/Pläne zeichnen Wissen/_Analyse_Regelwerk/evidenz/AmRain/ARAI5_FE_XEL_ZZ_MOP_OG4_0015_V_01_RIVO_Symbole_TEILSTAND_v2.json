@@ -1,0 +1,60 @@
+{
+ "projekt": "AmRain",
+ "geschoss": "OG4",
+ "datei": "ARAI5_FE_XEL_ZZ_MOP_OG4_0015_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+ "quelle": "Am Rain Notbeleuchtungserklärung\\ARAI5_FE_XEL_ZZ_MOP_OG4_0015_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+ "n_leuchten": 2,
+ "n_beidseitig_gruppen": 0,
+ "n_personen": 0,
+ "n_sichtlinien": 0,
+ "n_fluchtwege": 0,
+ "n_kennungen": 0,
+ "n_gelb_marker": 0,
+ "leuchten": [
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_OG4_0015_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "32726",
+   "block": "RIVO_ARR_left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    12239.0,
+    22304.3
+   ],
+   "insert_xy_mm": [
+    72787.2,
+    -70104.2
+   ],
+   "rot_deg": 90.0,
+   "xscale": 37.0486,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_OG4_0015_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "32744",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    14280.1,
+    19788.7
+   ],
+   "insert_xy_mm": [
+    -78271.8,
+    -41230.6
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  }
+ ],
+ "personen": [],
+ "sichtlinien": [],
+ "fluchtwege": [],
+ "kennungen": [],
+ "gelb_marker": [],
+ "hinweise": [],
+ "dauer_s": 2.5
+}

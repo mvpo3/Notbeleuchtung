@@ -1,0 +1,53 @@
+{
+ "projekt": "Tomaschek",
+ "geschoss": "OG",
+ "input": "SH21-TOM44-AR0-AP-OG-1 1. Obergeschoss.dxf",
+ "engine_n": 24,
+ "gt_n": 47,
+ "gt_by_klasse": {
+  "rz": 27,
+  "sicherheitsleuchte": 19,
+  "antipanik": 1
+ },
+ "gepaart": 5,
+ "typ_match_n": 2,
+ "fehlt_n": 42,
+ "ueberfluessig_n": 19,
+ "erreichbar_n": 17,
+ "erreichbar_gepaart": 3,
+ "distanz_median_mm": 1879.2,
+ "transform": {
+  "n_namen": 1226,
+  "n_inlier": 15,
+  "tx_mm": 8234.7,
+  "ty_mm": -16141.6
+ },
+ "paare": [
+  {
+   "gt": "1B3C3",
+   "distanz_mm": 2425.8,
+   "typ_match": false
+  },
+  {
+   "gt": "1B3E0",
+   "distanz_mm": 1744.5,
+   "typ_match": false
+  },
+  {
+   "gt": "1B545",
+   "distanz_mm": 1505.3,
+   "typ_match": true
+  },
+  {
+   "gt": "1B5DB",
+   "distanz_mm": 1879.2,
+   "typ_match": false
+  },
+  {
+   "gt": "1B703",
+   "distanz_mm": 2815.1,
+   "typ_match": true
+  }
+ ],
+ "engine_status": null
+}

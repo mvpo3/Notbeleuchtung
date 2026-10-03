@@ -1,0 +1,325 @@
+# Konsolidierte NEUE Regeln aus dem 5-Projekte-Abgleich (2026-09-29).
+# Quelle: 111 neu/widerspruch-Records der Seitenprotokolle (evidenz/*/seitenprotokoll.jsonl,
+# Dump: evidenz/_neu_kandidaten_dump.txt). prioritaet=basis NUR bei Mollgasse-Beleg.
+# quelle_seiten wird von baue_regelwerk.py zu quelle_pdf+belege_dxf aufgelöst.
+
+# ── NEUE BASIS-REGELN (Mollgasse-belegt) ──────────────────────────────────────
+
+- id: RW-028
+  thema: antipanik_laengsachse
+  regel: "Antipanikleuchte: Längsachse in Richtung des auszuleuchtenden (Gang-)Bereichs drehen; Position mittig im abgeschatteten Bereich."
+  geometrische_bedingung: {rotation: "Längsachse parallel zur Hauptachse des Zielbereichs", hinweis: "S.58: vertikal statt horizontal = bessere Ausleuchtung"}
+  leuchtentyp: antipanik
+  prioritaet: basis
+  quelle_seiten: {Mollgasse: [58]}
+
+- id: RW-029
+  thema: antipanik_position_diagonale
+  regel: "Antipanik-Position konstruieren über die Bereichs-Diagonale (Mauerkante→Gangecke) bzw. fluchtend in EINER Achse mit der nächsten Richtungs-Notleuchte UND mittig zum Bereich (gelbe Hilfslinien)."
+  geometrische_bedingung: {position: "Schnitt/Mitte der Bereichs-Diagonale; Achse durch die nächste Fluchtweg-Leuchte"}
+  leuchtentyp: antipanik
+  prioritaet: basis
+  quelle_seiten: {Mollgasse: [59, 67]}
+
+- id: RW-030
+  thema: antipanik_kann_fall
+  regel: "Optionale Antipanik zur Lux-Stützung: auch ohne Sichtblockade zulässig ('nicht zwingend, aber sinnvoll') — Kann-Fall zusätzlich zu NB-R10; Bestätigung durch Lichtberechnung."
+  geometrische_bedingung: {}
+  leuchtentyp: antipanik
+  prioritaet: basis
+  quelle_seiten: {Mollgasse: [59]}
+
+- id: RW-031
+  thema: geraete_wahl_geschoss
+  regel: "Geräte-Wahl nach Geschoss: Antipanikleuchten meist in Untergeschossen, runde Aufheller meist EG–OG; Antipanik auch im EG bei Allgemeinräumen (Technik/KIWA/Spielraum/Fahrradraum). Endgültige Wahl bestätigt die Lichtberechnung."
+  geometrische_bedingung: {}
+  leuchtentyp: "antipanik|aufheller"
+  prioritaet: basis
+  quelle_seiten: {Mollgasse: [49]}
+
+- id: RW-032
+  thema: stiegen_leuchte_decke_alternative
+  regel: "Deckenmontage mittig bei der Stiege ist zulässige Alternative zur Wandmontage (Regelfall NB-R14), solange die Frontal-Regel erfüllt bleibt; Alternativ-Position konstruierbar als Schnitt Mittellinie-Stiege × Mittellinie-Gang."
+  geometrische_bedingung: {position: "Schnittpunkt der Mittellinien Stiege × Gang", montage: "DA als Alternative zu WA"}
+  leuchtentyp: "notlicht_ks_stiege_links|_rechts"
+  prioritaet: basis
+  quelle_seiten: {Mollgasse: [42, 44]}
+
+- id: RW-033
+  thema: og_sichtketten_ausnahme
+  regel: "OG-Ausnahme: In Obergeschoßen mit nur EINEM Stiegenhaus und einem eindeutig verlaufenden I-förmigen Gang wird meist keine zusätzliche Richtungsleuchte benötigt — Richtungs-RZ konzentrieren sich auf EG/UG."
+  geometrische_bedingung: {bedingung: "n_stiegenhaeuser==1 UND Gang ohne Verzweigung/Richtungswechsel"}
+  leuchtentyp: "-"
+  prioritaet: basis
+  quelle_seiten: {Mollgasse: [74]}
+
+- id: RW-034
+  thema: lichtberechnung_qa_pflicht
+  regel: "QA-Prozess: JEDES bearbeitete Geschoss vollständig mit der Lichtberechnung nachprüfen, unter Einbezug ALLER platzierten Elemente (RZ, Notleuchten, Antipanik, Aufheller) — zweite Prüfstufe nach der Platzierungslogik."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: basis
+  quelle_seiten: {Mollgasse: [83]}
+
+- id: RW-035
+  thema: stiegenpfeil_farbe_stiege
+  regel: "Erkennungs-Heuristik (Selman-Naht): Der Architekten-Stiegenhauspfeil ist in derselben Farbe/Darstellung wie die Stiege selbst gezeichnet (Mollgasse: grau); rote Pfeile in Erklärbildern sind nachträgliche Markierung, keine Plan-Semantik."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: basis
+  quelle_seiten: {Mollgasse: [19, 5]}
+
+# ── ERGÄNZUNGSREGELN (nachrangig; greifen nur, wenn keine Basis-Regel greift) ─
+
+- id: RW-101
+  thema: knick_rz_stiegenlauf
+  regel: "Bei Richtungswechsel INNERHALB eines Stiegenlaufs (Zwischenpodest/abknickender Lauf) ein eigenes Richtungs-RZ am Knick zusätzlich zum Antritts-RZ (NB-R05); Pfeil = weitere Laufrichtung."
+  geometrische_bedingung: {position: "am Lauf-Knick", rotation: "Welt-Pfeil = Richtung des weiterführenden Laufs"}
+  leuchtentyp: "notlicht_ks_stiege_links|_rechts"
+  prioritaet: ergaenzung
+  quelle_seiten: {Hausfeld: [50, 57]}
+
+- id: RW-102
+  thema: aufheller_stgh_vorbereich_knoten
+  regel: "Treffen im Stiegenhaus-Vorbereich Schleusen-/Gangzugang, Liftzugang und Weg zum Stiegenfuß zusammen, wird dort zusätzlich zu Tür-/Richtungs-RZ EIN runder Aufheller gesetzt (Knoten-Beleuchtung)."
+  geometrische_bedingung: {bedingung: ">=3 zusammentreffende Wege am STGH-Vorbereich"}
+  leuchtentyp: aufheller
+  prioritaet: ergaenzung
+  quelle_seiten: {Hausfeld: [12]}
+
+- id: RW-103
+  thema: aussen_leuchte_letzter_ausgang
+  regel: "Unmittelbar AUSSEN vor dem letzten Ausgang eine beleuchtende Position (Antipanik-/SL-Typ, KEINE RZ-Front, keine Richtungsinfo) für Austritt + angrenzende Bodenfläche (EN 1838 §4.1.2 g); getrennt von Fassadenleuchten."
+  geometrische_bedingung: {position: "außen an der Ausgangstür"}
+  leuchtentyp: "antipanik|sicherheitsleuchte"
+  prioritaet: ergaenzung
+  quelle_seiten: {Hausfeld: [41], Tomaschek: [47], AmRain: [12, 31]}
+
+- id: RW-104
+  thema: schulraum_muster
+  regel: "Schule: JEDER Unterrichts-/Bildungsraum erhält ein raumseitiges Tür-RZ (nach NB-R01, Front in den Raum) PLUS genau einen Aufheller/AP im Rauminneren; der Wohnbau-Skip (WOHNUNG_PRIVAT ohne Notlicht) gilt für Klassenräume NICHT. Aufheller wirkt nur im eigenen Raum."
+  geometrische_bedingung: {bedingung: "raum_typ == KLASSENRAUM/BILDUNGSRAUM (Selman-Naht)"}
+  leuchtentyp: "rz + aufheller|antipanik"
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [87, 90, 101, 114, 146, 159]}
+
+- id: RW-105
+  thema: beidseitig_reihe_quer_ankuenfte
+  regel: "Eine REIHE beidseitiger RZ längs des Gangs bedient seitliche Raum-Ankünfte (Fronten quer zum Gang); lückenlose Frontalsicht für Längsläufer wird nicht gefordert — nuanciert NB-R07/NB-R16."
+  geometrische_bedingung: {}
+  leuchtentyp: "rz beidseitig"
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [75]}
+
+- id: RW-106
+  thema: knoten_einseitig_plus_beidseitig
+  regel: "Knoten mit drei Ankunftsrichtungen: Kombination aus einseitigem RZ (frontal zur Längsankunft) und beidseitigem RZ (Fronten zu Querankünften) am SELBEN Knoten ist regulär — dicht benachbarte Zeichen funktional analysieren, nie als Dublette löschen."
+  geometrische_bedingung: {}
+  leuchtentyp: "rz"
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [115]}
+
+- id: RW-107
+  thema: antipanik_flaechenbezogen
+  regel: "Offene Cluster-/MFU-/Saal-Flächen: Antipanik FLÄCHENBEZOGEN bewerten (freie Boden-Kernfläche nach EN 1838 4.3, 0,5-m-Randstreifen ausgenommen), nicht nur Weg unter der Leuchte; Großraum/Saal erhält flächige AP unabhängig von Sichtblockade."
+  geometrische_bedingung: {}
+  leuchtentyp: antipanik
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [64, 169]}
+
+- id: RW-108
+  thema: barrierefrei_wc_antipanik
+  regel: "Barrierefreies WC benötigt Antipanikbeleuchtung nach EN 1838 4.3.8 — eigener Trigger unabhängig von Sichtblockade und Fläche (keine 8-m²-/60-m²-Pauschale); nur echte Behinderten-Toiletten."
+  geometrische_bedingung: {bedingung: "raum_typ == WC_BARRIEREFREI"}
+  leuchtentyp: antipanik
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [58, 120, 182]}
+
+- id: RW-109
+  thema: sanitaer_schwellen
+  regel: "OVE E 8101 718.560.9.001.AT: Sanitärbereiche ≥8 m² nur bei ERHÖHTEN Anforderungen prüfen; die 60-m²-Ziffer gilt NUR für verkehrstechnische Einrichtungen — keine Schul-/Sanitär-Pauschale (Enis-Lane: Schwellenwerte in normwissen)."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [123, 103]}
+
+- id: RW-110
+  thema: mehrstufige_tuerfolgen
+  regel: "Mehrstufige Raum-/Türfolge (Raum→Raum→Gang): jede Tür der Folge erhält ihr eigenes Tür-RZ mit eigener Front; ein Aufheller im Zwischenraum ersetzt kein Tür-RZ; EN 1838 4.3.9 macht den Zwischenweg zum beleuchteten Rettungsweg."
+  geometrische_bedingung: {}
+  leuchtentyp: "rz"
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [50, 140]}
+
+- id: RW-111
+  thema: gang_aufheller_mehrfachbedienung
+  regel: "Ein gemeinsamer Gang-Aufheller darf mehrere benachbarte Türvorbereiche bedienen (SL-Analogie zu NB-R08); er deckt aber NIE Innenräume hinter Wänden/Kabinentrennungen und trägt keine Richtungsinformation."
+  geometrische_bedingung: {}
+  leuchtentyp: aufheller
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [126, 185]}
+
+- id: RW-112
+  thema: gefaehrdung_nur_beurteilung
+  regel: "Werk-/Küchenbereiche: Sicherheitsbeleuchtung für besondere Gefährdung (EN 1838 4.4: ≥10 % Wartungswert, ≥15 lx, Uo≥0,1, 0,5 s) NUR über Gefährdungsbeurteilung auslösen — nie automatisch aus dem Raumnamen."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [30, 128, 190]}
+
+- id: RW-113
+  thema: schraeg_rotation_exakt
+  regel: "Rotation an schrägen Wänden/Bestand exakt erhalten: krumme Winkel (96°, 269.007°, 7°/97°/187°/277°-Familie) NIE auf 90°-Raster runden — kleine Winkelabweichungen tragen realen Gebäudebezug."
+  geometrische_bedingung: {rotation: "exakter Wand-/Bestandswinkel, kein Quantisieren"}
+  leuchtentyp: "rz"
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [200, 99, 220]}
+  belege_dxf:
+    - {datei: "Tomaschek-Schule -Notbeleuchtungserklärung/EG_RIVO_Erklaerung.dxf", handle: "43561", block: "RIVO_ARR_left", rotation: 269.01, x: null, y: null, quelle: "Tomaschek S.99 (269.007° exakt erhalten)"}
+    - {datei: "Tomaschek-Schule -Notbeleuchtungserklärung/OG_RIVO_Erklaerung.dxf", handle: "1B563", block: "RIVO_ARR_down", rotation: 96.0, x: null, y: null, quelle: "Tomaschek S.200 (96°-Wand)"}
+    - {datei: "Tomaschek-Schule -Notbeleuchtungserklärung/SG_RIVO_Erklaerung.dxf", handle: "34FD6", block: "RIVO_ARR_bothsided0", rotation: 97.0, x: null, y: null, quelle: "Tomaschek S.220 (97°-Familie schräger Flügel)"}
+
+- id: RW-114
+  thema: rz_ersetzt_keine_stufen_sl
+  regel: "Eine RZ-Kette an einer Stiege deckt NICHT die Beleuchtungsaufgabe der Stufen (EN 1838 4.1.2 b); fehlende Stiegen-SL ist als offener Beleuchtungsnachweis auszuweisen, nicht durch RZ-Anrechnung zu heilen."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [157]}
+
+- id: RW-115
+  thema: absturzsicherung_wegbarriere
+  regel: "Absturzsicherungen/Brüstungskanten sind beim Fluchtweg-Routing Wegbarrieren (Weg nie über die Schutzkante führen) — erweitert den Hindernisbegriff über Symbol-Kollision hinaus (Selman-Naht)."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {AmRain: [61]}
+
+- id: RW-116
+  thema: rampe_kein_automatischer_fluchtweg
+  regel: "Garagen-/Fahrradrampe ist NICHT automatisch Fluchtweg oder sicherer Außenort: aus Rampengefälle keine Fluchtrichtung ableiten; erst nach belegter begehbarer Öffnung + Passage als Weg werten."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {Hausfeld: [18], AmRain: [109]}
+
+- id: RW-117
+  thema: rz_instanzen_kein_merge
+  regel: "Benachbarte RZ-Instanzen (z.B. am STGH-Knoten) sind eigenständige Geräte: kein Merge, kein Löschen, getrennte Handles/Belege je Instanz — der Engine-SL<2m-Merge betrifft NUR Sicherheitsleuchten."
+  geometrische_bedingung: {}
+  leuchtentyp: "rz"
+  prioritaet: ergaenzung
+  quelle_seiten: {AmRain: [67]}
+
+- id: RW-118
+  thema: geschoss_individualitaet
+  regel: "Geschoss-Konfigurationen NIE kopieren: dieselbe Grundriss-Stelle kann je Geschoss anderen Zeichentyp brauchen; vertikale Stiegenkern-Zuordnung nur über Stiegenbezeichnung+Lauf-/Liftkonfiguration+Schnittmarken/Höhen, nie über Koordinaten-Ähnlichkeit."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {AmRain: [71], Tomaschek: [153], Hausfeld: [64]}
+
+- id: RW-119
+  thema: leuchten_kennzeichnung_ove
+  regel: "Jede Sicherheitsleuchte trägt sichtbar Verteiler-, Stromkreis- und Leuchtennummer an/nahe der Leuchte (OVE E 8101:2025-10 560.9.15) — deckt die Engine-Praxis der circuit_hint-/NODEID-Labels."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {Hausfeld: [73]}
+  beleg_alternativ: "Text-Beleg statt Handle: Hausfeld-PDF S.73 zitiert OVE E 8101:2025-10 560.9.15 wörtlich; Leuchtenindex S.73-83 (65 Positionen) trägt die Nummern-Systematik. Kein einzelner INSERT-Handle zuordenbar (Kennzeichnungs-Regel, nicht Platzierungs-Regel)."
+
+- id: RW-120
+  thema: bestandsform_symbol_zuordnung
+  regel: "AG-CAD-Formregel Bestandskonvertierung: runde/quadratische Bestandsleuchten mit Mittelkreis → Aufheller-Symbol; rechteckige → Antipanik-Symbol. Reine Zeichensprache OHNE Lichtnachweis; Produktfunktion bleibt Attribut (Rolle ≠ Produkt)."
+  geometrische_bedingung: {}
+  leuchtentyp: "aufheller|antipanik"
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [6, 21, 84], Hausfeld: [15]}
+
+- id: RW-121
+  thema: rotationserhalt_bestand
+  regel: "Beim Symboltausch Bestand→RIVO Position/Kennung/Rotation/Skalierung EXAKT übernehmen (auch 269.007° oder 0.482583); die alte Leuchtenachse ist Dokumentation, NIE Fluchtrichtungs- oder Photometrie-Aussage."
+  geometrische_bedingung: {rotation: "Zieldrehung = Bestandsdrehung, keine Normalisierung"}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [23, 99, 220], AmRain: [60]}
+
+- id: RW-122
+  thema: attribut_grafik_widerspruch
+  regel: "Attribut/Grafik-Widerspruch (Produkttext vs. Symbolgrafik): Grafik-Rolle beibehalten, Widerspruch sichtbar als offenen Prüfpunkt führen — kein automatischer Symboltausch."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [136]}
+
+- id: RW-123
+  thema: rolle_nicht_produkt_sl
+  regel: "SL-Bestand: 'AP'/'SL' im Produktnamen belegt keine Funktion; SL-Symbol ohne Pfeil trägt KEINE Richtungsinformation und ersetzt kein RZ; Funktionszuordnung (Wegbeleuchtung/Antipanik/Aufheller) braucht je Stelle eigenen Nachweis (EN 1838 4.1.2/4.3.1)."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {AmRain: [14, 44, 62], Tomaschek: [78]}
+
+- id: RW-124
+  thema: quellen_disziplin_plananker
+  regel: "Architektur-Text (EINGANG/Adresse/SCHLEUSE/Türmarken) ist Plananker, KEIN Funktionsbeleg: keine Notausgangs-, Tür- oder Wegzuordnung aus Textnähe; Verbindungen nie aus Symbolnähe ableiten — Wand-/Türfolge muss geometrisch bestätigt sein."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {AmRain: [13, 21, 106, 108]}
+
+- id: RW-125
+  thema: sl_lichtnachweis_teilflaeche
+  regel: "Eine SL belegt nur ihre eigene Teilfläche: keine Lux-Deckung zwischen zwei Spots unterstellen, Treppenhaus-Nachweis deckt kein fernes Gangende, SL nahe Treppe ist kein Stufen-Nachweis — je Abschnitt eigene Lichtberechnung (EN 1838 4.2.7)."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {AmRain: [97, 107, 80]}
+
+- id: RW-126
+  thema: aussenleuchten_kein_wegnachweis
+  regel: "Fassaden-/Außenleuchten entlang der Gebäudekontur belegen KEINEN begehbaren Außenfluchtweg (auch nicht um Ecken); der Außenweg vom letzten Ausgang bis zum sicheren Bereich ist gesondert festzulegen und nachzuweisen."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [66, 69, 85]}
+
+- id: RW-127
+  thema: erfassungsrand_pruefrand
+  regel: "Erfassungsrand ≠ Prüfrand: das Ende der erfassten/ersetzten Leuchtenmenge beendet NICHT den nachzuweisenden Rettungsweg; angrenzende Bestandsflügel bleiben offene Prüfpflicht — im Bestand ohne belegte Zielobjektfolge keine Symbole erfinden."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [144, 207]}
+
+- id: RW-128
+  thema: sichtkette_erst_nach_passage
+  regel: "Eine RZ-Sichtkette (NB-R12) darf erst behauptet werden, wenn Tür-/Rampen-Durchgängigkeit belegt ist; Niveauwechsel im bestätigten Weg löst die §4.1.2-Prüfung aus."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {AmRain: [110]}
+
+- id: RW-129
+  thema: keine_sonderregel_aus_raumlabel
+  regel: "Hochrisiko-/Sonderregel-Einstufung nie allein aus dem Raumnamen (HEIZZENTRALE/Technikraum): Nutzungs- und Lichtwirkungsprüfung erforderlich; anonyme *U-Blöcke und Fremdgewerk-Texte erst per Legende klären."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {AmRain: [111, 113], Tomaschek: [210]}
+
+- id: RW-130
+  thema: schul_einstufung_schwellen
+  regel: "Schul-Einstufung (Enis-Lane): 3.200-m²-NETTO-Grundflächen-Schwelle (OIB RL2/OVE R12-2) über die maßgebende GESAMTfläche inkl. Bestand; Betriebsdauer 3 h nur bei erhöhten Anforderungen (Fußnote c); ≤20 Leuchten je Endstromkreis; Normausgabe exakt zitieren (AC1:2020 ≠ 2025)."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [26, 12, 208, 9]}
+
+- id: RW-131
+  thema: endausgang_dreiklang
+  regel: "Endausgang-Dreiklang (EN 1838 4.1.2 g): RZ + tatsächliche Ausgangstür + beleuchteter Außenweg bis zum sicheren Bereich sind ZUSAMMEN nachzuweisen — eine Leuchte an der Tür allein belegt den Außenweg nicht."
+  geometrische_bedingung: {}
+  leuchtentyp: "-"
+  prioritaet: ergaenzung
+  quelle_seiten: {Tomaschek: [15, 60]}

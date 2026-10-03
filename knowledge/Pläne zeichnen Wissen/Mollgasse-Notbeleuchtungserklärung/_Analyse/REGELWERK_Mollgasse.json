@@ -1,0 +1,5757 @@
+[
+ {
+  "id": "RW-001",
+  "nb_ref": "NB-R01",
+  "thema": "tuer_rz",
+  "regel": "Raum bindet ueber eine Tuer an den Fluchtweg an und erhaelt ein Tuer-RZ → in der Tuerachse, raumseitig hinter der Schwelle",
+  "geometrische_bedingung": {
+   "rotation": "Welt-Pfeil in den Raum = entgegen Fluchtrichtung durch die Tuer = entgegen Tuer-Oeffnungsrichtung",
+   "parameter": {
+    "quer_zur_tuerachse_mm": {
+     "gemessen": [
+      3,
+      35
+     ],
+     "toleranz": 50
+    },
+    "raumseitiger_versatz_mm": {
+     "gemessen": [
+      735,
+      930
+     ],
+     "hinweis": "Gang-Trenntuer 1OG: 258 gangseitig der Wandachse"
+    }
+   }
+  },
+  "leuchtentyp": "notlicht_ks_stiege_unten",
+  "belege": {
+   "pdf_seiten": [
+    1,
+    2,
+    3,
+    4,
+    14,
+    20,
+    43,
+    51,
+    60,
+    61,
+    69,
+    70,
+    72,
+    85
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20240",
+     "rotation": 89.99,
+     "x": 11513.3,
+     "y": 66599.2
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20286",
+     "rotation": 359.99,
+     "x": 10283.5,
+     "y": 64442.5
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "202A9",
+     "rotation": 179.99,
+     "x": 15948.2,
+     "y": 70780.2
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "202A9",
+     "rotation": 179.99,
+     "x": 15948.2,
+     "y": 70780.2
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20948",
+     "rotation": 269.99,
+     "x": 60933.7,
+     "y": 51509.5
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "21312",
+     "rotation": 269.99,
+     "x": 59788.5,
+     "y": 48583.9
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "21359",
+     "rotation": 179.99,
+     "x": 47774.1,
+     "y": 47341.5
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95042",
+     "rotation": 180.1,
+     "x": -346703,
+     "y": 34488
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95066",
+     "rotation": 90,
+     "x": -343613,
+     "y": 35026
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95067",
+     "rotation": 90,
+     "x": -337316,
+     "y": 35025
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B6",
+     "rotation": 180.1,
+     "x": -129816.6,
+     "y": 4317.9
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B7",
+     "rotation": 90,
+     "x": -126726.5,
+     "y": 4855.4
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B8",
+     "rotation": 90,
+     "x": -120429.3,
+     "y": 4854.4
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852E4",
+     "rotation": 359.55,
+     "x": -95917.8,
+     "y": -26588.3
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "952E9",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BEE4",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBE",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BE99",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C695",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7D0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C707",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C9BD",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C647",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C9A0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C649",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C97D",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1D06F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8CC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C936",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C64B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C885",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C644",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C861",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7CB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8A9",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C706",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C83E",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 14,
+   "dxf_belege": 39
+  },
+  "grenzfaelle": {
+   "quer_zur_tuerachse_mm": {
+    "gemessen": [
+     3,
+     35
+    ],
+    "toleranz": 50
+   },
+   "raumseitiger_versatz_mm": {
+    "gemessen": [
+     735,
+     930
+    ],
+    "hinweis": "Gang-Trenntuer 1OG: 258 gangseitig der Wandachse"
+   }
+  },
+  "begruendung": "PDF S.1-4, 12, 14, 20 — Tuer muss bei Netzausfall auffindbar bleiben, Pfeil zeigt in den Raum",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-002",
+  "nb_ref": "NB-R02",
+  "thema": "allgemeinbereiche",
+  "regel": "Raum ist Allgemeinbereich (fuer alle Bewohner zugaenglich; meist EG/UG): MUELLRAUM, FAHRRADRAUM(ABSTELLRAUM communal), KINDERWAGENRAUM, KELLERABTEIL, TECHNIK, SPIELRAUM, GESCHAEFTSLOKAL, Innenhof-Anbindung → bei der Tuer nach NB-R01; EIN RZ genuegt bei freier Sicht aus dem ganzen Raum",
+  "geometrische_bedingung": {
+   "rotation": "nach NB-R01",
+   "parameter": {
+    "sichtlinie_max_gemessen_mm": 9143
+   }
+  },
+  "leuchtentyp": "notlicht_ks_stiege_unten",
+  "belege": {
+   "pdf_seiten": [
+    2,
+    3,
+    4,
+    11,
+    12,
+    45,
+    62
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20286",
+     "rotation": 359.99,
+     "x": 10283.5,
+     "y": 64442.5
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "202A9",
+     "rotation": 179.99,
+     "x": 15948.2,
+     "y": 70780.2
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "202A9",
+     "rotation": 179.99,
+     "x": 15948.2,
+     "y": 70780.2
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206E7",
+     "rotation": 359.99,
+     "x": 55904.1,
+     "y": 45692.9
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "2070A",
+     "rotation": 269.99,
+     "x": 59670.8,
+     "y": 45738.8
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20948",
+     "rotation": 269.99,
+     "x": 60933.7,
+     "y": 51509.5
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "21312",
+     "rotation": 269.99,
+     "x": 59788.5,
+     "y": 48583.9
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "21359",
+     "rotation": 179.99,
+     "x": 47774.1,
+     "y": 47341.5
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "202EF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BEE4",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C697",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8EF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 7,
+   "dxf_belege": 13
+  },
+  "grenzfaelle": {
+   "sichtlinie_max_gemessen_mm": 9143
+  },
+  "begruendung": "PDF S.2-4, 11-13 — Allgemeinbereichs-Regel",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-003",
+  "nb_ref": "NB-R03",
+  "thema": "haupteingang",
+  "regel": "Haupteingangs-/Hauptausgangstuer des Gebaeudes → ueber/vor der Tuer, mittig zur Tuerachse, raumseitig",
+  "geometrische_bedingung": {
+   "rotation": "Welt-Pfeil ins Rauminnere",
+   "parameter": {
+    "quer_mm": 26,
+    "raumseitig_mm": {
+     "gemessen": [
+      375,
+      840
+     ]
+    }
+   }
+  },
+  "leuchtentyp": "notlicht_ks_stiege_unten",
+  "belege": {
+   "pdf_seiten": [
+    1,
+    6,
+    8
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20240",
+     "rotation": 89.99,
+     "x": 11513.3,
+     "y": 66599.2
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "2070A",
+     "rotation": 269.99,
+     "x": 59670.8,
+     "y": 45738.8
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20312",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "202EF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "21312",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20263",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206E7",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206C3",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 3,
+   "dxf_belege": 8
+  },
+  "grenzfaelle": {
+   "quer_mm": 26,
+   "raumseitig_mm": {
+    "gemessen": [
+     375,
+     840
+    ]
+   }
+  },
+  "begruendung": "PDF S.1, 6, 8, 10 — Ziel der Sichtkette beider Personenstroeme",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-004",
+  "nb_ref": "NB-R04",
+  "thema": "stiegenhauspfeil",
+  "regel": "Stiegenhaus mit Architekten-Stiegenpfeil (Aufwaertsrichtung JE LAUF) → RZ so, dass Ankommende es beim Erreichen des Geschosses (Blick links/rechts) sofort sehen; je Personenstrom ggf. eigenes RZ",
+  "geometrische_bedingung": {
+   "rotation": "UG-Stroeme laufen IN Pfeilrichtung hinauf, OG/DG-Stroeme ENTGEGEN hinunter",
+   "parameter": {
+    "delta_bewegung_vs_pfeil_grad": {
+     "gemessen": [
+      168,
+      180
+     ]
+    }
+   }
+  },
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [
+    5,
+    6,
+    7,
+    8,
+    15,
+    21,
+    25,
+    26,
+    27,
+    28,
+    32,
+    38,
+    39,
+    41,
+    54,
+    55
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "202EF",
+     "rotation": 89.99,
+     "x": 15867.9,
+     "y": 68105
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20263",
+     "rotation": 359.99,
+     "x": 15838.3,
+     "y": 66130.2
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20312",
+     "rotation": 359.71,
+     "x": 22317.9,
+     "y": 66417.7
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20240",
+     "rotation": 89.99,
+     "x": 11513.3,
+     "y": 66599.2
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206C0",
+     "rotation": 359.99,
+     "x": 48187.8,
+     "y": 41757.1
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206C3",
+     "rotation": 359.99,
+     "x": 55936.4,
+     "y": 41697.2
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "94FE7",
+     "rotation": 0,
+     "x": -353158,
+     "y": 31486
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "94FE8",
+     "rotation": 89.83,
+     "x": -348525,
+     "y": 33015
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95019",
+     "rotation": 269.55,
+     "x": -346579,
+     "y": 31546
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95042",
+     "rotation": 180.1,
+     "x": -346703,
+     "y": 34488
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "9568B",
+     "rotation": 89.99,
+     "x": -320154,
+     "y": 3638
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "956B0",
+     "rotation": 269.83,
+     "x": -318519,
+     "y": 5111
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "952E9",
+     "rotation": 359.55,
+     "x": -312728,
+     "y": 3649
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852AF",
+     "rotation": 360,
+     "x": -136271.7,
+     "y": 1315.4
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B0",
+     "rotation": 89.8,
+     "x": -131638.8,
+     "y": 2845
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "85344",
+     "rotation": 269.5,
+     "x": -129364,
+     "y": 1325
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "8532D",
+     "rotation": 90,
+     "x": -103343.5,
+     "y": -26599
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "85330",
+     "rotation": 269.8,
+     "x": -101727.4,
+     "y": -25172.8
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852E4",
+     "rotation": 359.55,
+     "x": -95917.8,
+     "y": -26588.3
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78D92",
+     "rotation": 359.9,
+     "x": -1784516,
+     "y": 16068
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DB5",
+     "rotation": 359.4,
+     "x": -1781086,
+     "y": 17879
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DDA",
+     "rotation": 359.4,
+     "x": -1743996,
+     "y": -11979
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "4121F",
+     "rotation": 359.87,
+     "x": -75940,
+     "y": 32585
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41220",
+     "rotation": 359.42,
+     "x": -72424,
+     "y": 34451
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "415B6",
+     "rotation": 89.87,
+     "x": -42975,
+     "y": 4646
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "413E8",
+     "rotation": 269.71,
+     "x": -39711,
+     "y": 6006
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41593",
+     "rotation": 359.42,
+     "x": -35752,
+     "y": 4564
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206DC",
+     "rotation": 359.87,
+     "x": 667,
+     "y": 26391
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20705",
+     "rotation": 359.42,
+     "x": 4697,
+     "y": 28335
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20864",
+     "rotation": 269.71,
+     "x": 36956,
+     "y": -59
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "2083F",
+     "rotation": 359.42,
+     "x": 40303,
+     "y": -1717
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "21312",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "952E8",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852E3",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B6",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DFD",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41249",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "413A0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206DB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BEE4",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBE",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BE99",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1CAF5",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1CD69",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BFEA",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 16,
+   "dxf_belege": 46
+  },
+  "grenzfaelle": {
+   "delta_bewegung_vs_pfeil_grad": {
+    "gemessen": [
+     168,
+     180
+    ]
+   }
+  },
+  "begruendung": "PDF S.5-8, 15, 19, 25-28, 41",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-005",
+  "nb_ref": "NB-R05",
+  "thema": "vor_der_stiege",
+  "regel": "Richtungs-RZ fuehrt auf eine Stiege bzw. empfaengt Stiegen-Ankoemmlinge → 800-1122 mm vor der Antritts-/Austrittskante, auf der Laufachse; Wandmontage als Sichtbarkeits-Alternative",
+  "geometrische_bedingung": {
+   "rotation": "Welt-Pfeil exakt in Abstiegs-/Weiterrichtung des Laufs, NIE auf eine Wand",
+   "parameter": {
+    "abstand_vor_kante_mm": {
+     "gemessen": [
+      801,
+      1122
+     ]
+    },
+    "quer_zur_laufachse_mm": {
+     "gemessen": [
+      20,
+      130
+     ]
+    },
+    "pfeil_vs_laufrichtung_grad": {
+     "toleranz": 1.0
+    }
+   }
+  },
+  "leuchtentyp": "notlicht_ks_stiege_links|_rechts (nach NB-R07)",
+  "belege": {
+   "pdf_seiten": [
+    16,
+    23,
+    25,
+    27,
+    29,
+    30,
+    32,
+    34,
+    39,
+    40,
+    41,
+    43,
+    56
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "94FE7",
+     "rotation": 0,
+     "x": -353158,
+     "y": 31486
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "94FE8",
+     "rotation": 89.83,
+     "x": -348525,
+     "y": 33015
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95019",
+     "rotation": 269.55,
+     "x": -346579,
+     "y": 31546
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95042",
+     "rotation": 180.1,
+     "x": -346703,
+     "y": 34488
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "9568B",
+     "rotation": 89.99,
+     "x": -320154,
+     "y": 3638
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "956B0",
+     "rotation": 269.83,
+     "x": -318519,
+     "y": 5111
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "952E9",
+     "rotation": 359.55,
+     "x": -312728,
+     "y": 3649
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852AF",
+     "rotation": 360,
+     "x": -136271.7,
+     "y": 1315.4
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B0",
+     "rotation": 89.8,
+     "x": -131638.8,
+     "y": 2845
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "85344",
+     "rotation": 269.5,
+     "x": -129364,
+     "y": 1325
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "8532D",
+     "rotation": 90,
+     "x": -103343.5,
+     "y": -26599
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "85330",
+     "rotation": 269.8,
+     "x": -101727.4,
+     "y": -25172.8
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852E4",
+     "rotation": 359.55,
+     "x": -95917.8,
+     "y": -26588.3
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78D92",
+     "rotation": 359.9,
+     "x": -1784516,
+     "y": 16068
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DB5",
+     "rotation": 359.4,
+     "x": -1781086,
+     "y": 17879
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DDA",
+     "rotation": 359.4,
+     "x": -1743996,
+     "y": -11979
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41593",
+     "rotation": 359.42,
+     "x": -35752,
+     "y": 4564
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206DC",
+     "rotation": 359.87,
+     "x": 667,
+     "y": 26391
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20705",
+     "rotation": 359.42,
+     "x": 4697,
+     "y": 28335
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20864",
+     "rotation": 269.71,
+     "x": 36956,
+     "y": -59
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "2083F",
+     "rotation": 359.42,
+     "x": 40303,
+     "y": -1717
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "952E8",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B6",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852E3",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DFD",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41249",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "413A0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "4121F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41220",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "415B6",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206DB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BEE4",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBE",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BE99",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1CD69",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1CAF5",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 13,
+   "dxf_belege": 37
+  },
+  "grenzfaelle": {
+   "abstand_vor_kante_mm": {
+    "gemessen": [
+     801,
+     1122
+    ]
+   },
+   "quer_zur_laufachse_mm": {
+    "gemessen": [
+     20,
+     130
+    ]
+   },
+   "pfeil_vs_laufrichtung_grad": {
+    "toleranz": 1.0
+   }
+  },
+  "begruendung": "PDF S.16, 25, 30 ('vor der Stiege, sonst zeigt der Pfeil zur Wand'), 39-40",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-006",
+  "nb_ref": "NB-R06",
+  "thema": "pfeil_unten_geradeaus",
+  "regel": "RZ im geraden Gangverlauf bedeutet 'geradeaus weiter' → mittig im Gang (Gangachse)",
+  "geometrische_bedingung": {
+   "rotation": "Welt-Pfeil ENTGEGEN der Fluchtrichtung (Vorderseite frontal zum ankommenden Strom)",
+   "parameter": {
+    "neben_gangachse_mm": {
+     "gemessen": [
+      6,
+      95
+     ]
+    },
+    "delta_pfeil_vs_fluss_grad": {
+     "gemessen": [
+      178.6,
+      180.0
+     ]
+    }
+   }
+  },
+  "leuchtentyp": "notlicht_ks_stiege_unten",
+  "belege": {
+   "pdf_seiten": [
+    16,
+    18,
+    22,
+    24,
+    25,
+    30,
+    33,
+    34,
+    38,
+    40,
+    43,
+    47,
+    48,
+    55,
+    60,
+    63,
+    69,
+    72,
+    79,
+    85,
+    86,
+    87,
+    93
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "94FE7",
+     "rotation": 0,
+     "x": -353158,
+     "y": 31486
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "94FE8",
+     "rotation": 89.83,
+     "x": -348525,
+     "y": 33015
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95019",
+     "rotation": 269.55,
+     "x": -346579,
+     "y": 31546
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95042",
+     "rotation": 180.1,
+     "x": -346703,
+     "y": 34488
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "952E8",
+     "rotation": 179.83,
+     "x": -312693,
+     "y": 7719
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "952E9",
+     "rotation": 359.55,
+     "x": -312728,
+     "y": 3649
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "9568B",
+     "rotation": 89.99,
+     "x": -320154,
+     "y": 3638
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "956B0",
+     "rotation": 269.83,
+     "x": -318519,
+     "y": 5111
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "952E9",
+     "rotation": 359.55,
+     "x": -312728,
+     "y": 3649
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B6",
+     "rotation": 180.1,
+     "x": -129816.6,
+     "y": 4317.9
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B7",
+     "rotation": 90,
+     "x": -126726.5,
+     "y": 4855.4
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B8",
+     "rotation": 90,
+     "x": -120429.3,
+     "y": 4854.4
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852AF",
+     "rotation": 360,
+     "x": -136271.7,
+     "y": 1315.4
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B0",
+     "rotation": 89.8,
+     "x": -131638.8,
+     "y": 2845
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "85344",
+     "rotation": 269.5,
+     "x": -129364,
+     "y": 1325
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "8532D",
+     "rotation": 90,
+     "x": -103343.5,
+     "y": -26599
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "85330",
+     "rotation": 269.8,
+     "x": -101727.4,
+     "y": -25172.8
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852E4",
+     "rotation": 359.55,
+     "x": -95917.8,
+     "y": -26588.3
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "413A0",
+     "rotation": 179.71,
+     "x": -35385,
+     "y": 8592
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "415B6",
+     "rotation": 89.87,
+     "x": -42975,
+     "y": 4646
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "413E8",
+     "rotation": 269.71,
+     "x": -39711,
+     "y": 6006
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41593",
+     "rotation": 359.42,
+     "x": -35752,
+     "y": 4564
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20864",
+     "rotation": 269.71,
+     "x": 36956,
+     "y": -59
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "2083F",
+     "rotation": 359.42,
+     "x": 40303,
+     "y": -1717
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852E3",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DB5",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DDA",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41249",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "4121F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41220",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206DB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20705",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206DC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BEE4",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBE",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BE99",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1CAF5",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1CD69",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BFEA",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C695",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7D0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7CB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8A9",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C647",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C9A0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C649",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C97D",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1D06F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8CC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C936",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C64B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C885",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C644",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C861",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C706",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C83E",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C698",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C912",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C95A",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 23,
+   "dxf_belege": 62
+  },
+  "grenzfaelle": {
+   "neben_gangachse_mm": {
+    "gemessen": [
+     6,
+     95
+    ]
+   },
+   "delta_pfeil_vs_fluss_grad": {
+    "gemessen": [
+     178.6,
+     180.0
+    ]
+   }
+  },
+  "begruendung": "PDF S.18, 33-34",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-007",
+  "nb_ref": "NB-R07",
+  "thema": "frontalsicht_auswahl",
+  "regel": "Auswahl links/rechts/unten fuer ein Richtungs-RZ → Symbol-Laengsachse quer zum Betrachter-Korridor",
+  "geometrische_bedingung": {
+   "rotation": "Pfeil = Fluchtrichtung AUS SICHT der Person; Person muss die Vorderseite sehen",
+   "parameter": {
+    "erstleuchte_sichtwinkel_zur_normalen_grad": {
+     "gemessen": [
+      0.3,
+      45.5
+     ],
+     "falschvariante": 89
+    },
+    "folgeleuchte": "nur Sichtbarkeit noetig (bis ~47.5 Grad, Seitenansicht toleriert 86-90 Grad bei Tuer-RZ am Gangende)"
+   }
+  },
+  "leuchtentyp": "notlicht_ks_stiege_links|_rechts|_unten",
+  "belege": {
+   "pdf_seiten": [
+    6,
+    13,
+    15,
+    17,
+    22,
+    23,
+    25,
+    27,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    43,
+    46,
+    48,
+    51,
+    55,
+    60,
+    63,
+    73,
+    75,
+    86,
+    94
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41249",
+     "rotation": 269.42,
+     "x": -75883,
+     "y": 30933
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "4121F",
+     "rotation": 359.87,
+     "x": -75940,
+     "y": 32585
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41220",
+     "rotation": 359.42,
+     "x": -72424,
+     "y": 34451
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "413A0",
+     "rotation": 179.71,
+     "x": -35385,
+     "y": 8592
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41593",
+     "rotation": 359.42,
+     "x": -35752,
+     "y": 4564
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "415B6",
+     "rotation": 89.87,
+     "x": -42975,
+     "y": 4646
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "415B6",
+     "rotation": 89.87,
+     "x": -42975,
+     "y": 4646
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "413E8",
+     "rotation": 269.71,
+     "x": -39711,
+     "y": 6006
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41593",
+     "rotation": 359.42,
+     "x": -35752,
+     "y": 4564
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206DC",
+     "rotation": 359.87,
+     "x": 667,
+     "y": 26391
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20705",
+     "rotation": 359.42,
+     "x": 4697,
+     "y": 28335
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20864",
+     "rotation": 269.71,
+     "x": 36956,
+     "y": -59
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "2083F",
+     "rotation": 359.42,
+     "x": 40303,
+     "y": -1717
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20312",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20240",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "202EF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "21312",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20263",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "94FE7",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "9568B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "94FE8",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "956B0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95019",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "952E8",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95042",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "952E9",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852AF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "8532D",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "85330",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "85344",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852E3",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B6",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852E4",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78D92",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DFD",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DB5",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DDA",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BEE4",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBE",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BE99",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1CAF5",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1CD69",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BFEA",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C695",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7D0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7CB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8A9",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C64B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C885",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C66F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C698",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C912",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C95A",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C697",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8EF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C649",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C97D",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C936",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 29,
+   "dxf_belege": 62
+  },
+  "grenzfaelle": {
+   "erstleuchte_sichtwinkel_zur_normalen_grad": {
+    "gemessen": [
+     0.3,
+     45.5
+    ],
+    "falschvariante": 89
+   },
+   "folgeleuchte": "nur Sichtbarkeit noetig (bis ~47.5 Grad, Seitenansicht toleriert 86-90 Grad bei Tuer-RZ am Gangende)"
+  },
+  "begruendung": "PDF S.31-37 (Vergleichsbeispiele 'Pfeil unten statt links' = Seitenansicht = falsch)",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-008",
+  "nb_ref": "NB-R08",
+  "thema": "erster_blick",
+  "regel": "Verlassen jeder Wohnung / jedes Raums → eine relevante Leuchte muss direkt sichtbar sein; bei zu grosser Entfernung ZUSATZ-Leuchte dazwischen; ein RZ darf mehrere Tueren bedienen",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {
+    "sichtlinien": "eine je Wohnungstuer, Start <=136 mm neben der Tuer, Laenge 882-12028 mm, 0 Wandschnitte",
+    "mehrfachbedienung": "bis 4 Wohnungstueren je RZ (1140-4275 mm)"
+   }
+  },
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [
+    9,
+    13,
+    14,
+    15,
+    17,
+    18,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    27,
+    29,
+    30,
+    31,
+    34,
+    39,
+    45,
+    46,
+    47,
+    48,
+    52,
+    53,
+    55,
+    62,
+    70,
+    84,
+    90,
+    91
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95042",
+     "rotation": 180.1,
+     "x": -346703,
+     "y": 34488
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95066",
+     "rotation": 90,
+     "x": -343613,
+     "y": 35026
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95067",
+     "rotation": 90,
+     "x": -337316,
+     "y": 35025
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "952E9",
+     "rotation": 359.55,
+     "x": -312728,
+     "y": 3649
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "952E8",
+     "rotation": 179.83,
+     "x": -312693,
+     "y": 7719
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "952E9",
+     "rotation": 359.55,
+     "x": -312728,
+     "y": 3649
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B6",
+     "rotation": 180.1,
+     "x": -129816.6,
+     "y": 4317.9
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B7",
+     "rotation": 90,
+     "x": -126726.5,
+     "y": 4855.4
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B8",
+     "rotation": 90,
+     "x": -120429.3,
+     "y": 4854.4
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852E3",
+     "rotation": 179.83,
+     "x": -95883,
+     "y": -22517.9
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DDA",
+     "rotation": 359.4,
+     "x": -1743996,
+     "y": -11979
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206E7",
+     "rotation": 359.99,
+     "x": 55904.1,
+     "y": 45692.9
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "2070A",
+     "rotation": 269.99,
+     "x": 59670.8,
+     "y": 45738.8
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20312",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "94FE7",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "9568B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "94FE8",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "956B0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95019",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852E4",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852AF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "8532D",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "85330",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "85344",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78D92",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DFD",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DB5",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41249",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "413A0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "4121F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41593",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41220",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "415B6",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206DC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "2083F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206DB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20705",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20864",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BEE4",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BE99",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C00E",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BFEA",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1CAF5",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1CD69",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C697",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8EF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1D06F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8CC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C649",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C97D",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C647",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C9A0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C706",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C83E",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C64B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C885",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C644",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C861",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7CB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8A9",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 30,
+   "dxf_belege": 62
+  },
+  "grenzfaelle": {
+   "sichtlinien": "eine je Wohnungstuer, Start <=136 mm neben der Tuer, Laenge 882-12028 mm, 0 Wandschnitte",
+   "mehrfachbedienung": "bis 4 Wohnungstueren je RZ (1140-4275 mm)"
+  },
+  "begruendung": "PDF S.14, 17-18 (Zusatz-RZ wegen Distanz), 22, 27, 29-30, 39",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-009",
+  "nb_ref": "NB-R09",
+  "thema": "gang_mit_ohne_stgh_tuer",
+  "regel": "Gang muendet ins Stiegenhaus → MIT Trenntuer: Tuer-RZ an der Trenntuer (NB-R01) + 2 antipanik_leuchte auf der Gangmittellinie. OHNE Trenntuer: KEIN Tuer-RZ an der Muendung; Richtungs-RZ am Knick bzw. vor der Stiege (NB-R05)",
+  "geometrische_bedingung": {
+   "rotation": "nach NB-R01/NB-R06/NB-R07",
+   "parameter": {
+    "ap_teilung_12m_gang_mm": [
+     3090,
+     6297,
+     2579
+    ],
+    "ap_neben_fluchtlinie_mm": 55,
+    "alternativen_nur_text": "2 Aufheller | mittiges down-RZ | down-RZ + Aufheller (Wahl nach Situation, Lux-Nachweis entscheidet)"
+   }
+  },
+  "leuchtentyp": "siehe Faelle",
+  "belege": {
+   "pdf_seiten": [
+    14,
+    20,
+    21,
+    29
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95042",
+     "rotation": 180.1,
+     "x": -346703,
+     "y": 34488
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95066",
+     "rotation": 90,
+     "x": -343613,
+     "y": 35026
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95067",
+     "rotation": 90,
+     "x": -337316,
+     "y": 35025
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "9568B",
+     "rotation": 89.99,
+     "x": -320154,
+     "y": 3638
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "956B0",
+     "rotation": 269.83,
+     "x": -318519,
+     "y": 5111
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "952E9",
+     "rotation": 359.55,
+     "x": -312728,
+     "y": 3649
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B6",
+     "rotation": 180.1,
+     "x": -129816.6,
+     "y": 4317.9
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B7",
+     "rotation": 90,
+     "x": -126726.5,
+     "y": 4855.4
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B8",
+     "rotation": 90,
+     "x": -120429.3,
+     "y": 4854.4
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DDA",
+     "rotation": 359.4,
+     "x": -1743996,
+     "y": -11979
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852E4",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852AF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "8532D",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "85330",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "85344",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852E3",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DB5",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 4,
+   "dxf_belege": 18
+  },
+  "grenzfaelle": {
+   "ap_teilung_12m_gang_mm": [
+    3090,
+    6297,
+    2579
+   ],
+   "ap_neben_fluchtlinie_mm": 55,
+   "alternativen_nur_text": "2 Aufheller | mittiges down-RZ | down-RZ + Aufheller (Wahl nach Situation, Lux-Nachweis entscheidet)"
+  },
+  "begruendung": "PDF S.14, 19, 20-21, 29",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-010",
+  "nb_ref": "NB-R10",
+  "thema": "antipanik_sichtblockade",
+  "regel": "Sicht der Person auf die Notleuchte ist blockiert (L-/U-Raumform, Wand dazwischen) ODER Lux-Nachweis im Gang scheitert → im abgeschatteten Bereich (gemessen 3211 mm vor der Person); rechteckige Raeume ohne Blockade: KEINE",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {
+    "lux_nachweis": "separater Nachweis (Lichtberechnung) — hier nur Flag lux_nachweis_erforderlich"
+   }
+  },
+  "leuchtentyp": "antipanik_leuchte",
+  "belege": {
+   "pdf_seiten": [
+    2,
+    10,
+    11,
+    12,
+    50,
+    68,
+    82
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "2070C",
+     "rotation": 269.99,
+     "x": 59721.7,
+     "y": 34557
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20752",
+     "rotation": 359.99,
+     "x": 53862.1,
+     "y": 30112.6
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20286",
+     "rotation": 359.99,
+     "x": 10283.5,
+     "y": 64442.5
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "21312",
+     "rotation": 269.99,
+     "x": 59788.5,
+     "y": 48583.9
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95042",
+     "rotation": 180.1,
+     "x": -346703,
+     "y": 34488
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95066",
+     "rotation": 90,
+     "x": -343613,
+     "y": 35026
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95067",
+     "rotation": 90,
+     "x": -337316,
+     "y": 35025
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B6",
+     "rotation": 180.1,
+     "x": -129816.6,
+     "y": 4317.9
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B7",
+     "rotation": 90,
+     "x": -126726.5,
+     "y": 4855.4
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B8",
+     "rotation": 90,
+     "x": -120429.3,
+     "y": 4854.4
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206E7",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "2070A",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20263",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "202EF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1D06F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8CC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C936",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C707",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C9BD",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 7,
+   "dxf_belege": 20
+  },
+  "grenzfaelle": {
+   "lux_nachweis": "separater Nachweis (Lichtberechnung) — hier nur Flag lux_nachweis_erforderlich"
+  },
+  "begruendung": "PDF S.2 (L-Form Muellraum), 10-12",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-011",
+  "nb_ref": "NB-R11",
+  "thema": "hindernis_versatz",
+  "regel": "Sollposition kollidiert mit Hindernis (z.B. Lichtkuppel, blau markiert) → quer versetzen bis frei (gemessen 142 mm Versatz, 292 mm Zentrum->Kuppelkante)",
+  "geometrische_bedingung": {
+   "rotation": "UNVERAENDERT beibehalten",
+   "parameter": {}
+  },
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [
+    40
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20864",
+     "rotation": 269.71,
+     "x": 36956,
+     "y": -59
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "2083F",
+     "rotation": 359.42,
+     "x": 40303,
+     "y": -1717
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206DB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20705",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206DC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 1,
+   "dxf_belege": 5
+  },
+  "grenzfaelle": "—",
+  "begruendung": "PDF S.40",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-012",
+  "nb_ref": "NB-R12",
+  "thema": "sichtkette_abstaende",
+  "regel": "Folge von RZ entlang des Fluchtwegs → lueckenlose Kette bis zum Ausgang; Wand-RZ mit Kante an Wandkante (15-101 mm)",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {
+    "folgeabstaende_mm": {
+     "gemessen": [
+      1975,
+      7749
+     ]
+    },
+    "sichtlinien_ende": "an der Symbol-KANTE, nicht am Zentrum"
+   }
+  },
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    13,
+    16,
+    22,
+    25,
+    28,
+    32,
+    36,
+    38,
+    48,
+    70,
+    85,
+    87,
+    88,
+    89,
+    92,
+    94
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "202EF",
+     "rotation": 89.99,
+     "x": 15867.9,
+     "y": 68105
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20263",
+     "rotation": 359.99,
+     "x": 15838.3,
+     "y": 66130.2
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20312",
+     "rotation": 359.71,
+     "x": 22317.9,
+     "y": 66417.7
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20240",
+     "rotation": 89.99,
+     "x": 11513.3,
+     "y": 66599.2
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206C0",
+     "rotation": 359.99,
+     "x": 48187.8,
+     "y": 41757.1
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206C3",
+     "rotation": 359.99,
+     "x": 55936.4,
+     "y": 41697.2
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "2070A",
+     "rotation": 269.99,
+     "x": 59670.8,
+     "y": 45738.8
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206E7",
+     "rotation": 359.99,
+     "x": 55904.1,
+     "y": 45692.9
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "2070A",
+     "rotation": 269.99,
+     "x": 59670.8,
+     "y": 45738.8
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "4121F",
+     "rotation": 359.87,
+     "x": -75940,
+     "y": 32585
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41220",
+     "rotation": 359.42,
+     "x": -72424,
+     "y": 34451
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "206DC",
+     "rotation": 359.87,
+     "x": 667,
+     "y": 26391
+    },
+    {
+     "datei": "WHA_MOL_DG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20705",
+     "rotation": 359.42,
+     "x": 4697,
+     "y": 28335
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "94FE7",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "9568B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "94FE8",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "956B0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95019",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "952E8",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852AF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "8532D",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "85330",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "85344",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852E3",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852B6",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "852E4",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78D92",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DFD",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DB5",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_3OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "78DDA",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41249",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "413A0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41593",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "415B6",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "413E8",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BE99",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1D06F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8CC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C649",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C97D",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C647",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C9A0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C64B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C885",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C644",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C861",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7CB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8A9",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C706",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C83E",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C936",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C697",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8EF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C698",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C912",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C95A",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 21,
+   "dxf_belege": 59
+  },
+  "grenzfaelle": {
+   "folgeabstaende_mm": {
+    "gemessen": [
+     1975,
+     7749
+    ]
+   },
+   "sichtlinien_ende": "an der Symbol-KANTE, nicht am Zentrum"
+  },
+  "begruendung": "PDF S.5-9 (EG-Ketten)",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-013",
+  "nb_ref": "NB-R13",
+  "thema": "ug_stiegenrichtung",
+  "regel": "Untergeschoss: Personen fluechten HINAUF ueber die Stiege → Leuchte vor/an der Stiege (NB-R05)",
+  "geometrische_bedingung": {
+   "rotation": "Welt-Pfeil = Aufwaertsrichtung des Laufs = IN Stiegenhauspfeilrichtung (OG: entgegen, NB-R04); Frontseite zum ankommenden UG-Strom",
+   "parameter": {}
+  },
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [
+    41,
+    43,
+    54,
+    55,
+    56,
+    71,
+    75,
+    92,
+    93
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BEE4",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBE",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BE99",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1CAF5",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1CD69",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BFEA",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C695",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7D0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C64B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C885",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C644",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C861",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C647",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C9A0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C649",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C97D",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C697",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8EF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C698",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C912",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C95A",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C66F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1D06F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8CC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C936",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 9,
+   "dxf_belege": 28
+  },
+  "grenzfaelle": "—",
+  "begruendung": "PDF S.43, 54-55 — UG-Gegenstueck zu NB-R04",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-014",
+  "nb_ref": "NB-R14",
+  "thema": "montageort_wand_decke",
+  "regel": "Wahl Wand- vs. Deckenmontage → Stiegen-Leuchten = Wand; Gang-Leuchten = Decke, mittig",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {}
+  },
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [
+    16,
+    32,
+    56
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "94FE7",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "9568B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "94FE8",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "956B0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95019",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "952E8",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41249",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "413A0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "4121F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41593",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "41220",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "415B6",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1CD69",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1CAF5",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 3,
+   "dxf_belege": 14
+  },
+  "grenzfaelle": "—",
+  "begruendung": "PDF S.56 woertlich: Notleuchten an Waenden hauptsaechlich bei Stiegen; alle 14 1KG-Platzierungen konsistent",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-015",
+  "nb_ref": "NB-R15",
+  "thema": "kabeltrasse_hindernis",
+  "regel": "Sollposition liegt auf/nahe einer Kabeltrasse (blaue Balken, KT300/KT400/KT500) → NIE auf der Trasse; seitlich versetzen, moeglichst >= 450 mm Abstand",
+  "geometrische_bedingung": {
+   "rotation": "nach Versatz erhalten: Sichtbarkeit, Pfeilrichtung, Frontseite, Fluchtwegbezug, Gebaeudehaelfte",
+   "parameter": {
+    "abstand_mm": {
+     "soll_min": 450,
+     "modalitaet": "moeglichst (Fachpraxis-SOLL)"
+    },
+    "versatz_gemessen_mm": [
+     507
+    ]
+   }
+  },
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [
+    63,
+    64,
+    65,
+    79,
+    81,
+    84,
+    85,
+    88
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7CB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8A9",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7CC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C695",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7D0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C706",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C83E",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C64B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C885",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C644",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C861",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1D06F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8CC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C647",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C9A0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 8,
+   "dxf_belege": 15
+  },
+  "grenzfaelle": {
+   "abstand_mm": {
+    "soll_min": 450,
+    "modalitaet": "moeglichst (Fachpraxis-SOLL)"
+   },
+   "versatz_gemessen_mm": [
+    507
+   ]
+  },
+  "begruendung": "PDF S.63-64 woertlich; 2KG (A)-Ana 1C7D0 bleibt trotz Versatz auf der Anastasius-Seite. ACHTUNG: Rigole (Bodenrinnen-Schraffuren) sind KEINE Kabeltrassen",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-016",
+  "nb_ref": "NB-R16",
+  "thema": "beidseitig",
+  "regel": "ZWEI Personenstroeme aus Gegenrichtungen nutzen denselben Fluchtweg-Knoten und brauchen beide die Frontseite → am gemeinsamen Knoten (GT: 2 gespiegelte Einzel-Bloecke, Abstand 264-318 mm; Engine: RIVO_NL_ARR_bothsided)",
+  "geometrische_bedingung": {
+   "rotation": "Achse = Fluchtweg-Achse beider Stroeme",
+   "parameter": {
+    "alternative": "beidseitig am Richtungswechsel OHNE Gegenstrom = NUR-ALTERNATIVE (orange, 'muss nicht sein') — NICHT automatisieren"
+   }
+  },
+  "leuchtentyp": "notlicht_ks_beidseitig",
+  "belege": {
+   "pdf_seiten": [
+    52,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    88,
+    89,
+    92,
+    93,
+    94
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C00E",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BFEA",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7CB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8A9",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7CC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C936",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1D06F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8CC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C66F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C698",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C912",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C95A",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C697",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8EF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C695",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7D0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C706",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C83E",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C707",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C9BD",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C64B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C885",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C644",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C861",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C647",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C9A0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 26,
+   "dxf_belege": 28
+  },
+  "grenzfaelle": {
+   "alternative": "beidseitig am Richtungswechsel OHNE Gegenstrom = NUR-ALTERNATIVE (orange, 'muss nicht sein') — NICHT automatisieren"
+  },
+  "begruendung": "PDF S.65-83; Pflicht-Paare 2KG Gr.1-5 + 1KG (I) + EG-Paar; Gr.6 = einzige Alternative",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-017",
+  "nb_ref": "NB-R17",
+  "thema": "garage_durchquerbarkeit",
+  "regel": "Fluchtwegfuehrung durch Garagenbereiche → Motorrad-Stellflaechen sind durchquerbar; Doppelparker-/PKW-Flaechen und Gruben NICHT",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {}
+  },
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    84,
+    86,
+    87
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7CB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8A9",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7CC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C936",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C647",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C9A0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C649",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C97D",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1D06F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8CC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C706",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C83E",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C64B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C885",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C644",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C861",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 9,
+   "dxf_belege": 17
+  },
+  "grenzfaelle": "—",
+  "begruendung": "PDF S.65-70; Personenreihe 1CBF6-1CBFC durch MOTORRAD-Stempel, 0 Fluchtwege durch DOPPELPARKER-Zonen. Durchquerbarkeit folgt aus freier Geometrie, nicht aus dem Raumlabel",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-018",
+  "nb_ref": "NB-R18",
+  "thema": "gebaeudehaelften",
+  "regel": "Projekt besteht aus zwei zusammengebauten Gebaeuden → Trennung entlang der weitergefuehrten Gebaeudewand; Zuordnung am EG-Grundriss verifizieren; je Haelfte eigene Fluchtwege/Ausgaenge/Label-Alphabete",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {
+    "prozessregel": "unklare Zuordnung NIEMALS raten -> offene Frage (PDF S.78, bindend)"
+   }
+  },
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C64B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C885",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C66F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C698",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C912",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C95A",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C695",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7D0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C706",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C83E",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 8,
+   "dxf_belege": 11
+  },
+  "grenzfaelle": {
+   "prozessregel": "unklare Zuordnung NIEMALS raten -> offene Frage (PDF S.78, bindend)"
+  },
+  "begruendung": "PDF S.76-83; rote Trennlinie 1C7F4 (116 m) auf der Mollgasse-Gebaeudewand",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-019",
+  "nb_ref": "NB-R19",
+  "thema": "ug_nebenraum_tuerleuchte",
+  "regel": "UG-Nebenraum bindet an den Gang an → TECHNIK/NIEDERSPANNUNG/E-Raum: Tuer-Leuchte nach NB-R01 (mittig 3-26 mm, 711-779 mm zugangsseitig). Einzelne kleine ER/KELLERABTEIL/Medienraum: KEINE eigene Tuerleuchte, wenn nach Tuerdurchtritt sofort ein Gang-RZ sichtbar ist",
+  "geometrische_bedingung": {
+   "rotation": "nach NB-R01",
+   "parameter": {}
+  },
+  "leuchtentyp": "notlicht_ks_stiege_unten",
+  "belege": {
+   "pdf_seiten": [
+    45,
+    47,
+    51,
+    52,
+    53,
+    71,
+    72,
+    73,
+    85,
+    90,
+    91,
+    93
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BEE4",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BE99",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBE",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C00E",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BFEA",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C695",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7D0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C64B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C885",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C644",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C861",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C647",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C9A0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C649",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C97D",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C697",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8EF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C698",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C912",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C95A",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C66F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1D06F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8CC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7CB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8A9",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C706",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C83E",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C936",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 12,
+   "dxf_belege": 31
+  },
+  "grenzfaelle": "—",
+  "begruendung": "PDF S.51-53, 71-73, 93; 1KG-09 (D) + Merktext 'Stromversorgung aller Notleuchten'",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-020",
+  "nb_ref": "NB-R20",
+  "thema": "tuerlose_gaenge_durchgaenge",
+  "regel": "tuerloser Gang / offener Durchgang im Fluchtweg → tuerloser zusammenhaengender Gang: KEINE Zwischen-RZ solange Sichtkette steht; kurzer Gang mit Direktsicht aller Tueren: genau EIN Tuer-RZ; offener Durchgang als Knoten: down-Typ MITTIG im Durchgang (gemessen 4 mm Mittigkeit bei 1250 mm)",
+  "geometrische_bedingung": {
+   "rotation": "down-Typ frontal zum ankommenden Strom (rechts/links/beidseitig am Durchgang im PDF explizit VERWORFEN)",
+   "parameter": {}
+  },
+  "leuchtentyp": "notlicht_ks_stiege_unten",
+  "belege": {
+   "pdf_seiten": [
+    58,
+    59,
+    60,
+    61,
+    62,
+    73,
+    74,
+    90,
+    91
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C695",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7D0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C707",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C9BD",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C697",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8EF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C64B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C885",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 9,
+   "dxf_belege": 8
+  },
+  "grenzfaelle": "—",
+  "begruendung": "PDF S.58-62, 73-74, 90-91 — S.73-74 sind dokumentierte Negativ-Beispiele",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-021",
+  "nb_ref": "NB-R21",
+  "thema": "sv_anlage",
+  "regel": "Projekt braucht Notbeleuchtungs-Stromversorgung → EIN System je Projekt ('meistens' auch bei zwei Gebaeudehaelften), Verteiler im Niederspannungsraum, NICHT an der E-Verteiler-Wand",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {}
+  },
+  "leuchtentyp": "gruppenbatterie_anlage",
+  "belege": {
+   "pdf_seiten": [
+    51,
+    71,
+    72
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BE99",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBE",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C695",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7D0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C64B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C885",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C644",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C861",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C647",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C9A0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C649",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C97D",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C697",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8EF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C698",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C912",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C95A",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C66F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 3,
+   "dxf_belege": 19
+  },
+  "grenzfaelle": "—",
+  "begruendung": "PDF S.51, 71-72; 1KG 1CB68, 2KG 1D10E/1D10F",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-022",
+  "nb_ref": "NB-R22",
+  "thema": "quellen_disziplin_fluchtplan",
+  "regel": "Quelle ist ein Flucht-/Rettungsplan (gruener Aushang), kein Notbeleuchtungsplan → belegt NUR Fluchtweg-Richtung/Tueren/Stiegenhaeuser/Ausgaenge; NICHT Leuchtenposition, Wand-/Deckenmontage, Frontseite, ein-/beidseitig, Typ, Hoehe, Lux, Anzahl",
+  "geometrische_bedingung": {
+   "rotation": "Blatt-Richtung != CAD-Richtung != Personen-Richtung; gedrehte Aushang-Blaetter",
+   "parameter": {
+    "standort_marke": "Aushang-Bezugspunkt, KEINE Leuchte",
+    "mehrere_blaetter": "gleiches Geschoss aus mehreren Aushaengen = EINE Referenz",
+    "raum_ohne_gruen": "bedeutet NICHT 'keine Notbeleuchtung noetig'"
+   }
+  },
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "dxf_handles": []
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 10,
+   "dxf_belege": 0
+  },
+  "grenzfaelle": {
+   "standort_marke": "Aushang-Bezugspunkt, KEINE Leuchte",
+   "mehrere_blaetter": "gleiches Geschoss aus mehreren Aushaengen = EINE Referenz",
+   "raum_ohne_gruen": "bedeutet NICHT 'keine Notbeleuchtung noetig'"
+  },
+  "begruendung": "TOMA S.1-10; Owner-Auftrag Quellen-Trennung A/B/C/D",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-023",
+  "nb_ref": "NB-R23",
+  "thema": "schul_bildungscluster_fluchtweg",
+  "regel": "Schule, Cluster-/offene-Lernlandschaft-Typologie → offener 'Kommunikations- und Bewegungsbereich' traegt den Fluchtweg; Unterrichtsraeume oeffnen direkt darauf, OHNE 'Gang'-Label",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {}
+  },
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [],
+   "dxf_handles": []
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 0,
+   "dxf_belege": 0
+  },
+  "grenzfaelle": "—",
+  "begruendung": "TOMA OG-04: Unterrichtsraum 1-4 -> Kommunikations-/Bewegungsbereich -> TH 2. Generalisiert NB-R20 auf Cluster-Ebene",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-024",
+  "nb_ref": "NB-R24",
+  "thema": "mehrere_stiegenhaeuser_gerichtet",
+  "regel": "Gebaeude mit mehreren Fluchtstiegenhaeusern (TOMA: TH 2/3/4) → Cluster/Gebaeudeteile GEZIELT verschiedenen THs zuordnen; NICHT alle zum naechstgelegenen TH / einem Hauptausgang; mehrere dargestellte Richtungen erhalten",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {}
+  },
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [],
+   "dxf_handles": []
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 0,
+   "dxf_belege": 0
+  },
+  "grenzfaelle": "—",
+  "begruendung": "TOMA SG/EG/OG; = Variante der Mollgasse-Gebaeudehaelften NB-R18 (unklar -> nicht raten)",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-025",
+  "nb_ref": "NB-R25",
+  "thema": "egress_je_ebene_zieltypen",
+  "regel": "Sockel-/Untergeschoss und Ziel-Typ-Bestimmung → Sockel-/UG kann direkte Aussenausgaenge auf eigener Ebene haben (Flucht nicht zwingend ueber EG). Ziel-Typen NIE gleichsetzen: Fluchtstiegenhaus / Ausgang ins Freie / Balkon-Terrasse-Loggia / vorlaeufige Evakuierungsstelle / Sammelstelle",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {}
+  },
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [],
+   "dxf_handles": []
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 0,
+   "dxf_belege": 0
+  },
+  "grenzfaelle": "—",
+  "begruendung": "TOMA SG: viele EN-Tueren ins Freie auf Sockel-Ebene. Ergaenzt NB-R13",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-026",
+  "nb_ref": "NB-R26",
+  "thema": "ausfuehrungsplan_annotationen_anker",
+  "regel": "Architektur-Ausfuehrungsplan mit Brandschutz-/Flucht-Textannotation → EN 1125 (Panikstange) / EN 179 (Notausgangsbeschlag) = Ausgangstueren; FLn = Fluchtweg-Flaeche mit Soll-m2; EI 30/90/230-C + 'brandlastfreie Zone' + BA = Brandabschnitte; RWA = Rauchabzug; BMZ = Brandmeldezentrale",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {
+    "daten_fallen": "INSUNITS kann luegen (TOMA=6 Meter, real mm -> ueber Tuerbreiten/Wandstaerken verifizieren); Riesen-Koordinaten-Offset moeglich (TOMA SG ~-1.7e9 -> Healthcheck/Nullung vor Engine-Lauf)",
+    "messwerte_mm": {
+     "toma_eg_fl": [
+      72,
+      72,
+      33,
+      39
+     ],
+     "toma_og_fl": [
+      48
+     ]
+    }
+   }
+  },
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [],
+   "dxf_handles": []
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 0,
+   "dxf_belege": 0
+  },
+  "grenzfaelle": {
+   "daten_fallen": "INSUNITS kann luegen (TOMA=6 Meter, real mm -> ueber Tuerbreiten/Wandstaerken verifizieren); Riesen-Koordinaten-Offset moeglich (TOMA SG ~-1.7e9 -> Healthcheck/Nullung vor Engine-Lauf)",
+   "messwerte_mm": {
+    "toma_eg_fl": [
+     72,
+     72,
+     33,
+     39
+    ],
+    "toma_og_fl": [
+     48
+    ]
+   }
+  },
+  "begruendung": "TOMA SG/EG/OG: EN/FL/EI/RWA/BMZ als Textannotation mit Koordinaten (inventar_*.json)",
+  "beleg_alternativ": "Header-Beleg statt Handle: $INSUNITS=6 (Meter) bei mm-Koordinaten in TOMA-/Baufeld-E2-DXFs (inventur.json 'insunits'); Textanker-Fälle AmRain S.13/23 (EINGANG-Modelltext). Prozess-/Eingaberegel ohne eigenen INSERT."
+ },
+ {
+  "id": "RW-027",
+  "nb_ref": "NB-R27",
+  "thema": "aufzug_keine_fluchtverbindung",
+  "regel": "Aufzug im Gebaeude → Aufzug NIE als vertikale Flucht-Kante; Aufzugsvorbereich getrennt (kann Teil des Gangs sein)",
+  "geometrische_bedingung": {
+   "rotation": "-",
+   "parameter": {}
+  },
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [],
+   "dxf_handles": []
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 0,
+   "dxf_belege": 0
+  },
+  "grenzfaelle": "—",
+  "begruendung": "TOMA Brandfall-Hinweis 'Aufzug nicht benutzen'; deckt sich mit fachpraxis.entferne_schacht_leuchten",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-028",
+  "nb_ref": null,
+  "thema": "antipanik_laengsachse",
+  "regel": "Antipanikleuchte: Längsachse in Richtung des auszuleuchtenden (Gang-)Bereichs drehen; Position mittig im abgeschatteten Bereich.",
+  "geometrische_bedingung": {
+   "rotation": "Längsachse parallel zur Hauptachse des Zielbereichs",
+   "hinweis": "S.58: vertikal statt horizontal = bessere Ausleuchtung"
+  },
+  "leuchtentyp": "antipanik",
+  "belege": {
+   "pdf_seiten": [
+    58
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C707",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C9BD",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 1,
+   "dxf_belege": 2
+  },
+  "grenzfaelle": "S.58: vertikal statt horizontal = bessere Ausleuchtung",
+  "begruendung": "",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-029",
+  "nb_ref": null,
+  "thema": "antipanik_position_diagonale",
+  "regel": "Antipanik-Position konstruieren über die Bereichs-Diagonale (Mauerkante→Gangecke) bzw. fluchtend in EINER Achse mit der nächsten Richtungs-Notleuchte UND mittig zum Bereich (gelbe Hilfslinien).",
+  "geometrische_bedingung": {
+   "position": "Schnitt/Mitte der Bereichs-Diagonale; Achse durch die nächste Fluchtweg-Leuchte"
+  },
+  "leuchtentyp": "antipanik",
+  "belege": {
+   "pdf_seiten": [
+    59,
+    67
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C706",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C83E",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1D06F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C8CC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7CC",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C7FB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C936",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 2,
+   "dxf_belege": 7
+  },
+  "grenzfaelle": "—",
+  "begruendung": "",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-030",
+  "nb_ref": null,
+  "thema": "antipanik_kann_fall",
+  "regel": "Optionale Antipanik zur Lux-Stützung: auch ohne Sichtblockade zulässig ('nicht zwingend, aber sinnvoll') — Kann-Fall zusätzlich zu NB-R10; Bestätigung durch Lichtberechnung.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "antipanik",
+  "belege": {
+   "pdf_seiten": [
+    59
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C706",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C83E",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 1,
+   "dxf_belege": 2
+  },
+  "grenzfaelle": "—",
+  "begruendung": "",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-031",
+  "nb_ref": null,
+  "thema": "geraete_wahl_geschoss",
+  "regel": "Geräte-Wahl nach Geschoss: Antipanikleuchten meist in Untergeschossen, runde Aufheller meist EG–OG; Antipanik auch im EG bei Allgemeinräumen (Technik/KIWA/Spielraum/Fahrradraum). Endgültige Wahl bestätigt die Lichtberechnung.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "antipanik|aufheller",
+  "belege": {
+   "pdf_seiten": [
+    49
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BE99",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 1,
+   "dxf_belege": 1
+  },
+  "grenzfaelle": "—",
+  "begruendung": "",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-032",
+  "nb_ref": null,
+  "thema": "stiegen_leuchte_decke_alternative",
+  "regel": "Deckenmontage mittig bei der Stiege ist zulässige Alternative zur Wandmontage (Regelfall NB-R14), solange die Frontal-Regel erfüllt bleibt; Alternativ-Position konstruierbar als Schnitt Mittellinie-Stiege × Mittellinie-Gang.",
+  "geometrische_bedingung": {
+   "position": "Schnittpunkt der Mittellinien Stiege × Gang",
+   "montage": "DA als Alternative zu WA"
+  },
+  "leuchtentyp": "notlicht_ks_stiege_links|_rechts",
+  "belege": {
+   "pdf_seiten": [
+    42,
+    44
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BEE4",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BCBB",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1BE99",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 2,
+   "dxf_belege": 3
+  },
+  "grenzfaelle": "—",
+  "begruendung": "",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-033",
+  "nb_ref": null,
+  "thema": "og_sichtketten_ausnahme",
+  "regel": "OG-Ausnahme: In Obergeschoßen mit nur EINEM Stiegenhaus und einem eindeutig verlaufenden I-förmigen Gang wird meist keine zusätzliche Richtungsleuchte benötigt — Richtungs-RZ konzentrieren sich auf EG/UG.",
+  "geometrische_bedingung": {
+   "bedingung": "n_stiegenhaeuser==1 UND Gang ohne Verzweigung/Richtungswechsel"
+  },
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [
+    74
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C64B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C885",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C66F",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 1,
+   "dxf_belege": 3
+  },
+  "grenzfaelle": "—",
+  "begruendung": "",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-034",
+  "nb_ref": null,
+  "thema": "lichtberechnung_qa_pflicht",
+  "regel": "QA-Prozess: JEDES bearbeitete Geschoss vollständig mit der Lichtberechnung nachprüfen, unter Einbezug ALLER platzierten Elemente (RZ, Notleuchten, Antipanik, Aufheller) — zweite Prüfstufe nach der Platzierungslogik.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [
+    83
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C707",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_2KG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "1C9BD",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 1,
+   "dxf_belege": 2
+  },
+  "grenzfaelle": "—",
+  "begruendung": "",
+  "beleg_alternativ": null
+ },
+ {
+  "id": "RW-035",
+  "nb_ref": null,
+  "thema": "stiegenpfeil_farbe_stiege",
+  "regel": "Erkennungs-Heuristik (Selman-Naht): Der Architekten-Stiegenhauspfeil ist in derselben Farbe/Darstellung wie die Stiege selbst gezeichnet (Mollgasse: grau); rote Pfeile in Erklärbildern sind nachträgliche Markierung, keine Plan-Semantik.",
+  "geometrische_bedingung": {},
+  "leuchtentyp": "-",
+  "belege": {
+   "pdf_seiten": [
+    5,
+    19
+   ],
+   "dxf_handles": [
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "94FE7",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "9568B",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "94FE8",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "956B0",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "95042",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_1OG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "952E9",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "202EF",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "21312",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20263",
+     "rotation": null,
+     "x": null,
+     "y": null
+    },
+    {
+     "datei": "WHA_MOL_EG_Notbeleuchtung_Erklärung.dxf",
+     "handle": "20312",
+     "rotation": null,
+     "x": null,
+     "y": null
+    }
+   ]
+  },
+  "haeufigkeit": {
+   "pdf_seiten": 2,
+   "dxf_belege": 10
+  },
+  "grenzfaelle": "—",
+  "begruendung": "",
+  "beleg_alternativ": null
+ }
+]

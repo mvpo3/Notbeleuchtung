@@ -1,0 +1,498 @@
+{
+ "1DG": {
+  "A": [
+   {
+    "handle": "227F1",
+    "block": "RIVO_ARR_right",
+    "dist_mm": 646.0,
+    "kennung_handle": "23906"
+   },
+   {
+    "handle": "22771",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 671.0,
+    "kennung_handle": "23984"
+   },
+   {
+    "handle": "22791",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 722.0,
+    "kennung_handle": "23A09"
+   }
+  ],
+  "B": [
+   {
+    "handle": "22751",
+    "block": "RIVO_ARR_right",
+    "dist_mm": 347.0,
+    "kennung_handle": "23908"
+   },
+   {
+    "handle": "22731",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 339.0,
+    "kennung_handle": "23986"
+   },
+   {
+    "handle": "227B1",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 336.0,
+    "kennung_handle": "23A0C"
+   }
+  ],
+  "C": [
+   {
+    "handle": "227D1",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 722.0,
+    "kennung_handle": "23A0F"
+   }
+  ]
+ },
+ "1OG": {
+  "A": [
+   {
+    "handle": "130B7",
+    "block": "RIVO_ARR_right",
+    "dist_mm": 646.0,
+    "kennung_handle": "13EAD"
+   },
+   {
+    "handle": "13037",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 671.0,
+    "kennung_handle": "13F2B"
+   },
+   {
+    "handle": "13057",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 722.0,
+    "kennung_handle": "13FB0"
+   }
+  ],
+  "B": [
+   {
+    "handle": "13017",
+    "block": "RIVO_ARR_right",
+    "dist_mm": 347.0,
+    "kennung_handle": "13EAF"
+   },
+   {
+    "handle": "12FF7",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 339.0,
+    "kennung_handle": "13F2D"
+   },
+   {
+    "handle": "13077",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 336.0,
+    "kennung_handle": "13FB3"
+   }
+  ],
+  "C": [
+   {
+    "handle": "13097",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 722.0,
+    "kennung_handle": "13FB6"
+   }
+  ]
+ },
+ "2DG": {
+  "A": [
+   {
+    "handle": "35282",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 681.0,
+    "kennung_handle": "36150"
+   },
+   {
+    "handle": "352A2",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 686.0,
+    "kennung_handle": "361A2"
+   }
+  ],
+  "B": [
+   {
+    "handle": "352C2",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 336.0,
+    "kennung_handle": "36152"
+   }
+  ]
+ },
+ "EG": {
+  "A": [
+   {
+    "handle": "9ED84",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 656.0,
+    "kennung_handle": "A08EB"
+   },
+   {
+    "handle": "9EDA4",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 335.0,
+    "kennung_handle": "A0944"
+   },
+   {
+    "handle": "9EDE4",
+    "block": "RIVO_Aufheller_Variante",
+    "dist_mm": 261.0,
+    "kennung_handle": "A0988"
+   },
+   {
+    "handle": "9EE48",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 673.0,
+    "kennung_handle": "A09E2"
+   },
+   {
+    "handle": "9EE68",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 644.0,
+    "kennung_handle": "A0A37"
+   },
+   {
+    "handle": "9EEA8",
+    "block": "RIVO_Antipanik",
+    "dist_mm": 433.0,
+    "kennung_handle": "A0A73"
+   }
+  ],
+  "B": [
+   {
+    "handle": "9ED64",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 351.0,
+    "kennung_handle": "A08ED"
+   },
+   {
+    "handle": "9EDC4",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 766.0,
+    "kennung_handle": "A0947"
+   },
+   {
+    "handle": "9EE08",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 343.0,
+    "kennung_handle": "A098A"
+   },
+   {
+    "handle": "9EDE6",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 346.0,
+    "kennung_handle": "A09E4"
+   },
+   {
+    "handle": "9EE06",
+    "block": "RIVO_Aufheller_Variante",
+    "dist_mm": 215.0,
+    "kennung_handle": "A0A39"
+   },
+   {
+    "handle": "9EE88",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 830.0,
+    "kennung_handle": "A0A76"
+   }
+  ],
+  "C": [
+   {
+    "handle": "9EE28",
+    "block": "RIVO_Antipanik",
+    "dist_mm": 249.0,
+    "kennung_handle": "A09E7"
+   }
+  ]
+ },
+ "UG": {
+  "P2": [
+   {
+    "handle": "6010E",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 1264.0,
+    "kennung_handle": "61410"
+   },
+   {
+    "handle": "6018E",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 1686.0,
+    "kennung_handle": "6149F"
+   },
+   {
+    "handle": "6020E",
+    "block": "RIVO_Aufheller_Variante",
+    "dist_mm": 837.0,
+    "kennung_handle": "614F4"
+   },
+   {
+    "handle": "601EE",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 1591.0,
+    "kennung_handle": "6155C"
+   },
+   {
+    "handle": "60510",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 1725.0,
+    "kennung_handle": "616B3"
+   },
+   {
+    "handle": "603D0",
+    "block": "RIVO_ARR_right",
+    "dist_mm": 268.0,
+    "kennung_handle": "6176A"
+   },
+   {
+    "handle": "60410",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 1112.0,
+    "kennung_handle": "617DD"
+   }
+  ],
+  "A": [
+   {
+    "handle": "6012E",
+    "block": "RIVO_ARR_right",
+    "dist_mm": 260.0,
+    "kennung_handle": "61413"
+   },
+   {
+    "handle": "6014E",
+    "block": "RIVO_ARR_right",
+    "dist_mm": 574.0,
+    "kennung_handle": "614A5"
+   },
+   {
+    "handle": "6018E",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 553.0,
+    "kennung_handle": "614F7"
+   },
+   {
+    "handle": "60210",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 229.0,
+    "kennung_handle": "6155F"
+   },
+   {
+    "handle": "60290",
+    "block": "RIVO_Antipanik",
+    "dist_mm": 274.0,
+    "kennung_handle": "6159C"
+   },
+   {
+    "handle": "602D0",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 678.0,
+    "kennung_handle": "61608"
+   },
+   {
+    "handle": "60310",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 839.0,
+    "kennung_handle": "61651"
+   },
+   {
+    "handle": "604D0",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 839.0,
+    "kennung_handle": "616B6"
+   },
+   {
+    "handle": "60330",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 481.0,
+    "kennung_handle": "61718"
+   },
+   {
+    "handle": "60390",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 592.0,
+    "kennung_handle": "6176D"
+   },
+   {
+    "handle": "60430",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 600.0,
+    "kennung_handle": "617E3"
+   },
+   {
+    "handle": "604B0",
+    "block": "RIVO_Antipanik",
+    "dist_mm": 288.0,
+    "kennung_handle": "6182E"
+   },
+   {
+    "handle": "60490",
+    "block": "RIVO_Antipanik",
+    "dist_mm": 418.0,
+    "kennung_handle": "61865"
+   }
+  ],
+  "B": [
+   {
+    "handle": "600EE",
+    "block": "RIVO_ARR_right",
+    "dist_mm": 260.0,
+    "kennung_handle": "61416"
+   },
+   {
+    "handle": "6016E",
+    "block": "RIVO_ARR_right",
+    "dist_mm": 239.0,
+    "kennung_handle": "614A8"
+   },
+   {
+    "handle": "601EE",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 553.0,
+    "kennung_handle": "614FA"
+   },
+   {
+    "handle": "601AE",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 226.0,
+    "kennung_handle": "61561"
+   },
+   {
+    "handle": "60270",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 548.0,
+    "kennung_handle": "6159F"
+   },
+   {
+    "handle": "602B0",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 678.0,
+    "kennung_handle": "6160B"
+   },
+   {
+    "handle": "602F0",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 839.0,
+    "kennung_handle": "61654"
+   },
+   {
+    "handle": "604F0",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 839.0,
+    "kennung_handle": "616B9"
+   },
+   {
+    "handle": "60350",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 481.0,
+    "kennung_handle": "6171A"
+   },
+   {
+    "handle": "603B0",
+    "block": "RIVO_ARR_right",
+    "dist_mm": 592.0,
+    "kennung_handle": "61770"
+   },
+   {
+    "handle": "60410",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 600.0,
+    "kennung_handle": "617E6"
+   },
+   {
+    "handle": "60470",
+    "block": "RIVO_ARR_right",
+    "dist_mm": 565.0,
+    "kennung_handle": "61831"
+   }
+  ],
+  "C": [
+   {
+    "handle": "6010E",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 260.0,
+    "kennung_handle": "61419"
+   },
+   {
+    "handle": "601CE",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 575.0,
+    "kennung_handle": "614AB"
+   },
+   {
+    "handle": "6020E",
+    "block": "RIVO_Aufheller_Variante",
+    "dist_mm": 274.0,
+    "kennung_handle": "614FD"
+   },
+   {
+    "handle": "60250",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 291.0,
+    "kennung_handle": "6160E"
+   },
+   {
+    "handle": "60510",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 839.0,
+    "kennung_handle": "616BC"
+   },
+   {
+    "handle": "60370",
+    "block": "RIVO_ARR_left",
+    "dist_mm": 481.0,
+    "kennung_handle": "6171C"
+   },
+   {
+    "handle": "603D0",
+    "block": "RIVO_ARR_right",
+    "dist_mm": 592.0,
+    "kennung_handle": "61773"
+   },
+   {
+    "handle": "603F0",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 248.0,
+    "kennung_handle": "617E9"
+   },
+   {
+    "handle": "60450",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 236.0,
+    "kennung_handle": "61834"
+   }
+  ],
+  "D": [
+   {
+    "handle": "60230",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 291.0,
+    "kennung_handle": "61611"
+   }
+  ],
+  "P1": [
+   {
+    "handle": "60430",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 732.0,
+    "kennung_handle": "617DA"
+   }
+  ],
+  "P3": [
+   {
+    "handle": "60450",
+    "block": "RIVO_ARR_down",
+    "dist_mm": 779.0,
+    "kennung_handle": "617E0"
+   },
+   {
+    "handle": "60470",
+    "block": "RIVO_ARR_right",
+    "dist_mm": 857.0,
+    "kennung_handle": "6182B"
+   }
+  ]
+ }
+}

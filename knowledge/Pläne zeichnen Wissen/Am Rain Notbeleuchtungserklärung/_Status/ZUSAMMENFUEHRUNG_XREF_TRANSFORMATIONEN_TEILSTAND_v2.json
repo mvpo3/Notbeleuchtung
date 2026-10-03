@@ -1,0 +1,423 @@
+{
+  "schema_version": "1.0",
+  "assembly_type": "derived_xref_modelspace_only",
+  "status": "technical_partial_result; not a bound/self-contained CAD merge or finished escape-lighting plan",
+  "assembly_dxf": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Am Rain Notbeleuchtungserklärung\\_Codex_Am_Rain_RIVO_Lernbuch_20260923_183542\\02_DXF_RIVO\\Am_Rain_Notbeleuchtungsplaene_Alle_Geschosse_RIVO_Zusammenfuehrung_TEILSTAND_v2.dxf",
+  "assembly_sha256": "a5305fe0eb57d04728a01a3cb3d98a543d25f76e3344728992f792823800969a",
+  "assembly_insunits_code": 4,
+  "floor_order_bottom_to_top": [
+    "UG",
+    "EG",
+    "OG1",
+    "OG2",
+    "OG3",
+    "OG4"
+  ],
+  "vertical_gap_between_full_model_bboxes_mm": 100000.0,
+  "xref_count": 6,
+  "geometry_model_space_only": true,
+  "individual_source_layouts_not_imported": true,
+  "resource_collision_strategy": "XREF namespaces isolate block, layer, text-style, and layout resources; source layouts remain in the six authoritative individual DXFs.",
+  "important_extent_limit": "Each source contains two widely separated model regions; complete source model XREFs make the master roughly 35 km wide. Zoom-extents is not a useful building overview. No internal source geometry or luminaire was moved independently.",
+  "cad_viewer_validation": "Not performed; reopened and audited with ezdxf only. Native CAD XREF resolve/display remains to be checked.",
+  "pre_save_audit": {
+    "errors": 0,
+    "fixes": 0
+  },
+  "post_reopen_audit": {
+    "errors": 0,
+    "fixes": 0
+  },
+  "floors": [
+    {
+      "floor": "UG",
+      "source_dxf": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Am Rain Notbeleuchtungserklärung\\_Codex_Am_Rain_RIVO_Lernbuch_20260923_183542\\02_DXF_RIVO\\ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+      "xref_path_stored": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+      "source_sha256_before": "a23be919116bad95045d2e301a185cea20cff5222f5c0ad6b048a01738205e4d",
+      "source_insunits_code": 4,
+      "xref_block": "AR_UG_RIVO_TEILSTAND_V2",
+      "insert_handle": "8E",
+      "source_full_model_bbox_fast_mm": {
+        "min": [
+          -9651.324462890627,
+          -8631.160717822479,
+          -456.2567794251408
+        ],
+        "max": [
+          34805136.56585895,
+          1335100.4,
+          0.0
+        ],
+        "size": [
+          34814787.89032184,
+          1343731.5607178223,
+          456.2567794251408
+        ]
+      },
+      "transform_to_assembly": {
+        "x_assembly": "x_source + (9651.32446289063)",
+        "y_assembly": "y_source + (8631.16071782248)",
+        "z_assembly": "z_source",
+        "translation_mm": [
+          9651.324462890627,
+          8631.160717822479,
+          0.0
+        ],
+        "rotation_degrees": 0.0,
+        "uniform_scale": 1.0
+      },
+      "inverse_to_source": {
+        "translation_mm": [
+          -9651.324462890627,
+          -8631.160717822479,
+          0.0
+        ],
+        "rotation_degrees": 0.0,
+        "uniform_scale": 1.0
+      },
+      "assembly_full_source_bbox_mm": {
+        "min": [
+          0.0,
+          0.0,
+          -456.2567794251408
+        ],
+        "max": [
+          34814787.89032184,
+          1343731.5607178223,
+          0.0
+        ]
+      },
+      "source_model_entity_count": 43808,
+      "source_layouts_preserved_only_in_individual_dxf": [
+        "Blitzschutz+Erdung",
+        "Elektromontageplan",
+        "Model"
+      ]
+    },
+    {
+      "floor": "EG",
+      "source_dxf": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Am Rain Notbeleuchtungserklärung\\_Codex_Am_Rain_RIVO_Lernbuch_20260923_183542\\02_DXF_RIVO\\ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+      "xref_path_stored": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+      "source_sha256_before": "0805a4c1b172c60083f0fd0a3bc1827394d862dc123a83beacb7ee8ae0d5c990",
+      "source_insunits_code": 4,
+      "xref_block": "AR_EG_RIVO_TEILSTAND_V2",
+      "insert_handle": "95",
+      "source_full_model_bbox_fast_mm": {
+        "min": [
+          -21462.70751953125,
+          -10943.994140625,
+          -7.3387e-12
+        ],
+        "max": [
+          34806142.14987779,
+          1179406.3570380467,
+          8.164e-13
+        ],
+        "size": [
+          34827604.85739732,
+          1190350.3511786717,
+          8.1551e-12
+        ]
+      },
+      "transform_to_assembly": {
+        "x_assembly": "x_source + (21462.7075195312)",
+        "y_assembly": "y_source + (1454675.55485845)",
+        "z_assembly": "z_source",
+        "translation_mm": [
+          21462.70751953125,
+          1454675.5548584473,
+          0.0
+        ],
+        "rotation_degrees": 0.0,
+        "uniform_scale": 1.0
+      },
+      "inverse_to_source": {
+        "translation_mm": [
+          -21462.70751953125,
+          -1454675.5548584473,
+          0.0
+        ],
+        "rotation_degrees": 0.0,
+        "uniform_scale": 1.0
+      },
+      "assembly_full_source_bbox_mm": {
+        "min": [
+          0.0,
+          1443731.5607178223,
+          -7.3387e-12
+        ],
+        "max": [
+          34827604.85739732,
+          2634081.911896494,
+          8.164e-13
+        ]
+      },
+      "source_model_entity_count": 72313,
+      "source_layouts_preserved_only_in_individual_dxf": [
+        "Layout1",
+        "Layout2",
+        "Model"
+      ]
+    },
+    {
+      "floor": "OG1",
+      "source_dxf": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Am Rain Notbeleuchtungserklärung\\_Codex_Am_Rain_RIVO_Lernbuch_20260923_183542\\02_DXF_RIVO\\ARAI5_FE_XEL_ZZ_MOP_OG1_0012_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+      "xref_path_stored": "ARAI5_FE_XEL_ZZ_MOP_OG1_0012_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+      "source_sha256_before": "5142d2b20e47fef871255e1d526a4f68c433180ed2f09942c628778ba3be1554",
+      "source_insunits_code": 4,
+      "xref_block": "AR_OG1_RIVO_TEILSTAND_V2",
+      "insert_handle": "9C",
+      "source_full_model_bbox_fast_mm": {
+        "min": [
+          -8434.6923828125,
+          -5119.54345703125,
+          -3.4072e-12
+        ],
+        "max": [
+          34795386.21320249,
+          1203459.1073925246,
+          8.164e-13
+        ],
+        "size": [
+          34803820.905585304,
+          1208578.6508495559,
+          4.2236e-12
+        ]
+      },
+      "transform_to_assembly": {
+        "x_assembly": "x_source + (8434.6923828125)",
+        "y_assembly": "y_source + (2739201.45535353)",
+        "z_assembly": "z_source",
+        "translation_mm": [
+          8434.6923828125,
+          2739201.4553535255,
+          0.0
+        ],
+        "rotation_degrees": 0.0,
+        "uniform_scale": 1.0
+      },
+      "inverse_to_source": {
+        "translation_mm": [
+          -8434.6923828125,
+          -2739201.4553535255,
+          0.0
+        ],
+        "rotation_degrees": 0.0,
+        "uniform_scale": 1.0
+      },
+      "assembly_full_source_bbox_mm": {
+        "min": [
+          0.0,
+          2734081.911896494,
+          -3.4072e-12
+        ],
+        "max": [
+          34803820.905585304,
+          3942660.56274605,
+          8.164e-13
+        ]
+      },
+      "source_model_entity_count": 32529,
+      "source_layouts_preserved_only_in_individual_dxf": [
+        "Layout1",
+        "Layout2",
+        "Model"
+      ]
+    },
+    {
+      "floor": "OG2",
+      "source_dxf": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Am Rain Notbeleuchtungserklärung\\_Codex_Am_Rain_RIVO_Lernbuch_20260923_183542\\02_DXF_RIVO\\ARAI5_FE_XEL_ZZ_MOP_OG2_0013_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+      "xref_path_stored": "ARAI5_FE_XEL_ZZ_MOP_OG2_0013_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+      "source_sha256_before": "53670f4520bfa0bad451f46781f0a761bddfe0a6c7e1cad6618f671611f12a61",
+      "source_insunits_code": 4,
+      "xref_block": "AR_OG2_RIVO_TEILSTAND_V2",
+      "insert_handle": "A3",
+      "source_full_model_bbox_fast_mm": {
+        "min": [
+          -8434.6923828125,
+          -4902.55126953125,
+          -3.4072e-12
+        ],
+        "max": [
+          34747451.97526272,
+          1215163.7854286628,
+          8.164e-13
+        ],
+        "size": [
+          34755886.66764553,
+          1220066.336698194,
+          4.2236e-12
+        ]
+      },
+      "transform_to_assembly": {
+        "x_assembly": "x_source + (8434.6923828125)",
+        "y_assembly": "y_source + (4047563.11401558)",
+        "z_assembly": "z_source",
+        "translation_mm": [
+          8434.6923828125,
+          4047563.114015581,
+          0.0
+        ],
+        "rotation_degrees": 0.0,
+        "uniform_scale": 1.0
+      },
+      "inverse_to_source": {
+        "translation_mm": [
+          -8434.6923828125,
+          -4047563.114015581,
+          0.0
+        ],
+        "rotation_degrees": 0.0,
+        "uniform_scale": 1.0
+      },
+      "assembly_full_source_bbox_mm": {
+        "min": [
+          0.0,
+          4042660.56274605,
+          -3.4072e-12
+        ],
+        "max": [
+          34755886.66764553,
+          5262726.899444244,
+          8.164e-13
+        ]
+      },
+      "source_model_entity_count": 30075,
+      "source_layouts_preserved_only_in_individual_dxf": [
+        "Layout1",
+        "Layout2",
+        "Model"
+      ]
+    },
+    {
+      "floor": "OG3",
+      "source_dxf": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Am Rain Notbeleuchtungserklärung\\_Codex_Am_Rain_RIVO_Lernbuch_20260923_183542\\02_DXF_RIVO\\ARAI5_FE_XEL_ZZ_MOP_OG3_0014_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+      "xref_path_stored": "ARAI5_FE_XEL_ZZ_MOP_OG3_0014_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+      "source_sha256_before": "562595073912ee0f22642004a9abf755e68a994b4e3fb40a22e12cfb282d43b1",
+      "source_insunits_code": 4,
+      "xref_block": "AR_OG3_RIVO_TEILSTAND_V2",
+      "insert_handle": "AA",
+      "source_full_model_bbox_fast_mm": {
+        "min": [
+          -8434.6923828125,
+          -6018.104855854026,
+          -3.4072e-12
+        ],
+        "max": [
+          34746547.4142487,
+          1201838.248972388,
+          8.164e-13
+        ],
+        "size": [
+          34754982.10663151,
+          1207856.353828242,
+          4.2236e-12
+        ]
+      },
+      "transform_to_assembly": {
+        "x_assembly": "x_source + (8434.6923828125)",
+        "y_assembly": "y_source + (5368745.0043001)",
+        "z_assembly": "z_source",
+        "translation_mm": [
+          8434.6923828125,
+          5368745.004300098,
+          0.0
+        ],
+        "rotation_degrees": 0.0,
+        "uniform_scale": 1.0
+      },
+      "inverse_to_source": {
+        "translation_mm": [
+          -8434.6923828125,
+          -5368745.004300098,
+          0.0
+        ],
+        "rotation_degrees": 0.0,
+        "uniform_scale": 1.0
+      },
+      "assembly_full_source_bbox_mm": {
+        "min": [
+          0.0,
+          5362726.899444244,
+          -3.4072e-12
+        ],
+        "max": [
+          34754982.10663151,
+          6570583.253272486,
+          8.164e-13
+        ]
+      },
+      "source_model_entity_count": 28338,
+      "source_layouts_preserved_only_in_individual_dxf": [
+        "Layout1",
+        "Layout2",
+        "Model"
+      ]
+    },
+    {
+      "floor": "OG4",
+      "source_dxf": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Am Rain Notbeleuchtungserklärung\\_Codex_Am_Rain_RIVO_Lernbuch_20260923_183542\\02_DXF_RIVO\\ARAI5_FE_XEL_ZZ_MOP_OG4_0015_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+      "xref_path_stored": "ARAI5_FE_XEL_ZZ_MOP_OG4_0015_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+      "source_sha256_before": "7ce5b6ef2e183dc1b4cd4190118d652064e302702d5b4107fe3121663ef4f25c",
+      "source_insunits_code": 4,
+      "xref_block": "AR_OG4_RIVO_TEILSTAND_V2",
+      "insert_handle": "B1",
+      "source_full_model_bbox_fast_mm": {
+        "min": [
+          -6934.1552734375,
+          -6018.104855393342,
+          -3.4072e-12
+        ],
+        "max": [
+          34700261.48012215,
+          1192307.7258982705,
+          8.164e-13
+        ],
+        "size": [
+          34707195.63539559,
+          1198325.8307536638,
+          4.2236e-12
+        ]
+      },
+      "transform_to_assembly": {
+        "x_assembly": "x_source + (6934.1552734375)",
+        "y_assembly": "y_source + (6676601.35812788)",
+        "z_assembly": "z_source",
+        "translation_mm": [
+          6934.1552734375,
+          6676601.358127879,
+          0.0
+        ],
+        "rotation_degrees": 0.0,
+        "uniform_scale": 1.0
+      },
+      "inverse_to_source": {
+        "translation_mm": [
+          -6934.1552734375,
+          -6676601.358127879,
+          0.0
+        ],
+        "rotation_degrees": 0.0,
+        "uniform_scale": 1.0
+      },
+      "assembly_full_source_bbox_mm": {
+        "min": [
+          0.0,
+          6670583.253272486,
+          -3.4072e-12
+        ],
+        "max": [
+          34707195.63539559,
+          7868909.0840261495,
+          8.164e-13
+        ]
+      },
+      "source_model_entity_count": 9078,
+      "source_layouts_preserved_only_in_individual_dxf": [
+        "Layout1",
+        "Layout2",
+        "Model"
+      ]
+    }
+  ]
+}

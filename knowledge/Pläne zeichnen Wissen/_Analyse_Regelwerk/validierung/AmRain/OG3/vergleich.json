@@ -1,0 +1,6 @@
+{
+ "projekt": "AmRain",
+ "geschoss": "OG3",
+ "input": "ARAI5_FE_XEL_ZZ_MOP_OG3_0014_V_01.dxf",
+ "fehler": "ValueError: Keine Wand-Entities gefunden — Layer-Muster prüfen."
+}

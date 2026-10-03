@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Mollgasse-Review — Engine vs. Erklär-PDF (visuell)</title>
+<style>
+  :root{--gruen:#1EB350;--rot:#d94545;--orange:#e8912d;--blau:#2d6fe8;--grau:#6b7280;--bg:#f7f8fa;--karte:#fff;}
+  *{box-sizing:border-box}
+  body{font-family:"Segoe UI",system-ui,sans-serif;margin:0;background:var(--bg);color:#1a2333;line-height:1.5}
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 22px 80px}
+  h1{font-size:30px;margin:6px 0 2px} h2{font-size:22px;margin:40px 0 12px;border-bottom:3px solid #e4e7ec;padding-bottom:6px}
+  h3{font-size:16px;margin:18px 0 8px}
+  .sub{color:var(--grau);font-size:14px;margin-bottom:18px}
+  .grid{display:grid;gap:14px} .g2{grid-template-columns:1fr 1fr} .g3{grid-template-columns:1fr 1fr 1fr} .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:860px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .karte{background:var(--karte);border:1px solid #e4e7ec;border-radius:12px;padding:16px 18px;box-shadow:0 1px 3px rgba(16,24,40,.06)}
+  .kpi{text-align:center;padding:18px 10px}
+  .kpi .zahl{font-size:34px;font-weight:700} .kpi .label{font-size:13px;color:var(--grau)}
+  .gruen{color:var(--gruen)} .rot{color:var(--rot)} .orange{color:var(--orange)} .blau{color:var(--blau)}
+  .pille{display:inline-block;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:600;color:#fff}
+  .p-g{background:var(--gruen)} .p-r{background:var(--rot)} .p-o{background:var(--orange)} .p-b{background:var(--blau)} .p-x{background:var(--grau)}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;background:#fff}
+  th,td{border:1px solid #e4e7ec;padding:7px 9px;text-align:left;vertical-align:top}
+  th{background:#eef1f5}
+  .balken{display:flex;height:26px;border-radius:6px;overflow:hidden;font-size:12px;color:#fff;font-weight:600}
+  .balken div{display:flex;align-items:center;justify-content:center;min-width:0;white-space:nowrap}
+  .b-g{background:var(--gruen)} .b-o{background:var(--orange)} .b-r{background:var(--rot)} .b-grau{background:#c3c9d4;color:#333}
+  .legende{font-size:12.5px;color:var(--grau);margin-top:6px}
+  figure{margin:10px 0}
+  figure img{width:100%;border:1px solid #d8dde6;border-radius:8px}
+  figcaption{font-size:12.5px;color:var(--grau);margin-top:5px}
+  .zwei{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:start}
+  @media(max-width:900px){.zwei{grid-template-columns:1fr}}
+  .hinweis{border-left:4px solid var(--blau);background:#eef4ff;padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px}
+  .warn{border-left-color:var(--orange);background:#fff6ea}
+  .gut{border-left-color:var(--gruen);background:#ecfaf1}
+  .schlecht{border-left-color:var(--rot);background:#fdefef}
+  svg text{font-family:"Segoe UI",sans-serif}
+  .frage{background:#fff;border:1px solid #e4e7ec;border-left:5px solid var(--blau);border-radius:8px;padding:12px 14px;margin:8px 0}
+  .frage b{color:var(--blau)}
+  .phase{display:flex;gap:12px;align-items:center;margin:10px 0}
+  .phase .nr{flex:0 0 46px;height:46px;border-radius:50%;background:var(--blau);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+  .phase .balkenwrap{flex:1}
+  .mono{font-family:Consolas,monospace;font-size:12.5px;background:#f1f3f7;padding:1px 5px;border-radius:4px}
+  .fussnote{font-size:12px;color:var(--grau);margin-top:30px;border-top:1px solid #e4e7ec;padding-top:10px}
+</style>
+</head>
+<body><div class="wrap">
+
+<h1>Mollgasse-Review: Wie gut zeichnet die Engine schon wie du?</h1>
+<div class="sub">Analyse vom 30.09.2026 · Basis: deine Erklär-PDF (95 Seiten, jede Seite als Bild analysiert, 283 Regel-Aussagen) + 8 Erklär-DXFs (97 Referenzleuchten, jede per Handle vermessen) + echter Engine-Lauf auf allen 8 Geschossen. Vollreferenzen: REVIEW.md, GEGENPRUEFUNG_ENGINE.md, ANALYSE_PDF.md.</div>
+
+<!-- ================= KPI-DASHBOARD ================= -->
+<div class="grid g4">
+  <div class="karte kpi"><div class="zahl gruen">19<span style="font-size:18px;color:var(--grau)">/35</span></div><div class="label">Regeln deckungsgleich<br>(Engine macht es schon genau so)</div></div>
+  <div class="karte kpi"><div class="zahl orange">6</div><div class="label">Regeln abweichend<br>(drin, aber anders als du zeichnest)</div></div>
+  <div class="karte kpi"><div class="zahl rot">10</div><div class="label">Regeln fehlen<br>(4 davon durch fehlende Eingangsdaten blockiert)</div></div>
+  <div class="karte kpi"><div class="zahl rot">33<span style="font-size:18px;color:var(--grau)">/97</span></div><div class="label">Referenzleuchten heute<br>richtig getroffen (echter Lauf)</div></div>
+</div>
+
+<div class="karte" style="margin-top:14px">
+  <h3 style="margin-top:0">Das Regel-Wissen (35 Regeln aus deiner PDF)</h3>
+  <div class="balken">
+    <div class="b-g" style="width:54.3%">19 deckungsgleich</div>
+    <div class="b-o" style="width:17.1%">6 abweichend</div>
+    <div class="b-r" style="width:28.6%">10 fehlen</div>
+  </div>
+  <h3>…aber die Leuchten-Reproduktion (97 Referenzleuchten, echter Engine-Lauf)</h3>
+  <div class="balken">
+    <div class="b-g" style="width:13.4%">13 Typ ✓</div>
+    <div class="b-o" style="width:20.6%">20 Position ✓, Typ ✗</div>
+    <div class="b-r" style="width:66%">64 nicht getroffen</div>
+  </div>
+  <div class="legende">Dazu kommen <b>115 überzählige Symbole</b>, die die Engine setzt, dein Plan aber nicht kennt (davon allein 48 im EG).</div>
+  <div class="hinweis" style="margin-top:12px"><b>Die Kernaussage des Reviews:</b> Das Regel-<i>Wissen</i> ist gut (54 % identisch, 0 harte Widersprüche) — aber die wenigen abweichenden Regeln sind genau die, die <i>jede einzelne Leuchte</i> betreffen: WOHIN genau (Positions-Konvention) und WELCHER Pfeiltyp (Frontalsicht). Eine falsche Konvention verschiebt alles, auch wenn 19 andere Regeln perfekt sitzen. Darum: erst die 6 Abweichler + der Überschuss, dann neue Regeln.</div>
+</div>
+
+<!-- ================= PRO GESCHOSS ================= -->
+<h2>Ergebnis je Geschoss (Engine heute vs. deine Referenz)</h2>
+<div class="karte">
+  <table>
+    <tr><th style="width:60px">Geschoss</th><th>Treffer-Bilanz (grün = gepaart · rot = von dir gezeichnet, Engine trifft nicht)</th><th style="width:90px">überzählig</th></tr>
+    <tr><td><b>EG</b></td><td><div class="balken"><div class="b-g" style="width:29%">5</div><div class="b-r" style="width:71%">12 fehlen</div></div></td><td class="rot"><b>+48</b></td></tr>
+    <tr><td><b>1OG</b></td><td><div class="balken"><div class="b-g" style="width:36%">4</div><div class="b-r" style="width:64%">7</div></div></td><td>+8</td></tr>
+    <tr><td><b>2OG</b></td><td><div class="balken"><div class="b-g" style="width:36%">4</div><div class="b-r" style="width:64%">7</div></div></td><td>+10</td></tr>
+    <tr><td><b>3OG</b></td><td><div class="balken"><div class="b-g" style="width:25%">1</div><div class="b-r" style="width:75%">3</div></div></td><td>+8</td></tr>
+    <tr><td><b>4OG</b></td><td><div class="balken"><div class="b-g" style="width:71%">5</div><div class="b-r" style="width:29%">2</div></div></td><td>+9</td></tr>
+    <tr><td><b>DG</b></td><td><div class="balken"><div class="b-g" style="width:33%">2</div><div class="b-r" style="width:67%">4</div></div></td><td>+6</td></tr>
+    <tr><td><b>1KG</b></td><td><div class="balken"><div class="b-g" style="width:25%">3</div><div class="b-r" style="width:75%">9</div></div></td><td>+11</td></tr>
+    <tr><td><b>2KG</b></td><td><div class="balken"><div class="b-g" style="width:31%">9</div><div class="b-r" style="width:69%">20</div></div></td><td>+15</td></tr>
+  </table>
+  <div class="legende">4OG ist am besten (71 %) — dort dominieren die Regeln, die die Engine schon exakt kann. EG/KG sind am schwächsten: EG wegen des Aufheller-Überschusses, die Kellergeschosse, weil die Raumerkennung dort Kellerabteil-Gänge und Garage noch nicht liefert (Selman-Paket S-KG, bereits übergeben).</div>
+</div>
+
+<!-- ================= WAS GUT FUNKTIONIERT ================= -->
+<h2>✅ Was schon gut funktioniert (19 deckungsgleiche Regeln)</h2>
+<div class="grid g3">
+  <div class="karte"><span class="pille p-g">deckungsgleich</span>
+    <h3>Die Lese-Konvention deiner Pläne</h3>
+    „Pfeil nach unten/links/rechts" = Block-Familie, die echte Richtung entsteht erst durch Drehung (+ Spiegelung). Die Engine liest und schreibt das korrekt — in 7 PDF-Stellen gegengeprüft, 0 Fehler.</div>
+  <div class="karte"><span class="pille p-g">deckungsgleich</span>
+    <h3>Gerade Gang-Zeichen (NB-R06)</h3>
+    Down-Typ, Front ENTGEGEN der Fluchtrichtung — „die ankommende Person sieht die Vorderseite". Fast alle 13 Typ-Treffer kommen aus dieser Regel.</div>
+  <div class="karte"><span class="pille p-g">deckungsgleich</span>
+    <h3>UG flüchtet HINAUF (NB-R13)</h3>
+    Kellergeschosse drehen die Stiegen-Logik um — in 1KG/2KG zeigen die Engine-Stiegen-RZ in die richtige Richtung.</div>
+  <div class="karte"><span class="pille p-g">deckungsgleich</span>
+    <h3>Sichtkette / „auf den ersten Blick"</h3>
+    Jede Wohnungstür sieht ein Zeichen, redundante fallen weg, Türaufschläge blockieren Sicht — dein Kernprinzip von S.22 ist als Ausdünnungs-Logik gebaut.</div>
+  <div class="karte"><span class="pille p-g">deckungsgleich</span>
+    <h3>Kein Symbol in Lift/Schacht</h3>
+    0 Fehlplatzierungen in Aufzügen/Schächten über alle 8 Geschosse.</div>
+  <div class="karte"><span class="pille p-g">deckungsgleich</span>
+    <h3>Türleuchten in Pflichträumen + Lichtberechnung</h3>
+    Technik/Müll/Kinderwagen bekommen ihr Tür-Zeichen; jedes Geschoss läuft automatisch durch den Lux-Nachweis (dein QA-Prinzip von S.83).</div>
+</div>
+
+<!-- ================= PROBLEM 1 ================= -->
+<h2>⚠️ Baustelle 1 — Positions-Konvention: richtige Leuchte, falscher Fleck</h2>
+<div class="zwei">
+  <div>
+    <div class="karte">
+      <svg viewBox="0 0 560 300" width="100%">
+        <rect x="0" y="0" width="560" height="300" fill="#fbfcfe"/>
+        <!-- Stiege -->
+        <g>
+          <rect x="60" y="60" width="150" height="180" fill="#eef1f5" stroke="#9aa4b2"/>
+          <line x1="60" y1="85" x2="210" y2="85" stroke="#9aa4b2"/><line x1="60" y1="110" x2="210" y2="110" stroke="#9aa4b2"/>
+          <line x1="60" y1="135" x2="210" y2="135" stroke="#9aa4b2"/><line x1="60" y1="160" x2="210" y2="160" stroke="#9aa4b2"/>
+          <line x1="60" y1="185" x2="210" y2="185" stroke="#9aa4b2"/><line x1="60" y1="210" x2="210" y2="210" stroke="#9aa4b2"/>
+          <text x="75" y="50" font-size="13" fill="#6b7280">Stiegenlauf</text>
+        </g>
+        <!-- Antrittskante -->
+        <line x1="210" y1="60" x2="210" y2="240" stroke="#1a2333" stroke-width="3"/>
+        <text x="216" y="255" font-size="12" fill="#1a2333">Antrittskante</text>
+        <!-- Owner-Band -->
+        <rect x="235" y="60" width="90" height="180" fill="#1EB35022" stroke="#1EB350" stroke-dasharray="6 4"/>
+        <text x="238" y="52" font-size="13" fill="#1EB350" font-weight="bold">DEIN Band: 800–1122 mm vor der Kante</text>
+        <rect x="266" y="135" width="28" height="18" fill="#1EB350" rx="2"/>
+        <polygon points="280,158 273,150 287,150" fill="#1EB350"/>
+        <text x="240" y="175" font-size="12" fill="#1EB350">Referenz-RZ, auf der Laufachse</text>
+        <!-- Engine -->
+        <circle cx="440" cy="120" r="11" fill="#d94545"/>
+        <text x="352" y="98" font-size="13" fill="#d94545" font-weight="bold">Engine heute: am Graph-Knoten</text>
+        <line x1="294" y1="144" x2="429" y2="122" stroke="#d94545" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="330" y="160" font-size="13" fill="#d94545" font-weight="bold">Δ 1–2 m</text>
+        <text x="40" y="285" font-size="12" fill="#6b7280">Folge: Leuchte EXISTIERT, zählt aber als Abweichung — Haupttreiber der 64 Fehl-Fälle.</text>
+      </svg>
+    </div>
+    <div class="hinweis warn" style="margin-top:10px"><b>Betroffen:</b> RW-005 (Stiegen-Band, „sonst zeigt der Pfeil zur Wand", S.30) und RW-001 (Tür-RZ: PDF-Vermessung 735–930 mm raumseitig vs. deine Ansage vom 18.09. „auf der Wandlinie" → <b>Frage 1 unten</b>).</div>
+  </div>
+  <div>
+    <figure>
+      <img src="bilder/S030.png" alt="PDF S.30">
+      <figcaption><b>Dein Kernbeleg S.30:</b> „vor der Stiege, sonst zeigt der Pfeil zur Wand" — im DXF vermessen: alle Stiegen-RZ liegen 800–1122 mm vor der Kante, exakt auf der Laufachse.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<!-- ================= PROBLEM 2 ================= -->
+<h2>⚠️ Baustelle 2 — Pfeiltyp-Wahl: die Engine denkt in Vektoren, du in Blickrichtungen</h2>
+<div class="zwei">
+  <div>
+    <div class="karte">
+      <svg viewBox="0 0 560 300" width="100%">
+        <rect x="0" y="0" width="560" height="300" fill="#fbfcfe"/>
+        <!-- Korridor -->
+        <rect x="40" y="110" width="480" height="80" fill="#eef1f5" stroke="#9aa4b2"/>
+        <!-- Person -->
+        <circle cx="90" cy="150" r="10" fill="#1EB350"/>
+        <line x1="90" y1="160" x2="90" y2="180" stroke="#1EB350" stroke-width="4"/>
+        <text x="60" y="205" font-size="12" fill="#1EB350">ankommende Person</text>
+        <line x1="105" y1="150" x2="175" y2="150" stroke="#1EB350" stroke-width="2" marker-end="url(#pf)"/>
+        <defs><marker id="pf" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1EB350"/></marker></defs>
+        <!-- richtig: frontal -->
+        <rect x="255" y="118" width="10" height="34" fill="#1EB350"/>
+        <text x="215" y="105" font-size="13" fill="#1EB350" font-weight="bold">RICHTIG: Front zur Person</text>
+        <text x="225" y="172" font-size="11.5" fill="#1EB350">(Vorderseite sichtbar, Winkel ≤ 45°)</text>
+        <!-- falsch: seitlich -->
+        <rect x="400" y="145" width="44" height="10" fill="#d94545"/>
+        <text x="365" y="105" font-size="13" fill="#d94545" font-weight="bold">FALSCH: Seitenansicht</text>
+        <text x="368" y="172" font-size="11.5" fill="#d94545">(deine Falsch-Beispiele S.31–36)</text>
+        <text x="40" y="240" font-size="12.5" fill="#6b7280">Deine Regel (S.31–37): erst prüfen, WAS die Person sieht, DANN den Block wählen (unten/links/rechts).</text>
+        <text x="40" y="262" font-size="12.5" fill="#6b7280">Die Engine wählt heute nach dem quantisierten Fluchtvektor — Ergebnis: nur 13 von 33 getroffenen</text>
+        <text x="40" y="280" font-size="12.5" fill="#6b7280">Leuchten haben die richtige Typ-Familie.</text>
+      </svg>
+    </div>
+  </div>
+  <div>
+    <figure>
+      <img src="bilder/S035.png" alt="PDF S.35">
+      <figcaption><b>S.35 — dein dokumentiertes Falsch-Beispiel:</b> down-Block statt left = Seitenansicht, Person erkennt das Schild nicht. Genau diese Lehrbeispiele (inkl. DXF-Instanz 413E8) werden die Testfälle für den Einbau.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<!-- ================= PROBLEM 3 ================= -->
+<h2>⚠️ Baustelle 3 — Der Aufheller-Überschuss: 115 Symbole, die dein Plan nicht kennt</h2>
+<div class="karte">
+  <div class="zwei">
+    <div>
+      <p style="margin-top:0">Die Engine setzt heute <b>neben jedes Rettungszeichen automatisch einen Aufheller (500 mm dahinter)</b> — eine Ansage aus dem September. Deine Mollgasse-PDF lehrt es anders: Zusatzleuchten (Antipanik/Aufheller) kommen <b>nur, wo die Lichtberechnung es verlangt</b> oder eine Sichtblockade existiert — und ihre Position wird konstruiert (Diagonale), nicht pauschal versetzt.</p>
+      <div class="balken" style="max-width:420px">
+        <div class="b-r" style="width:42%">EG: 48</div>
+        <div class="b-o" style="width:58%">übrige Geschosse: 67</div>
+      </div>
+      <div class="legende">Die 115 überzähligen Symbole nach Geschoss — fast die Hälfte im EG.</div>
+      <div class="hinweis schlecht" style="margin-top:12px"><b>Klassifikation: ENGINE-ÜBERSCHUSS</b> — die Regel hat im Mollgasse-Regelwerk keinen Beleg. Vorschlag: Aufheller nur noch nach gescheitertem Lux-Nachweis setzen (= dein Prinzip). Das ist der größte Einzelhebel und <b>Frage 2 unten</b>.</div>
+    </div>
+    <div>
+      <figure>
+        <img src="bilder/S059.png" alt="PDF S.59">
+        <figcaption><b>S.59 — so machst du es:</b> optionale Antipanik zur Lux-Stützung, Position über die Bereichs-Diagonale konstruiert („nicht zwingend, aber sinnvoll").</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ENTDECKUNGEN ================= -->
+<h2>💡 Zwei neue Entdeckungen — deine Konstruktionen sind EXAKTE Rezepte</h2>
+<div class="zwei">
+  <div>
+    <div class="karte">
+      <svg viewBox="0 0 560 330" width="100%">
+        <rect x="0" y="0" width="560" height="330" fill="#fbfcfe"/>
+        <!-- Raum -->
+        <polygon points="70,50 470,50 470,150 320,150 320,270 70,270" fill="#eef1f5" stroke="#9aa4b2" stroke-width="2"/>
+        <text x="80" y="42" font-size="12.5" fill="#6b7280">abgeschatteter Bereich (Gang/Garage)</text>
+        <!-- Diagonale -->
+        <line x1="70" y1="50" x2="320" y2="270" stroke="#e8c11c" stroke-width="3" stroke-dasharray="8 5"/>
+        <text x="120" y="200" font-size="13" fill="#b89400" font-weight="bold" transform="rotate(41 120 200)">gelbe Diagonale: Mauerkante → Gangecke</text>
+        <!-- Mitte -->
+        <circle cx="195" cy="160" r="14" fill="none" stroke="#e8912d" stroke-width="3"/>
+        <rect x="181" y="152" width="28" height="16" fill="#1EB350" rx="2"/>
+        <text x="220" y="150" font-size="13" fill="#1a2333" font-weight="bold">Antipanik EXAKT auf der Mitte</text>
+        <text x="220" y="168" font-size="12.5" fill="#6b7280">nachgemessen: Δ 23–33 mm!</text>
+        <text x="70" y="300" font-size="12.5" fill="#6b7280">Handles 1C707/(B), 1C706/(C) + Diagonalen 1D03D, Markierungskreis 1D044 — die Konstruktions-</text>
+        <text x="70" y="318" font-size="12.5" fill="#6b7280">linien existieren real im DXF. Das ist kein „ungefähr mittig", das ist ein Algorithmus.</text>
+      </svg>
+    </div>
+  </div>
+  <div>
+    <figure>
+      <img src="bilder/S067.png" alt="PDF S.67">
+      <figcaption><b>Rezept 2 (S.67):</b> Antipanik (K) fluchtend in EINER Achse mit der nächsten Notleuchte (H) — nachgemessen Δ 24 mm — UND wandmittig (Δ 8 mm). Beide Rezepte sind direkt einbaubar (Plan-Punkt #4/#5).</figcaption>
+    </figure>
+  </div>
+</div>
+
+<!-- ================= WEITERE BEFUNDE ================= -->
+<h2>🔍 Weitere Befunde aus dem Seite-für-Seite-Abgleich</h2>
+<div class="grid g2">
+  <div class="karte">
+    <span class="pille p-o">PDF-Textfehler</span>
+    <h3>S.57/58: B↔C vertauscht — jetzt im Bild bewiesen</h3>
+    <figure><img src="bilder/S057.png" alt="PDF S.57">
+    <figcaption>Der Text nennt (B) „vertikal ausgerichtet" — im Bild und DXF liegt (B) horizontal auf der Diagonale (rot 178,7°); vertikal ist (C). Die Orientierungs-Absätze gehören getauscht. Regelgehalt bleibt gültig.</figcaption></figure>
+  </div>
+  <div class="karte">
+    <span class="pille p-g">Regel bestätigt</span>
+    <h3>S.74: Die OG-Ausnahme — weniger ist richtig</h3>
+    <figure><img src="bilder/S074.png" alt="PDF S.74">
+    <figcaption>Ein Stiegenhaus + eindeutiger I-Gang → meist KEINE zusätzliche Richtungsleuchte in Obergeschossen. Die Engine kennt diese Ausnahme noch nicht — daher ihr OG-Überschuss (+8 bis +10 je Geschoss). Einbau = Plan-Punkt #7.</figcaption></figure>
+  </div>
+</div>
+<div class="karte" style="margin-top:14px">
+  <h3 style="margin-top:0">Abgleich PDF ↔ DXF gesamt: 34 Vermerke, 0 Regel-Widersprüche</h3>
+  <table>
+    <tr><th>Klasse</th><th>Fälle</th><th>Bedeutung</th></tr>
+    <tr><td><span class="pille p-g">Sprachkonvention</span></td><td>7</td><td>„Pfeil nach unten" = Blockname, nicht Weltrichtung — kein Fehler, aber DIE Lese-Lehre (Engine macht's richtig)</td></tr>
+    <tr><td><span class="pille p-o">PDF-Textfehler</span></td><td>5</td><td>S.57 B↔C · S.35/36 Kennung (B)↔(D) + Text-Duplikat · S.19 Sichtlinien-Zuordnung → für dich zum Korrigieren</td></tr>
+    <tr><td><span class="pille p-x">Kopier-Reste</span></td><td>2</td><td>u.a. EG 2137C (deine bekannte Löschliste) — beim Messen ausgefiltert</td></tr>
+    <tr><td><span class="pille p-b">Im DXF, im PDF unerklärt</span></td><td>4</td><td>8532F (2OG), 78DFD-Szene (3OG), DG-West 206DB/206D6, (D) 1BFC3 (1KG) — regelkonform, aber ohne Erklär-Text</td></tr>
+    <tr><td><span class="pille p-x">Werkzeug-Lücken</span></td><td>5</td><td>rote Trennlinie/blaue Kuppel/gelbe Blockpfeile/Leerzeichen-Kennungen — unsere Extraktoren, nicht dein Plan</td></tr>
+    <tr><td><span class="pille p-b">Benennungs-Unschärfen</span></td><td>3</td><td>„Haupteingang" für zwei Westtüren · gleiche Kennung (D) für zwei Situationen (S.20/S.23)</td></tr>
+  </table>
+</div>
+
+<!-- ================= FAHRPLAN ================= -->
+<h2>🛠️ Der Fahrplan: 4 Phasen, jede messbar am GT-Harness</h2>
+<div class="karte">
+  <div class="phase"><div class="nr">M1</div><div class="balkenwrap">
+    <b>Aufheller-Drossel + Werkzeug-Fixes</b> — B1 nur noch nach Lux-Gate; Kopier-Rest-Filter; Kennungs-Matcher.<br>
+    <div class="balken" style="max-width:520px;margin-top:4px"><div class="b-g" style="width:34%">Ziel: 33/97 stabil</div><div class="b-grau" style="width:66%">Überschuss 115 → &lt; 40</div></div>
+  </div></div>
+  <div class="phase"><div class="nr">M2</div><div class="balkenwrap">
+    <b>Positions-Rezepte</b> — Stiegen-Band 800–1122 mm, Tür-Versatz (nach deiner Antwort), Diagonalen-Mitte + Achs-Fluchtung für Antipanik.<br>
+    <div class="balken" style="max-width:520px;margin-top:4px"><div class="b-g" style="width:57%">Ziel: ≥ 55/97 gepaart</div><div class="b-grau" style="width:43%"></div></div>
+  </div></div>
+  <div class="phase"><div class="nr">M3</div><div class="balkenwrap">
+    <b>Typ-Wahl nach Frontalsicht + OG-Ausnahme + beidseitig-Konvention</b> (2 gespiegelte Blöcke wie in deinen Plänen).<br>
+    <div class="balken" style="max-width:520px;margin-top:4px"><div class="b-g" style="width:70%">Ziel: Typ-Match ≥ 70 % · beidseitig ≥ 4/8</div><div class="b-grau" style="width:30%"></div></div>
+  </div></div>
+  <div class="phase"><div class="nr">M4</div><div class="balkenwrap">
+    <b>Selman-Pakete S-KG</b> (Kellerabteile, Garage, Zirkulation — bereits übergeben) + Gesamt-Re-Run.<br>
+    <div class="balken" style="max-width:520px;margin-top:4px"><div class="b-g" style="width:83%">Ziel: ≥ 80/97 (≈ 83 %)</div><div class="b-grau" style="width:17%">Rest-Analyse → 95 %</div></div>
+  </div></div>
+  <div class="hinweis" style="margin-top:10px">Jede Phase endet mit einem Messlauf über alle 8 Geschosse (<span class="mono">mollgasse_gt_vergleich.py</span>) und deiner Abnahme, bevor Test-Bänder nachgezogen werden. Risiken (Fischamend-Stückzahlen, 4OG-Rotations-Golden, Hausfeld 2DG 3/3) sind in REVIEW.md §6 aufgelistet — Hausfeld läuft als Wachhund in jeder Phase mit.</div>
+</div>
+
+<!-- ================= FRAGEN ================= -->
+<h2>❓ Deine 8 Entscheidungen (blockieren teilweise M1/M2)</h2>
+<div class="frage"><b>1 · Tür-RZ-Versatz:</b> Deine Ansage 18.09. „auf der Wandlinie" ↔ PDF-Vermessung 735–930 mm raumseitig. Was gilt? <i>(blockiert M2)</i></div>
+<div class="frage"><b>2 · Aufheller-500mm:</b> Pauschal je RZ (Ansage 09/26) ↔ nur per Lichtberechnung (deine PDF). Drosseln? <i>(größter Hebel, M1)</i></div>
+<div class="frage"><b>3 · beidseitig:</b> Du zeichnest 2 gespiegelte Einzel-Schilder, die Engine rendert 1 Kombi-Block. Ziel-Format für Produktionspläne?</div>
+<div class="frage"><b>4 · PDF-Korrekturen:</b> S.57/58 B↔C-Tausch, S.35/36 Kennung (B)↔(D) + Text-Duplikat, S.19 Sichtlinien-Satz — korrigierst du die PDF?</div>
+<div class="frage"><b>5 · „Haupteingangstür":</b> S.1 und S.6 nutzen den Begriff für zwei verschiedene Westtüren (20286 vs. 20240) — Benennung klären.</div>
+<div class="frage"><b>6 · Unerklärte Leuchten:</b> 8532F (2OG), 78DFD-Szene (3OG), DG-West (206DB/206D6), (D) 1BFC3 (1KG) — bewusst ohne Erklärtext oder PDF-Nachtrag?</div>
+<div class="frage"><b>7 · FREIHEIT / KEINE FREIHEIT</b> (S.77): Bedeutung der Kästen weiter offen (seit 18.09.).</div>
+<div class="frage"><b>8 · Phasen-GO:</b> M1 starten (kein Blocker) — ja/nein?</div>
+
+<div class="fussnote">
+Erstellt 30.09.2026 · Alle Zahlen aus echten Läufen/Vermessungen, nichts geschätzt · Quellen im selben Ordner: REVIEW.md · GEGENPRUEFUNG_ENGINE.md · ENGINE_WISSEN_IST.md · ANALYSE_PDF.md (95 Seiten) · ANALYSE_DXF_&lt;Geschoss&gt;.md (8×) · ABWEICHUNGEN_PDF_DXF.md · REGELWERK_Mollgasse.md/.json · Roh-Messdaten: Projekte/_ergebnis/Mollgasse_GT/&lt;G&gt;/vergleich.json
+</div>
+</div></body></html>

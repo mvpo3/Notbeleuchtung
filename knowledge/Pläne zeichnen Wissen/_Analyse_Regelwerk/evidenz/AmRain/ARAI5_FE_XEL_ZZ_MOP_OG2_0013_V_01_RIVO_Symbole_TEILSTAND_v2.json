@@ -1,0 +1,240 @@
+{
+ "projekt": "AmRain",
+ "geschoss": "OG2",
+ "datei": "ARAI5_FE_XEL_ZZ_MOP_OG2_0013_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+ "quelle": "Am Rain Notbeleuchtungserklärung\\ARAI5_FE_XEL_ZZ_MOP_OG2_0013_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+ "n_leuchten": 8,
+ "n_beidseitig_gruppen": 1,
+ "n_personen": 0,
+ "n_sichtlinien": 0,
+ "n_fluchtwege": 0,
+ "n_kennungen": 0,
+ "n_gelb_marker": 4,
+ "leuchten": [
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_OG2_0013_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "9C724",
+   "block": "RIVO_ARR_left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    12239.0,
+    22304.3
+   ],
+   "insert_xy_mm": [
+    72787.2,
+    -70104.2
+   ],
+   "rot_deg": 90.0,
+   "xscale": 37.0486,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_OG2_0013_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "9C742",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    14280.1,
+    19788.7
+   ],
+   "insert_xy_mm": [
+    -78271.8,
+    -41230.6
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_OG2_0013_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "9C777",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    15330.3,
+    17487.4
+   ],
+   "insert_xy_mm": [
+    76162.6,
+    -74689.4
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 360.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_OG2_0013_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "9C795",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    32999.7,
+    17487.4
+   ],
+   "insert_xy_mm": [
+    93832.0,
+    -74689.4
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 360.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_OG2_0013_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "9C7E1",
+   "block": "RIVO_ARR_left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    55292.3,
+    14939.1
+   ],
+   "insert_xy_mm": [
+    115840.4,
+    -77469.5
+   ],
+   "rot_deg": 90.0,
+   "xscale": 37.0486,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_OG2_0013_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "9C7FF",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    57333.4,
+    12423.5
+   ],
+   "insert_xy_mm": [
+    -35218.6,
+    -48595.9
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_OG2_0013_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "9C834",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    56663.6,
+    9419.5
+   ],
+   "insert_xy_mm": [
+    -2304.2,
+    101712.4
+   ],
+   "rot_deg": 270.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 1
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_OG2_0013_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "9C852",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    58154.0,
+    9253.6
+   ],
+   "insert_xy_mm": [
+    118986.3,
+    -82923.1
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 360.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  }
+ ],
+ "personen": [],
+ "sichtlinien": [],
+ "fluchtwege": [],
+ "kennungen": [],
+ "gelb_marker": [
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_OG2_0013_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "8027C",
+   "art": "lwpolyline",
+   "layer": "0",
+   "punkte": [
+    [
+     40345.0,
+     43300.0
+    ],
+    [
+     40345.0,
+     43800.0
+    ]
+   ]
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_OG2_0013_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "8985D",
+   "art": "lwpolyline",
+   "layer": "0",
+   "punkte": [
+    [
+     73830.0,
+     10315.0
+    ],
+    [
+     73365.0,
+     10315.0
+    ]
+   ]
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_OG2_0013_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "8CEBB",
+   "art": "lwpolyline",
+   "layer": "0",
+   "punkte": [
+    [
+     21120.0,
+     18615.0
+    ],
+    [
+     21500.0,
+     18615.0
+    ]
+   ]
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_OG2_0013_V_01_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "8DE23",
+   "art": "line",
+   "layer": "0",
+   "punkte": [
+    [
+     45167.5,
+     21930.0
+    ],
+    [
+     43270.0,
+     21930.0
+    ]
+   ]
+  }
+ ],
+ "hinweise": [],
+ "dauer_s": 8.0
+}

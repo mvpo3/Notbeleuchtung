@@ -1,0 +1,562 @@
+{
+ "projekt": "AmRain",
+ "geschoss": "EG",
+ "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+ "quelle": "Am Rain Notbeleuchtungserklärung\\ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+ "n_leuchten": 26,
+ "n_beidseitig_gruppen": 13,
+ "n_personen": 0,
+ "n_sichtlinien": 0,
+ "n_fluchtwege": 0,
+ "n_kennungen": 0,
+ "n_gelb_marker": 2,
+ "leuchten": [
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181B5F",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    405.7,
+    39147.6
+   ],
+   "insert_xy_mm": [
+    92336.4,
+    100274.7
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181B7D",
+   "block": "RIVO_ARR_right",
+   "typ": "rz",
+   "richtung_block": "right",
+   "xy_mm": [
+    5135.9,
+    39173.0
+   ],
+   "insert_xy_mm": [
+    97066.6,
+    99476.6
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 180.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181B9B",
+   "block": "RIVO_ARR_left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    35517.7,
+    39147.0
+   ],
+   "insert_xy_mm": [
+    127679.8,
+    99989.9
+   ],
+   "rot_deg": 180.0,
+   "xscale": 37.0486,
+   "welt_pfeil_deg": 0.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181BB9",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    44689.4,
+    42903.8
+   ],
+   "insert_xy_mm": [
+    103031.7,
+    -49260.0
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 1
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181BD7",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    44617.2,
+    39198.4
+   ],
+   "insert_xy_mm": [
+    136547.9,
+    100325.5
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181BF5",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    39367.2,
+    42875.1
+   ],
+   "insert_xy_mm": [
+    131285.0,
+    101594.8
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 2
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181C13",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    39211.6,
+    39719.3
+   ],
+   "insert_xy_mm": [
+    -19756.1,
+    132012.2
+   ],
+   "rot_deg": 270.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 3
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181C31",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    55988.0,
+    34544.4
+   ],
+   "insert_xy_mm": [
+    147918.8,
+    95671.5
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181CF1",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    58443.1,
+    38277.0
+   ],
+   "insert_xy_mm": [
+    116785.5,
+    -53886.7
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 4
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181D0F",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    63351.4,
+    38498.8
+   ],
+   "insert_xy_mm": [
+    -29187.6,
+    -20091.7
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 5
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181D2D",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    63700.7,
+    35296.8
+   ],
+   "insert_xy_mm": [
+    4732.9,
+    127589.8
+   ],
+   "rot_deg": 270.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 6
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181D4B",
+   "block": "RIVO_ARR_right",
+   "typ": "rz",
+   "richtung_block": "right",
+   "xy_mm": [
+    67405.0,
+    34799.0
+   ],
+   "insert_xy_mm": [
+    159335.7,
+    95102.5
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 180.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181D83",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    150379.1,
+    35319.3
+   ],
+   "insert_xy_mm": [
+    91411.4,
+    127612.3
+   ],
+   "rot_deg": 270.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 7
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181DA1",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    150473.9,
+    38464.8
+   ],
+   "insert_xy_mm": [
+    242391.7,
+    97184.5
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 8
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181DBF",
+   "block": "RIVO_ARR_left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    146462.4,
+    34806.9
+   ],
+   "insert_xy_mm": [
+    238624.5,
+    95649.8
+   ],
+   "rot_deg": 180.0,
+   "xscale": 37.0486,
+   "welt_pfeil_deg": 360.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181DDD",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    155589.6,
+    38566.2
+   ],
+   "insert_xy_mm": [
+    213931.9,
+    -53597.6
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 9
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181DFB",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    155652.0,
+    34827.4
+   ],
+   "insert_xy_mm": [
+    247582.8,
+    95954.5
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181E19",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    10103.8,
+    23757.7
+   ],
+   "insert_xy_mm": [
+    -82448.1,
+    -37261.7
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181E37",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    10944.2,
+    17713.4
+   ],
+   "insert_xy_mm": [
+    -48023.6,
+    110006.4
+   ],
+   "rot_deg": 270.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 10
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181E55",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    13534.1,
+    17722.6
+   ],
+   "insert_xy_mm": [
+    -79004.8,
+    -40867.9
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 11
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181E73",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    15213.8,
+    17568.8
+   ],
+   "insert_xy_mm": [
+    76046.1,
+    -74608.0
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 360.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181ED6",
+   "block": "RIVO_ARR_right",
+   "typ": "rz",
+   "richtung_block": "right",
+   "xy_mm": [
+    14614.6,
+    22540.2
+   ],
+   "insert_xy_mm": [
+    -45821.6,
+    114846.1
+   ],
+   "rot_deg": 270.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181EF4",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    53782.5,
+    16391.8
+   ],
+   "insert_xy_mm": [
+    -38769.4,
+    -44627.5
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181F12",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    53768.8,
+    9730.7
+   ],
+   "insert_xy_mm": [
+    -5199.0,
+    102023.7
+   ],
+   "rot_deg": 270.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 12
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181F30",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    56567.9,
+    9745.7
+   ],
+   "insert_xy_mm": [
+    -35971.0,
+    -48844.7
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 13
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "181F4E",
+   "block": "RIVO_ARR_right",
+   "typ": "rz",
+   "richtung_block": "right",
+   "xy_mm": [
+    57621.0,
+    14776.6
+   ],
+   "insert_xy_mm": [
+    -2815.2,
+    107082.5
+   ],
+   "rot_deg": 270.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  }
+ ],
+ "personen": [],
+ "sichtlinien": [],
+ "fluchtwege": [],
+ "kennungen": [],
+ "gelb_marker": [
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "125EAA",
+   "art": "lwpolyline",
+   "layer": "0",
+   "punkte": [
+    [
+     70345.0,
+     38850.0
+    ],
+    [
+     70345.0,
+     39350.0
+    ]
+   ]
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_EG_0011_V_02_EG_Erklaerung_TEILSTAND_v2.dxf",
+   "handle": "12B7B3",
+   "art": "lwpolyline",
+   "layer": "0",
+   "punkte": [
+    [
+     144435.0,
+     39715.0
+    ],
+    [
+     146170.0,
+     39715.0
+    ]
+   ]
+  }
+ ],
+ "hinweise": [],
+ "dauer_s": 12.5
+}

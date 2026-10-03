@@ -1,0 +1,908 @@
+{
+ "projekt": "AmRain",
+ "geschoss": "UG",
+ "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+ "quelle": "Am Rain Notbeleuchtungserklärung\\ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+ "n_leuchten": 46,
+ "n_beidseitig_gruppen": 12,
+ "n_personen": 0,
+ "n_sichtlinien": 0,
+ "n_fluchtwege": 0,
+ "n_kennungen": 0,
+ "n_gelb_marker": 0,
+ "leuchten": [
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "12878E",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    12590.8,
+    40996.5
+   ],
+   "insert_xy_mm": [
+    73423.1,
+    -51180.2
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 0.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "1287AC",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    8911.7,
+    41072.3
+   ],
+   "insert_xy_mm": [
+    67254.1,
+    -51091.5
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 1
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "1287CA",
+   "block": "RIVO_ARR_right",
+   "typ": "rz",
+   "richtung_block": "right",
+   "xy_mm": [
+    8586.4,
+    39093.7
+   ],
+   "insert_xy_mm": [
+    100517.1,
+    99397.3
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 180.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "1287FF",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    40702.1,
+    43109.1
+   ],
+   "insert_xy_mm": [
+    101534.4,
+    -49067.7
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 0.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "12881D",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    39382.5,
+    42873.9
+   ],
+   "insert_xy_mm": [
+    97724.9,
+    -49289.9
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 2
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "12883B",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    39583.1,
+    41007.5
+   ],
+   "insert_xy_mm": [
+    -52955.9,
+    -17583.0
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 3
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128873",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    61762.3,
+    38705.8
+   ],
+   "insert_xy_mm": [
+    502.6,
+    131011.8
+   ],
+   "rot_deg": 270.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 180.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128891",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    63165.0,
+    38480.6
+   ],
+   "insert_xy_mm": [
+    121507.4,
+    -53683.2
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 4
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "1288AF",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    63173.4,
+    36746.6
+   ],
+   "insert_xy_mm": [
+    155091.2,
+    95466.2
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 5
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "1288CD",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    150536.4,
+    36777.9
+   ],
+   "insert_xy_mm": [
+    57997.4,
+    -21812.6
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 6
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "1288EB",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    150537.0,
+    38504.3
+   ],
+   "insert_xy_mm": [
+    208879.4,
+    -53659.5
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 7
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128987",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    12780.2,
+    19274.4
+   ],
+   "insert_xy_mm": [
+    -79771.7,
+    -41744.9
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "1289A5",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    10679.6,
+    20043.3
+   ],
+   "insert_xy_mm": [
+    102630.0,
+    81170.4
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "1289C3",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    13465.4,
+    12616.2
+   ],
+   "insert_xy_mm": [
+    -79066.9,
+    -48403.2
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "1289E1",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    14122.2,
+    7927.9
+   ],
+   "insert_xy_mm": [
+    -78410.1,
+    -53091.4
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128A1A",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    15208.5,
+    10735.2
+   ],
+   "insert_xy_mm": [
+    76060.4,
+    -81441.6
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 360.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128A38",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    15208.5,
+    15465.2
+   ],
+   "insert_xy_mm": [
+    76060.4,
+    -76711.6
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 360.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128A56",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    15208.5,
+    19449.3
+   ],
+   "insert_xy_mm": [
+    76060.4,
+    -72727.4
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 360.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128A74",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    1865.6,
+    9066.8
+   ],
+   "insert_xy_mm": [
+    62717.5,
+    -83110.0
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 360.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128A92",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    8594.3,
+    9233.7
+   ],
+   "insert_xy_mm": [
+    -83966.4,
+    -49356.8
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 8
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128AB0",
+   "block": "RIVO_ARR_left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    1211.0,
+    13138.9
+   ],
+   "insert_xy_mm": [
+    -59777.0,
+    105676.6
+   ],
+   "rot_deg": 270.0,
+   "xscale": 37.0486,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128ACA",
+   "block": "RIVO_ARR_left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    1211.0,
+    20155.3
+   ],
+   "insert_xy_mm": [
+    -59777.0,
+    112693.0
+   ],
+   "rot_deg": 270.0,
+   "xscale": 37.0486,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128AE4",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    8652.4,
+    16837.8
+   ],
+   "insert_xy_mm": [
+    100561.4,
+    77964.9
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128BEC",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    11184.3,
+    22640.1
+   ],
+   "insert_xy_mm": [
+    103102.7,
+    83767.2
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128C0A",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    55784.1,
+    11753.0
+   ],
+   "insert_xy_mm": [
+    -36767.8,
+    -49266.3
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128C28",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    54446.2,
+    10018.6
+   ],
+   "insert_xy_mm": [
+    -6794.0,
+    102324.5
+   ],
+   "rot_deg": 270.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 180.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128C46",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    54570.3,
+    8598.7
+   ],
+   "insert_xy_mm": [
+    -6669.8,
+    100904.6
+   ],
+   "rot_deg": 270.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 180.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128C64",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    58118.9,
+    9142.2
+   ],
+   "insert_xy_mm": [
+    118970.7,
+    -83034.6
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 360.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128C82",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    61293.4,
+    8019.3
+   ],
+   "insert_xy_mm": [
+    -31238.9,
+    -53000.0
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128CA0",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    68023.1,
+    8019.3
+   ],
+   "insert_xy_mm": [
+    -24509.2,
+    -53000.0
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128CBE",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    74696.3,
+    8019.3
+   ],
+   "insert_xy_mm": [
+    -17836.0,
+    -53000.0
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128CF3",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    61313.4,
+    10324.8
+   ],
+   "insert_xy_mm": [
+    153263.8,
+    71451.9
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128D62",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    51716.9,
+    9817.8
+   ],
+   "insert_xy_mm": [
+    143612.9,
+    68537.5
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 9
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128D80",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    52077.7,
+    4593.7
+   ],
+   "insert_xy_mm": [
+    -40454.6,
+    -56425.6
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128D9E",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    58766.3,
+    16798.2
+   ],
+   "insert_xy_mm": [
+    150716.6,
+    77925.3
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128EA3",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    41408.4,
+    30472.8
+   ],
+   "insert_xy_mm": [
+    -17578.1,
+    122765.8
+   ],
+   "rot_deg": 270.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 10
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128EC1",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    97780.7,
+    30486.6
+   ],
+   "insert_xy_mm": [
+    156107.5,
+    -61677.2
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 11
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128EDF",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    153067.1,
+    34164.9
+   ],
+   "insert_xy_mm": [
+    60502.7,
+    -26854.4
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128EFD",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    60676.4,
+    34164.9
+   ],
+   "insert_xy_mm": [
+    -31888.0,
+    -26854.4
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128F1B",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    41274.0,
+    38494.1
+   ],
+   "insert_xy_mm": [
+    -51290.3,
+    -22525.2
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128F39",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    13707.1,
+    38535.1
+   ],
+   "insert_xy_mm": [
+    -78857.3,
+    -22484.2
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128F57",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    30173.2,
+    22093.0
+   ],
+   "insert_xy_mm": [
+    -62391.1,
+    -38926.3
+   ],
+   "rot_deg": 0.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128F75",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    58804.8,
+    22610.7
+   ],
+   "insert_xy_mm": [
+    150723.1,
+    83737.8
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128F93",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    29867.6,
+    30468.4
+   ],
+   "insert_xy_mm": [
+    121766.8,
+    89188.0
+   ],
+   "rot_deg": 180.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 12
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "128FB1",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    77827.6,
+    30406.9
+   ],
+   "insert_xy_mm": [
+    138641.3,
+    -61769.8
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 0.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "ARAI5_FE_XEL_ZZ_MOP_UG_0010_V_02_RIVO_Symbole_TEILSTAND_v2.dxf",
+   "handle": "1292DB",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    59823.3,
+    8835.6
+   ],
+   "insert_xy_mm": [
+    120950.4,
+    -83114.8
+   ],
+   "rot_deg": 90.0,
+   "xscale": 36.9557,
+   "welt_pfeil_deg": 360.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  }
+ ],
+ "personen": [],
+ "sichtlinien": [],
+ "fluchtwege": [],
+ "kennungen": [],
+ "gelb_marker": [],
+ "hinweise": [],
+ "dauer_s": 10.7
+}

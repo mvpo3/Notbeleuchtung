@@ -1,0 +1,1272 @@
+{
+ "projekt": "Mollgasse",
+ "geschoss": "4OG",
+ "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+ "quelle": "Mollgasse-Notbeleuchtungserklärung\\WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+ "n_leuchten": 7,
+ "n_beidseitig_gruppen": 0,
+ "n_personen": 17,
+ "n_sichtlinien": 6,
+ "n_fluchtwege": 39,
+ "n_kennungen": 24,
+ "n_gelb_marker": 0,
+ "leuchten": [
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4121F",
+   "block": "RIVO-RZ-ARR_right",
+   "typ": "rz",
+   "richtung_block": "right",
+   "xy_mm": [
+    -75939.6,
+    32585.3
+   ],
+   "insert_xy_mm": [
+    -657920.4,
+    -102566.0
+   ],
+   "rot_deg": 359.87,
+   "xscale": 1.3724,
+   "welt_pfeil_deg": 359.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41220",
+   "block": "RIVO-SIBEL-ARR-left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    -72423.9,
+    34450.6
+   ],
+   "insert_xy_mm": [
+    -205438.3,
+    -34681.4
+   ],
+   "rot_deg": 359.42,
+   "xscale": 36.0983,
+   "welt_pfeil_deg": 179.42,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41249",
+   "block": "RIVO-SIBEL-ARR-left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    -75883.5,
+    30932.7
+   ],
+   "insert_xy_mm": [
+    -145015.5,
+    163947.2
+   ],
+   "rot_deg": 269.42,
+   "xscale": 36.0983,
+   "welt_pfeil_deg": 89.42,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "413A0",
+   "block": "RIVO-SIBEL-ARR-down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    -35385.0,
+    8592.0
+   ],
+   "insert_xy_mm": [
+    96667.0,
+    77484.7
+   ],
+   "rot_deg": 179.71,
+   "xscale": 35.6373,
+   "welt_pfeil_deg": 89.71,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "413E8",
+   "block": "RIVO-SIBEL-ARR-down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    -39711.1,
+    6006.3
+   ],
+   "insert_xy_mm": [
+    -108603.7,
+    138058.2
+   ],
+   "rot_deg": 269.71,
+   "xscale": 35.6373,
+   "welt_pfeil_deg": 179.71,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41593",
+   "block": "RIVO-SIBEL-ARR-left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    -35752.2,
+    4564.3
+   ],
+   "insert_xy_mm": [
+    -168766.7,
+    -64567.6
+   ],
+   "rot_deg": 359.42,
+   "xscale": 36.0983,
+   "welt_pfeil_deg": 179.42,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "415B6",
+   "block": "RIVO-RZ-ARR_right",
+   "typ": "rz",
+   "richtung_block": "right",
+   "xy_mm": [
+    -42975.5,
+    4646.0
+   ],
+   "insert_xy_mm": [
+    92175.8,
+    -577334.8
+   ],
+   "rot_deg": 89.87,
+   "xscale": 1.3724,
+   "welt_pfeil_deg": 89.87,
+   "layer": "0"
+  }
+ ],
+ "personen": [
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41222",
+   "block": "750298750",
+   "xy_mm": [
+    -77371.8,
+    29702.3
+   ],
+   "rot_deg": 101.86,
+   "xscale": -4.0068,
+   "blick_deg": 101.86,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41277",
+   "block": "750298750",
+   "xy_mm": [
+    -78494.2,
+    30631.7
+   ],
+   "rot_deg": 11.86,
+   "xscale": -4.0068,
+   "blick_deg": 11.86,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "412FF",
+   "block": "750298750",
+   "xy_mm": [
+    -75938.0,
+    31794.8
+   ],
+   "rot_deg": 101.86,
+   "xscale": -4.0068,
+   "blick_deg": 101.86,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41301",
+   "block": "750298750",
+   "xy_mm": [
+    -73667.5,
+    32586.4
+   ],
+   "rot_deg": 11.86,
+   "xscale": -4.0068,
+   "blick_deg": 11.86,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41303",
+   "block": "750298750",
+   "xy_mm": [
+    -73882.5,
+    33992.0
+   ],
+   "rot_deg": 347.88,
+   "xscale": 4.0068,
+   "blick_deg": 167.88,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41329",
+   "block": "750298750",
+   "xy_mm": [
+    -75948.9,
+    33726.2
+   ],
+   "rot_deg": 77.54,
+   "xscale": 4.0068,
+   "blick_deg": 257.54,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4132D",
+   "block": "750298750",
+   "xy_mm": [
+    -75182.5,
+    32570.7
+   ],
+   "rot_deg": 11.86,
+   "xscale": -4.0068,
+   "blick_deg": 11.86,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4137B",
+   "block": "750298750",
+   "xy_mm": [
+    -34559.4,
+    3513.8
+   ],
+   "rot_deg": 101.86,
+   "xscale": -4.0068,
+   "blick_deg": 101.86,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4140D",
+   "block": "750298750",
+   "xy_mm": [
+    -35692.6,
+    2844.0
+   ],
+   "rot_deg": 101.86,
+   "xscale": -4.0068,
+   "blick_deg": 101.86,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41433",
+   "block": "750298750",
+   "xy_mm": [
+    -36191.2,
+    10554.5
+   ],
+   "rot_deg": 304.09,
+   "xscale": -4.0068,
+   "blick_deg": 304.09,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41458",
+   "block": "750298750",
+   "xy_mm": [
+    -35363.3,
+    11436.7
+   ],
+   "rot_deg": 304.09,
+   "xscale": -4.0068,
+   "blick_deg": 304.09,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41486",
+   "block": "750298750",
+   "xy_mm": [
+    -35418.2,
+    7187.5
+   ],
+   "rot_deg": 304.09,
+   "xscale": -4.0068,
+   "blick_deg": 304.09,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41488",
+   "block": "750298750",
+   "xy_mm": [
+    -41537.1,
+    5847.6
+   ],
+   "rot_deg": 2.75,
+   "xscale": -4.0068,
+   "blick_deg": 2.75,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "414AD",
+   "block": "750298750",
+   "xy_mm": [
+    -38374.9,
+    5961.1
+   ],
+   "rot_deg": 2.75,
+   "xscale": -4.0068,
+   "blick_deg": 2.75,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "414D2",
+   "block": "750298750",
+   "xy_mm": [
+    -36505.5,
+    4573.1
+   ],
+   "rot_deg": 356.98,
+   "xscale": 4.0068,
+   "blick_deg": 176.98,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "414D4",
+   "block": "750298750",
+   "xy_mm": [
+    -39385.9,
+    4579.7
+   ],
+   "rot_deg": 356.98,
+   "xscale": 4.0068,
+   "blick_deg": 176.98,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "414D7",
+   "block": "750298750",
+   "xy_mm": [
+    -37945.0,
+    4576.4
+   ],
+   "rot_deg": 356.98,
+   "xscale": 4.0068,
+   "blick_deg": 176.98,
+   "layer": "0"
+  }
+ ],
+ "sichtlinien": [
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41280",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -78461.7,
+     30900.9
+    ],
+    [
+     -76042.9,
+     30934.3
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41281",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -77641.1,
+     29734.8
+    ],
+    [
+     -76026.9,
+     30938.6
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4132E",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -76225.2,
+     33702.0
+    ],
+    [
+     -75917.1,
+     32743.9
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4140F",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -35961.9,
+     2876.5
+    ],
+    [
+     -35703.1,
+     4405.1
+    ],
+    [
+     -34828.7,
+     3546.3
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4145A",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -35897.7,
+     10637.8
+    ],
+    [
+     -35384.2,
+     8749.4
+    ],
+    [
+     -35069.9,
+     11519.9
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41645",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -42816.1,
+     4805.7
+    ],
+    [
+     -39474.3,
+     4851.7
+    ]
+   ],
+   "layer": "0"
+  }
+ ],
+ "fluchtwege": [
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41282",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -78028.0,
+     30625.7
+    ],
+    [
+     -76690.1,
+     30622.6
+    ],
+    [
+     -76689.6,
+     30827.8
+    ],
+    [
+     -76044.0,
+     30821.4
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41283",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -77371.1,
+     30032.3
+    ],
+    [
+     -77369.7,
+     30624.2
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41284",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -75880.3,
+     31251.6
+    ],
+    [
+     -75877.6,
+     32426.1
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41285",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -72742.7,
+     34453.8
+    ],
+    [
+     -75874.4,
+     34460.9
+    ],
+    [
+     -75878.3,
+     32744.2
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41286",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -75621.5,
+     32584.5
+    ],
+    [
+     -72648.1,
+     32569.4
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "412AE",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -77752.2,
+    30636.3
+   ],
+   "rot_deg": 179.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "412AF",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -77017.8,
+    30634.6
+   ],
+   "rot_deg": 179.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "412B0",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -76480.1,
+    30832.9
+   ],
+   "rot_deg": 179.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "412B1",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -77381.5,
+    30503.7
+   ],
+   "rot_deg": 269.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "412B2",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -75877.9,
+    32274.4
+   ],
+   "rot_deg": 269.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "412B3",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -74806.7,
+    32591.7
+   ],
+   "rot_deg": 179.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "412B4",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -74162.1,
+    34448.1
+   ],
+   "rot_deg": 359.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "412B5",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -75429.0,
+    34450.9
+   ],
+   "rot_deg": 359.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "412B6",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -75870.2,
+    34029.5
+   ],
+   "rot_deg": 89.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "412B7",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -75871.6,
+    33387.2
+   ],
+   "rot_deg": 89.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41305",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -74055.7,
+    32585.0
+   ],
+   "rot_deg": 179.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4145B",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -35324.5,
+     11349.4
+    ],
+    [
+     -35337.8,
+     8749.2
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4145C",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -36005.7,
+     10719.4
+    ],
+    [
+     -35324.5,
+     10719.4
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4145D",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -35749.5,
+     2677.4
+    ],
+    [
+     -35732.2,
+     4405.4
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4145E",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -34744.5,
+     3489.4
+    ],
+    [
+     -35741.3,
+     3499.4
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4145F",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -39525.8,
+     6009.6
+    ],
+    [
+     -35730.6,
+     6000.9
+    ],
+    [
+     -35743.4,
+     4724.4
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41460",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -35385.8,
+     8434.6
+    ],
+    [
+     -35391.3,
+     6000.2
+    ],
+    [
+     -35730.6,
+     6000.9
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41461",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -36020.3,
+     4567.7
+    ],
+    [
+     -41994.5,
+     4567.7
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "414D6",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -39840.5,
+     6011.2
+    ],
+    [
+     -41415.5,
+     6014.8
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "414FB",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -40222.4,
+    6025.3
+   ],
+   "rot_deg": 179.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4151E",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -37664.7,
+    6021.1
+   ],
+   "rot_deg": 179.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41541",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -35324.3,
+    10184.6
+   ],
+   "rot_deg": 89.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41542",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -35382.8,
+    7872.8
+   ],
+   "rot_deg": 89.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41543",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -35382.8,
+    6407.1
+   ],
+   "rot_deg": 89.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41544",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -35751.4,
+    3278.8
+   ],
+   "rot_deg": 269.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41545",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -35750.1,
+    3864.4
+   ],
+   "rot_deg": 269.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41546",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -35507.8,
+    3485.1
+   ],
+   "rot_deg": 359.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41547",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -37003.2,
+    4558.0
+   ],
+   "rot_deg": 359.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41548",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -38710.2,
+    4562.0
+   ],
+   "rot_deg": 359.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41549",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -40776.7,
+    4558.3
+   ],
+   "rot_deg": 359.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4154A",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -35727.1,
+    5454.3
+   ],
+   "rot_deg": 89.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4154B",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -35455.9,
+    10731.2
+   ],
+   "rot_deg": 179.87,
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "415DA",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     -42968.9,
+     4966.7
+    ],
+    [
+     -42966.5,
+     5987.4
+    ],
+    [
+     -41750.2,
+     5991.5
+    ]
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "415FD",
+   "block": "4444444",
+   "art": "pfeil",
+   "xy_mm": [
+    -42982.4,
+    5507.4
+   ],
+   "rot_deg": 269.87,
+   "layer": "0"
+  }
+ ],
+ "kennungen": [
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41223",
+   "text": "(4OG)",
+   "xy_mm": [
+    -77591.1,
+    30138.3
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41225",
+   "text": "(C)",
+   "xy_mm": [
+    -72061.4,
+    34594.2
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4124A",
+   "text": "(A)",
+   "xy_mm": [
+    -75667.3,
+    31271.9
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41278",
+   "text": "(4OG)",
+   "xy_mm": [
+    -78357.0,
+    31101.5
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "412DA",
+   "text": "(B)",
+   "xy_mm": [
+    -76184.4,
+    32936.4
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41300",
+   "text": "(4OG)",
+   "xy_mm": [
+    -76615.9,
+    31718.1
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41302",
+   "text": "(4OG)",
+   "xy_mm": [
+    -73521.6,
+    32981.0
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41304",
+   "text": "(DG)",
+   "xy_mm": [
+    -73802.6,
+    34386.4
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4132A",
+   "text": "(DG)",
+   "xy_mm": [
+    -76520.8,
+    33616.4
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4132C",
+   "text": "(DG)",
+   "xy_mm": [
+    -75054.4,
+    32983.8
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4137C",
+   "text": "(4OG)",
+   "xy_mm": [
+    -35237.3,
+    3437.1
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "413A1",
+   "text": "(A)",
+   "xy_mm": [
+    -35051.8,
+    8667.5
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "413E9",
+   "text": "(C)",
+   "xy_mm": [
+    -43148.5,
+    5190.1
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4140E",
+   "text": "(4OG)",
+   "xy_mm": [
+    -36370.6,
+    2767.2
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41434",
+   "text": "(4OG)",
+   "xy_mm": [
+    -35973.7,
+    10871.8
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41459",
+   "text": "(4OG)",
+   "xy_mm": [
+    -35145.8,
+    11753.9
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41487",
+   "text": "(4OG)",
+   "xy_mm": [
+    -35200.7,
+    7504.8
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "41489",
+   "text": "(DG)",
+   "xy_mm": [
+    -41318.4,
+    6202.6
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "414AE",
+   "text": "(DG)",
+   "xy_mm": [
+    -38156.2,
+    6316.1
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "414D3",
+   "text": "(DG)",
+   "xy_mm": [
+    -37104.5,
+    4927.7
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "414D5",
+   "text": "(DG)",
+   "xy_mm": [
+    -39985.0,
+    4934.3
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "414D8",
+   "text": "(4OG)",
+   "xy_mm": [
+    -38594.4,
+    4931.1
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "4156F",
+   "text": "(B)",
+   "xy_mm": [
+    -35322.6,
+    4628.8
+   ],
+   "layer": "0"
+  },
+  {
+   "datei": "WHA_MOL_4OG_Notbeleuchtung_Erklärung.dxf",
+   "handle": "415D9",
+   "text": "(D)",
+   "xy_mm": [
+    -39847.0,
+    5661.5
+   ],
+   "layer": "0"
+  }
+ ],
+ "gelb_marker": [],
+ "hinweise": [],
+ "dauer_s": 2.6
+}

@@ -1,0 +1,156 @@
+{
+ "projekt": "BaufeldE2",
+ "geschoss": "UG",
+ "input": "Elektromontageplan_UG.dxf",
+ "engine_n": 46,
+ "gt_n": 89,
+ "gt_by_klasse": {
+  "rz": 89
+ },
+ "gepaart": 26,
+ "typ_match_n": 13,
+ "fehlt_n": 63,
+ "ueberfluessig_n": 20,
+ "erreichbar_n": 88,
+ "erreichbar_gepaart": 26,
+ "distanz_median_mm": 1968.1,
+ "transform": {
+  "n_namen": 2043,
+  "n_inlier": 2043,
+  "tx_mm": 0.0,
+  "ty_mm": 0.0
+ },
+ "paare": [
+  {
+   "gt": "81C94",
+   "distanz_mm": 1696.6,
+   "typ_match": false
+  },
+  {
+   "gt": "81D1C",
+   "distanz_mm": 2820.2,
+   "typ_match": true
+  },
+  {
+   "gt": "81DE8",
+   "distanz_mm": 544.1,
+   "typ_match": true
+  },
+  {
+   "gt": "81E0A",
+   "distanz_mm": 2478.3,
+   "typ_match": true
+  },
+  {
+   "gt": "81E4E",
+   "distanz_mm": 545.0,
+   "typ_match": false
+  },
+  {
+   "gt": "81EB4",
+   "distanz_mm": 2581.0,
+   "typ_match": true
+  },
+  {
+   "gt": "81ED6",
+   "distanz_mm": 1953.6,
+   "typ_match": true
+  },
+  {
+   "gt": "81F1A",
+   "distanz_mm": 2648.8,
+   "typ_match": true
+  },
+  {
+   "gt": "81FE6",
+   "distanz_mm": 1276.4,
+   "typ_match": true
+  },
+  {
+   "gt": "82008",
+   "distanz_mm": 2421.0,
+   "typ_match": false
+  },
+  {
+   "gt": "82118",
+   "distanz_mm": 1272.5,
+   "typ_match": false
+  },
+  {
+   "gt": "8213A",
+   "distanz_mm": 2535.3,
+   "typ_match": false
+  },
+  {
+   "gt": "82228",
+   "distanz_mm": 2477.5,
+   "typ_match": false
+  },
+  {
+   "gt": "8224A",
+   "distanz_mm": 2728.2,
+   "typ_match": false
+  },
+  {
+   "gt": "822F4",
+   "distanz_mm": 1570.1,
+   "typ_match": true
+  },
+  {
+   "gt": "84250",
+   "distanz_mm": 793.6,
+   "typ_match": false
+  },
+  {
+   "gt": "842E4",
+   "distanz_mm": 1287.7,
+   "typ_match": true
+  },
+  {
+   "gt": "84535",
+   "distanz_mm": 1542.2,
+   "typ_match": true
+  },
+  {
+   "gt": "84613",
+   "distanz_mm": 2249.2,
+   "typ_match": true
+  },
+  {
+   "gt": "846A7",
+   "distanz_mm": 1860.1,
+   "typ_match": true
+  },
+  {
+   "gt": "846F1",
+   "distanz_mm": 1079.2,
+   "typ_match": false
+  },
+  {
+   "gt": "8473B",
+   "distanz_mm": 1087.4,
+   "typ_match": false
+  },
+  {
+   "gt": "848F6",
+   "distanz_mm": 2784.0,
+   "typ_match": true
+  },
+  {
+   "gt": "84940",
+   "distanz_mm": 2334.0,
+   "typ_match": false
+  },
+  {
+   "gt": "849D4",
+   "distanz_mm": 2989.6,
+   "typ_match": false
+  },
+  {
+   "gt": "84BDA",
+   "distanz_mm": 1982.6,
+   "typ_match": false
+  }
+ ],
+ "engine_status": null
+}

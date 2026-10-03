@@ -1,0 +1,5478 @@
+{
+ "projekt": "Tomaschek",
+ "geschoss": "EG",
+ "datei": "EG_RIVO_Erklaerung.dxf",
+ "quelle": "Tomaschek-Schule -Notbeleuchtungserklärung\\EG_RIVO_Erklaerung.dxf",
+ "n_leuchten": 53,
+ "n_beidseitig_gruppen": 8,
+ "n_personen": 0,
+ "n_sichtlinien": 90,
+ "n_fluchtwege": 125,
+ "n_kennungen": 85,
+ "n_gelb_marker": 0,
+ "leuchten": [
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "20493",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    21301.2,
+    85830.0
+   ],
+   "insert_xy_mm": [
+    49678.3,
+    41155.6
+   ],
+   "rot_deg": 90.0,
+   "xscale": 17.879,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 1
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "2055A",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    23458.6,
+    84229.2
+   ],
+   "insert_xy_mm": [
+    -32025.3,
+    47441.1
+   ],
+   "rot_deg": 0.0,
+   "xscale": 22.2292,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "20578",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    23419.2,
+    88484.6
+   ],
+   "insert_xy_mm": [
+    78903.1,
+    125156.0
+   ],
+   "rot_deg": 180.0,
+   "xscale": 22.2292,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "20596",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    21092.8,
+    87793.6
+   ],
+   "insert_xy_mm": [
+    76416.5,
+    124561.1
+   ],
+   "rot_deg": 180.0,
+   "xscale": 22.2292,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "205B4",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    31126.3,
+    86066.8
+   ],
+   "insert_xy_mm": [
+    67744.1,
+    30620.4
+   ],
+   "rot_deg": 90.0,
+   "xscale": 22.2292,
+   "welt_pfeil_deg": 0.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "205D2",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    32259.5,
+    84050.7
+   ],
+   "insert_xy_mm": [
+    -23267.1,
+    47412.8
+   ],
+   "rot_deg": 0.0,
+   "xscale": 22.2292,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "205F0",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    46927.7,
+    84231.0
+   ],
+   "insert_xy_mm": [
+    -8556.2,
+    47438.4
+   ],
+   "rot_deg": 0.0,
+   "xscale": 22.2292,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "2060E",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    55459.0,
+    84887.5
+   ],
+   "insert_xy_mm": [
+    -24.9,
+    48097.7
+   ],
+   "rot_deg": 0.0,
+   "xscale": 22.2292,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "2062C",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    12749.9,
+    141751.8
+   ],
+   "insert_xy_mm": [
+    12749.9,
+    141751.8
+   ],
+   "rot_deg": 270.0,
+   "xscale": 22.2292,
+   "welt_pfeil_deg": 180.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "2064B",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    64924.6,
+    86939.7
+   ],
+   "insert_xy_mm": [
+    23574.4,
+    151705.6
+   ],
+   "rot_deg": 270.0,
+   "xscale": 25.934,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 2
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "20669",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    64232.3,
+    93721.9
+   ],
+   "insert_xy_mm": [
+    -676.8,
+    52604.2
+   ],
+   "rot_deg": 0.0,
+   "xscale": 25.934,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 3
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "20687",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    56094.4,
+    87948.7
+   ],
+   "insert_xy_mm": [
+    111578.3,
+    124624.8
+   ],
+   "rot_deg": 180.0,
+   "xscale": 22.2292,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "206A5",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    59970.7,
+    87782.0
+   ],
+   "insert_xy_mm": [
+    115454.6,
+    124627.6
+   ],
+   "rot_deg": 180.0,
+   "xscale": 22.2292,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "206C3",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    50336.8,
+    90624.0
+   ],
+   "insert_xy_mm": [
+    183293.2,
+    -123886.1
+   ],
+   "rot_deg": 90.0,
+   "xscale": 86.1068,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "206DA",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    52338.7,
+    89266.0
+   ],
+   "insert_xy_mm": [
+    -98034.2,
+    -3698.4
+   ],
+   "rot_deg": 0.0,
+   "xscale": 60.2078,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "206F4",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    35254.4,
+    80335.1
+   ],
+   "insert_xy_mm": [
+    -115101.7,
+    -12629.3
+   ],
+   "rot_deg": 0.0,
+   "xscale": 60.2078,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "2070E",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    44177.4,
+    80225.1
+   ],
+   "insert_xy_mm": [
+    -106178.6,
+    -12739.3
+   ],
+   "rot_deg": 0.0,
+   "xscale": 60.2078,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "20728",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    26551.2,
+    80279.1
+   ],
+   "insert_xy_mm": [
+    -123804.9,
+    -12629.3
+   ],
+   "rot_deg": 0.0,
+   "xscale": 60.2078,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "20742",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    26677.4,
+    92542.9
+   ],
+   "insert_xy_mm": [
+    -123678.6,
+    -421.5
+   ],
+   "rot_deg": 0.0,
+   "xscale": 60.2078,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "2075C",
+   "block": "RIVO_ARR_left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    60734.9,
+    95984.5
+   ],
+   "insert_xy_mm": [
+    -4129.3,
+    53468.6
+   ],
+   "rot_deg": 0.0,
+   "xscale": 25.934,
+   "welt_pfeil_deg": 180.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "20779",
+   "block": "RIVO_ARR_left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    56422.1,
+    92495.9
+   ],
+   "insert_xy_mm": [
+    121020.3,
+    135084.7
+   ],
+   "rot_deg": 180.0,
+   "xscale": 25.934,
+   "welt_pfeil_deg": 360.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "20796",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    37999.2,
+    90967.3
+   ],
+   "insert_xy_mm": [
+    -112356.9,
+    -1997.1
+   ],
+   "rot_deg": 0.0,
+   "xscale": 60.2078,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "207B0",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    44583.6,
+    86403.6
+   ],
+   "insert_xy_mm": [
+    -105566.6,
+    -6617.9
+   ],
+   "rot_deg": 0.0,
+   "xscale": 60.2078,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "207CA",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    56624.6,
+    86145.3
+   ],
+   "insert_xy_mm": [
+    -158197.3,
+    -46605.3
+   ],
+   "rot_deg": 0.0,
+   "xscale": 86.1068,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "207E1",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    60606.9,
+    83155.2
+   ],
+   "insert_xy_mm": [
+    -89766.0,
+    -9809.3
+   ],
+   "rot_deg": 0.0,
+   "xscale": 60.2078,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "207FB",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    59491.2,
+    89912.7
+   ],
+   "insert_xy_mm": [
+    -90577.9,
+    -2867.2
+   ],
+   "rot_deg": 0.0,
+   "xscale": 60.2078,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "20815",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    55828.2,
+    90066.2
+   ],
+   "insert_xy_mm": [
+    -94544.8,
+    -2898.2
+   ],
+   "rot_deg": 0.0,
+   "xscale": 60.2078,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "2082F",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    65456.1,
+    83772.2
+   ],
+   "insert_xy_mm": [
+    24105.9,
+    148538.0
+   ],
+   "rot_deg": 270.0,
+   "xscale": 25.934,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 4
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "2084D",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    72328.4,
+    83912.7
+   ],
+   "insert_xy_mm": [
+    -142332.7,
+    -49134.0
+   ],
+   "rot_deg": 0.0,
+   "xscale": 86.1068,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "20864",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    102853.8,
+    35614.5
+   ],
+   "insert_xy_mm": [
+    102853.8,
+    35614.5
+   ],
+   "rot_deg": 90.0,
+   "xscale": 22.2292,
+   "welt_pfeil_deg": 360.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "20882",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    26415.9,
+    151832.3
+   ],
+   "insert_xy_mm": [
+    26415.9,
+    151832.3
+   ],
+   "rot_deg": 270.0,
+   "xscale": 25.934,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 5
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "208A0",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    71120.0,
+    91636.8
+   ],
+   "insert_xy_mm": [
+    -79254.6,
+    -1271.6
+   ],
+   "rot_deg": 0.0,
+   "xscale": 60.2078,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "208BA",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    78179.3,
+    85583.8
+   ],
+   "insert_xy_mm": [
+    133663.2,
+    122244.7
+   ],
+   "rot_deg": 180.0,
+   "xscale": 22.2292,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "208F6",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    78193.3,
+    88243.8
+   ],
+   "insert_xy_mm": [
+    119166.6,
+    23565.4
+   ],
+   "rot_deg": 90.0,
+   "xscale": 25.934,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 6
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "20914",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    74982.6,
+    88904.6
+   ],
+   "insert_xy_mm": [
+    -75112.0,
+    -4115.7
+   ],
+   "rot_deg": 0.0,
+   "xscale": 60.2078,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "2092E",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    27759.3,
+    86356.5
+   ],
+   "insert_xy_mm": [
+    -122428.6,
+    -6668.8
+   ],
+   "rot_deg": 0.0,
+   "xscale": 60.2078,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "20948",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    21073.3,
+    83736.3
+   ],
+   "insert_xy_mm": [
+    -219465.6,
+    -65230.3
+   ],
+   "rot_deg": 0.0,
+   "xscale": 96.4373,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "20964",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    43462.7,
+    92954.5
+   ],
+   "insert_xy_mm": [
+    80080.5,
+    37508.1
+   ],
+   "rot_deg": 90.0,
+   "xscale": 22.2292,
+   "welt_pfeil_deg": 0.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "20982",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    20200.0,
+    92376.8
+   ],
+   "insert_xy_mm": [
+    -129933.5,
+    -418.7
+   ],
+   "rot_deg": 0.0,
+   "xscale": 60.2078,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "2099C",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    47080.8,
+    93956.2
+   ],
+   "insert_xy_mm": [
+    -103275.2,
+    991.8
+   ],
+   "rot_deg": 0.0,
+   "xscale": 60.2078,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting_yellow"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "209B6",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    77851.6,
+    90121.7
+   ],
+   "insert_xy_mm": [
+    133163.9,
+    126859.1
+   ],
+   "rot_deg": 180.0,
+   "xscale": 22.2292,
+   "welt_pfeil_deg": 90.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "209D4",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    51215.9,
+    84661.3
+   ],
+   "insert_xy_mm": [
+    -4268.0,
+    48024.2
+   ],
+   "rot_deg": 0.0,
+   "xscale": 22.2292,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "209F2",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    115058.0,
+    127429.6
+   ],
+   "insert_xy_mm": [
+    115058.0,
+    127429.6
+   ],
+   "rot_deg": 180.0,
+   "xscale": 25.934,
+   "welt_pfeil_deg": null,
+   "layer": "din_SIBEL_10_emergency_lighting",
+   "beidseitig_gruppe": 7
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "20A11",
+   "block": "RIVO_ARR_left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    18470.3,
+    80637.6
+   ],
+   "insert_xy_mm": [
+    60961.9,
+    15950.5
+   ],
+   "rot_deg": 90.0,
+   "xscale": 25.934,
+   "welt_pfeil_deg": 270.0,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "43561",
+   "block": "RIVO_ARR_left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    21772.8,
+    77352.2
+   ],
+   "insert_xy_mm": [
+    -19592.3,
+    142763.3
+   ],
+   "rot_deg": 269.01,
+   "xscale": 25.934,
+   "welt_pfeil_deg": 89.01,
+   "layer": "din_SIBEL_10_emergency_lighting"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A087",
+   "block": "RIVO_ARR_down",
+   "typ": "rz",
+   "richtung_block": "down",
+   "xy_mm": [
+    16301.5,
+    106528.9
+   ],
+   "insert_xy_mm": [
+    -139120.9,
+    3638.4
+   ],
+   "rot_deg": 0.0,
+   "xscale": 62.2687,
+   "welt_pfeil_deg": 270.0,
+   "layer": "RIVO_ERK_LEGENDE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A089",
+   "block": "RIVO_ARR_left",
+   "typ": "rz",
+   "richtung_block": "left",
+   "xy_mm": [
+    31301.5,
+    106528.9
+   ],
+   "insert_xy_mm": [
+    -124120.9,
+    4374.6
+   ],
+   "rot_deg": 0.0,
+   "xscale": 62.2687,
+   "welt_pfeil_deg": 180.0,
+   "layer": "RIVO_ERK_LEGENDE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A08B",
+   "block": "RIVO_ARR_right",
+   "typ": "rz",
+   "richtung_block": "right",
+   "xy_mm": [
+    46301.5,
+    106528.9
+   ],
+   "insert_xy_mm": [
+    -109120.9,
+    5026.0
+   ],
+   "rot_deg": 0.0,
+   "xscale": 62.2687,
+   "welt_pfeil_deg": 0.0,
+   "layer": "RIVO_ERK_LEGENDE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A08D",
+   "block": "RIVO_Antipanik",
+   "typ": "antipanik",
+   "richtung_block": null,
+   "xy_mm": [
+    61301.5,
+    106528.9
+   ],
+   "insert_xy_mm": [
+    -172683.7,
+    -44176.5
+   ],
+   "rot_deg": 0.0,
+   "xscale": 93.8085,
+   "welt_pfeil_deg": null,
+   "layer": "RIVO_ERK_LEGENDE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A08F",
+   "block": "RIVO_Aufheller",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    16301.5,
+    104228.9
+   ],
+   "insert_xy_mm": [
+    -697064.5,
+    -358788.7
+   ],
+   "rot_deg": 0.0,
+   "xscale": 286.082,
+   "welt_pfeil_deg": null,
+   "layer": "RIVO_ERK_LEGENDE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A091",
+   "block": "RIVO_ARR_bothsided",
+   "typ": "rz",
+   "richtung_block": "bothsided",
+   "xy_mm": [
+    31301.5,
+    104228.9
+   ],
+   "insert_xy_mm": [
+    -124099.1,
+    5397.8
+   ],
+   "rot_deg": 0.0,
+   "xscale": 62.2687,
+   "welt_pfeil_deg": null,
+   "layer": "RIVO_ERK_LEGENDE",
+   "beidseitig_gruppe": 8
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A093",
+   "block": "RIVO_Gruppenbatterie_Verteiler",
+   "typ": "anlage",
+   "richtung_block": null,
+   "xy_mm": [
+    46301.5,
+    104228.9
+   ],
+   "insert_xy_mm": [
+    -114804.5,
+    3358.3
+   ],
+   "rot_deg": 0.0,
+   "xscale": 64.5631,
+   "welt_pfeil_deg": null,
+   "layer": "RIVO_ERK_LEGENDE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A095",
+   "block": "RIVO_Aufheller_Variante",
+   "typ": "aufheller",
+   "richtung_block": null,
+   "xy_mm": [
+    61301.5,
+    104228.9
+   ],
+   "insert_xy_mm": [
+    -653653.7,
+    -338425.5
+   ],
+   "rot_deg": 0.0,
+   "xscale": 286.7193,
+   "welt_pfeil_deg": null,
+   "layer": "RIVO_ERK_LEGENDE"
+  }
+ ],
+ "personen": [],
+ "sichtlinien": [
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F2F",
+   "art": "line",
+   "punkte": [
+    [
+     21533.0,
+     89432.0
+    ],
+    [
+     21463.5,
+     89235.1
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F30",
+   "art": "line",
+   "punkte": [
+    [
+     21413.2,
+     89092.5
+    ],
+    [
+     21343.7,
+     88895.6
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F31",
+   "art": "line",
+   "punkte": [
+    [
+     21293.4,
+     88753.0
+    ],
+    [
+     21223.9,
+     88556.2
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F32",
+   "art": "line",
+   "punkte": [
+    [
+     21173.6,
+     88413.6
+    ],
+    [
+     21104.1,
+     88216.7
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F33",
+   "art": "line",
+   "punkte": [
+    [
+     21053.7,
+     88074.1
+    ],
+    [
+     20984.2,
+     87877.2
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F34",
+   "art": "line",
+   "punkte": [
+    [
+     20933.9,
+     87734.6
+    ],
+    [
+     20933.0,
+     87732.0
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F35",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     20911.0,
+     87994.3
+    ],
+    [
+     20933.0,
+     87732.0
+    ],
+    [
+     21114.7,
+     87922.4
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F47",
+   "art": "line",
+   "punkte": [
+    [
+     24019.0,
+     90027.0
+    ],
+    [
+     23949.5,
+     89830.1
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F48",
+   "art": "line",
+   "punkte": [
+    [
+     23899.2,
+     89687.5
+    ],
+    [
+     23829.7,
+     89490.6
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F49",
+   "art": "line",
+   "punkte": [
+    [
+     23779.4,
+     89348.0
+    ],
+    [
+     23709.9,
+     89151.2
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F4A",
+   "art": "line",
+   "punkte": [
+    [
+     23659.6,
+     89008.6
+    ],
+    [
+     23590.1,
+     88811.7
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F4B",
+   "art": "line",
+   "punkte": [
+    [
+     23539.7,
+     88669.1
+    ],
+    [
+     23470.2,
+     88472.2
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F4C",
+   "art": "line",
+   "punkte": [
+    [
+     23419.9,
+     88329.6
+    ],
+    [
+     23419.0,
+     88327.0
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F4D",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     23397.0,
+     88589.3
+    ],
+    [
+     23419.0,
+     88327.0
+    ],
+    [
+     23600.7,
+     88517.4
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F6D",
+   "art": "line",
+   "punkte": [
+    [
+     27500.0,
+     86000.0
+    ],
+    [
+     27291.3,
+     85992.4
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F6E",
+   "art": "line",
+   "punkte": [
+    [
+     27140.2,
+     85986.9
+    ],
+    [
+     26931.6,
+     85979.4
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F6F",
+   "art": "line",
+   "punkte": [
+    [
+     26780.5,
+     85973.9
+    ],
+    [
+     26571.8,
+     85966.3
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F70",
+   "art": "line",
+   "punkte": [
+    [
+     26420.7,
+     85960.8
+    ],
+    [
+     26212.0,
+     85953.3
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F71",
+   "art": "line",
+   "punkte": [
+    [
+     26060.9,
+     85947.8
+    ],
+    [
+     25852.3,
+     85940.2
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F72",
+   "art": "line",
+   "punkte": [
+    [
+     25701.2,
+     85934.7
+    ],
+    [
+     25492.5,
+     85927.1
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F73",
+   "art": "line",
+   "punkte": [
+    [
+     25341.4,
+     85921.7
+    ],
+    [
+     25132.8,
+     85914.1
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F74",
+   "art": "line",
+   "punkte": [
+    [
+     24981.7,
+     85908.6
+    ],
+    [
+     24773.0,
+     85901.0
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F75",
+   "art": "line",
+   "punkte": [
+    [
+     24621.9,
+     85895.5
+    ],
+    [
+     24413.2,
+     85888.0
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F76",
+   "art": "line",
+   "punkte": [
+    [
+     24262.1,
+     85882.5
+    ],
+    [
+     24053.5,
+     85874.9
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F77",
+   "art": "line",
+   "punkte": [
+    [
+     23902.4,
+     85869.4
+    ],
+    [
+     23693.7,
+     85861.8
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F78",
+   "art": "line",
+   "punkte": [
+    [
+     23542.6,
+     85856.4
+    ],
+    [
+     23333.9,
+     85848.8
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F79",
+   "art": "line",
+   "punkte": [
+    [
+     23182.8,
+     85843.3
+    ],
+    [
+     22974.2,
+     85835.7
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F7A",
+   "art": "line",
+   "punkte": [
+    [
+     22823.1,
+     85830.2
+    ],
+    [
+     22614.4,
+     85822.7
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F7B",
+   "art": "line",
+   "punkte": [
+    [
+     22463.3,
+     85817.2
+    ],
+    [
+     22254.7,
+     85809.6
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F7C",
+   "art": "line",
+   "punkte": [
+    [
+     22103.6,
+     85804.1
+    ],
+    [
+     21894.9,
+     85796.6
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F7D",
+   "art": "line",
+   "punkte": [
+    [
+     21743.8,
+     85791.1
+    ],
+    [
+     21535.1,
+     85783.5
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F7E",
+   "art": "line",
+   "punkte": [
+    [
+     21384.0,
+     85778.0
+    ],
+    [
+     21301.0,
+     85775.0
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F7F",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     21536.9,
+     85891.6
+    ],
+    [
+     21301.0,
+     85775.0
+    ],
+    [
+     21544.8,
+     85675.8
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F93",
+   "art": "line",
+   "punkte": [
+    [
+     24059.0,
+     82570.0
+    ],
+    [
+     23989.5,
+     82766.9
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F94",
+   "art": "line",
+   "punkte": [
+    [
+     23939.2,
+     82909.5
+    ],
+    [
+     23869.7,
+     83106.4
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F95",
+   "art": "line",
+   "punkte": [
+    [
+     23819.4,
+     83249.0
+    ],
+    [
+     23749.9,
+     83445.8
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F96",
+   "art": "line",
+   "punkte": [
+    [
+     23699.6,
+     83588.4
+    ],
+    [
+     23630.1,
+     83785.3
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F97",
+   "art": "line",
+   "punkte": [
+    [
+     23579.7,
+     83927.9
+    ],
+    [
+     23510.2,
+     84124.8
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F98",
+   "art": "line",
+   "punkte": [
+    [
+     23459.9,
+     84267.4
+    ],
+    [
+     23459.0,
+     84270.0
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F99",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     23640.7,
+     84079.6
+    ],
+    [
+     23459.0,
+     84270.0
+    ],
+    [
+     23437.0,
+     84007.7
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FAB",
+   "art": "line",
+   "punkte": [
+    [
+     32817.0,
+     82542.0
+    ],
+    [
+     32747.5,
+     82738.9
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FAC",
+   "art": "line",
+   "punkte": [
+    [
+     32697.2,
+     82881.5
+    ],
+    [
+     32627.7,
+     83078.4
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FAD",
+   "art": "line",
+   "punkte": [
+    [
+     32577.4,
+     83221.0
+    ],
+    [
+     32507.9,
+     83417.8
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FAE",
+   "art": "line",
+   "punkte": [
+    [
+     32457.6,
+     83560.4
+    ],
+    [
+     32388.1,
+     83757.3
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FAF",
+   "art": "line",
+   "punkte": [
+    [
+     32337.7,
+     83899.9
+    ],
+    [
+     32268.2,
+     84096.8
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FB0",
+   "art": "line",
+   "punkte": [
+    [
+     32217.9,
+     84239.4
+    ],
+    [
+     32217.0,
+     84242.0
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FB1",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     32398.7,
+     84051.6
+    ],
+    [
+     32217.0,
+     84242.0
+    ],
+    [
+     32195.0,
+     83979.7
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FC3",
+   "art": "line",
+   "punkte": [
+    [
+     47528.0,
+     82567.0
+    ],
+    [
+     47458.5,
+     82763.9
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FC4",
+   "art": "line",
+   "punkte": [
+    [
+     47408.2,
+     82906.5
+    ],
+    [
+     47338.7,
+     83103.4
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FC5",
+   "art": "line",
+   "punkte": [
+    [
+     47288.4,
+     83246.0
+    ],
+    [
+     47218.9,
+     83442.8
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FC6",
+   "art": "line",
+   "punkte": [
+    [
+     47168.6,
+     83585.4
+    ],
+    [
+     47099.1,
+     83782.3
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FC7",
+   "art": "line",
+   "punkte": [
+    [
+     47048.7,
+     83924.9
+    ],
+    [
+     46979.2,
+     84121.8
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FC8",
+   "art": "line",
+   "punkte": [
+    [
+     46928.9,
+     84264.4
+    ],
+    [
+     46928.0,
+     84267.0
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FC9",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     47109.7,
+     84076.6
+    ],
+    [
+     46928.0,
+     84267.0
+    ],
+    [
+     46906.0,
+     84004.7
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FEE",
+   "art": "line",
+   "punkte": [
+    [
+     46200.0,
+     93200.0
+    ],
+    [
+     45991.7,
+     93185.3
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FEF",
+   "art": "line",
+   "punkte": [
+    [
+     45840.9,
+     93174.7
+    ],
+    [
+     45632.6,
+     93160.0
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FF0",
+   "art": "line",
+   "punkte": [
+    [
+     45481.8,
+     93149.3
+    ],
+    [
+     45273.5,
+     93134.6
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FF1",
+   "art": "line",
+   "punkte": [
+    [
+     45122.7,
+     93124.0
+    ],
+    [
+     44914.4,
+     93109.3
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FF2",
+   "art": "line",
+   "punkte": [
+    [
+     44763.6,
+     93098.7
+    ],
+    [
+     44555.3,
+     93084.0
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FF3",
+   "art": "line",
+   "punkte": [
+    [
+     44404.5,
+     93073.3
+    ],
+    [
+     44196.2,
+     93058.6
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FF4",
+   "art": "line",
+   "punkte": [
+    [
+     44045.4,
+     93048.0
+    ],
+    [
+     43837.1,
+     93033.3
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FF5",
+   "art": "line",
+   "punkte": [
+    [
+     43686.2,
+     93022.6
+    ],
+    [
+     43478.0,
+     93007.9
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FF6",
+   "art": "line",
+   "punkte": [
+    [
+     43327.1,
+     92997.3
+    ],
+    [
+     43252.0,
+     92992.0
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FF7",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     43483.8,
+     93116.6
+    ],
+    [
+     43252.0,
+     92992.0
+    ],
+    [
+     43499.0,
+     92901.2
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A012",
+   "art": "line",
+   "punkte": [
+    [
+     46000.0,
+     86250.0
+    ],
+    [
+     46208.8,
+     86251.1
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A013",
+   "art": "line",
+   "punkte": [
+    [
+     46360.0,
+     86251.8
+    ],
+    [
+     46568.8,
+     86252.9
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A014",
+   "art": "line",
+   "punkte": [
+    [
+     46720.0,
+     86253.6
+    ],
+    [
+     46928.8,
+     86254.7
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A015",
+   "art": "line",
+   "punkte": [
+    [
+     47080.0,
+     86255.4
+    ],
+    [
+     47288.8,
+     86256.5
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A016",
+   "art": "line",
+   "punkte": [
+    [
+     47440.0,
+     86257.2
+    ],
+    [
+     47648.8,
+     86258.3
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A017",
+   "art": "line",
+   "punkte": [
+    [
+     47800.0,
+     86259.1
+    ],
+    [
+     48008.8,
+     86260.1
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A018",
+   "art": "line",
+   "punkte": [
+    [
+     48160.0,
+     86260.9
+    ],
+    [
+     48368.8,
+     86261.9
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A019",
+   "art": "line",
+   "punkte": [
+    [
+     48520.0,
+     86262.7
+    ],
+    [
+     48728.8,
+     86263.7
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A01A",
+   "art": "line",
+   "punkte": [
+    [
+     48880.0,
+     86264.5
+    ],
+    [
+     49088.8,
+     86265.5
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A01B",
+   "art": "line",
+   "punkte": [
+    [
+     49240.0,
+     86266.3
+    ],
+    [
+     49448.8,
+     86267.3
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A01C",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     49339.5,
+     86158.8
+    ],
+    [
+     49579.0,
+     86268.0
+    ],
+    [
+     49338.5,
+     86374.8
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A01D",
+   "art": "line",
+   "punkte": [
+    [
+     50300.0,
+     87600.0
+    ],
+    [
+     50305.6,
+     87391.3
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A01E",
+   "art": "line",
+   "punkte": [
+    [
+     50309.7,
+     87240.1
+    ],
+    [
+     50315.4,
+     87031.4
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A01F",
+   "art": "line",
+   "punkte": [
+    [
+     50319.5,
+     86880.3
+    ],
+    [
+     50325.1,
+     86671.5
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A020",
+   "art": "line",
+   "punkte": [
+    [
+     50329.2,
+     86520.4
+    ],
+    [
+     50334.8,
+     86311.7
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A021",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     50247.0,
+     86452.2
+    ],
+    [
+     50336.0,
+     86268.0
+    ],
+    [
+     50414.9,
+     86456.7
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A075",
+   "art": "line",
+   "punkte": [
+    [
+     69000.0,
+     91100.0
+    ],
+    [
+     68791.2,
+     91099.9
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A076",
+   "art": "line",
+   "punkte": [
+    [
+     68640.0,
+     91099.8
+    ],
+    [
+     68431.2,
+     91099.6
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A077",
+   "art": "line",
+   "punkte": [
+    [
+     68280.0,
+     91099.5
+    ],
+    [
+     68071.2,
+     91099.4
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A078",
+   "art": "line",
+   "punkte": [
+    [
+     67920.0,
+     91099.3
+    ],
+    [
+     67711.2,
+     91099.1
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A079",
+   "art": "line",
+   "punkte": [
+    [
+     67560.0,
+     91099.0
+    ],
+    [
+     67351.2,
+     91098.9
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A07A",
+   "art": "line",
+   "punkte": [
+    [
+     67200.0,
+     91098.8
+    ],
+    [
+     66991.2,
+     91098.6
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A07B",
+   "art": "line",
+   "punkte": [
+    [
+     66840.0,
+     91098.5
+    ],
+    [
+     66631.2,
+     91098.4
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A07C",
+   "art": "line",
+   "punkte": [
+    [
+     66480.0,
+     91098.3
+    ],
+    [
+     66271.2,
+     91098.2
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A07D",
+   "art": "line",
+   "punkte": [
+    [
+     66120.0,
+     91098.1
+    ],
+    [
+     66025.0,
+     91098.0
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A07E",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     66264.9,
+     91206.2
+    ],
+    [
+     66025.0,
+     91098.0
+    ],
+    [
+     66265.1,
+     90990.2
+    ]
+   ],
+   "layer": "RIVO_ERK_SICHTLINIE"
+  }
+ ],
+ "fluchtwege": [
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F21",
+   "art": "line",
+   "punkte": [
+    [
+     20933.0,
+     89532.0
+    ],
+    [
+     20933.0,
+     89184.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F22",
+   "art": "line",
+   "punkte": [
+    [
+     20933.0,
+     88932.0
+    ],
+    [
+     20933.0,
+     88584.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F23",
+   "art": "line",
+   "punkte": [
+    [
+     20933.0,
+     88332.0
+    ],
+    [
+     20933.0,
+     87984.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F24",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     20835.4,
+     88199.0
+    ],
+    [
+     20933.0,
+     87982.0
+    ],
+    [
+     21030.6,
+     88199.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F25",
+   "art": "line",
+   "punkte": [
+    [
+     20933.0,
+     87982.0
+    ],
+    [
+     20933.0,
+     87634.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F26",
+   "art": "line",
+   "punkte": [
+    [
+     20933.0,
+     87382.0
+    ],
+    [
+     20933.0,
+     87034.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F27",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     20860.6,
+     86993.0
+    ],
+    [
+     20933.0,
+     86832.0
+    ],
+    [
+     21005.4,
+     86993.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F39",
+   "art": "line",
+   "punkte": [
+    [
+     23419.0,
+     90127.0
+    ],
+    [
+     23419.0,
+     89779.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F3A",
+   "art": "line",
+   "punkte": [
+    [
+     23419.0,
+     89527.0
+    ],
+    [
+     23419.0,
+     89179.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F3B",
+   "art": "line",
+   "punkte": [
+    [
+     23419.0,
+     88927.0
+    ],
+    [
+     23419.0,
+     88579.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F3C",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     23321.4,
+     88794.0
+    ],
+    [
+     23419.0,
+     88577.0
+    ],
+    [
+     23516.6,
+     88794.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F3D",
+   "art": "line",
+   "punkte": [
+    [
+     23419.0,
+     88577.0
+    ],
+    [
+     23419.0,
+     88229.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F3E",
+   "art": "line",
+   "punkte": [
+    [
+     23419.0,
+     87977.0
+    ],
+    [
+     23419.0,
+     87629.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F3F",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     23346.6,
+     87588.0
+    ],
+    [
+     23419.0,
+     87427.0
+    ],
+    [
+     23491.4,
+     87588.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F51",
+   "art": "line",
+   "punkte": [
+    [
+     30400.0,
+     86000.0
+    ],
+    [
+     30052.0,
+     86000.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F52",
+   "art": "line",
+   "punkte": [
+    [
+     29800.0,
+     86000.0
+    ],
+    [
+     29452.0,
+     86000.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F53",
+   "art": "line",
+   "punkte": [
+    [
+     29200.0,
+     86000.0
+    ],
+    [
+     28852.0,
+     86000.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F54",
+   "art": "line",
+   "punkte": [
+    [
+     28600.0,
+     86000.0
+    ],
+    [
+     28252.0,
+     86000.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F55",
+   "art": "line",
+   "punkte": [
+    [
+     28000.0,
+     86000.0
+    ],
+    [
+     27652.0,
+     86000.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F56",
+   "art": "line",
+   "punkte": [
+    [
+     27400.0,
+     86000.0
+    ],
+    [
+     27052.0,
+     86000.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F57",
+   "art": "line",
+   "punkte": [
+    [
+     26800.0,
+     86000.0
+    ],
+    [
+     26452.0,
+     86000.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F58",
+   "art": "line",
+   "punkte": [
+    [
+     26200.0,
+     86000.0
+    ],
+    [
+     25852.0,
+     86000.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F59",
+   "art": "line",
+   "punkte": [
+    [
+     25600.0,
+     86000.0
+    ],
+    [
+     25252.0,
+     86000.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F5A",
+   "art": "line",
+   "punkte": [
+    [
+     25000.0,
+     86000.0
+    ],
+    [
+     24652.0,
+     86000.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F5B",
+   "art": "line",
+   "punkte": [
+    [
+     24400.0,
+     86000.0
+    ],
+    [
+     24052.0,
+     86000.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F5C",
+   "art": "line",
+   "punkte": [
+    [
+     23800.0,
+     86000.0
+    ],
+    [
+     23452.0,
+     86000.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F5D",
+   "art": "line",
+   "punkte": [
+    [
+     23200.0,
+     86000.0
+    ],
+    [
+     22852.0,
+     86000.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F5E",
+   "art": "line",
+   "punkte": [
+    [
+     22600.0,
+     86000.0
+    ],
+    [
+     22252.0,
+     86000.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F5F",
+   "art": "line",
+   "punkte": [
+    [
+     22000.0,
+     86000.0
+    ],
+    [
+     21800.0,
+     86000.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F60",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     22040.0,
+     86108.0
+    ],
+    [
+     21800.0,
+     86000.0
+    ],
+    [
+     22040.0,
+     85892.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F61",
+   "art": "line",
+   "punkte": [
+    [
+     21800.0,
+     86000.0
+    ],
+    [
+     21667.5,
+     85678.2
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F62",
+   "art": "line",
+   "punkte": [
+    [
+     21571.6,
+     85445.2
+    ],
+    [
+     21439.0,
+     85123.4
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F63",
+   "art": "line",
+   "punkte": [
+    [
+     21343.1,
+     84890.4
+    ],
+    [
+     21210.6,
+     84568.6
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F64",
+   "art": "line",
+   "punkte": [
+    [
+     21114.7,
+     84335.6
+    ],
+    [
+     21100.0,
+     84300.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F65",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     21091.5,
+     84563.0
+    ],
+    [
+     21100.0,
+     84300.0
+    ],
+    [
+     21291.2,
+     84480.8
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F85",
+   "art": "line",
+   "punkte": [
+    [
+     23459.0,
+     82470.0
+    ],
+    [
+     23459.0,
+     82818.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F86",
+   "art": "line",
+   "punkte": [
+    [
+     23459.0,
+     83070.0
+    ],
+    [
+     23459.0,
+     83418.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F87",
+   "art": "line",
+   "punkte": [
+    [
+     23459.0,
+     83670.0
+    ],
+    [
+     23459.0,
+     84018.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F88",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     23556.6,
+     83803.0
+    ],
+    [
+     23459.0,
+     84020.0
+    ],
+    [
+     23361.4,
+     83803.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F89",
+   "art": "line",
+   "punkte": [
+    [
+     23459.0,
+     84020.0
+    ],
+    [
+     23459.0,
+     84368.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F8A",
+   "art": "line",
+   "punkte": [
+    [
+     23459.0,
+     84620.0
+    ],
+    [
+     23459.0,
+     84968.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F8B",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     23531.4,
+     85009.0
+    ],
+    [
+     23459.0,
+     85170.0
+    ],
+    [
+     23386.6,
+     85009.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F9D",
+   "art": "line",
+   "punkte": [
+    [
+     32217.0,
+     82442.0
+    ],
+    [
+     32217.0,
+     82790.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F9E",
+   "art": "line",
+   "punkte": [
+    [
+     32217.0,
+     83042.0
+    ],
+    [
+     32217.0,
+     83390.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F9F",
+   "art": "line",
+   "punkte": [
+    [
+     32217.0,
+     83642.0
+    ],
+    [
+     32217.0,
+     83990.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FA0",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     32314.6,
+     83775.0
+    ],
+    [
+     32217.0,
+     83992.0
+    ],
+    [
+     32119.4,
+     83775.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FA1",
+   "art": "line",
+   "punkte": [
+    [
+     32217.0,
+     83992.0
+    ],
+    [
+     32217.0,
+     84340.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FA2",
+   "art": "line",
+   "punkte": [
+    [
+     32217.0,
+     84592.0
+    ],
+    [
+     32217.0,
+     84940.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FA3",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     32289.4,
+     84981.0
+    ],
+    [
+     32217.0,
+     85142.0
+    ],
+    [
+     32144.6,
+     84981.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FB5",
+   "art": "line",
+   "punkte": [
+    [
+     46928.0,
+     82467.0
+    ],
+    [
+     46928.0,
+     82815.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FB6",
+   "art": "line",
+   "punkte": [
+    [
+     46928.0,
+     83067.0
+    ],
+    [
+     46928.0,
+     83415.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FB7",
+   "art": "line",
+   "punkte": [
+    [
+     46928.0,
+     83667.0
+    ],
+    [
+     46928.0,
+     84015.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FB8",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     47025.6,
+     83800.0
+    ],
+    [
+     46928.0,
+     84017.0
+    ],
+    [
+     46830.4,
+     83800.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FB9",
+   "art": "line",
+   "punkte": [
+    [
+     46928.0,
+     84017.0
+    ],
+    [
+     46928.0,
+     84365.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FBA",
+   "art": "line",
+   "punkte": [
+    [
+     46928.0,
+     84617.0
+    ],
+    [
+     46928.0,
+     84965.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FBB",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     47000.4,
+     85006.0
+    ],
+    [
+     46928.0,
+     85167.0
+    ],
+    [
+     46855.6,
+     85006.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FCD",
+   "art": "line",
+   "punkte": [
+    [
+     38000.0,
+     90500.0
+    ],
+    [
+     38000.0,
+     90152.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FCE",
+   "art": "line",
+   "punkte": [
+    [
+     38000.0,
+     89900.0
+    ],
+    [
+     38000.0,
+     89552.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FCF",
+   "art": "line",
+   "punkte": [
+    [
+     38000.0,
+     89300.0
+    ],
+    [
+     38000.0,
+     88952.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FD0",
+   "art": "line",
+   "punkte": [
+    [
+     38000.0,
+     88700.0
+    ],
+    [
+     38000.0,
+     88352.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FD1",
+   "art": "line",
+   "punkte": [
+    [
+     38000.0,
+     88100.0
+    ],
+    [
+     38000.0,
+     87752.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FD2",
+   "art": "line",
+   "punkte": [
+    [
+     38000.0,
+     87500.0
+    ],
+    [
+     38000.0,
+     87152.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FD3",
+   "art": "line",
+   "punkte": [
+    [
+     38000.0,
+     86900.0
+    ],
+    [
+     38000.0,
+     86700.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FD4",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     37892.0,
+     86940.0
+    ],
+    [
+     38000.0,
+     86700.0
+    ],
+    [
+     38108.0,
+     86940.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FDE",
+   "art": "line",
+   "punkte": [
+    [
+     46200.0,
+     93200.0
+    ],
+    [
+     45852.0,
+     93200.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FDF",
+   "art": "line",
+   "punkte": [
+    [
+     45600.0,
+     93200.0
+    ],
+    [
+     45252.0,
+     93200.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FE0",
+   "art": "line",
+   "punkte": [
+    [
+     45000.0,
+     93200.0
+    ],
+    [
+     44652.0,
+     93200.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FE1",
+   "art": "line",
+   "punkte": [
+    [
+     44400.0,
+     93200.0
+    ],
+    [
+     44052.0,
+     93200.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FE2",
+   "art": "line",
+   "punkte": [
+    [
+     43800.0,
+     93200.0
+    ],
+    [
+     43500.0,
+     93200.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FE3",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     43740.0,
+     93308.0
+    ],
+    [
+     43500.0,
+     93200.0
+    ],
+    [
+     43740.0,
+     93092.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FE4",
+   "art": "line",
+   "punkte": [
+    [
+     43500.0,
+     93200.0
+    ],
+    [
+     43152.0,
+     93200.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FE5",
+   "art": "line",
+   "punkte": [
+    [
+     42900.0,
+     93200.0
+    ],
+    [
+     42552.0,
+     93200.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FE6",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     42468.0,
+     93275.6
+    ],
+    [
+     42300.0,
+     93200.0
+    ],
+    [
+     42468.0,
+     93124.4
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FFB",
+   "art": "line",
+   "punkte": [
+    [
+     46000.0,
+     86100.0
+    ],
+    [
+     46348.0,
+     86100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FFC",
+   "art": "line",
+   "punkte": [
+    [
+     46600.0,
+     86100.0
+    ],
+    [
+     46948.0,
+     86100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FFD",
+   "art": "line",
+   "punkte": [
+    [
+     47200.0,
+     86100.0
+    ],
+    [
+     47548.0,
+     86100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FFE",
+   "art": "line",
+   "punkte": [
+    [
+     47800.0,
+     86100.0
+    ],
+    [
+     48148.0,
+     86100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FFF",
+   "art": "line",
+   "punkte": [
+    [
+     48400.0,
+     86100.0
+    ],
+    [
+     48748.0,
+     86100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A000",
+   "art": "line",
+   "punkte": [
+    [
+     49000.0,
+     86100.0
+    ],
+    [
+     49348.0,
+     86100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A001",
+   "art": "line",
+   "punkte": [
+    [
+     49600.0,
+     86100.0
+    ],
+    [
+     49700.0,
+     86100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A002",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     49460.0,
+     85992.0
+    ],
+    [
+     49700.0,
+     86100.0
+    ],
+    [
+     49460.0,
+     86208.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A003",
+   "art": "line",
+   "punkte": [
+    [
+     49700.0,
+     86100.0
+    ],
+    [
+     50048.0,
+     86100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A004",
+   "art": "line",
+   "punkte": [
+    [
+     50300.0,
+     86100.0
+    ],
+    [
+     50648.0,
+     86100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A005",
+   "art": "line",
+   "punkte": [
+    [
+     50900.0,
+     86100.0
+    ],
+    [
+     51248.0,
+     86100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A006",
+   "art": "line",
+   "punkte": [
+    [
+     51500.0,
+     86100.0
+    ],
+    [
+     51848.0,
+     86100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A007",
+   "art": "line",
+   "punkte": [
+    [
+     52100.0,
+     86100.0
+    ],
+    [
+     52448.0,
+     86100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A008",
+   "art": "line",
+   "punkte": [
+    [
+     52700.0,
+     86100.0
+    ],
+    [
+     53048.0,
+     86100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A009",
+   "art": "line",
+   "punkte": [
+    [
+     53300.0,
+     86100.0
+    ],
+    [
+     53600.0,
+     86100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A00A",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     53360.0,
+     85992.0
+    ],
+    [
+     53600.0,
+     86100.0
+    ],
+    [
+     53360.0,
+     86208.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A026",
+   "art": "line",
+   "punkte": [
+    [
+     56000.0,
+     89100.0
+    ],
+    [
+     56028.9,
+     88753.2
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A027",
+   "art": "line",
+   "punkte": [
+    [
+     56049.8,
+     88502.1
+    ],
+    [
+     56078.7,
+     88155.3
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A028",
+   "art": "line",
+   "punkte": [
+    [
+     56099.7,
+     87904.1
+    ],
+    [
+     56100.0,
+     87900.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A029",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     56010.4,
+     88061.7
+    ],
+    [
+     56100.0,
+     87900.0
+    ],
+    [
+     56161.6,
+     88074.3
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A02A",
+   "art": "line",
+   "punkte": [
+    [
+     56100.0,
+     87900.0
+    ],
+    [
+     56100.0,
+     87552.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A02B",
+   "art": "line",
+   "punkte": [
+    [
+     56100.0,
+     87300.0
+    ],
+    [
+     56100.0,
+     86952.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A02C",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     56024.4,
+     86868.0
+    ],
+    [
+     56100.0,
+     86700.0
+    ],
+    [
+     56175.6,
+     86868.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A034",
+   "art": "line",
+   "punkte": [
+    [
+     60000.0,
+     89100.0
+    ],
+    [
+     60000.0,
+     88752.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A035",
+   "art": "line",
+   "punkte": [
+    [
+     60000.0,
+     88500.0
+    ],
+    [
+     60000.0,
+     88152.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A036",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     59924.4,
+     88068.0
+    ],
+    [
+     60000.0,
+     87900.0
+    ],
+    [
+     60075.6,
+     88068.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A037",
+   "art": "line",
+   "punkte": [
+    [
+     60000.0,
+     87900.0
+    ],
+    [
+     60000.0,
+     87552.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A038",
+   "art": "line",
+   "punkte": [
+    [
+     60000.0,
+     87300.0
+    ],
+    [
+     60000.0,
+     86952.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A039",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     59924.4,
+     86868.0
+    ],
+    [
+     60000.0,
+     86700.0
+    ],
+    [
+     60075.6,
+     86868.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A045",
+   "art": "line",
+   "punkte": [
+    [
+     51200.0,
+     83300.0
+    ],
+    [
+     51200.0,
+     83648.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A046",
+   "art": "line",
+   "punkte": [
+    [
+     51200.0,
+     83900.0
+    ],
+    [
+     51200.0,
+     84248.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A047",
+   "art": "line",
+   "punkte": [
+    [
+     51200.0,
+     84500.0
+    ],
+    [
+     51200.0,
+     84700.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A048",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     51288.2,
+     84504.0
+    ],
+    [
+     51200.0,
+     84700.0
+    ],
+    [
+     51111.8,
+     84504.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A049",
+   "art": "line",
+   "punkte": [
+    [
+     51200.0,
+     84700.0
+    ],
+    [
+     51200.0,
+     85048.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A04A",
+   "art": "line",
+   "punkte": [
+    [
+     51200.0,
+     85300.0
+    ],
+    [
+     51200.0,
+     85648.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A04B",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     51269.3,
+     85646.0
+    ],
+    [
+     51200.0,
+     85800.0
+    ],
+    [
+     51130.7,
+     85646.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A053",
+   "art": "line",
+   "punkte": [
+    [
+     55400.0,
+     83400.0
+    ],
+    [
+     55400.0,
+     83748.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A054",
+   "art": "line",
+   "punkte": [
+    [
+     55400.0,
+     84000.0
+    ],
+    [
+     55400.0,
+     84348.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A055",
+   "art": "line",
+   "punkte": [
+    [
+     55400.0,
+     84600.0
+    ],
+    [
+     55400.0,
+     84800.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A056",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     55488.2,
+     84604.0
+    ],
+    [
+     55400.0,
+     84800.0
+    ],
+    [
+     55311.8,
+     84604.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A057",
+   "art": "line",
+   "punkte": [
+    [
+     55400.0,
+     84800.0
+    ],
+    [
+     55400.0,
+     85148.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A058",
+   "art": "line",
+   "punkte": [
+    [
+     55400.0,
+     85400.0
+    ],
+    [
+     55400.0,
+     85748.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A059",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     55463.0,
+     85660.0
+    ],
+    [
+     55400.0,
+     85800.0
+    ],
+    [
+     55337.0,
+     85660.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A065",
+   "art": "line",
+   "punkte": [
+    [
+     69400.0,
+     91100.0
+    ],
+    [
+     69052.0,
+     91100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A066",
+   "art": "line",
+   "punkte": [
+    [
+     68800.0,
+     91100.0
+    ],
+    [
+     68452.0,
+     91100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A067",
+   "art": "line",
+   "punkte": [
+    [
+     68200.0,
+     91100.0
+    ],
+    [
+     67852.0,
+     91100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A068",
+   "art": "line",
+   "punkte": [
+    [
+     67600.0,
+     91100.0
+    ],
+    [
+     67252.0,
+     91100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A069",
+   "art": "line",
+   "punkte": [
+    [
+     67000.0,
+     91100.0
+    ],
+    [
+     66652.0,
+     91100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A06A",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     66640.0,
+     91208.0
+    ],
+    [
+     66400.0,
+     91100.0
+    ],
+    [
+     66640.0,
+     90992.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A06B",
+   "art": "line",
+   "punkte": [
+    [
+     66400.0,
+     91100.0
+    ],
+    [
+     66052.0,
+     91100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A06C",
+   "art": "line",
+   "punkte": [
+    [
+     65800.0,
+     91100.0
+    ],
+    [
+     65452.0,
+     91100.0
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A06D",
+   "art": "lwpolyline",
+   "punkte": [
+    [
+     65368.0,
+     91175.6
+    ],
+    [
+     65200.0,
+     91100.0
+    ],
+    [
+     65368.0,
+     91024.4
+    ]
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  }
+ ],
+ "kennungen": [
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49EEE",
+   "text": "EG-001",
+   "xy_mm": [
+    60851.9,
+    96378.9
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49EEF",
+   "text": "EG-002",
+   "xy_mm": [
+    47107.3,
+    94194.3
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49EF0",
+   "text": "EG-003",
+   "xy_mm": [
+    64295.3,
+    94015.9
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49EF1",
+   "text": "EG-004",
+   "xy_mm": [
+    20449.1,
+    92783.7
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49EF2",
+   "text": "EG-005",
+   "xy_mm": [
+    26703.9,
+    92781.0
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49EF3",
+   "text": "EG-006",
+   "xy_mm": [
+    43501.7,
+    93242.0
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49EF4",
+   "text": "EG-007",
+   "xy_mm": [
+    56539.1,
+    92674.4
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49EF5",
+   "text": "EG-008",
+   "xy_mm": [
+    66274.9,
+    91348.4
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49EF6",
+   "text": "EG-009",
+   "xy_mm": [
+    71127.9,
+    91930.8
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49EF7",
+   "text": "EG-010",
+   "xy_mm": [
+    38025.7,
+    91205.3
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49EF8",
+   "text": "EG-011",
+   "xy_mm": [
+    50606.3,
+    91077.3
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49EFA",
+   "text": "EG-012",
+   "xy_mm": [
+    52348.3,
+    89504.1
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49EFB",
+   "text": "EG-013",
+   "xy_mm": [
+    55837.7,
+    90304.2
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49EFC",
+   "text": "EG-014",
+   "xy_mm": [
+    59804.6,
+    90335.3
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49EFD",
+   "text": "EG-015",
+   "xy_mm": [
+    77930.0,
+    90280.3
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49EFE",
+   "text": "EG-016",
+   "xy_mm": [
+    21182.6,
+    87982.3
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49EFF",
+   "text": "EG-017",
+   "xy_mm": [
+    23669.2,
+    88577.2
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F00",
+   "text": "EG-018",
+   "xy_mm": [
+    56344.4,
+    88046.0
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F01",
+   "text": "EG-019",
+   "xy_mm": [
+    60220.7,
+    88048.8
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F02",
+   "text": "EG-020",
+   "xy_mm": [
+    67827.7,
+    87360.2
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F03",
+   "text": "EG-021",
+   "xy_mm": [
+    75270.5,
+    89086.8
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F04",
+   "text": "EG-022",
+   "xy_mm": [
+    78254.9,
+    88537.5
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F05",
+   "text": "EG-023",
+   "xy_mm": [
+    21551.2,
+    86025.3
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F06",
+   "text": "EG-024",
+   "xy_mm": [
+    27953.9,
+    86533.7
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F07",
+   "text": "EG-025",
+   "xy_mm": [
+    31165.2,
+    86354.3
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F08",
+   "text": "EG-026",
+   "xy_mm": [
+    44815.9,
+    86584.6
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F09",
+   "text": "EG-027",
+   "xy_mm": [
+    49828.7,
+    86517.9
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F0A",
+   "text": "EG-028",
+   "xy_mm": [
+    50585.9,
+    86517.9
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F0B",
+   "text": "EG-029",
+   "xy_mm": [
+    56766.1,
+    86581.6
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F0D",
+   "text": "EG-030",
+   "xy_mm": [
+    64986.2,
+    87233.5
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F0E",
+   "text": "EG-031",
+   "xy_mm": [
+    78429.3,
+    85665.8
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F0F",
+   "text": "EG-032",
+   "xy_mm": [
+    21257.7,
+    83905.4
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F11",
+   "text": "EG-033",
+   "xy_mm": [
+    23708.6,
+    84519.9
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F12",
+   "text": "EG-034",
+   "xy_mm": [
+    32466.8,
+    84491.6
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F13",
+   "text": "EG-035",
+   "xy_mm": [
+    47177.7,
+    84517.2
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F14",
+   "text": "EG-036",
+   "xy_mm": [
+    51465.9,
+    85103.0
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F15",
+   "text": "EG-037",
+   "xy_mm": [
+    55709.0,
+    85176.5
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F16",
+   "text": "EG-038",
+   "xy_mm": [
+    60616.5,
+    83393.2
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F17",
+   "text": "EG-039",
+   "xy_mm": [
+    65517.6,
+    84065.9
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F18",
+   "text": "EG-040",
+   "xy_mm": [
+    72630.7,
+    84052.9
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F1A",
+   "text": "EG-041",
+   "xy_mm": [
+    18551.5,
+    80931.7
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F1B",
+   "text": "EG-042",
+   "xy_mm": [
+    26577.7,
+    80573.2
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F1C",
+   "text": "EG-043",
+   "xy_mm": [
+    35280.9,
+    80573.2
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F1D",
+   "text": "EG-044",
+   "xy_mm": [
+    44203.9,
+    80463.1
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F1E",
+   "text": "EG-045",
+   "xy_mm": [
+    22189.6,
+    77552.4
+   ],
+   "layer": "RIVO_ERK_KENNUNG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F20",
+   "text": "F-EG-01 / PDF S. 85",
+   "xy_mm": [
+    16999.0,
+    95584.0
+   ],
+   "layer": "RIVO_ERK_FALL"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F2E",
+   "text": "F-EG-01/P1",
+   "xy_mm": [
+    21113.0,
+    89742.0
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F38",
+   "text": "F-EG-02 / PDF S. 88",
+   "xy_mm": [
+    20219.0,
+    95581.0
+   ],
+   "layer": "RIVO_ERK_FALL"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F46",
+   "text": "F-EG-02/P1",
+   "xy_mm": [
+    23599.0,
+    90337.0
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F50",
+   "text": "F-EG-03 / PDF S. 91",
+   "xy_mm": [
+    17500.0,
+    90250.0
+   ],
+   "layer": "RIVO_ERK_FALL"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F6C",
+   "text": "F-EG-03/P1",
+   "xy_mm": [
+    30580.0,
+    86210.0
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F81",
+   "text": "F-EG-04 / PDF S. 95",
+   "xy_mm": [
+    17000.0,
+    86850.0
+   ],
+   "layer": "RIVO_ERK_FALL"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F84",
+   "text": "F-EG-05 / PDF S. 99",
+   "xy_mm": [
+    20259.0,
+    87320.0
+   ],
+   "layer": "RIVO_ERK_FALL"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F92",
+   "text": "F-EG-05/P1",
+   "xy_mm": [
+    23639.0,
+    82680.0
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49F9C",
+   "text": "F-EG-06 / PDF S. 102",
+   "xy_mm": [
+    29017.0,
+    87292.0
+   ],
+   "layer": "RIVO_ERK_FALL"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FAA",
+   "text": "F-EG-06/P1",
+   "xy_mm": [
+    32397.0,
+    82652.0
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FB4",
+   "text": "F-EG-07 / PDF S. 105",
+   "xy_mm": [
+    40754.0,
+    87317.0
+   ],
+   "layer": "RIVO_ERK_FALL"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FC2",
+   "text": "F-EG-07/P1",
+   "xy_mm": [
+    47108.0,
+    82677.0
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FCC",
+   "text": "F-EG-08 / PDF S. 108",
+   "xy_mm": [
+    30500.0,
+    94650.0
+   ],
+   "layer": "RIVO_ERK_FALL"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FDB",
+   "text": "F-EG-08/P1",
+   "xy_mm": [
+    38180.0,
+    90710.0
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FDD",
+   "text": "F-EG-09 / PDF S. 111",
+   "xy_mm": [
+    41500.0,
+    96950.0
+   ],
+   "layer": "RIVO_ERK_FALL"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FED",
+   "text": "F-EG-09/P1",
+   "xy_mm": [
+    46380.0,
+    93410.0
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "49FFA",
+   "text": "F-EG-10 / PDF S. 114",
+   "xy_mm": [
+    42200.0,
+    89250.0
+   ],
+   "layer": "RIVO_ERK_FALL"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A011",
+   "text": "F-EG-10/P1",
+   "xy_mm": [
+    46180.0,
+    86310.0
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A023",
+   "text": "F-EG-11 / PDF S. 118",
+   "xy_mm": [
+    48900.0,
+    93050.0
+   ],
+   "layer": "RIVO_ERK_FALL"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A025",
+   "text": "F-EG-12 / PDF S. 121",
+   "xy_mm": [
+    54000.0,
+    92750.0
+   ],
+   "layer": "RIVO_ERK_FALL"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A033",
+   "text": "F-EG-12/P1",
+   "xy_mm": [
+    56180.0,
+    89310.0
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A040",
+   "text": "F-EG-12/P2",
+   "xy_mm": [
+    60180.0,
+    89310.0
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A044",
+   "text": "F-EG-13 / PDF S. 126",
+   "xy_mm": [
+    49300.0,
+    87750.0
+   ],
+   "layer": "RIVO_ERK_FALL"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A052",
+   "text": "F-EG-13/P1",
+   "xy_mm": [
+    51380.0,
+    83510.0
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A060",
+   "text": "F-EG-13/P2",
+   "xy_mm": [
+    55580.0,
+    83610.0
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A062",
+   "text": "F-EG-14 / PDF S. 130",
+   "xy_mm": [
+    52500.0,
+    98650.0
+   ],
+   "layer": "RIVO_ERK_FALL"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A064",
+   "text": "F-EG-15 / PDF S. 134",
+   "xy_mm": [
+    63000.0,
+    95050.0
+   ],
+   "layer": "RIVO_ERK_FALL"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A074",
+   "text": "F-EG-15/P1",
+   "xy_mm": [
+    67700.0,
+    91310.0
+   ],
+   "layer": "RIVO_ERK_FLUCHTWEG"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A081",
+   "text": "F-EG-16 / PDF S. 138",
+   "xy_mm": [
+    73200.0,
+    94250.0
+   ],
+   "layer": "RIVO_ERK_FALL"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A083",
+   "text": "F-EG-17 / PDF S. 142",
+   "xy_mm": [
+    62500.0,
+    87850.0
+   ],
+   "layer": "RIVO_ERK_FALL"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A084",
+   "text": "EG – ERKLAERUNGSUNTERLAGE RIVO – keine Ausfuehrungsfreigabe",
+   "xy_mm": [
+    16301.5,
+    109128.9
+   ],
+   "layer": "RIVO_ERK_HINWEIS"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A088",
+   "text": "RIVO_ARR_down",
+   "xy_mm": [
+    17201.5,
+    106528.9
+   ],
+   "layer": "RIVO_ERK_LEGENDE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A08A",
+   "text": "RIVO_ARR_left",
+   "xy_mm": [
+    32201.5,
+    106528.9
+   ],
+   "layer": "RIVO_ERK_LEGENDE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A08C",
+   "text": "RIVO_ARR_right",
+   "xy_mm": [
+    47201.5,
+    106528.9
+   ],
+   "layer": "RIVO_ERK_LEGENDE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A08E",
+   "text": "RIVO_Antipanik",
+   "xy_mm": [
+    62201.5,
+    106528.9
+   ],
+   "layer": "RIVO_ERK_LEGENDE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A090",
+   "text": "RIVO_Aufheller",
+   "xy_mm": [
+    17201.5,
+    104228.9
+   ],
+   "layer": "RIVO_ERK_LEGENDE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A092",
+   "text": "RIVO_ARR_bothsided",
+   "xy_mm": [
+    32201.5,
+    104228.9
+   ],
+   "layer": "RIVO_ERK_LEGENDE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A094",
+   "text": "RIVO_Gruppenbatterie_Verteiler",
+   "xy_mm": [
+    47201.5,
+    104228.9
+   ],
+   "layer": "RIVO_ERK_LEGENDE"
+  },
+  {
+   "datei": "EG_RIVO_Erklaerung.dxf",
+   "handle": "4A096",
+   "text": "RIVO_Aufheller_Variante",
+   "xy_mm": [
+    62201.5,
+    104228.9
+   ],
+   "layer": "RIVO_ERK_LEGENDE"
+  }
+ ],
+ "gelb_marker": [],
+ "hinweise": [],
+ "dauer_s": 6.2
+}

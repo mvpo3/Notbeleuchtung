@@ -1,0 +1,204 @@
+{
+  "schema_version": "1.0",
+  "created": "2026-09-24T00:05:25.628087+02:00",
+  "revision_dir": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946",
+  "scope": "Tomaschek-Schule: bestaetigte grafische Formregel fuer 65 beleuchtende Leuchten; 81 RZ bleiben separat",
+  "authoritative_inputs": [
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\1.Elektromontageplan_Sockelgeschoss.dxf",
+      "sha256": "16d32ff58441923b32077f85f8083ece76773ab78440edf64a32c7b62ea416bc",
+      "bytes": 43122048,
+      "role": "unveraenderter Original-Geschossplan"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\2.Elektromontageplan_Erdgeschoss.dxf",
+      "sha256": "af90caf9bcd3e57ebb57a81f0330ea1d35b8f3d5e38cbe356c50ce9a82b70552",
+      "bytes": 48114341,
+      "role": "unveraenderter Original-Geschossplan"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\3.Elektromontageplan_1.Obergeschoss.dxf",
+      "sha256": "01de71eeb2081273fe9cf1ce8a6ee5604e999affdbeab8b1125aa8aea262ba17",
+      "bytes": 38631940,
+      "role": "unveraenderter Original-Geschossplan"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\CAD_Symbole\\RIVO_NL_Symbole.dxf",
+      "sha256": "f70ae878381e066f116e5a7dc3eed7724755efe70e16e4385169c4191b545998",
+      "bytes": 309239,
+      "role": "unveraenderte RIVO-Bibliothek"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\TOMA_Flucht- und Rettungspläne.pdf",
+      "sha256": "539f751a13a8a166a28199236f12eff1b119f428169cfe4625f7e2e1bc28419a",
+      "bytes": 3538625,
+      "role": "projektzugehoeriger Flucht- und Rettungsplan; keine CAD-Quelle"
+    }
+  ],
+  "previous_reviewed_delivery": [
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_20260922_190927\\02_DXF_RIVO\\1.Elektromontageplan_Sockelgeschoss_RIVO_Symbole.dxf",
+      "sha256": "857df2f28754360a534af462193df03084b0ab1476fcb35b4df00f51865f2205",
+      "bytes": 43274560,
+      "role": "hashverifizierter Vorbearbeitungsstand; keine Originalquelle"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_20260922_190927\\02_DXF_RIVO\\2.Elektromontageplan_Erdgeschoss_RIVO_Symbole.dxf",
+      "sha256": "b09ec259c2689564769c427d6350ead42a9f211c761ddaf6b5189bc68c0b4d88",
+      "bytes": 48266902,
+      "role": "hashverifizierter Vorbearbeitungsstand; keine Originalquelle"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_20260922_190927\\02_DXF_RIVO\\3.Elektromontageplan_1.Obergeschoss_RIVO_Symbole.dxf",
+      "sha256": "47040b6865fe3a4136d4e36ce02d8109be9d098616829950d99ddf3cea7d5e4c",
+      "bytes": 38784436,
+      "role": "hashverifizierter Vorbearbeitungsstand; keine Originalquelle"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_20260922_190927\\03_DXF_Erklaerung\\EG_RIVO_Erklaerung.dxf",
+      "sha256": "d870c0502b72120694a430a485524304e6ba897ca53bd091b7ddfd6ae8688a44",
+      "bytes": 46196331,
+      "role": "hashverifizierter Vorbearbeitungsstand; keine Originalquelle"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_20260922_190927\\03_DXF_Erklaerung\\OG_RIVO_Erklaerung.dxf",
+      "sha256": "3494ee15b09825f9f6928f4ed0a16771ecd9cc928f7d93d4c012fcb6532fe1b0",
+      "bytes": 37212608,
+      "role": "hashverifizierter Vorbearbeitungsstand; keine Originalquelle"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_20260922_190927\\03_DXF_Erklaerung\\SG_RIVO_Erklaerung.dxf",
+      "sha256": "2fa969b3f302d515f18fdef9016b7f141984684345e9d91e205cb29e512c8f36",
+      "bytes": 41327385,
+      "role": "hashverifizierter Vorbearbeitungsstand; keine Originalquelle"
+    }
+  ],
+  "results": [
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\01_PDF\\EG_RIVO_Uebersicht.pdf",
+      "sha256": "2b7237844c4c9031347663ed3b6272f0b6960130dcbc73c4f95a143a1b5dd914",
+      "bytes": 2240866,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\01_PDF\\OG_RIVO_Uebersicht.pdf",
+      "sha256": "0ee3451f4663d3d6daf11b706abd8bd7632b0a0afd92f11a7a1121e6524b091a",
+      "bytes": 2153879,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\01_PDF\\SG_RIVO_Uebersicht.pdf",
+      "sha256": "53059b6c071671753d7189bc8a5b722e62843b524e592595d981929a93fb6407",
+      "bytes": 2525244,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\01_PDF\\Tomaschek_Schule_Notbeleuchtungen_zeichnen_RIVO_Formkorrektur.pdf",
+      "sha256": "f37d38dda0da98599541a285ce848d1f099d474b4d92cf0910846ee3f3b7e860",
+      "bytes": 16738277,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\02_DXF_RIVO\\1.Elektromontageplan_Sockelgeschoss_RIVO_Symbole.dxf",
+      "sha256": "7f1019ebfbd5be386bfc07dc1902f6696476ca72c7189b20f3f2c35bdbbc0668",
+      "bytes": 43275732,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\02_DXF_RIVO\\2.Elektromontageplan_Erdgeschoss_RIVO_Symbole.dxf",
+      "sha256": "ccf7496f0743d50e3ccb05cfe46c279b0ee9fe6d8538b174b4ca011807f1d7bb",
+      "bytes": 48267230,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\02_DXF_RIVO\\3.Elektromontageplan_1.Obergeschoss_RIVO_Symbole.dxf",
+      "sha256": "6eb7b4e84f3e876f176b0c7e03df2e55c62e93f5bf4513356dae5fcd4b5751e0",
+      "bytes": 38784537,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\03_DXF_Erklaerung\\EG_RIVO_Erklaerung.dxf",
+      "sha256": "fc35daff2c1fec5e8156f2e86a52f777dc076b81552e04221b430d18a6d8b941",
+      "bytes": 46196007,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\03_DXF_Erklaerung\\OG_RIVO_Erklaerung.dxf",
+      "sha256": "34de944c86b8a2858aca5966ff07d569572ea073e55e6d91c8e13421f38f156b",
+      "bytes": 37212376,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\03_DXF_Erklaerung\\SG_RIVO_Erklaerung.dxf",
+      "sha256": "27513e79659a9cbc5297503051bf05dff817426eb405bce100ca578feca6ff12",
+      "bytes": 41325645,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\04_Daten_und_Quellen\\LEUCHTENREGISTER.json",
+      "sha256": "894d7c6ce880cd35b18c04ec3c20040476f40de128edaad59122af8ee14318fa",
+      "bytes": 961439,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\04_Daten_und_Quellen\\LEUCHTENREGISTER.csv",
+      "sha256": "2773074af4308fe5caf2875eadb64080028dfe4c43a7b27b20d41939f2457dfb",
+      "bytes": 673205,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\04_Daten_und_Quellen\\SYMBOL_MAPPING.json",
+      "sha256": "359fe34ecb431b2d534a16687cc256971102764526c46cefbdea9404182f02d8",
+      "bytes": 30188,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\04_Daten_und_Quellen\\FALLREGISTER.json",
+      "sha256": "913c03da8907c55663d8404b5c1fa57e4481124e2fd3468afd55a8858c8757b8",
+      "bytes": 302580,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\04_Daten_und_Quellen\\EINZELERKLAERUNGEN.json",
+      "sha256": "cd4d3faeaa4dfbfa09900547cbdf32f48793a148011152ecc002178786e5c472",
+      "bytes": 163415,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\04_Daten_und_Quellen\\ERKLAERUNG.md",
+      "sha256": "0aea70c9df6c8a785851c553dc669b41e515eacaca6c6ca7962251df318dbc77",
+      "bytes": 381996,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\04_Daten_und_Quellen\\OFFENE_PUNKTE.md",
+      "sha256": "8216bc559274c2a861c028eb9cbcd4e09aa674973649609ff473646d7f743b66",
+      "bytes": 40922,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\04_Daten_und_Quellen\\NORM_ANFORDERUNGEN.json",
+      "sha256": "ca3053cd02db270e386df9578880b19425a6ee17ac07decdeb38fb5351cf83b2",
+      "bytes": 263203,
+      "role": "Ergebnis dieser Formkorrektur"
+    },
+    {
+      "path": "C:\\Users\\mvpst\\Documents\\KI-Projekt\\Notbeleuchtung\\knowledge\\Pläne zeichnen Wissen\\Tomaschek-Schule -Notbeleuchtungserklärung\\_Codex_RIVO_Lernbuch_Formkorrektur_20260923_230946\\04_Daten_und_Quellen\\NORMENREGISTER.md",
+      "sha256": "5dfe8d16edbf928d0d06258a825c6d57135ecdc0f42ab667d24c412a82404e69",
+      "bytes": 63988,
+      "role": "Ergebnis dieser Formkorrektur"
+    }
+  ],
+  "repository": {
+    "remote": "https://github.com/mvpo3/Notbeleuchtung.git",
+    "branch": "codex/Notbeleuchtungs_Platzierungslogik",
+    "head": "8257ff90b48f2e44953fb21e341173fded9f9fb0",
+    "origin_main_at_manifest_time": "4b950d1b6777966d3400e68f4f2beda966ca4d66",
+    "git_mutation": false
+  },
+  "notes": [
+    "Die Original-DXFs und RIVO-Bibliothek wurden nicht geaendert.",
+    "Der vorherige Ergebnisordner ist nur ein offengelegter, hashverifizierter Hilfsstand.",
+    "Keine Normvolltexte oder Originalplaene wurden ins Ergebnispaket kopiert."
+  ]
+}
