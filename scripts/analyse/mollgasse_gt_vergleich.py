@@ -177,6 +177,17 @@ def _vergleiche(geschoss: str, output, gt_einheiten: list[dict]) -> dict:
                "beidseitig": (p.richtung == "gerade" and p.kind == "rz"),
                "key": p.catalog_key}
               for i, p in enumerate(output.platzierung.platzierungen)]
+    # Welt-Pfeil-Rahmen (Codex-Review 2026-10-03, Finding B): für den Pfeil-Fehler
+    # rechnen wir BEIDE Seiten in denselben Weltwinkel. Engine = gemessene Block-Basis
+    # (orientation.py) + INSERT-Rotation; GT trägt `welt_pfeil_deg` aus der Extraktion.
+    from notbeleuchtung.symbols.orientation import basis_deg, load_symbol_mapping
+    _sym_map = load_symbol_mapping()
+
+    def _engine_welt_pfeil(key: str, rot: float) -> float | None:
+        blk = (_sym_map.get(key) or {}).get("block_name", "")
+        base = basis_deg(blk) if blk else None
+        return None if base is None else (base + rot) % 360.0
+
     frei = {e["i"] for e in engine}
     paare, fehlt = [], []
     for g in gt_einheiten:
@@ -191,11 +202,14 @@ def _vergleiche(geschoss: str, output, gt_einheiten: list[dict]) -> dict:
             continue
         frei.discard(best["i"])
         rot_delta = None
-        if g.get("welt_pfeil_deg") is not None and best["klasse"] == "rz":
-            # Engine-Welt-Pfeil aus richtung (Ziel-Richtung) approximieren wir
-            # NICHT — wir vergleichen die INSERT-Rotationen direkt nur, wenn
-            # beide down-Basis tragen; sonst nur Distanz (metrisch ehrlich).
-            rot_delta = round(abs(((best["rot"] - g["rot_deg"]) + 180) % 360 - 180), 1)
+        if (g.get("welt_pfeil_deg") is not None and best["klasse"] == "rz"
+                and not best["beidseitig"]):
+            # Welt-Pfeil beider Seiten im gemeinsamen Rahmen (NICHT mehr rohe
+            # INSERT-Rotationen — die ignorierten Block-Basis + Spiegelung und meldeten
+            # z.B. 1OG 95019 fälschlich 0,4° statt real ~90°).
+            ew = _engine_welt_pfeil(best["key"], best["rot"])
+            if ew is not None:
+                rot_delta = round(abs(((ew - g["welt_pfeil_deg"]) + 180) % 360 - 180), 1)
         # Typ-Match (RW-006/007/016): GT-Blockfamilie ↔ Engine-richtung;
         # beidseitig zählt als Match, wenn beide Seiten beidseitig sind.
         if g["beidseitig"] or best["beidseitig"]:
