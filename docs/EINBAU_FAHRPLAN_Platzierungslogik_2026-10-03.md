@@ -50,8 +50,23 @@ billig durch **Audit-Kopplung** statt Rewrite:
 |---|---|---|---|---|
 | **S-A** | RW-029 | Antipanik-Position auf **Diagonalen-Mitte-Rezept** (Mauerkante→Gangecke, Mitte Δ23–33 mm) statt `find_center_visual`-Näherung | Typ/Position Antipanik | Golden/GT-Band (AP-Positionen shiften) → Messlauf |
 | **S-B** | RW-111 | Gang-Aufheller bedient mehrere Türvorbereiche (SL-Analogie NB-R08); EIN Aufheller für Türcluster (PDF 3OG „eine Leuchte bedient vier Türen") | Platzierungs-Treue (nicht Drossel — B1: 500 mm ist Mindestmaß) | GT-Band |
-| **S-C** | RW-005 | Stiegen-RZ-Positionsband 800–1122 mm vor Antritt/Austritt, auf Laufachse schärfen | senkt 1–2 m Paarungsdistanzen | Golden stgh |
+| ~~**S-C**~~ | RW-005 | ~~Stiegen-RZ-Positionsband 800–1122 mm vor Antritt/Austritt~~ | **VERWORFEN 2026-10-03 (empirisch)** | s.u. |
 | **S-D** | #5 (validierung) | **Exit-RZ-Fallback**: RZ am `final_exit` auch wenn außerhalb Raumpolygon | schließt EG/1KG-WARNUNG (Diagnose 2026-10-03) | GT-Doppelzählung an schon gedeckten Ausgängen → eigener Messlauf; **Wurzel ist Selman (s. Phase 3)** |
+
+### S-C verworfen — empirischer Befund (2026-10-03)
+
+S-C gebaut (`_band_position` in `stgh_strategy`: RZ 960 mm vor der in Fluchtrichtung
+erreichten Stiegenkante, Laufachse, Polygon-geklemmt, Fallback Podest-Zentrum) +
+gemessen (`mollgasse_gt_vergleich` 1OG/2OG/4OG/DG). Ergebnis **netto negativ**:
+1OG +1 gepaart, aber **2OG typ 3→2** (bestes Paar 852B6 283 mm verloren), **4OG
+gepaart 5→4** (41593 verloren); die großen Distanzen (852B0, 41220) wurden
+SCHLECHTER. Ursache: die 1–2 m-Stiegen-Distanzen sind dominiert von den
+**Ausgangsachsen-/directional-Miss-Fällen** (41220/41593/1BCBB folgen der
+Gebäude-Ausgangsachse, nicht der Laufrichtung → M3-T2 + Selman-Knotengraph), NICHT
+vom Podest-Zentrum-vs-Band-Offset. Das feste Band zerschießt die schon-guten
+Podest-RZ. **Revertiert** (0 Test-Regress; Baseline wieder her). **Lehre:** der
+Stiegen-Hebel ist Selman-gegated (bestätigt die Kernaussage oben) — kein
+Leonis-Band-Tweak. → Phase 2 (S-E Exit-Gradient) nach Selman-Knotengraph.
 
 ## Phase 2 — Leonis-Logik, aber Selman-gated
 
@@ -98,7 +113,9 @@ ausdrückbar. Braucht Owner-GO + Selman (Erkennung) + Enis (Norm) + Contract-Fre
 ## Empfohlene Reihenfolge (netto)
 
 1. **Blocker:** B1 ✅ (kein Drossel), B2 ✅ (kein Maß, RZ mittig auf Tür, `RZ_INS_RAUM_MM=0` bleibt), B3 ✅ (Engine korrekt), B4 ✅ (ja, aber Enis-Naht). **Alle 4 geklärt.**
-2. **S-A + S-C** (Leonis-pur, Golden-Risiko beherrschbar, direkter Typ/Position-Gewinn).
+2. ~~S-C~~ empirisch verworfen (Selman-gegated, s.o.). **S-A** als verbleibender
+   Leonis-pur-Kandidat — ⚠️ RW-029 ist unterspezifiziert (Diagonalen-Konstruktion +
+   gelbe Hilfslinien = Experten-visuell), also vor Bau erst Rezept schärfen/messen.
 3. **S-B** — Aufheller-Mehrfachbedienung (Platzierungs-Treue, kein Drossel).
 4. **S-AUDIT** anstoßen = Leonis+Enis-Naht (Enis registriert „Referenz-Praxis: RW-xxx" in `quellen`).
 5. **Selman-Paket anstoßen** (Knotengraph + KG + Ausgang-in-Raum) — entsperrt den
