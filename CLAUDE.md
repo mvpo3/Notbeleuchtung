@@ -130,6 +130,12 @@ kein Entscheider — die Regelquellen unten schlagen Codex immer.
      NICHT ändern. Läuft über ChatGPT-Auth (kein `OPENAI_API_KEY` gesetzt) → **keine
      API-Kosten**. (Fallback, falls ein Modell für `review` abgelehnt wird: ohne `-c`
      aufrufen, dann wählt Codex das dedizierte `codex-auto-review`.)
+   - **Ziel-Brief IMMER mitgeben** (damit Codex die fertigen Experten-Pläne als Soll
+     kennt und ziel-gerichtet reviewt — nicht nur Code-Korrektheit): den Prompt aus
+     `docs/CODEX_REVIEW_BRIEF.md` über stdin (`-`) anhängen, z.B.
+     `{ cat docs/CODEX_REVIEW_BRIEF.md; echo; echo "AUFGABE: <scope>"; } | codex review --base main -c model="gpt-5.5" -`.
+     Der Brief zeigt Ziel (Mollgasse-Erklär-Pläne + Analyse), gemessenen GT-Abstand,
+     Lane-Grenzen (Selman/Enis-gegated) und was das Review zeigen soll.
 3. **Verifizieren** — Claude prüft **jedes** Codex-Finding gegen Code + Regelquellen,
    übernimmt nichts blind. Ein Finding, das eine Regelquelle verletzt, wird mit
    Begründung verworfen.
