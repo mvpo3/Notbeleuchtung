@@ -35,23 +35,21 @@ billig durch **Audit-Kopplung** statt Rewrite:
   mit Enis klären, ob „Referenz-Praxis: RW-xxx" als zulässige Quelle gilt, sonst
   bricht das Gate. Nutzen: Audit-Trail Platzierung→Regel ohne Verhaltens-Change.
 
-## Blocker zuerst (Owner-Entscheidungen, keine Code-Arbeit)
+## Blocker — Owner-Entscheidungen (Stand 2026-10-03)
 
-Diese blockieren ganze Slices — vor Phase 1 beantworten:
-
-| B | Frage | blockiert |
-|---|---|---|
-| B1 | B1-Aufheller 500 mm je RZ drosseln? (kein Mollgasse-PDF-Beleg, aber **Haupttreiber der 115 Überschüsse**, EG 48) | S-B + Überschuss-Senkung |
-| B2 | Tür-RZ-Versatz: 0 mm (Wandlinie) oder 735–930 mm raumseitig? (widersprüchliche Ansagen) | RW-001-Feinschliff |
-| B3 | beidseitig-Format: 2 Einzel-RZ oder 1 `bothsided`-Block? | RW-016/105/106 |
-| B4 | S-AUDIT bauen? (+ Enis-Naht-Klärung) | Audit-Kopplung |
+| B | Frage | Owner-Antwort 2026-10-03 | Folge |
+|---|---|---|---|
+| B1 | Aufheller 500 mm je RZ drosseln? | **500 mm = MINDESTabstand; darüber unschädlich/nicht falsch → NICHT drosseln** | S-B nicht mehr „Überschuss-Drossel"; die 115 Überschüsse sind großteils RZ-only-DXF-Artefakt (M1-Phantom), kein Fehler |
+| B2 | Tür-RZ-Versatz 0 mm (Wandlinie) oder 735–930 mm raumseitig? | **offen** — Herkunft erläutert: gemessener raumseitiger Versatz im Mollgasse-Erklär-DXF (`REGELWERK_Mollgasse.md:14`, RW-001; RW-003 375–840, UG 711–779). Steht gegen Ansage 18.09. „Wandlinie, 0 mm" | RW-001-Feinschliff wartet weiter auf Entscheid |
+| B3 | beidseitig: 2 Einzel-RZ oder 1 Block? | **1 Block** (`RIVO_ARR_bothsided` in `CAD_Symbole/RIVO_NL_Symbole.dxf`) | ✅ Engine schon korrekt (`dxf_renderer.py:1183/1205`) — KEIN Umbau; GT-„2 Einzel" = nur Mess-Nuance |
+| B4 | S-AUDIT (regelwerk.quelle → norm_quelle) bauen? | **ja** | ⚠️ Naht: `test_naht_norm_quelle_in_regelwerk` erzwingt norm_quelle ∈ `NormRegelwerk.quellen` → Enis muss „Referenz-Praxis: RW-xxx" registrieren (Präzedenz `fachpraxis.py:91`). **Leonis+Enis-Naht, nicht solo** |
 
 ## Phase 1 — Leonis-pur, Selman-unabhängig (sofort baubar)
 
 | Slice | Regel | Was | GT-Hebel | Risiko |
 |---|---|---|---|---|
 | **S-A** | RW-029 | Antipanik-Position auf **Diagonalen-Mitte-Rezept** (Mauerkante→Gangecke, Mitte Δ23–33 mm) statt `find_center_visual`-Näherung | Typ/Position Antipanik | Golden/GT-Band (AP-Positionen shiften) → Messlauf |
-| **S-B** | RW-111 | Gang-Aufheller bedient mehrere Türvorbereiche (SL-Analogie NB-R08) statt 1:1 je RZ | **senkt Aufheller-Überschuss** | GT-Band; **braucht B1** |
+| **S-B** | RW-111 | Gang-Aufheller bedient mehrere Türvorbereiche (SL-Analogie NB-R08); EIN Aufheller für Türcluster (PDF 3OG „eine Leuchte bedient vier Türen") | Platzierungs-Treue (nicht Drossel — B1: 500 mm ist Mindestmaß) | GT-Band |
 | **S-C** | RW-005 | Stiegen-RZ-Positionsband 800–1122 mm vor Antritt/Austritt, auf Laufachse schärfen | senkt 1–2 m Paarungsdistanzen | Golden stgh |
 | **S-D** | #5 (validierung) | **Exit-RZ-Fallback**: RZ am `final_exit` auch wenn außerhalb Raumpolygon | schließt EG/1KG-WARNUNG (Diagnose 2026-10-03) | GT-Doppelzählung an schon gedeckten Ausgängen → eigener Messlauf; **Wurzel ist Selman (s. Phase 3)** |
 
@@ -99,13 +97,14 @@ ausdrückbar. Braucht Owner-GO + Selman (Erkennung) + Enis (Norm) + Contract-Fre
 
 ## Empfohlene Reihenfolge (netto)
 
-1. **Blocker B1–B4 klären** (Owner, 0 Code).
+1. **Blocker:** B1 ✅ (kein Drossel), B3 ✅ (Engine korrekt), B4 ✅ (ja, aber Enis-Naht). **Nur B2 bleibt offen** (0 mm vs 735–930 mm).
 2. **S-A + S-C** (Leonis-pur, Golden-Risiko beherrschbar, direkter Typ/Position-Gewinn).
-3. **S-B** (nach B1) — Überschuss-Senkung (115 → ?).
-4. **Selman-Paket anstoßen** (Knotengraph + KG + Ausgang-in-Raum) — entsperrt den
+3. **S-B** — Aufheller-Mehrfachbedienung (Platzierungs-Treue, kein Drossel).
+4. **S-AUDIT** anstoßen = Leonis+Enis-Naht (Enis registriert „Referenz-Praxis: RW-xxx" in `quellen`).
+5. **Selman-Paket anstoßen** (Knotengraph + KG + Ausgang-in-Raum) — entsperrt den
    eigentlichen gepaart-Hebel.
-5. **Phase 2 (S-E…S-I)** sobald Selman liefert.
-6. **Enis-/Contract-Pakete** parallel (eigene Lanes).
+6. **Phase 2 (S-E…S-I)** sobald Selman liefert.
+7. **Enis-/Contract-Pakete** parallel (eigene Lanes); RW-001-Feinschliff nach B2.
 
 **Kurz:** Leonis kann den **Typ-Match** jetzt weiter heben (M3-Rest, S-A/C),
 aber die **gepaart-Quote** (34 %) ist zu ~¾ Selman-gegated. Der Fahrplan baut
