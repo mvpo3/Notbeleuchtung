@@ -4,6 +4,33 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-10-03 später) — 3 Commits GEPUSHT. EG+1KG-WARNUNG aufgeschlüsselt = Regel #5 (RZ an Notausgängen), Lane = Erkennung/Selman. Codex-Review offen (Quota ~19:10).
+
+**Branch `leonis/kopplung-raumerkennung-c3b8186` GEPUSHT (`ee29f8d..171195e`, 0 ungepusht).**
+Owner-GO erteilt → `bd9f070` (M3) + `4d84cfa` (Wohnungsgang) + `171195e` (docs) auf origin.
+CAD-Lösch-Anomalie + GT-`vergleich.json`-Overwrites weiter UNANGETASTET.
+
+**EG+1KG-WARNUNG-Diagnose (read-only, Owner-Auftrag) — Ergebnis in `docs/CHANGELOG_Platzierungslogik.md`
+(Eintrag 2026-10-03):** Beide Geschosse tragen GENAU EINE Warnung, dieselbe Regel: **#5
+„RZ an Notausgängen (EN 1838 §4.1.2 g)"** (`validierung.py:218-230`, Radius 2000 mm),
+`warnung` kein `fehler`.
+- **EG 2/9:** Stiegenhaus-Eck-Paar x≈2 703 k (einer in `raum_51` STIEGENHAUS, einer
+  AUSSERHALB aller Raumpolygone); nächstes RZ 9,5/10,8 m, je 1 SL ~1 m daneben.
+- **1KG 1/1:** final_exit AUSSERHALB aller Raumpolygone (Keller-/Garagen-Riegel); RZ 11,9 m, SL ~1 m.
+- **Lane = Erkennung (Selman):** Ausgang außerhalb jedes Raumpolygons → kein Raum/Segment
+  für den RZ-Anker → gar kein RZ erzeugt (RZ ~10 m weg = kein Dedup-Dropout). Die ~1-m-SL
+  hält den Ausgang hell → warnung, kein fehler. **Folge-Slice Platzierung (Owner-GO nötig,
+  NICHT gebaut):** Exit-RZ-Fallback (RZ am final_exit ohne Raum) — Risiko GT-Bänder +
+  Doppelzählung. Belege: `scratchpad/diag_warnung.py` / `diag_ausgang.py`.
+
+**RESUME:** Codex-Review (BINDEND, Quota ~19:10): `codex review --commit bd9f070` + `--commit 4d84cfa`
+`-c model="gpt-5.5"`, Findings gegen Regelquellen. Danach Owner-Weiche: Selman-Paket (Ausgänge
+außerhalb Raumpolygonen = kein RZ-Anker + KG-Riegel-Erkennung) ODER pfad3-DG1-Ruling (Test-
+Widerspruch: DG1 `raum_8` WOHNUNG_PRIVAT Flags 11 „behält Notlicht" ↔ S7b „0 Leuchten"; `4d84cfa`-
+Sperre greift bewusst nur bei fw=False∧comm=False) ODER Exit-RZ-Fallback-Slice.
+
+---
+
 ## STAND (2026-10-03 NACHT) — M3 + Wohnungsgang-Fix COMMITTET (lokal, 2 Commits, UNGEPUSHT). Stiegen-Richtung = Erkennungs-Decke. Morgen weiter.
 
 **Branch `leonis/kopplung-raumerkennung-c3b8186`. ZWEI lokale Commits, NICHT gepusht:**

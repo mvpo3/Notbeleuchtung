@@ -81,3 +81,32 @@ Selman-Naht, 0 neu) / 13 xfailed · `ruff` clean · kein Contract-Touch. Visual-
 **Hausfeld-2DG-Wächter: nicht automatisiert lauffähig** (kein leerer Architektur-Input
 im Repo) → Owner-Sicht-Check empfohlen; betroffen nur Stiegen-Podest-RZ-Typ, Gang/Tür/
 Ausgang unberührt. **Codex-Review ausstehend** (Quota bis 2026-10-03 ~19:10).
+
+## 2026-10-03 — Diagnose Mollgasse EG+1KG Prüf-WARNUNG (read-only, kein Code-Touch)
+
+Aufschlüsselung der Rivoplan-Satz-WARNUNG (EG + 1KG Status `warnung`, Rest `ok`).
+Beide Geschosse tragen **genau eine** Warnung, dieselbe Regel: **Regel #5 — „Rettungs-
+zeichen an Notausgängen (EN 1838 §4.1.2 g)"** (`hauptengine/validierung.py:218-230`,
+Radius `_AUSGANG_RZ_RADIUS_MM = 2000`). `warnung`, kein `fehler` — kein Hard-Stop.
+
+| Geschoss | Befund | ungedeckte Ausgänge |
+|---|---|---|
+| EG | 2/9 Notausgänge ohne RZ in 2 m | Stiegenhaus-Eck-Paar x≈2 703 k (~2,3 m auseinander): einer in `raum_51` STIEGENHAUS, einer **außerhalb aller erkannten Raumpolygone**. Nächstes RZ 9,5 / 10,8 m; je 1 SL ~1 m daneben. |
+| 1KG | 1/1 Notausgang ohne RZ | final_exit **außerhalb aller Raumpolygone** (Keller-/Garagen-Riegel). Nächstes RZ 11,9 m; 1 SL ~1 m daneben. |
+
+**Ursache / Lane = Erkennung (Selman), nicht Platzierung:** RZ werden raum-/segment-
+verankert gesetzt. Ein `final_exit` **außerhalb jedes erkannten Raumpolygons** hat
+keinen Raum/kein Segment, an das ein RZ-Anker binden könnte → es wird **gar kein RZ
+erzeugt** (nächstes RZ ~10 m weg ⇒ kein Dedup-Dropout, sondern nie angelegt). Deckt
+sich mit dem 1KG-Befund „Keller-/Garagen-Riegel leer = KG-Erkennungsengpass". Die je
+~1 m danebenliegende Sicherheitsleuchte hält den Ausgang hell → darum `warnung`, nicht
+`fehler`.
+
+**Platzierungs-seitiger Folge-Slice (Owner-GO nötig, NICHT gebaut):** Exit-RZ-Fallback
+— RZ direkt am `final_exit` setzen, auch wenn er in keinem erkannten Raum liegt. Risiko:
+kippt die Mollgasse-GT-Bänder + Doppelzählung an Ausgängen, die schon ein raum-
+verankertes RZ tragen → eigener Slice mit Messlauf, nicht blind. Primärhebel bleibt der
+Erkennungs-Fix (Selman): Ausgangs-Polygone schließen bzw. Ausgänge einem Raum zuordnen.
+
+Belege reproduzierbar: `scratchpad/diag_warnung.py` / `diag_ausgang.py` (spiegeln
+`pipeline.run` bis `pruefbericht`, ohne Render). Kein src/contract/test berührt.
