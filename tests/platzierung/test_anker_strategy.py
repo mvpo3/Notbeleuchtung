@@ -8,6 +8,7 @@ from notbeleuchtung.hauptengine.contracts import (
     BBox,
     Edge,
     Node,
+    Raum,
     RaumModell,
     ZirkulationsGraph,
 )
@@ -55,6 +56,36 @@ def test_richtung_zeigt_zum_ausgang():
     assert bei_j.richtung == "unten"
     bei_exit = next(p for p in out if p.xy_mm == (0.0, -6000.0))
     assert bei_exit.richtung == "unten"  # Ausgang erreicht
+
+
+def _kreuzung_in_privatraum(fw=False, comm=False) -> RaumModell:
+    # Die Kreuzung J (0,0) liegt STRIKT im Inneren eines privaten Zimmers.
+    zimmer = Raum(id="zimmer", raum_typ="ZIMMER", nutzungsklasse="WOHNUNG_PRIVAT",
+                  ist_fluchtweg=fw, ist_communal=comm,
+                  polygon_mm=[(-2000.0, -2000.0), (2000.0, -2000.0),
+                              (2000.0, 2000.0), (-2000.0, 2000.0)])
+    return _plus_korridor().model_copy(update={"raeume": [zimmer]})
+
+
+def test_anker_rz_nicht_im_privatraum():
+    # Codex-Review 2026-10-03 / Prüfkriterium 8: ein Kreuzungs-Anker IM Inneren eines
+    # ausdrücklich privaten Raums (WOHNUNG_PRIVAT, fw/comm=False) bekommt KEIN RZ;
+    # der Ausgang bekommt weiter seines (EN 1838 §4.1.2 g).
+    out = plan_rettungszeichen_anker(_kreuzung_in_privatraum(), FakeNormProvider())
+    xy = {p.xy_mm for p in out}
+    assert (0.0, 0.0) not in xy          # Kreuzung J im Privatzimmer → kein RZ
+    assert (0.0, -6000.0) in xy          # Ausgang bleibt
+    assert len(out) == 1
+
+
+def test_anker_rz_bleibt_wenn_fluchtweg_durch_privatraum():
+    # Führt ein Fluchtweg/Allgemeinbereich hindurch (flags True), ist es kein reines
+    # Wohnungsinneres → der Anker behält sein RZ (wie ohne Raum).
+    out = plan_rettungszeichen_anker(
+        _kreuzung_in_privatraum(fw=True, comm=True), FakeNormProvider())
+    xy = {p.xy_mm for p in out}
+    assert (0.0, 0.0) in xy              # Fluchtweg führt durch → RZ bleibt
+    assert len(out) == 2
 
 
 def _kreuz_mit_isoliertem_ausgang() -> RaumModell:

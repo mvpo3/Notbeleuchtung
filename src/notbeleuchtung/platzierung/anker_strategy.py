@@ -182,11 +182,32 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
     exit_pos = [pos[e] for e in exits if e in pos]
     dist_je_exit = distanz_je_ausgang(raum, G)       # NB-R16: Wasserscheiden-Test
 
+    # Prüfkriterium 8 / S2 (Codex-Review 2026-10-03): das Wohnungsinnere bekommt keine
+    # Notbeleuchtung (EN 1838/ÖNorm). Ein NICHT-Ausgangs-Anker IM Inneren eines
+    # ausdrücklich privaten Raums (WOHNUNG_PRIVAT, fw/comm=False — wie Selman ihn für
+    # Mollgasse EG raum_18 ZIMMER liefert) erzeugt sonst ein RZ ohne GT-Partner. Die
+    # anderen Strategien (deckung/flaechen) sperren das schon; anker_strategy fehlte es.
+    from shapely.geometry import Point as _Point
+    from shapely.geometry import Polygon as _Polygon
+    _privat_polys = [
+        _Polygon(r.polygon_mm).buffer(0) for r in raum.raeume
+        if r.nutzungsklasse == "WOHNUNG_PRIVAT"
+        and not r.ist_fluchtweg and not r.ist_communal and len(r.polygon_mm) >= 3
+    ]
+
     out: list[Platzierung] = []
     for nid in anker:
         if nid not in pos:
             continue
         nx_, ny = pos[nid]
+        # Privatraum-Riegel: Nicht-Ausgangs-Anker STRIKT im Inneren eines privaten
+        # Raums → kein RZ. `contains` (strenges Inneres) lässt Türanker AUF der
+        # Raumgrenze unberührt, damit das Tür-RZ (RW-001) erhalten bleibt. Ausgänge
+        # bekommen immer ein RZ (EN 1838 §4.1.2 g) — darum `nid not in exits`.
+        if nid not in exits and _privat_polys:
+            _pt = _Point(nx_, ny)
+            if any(poly.contains(_pt) for poly in _privat_polys):
+                continue
         # NB-R16: Kreuzung als Wasserscheide zwischen zwei Ausgängen (Gegenströme)
         # → beidseitiges RZ (`richtung="gerade"` → Render setzt den Bothsided-Block),
         # Achse entlang des Korridors. Nur an ECHTEN Kreuzungen (kein Ausgang),
